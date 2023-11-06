@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphItemAnalytics do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,20 +16,27 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphItemAnalytics do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :allTime => MicrosoftGraph.Model.ItemAnalyticsAllTime.t | nil,
-    :itemActivityStats => [MicrosoftGraph.Model.MicrosoftGraphItemActivityStat.t] | nil,
-    :lastSevenDays => MicrosoftGraph.Model.ItemAnalyticsAllTime.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :allTime => MicrosoftGraph.Model.ItemAnalyticsAllTime.t() | nil,
+          :itemActivityStats => [MicrosoftGraph.Model.MicrosoftGraphItemActivityStat.t()] | nil,
+          :lastSevenDays => MicrosoftGraph.Model.ItemAnalyticsAllTime.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:allTime, :struct, MicrosoftGraph.Model.ItemAnalyticsAllTime)
-     |> Deserializer.deserialize(:itemActivityStats, :list, MicrosoftGraph.Model.MicrosoftGraphItemActivityStat)
-     |> Deserializer.deserialize(:lastSevenDays, :struct, MicrosoftGraph.Model.ItemAnalyticsAllTime)
+    |> Deserializer.deserialize(:allTime, :struct, MicrosoftGraph.Model.ItemAnalyticsAllTime)
+    |> Deserializer.deserialize(
+      :itemActivityStats,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphItemActivityStat
+    )
+    |> Deserializer.deserialize(
+      :lastSevenDays,
+      :struct,
+      MicrosoftGraph.Model.ItemAnalyticsAllTime
+    )
   end
 end
-

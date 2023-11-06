@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphMdmWindowsInformationProtectionPolicyCollectionResponse do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,20 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphMdmWindowsInformationProtectionPoli
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.count" => integer() | nil,
-    :"@odata.nextLink" => String.t | nil,
-    :value => [MicrosoftGraph.Model.MicrosoftGraphMdmWindowsInformationProtectionPolicy.t] | nil
-  }
+          :"@odata.count" => integer() | nil,
+          :"@odata.nextLink" => String.t() | nil,
+          :value =>
+            [MicrosoftGraph.Model.MicrosoftGraphMdmWindowsInformationProtectionPolicy.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:value, :list, MicrosoftGraph.Model.MicrosoftGraphMdmWindowsInformationProtectionPolicy)
+    |> Deserializer.deserialize(
+      :value,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphMdmWindowsInformationProtectionPolicy
+    )
   end
 end
-

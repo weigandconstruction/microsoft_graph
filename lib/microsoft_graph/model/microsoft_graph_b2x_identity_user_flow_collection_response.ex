@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphB2xIdentityUserFlowCollectionResponse do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,19 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphB2xIdentityUserFlowCollectionRespon
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.count" => integer() | nil,
-    :"@odata.nextLink" => String.t | nil,
-    :value => [MicrosoftGraph.Model.MicrosoftGraphB2xIdentityUserFlow.t] | nil
-  }
+          :"@odata.count" => integer() | nil,
+          :"@odata.nextLink" => String.t() | nil,
+          :value => [MicrosoftGraph.Model.MicrosoftGraphB2xIdentityUserFlow.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:value, :list, MicrosoftGraph.Model.MicrosoftGraphB2xIdentityUserFlow)
+    |> Deserializer.deserialize(
+      :value,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphB2xIdentityUserFlow
+    )
   end
 end
-

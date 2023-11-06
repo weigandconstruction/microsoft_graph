@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.AnalyzedMessageEvidenceP2Sender do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :displayName => String.t | nil,
-    :domainName => String.t | nil,
-    :emailAddress => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :displayName => String.t() | nil,
+          :domainName => String.t() | nil,
+          :emailAddress => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

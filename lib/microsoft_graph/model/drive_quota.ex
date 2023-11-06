@@ -18,20 +18,24 @@ defmodule MicrosoftGraph.Model.DriveQuota do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :deleted => integer() | nil,
-    :remaining => integer() | nil,
-    :state => String.t | nil,
-    :storagePlanInformation => MicrosoftGraph.Model.MicrosoftGraphQuotaStoragePlanInformation.t | nil,
-    :total => integer() | nil,
-    :used => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :deleted => integer() | nil,
+          :remaining => integer() | nil,
+          :state => String.t() | nil,
+          :storagePlanInformation =>
+            MicrosoftGraph.Model.MicrosoftGraphQuotaStoragePlanInformation.t() | nil,
+          :total => integer() | nil,
+          :used => integer() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:storagePlanInformation, :struct, MicrosoftGraph.Model.MicrosoftGraphQuotaStoragePlanInformation)
+    |> Deserializer.deserialize(
+      :storagePlanInformation,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphQuotaStoragePlanInformation
+    )
   end
 end
-

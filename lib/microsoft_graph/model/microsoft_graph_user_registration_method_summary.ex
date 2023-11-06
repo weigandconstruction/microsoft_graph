@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphUserRegistrationMethodSummary do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,20 +16,34 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphUserRegistrationMethodSummary do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :totalUserCount => integer() | nil,
-    :userRegistrationMethodCounts => [MicrosoftGraph.Model.MicrosoftGraphUserRegistrationMethodCount.t] | nil,
-    :userRoles => MicrosoftGraph.Model.MicrosoftGraphUserRegistrationFeatureSummaryUserRoles.t | nil,
-    :userTypes => MicrosoftGraph.Model.MicrosoftGraphUserRegistrationFeatureSummaryUserTypes.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :totalUserCount => integer() | nil,
+          :userRegistrationMethodCounts =>
+            [MicrosoftGraph.Model.MicrosoftGraphUserRegistrationMethodCount.t()] | nil,
+          :userRoles =>
+            MicrosoftGraph.Model.MicrosoftGraphUserRegistrationFeatureSummaryUserRoles.t() | nil,
+          :userTypes =>
+            MicrosoftGraph.Model.MicrosoftGraphUserRegistrationFeatureSummaryUserTypes.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:userRegistrationMethodCounts, :list, MicrosoftGraph.Model.MicrosoftGraphUserRegistrationMethodCount)
-     |> Deserializer.deserialize(:userRoles, :struct, MicrosoftGraph.Model.MicrosoftGraphUserRegistrationFeatureSummaryUserRoles)
-     |> Deserializer.deserialize(:userTypes, :struct, MicrosoftGraph.Model.MicrosoftGraphUserRegistrationFeatureSummaryUserTypes)
+    |> Deserializer.deserialize(
+      :userRegistrationMethodCounts,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphUserRegistrationMethodCount
+    )
+    |> Deserializer.deserialize(
+      :userRoles,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphUserRegistrationFeatureSummaryUserRoles
+    )
+    |> Deserializer.deserialize(
+      :userTypes,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphUserRegistrationFeatureSummaryUserTypes
+    )
   end
 end
-

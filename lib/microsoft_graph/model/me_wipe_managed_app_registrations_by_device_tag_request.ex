@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MeWipeManagedAppRegistrationsByDeviceTagRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,11 +12,10 @@ defmodule MicrosoftGraph.Model.MeWipeManagedAppRegistrationsByDeviceTagRequest d
   ]
 
   @type t :: %__MODULE__{
-    :deviceTag => String.t | nil
-  }
+          :deviceTag => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

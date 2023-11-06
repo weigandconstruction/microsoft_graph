@@ -23,8 +23,19 @@ defmodule MicrosoftGraph.Api.IdentityProtectionRiskDetection do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphRiskDetection.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_protection_create_risk_detections(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphRiskDetection.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphRiskDetection.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_protection_create_risk_detections(connection, microsoft_graph_risk_detection, _opts \\ []) do
+  @spec identity_protection_create_risk_detections(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphRiskDetection.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphRiskDetection.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_protection_create_risk_detections(
+        connection,
+        microsoft_graph_risk_detection,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -56,7 +67,10 @@ defmodule MicrosoftGraph.Api.IdentityProtectionRiskDetection do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_protection_delete_risk_detections(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_protection_delete_risk_detections(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_protection_delete_risk_detections(connection, risk_detection_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -95,7 +109,10 @@ defmodule MicrosoftGraph.Api.IdentityProtectionRiskDetection do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphRiskDetection.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_protection_get_risk_detections(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphRiskDetection.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_protection_get_risk_detections(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphRiskDetection.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_protection_get_risk_detections(connection, risk_detection_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -140,7 +157,10 @@ defmodule MicrosoftGraph.Api.IdentityProtectionRiskDetection do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphRiskDetectionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_protection_list_risk_detections(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphRiskDetectionCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_protection_list_risk_detections(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphRiskDetectionCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_protection_list_risk_detections(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -184,7 +204,10 @@ defmodule MicrosoftGraph.Api.IdentityProtectionRiskDetection do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_protection_risk_detections_get_count_ee19(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_protection_risk_detections_get_count_ee19(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_protection_risk_detections_get_count_ee19(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -222,8 +245,21 @@ defmodule MicrosoftGraph.Api.IdentityProtectionRiskDetection do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphRiskDetection.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_protection_update_risk_detections(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphRiskDetection.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphRiskDetection.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_protection_update_risk_detections(connection, risk_detection_id, microsoft_graph_risk_detection, _opts \\ []) do
+  @spec identity_protection_update_risk_detections(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphRiskDetection.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphRiskDetection.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_protection_update_risk_detections(
+        connection,
+        risk_detection_id,
+        microsoft_graph_risk_detection,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

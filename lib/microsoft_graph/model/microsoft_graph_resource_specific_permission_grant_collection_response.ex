@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrantCollectionResponse do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,19 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrantColl
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.count" => integer() | nil,
-    :"@odata.nextLink" => String.t | nil,
-    :value => [MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant.t] | nil
-  }
+          :"@odata.count" => integer() | nil,
+          :"@odata.nextLink" => String.t() | nil,
+          :value => [MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:value, :list, MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant)
+    |> Deserializer.deserialize(
+      :value,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant
+    )
   end
 end
-

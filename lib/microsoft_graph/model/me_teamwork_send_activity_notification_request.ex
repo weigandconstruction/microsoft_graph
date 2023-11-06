@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MeTeamworkSendActivityNotificationRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,20 +16,38 @@ defmodule MicrosoftGraph.Model.MeTeamworkSendActivityNotificationRequest do
   ]
 
   @type t :: %__MODULE__{
-    :activityType => String.t | nil,
-    :chainId => integer() | nil,
-    :previewText => MicrosoftGraph.Model.MeJoinedTeamsTeamSendActivityNotificationRequestPreviewText.t | nil,
-    :templateParameters => [MicrosoftGraph.Model.MeJoinedTeamsTeamSendActivityNotificationRequestTemplateParametersInner.t] | nil,
-    :topic => MicrosoftGraph.Model.MeJoinedTeamsTeamSendActivityNotificationRequestTopic.t | nil
-  }
+          :activityType => String.t() | nil,
+          :chainId => integer() | nil,
+          :previewText =>
+            MicrosoftGraph.Model.MeJoinedTeamsTeamSendActivityNotificationRequestPreviewText.t()
+            | nil,
+          :templateParameters =>
+            [
+              MicrosoftGraph.Model.MeJoinedTeamsTeamSendActivityNotificationRequestTemplateParametersInner.t()
+            ]
+            | nil,
+          :topic =>
+            MicrosoftGraph.Model.MeJoinedTeamsTeamSendActivityNotificationRequestTopic.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:previewText, :struct, MicrosoftGraph.Model.MeJoinedTeamsTeamSendActivityNotificationRequestPreviewText)
-     |> Deserializer.deserialize(:templateParameters, :list, MicrosoftGraph.Model.MeJoinedTeamsTeamSendActivityNotificationRequestTemplateParametersInner)
-     |> Deserializer.deserialize(:topic, :struct, MicrosoftGraph.Model.MeJoinedTeamsTeamSendActivityNotificationRequestTopic)
+    |> Deserializer.deserialize(
+      :previewText,
+      :struct,
+      MicrosoftGraph.Model.MeJoinedTeamsTeamSendActivityNotificationRequestPreviewText
+    )
+    |> Deserializer.deserialize(
+      :templateParameters,
+      :list,
+      MicrosoftGraph.Model.MeJoinedTeamsTeamSendActivityNotificationRequestTemplateParametersInner
+    )
+    |> Deserializer.deserialize(
+      :topic,
+      :struct,
+      MicrosoftGraph.Model.MeJoinedTeamsTeamSendActivityNotificationRequestTopic
+    )
   end
 end
-

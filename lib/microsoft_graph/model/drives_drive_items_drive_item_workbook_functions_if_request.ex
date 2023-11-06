@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookFunctionsIfRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,18 +14,35 @@ defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookFunctionsIfReque
   ]
 
   @type t :: %__MODULE__{
-    :logicalTest => MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookFunctionsImSechRequestInumber.t | nil,
-    :valueIfFalse => MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookFunctionsImSechRequestInumber.t | nil,
-    :valueIfTrue => MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookFunctionsImSechRequestInumber.t | nil
-  }
+          :logicalTest =>
+            MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookFunctionsImSechRequestInumber.t()
+            | nil,
+          :valueIfFalse =>
+            MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookFunctionsImSechRequestInumber.t()
+            | nil,
+          :valueIfTrue =>
+            MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookFunctionsImSechRequestInumber.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:logicalTest, :struct, MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookFunctionsImSechRequestInumber)
-     |> Deserializer.deserialize(:valueIfFalse, :struct, MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookFunctionsImSechRequestInumber)
-     |> Deserializer.deserialize(:valueIfTrue, :struct, MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookFunctionsImSechRequestInumber)
+    |> Deserializer.deserialize(
+      :logicalTest,
+      :struct,
+      MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookFunctionsImSechRequestInumber
+    )
+    |> Deserializer.deserialize(
+      :valueIfFalse,
+      :struct,
+      MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookFunctionsImSechRequestInumber
+    )
+    |> Deserializer.deserialize(
+      :valueIfTrue,
+      :struct,
+      MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookFunctionsImSechRequestInumber
+    )
   end
 end
-

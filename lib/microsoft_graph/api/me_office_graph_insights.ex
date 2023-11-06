@@ -23,7 +23,10 @@ defmodule MicrosoftGraph.Api.MeOfficeGraphInsights do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_delete_insights(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_delete_insights(Tesla.Env.client(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_delete_insights(connection, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -60,7 +63,10 @@ defmodule MicrosoftGraph.Api.MeOfficeGraphInsights do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOfficeGraphInsights.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_get_insights(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOfficeGraphInsights.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_get_insights(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOfficeGraphInsights.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_get_insights(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -97,7 +103,14 @@ defmodule MicrosoftGraph.Api.MeOfficeGraphInsights do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSharedInsight.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_insights_create_shared(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphSharedInsight.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSharedInsight.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_insights_create_shared(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphSharedInsight.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSharedInsight.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_insights_create_shared(connection, microsoft_graph_shared_insight, _opts \\ []) do
     request =
       %{}
@@ -129,7 +142,14 @@ defmodule MicrosoftGraph.Api.MeOfficeGraphInsights do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTrending.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_insights_create_trending(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphTrending.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTrending.t} | {:error, Tesla.Env.t}
+  @spec me_insights_create_trending(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphTrending.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTrending.t()}
+          | {:error, Tesla.Env.t()}
   def me_insights_create_trending(connection, microsoft_graph_trending, _opts \\ []) do
     request =
       %{}
@@ -161,7 +181,14 @@ defmodule MicrosoftGraph.Api.MeOfficeGraphInsights do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUsedInsight.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_insights_create_used(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphUsedInsight.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUsedInsight.t} | {:error, Tesla.Env.t}
+  @spec me_insights_create_used(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphUsedInsight.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUsedInsight.t()}
+          | {:error, Tesla.Env.t()}
   def me_insights_create_used(connection, microsoft_graph_used_insight, _opts \\ []) do
     request =
       %{}
@@ -194,7 +221,10 @@ defmodule MicrosoftGraph.Api.MeOfficeGraphInsights do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_insights_delete_shared(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_insights_delete_shared(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_insights_delete_shared(connection, shared_insight_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -231,7 +261,10 @@ defmodule MicrosoftGraph.Api.MeOfficeGraphInsights do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_insights_delete_trending(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_insights_delete_trending(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_insights_delete_trending(connection, trending_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -268,7 +301,10 @@ defmodule MicrosoftGraph.Api.MeOfficeGraphInsights do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_insights_delete_used(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_insights_delete_used(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_insights_delete_used(connection, used_insight_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -307,7 +343,10 @@ defmodule MicrosoftGraph.Api.MeOfficeGraphInsights do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSharedInsight.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_insights_get_shared(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSharedInsight.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_insights_get_shared(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSharedInsight.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_insights_get_shared(connection, shared_insight_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -347,7 +386,10 @@ defmodule MicrosoftGraph.Api.MeOfficeGraphInsights do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTrending.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_insights_get_trending(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTrending.t} | {:error, Tesla.Env.t}
+  @spec me_insights_get_trending(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTrending.t()}
+          | {:error, Tesla.Env.t()}
   def me_insights_get_trending(connection, trending_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -387,7 +429,10 @@ defmodule MicrosoftGraph.Api.MeOfficeGraphInsights do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUsedInsight.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_insights_get_used(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUsedInsight.t} | {:error, Tesla.Env.t}
+  @spec me_insights_get_used(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUsedInsight.t()}
+          | {:error, Tesla.Env.t()}
   def me_insights_get_used(connection, used_insight_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -432,7 +477,10 @@ defmodule MicrosoftGraph.Api.MeOfficeGraphInsights do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSharedInsightCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_insights_list_shared(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSharedInsightCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_insights_list_shared(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSharedInsightCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_insights_list_shared(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -483,7 +531,10 @@ defmodule MicrosoftGraph.Api.MeOfficeGraphInsights do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTrendingCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_insights_list_trending(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTrendingCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_insights_list_trending(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTrendingCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_insights_list_trending(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -534,7 +585,10 @@ defmodule MicrosoftGraph.Api.MeOfficeGraphInsights do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUsedInsightCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_insights_list_used(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUsedInsightCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_insights_list_used(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUsedInsightCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_insights_list_used(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -578,7 +632,10 @@ defmodule MicrosoftGraph.Api.MeOfficeGraphInsights do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_insights_shared_get_count32da(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_insights_shared_get_count32da(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_insights_shared_get_count32da(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -617,7 +674,10 @@ defmodule MicrosoftGraph.Api.MeOfficeGraphInsights do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEntity.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_insights_shared_get_last_shared_method(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEntity.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_insights_shared_get_last_shared_method(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEntity.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_insights_shared_get_last_shared_method(connection, shared_insight_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -657,7 +717,10 @@ defmodule MicrosoftGraph.Api.MeOfficeGraphInsights do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEntity.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_insights_shared_get_resource(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEntity.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_insights_shared_get_resource(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEntity.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_insights_shared_get_resource(connection, shared_insight_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -695,7 +758,10 @@ defmodule MicrosoftGraph.Api.MeOfficeGraphInsights do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_insights_trending_get_count7d42(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_insights_trending_get_count7d42(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_insights_trending_get_count7d42(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -735,7 +801,10 @@ defmodule MicrosoftGraph.Api.MeOfficeGraphInsights do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEntity.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_insights_trending_get_resource(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEntity.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_insights_trending_get_resource(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEntity.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_insights_trending_get_resource(connection, trending_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -773,8 +842,21 @@ defmodule MicrosoftGraph.Api.MeOfficeGraphInsights do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSharedInsight.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_insights_update_shared(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphSharedInsight.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSharedInsight.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_insights_update_shared(connection, shared_insight_id, microsoft_graph_shared_insight, _opts \\ []) do
+  @spec me_insights_update_shared(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSharedInsight.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSharedInsight.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_insights_update_shared(
+        connection,
+        shared_insight_id,
+        microsoft_graph_shared_insight,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -806,7 +888,15 @@ defmodule MicrosoftGraph.Api.MeOfficeGraphInsights do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTrending.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_insights_update_trending(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphTrending.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTrending.t} | {:error, Tesla.Env.t}
+  @spec me_insights_update_trending(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTrending.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTrending.t()}
+          | {:error, Tesla.Env.t()}
   def me_insights_update_trending(connection, trending_id, microsoft_graph_trending, _opts \\ []) do
     request =
       %{}
@@ -839,8 +929,21 @@ defmodule MicrosoftGraph.Api.MeOfficeGraphInsights do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUsedInsight.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_insights_update_used(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphUsedInsight.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUsedInsight.t} | {:error, Tesla.Env.t}
-  def me_insights_update_used(connection, used_insight_id, microsoft_graph_used_insight, _opts \\ []) do
+  @spec me_insights_update_used(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUsedInsight.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUsedInsight.t()}
+          | {:error, Tesla.Env.t()}
+  def me_insights_update_used(
+        connection,
+        used_insight_id,
+        microsoft_graph_used_insight,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -872,7 +975,10 @@ defmodule MicrosoftGraph.Api.MeOfficeGraphInsights do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_insights_used_get_count_c703(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_insights_used_get_count_c703(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_insights_used_get_count_c703(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -912,7 +1018,10 @@ defmodule MicrosoftGraph.Api.MeOfficeGraphInsights do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEntity.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_insights_used_get_resource(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEntity.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_insights_used_get_resource(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEntity.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_insights_used_get_resource(connection, used_insight_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -949,7 +1058,14 @@ defmodule MicrosoftGraph.Api.MeOfficeGraphInsights do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOfficeGraphInsights.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_update_insights(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphOfficeGraphInsights.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOfficeGraphInsights.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_update_insights(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphOfficeGraphInsights.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOfficeGraphInsights.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_update_insights(connection, microsoft_graph_office_graph_insights, _opts \\ []) do
     request =
       %{}

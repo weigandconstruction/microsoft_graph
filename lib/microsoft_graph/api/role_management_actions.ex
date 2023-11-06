@@ -24,12 +24,25 @@ defmodule MicrosoftGraph.Api.RoleManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_assignment_schedule_requests_unified_role_assignment_schedule_request_cancel(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_assignment_schedule_requests_unified_role_assignment_schedule_request_cancel(connection, unified_role_assignment_schedule_request_id, _opts \\ []) do
+  @spec role_management_directory_role_assignment_schedule_requests_unified_role_assignment_schedule_request_cancel(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_assignment_schedule_requests_unified_role_assignment_schedule_request_cancel(
+        connection,
+        unified_role_assignment_schedule_request_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/roleManagement/directory/roleAssignmentScheduleRequests/#{unified_role_assignment_schedule_request_id}/cancel")
+      |> url(
+        "/roleManagement/directory/roleAssignmentScheduleRequests/#{unified_role_assignment_schedule_request_id}/cancel"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -57,12 +70,25 @@ defmodule MicrosoftGraph.Api.RoleManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_eligibility_schedule_requests_unified_role_eligibility_schedule_request_cancel(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_eligibility_schedule_requests_unified_role_eligibility_schedule_request_cancel(connection, unified_role_eligibility_schedule_request_id, _opts \\ []) do
+  @spec role_management_directory_role_eligibility_schedule_requests_unified_role_eligibility_schedule_request_cancel(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_eligibility_schedule_requests_unified_role_eligibility_schedule_request_cancel(
+        connection,
+        unified_role_eligibility_schedule_request_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/roleManagement/directory/roleEligibilityScheduleRequests/#{unified_role_eligibility_schedule_request_id}/cancel")
+      |> url(
+        "/roleManagement/directory/roleEligibilityScheduleRequests/#{unified_role_eligibility_schedule_request_id}/cancel"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -90,12 +116,25 @@ defmodule MicrosoftGraph.Api.RoleManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_assignment_schedule_requests_unified_role_assignment_schedule_request_cancel(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_assignment_schedule_requests_unified_role_assignment_schedule_request_cancel(connection, unified_role_assignment_schedule_request_id, _opts \\ []) do
+  @spec role_management_entitlement_management_role_assignment_schedule_requests_unified_role_assignment_schedule_request_cancel(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_assignment_schedule_requests_unified_role_assignment_schedule_request_cancel(
+        connection,
+        unified_role_assignment_schedule_request_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/roleManagement/entitlementManagement/roleAssignmentScheduleRequests/#{unified_role_assignment_schedule_request_id}/cancel")
+      |> url(
+        "/roleManagement/entitlementManagement/roleAssignmentScheduleRequests/#{unified_role_assignment_schedule_request_id}/cancel"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -123,12 +162,25 @@ defmodule MicrosoftGraph.Api.RoleManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_eligibility_schedule_requests_unified_role_eligibility_schedule_request_cancel(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_eligibility_schedule_requests_unified_role_eligibility_schedule_request_cancel(connection, unified_role_eligibility_schedule_request_id, _opts \\ []) do
+  @spec role_management_entitlement_management_role_eligibility_schedule_requests_unified_role_eligibility_schedule_request_cancel(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_eligibility_schedule_requests_unified_role_eligibility_schedule_request_cancel(
+        connection,
+        unified_role_eligibility_schedule_request_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/roleManagement/entitlementManagement/roleEligibilityScheduleRequests/#{unified_role_eligibility_schedule_request_id}/cancel")
+      |> url(
+        "/roleManagement/entitlementManagement/roleEligibilityScheduleRequests/#{unified_role_eligibility_schedule_request_id}/cancel"
+      )
       |> ensure_body()
       |> Enum.into([])
 

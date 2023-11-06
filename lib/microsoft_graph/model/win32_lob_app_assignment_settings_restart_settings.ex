@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.Win32LobAppAssignmentSettingsRestartSettings do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :countdownDisplayBeforeRestartInMinutes => integer() | nil,
-    :gracePeriodInMinutes => integer() | nil,
-    :restartNotificationSnoozeDurationInMinutes => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :countdownDisplayBeforeRestartInMinutes => integer() | nil,
+          :gracePeriodInMinutes => integer() | nil,
+          :restartNotificationSnoozeDurationInMinutes => integer() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

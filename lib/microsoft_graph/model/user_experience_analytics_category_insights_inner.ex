@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.UserExperienceAnalyticsCategoryInsightsInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,19 +16,29 @@ defmodule MicrosoftGraph.Model.UserExperienceAnalyticsCategoryInsightsInner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :insightId => String.t | nil,
-    :severity => MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsInsightSeverity.t | nil,
-    :userExperienceAnalyticsMetricId => String.t | nil,
-    :values => [MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsInsightValuesInner.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :insightId => String.t() | nil,
+          :severity =>
+            MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsInsightSeverity.t() | nil,
+          :userExperienceAnalyticsMetricId => String.t() | nil,
+          :values =>
+            [MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsInsightValuesInner.t()]
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:severity, :struct, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsInsightSeverity)
-     |> Deserializer.deserialize(:values, :list, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsInsightValuesInner)
+    |> Deserializer.deserialize(
+      :severity,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsInsightSeverity
+    )
+    |> Deserializer.deserialize(
+      :values,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsInsightValuesInner
+    )
   end
 end
-

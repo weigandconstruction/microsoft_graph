@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphPlanner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,20 +16,19 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphPlanner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :buckets => [MicrosoftGraph.Model.MicrosoftGraphPlannerBucket.t] | nil,
-    :plans => [MicrosoftGraph.Model.MicrosoftGraphPlannerPlan.t] | nil,
-    :tasks => [MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :buckets => [MicrosoftGraph.Model.MicrosoftGraphPlannerBucket.t()] | nil,
+          :plans => [MicrosoftGraph.Model.MicrosoftGraphPlannerPlan.t()] | nil,
+          :tasks => [MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:buckets, :list, MicrosoftGraph.Model.MicrosoftGraphPlannerBucket)
-     |> Deserializer.deserialize(:plans, :list, MicrosoftGraph.Model.MicrosoftGraphPlannerPlan)
-     |> Deserializer.deserialize(:tasks, :list, MicrosoftGraph.Model.MicrosoftGraphPlannerTask)
+    |> Deserializer.deserialize(:buckets, :list, MicrosoftGraph.Model.MicrosoftGraphPlannerBucket)
+    |> Deserializer.deserialize(:plans, :list, MicrosoftGraph.Model.MicrosoftGraphPlannerPlan)
+    |> Deserializer.deserialize(:tasks, :list, MicrosoftGraph.Model.MicrosoftGraphPlannerTask)
   end
 end
-

@@ -15,18 +15,21 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphChatMessageHistoryItemReaction do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :createdDateTime => DateTime.t | nil,
-    :reactionType => String.t | nil,
-    :user => MicrosoftGraph.Model.MicrosoftGraphChatMessageReactionIdentitySet.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :createdDateTime => DateTime.t() | nil,
+          :reactionType => String.t() | nil,
+          :user => MicrosoftGraph.Model.MicrosoftGraphChatMessageReactionIdentitySet.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:user, :struct, MicrosoftGraph.Model.MicrosoftGraphChatMessageReactionIdentitySet)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :user,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphChatMessageReactionIdentitySet
+    )
   end
 end
-

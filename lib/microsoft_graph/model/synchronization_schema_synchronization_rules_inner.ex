@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.SynchronizationSchemaSynchronizationRulesInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -22,27 +22,46 @@ defmodule MicrosoftGraph.Model.SynchronizationSchemaSynchronizationRulesInner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :containerFilter => MicrosoftGraph.Model.MicrosoftGraphSynchronizationRuleContainerFilter.t | nil,
-    :editable => boolean() | nil,
-    :groupFilter => MicrosoftGraph.Model.MicrosoftGraphSynchronizationRuleGroupFilter.t | nil,
-    :id => String.t | nil,
-    :metadata => [MicrosoftGraph.Model.MicrosoftGraphAttributeDefinitionApiExpressionsInner.t] | nil,
-    :name => String.t | nil,
-    :objectMappings => [MicrosoftGraph.Model.MicrosoftGraphSynchronizationRuleObjectMappingsInner.t] | nil,
-    :priority => integer() | nil,
-    :sourceDirectoryName => String.t | nil,
-    :targetDirectoryName => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :containerFilter =>
+            MicrosoftGraph.Model.MicrosoftGraphSynchronizationRuleContainerFilter.t() | nil,
+          :editable => boolean() | nil,
+          :groupFilter =>
+            MicrosoftGraph.Model.MicrosoftGraphSynchronizationRuleGroupFilter.t() | nil,
+          :id => String.t() | nil,
+          :metadata =>
+            [MicrosoftGraph.Model.MicrosoftGraphAttributeDefinitionApiExpressionsInner.t()] | nil,
+          :name => String.t() | nil,
+          :objectMappings =>
+            [MicrosoftGraph.Model.MicrosoftGraphSynchronizationRuleObjectMappingsInner.t()] | nil,
+          :priority => integer() | nil,
+          :sourceDirectoryName => String.t() | nil,
+          :targetDirectoryName => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:containerFilter, :struct, MicrosoftGraph.Model.MicrosoftGraphSynchronizationRuleContainerFilter)
-     |> Deserializer.deserialize(:groupFilter, :struct, MicrosoftGraph.Model.MicrosoftGraphSynchronizationRuleGroupFilter)
-     |> Deserializer.deserialize(:metadata, :list, MicrosoftGraph.Model.MicrosoftGraphAttributeDefinitionApiExpressionsInner)
-     |> Deserializer.deserialize(:objectMappings, :list, MicrosoftGraph.Model.MicrosoftGraphSynchronizationRuleObjectMappingsInner)
+    |> Deserializer.deserialize(
+      :containerFilter,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSynchronizationRuleContainerFilter
+    )
+    |> Deserializer.deserialize(
+      :groupFilter,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSynchronizationRuleGroupFilter
+    )
+    |> Deserializer.deserialize(
+      :metadata,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAttributeDefinitionApiExpressionsInner
+    )
+    |> Deserializer.deserialize(
+      :objectMappings,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSynchronizationRuleObjectMappingsInner
+    )
   end
 end
-

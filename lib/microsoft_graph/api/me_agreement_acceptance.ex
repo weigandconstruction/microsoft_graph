@@ -24,7 +24,10 @@ defmodule MicrosoftGraph.Api.MeAgreementAcceptance do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_agreement_acceptances_get_count_dea5(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_agreement_acceptances_get_count_dea5(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_agreement_acceptances_get_count_dea5(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -64,7 +67,10 @@ defmodule MicrosoftGraph.Api.MeAgreementAcceptance do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementAcceptance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_get_agreement_acceptances(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementAcceptance.t} | {:error, Tesla.Env.t}
+  @spec me_get_agreement_acceptances(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementAcceptance.t()}
+          | {:error, Tesla.Env.t()}
   def me_get_agreement_acceptances(connection, agreement_acceptance_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -109,7 +115,10 @@ defmodule MicrosoftGraph.Api.MeAgreementAcceptance do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementAcceptanceCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_list_agreement_acceptances(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementAcceptanceCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_list_agreement_acceptances(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementAcceptanceCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_list_agreement_acceptances(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,

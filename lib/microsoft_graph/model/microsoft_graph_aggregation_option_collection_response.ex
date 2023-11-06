@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAggregationOptionCollectionResponse do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,19 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAggregationOptionCollectionResponse
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.count" => integer() | nil,
-    :"@odata.nextLink" => String.t | nil,
-    :value => [MicrosoftGraph.Model.MicrosoftGraphAggregationOption.t] | nil
-  }
+          :"@odata.count" => integer() | nil,
+          :"@odata.nextLink" => String.t() | nil,
+          :value => [MicrosoftGraph.Model.MicrosoftGraphAggregationOption.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:value, :list, MicrosoftGraph.Model.MicrosoftGraphAggregationOption)
+    |> Deserializer.deserialize(
+      :value,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAggregationOption
+    )
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphIosLobAppCollectionResponse do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,15 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphIosLobAppCollectionResponse do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.count" => integer() | nil,
-    :"@odata.nextLink" => String.t | nil,
-    :value => [MicrosoftGraph.Model.MicrosoftGraphIosLobApp.t] | nil
-  }
+          :"@odata.count" => integer() | nil,
+          :"@odata.nextLink" => String.t() | nil,
+          :value => [MicrosoftGraph.Model.MicrosoftGraphIosLobApp.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:value, :list, MicrosoftGraph.Model.MicrosoftGraphIosLobApp)
+    |> Deserializer.deserialize(:value, :list, MicrosoftGraph.Model.MicrosoftGraphIosLobApp)
   end
 end
-

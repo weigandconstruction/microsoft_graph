@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleManagementPolicyAssignment do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,20 +18,23 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleManagementPolicyAssignme
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :policy => MicrosoftGraph.Model.UnifiedRoleManagementPolicyAssignmentPolicy.t | nil,
-    :policyId => String.t | nil,
-    :roleDefinitionId => String.t | nil,
-    :scopeId => String.t | nil,
-    :scopeType => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :policy => MicrosoftGraph.Model.UnifiedRoleManagementPolicyAssignmentPolicy.t() | nil,
+          :policyId => String.t() | nil,
+          :roleDefinitionId => String.t() | nil,
+          :scopeId => String.t() | nil,
+          :scopeType => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:policy, :struct, MicrosoftGraph.Model.UnifiedRoleManagementPolicyAssignmentPolicy)
+    |> Deserializer.deserialize(
+      :policy,
+      :struct,
+      MicrosoftGraph.Model.UnifiedRoleManagementPolicyAssignmentPolicy
+    )
   end
 end
-

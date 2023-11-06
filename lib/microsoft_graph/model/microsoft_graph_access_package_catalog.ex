@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAccessPackageCatalog do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -25,35 +25,61 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAccessPackageCatalog do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :accessPackages => [MicrosoftGraph.Model.MicrosoftGraphAccessPackage.t] | nil,
-    :catalogType => MicrosoftGraph.Model.AccessPackageCatalogCatalogType.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :customWorkflowExtensions => [MicrosoftGraph.Model.MicrosoftGraphCustomCalloutExtension.t] | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :isExternallyVisible => boolean() | nil,
-    :modifiedDateTime => DateTime.t | nil,
-    :resourceRoles => [MicrosoftGraph.Model.MicrosoftGraphAccessPackageResourceRole.t] | nil,
-    :resourceScopes => [MicrosoftGraph.Model.MicrosoftGraphAccessPackageResourceScope.t] | nil,
-    :resources => [MicrosoftGraph.Model.MicrosoftGraphAccessPackageResource.t] | nil,
-    :state => MicrosoftGraph.Model.AccessPackageCatalogState.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :accessPackages => [MicrosoftGraph.Model.MicrosoftGraphAccessPackage.t()] | nil,
+          :catalogType => MicrosoftGraph.Model.AccessPackageCatalogCatalogType.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :customWorkflowExtensions =>
+            [MicrosoftGraph.Model.MicrosoftGraphCustomCalloutExtension.t()] | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :isExternallyVisible => boolean() | nil,
+          :modifiedDateTime => DateTime.t() | nil,
+          :resourceRoles =>
+            [MicrosoftGraph.Model.MicrosoftGraphAccessPackageResourceRole.t()] | nil,
+          :resourceScopes =>
+            [MicrosoftGraph.Model.MicrosoftGraphAccessPackageResourceScope.t()] | nil,
+          :resources => [MicrosoftGraph.Model.MicrosoftGraphAccessPackageResource.t()] | nil,
+          :state => MicrosoftGraph.Model.AccessPackageCatalogState.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:accessPackages, :list, MicrosoftGraph.Model.MicrosoftGraphAccessPackage)
-     |> Deserializer.deserialize(:catalogType, :struct, MicrosoftGraph.Model.AccessPackageCatalogCatalogType)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:customWorkflowExtensions, :list, MicrosoftGraph.Model.MicrosoftGraphCustomCalloutExtension)
-     |> Deserializer.deserialize(:modifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:resourceRoles, :list, MicrosoftGraph.Model.MicrosoftGraphAccessPackageResourceRole)
-     |> Deserializer.deserialize(:resourceScopes, :list, MicrosoftGraph.Model.MicrosoftGraphAccessPackageResourceScope)
-     |> Deserializer.deserialize(:resources, :list, MicrosoftGraph.Model.MicrosoftGraphAccessPackageResource)
-     |> Deserializer.deserialize(:state, :struct, MicrosoftGraph.Model.AccessPackageCatalogState)
+    |> Deserializer.deserialize(
+      :accessPackages,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAccessPackage
+    )
+    |> Deserializer.deserialize(
+      :catalogType,
+      :struct,
+      MicrosoftGraph.Model.AccessPackageCatalogCatalogType
+    )
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :customWorkflowExtensions,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphCustomCalloutExtension
+    )
+    |> Deserializer.deserialize(:modifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :resourceRoles,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAccessPackageResourceRole
+    )
+    |> Deserializer.deserialize(
+      :resourceScopes,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAccessPackageResourceScope
+    )
+    |> Deserializer.deserialize(
+      :resources,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAccessPackageResource
+    )
+    |> Deserializer.deserialize(:state, :struct, MicrosoftGraph.Model.AccessPackageCatalogState)
   end
 end
-

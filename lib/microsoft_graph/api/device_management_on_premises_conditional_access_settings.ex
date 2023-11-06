@@ -23,7 +23,10 @@ defmodule MicrosoftGraph.Api.DeviceManagementOnPremisesConditionalAccessSettings
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_delete_conditional_access_settings(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec device_management_delete_conditional_access_settings(Tesla.Env.client(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def device_management_delete_conditional_access_settings(connection, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -61,7 +64,10 @@ defmodule MicrosoftGraph.Api.DeviceManagementOnPremisesConditionalAccessSettings
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnPremisesConditionalAccessSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_get_conditional_access_settings(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnPremisesConditionalAccessSettings.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec device_management_get_conditional_access_settings(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnPremisesConditionalAccessSettings.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def device_management_get_conditional_access_settings(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -99,8 +105,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementOnPremisesConditionalAccessSettings
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnPremisesConditionalAccessSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_update_conditional_access_settings(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphOnPremisesConditionalAccessSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnPremisesConditionalAccessSettings.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_update_conditional_access_settings(connection, microsoft_graph_on_premises_conditional_access_settings, _opts \\ []) do
+  @spec device_management_update_conditional_access_settings(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphOnPremisesConditionalAccessSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnPremisesConditionalAccessSettings.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_update_conditional_access_settings(
+        connection,
+        microsoft_graph_on_premises_conditional_access_settings,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphRiskDetection do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -32,43 +32,54 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphRiskDetection do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :activity => MicrosoftGraph.Model.RiskDetectionActivity.t | nil,
-    :activityDateTime => DateTime.t | nil,
-    :additionalInfo => String.t | nil,
-    :correlationId => String.t | nil,
-    :detectedDateTime => DateTime.t | nil,
-    :detectionTimingType => MicrosoftGraph.Model.RiskDetectionDetectionTimingType.t | nil,
-    :ipAddress => String.t | nil,
-    :lastUpdatedDateTime => DateTime.t | nil,
-    :location => MicrosoftGraph.Model.RiskDetectionLocation.t | nil,
-    :requestId => String.t | nil,
-    :riskDetail => MicrosoftGraph.Model.RiskDetectionRiskDetail.t | nil,
-    :riskEventType => String.t | nil,
-    :riskLevel => MicrosoftGraph.Model.RiskDetectionRiskLevel.t | nil,
-    :riskState => MicrosoftGraph.Model.RiskDetectionRiskState.t | nil,
-    :source => String.t | nil,
-    :tokenIssuerType => MicrosoftGraph.Model.RiskDetectionTokenIssuerType.t | nil,
-    :userDisplayName => String.t | nil,
-    :userId => String.t | nil,
-    :userPrincipalName => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :activity => MicrosoftGraph.Model.RiskDetectionActivity.t() | nil,
+          :activityDateTime => DateTime.t() | nil,
+          :additionalInfo => String.t() | nil,
+          :correlationId => String.t() | nil,
+          :detectedDateTime => DateTime.t() | nil,
+          :detectionTimingType => MicrosoftGraph.Model.RiskDetectionDetectionTimingType.t() | nil,
+          :ipAddress => String.t() | nil,
+          :lastUpdatedDateTime => DateTime.t() | nil,
+          :location => MicrosoftGraph.Model.RiskDetectionLocation.t() | nil,
+          :requestId => String.t() | nil,
+          :riskDetail => MicrosoftGraph.Model.RiskDetectionRiskDetail.t() | nil,
+          :riskEventType => String.t() | nil,
+          :riskLevel => MicrosoftGraph.Model.RiskDetectionRiskLevel.t() | nil,
+          :riskState => MicrosoftGraph.Model.RiskDetectionRiskState.t() | nil,
+          :source => String.t() | nil,
+          :tokenIssuerType => MicrosoftGraph.Model.RiskDetectionTokenIssuerType.t() | nil,
+          :userDisplayName => String.t() | nil,
+          :userId => String.t() | nil,
+          :userPrincipalName => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:activity, :struct, MicrosoftGraph.Model.RiskDetectionActivity)
-     |> Deserializer.deserialize(:activityDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:detectedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:detectionTimingType, :struct, MicrosoftGraph.Model.RiskDetectionDetectionTimingType)
-     |> Deserializer.deserialize(:lastUpdatedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:location, :struct, MicrosoftGraph.Model.RiskDetectionLocation)
-     |> Deserializer.deserialize(:riskDetail, :struct, MicrosoftGraph.Model.RiskDetectionRiskDetail)
-     |> Deserializer.deserialize(:riskLevel, :struct, MicrosoftGraph.Model.RiskDetectionRiskLevel)
-     |> Deserializer.deserialize(:riskState, :struct, MicrosoftGraph.Model.RiskDetectionRiskState)
-     |> Deserializer.deserialize(:tokenIssuerType, :struct, MicrosoftGraph.Model.RiskDetectionTokenIssuerType)
+    |> Deserializer.deserialize(:activity, :struct, MicrosoftGraph.Model.RiskDetectionActivity)
+    |> Deserializer.deserialize(:activityDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:detectedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :detectionTimingType,
+      :struct,
+      MicrosoftGraph.Model.RiskDetectionDetectionTimingType
+    )
+    |> Deserializer.deserialize(:lastUpdatedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:location, :struct, MicrosoftGraph.Model.RiskDetectionLocation)
+    |> Deserializer.deserialize(
+      :riskDetail,
+      :struct,
+      MicrosoftGraph.Model.RiskDetectionRiskDetail
+    )
+    |> Deserializer.deserialize(:riskLevel, :struct, MicrosoftGraph.Model.RiskDetectionRiskLevel)
+    |> Deserializer.deserialize(:riskState, :struct, MicrosoftGraph.Model.RiskDetectionRiskState)
+    |> Deserializer.deserialize(
+      :tokenIssuerType,
+      :struct,
+      MicrosoftGraph.Model.RiskDetectionTokenIssuerType
+    )
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.ReportsSecurityGetAttackSimulationRepeatOffenders2XxResponseAllOfValueInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,21 @@ defmodule MicrosoftGraph.Model.ReportsSecurityGetAttackSimulationRepeatOffenders
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :attackSimulationUser => MicrosoftGraph.Model.MicrosoftGraphAttackSimulationRepeatOffenderAttackSimulationUser.t | nil,
-    :repeatOffenceCount => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :attackSimulationUser =>
+            MicrosoftGraph.Model.MicrosoftGraphAttackSimulationRepeatOffenderAttackSimulationUser.t()
+            | nil,
+          :repeatOffenceCount => integer() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:attackSimulationUser, :struct, MicrosoftGraph.Model.MicrosoftGraphAttackSimulationRepeatOffenderAttackSimulationUser)
+    |> Deserializer.deserialize(
+      :attackSimulationUser,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAttackSimulationRepeatOffenderAttackSimulationUser
+    )
   end
 end
-

@@ -16,15 +16,14 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphFileHashes do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :crc32Hash => String.t | nil,
-    :quickXorHash => String.t | nil,
-    :sha1Hash => String.t | nil,
-    :sha256Hash => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :crc32Hash => String.t() | nil,
+          :quickXorHash => String.t() | nil,
+          :sha1Hash => String.t() | nil,
+          :sha256Hash => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

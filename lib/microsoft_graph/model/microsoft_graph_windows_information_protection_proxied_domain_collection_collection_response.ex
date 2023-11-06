@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionProxiedDomainCollectionCollectionResponse do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,23 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionProxied
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.count" => integer() | nil,
-    :"@odata.nextLink" => String.t | nil,
-    :value => [MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionProxiedDomainCollection.t] | nil
-  }
+          :"@odata.count" => integer() | nil,
+          :"@odata.nextLink" => String.t() | nil,
+          :value =>
+            [
+              MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionProxiedDomainCollection.t()
+            ]
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:value, :list, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionProxiedDomainCollection)
+    |> Deserializer.deserialize(
+      :value,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionProxiedDomainCollection
+    )
   end
 end
-

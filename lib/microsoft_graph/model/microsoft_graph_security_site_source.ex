@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSecuritySiteSource do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,23 +18,22 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSecuritySiteSource do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :createdBy => MicrosoftGraph.Model.DataSourceCreatedBy.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :displayName => String.t | nil,
-    :holdStatus => MicrosoftGraph.Model.DataSourceHoldStatus.t | nil,
-    :site => MicrosoftGraph.Model.MicrosoftGraphSite.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :createdBy => MicrosoftGraph.Model.DataSourceCreatedBy.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :displayName => String.t() | nil,
+          :holdStatus => MicrosoftGraph.Model.DataSourceHoldStatus.t() | nil,
+          :site => MicrosoftGraph.Model.MicrosoftGraphSite.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.DataSourceCreatedBy)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:holdStatus, :struct, MicrosoftGraph.Model.DataSourceHoldStatus)
-     |> Deserializer.deserialize(:site, :struct, MicrosoftGraph.Model.MicrosoftGraphSite)
+    |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.DataSourceCreatedBy)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:holdStatus, :struct, MicrosoftGraph.Model.DataSourceHoldStatus)
+    |> Deserializer.deserialize(:site, :struct, MicrosoftGraph.Model.MicrosoftGraphSite)
   end
 end
-

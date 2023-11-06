@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsScoreHistory do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,15 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsScoreHistory
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :startupDateTime => DateTime.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :startupDateTime => DateTime.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:startupDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:startupDateTime, :datetime, nil)
   end
 end
-

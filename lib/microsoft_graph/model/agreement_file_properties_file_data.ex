@@ -13,12 +13,11 @@ defmodule MicrosoftGraph.Model.AgreementFilePropertiesFileData do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :data => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :data => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

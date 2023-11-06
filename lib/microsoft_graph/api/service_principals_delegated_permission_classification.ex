@@ -25,8 +25,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDelegatedPermissionClassification 
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDelegatedPermissionClassification.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_create_delegated_permission_classifications(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphDelegatedPermissionClassification.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDelegatedPermissionClassification.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_create_delegated_permission_classifications(connection, service_principal_id, microsoft_graph_delegated_permission_classification, _opts \\ []) do
+  @spec service_principals_create_delegated_permission_classifications(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDelegatedPermissionClassification.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDelegatedPermissionClassification.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_create_delegated_permission_classifications(
+        connection,
+        service_principal_id,
+        microsoft_graph_delegated_permission_classification,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -59,8 +72,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDelegatedPermissionClassification 
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_delegated_permission_classifications_get_count31f9(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_delegated_permission_classifications_get_count31f9(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_delegated_permission_classifications_get_count31f9(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_delegated_permission_classifications_get_count31f9(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -69,7 +93,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDelegatedPermissionClassification 
     request =
       %{}
       |> method(:get)
-      |> url("/servicePrincipals/#{service_principal_id}/delegatedPermissionClassifications/$count")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/delegatedPermissionClassifications/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -99,8 +125,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDelegatedPermissionClassification 
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_delete_delegated_permission_classifications(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_delete_delegated_permission_classifications(connection, service_principal_id, delegated_permission_classification_id, opts \\ []) do
+  @spec service_principals_delete_delegated_permission_classifications(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_delete_delegated_permission_classifications(
+        connection,
+        service_principal_id,
+        delegated_permission_classification_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -108,7 +147,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDelegatedPermissionClassification 
     request =
       %{}
       |> method(:delete)
-      |> url("/servicePrincipals/#{service_principal_id}/delegatedPermissionClassifications/#{delegated_permission_classification_id}")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/delegatedPermissionClassifications/#{delegated_permission_classification_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -138,8 +179,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDelegatedPermissionClassification 
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDelegatedPermissionClassification.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_get_delegated_permission_classifications(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDelegatedPermissionClassification.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_get_delegated_permission_classifications(connection, service_principal_id, delegated_permission_classification_id, opts \\ []) do
+  @spec service_principals_get_delegated_permission_classifications(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDelegatedPermissionClassification.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_get_delegated_permission_classifications(
+        connection,
+        service_principal_id,
+        delegated_permission_classification_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -148,7 +202,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDelegatedPermissionClassification 
     request =
       %{}
       |> method(:get)
-      |> url("/servicePrincipals/#{service_principal_id}/delegatedPermissionClassifications/#{delegated_permission_classification_id}")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/delegatedPermissionClassifications/#{delegated_permission_classification_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -184,8 +240,20 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDelegatedPermissionClassification 
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDelegatedPermissionClassificationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_list_delegated_permission_classifications(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDelegatedPermissionClassificationCollectionResponse.t} | {:error, Tesla.Env.t}
-  def service_principals_list_delegated_permission_classifications(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_list_delegated_permission_classifications(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphDelegatedPermissionClassificationCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_list_delegated_permission_classifications(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -207,7 +275,8 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDelegatedPermissionClassification 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphDelegatedPermissionClassificationCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphDelegatedPermissionClassificationCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -229,12 +298,29 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDelegatedPermissionClassification 
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDelegatedPermissionClassification.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_update_delegated_permission_classifications(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphDelegatedPermissionClassification.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDelegatedPermissionClassification.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_update_delegated_permission_classifications(connection, service_principal_id, delegated_permission_classification_id, microsoft_graph_delegated_permission_classification, _opts \\ []) do
+  @spec service_principals_update_delegated_permission_classifications(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDelegatedPermissionClassification.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDelegatedPermissionClassification.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_update_delegated_permission_classifications(
+        connection,
+        service_principal_id,
+        delegated_permission_classification_id,
+        microsoft_graph_delegated_permission_classification,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/servicePrincipals/#{service_principal_id}/delegatedPermissionClassifications/#{delegated_permission_classification_id}")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/delegatedPermissionClassifications/#{delegated_permission_classification_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_delegated_permission_classification)
       |> Enum.into([])
 

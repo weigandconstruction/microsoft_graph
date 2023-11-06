@@ -23,7 +23,10 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_delete_directory(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec role_management_delete_directory(Tesla.Env.client(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def role_management_delete_directory(connection, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -59,7 +62,10 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_delete_entitlement_management(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec role_management_delete_entitlement_management(Tesla.Env.client(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def role_management_delete_entitlement_management(connection, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -95,8 +101,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceNamespace.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_create_resource_namespaces(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceNamespace.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceNamespace.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_create_resource_namespaces(connection, microsoft_graph_unified_rbac_resource_namespace, _opts \\ []) do
+  @spec role_management_directory_create_resource_namespaces(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceNamespace.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceNamespace.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_create_resource_namespaces(
+        connection,
+        microsoft_graph_unified_rbac_resource_namespace,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -127,8 +144,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleInstance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_create_role_assignment_schedule_instances(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleInstance.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleInstance.t} | {:error, Tesla.Env.t}
-  def role_management_directory_create_role_assignment_schedule_instances(connection, microsoft_graph_unified_role_assignment_schedule_instance, _opts \\ []) do
+  @spec role_management_directory_create_role_assignment_schedule_instances(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleInstance.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleInstance.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_create_role_assignment_schedule_instances(
+        connection,
+        microsoft_graph_unified_role_assignment_schedule_instance,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -160,8 +188,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_create_role_assignment_schedule_requests(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_create_role_assignment_schedule_requests(connection, microsoft_graph_unified_role_assignment_schedule_request, _opts \\ []) do
+  @spec role_management_directory_create_role_assignment_schedule_requests(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_create_role_assignment_schedule_requests(
+        connection,
+        microsoft_graph_unified_role_assignment_schedule_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -192,8 +231,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentSchedule.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_create_role_assignment_schedules(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentSchedule.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentSchedule.t} | {:error, Tesla.Env.t}
-  def role_management_directory_create_role_assignment_schedules(connection, microsoft_graph_unified_role_assignment_schedule, _opts \\ []) do
+  @spec role_management_directory_create_role_assignment_schedules(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentSchedule.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentSchedule.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_create_role_assignment_schedules(
+        connection,
+        microsoft_graph_unified_role_assignment_schedule,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -225,8 +275,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_create_role_assignments(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignment.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignment.t} | {:error, Tesla.Env.t}
-  def role_management_directory_create_role_assignments(connection, microsoft_graph_unified_role_assignment, _opts \\ []) do
+  @spec role_management_directory_create_role_assignments(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignment.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignment.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_create_role_assignments(
+        connection,
+        microsoft_graph_unified_role_assignment,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -258,8 +319,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_create_role_definitions(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t} | {:error, Tesla.Env.t}
-  def role_management_directory_create_role_definitions(connection, microsoft_graph_unified_role_definition, _opts \\ []) do
+  @spec role_management_directory_create_role_definitions(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_create_role_definitions(
+        connection,
+        microsoft_graph_unified_role_definition,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -290,8 +362,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleInstance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_create_role_eligibility_schedule_instances(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleInstance.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleInstance.t} | {:error, Tesla.Env.t}
-  def role_management_directory_create_role_eligibility_schedule_instances(connection, microsoft_graph_unified_role_eligibility_schedule_instance, _opts \\ []) do
+  @spec role_management_directory_create_role_eligibility_schedule_instances(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleInstance.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleInstance.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_create_role_eligibility_schedule_instances(
+        connection,
+        microsoft_graph_unified_role_eligibility_schedule_instance,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -323,8 +406,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_create_role_eligibility_schedule_requests(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleRequest.t} | {:error, Tesla.Env.t}
-  def role_management_directory_create_role_eligibility_schedule_requests(connection, microsoft_graph_unified_role_eligibility_schedule_request, _opts \\ []) do
+  @spec role_management_directory_create_role_eligibility_schedule_requests(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleRequest.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_create_role_eligibility_schedule_requests(
+        connection,
+        microsoft_graph_unified_role_eligibility_schedule_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -355,8 +449,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilitySchedule.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_create_role_eligibility_schedules(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilitySchedule.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilitySchedule.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_create_role_eligibility_schedules(connection, microsoft_graph_unified_role_eligibility_schedule, _opts \\ []) do
+  @spec role_management_directory_create_role_eligibility_schedules(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilitySchedule.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilitySchedule.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_create_role_eligibility_schedules(
+        connection,
+        microsoft_graph_unified_role_eligibility_schedule,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -388,8 +493,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_delete_resource_namespaces(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_delete_resource_namespaces(connection, unified_rbac_resource_namespace_id, opts \\ []) do
+  @spec role_management_directory_delete_resource_namespaces(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_delete_resource_namespaces(
+        connection,
+        unified_rbac_resource_namespace_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -425,8 +541,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_delete_role_assignment_schedule_instances(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_delete_role_assignment_schedule_instances(connection, unified_role_assignment_schedule_instance_id, opts \\ []) do
+  @spec role_management_directory_delete_role_assignment_schedule_instances(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_delete_role_assignment_schedule_instances(
+        connection,
+        unified_role_assignment_schedule_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -434,7 +561,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:delete)
-      |> url("/roleManagement/directory/roleAssignmentScheduleInstances/#{unified_role_assignment_schedule_instance_id}")
+      |> url(
+        "/roleManagement/directory/roleAssignmentScheduleInstances/#{unified_role_assignment_schedule_instance_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -462,8 +591,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_delete_role_assignment_schedule_requests(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_delete_role_assignment_schedule_requests(connection, unified_role_assignment_schedule_request_id, opts \\ []) do
+  @spec role_management_directory_delete_role_assignment_schedule_requests(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_delete_role_assignment_schedule_requests(
+        connection,
+        unified_role_assignment_schedule_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -471,7 +611,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:delete)
-      |> url("/roleManagement/directory/roleAssignmentScheduleRequests/#{unified_role_assignment_schedule_request_id}")
+      |> url(
+        "/roleManagement/directory/roleAssignmentScheduleRequests/#{unified_role_assignment_schedule_request_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -499,8 +641,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_delete_role_assignment_schedules(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_delete_role_assignment_schedules(connection, unified_role_assignment_schedule_id, opts \\ []) do
+  @spec role_management_directory_delete_role_assignment_schedules(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_delete_role_assignment_schedules(
+        connection,
+        unified_role_assignment_schedule_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -508,7 +661,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:delete)
-      |> url("/roleManagement/directory/roleAssignmentSchedules/#{unified_role_assignment_schedule_id}")
+      |> url(
+        "/roleManagement/directory/roleAssignmentSchedules/#{unified_role_assignment_schedule_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -537,8 +692,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_delete_role_assignments(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_delete_role_assignments(connection, unified_role_assignment_id, opts \\ []) do
+  @spec role_management_directory_delete_role_assignments(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_delete_role_assignments(
+        connection,
+        unified_role_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -575,8 +741,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_delete_role_definitions(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_delete_role_definitions(connection, unified_role_definition_id, opts \\ []) do
+  @spec role_management_directory_delete_role_definitions(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_delete_role_definitions(
+        connection,
+        unified_role_definition_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -612,8 +789,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_delete_role_eligibility_schedule_instances(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_delete_role_eligibility_schedule_instances(connection, unified_role_eligibility_schedule_instance_id, opts \\ []) do
+  @spec role_management_directory_delete_role_eligibility_schedule_instances(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_delete_role_eligibility_schedule_instances(
+        connection,
+        unified_role_eligibility_schedule_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -621,7 +809,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:delete)
-      |> url("/roleManagement/directory/roleEligibilityScheduleInstances/#{unified_role_eligibility_schedule_instance_id}")
+      |> url(
+        "/roleManagement/directory/roleEligibilityScheduleInstances/#{unified_role_eligibility_schedule_instance_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -649,8 +839,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_delete_role_eligibility_schedule_requests(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_delete_role_eligibility_schedule_requests(connection, unified_role_eligibility_schedule_request_id, opts \\ []) do
+  @spec role_management_directory_delete_role_eligibility_schedule_requests(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_delete_role_eligibility_schedule_requests(
+        connection,
+        unified_role_eligibility_schedule_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -658,7 +859,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:delete)
-      |> url("/roleManagement/directory/roleEligibilityScheduleRequests/#{unified_role_eligibility_schedule_request_id}")
+      |> url(
+        "/roleManagement/directory/roleEligibilityScheduleRequests/#{unified_role_eligibility_schedule_request_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -686,8 +889,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_delete_role_eligibility_schedules(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_delete_role_eligibility_schedules(connection, unified_role_eligibility_schedule_id, opts \\ []) do
+  @spec role_management_directory_delete_role_eligibility_schedules(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_delete_role_eligibility_schedules(
+        connection,
+        unified_role_eligibility_schedule_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -695,7 +909,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:delete)
-      |> url("/roleManagement/directory/roleEligibilitySchedules/#{unified_role_eligibility_schedule_id}")
+      |> url(
+        "/roleManagement/directory/roleEligibilitySchedules/#{unified_role_eligibility_schedule_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -724,8 +940,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceNamespace.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_get_resource_namespaces(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceNamespace.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_get_resource_namespaces(connection, unified_rbac_resource_namespace_id, opts \\ []) do
+  @spec role_management_directory_get_resource_namespaces(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceNamespace.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_get_resource_namespaces(
+        connection,
+        unified_rbac_resource_namespace_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -764,8 +991,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleInstance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_get_role_assignment_schedule_instances(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleInstance.t} | {:error, Tesla.Env.t}
-  def role_management_directory_get_role_assignment_schedule_instances(connection, unified_role_assignment_schedule_instance_id, opts \\ []) do
+  @spec role_management_directory_get_role_assignment_schedule_instances(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleInstance.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_get_role_assignment_schedule_instances(
+        connection,
+        unified_role_assignment_schedule_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -774,7 +1012,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/roleAssignmentScheduleInstances/#{unified_role_assignment_schedule_instance_id}")
+      |> url(
+        "/roleManagement/directory/roleAssignmentScheduleInstances/#{unified_role_assignment_schedule_instance_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -804,8 +1044,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_get_role_assignment_schedule_requests(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_get_role_assignment_schedule_requests(connection, unified_role_assignment_schedule_request_id, opts \\ []) do
+  @spec role_management_directory_get_role_assignment_schedule_requests(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_get_role_assignment_schedule_requests(
+        connection,
+        unified_role_assignment_schedule_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -814,7 +1065,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/roleAssignmentScheduleRequests/#{unified_role_assignment_schedule_request_id}")
+      |> url(
+        "/roleManagement/directory/roleAssignmentScheduleRequests/#{unified_role_assignment_schedule_request_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -844,8 +1097,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentSchedule.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_get_role_assignment_schedules(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentSchedule.t} | {:error, Tesla.Env.t}
-  def role_management_directory_get_role_assignment_schedules(connection, unified_role_assignment_schedule_id, opts \\ []) do
+  @spec role_management_directory_get_role_assignment_schedules(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentSchedule.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_get_role_assignment_schedules(
+        connection,
+        unified_role_assignment_schedule_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -854,7 +1118,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/roleAssignmentSchedules/#{unified_role_assignment_schedule_id}")
+      |> url(
+        "/roleManagement/directory/roleAssignmentSchedules/#{unified_role_assignment_schedule_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -884,8 +1150,15 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_get_role_assignments(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignment.t} | {:error, Tesla.Env.t}
-  def role_management_directory_get_role_assignments(connection, unified_role_assignment_id, opts \\ []) do
+  @spec role_management_directory_get_role_assignments(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignment.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_get_role_assignments(
+        connection,
+        unified_role_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -924,8 +1197,15 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_get_role_definitions(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t} | {:error, Tesla.Env.t}
-  def role_management_directory_get_role_definitions(connection, unified_role_definition_id, opts \\ []) do
+  @spec role_management_directory_get_role_definitions(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_get_role_definitions(
+        connection,
+        unified_role_definition_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -964,8 +1244,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleInstance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_get_role_eligibility_schedule_instances(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleInstance.t} | {:error, Tesla.Env.t}
-  def role_management_directory_get_role_eligibility_schedule_instances(connection, unified_role_eligibility_schedule_instance_id, opts \\ []) do
+  @spec role_management_directory_get_role_eligibility_schedule_instances(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleInstance.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_get_role_eligibility_schedule_instances(
+        connection,
+        unified_role_eligibility_schedule_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -974,7 +1265,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/roleEligibilityScheduleInstances/#{unified_role_eligibility_schedule_instance_id}")
+      |> url(
+        "/roleManagement/directory/roleEligibilityScheduleInstances/#{unified_role_eligibility_schedule_instance_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1004,8 +1297,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_get_role_eligibility_schedule_requests(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleRequest.t} | {:error, Tesla.Env.t}
-  def role_management_directory_get_role_eligibility_schedule_requests(connection, unified_role_eligibility_schedule_request_id, opts \\ []) do
+  @spec role_management_directory_get_role_eligibility_schedule_requests(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleRequest.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_get_role_eligibility_schedule_requests(
+        connection,
+        unified_role_eligibility_schedule_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1014,7 +1318,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/roleEligibilityScheduleRequests/#{unified_role_eligibility_schedule_request_id}")
+      |> url(
+        "/roleManagement/directory/roleEligibilityScheduleRequests/#{unified_role_eligibility_schedule_request_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1044,8 +1350,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilitySchedule.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_get_role_eligibility_schedules(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilitySchedule.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_get_role_eligibility_schedules(connection, unified_role_eligibility_schedule_id, opts \\ []) do
+  @spec role_management_directory_get_role_eligibility_schedules(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilitySchedule.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_get_role_eligibility_schedules(
+        connection,
+        unified_role_eligibility_schedule_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1054,7 +1371,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/roleEligibilitySchedules/#{unified_role_eligibility_schedule_id}")
+      |> url(
+        "/roleManagement/directory/roleEligibilitySchedules/#{unified_role_eligibility_schedule_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1088,7 +1407,11 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceNamespaceCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_list_resource_namespaces(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceNamespaceCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec role_management_directory_list_resource_namespaces(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceNamespaceCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def role_management_directory_list_resource_namespaces(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1139,7 +1462,14 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleInstanceCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_list_role_assignment_schedule_instances(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleInstanceCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec role_management_directory_list_role_assignment_schedule_instances(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleInstanceCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def role_management_directory_list_role_assignment_schedule_instances(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1162,7 +1492,8 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleInstanceCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleInstanceCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -1190,7 +1521,14 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleRequestCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_list_role_assignment_schedule_requests(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleRequestCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec role_management_directory_list_role_assignment_schedule_requests(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleRequestCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def role_management_directory_list_role_assignment_schedule_requests(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1213,7 +1551,8 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleRequestCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleRequestCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -1241,7 +1580,11 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_list_role_assignment_schedules(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec role_management_directory_list_role_assignment_schedules(Tesla.Env.client(), keyword()) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def role_management_directory_list_role_assignment_schedules(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1292,7 +1635,10 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_list_role_assignments(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec role_management_directory_list_role_assignments(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def role_management_directory_list_role_assignments(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1343,7 +1689,10 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinitionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_list_role_definitions(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinitionCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec role_management_directory_list_role_definitions(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinitionCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def role_management_directory_list_role_definitions(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1394,7 +1743,14 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleInstanceCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_list_role_eligibility_schedule_instances(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleInstanceCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec role_management_directory_list_role_eligibility_schedule_instances(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleInstanceCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def role_management_directory_list_role_eligibility_schedule_instances(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1417,7 +1773,8 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleInstanceCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleInstanceCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -1445,7 +1802,14 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleRequestCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_list_role_eligibility_schedule_requests(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleRequestCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec role_management_directory_list_role_eligibility_schedule_requests(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleRequestCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def role_management_directory_list_role_eligibility_schedule_requests(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1468,7 +1832,8 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleRequestCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleRequestCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -1496,7 +1861,11 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_list_role_eligibility_schedules(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec role_management_directory_list_role_eligibility_schedules(Tesla.Env.client(), keyword()) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def role_management_directory_list_role_eligibility_schedules(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1519,7 +1888,8 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -1540,12 +1910,27 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceAction.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_resource_namespaces_create_resource_actions(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceAction.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceAction.t} | {:error, Tesla.Env.t}
-  def role_management_directory_resource_namespaces_create_resource_actions(connection, unified_rbac_resource_namespace_id, microsoft_graph_unified_rbac_resource_action, _opts \\ []) do
+  @spec role_management_directory_resource_namespaces_create_resource_actions(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceAction.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceAction.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_resource_namespaces_create_resource_actions(
+        connection,
+        unified_rbac_resource_namespace_id,
+        microsoft_graph_unified_rbac_resource_action,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/roleManagement/directory/resourceNamespaces/#{unified_rbac_resource_namespace_id}/resourceActions")
+      |> url(
+        "/roleManagement/directory/resourceNamespaces/#{unified_rbac_resource_namespace_id}/resourceActions"
+      )
       |> add_param(:body, :body, microsoft_graph_unified_rbac_resource_action)
       |> Enum.into([])
 
@@ -1574,8 +1959,21 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_resource_namespaces_delete_resource_actions(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_resource_namespaces_delete_resource_actions(connection, unified_rbac_resource_namespace_id, unified_rbac_resource_action_id, opts \\ []) do
+  @spec role_management_directory_resource_namespaces_delete_resource_actions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_resource_namespaces_delete_resource_actions(
+        connection,
+        unified_rbac_resource_namespace_id,
+        unified_rbac_resource_action_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1583,7 +1981,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:delete)
-      |> url("/roleManagement/directory/resourceNamespaces/#{unified_rbac_resource_namespace_id}/resourceActions/#{unified_rbac_resource_action_id}")
+      |> url(
+        "/roleManagement/directory/resourceNamespaces/#{unified_rbac_resource_namespace_id}/resourceActions/#{unified_rbac_resource_action_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1611,7 +2011,10 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_resource_namespaces_get_count2247(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec role_management_directory_resource_namespaces_get_count2247(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def role_management_directory_resource_namespaces_get_count2247(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -1651,8 +2054,21 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceAction.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_resource_namespaces_get_resource_actions(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceAction.t} | {:error, Tesla.Env.t}
-  def role_management_directory_resource_namespaces_get_resource_actions(connection, unified_rbac_resource_namespace_id, unified_rbac_resource_action_id, opts \\ []) do
+  @spec role_management_directory_resource_namespaces_get_resource_actions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceAction.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_resource_namespaces_get_resource_actions(
+        connection,
+        unified_rbac_resource_namespace_id,
+        unified_rbac_resource_action_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1661,7 +2077,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/resourceNamespaces/#{unified_rbac_resource_namespace_id}/resourceActions/#{unified_rbac_resource_action_id}")
+      |> url(
+        "/roleManagement/directory/resourceNamespaces/#{unified_rbac_resource_namespace_id}/resourceActions/#{unified_rbac_resource_action_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1696,8 +2114,20 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceActionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_resource_namespaces_list_resource_actions(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceActionCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_resource_namespaces_list_resource_actions(connection, unified_rbac_resource_namespace_id, opts \\ []) do
+  @spec role_management_directory_resource_namespaces_list_resource_actions(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceActionCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_resource_namespaces_list_resource_actions(
+        connection,
+        unified_rbac_resource_namespace_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1712,7 +2142,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/resourceNamespaces/#{unified_rbac_resource_namespace_id}/resourceActions")
+      |> url(
+        "/roleManagement/directory/resourceNamespaces/#{unified_rbac_resource_namespace_id}/resourceActions"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1741,8 +2173,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_resource_namespaces_resource_actions_get_count1b0d(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_resource_namespaces_resource_actions_get_count1b0d(connection, unified_rbac_resource_namespace_id, opts \\ []) do
+  @spec role_management_directory_resource_namespaces_resource_actions_get_count1b0d(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_resource_namespaces_resource_actions_get_count1b0d(
+        connection,
+        unified_rbac_resource_namespace_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1751,7 +2194,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/resourceNamespaces/#{unified_rbac_resource_namespace_id}/resourceActions/$count")
+      |> url(
+        "/roleManagement/directory/resourceNamespaces/#{unified_rbac_resource_namespace_id}/resourceActions/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1780,12 +2225,29 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceAction.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_resource_namespaces_update_resource_actions(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceAction.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceAction.t} | {:error, Tesla.Env.t}
-  def role_management_directory_resource_namespaces_update_resource_actions(connection, unified_rbac_resource_namespace_id, unified_rbac_resource_action_id, microsoft_graph_unified_rbac_resource_action, _opts \\ []) do
+  @spec role_management_directory_resource_namespaces_update_resource_actions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceAction.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceAction.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_resource_namespaces_update_resource_actions(
+        connection,
+        unified_rbac_resource_namespace_id,
+        unified_rbac_resource_action_id,
+        microsoft_graph_unified_rbac_resource_action,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/roleManagement/directory/resourceNamespaces/#{unified_rbac_resource_namespace_id}/resourceActions/#{unified_rbac_resource_action_id}")
+      |> url(
+        "/roleManagement/directory/resourceNamespaces/#{unified_rbac_resource_namespace_id}/resourceActions/#{unified_rbac_resource_action_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_unified_rbac_resource_action)
       |> Enum.into([])
 
@@ -1815,8 +2277,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleInstance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_assignment_schedule_instances_get_activated_using(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleInstance.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_assignment_schedule_instances_get_activated_using(connection, unified_role_assignment_schedule_instance_id, opts \\ []) do
+  @spec role_management_directory_role_assignment_schedule_instances_get_activated_using(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleInstance.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_assignment_schedule_instances_get_activated_using(
+        connection,
+        unified_role_assignment_schedule_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1825,7 +2298,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/roleAssignmentScheduleInstances/#{unified_role_assignment_schedule_instance_id}/activatedUsing")
+      |> url(
+        "/roleManagement/directory/roleAssignmentScheduleInstances/#{unified_role_assignment_schedule_instance_id}/activatedUsing"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1855,8 +2330,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAppScope.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_assignment_schedule_instances_get_app_scope(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAppScope.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_assignment_schedule_instances_get_app_scope(connection, unified_role_assignment_schedule_instance_id, opts \\ []) do
+  @spec role_management_directory_role_assignment_schedule_instances_get_app_scope(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAppScope.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_assignment_schedule_instances_get_app_scope(
+        connection,
+        unified_role_assignment_schedule_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1865,7 +2351,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/roleAssignmentScheduleInstances/#{unified_role_assignment_schedule_instance_id}/appScope")
+      |> url(
+        "/roleManagement/directory/roleAssignmentScheduleInstances/#{unified_role_assignment_schedule_instance_id}/appScope"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1893,8 +2381,17 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_assignment_schedule_instances_get_count_e055(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_assignment_schedule_instances_get_count_e055(connection, opts \\ []) do
+  @spec role_management_directory_role_assignment_schedule_instances_get_count_e055(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_assignment_schedule_instances_get_count_e055(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1933,8 +2430,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_assignment_schedule_instances_get_directory_scope(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_assignment_schedule_instances_get_directory_scope(connection, unified_role_assignment_schedule_instance_id, opts \\ []) do
+  @spec role_management_directory_role_assignment_schedule_instances_get_directory_scope(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_assignment_schedule_instances_get_directory_scope(
+        connection,
+        unified_role_assignment_schedule_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1943,7 +2451,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/roleAssignmentScheduleInstances/#{unified_role_assignment_schedule_instance_id}/directoryScope")
+      |> url(
+        "/roleManagement/directory/roleAssignmentScheduleInstances/#{unified_role_assignment_schedule_instance_id}/directoryScope"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1973,8 +2483,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_assignment_schedule_instances_get_principal(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_assignment_schedule_instances_get_principal(connection, unified_role_assignment_schedule_instance_id, opts \\ []) do
+  @spec role_management_directory_role_assignment_schedule_instances_get_principal(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_assignment_schedule_instances_get_principal(
+        connection,
+        unified_role_assignment_schedule_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1983,7 +2504,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/roleAssignmentScheduleInstances/#{unified_role_assignment_schedule_instance_id}/principal")
+      |> url(
+        "/roleManagement/directory/roleAssignmentScheduleInstances/#{unified_role_assignment_schedule_instance_id}/principal"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2013,8 +2536,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_assignment_schedule_instances_get_role_definition(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_assignment_schedule_instances_get_role_definition(connection, unified_role_assignment_schedule_instance_id, opts \\ []) do
+  @spec role_management_directory_role_assignment_schedule_instances_get_role_definition(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_assignment_schedule_instances_get_role_definition(
+        connection,
+        unified_role_assignment_schedule_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2023,7 +2557,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/roleAssignmentScheduleInstances/#{unified_role_assignment_schedule_instance_id}/roleDefinition")
+      |> url(
+        "/roleManagement/directory/roleAssignmentScheduleInstances/#{unified_role_assignment_schedule_instance_id}/roleDefinition"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2053,8 +2589,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilitySchedule.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_assignment_schedule_requests_get_activated_using(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilitySchedule.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_assignment_schedule_requests_get_activated_using(connection, unified_role_assignment_schedule_request_id, opts \\ []) do
+  @spec role_management_directory_role_assignment_schedule_requests_get_activated_using(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilitySchedule.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_assignment_schedule_requests_get_activated_using(
+        connection,
+        unified_role_assignment_schedule_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2063,7 +2610,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/roleAssignmentScheduleRequests/#{unified_role_assignment_schedule_request_id}/activatedUsing")
+      |> url(
+        "/roleManagement/directory/roleAssignmentScheduleRequests/#{unified_role_assignment_schedule_request_id}/activatedUsing"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2093,8 +2642,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAppScope.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_assignment_schedule_requests_get_app_scope(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAppScope.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_assignment_schedule_requests_get_app_scope(connection, unified_role_assignment_schedule_request_id, opts \\ []) do
+  @spec role_management_directory_role_assignment_schedule_requests_get_app_scope(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAppScope.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_assignment_schedule_requests_get_app_scope(
+        connection,
+        unified_role_assignment_schedule_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2103,7 +2663,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/roleAssignmentScheduleRequests/#{unified_role_assignment_schedule_request_id}/appScope")
+      |> url(
+        "/roleManagement/directory/roleAssignmentScheduleRequests/#{unified_role_assignment_schedule_request_id}/appScope"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2131,8 +2693,17 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_assignment_schedule_requests_get_count6fe6(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_assignment_schedule_requests_get_count6fe6(connection, opts \\ []) do
+  @spec role_management_directory_role_assignment_schedule_requests_get_count6fe6(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_assignment_schedule_requests_get_count6fe6(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -2171,8 +2742,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_assignment_schedule_requests_get_directory_scope(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_assignment_schedule_requests_get_directory_scope(connection, unified_role_assignment_schedule_request_id, opts \\ []) do
+  @spec role_management_directory_role_assignment_schedule_requests_get_directory_scope(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_assignment_schedule_requests_get_directory_scope(
+        connection,
+        unified_role_assignment_schedule_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2181,7 +2763,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/roleAssignmentScheduleRequests/#{unified_role_assignment_schedule_request_id}/directoryScope")
+      |> url(
+        "/roleManagement/directory/roleAssignmentScheduleRequests/#{unified_role_assignment_schedule_request_id}/directoryScope"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2211,8 +2795,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_assignment_schedule_requests_get_principal(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_assignment_schedule_requests_get_principal(connection, unified_role_assignment_schedule_request_id, opts \\ []) do
+  @spec role_management_directory_role_assignment_schedule_requests_get_principal(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_assignment_schedule_requests_get_principal(
+        connection,
+        unified_role_assignment_schedule_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2221,7 +2816,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/roleAssignmentScheduleRequests/#{unified_role_assignment_schedule_request_id}/principal")
+      |> url(
+        "/roleManagement/directory/roleAssignmentScheduleRequests/#{unified_role_assignment_schedule_request_id}/principal"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2251,8 +2848,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_assignment_schedule_requests_get_role_definition(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_assignment_schedule_requests_get_role_definition(connection, unified_role_assignment_schedule_request_id, opts \\ []) do
+  @spec role_management_directory_role_assignment_schedule_requests_get_role_definition(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_assignment_schedule_requests_get_role_definition(
+        connection,
+        unified_role_assignment_schedule_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2261,7 +2869,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/roleAssignmentScheduleRequests/#{unified_role_assignment_schedule_request_id}/roleDefinition")
+      |> url(
+        "/roleManagement/directory/roleAssignmentScheduleRequests/#{unified_role_assignment_schedule_request_id}/roleDefinition"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2291,8 +2901,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentSchedule.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_assignment_schedule_requests_get_target_schedule(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentSchedule.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_assignment_schedule_requests_get_target_schedule(connection, unified_role_assignment_schedule_request_id, opts \\ []) do
+  @spec role_management_directory_role_assignment_schedule_requests_get_target_schedule(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentSchedule.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_assignment_schedule_requests_get_target_schedule(
+        connection,
+        unified_role_assignment_schedule_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2301,7 +2922,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/roleAssignmentScheduleRequests/#{unified_role_assignment_schedule_request_id}/targetSchedule")
+      |> url(
+        "/roleManagement/directory/roleAssignmentScheduleRequests/#{unified_role_assignment_schedule_request_id}/targetSchedule"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2331,8 +2954,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilitySchedule.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_assignment_schedules_get_activated_using(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilitySchedule.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_assignment_schedules_get_activated_using(connection, unified_role_assignment_schedule_id, opts \\ []) do
+  @spec role_management_directory_role_assignment_schedules_get_activated_using(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilitySchedule.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_assignment_schedules_get_activated_using(
+        connection,
+        unified_role_assignment_schedule_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2341,7 +2975,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/roleAssignmentSchedules/#{unified_role_assignment_schedule_id}/activatedUsing")
+      |> url(
+        "/roleManagement/directory/roleAssignmentSchedules/#{unified_role_assignment_schedule_id}/activatedUsing"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2371,8 +3007,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAppScope.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_assignment_schedules_get_app_scope(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAppScope.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_assignment_schedules_get_app_scope(connection, unified_role_assignment_schedule_id, opts \\ []) do
+  @spec role_management_directory_role_assignment_schedules_get_app_scope(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAppScope.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_assignment_schedules_get_app_scope(
+        connection,
+        unified_role_assignment_schedule_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2381,7 +3028,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/roleAssignmentSchedules/#{unified_role_assignment_schedule_id}/appScope")
+      |> url(
+        "/roleManagement/directory/roleAssignmentSchedules/#{unified_role_assignment_schedule_id}/appScope"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2409,7 +3058,13 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_assignment_schedules_get_count6f04(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec role_management_directory_role_assignment_schedules_get_count6f04(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def role_management_directory_role_assignment_schedules_get_count6f04(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -2449,8 +3104,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_assignment_schedules_get_directory_scope(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_assignment_schedules_get_directory_scope(connection, unified_role_assignment_schedule_id, opts \\ []) do
+  @spec role_management_directory_role_assignment_schedules_get_directory_scope(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_assignment_schedules_get_directory_scope(
+        connection,
+        unified_role_assignment_schedule_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2459,7 +3125,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/roleAssignmentSchedules/#{unified_role_assignment_schedule_id}/directoryScope")
+      |> url(
+        "/roleManagement/directory/roleAssignmentSchedules/#{unified_role_assignment_schedule_id}/directoryScope"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2489,8 +3157,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_assignment_schedules_get_principal(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_assignment_schedules_get_principal(connection, unified_role_assignment_schedule_id, opts \\ []) do
+  @spec role_management_directory_role_assignment_schedules_get_principal(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_assignment_schedules_get_principal(
+        connection,
+        unified_role_assignment_schedule_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2499,7 +3178,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/roleAssignmentSchedules/#{unified_role_assignment_schedule_id}/principal")
+      |> url(
+        "/roleManagement/directory/roleAssignmentSchedules/#{unified_role_assignment_schedule_id}/principal"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2529,8 +3210,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_assignment_schedules_get_role_definition(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_assignment_schedules_get_role_definition(connection, unified_role_assignment_schedule_id, opts \\ []) do
+  @spec role_management_directory_role_assignment_schedules_get_role_definition(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_assignment_schedules_get_role_definition(
+        connection,
+        unified_role_assignment_schedule_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2539,7 +3231,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/roleAssignmentSchedules/#{unified_role_assignment_schedule_id}/roleDefinition")
+      |> url(
+        "/roleManagement/directory/roleAssignmentSchedules/#{unified_role_assignment_schedule_id}/roleDefinition"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2567,8 +3261,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_assignments_delete_app_scope(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_assignments_delete_app_scope(connection, unified_role_assignment_id, opts \\ []) do
+  @spec role_management_directory_role_assignments_delete_app_scope(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_assignments_delete_app_scope(
+        connection,
+        unified_role_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -2606,8 +3311,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAppScope.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_assignments_get_app_scope(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAppScope.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_assignments_get_app_scope(connection, unified_role_assignment_id, opts \\ []) do
+  @spec role_management_directory_role_assignments_get_app_scope(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAppScope.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_assignments_get_app_scope(
+        connection,
+        unified_role_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2644,7 +3360,10 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_assignments_get_count_bd5b(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec role_management_directory_role_assignments_get_count_bd5b(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def role_management_directory_role_assignments_get_count_bd5b(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -2684,8 +3403,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_assignments_get_directory_scope(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_assignments_get_directory_scope(connection, unified_role_assignment_id, opts \\ []) do
+  @spec role_management_directory_role_assignments_get_directory_scope(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_assignments_get_directory_scope(
+        connection,
+        unified_role_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2694,7 +3424,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/roleAssignments/#{unified_role_assignment_id}/directoryScope")
+      |> url(
+        "/roleManagement/directory/roleAssignments/#{unified_role_assignment_id}/directoryScope"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2724,8 +3456,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_assignments_get_principal(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_assignments_get_principal(connection, unified_role_assignment_id, opts \\ []) do
+  @spec role_management_directory_role_assignments_get_principal(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_assignments_get_principal(
+        connection,
+        unified_role_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2764,8 +3507,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_assignments_get_role_definition(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_assignments_get_role_definition(connection, unified_role_assignment_id, opts \\ []) do
+  @spec role_management_directory_role_assignments_get_role_definition(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_assignments_get_role_definition(
+        connection,
+        unified_role_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2774,7 +3528,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/roleAssignments/#{unified_role_assignment_id}/roleDefinition")
+      |> url(
+        "/roleManagement/directory/roleAssignments/#{unified_role_assignment_id}/roleDefinition"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2802,8 +3558,21 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAppScope.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_assignments_update_app_scope(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphAppScope.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAppScope.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_assignments_update_app_scope(connection, unified_role_assignment_id, microsoft_graph_app_scope, _opts \\ []) do
+  @spec role_management_directory_role_assignments_update_app_scope(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAppScope.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAppScope.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_assignments_update_app_scope(
+        connection,
+        unified_role_assignment_id,
+        microsoft_graph_app_scope,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -2835,12 +3604,27 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_definitions_create_inherits_permissions_from(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_definitions_create_inherits_permissions_from(connection, unified_role_definition_id, microsoft_graph_unified_role_definition, _opts \\ []) do
+  @spec role_management_directory_role_definitions_create_inherits_permissions_from(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_definitions_create_inherits_permissions_from(
+        connection,
+        unified_role_definition_id,
+        microsoft_graph_unified_role_definition,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/roleManagement/directory/roleDefinitions/#{unified_role_definition_id}/inheritsPermissionsFrom")
+      |> url(
+        "/roleManagement/directory/roleDefinitions/#{unified_role_definition_id}/inheritsPermissionsFrom"
+      )
       |> add_param(:body, :body, microsoft_graph_unified_role_definition)
       |> Enum.into([])
 
@@ -2869,8 +3653,21 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_definitions_delete_inherits_permissions_from(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_definitions_delete_inherits_permissions_from(connection, unified_role_definition_id, unified_role_definition_id1, opts \\ []) do
+  @spec role_management_directory_role_definitions_delete_inherits_permissions_from(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_definitions_delete_inherits_permissions_from(
+        connection,
+        unified_role_definition_id,
+        unified_role_definition_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -2878,7 +3675,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:delete)
-      |> url("/roleManagement/directory/roleDefinitions/#{unified_role_definition_id}/inheritsPermissionsFrom/#{unified_role_definition_id1}")
+      |> url(
+        "/roleManagement/directory/roleDefinitions/#{unified_role_definition_id}/inheritsPermissionsFrom/#{unified_role_definition_id1}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2906,7 +3705,10 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_definitions_get_count0578(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec role_management_directory_role_definitions_get_count0578(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def role_management_directory_role_definitions_get_count0578(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -2947,8 +3749,21 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_definitions_get_inherits_permissions_from(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_definitions_get_inherits_permissions_from(connection, unified_role_definition_id, unified_role_definition_id1, opts \\ []) do
+  @spec role_management_directory_role_definitions_get_inherits_permissions_from(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_definitions_get_inherits_permissions_from(
+        connection,
+        unified_role_definition_id,
+        unified_role_definition_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2957,7 +3772,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/roleDefinitions/#{unified_role_definition_id}/inheritsPermissionsFrom/#{unified_role_definition_id1}")
+      |> url(
+        "/roleManagement/directory/roleDefinitions/#{unified_role_definition_id}/inheritsPermissionsFrom/#{unified_role_definition_id1}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2986,8 +3803,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_definitions_inherits_permissions_from_get_count_f7ad(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_definitions_inherits_permissions_from_get_count_f7ad(connection, unified_role_definition_id, opts \\ []) do
+  @spec role_management_directory_role_definitions_inherits_permissions_from_get_count_f7ad(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_definitions_inherits_permissions_from_get_count_f7ad(
+        connection,
+        unified_role_definition_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -2996,7 +3824,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/roleDefinitions/#{unified_role_definition_id}/inheritsPermissionsFrom/$count")
+      |> url(
+        "/roleManagement/directory/roleDefinitions/#{unified_role_definition_id}/inheritsPermissionsFrom/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3032,8 +3862,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinitionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_definitions_list_inherits_permissions_from(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinitionCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_definitions_list_inherits_permissions_from(connection, unified_role_definition_id, opts \\ []) do
+  @spec role_management_directory_role_definitions_list_inherits_permissions_from(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinitionCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_definitions_list_inherits_permissions_from(
+        connection,
+        unified_role_definition_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -3048,7 +3889,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/roleDefinitions/#{unified_role_definition_id}/inheritsPermissionsFrom")
+      |> url(
+        "/roleManagement/directory/roleDefinitions/#{unified_role_definition_id}/inheritsPermissionsFrom"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3077,12 +3920,29 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_definitions_update_inherits_permissions_from(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_definitions_update_inherits_permissions_from(connection, unified_role_definition_id, unified_role_definition_id1, microsoft_graph_unified_role_definition, _opts \\ []) do
+  @spec role_management_directory_role_definitions_update_inherits_permissions_from(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_definitions_update_inherits_permissions_from(
+        connection,
+        unified_role_definition_id,
+        unified_role_definition_id1,
+        microsoft_graph_unified_role_definition,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/roleManagement/directory/roleDefinitions/#{unified_role_definition_id}/inheritsPermissionsFrom/#{unified_role_definition_id1}")
+      |> url(
+        "/roleManagement/directory/roleDefinitions/#{unified_role_definition_id}/inheritsPermissionsFrom/#{unified_role_definition_id1}"
+      )
       |> add_param(:body, :body, microsoft_graph_unified_role_definition)
       |> Enum.into([])
 
@@ -3112,8 +3972,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAppScope.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_eligibility_schedule_instances_get_app_scope(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAppScope.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_eligibility_schedule_instances_get_app_scope(connection, unified_role_eligibility_schedule_instance_id, opts \\ []) do
+  @spec role_management_directory_role_eligibility_schedule_instances_get_app_scope(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAppScope.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_eligibility_schedule_instances_get_app_scope(
+        connection,
+        unified_role_eligibility_schedule_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3122,7 +3993,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/roleEligibilityScheduleInstances/#{unified_role_eligibility_schedule_instance_id}/appScope")
+      |> url(
+        "/roleManagement/directory/roleEligibilityScheduleInstances/#{unified_role_eligibility_schedule_instance_id}/appScope"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3150,8 +4023,17 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_eligibility_schedule_instances_get_count7642(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_eligibility_schedule_instances_get_count7642(connection, opts \\ []) do
+  @spec role_management_directory_role_eligibility_schedule_instances_get_count7642(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_eligibility_schedule_instances_get_count7642(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -3190,8 +4072,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_eligibility_schedule_instances_get_directory_scope(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_eligibility_schedule_instances_get_directory_scope(connection, unified_role_eligibility_schedule_instance_id, opts \\ []) do
+  @spec role_management_directory_role_eligibility_schedule_instances_get_directory_scope(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_eligibility_schedule_instances_get_directory_scope(
+        connection,
+        unified_role_eligibility_schedule_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3200,7 +4093,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/roleEligibilityScheduleInstances/#{unified_role_eligibility_schedule_instance_id}/directoryScope")
+      |> url(
+        "/roleManagement/directory/roleEligibilityScheduleInstances/#{unified_role_eligibility_schedule_instance_id}/directoryScope"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3230,8 +4125,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_eligibility_schedule_instances_get_principal(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_eligibility_schedule_instances_get_principal(connection, unified_role_eligibility_schedule_instance_id, opts \\ []) do
+  @spec role_management_directory_role_eligibility_schedule_instances_get_principal(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_eligibility_schedule_instances_get_principal(
+        connection,
+        unified_role_eligibility_schedule_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3240,7 +4146,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/roleEligibilityScheduleInstances/#{unified_role_eligibility_schedule_instance_id}/principal")
+      |> url(
+        "/roleManagement/directory/roleEligibilityScheduleInstances/#{unified_role_eligibility_schedule_instance_id}/principal"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3270,8 +4178,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_eligibility_schedule_instances_get_role_definition(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_eligibility_schedule_instances_get_role_definition(connection, unified_role_eligibility_schedule_instance_id, opts \\ []) do
+  @spec role_management_directory_role_eligibility_schedule_instances_get_role_definition(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_eligibility_schedule_instances_get_role_definition(
+        connection,
+        unified_role_eligibility_schedule_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3280,7 +4199,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/roleEligibilityScheduleInstances/#{unified_role_eligibility_schedule_instance_id}/roleDefinition")
+      |> url(
+        "/roleManagement/directory/roleEligibilityScheduleInstances/#{unified_role_eligibility_schedule_instance_id}/roleDefinition"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3310,8 +4231,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAppScope.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_eligibility_schedule_requests_get_app_scope(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAppScope.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_eligibility_schedule_requests_get_app_scope(connection, unified_role_eligibility_schedule_request_id, opts \\ []) do
+  @spec role_management_directory_role_eligibility_schedule_requests_get_app_scope(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAppScope.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_eligibility_schedule_requests_get_app_scope(
+        connection,
+        unified_role_eligibility_schedule_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3320,7 +4252,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/roleEligibilityScheduleRequests/#{unified_role_eligibility_schedule_request_id}/appScope")
+      |> url(
+        "/roleManagement/directory/roleEligibilityScheduleRequests/#{unified_role_eligibility_schedule_request_id}/appScope"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3348,8 +4282,17 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_eligibility_schedule_requests_get_count68f0(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_eligibility_schedule_requests_get_count68f0(connection, opts \\ []) do
+  @spec role_management_directory_role_eligibility_schedule_requests_get_count68f0(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_eligibility_schedule_requests_get_count68f0(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -3388,8 +4331,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_eligibility_schedule_requests_get_directory_scope(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_eligibility_schedule_requests_get_directory_scope(connection, unified_role_eligibility_schedule_request_id, opts \\ []) do
+  @spec role_management_directory_role_eligibility_schedule_requests_get_directory_scope(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_eligibility_schedule_requests_get_directory_scope(
+        connection,
+        unified_role_eligibility_schedule_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3398,7 +4352,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/roleEligibilityScheduleRequests/#{unified_role_eligibility_schedule_request_id}/directoryScope")
+      |> url(
+        "/roleManagement/directory/roleEligibilityScheduleRequests/#{unified_role_eligibility_schedule_request_id}/directoryScope"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3428,8 +4384,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_eligibility_schedule_requests_get_principal(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_eligibility_schedule_requests_get_principal(connection, unified_role_eligibility_schedule_request_id, opts \\ []) do
+  @spec role_management_directory_role_eligibility_schedule_requests_get_principal(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_eligibility_schedule_requests_get_principal(
+        connection,
+        unified_role_eligibility_schedule_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3438,7 +4405,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/roleEligibilityScheduleRequests/#{unified_role_eligibility_schedule_request_id}/principal")
+      |> url(
+        "/roleManagement/directory/roleEligibilityScheduleRequests/#{unified_role_eligibility_schedule_request_id}/principal"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3468,8 +4437,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_eligibility_schedule_requests_get_role_definition(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_eligibility_schedule_requests_get_role_definition(connection, unified_role_eligibility_schedule_request_id, opts \\ []) do
+  @spec role_management_directory_role_eligibility_schedule_requests_get_role_definition(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_eligibility_schedule_requests_get_role_definition(
+        connection,
+        unified_role_eligibility_schedule_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3478,7 +4458,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/roleEligibilityScheduleRequests/#{unified_role_eligibility_schedule_request_id}/roleDefinition")
+      |> url(
+        "/roleManagement/directory/roleEligibilityScheduleRequests/#{unified_role_eligibility_schedule_request_id}/roleDefinition"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3508,8 +4490,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilitySchedule.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_eligibility_schedule_requests_get_target_schedule(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilitySchedule.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_eligibility_schedule_requests_get_target_schedule(connection, unified_role_eligibility_schedule_request_id, opts \\ []) do
+  @spec role_management_directory_role_eligibility_schedule_requests_get_target_schedule(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilitySchedule.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_eligibility_schedule_requests_get_target_schedule(
+        connection,
+        unified_role_eligibility_schedule_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3518,7 +4511,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/roleEligibilityScheduleRequests/#{unified_role_eligibility_schedule_request_id}/targetSchedule")
+      |> url(
+        "/roleManagement/directory/roleEligibilityScheduleRequests/#{unified_role_eligibility_schedule_request_id}/targetSchedule"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3548,8 +4543,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAppScope.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_eligibility_schedules_get_app_scope(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAppScope.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_eligibility_schedules_get_app_scope(connection, unified_role_eligibility_schedule_id, opts \\ []) do
+  @spec role_management_directory_role_eligibility_schedules_get_app_scope(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAppScope.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_eligibility_schedules_get_app_scope(
+        connection,
+        unified_role_eligibility_schedule_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3558,7 +4564,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/roleEligibilitySchedules/#{unified_role_eligibility_schedule_id}/appScope")
+      |> url(
+        "/roleManagement/directory/roleEligibilitySchedules/#{unified_role_eligibility_schedule_id}/appScope"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3586,7 +4594,13 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_eligibility_schedules_get_count_b25d(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec role_management_directory_role_eligibility_schedules_get_count_b25d(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def role_management_directory_role_eligibility_schedules_get_count_b25d(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -3626,8 +4640,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_eligibility_schedules_get_directory_scope(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_eligibility_schedules_get_directory_scope(connection, unified_role_eligibility_schedule_id, opts \\ []) do
+  @spec role_management_directory_role_eligibility_schedules_get_directory_scope(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_eligibility_schedules_get_directory_scope(
+        connection,
+        unified_role_eligibility_schedule_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3636,7 +4661,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/roleEligibilitySchedules/#{unified_role_eligibility_schedule_id}/directoryScope")
+      |> url(
+        "/roleManagement/directory/roleEligibilitySchedules/#{unified_role_eligibility_schedule_id}/directoryScope"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3666,8 +4693,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_eligibility_schedules_get_principal(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_eligibility_schedules_get_principal(connection, unified_role_eligibility_schedule_id, opts \\ []) do
+  @spec role_management_directory_role_eligibility_schedules_get_principal(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_eligibility_schedules_get_principal(
+        connection,
+        unified_role_eligibility_schedule_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3676,7 +4714,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/roleEligibilitySchedules/#{unified_role_eligibility_schedule_id}/principal")
+      |> url(
+        "/roleManagement/directory/roleEligibilitySchedules/#{unified_role_eligibility_schedule_id}/principal"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3706,8 +4746,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_eligibility_schedules_get_role_definition(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_eligibility_schedules_get_role_definition(connection, unified_role_eligibility_schedule_id, opts \\ []) do
+  @spec role_management_directory_role_eligibility_schedules_get_role_definition(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_eligibility_schedules_get_role_definition(
+        connection,
+        unified_role_eligibility_schedule_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3716,7 +4767,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/roleEligibilitySchedules/#{unified_role_eligibility_schedule_id}/roleDefinition")
+      |> url(
+        "/roleManagement/directory/roleEligibilitySchedules/#{unified_role_eligibility_schedule_id}/roleDefinition"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3744,8 +4797,21 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceNamespace.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_update_resource_namespaces(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceNamespace.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceNamespace.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_update_resource_namespaces(connection, unified_rbac_resource_namespace_id, microsoft_graph_unified_rbac_resource_namespace, _opts \\ []) do
+  @spec role_management_directory_update_resource_namespaces(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceNamespace.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceNamespace.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_update_resource_namespaces(
+        connection,
+        unified_rbac_resource_namespace_id,
+        microsoft_graph_unified_rbac_resource_namespace,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -3777,12 +4843,27 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleInstance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_update_role_assignment_schedule_instances(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleInstance.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleInstance.t} | {:error, Tesla.Env.t}
-  def role_management_directory_update_role_assignment_schedule_instances(connection, unified_role_assignment_schedule_instance_id, microsoft_graph_unified_role_assignment_schedule_instance, _opts \\ []) do
+  @spec role_management_directory_update_role_assignment_schedule_instances(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleInstance.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleInstance.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_update_role_assignment_schedule_instances(
+        connection,
+        unified_role_assignment_schedule_instance_id,
+        microsoft_graph_unified_role_assignment_schedule_instance,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/roleManagement/directory/roleAssignmentScheduleInstances/#{unified_role_assignment_schedule_instance_id}")
+      |> url(
+        "/roleManagement/directory/roleAssignmentScheduleInstances/#{unified_role_assignment_schedule_instance_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_unified_role_assignment_schedule_instance)
       |> Enum.into([])
 
@@ -3810,12 +4891,27 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_update_role_assignment_schedule_requests(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_update_role_assignment_schedule_requests(connection, unified_role_assignment_schedule_request_id, microsoft_graph_unified_role_assignment_schedule_request, _opts \\ []) do
+  @spec role_management_directory_update_role_assignment_schedule_requests(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_update_role_assignment_schedule_requests(
+        connection,
+        unified_role_assignment_schedule_request_id,
+        microsoft_graph_unified_role_assignment_schedule_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/roleManagement/directory/roleAssignmentScheduleRequests/#{unified_role_assignment_schedule_request_id}")
+      |> url(
+        "/roleManagement/directory/roleAssignmentScheduleRequests/#{unified_role_assignment_schedule_request_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_unified_role_assignment_schedule_request)
       |> Enum.into([])
 
@@ -3843,12 +4939,27 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentSchedule.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_update_role_assignment_schedules(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentSchedule.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentSchedule.t} | {:error, Tesla.Env.t}
-  def role_management_directory_update_role_assignment_schedules(connection, unified_role_assignment_schedule_id, microsoft_graph_unified_role_assignment_schedule, _opts \\ []) do
+  @spec role_management_directory_update_role_assignment_schedules(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentSchedule.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentSchedule.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_update_role_assignment_schedules(
+        connection,
+        unified_role_assignment_schedule_id,
+        microsoft_graph_unified_role_assignment_schedule,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/roleManagement/directory/roleAssignmentSchedules/#{unified_role_assignment_schedule_id}")
+      |> url(
+        "/roleManagement/directory/roleAssignmentSchedules/#{unified_role_assignment_schedule_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_unified_role_assignment_schedule)
       |> Enum.into([])
 
@@ -3876,8 +4987,21 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_update_role_assignments(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignment.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignment.t} | {:error, Tesla.Env.t}
-  def role_management_directory_update_role_assignments(connection, unified_role_assignment_id, microsoft_graph_unified_role_assignment, _opts \\ []) do
+  @spec role_management_directory_update_role_assignments(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignment.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignment.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_update_role_assignments(
+        connection,
+        unified_role_assignment_id,
+        microsoft_graph_unified_role_assignment,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -3910,8 +5034,21 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_update_role_definitions(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t} | {:error, Tesla.Env.t}
-  def role_management_directory_update_role_definitions(connection, unified_role_definition_id, microsoft_graph_unified_role_definition, _opts \\ []) do
+  @spec role_management_directory_update_role_definitions(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_update_role_definitions(
+        connection,
+        unified_role_definition_id,
+        microsoft_graph_unified_role_definition,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -3943,12 +5080,27 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleInstance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_update_role_eligibility_schedule_instances(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleInstance.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleInstance.t} | {:error, Tesla.Env.t}
-  def role_management_directory_update_role_eligibility_schedule_instances(connection, unified_role_eligibility_schedule_instance_id, microsoft_graph_unified_role_eligibility_schedule_instance, _opts \\ []) do
+  @spec role_management_directory_update_role_eligibility_schedule_instances(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleInstance.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleInstance.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_update_role_eligibility_schedule_instances(
+        connection,
+        unified_role_eligibility_schedule_instance_id,
+        microsoft_graph_unified_role_eligibility_schedule_instance,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/roleManagement/directory/roleEligibilityScheduleInstances/#{unified_role_eligibility_schedule_instance_id}")
+      |> url(
+        "/roleManagement/directory/roleEligibilityScheduleInstances/#{unified_role_eligibility_schedule_instance_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_unified_role_eligibility_schedule_instance)
       |> Enum.into([])
 
@@ -3976,12 +5128,27 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_update_role_eligibility_schedule_requests(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleRequest.t} | {:error, Tesla.Env.t}
-  def role_management_directory_update_role_eligibility_schedule_requests(connection, unified_role_eligibility_schedule_request_id, microsoft_graph_unified_role_eligibility_schedule_request, _opts \\ []) do
+  @spec role_management_directory_update_role_eligibility_schedule_requests(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleRequest.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_update_role_eligibility_schedule_requests(
+        connection,
+        unified_role_eligibility_schedule_request_id,
+        microsoft_graph_unified_role_eligibility_schedule_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/roleManagement/directory/roleEligibilityScheduleRequests/#{unified_role_eligibility_schedule_request_id}")
+      |> url(
+        "/roleManagement/directory/roleEligibilityScheduleRequests/#{unified_role_eligibility_schedule_request_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_unified_role_eligibility_schedule_request)
       |> Enum.into([])
 
@@ -4009,12 +5176,27 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilitySchedule.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_update_role_eligibility_schedules(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilitySchedule.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilitySchedule.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_update_role_eligibility_schedules(connection, unified_role_eligibility_schedule_id, microsoft_graph_unified_role_eligibility_schedule, _opts \\ []) do
+  @spec role_management_directory_update_role_eligibility_schedules(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilitySchedule.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilitySchedule.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_update_role_eligibility_schedules(
+        connection,
+        unified_role_eligibility_schedule_id,
+        microsoft_graph_unified_role_eligibility_schedule,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/roleManagement/directory/roleEligibilitySchedules/#{unified_role_eligibility_schedule_id}")
+      |> url(
+        "/roleManagement/directory/roleEligibilitySchedules/#{unified_role_eligibility_schedule_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_unified_role_eligibility_schedule)
       |> Enum.into([])
 
@@ -4041,8 +5223,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceNamespace.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_create_resource_namespaces(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceNamespace.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceNamespace.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_create_resource_namespaces(connection, microsoft_graph_unified_rbac_resource_namespace, _opts \\ []) do
+  @spec role_management_entitlement_management_create_resource_namespaces(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceNamespace.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceNamespace.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_create_resource_namespaces(
+        connection,
+        microsoft_graph_unified_rbac_resource_namespace,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -4073,8 +5266,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleInstance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_create_role_assignment_schedule_instances(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleInstance.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleInstance.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_create_role_assignment_schedule_instances(connection, microsoft_graph_unified_role_assignment_schedule_instance, _opts \\ []) do
+  @spec role_management_entitlement_management_create_role_assignment_schedule_instances(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleInstance.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleInstance.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_create_role_assignment_schedule_instances(
+        connection,
+        microsoft_graph_unified_role_assignment_schedule_instance,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -4106,8 +5310,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_create_role_assignment_schedule_requests(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_create_role_assignment_schedule_requests(connection, microsoft_graph_unified_role_assignment_schedule_request, _opts \\ []) do
+  @spec role_management_entitlement_management_create_role_assignment_schedule_requests(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_create_role_assignment_schedule_requests(
+        connection,
+        microsoft_graph_unified_role_assignment_schedule_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -4138,8 +5353,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentSchedule.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_create_role_assignment_schedules(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentSchedule.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentSchedule.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_create_role_assignment_schedules(connection, microsoft_graph_unified_role_assignment_schedule, _opts \\ []) do
+  @spec role_management_entitlement_management_create_role_assignment_schedules(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentSchedule.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentSchedule.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_create_role_assignment_schedules(
+        connection,
+        microsoft_graph_unified_role_assignment_schedule,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -4171,8 +5397,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_create_role_assignments(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignment.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignment.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_create_role_assignments(connection, microsoft_graph_unified_role_assignment, _opts \\ []) do
+  @spec role_management_entitlement_management_create_role_assignments(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignment.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignment.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_create_role_assignments(
+        connection,
+        microsoft_graph_unified_role_assignment,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -4204,8 +5441,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_create_role_definitions(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_create_role_definitions(connection, microsoft_graph_unified_role_definition, _opts \\ []) do
+  @spec role_management_entitlement_management_create_role_definitions(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_create_role_definitions(
+        connection,
+        microsoft_graph_unified_role_definition,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -4236,8 +5484,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleInstance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_create_role_eligibility_schedule_instances(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleInstance.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleInstance.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_create_role_eligibility_schedule_instances(connection, microsoft_graph_unified_role_eligibility_schedule_instance, _opts \\ []) do
+  @spec role_management_entitlement_management_create_role_eligibility_schedule_instances(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleInstance.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleInstance.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_create_role_eligibility_schedule_instances(
+        connection,
+        microsoft_graph_unified_role_eligibility_schedule_instance,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -4269,8 +5528,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_create_role_eligibility_schedule_requests(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleRequest.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_create_role_eligibility_schedule_requests(connection, microsoft_graph_unified_role_eligibility_schedule_request, _opts \\ []) do
+  @spec role_management_entitlement_management_create_role_eligibility_schedule_requests(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleRequest.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_create_role_eligibility_schedule_requests(
+        connection,
+        microsoft_graph_unified_role_eligibility_schedule_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -4301,8 +5571,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilitySchedule.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_create_role_eligibility_schedules(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilitySchedule.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilitySchedule.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_create_role_eligibility_schedules(connection, microsoft_graph_unified_role_eligibility_schedule, _opts \\ []) do
+  @spec role_management_entitlement_management_create_role_eligibility_schedules(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilitySchedule.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilitySchedule.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_create_role_eligibility_schedules(
+        connection,
+        microsoft_graph_unified_role_eligibility_schedule,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -4334,8 +5615,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_delete_resource_namespaces(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_delete_resource_namespaces(connection, unified_rbac_resource_namespace_id, opts \\ []) do
+  @spec role_management_entitlement_management_delete_resource_namespaces(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_delete_resource_namespaces(
+        connection,
+        unified_rbac_resource_namespace_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -4343,7 +5635,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:delete)
-      |> url("/roleManagement/entitlementManagement/resourceNamespaces/#{unified_rbac_resource_namespace_id}")
+      |> url(
+        "/roleManagement/entitlementManagement/resourceNamespaces/#{unified_rbac_resource_namespace_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4371,8 +5665,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_delete_role_assignment_schedule_instances(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_delete_role_assignment_schedule_instances(connection, unified_role_assignment_schedule_instance_id, opts \\ []) do
+  @spec role_management_entitlement_management_delete_role_assignment_schedule_instances(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_delete_role_assignment_schedule_instances(
+        connection,
+        unified_role_assignment_schedule_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -4380,7 +5685,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:delete)
-      |> url("/roleManagement/entitlementManagement/roleAssignmentScheduleInstances/#{unified_role_assignment_schedule_instance_id}")
+      |> url(
+        "/roleManagement/entitlementManagement/roleAssignmentScheduleInstances/#{unified_role_assignment_schedule_instance_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4408,8 +5715,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_delete_role_assignment_schedule_requests(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_delete_role_assignment_schedule_requests(connection, unified_role_assignment_schedule_request_id, opts \\ []) do
+  @spec role_management_entitlement_management_delete_role_assignment_schedule_requests(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_delete_role_assignment_schedule_requests(
+        connection,
+        unified_role_assignment_schedule_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -4417,7 +5735,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:delete)
-      |> url("/roleManagement/entitlementManagement/roleAssignmentScheduleRequests/#{unified_role_assignment_schedule_request_id}")
+      |> url(
+        "/roleManagement/entitlementManagement/roleAssignmentScheduleRequests/#{unified_role_assignment_schedule_request_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4445,8 +5765,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_delete_role_assignment_schedules(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_delete_role_assignment_schedules(connection, unified_role_assignment_schedule_id, opts \\ []) do
+  @spec role_management_entitlement_management_delete_role_assignment_schedules(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_delete_role_assignment_schedules(
+        connection,
+        unified_role_assignment_schedule_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -4454,7 +5785,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:delete)
-      |> url("/roleManagement/entitlementManagement/roleAssignmentSchedules/#{unified_role_assignment_schedule_id}")
+      |> url(
+        "/roleManagement/entitlementManagement/roleAssignmentSchedules/#{unified_role_assignment_schedule_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4483,8 +5816,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_delete_role_assignments(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_delete_role_assignments(connection, unified_role_assignment_id, opts \\ []) do
+  @spec role_management_entitlement_management_delete_role_assignments(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_delete_role_assignments(
+        connection,
+        unified_role_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -4492,7 +5836,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:delete)
-      |> url("/roleManagement/entitlementManagement/roleAssignments/#{unified_role_assignment_id}")
+      |> url(
+        "/roleManagement/entitlementManagement/roleAssignments/#{unified_role_assignment_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4521,8 +5867,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_delete_role_definitions(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_delete_role_definitions(connection, unified_role_definition_id, opts \\ []) do
+  @spec role_management_entitlement_management_delete_role_definitions(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_delete_role_definitions(
+        connection,
+        unified_role_definition_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -4530,7 +5887,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:delete)
-      |> url("/roleManagement/entitlementManagement/roleDefinitions/#{unified_role_definition_id}")
+      |> url(
+        "/roleManagement/entitlementManagement/roleDefinitions/#{unified_role_definition_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4558,8 +5917,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_delete_role_eligibility_schedule_instances(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_delete_role_eligibility_schedule_instances(connection, unified_role_eligibility_schedule_instance_id, opts \\ []) do
+  @spec role_management_entitlement_management_delete_role_eligibility_schedule_instances(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_delete_role_eligibility_schedule_instances(
+        connection,
+        unified_role_eligibility_schedule_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -4567,7 +5937,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:delete)
-      |> url("/roleManagement/entitlementManagement/roleEligibilityScheduleInstances/#{unified_role_eligibility_schedule_instance_id}")
+      |> url(
+        "/roleManagement/entitlementManagement/roleEligibilityScheduleInstances/#{unified_role_eligibility_schedule_instance_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4595,8 +5967,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_delete_role_eligibility_schedule_requests(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_delete_role_eligibility_schedule_requests(connection, unified_role_eligibility_schedule_request_id, opts \\ []) do
+  @spec role_management_entitlement_management_delete_role_eligibility_schedule_requests(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_delete_role_eligibility_schedule_requests(
+        connection,
+        unified_role_eligibility_schedule_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -4604,7 +5987,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:delete)
-      |> url("/roleManagement/entitlementManagement/roleEligibilityScheduleRequests/#{unified_role_eligibility_schedule_request_id}")
+      |> url(
+        "/roleManagement/entitlementManagement/roleEligibilityScheduleRequests/#{unified_role_eligibility_schedule_request_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4632,8 +6017,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_delete_role_eligibility_schedules(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_delete_role_eligibility_schedules(connection, unified_role_eligibility_schedule_id, opts \\ []) do
+  @spec role_management_entitlement_management_delete_role_eligibility_schedules(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_delete_role_eligibility_schedules(
+        connection,
+        unified_role_eligibility_schedule_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -4641,7 +6037,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:delete)
-      |> url("/roleManagement/entitlementManagement/roleEligibilitySchedules/#{unified_role_eligibility_schedule_id}")
+      |> url(
+        "/roleManagement/entitlementManagement/roleEligibilitySchedules/#{unified_role_eligibility_schedule_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4670,8 +6068,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceNamespace.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_get_resource_namespaces(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceNamespace.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_get_resource_namespaces(connection, unified_rbac_resource_namespace_id, opts \\ []) do
+  @spec role_management_entitlement_management_get_resource_namespaces(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceNamespace.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_get_resource_namespaces(
+        connection,
+        unified_rbac_resource_namespace_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -4680,7 +6089,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/resourceNamespaces/#{unified_rbac_resource_namespace_id}")
+      |> url(
+        "/roleManagement/entitlementManagement/resourceNamespaces/#{unified_rbac_resource_namespace_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4710,8 +6121,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleInstance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_get_role_assignment_schedule_instances(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleInstance.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_get_role_assignment_schedule_instances(connection, unified_role_assignment_schedule_instance_id, opts \\ []) do
+  @spec role_management_entitlement_management_get_role_assignment_schedule_instances(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleInstance.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_get_role_assignment_schedule_instances(
+        connection,
+        unified_role_assignment_schedule_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -4720,7 +6142,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleAssignmentScheduleInstances/#{unified_role_assignment_schedule_instance_id}")
+      |> url(
+        "/roleManagement/entitlementManagement/roleAssignmentScheduleInstances/#{unified_role_assignment_schedule_instance_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4750,8 +6174,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_get_role_assignment_schedule_requests(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_get_role_assignment_schedule_requests(connection, unified_role_assignment_schedule_request_id, opts \\ []) do
+  @spec role_management_entitlement_management_get_role_assignment_schedule_requests(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_get_role_assignment_schedule_requests(
+        connection,
+        unified_role_assignment_schedule_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -4760,7 +6195,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleAssignmentScheduleRequests/#{unified_role_assignment_schedule_request_id}")
+      |> url(
+        "/roleManagement/entitlementManagement/roleAssignmentScheduleRequests/#{unified_role_assignment_schedule_request_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4790,8 +6227,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentSchedule.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_get_role_assignment_schedules(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentSchedule.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_get_role_assignment_schedules(connection, unified_role_assignment_schedule_id, opts \\ []) do
+  @spec role_management_entitlement_management_get_role_assignment_schedules(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentSchedule.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_get_role_assignment_schedules(
+        connection,
+        unified_role_assignment_schedule_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -4800,7 +6248,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleAssignmentSchedules/#{unified_role_assignment_schedule_id}")
+      |> url(
+        "/roleManagement/entitlementManagement/roleAssignmentSchedules/#{unified_role_assignment_schedule_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4830,8 +6280,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_get_role_assignments(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignment.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_get_role_assignments(connection, unified_role_assignment_id, opts \\ []) do
+  @spec role_management_entitlement_management_get_role_assignments(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignment.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_get_role_assignments(
+        connection,
+        unified_role_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -4840,7 +6301,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleAssignments/#{unified_role_assignment_id}")
+      |> url(
+        "/roleManagement/entitlementManagement/roleAssignments/#{unified_role_assignment_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4870,8 +6333,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_get_role_definitions(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_get_role_definitions(connection, unified_role_definition_id, opts \\ []) do
+  @spec role_management_entitlement_management_get_role_definitions(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_get_role_definitions(
+        connection,
+        unified_role_definition_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -4880,7 +6354,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleDefinitions/#{unified_role_definition_id}")
+      |> url(
+        "/roleManagement/entitlementManagement/roleDefinitions/#{unified_role_definition_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4910,8 +6386,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleInstance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_get_role_eligibility_schedule_instances(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleInstance.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_get_role_eligibility_schedule_instances(connection, unified_role_eligibility_schedule_instance_id, opts \\ []) do
+  @spec role_management_entitlement_management_get_role_eligibility_schedule_instances(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleInstance.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_get_role_eligibility_schedule_instances(
+        connection,
+        unified_role_eligibility_schedule_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -4920,7 +6407,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleEligibilityScheduleInstances/#{unified_role_eligibility_schedule_instance_id}")
+      |> url(
+        "/roleManagement/entitlementManagement/roleEligibilityScheduleInstances/#{unified_role_eligibility_schedule_instance_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4950,8 +6439,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_get_role_eligibility_schedule_requests(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleRequest.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_get_role_eligibility_schedule_requests(connection, unified_role_eligibility_schedule_request_id, opts \\ []) do
+  @spec role_management_entitlement_management_get_role_eligibility_schedule_requests(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleRequest.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_get_role_eligibility_schedule_requests(
+        connection,
+        unified_role_eligibility_schedule_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -4960,7 +6460,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleEligibilityScheduleRequests/#{unified_role_eligibility_schedule_request_id}")
+      |> url(
+        "/roleManagement/entitlementManagement/roleEligibilityScheduleRequests/#{unified_role_eligibility_schedule_request_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4990,8 +6492,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilitySchedule.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_get_role_eligibility_schedules(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilitySchedule.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_get_role_eligibility_schedules(connection, unified_role_eligibility_schedule_id, opts \\ []) do
+  @spec role_management_entitlement_management_get_role_eligibility_schedules(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilitySchedule.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_get_role_eligibility_schedules(
+        connection,
+        unified_role_eligibility_schedule_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -5000,7 +6513,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleEligibilitySchedules/#{unified_role_eligibility_schedule_id}")
+      |> url(
+        "/roleManagement/entitlementManagement/roleEligibilitySchedules/#{unified_role_eligibility_schedule_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5034,7 +6549,14 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceNamespaceCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_list_resource_namespaces(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceNamespaceCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec role_management_entitlement_management_list_resource_namespaces(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceNamespaceCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def role_management_entitlement_management_list_resource_namespaces(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -5085,8 +6607,18 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleInstanceCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_list_role_assignment_schedule_instances(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleInstanceCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_list_role_assignment_schedule_instances(connection, opts \\ []) do
+  @spec role_management_entitlement_management_list_role_assignment_schedule_instances(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleInstanceCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_list_role_assignment_schedule_instances(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -5108,7 +6640,8 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleInstanceCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleInstanceCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -5136,8 +6669,18 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleRequestCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_list_role_assignment_schedule_requests(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleRequestCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_list_role_assignment_schedule_requests(connection, opts \\ []) do
+  @spec role_management_entitlement_management_list_role_assignment_schedule_requests(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleRequestCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_list_role_assignment_schedule_requests(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -5159,7 +6702,8 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleRequestCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleRequestCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -5187,8 +6731,18 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_list_role_assignment_schedules(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_list_role_assignment_schedules(connection, opts \\ []) do
+  @spec role_management_entitlement_management_list_role_assignment_schedules(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_list_role_assignment_schedules(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -5238,7 +6792,13 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_list_role_assignments(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec role_management_entitlement_management_list_role_assignments(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def role_management_entitlement_management_list_role_assignments(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -5289,7 +6849,13 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinitionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_list_role_definitions(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinitionCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec role_management_entitlement_management_list_role_definitions(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinitionCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def role_management_entitlement_management_list_role_definitions(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -5340,8 +6906,18 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleInstanceCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_list_role_eligibility_schedule_instances(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleInstanceCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_list_role_eligibility_schedule_instances(connection, opts \\ []) do
+  @spec role_management_entitlement_management_list_role_eligibility_schedule_instances(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleInstanceCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_list_role_eligibility_schedule_instances(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -5363,7 +6939,8 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleInstanceCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleInstanceCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -5391,8 +6968,18 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleRequestCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_list_role_eligibility_schedule_requests(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleRequestCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_list_role_eligibility_schedule_requests(connection, opts \\ []) do
+  @spec role_management_entitlement_management_list_role_eligibility_schedule_requests(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleRequestCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_list_role_eligibility_schedule_requests(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -5414,7 +7001,8 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleRequestCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleRequestCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -5442,8 +7030,18 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_list_role_eligibility_schedules(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_list_role_eligibility_schedules(connection, opts \\ []) do
+  @spec role_management_entitlement_management_list_role_eligibility_schedules(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_list_role_eligibility_schedules(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -5465,7 +7063,8 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -5486,12 +7085,27 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceAction.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_resource_namespaces_create_resource_actions(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceAction.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceAction.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_resource_namespaces_create_resource_actions(connection, unified_rbac_resource_namespace_id, microsoft_graph_unified_rbac_resource_action, _opts \\ []) do
+  @spec role_management_entitlement_management_resource_namespaces_create_resource_actions(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceAction.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceAction.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_resource_namespaces_create_resource_actions(
+        connection,
+        unified_rbac_resource_namespace_id,
+        microsoft_graph_unified_rbac_resource_action,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/roleManagement/entitlementManagement/resourceNamespaces/#{unified_rbac_resource_namespace_id}/resourceActions")
+      |> url(
+        "/roleManagement/entitlementManagement/resourceNamespaces/#{unified_rbac_resource_namespace_id}/resourceActions"
+      )
       |> add_param(:body, :body, microsoft_graph_unified_rbac_resource_action)
       |> Enum.into([])
 
@@ -5520,8 +7134,21 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_resource_namespaces_delete_resource_actions(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_resource_namespaces_delete_resource_actions(connection, unified_rbac_resource_namespace_id, unified_rbac_resource_action_id, opts \\ []) do
+  @spec role_management_entitlement_management_resource_namespaces_delete_resource_actions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_resource_namespaces_delete_resource_actions(
+        connection,
+        unified_rbac_resource_namespace_id,
+        unified_rbac_resource_action_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -5529,7 +7156,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:delete)
-      |> url("/roleManagement/entitlementManagement/resourceNamespaces/#{unified_rbac_resource_namespace_id}/resourceActions/#{unified_rbac_resource_action_id}")
+      |> url(
+        "/roleManagement/entitlementManagement/resourceNamespaces/#{unified_rbac_resource_namespace_id}/resourceActions/#{unified_rbac_resource_action_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5557,8 +7186,17 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_resource_namespaces_get_count1f5d(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_resource_namespaces_get_count1f5d(connection, opts \\ []) do
+  @spec role_management_entitlement_management_resource_namespaces_get_count1f5d(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_resource_namespaces_get_count1f5d(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -5597,8 +7235,21 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceAction.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_resource_namespaces_get_resource_actions(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceAction.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_resource_namespaces_get_resource_actions(connection, unified_rbac_resource_namespace_id, unified_rbac_resource_action_id, opts \\ []) do
+  @spec role_management_entitlement_management_resource_namespaces_get_resource_actions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceAction.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_resource_namespaces_get_resource_actions(
+        connection,
+        unified_rbac_resource_namespace_id,
+        unified_rbac_resource_action_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -5607,7 +7258,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/resourceNamespaces/#{unified_rbac_resource_namespace_id}/resourceActions/#{unified_rbac_resource_action_id}")
+      |> url(
+        "/roleManagement/entitlementManagement/resourceNamespaces/#{unified_rbac_resource_namespace_id}/resourceActions/#{unified_rbac_resource_action_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5642,8 +7295,20 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceActionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_resource_namespaces_list_resource_actions(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceActionCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_resource_namespaces_list_resource_actions(connection, unified_rbac_resource_namespace_id, opts \\ []) do
+  @spec role_management_entitlement_management_resource_namespaces_list_resource_actions(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceActionCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_resource_namespaces_list_resource_actions(
+        connection,
+        unified_rbac_resource_namespace_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -5658,7 +7323,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/resourceNamespaces/#{unified_rbac_resource_namespace_id}/resourceActions")
+      |> url(
+        "/roleManagement/entitlementManagement/resourceNamespaces/#{unified_rbac_resource_namespace_id}/resourceActions"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5687,8 +7354,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_resource_namespaces_resource_actions_get_count_e4ec(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_resource_namespaces_resource_actions_get_count_e4ec(connection, unified_rbac_resource_namespace_id, opts \\ []) do
+  @spec role_management_entitlement_management_resource_namespaces_resource_actions_get_count_e4ec(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_resource_namespaces_resource_actions_get_count_e4ec(
+        connection,
+        unified_rbac_resource_namespace_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -5697,7 +7375,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/resourceNamespaces/#{unified_rbac_resource_namespace_id}/resourceActions/$count")
+      |> url(
+        "/roleManagement/entitlementManagement/resourceNamespaces/#{unified_rbac_resource_namespace_id}/resourceActions/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5726,12 +7406,29 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceAction.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_resource_namespaces_update_resource_actions(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceAction.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceAction.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_resource_namespaces_update_resource_actions(connection, unified_rbac_resource_namespace_id, unified_rbac_resource_action_id, microsoft_graph_unified_rbac_resource_action, _opts \\ []) do
+  @spec role_management_entitlement_management_resource_namespaces_update_resource_actions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceAction.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceAction.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_resource_namespaces_update_resource_actions(
+        connection,
+        unified_rbac_resource_namespace_id,
+        unified_rbac_resource_action_id,
+        microsoft_graph_unified_rbac_resource_action,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/roleManagement/entitlementManagement/resourceNamespaces/#{unified_rbac_resource_namespace_id}/resourceActions/#{unified_rbac_resource_action_id}")
+      |> url(
+        "/roleManagement/entitlementManagement/resourceNamespaces/#{unified_rbac_resource_namespace_id}/resourceActions/#{unified_rbac_resource_action_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_unified_rbac_resource_action)
       |> Enum.into([])
 
@@ -5761,8 +7458,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleInstance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_assignment_schedule_instances_get_activated_using(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleInstance.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_assignment_schedule_instances_get_activated_using(connection, unified_role_assignment_schedule_instance_id, opts \\ []) do
+  @spec role_management_entitlement_management_role_assignment_schedule_instances_get_activated_using(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleInstance.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_assignment_schedule_instances_get_activated_using(
+        connection,
+        unified_role_assignment_schedule_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -5771,7 +7479,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleAssignmentScheduleInstances/#{unified_role_assignment_schedule_instance_id}/activatedUsing")
+      |> url(
+        "/roleManagement/entitlementManagement/roleAssignmentScheduleInstances/#{unified_role_assignment_schedule_instance_id}/activatedUsing"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5801,8 +7511,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAppScope.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_assignment_schedule_instances_get_app_scope(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAppScope.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_assignment_schedule_instances_get_app_scope(connection, unified_role_assignment_schedule_instance_id, opts \\ []) do
+  @spec role_management_entitlement_management_role_assignment_schedule_instances_get_app_scope(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAppScope.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_assignment_schedule_instances_get_app_scope(
+        connection,
+        unified_role_assignment_schedule_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -5811,7 +7532,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleAssignmentScheduleInstances/#{unified_role_assignment_schedule_instance_id}/appScope")
+      |> url(
+        "/roleManagement/entitlementManagement/roleAssignmentScheduleInstances/#{unified_role_assignment_schedule_instance_id}/appScope"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5839,8 +7562,17 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_assignment_schedule_instances_get_count2c0d(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_assignment_schedule_instances_get_count2c0d(connection, opts \\ []) do
+  @spec role_management_entitlement_management_role_assignment_schedule_instances_get_count2c0d(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_assignment_schedule_instances_get_count2c0d(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -5879,8 +7611,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_assignment_schedule_instances_get_directory_scope(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_assignment_schedule_instances_get_directory_scope(connection, unified_role_assignment_schedule_instance_id, opts \\ []) do
+  @spec role_management_entitlement_management_role_assignment_schedule_instances_get_directory_scope(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_assignment_schedule_instances_get_directory_scope(
+        connection,
+        unified_role_assignment_schedule_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -5889,7 +7632,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleAssignmentScheduleInstances/#{unified_role_assignment_schedule_instance_id}/directoryScope")
+      |> url(
+        "/roleManagement/entitlementManagement/roleAssignmentScheduleInstances/#{unified_role_assignment_schedule_instance_id}/directoryScope"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5919,8 +7664,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_assignment_schedule_instances_get_principal(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_assignment_schedule_instances_get_principal(connection, unified_role_assignment_schedule_instance_id, opts \\ []) do
+  @spec role_management_entitlement_management_role_assignment_schedule_instances_get_principal(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_assignment_schedule_instances_get_principal(
+        connection,
+        unified_role_assignment_schedule_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -5929,7 +7685,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleAssignmentScheduleInstances/#{unified_role_assignment_schedule_instance_id}/principal")
+      |> url(
+        "/roleManagement/entitlementManagement/roleAssignmentScheduleInstances/#{unified_role_assignment_schedule_instance_id}/principal"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5959,8 +7717,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_assignment_schedule_instances_get_role_definition(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_assignment_schedule_instances_get_role_definition(connection, unified_role_assignment_schedule_instance_id, opts \\ []) do
+  @spec role_management_entitlement_management_role_assignment_schedule_instances_get_role_definition(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_assignment_schedule_instances_get_role_definition(
+        connection,
+        unified_role_assignment_schedule_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -5969,7 +7738,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleAssignmentScheduleInstances/#{unified_role_assignment_schedule_instance_id}/roleDefinition")
+      |> url(
+        "/roleManagement/entitlementManagement/roleAssignmentScheduleInstances/#{unified_role_assignment_schedule_instance_id}/roleDefinition"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5999,8 +7770,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilitySchedule.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_assignment_schedule_requests_get_activated_using(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilitySchedule.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_assignment_schedule_requests_get_activated_using(connection, unified_role_assignment_schedule_request_id, opts \\ []) do
+  @spec role_management_entitlement_management_role_assignment_schedule_requests_get_activated_using(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilitySchedule.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_assignment_schedule_requests_get_activated_using(
+        connection,
+        unified_role_assignment_schedule_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -6009,7 +7791,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleAssignmentScheduleRequests/#{unified_role_assignment_schedule_request_id}/activatedUsing")
+      |> url(
+        "/roleManagement/entitlementManagement/roleAssignmentScheduleRequests/#{unified_role_assignment_schedule_request_id}/activatedUsing"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6039,8 +7823,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAppScope.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_assignment_schedule_requests_get_app_scope(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAppScope.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_assignment_schedule_requests_get_app_scope(connection, unified_role_assignment_schedule_request_id, opts \\ []) do
+  @spec role_management_entitlement_management_role_assignment_schedule_requests_get_app_scope(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAppScope.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_assignment_schedule_requests_get_app_scope(
+        connection,
+        unified_role_assignment_schedule_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -6049,7 +7844,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleAssignmentScheduleRequests/#{unified_role_assignment_schedule_request_id}/appScope")
+      |> url(
+        "/roleManagement/entitlementManagement/roleAssignmentScheduleRequests/#{unified_role_assignment_schedule_request_id}/appScope"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6077,8 +7874,17 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_assignment_schedule_requests_get_count9503(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_assignment_schedule_requests_get_count9503(connection, opts \\ []) do
+  @spec role_management_entitlement_management_role_assignment_schedule_requests_get_count9503(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_assignment_schedule_requests_get_count9503(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -6117,8 +7923,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_assignment_schedule_requests_get_directory_scope(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_assignment_schedule_requests_get_directory_scope(connection, unified_role_assignment_schedule_request_id, opts \\ []) do
+  @spec role_management_entitlement_management_role_assignment_schedule_requests_get_directory_scope(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_assignment_schedule_requests_get_directory_scope(
+        connection,
+        unified_role_assignment_schedule_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -6127,7 +7944,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleAssignmentScheduleRequests/#{unified_role_assignment_schedule_request_id}/directoryScope")
+      |> url(
+        "/roleManagement/entitlementManagement/roleAssignmentScheduleRequests/#{unified_role_assignment_schedule_request_id}/directoryScope"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6157,8 +7976,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_assignment_schedule_requests_get_principal(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_assignment_schedule_requests_get_principal(connection, unified_role_assignment_schedule_request_id, opts \\ []) do
+  @spec role_management_entitlement_management_role_assignment_schedule_requests_get_principal(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_assignment_schedule_requests_get_principal(
+        connection,
+        unified_role_assignment_schedule_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -6167,7 +7997,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleAssignmentScheduleRequests/#{unified_role_assignment_schedule_request_id}/principal")
+      |> url(
+        "/roleManagement/entitlementManagement/roleAssignmentScheduleRequests/#{unified_role_assignment_schedule_request_id}/principal"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6197,8 +8029,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_assignment_schedule_requests_get_role_definition(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_assignment_schedule_requests_get_role_definition(connection, unified_role_assignment_schedule_request_id, opts \\ []) do
+  @spec role_management_entitlement_management_role_assignment_schedule_requests_get_role_definition(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_assignment_schedule_requests_get_role_definition(
+        connection,
+        unified_role_assignment_schedule_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -6207,7 +8050,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleAssignmentScheduleRequests/#{unified_role_assignment_schedule_request_id}/roleDefinition")
+      |> url(
+        "/roleManagement/entitlementManagement/roleAssignmentScheduleRequests/#{unified_role_assignment_schedule_request_id}/roleDefinition"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6237,8 +8082,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentSchedule.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_assignment_schedule_requests_get_target_schedule(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentSchedule.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_assignment_schedule_requests_get_target_schedule(connection, unified_role_assignment_schedule_request_id, opts \\ []) do
+  @spec role_management_entitlement_management_role_assignment_schedule_requests_get_target_schedule(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentSchedule.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_assignment_schedule_requests_get_target_schedule(
+        connection,
+        unified_role_assignment_schedule_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -6247,7 +8103,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleAssignmentScheduleRequests/#{unified_role_assignment_schedule_request_id}/targetSchedule")
+      |> url(
+        "/roleManagement/entitlementManagement/roleAssignmentScheduleRequests/#{unified_role_assignment_schedule_request_id}/targetSchedule"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6277,8 +8135,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilitySchedule.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_assignment_schedules_get_activated_using(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilitySchedule.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_assignment_schedules_get_activated_using(connection, unified_role_assignment_schedule_id, opts \\ []) do
+  @spec role_management_entitlement_management_role_assignment_schedules_get_activated_using(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilitySchedule.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_assignment_schedules_get_activated_using(
+        connection,
+        unified_role_assignment_schedule_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -6287,7 +8156,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleAssignmentSchedules/#{unified_role_assignment_schedule_id}/activatedUsing")
+      |> url(
+        "/roleManagement/entitlementManagement/roleAssignmentSchedules/#{unified_role_assignment_schedule_id}/activatedUsing"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6317,8 +8188,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAppScope.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_assignment_schedules_get_app_scope(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAppScope.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_assignment_schedules_get_app_scope(connection, unified_role_assignment_schedule_id, opts \\ []) do
+  @spec role_management_entitlement_management_role_assignment_schedules_get_app_scope(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAppScope.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_assignment_schedules_get_app_scope(
+        connection,
+        unified_role_assignment_schedule_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -6327,7 +8209,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleAssignmentSchedules/#{unified_role_assignment_schedule_id}/appScope")
+      |> url(
+        "/roleManagement/entitlementManagement/roleAssignmentSchedules/#{unified_role_assignment_schedule_id}/appScope"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6355,8 +8239,17 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_assignment_schedules_get_count61d0(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_assignment_schedules_get_count61d0(connection, opts \\ []) do
+  @spec role_management_entitlement_management_role_assignment_schedules_get_count61d0(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_assignment_schedules_get_count61d0(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -6395,8 +8288,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_assignment_schedules_get_directory_scope(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_assignment_schedules_get_directory_scope(connection, unified_role_assignment_schedule_id, opts \\ []) do
+  @spec role_management_entitlement_management_role_assignment_schedules_get_directory_scope(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_assignment_schedules_get_directory_scope(
+        connection,
+        unified_role_assignment_schedule_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -6405,7 +8309,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleAssignmentSchedules/#{unified_role_assignment_schedule_id}/directoryScope")
+      |> url(
+        "/roleManagement/entitlementManagement/roleAssignmentSchedules/#{unified_role_assignment_schedule_id}/directoryScope"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6435,8 +8341,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_assignment_schedules_get_principal(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_assignment_schedules_get_principal(connection, unified_role_assignment_schedule_id, opts \\ []) do
+  @spec role_management_entitlement_management_role_assignment_schedules_get_principal(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_assignment_schedules_get_principal(
+        connection,
+        unified_role_assignment_schedule_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -6445,7 +8362,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleAssignmentSchedules/#{unified_role_assignment_schedule_id}/principal")
+      |> url(
+        "/roleManagement/entitlementManagement/roleAssignmentSchedules/#{unified_role_assignment_schedule_id}/principal"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6475,8 +8394,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_assignment_schedules_get_role_definition(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_assignment_schedules_get_role_definition(connection, unified_role_assignment_schedule_id, opts \\ []) do
+  @spec role_management_entitlement_management_role_assignment_schedules_get_role_definition(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_assignment_schedules_get_role_definition(
+        connection,
+        unified_role_assignment_schedule_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -6485,7 +8415,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleAssignmentSchedules/#{unified_role_assignment_schedule_id}/roleDefinition")
+      |> url(
+        "/roleManagement/entitlementManagement/roleAssignmentSchedules/#{unified_role_assignment_schedule_id}/roleDefinition"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6513,8 +8445,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_assignments_delete_app_scope(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_assignments_delete_app_scope(connection, unified_role_assignment_id, opts \\ []) do
+  @spec role_management_entitlement_management_role_assignments_delete_app_scope(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_assignments_delete_app_scope(
+        connection,
+        unified_role_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -6522,7 +8465,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:delete)
-      |> url("/roleManagement/entitlementManagement/roleAssignments/#{unified_role_assignment_id}/appScope")
+      |> url(
+        "/roleManagement/entitlementManagement/roleAssignments/#{unified_role_assignment_id}/appScope"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6552,8 +8497,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAppScope.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_assignments_get_app_scope(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAppScope.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_assignments_get_app_scope(connection, unified_role_assignment_id, opts \\ []) do
+  @spec role_management_entitlement_management_role_assignments_get_app_scope(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAppScope.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_assignments_get_app_scope(
+        connection,
+        unified_role_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -6562,7 +8518,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleAssignments/#{unified_role_assignment_id}/appScope")
+      |> url(
+        "/roleManagement/entitlementManagement/roleAssignments/#{unified_role_assignment_id}/appScope"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6590,8 +8548,17 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_assignments_get_count_ca1d(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_assignments_get_count_ca1d(connection, opts \\ []) do
+  @spec role_management_entitlement_management_role_assignments_get_count_ca1d(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_assignments_get_count_ca1d(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -6630,8 +8597,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_assignments_get_directory_scope(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_assignments_get_directory_scope(connection, unified_role_assignment_id, opts \\ []) do
+  @spec role_management_entitlement_management_role_assignments_get_directory_scope(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_assignments_get_directory_scope(
+        connection,
+        unified_role_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -6640,7 +8618,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleAssignments/#{unified_role_assignment_id}/directoryScope")
+      |> url(
+        "/roleManagement/entitlementManagement/roleAssignments/#{unified_role_assignment_id}/directoryScope"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6670,8 +8650,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_assignments_get_principal(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_assignments_get_principal(connection, unified_role_assignment_id, opts \\ []) do
+  @spec role_management_entitlement_management_role_assignments_get_principal(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_assignments_get_principal(
+        connection,
+        unified_role_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -6680,7 +8671,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleAssignments/#{unified_role_assignment_id}/principal")
+      |> url(
+        "/roleManagement/entitlementManagement/roleAssignments/#{unified_role_assignment_id}/principal"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6710,8 +8703,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_assignments_get_role_definition(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_assignments_get_role_definition(connection, unified_role_assignment_id, opts \\ []) do
+  @spec role_management_entitlement_management_role_assignments_get_role_definition(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_assignments_get_role_definition(
+        connection,
+        unified_role_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -6720,7 +8724,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleAssignments/#{unified_role_assignment_id}/roleDefinition")
+      |> url(
+        "/roleManagement/entitlementManagement/roleAssignments/#{unified_role_assignment_id}/roleDefinition"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6748,12 +8754,27 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAppScope.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_assignments_update_app_scope(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphAppScope.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAppScope.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_assignments_update_app_scope(connection, unified_role_assignment_id, microsoft_graph_app_scope, _opts \\ []) do
+  @spec role_management_entitlement_management_role_assignments_update_app_scope(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAppScope.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAppScope.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_assignments_update_app_scope(
+        connection,
+        unified_role_assignment_id,
+        microsoft_graph_app_scope,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/roleManagement/entitlementManagement/roleAssignments/#{unified_role_assignment_id}/appScope")
+      |> url(
+        "/roleManagement/entitlementManagement/roleAssignments/#{unified_role_assignment_id}/appScope"
+      )
       |> add_param(:body, :body, microsoft_graph_app_scope)
       |> Enum.into([])
 
@@ -6781,12 +8802,27 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_definitions_create_inherits_permissions_from(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_definitions_create_inherits_permissions_from(connection, unified_role_definition_id, microsoft_graph_unified_role_definition, _opts \\ []) do
+  @spec role_management_entitlement_management_role_definitions_create_inherits_permissions_from(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_definitions_create_inherits_permissions_from(
+        connection,
+        unified_role_definition_id,
+        microsoft_graph_unified_role_definition,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/roleManagement/entitlementManagement/roleDefinitions/#{unified_role_definition_id}/inheritsPermissionsFrom")
+      |> url(
+        "/roleManagement/entitlementManagement/roleDefinitions/#{unified_role_definition_id}/inheritsPermissionsFrom"
+      )
       |> add_param(:body, :body, microsoft_graph_unified_role_definition)
       |> Enum.into([])
 
@@ -6815,8 +8851,21 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_definitions_delete_inherits_permissions_from(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_definitions_delete_inherits_permissions_from(connection, unified_role_definition_id, unified_role_definition_id1, opts \\ []) do
+  @spec role_management_entitlement_management_role_definitions_delete_inherits_permissions_from(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_definitions_delete_inherits_permissions_from(
+        connection,
+        unified_role_definition_id,
+        unified_role_definition_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -6824,7 +8873,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:delete)
-      |> url("/roleManagement/entitlementManagement/roleDefinitions/#{unified_role_definition_id}/inheritsPermissionsFrom/#{unified_role_definition_id1}")
+      |> url(
+        "/roleManagement/entitlementManagement/roleDefinitions/#{unified_role_definition_id}/inheritsPermissionsFrom/#{unified_role_definition_id1}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6852,8 +8903,17 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_definitions_get_count_d1b3(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_definitions_get_count_d1b3(connection, opts \\ []) do
+  @spec role_management_entitlement_management_role_definitions_get_count_d1b3(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_definitions_get_count_d1b3(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -6893,8 +8953,21 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_definitions_get_inherits_permissions_from(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_definitions_get_inherits_permissions_from(connection, unified_role_definition_id, unified_role_definition_id1, opts \\ []) do
+  @spec role_management_entitlement_management_role_definitions_get_inherits_permissions_from(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_definitions_get_inherits_permissions_from(
+        connection,
+        unified_role_definition_id,
+        unified_role_definition_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -6903,7 +8976,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleDefinitions/#{unified_role_definition_id}/inheritsPermissionsFrom/#{unified_role_definition_id1}")
+      |> url(
+        "/roleManagement/entitlementManagement/roleDefinitions/#{unified_role_definition_id}/inheritsPermissionsFrom/#{unified_role_definition_id1}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6932,8 +9007,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_definitions_inherits_permissions_from_get_count_eda5(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_definitions_inherits_permissions_from_get_count_eda5(connection, unified_role_definition_id, opts \\ []) do
+  @spec role_management_entitlement_management_role_definitions_inherits_permissions_from_get_count_eda5(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_definitions_inherits_permissions_from_get_count_eda5(
+        connection,
+        unified_role_definition_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -6942,7 +9028,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleDefinitions/#{unified_role_definition_id}/inheritsPermissionsFrom/$count")
+      |> url(
+        "/roleManagement/entitlementManagement/roleDefinitions/#{unified_role_definition_id}/inheritsPermissionsFrom/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6978,8 +9066,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinitionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_definitions_list_inherits_permissions_from(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinitionCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_definitions_list_inherits_permissions_from(connection, unified_role_definition_id, opts \\ []) do
+  @spec role_management_entitlement_management_role_definitions_list_inherits_permissions_from(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinitionCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_definitions_list_inherits_permissions_from(
+        connection,
+        unified_role_definition_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -6994,7 +9093,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleDefinitions/#{unified_role_definition_id}/inheritsPermissionsFrom")
+      |> url(
+        "/roleManagement/entitlementManagement/roleDefinitions/#{unified_role_definition_id}/inheritsPermissionsFrom"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7023,12 +9124,29 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_definitions_update_inherits_permissions_from(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_definitions_update_inherits_permissions_from(connection, unified_role_definition_id, unified_role_definition_id1, microsoft_graph_unified_role_definition, _opts \\ []) do
+  @spec role_management_entitlement_management_role_definitions_update_inherits_permissions_from(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_definitions_update_inherits_permissions_from(
+        connection,
+        unified_role_definition_id,
+        unified_role_definition_id1,
+        microsoft_graph_unified_role_definition,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/roleManagement/entitlementManagement/roleDefinitions/#{unified_role_definition_id}/inheritsPermissionsFrom/#{unified_role_definition_id1}")
+      |> url(
+        "/roleManagement/entitlementManagement/roleDefinitions/#{unified_role_definition_id}/inheritsPermissionsFrom/#{unified_role_definition_id1}"
+      )
       |> add_param(:body, :body, microsoft_graph_unified_role_definition)
       |> Enum.into([])
 
@@ -7058,8 +9176,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAppScope.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_eligibility_schedule_instances_get_app_scope(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAppScope.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_eligibility_schedule_instances_get_app_scope(connection, unified_role_eligibility_schedule_instance_id, opts \\ []) do
+  @spec role_management_entitlement_management_role_eligibility_schedule_instances_get_app_scope(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAppScope.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_eligibility_schedule_instances_get_app_scope(
+        connection,
+        unified_role_eligibility_schedule_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -7068,7 +9197,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleEligibilityScheduleInstances/#{unified_role_eligibility_schedule_instance_id}/appScope")
+      |> url(
+        "/roleManagement/entitlementManagement/roleEligibilityScheduleInstances/#{unified_role_eligibility_schedule_instance_id}/appScope"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7096,8 +9227,17 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_eligibility_schedule_instances_get_count4687(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_eligibility_schedule_instances_get_count4687(connection, opts \\ []) do
+  @spec role_management_entitlement_management_role_eligibility_schedule_instances_get_count4687(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_eligibility_schedule_instances_get_count4687(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -7136,8 +9276,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_eligibility_schedule_instances_get_directory_scope(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_eligibility_schedule_instances_get_directory_scope(connection, unified_role_eligibility_schedule_instance_id, opts \\ []) do
+  @spec role_management_entitlement_management_role_eligibility_schedule_instances_get_directory_scope(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_eligibility_schedule_instances_get_directory_scope(
+        connection,
+        unified_role_eligibility_schedule_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -7146,7 +9297,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleEligibilityScheduleInstances/#{unified_role_eligibility_schedule_instance_id}/directoryScope")
+      |> url(
+        "/roleManagement/entitlementManagement/roleEligibilityScheduleInstances/#{unified_role_eligibility_schedule_instance_id}/directoryScope"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7176,8 +9329,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_eligibility_schedule_instances_get_principal(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_eligibility_schedule_instances_get_principal(connection, unified_role_eligibility_schedule_instance_id, opts \\ []) do
+  @spec role_management_entitlement_management_role_eligibility_schedule_instances_get_principal(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_eligibility_schedule_instances_get_principal(
+        connection,
+        unified_role_eligibility_schedule_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -7186,7 +9350,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleEligibilityScheduleInstances/#{unified_role_eligibility_schedule_instance_id}/principal")
+      |> url(
+        "/roleManagement/entitlementManagement/roleEligibilityScheduleInstances/#{unified_role_eligibility_schedule_instance_id}/principal"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7216,8 +9382,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_eligibility_schedule_instances_get_role_definition(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_eligibility_schedule_instances_get_role_definition(connection, unified_role_eligibility_schedule_instance_id, opts \\ []) do
+  @spec role_management_entitlement_management_role_eligibility_schedule_instances_get_role_definition(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_eligibility_schedule_instances_get_role_definition(
+        connection,
+        unified_role_eligibility_schedule_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -7226,7 +9403,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleEligibilityScheduleInstances/#{unified_role_eligibility_schedule_instance_id}/roleDefinition")
+      |> url(
+        "/roleManagement/entitlementManagement/roleEligibilityScheduleInstances/#{unified_role_eligibility_schedule_instance_id}/roleDefinition"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7256,8 +9435,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAppScope.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_eligibility_schedule_requests_get_app_scope(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAppScope.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_eligibility_schedule_requests_get_app_scope(connection, unified_role_eligibility_schedule_request_id, opts \\ []) do
+  @spec role_management_entitlement_management_role_eligibility_schedule_requests_get_app_scope(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAppScope.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_eligibility_schedule_requests_get_app_scope(
+        connection,
+        unified_role_eligibility_schedule_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -7266,7 +9456,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleEligibilityScheduleRequests/#{unified_role_eligibility_schedule_request_id}/appScope")
+      |> url(
+        "/roleManagement/entitlementManagement/roleEligibilityScheduleRequests/#{unified_role_eligibility_schedule_request_id}/appScope"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7294,8 +9486,17 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_eligibility_schedule_requests_get_count0523(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_eligibility_schedule_requests_get_count0523(connection, opts \\ []) do
+  @spec role_management_entitlement_management_role_eligibility_schedule_requests_get_count0523(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_eligibility_schedule_requests_get_count0523(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -7334,8 +9535,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_eligibility_schedule_requests_get_directory_scope(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_eligibility_schedule_requests_get_directory_scope(connection, unified_role_eligibility_schedule_request_id, opts \\ []) do
+  @spec role_management_entitlement_management_role_eligibility_schedule_requests_get_directory_scope(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_eligibility_schedule_requests_get_directory_scope(
+        connection,
+        unified_role_eligibility_schedule_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -7344,7 +9556,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleEligibilityScheduleRequests/#{unified_role_eligibility_schedule_request_id}/directoryScope")
+      |> url(
+        "/roleManagement/entitlementManagement/roleEligibilityScheduleRequests/#{unified_role_eligibility_schedule_request_id}/directoryScope"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7374,8 +9588,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_eligibility_schedule_requests_get_principal(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_eligibility_schedule_requests_get_principal(connection, unified_role_eligibility_schedule_request_id, opts \\ []) do
+  @spec role_management_entitlement_management_role_eligibility_schedule_requests_get_principal(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_eligibility_schedule_requests_get_principal(
+        connection,
+        unified_role_eligibility_schedule_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -7384,7 +9609,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleEligibilityScheduleRequests/#{unified_role_eligibility_schedule_request_id}/principal")
+      |> url(
+        "/roleManagement/entitlementManagement/roleEligibilityScheduleRequests/#{unified_role_eligibility_schedule_request_id}/principal"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7414,8 +9641,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_eligibility_schedule_requests_get_role_definition(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_eligibility_schedule_requests_get_role_definition(connection, unified_role_eligibility_schedule_request_id, opts \\ []) do
+  @spec role_management_entitlement_management_role_eligibility_schedule_requests_get_role_definition(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_eligibility_schedule_requests_get_role_definition(
+        connection,
+        unified_role_eligibility_schedule_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -7424,7 +9662,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleEligibilityScheduleRequests/#{unified_role_eligibility_schedule_request_id}/roleDefinition")
+      |> url(
+        "/roleManagement/entitlementManagement/roleEligibilityScheduleRequests/#{unified_role_eligibility_schedule_request_id}/roleDefinition"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7454,8 +9694,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilitySchedule.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_eligibility_schedule_requests_get_target_schedule(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilitySchedule.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_eligibility_schedule_requests_get_target_schedule(connection, unified_role_eligibility_schedule_request_id, opts \\ []) do
+  @spec role_management_entitlement_management_role_eligibility_schedule_requests_get_target_schedule(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilitySchedule.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_eligibility_schedule_requests_get_target_schedule(
+        connection,
+        unified_role_eligibility_schedule_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -7464,7 +9715,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleEligibilityScheduleRequests/#{unified_role_eligibility_schedule_request_id}/targetSchedule")
+      |> url(
+        "/roleManagement/entitlementManagement/roleEligibilityScheduleRequests/#{unified_role_eligibility_schedule_request_id}/targetSchedule"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7494,8 +9747,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAppScope.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_eligibility_schedules_get_app_scope(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAppScope.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_eligibility_schedules_get_app_scope(connection, unified_role_eligibility_schedule_id, opts \\ []) do
+  @spec role_management_entitlement_management_role_eligibility_schedules_get_app_scope(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAppScope.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_eligibility_schedules_get_app_scope(
+        connection,
+        unified_role_eligibility_schedule_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -7504,7 +9768,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleEligibilitySchedules/#{unified_role_eligibility_schedule_id}/appScope")
+      |> url(
+        "/roleManagement/entitlementManagement/roleEligibilitySchedules/#{unified_role_eligibility_schedule_id}/appScope"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7532,8 +9798,17 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_eligibility_schedules_get_count_cd69(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_eligibility_schedules_get_count_cd69(connection, opts \\ []) do
+  @spec role_management_entitlement_management_role_eligibility_schedules_get_count_cd69(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_eligibility_schedules_get_count_cd69(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -7572,8 +9847,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_eligibility_schedules_get_directory_scope(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_eligibility_schedules_get_directory_scope(connection, unified_role_eligibility_schedule_id, opts \\ []) do
+  @spec role_management_entitlement_management_role_eligibility_schedules_get_directory_scope(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_eligibility_schedules_get_directory_scope(
+        connection,
+        unified_role_eligibility_schedule_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -7582,7 +9868,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleEligibilitySchedules/#{unified_role_eligibility_schedule_id}/directoryScope")
+      |> url(
+        "/roleManagement/entitlementManagement/roleEligibilitySchedules/#{unified_role_eligibility_schedule_id}/directoryScope"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7612,8 +9900,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_eligibility_schedules_get_principal(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_eligibility_schedules_get_principal(connection, unified_role_eligibility_schedule_id, opts \\ []) do
+  @spec role_management_entitlement_management_role_eligibility_schedules_get_principal(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_eligibility_schedules_get_principal(
+        connection,
+        unified_role_eligibility_schedule_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -7622,7 +9921,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleEligibilitySchedules/#{unified_role_eligibility_schedule_id}/principal")
+      |> url(
+        "/roleManagement/entitlementManagement/roleEligibilitySchedules/#{unified_role_eligibility_schedule_id}/principal"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7652,8 +9953,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_eligibility_schedules_get_role_definition(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_eligibility_schedules_get_role_definition(connection, unified_role_eligibility_schedule_id, opts \\ []) do
+  @spec role_management_entitlement_management_role_eligibility_schedules_get_role_definition(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_eligibility_schedules_get_role_definition(
+        connection,
+        unified_role_eligibility_schedule_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -7662,7 +9974,9 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleEligibilitySchedules/#{unified_role_eligibility_schedule_id}/roleDefinition")
+      |> url(
+        "/roleManagement/entitlementManagement/roleEligibilitySchedules/#{unified_role_eligibility_schedule_id}/roleDefinition"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7690,12 +10004,27 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceNamespace.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_update_resource_namespaces(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceNamespace.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceNamespace.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_update_resource_namespaces(connection, unified_rbac_resource_namespace_id, microsoft_graph_unified_rbac_resource_namespace, _opts \\ []) do
+  @spec role_management_entitlement_management_update_resource_namespaces(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceNamespace.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceNamespace.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_update_resource_namespaces(
+        connection,
+        unified_rbac_resource_namespace_id,
+        microsoft_graph_unified_rbac_resource_namespace,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/roleManagement/entitlementManagement/resourceNamespaces/#{unified_rbac_resource_namespace_id}")
+      |> url(
+        "/roleManagement/entitlementManagement/resourceNamespaces/#{unified_rbac_resource_namespace_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_unified_rbac_resource_namespace)
       |> Enum.into([])
 
@@ -7723,12 +10052,27 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleInstance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_update_role_assignment_schedule_instances(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleInstance.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleInstance.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_update_role_assignment_schedule_instances(connection, unified_role_assignment_schedule_instance_id, microsoft_graph_unified_role_assignment_schedule_instance, _opts \\ []) do
+  @spec role_management_entitlement_management_update_role_assignment_schedule_instances(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleInstance.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleInstance.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_update_role_assignment_schedule_instances(
+        connection,
+        unified_role_assignment_schedule_instance_id,
+        microsoft_graph_unified_role_assignment_schedule_instance,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/roleManagement/entitlementManagement/roleAssignmentScheduleInstances/#{unified_role_assignment_schedule_instance_id}")
+      |> url(
+        "/roleManagement/entitlementManagement/roleAssignmentScheduleInstances/#{unified_role_assignment_schedule_instance_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_unified_role_assignment_schedule_instance)
       |> Enum.into([])
 
@@ -7756,12 +10100,27 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_update_role_assignment_schedule_requests(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_update_role_assignment_schedule_requests(connection, unified_role_assignment_schedule_request_id, microsoft_graph_unified_role_assignment_schedule_request, _opts \\ []) do
+  @spec role_management_entitlement_management_update_role_assignment_schedule_requests(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_update_role_assignment_schedule_requests(
+        connection,
+        unified_role_assignment_schedule_request_id,
+        microsoft_graph_unified_role_assignment_schedule_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/roleManagement/entitlementManagement/roleAssignmentScheduleRequests/#{unified_role_assignment_schedule_request_id}")
+      |> url(
+        "/roleManagement/entitlementManagement/roleAssignmentScheduleRequests/#{unified_role_assignment_schedule_request_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_unified_role_assignment_schedule_request)
       |> Enum.into([])
 
@@ -7789,12 +10148,27 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentSchedule.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_update_role_assignment_schedules(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentSchedule.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentSchedule.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_update_role_assignment_schedules(connection, unified_role_assignment_schedule_id, microsoft_graph_unified_role_assignment_schedule, _opts \\ []) do
+  @spec role_management_entitlement_management_update_role_assignment_schedules(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentSchedule.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentSchedule.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_update_role_assignment_schedules(
+        connection,
+        unified_role_assignment_schedule_id,
+        microsoft_graph_unified_role_assignment_schedule,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/roleManagement/entitlementManagement/roleAssignmentSchedules/#{unified_role_assignment_schedule_id}")
+      |> url(
+        "/roleManagement/entitlementManagement/roleAssignmentSchedules/#{unified_role_assignment_schedule_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_unified_role_assignment_schedule)
       |> Enum.into([])
 
@@ -7822,12 +10196,27 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_update_role_assignments(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignment.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignment.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_update_role_assignments(connection, unified_role_assignment_id, microsoft_graph_unified_role_assignment, _opts \\ []) do
+  @spec role_management_entitlement_management_update_role_assignments(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignment.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignment.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_update_role_assignments(
+        connection,
+        unified_role_assignment_id,
+        microsoft_graph_unified_role_assignment,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/roleManagement/entitlementManagement/roleAssignments/#{unified_role_assignment_id}")
+      |> url(
+        "/roleManagement/entitlementManagement/roleAssignments/#{unified_role_assignment_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_unified_role_assignment)
       |> Enum.into([])
 
@@ -7856,12 +10245,27 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_update_role_definitions(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_update_role_definitions(connection, unified_role_definition_id, microsoft_graph_unified_role_definition, _opts \\ []) do
+  @spec role_management_entitlement_management_update_role_definitions(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_update_role_definitions(
+        connection,
+        unified_role_definition_id,
+        microsoft_graph_unified_role_definition,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/roleManagement/entitlementManagement/roleDefinitions/#{unified_role_definition_id}")
+      |> url(
+        "/roleManagement/entitlementManagement/roleDefinitions/#{unified_role_definition_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_unified_role_definition)
       |> Enum.into([])
 
@@ -7889,12 +10293,27 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleInstance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_update_role_eligibility_schedule_instances(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleInstance.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleInstance.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_update_role_eligibility_schedule_instances(connection, unified_role_eligibility_schedule_instance_id, microsoft_graph_unified_role_eligibility_schedule_instance, _opts \\ []) do
+  @spec role_management_entitlement_management_update_role_eligibility_schedule_instances(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleInstance.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleInstance.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_update_role_eligibility_schedule_instances(
+        connection,
+        unified_role_eligibility_schedule_instance_id,
+        microsoft_graph_unified_role_eligibility_schedule_instance,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/roleManagement/entitlementManagement/roleEligibilityScheduleInstances/#{unified_role_eligibility_schedule_instance_id}")
+      |> url(
+        "/roleManagement/entitlementManagement/roleEligibilityScheduleInstances/#{unified_role_eligibility_schedule_instance_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_unified_role_eligibility_schedule_instance)
       |> Enum.into([])
 
@@ -7922,12 +10341,27 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_update_role_eligibility_schedule_requests(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleRequest.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_update_role_eligibility_schedule_requests(connection, unified_role_eligibility_schedule_request_id, microsoft_graph_unified_role_eligibility_schedule_request, _opts \\ []) do
+  @spec role_management_entitlement_management_update_role_eligibility_schedule_requests(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleRequest.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_update_role_eligibility_schedule_requests(
+        connection,
+        unified_role_eligibility_schedule_request_id,
+        microsoft_graph_unified_role_eligibility_schedule_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/roleManagement/entitlementManagement/roleEligibilityScheduleRequests/#{unified_role_eligibility_schedule_request_id}")
+      |> url(
+        "/roleManagement/entitlementManagement/roleEligibilityScheduleRequests/#{unified_role_eligibility_schedule_request_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_unified_role_eligibility_schedule_request)
       |> Enum.into([])
 
@@ -7955,12 +10389,27 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilitySchedule.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_update_role_eligibility_schedules(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilitySchedule.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilitySchedule.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_update_role_eligibility_schedules(connection, unified_role_eligibility_schedule_id, microsoft_graph_unified_role_eligibility_schedule, _opts \\ []) do
+  @spec role_management_entitlement_management_update_role_eligibility_schedules(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilitySchedule.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilitySchedule.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_update_role_eligibility_schedules(
+        connection,
+        unified_role_eligibility_schedule_id,
+        microsoft_graph_unified_role_eligibility_schedule,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/roleManagement/entitlementManagement/roleEligibilitySchedules/#{unified_role_eligibility_schedule_id}")
+      |> url(
+        "/roleManagement/entitlementManagement/roleEligibilitySchedules/#{unified_role_eligibility_schedule_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_unified_role_eligibility_schedule)
       |> Enum.into([])
 
@@ -7988,7 +10437,10 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphRbacApplication.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_get_directory(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphRbacApplication.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec role_management_get_directory(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphRbacApplication.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def role_management_get_directory(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -8027,7 +10479,10 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphRbacApplication.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_get_entitlement_management(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphRbacApplication.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec role_management_get_entitlement_management(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphRbacApplication.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def role_management_get_entitlement_management(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -8064,7 +10519,14 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphRbacApplication.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_update_directory(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphRbacApplication.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphRbacApplication.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec role_management_update_directory(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphRbacApplication.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphRbacApplication.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def role_management_update_directory(connection, microsoft_graph_rbac_application, _opts \\ []) do
     request =
       %{}
@@ -8096,8 +10558,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRbacApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphRbacApplication.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_update_entitlement_management(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphRbacApplication.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphRbacApplication.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_update_entitlement_management(connection, microsoft_graph_rbac_application, _opts \\ []) do
+  @spec role_management_update_entitlement_management(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphRbacApplication.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphRbacApplication.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_update_entitlement_management(
+        connection,
+        microsoft_graph_rbac_application,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

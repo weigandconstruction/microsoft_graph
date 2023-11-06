@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphRoomList do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,23 +19,26 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphRoomList do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :address => MicrosoftGraph.Model.PlaceAddress.t | nil,
-    :displayName => String.t | nil,
-    :geoCoordinates => MicrosoftGraph.Model.PlaceGeoCoordinates.t | nil,
-    :phone => String.t | nil,
-    :emailAddress => String.t | nil,
-    :rooms => [MicrosoftGraph.Model.MicrosoftGraphRoom.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :address => MicrosoftGraph.Model.PlaceAddress.t() | nil,
+          :displayName => String.t() | nil,
+          :geoCoordinates => MicrosoftGraph.Model.PlaceGeoCoordinates.t() | nil,
+          :phone => String.t() | nil,
+          :emailAddress => String.t() | nil,
+          :rooms => [MicrosoftGraph.Model.MicrosoftGraphRoom.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:address, :struct, MicrosoftGraph.Model.PlaceAddress)
-     |> Deserializer.deserialize(:geoCoordinates, :struct, MicrosoftGraph.Model.PlaceGeoCoordinates)
-     |> Deserializer.deserialize(:rooms, :list, MicrosoftGraph.Model.MicrosoftGraphRoom)
+    |> Deserializer.deserialize(:address, :struct, MicrosoftGraph.Model.PlaceAddress)
+    |> Deserializer.deserialize(
+      :geoCoordinates,
+      :struct,
+      MicrosoftGraph.Model.PlaceGeoCoordinates
+    )
+    |> Deserializer.deserialize(:rooms, :list, MicrosoftGraph.Model.MicrosoftGraphRoom)
   end
 end
-

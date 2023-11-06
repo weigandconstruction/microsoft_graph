@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.UsersUserMailFoldersMailFolderChildFoldersMailFolderMessagesMessageCreateForwardRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,17 +14,30 @@ defmodule MicrosoftGraph.Model.UsersUserMailFoldersMailFolderChildFoldersMailFol
   ]
 
   @type t :: %__MODULE__{
-    :Comment => String.t | nil,
-    :Message => MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t | nil,
-    :ToRecipients => [MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequestToRecipientsInner.t] | nil
-  }
+          :Comment => String.t() | nil,
+          :Message =>
+            MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t()
+            | nil,
+          :ToRecipients =>
+            [
+              MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequestToRecipientsInner.t()
+            ]
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:Message, :struct, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage)
-     |> Deserializer.deserialize(:ToRecipients, :list, MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequestToRecipientsInner)
+    |> Deserializer.deserialize(
+      :Message,
+      :struct,
+      MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage
+    )
+    |> Deserializer.deserialize(
+      :ToRecipients,
+      :list,
+      MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequestToRecipientsInner
+    )
   end
 end
-

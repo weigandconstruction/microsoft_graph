@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleManagementPolicy do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -22,27 +22,41 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleManagementPolicy do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :effectiveRules => [MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleManagementPolicyRule.t] | nil,
-    :isOrganizationDefault => boolean() | nil,
-    :lastModifiedBy => MicrosoftGraph.Model.UnifiedRoleManagementPolicyLastModifiedBy.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :rules => [MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleManagementPolicyRule.t] | nil,
-    :scopeId => String.t | nil,
-    :scopeType => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :effectiveRules =>
+            [MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleManagementPolicyRule.t()] | nil,
+          :isOrganizationDefault => boolean() | nil,
+          :lastModifiedBy =>
+            MicrosoftGraph.Model.UnifiedRoleManagementPolicyLastModifiedBy.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :rules =>
+            [MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleManagementPolicyRule.t()] | nil,
+          :scopeId => String.t() | nil,
+          :scopeType => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:effectiveRules, :list, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleManagementPolicyRule)
-     |> Deserializer.deserialize(:lastModifiedBy, :struct, MicrosoftGraph.Model.UnifiedRoleManagementPolicyLastModifiedBy)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:rules, :list, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleManagementPolicyRule)
+    |> Deserializer.deserialize(
+      :effectiveRules,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleManagementPolicyRule
+    )
+    |> Deserializer.deserialize(
+      :lastModifiedBy,
+      :struct,
+      MicrosoftGraph.Model.UnifiedRoleManagementPolicyLastModifiedBy
+    )
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :rules,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleManagementPolicyRule
+    )
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphFollowupFlag do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,21 +16,37 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphFollowupFlag do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :completedDateTime => MicrosoftGraph.Model.MicrosoftGraphFollowupFlagCompletedDateTime.t | nil,
-    :dueDateTime => MicrosoftGraph.Model.MicrosoftGraphFollowupFlagDueDateTime.t | nil,
-    :flagStatus => MicrosoftGraph.Model.MicrosoftGraphFollowupFlagFlagStatus.t | nil,
-    :startDateTime => MicrosoftGraph.Model.MicrosoftGraphFollowupFlagStartDateTime.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :completedDateTime =>
+            MicrosoftGraph.Model.MicrosoftGraphFollowupFlagCompletedDateTime.t() | nil,
+          :dueDateTime => MicrosoftGraph.Model.MicrosoftGraphFollowupFlagDueDateTime.t() | nil,
+          :flagStatus => MicrosoftGraph.Model.MicrosoftGraphFollowupFlagFlagStatus.t() | nil,
+          :startDateTime => MicrosoftGraph.Model.MicrosoftGraphFollowupFlagStartDateTime.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:completedDateTime, :struct, MicrosoftGraph.Model.MicrosoftGraphFollowupFlagCompletedDateTime)
-     |> Deserializer.deserialize(:dueDateTime, :struct, MicrosoftGraph.Model.MicrosoftGraphFollowupFlagDueDateTime)
-     |> Deserializer.deserialize(:flagStatus, :struct, MicrosoftGraph.Model.MicrosoftGraphFollowupFlagFlagStatus)
-     |> Deserializer.deserialize(:startDateTime, :struct, MicrosoftGraph.Model.MicrosoftGraphFollowupFlagStartDateTime)
+    |> Deserializer.deserialize(
+      :completedDateTime,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphFollowupFlagCompletedDateTime
+    )
+    |> Deserializer.deserialize(
+      :dueDateTime,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphFollowupFlagDueDateTime
+    )
+    |> Deserializer.deserialize(
+      :flagStatus,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphFollowupFlagFlagStatus
+    )
+    |> Deserializer.deserialize(
+      :startDateTime,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphFollowupFlagStartDateTime
+    )
   end
 end
-

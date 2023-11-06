@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphIosManagedAppRegistration do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -28,36 +28,56 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphIosManagedAppRegistration do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :appIdentifier => MicrosoftGraph.Model.ManagedAppRegistrationAppIdentifier.t | nil,
-    :applicationVersion => String.t | nil,
-    :appliedPolicies => [MicrosoftGraph.Model.MicrosoftGraphManagedAppPolicy.t] | nil,
-    :createdDateTime => DateTime.t | nil,
-    :deviceName => String.t | nil,
-    :deviceTag => String.t | nil,
-    :deviceType => String.t | nil,
-    :flaggedReasons => [MicrosoftGraph.Model.MicrosoftGraphManagedAppFlaggedReason.t] | nil,
-    :intendedPolicies => [MicrosoftGraph.Model.MicrosoftGraphManagedAppPolicy.t] | nil,
-    :lastSyncDateTime => DateTime.t | nil,
-    :managementSdkVersion => String.t | nil,
-    :operations => [MicrosoftGraph.Model.MicrosoftGraphManagedAppOperation.t] | nil,
-    :platformVersion => String.t | nil,
-    :userId => String.t | nil,
-    :version => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :appIdentifier => MicrosoftGraph.Model.ManagedAppRegistrationAppIdentifier.t() | nil,
+          :applicationVersion => String.t() | nil,
+          :appliedPolicies => [MicrosoftGraph.Model.MicrosoftGraphManagedAppPolicy.t()] | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :deviceName => String.t() | nil,
+          :deviceTag => String.t() | nil,
+          :deviceType => String.t() | nil,
+          :flaggedReasons =>
+            [MicrosoftGraph.Model.MicrosoftGraphManagedAppFlaggedReason.t()] | nil,
+          :intendedPolicies => [MicrosoftGraph.Model.MicrosoftGraphManagedAppPolicy.t()] | nil,
+          :lastSyncDateTime => DateTime.t() | nil,
+          :managementSdkVersion => String.t() | nil,
+          :operations => [MicrosoftGraph.Model.MicrosoftGraphManagedAppOperation.t()] | nil,
+          :platformVersion => String.t() | nil,
+          :userId => String.t() | nil,
+          :version => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:appIdentifier, :struct, MicrosoftGraph.Model.ManagedAppRegistrationAppIdentifier)
-     |> Deserializer.deserialize(:appliedPolicies, :list, MicrosoftGraph.Model.MicrosoftGraphManagedAppPolicy)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:flaggedReasons, :list, MicrosoftGraph.Model.MicrosoftGraphManagedAppFlaggedReason)
-     |> Deserializer.deserialize(:intendedPolicies, :list, MicrosoftGraph.Model.MicrosoftGraphManagedAppPolicy)
-     |> Deserializer.deserialize(:lastSyncDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:operations, :list, MicrosoftGraph.Model.MicrosoftGraphManagedAppOperation)
+    |> Deserializer.deserialize(
+      :appIdentifier,
+      :struct,
+      MicrosoftGraph.Model.ManagedAppRegistrationAppIdentifier
+    )
+    |> Deserializer.deserialize(
+      :appliedPolicies,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphManagedAppPolicy
+    )
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :flaggedReasons,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphManagedAppFlaggedReason
+    )
+    |> Deserializer.deserialize(
+      :intendedPolicies,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphManagedAppPolicy
+    )
+    |> Deserializer.deserialize(:lastSyncDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :operations,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphManagedAppOperation
+    )
   end
 end
-

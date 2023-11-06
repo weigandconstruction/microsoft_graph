@@ -23,7 +23,10 @@ defmodule MicrosoftGraph.Api.AdminServiceAnnouncement do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_delete_service_announcement(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec admin_delete_service_announcement(Tesla.Env.client(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def admin_delete_service_announcement(connection, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -61,7 +64,10 @@ defmodule MicrosoftGraph.Api.AdminServiceAnnouncement do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceAnnouncement.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_get_service_announcement(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceAnnouncement.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec admin_get_service_announcement(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceAnnouncement.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def admin_get_service_announcement(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -98,8 +104,19 @@ defmodule MicrosoftGraph.Api.AdminServiceAnnouncement do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceHealth.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_service_announcement_create_health_overviews(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphServiceHealth.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceHealth.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def admin_service_announcement_create_health_overviews(connection, microsoft_graph_service_health, _opts \\ []) do
+  @spec admin_service_announcement_create_health_overviews(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphServiceHealth.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceHealth.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_service_announcement_create_health_overviews(
+        connection,
+        microsoft_graph_service_health,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -130,8 +147,19 @@ defmodule MicrosoftGraph.Api.AdminServiceAnnouncement do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssue.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_service_announcement_create_issues(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssue.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssue.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def admin_service_announcement_create_issues(connection, microsoft_graph_service_health_issue, _opts \\ []) do
+  @spec admin_service_announcement_create_issues(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssue.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssue.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_service_announcement_create_issues(
+        connection,
+        microsoft_graph_service_health_issue,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -162,8 +190,19 @@ defmodule MicrosoftGraph.Api.AdminServiceAnnouncement do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceUpdateMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_service_announcement_create_messages(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphServiceUpdateMessage.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceUpdateMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def admin_service_announcement_create_messages(connection, microsoft_graph_service_update_message, _opts \\ []) do
+  @spec admin_service_announcement_create_messages(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphServiceUpdateMessage.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceUpdateMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_service_announcement_create_messages(
+        connection,
+        microsoft_graph_service_update_message,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -195,8 +234,19 @@ defmodule MicrosoftGraph.Api.AdminServiceAnnouncement do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_service_announcement_delete_health_overviews(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def admin_service_announcement_delete_health_overviews(connection, service_health_id, opts \\ []) do
+  @spec admin_service_announcement_delete_health_overviews(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_service_announcement_delete_health_overviews(
+        connection,
+        service_health_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -232,7 +282,10 @@ defmodule MicrosoftGraph.Api.AdminServiceAnnouncement do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_service_announcement_delete_issues(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec admin_service_announcement_delete_issues(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def admin_service_announcement_delete_issues(connection, service_health_issue_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -269,8 +322,15 @@ defmodule MicrosoftGraph.Api.AdminServiceAnnouncement do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_service_announcement_delete_messages(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def admin_service_announcement_delete_messages(connection, service_update_message_id, opts \\ []) do
+  @spec admin_service_announcement_delete_messages(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_service_announcement_delete_messages(
+        connection,
+        service_update_message_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -308,7 +368,10 @@ defmodule MicrosoftGraph.Api.AdminServiceAnnouncement do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceHealth.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_service_announcement_get_health_overviews(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceHealth.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec admin_service_announcement_get_health_overviews(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceHealth.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def admin_service_announcement_get_health_overviews(connection, service_health_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -348,7 +411,10 @@ defmodule MicrosoftGraph.Api.AdminServiceAnnouncement do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssue.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_service_announcement_get_issues(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssue.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec admin_service_announcement_get_issues(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssue.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def admin_service_announcement_get_issues(connection, service_health_issue_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -388,7 +454,10 @@ defmodule MicrosoftGraph.Api.AdminServiceAnnouncement do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceUpdateMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_service_announcement_get_messages(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceUpdateMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec admin_service_announcement_get_messages(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceUpdateMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def admin_service_announcement_get_messages(connection, service_update_message_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -426,12 +495,25 @@ defmodule MicrosoftGraph.Api.AdminServiceAnnouncement do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_service_announcement_get_messages_attachments_archive(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
-  def admin_service_announcement_get_messages_attachments_archive(connection, service_update_message_id, _opts \\ []) do
+  @spec admin_service_announcement_get_messages_attachments_archive(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_service_announcement_get_messages_attachments_archive(
+        connection,
+        service_update_message_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/admin/serviceAnnouncement/messages/#{service_update_message_id}/attachmentsArchive")
+      |> url(
+        "/admin/serviceAnnouncement/messages/#{service_update_message_id}/attachmentsArchive"
+      )
       |> Enum.into([])
 
     connection
@@ -458,8 +540,21 @@ defmodule MicrosoftGraph.Api.AdminServiceAnnouncement do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssue.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_service_announcement_health_overviews_create_issues(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssue.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssue.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def admin_service_announcement_health_overviews_create_issues(connection, service_health_id, microsoft_graph_service_health_issue, _opts \\ []) do
+  @spec admin_service_announcement_health_overviews_create_issues(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssue.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssue.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_service_announcement_health_overviews_create_issues(
+        connection,
+        service_health_id,
+        microsoft_graph_service_health_issue,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -492,8 +587,21 @@ defmodule MicrosoftGraph.Api.AdminServiceAnnouncement do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_service_announcement_health_overviews_delete_issues(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def admin_service_announcement_health_overviews_delete_issues(connection, service_health_id, service_health_issue_id, opts \\ []) do
+  @spec admin_service_announcement_health_overviews_delete_issues(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_service_announcement_health_overviews_delete_issues(
+        connection,
+        service_health_id,
+        service_health_issue_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -501,7 +609,9 @@ defmodule MicrosoftGraph.Api.AdminServiceAnnouncement do
     request =
       %{}
       |> method(:delete)
-      |> url("/admin/serviceAnnouncement/healthOverviews/#{service_health_id}/issues/#{service_health_issue_id}")
+      |> url(
+        "/admin/serviceAnnouncement/healthOverviews/#{service_health_id}/issues/#{service_health_issue_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -529,7 +639,10 @@ defmodule MicrosoftGraph.Api.AdminServiceAnnouncement do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_service_announcement_health_overviews_get_count51c2(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec admin_service_announcement_health_overviews_get_count51c2(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def admin_service_announcement_health_overviews_get_count51c2(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -570,8 +683,21 @@ defmodule MicrosoftGraph.Api.AdminServiceAnnouncement do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssue.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_service_announcement_health_overviews_get_issues(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssue.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def admin_service_announcement_health_overviews_get_issues(connection, service_health_id, service_health_issue_id, opts \\ []) do
+  @spec admin_service_announcement_health_overviews_get_issues(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssue.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_service_announcement_health_overviews_get_issues(
+        connection,
+        service_health_id,
+        service_health_issue_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -580,7 +706,9 @@ defmodule MicrosoftGraph.Api.AdminServiceAnnouncement do
     request =
       %{}
       |> method(:get)
-      |> url("/admin/serviceAnnouncement/healthOverviews/#{service_health_id}/issues/#{service_health_issue_id}")
+      |> url(
+        "/admin/serviceAnnouncement/healthOverviews/#{service_health_id}/issues/#{service_health_issue_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -609,8 +737,19 @@ defmodule MicrosoftGraph.Api.AdminServiceAnnouncement do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_service_announcement_health_overviews_issues_get_count_fd80(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def admin_service_announcement_health_overviews_issues_get_count_fd80(connection, service_health_id, opts \\ []) do
+  @spec admin_service_announcement_health_overviews_issues_get_count_fd80(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_service_announcement_health_overviews_issues_get_count_fd80(
+        connection,
+        service_health_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -655,8 +794,19 @@ defmodule MicrosoftGraph.Api.AdminServiceAnnouncement do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssueCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_service_announcement_health_overviews_list_issues(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssueCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def admin_service_announcement_health_overviews_list_issues(connection, service_health_id, opts \\ []) do
+  @spec admin_service_announcement_health_overviews_list_issues(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssueCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_service_announcement_health_overviews_list_issues(
+        connection,
+        service_health_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -700,12 +850,29 @@ defmodule MicrosoftGraph.Api.AdminServiceAnnouncement do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssue.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_service_announcement_health_overviews_update_issues(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssue.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssue.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def admin_service_announcement_health_overviews_update_issues(connection, service_health_id, service_health_issue_id, microsoft_graph_service_health_issue, _opts \\ []) do
+  @spec admin_service_announcement_health_overviews_update_issues(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssue.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssue.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_service_announcement_health_overviews_update_issues(
+        connection,
+        service_health_id,
+        service_health_issue_id,
+        microsoft_graph_service_health_issue,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/admin/serviceAnnouncement/healthOverviews/#{service_health_id}/issues/#{service_health_issue_id}")
+      |> url(
+        "/admin/serviceAnnouncement/healthOverviews/#{service_health_id}/issues/#{service_health_issue_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_service_health_issue)
       |> Enum.into([])
 
@@ -733,7 +900,10 @@ defmodule MicrosoftGraph.Api.AdminServiceAnnouncement do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_service_announcement_issues_get_count_e140(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec admin_service_announcement_issues_get_count_e140(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def admin_service_announcement_issues_get_count_e140(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -778,7 +948,10 @@ defmodule MicrosoftGraph.Api.AdminServiceAnnouncement do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceHealthCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_service_announcement_list_health_overviews(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceHealthCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec admin_service_announcement_list_health_overviews(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceHealthCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def admin_service_announcement_list_health_overviews(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -829,7 +1002,10 @@ defmodule MicrosoftGraph.Api.AdminServiceAnnouncement do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssueCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_service_announcement_list_issues(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssueCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec admin_service_announcement_list_issues(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssueCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def admin_service_announcement_list_issues(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -880,7 +1056,10 @@ defmodule MicrosoftGraph.Api.AdminServiceAnnouncement do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceUpdateMessageCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_service_announcement_list_messages(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceUpdateMessageCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec admin_service_announcement_list_messages(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceUpdateMessageCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def admin_service_announcement_list_messages(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -925,8 +1104,19 @@ defmodule MicrosoftGraph.Api.AdminServiceAnnouncement do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_service_announcement_messages_attachments_get_count_e0ef(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def admin_service_announcement_messages_attachments_get_count_e0ef(connection, service_update_message_id, opts \\ []) do
+  @spec admin_service_announcement_messages_attachments_get_count_e0ef(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_service_announcement_messages_attachments_get_count_e0ef(
+        connection,
+        service_update_message_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -935,7 +1125,9 @@ defmodule MicrosoftGraph.Api.AdminServiceAnnouncement do
     request =
       %{}
       |> method(:get)
-      |> url("/admin/serviceAnnouncement/messages/#{service_update_message_id}/attachments/$count")
+      |> url(
+        "/admin/serviceAnnouncement/messages/#{service_update_message_id}/attachments/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -963,8 +1155,21 @@ defmodule MicrosoftGraph.Api.AdminServiceAnnouncement do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceAnnouncementAttachment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_service_announcement_messages_create_attachments(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphServiceAnnouncementAttachment.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceAnnouncementAttachment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def admin_service_announcement_messages_create_attachments(connection, service_update_message_id, microsoft_graph_service_announcement_attachment, _opts \\ []) do
+  @spec admin_service_announcement_messages_create_attachments(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphServiceAnnouncementAttachment.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceAnnouncementAttachment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_service_announcement_messages_create_attachments(
+        connection,
+        service_update_message_id,
+        microsoft_graph_service_announcement_attachment,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -997,8 +1202,21 @@ defmodule MicrosoftGraph.Api.AdminServiceAnnouncement do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_service_announcement_messages_delete_attachments(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def admin_service_announcement_messages_delete_attachments(connection, service_update_message_id, service_announcement_attachment_id, opts \\ []) do
+  @spec admin_service_announcement_messages_delete_attachments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_service_announcement_messages_delete_attachments(
+        connection,
+        service_update_message_id,
+        service_announcement_attachment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1006,7 +1224,9 @@ defmodule MicrosoftGraph.Api.AdminServiceAnnouncement do
     request =
       %{}
       |> method(:delete)
-      |> url("/admin/serviceAnnouncement/messages/#{service_update_message_id}/attachments/#{service_announcement_attachment_id}")
+      |> url(
+        "/admin/serviceAnnouncement/messages/#{service_update_message_id}/attachments/#{service_announcement_attachment_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1037,8 +1257,21 @@ defmodule MicrosoftGraph.Api.AdminServiceAnnouncement do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceAnnouncementAttachment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_service_announcement_messages_get_attachments(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceAnnouncementAttachment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def admin_service_announcement_messages_get_attachments(connection, service_update_message_id, service_announcement_attachment_id, opts \\ []) do
+  @spec admin_service_announcement_messages_get_attachments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceAnnouncementAttachment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_service_announcement_messages_get_attachments(
+        connection,
+        service_update_message_id,
+        service_announcement_attachment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1047,7 +1280,9 @@ defmodule MicrosoftGraph.Api.AdminServiceAnnouncement do
     request =
       %{}
       |> method(:get)
-      |> url("/admin/serviceAnnouncement/messages/#{service_update_message_id}/attachments/#{service_announcement_attachment_id}")
+      |> url(
+        "/admin/serviceAnnouncement/messages/#{service_update_message_id}/attachments/#{service_announcement_attachment_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1076,12 +1311,27 @@ defmodule MicrosoftGraph.Api.AdminServiceAnnouncement do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_service_announcement_messages_get_attachments_content(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
-  def admin_service_announcement_messages_get_attachments_content(connection, service_update_message_id, service_announcement_attachment_id, _opts \\ []) do
+  @spec admin_service_announcement_messages_get_attachments_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_service_announcement_messages_get_attachments_content(
+        connection,
+        service_update_message_id,
+        service_announcement_attachment_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/admin/serviceAnnouncement/messages/#{service_update_message_id}/attachments/#{service_announcement_attachment_id}/content")
+      |> url(
+        "/admin/serviceAnnouncement/messages/#{service_update_message_id}/attachments/#{service_announcement_attachment_id}/content"
+      )
       |> Enum.into([])
 
     connection
@@ -1108,7 +1358,10 @@ defmodule MicrosoftGraph.Api.AdminServiceAnnouncement do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_service_announcement_messages_get_count0cc9(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec admin_service_announcement_messages_get_count0cc9(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def admin_service_announcement_messages_get_count0cc9(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -1154,8 +1407,20 @@ defmodule MicrosoftGraph.Api.AdminServiceAnnouncement do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceAnnouncementAttachmentCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_service_announcement_messages_list_attachments(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceAnnouncementAttachmentCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def admin_service_announcement_messages_list_attachments(connection, service_update_message_id, opts \\ []) do
+  @spec admin_service_announcement_messages_list_attachments(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphServiceAnnouncementAttachmentCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_service_announcement_messages_list_attachments(
+        connection,
+        service_update_message_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1199,12 +1464,29 @@ defmodule MicrosoftGraph.Api.AdminServiceAnnouncement do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceAnnouncementAttachment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_service_announcement_messages_update_attachments(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphServiceAnnouncementAttachment.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceAnnouncementAttachment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def admin_service_announcement_messages_update_attachments(connection, service_update_message_id, service_announcement_attachment_id, microsoft_graph_service_announcement_attachment, _opts \\ []) do
+  @spec admin_service_announcement_messages_update_attachments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphServiceAnnouncementAttachment.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceAnnouncementAttachment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_service_announcement_messages_update_attachments(
+        connection,
+        service_update_message_id,
+        service_announcement_attachment_id,
+        microsoft_graph_service_announcement_attachment,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/admin/serviceAnnouncement/messages/#{service_update_message_id}/attachments/#{service_announcement_attachment_id}")
+      |> url(
+        "/admin/serviceAnnouncement/messages/#{service_update_message_id}/attachments/#{service_announcement_attachment_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_service_announcement_attachment)
       |> Enum.into([])
 
@@ -1234,12 +1516,29 @@ defmodule MicrosoftGraph.Api.AdminServiceAnnouncement do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceAnnouncementAttachment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_service_announcement_messages_update_attachments_content(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceAnnouncementAttachment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def admin_service_announcement_messages_update_attachments_content(connection, service_update_message_id, service_announcement_attachment_id, body, _opts \\ []) do
+  @spec admin_service_announcement_messages_update_attachments_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceAnnouncementAttachment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_service_announcement_messages_update_attachments_content(
+        connection,
+        service_update_message_id,
+        service_announcement_attachment_id,
+        body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)
-      |> url("/admin/serviceAnnouncement/messages/#{service_update_message_id}/attachments/#{service_announcement_attachment_id}/content")
+      |> url(
+        "/admin/serviceAnnouncement/messages/#{service_update_message_id}/attachments/#{service_announcement_attachment_id}/content"
+      )
       |> add_param(:body, :body, body)
       |> Enum.into([])
 
@@ -1267,8 +1566,21 @@ defmodule MicrosoftGraph.Api.AdminServiceAnnouncement do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceHealth.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_service_announcement_update_health_overviews(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphServiceHealth.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceHealth.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def admin_service_announcement_update_health_overviews(connection, service_health_id, microsoft_graph_service_health, _opts \\ []) do
+  @spec admin_service_announcement_update_health_overviews(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphServiceHealth.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceHealth.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_service_announcement_update_health_overviews(
+        connection,
+        service_health_id,
+        microsoft_graph_service_health,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -1300,8 +1612,21 @@ defmodule MicrosoftGraph.Api.AdminServiceAnnouncement do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssue.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_service_announcement_update_issues(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssue.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssue.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def admin_service_announcement_update_issues(connection, service_health_issue_id, microsoft_graph_service_health_issue, _opts \\ []) do
+  @spec admin_service_announcement_update_issues(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssue.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssue.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_service_announcement_update_issues(
+        connection,
+        service_health_issue_id,
+        microsoft_graph_service_health_issue,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -1333,8 +1658,21 @@ defmodule MicrosoftGraph.Api.AdminServiceAnnouncement do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceUpdateMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_service_announcement_update_messages(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphServiceUpdateMessage.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceUpdateMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def admin_service_announcement_update_messages(connection, service_update_message_id, microsoft_graph_service_update_message, _opts \\ []) do
+  @spec admin_service_announcement_update_messages(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphServiceUpdateMessage.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceUpdateMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_service_announcement_update_messages(
+        connection,
+        service_update_message_id,
+        microsoft_graph_service_update_message,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -1367,12 +1705,27 @@ defmodule MicrosoftGraph.Api.AdminServiceAnnouncement do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_service_announcement_update_messages_attachments_archive(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def admin_service_announcement_update_messages_attachments_archive(connection, service_update_message_id, body, _opts \\ []) do
+  @spec admin_service_announcement_update_messages_attachments_archive(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_service_announcement_update_messages_attachments_archive(
+        connection,
+        service_update_message_id,
+        body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)
-      |> url("/admin/serviceAnnouncement/messages/#{service_update_message_id}/attachmentsArchive")
+      |> url(
+        "/admin/serviceAnnouncement/messages/#{service_update_message_id}/attachmentsArchive"
+      )
       |> add_param(:body, :body, body)
       |> Enum.into([])
 
@@ -1399,8 +1752,19 @@ defmodule MicrosoftGraph.Api.AdminServiceAnnouncement do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceAnnouncement.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_update_service_announcement(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphServiceAnnouncement.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceAnnouncement.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def admin_update_service_announcement(connection, microsoft_graph_service_announcement, _opts \\ []) do
+  @spec admin_update_service_announcement(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphServiceAnnouncement.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceAnnouncement.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_update_service_announcement(
+        connection,
+        microsoft_graph_service_announcement,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookNamesAddRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,21 @@ defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookNamesAddRequest 
   ]
 
   @type t :: %__MODULE__{
-    :comment => String.t | nil,
-    :name => String.t | nil,
-    :reference => MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookFunctionsImSechRequestInumber.t | nil
-  }
+          :comment => String.t() | nil,
+          :name => String.t() | nil,
+          :reference =>
+            MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookFunctionsImSechRequestInumber.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:reference, :struct, MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookFunctionsImSechRequestInumber)
+    |> Deserializer.deserialize(
+      :reference,
+      :struct,
+      MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookFunctionsImSechRequestInumber
+    )
   end
 end
-

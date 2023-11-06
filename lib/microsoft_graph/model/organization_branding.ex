@@ -44,48 +44,64 @@ defmodule MicrosoftGraph.Model.OrganizationBranding do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :backgroundColor => String.t | nil,
-    :backgroundImage => String.t | nil,
-    :backgroundImageRelativeUrl => String.t | nil,
-    :bannerLogo => String.t | nil,
-    :bannerLogoRelativeUrl => String.t | nil,
-    :cdnList => [String.t] | nil,
-    :customAccountResetCredentialsUrl => String.t | nil,
-    :customCSS => String.t | nil,
-    :customCSSRelativeUrl => String.t | nil,
-    :customCannotAccessYourAccountText => String.t | nil,
-    :customCannotAccessYourAccountUrl => String.t | nil,
-    :customForgotMyPasswordText => String.t | nil,
-    :customPrivacyAndCookiesText => String.t | nil,
-    :customPrivacyAndCookiesUrl => String.t | nil,
-    :customResetItNowText => String.t | nil,
-    :customTermsOfUseText => String.t | nil,
-    :customTermsOfUseUrl => String.t | nil,
-    :favicon => String.t | nil,
-    :faviconRelativeUrl => String.t | nil,
-    :headerBackgroundColor => String.t | nil,
-    :headerLogo => String.t | nil,
-    :headerLogoRelativeUrl => String.t | nil,
-    :loginPageLayoutConfiguration => MicrosoftGraph.Model.OrganizationalBrandingPropertiesLoginPageLayoutConfiguration.t | nil,
-    :loginPageTextVisibilitySettings => MicrosoftGraph.Model.OrganizationalBrandingPropertiesLoginPageTextVisibilitySettings.t | nil,
-    :signInPageText => String.t | nil,
-    :squareLogo => String.t | nil,
-    :squareLogoDark => String.t | nil,
-    :squareLogoDarkRelativeUrl => String.t | nil,
-    :squareLogoRelativeUrl => String.t | nil,
-    :usernameHintText => String.t | nil,
-    :localizations => [MicrosoftGraph.Model.MicrosoftGraphOrganizationalBrandingLocalization.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :backgroundColor => String.t() | nil,
+          :backgroundImage => String.t() | nil,
+          :backgroundImageRelativeUrl => String.t() | nil,
+          :bannerLogo => String.t() | nil,
+          :bannerLogoRelativeUrl => String.t() | nil,
+          :cdnList => [String.t()] | nil,
+          :customAccountResetCredentialsUrl => String.t() | nil,
+          :customCSS => String.t() | nil,
+          :customCSSRelativeUrl => String.t() | nil,
+          :customCannotAccessYourAccountText => String.t() | nil,
+          :customCannotAccessYourAccountUrl => String.t() | nil,
+          :customForgotMyPasswordText => String.t() | nil,
+          :customPrivacyAndCookiesText => String.t() | nil,
+          :customPrivacyAndCookiesUrl => String.t() | nil,
+          :customResetItNowText => String.t() | nil,
+          :customTermsOfUseText => String.t() | nil,
+          :customTermsOfUseUrl => String.t() | nil,
+          :favicon => String.t() | nil,
+          :faviconRelativeUrl => String.t() | nil,
+          :headerBackgroundColor => String.t() | nil,
+          :headerLogo => String.t() | nil,
+          :headerLogoRelativeUrl => String.t() | nil,
+          :loginPageLayoutConfiguration =>
+            MicrosoftGraph.Model.OrganizationalBrandingPropertiesLoginPageLayoutConfiguration.t()
+            | nil,
+          :loginPageTextVisibilitySettings =>
+            MicrosoftGraph.Model.OrganizationalBrandingPropertiesLoginPageTextVisibilitySettings.t()
+            | nil,
+          :signInPageText => String.t() | nil,
+          :squareLogo => String.t() | nil,
+          :squareLogoDark => String.t() | nil,
+          :squareLogoDarkRelativeUrl => String.t() | nil,
+          :squareLogoRelativeUrl => String.t() | nil,
+          :usernameHintText => String.t() | nil,
+          :localizations =>
+            [MicrosoftGraph.Model.MicrosoftGraphOrganizationalBrandingLocalization.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:loginPageLayoutConfiguration, :struct, MicrosoftGraph.Model.OrganizationalBrandingPropertiesLoginPageLayoutConfiguration)
-     |> Deserializer.deserialize(:loginPageTextVisibilitySettings, :struct, MicrosoftGraph.Model.OrganizationalBrandingPropertiesLoginPageTextVisibilitySettings)
-     |> Deserializer.deserialize(:localizations, :list, MicrosoftGraph.Model.MicrosoftGraphOrganizationalBrandingLocalization)
+    |> Deserializer.deserialize(
+      :loginPageLayoutConfiguration,
+      :struct,
+      MicrosoftGraph.Model.OrganizationalBrandingPropertiesLoginPageLayoutConfiguration
+    )
+    |> Deserializer.deserialize(
+      :loginPageTextVisibilitySettings,
+      :struct,
+      MicrosoftGraph.Model.OrganizationalBrandingPropertiesLoginPageTextVisibilitySettings
+    )
+    |> Deserializer.deserialize(
+      :localizations,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphOrganizationalBrandingLocalization
+    )
   end
 end
-

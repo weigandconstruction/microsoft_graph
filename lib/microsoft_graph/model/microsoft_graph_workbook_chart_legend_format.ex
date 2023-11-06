@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLegendFormat do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,18 +15,25 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLegendFormat do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :fill => MicrosoftGraph.Model.WorkbookChartLegendFormatFill.t | nil,
-    :font => MicrosoftGraph.Model.WorkbookChartLegendFormatFont.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :fill => MicrosoftGraph.Model.WorkbookChartLegendFormatFill.t() | nil,
+          :font => MicrosoftGraph.Model.WorkbookChartLegendFormatFont.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:fill, :struct, MicrosoftGraph.Model.WorkbookChartLegendFormatFill)
-     |> Deserializer.deserialize(:font, :struct, MicrosoftGraph.Model.WorkbookChartLegendFormatFont)
+    |> Deserializer.deserialize(
+      :fill,
+      :struct,
+      MicrosoftGraph.Model.WorkbookChartLegendFormatFill
+    )
+    |> Deserializer.deserialize(
+      :font,
+      :struct,
+      MicrosoftGraph.Model.WorkbookChartLegendFormatFont
+    )
   end
 end
-

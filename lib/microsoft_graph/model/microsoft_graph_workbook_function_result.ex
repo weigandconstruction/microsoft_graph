@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphWorkbookFunctionResult do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,17 +15,22 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphWorkbookFunctionResult do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :error => String.t | nil,
-    :value => MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookFunctionsImSechRequestInumber.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :error => String.t() | nil,
+          :value =>
+            MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookFunctionsImSechRequestInumber.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:value, :struct, MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookFunctionsImSechRequestInumber)
+    |> Deserializer.deserialize(
+      :value,
+      :struct,
+      MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookFunctionsImSechRequestInumber
+    )
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MeTranslateExchangeIdsRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,17 +14,24 @@ defmodule MicrosoftGraph.Model.MeTranslateExchangeIdsRequest do
   ]
 
   @type t :: %__MODULE__{
-    :InputIds => [String.t] | nil,
-    :SourceIdType => MicrosoftGraph.Model.MicrosoftGraphExchangeIdFormat.t | nil,
-    :TargetIdType => MicrosoftGraph.Model.MicrosoftGraphExchangeIdFormat.t | nil
-  }
+          :InputIds => [String.t()] | nil,
+          :SourceIdType => MicrosoftGraph.Model.MicrosoftGraphExchangeIdFormat.t() | nil,
+          :TargetIdType => MicrosoftGraph.Model.MicrosoftGraphExchangeIdFormat.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:SourceIdType, :struct, MicrosoftGraph.Model.MicrosoftGraphExchangeIdFormat)
-     |> Deserializer.deserialize(:TargetIdType, :struct, MicrosoftGraph.Model.MicrosoftGraphExchangeIdFormat)
+    |> Deserializer.deserialize(
+      :SourceIdType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphExchangeIdFormat
+    )
+    |> Deserializer.deserialize(
+      :TargetIdType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphExchangeIdFormat
+    )
   end
 end
-

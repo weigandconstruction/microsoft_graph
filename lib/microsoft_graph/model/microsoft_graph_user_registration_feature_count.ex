@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphUserRegistrationFeatureCount do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,19 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphUserRegistrationFeatureCount do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :feature => MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodFeature.t | nil,
-    :userCount => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :feature => MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodFeature.t() | nil,
+          :userCount => integer() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:feature, :struct, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodFeature)
+    |> Deserializer.deserialize(
+      :feature,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodFeature
+    )
   end
 end
-

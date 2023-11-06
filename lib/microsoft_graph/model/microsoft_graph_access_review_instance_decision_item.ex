@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceDecisionItem do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -27,35 +27,55 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceDecisionItem do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :accessReviewId => String.t | nil,
-    :appliedBy => MicrosoftGraph.Model.AccessReviewInstanceDecisionItemAppliedBy.t | nil,
-    :appliedDateTime => DateTime.t | nil,
-    :applyResult => String.t | nil,
-    :decision => String.t | nil,
-    :insights => [MicrosoftGraph.Model.MicrosoftGraphGovernanceInsight.t] | nil,
-    :justification => String.t | nil,
-    :principal => MicrosoftGraph.Model.AccessReviewInstanceDecisionItemPrincipal.t | nil,
-    :principalLink => String.t | nil,
-    :recommendation => String.t | nil,
-    :resource => MicrosoftGraph.Model.AccessReviewInstanceDecisionItemResource.t | nil,
-    :resourceLink => String.t | nil,
-    :reviewedBy => MicrosoftGraph.Model.AccessReviewInstanceDecisionItemReviewedBy.t | nil,
-    :reviewedDateTime => DateTime.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :accessReviewId => String.t() | nil,
+          :appliedBy => MicrosoftGraph.Model.AccessReviewInstanceDecisionItemAppliedBy.t() | nil,
+          :appliedDateTime => DateTime.t() | nil,
+          :applyResult => String.t() | nil,
+          :decision => String.t() | nil,
+          :insights => [MicrosoftGraph.Model.MicrosoftGraphGovernanceInsight.t()] | nil,
+          :justification => String.t() | nil,
+          :principal => MicrosoftGraph.Model.AccessReviewInstanceDecisionItemPrincipal.t() | nil,
+          :principalLink => String.t() | nil,
+          :recommendation => String.t() | nil,
+          :resource => MicrosoftGraph.Model.AccessReviewInstanceDecisionItemResource.t() | nil,
+          :resourceLink => String.t() | nil,
+          :reviewedBy =>
+            MicrosoftGraph.Model.AccessReviewInstanceDecisionItemReviewedBy.t() | nil,
+          :reviewedDateTime => DateTime.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:appliedBy, :struct, MicrosoftGraph.Model.AccessReviewInstanceDecisionItemAppliedBy)
-     |> Deserializer.deserialize(:appliedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:insights, :list, MicrosoftGraph.Model.MicrosoftGraphGovernanceInsight)
-     |> Deserializer.deserialize(:principal, :struct, MicrosoftGraph.Model.AccessReviewInstanceDecisionItemPrincipal)
-     |> Deserializer.deserialize(:resource, :struct, MicrosoftGraph.Model.AccessReviewInstanceDecisionItemResource)
-     |> Deserializer.deserialize(:reviewedBy, :struct, MicrosoftGraph.Model.AccessReviewInstanceDecisionItemReviewedBy)
-     |> Deserializer.deserialize(:reviewedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :appliedBy,
+      :struct,
+      MicrosoftGraph.Model.AccessReviewInstanceDecisionItemAppliedBy
+    )
+    |> Deserializer.deserialize(:appliedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :insights,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphGovernanceInsight
+    )
+    |> Deserializer.deserialize(
+      :principal,
+      :struct,
+      MicrosoftGraph.Model.AccessReviewInstanceDecisionItemPrincipal
+    )
+    |> Deserializer.deserialize(
+      :resource,
+      :struct,
+      MicrosoftGraph.Model.AccessReviewInstanceDecisionItemResource
+    )
+    |> Deserializer.deserialize(
+      :reviewedBy,
+      :struct,
+      MicrosoftGraph.Model.AccessReviewInstanceDecisionItemReviewedBy
+    )
+    |> Deserializer.deserialize(:reviewedDateTime, :datetime, nil)
   end
 end
-

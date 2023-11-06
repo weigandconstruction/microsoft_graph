@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphOpenTypeExtension do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphOpenTypeExtension do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :extensionName => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :extensionName => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

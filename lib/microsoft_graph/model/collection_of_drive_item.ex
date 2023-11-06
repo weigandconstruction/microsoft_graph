@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.CollectionOfDriveItem do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,19 @@ defmodule MicrosoftGraph.Model.CollectionOfDriveItem do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.deltaLink" => String.t | nil,
-    :"@odata.nextLink" => String.t | nil,
-    :value => [MicrosoftGraph.Model.CollectionOfDriveItemAllOfValueInner.t] | nil
-  }
+          :"@odata.deltaLink" => String.t() | nil,
+          :"@odata.nextLink" => String.t() | nil,
+          :value => [MicrosoftGraph.Model.CollectionOfDriveItemAllOfValueInner.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:value, :list, MicrosoftGraph.Model.CollectionOfDriveItemAllOfValueInner)
+    |> Deserializer.deserialize(
+      :value,
+      :list,
+      MicrosoftGraph.Model.CollectionOfDriveItemAllOfValueInner
+    )
   end
 end
-

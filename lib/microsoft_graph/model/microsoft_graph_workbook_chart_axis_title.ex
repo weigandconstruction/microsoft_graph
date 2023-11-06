@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitle do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,18 +16,21 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitle do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :format => MicrosoftGraph.Model.WorkbookChartAxisTitleFormat.t | nil,
-    :text => String.t | nil,
-    :visible => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :format => MicrosoftGraph.Model.WorkbookChartAxisTitleFormat.t() | nil,
+          :text => String.t() | nil,
+          :visible => boolean() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:format, :struct, MicrosoftGraph.Model.WorkbookChartAxisTitleFormat)
+    |> Deserializer.deserialize(
+      :format,
+      :struct,
+      MicrosoftGraph.Model.WorkbookChartAxisTitleFormat
+    )
   end
 end
-

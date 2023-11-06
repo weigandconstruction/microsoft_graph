@@ -25,7 +25,10 @@ defmodule MicrosoftGraph.Api.MePerson do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPerson.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_get_people(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPerson.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_get_people(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPerson.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_get_people(connection, person_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query
@@ -68,7 +71,10 @@ defmodule MicrosoftGraph.Api.MePerson do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPersonCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_list_people(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPersonCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_list_people(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPersonCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_list_people(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -111,7 +117,10 @@ defmodule MicrosoftGraph.Api.MePerson do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_people_get_count_eaef(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_people_get_count_eaef(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_people_get_count_eaef(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,

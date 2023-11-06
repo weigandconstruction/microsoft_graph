@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphUserSimulationEventInfo do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,19 +17,18 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphUserSimulationEventInfo do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :browser => String.t | nil,
-    :eventDateTime => DateTime.t | nil,
-    :eventName => String.t | nil,
-    :ipAddress => String.t | nil,
-    :osPlatformDeviceDetails => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :browser => String.t() | nil,
+          :eventDateTime => DateTime.t() | nil,
+          :eventName => String.t() | nil,
+          :ipAddress => String.t() | nil,
+          :osPlatformDeviceDetails => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:eventDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:eventDateTime, :datetime, nil)
   end
 end
-

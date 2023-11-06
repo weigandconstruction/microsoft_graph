@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphChannelMembersNotificationRecipient do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphChannelMembersNotificationRecipient
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :channelId => String.t | nil,
-    :teamId => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :channelId => String.t() | nil,
+          :teamId => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

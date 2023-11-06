@@ -13,12 +13,11 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsCloudIdentit
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :deviceWithoutCloudIdentityCount => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :deviceWithoutCloudIdentityCount => integer() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

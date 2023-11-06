@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.EducationRubricOutcomePublishedRubricQualityFeedbackInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,20 @@ defmodule MicrosoftGraph.Model.EducationRubricOutcomePublishedRubricQualityFeedb
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :feedback => MicrosoftGraph.Model.MicrosoftGraphRubricQualityFeedbackModelFeedback.t | nil,
-    :qualityId => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :feedback =>
+            MicrosoftGraph.Model.MicrosoftGraphRubricQualityFeedbackModelFeedback.t() | nil,
+          :qualityId => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:feedback, :struct, MicrosoftGraph.Model.MicrosoftGraphRubricQualityFeedbackModelFeedback)
+    |> Deserializer.deserialize(
+      :feedback,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphRubricQualityFeedbackModelFeedback
+    )
   end
 end
-

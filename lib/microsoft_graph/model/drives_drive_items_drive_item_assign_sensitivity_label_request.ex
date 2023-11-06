@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemAssignSensitivityLabelRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,21 @@ defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemAssignSensitivityLabelRe
   ]
 
   @type t :: %__MODULE__{
-    :assignmentMethod => MicrosoftGraph.Model.DrivesDriveItemsDriveItemAssignSensitivityLabelRequestAssignmentMethod.t | nil,
-    :justificationText => String.t | nil,
-    :sensitivityLabelId => String.t | nil
-  }
+          :assignmentMethod =>
+            MicrosoftGraph.Model.DrivesDriveItemsDriveItemAssignSensitivityLabelRequestAssignmentMethod.t()
+            | nil,
+          :justificationText => String.t() | nil,
+          :sensitivityLabelId => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:assignmentMethod, :struct, MicrosoftGraph.Model.DrivesDriveItemsDriveItemAssignSensitivityLabelRequestAssignmentMethod)
+    |> Deserializer.deserialize(
+      :assignmentMethod,
+      :struct,
+      MicrosoftGraph.Model.DrivesDriveItemsDriveItemAssignSensitivityLabelRequestAssignmentMethod
+    )
   end
 end
-

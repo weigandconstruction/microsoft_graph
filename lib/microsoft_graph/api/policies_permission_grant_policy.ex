@@ -24,8 +24,19 @@ defmodule MicrosoftGraph.Api.PoliciesPermissionGrantPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPermissionGrantPolicy.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_create_permission_grant_policies(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphPermissionGrantPolicy.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPermissionGrantPolicy.t} | {:error, Tesla.Env.t}
-  def policies_create_permission_grant_policies(connection, microsoft_graph_permission_grant_policy, _opts \\ []) do
+  @spec policies_create_permission_grant_policies(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphPermissionGrantPolicy.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPermissionGrantPolicy.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_create_permission_grant_policies(
+        connection,
+        microsoft_graph_permission_grant_policy,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -58,8 +69,15 @@ defmodule MicrosoftGraph.Api.PoliciesPermissionGrantPolicy do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_delete_permission_grant_policies(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_delete_permission_grant_policies(connection, permission_grant_policy_id, opts \\ []) do
+  @spec policies_delete_permission_grant_policies(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_delete_permission_grant_policies(
+        connection,
+        permission_grant_policy_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -97,7 +115,10 @@ defmodule MicrosoftGraph.Api.PoliciesPermissionGrantPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPermissionGrantPolicy.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_get_permission_grant_policies(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPermissionGrantPolicy.t} | {:error, Tesla.Env.t}
+  @spec policies_get_permission_grant_policies(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPermissionGrantPolicy.t()}
+          | {:error, Tesla.Env.t()}
   def policies_get_permission_grant_policies(connection, permission_grant_policy_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -142,7 +163,10 @@ defmodule MicrosoftGraph.Api.PoliciesPermissionGrantPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPermissionGrantPolicyCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_list_permission_grant_policies(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPermissionGrantPolicyCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec policies_list_permission_grant_policies(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPermissionGrantPolicyCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def policies_list_permission_grant_policies(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -187,8 +211,21 @@ defmodule MicrosoftGraph.Api.PoliciesPermissionGrantPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPermissionGrantConditionSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_permission_grant_policies_create_excludes(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphPermissionGrantConditionSet.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPermissionGrantConditionSet.t} | {:error, Tesla.Env.t}
-  def policies_permission_grant_policies_create_excludes(connection, permission_grant_policy_id, microsoft_graph_permission_grant_condition_set, _opts \\ []) do
+  @spec policies_permission_grant_policies_create_excludes(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPermissionGrantConditionSet.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPermissionGrantConditionSet.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_permission_grant_policies_create_excludes(
+        connection,
+        permission_grant_policy_id,
+        microsoft_graph_permission_grant_condition_set,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -221,8 +258,21 @@ defmodule MicrosoftGraph.Api.PoliciesPermissionGrantPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPermissionGrantConditionSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_permission_grant_policies_create_includes(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphPermissionGrantConditionSet.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPermissionGrantConditionSet.t} | {:error, Tesla.Env.t}
-  def policies_permission_grant_policies_create_includes(connection, permission_grant_policy_id, microsoft_graph_permission_grant_condition_set, _opts \\ []) do
+  @spec policies_permission_grant_policies_create_includes(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPermissionGrantConditionSet.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPermissionGrantConditionSet.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_permission_grant_policies_create_includes(
+        connection,
+        permission_grant_policy_id,
+        microsoft_graph_permission_grant_condition_set,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -256,8 +306,21 @@ defmodule MicrosoftGraph.Api.PoliciesPermissionGrantPolicy do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_permission_grant_policies_delete_excludes(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_permission_grant_policies_delete_excludes(connection, permission_grant_policy_id, permission_grant_condition_set_id, opts \\ []) do
+  @spec policies_permission_grant_policies_delete_excludes(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_permission_grant_policies_delete_excludes(
+        connection,
+        permission_grant_policy_id,
+        permission_grant_condition_set_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -265,7 +328,9 @@ defmodule MicrosoftGraph.Api.PoliciesPermissionGrantPolicy do
     request =
       %{}
       |> method(:delete)
-      |> url("/policies/permissionGrantPolicies/#{permission_grant_policy_id}/excludes/#{permission_grant_condition_set_id}")
+      |> url(
+        "/policies/permissionGrantPolicies/#{permission_grant_policy_id}/excludes/#{permission_grant_condition_set_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -295,8 +360,21 @@ defmodule MicrosoftGraph.Api.PoliciesPermissionGrantPolicy do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_permission_grant_policies_delete_includes(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_permission_grant_policies_delete_includes(connection, permission_grant_policy_id, permission_grant_condition_set_id, opts \\ []) do
+  @spec policies_permission_grant_policies_delete_includes(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_permission_grant_policies_delete_includes(
+        connection,
+        permission_grant_policy_id,
+        permission_grant_condition_set_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -304,7 +382,9 @@ defmodule MicrosoftGraph.Api.PoliciesPermissionGrantPolicy do
     request =
       %{}
       |> method(:delete)
-      |> url("/policies/permissionGrantPolicies/#{permission_grant_policy_id}/includes/#{permission_grant_condition_set_id}")
+      |> url(
+        "/policies/permissionGrantPolicies/#{permission_grant_policy_id}/includes/#{permission_grant_condition_set_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -333,8 +413,19 @@ defmodule MicrosoftGraph.Api.PoliciesPermissionGrantPolicy do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_permission_grant_policies_excludes_get_count7507(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_permission_grant_policies_excludes_get_count7507(connection, permission_grant_policy_id, opts \\ []) do
+  @spec policies_permission_grant_policies_excludes_get_count7507(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_permission_grant_policies_excludes_get_count7507(
+        connection,
+        permission_grant_policy_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -371,7 +462,10 @@ defmodule MicrosoftGraph.Api.PoliciesPermissionGrantPolicy do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_permission_grant_policies_get_count86b8(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec policies_permission_grant_policies_get_count86b8(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def policies_permission_grant_policies_get_count86b8(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -412,8 +506,21 @@ defmodule MicrosoftGraph.Api.PoliciesPermissionGrantPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPermissionGrantConditionSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_permission_grant_policies_get_excludes(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPermissionGrantConditionSet.t} | {:error, Tesla.Env.t}
-  def policies_permission_grant_policies_get_excludes(connection, permission_grant_policy_id, permission_grant_condition_set_id, opts \\ []) do
+  @spec policies_permission_grant_policies_get_excludes(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPermissionGrantConditionSet.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_permission_grant_policies_get_excludes(
+        connection,
+        permission_grant_policy_id,
+        permission_grant_condition_set_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -422,7 +529,9 @@ defmodule MicrosoftGraph.Api.PoliciesPermissionGrantPolicy do
     request =
       %{}
       |> method(:get)
-      |> url("/policies/permissionGrantPolicies/#{permission_grant_policy_id}/excludes/#{permission_grant_condition_set_id}")
+      |> url(
+        "/policies/permissionGrantPolicies/#{permission_grant_policy_id}/excludes/#{permission_grant_condition_set_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -453,8 +562,21 @@ defmodule MicrosoftGraph.Api.PoliciesPermissionGrantPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPermissionGrantConditionSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_permission_grant_policies_get_includes(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPermissionGrantConditionSet.t} | {:error, Tesla.Env.t}
-  def policies_permission_grant_policies_get_includes(connection, permission_grant_policy_id, permission_grant_condition_set_id, opts \\ []) do
+  @spec policies_permission_grant_policies_get_includes(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPermissionGrantConditionSet.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_permission_grant_policies_get_includes(
+        connection,
+        permission_grant_policy_id,
+        permission_grant_condition_set_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -463,7 +585,9 @@ defmodule MicrosoftGraph.Api.PoliciesPermissionGrantPolicy do
     request =
       %{}
       |> method(:get)
-      |> url("/policies/permissionGrantPolicies/#{permission_grant_policy_id}/includes/#{permission_grant_condition_set_id}")
+      |> url(
+        "/policies/permissionGrantPolicies/#{permission_grant_policy_id}/includes/#{permission_grant_condition_set_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -492,8 +616,19 @@ defmodule MicrosoftGraph.Api.PoliciesPermissionGrantPolicy do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_permission_grant_policies_includes_get_count4a76(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_permission_grant_policies_includes_get_count4a76(connection, permission_grant_policy_id, opts \\ []) do
+  @spec policies_permission_grant_policies_includes_get_count4a76(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_permission_grant_policies_includes_get_count4a76(
+        connection,
+        permission_grant_policy_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -538,8 +673,20 @@ defmodule MicrosoftGraph.Api.PoliciesPermissionGrantPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPermissionGrantConditionSetCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_permission_grant_policies_list_excludes(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPermissionGrantConditionSetCollectionResponse.t} | {:error, Tesla.Env.t}
-  def policies_permission_grant_policies_list_excludes(connection, permission_grant_policy_id, opts \\ []) do
+  @spec policies_permission_grant_policies_list_excludes(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphPermissionGrantConditionSetCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_permission_grant_policies_list_excludes(
+        connection,
+        permission_grant_policy_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -590,8 +737,20 @@ defmodule MicrosoftGraph.Api.PoliciesPermissionGrantPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPermissionGrantConditionSetCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_permission_grant_policies_list_includes(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPermissionGrantConditionSetCollectionResponse.t} | {:error, Tesla.Env.t}
-  def policies_permission_grant_policies_list_includes(connection, permission_grant_policy_id, opts \\ []) do
+  @spec policies_permission_grant_policies_list_includes(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphPermissionGrantConditionSetCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_permission_grant_policies_list_includes(
+        connection,
+        permission_grant_policy_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -635,12 +794,29 @@ defmodule MicrosoftGraph.Api.PoliciesPermissionGrantPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPermissionGrantConditionSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_permission_grant_policies_update_excludes(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphPermissionGrantConditionSet.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPermissionGrantConditionSet.t} | {:error, Tesla.Env.t}
-  def policies_permission_grant_policies_update_excludes(connection, permission_grant_policy_id, permission_grant_condition_set_id, microsoft_graph_permission_grant_condition_set, _opts \\ []) do
+  @spec policies_permission_grant_policies_update_excludes(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPermissionGrantConditionSet.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPermissionGrantConditionSet.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_permission_grant_policies_update_excludes(
+        connection,
+        permission_grant_policy_id,
+        permission_grant_condition_set_id,
+        microsoft_graph_permission_grant_condition_set,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/policies/permissionGrantPolicies/#{permission_grant_policy_id}/excludes/#{permission_grant_condition_set_id}")
+      |> url(
+        "/policies/permissionGrantPolicies/#{permission_grant_policy_id}/excludes/#{permission_grant_condition_set_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_permission_grant_condition_set)
       |> Enum.into([])
 
@@ -669,12 +845,29 @@ defmodule MicrosoftGraph.Api.PoliciesPermissionGrantPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPermissionGrantConditionSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_permission_grant_policies_update_includes(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphPermissionGrantConditionSet.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPermissionGrantConditionSet.t} | {:error, Tesla.Env.t}
-  def policies_permission_grant_policies_update_includes(connection, permission_grant_policy_id, permission_grant_condition_set_id, microsoft_graph_permission_grant_condition_set, _opts \\ []) do
+  @spec policies_permission_grant_policies_update_includes(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPermissionGrantConditionSet.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPermissionGrantConditionSet.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_permission_grant_policies_update_includes(
+        connection,
+        permission_grant_policy_id,
+        permission_grant_condition_set_id,
+        microsoft_graph_permission_grant_condition_set,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/policies/permissionGrantPolicies/#{permission_grant_policy_id}/includes/#{permission_grant_condition_set_id}")
+      |> url(
+        "/policies/permissionGrantPolicies/#{permission_grant_policy_id}/includes/#{permission_grant_condition_set_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_permission_grant_condition_set)
       |> Enum.into([])
 
@@ -703,8 +896,21 @@ defmodule MicrosoftGraph.Api.PoliciesPermissionGrantPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPermissionGrantPolicy.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_update_permission_grant_policies(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphPermissionGrantPolicy.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPermissionGrantPolicy.t} | {:error, Tesla.Env.t}
-  def policies_update_permission_grant_policies(connection, permission_grant_policy_id, microsoft_graph_permission_grant_policy, _opts \\ []) do
+  @spec policies_update_permission_grant_policies(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPermissionGrantPolicy.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPermissionGrantPolicy.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_update_permission_grant_policies(
+        connection,
+        permission_grant_policy_id,
+        microsoft_graph_permission_grant_policy,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

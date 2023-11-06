@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookFunctionsNumberValueRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,18 +14,35 @@ defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookFunctionsNumberV
   ]
 
   @type t :: %__MODULE__{
-    :decimalSeparator => MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookFunctionsImSechRequestInumber.t | nil,
-    :groupSeparator => MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookFunctionsImSechRequestInumber.t | nil,
-    :text => MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookFunctionsImSechRequestInumber.t | nil
-  }
+          :decimalSeparator =>
+            MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookFunctionsImSechRequestInumber.t()
+            | nil,
+          :groupSeparator =>
+            MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookFunctionsImSechRequestInumber.t()
+            | nil,
+          :text =>
+            MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookFunctionsImSechRequestInumber.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:decimalSeparator, :struct, MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookFunctionsImSechRequestInumber)
-     |> Deserializer.deserialize(:groupSeparator, :struct, MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookFunctionsImSechRequestInumber)
-     |> Deserializer.deserialize(:text, :struct, MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookFunctionsImSechRequestInumber)
+    |> Deserializer.deserialize(
+      :decimalSeparator,
+      :struct,
+      MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookFunctionsImSechRequestInumber
+    )
+    |> Deserializer.deserialize(
+      :groupSeparator,
+      :struct,
+      MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookFunctionsImSechRequestInumber
+    )
+    |> Deserializer.deserialize(
+      :text,
+      :struct,
+      MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookFunctionsImSechRequestInumber
+    )
   end
 end
-

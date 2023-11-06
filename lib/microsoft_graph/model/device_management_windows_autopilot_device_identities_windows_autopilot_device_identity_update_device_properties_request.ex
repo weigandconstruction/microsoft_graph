@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DeviceManagementWindowsAutopilotDeviceIdentitiesWindowsAutopilotDeviceIdentityUpdateDevicePropertiesRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.DeviceManagementWindowsAutopilotDeviceIdentitiesW
   ]
 
   @type t :: %__MODULE__{
-    :addressableUserName => String.t | nil,
-    :displayName => String.t | nil,
-    :groupTag => String.t | nil,
-    :userPrincipalName => String.t | nil
-  }
+          :addressableUserName => String.t() | nil,
+          :displayName => String.t() | nil,
+          :groupTag => String.t() | nil,
+          :userPrincipalName => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

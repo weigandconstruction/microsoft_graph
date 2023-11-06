@@ -15,18 +15,28 @@ defmodule MicrosoftGraph.Model.NoTrainingNotificationSettingSimulationNotificati
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :defaultLanguage => String.t | nil,
-    :endUserNotification => MicrosoftGraph.Model.MicrosoftGraphBaseEndUserNotificationEndUserNotification.t | nil,
-    :targettedUserType => MicrosoftGraph.Model.SimulationNotificationTargettedUserType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :defaultLanguage => String.t() | nil,
+          :endUserNotification =>
+            MicrosoftGraph.Model.MicrosoftGraphBaseEndUserNotificationEndUserNotification.t()
+            | nil,
+          :targettedUserType =>
+            MicrosoftGraph.Model.SimulationNotificationTargettedUserType.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:endUserNotification, :struct, MicrosoftGraph.Model.MicrosoftGraphBaseEndUserNotificationEndUserNotification)
-     |> Deserializer.deserialize(:targettedUserType, :struct, MicrosoftGraph.Model.SimulationNotificationTargettedUserType)
+    |> Deserializer.deserialize(
+      :endUserNotification,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphBaseEndUserNotificationEndUserNotification
+    )
+    |> Deserializer.deserialize(
+      :targettedUserType,
+      :struct,
+      MicrosoftGraph.Model.SimulationNotificationTargettedUserType
+    )
   end
 end
-

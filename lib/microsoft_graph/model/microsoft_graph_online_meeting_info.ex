@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphOnlineMeetingInfo do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,20 +18,19 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphOnlineMeetingInfo do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :conferenceId => String.t | nil,
-    :joinUrl => String.t | nil,
-    :phones => [MicrosoftGraph.Model.OrgContactPhonesInner.t] | nil,
-    :quickDial => String.t | nil,
-    :tollFreeNumbers => [String.t] | nil,
-    :tollNumber => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :conferenceId => String.t() | nil,
+          :joinUrl => String.t() | nil,
+          :phones => [MicrosoftGraph.Model.OrgContactPhonesInner.t()] | nil,
+          :quickDial => String.t() | nil,
+          :tollFreeNumbers => [String.t()] | nil,
+          :tollNumber => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:phones, :list, MicrosoftGraph.Model.OrgContactPhonesInner)
+    |> Deserializer.deserialize(:phones, :list, MicrosoftGraph.Model.OrgContactPhonesInner)
   end
 end
-

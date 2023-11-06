@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphDomainDnsMxRecord do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -20,19 +20,18 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphDomainDnsMxRecord do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :isOptional => boolean() | nil,
-    :label => String.t | nil,
-    :recordType => String.t | nil,
-    :supportedService => String.t | nil,
-    :ttl => integer() | nil,
-    :mailExchange => String.t | nil,
-    :preference => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :isOptional => boolean() | nil,
+          :label => String.t() | nil,
+          :recordType => String.t() | nil,
+          :supportedService => String.t() | nil,
+          :ttl => integer() | nil,
+          :mailExchange => String.t() | nil,
+          :preference => integer() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

@@ -24,8 +24,17 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_conditional_access_authentication_context_class_references_get_count1d40(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_conditional_access_authentication_context_class_references_get_count1d40(connection, opts \\ []) do
+  @spec identity_conditional_access_authentication_context_class_references_get_count1d40(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_conditional_access_authentication_context_class_references_get_count1d40(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -62,8 +71,17 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_conditional_access_authentication_strength_authentication_method_modes_get_count_e876(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_conditional_access_authentication_strength_authentication_method_modes_get_count_e876(connection, opts \\ []) do
+  @spec identity_conditional_access_authentication_strength_authentication_method_modes_get_count_e876(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_conditional_access_authentication_strength_authentication_method_modes_get_count_e876(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -72,7 +90,9 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/identity/conditionalAccess/authenticationStrength/authenticationMethodModes/$count")
+      |> url(
+        "/identity/conditionalAccess/authenticationStrength/authenticationMethodModes/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -99,8 +119,19 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodModeDetail.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_conditional_access_authentication_strength_create_authentication_method_modes(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodModeDetail.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodModeDetail.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_conditional_access_authentication_strength_create_authentication_method_modes(connection, microsoft_graph_authentication_method_mode_detail, _opts \\ []) do
+  @spec identity_conditional_access_authentication_strength_create_authentication_method_modes(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodModeDetail.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodModeDetail.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_conditional_access_authentication_strength_create_authentication_method_modes(
+        connection,
+        microsoft_graph_authentication_method_mode_detail,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -131,8 +162,19 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthPolicy.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_conditional_access_authentication_strength_create_policies(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthPolicy.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthPolicy.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_conditional_access_authentication_strength_create_policies(connection, microsoft_graph_authentication_strength_policy, _opts \\ []) do
+  @spec identity_conditional_access_authentication_strength_create_policies(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthPolicy.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthPolicy.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_conditional_access_authentication_strength_create_policies(
+        connection,
+        microsoft_graph_authentication_strength_policy,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -164,8 +206,19 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_conditional_access_authentication_strength_delete_authentication_method_modes(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_conditional_access_authentication_strength_delete_authentication_method_modes(connection, authentication_method_mode_detail_id, opts \\ []) do
+  @spec identity_conditional_access_authentication_strength_delete_authentication_method_modes(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_conditional_access_authentication_strength_delete_authentication_method_modes(
+        connection,
+        authentication_method_mode_detail_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -173,7 +226,9 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
     request =
       %{}
       |> method(:delete)
-      |> url("/identity/conditionalAccess/authenticationStrength/authenticationMethodModes/#{authentication_method_mode_detail_id}")
+      |> url(
+        "/identity/conditionalAccess/authenticationStrength/authenticationMethodModes/#{authentication_method_mode_detail_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -201,8 +256,19 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_conditional_access_authentication_strength_delete_policies(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_conditional_access_authentication_strength_delete_policies(connection, authentication_strength_policy_id, opts \\ []) do
+  @spec identity_conditional_access_authentication_strength_delete_policies(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_conditional_access_authentication_strength_delete_policies(
+        connection,
+        authentication_strength_policy_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -210,7 +276,9 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
     request =
       %{}
       |> method(:delete)
-      |> url("/identity/conditionalAccess/authenticationStrength/policies/#{authentication_strength_policy_id}")
+      |> url(
+        "/identity/conditionalAccess/authenticationStrength/policies/#{authentication_strength_policy_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -240,8 +308,19 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodModeDetail.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_conditional_access_authentication_strength_get_authentication_method_modes(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodModeDetail.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_conditional_access_authentication_strength_get_authentication_method_modes(connection, authentication_method_mode_detail_id, opts \\ []) do
+  @spec identity_conditional_access_authentication_strength_get_authentication_method_modes(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodModeDetail.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_conditional_access_authentication_strength_get_authentication_method_modes(
+        connection,
+        authentication_method_mode_detail_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -250,7 +329,9 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/identity/conditionalAccess/authenticationStrength/authenticationMethodModes/#{authentication_method_mode_detail_id}")
+      |> url(
+        "/identity/conditionalAccess/authenticationStrength/authenticationMethodModes/#{authentication_method_mode_detail_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -280,8 +361,19 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthPolicy.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_conditional_access_authentication_strength_get_policies(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthPolicy.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_conditional_access_authentication_strength_get_policies(connection, authentication_strength_policy_id, opts \\ []) do
+  @spec identity_conditional_access_authentication_strength_get_policies(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthPolicy.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_conditional_access_authentication_strength_get_policies(
+        connection,
+        authentication_strength_policy_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -290,7 +382,9 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/identity/conditionalAccess/authenticationStrength/policies/#{authentication_strength_policy_id}")
+      |> url(
+        "/identity/conditionalAccess/authenticationStrength/policies/#{authentication_strength_policy_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -325,8 +419,18 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodModeDetailCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_conditional_access_authentication_strength_list_authentication_method_modes(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodModeDetailCollectionResponse.t} | {:error, Tesla.Env.t}
-  def identity_conditional_access_authentication_strength_list_authentication_method_modes(connection, opts \\ []) do
+  @spec identity_conditional_access_authentication_strength_list_authentication_method_modes(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodModeDetailCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_conditional_access_authentication_strength_list_authentication_method_modes(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -348,7 +452,8 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodModeDetailCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodModeDetailCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -376,7 +481,14 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthPolicyCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_conditional_access_authentication_strength_list_policies(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthPolicyCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_conditional_access_authentication_strength_list_policies(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthPolicyCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_conditional_access_authentication_strength_list_policies(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -421,8 +533,19 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_conditional_access_authentication_strength_policies_combination_configurations_get_count64b7(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_conditional_access_authentication_strength_policies_combination_configurations_get_count64b7(connection, authentication_strength_policy_id, opts \\ []) do
+  @spec identity_conditional_access_authentication_strength_policies_combination_configurations_get_count64b7(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_conditional_access_authentication_strength_policies_combination_configurations_get_count64b7(
+        connection,
+        authentication_strength_policy_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -431,7 +554,9 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/identity/conditionalAccess/authenticationStrength/policies/#{authentication_strength_policy_id}/combinationConfigurations/$count")
+      |> url(
+        "/identity/conditionalAccess/authenticationStrength/policies/#{authentication_strength_policy_id}/combinationConfigurations/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -460,12 +585,27 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationCombinationConfiguration.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_conditional_access_authentication_strength_policies_create_combination_configurations(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphAuthenticationCombinationConfiguration.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationCombinationConfiguration.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_conditional_access_authentication_strength_policies_create_combination_configurations(connection, authentication_strength_policy_id, microsoft_graph_authentication_combination_configuration, _opts \\ []) do
+  @spec identity_conditional_access_authentication_strength_policies_create_combination_configurations(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAuthenticationCombinationConfiguration.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationCombinationConfiguration.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_conditional_access_authentication_strength_policies_create_combination_configurations(
+        connection,
+        authentication_strength_policy_id,
+        microsoft_graph_authentication_combination_configuration,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identity/conditionalAccess/authenticationStrength/policies/#{authentication_strength_policy_id}/combinationConfigurations")
+      |> url(
+        "/identity/conditionalAccess/authenticationStrength/policies/#{authentication_strength_policy_id}/combinationConfigurations"
+      )
       |> add_param(:body, :body, microsoft_graph_authentication_combination_configuration)
       |> Enum.into([])
 
@@ -495,8 +635,21 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_conditional_access_authentication_strength_policies_delete_combination_configurations(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_conditional_access_authentication_strength_policies_delete_combination_configurations(connection, authentication_strength_policy_id, authentication_combination_configuration_id, opts \\ []) do
+  @spec identity_conditional_access_authentication_strength_policies_delete_combination_configurations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_conditional_access_authentication_strength_policies_delete_combination_configurations(
+        connection,
+        authentication_strength_policy_id,
+        authentication_combination_configuration_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -504,7 +657,9 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
     request =
       %{}
       |> method(:delete)
-      |> url("/identity/conditionalAccess/authenticationStrength/policies/#{authentication_strength_policy_id}/combinationConfigurations/#{authentication_combination_configuration_id}")
+      |> url(
+        "/identity/conditionalAccess/authenticationStrength/policies/#{authentication_strength_policy_id}/combinationConfigurations/#{authentication_combination_configuration_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -535,8 +690,21 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationCombinationConfiguration.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_conditional_access_authentication_strength_policies_get_combination_configurations(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationCombinationConfiguration.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_conditional_access_authentication_strength_policies_get_combination_configurations(connection, authentication_strength_policy_id, authentication_combination_configuration_id, opts \\ []) do
+  @spec identity_conditional_access_authentication_strength_policies_get_combination_configurations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationCombinationConfiguration.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_conditional_access_authentication_strength_policies_get_combination_configurations(
+        connection,
+        authentication_strength_policy_id,
+        authentication_combination_configuration_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -545,7 +713,9 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/identity/conditionalAccess/authenticationStrength/policies/#{authentication_strength_policy_id}/combinationConfigurations/#{authentication_combination_configuration_id}")
+      |> url(
+        "/identity/conditionalAccess/authenticationStrength/policies/#{authentication_strength_policy_id}/combinationConfigurations/#{authentication_combination_configuration_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -573,8 +743,17 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_conditional_access_authentication_strength_policies_get_count8166(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_conditional_access_authentication_strength_policies_get_count8166(connection, opts \\ []) do
+  @spec identity_conditional_access_authentication_strength_policies_get_count8166(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_conditional_access_authentication_strength_policies_get_count8166(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -619,8 +798,20 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationCombinationConfigurationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_conditional_access_authentication_strength_policies_list_combination_configurations(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationCombinationConfigurationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_conditional_access_authentication_strength_policies_list_combination_configurations(connection, authentication_strength_policy_id, opts \\ []) do
+  @spec identity_conditional_access_authentication_strength_policies_list_combination_configurations(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphAuthenticationCombinationConfigurationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_conditional_access_authentication_strength_policies_list_combination_configurations(
+        connection,
+        authentication_strength_policy_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -635,14 +826,17 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/identity/conditionalAccess/authenticationStrength/policies/#{authentication_strength_policy_id}/combinationConfigurations")
+      |> url(
+        "/identity/conditionalAccess/authenticationStrength/policies/#{authentication_strength_policy_id}/combinationConfigurations"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphAuthenticationCombinationConfigurationCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphAuthenticationCombinationConfigurationCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -665,12 +859,29 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationCombinationConfiguration.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_conditional_access_authentication_strength_policies_update_combination_configurations(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphAuthenticationCombinationConfiguration.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationCombinationConfiguration.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_conditional_access_authentication_strength_policies_update_combination_configurations(connection, authentication_strength_policy_id, authentication_combination_configuration_id, microsoft_graph_authentication_combination_configuration, _opts \\ []) do
+  @spec identity_conditional_access_authentication_strength_policies_update_combination_configurations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAuthenticationCombinationConfiguration.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationCombinationConfiguration.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_conditional_access_authentication_strength_policies_update_combination_configurations(
+        connection,
+        authentication_strength_policy_id,
+        authentication_combination_configuration_id,
+        microsoft_graph_authentication_combination_configuration,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identity/conditionalAccess/authenticationStrength/policies/#{authentication_strength_policy_id}/combinationConfigurations/#{authentication_combination_configuration_id}")
+      |> url(
+        "/identity/conditionalAccess/authenticationStrength/policies/#{authentication_strength_policy_id}/combinationConfigurations/#{authentication_combination_configuration_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_authentication_combination_configuration)
       |> Enum.into([])
 
@@ -698,12 +909,27 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodModeDetail.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_conditional_access_authentication_strength_update_authentication_method_modes(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodModeDetail.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodModeDetail.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_conditional_access_authentication_strength_update_authentication_method_modes(connection, authentication_method_mode_detail_id, microsoft_graph_authentication_method_mode_detail, _opts \\ []) do
+  @spec identity_conditional_access_authentication_strength_update_authentication_method_modes(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodModeDetail.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodModeDetail.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_conditional_access_authentication_strength_update_authentication_method_modes(
+        connection,
+        authentication_method_mode_detail_id,
+        microsoft_graph_authentication_method_mode_detail,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identity/conditionalAccess/authenticationStrength/authenticationMethodModes/#{authentication_method_mode_detail_id}")
+      |> url(
+        "/identity/conditionalAccess/authenticationStrength/authenticationMethodModes/#{authentication_method_mode_detail_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_authentication_method_mode_detail)
       |> Enum.into([])
 
@@ -731,12 +957,27 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthPolicy.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_conditional_access_authentication_strength_update_policies(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthPolicy.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthPolicy.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_conditional_access_authentication_strength_update_policies(connection, authentication_strength_policy_id, microsoft_graph_authentication_strength_policy, _opts \\ []) do
+  @spec identity_conditional_access_authentication_strength_update_policies(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthPolicy.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthPolicy.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_conditional_access_authentication_strength_update_policies(
+        connection,
+        authentication_strength_policy_id,
+        microsoft_graph_authentication_strength_policy,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identity/conditionalAccess/authenticationStrength/policies/#{authentication_strength_policy_id}")
+      |> url(
+        "/identity/conditionalAccess/authenticationStrength/policies/#{authentication_strength_policy_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_authentication_strength_policy)
       |> Enum.into([])
 
@@ -763,8 +1004,19 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationContextClassReference.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_conditional_access_create_authentication_context_class_references(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphAuthenticationContextClassReference.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationContextClassReference.t} | {:error, Tesla.Env.t}
-  def identity_conditional_access_create_authentication_context_class_references(connection, microsoft_graph_authentication_context_class_reference, _opts \\ []) do
+  @spec identity_conditional_access_create_authentication_context_class_references(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphAuthenticationContextClassReference.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationContextClassReference.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_conditional_access_create_authentication_context_class_references(
+        connection,
+        microsoft_graph_authentication_context_class_reference,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -796,8 +1048,19 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphNamedLocation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_conditional_access_create_named_locations(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphNamedLocation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphNamedLocation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_conditional_access_create_named_locations(connection, microsoft_graph_named_location, _opts \\ []) do
+  @spec identity_conditional_access_create_named_locations(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphNamedLocation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphNamedLocation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_conditional_access_create_named_locations(
+        connection,
+        microsoft_graph_named_location,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -829,8 +1092,19 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphConditionalAccessPolicy.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_conditional_access_create_policies(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphConditionalAccessPolicy.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphConditionalAccessPolicy.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_conditional_access_create_policies(connection, microsoft_graph_conditional_access_policy, _opts \\ []) do
+  @spec identity_conditional_access_create_policies(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphConditionalAccessPolicy.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphConditionalAccessPolicy.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_conditional_access_create_policies(
+        connection,
+        microsoft_graph_conditional_access_policy,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -863,8 +1137,19 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_conditional_access_delete_authentication_context_class_references(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_conditional_access_delete_authentication_context_class_references(connection, authentication_context_class_reference_id, opts \\ []) do
+  @spec identity_conditional_access_delete_authentication_context_class_references(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_conditional_access_delete_authentication_context_class_references(
+        connection,
+        authentication_context_class_reference_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -872,7 +1157,9 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
     request =
       %{}
       |> method(:delete)
-      |> url("/identity/conditionalAccess/authenticationContextClassReferences/#{authentication_context_class_reference_id}")
+      |> url(
+        "/identity/conditionalAccess/authenticationContextClassReferences/#{authentication_context_class_reference_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -899,7 +1186,10 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_conditional_access_delete_authentication_strength(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_conditional_access_delete_authentication_strength(Tesla.Env.client(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_conditional_access_delete_authentication_strength(connection, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -937,8 +1227,19 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_conditional_access_delete_named_locations(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_conditional_access_delete_named_locations(connection, named_location_id, opts \\ []) do
+  @spec identity_conditional_access_delete_named_locations(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_conditional_access_delete_named_locations(
+        connection,
+        named_location_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -975,8 +1276,15 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_conditional_access_delete_policies(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_conditional_access_delete_policies(connection, conditional_access_policy_id, opts \\ []) do
+  @spec identity_conditional_access_delete_policies(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_conditional_access_delete_policies(
+        connection,
+        conditional_access_policy_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1014,8 +1322,19 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationContextClassReference.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_conditional_access_get_authentication_context_class_references(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationContextClassReference.t} | {:error, Tesla.Env.t}
-  def identity_conditional_access_get_authentication_context_class_references(connection, authentication_context_class_reference_id, opts \\ []) do
+  @spec identity_conditional_access_get_authentication_context_class_references(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationContextClassReference.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_conditional_access_get_authentication_context_class_references(
+        connection,
+        authentication_context_class_reference_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1024,7 +1343,9 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/identity/conditionalAccess/authenticationContextClassReferences/#{authentication_context_class_reference_id}")
+      |> url(
+        "/identity/conditionalAccess/authenticationContextClassReferences/#{authentication_context_class_reference_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1052,7 +1373,10 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthRoot.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_conditional_access_get_authentication_strength(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthRoot.t} | {:error, Tesla.Env.t}
+  @spec identity_conditional_access_get_authentication_strength(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthRoot.t()}
+          | {:error, Tesla.Env.t()}
   def identity_conditional_access_get_authentication_strength(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -1092,7 +1416,10 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphNamedLocation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_conditional_access_get_named_locations(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphNamedLocation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_conditional_access_get_named_locations(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphNamedLocation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_conditional_access_get_named_locations(connection, named_location_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -1132,8 +1459,15 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphConditionalAccessPolicy.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_conditional_access_get_policies(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphConditionalAccessPolicy.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_conditional_access_get_policies(connection, conditional_access_policy_id, opts \\ []) do
+  @spec identity_conditional_access_get_policies(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphConditionalAccessPolicy.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_conditional_access_get_policies(
+        connection,
+        conditional_access_policy_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1172,8 +1506,15 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphConditionalAccessTemplate.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_conditional_access_get_templates(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphConditionalAccessTemplate.t} | {:error, Tesla.Env.t}
-  def identity_conditional_access_get_templates(connection, conditional_access_template_id, opts \\ []) do
+  @spec identity_conditional_access_get_templates(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphConditionalAccessTemplate.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_conditional_access_get_templates(
+        connection,
+        conditional_access_template_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1217,8 +1558,18 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationContextClassReferenceCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_conditional_access_list_authentication_context_class_references(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationContextClassReferenceCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_conditional_access_list_authentication_context_class_references(connection, opts \\ []) do
+  @spec identity_conditional_access_list_authentication_context_class_references(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphAuthenticationContextClassReferenceCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_conditional_access_list_authentication_context_class_references(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1240,7 +1591,8 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphAuthenticationContextClassReferenceCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphAuthenticationContextClassReferenceCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -1268,7 +1620,10 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphNamedLocationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_conditional_access_list_named_locations(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphNamedLocationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_conditional_access_list_named_locations(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphNamedLocationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_conditional_access_list_named_locations(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1319,7 +1674,10 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphConditionalAccessPolicyCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_conditional_access_list_policies(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphConditionalAccessPolicyCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_conditional_access_list_policies(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphConditionalAccessPolicyCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_conditional_access_list_policies(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1370,7 +1728,11 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphConditionalAccessTemplateCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_conditional_access_list_templates(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphConditionalAccessTemplateCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec identity_conditional_access_list_templates(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphConditionalAccessTemplateCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def identity_conditional_access_list_templates(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1414,7 +1776,10 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_conditional_access_named_locations_get_count_e424(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_conditional_access_named_locations_get_count_e424(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_conditional_access_named_locations_get_count_e424(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -1452,7 +1817,10 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_conditional_access_policies_get_count608a(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_conditional_access_policies_get_count608a(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_conditional_access_policies_get_count608a(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -1490,7 +1858,10 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_conditional_access_templates_get_count_a96d(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_conditional_access_templates_get_count_a96d(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_conditional_access_templates_get_count_a96d(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -1529,12 +1900,27 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationContextClassReference.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_conditional_access_update_authentication_context_class_references(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphAuthenticationContextClassReference.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationContextClassReference.t} | {:error, Tesla.Env.t}
-  def identity_conditional_access_update_authentication_context_class_references(connection, authentication_context_class_reference_id, microsoft_graph_authentication_context_class_reference, _opts \\ []) do
+  @spec identity_conditional_access_update_authentication_context_class_references(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAuthenticationContextClassReference.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationContextClassReference.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_conditional_access_update_authentication_context_class_references(
+        connection,
+        authentication_context_class_reference_id,
+        microsoft_graph_authentication_context_class_reference,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identity/conditionalAccess/authenticationContextClassReferences/#{authentication_context_class_reference_id}")
+      |> url(
+        "/identity/conditionalAccess/authenticationContextClassReferences/#{authentication_context_class_reference_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_authentication_context_class_reference)
       |> Enum.into([])
 
@@ -1561,8 +1947,19 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthRoot.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_conditional_access_update_authentication_strength(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthRoot.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthRoot.t} | {:error, Tesla.Env.t}
-  def identity_conditional_access_update_authentication_strength(connection, microsoft_graph_authentication_strength_root, _opts \\ []) do
+  @spec identity_conditional_access_update_authentication_strength(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthRoot.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthRoot.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_conditional_access_update_authentication_strength(
+        connection,
+        microsoft_graph_authentication_strength_root,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -1595,8 +1992,21 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphNamedLocation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_conditional_access_update_named_locations(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphNamedLocation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphNamedLocation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_conditional_access_update_named_locations(connection, named_location_id, microsoft_graph_named_location, _opts \\ []) do
+  @spec identity_conditional_access_update_named_locations(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphNamedLocation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphNamedLocation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_conditional_access_update_named_locations(
+        connection,
+        named_location_id,
+        microsoft_graph_named_location,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -1629,8 +2039,21 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphConditionalAccessPolicy.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_conditional_access_update_policies(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphConditionalAccessPolicy.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphConditionalAccessPolicy.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_conditional_access_update_policies(connection, conditional_access_policy_id, microsoft_graph_conditional_access_policy, _opts \\ []) do
+  @spec identity_conditional_access_update_policies(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphConditionalAccessPolicy.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphConditionalAccessPolicy.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_conditional_access_update_policies(
+        connection,
+        conditional_access_policy_id,
+        microsoft_graph_conditional_access_policy,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -1661,7 +2084,10 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_delete_conditional_access(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_delete_conditional_access(Tesla.Env.client(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_delete_conditional_access(connection, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -1699,7 +2125,10 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphConditionalAccessRoot.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_get_conditional_access(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphConditionalAccessRoot.t} | {:error, Tesla.Env.t}
+  @spec identity_get_conditional_access(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphConditionalAccessRoot.t()}
+          | {:error, Tesla.Env.t()}
   def identity_get_conditional_access(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -1736,8 +2165,19 @@ defmodule MicrosoftGraph.Api.IdentityConditionalAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphConditionalAccessRoot.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_update_conditional_access(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphConditionalAccessRoot.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphConditionalAccessRoot.t} | {:error, Tesla.Env.t}
-  def identity_update_conditional_access(connection, microsoft_graph_conditional_access_root, _opts \\ []) do
+  @spec identity_update_conditional_access(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphConditionalAccessRoot.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphConditionalAccessRoot.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_update_conditional_access(
+        connection,
+        microsoft_graph_conditional_access_root,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

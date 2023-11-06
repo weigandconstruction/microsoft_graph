@@ -16,18 +16,17 @@ defmodule MicrosoftGraph.Model.WindowsInformationProtectionDataRecoveryCertifica
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :certificate => String.t | nil,
-    :description => String.t | nil,
-    :expirationDateTime => DateTime.t | nil,
-    :subjectName => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :certificate => String.t() | nil,
+          :description => String.t() | nil,
+          :expirationDateTime => DateTime.t() | nil,
+          :subjectName => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:expirationDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:expirationDateTime, :datetime, nil)
   end
 end
-

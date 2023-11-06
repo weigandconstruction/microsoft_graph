@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceStartupProcessPerformanceCollectionResponse do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,23 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceStartu
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.count" => integer() | nil,
-    :"@odata.nextLink" => String.t | nil,
-    :value => [MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceStartupProcessPerformance.t] | nil
-  }
+          :"@odata.count" => integer() | nil,
+          :"@odata.nextLink" => String.t() | nil,
+          :value =>
+            [
+              MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceStartupProcessPerformance.t()
+            ]
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:value, :list, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceStartupProcessPerformance)
+    |> Deserializer.deserialize(
+      :value,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceStartupProcessPerformance
+    )
   end
 end
-

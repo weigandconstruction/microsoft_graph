@@ -23,29 +23,36 @@ defmodule MicrosoftGraph.Model.TeamsAppInstallationTeamsAppDefinition do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :authorization => MicrosoftGraph.Model.TeamsAppDefinitionAuthorization.t | nil,
-    :bot => MicrosoftGraph.Model.TeamsAppDefinitionBot.t | nil,
-    :createdBy => MicrosoftGraph.Model.CaseLastModifiedBy.t | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :publishingState => MicrosoftGraph.Model.TeamsAppDefinitionPublishingState.t | nil,
-    :shortDescription => String.t | nil,
-    :teamsAppId => String.t | nil,
-    :version => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :authorization => MicrosoftGraph.Model.TeamsAppDefinitionAuthorization.t() | nil,
+          :bot => MicrosoftGraph.Model.TeamsAppDefinitionBot.t() | nil,
+          :createdBy => MicrosoftGraph.Model.CaseLastModifiedBy.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :publishingState => MicrosoftGraph.Model.TeamsAppDefinitionPublishingState.t() | nil,
+          :shortDescription => String.t() | nil,
+          :teamsAppId => String.t() | nil,
+          :version => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:authorization, :struct, MicrosoftGraph.Model.TeamsAppDefinitionAuthorization)
-     |> Deserializer.deserialize(:bot, :struct, MicrosoftGraph.Model.TeamsAppDefinitionBot)
-     |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.CaseLastModifiedBy)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:publishingState, :struct, MicrosoftGraph.Model.TeamsAppDefinitionPublishingState)
+    |> Deserializer.deserialize(
+      :authorization,
+      :struct,
+      MicrosoftGraph.Model.TeamsAppDefinitionAuthorization
+    )
+    |> Deserializer.deserialize(:bot, :struct, MicrosoftGraph.Model.TeamsAppDefinitionBot)
+    |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.CaseLastModifiedBy)
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :publishingState,
+      :struct,
+      MicrosoftGraph.Model.TeamsAppDefinitionPublishingState
+    )
   end
 end
-

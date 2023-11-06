@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookTablesWorkbookTableColumnsWorkbookTableColumnFilterApplyIconFilterRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,14 +12,19 @@ defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookTablesWorkbookTa
   ]
 
   @type t :: %__MODULE__{
-    :icon => MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookTablesWorkbookTableColumnsWorkbookTableColumnFilterApplyIconFilterRequestIcon.t | nil
-  }
+          :icon =>
+            MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookTablesWorkbookTableColumnsWorkbookTableColumnFilterApplyIconFilterRequestIcon.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:icon, :struct, MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookTablesWorkbookTableColumnsWorkbookTableColumnFilterApplyIconFilterRequestIcon)
+    |> Deserializer.deserialize(
+      :icon,
+      :struct,
+      MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookTablesWorkbookTableColumnsWorkbookTableColumnFilterApplyIconFilterRequestIcon
+    )
   end
 end
-

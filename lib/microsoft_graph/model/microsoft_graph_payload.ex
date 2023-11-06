@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphPayload do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -35,51 +35,71 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphPayload do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :brand => MicrosoftGraph.Model.PayloadBrand.t | nil,
-    :complexity => MicrosoftGraph.Model.PayloadComplexity.t | nil,
-    :createdBy => MicrosoftGraph.Model.PayloadCreatedBy.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :description => String.t | nil,
-    :detail => MicrosoftGraph.Model.PayloadDetail.t | nil,
-    :displayName => String.t | nil,
-    :industry => MicrosoftGraph.Model.PayloadIndustry.t | nil,
-    :isAutomated => boolean() | nil,
-    :isControversial => boolean() | nil,
-    :isCurrentEvent => boolean() | nil,
-    :language => String.t | nil,
-    :lastModifiedBy => MicrosoftGraph.Model.PayloadLastModifiedBy.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :payloadTags => [String.t] | nil,
-    :platform => MicrosoftGraph.Model.PayloadPlatform.t | nil,
-    :predictedCompromiseRate => MicrosoftGraph.Model.PayloadPredictedCompromiseRate.t | nil,
-    :simulationAttackType => MicrosoftGraph.Model.SimulationAttackType.t | nil,
-    :source => MicrosoftGraph.Model.MicrosoftGraphSimulationContentSource.t | nil,
-    :status => MicrosoftGraph.Model.PayloadStatus.t | nil,
-    :technique => MicrosoftGraph.Model.SimulationAttackTechnique.t | nil,
-    :theme => MicrosoftGraph.Model.PayloadTheme.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :brand => MicrosoftGraph.Model.PayloadBrand.t() | nil,
+          :complexity => MicrosoftGraph.Model.PayloadComplexity.t() | nil,
+          :createdBy => MicrosoftGraph.Model.PayloadCreatedBy.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :detail => MicrosoftGraph.Model.PayloadDetail.t() | nil,
+          :displayName => String.t() | nil,
+          :industry => MicrosoftGraph.Model.PayloadIndustry.t() | nil,
+          :isAutomated => boolean() | nil,
+          :isControversial => boolean() | nil,
+          :isCurrentEvent => boolean() | nil,
+          :language => String.t() | nil,
+          :lastModifiedBy => MicrosoftGraph.Model.PayloadLastModifiedBy.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :payloadTags => [String.t()] | nil,
+          :platform => MicrosoftGraph.Model.PayloadPlatform.t() | nil,
+          :predictedCompromiseRate =>
+            MicrosoftGraph.Model.PayloadPredictedCompromiseRate.t() | nil,
+          :simulationAttackType => MicrosoftGraph.Model.SimulationAttackType.t() | nil,
+          :source => MicrosoftGraph.Model.MicrosoftGraphSimulationContentSource.t() | nil,
+          :status => MicrosoftGraph.Model.PayloadStatus.t() | nil,
+          :technique => MicrosoftGraph.Model.SimulationAttackTechnique.t() | nil,
+          :theme => MicrosoftGraph.Model.PayloadTheme.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:brand, :struct, MicrosoftGraph.Model.PayloadBrand)
-     |> Deserializer.deserialize(:complexity, :struct, MicrosoftGraph.Model.PayloadComplexity)
-     |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.PayloadCreatedBy)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:detail, :struct, MicrosoftGraph.Model.PayloadDetail)
-     |> Deserializer.deserialize(:industry, :struct, MicrosoftGraph.Model.PayloadIndustry)
-     |> Deserializer.deserialize(:lastModifiedBy, :struct, MicrosoftGraph.Model.PayloadLastModifiedBy)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:platform, :struct, MicrosoftGraph.Model.PayloadPlatform)
-     |> Deserializer.deserialize(:predictedCompromiseRate, :struct, MicrosoftGraph.Model.PayloadPredictedCompromiseRate)
-     |> Deserializer.deserialize(:simulationAttackType, :struct, MicrosoftGraph.Model.SimulationAttackType)
-     |> Deserializer.deserialize(:source, :struct, MicrosoftGraph.Model.MicrosoftGraphSimulationContentSource)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.PayloadStatus)
-     |> Deserializer.deserialize(:technique, :struct, MicrosoftGraph.Model.SimulationAttackTechnique)
-     |> Deserializer.deserialize(:theme, :struct, MicrosoftGraph.Model.PayloadTheme)
+    |> Deserializer.deserialize(:brand, :struct, MicrosoftGraph.Model.PayloadBrand)
+    |> Deserializer.deserialize(:complexity, :struct, MicrosoftGraph.Model.PayloadComplexity)
+    |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.PayloadCreatedBy)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:detail, :struct, MicrosoftGraph.Model.PayloadDetail)
+    |> Deserializer.deserialize(:industry, :struct, MicrosoftGraph.Model.PayloadIndustry)
+    |> Deserializer.deserialize(
+      :lastModifiedBy,
+      :struct,
+      MicrosoftGraph.Model.PayloadLastModifiedBy
+    )
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:platform, :struct, MicrosoftGraph.Model.PayloadPlatform)
+    |> Deserializer.deserialize(
+      :predictedCompromiseRate,
+      :struct,
+      MicrosoftGraph.Model.PayloadPredictedCompromiseRate
+    )
+    |> Deserializer.deserialize(
+      :simulationAttackType,
+      :struct,
+      MicrosoftGraph.Model.SimulationAttackType
+    )
+    |> Deserializer.deserialize(
+      :source,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSimulationContentSource
+    )
+    |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.PayloadStatus)
+    |> Deserializer.deserialize(
+      :technique,
+      :struct,
+      MicrosoftGraph.Model.SimulationAttackTechnique
+    )
+    |> Deserializer.deserialize(:theme, :struct, MicrosoftGraph.Model.PayloadTheme)
   end
 end
-

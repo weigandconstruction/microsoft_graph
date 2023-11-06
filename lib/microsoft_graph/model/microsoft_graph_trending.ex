@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphTrending do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,24 +18,31 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphTrending do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :resource => MicrosoftGraph.Model.TrendingResource.t | nil,
-    :resourceReference => MicrosoftGraph.Model.TrendingResourceReference.t | nil,
-    :resourceVisualization => MicrosoftGraph.Model.TrendingResourceVisualization.t | nil,
-    :weight => MicrosoftGraph.Model.TrendingWeight.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :resource => MicrosoftGraph.Model.TrendingResource.t() | nil,
+          :resourceReference => MicrosoftGraph.Model.TrendingResourceReference.t() | nil,
+          :resourceVisualization => MicrosoftGraph.Model.TrendingResourceVisualization.t() | nil,
+          :weight => MicrosoftGraph.Model.TrendingWeight.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:resource, :struct, MicrosoftGraph.Model.TrendingResource)
-     |> Deserializer.deserialize(:resourceReference, :struct, MicrosoftGraph.Model.TrendingResourceReference)
-     |> Deserializer.deserialize(:resourceVisualization, :struct, MicrosoftGraph.Model.TrendingResourceVisualization)
-     |> Deserializer.deserialize(:weight, :struct, MicrosoftGraph.Model.TrendingWeight)
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:resource, :struct, MicrosoftGraph.Model.TrendingResource)
+    |> Deserializer.deserialize(
+      :resourceReference,
+      :struct,
+      MicrosoftGraph.Model.TrendingResourceReference
+    )
+    |> Deserializer.deserialize(
+      :resourceVisualization,
+      :struct,
+      MicrosoftGraph.Model.TrendingResourceVisualization
+    )
+    |> Deserializer.deserialize(:weight, :struct, MicrosoftGraph.Model.TrendingWeight)
   end
 end
-

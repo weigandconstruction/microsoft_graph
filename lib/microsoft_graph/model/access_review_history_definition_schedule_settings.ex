@@ -14,16 +14,19 @@ defmodule MicrosoftGraph.Model.AccessReviewHistoryDefinitionScheduleSettings do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :recurrence => MicrosoftGraph.Model.MicrosoftGraphPatternedRecurrence.t | nil,
-    :reportRange => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :recurrence => MicrosoftGraph.Model.MicrosoftGraphPatternedRecurrence.t() | nil,
+          :reportRange => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:recurrence, :struct, MicrosoftGraph.Model.MicrosoftGraphPatternedRecurrence)
+    |> Deserializer.deserialize(
+      :recurrence,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphPatternedRecurrence
+    )
   end
 end
-

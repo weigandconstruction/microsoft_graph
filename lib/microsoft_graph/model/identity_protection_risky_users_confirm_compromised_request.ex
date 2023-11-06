@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.IdentityProtectionRiskyUsersConfirmCompromisedRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,11 +12,10 @@ defmodule MicrosoftGraph.Model.IdentityProtectionRiskyUsersConfirmCompromisedReq
   ]
 
   @type t :: %__MODULE__{
-    :userIds => [String.t] | nil
-  }
+          :userIds => [String.t()] | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityDataSet do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,19 +16,18 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityDataSet do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :createdBy => MicrosoftGraph.Model.CaseLastModifiedBy.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :displayName => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :createdBy => MicrosoftGraph.Model.CaseLastModifiedBy.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :displayName => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.CaseLastModifiedBy)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.CaseLastModifiedBy)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
   end
 end
-

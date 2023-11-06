@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleManagementPolicyNotificationRuleCollectionResponse do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,21 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleManagementPolicyNotifica
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.count" => integer() | nil,
-    :"@odata.nextLink" => String.t | nil,
-    :value => [MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleManagementPolicyNotificationRule.t] | nil
-  }
+          :"@odata.count" => integer() | nil,
+          :"@odata.nextLink" => String.t() | nil,
+          :value =>
+            [MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleManagementPolicyNotificationRule.t()]
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:value, :list, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleManagementPolicyNotificationRule)
+    |> Deserializer.deserialize(
+      :value,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleManagementPolicyNotificationRule
+    )
   end
 end
-

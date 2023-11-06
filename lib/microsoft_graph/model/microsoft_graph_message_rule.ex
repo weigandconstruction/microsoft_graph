@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphMessageRule do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -21,25 +21,24 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphMessageRule do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :actions => MicrosoftGraph.Model.MessageRuleActions.t | nil,
-    :conditions => MicrosoftGraph.Model.MessageRuleConditions.t | nil,
-    :displayName => String.t | nil,
-    :exceptions => MicrosoftGraph.Model.MessageRuleExceptions.t | nil,
-    :hasError => boolean() | nil,
-    :isEnabled => boolean() | nil,
-    :isReadOnly => boolean() | nil,
-    :sequence => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :actions => MicrosoftGraph.Model.MessageRuleActions.t() | nil,
+          :conditions => MicrosoftGraph.Model.MessageRuleConditions.t() | nil,
+          :displayName => String.t() | nil,
+          :exceptions => MicrosoftGraph.Model.MessageRuleExceptions.t() | nil,
+          :hasError => boolean() | nil,
+          :isEnabled => boolean() | nil,
+          :isReadOnly => boolean() | nil,
+          :sequence => integer() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:actions, :struct, MicrosoftGraph.Model.MessageRuleActions)
-     |> Deserializer.deserialize(:conditions, :struct, MicrosoftGraph.Model.MessageRuleConditions)
-     |> Deserializer.deserialize(:exceptions, :struct, MicrosoftGraph.Model.MessageRuleExceptions)
+    |> Deserializer.deserialize(:actions, :struct, MicrosoftGraph.Model.MessageRuleActions)
+    |> Deserializer.deserialize(:conditions, :struct, MicrosoftGraph.Model.MessageRuleConditions)
+    |> Deserializer.deserialize(:exceptions, :struct, MicrosoftGraph.Model.MessageRuleExceptions)
   end
 end
-

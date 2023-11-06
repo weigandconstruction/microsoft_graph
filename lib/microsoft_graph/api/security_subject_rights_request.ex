@@ -23,8 +23,19 @@ defmodule MicrosoftGraph.Api.SecuritySubjectRightsRequest do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSubjectRightsRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_create_subject_rights_requests(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphSubjectRightsRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSubjectRightsRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_create_subject_rights_requests(connection, microsoft_graph_subject_rights_request, _opts \\ []) do
+  @spec security_create_subject_rights_requests(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphSubjectRightsRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSubjectRightsRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_create_subject_rights_requests(
+        connection,
+        microsoft_graph_subject_rights_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -56,7 +67,10 @@ defmodule MicrosoftGraph.Api.SecuritySubjectRightsRequest do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_delete_subject_rights_requests(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_delete_subject_rights_requests(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_delete_subject_rights_requests(connection, subject_rights_request_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -94,7 +108,10 @@ defmodule MicrosoftGraph.Api.SecuritySubjectRightsRequest do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSubjectRightsRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_get_subject_rights_requests(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSubjectRightsRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_get_subject_rights_requests(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSubjectRightsRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_get_subject_rights_requests(connection, subject_rights_request_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -138,7 +155,10 @@ defmodule MicrosoftGraph.Api.SecuritySubjectRightsRequest do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSubjectRightsRequestCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_list_subject_rights_requests(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSubjectRightsRequestCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec security_list_subject_rights_requests(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSubjectRightsRequestCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def security_list_subject_rights_requests(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -183,8 +203,19 @@ defmodule MicrosoftGraph.Api.SecuritySubjectRightsRequest do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_subject_rights_requests_approvers_get_count2c51(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_subject_rights_requests_approvers_get_count2c51(connection, subject_rights_request_id, opts \\ []) do
+  @spec security_subject_rights_requests_approvers_get_count2c51(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_subject_rights_requests_approvers_get_count2c51(
+        connection,
+        subject_rights_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -224,8 +255,21 @@ defmodule MicrosoftGraph.Api.SecuritySubjectRightsRequest do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_subject_rights_requests_approvers_get_mailbox_settings(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def security_subject_rights_requests_approvers_get_mailbox_settings(connection, subject_rights_request_id, user_id, opts \\ []) do
+  @spec security_subject_rights_requests_approvers_get_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def security_subject_rights_requests_approvers_get_mailbox_settings(
+        connection,
+        subject_rights_request_id,
+        user_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -234,7 +278,9 @@ defmodule MicrosoftGraph.Api.SecuritySubjectRightsRequest do
     request =
       %{}
       |> method(:get)
-      |> url("/security/subjectRightsRequests/#{subject_rights_request_id}/approvers/#{user_id}/mailboxSettings")
+      |> url(
+        "/security/subjectRightsRequests/#{subject_rights_request_id}/approvers/#{user_id}/mailboxSettings"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -270,8 +316,21 @@ defmodule MicrosoftGraph.Api.SecuritySubjectRightsRequest do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_subject_rights_requests_approvers_list_service_provisioning_errors(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_subject_rights_requests_approvers_list_service_provisioning_errors(connection, subject_rights_request_id, user_id, opts \\ []) do
+  @spec security_subject_rights_requests_approvers_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_subject_rights_requests_approvers_list_service_provisioning_errors(
+        connection,
+        subject_rights_request_id,
+        user_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -286,7 +345,9 @@ defmodule MicrosoftGraph.Api.SecuritySubjectRightsRequest do
     request =
       %{}
       |> method(:get)
-      |> url("/security/subjectRightsRequests/#{subject_rights_request_id}/approvers/#{user_id}/serviceProvisioningErrors")
+      |> url(
+        "/security/subjectRightsRequests/#{subject_rights_request_id}/approvers/#{user_id}/serviceProvisioningErrors"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -316,8 +377,21 @@ defmodule MicrosoftGraph.Api.SecuritySubjectRightsRequest do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_subject_rights_requests_approvers_service_provisioning_errors_get_count2135(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_subject_rights_requests_approvers_service_provisioning_errors_get_count2135(connection, subject_rights_request_id, user_id, opts \\ []) do
+  @spec security_subject_rights_requests_approvers_service_provisioning_errors_get_count2135(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_subject_rights_requests_approvers_service_provisioning_errors_get_count2135(
+        connection,
+        subject_rights_request_id,
+        user_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -326,7 +400,9 @@ defmodule MicrosoftGraph.Api.SecuritySubjectRightsRequest do
     request =
       %{}
       |> method(:get)
-      |> url("/security/subjectRightsRequests/#{subject_rights_request_id}/approvers/#{user_id}/serviceProvisioningErrors/$count")
+      |> url(
+        "/security/subjectRightsRequests/#{subject_rights_request_id}/approvers/#{user_id}/serviceProvisioningErrors/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -355,12 +431,29 @@ defmodule MicrosoftGraph.Api.SecuritySubjectRightsRequest do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_subject_rights_requests_approvers_update_mailbox_settings(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def security_subject_rights_requests_approvers_update_mailbox_settings(connection, subject_rights_request_id, user_id, microsoft_graph_mailbox_settings, _opts \\ []) do
+  @spec security_subject_rights_requests_approvers_update_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def security_subject_rights_requests_approvers_update_mailbox_settings(
+        connection,
+        subject_rights_request_id,
+        user_id,
+        microsoft_graph_mailbox_settings,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/security/subjectRightsRequests/#{subject_rights_request_id}/approvers/#{user_id}/mailboxSettings")
+      |> url(
+        "/security/subjectRightsRequests/#{subject_rights_request_id}/approvers/#{user_id}/mailboxSettings"
+      )
       |> add_param(:body, :body, microsoft_graph_mailbox_settings)
       |> Enum.into([])
 
@@ -389,8 +482,19 @@ defmodule MicrosoftGraph.Api.SecuritySubjectRightsRequest do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_subject_rights_requests_collaborators_get_count11c6(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_subject_rights_requests_collaborators_get_count11c6(connection, subject_rights_request_id, opts \\ []) do
+  @spec security_subject_rights_requests_collaborators_get_count11c6(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_subject_rights_requests_collaborators_get_count11c6(
+        connection,
+        subject_rights_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -430,8 +534,21 @@ defmodule MicrosoftGraph.Api.SecuritySubjectRightsRequest do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_subject_rights_requests_collaborators_get_mailbox_settings(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def security_subject_rights_requests_collaborators_get_mailbox_settings(connection, subject_rights_request_id, user_id, opts \\ []) do
+  @spec security_subject_rights_requests_collaborators_get_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def security_subject_rights_requests_collaborators_get_mailbox_settings(
+        connection,
+        subject_rights_request_id,
+        user_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -440,7 +557,9 @@ defmodule MicrosoftGraph.Api.SecuritySubjectRightsRequest do
     request =
       %{}
       |> method(:get)
-      |> url("/security/subjectRightsRequests/#{subject_rights_request_id}/collaborators/#{user_id}/mailboxSettings")
+      |> url(
+        "/security/subjectRightsRequests/#{subject_rights_request_id}/collaborators/#{user_id}/mailboxSettings"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -476,8 +595,21 @@ defmodule MicrosoftGraph.Api.SecuritySubjectRightsRequest do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_subject_rights_requests_collaborators_list_service_provisioning_errors(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_subject_rights_requests_collaborators_list_service_provisioning_errors(connection, subject_rights_request_id, user_id, opts \\ []) do
+  @spec security_subject_rights_requests_collaborators_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_subject_rights_requests_collaborators_list_service_provisioning_errors(
+        connection,
+        subject_rights_request_id,
+        user_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -492,7 +624,9 @@ defmodule MicrosoftGraph.Api.SecuritySubjectRightsRequest do
     request =
       %{}
       |> method(:get)
-      |> url("/security/subjectRightsRequests/#{subject_rights_request_id}/collaborators/#{user_id}/serviceProvisioningErrors")
+      |> url(
+        "/security/subjectRightsRequests/#{subject_rights_request_id}/collaborators/#{user_id}/serviceProvisioningErrors"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -522,8 +656,21 @@ defmodule MicrosoftGraph.Api.SecuritySubjectRightsRequest do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_subject_rights_requests_collaborators_service_provisioning_errors_get_count9d67(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_subject_rights_requests_collaborators_service_provisioning_errors_get_count9d67(connection, subject_rights_request_id, user_id, opts \\ []) do
+  @spec security_subject_rights_requests_collaborators_service_provisioning_errors_get_count9d67(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_subject_rights_requests_collaborators_service_provisioning_errors_get_count9d67(
+        connection,
+        subject_rights_request_id,
+        user_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -532,7 +679,9 @@ defmodule MicrosoftGraph.Api.SecuritySubjectRightsRequest do
     request =
       %{}
       |> method(:get)
-      |> url("/security/subjectRightsRequests/#{subject_rights_request_id}/collaborators/#{user_id}/serviceProvisioningErrors/$count")
+      |> url(
+        "/security/subjectRightsRequests/#{subject_rights_request_id}/collaborators/#{user_id}/serviceProvisioningErrors/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -561,12 +710,29 @@ defmodule MicrosoftGraph.Api.SecuritySubjectRightsRequest do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_subject_rights_requests_collaborators_update_mailbox_settings(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def security_subject_rights_requests_collaborators_update_mailbox_settings(connection, subject_rights_request_id, user_id, microsoft_graph_mailbox_settings, _opts \\ []) do
+  @spec security_subject_rights_requests_collaborators_update_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def security_subject_rights_requests_collaborators_update_mailbox_settings(
+        connection,
+        subject_rights_request_id,
+        user_id,
+        microsoft_graph_mailbox_settings,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/security/subjectRightsRequests/#{subject_rights_request_id}/collaborators/#{user_id}/mailboxSettings")
+      |> url(
+        "/security/subjectRightsRequests/#{subject_rights_request_id}/collaborators/#{user_id}/mailboxSettings"
+      )
       |> add_param(:body, :body, microsoft_graph_mailbox_settings)
       |> Enum.into([])
 
@@ -595,8 +761,21 @@ defmodule MicrosoftGraph.Api.SecuritySubjectRightsRequest do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAuthoredNote.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_subject_rights_requests_create_notes(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphAuthoredNote.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthoredNote.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_subject_rights_requests_create_notes(connection, subject_rights_request_id, microsoft_graph_authored_note, _opts \\ []) do
+  @spec security_subject_rights_requests_create_notes(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAuthoredNote.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthoredNote.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_subject_rights_requests_create_notes(
+        connection,
+        subject_rights_request_id,
+        microsoft_graph_authored_note,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -629,8 +808,21 @@ defmodule MicrosoftGraph.Api.SecuritySubjectRightsRequest do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_subject_rights_requests_delete_notes(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_subject_rights_requests_delete_notes(connection, subject_rights_request_id, authored_note_id, opts \\ []) do
+  @spec security_subject_rights_requests_delete_notes(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_subject_rights_requests_delete_notes(
+        connection,
+        subject_rights_request_id,
+        authored_note_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -638,7 +830,9 @@ defmodule MicrosoftGraph.Api.SecuritySubjectRightsRequest do
     request =
       %{}
       |> method(:delete)
-      |> url("/security/subjectRightsRequests/#{subject_rights_request_id}/notes/#{authored_note_id}")
+      |> url(
+        "/security/subjectRightsRequests/#{subject_rights_request_id}/notes/#{authored_note_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -669,8 +863,21 @@ defmodule MicrosoftGraph.Api.SecuritySubjectRightsRequest do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_subject_rights_requests_get_approvers(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_subject_rights_requests_get_approvers(connection, subject_rights_request_id, user_id, opts \\ []) do
+  @spec security_subject_rights_requests_get_approvers(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_subject_rights_requests_get_approvers(
+        connection,
+        subject_rights_request_id,
+        user_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -710,8 +917,21 @@ defmodule MicrosoftGraph.Api.SecuritySubjectRightsRequest do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_subject_rights_requests_get_collaborators(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_subject_rights_requests_get_collaborators(connection, subject_rights_request_id, user_id, opts \\ []) do
+  @spec security_subject_rights_requests_get_collaborators(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_subject_rights_requests_get_collaborators(
+        connection,
+        subject_rights_request_id,
+        user_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -720,7 +940,9 @@ defmodule MicrosoftGraph.Api.SecuritySubjectRightsRequest do
     request =
       %{}
       |> method(:get)
-      |> url("/security/subjectRightsRequests/#{subject_rights_request_id}/collaborators/#{user_id}")
+      |> url(
+        "/security/subjectRightsRequests/#{subject_rights_request_id}/collaborators/#{user_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -748,7 +970,10 @@ defmodule MicrosoftGraph.Api.SecuritySubjectRightsRequest do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_subject_rights_requests_get_count8072(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_subject_rights_requests_get_count8072(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_subject_rights_requests_get_count8072(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -789,8 +1014,21 @@ defmodule MicrosoftGraph.Api.SecuritySubjectRightsRequest do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAuthoredNote.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_subject_rights_requests_get_notes(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthoredNote.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_subject_rights_requests_get_notes(connection, subject_rights_request_id, authored_note_id, opts \\ []) do
+  @spec security_subject_rights_requests_get_notes(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthoredNote.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_subject_rights_requests_get_notes(
+        connection,
+        subject_rights_request_id,
+        authored_note_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -799,7 +1037,9 @@ defmodule MicrosoftGraph.Api.SecuritySubjectRightsRequest do
     request =
       %{}
       |> method(:get)
-      |> url("/security/subjectRightsRequests/#{subject_rights_request_id}/notes/#{authored_note_id}")
+      |> url(
+        "/security/subjectRightsRequests/#{subject_rights_request_id}/notes/#{authored_note_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -829,7 +1069,10 @@ defmodule MicrosoftGraph.Api.SecuritySubjectRightsRequest do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeam.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_subject_rights_requests_get_team(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeam.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_subject_rights_requests_get_team(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeam.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_subject_rights_requests_get_team(connection, subject_rights_request_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -875,8 +1118,15 @@ defmodule MicrosoftGraph.Api.SecuritySubjectRightsRequest do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_subject_rights_requests_list_approvers(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUserCollectionResponse.t} | {:error, Tesla.Env.t}
-  def security_subject_rights_requests_list_approvers(connection, subject_rights_request_id, opts \\ []) do
+  @spec security_subject_rights_requests_list_approvers(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUserCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def security_subject_rights_requests_list_approvers(
+        connection,
+        subject_rights_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -927,8 +1177,19 @@ defmodule MicrosoftGraph.Api.SecuritySubjectRightsRequest do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_subject_rights_requests_list_collaborators(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUserCollectionResponse.t} | {:error, Tesla.Env.t}
-  def security_subject_rights_requests_list_collaborators(connection, subject_rights_request_id, opts \\ []) do
+  @spec security_subject_rights_requests_list_collaborators(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUserCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def security_subject_rights_requests_list_collaborators(
+        connection,
+        subject_rights_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -979,8 +1240,15 @@ defmodule MicrosoftGraph.Api.SecuritySubjectRightsRequest do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAuthoredNoteCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_subject_rights_requests_list_notes(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthoredNoteCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_subject_rights_requests_list_notes(connection, subject_rights_request_id, opts \\ []) do
+  @spec security_subject_rights_requests_list_notes(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthoredNoteCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_subject_rights_requests_list_notes(
+        connection,
+        subject_rights_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1024,8 +1292,19 @@ defmodule MicrosoftGraph.Api.SecuritySubjectRightsRequest do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_subject_rights_requests_notes_get_count_d132(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_subject_rights_requests_notes_get_count_d132(connection, subject_rights_request_id, opts \\ []) do
+  @spec security_subject_rights_requests_notes_get_count_d132(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_subject_rights_requests_notes_get_count_d132(
+        connection,
+        subject_rights_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1063,12 +1342,29 @@ defmodule MicrosoftGraph.Api.SecuritySubjectRightsRequest do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAuthoredNote.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_subject_rights_requests_update_notes(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphAuthoredNote.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthoredNote.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_subject_rights_requests_update_notes(connection, subject_rights_request_id, authored_note_id, microsoft_graph_authored_note, _opts \\ []) do
+  @spec security_subject_rights_requests_update_notes(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAuthoredNote.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthoredNote.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_subject_rights_requests_update_notes(
+        connection,
+        subject_rights_request_id,
+        authored_note_id,
+        microsoft_graph_authored_note,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/security/subjectRightsRequests/#{subject_rights_request_id}/notes/#{authored_note_id}")
+      |> url(
+        "/security/subjectRightsRequests/#{subject_rights_request_id}/notes/#{authored_note_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_authored_note)
       |> Enum.into([])
 
@@ -1096,8 +1392,21 @@ defmodule MicrosoftGraph.Api.SecuritySubjectRightsRequest do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSubjectRightsRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_update_subject_rights_requests(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphSubjectRightsRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSubjectRightsRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_update_subject_rights_requests(connection, subject_rights_request_id, microsoft_graph_subject_rights_request, _opts \\ []) do
+  @spec security_update_subject_rights_requests(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSubjectRightsRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSubjectRightsRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_update_subject_rights_requests(
+        connection,
+        subject_rights_request_id,
+        microsoft_graph_subject_rights_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

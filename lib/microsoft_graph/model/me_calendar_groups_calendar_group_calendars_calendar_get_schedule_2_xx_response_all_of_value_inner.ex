@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarGetSchedule2XxResponseAllOfValueInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,21 +17,34 @@ defmodule MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarGet
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :availabilityView => String.t | nil,
-    :error => MicrosoftGraph.Model.MicrosoftGraphScheduleInformationError.t | nil,
-    :scheduleId => String.t | nil,
-    :scheduleItems => [MicrosoftGraph.Model.MicrosoftGraphScheduleInformationScheduleItemsInner.t] | nil,
-    :workingHours => MicrosoftGraph.Model.MicrosoftGraphScheduleInformationWorkingHours.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :availabilityView => String.t() | nil,
+          :error => MicrosoftGraph.Model.MicrosoftGraphScheduleInformationError.t() | nil,
+          :scheduleId => String.t() | nil,
+          :scheduleItems =>
+            [MicrosoftGraph.Model.MicrosoftGraphScheduleInformationScheduleItemsInner.t()] | nil,
+          :workingHours =>
+            MicrosoftGraph.Model.MicrosoftGraphScheduleInformationWorkingHours.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:error, :struct, MicrosoftGraph.Model.MicrosoftGraphScheduleInformationError)
-     |> Deserializer.deserialize(:scheduleItems, :list, MicrosoftGraph.Model.MicrosoftGraphScheduleInformationScheduleItemsInner)
-     |> Deserializer.deserialize(:workingHours, :struct, MicrosoftGraph.Model.MicrosoftGraphScheduleInformationWorkingHours)
+    |> Deserializer.deserialize(
+      :error,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphScheduleInformationError
+    )
+    |> Deserializer.deserialize(
+      :scheduleItems,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphScheduleInformationScheduleItemsInner
+    )
+    |> Deserializer.deserialize(
+      :workingHours,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphScheduleInformationWorkingHours
+    )
   end
 end
-

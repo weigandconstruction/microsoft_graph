@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.BookingBusinessBusinessHoursInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,17 +14,21 @@ defmodule MicrosoftGraph.Model.BookingBusinessBusinessHoursInner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :day => MicrosoftGraph.Model.MicrosoftGraphDayOfWeek.t | nil,
-    :timeSlots => [MicrosoftGraph.Model.MicrosoftGraphBookingWorkHoursTimeSlotsInner.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :day => MicrosoftGraph.Model.MicrosoftGraphDayOfWeek.t() | nil,
+          :timeSlots =>
+            [MicrosoftGraph.Model.MicrosoftGraphBookingWorkHoursTimeSlotsInner.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:day, :struct, MicrosoftGraph.Model.MicrosoftGraphDayOfWeek)
-     |> Deserializer.deserialize(:timeSlots, :list, MicrosoftGraph.Model.MicrosoftGraphBookingWorkHoursTimeSlotsInner)
+    |> Deserializer.deserialize(:day, :struct, MicrosoftGraph.Model.MicrosoftGraphDayOfWeek)
+    |> Deserializer.deserialize(
+      :timeSlots,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphBookingWorkHoursTimeSlotsInner
+    )
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAutomaticRepliesSetting do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,23 +18,43 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAutomaticRepliesSetting do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :externalAudience => MicrosoftGraph.Model.MicrosoftGraphAutomaticRepliesSettingExternalAudience.t | nil,
-    :externalReplyMessage => String.t | nil,
-    :internalReplyMessage => String.t | nil,
-    :scheduledEndDateTime => MicrosoftGraph.Model.MicrosoftGraphAutomaticRepliesSettingScheduledEndDateTime.t | nil,
-    :scheduledStartDateTime => MicrosoftGraph.Model.MicrosoftGraphAutomaticRepliesSettingScheduledStartDateTime.t | nil,
-    :status => MicrosoftGraph.Model.MicrosoftGraphAutomaticRepliesSettingStatus.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :externalAudience =>
+            MicrosoftGraph.Model.MicrosoftGraphAutomaticRepliesSettingExternalAudience.t() | nil,
+          :externalReplyMessage => String.t() | nil,
+          :internalReplyMessage => String.t() | nil,
+          :scheduledEndDateTime =>
+            MicrosoftGraph.Model.MicrosoftGraphAutomaticRepliesSettingScheduledEndDateTime.t()
+            | nil,
+          :scheduledStartDateTime =>
+            MicrosoftGraph.Model.MicrosoftGraphAutomaticRepliesSettingScheduledStartDateTime.t()
+            | nil,
+          :status => MicrosoftGraph.Model.MicrosoftGraphAutomaticRepliesSettingStatus.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:externalAudience, :struct, MicrosoftGraph.Model.MicrosoftGraphAutomaticRepliesSettingExternalAudience)
-     |> Deserializer.deserialize(:scheduledEndDateTime, :struct, MicrosoftGraph.Model.MicrosoftGraphAutomaticRepliesSettingScheduledEndDateTime)
-     |> Deserializer.deserialize(:scheduledStartDateTime, :struct, MicrosoftGraph.Model.MicrosoftGraphAutomaticRepliesSettingScheduledStartDateTime)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.MicrosoftGraphAutomaticRepliesSettingStatus)
+    |> Deserializer.deserialize(
+      :externalAudience,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAutomaticRepliesSettingExternalAudience
+    )
+    |> Deserializer.deserialize(
+      :scheduledEndDateTime,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAutomaticRepliesSettingScheduledEndDateTime
+    )
+    |> Deserializer.deserialize(
+      :scheduledStartDateTime,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAutomaticRepliesSettingScheduledStartDateTime
+    )
+    |> Deserializer.deserialize(
+      :status,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAutomaticRepliesSettingStatus
+    )
   end
 end
-

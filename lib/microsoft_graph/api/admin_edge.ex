@@ -23,7 +23,10 @@ defmodule MicrosoftGraph.Api.AdminEdge do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_delete_edge(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec admin_delete_edge(Tesla.Env.client(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def admin_delete_edge(connection, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -59,7 +62,10 @@ defmodule MicrosoftGraph.Api.AdminEdge do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_edge_delete_internet_explorer_mode(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec admin_edge_delete_internet_explorer_mode(Tesla.Env.client(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def admin_edge_delete_internet_explorer_mode(connection, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -97,7 +103,10 @@ defmodule MicrosoftGraph.Api.AdminEdge do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphInternetExplorerMode.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_edge_get_internet_explorer_mode(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphInternetExplorerMode.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec admin_edge_get_internet_explorer_mode(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphInternetExplorerMode.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def admin_edge_get_internet_explorer_mode(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -135,8 +144,19 @@ defmodule MicrosoftGraph.Api.AdminEdge do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBrowserSiteList.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_edge_internet_explorer_mode_create_site_lists(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphBrowserSiteList.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphBrowserSiteList.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def admin_edge_internet_explorer_mode_create_site_lists(connection, microsoft_graph_browser_site_list, _opts \\ []) do
+  @spec admin_edge_internet_explorer_mode_create_site_lists(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphBrowserSiteList.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphBrowserSiteList.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_edge_internet_explorer_mode_create_site_lists(
+        connection,
+        microsoft_graph_browser_site_list,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -169,8 +189,19 @@ defmodule MicrosoftGraph.Api.AdminEdge do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_edge_internet_explorer_mode_delete_site_lists(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def admin_edge_internet_explorer_mode_delete_site_lists(connection, browser_site_list_id, opts \\ []) do
+  @spec admin_edge_internet_explorer_mode_delete_site_lists(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_edge_internet_explorer_mode_delete_site_lists(
+        connection,
+        browser_site_list_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -208,8 +239,19 @@ defmodule MicrosoftGraph.Api.AdminEdge do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBrowserSiteList.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_edge_internet_explorer_mode_get_site_lists(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphBrowserSiteList.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def admin_edge_internet_explorer_mode_get_site_lists(connection, browser_site_list_id, opts \\ []) do
+  @spec admin_edge_internet_explorer_mode_get_site_lists(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphBrowserSiteList.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_edge_internet_explorer_mode_get_site_lists(
+        connection,
+        browser_site_list_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -253,7 +295,10 @@ defmodule MicrosoftGraph.Api.AdminEdge do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBrowserSiteListCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_edge_internet_explorer_mode_list_site_lists(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphBrowserSiteListCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec admin_edge_internet_explorer_mode_list_site_lists(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphBrowserSiteListCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def admin_edge_internet_explorer_mode_list_site_lists(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -298,8 +343,21 @@ defmodule MicrosoftGraph.Api.AdminEdge do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBrowserSharedCookie.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_edge_internet_explorer_mode_site_lists_create_shared_cookies(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphBrowserSharedCookie.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphBrowserSharedCookie.t} | {:error, Tesla.Env.t}
-  def admin_edge_internet_explorer_mode_site_lists_create_shared_cookies(connection, browser_site_list_id, microsoft_graph_browser_shared_cookie, _opts \\ []) do
+  @spec admin_edge_internet_explorer_mode_site_lists_create_shared_cookies(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphBrowserSharedCookie.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphBrowserSharedCookie.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_edge_internet_explorer_mode_site_lists_create_shared_cookies(
+        connection,
+        browser_site_list_id,
+        microsoft_graph_browser_shared_cookie,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -332,8 +390,21 @@ defmodule MicrosoftGraph.Api.AdminEdge do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBrowserSite.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_edge_internet_explorer_mode_site_lists_create_sites(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphBrowserSite.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphBrowserSite.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def admin_edge_internet_explorer_mode_site_lists_create_sites(connection, browser_site_list_id, microsoft_graph_browser_site, _opts \\ []) do
+  @spec admin_edge_internet_explorer_mode_site_lists_create_sites(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphBrowserSite.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphBrowserSite.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_edge_internet_explorer_mode_site_lists_create_sites(
+        connection,
+        browser_site_list_id,
+        microsoft_graph_browser_site,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -367,8 +438,21 @@ defmodule MicrosoftGraph.Api.AdminEdge do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_edge_internet_explorer_mode_site_lists_delete_shared_cookies(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def admin_edge_internet_explorer_mode_site_lists_delete_shared_cookies(connection, browser_site_list_id, browser_shared_cookie_id, opts \\ []) do
+  @spec admin_edge_internet_explorer_mode_site_lists_delete_shared_cookies(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_edge_internet_explorer_mode_site_lists_delete_shared_cookies(
+        connection,
+        browser_site_list_id,
+        browser_shared_cookie_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -376,7 +460,9 @@ defmodule MicrosoftGraph.Api.AdminEdge do
     request =
       %{}
       |> method(:delete)
-      |> url("/admin/edge/internetExplorerMode/siteLists/#{browser_site_list_id}/sharedCookies/#{browser_shared_cookie_id}")
+      |> url(
+        "/admin/edge/internetExplorerMode/siteLists/#{browser_site_list_id}/sharedCookies/#{browser_shared_cookie_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -406,8 +492,21 @@ defmodule MicrosoftGraph.Api.AdminEdge do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_edge_internet_explorer_mode_site_lists_delete_sites(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def admin_edge_internet_explorer_mode_site_lists_delete_sites(connection, browser_site_list_id, browser_site_id, opts \\ []) do
+  @spec admin_edge_internet_explorer_mode_site_lists_delete_sites(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_edge_internet_explorer_mode_site_lists_delete_sites(
+        connection,
+        browser_site_list_id,
+        browser_site_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -415,7 +514,9 @@ defmodule MicrosoftGraph.Api.AdminEdge do
     request =
       %{}
       |> method(:delete)
-      |> url("/admin/edge/internetExplorerMode/siteLists/#{browser_site_list_id}/sites/#{browser_site_id}")
+      |> url(
+        "/admin/edge/internetExplorerMode/siteLists/#{browser_site_list_id}/sites/#{browser_site_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -443,7 +544,10 @@ defmodule MicrosoftGraph.Api.AdminEdge do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_edge_internet_explorer_mode_site_lists_get_count_d3d6(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec admin_edge_internet_explorer_mode_site_lists_get_count_d3d6(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def admin_edge_internet_explorer_mode_site_lists_get_count_d3d6(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -484,8 +588,21 @@ defmodule MicrosoftGraph.Api.AdminEdge do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBrowserSharedCookie.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_edge_internet_explorer_mode_site_lists_get_shared_cookies(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphBrowserSharedCookie.t} | {:error, Tesla.Env.t}
-  def admin_edge_internet_explorer_mode_site_lists_get_shared_cookies(connection, browser_site_list_id, browser_shared_cookie_id, opts \\ []) do
+  @spec admin_edge_internet_explorer_mode_site_lists_get_shared_cookies(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphBrowserSharedCookie.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_edge_internet_explorer_mode_site_lists_get_shared_cookies(
+        connection,
+        browser_site_list_id,
+        browser_shared_cookie_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -494,7 +611,9 @@ defmodule MicrosoftGraph.Api.AdminEdge do
     request =
       %{}
       |> method(:get)
-      |> url("/admin/edge/internetExplorerMode/siteLists/#{browser_site_list_id}/sharedCookies/#{browser_shared_cookie_id}")
+      |> url(
+        "/admin/edge/internetExplorerMode/siteLists/#{browser_site_list_id}/sharedCookies/#{browser_shared_cookie_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -525,8 +644,21 @@ defmodule MicrosoftGraph.Api.AdminEdge do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBrowserSite.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_edge_internet_explorer_mode_site_lists_get_sites(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphBrowserSite.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def admin_edge_internet_explorer_mode_site_lists_get_sites(connection, browser_site_list_id, browser_site_id, opts \\ []) do
+  @spec admin_edge_internet_explorer_mode_site_lists_get_sites(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphBrowserSite.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_edge_internet_explorer_mode_site_lists_get_sites(
+        connection,
+        browser_site_list_id,
+        browser_site_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -535,7 +667,9 @@ defmodule MicrosoftGraph.Api.AdminEdge do
     request =
       %{}
       |> method(:get)
-      |> url("/admin/edge/internetExplorerMode/siteLists/#{browser_site_list_id}/sites/#{browser_site_id}")
+      |> url(
+        "/admin/edge/internetExplorerMode/siteLists/#{browser_site_list_id}/sites/#{browser_site_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -571,8 +705,19 @@ defmodule MicrosoftGraph.Api.AdminEdge do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBrowserSharedCookieCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_edge_internet_explorer_mode_site_lists_list_shared_cookies(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphBrowserSharedCookieCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def admin_edge_internet_explorer_mode_site_lists_list_shared_cookies(connection, browser_site_list_id, opts \\ []) do
+  @spec admin_edge_internet_explorer_mode_site_lists_list_shared_cookies(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphBrowserSharedCookieCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_edge_internet_explorer_mode_site_lists_list_shared_cookies(
+        connection,
+        browser_site_list_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -623,8 +768,19 @@ defmodule MicrosoftGraph.Api.AdminEdge do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBrowserSiteCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_edge_internet_explorer_mode_site_lists_list_sites(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphBrowserSiteCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def admin_edge_internet_explorer_mode_site_lists_list_sites(connection, browser_site_list_id, opts \\ []) do
+  @spec admin_edge_internet_explorer_mode_site_lists_list_sites(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphBrowserSiteCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_edge_internet_explorer_mode_site_lists_list_sites(
+        connection,
+        browser_site_list_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -668,8 +824,19 @@ defmodule MicrosoftGraph.Api.AdminEdge do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_edge_internet_explorer_mode_site_lists_shared_cookies_get_count0de2(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def admin_edge_internet_explorer_mode_site_lists_shared_cookies_get_count0de2(connection, browser_site_list_id, opts \\ []) do
+  @spec admin_edge_internet_explorer_mode_site_lists_shared_cookies_get_count0de2(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_edge_internet_explorer_mode_site_lists_shared_cookies_get_count0de2(
+        connection,
+        browser_site_list_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -678,7 +845,9 @@ defmodule MicrosoftGraph.Api.AdminEdge do
     request =
       %{}
       |> method(:get)
-      |> url("/admin/edge/internetExplorerMode/siteLists/#{browser_site_list_id}/sharedCookies/$count")
+      |> url(
+        "/admin/edge/internetExplorerMode/siteLists/#{browser_site_list_id}/sharedCookies/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -707,8 +876,19 @@ defmodule MicrosoftGraph.Api.AdminEdge do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_edge_internet_explorer_mode_site_lists_sites_get_count_da97(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def admin_edge_internet_explorer_mode_site_lists_sites_get_count_da97(connection, browser_site_list_id, opts \\ []) do
+  @spec admin_edge_internet_explorer_mode_site_lists_sites_get_count_da97(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_edge_internet_explorer_mode_site_lists_sites_get_count_da97(
+        connection,
+        browser_site_list_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -747,12 +927,29 @@ defmodule MicrosoftGraph.Api.AdminEdge do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBrowserSharedCookie.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_edge_internet_explorer_mode_site_lists_update_shared_cookies(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphBrowserSharedCookie.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphBrowserSharedCookie.t} | {:error, Tesla.Env.t}
-  def admin_edge_internet_explorer_mode_site_lists_update_shared_cookies(connection, browser_site_list_id, browser_shared_cookie_id, microsoft_graph_browser_shared_cookie, _opts \\ []) do
+  @spec admin_edge_internet_explorer_mode_site_lists_update_shared_cookies(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphBrowserSharedCookie.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphBrowserSharedCookie.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_edge_internet_explorer_mode_site_lists_update_shared_cookies(
+        connection,
+        browser_site_list_id,
+        browser_shared_cookie_id,
+        microsoft_graph_browser_shared_cookie,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/admin/edge/internetExplorerMode/siteLists/#{browser_site_list_id}/sharedCookies/#{browser_shared_cookie_id}")
+      |> url(
+        "/admin/edge/internetExplorerMode/siteLists/#{browser_site_list_id}/sharedCookies/#{browser_shared_cookie_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_browser_shared_cookie)
       |> Enum.into([])
 
@@ -782,12 +979,29 @@ defmodule MicrosoftGraph.Api.AdminEdge do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBrowserSite.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_edge_internet_explorer_mode_site_lists_update_sites(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphBrowserSite.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphBrowserSite.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def admin_edge_internet_explorer_mode_site_lists_update_sites(connection, browser_site_list_id, browser_site_id, microsoft_graph_browser_site, _opts \\ []) do
+  @spec admin_edge_internet_explorer_mode_site_lists_update_sites(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphBrowserSite.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphBrowserSite.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_edge_internet_explorer_mode_site_lists_update_sites(
+        connection,
+        browser_site_list_id,
+        browser_site_id,
+        microsoft_graph_browser_site,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/admin/edge/internetExplorerMode/siteLists/#{browser_site_list_id}/sites/#{browser_site_id}")
+      |> url(
+        "/admin/edge/internetExplorerMode/siteLists/#{browser_site_list_id}/sites/#{browser_site_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_browser_site)
       |> Enum.into([])
 
@@ -816,8 +1030,21 @@ defmodule MicrosoftGraph.Api.AdminEdge do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBrowserSiteList.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_edge_internet_explorer_mode_update_site_lists(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphBrowserSiteList.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphBrowserSiteList.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def admin_edge_internet_explorer_mode_update_site_lists(connection, browser_site_list_id, microsoft_graph_browser_site_list, _opts \\ []) do
+  @spec admin_edge_internet_explorer_mode_update_site_lists(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphBrowserSiteList.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphBrowserSiteList.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_edge_internet_explorer_mode_update_site_lists(
+        connection,
+        browser_site_list_id,
+        microsoft_graph_browser_site_list,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -848,8 +1075,19 @@ defmodule MicrosoftGraph.Api.AdminEdge do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphInternetExplorerMode.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_edge_update_internet_explorer_mode(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphInternetExplorerMode.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphInternetExplorerMode.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def admin_edge_update_internet_explorer_mode(connection, microsoft_graph_internet_explorer_mode, _opts \\ []) do
+  @spec admin_edge_update_internet_explorer_mode(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphInternetExplorerMode.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphInternetExplorerMode.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_edge_update_internet_explorer_mode(
+        connection,
+        microsoft_graph_internet_explorer_mode,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -882,7 +1120,10 @@ defmodule MicrosoftGraph.Api.AdminEdge do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEdge.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_get_edge(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEdge.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec admin_get_edge(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEdge.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def admin_get_edge(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -919,7 +1160,14 @@ defmodule MicrosoftGraph.Api.AdminEdge do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEdge.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_update_edge(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphEdge.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEdge.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec admin_update_edge(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphEdge.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEdge.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def admin_update_edge(connection, microsoft_graph_edge, _opts \\ []) do
     request =
       %{}

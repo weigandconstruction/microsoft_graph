@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.EducationClassAssignmentSettings do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :submissionAnimationDisabled => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :submissionAnimationDisabled => boolean() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

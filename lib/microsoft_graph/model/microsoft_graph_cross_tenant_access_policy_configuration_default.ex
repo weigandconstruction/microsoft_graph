@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyConfigurationDefault do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -20,27 +20,61 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyConfiguratio
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :automaticUserConsentSettings => MicrosoftGraph.Model.CrossTenantAccessPolicyConfigurationDefaultAutomaticUserConsentSettings.t | nil,
-    :b2bCollaborationInbound => MicrosoftGraph.Model.CrossTenantAccessPolicyConfigurationDefaultB2bCollaborationInbound.t | nil,
-    :b2bCollaborationOutbound => MicrosoftGraph.Model.CrossTenantAccessPolicyConfigurationDefaultB2bCollaborationOutbound.t | nil,
-    :b2bDirectConnectInbound => MicrosoftGraph.Model.CrossTenantAccessPolicyConfigurationDefaultB2bDirectConnectInbound.t | nil,
-    :b2bDirectConnectOutbound => MicrosoftGraph.Model.CrossTenantAccessPolicyConfigurationDefaultB2bDirectConnectOutbound.t | nil,
-    :inboundTrust => MicrosoftGraph.Model.CrossTenantAccessPolicyConfigurationDefaultInboundTrust.t | nil,
-    :isServiceDefault => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :automaticUserConsentSettings =>
+            MicrosoftGraph.Model.CrossTenantAccessPolicyConfigurationDefaultAutomaticUserConsentSettings.t()
+            | nil,
+          :b2bCollaborationInbound =>
+            MicrosoftGraph.Model.CrossTenantAccessPolicyConfigurationDefaultB2bCollaborationInbound.t()
+            | nil,
+          :b2bCollaborationOutbound =>
+            MicrosoftGraph.Model.CrossTenantAccessPolicyConfigurationDefaultB2bCollaborationOutbound.t()
+            | nil,
+          :b2bDirectConnectInbound =>
+            MicrosoftGraph.Model.CrossTenantAccessPolicyConfigurationDefaultB2bDirectConnectInbound.t()
+            | nil,
+          :b2bDirectConnectOutbound =>
+            MicrosoftGraph.Model.CrossTenantAccessPolicyConfigurationDefaultB2bDirectConnectOutbound.t()
+            | nil,
+          :inboundTrust =>
+            MicrosoftGraph.Model.CrossTenantAccessPolicyConfigurationDefaultInboundTrust.t() | nil,
+          :isServiceDefault => boolean() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:automaticUserConsentSettings, :struct, MicrosoftGraph.Model.CrossTenantAccessPolicyConfigurationDefaultAutomaticUserConsentSettings)
-     |> Deserializer.deserialize(:b2bCollaborationInbound, :struct, MicrosoftGraph.Model.CrossTenantAccessPolicyConfigurationDefaultB2bCollaborationInbound)
-     |> Deserializer.deserialize(:b2bCollaborationOutbound, :struct, MicrosoftGraph.Model.CrossTenantAccessPolicyConfigurationDefaultB2bCollaborationOutbound)
-     |> Deserializer.deserialize(:b2bDirectConnectInbound, :struct, MicrosoftGraph.Model.CrossTenantAccessPolicyConfigurationDefaultB2bDirectConnectInbound)
-     |> Deserializer.deserialize(:b2bDirectConnectOutbound, :struct, MicrosoftGraph.Model.CrossTenantAccessPolicyConfigurationDefaultB2bDirectConnectOutbound)
-     |> Deserializer.deserialize(:inboundTrust, :struct, MicrosoftGraph.Model.CrossTenantAccessPolicyConfigurationDefaultInboundTrust)
+    |> Deserializer.deserialize(
+      :automaticUserConsentSettings,
+      :struct,
+      MicrosoftGraph.Model.CrossTenantAccessPolicyConfigurationDefaultAutomaticUserConsentSettings
+    )
+    |> Deserializer.deserialize(
+      :b2bCollaborationInbound,
+      :struct,
+      MicrosoftGraph.Model.CrossTenantAccessPolicyConfigurationDefaultB2bCollaborationInbound
+    )
+    |> Deserializer.deserialize(
+      :b2bCollaborationOutbound,
+      :struct,
+      MicrosoftGraph.Model.CrossTenantAccessPolicyConfigurationDefaultB2bCollaborationOutbound
+    )
+    |> Deserializer.deserialize(
+      :b2bDirectConnectInbound,
+      :struct,
+      MicrosoftGraph.Model.CrossTenantAccessPolicyConfigurationDefaultB2bDirectConnectInbound
+    )
+    |> Deserializer.deserialize(
+      :b2bDirectConnectOutbound,
+      :struct,
+      MicrosoftGraph.Model.CrossTenantAccessPolicyConfigurationDefaultB2bDirectConnectOutbound
+    )
+    |> Deserializer.deserialize(
+      :inboundTrust,
+      :struct,
+      MicrosoftGraph.Model.CrossTenantAccessPolicyConfigurationDefaultInboundTrust
+    )
   end
 end
-

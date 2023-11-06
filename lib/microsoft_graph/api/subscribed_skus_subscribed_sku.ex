@@ -23,8 +23,19 @@ defmodule MicrosoftGraph.Api.SubscribedSkusSubscribedSku do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSubscribedSku.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec subscribed_skus_subscribed_sku_create_subscribed_sku(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphSubscribedSku.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSubscribedSku.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def subscribed_skus_subscribed_sku_create_subscribed_sku(connection, microsoft_graph_subscribed_sku, _opts \\ []) do
+  @spec subscribed_skus_subscribed_sku_create_subscribed_sku(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphSubscribedSku.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSubscribedSku.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def subscribed_skus_subscribed_sku_create_subscribed_sku(
+        connection,
+        microsoft_graph_subscribed_sku,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -56,8 +67,19 @@ defmodule MicrosoftGraph.Api.SubscribedSkusSubscribedSku do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec subscribed_skus_subscribed_sku_delete_subscribed_sku(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def subscribed_skus_subscribed_sku_delete_subscribed_sku(connection, subscribed_sku_id, opts \\ []) do
+  @spec subscribed_skus_subscribed_sku_delete_subscribed_sku(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def subscribed_skus_subscribed_sku_delete_subscribed_sku(
+        connection,
+        subscribed_sku_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -94,7 +116,14 @@ defmodule MicrosoftGraph.Api.SubscribedSkusSubscribedSku do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSubscribedSku.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec subscribed_skus_subscribed_sku_get_subscribed_sku(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSubscribedSku.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec subscribed_skus_subscribed_sku_get_subscribed_sku(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSubscribedSku.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def subscribed_skus_subscribed_sku_get_subscribed_sku(connection, subscribed_sku_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query
@@ -133,7 +162,10 @@ defmodule MicrosoftGraph.Api.SubscribedSkusSubscribedSku do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSubscribedSkuCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec subscribed_skus_subscribed_sku_list_subscribed_sku(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSubscribedSkuCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec subscribed_skus_subscribed_sku_list_subscribed_sku(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSubscribedSkuCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def subscribed_skus_subscribed_sku_list_subscribed_sku(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -172,8 +204,21 @@ defmodule MicrosoftGraph.Api.SubscribedSkusSubscribedSku do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSubscribedSku.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec subscribed_skus_subscribed_sku_update_subscribed_sku(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphSubscribedSku.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSubscribedSku.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def subscribed_skus_subscribed_sku_update_subscribed_sku(connection, subscribed_sku_id, microsoft_graph_subscribed_sku, _opts \\ []) do
+  @spec subscribed_skus_subscribed_sku_update_subscribed_sku(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSubscribedSku.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSubscribedSku.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def subscribed_skus_subscribed_sku_update_subscribed_sku(
+        connection,
+        subscribed_sku_id,
+        microsoft_graph_subscribed_sku,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

@@ -19,24 +19,31 @@ defmodule MicrosoftGraph.Model.RetentionEventRetentionEventType do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :createdBy => MicrosoftGraph.Model.RetentionEventTypeCreatedBy.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :lastModifiedBy => MicrosoftGraph.Model.RetentionEventTypeLastModifiedBy.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :createdBy => MicrosoftGraph.Model.RetentionEventTypeCreatedBy.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :lastModifiedBy => MicrosoftGraph.Model.RetentionEventTypeLastModifiedBy.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.RetentionEventTypeCreatedBy)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastModifiedBy, :struct, MicrosoftGraph.Model.RetentionEventTypeLastModifiedBy)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :createdBy,
+      :struct,
+      MicrosoftGraph.Model.RetentionEventTypeCreatedBy
+    )
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :lastModifiedBy,
+      :struct,
+      MicrosoftGraph.Model.RetentionEventTypeLastModifiedBy
+    )
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
   end
 end
-

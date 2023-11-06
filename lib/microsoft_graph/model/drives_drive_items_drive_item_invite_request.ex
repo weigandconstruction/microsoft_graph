@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemInviteRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,21 +19,24 @@ defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemInviteRequest do
   ]
 
   @type t :: %__MODULE__{
-    :expirationDateTime => String.t | nil,
-    :message => String.t | nil,
-    :password => String.t | nil,
-    :recipients => [MicrosoftGraph.Model.MicrosoftGraphDriveRecipient.t] | nil,
-    :requireSignIn => boolean() | nil,
-    :retainInheritedPermissions => boolean() | nil,
-    :roles => [String.t] | nil,
-    :sendInvitation => boolean() | nil
-  }
+          :expirationDateTime => String.t() | nil,
+          :message => String.t() | nil,
+          :password => String.t() | nil,
+          :recipients => [MicrosoftGraph.Model.MicrosoftGraphDriveRecipient.t()] | nil,
+          :requireSignIn => boolean() | nil,
+          :retainInheritedPermissions => boolean() | nil,
+          :roles => [String.t()] | nil,
+          :sendInvitation => boolean() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:recipients, :list, MicrosoftGraph.Model.MicrosoftGraphDriveRecipient)
+    |> Deserializer.deserialize(
+      :recipients,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDriveRecipient
+    )
   end
 end
-

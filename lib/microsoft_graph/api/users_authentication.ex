@@ -25,8 +25,21 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEmailAuthenticationMethod.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_create_email_methods(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphEmailAuthenticationMethod.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEmailAuthenticationMethod.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_authentication_create_email_methods(connection, user_id, microsoft_graph_email_authentication_method, _opts \\ []) do
+  @spec users_authentication_create_email_methods(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphEmailAuthenticationMethod.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEmailAuthenticationMethod.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_authentication_create_email_methods(
+        connection,
+        user_id,
+        microsoft_graph_email_authentication_method,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -58,8 +71,21 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethod.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_create_methods(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethod.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethod.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_authentication_create_methods(connection, user_id, microsoft_graph_authentication_method, _opts \\ []) do
+  @spec users_authentication_create_methods(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethod.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethod.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_authentication_create_methods(
+        connection,
+        user_id,
+        microsoft_graph_authentication_method,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -91,8 +117,21 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphLongRunningOperation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_create_operations(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphLongRunningOperation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphLongRunningOperation.t} | {:error, Tesla.Env.t}
-  def users_authentication_create_operations(connection, user_id, microsoft_graph_long_running_operation, _opts \\ []) do
+  @spec users_authentication_create_operations(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphLongRunningOperation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphLongRunningOperation.t()}
+          | {:error, Tesla.Env.t()}
+  def users_authentication_create_operations(
+        connection,
+        user_id,
+        microsoft_graph_long_running_operation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -124,8 +163,21 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPasswordAuthenticationMethod.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_create_password_methods(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphPasswordAuthenticationMethod.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPasswordAuthenticationMethod.t} | {:error, Tesla.Env.t}
-  def users_authentication_create_password_methods(connection, user_id, microsoft_graph_password_authentication_method, _opts \\ []) do
+  @spec users_authentication_create_password_methods(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPasswordAuthenticationMethod.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPasswordAuthenticationMethod.t()}
+          | {:error, Tesla.Env.t()}
+  def users_authentication_create_password_methods(
+        connection,
+        user_id,
+        microsoft_graph_password_authentication_method,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -158,8 +210,21 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPhoneAuthenticationMethod.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_create_phone_methods(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphPhoneAuthenticationMethod.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPhoneAuthenticationMethod.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_authentication_create_phone_methods(connection, user_id, microsoft_graph_phone_authentication_method, _opts \\ []) do
+  @spec users_authentication_create_phone_methods(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPhoneAuthenticationMethod.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPhoneAuthenticationMethod.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_authentication_create_phone_methods(
+        connection,
+        user_id,
+        microsoft_graph_phone_authentication_method,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -192,8 +257,21 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTemporaryAccessPassAuthenticationMethod.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_create_temporary_access_pass_methods(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphTemporaryAccessPassAuthenticationMethod.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTemporaryAccessPassAuthenticationMethod.t} | {:error, Tesla.Env.t}
-  def users_authentication_create_temporary_access_pass_methods(connection, user_id, microsoft_graph_temporary_access_pass_authentication_method, _opts \\ []) do
+  @spec users_authentication_create_temporary_access_pass_methods(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTemporaryAccessPassAuthenticationMethod.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTemporaryAccessPassAuthenticationMethod.t()}
+          | {:error, Tesla.Env.t()}
+  def users_authentication_create_temporary_access_pass_methods(
+        connection,
+        user_id,
+        microsoft_graph_temporary_access_pass_authentication_method,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -227,8 +305,21 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_delete_email_methods(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_authentication_delete_email_methods(connection, user_id, email_authentication_method_id, opts \\ []) do
+  @spec users_authentication_delete_email_methods(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_authentication_delete_email_methods(
+        connection,
+        user_id,
+        email_authentication_method_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -266,8 +357,21 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_delete_fido2_methods(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_authentication_delete_fido2_methods(connection, user_id, fido2_authentication_method_id, opts \\ []) do
+  @spec users_authentication_delete_fido2_methods(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_authentication_delete_fido2_methods(
+        connection,
+        user_id,
+        fido2_authentication_method_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -305,8 +409,21 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_delete_microsoft_authenticator_methods(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_authentication_delete_microsoft_authenticator_methods(connection, user_id, microsoft_authenticator_authentication_method_id, opts \\ []) do
+  @spec users_authentication_delete_microsoft_authenticator_methods(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_authentication_delete_microsoft_authenticator_methods(
+        connection,
+        user_id,
+        microsoft_authenticator_authentication_method_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -314,7 +431,9 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
     request =
       %{}
       |> method(:delete)
-      |> url("/users/#{user_id}/authentication/microsoftAuthenticatorMethods/#{microsoft_authenticator_authentication_method_id}")
+      |> url(
+        "/users/#{user_id}/authentication/microsoftAuthenticatorMethods/#{microsoft_authenticator_authentication_method_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -343,8 +462,21 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_delete_operations(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_authentication_delete_operations(connection, user_id, long_running_operation_id, opts \\ []) do
+  @spec users_authentication_delete_operations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_authentication_delete_operations(
+        connection,
+        user_id,
+        long_running_operation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -382,8 +514,21 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_delete_phone_methods(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_authentication_delete_phone_methods(connection, user_id, phone_authentication_method_id, opts \\ []) do
+  @spec users_authentication_delete_phone_methods(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_authentication_delete_phone_methods(
+        connection,
+        user_id,
+        phone_authentication_method_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -421,8 +566,21 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_delete_software_oath_methods(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_authentication_delete_software_oath_methods(connection, user_id, software_oath_authentication_method_id, opts \\ []) do
+  @spec users_authentication_delete_software_oath_methods(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_authentication_delete_software_oath_methods(
+        connection,
+        user_id,
+        software_oath_authentication_method_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -430,7 +588,9 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
     request =
       %{}
       |> method(:delete)
-      |> url("/users/#{user_id}/authentication/softwareOathMethods/#{software_oath_authentication_method_id}")
+      |> url(
+        "/users/#{user_id}/authentication/softwareOathMethods/#{software_oath_authentication_method_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -460,8 +620,21 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_delete_temporary_access_pass_methods(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_authentication_delete_temporary_access_pass_methods(connection, user_id, temporary_access_pass_authentication_method_id, opts \\ []) do
+  @spec users_authentication_delete_temporary_access_pass_methods(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_authentication_delete_temporary_access_pass_methods(
+        connection,
+        user_id,
+        temporary_access_pass_authentication_method_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -469,7 +642,9 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
     request =
       %{}
       |> method(:delete)
-      |> url("/users/#{user_id}/authentication/temporaryAccessPassMethods/#{temporary_access_pass_authentication_method_id}")
+      |> url(
+        "/users/#{user_id}/authentication/temporaryAccessPassMethods/#{temporary_access_pass_authentication_method_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -499,8 +674,21 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_delete_windows_hello_for_business_methods(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_authentication_delete_windows_hello_for_business_methods(connection, user_id, windows_hello_for_business_authentication_method_id, opts \\ []) do
+  @spec users_authentication_delete_windows_hello_for_business_methods(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_authentication_delete_windows_hello_for_business_methods(
+        connection,
+        user_id,
+        windows_hello_for_business_authentication_method_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -508,7 +696,9 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
     request =
       %{}
       |> method(:delete)
-      |> url("/users/#{user_id}/authentication/windowsHelloForBusinessMethods/#{windows_hello_for_business_authentication_method_id}")
+      |> url(
+        "/users/#{user_id}/authentication/windowsHelloForBusinessMethods/#{windows_hello_for_business_authentication_method_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -537,7 +727,14 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_email_methods_get_count6f5c(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_authentication_email_methods_get_count6f5c(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_authentication_email_methods_get_count6f5c(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -576,7 +773,14 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_fido2_methods_get_count9673(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_authentication_fido2_methods_get_count9673(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_authentication_fido2_methods_get_count9673(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -617,8 +821,21 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEmailAuthenticationMethod.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_get_email_methods(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEmailAuthenticationMethod.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_authentication_get_email_methods(connection, user_id, email_authentication_method_id, opts \\ []) do
+  @spec users_authentication_get_email_methods(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEmailAuthenticationMethod.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_authentication_get_email_methods(
+        connection,
+        user_id,
+        email_authentication_method_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -658,8 +875,21 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphFido2AuthenticationMethod.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_get_fido2_methods(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphFido2AuthenticationMethod.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_authentication_get_fido2_methods(connection, user_id, fido2_authentication_method_id, opts \\ []) do
+  @spec users_authentication_get_fido2_methods(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphFido2AuthenticationMethod.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_authentication_get_fido2_methods(
+        connection,
+        user_id,
+        fido2_authentication_method_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -699,7 +929,10 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethod.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_get_methods(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethod.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_authentication_get_methods(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethod.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_authentication_get_methods(connection, user_id, authentication_method_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -740,8 +973,22 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMicrosoftAuthenticatorAuthenticationMethod.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_get_microsoft_authenticator_methods(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMicrosoftAuthenticatorAuthenticationMethod.t} | {:error, Tesla.Env.t}
-  def users_authentication_get_microsoft_authenticator_methods(connection, user_id, microsoft_authenticator_authentication_method_id, opts \\ []) do
+  @spec users_authentication_get_microsoft_authenticator_methods(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphMicrosoftAuthenticatorAuthenticationMethod.t()}
+          | {:error, Tesla.Env.t()}
+  def users_authentication_get_microsoft_authenticator_methods(
+        connection,
+        user_id,
+        microsoft_authenticator_authentication_method_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -750,7 +997,9 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/authentication/microsoftAuthenticatorMethods/#{microsoft_authenticator_authentication_method_id}")
+      |> url(
+        "/users/#{user_id}/authentication/microsoftAuthenticatorMethods/#{microsoft_authenticator_authentication_method_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -781,8 +1030,16 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphLongRunningOperation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_get_operations(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphLongRunningOperation.t} | {:error, Tesla.Env.t}
-  def users_authentication_get_operations(connection, user_id, long_running_operation_id, opts \\ []) do
+  @spec users_authentication_get_operations(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphLongRunningOperation.t()}
+          | {:error, Tesla.Env.t()}
+  def users_authentication_get_operations(
+        connection,
+        user_id,
+        long_running_operation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -822,8 +1079,21 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPasswordAuthenticationMethod.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_get_password_methods(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPasswordAuthenticationMethod.t} | {:error, Tesla.Env.t}
-  def users_authentication_get_password_methods(connection, user_id, password_authentication_method_id, opts \\ []) do
+  @spec users_authentication_get_password_methods(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPasswordAuthenticationMethod.t()}
+          | {:error, Tesla.Env.t()}
+  def users_authentication_get_password_methods(
+        connection,
+        user_id,
+        password_authentication_method_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -832,7 +1102,9 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/authentication/passwordMethods/#{password_authentication_method_id}")
+      |> url(
+        "/users/#{user_id}/authentication/passwordMethods/#{password_authentication_method_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -863,8 +1135,21 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPhoneAuthenticationMethod.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_get_phone_methods(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPhoneAuthenticationMethod.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_authentication_get_phone_methods(connection, user_id, phone_authentication_method_id, opts \\ []) do
+  @spec users_authentication_get_phone_methods(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPhoneAuthenticationMethod.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_authentication_get_phone_methods(
+        connection,
+        user_id,
+        phone_authentication_method_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -904,8 +1189,21 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSoftwareOathAuthenticationMethod.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_get_software_oath_methods(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSoftwareOathAuthenticationMethod.t} | {:error, Tesla.Env.t}
-  def users_authentication_get_software_oath_methods(connection, user_id, software_oath_authentication_method_id, opts \\ []) do
+  @spec users_authentication_get_software_oath_methods(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSoftwareOathAuthenticationMethod.t()}
+          | {:error, Tesla.Env.t()}
+  def users_authentication_get_software_oath_methods(
+        connection,
+        user_id,
+        software_oath_authentication_method_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -914,7 +1212,9 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/authentication/softwareOathMethods/#{software_oath_authentication_method_id}")
+      |> url(
+        "/users/#{user_id}/authentication/softwareOathMethods/#{software_oath_authentication_method_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -945,8 +1245,21 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTemporaryAccessPassAuthenticationMethod.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_get_temporary_access_pass_methods(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTemporaryAccessPassAuthenticationMethod.t} | {:error, Tesla.Env.t}
-  def users_authentication_get_temporary_access_pass_methods(connection, user_id, temporary_access_pass_authentication_method_id, opts \\ []) do
+  @spec users_authentication_get_temporary_access_pass_methods(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTemporaryAccessPassAuthenticationMethod.t()}
+          | {:error, Tesla.Env.t()}
+  def users_authentication_get_temporary_access_pass_methods(
+        connection,
+        user_id,
+        temporary_access_pass_authentication_method_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -955,7 +1268,9 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/authentication/temporaryAccessPassMethods/#{temporary_access_pass_authentication_method_id}")
+      |> url(
+        "/users/#{user_id}/authentication/temporaryAccessPassMethods/#{temporary_access_pass_authentication_method_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -986,8 +1301,22 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWindowsHelloForBusinessAuthenticationMethod.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_get_windows_hello_for_business_methods(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWindowsHelloForBusinessAuthenticationMethod.t} | {:error, Tesla.Env.t}
-  def users_authentication_get_windows_hello_for_business_methods(connection, user_id, windows_hello_for_business_authentication_method_id, opts \\ []) do
+  @spec users_authentication_get_windows_hello_for_business_methods(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphWindowsHelloForBusinessAuthenticationMethod.t()}
+          | {:error, Tesla.Env.t()}
+  def users_authentication_get_windows_hello_for_business_methods(
+        connection,
+        user_id,
+        windows_hello_for_business_authentication_method_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -996,7 +1325,9 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/authentication/windowsHelloForBusinessMethods/#{windows_hello_for_business_authentication_method_id}")
+      |> url(
+        "/users/#{user_id}/authentication/windowsHelloForBusinessMethods/#{windows_hello_for_business_authentication_method_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1032,7 +1363,11 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEmailAuthenticationMethodCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_list_email_methods(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEmailAuthenticationMethodCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_authentication_list_email_methods(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphEmailAuthenticationMethodCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_authentication_list_email_methods(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1084,7 +1419,11 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphFido2AuthenticationMethodCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_list_fido2_methods(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphFido2AuthenticationMethodCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_authentication_list_fido2_methods(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphFido2AuthenticationMethodCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_authentication_list_fido2_methods(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1136,7 +1475,10 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_list_methods(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec users_authentication_list_methods(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def users_authentication_list_methods(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1188,7 +1530,15 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMicrosoftAuthenticatorAuthenticationMethodCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_list_microsoft_authenticator_methods(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphMicrosoftAuthenticatorAuthenticationMethodCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_authentication_list_microsoft_authenticator_methods(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphMicrosoftAuthenticatorAuthenticationMethodCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_authentication_list_microsoft_authenticator_methods(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1211,7 +1561,8 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphMicrosoftAuthenticatorAuthenticationMethodCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphMicrosoftAuthenticatorAuthenticationMethodCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -1240,7 +1591,10 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphLongRunningOperationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_list_operations(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphLongRunningOperationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_authentication_list_operations(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphLongRunningOperationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_authentication_list_operations(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1292,7 +1646,11 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPasswordAuthenticationMethodCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_list_password_methods(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPasswordAuthenticationMethodCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_authentication_list_password_methods(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphPasswordAuthenticationMethodCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_authentication_list_password_methods(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1344,7 +1702,11 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPhoneAuthenticationMethodCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_list_phone_methods(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPhoneAuthenticationMethodCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_authentication_list_phone_methods(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphPhoneAuthenticationMethodCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_authentication_list_phone_methods(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1396,7 +1758,11 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSoftwareOathAuthenticationMethodCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_list_software_oath_methods(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSoftwareOathAuthenticationMethodCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_authentication_list_software_oath_methods(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphSoftwareOathAuthenticationMethodCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_authentication_list_software_oath_methods(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1419,7 +1785,8 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphSoftwareOathAuthenticationMethodCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphSoftwareOathAuthenticationMethodCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -1448,7 +1815,15 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTemporaryAccessPassAuthenticationMethodCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_list_temporary_access_pass_methods(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTemporaryAccessPassAuthenticationMethodCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_authentication_list_temporary_access_pass_methods(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphTemporaryAccessPassAuthenticationMethodCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_authentication_list_temporary_access_pass_methods(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1471,7 +1846,8 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphTemporaryAccessPassAuthenticationMethodCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphTemporaryAccessPassAuthenticationMethodCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -1500,8 +1876,20 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWindowsHelloForBusinessAuthenticationMethodCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_list_windows_hello_for_business_methods(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWindowsHelloForBusinessAuthenticationMethodCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_authentication_list_windows_hello_for_business_methods(connection, user_id, opts \\ []) do
+  @spec users_authentication_list_windows_hello_for_business_methods(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphWindowsHelloForBusinessAuthenticationMethodCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_authentication_list_windows_hello_for_business_methods(
+        connection,
+        user_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1523,7 +1911,8 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphWindowsHelloForBusinessAuthenticationMethodCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphWindowsHelloForBusinessAuthenticationMethodCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -1545,7 +1934,10 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_methods_get_count0da1(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_authentication_methods_get_count0da1(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_authentication_methods_get_count0da1(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -1584,8 +1976,19 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_microsoft_authenticator_methods_get_count_af8c(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_authentication_microsoft_authenticator_methods_get_count_af8c(connection, user_id, opts \\ []) do
+  @spec users_authentication_microsoft_authenticator_methods_get_count_af8c(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_authentication_microsoft_authenticator_methods_get_count_af8c(
+        connection,
+        user_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1625,8 +2028,21 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDevice.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_microsoft_authenticator_methods_get_device(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDevice.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_authentication_microsoft_authenticator_methods_get_device(connection, user_id, microsoft_authenticator_authentication_method_id, opts \\ []) do
+  @spec users_authentication_microsoft_authenticator_methods_get_device(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDevice.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_authentication_microsoft_authenticator_methods_get_device(
+        connection,
+        user_id,
+        microsoft_authenticator_authentication_method_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1635,7 +2051,9 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/authentication/microsoftAuthenticatorMethods/#{microsoft_authenticator_authentication_method_id}/device")
+      |> url(
+        "/users/#{user_id}/authentication/microsoftAuthenticatorMethods/#{microsoft_authenticator_authentication_method_id}/device"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1664,7 +2082,10 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_operations_get_count40a4(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_authentication_operations_get_count40a4(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_authentication_operations_get_count40a4(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -1703,7 +2124,14 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_password_methods_get_count_ec55(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_authentication_password_methods_get_count_ec55(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_authentication_password_methods_get_count_ec55(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -1742,7 +2170,14 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_phone_methods_get_count2ea0(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_authentication_phone_methods_get_count2ea0(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_authentication_phone_methods_get_count2ea0(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -1781,7 +2216,14 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_software_oath_methods_get_count0ccd(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_authentication_software_oath_methods_get_count0ccd(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_authentication_software_oath_methods_get_count0ccd(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -1820,8 +2262,19 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_temporary_access_pass_methods_get_count3b4c(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_authentication_temporary_access_pass_methods_get_count3b4c(connection, user_id, opts \\ []) do
+  @spec users_authentication_temporary_access_pass_methods_get_count3b4c(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_authentication_temporary_access_pass_methods_get_count3b4c(
+        connection,
+        user_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1860,8 +2313,23 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEmailAuthenticationMethod.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_update_email_methods(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphEmailAuthenticationMethod.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEmailAuthenticationMethod.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_authentication_update_email_methods(connection, user_id, email_authentication_method_id, microsoft_graph_email_authentication_method, _opts \\ []) do
+  @spec users_authentication_update_email_methods(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphEmailAuthenticationMethod.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEmailAuthenticationMethod.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_authentication_update_email_methods(
+        connection,
+        user_id,
+        email_authentication_method_id,
+        microsoft_graph_email_authentication_method,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -1894,8 +2362,23 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethod.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_update_methods(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethod.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethod.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_authentication_update_methods(connection, user_id, authentication_method_id, microsoft_graph_authentication_method, _opts \\ []) do
+  @spec users_authentication_update_methods(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethod.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethod.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_authentication_update_methods(
+        connection,
+        user_id,
+        authentication_method_id,
+        microsoft_graph_authentication_method,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -1928,8 +2411,23 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphLongRunningOperation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_update_operations(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphLongRunningOperation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphLongRunningOperation.t} | {:error, Tesla.Env.t}
-  def users_authentication_update_operations(connection, user_id, long_running_operation_id, microsoft_graph_long_running_operation, _opts \\ []) do
+  @spec users_authentication_update_operations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphLongRunningOperation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphLongRunningOperation.t()}
+          | {:error, Tesla.Env.t()}
+  def users_authentication_update_operations(
+        connection,
+        user_id,
+        long_running_operation_id,
+        microsoft_graph_long_running_operation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -1963,8 +2461,23 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPhoneAuthenticationMethod.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_update_phone_methods(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphPhoneAuthenticationMethod.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPhoneAuthenticationMethod.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_authentication_update_phone_methods(connection, user_id, phone_authentication_method_id, microsoft_graph_phone_authentication_method, _opts \\ []) do
+  @spec users_authentication_update_phone_methods(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPhoneAuthenticationMethod.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPhoneAuthenticationMethod.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_authentication_update_phone_methods(
+        connection,
+        user_id,
+        phone_authentication_method_id,
+        microsoft_graph_phone_authentication_method,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -1997,8 +2510,19 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_windows_hello_for_business_methods_get_count0479(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_authentication_windows_hello_for_business_methods_get_count0479(connection, user_id, opts \\ []) do
+  @spec users_authentication_windows_hello_for_business_methods_get_count0479(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_authentication_windows_hello_for_business_methods_get_count0479(
+        connection,
+        user_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -2038,8 +2562,21 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDevice.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_authentication_windows_hello_for_business_methods_get_device(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDevice.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_authentication_windows_hello_for_business_methods_get_device(connection, user_id, windows_hello_for_business_authentication_method_id, opts \\ []) do
+  @spec users_authentication_windows_hello_for_business_methods_get_device(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDevice.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_authentication_windows_hello_for_business_methods_get_device(
+        connection,
+        user_id,
+        windows_hello_for_business_authentication_method_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2048,7 +2585,9 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/authentication/windowsHelloForBusinessMethods/#{windows_hello_for_business_authentication_method_id}/device")
+      |> url(
+        "/users/#{user_id}/authentication/windowsHelloForBusinessMethods/#{windows_hello_for_business_authentication_method_id}/device"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2076,7 +2615,10 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_delete_authentication(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_delete_authentication(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_delete_authentication(connection, user_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -2115,7 +2657,10 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAuthentication.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_get_authentication(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthentication.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_get_authentication(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthentication.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_get_authentication(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -2153,8 +2698,21 @@ defmodule MicrosoftGraph.Api.UsersAuthentication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAuthentication.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_update_authentication(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphAuthentication.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthentication.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_update_authentication(connection, user_id, microsoft_graph_authentication, _opts \\ []) do
+  @spec users_update_authentication(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAuthentication.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthentication.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_update_authentication(
+        connection,
+        user_id,
+        microsoft_graph_authentication,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

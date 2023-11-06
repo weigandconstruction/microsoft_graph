@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DeviceAppManagementMobileAppsMobileAppAssignRequestMobileAppAssignmentsInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,20 +16,27 @@ defmodule MicrosoftGraph.Model.DeviceAppManagementMobileAppsMobileAppAssignReque
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :intent => MicrosoftGraph.Model.MicrosoftGraphInstallIntent.t | nil,
-    :settings => MicrosoftGraph.Model.MobileAppAssignmentSettings.t | nil,
-    :target => MicrosoftGraph.Model.MobileAppAssignmentTarget.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :intent => MicrosoftGraph.Model.MicrosoftGraphInstallIntent.t() | nil,
+          :settings => MicrosoftGraph.Model.MobileAppAssignmentSettings.t() | nil,
+          :target => MicrosoftGraph.Model.MobileAppAssignmentTarget.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:intent, :struct, MicrosoftGraph.Model.MicrosoftGraphInstallIntent)
-     |> Deserializer.deserialize(:settings, :struct, MicrosoftGraph.Model.MobileAppAssignmentSettings)
-     |> Deserializer.deserialize(:target, :struct, MicrosoftGraph.Model.MobileAppAssignmentTarget)
+    |> Deserializer.deserialize(
+      :intent,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphInstallIntent
+    )
+    |> Deserializer.deserialize(
+      :settings,
+      :struct,
+      MicrosoftGraph.Model.MobileAppAssignmentSettings
+    )
+    |> Deserializer.deserialize(:target, :struct, MicrosoftGraph.Model.MobileAppAssignmentTarget)
   end
 end
-

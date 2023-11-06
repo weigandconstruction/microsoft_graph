@@ -16,19 +16,18 @@ defmodule MicrosoftGraph.Model.UserSignInActivity do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :lastNonInteractiveSignInDateTime => DateTime.t | nil,
-    :lastNonInteractiveSignInRequestId => String.t | nil,
-    :lastSignInDateTime => DateTime.t | nil,
-    :lastSignInRequestId => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :lastNonInteractiveSignInDateTime => DateTime.t() | nil,
+          :lastNonInteractiveSignInRequestId => String.t() | nil,
+          :lastSignInDateTime => DateTime.t() | nil,
+          :lastSignInRequestId => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:lastNonInteractiveSignInDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastSignInDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastNonInteractiveSignInDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastSignInDateTime, :datetime, nil)
   end
 end
-

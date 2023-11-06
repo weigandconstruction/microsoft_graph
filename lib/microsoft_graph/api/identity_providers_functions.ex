@@ -27,7 +27,11 @@ defmodule MicrosoftGraph.Api.IdentityProvidersFunctions do
   - `{:ok, MicrosoftGraph.Model.DirectoryFederationConfigurationsAvailableProviderTypes2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_providers_available_provider_types(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.DirectoryFederationConfigurationsAvailableProviderTypes2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec identity_providers_available_provider_types(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.DirectoryFederationConfigurationsAvailableProviderTypes2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def identity_providers_available_provider_types(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -47,7 +51,8 @@ defmodule MicrosoftGraph.Api.IdentityProvidersFunctions do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.DirectoryFederationConfigurationsAvailableProviderTypes2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.DirectoryFederationConfigurationsAvailableProviderTypes2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])

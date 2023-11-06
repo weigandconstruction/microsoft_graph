@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphIncomingCallOptions do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphIncomingCallOptions do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :hideBotAfterEscalation => boolean() | nil,
-    :isContentSharingNotificationEnabled => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :hideBotAfterEscalation => boolean() | nil,
+          :isContentSharingNotificationEnabled => boolean() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

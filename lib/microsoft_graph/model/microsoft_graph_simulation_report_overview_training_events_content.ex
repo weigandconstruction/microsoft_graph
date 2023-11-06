@@ -14,16 +14,23 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSimulationReportOverviewTrainingEve
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :assignedTrainingsInfos => [MicrosoftGraph.Model.MicrosoftGraphTrainingEventsContentAssignedTrainingsInfosInner.t] | nil,
-    :trainingsAssignedUserCount => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :assignedTrainingsInfos =>
+            [
+              MicrosoftGraph.Model.MicrosoftGraphTrainingEventsContentAssignedTrainingsInfosInner.t()
+            ]
+            | nil,
+          :trainingsAssignedUserCount => integer() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:assignedTrainingsInfos, :list, MicrosoftGraph.Model.MicrosoftGraphTrainingEventsContentAssignedTrainingsInfosInner)
+    |> Deserializer.deserialize(
+      :assignedTrainingsInfos,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphTrainingEventsContentAssignedTrainingsInfosInner
+    )
   end
 end
-

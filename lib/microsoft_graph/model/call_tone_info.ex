@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.CallToneInfo do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,15 @@ defmodule MicrosoftGraph.Model.CallToneInfo do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :sequenceId => integer() | nil,
-    :tone => MicrosoftGraph.Model.MicrosoftGraphTone.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :sequenceId => integer() | nil,
+          :tone => MicrosoftGraph.Model.MicrosoftGraphTone.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:tone, :struct, MicrosoftGraph.Model.MicrosoftGraphTone)
+    |> Deserializer.deserialize(:tone, :struct, MicrosoftGraph.Model.MicrosoftGraphTone)
   end
 end
-

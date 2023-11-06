@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphCallRecordingEventMessageDetail do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,23 +19,36 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphCallRecordingEventMessageDetail do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :callId => String.t | nil,
-    :callRecordingDisplayName => String.t | nil,
-    :callRecordingDuration => String.t | nil,
-    :callRecordingStatus => MicrosoftGraph.Model.CallRecordingEventMessageDetailCallRecordingStatus.t | nil,
-    :callRecordingUrl => String.t | nil,
-    :initiator => MicrosoftGraph.Model.ChannelRenamedEventMessageDetailInitiator.t | nil,
-    :meetingOrganizer => MicrosoftGraph.Model.CallRecordingEventMessageDetailMeetingOrganizer.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :callId => String.t() | nil,
+          :callRecordingDisplayName => String.t() | nil,
+          :callRecordingDuration => String.t() | nil,
+          :callRecordingStatus =>
+            MicrosoftGraph.Model.CallRecordingEventMessageDetailCallRecordingStatus.t() | nil,
+          :callRecordingUrl => String.t() | nil,
+          :initiator => MicrosoftGraph.Model.ChannelRenamedEventMessageDetailInitiator.t() | nil,
+          :meetingOrganizer =>
+            MicrosoftGraph.Model.CallRecordingEventMessageDetailMeetingOrganizer.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:callRecordingStatus, :struct, MicrosoftGraph.Model.CallRecordingEventMessageDetailCallRecordingStatus)
-     |> Deserializer.deserialize(:initiator, :struct, MicrosoftGraph.Model.ChannelRenamedEventMessageDetailInitiator)
-     |> Deserializer.deserialize(:meetingOrganizer, :struct, MicrosoftGraph.Model.CallRecordingEventMessageDetailMeetingOrganizer)
+    |> Deserializer.deserialize(
+      :callRecordingStatus,
+      :struct,
+      MicrosoftGraph.Model.CallRecordingEventMessageDetailCallRecordingStatus
+    )
+    |> Deserializer.deserialize(
+      :initiator,
+      :struct,
+      MicrosoftGraph.Model.ChannelRenamedEventMessageDetailInitiator
+    )
+    |> Deserializer.deserialize(
+      :meetingOrganizer,
+      :struct,
+      MicrosoftGraph.Model.CallRecordingEventMessageDetailMeetingOrganizer
+    )
   end
 end
-

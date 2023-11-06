@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphWindows10NetworkProxyServer do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :address => String.t | nil,
-    :exceptions => [String.t] | nil,
-    :useForLocalAddresses => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :address => String.t() | nil,
+          :exceptions => [String.t()] | nil,
+          :useForLocalAddresses => boolean() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

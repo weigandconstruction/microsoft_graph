@@ -14,16 +14,19 @@ defmodule MicrosoftGraph.Model.OnlineMeetingLobbyBypassSettings do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :isDialInBypassEnabled => boolean() | nil,
-    :scope => MicrosoftGraph.Model.MicrosoftGraphLobbyBypassSettingsScope.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :isDialInBypassEnabled => boolean() | nil,
+          :scope => MicrosoftGraph.Model.MicrosoftGraphLobbyBypassSettingsScope.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:scope, :struct, MicrosoftGraph.Model.MicrosoftGraphLobbyBypassSettingsScope)
+    |> Deserializer.deserialize(
+      :scope,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphLobbyBypassSettingsScope
+    )
   end
 end
-

@@ -29,7 +29,10 @@ defmodule MicrosoftGraph.Api.Oauth2PermissionGrantsFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfOAuth2PermissionGrant.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec oauth2_permission_grants_delta(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.CollectionOfOAuth2PermissionGrant.t} | {:error, Tesla.Env.t}
+  @spec oauth2_permission_grants_delta(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.CollectionOfOAuth2PermissionGrant.t()}
+          | {:error, Tesla.Env.t()}
   def oauth2_permission_grants_delta(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,

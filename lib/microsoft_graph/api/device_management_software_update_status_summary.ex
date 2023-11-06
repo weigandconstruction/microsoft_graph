@@ -25,7 +25,10 @@ defmodule MicrosoftGraph.Api.DeviceManagementSoftwareUpdateStatusSummary do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSoftwareUpdateStatusSummary.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_get_software_update_status_summary(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSoftwareUpdateStatusSummary.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec device_management_get_software_update_status_summary(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSoftwareUpdateStatusSummary.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def device_management_get_software_update_status_summary(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,

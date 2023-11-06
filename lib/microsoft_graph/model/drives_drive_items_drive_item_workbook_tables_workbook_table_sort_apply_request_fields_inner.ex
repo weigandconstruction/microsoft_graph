@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookTablesWorkbookTableSortApplyRequestFieldsInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,20 +18,23 @@ defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookTablesWorkbookTa
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :ascending => boolean() | nil,
-    :color => String.t | nil,
-    :dataOption => String.t | nil,
-    :icon => MicrosoftGraph.Model.MicrosoftGraphWorkbookSortFieldIcon.t | nil,
-    :key => integer() | nil,
-    :sortOn => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :ascending => boolean() | nil,
+          :color => String.t() | nil,
+          :dataOption => String.t() | nil,
+          :icon => MicrosoftGraph.Model.MicrosoftGraphWorkbookSortFieldIcon.t() | nil,
+          :key => integer() | nil,
+          :sortOn => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:icon, :struct, MicrosoftGraph.Model.MicrosoftGraphWorkbookSortFieldIcon)
+    |> Deserializer.deserialize(
+      :icon,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphWorkbookSortFieldIcon
+    )
   end
 end
-

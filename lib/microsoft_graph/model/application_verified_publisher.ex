@@ -15,17 +15,16 @@ defmodule MicrosoftGraph.Model.ApplicationVerifiedPublisher do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :addedDateTime => DateTime.t | nil,
-    :displayName => String.t | nil,
-    :verifiedPublisherId => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :addedDateTime => DateTime.t() | nil,
+          :displayName => String.t() | nil,
+          :verifiedPublisherId => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:addedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:addedDateTime, :datetime, nil)
   end
 end
-

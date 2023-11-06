@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphExtractSensitivityLabelsResultLabelsInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,17 +15,21 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphExtractSensitivityLabelsResultLabel
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :assignmentMethod => MicrosoftGraph.Model.MicrosoftGraphSensitivityLabelAssignmentMethod.t | nil,
-    :sensitivityLabelId => String.t | nil,
-    :tenantId => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :assignmentMethod =>
+            MicrosoftGraph.Model.MicrosoftGraphSensitivityLabelAssignmentMethod.t() | nil,
+          :sensitivityLabelId => String.t() | nil,
+          :tenantId => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:assignmentMethod, :struct, MicrosoftGraph.Model.MicrosoftGraphSensitivityLabelAssignmentMethod)
+    |> Deserializer.deserialize(
+      :assignmentMethod,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSensitivityLabelAssignmentMethod
+    )
   end
 end
-

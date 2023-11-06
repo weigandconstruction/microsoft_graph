@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphEducationAssignmentSettings do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphEducationAssignmentSettings do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :submissionAnimationDisabled => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :submissionAnimationDisabled => boolean() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

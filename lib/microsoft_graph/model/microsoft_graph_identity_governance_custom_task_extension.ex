@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceCustomTaskExtension do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -23,32 +23,59 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceCustomTaskExtensi
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :authenticationConfiguration => MicrosoftGraph.Model.CustomCalloutExtensionAuthenticationConfiguration.t | nil,
-    :clientConfiguration => MicrosoftGraph.Model.CustomCalloutExtensionClientConfiguration.t | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :endpointConfiguration => MicrosoftGraph.Model.CustomCalloutExtensionEndpointConfiguration.t | nil,
-    :callbackConfiguration => MicrosoftGraph.Model.CustomTaskExtensionCallbackConfiguration.t | nil,
-    :createdBy => MicrosoftGraph.Model.CustomTaskExtensionCreatedBy.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :lastModifiedBy => MicrosoftGraph.Model.CustomTaskExtensionLastModifiedBy.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :authenticationConfiguration =>
+            MicrosoftGraph.Model.CustomCalloutExtensionAuthenticationConfiguration.t() | nil,
+          :clientConfiguration =>
+            MicrosoftGraph.Model.CustomCalloutExtensionClientConfiguration.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :endpointConfiguration =>
+            MicrosoftGraph.Model.CustomCalloutExtensionEndpointConfiguration.t() | nil,
+          :callbackConfiguration =>
+            MicrosoftGraph.Model.CustomTaskExtensionCallbackConfiguration.t() | nil,
+          :createdBy => MicrosoftGraph.Model.CustomTaskExtensionCreatedBy.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :lastModifiedBy => MicrosoftGraph.Model.CustomTaskExtensionLastModifiedBy.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:authenticationConfiguration, :struct, MicrosoftGraph.Model.CustomCalloutExtensionAuthenticationConfiguration)
-     |> Deserializer.deserialize(:clientConfiguration, :struct, MicrosoftGraph.Model.CustomCalloutExtensionClientConfiguration)
-     |> Deserializer.deserialize(:endpointConfiguration, :struct, MicrosoftGraph.Model.CustomCalloutExtensionEndpointConfiguration)
-     |> Deserializer.deserialize(:callbackConfiguration, :struct, MicrosoftGraph.Model.CustomTaskExtensionCallbackConfiguration)
-     |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.CustomTaskExtensionCreatedBy)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastModifiedBy, :struct, MicrosoftGraph.Model.CustomTaskExtensionLastModifiedBy)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :authenticationConfiguration,
+      :struct,
+      MicrosoftGraph.Model.CustomCalloutExtensionAuthenticationConfiguration
+    )
+    |> Deserializer.deserialize(
+      :clientConfiguration,
+      :struct,
+      MicrosoftGraph.Model.CustomCalloutExtensionClientConfiguration
+    )
+    |> Deserializer.deserialize(
+      :endpointConfiguration,
+      :struct,
+      MicrosoftGraph.Model.CustomCalloutExtensionEndpointConfiguration
+    )
+    |> Deserializer.deserialize(
+      :callbackConfiguration,
+      :struct,
+      MicrosoftGraph.Model.CustomTaskExtensionCallbackConfiguration
+    )
+    |> Deserializer.deserialize(
+      :createdBy,
+      :struct,
+      MicrosoftGraph.Model.CustomTaskExtensionCreatedBy
+    )
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :lastModifiedBy,
+      :struct,
+      MicrosoftGraph.Model.CustomTaskExtensionLastModifiedBy
+    )
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
   end
 end
-

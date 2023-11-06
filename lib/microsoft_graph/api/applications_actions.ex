@@ -25,8 +25,21 @@ defmodule MicrosoftGraph.Api.ApplicationsActions do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphKeyCredential.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_application_add_key(Tesla.Env.client, String.t, MicrosoftGraph.Model.ApplicationsApplicationAddKeyRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphKeyCredential.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def applications_application_add_key(connection, application_id, applications_application_add_key_request, _opts \\ []) do
+  @spec applications_application_add_key(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.ApplicationsApplicationAddKeyRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphKeyCredential.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def applications_application_add_key(
+        connection,
+        application_id,
+        applications_application_add_key_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -59,8 +72,21 @@ defmodule MicrosoftGraph.Api.ApplicationsActions do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPasswordCredential.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_application_add_password(Tesla.Env.client, String.t, MicrosoftGraph.Model.ServicePrincipalsServicePrincipalAddPasswordRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPasswordCredential.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def applications_application_add_password(connection, application_id, service_principals_service_principal_add_password_request, _opts \\ []) do
+  @spec applications_application_add_password(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.ServicePrincipalsServicePrincipalAddPasswordRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPasswordCredential.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def applications_application_add_password(
+        connection,
+        application_id,
+        service_principals_service_principal_add_password_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -93,8 +119,21 @@ defmodule MicrosoftGraph.Api.ApplicationsActions do
   - `{:ok, MicrosoftGraph.Model.ContractsContractCheckMemberGroups2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_application_check_member_groups(Tesla.Env.client, String.t, MicrosoftGraph.Model.ContractsContractCheckMemberGroupsRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.ContractsContractCheckMemberGroups2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def applications_application_check_member_groups(connection, application_id, contracts_contract_check_member_groups_request, _opts \\ []) do
+  @spec applications_application_check_member_groups(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.ContractsContractCheckMemberGroupsRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.ContractsContractCheckMemberGroups2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def applications_application_check_member_groups(
+        connection,
+        application_id,
+        contracts_contract_check_member_groups_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -126,13 +165,30 @@ defmodule MicrosoftGraph.Api.ApplicationsActions do
   - `{:ok, MicrosoftGraph.Model.ContractsContractCheckMemberGroups2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_application_check_member_objects(Tesla.Env.client, String.t, MicrosoftGraph.Model.DirectoryRoleTemplatesDirectoryRoleTemplateCheckMemberObjectsRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.ContractsContractCheckMemberGroups2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def applications_application_check_member_objects(connection, application_id, directory_role_templates_directory_role_template_check_member_objects_request, _opts \\ []) do
+  @spec applications_application_check_member_objects(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.DirectoryRoleTemplatesDirectoryRoleTemplateCheckMemberObjectsRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.ContractsContractCheckMemberGroups2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def applications_application_check_member_objects(
+        connection,
+        application_id,
+        directory_role_templates_directory_role_template_check_member_objects_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/applications/#{application_id}/checkMemberObjects")
-      |> add_param(:body, :body, directory_role_templates_directory_role_template_check_member_objects_request)
+      |> add_param(
+        :body,
+        :body,
+        directory_role_templates_directory_role_template_check_member_objects_request
+      )
       |> Enum.into([])
 
     connection
@@ -160,8 +216,21 @@ defmodule MicrosoftGraph.Api.ApplicationsActions do
   - `{:ok, MicrosoftGraph.Model.ContractsContractCheckMemberGroups2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_application_get_member_groups(Tesla.Env.client, String.t, MicrosoftGraph.Model.ContactsOrgContactGetMemberGroupsRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.ContractsContractCheckMemberGroups2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def applications_application_get_member_groups(connection, application_id, contacts_org_contact_get_member_groups_request, _opts \\ []) do
+  @spec applications_application_get_member_groups(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.ContactsOrgContactGetMemberGroupsRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.ContractsContractCheckMemberGroups2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def applications_application_get_member_groups(
+        connection,
+        application_id,
+        contacts_org_contact_get_member_groups_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -194,8 +263,21 @@ defmodule MicrosoftGraph.Api.ApplicationsActions do
   - `{:ok, MicrosoftGraph.Model.ContractsContractCheckMemberGroups2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_application_get_member_objects(Tesla.Env.client, String.t, MicrosoftGraph.Model.ContactsOrgContactGetMemberGroupsRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.ContractsContractCheckMemberGroups2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def applications_application_get_member_objects(connection, application_id, contacts_org_contact_get_member_groups_request, _opts \\ []) do
+  @spec applications_application_get_member_objects(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.ContactsOrgContactGetMemberGroupsRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.ContractsContractCheckMemberGroups2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def applications_application_get_member_objects(
+        connection,
+        application_id,
+        contacts_org_contact_get_member_groups_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -228,8 +310,21 @@ defmodule MicrosoftGraph.Api.ApplicationsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_application_remove_key(Tesla.Env.client, String.t, MicrosoftGraph.Model.ServicePrincipalsServicePrincipalRemoveKeyRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def applications_application_remove_key(connection, application_id, service_principals_service_principal_remove_key_request, _opts \\ []) do
+  @spec applications_application_remove_key(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.ServicePrincipalsServicePrincipalRemoveKeyRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def applications_application_remove_key(
+        connection,
+        application_id,
+        service_principals_service_principal_remove_key_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -262,8 +357,21 @@ defmodule MicrosoftGraph.Api.ApplicationsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_application_remove_password(Tesla.Env.client, String.t, MicrosoftGraph.Model.ApplicationsApplicationRemovePasswordRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def applications_application_remove_password(connection, application_id, applications_application_remove_password_request, _opts \\ []) do
+  @spec applications_application_remove_password(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.ApplicationsApplicationRemovePasswordRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def applications_application_remove_password(
+        connection,
+        application_id,
+        applications_application_remove_password_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -295,7 +403,10 @@ defmodule MicrosoftGraph.Api.ApplicationsActions do
   - `{:ok, MicrosoftGraph.Model.OrganizationOrganizationRestore2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_application_restore(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.OrganizationOrganizationRestore2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec applications_application_restore(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.OrganizationOrganizationRestore2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def applications_application_restore(connection, application_id, _opts \\ []) do
     request =
       %{}
@@ -329,8 +440,21 @@ defmodule MicrosoftGraph.Api.ApplicationsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_application_set_verified_publisher(Tesla.Env.client, String.t, MicrosoftGraph.Model.ApplicationsApplicationSetVerifiedPublisherRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def applications_application_set_verified_publisher(connection, application_id, applications_application_set_verified_publisher_request, _opts \\ []) do
+  @spec applications_application_set_verified_publisher(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.ApplicationsApplicationSetVerifiedPublisherRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def applications_application_set_verified_publisher(
+        connection,
+        application_id,
+        applications_application_set_verified_publisher_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -363,13 +487,30 @@ defmodule MicrosoftGraph.Api.ApplicationsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_application_synchronization_acquire_access_token(Tesla.Env.client, String.t, MicrosoftGraph.Model.ApplicationsApplicationSynchronizationAcquireAccessTokenRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def applications_application_synchronization_acquire_access_token(connection, application_id, applications_application_synchronization_acquire_access_token_request, _opts \\ []) do
+  @spec applications_application_synchronization_acquire_access_token(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.ApplicationsApplicationSynchronizationAcquireAccessTokenRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def applications_application_synchronization_acquire_access_token(
+        connection,
+        application_id,
+        applications_application_synchronization_acquire_access_token_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/applications/#{application_id}/synchronization/acquireAccessToken")
-      |> add_param(:body, :body, applications_application_synchronization_acquire_access_token_request)
+      |> add_param(
+        :body,
+        :body,
+        applications_application_synchronization_acquire_access_token_request
+      )
       |> Enum.into([])
 
     connection
@@ -397,12 +538,27 @@ defmodule MicrosoftGraph.Api.ApplicationsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_application_synchronization_jobs_synchronization_job_pause(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def applications_application_synchronization_jobs_synchronization_job_pause(connection, application_id, synchronization_job_id, _opts \\ []) do
+  @spec applications_application_synchronization_jobs_synchronization_job_pause(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def applications_application_synchronization_jobs_synchronization_job_pause(
+        connection,
+        application_id,
+        synchronization_job_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/applications/#{application_id}/synchronization/jobs/#{synchronization_job_id}/pause")
+      |> url(
+        "/applications/#{application_id}/synchronization/jobs/#{synchronization_job_id}/pause"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -432,13 +588,34 @@ defmodule MicrosoftGraph.Api.ApplicationsActions do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphStringKeyStringValuePair.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_application_synchronization_jobs_synchronization_job_provision_on_demand(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.ApplicationsApplicationSynchronizationJobsSynchronizationJobProvisionOnDemandRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphStringKeyStringValuePair.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def applications_application_synchronization_jobs_synchronization_job_provision_on_demand(connection, application_id, synchronization_job_id, applications_application_synchronization_jobs_synchronization_job_provision_on_demand_request, _opts \\ []) do
+  @spec applications_application_synchronization_jobs_synchronization_job_provision_on_demand(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.ApplicationsApplicationSynchronizationJobsSynchronizationJobProvisionOnDemandRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphStringKeyStringValuePair.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def applications_application_synchronization_jobs_synchronization_job_provision_on_demand(
+        connection,
+        application_id,
+        synchronization_job_id,
+        applications_application_synchronization_jobs_synchronization_job_provision_on_demand_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/applications/#{application_id}/synchronization/jobs/#{synchronization_job_id}/provisionOnDemand")
-      |> add_param(:body, :body, applications_application_synchronization_jobs_synchronization_job_provision_on_demand_request)
+      |> url(
+        "/applications/#{application_id}/synchronization/jobs/#{synchronization_job_id}/provisionOnDemand"
+      )
+      |> add_param(
+        :body,
+        :body,
+        applications_application_synchronization_jobs_synchronization_job_provision_on_demand_request
+      )
       |> Enum.into([])
 
     connection
@@ -467,13 +644,34 @@ defmodule MicrosoftGraph.Api.ApplicationsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_application_synchronization_jobs_synchronization_job_restart(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.ServicePrincipalsServicePrincipalSynchronizationJobsSynchronizationJobRestartRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def applications_application_synchronization_jobs_synchronization_job_restart(connection, application_id, synchronization_job_id, service_principals_service_principal_synchronization_jobs_synchronization_job_restart_request, _opts \\ []) do
+  @spec applications_application_synchronization_jobs_synchronization_job_restart(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.ServicePrincipalsServicePrincipalSynchronizationJobsSynchronizationJobRestartRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def applications_application_synchronization_jobs_synchronization_job_restart(
+        connection,
+        application_id,
+        synchronization_job_id,
+        service_principals_service_principal_synchronization_jobs_synchronization_job_restart_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/applications/#{application_id}/synchronization/jobs/#{synchronization_job_id}/restart")
-      |> add_param(:body, :body, service_principals_service_principal_synchronization_jobs_synchronization_job_restart_request)
+      |> url(
+        "/applications/#{application_id}/synchronization/jobs/#{synchronization_job_id}/restart"
+      )
+      |> add_param(
+        :body,
+        :body,
+        service_principals_service_principal_synchronization_jobs_synchronization_job_restart_request
+      )
       |> Enum.into([])
 
     connection
@@ -502,19 +700,38 @@ defmodule MicrosoftGraph.Api.ApplicationsActions do
   - `{:ok, MicrosoftGraph.Model.ApplicationsApplicationSynchronizationTemplatesSynchronizationTemplateSchemaDirectoriesDirectoryDefinitionDiscover2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_application_synchronization_jobs_synchronization_job_schema_directories_directory_definition_discover(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.ApplicationsApplicationSynchronizationTemplatesSynchronizationTemplateSchemaDirectoriesDirectoryDefinitionDiscover2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def applications_application_synchronization_jobs_synchronization_job_schema_directories_directory_definition_discover(connection, application_id, synchronization_job_id, directory_definition_id, _opts \\ []) do
+  @spec applications_application_synchronization_jobs_synchronization_job_schema_directories_directory_definition_discover(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.ApplicationsApplicationSynchronizationTemplatesSynchronizationTemplateSchemaDirectoriesDirectoryDefinitionDiscover2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def applications_application_synchronization_jobs_synchronization_job_schema_directories_directory_definition_discover(
+        connection,
+        application_id,
+        synchronization_job_id,
+        directory_definition_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/applications/#{application_id}/synchronization/jobs/#{synchronization_job_id}/schema/directories/#{directory_definition_id}/discover")
+      |> url(
+        "/applications/#{application_id}/synchronization/jobs/#{synchronization_job_id}/schema/directories/#{directory_definition_id}/discover"
+      )
       |> ensure_body()
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.ApplicationsApplicationSynchronizationTemplatesSynchronizationTemplateSchemaDirectoriesDirectoryDefinitionDiscover2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.ApplicationsApplicationSynchronizationTemplatesSynchronizationTemplateSchemaDirectoriesDirectoryDefinitionDiscover2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -537,19 +754,42 @@ defmodule MicrosoftGraph.Api.ApplicationsActions do
   - `{:ok, MicrosoftGraph.Model.ApplicationsApplicationSynchronizationJobsSynchronizationJobSchemaParseExpression2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_application_synchronization_jobs_synchronization_job_schema_parse_expression(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.ApplicationsApplicationSynchronizationJobsSynchronizationJobSchemaParseExpressionRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.ApplicationsApplicationSynchronizationJobsSynchronizationJobSchemaParseExpression2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def applications_application_synchronization_jobs_synchronization_job_schema_parse_expression(connection, application_id, synchronization_job_id, applications_application_synchronization_jobs_synchronization_job_schema_parse_expression_request, _opts \\ []) do
+  @spec applications_application_synchronization_jobs_synchronization_job_schema_parse_expression(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.ApplicationsApplicationSynchronizationJobsSynchronizationJobSchemaParseExpressionRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.ApplicationsApplicationSynchronizationJobsSynchronizationJobSchemaParseExpression2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def applications_application_synchronization_jobs_synchronization_job_schema_parse_expression(
+        connection,
+        application_id,
+        synchronization_job_id,
+        applications_application_synchronization_jobs_synchronization_job_schema_parse_expression_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/applications/#{application_id}/synchronization/jobs/#{synchronization_job_id}/schema/parseExpression")
-      |> add_param(:body, :body, applications_application_synchronization_jobs_synchronization_job_schema_parse_expression_request)
+      |> url(
+        "/applications/#{application_id}/synchronization/jobs/#{synchronization_job_id}/schema/parseExpression"
+      )
+      |> add_param(
+        :body,
+        :body,
+        applications_application_synchronization_jobs_synchronization_job_schema_parse_expression_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.ApplicationsApplicationSynchronizationJobsSynchronizationJobSchemaParseExpression2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.ApplicationsApplicationSynchronizationJobsSynchronizationJobSchemaParseExpression2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -571,12 +811,27 @@ defmodule MicrosoftGraph.Api.ApplicationsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_application_synchronization_jobs_synchronization_job_start(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def applications_application_synchronization_jobs_synchronization_job_start(connection, application_id, synchronization_job_id, _opts \\ []) do
+  @spec applications_application_synchronization_jobs_synchronization_job_start(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def applications_application_synchronization_jobs_synchronization_job_start(
+        connection,
+        application_id,
+        synchronization_job_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/applications/#{application_id}/synchronization/jobs/#{synchronization_job_id}/start")
+      |> url(
+        "/applications/#{application_id}/synchronization/jobs/#{synchronization_job_id}/start"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -606,13 +861,34 @@ defmodule MicrosoftGraph.Api.ApplicationsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_application_synchronization_jobs_synchronization_job_validate_credentials(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.ApplicationsApplicationSynchronizationJobsSynchronizationJobValidateCredentialsRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def applications_application_synchronization_jobs_synchronization_job_validate_credentials(connection, application_id, synchronization_job_id, applications_application_synchronization_jobs_synchronization_job_validate_credentials_request, _opts \\ []) do
+  @spec applications_application_synchronization_jobs_synchronization_job_validate_credentials(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.ApplicationsApplicationSynchronizationJobsSynchronizationJobValidateCredentialsRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def applications_application_synchronization_jobs_synchronization_job_validate_credentials(
+        connection,
+        application_id,
+        synchronization_job_id,
+        applications_application_synchronization_jobs_synchronization_job_validate_credentials_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/applications/#{application_id}/synchronization/jobs/#{synchronization_job_id}/validateCredentials")
-      |> add_param(:body, :body, applications_application_synchronization_jobs_synchronization_job_validate_credentials_request)
+      |> url(
+        "/applications/#{application_id}/synchronization/jobs/#{synchronization_job_id}/validateCredentials"
+      )
+      |> add_param(
+        :body,
+        :body,
+        applications_application_synchronization_jobs_synchronization_job_validate_credentials_request
+      )
       |> Enum.into([])
 
     connection
@@ -639,13 +915,30 @@ defmodule MicrosoftGraph.Api.ApplicationsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_application_synchronization_jobs_validate_credentials(Tesla.Env.client, String.t, MicrosoftGraph.Model.ApplicationsApplicationSynchronizationJobsSynchronizationJobValidateCredentialsRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def applications_application_synchronization_jobs_validate_credentials(connection, application_id, applications_application_synchronization_jobs_synchronization_job_validate_credentials_request, _opts \\ []) do
+  @spec applications_application_synchronization_jobs_validate_credentials(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.ApplicationsApplicationSynchronizationJobsSynchronizationJobValidateCredentialsRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def applications_application_synchronization_jobs_validate_credentials(
+        connection,
+        application_id,
+        applications_application_synchronization_jobs_synchronization_job_validate_credentials_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/applications/#{application_id}/synchronization/jobs/validateCredentials")
-      |> add_param(:body, :body, applications_application_synchronization_jobs_synchronization_job_validate_credentials_request)
+      |> add_param(
+        :body,
+        :body,
+        applications_application_synchronization_jobs_synchronization_job_validate_credentials_request
+      )
       |> Enum.into([])
 
     connection
@@ -674,19 +967,38 @@ defmodule MicrosoftGraph.Api.ApplicationsActions do
   - `{:ok, MicrosoftGraph.Model.ApplicationsApplicationSynchronizationTemplatesSynchronizationTemplateSchemaDirectoriesDirectoryDefinitionDiscover2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_application_synchronization_templates_synchronization_template_schema_directories_directory_definition_discover(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.ApplicationsApplicationSynchronizationTemplatesSynchronizationTemplateSchemaDirectoriesDirectoryDefinitionDiscover2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def applications_application_synchronization_templates_synchronization_template_schema_directories_directory_definition_discover(connection, application_id, synchronization_template_id, directory_definition_id, _opts \\ []) do
+  @spec applications_application_synchronization_templates_synchronization_template_schema_directories_directory_definition_discover(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.ApplicationsApplicationSynchronizationTemplatesSynchronizationTemplateSchemaDirectoriesDirectoryDefinitionDiscover2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def applications_application_synchronization_templates_synchronization_template_schema_directories_directory_definition_discover(
+        connection,
+        application_id,
+        synchronization_template_id,
+        directory_definition_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/applications/#{application_id}/synchronization/templates/#{synchronization_template_id}/schema/directories/#{directory_definition_id}/discover")
+      |> url(
+        "/applications/#{application_id}/synchronization/templates/#{synchronization_template_id}/schema/directories/#{directory_definition_id}/discover"
+      )
       |> ensure_body()
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.ApplicationsApplicationSynchronizationTemplatesSynchronizationTemplateSchemaDirectoriesDirectoryDefinitionDiscover2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.ApplicationsApplicationSynchronizationTemplatesSynchronizationTemplateSchemaDirectoriesDirectoryDefinitionDiscover2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -709,19 +1021,42 @@ defmodule MicrosoftGraph.Api.ApplicationsActions do
   - `{:ok, MicrosoftGraph.Model.ApplicationsApplicationSynchronizationJobsSynchronizationJobSchemaParseExpression2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_application_synchronization_templates_synchronization_template_schema_parse_expression(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.ApplicationsApplicationSynchronizationJobsSynchronizationJobSchemaParseExpressionRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.ApplicationsApplicationSynchronizationJobsSynchronizationJobSchemaParseExpression2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def applications_application_synchronization_templates_synchronization_template_schema_parse_expression(connection, application_id, synchronization_template_id, applications_application_synchronization_jobs_synchronization_job_schema_parse_expression_request, _opts \\ []) do
+  @spec applications_application_synchronization_templates_synchronization_template_schema_parse_expression(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.ApplicationsApplicationSynchronizationJobsSynchronizationJobSchemaParseExpressionRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.ApplicationsApplicationSynchronizationJobsSynchronizationJobSchemaParseExpression2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def applications_application_synchronization_templates_synchronization_template_schema_parse_expression(
+        connection,
+        application_id,
+        synchronization_template_id,
+        applications_application_synchronization_jobs_synchronization_job_schema_parse_expression_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/applications/#{application_id}/synchronization/templates/#{synchronization_template_id}/schema/parseExpression")
-      |> add_param(:body, :body, applications_application_synchronization_jobs_synchronization_job_schema_parse_expression_request)
+      |> url(
+        "/applications/#{application_id}/synchronization/templates/#{synchronization_template_id}/schema/parseExpression"
+      )
+      |> add_param(
+        :body,
+        :body,
+        applications_application_synchronization_jobs_synchronization_job_schema_parse_expression_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.ApplicationsApplicationSynchronizationJobsSynchronizationJobSchemaParseExpression2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.ApplicationsApplicationSynchronizationJobsSynchronizationJobSchemaParseExpression2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -742,7 +1077,14 @@ defmodule MicrosoftGraph.Api.ApplicationsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_application_unset_verified_publisher(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec applications_application_unset_verified_publisher(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def applications_application_unset_verified_publisher(connection, application_id, _opts \\ []) do
     request =
       %{}
@@ -775,13 +1117,28 @@ defmodule MicrosoftGraph.Api.ApplicationsActions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfExtensionProperty.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_get_available_extension_properties(Tesla.Env.client, MicrosoftGraph.Model.DirectoryDeletedItemsGetAvailableExtensionPropertiesRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfExtensionProperty.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def applications_get_available_extension_properties(connection, directory_deleted_items_get_available_extension_properties_request, _opts \\ []) do
+  @spec applications_get_available_extension_properties(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.DirectoryDeletedItemsGetAvailableExtensionPropertiesRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfExtensionProperty.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def applications_get_available_extension_properties(
+        connection,
+        directory_deleted_items_get_available_extension_properties_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/applications/getAvailableExtensionProperties")
-      |> add_param(:body, :body, directory_deleted_items_get_available_extension_properties_request)
+      |> add_param(
+        :body,
+        :body,
+        directory_deleted_items_get_available_extension_properties_request
+      )
       |> Enum.into([])
 
     connection
@@ -808,7 +1165,14 @@ defmodule MicrosoftGraph.Api.ApplicationsActions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_get_by_ids(Tesla.Env.client, MicrosoftGraph.Model.ContactsGetByIdsRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.CollectionOfDirectoryObject.t} | {:error, Tesla.Env.t}
+  @spec applications_get_by_ids(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.ContactsGetByIdsRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.CollectionOfDirectoryObject.t()}
+          | {:error, Tesla.Env.t()}
   def applications_get_by_ids(connection, contacts_get_by_ids_request, _opts \\ []) do
     request =
       %{}
@@ -841,8 +1205,19 @@ defmodule MicrosoftGraph.Api.ApplicationsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_validate_properties(Tesla.Env.client, MicrosoftGraph.Model.ContactsValidatePropertiesRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def applications_validate_properties(connection, contacts_validate_properties_request, _opts \\ []) do
+  @spec applications_validate_properties(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.ContactsValidatePropertiesRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def applications_validate_properties(
+        connection,
+        contacts_validate_properties_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)

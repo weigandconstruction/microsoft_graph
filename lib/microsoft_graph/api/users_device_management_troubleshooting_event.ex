@@ -24,8 +24,21 @@ defmodule MicrosoftGraph.Api.UsersDeviceManagementTroubleshootingEvent do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceManagementTroubleshootingEvent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_create_device_management_troubleshooting_events(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphDeviceManagementTroubleshootingEvent.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceManagementTroubleshootingEvent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_create_device_management_troubleshooting_events(connection, user_id, microsoft_graph_device_management_troubleshooting_event, _opts \\ []) do
+  @spec users_create_device_management_troubleshooting_events(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDeviceManagementTroubleshootingEvent.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceManagementTroubleshootingEvent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_create_device_management_troubleshooting_events(
+        connection,
+        user_id,
+        microsoft_graph_device_management_troubleshooting_event,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -58,8 +71,21 @@ defmodule MicrosoftGraph.Api.UsersDeviceManagementTroubleshootingEvent do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_delete_device_management_troubleshooting_events(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_delete_device_management_troubleshooting_events(connection, user_id, device_management_troubleshooting_event_id, opts \\ []) do
+  @spec users_delete_device_management_troubleshooting_events(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_delete_device_management_troubleshooting_events(
+        connection,
+        user_id,
+        device_management_troubleshooting_event_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -67,7 +93,9 @@ defmodule MicrosoftGraph.Api.UsersDeviceManagementTroubleshootingEvent do
     request =
       %{}
       |> method(:delete)
-      |> url("/users/#{user_id}/deviceManagementTroubleshootingEvents/#{device_management_troubleshooting_event_id}")
+      |> url(
+        "/users/#{user_id}/deviceManagementTroubleshootingEvents/#{device_management_troubleshooting_event_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -96,8 +124,19 @@ defmodule MicrosoftGraph.Api.UsersDeviceManagementTroubleshootingEvent do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_device_management_troubleshooting_events_get_count3623(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_device_management_troubleshooting_events_get_count3623(connection, user_id, opts \\ []) do
+  @spec users_device_management_troubleshooting_events_get_count3623(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_device_management_troubleshooting_events_get_count3623(
+        connection,
+        user_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -137,8 +176,21 @@ defmodule MicrosoftGraph.Api.UsersDeviceManagementTroubleshootingEvent do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceManagementTroubleshootingEvent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_get_device_management_troubleshooting_events(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceManagementTroubleshootingEvent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_get_device_management_troubleshooting_events(connection, user_id, device_management_troubleshooting_event_id, opts \\ []) do
+  @spec users_get_device_management_troubleshooting_events(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceManagementTroubleshootingEvent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_get_device_management_troubleshooting_events(
+        connection,
+        user_id,
+        device_management_troubleshooting_event_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -147,7 +199,9 @@ defmodule MicrosoftGraph.Api.UsersDeviceManagementTroubleshootingEvent do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/deviceManagementTroubleshootingEvents/#{device_management_troubleshooting_event_id}")
+      |> url(
+        "/users/#{user_id}/deviceManagementTroubleshootingEvents/#{device_management_troubleshooting_event_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -183,7 +237,15 @@ defmodule MicrosoftGraph.Api.UsersDeviceManagementTroubleshootingEvent do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceManagementTroubleshootingEventCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_list_device_management_troubleshooting_events(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceManagementTroubleshootingEventCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_list_device_management_troubleshooting_events(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphDeviceManagementTroubleshootingEventCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_list_device_management_troubleshooting_events(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -206,7 +268,8 @@ defmodule MicrosoftGraph.Api.UsersDeviceManagementTroubleshootingEvent do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphDeviceManagementTroubleshootingEventCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphDeviceManagementTroubleshootingEventCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -228,12 +291,29 @@ defmodule MicrosoftGraph.Api.UsersDeviceManagementTroubleshootingEvent do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceManagementTroubleshootingEvent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_update_device_management_troubleshooting_events(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphDeviceManagementTroubleshootingEvent.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceManagementTroubleshootingEvent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_update_device_management_troubleshooting_events(connection, user_id, device_management_troubleshooting_event_id, microsoft_graph_device_management_troubleshooting_event, _opts \\ []) do
+  @spec users_update_device_management_troubleshooting_events(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDeviceManagementTroubleshootingEvent.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceManagementTroubleshootingEvent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_update_device_management_troubleshooting_events(
+        connection,
+        user_id,
+        device_management_troubleshooting_event_id,
+        microsoft_graph_device_management_troubleshooting_event,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/users/#{user_id}/deviceManagementTroubleshootingEvents/#{device_management_troubleshooting_event_id}")
+      |> url(
+        "/users/#{user_id}/deviceManagementTroubleshootingEvents/#{device_management_troubleshooting_event_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_device_management_troubleshooting_event)
       |> Enum.into([])
 

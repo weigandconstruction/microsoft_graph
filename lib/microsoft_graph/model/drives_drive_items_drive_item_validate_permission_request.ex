@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemValidatePermissionRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,12 +13,11 @@ defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemValidatePermissionReques
   ]
 
   @type t :: %__MODULE__{
-    :challengeToken => String.t | nil,
-    :password => String.t | nil
-  }
+          :challengeToken => String.t() | nil,
+          :password => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

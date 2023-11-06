@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSimulation do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -37,57 +37,93 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSimulation do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :attackTechnique => MicrosoftGraph.Model.SimulationAttackTechnique.t | nil,
-    :attackType => MicrosoftGraph.Model.SimulationAttackType.t | nil,
-    :automationId => String.t | nil,
-    :completionDateTime => DateTime.t | nil,
-    :createdBy => MicrosoftGraph.Model.SimulationCreatedBy.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :durationInDays => integer() | nil,
-    :endUserNotificationSetting => MicrosoftGraph.Model.SimulationEndUserNotificationSetting.t | nil,
-    :excludedAccountTarget => MicrosoftGraph.Model.SimulationExcludedAccountTarget.t | nil,
-    :includedAccountTarget => MicrosoftGraph.Model.SimulationIncludedAccountTarget.t | nil,
-    :isAutomated => boolean() | nil,
-    :landingPage => MicrosoftGraph.Model.SimulationLandingPage.t | nil,
-    :lastModifiedBy => MicrosoftGraph.Model.SimulationLastModifiedBy.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :launchDateTime => DateTime.t | nil,
-    :loginPage => MicrosoftGraph.Model.SimulationLoginPage.t | nil,
-    :oAuthConsentAppDetail => MicrosoftGraph.Model.SimulationOAuthConsentAppDetail.t | nil,
-    :payload => MicrosoftGraph.Model.SimulationPayload.t | nil,
-    :payloadDeliveryPlatform => MicrosoftGraph.Model.SimulationPayloadDeliveryPlatform.t | nil,
-    :report => MicrosoftGraph.Model.SimulationReport.t | nil,
-    :status => MicrosoftGraph.Model.SimulationStatus.t | nil,
-    :trainingSetting => MicrosoftGraph.Model.SimulationTrainingSetting.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :attackTechnique => MicrosoftGraph.Model.SimulationAttackTechnique.t() | nil,
+          :attackType => MicrosoftGraph.Model.SimulationAttackType.t() | nil,
+          :automationId => String.t() | nil,
+          :completionDateTime => DateTime.t() | nil,
+          :createdBy => MicrosoftGraph.Model.SimulationCreatedBy.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :durationInDays => integer() | nil,
+          :endUserNotificationSetting =>
+            MicrosoftGraph.Model.SimulationEndUserNotificationSetting.t() | nil,
+          :excludedAccountTarget =>
+            MicrosoftGraph.Model.SimulationExcludedAccountTarget.t() | nil,
+          :includedAccountTarget =>
+            MicrosoftGraph.Model.SimulationIncludedAccountTarget.t() | nil,
+          :isAutomated => boolean() | nil,
+          :landingPage => MicrosoftGraph.Model.SimulationLandingPage.t() | nil,
+          :lastModifiedBy => MicrosoftGraph.Model.SimulationLastModifiedBy.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :launchDateTime => DateTime.t() | nil,
+          :loginPage => MicrosoftGraph.Model.SimulationLoginPage.t() | nil,
+          :oAuthConsentAppDetail =>
+            MicrosoftGraph.Model.SimulationOAuthConsentAppDetail.t() | nil,
+          :payload => MicrosoftGraph.Model.SimulationPayload.t() | nil,
+          :payloadDeliveryPlatform =>
+            MicrosoftGraph.Model.SimulationPayloadDeliveryPlatform.t() | nil,
+          :report => MicrosoftGraph.Model.SimulationReport.t() | nil,
+          :status => MicrosoftGraph.Model.SimulationStatus.t() | nil,
+          :trainingSetting => MicrosoftGraph.Model.SimulationTrainingSetting.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:attackTechnique, :struct, MicrosoftGraph.Model.SimulationAttackTechnique)
-     |> Deserializer.deserialize(:attackType, :struct, MicrosoftGraph.Model.SimulationAttackType)
-     |> Deserializer.deserialize(:completionDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.SimulationCreatedBy)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:endUserNotificationSetting, :struct, MicrosoftGraph.Model.SimulationEndUserNotificationSetting)
-     |> Deserializer.deserialize(:excludedAccountTarget, :struct, MicrosoftGraph.Model.SimulationExcludedAccountTarget)
-     |> Deserializer.deserialize(:includedAccountTarget, :struct, MicrosoftGraph.Model.SimulationIncludedAccountTarget)
-     |> Deserializer.deserialize(:landingPage, :struct, MicrosoftGraph.Model.SimulationLandingPage)
-     |> Deserializer.deserialize(:lastModifiedBy, :struct, MicrosoftGraph.Model.SimulationLastModifiedBy)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:launchDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:loginPage, :struct, MicrosoftGraph.Model.SimulationLoginPage)
-     |> Deserializer.deserialize(:oAuthConsentAppDetail, :struct, MicrosoftGraph.Model.SimulationOAuthConsentAppDetail)
-     |> Deserializer.deserialize(:payload, :struct, MicrosoftGraph.Model.SimulationPayload)
-     |> Deserializer.deserialize(:payloadDeliveryPlatform, :struct, MicrosoftGraph.Model.SimulationPayloadDeliveryPlatform)
-     |> Deserializer.deserialize(:report, :struct, MicrosoftGraph.Model.SimulationReport)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.SimulationStatus)
-     |> Deserializer.deserialize(:trainingSetting, :struct, MicrosoftGraph.Model.SimulationTrainingSetting)
+    |> Deserializer.deserialize(
+      :attackTechnique,
+      :struct,
+      MicrosoftGraph.Model.SimulationAttackTechnique
+    )
+    |> Deserializer.deserialize(:attackType, :struct, MicrosoftGraph.Model.SimulationAttackType)
+    |> Deserializer.deserialize(:completionDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.SimulationCreatedBy)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :endUserNotificationSetting,
+      :struct,
+      MicrosoftGraph.Model.SimulationEndUserNotificationSetting
+    )
+    |> Deserializer.deserialize(
+      :excludedAccountTarget,
+      :struct,
+      MicrosoftGraph.Model.SimulationExcludedAccountTarget
+    )
+    |> Deserializer.deserialize(
+      :includedAccountTarget,
+      :struct,
+      MicrosoftGraph.Model.SimulationIncludedAccountTarget
+    )
+    |> Deserializer.deserialize(:landingPage, :struct, MicrosoftGraph.Model.SimulationLandingPage)
+    |> Deserializer.deserialize(
+      :lastModifiedBy,
+      :struct,
+      MicrosoftGraph.Model.SimulationLastModifiedBy
+    )
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:launchDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:loginPage, :struct, MicrosoftGraph.Model.SimulationLoginPage)
+    |> Deserializer.deserialize(
+      :oAuthConsentAppDetail,
+      :struct,
+      MicrosoftGraph.Model.SimulationOAuthConsentAppDetail
+    )
+    |> Deserializer.deserialize(:payload, :struct, MicrosoftGraph.Model.SimulationPayload)
+    |> Deserializer.deserialize(
+      :payloadDeliveryPlatform,
+      :struct,
+      MicrosoftGraph.Model.SimulationPayloadDeliveryPlatform
+    )
+    |> Deserializer.deserialize(:report, :struct, MicrosoftGraph.Model.SimulationReport)
+    |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.SimulationStatus)
+    |> Deserializer.deserialize(
+      :trainingSetting,
+      :struct,
+      MicrosoftGraph.Model.SimulationTrainingSetting
+    )
   end
 end
-

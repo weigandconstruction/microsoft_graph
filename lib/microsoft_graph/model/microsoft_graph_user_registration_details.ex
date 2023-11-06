@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphUserRegistrationDetails do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -28,32 +28,41 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphUserRegistrationDetails do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :isAdmin => boolean() | nil,
-    :isMfaCapable => boolean() | nil,
-    :isMfaRegistered => boolean() | nil,
-    :isPasswordlessCapable => boolean() | nil,
-    :isSsprCapable => boolean() | nil,
-    :isSsprEnabled => boolean() | nil,
-    :isSsprRegistered => boolean() | nil,
-    :isSystemPreferredAuthenticationMethodEnabled => boolean() | nil,
-    :lastUpdatedDateTime => DateTime.t | nil,
-    :methodsRegistered => [String.t] | nil,
-    :systemPreferredAuthenticationMethods => [String.t] | nil,
-    :userDisplayName => String.t | nil,
-    :userPreferredMethodForSecondaryAuthentication => MicrosoftGraph.Model.UserRegistrationDetailsUserPreferredMethodForSecondaryAuthentication.t | nil,
-    :userPrincipalName => String.t | nil,
-    :userType => MicrosoftGraph.Model.UserRegistrationDetailsUserType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :isAdmin => boolean() | nil,
+          :isMfaCapable => boolean() | nil,
+          :isMfaRegistered => boolean() | nil,
+          :isPasswordlessCapable => boolean() | nil,
+          :isSsprCapable => boolean() | nil,
+          :isSsprEnabled => boolean() | nil,
+          :isSsprRegistered => boolean() | nil,
+          :isSystemPreferredAuthenticationMethodEnabled => boolean() | nil,
+          :lastUpdatedDateTime => DateTime.t() | nil,
+          :methodsRegistered => [String.t()] | nil,
+          :systemPreferredAuthenticationMethods => [String.t()] | nil,
+          :userDisplayName => String.t() | nil,
+          :userPreferredMethodForSecondaryAuthentication =>
+            MicrosoftGraph.Model.UserRegistrationDetailsUserPreferredMethodForSecondaryAuthentication.t()
+            | nil,
+          :userPrincipalName => String.t() | nil,
+          :userType => MicrosoftGraph.Model.UserRegistrationDetailsUserType.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:lastUpdatedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:userPreferredMethodForSecondaryAuthentication, :struct, MicrosoftGraph.Model.UserRegistrationDetailsUserPreferredMethodForSecondaryAuthentication)
-     |> Deserializer.deserialize(:userType, :struct, MicrosoftGraph.Model.UserRegistrationDetailsUserType)
+    |> Deserializer.deserialize(:lastUpdatedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :userPreferredMethodForSecondaryAuthentication,
+      :struct,
+      MicrosoftGraph.Model.UserRegistrationDetailsUserPreferredMethodForSecondaryAuthentication
+    )
+    |> Deserializer.deserialize(
+      :userType,
+      :struct,
+      MicrosoftGraph.Model.UserRegistrationDetailsUserType
+    )
   end
 end
-

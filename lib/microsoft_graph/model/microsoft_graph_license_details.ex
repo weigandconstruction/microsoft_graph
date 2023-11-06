@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphLicenseDetails do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,18 +16,21 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphLicenseDetails do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :servicePlans => [MicrosoftGraph.Model.MicrosoftGraphServicePlanInfo.t] | nil,
-    :skuId => String.t | nil,
-    :skuPartNumber => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :servicePlans => [MicrosoftGraph.Model.MicrosoftGraphServicePlanInfo.t()] | nil,
+          :skuId => String.t() | nil,
+          :skuPartNumber => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:servicePlans, :list, MicrosoftGraph.Model.MicrosoftGraphServicePlanInfo)
+    |> Deserializer.deserialize(
+      :servicePlans,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphServicePlanInfo
+    )
   end
 end
-

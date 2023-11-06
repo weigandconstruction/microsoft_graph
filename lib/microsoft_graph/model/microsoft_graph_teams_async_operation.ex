@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphTeamsAsyncOperation do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -21,27 +21,34 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphTeamsAsyncOperation do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :attemptsCount => integer() | nil,
-    :createdDateTime => DateTime.t | nil,
-    :error => MicrosoftGraph.Model.TeamsAsyncOperationError.t | nil,
-    :lastActionDateTime => DateTime.t | nil,
-    :operationType => MicrosoftGraph.Model.MicrosoftGraphTeamsAsyncOperationType.t | nil,
-    :status => MicrosoftGraph.Model.MicrosoftGraphTeamsAsyncOperationStatus.t | nil,
-    :targetResourceId => String.t | nil,
-    :targetResourceLocation => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :attemptsCount => integer() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :error => MicrosoftGraph.Model.TeamsAsyncOperationError.t() | nil,
+          :lastActionDateTime => DateTime.t() | nil,
+          :operationType => MicrosoftGraph.Model.MicrosoftGraphTeamsAsyncOperationType.t() | nil,
+          :status => MicrosoftGraph.Model.MicrosoftGraphTeamsAsyncOperationStatus.t() | nil,
+          :targetResourceId => String.t() | nil,
+          :targetResourceLocation => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:error, :struct, MicrosoftGraph.Model.TeamsAsyncOperationError)
-     |> Deserializer.deserialize(:lastActionDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:operationType, :struct, MicrosoftGraph.Model.MicrosoftGraphTeamsAsyncOperationType)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.MicrosoftGraphTeamsAsyncOperationStatus)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:error, :struct, MicrosoftGraph.Model.TeamsAsyncOperationError)
+    |> Deserializer.deserialize(:lastActionDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :operationType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphTeamsAsyncOperationType
+    )
+    |> Deserializer.deserialize(
+      :status,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphTeamsAsyncOperationStatus
+    )
   end
 end
-

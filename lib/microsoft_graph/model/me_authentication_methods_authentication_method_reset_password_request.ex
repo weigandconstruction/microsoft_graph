@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MeAuthenticationMethodsAuthenticationMethodResetPasswordRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,11 +12,10 @@ defmodule MicrosoftGraph.Model.MeAuthenticationMethodsAuthenticationMethodResetP
   ]
 
   @type t :: %__MODULE__{
-    :newPassword => String.t | nil
-  }
+          :newPassword => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

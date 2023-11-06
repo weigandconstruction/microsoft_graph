@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodsRegistrationCampaignIncludeTarget do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,17 +15,21 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodsRegistrationCa
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :targetType => MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodTargetType.t | nil,
-    :targetedAuthenticationMethod => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :targetType =>
+            MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodTargetType.t() | nil,
+          :targetedAuthenticationMethod => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:targetType, :struct, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodTargetType)
+    |> Deserializer.deserialize(
+      :targetType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodTargetType
+    )
   end
 end
-

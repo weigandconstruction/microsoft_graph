@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSecureScore do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -23,30 +23,46 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSecureScore do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :activeUserCount => integer() | nil,
-    :averageComparativeScores => [MicrosoftGraph.Model.SecureScoreAverageComparativeScoresInner.t] | nil,
-    :azureTenantId => String.t | nil,
-    :controlScores => [MicrosoftGraph.Model.SecureScoreControlScoresInner.t] | nil,
-    :createdDateTime => DateTime.t | nil,
-    :currentScore => MicrosoftGraph.Model.SecureScoreCurrentScore.t | nil,
-    :enabledServices => [String.t] | nil,
-    :licensedUserCount => integer() | nil,
-    :maxScore => MicrosoftGraph.Model.SecureScoreMaxScore.t | nil,
-    :vendorInformation => MicrosoftGraph.Model.SecureScoreVendorInformation.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :activeUserCount => integer() | nil,
+          :averageComparativeScores =>
+            [MicrosoftGraph.Model.SecureScoreAverageComparativeScoresInner.t()] | nil,
+          :azureTenantId => String.t() | nil,
+          :controlScores => [MicrosoftGraph.Model.SecureScoreControlScoresInner.t()] | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :currentScore => MicrosoftGraph.Model.SecureScoreCurrentScore.t() | nil,
+          :enabledServices => [String.t()] | nil,
+          :licensedUserCount => integer() | nil,
+          :maxScore => MicrosoftGraph.Model.SecureScoreMaxScore.t() | nil,
+          :vendorInformation => MicrosoftGraph.Model.SecureScoreVendorInformation.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:averageComparativeScores, :list, MicrosoftGraph.Model.SecureScoreAverageComparativeScoresInner)
-     |> Deserializer.deserialize(:controlScores, :list, MicrosoftGraph.Model.SecureScoreControlScoresInner)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:currentScore, :struct, MicrosoftGraph.Model.SecureScoreCurrentScore)
-     |> Deserializer.deserialize(:maxScore, :struct, MicrosoftGraph.Model.SecureScoreMaxScore)
-     |> Deserializer.deserialize(:vendorInformation, :struct, MicrosoftGraph.Model.SecureScoreVendorInformation)
+    |> Deserializer.deserialize(
+      :averageComparativeScores,
+      :list,
+      MicrosoftGraph.Model.SecureScoreAverageComparativeScoresInner
+    )
+    |> Deserializer.deserialize(
+      :controlScores,
+      :list,
+      MicrosoftGraph.Model.SecureScoreControlScoresInner
+    )
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :currentScore,
+      :struct,
+      MicrosoftGraph.Model.SecureScoreCurrentScore
+    )
+    |> Deserializer.deserialize(:maxScore, :struct, MicrosoftGraph.Model.SecureScoreMaxScore)
+    |> Deserializer.deserialize(
+      :vendorInformation,
+      :struct,
+      MicrosoftGraph.Model.SecureScoreVendorInformation
+    )
   end
 end
-

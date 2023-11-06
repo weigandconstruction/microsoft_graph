@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,23 +19,22 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphRequest do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :approvalId => String.t | nil,
-    :completedDateTime => DateTime.t | nil,
-    :createdBy => MicrosoftGraph.Model.RequestCreatedBy.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :customData => String.t | nil,
-    :status => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :approvalId => String.t() | nil,
+          :completedDateTime => DateTime.t() | nil,
+          :createdBy => MicrosoftGraph.Model.RequestCreatedBy.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :customData => String.t() | nil,
+          :status => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:completedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.RequestCreatedBy)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:completedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.RequestCreatedBy)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
   end
 end
-

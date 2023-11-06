@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphTeamsAppPermissionSetResourceSpecificPermissionsInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,21 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphTeamsAppPermissionSetResourceSpecif
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :permissionType => MicrosoftGraph.Model.MicrosoftGraphTeamsAppResourceSpecificPermissionPermissionType.t | nil,
-    :permissionValue => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :permissionType =>
+            MicrosoftGraph.Model.MicrosoftGraphTeamsAppResourceSpecificPermissionPermissionType.t()
+            | nil,
+          :permissionValue => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:permissionType, :struct, MicrosoftGraph.Model.MicrosoftGraphTeamsAppResourceSpecificPermissionPermissionType)
+    |> Deserializer.deserialize(
+      :permissionType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphTeamsAppResourceSpecificPermissionPermissionType
+    )
   end
 end
-

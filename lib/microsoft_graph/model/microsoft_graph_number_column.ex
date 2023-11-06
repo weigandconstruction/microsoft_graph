@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphNumberColumn do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,19 +16,26 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphNumberColumn do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :decimalPlaces => String.t | nil,
-    :displayAs => String.t | nil,
-    :maximum => MicrosoftGraph.Model.MicrosoftGraphNumberColumnMaximum.t | nil,
-    :minimum => MicrosoftGraph.Model.MicrosoftGraphNumberColumnMinimum.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :decimalPlaces => String.t() | nil,
+          :displayAs => String.t() | nil,
+          :maximum => MicrosoftGraph.Model.MicrosoftGraphNumberColumnMaximum.t() | nil,
+          :minimum => MicrosoftGraph.Model.MicrosoftGraphNumberColumnMinimum.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:maximum, :struct, MicrosoftGraph.Model.MicrosoftGraphNumberColumnMaximum)
-     |> Deserializer.deserialize(:minimum, :struct, MicrosoftGraph.Model.MicrosoftGraphNumberColumnMinimum)
+    |> Deserializer.deserialize(
+      :maximum,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphNumberColumnMaximum
+    )
+    |> Deserializer.deserialize(
+      :minimum,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphNumberColumnMinimum
+    )
   end
 end
-

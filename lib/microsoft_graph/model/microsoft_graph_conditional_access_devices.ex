@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphConditionalAccessDevices do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,15 +13,19 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphConditionalAccessDevices do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :deviceFilter => MicrosoftGraph.Model.MicrosoftGraphConditionalAccessDevicesDeviceFilter.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :deviceFilter =>
+            MicrosoftGraph.Model.MicrosoftGraphConditionalAccessDevicesDeviceFilter.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:deviceFilter, :struct, MicrosoftGraph.Model.MicrosoftGraphConditionalAccessDevicesDeviceFilter)
+    |> Deserializer.deserialize(
+      :deviceFilter,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphConditionalAccessDevicesDeviceFilter
+    )
   end
 end
-

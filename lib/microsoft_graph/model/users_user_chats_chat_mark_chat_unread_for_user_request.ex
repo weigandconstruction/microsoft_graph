@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.UsersUserChatsChatMarkChatUnreadForUserRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,16 +13,19 @@ defmodule MicrosoftGraph.Model.UsersUserChatsChatMarkChatUnreadForUserRequest do
   ]
 
   @type t :: %__MODULE__{
-    :lastMessageReadDateTime => DateTime.t | nil,
-    :user => MicrosoftGraph.Model.ChatsChatUnhideForUserRequestUser.t | nil
-  }
+          :lastMessageReadDateTime => DateTime.t() | nil,
+          :user => MicrosoftGraph.Model.ChatsChatUnhideForUserRequestUser.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:lastMessageReadDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:user, :struct, MicrosoftGraph.Model.ChatsChatUnhideForUserRequestUser)
+    |> Deserializer.deserialize(:lastMessageReadDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :user,
+      :struct,
+      MicrosoftGraph.Model.ChatsChatUnhideForUserRequestUser
+    )
   end
 end
-

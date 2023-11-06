@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.SubjectRightsRequestStagesInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,19 +15,33 @@ defmodule MicrosoftGraph.Model.SubjectRightsRequestStagesInner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :error => MicrosoftGraph.Model.MicrosoftGraphSubjectRightsRequestStageDetailError.t | nil,
-    :stage => MicrosoftGraph.Model.MicrosoftGraphSubjectRightsRequestStageDetailStage.t | nil,
-    :status => MicrosoftGraph.Model.MicrosoftGraphSubjectRightsRequestStageDetailStatus.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :error =>
+            MicrosoftGraph.Model.MicrosoftGraphSubjectRightsRequestStageDetailError.t() | nil,
+          :stage =>
+            MicrosoftGraph.Model.MicrosoftGraphSubjectRightsRequestStageDetailStage.t() | nil,
+          :status =>
+            MicrosoftGraph.Model.MicrosoftGraphSubjectRightsRequestStageDetailStatus.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:error, :struct, MicrosoftGraph.Model.MicrosoftGraphSubjectRightsRequestStageDetailError)
-     |> Deserializer.deserialize(:stage, :struct, MicrosoftGraph.Model.MicrosoftGraphSubjectRightsRequestStageDetailStage)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.MicrosoftGraphSubjectRightsRequestStageDetailStatus)
+    |> Deserializer.deserialize(
+      :error,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSubjectRightsRequestStageDetailError
+    )
+    |> Deserializer.deserialize(
+      :stage,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSubjectRightsRequestStageDetailStage
+    )
+    |> Deserializer.deserialize(
+      :status,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSubjectRightsRequestStageDetailStatus
+    )
   end
 end
-

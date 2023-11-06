@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphDeviceEnrollmentWindowsHelloForBusinessConfiguration do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -32,41 +32,64 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphDeviceEnrollmentWindowsHelloForBusi
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :assignments => [MicrosoftGraph.Model.MicrosoftGraphEnrollmentConfigurationAssignment.t] | nil,
-    :createdDateTime => DateTime.t | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :priority => integer() | nil,
-    :version => integer() | nil,
-    :enhancedBiometricsState => MicrosoftGraph.Model.MicrosoftGraphEnablement.t | nil,
-    :pinExpirationInDays => integer() | nil,
-    :pinLowercaseCharactersUsage => MicrosoftGraph.Model.MicrosoftGraphWindowsHelloForBusinessPinUsage.t | nil,
-    :pinMaximumLength => integer() | nil,
-    :pinMinimumLength => integer() | nil,
-    :pinPreviousBlockCount => integer() | nil,
-    :pinSpecialCharactersUsage => MicrosoftGraph.Model.MicrosoftGraphWindowsHelloForBusinessPinUsage.t | nil,
-    :pinUppercaseCharactersUsage => MicrosoftGraph.Model.MicrosoftGraphWindowsHelloForBusinessPinUsage.t | nil,
-    :remotePassportEnabled => boolean() | nil,
-    :securityDeviceRequired => boolean() | nil,
-    :state => MicrosoftGraph.Model.MicrosoftGraphEnablement.t | nil,
-    :unlockWithBiometricsEnabled => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :assignments =>
+            [MicrosoftGraph.Model.MicrosoftGraphEnrollmentConfigurationAssignment.t()] | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :priority => integer() | nil,
+          :version => integer() | nil,
+          :enhancedBiometricsState => MicrosoftGraph.Model.MicrosoftGraphEnablement.t() | nil,
+          :pinExpirationInDays => integer() | nil,
+          :pinLowercaseCharactersUsage =>
+            MicrosoftGraph.Model.MicrosoftGraphWindowsHelloForBusinessPinUsage.t() | nil,
+          :pinMaximumLength => integer() | nil,
+          :pinMinimumLength => integer() | nil,
+          :pinPreviousBlockCount => integer() | nil,
+          :pinSpecialCharactersUsage =>
+            MicrosoftGraph.Model.MicrosoftGraphWindowsHelloForBusinessPinUsage.t() | nil,
+          :pinUppercaseCharactersUsage =>
+            MicrosoftGraph.Model.MicrosoftGraphWindowsHelloForBusinessPinUsage.t() | nil,
+          :remotePassportEnabled => boolean() | nil,
+          :securityDeviceRequired => boolean() | nil,
+          :state => MicrosoftGraph.Model.MicrosoftGraphEnablement.t() | nil,
+          :unlockWithBiometricsEnabled => boolean() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:assignments, :list, MicrosoftGraph.Model.MicrosoftGraphEnrollmentConfigurationAssignment)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:enhancedBiometricsState, :struct, MicrosoftGraph.Model.MicrosoftGraphEnablement)
-     |> Deserializer.deserialize(:pinLowercaseCharactersUsage, :struct, MicrosoftGraph.Model.MicrosoftGraphWindowsHelloForBusinessPinUsage)
-     |> Deserializer.deserialize(:pinSpecialCharactersUsage, :struct, MicrosoftGraph.Model.MicrosoftGraphWindowsHelloForBusinessPinUsage)
-     |> Deserializer.deserialize(:pinUppercaseCharactersUsage, :struct, MicrosoftGraph.Model.MicrosoftGraphWindowsHelloForBusinessPinUsage)
-     |> Deserializer.deserialize(:state, :struct, MicrosoftGraph.Model.MicrosoftGraphEnablement)
+    |> Deserializer.deserialize(
+      :assignments,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphEnrollmentConfigurationAssignment
+    )
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :enhancedBiometricsState,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphEnablement
+    )
+    |> Deserializer.deserialize(
+      :pinLowercaseCharactersUsage,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphWindowsHelloForBusinessPinUsage
+    )
+    |> Deserializer.deserialize(
+      :pinSpecialCharactersUsage,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphWindowsHelloForBusinessPinUsage
+    )
+    |> Deserializer.deserialize(
+      :pinUppercaseCharactersUsage,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphWindowsHelloForBusinessPinUsage
+    )
+    |> Deserializer.deserialize(:state, :struct, MicrosoftGraph.Model.MicrosoftGraphEnablement)
   end
 end
-

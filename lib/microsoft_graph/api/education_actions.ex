@@ -25,19 +25,36 @@ defmodule MicrosoftGraph.Api.EducationActions do
   - `{:ok, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_education_class_assignments_education_assignment_publish(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_education_class_assignments_education_assignment_publish(connection, education_class_id, education_assignment_id, _opts \\ []) do
+  @spec education_classes_education_class_assignments_education_assignment_publish(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_education_class_assignments_education_assignment_publish(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/publish")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/publish"
+      )
       |> ensure_body()
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -59,19 +76,36 @@ defmodule MicrosoftGraph.Api.EducationActions do
   - `{:ok, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_education_class_assignments_education_assignment_set_up_feedback_resources_folder(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_education_class_assignments_education_assignment_set_up_feedback_resources_folder(connection, education_class_id, education_assignment_id, _opts \\ []) do
+  @spec education_classes_education_class_assignments_education_assignment_set_up_feedback_resources_folder(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_education_class_assignments_education_assignment_set_up_feedback_resources_folder(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/setUpFeedbackResourcesFolder")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/setUpFeedbackResourcesFolder"
+      )
       |> ensure_body()
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -93,19 +127,36 @@ defmodule MicrosoftGraph.Api.EducationActions do
   - `{:ok, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_education_class_assignments_education_assignment_set_up_resources_folder(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_education_class_assignments_education_assignment_set_up_resources_folder(connection, education_class_id, education_assignment_id, _opts \\ []) do
+  @spec education_classes_education_class_assignments_education_assignment_set_up_resources_folder(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_education_class_assignments_education_assignment_set_up_resources_folder(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/setUpResourcesFolder")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/setUpResourcesFolder"
+      )
       |> ensure_body()
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -128,19 +179,38 @@ defmodule MicrosoftGraph.Api.EducationActions do
   - `{:ok, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_education_class_assignments_education_assignment_submissions_education_submission_reassign(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse.t} | {:error, Tesla.Env.t}
-  def education_classes_education_class_assignments_education_assignment_submissions_education_submission_reassign(connection, education_class_id, education_assignment_id, education_submission_id, _opts \\ []) do
+  @spec education_classes_education_class_assignments_education_assignment_submissions_education_submission_reassign(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_education_class_assignments_education_assignment_submissions_education_submission_reassign(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        education_submission_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/reassign")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/reassign"
+      )
       |> ensure_body()
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -163,19 +233,38 @@ defmodule MicrosoftGraph.Api.EducationActions do
   - `{:ok, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_education_class_assignments_education_assignment_submissions_education_submission_return(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse.t} | {:error, Tesla.Env.t}
-  def education_classes_education_class_assignments_education_assignment_submissions_education_submission_return(connection, education_class_id, education_assignment_id, education_submission_id, _opts \\ []) do
+  @spec education_classes_education_class_assignments_education_assignment_submissions_education_submission_return(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_education_class_assignments_education_assignment_submissions_education_submission_return(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        education_submission_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/return")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/return"
+      )
       |> ensure_body()
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -198,19 +287,38 @@ defmodule MicrosoftGraph.Api.EducationActions do
   - `{:ok, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_education_class_assignments_education_assignment_submissions_education_submission_set_up_resources_folder(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse.t} | {:error, Tesla.Env.t}
-  def education_classes_education_class_assignments_education_assignment_submissions_education_submission_set_up_resources_folder(connection, education_class_id, education_assignment_id, education_submission_id, _opts \\ []) do
+  @spec education_classes_education_class_assignments_education_assignment_submissions_education_submission_set_up_resources_folder(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_education_class_assignments_education_assignment_submissions_education_submission_set_up_resources_folder(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        education_submission_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/setUpResourcesFolder")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/setUpResourcesFolder"
+      )
       |> ensure_body()
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -233,19 +341,38 @@ defmodule MicrosoftGraph.Api.EducationActions do
   - `{:ok, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_education_class_assignments_education_assignment_submissions_education_submission_submit(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse.t} | {:error, Tesla.Env.t}
-  def education_classes_education_class_assignments_education_assignment_submissions_education_submission_submit(connection, education_class_id, education_assignment_id, education_submission_id, _opts \\ []) do
+  @spec education_classes_education_class_assignments_education_assignment_submissions_education_submission_submit(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_education_class_assignments_education_assignment_submissions_education_submission_submit(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        education_submission_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/submit")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/submit"
+      )
       |> ensure_body()
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -268,19 +395,38 @@ defmodule MicrosoftGraph.Api.EducationActions do
   - `{:ok, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_education_class_assignments_education_assignment_submissions_education_submission_unsubmit(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse.t} | {:error, Tesla.Env.t}
-  def education_classes_education_class_assignments_education_assignment_submissions_education_submission_unsubmit(connection, education_class_id, education_assignment_id, education_submission_id, _opts \\ []) do
+  @spec education_classes_education_class_assignments_education_assignment_submissions_education_submission_unsubmit(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_education_class_assignments_education_assignment_submissions_education_submission_unsubmit(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        education_submission_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/unsubmit")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/unsubmit"
+      )
       |> ensure_body()
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -301,8 +447,20 @@ defmodule MicrosoftGraph.Api.EducationActions do
   - `{:ok, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_me_assignments_education_assignment_publish(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_me_assignments_education_assignment_publish(connection, education_assignment_id, _opts \\ []) do
+  @spec education_me_assignments_education_assignment_publish(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_me_assignments_education_assignment_publish(
+        connection,
+        education_assignment_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -313,7 +471,8 @@ defmodule MicrosoftGraph.Api.EducationActions do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -334,8 +493,20 @@ defmodule MicrosoftGraph.Api.EducationActions do
   - `{:ok, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_me_assignments_education_assignment_set_up_feedback_resources_folder(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_me_assignments_education_assignment_set_up_feedback_resources_folder(connection, education_assignment_id, _opts \\ []) do
+  @spec education_me_assignments_education_assignment_set_up_feedback_resources_folder(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_me_assignments_education_assignment_set_up_feedback_resources_folder(
+        connection,
+        education_assignment_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -346,7 +517,8 @@ defmodule MicrosoftGraph.Api.EducationActions do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -367,8 +539,20 @@ defmodule MicrosoftGraph.Api.EducationActions do
   - `{:ok, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_me_assignments_education_assignment_set_up_resources_folder(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_me_assignments_education_assignment_set_up_resources_folder(connection, education_assignment_id, _opts \\ []) do
+  @spec education_me_assignments_education_assignment_set_up_resources_folder(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_me_assignments_education_assignment_set_up_resources_folder(
+        connection,
+        education_assignment_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -379,7 +563,8 @@ defmodule MicrosoftGraph.Api.EducationActions do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -401,19 +586,36 @@ defmodule MicrosoftGraph.Api.EducationActions do
   - `{:ok, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_me_assignments_education_assignment_submissions_education_submission_reassign(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse.t} | {:error, Tesla.Env.t}
-  def education_me_assignments_education_assignment_submissions_education_submission_reassign(connection, education_assignment_id, education_submission_id, _opts \\ []) do
+  @spec education_me_assignments_education_assignment_submissions_education_submission_reassign(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def education_me_assignments_education_assignment_submissions_education_submission_reassign(
+        connection,
+        education_assignment_id,
+        education_submission_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/education/me/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/reassign")
+      |> url(
+        "/education/me/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/reassign"
+      )
       |> ensure_body()
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -435,19 +637,36 @@ defmodule MicrosoftGraph.Api.EducationActions do
   - `{:ok, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_me_assignments_education_assignment_submissions_education_submission_return(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse.t} | {:error, Tesla.Env.t}
-  def education_me_assignments_education_assignment_submissions_education_submission_return(connection, education_assignment_id, education_submission_id, _opts \\ []) do
+  @spec education_me_assignments_education_assignment_submissions_education_submission_return(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def education_me_assignments_education_assignment_submissions_education_submission_return(
+        connection,
+        education_assignment_id,
+        education_submission_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/education/me/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/return")
+      |> url(
+        "/education/me/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/return"
+      )
       |> ensure_body()
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -469,19 +688,36 @@ defmodule MicrosoftGraph.Api.EducationActions do
   - `{:ok, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_me_assignments_education_assignment_submissions_education_submission_set_up_resources_folder(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse.t} | {:error, Tesla.Env.t}
-  def education_me_assignments_education_assignment_submissions_education_submission_set_up_resources_folder(connection, education_assignment_id, education_submission_id, _opts \\ []) do
+  @spec education_me_assignments_education_assignment_submissions_education_submission_set_up_resources_folder(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def education_me_assignments_education_assignment_submissions_education_submission_set_up_resources_folder(
+        connection,
+        education_assignment_id,
+        education_submission_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/education/me/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/setUpResourcesFolder")
+      |> url(
+        "/education/me/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/setUpResourcesFolder"
+      )
       |> ensure_body()
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -503,19 +739,36 @@ defmodule MicrosoftGraph.Api.EducationActions do
   - `{:ok, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_me_assignments_education_assignment_submissions_education_submission_submit(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse.t} | {:error, Tesla.Env.t}
-  def education_me_assignments_education_assignment_submissions_education_submission_submit(connection, education_assignment_id, education_submission_id, _opts \\ []) do
+  @spec education_me_assignments_education_assignment_submissions_education_submission_submit(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def education_me_assignments_education_assignment_submissions_education_submission_submit(
+        connection,
+        education_assignment_id,
+        education_submission_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/education/me/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/submit")
+      |> url(
+        "/education/me/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/submit"
+      )
       |> ensure_body()
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -537,19 +790,36 @@ defmodule MicrosoftGraph.Api.EducationActions do
   - `{:ok, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_me_assignments_education_assignment_submissions_education_submission_unsubmit(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse.t} | {:error, Tesla.Env.t}
-  def education_me_assignments_education_assignment_submissions_education_submission_unsubmit(connection, education_assignment_id, education_submission_id, _opts \\ []) do
+  @spec education_me_assignments_education_assignment_submissions_education_submission_unsubmit(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def education_me_assignments_education_assignment_submissions_education_submission_unsubmit(
+        connection,
+        education_assignment_id,
+        education_submission_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/education/me/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/unsubmit")
+      |> url(
+        "/education/me/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/unsubmit"
+      )
       |> ensure_body()
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -571,19 +841,36 @@ defmodule MicrosoftGraph.Api.EducationActions do
   - `{:ok, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_users_education_user_assignments_education_assignment_publish(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_users_education_user_assignments_education_assignment_publish(connection, education_user_id, education_assignment_id, _opts \\ []) do
+  @spec education_users_education_user_assignments_education_assignment_publish(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_users_education_user_assignments_education_assignment_publish(
+        connection,
+        education_user_id,
+        education_assignment_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/education/users/#{education_user_id}/assignments/#{education_assignment_id}/publish")
+      |> url(
+        "/education/users/#{education_user_id}/assignments/#{education_assignment_id}/publish"
+      )
       |> ensure_body()
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -605,19 +892,36 @@ defmodule MicrosoftGraph.Api.EducationActions do
   - `{:ok, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_users_education_user_assignments_education_assignment_set_up_feedback_resources_folder(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_users_education_user_assignments_education_assignment_set_up_feedback_resources_folder(connection, education_user_id, education_assignment_id, _opts \\ []) do
+  @spec education_users_education_user_assignments_education_assignment_set_up_feedback_resources_folder(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_users_education_user_assignments_education_assignment_set_up_feedback_resources_folder(
+        connection,
+        education_user_id,
+        education_assignment_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/education/users/#{education_user_id}/assignments/#{education_assignment_id}/setUpFeedbackResourcesFolder")
+      |> url(
+        "/education/users/#{education_user_id}/assignments/#{education_assignment_id}/setUpFeedbackResourcesFolder"
+      )
       |> ensure_body()
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -639,19 +943,36 @@ defmodule MicrosoftGraph.Api.EducationActions do
   - `{:ok, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_users_education_user_assignments_education_assignment_set_up_resources_folder(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_users_education_user_assignments_education_assignment_set_up_resources_folder(connection, education_user_id, education_assignment_id, _opts \\ []) do
+  @spec education_users_education_user_assignments_education_assignment_set_up_resources_folder(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_users_education_user_assignments_education_assignment_set_up_resources_folder(
+        connection,
+        education_user_id,
+        education_assignment_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/education/users/#{education_user_id}/assignments/#{education_assignment_id}/setUpResourcesFolder")
+      |> url(
+        "/education/users/#{education_user_id}/assignments/#{education_assignment_id}/setUpResourcesFolder"
+      )
       |> ensure_body()
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -674,19 +995,38 @@ defmodule MicrosoftGraph.Api.EducationActions do
   - `{:ok, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_users_education_user_assignments_education_assignment_submissions_education_submission_reassign(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse.t} | {:error, Tesla.Env.t}
-  def education_users_education_user_assignments_education_assignment_submissions_education_submission_reassign(connection, education_user_id, education_assignment_id, education_submission_id, _opts \\ []) do
+  @spec education_users_education_user_assignments_education_assignment_submissions_education_submission_reassign(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def education_users_education_user_assignments_education_assignment_submissions_education_submission_reassign(
+        connection,
+        education_user_id,
+        education_assignment_id,
+        education_submission_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/education/users/#{education_user_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/reassign")
+      |> url(
+        "/education/users/#{education_user_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/reassign"
+      )
       |> ensure_body()
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -709,19 +1049,38 @@ defmodule MicrosoftGraph.Api.EducationActions do
   - `{:ok, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_users_education_user_assignments_education_assignment_submissions_education_submission_return(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse.t} | {:error, Tesla.Env.t}
-  def education_users_education_user_assignments_education_assignment_submissions_education_submission_return(connection, education_user_id, education_assignment_id, education_submission_id, _opts \\ []) do
+  @spec education_users_education_user_assignments_education_assignment_submissions_education_submission_return(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def education_users_education_user_assignments_education_assignment_submissions_education_submission_return(
+        connection,
+        education_user_id,
+        education_assignment_id,
+        education_submission_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/education/users/#{education_user_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/return")
+      |> url(
+        "/education/users/#{education_user_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/return"
+      )
       |> ensure_body()
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -744,19 +1103,38 @@ defmodule MicrosoftGraph.Api.EducationActions do
   - `{:ok, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_users_education_user_assignments_education_assignment_submissions_education_submission_set_up_resources_folder(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse.t} | {:error, Tesla.Env.t}
-  def education_users_education_user_assignments_education_assignment_submissions_education_submission_set_up_resources_folder(connection, education_user_id, education_assignment_id, education_submission_id, _opts \\ []) do
+  @spec education_users_education_user_assignments_education_assignment_submissions_education_submission_set_up_resources_folder(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def education_users_education_user_assignments_education_assignment_submissions_education_submission_set_up_resources_folder(
+        connection,
+        education_user_id,
+        education_assignment_id,
+        education_submission_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/education/users/#{education_user_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/setUpResourcesFolder")
+      |> url(
+        "/education/users/#{education_user_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/setUpResourcesFolder"
+      )
       |> ensure_body()
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -779,19 +1157,38 @@ defmodule MicrosoftGraph.Api.EducationActions do
   - `{:ok, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_users_education_user_assignments_education_assignment_submissions_education_submission_submit(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse.t} | {:error, Tesla.Env.t}
-  def education_users_education_user_assignments_education_assignment_submissions_education_submission_submit(connection, education_user_id, education_assignment_id, education_submission_id, _opts \\ []) do
+  @spec education_users_education_user_assignments_education_assignment_submissions_education_submission_submit(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def education_users_education_user_assignments_education_assignment_submissions_education_submission_submit(
+        connection,
+        education_user_id,
+        education_assignment_id,
+        education_submission_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/education/users/#{education_user_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/submit")
+      |> url(
+        "/education/users/#{education_user_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/submit"
+      )
       |> ensure_body()
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -814,19 +1211,38 @@ defmodule MicrosoftGraph.Api.EducationActions do
   - `{:ok, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_users_education_user_assignments_education_assignment_submissions_education_submission_unsubmit(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse.t} | {:error, Tesla.Env.t}
-  def education_users_education_user_assignments_education_assignment_submissions_education_submission_unsubmit(connection, education_user_id, education_assignment_id, education_submission_id, _opts \\ []) do
+  @spec education_users_education_user_assignments_education_assignment_submissions_education_submission_unsubmit(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def education_users_education_user_assignments_education_assignment_submissions_education_submission_unsubmit(
+        connection,
+        education_user_id,
+        education_assignment_id,
+        education_submission_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/education/users/#{education_user_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/unsubmit")
+      |> url(
+        "/education/users/#{education_user_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/unsubmit"
+      )
       |> ensure_body()
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSubmissionsEducationSubmissionUnsubmit2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])

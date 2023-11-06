@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.CollectionOfEdiscoveryReviewTag do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,20 @@ defmodule MicrosoftGraph.Model.CollectionOfEdiscoveryReviewTag do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.count" => integer() | nil,
-    :"@odata.nextLink" => String.t | nil,
-    :value => [MicrosoftGraph.Model.CollectionOfEdiscoveryReviewTagAllOfValueInner.t] | nil
-  }
+          :"@odata.count" => integer() | nil,
+          :"@odata.nextLink" => String.t() | nil,
+          :value =>
+            [MicrosoftGraph.Model.CollectionOfEdiscoveryReviewTagAllOfValueInner.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:value, :list, MicrosoftGraph.Model.CollectionOfEdiscoveryReviewTagAllOfValueInner)
+    |> Deserializer.deserialize(
+      :value,
+      :list,
+      MicrosoftGraph.Model.CollectionOfEdiscoveryReviewTagAllOfValueInner
+    )
   end
 end
-

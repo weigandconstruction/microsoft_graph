@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphEducationWordResource do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,23 +18,31 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphEducationWordResource do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :createdBy => MicrosoftGraph.Model.MicrosoftGraphEducationResourceCreatedBy.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :displayName => String.t | nil,
-    :lastModifiedBy => MicrosoftGraph.Model.MicrosoftGraphEducationResourceLastModifiedBy.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :fileUrl => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :createdBy => MicrosoftGraph.Model.MicrosoftGraphEducationResourceCreatedBy.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :displayName => String.t() | nil,
+          :lastModifiedBy =>
+            MicrosoftGraph.Model.MicrosoftGraphEducationResourceLastModifiedBy.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :fileUrl => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.MicrosoftGraphEducationResourceCreatedBy)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastModifiedBy, :struct, MicrosoftGraph.Model.MicrosoftGraphEducationResourceLastModifiedBy)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :createdBy,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphEducationResourceCreatedBy
+    )
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :lastModifiedBy,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphEducationResourceLastModifiedBy
+    )
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
   end
 end
-

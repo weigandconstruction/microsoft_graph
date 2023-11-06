@@ -15,18 +15,27 @@ defmodule MicrosoftGraph.Model.DeviceManagementUserExperienceAnalyticsAppHealthO
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :insights => [MicrosoftGraph.Model.UserExperienceAnalyticsCategoryInsightsInner.t] | nil,
-    :metricValues => [MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsMetric.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :insights =>
+            [MicrosoftGraph.Model.UserExperienceAnalyticsCategoryInsightsInner.t()] | nil,
+          :metricValues =>
+            [MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsMetric.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:insights, :list, MicrosoftGraph.Model.UserExperienceAnalyticsCategoryInsightsInner)
-     |> Deserializer.deserialize(:metricValues, :list, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsMetric)
+    |> Deserializer.deserialize(
+      :insights,
+      :list,
+      MicrosoftGraph.Model.UserExperienceAnalyticsCategoryInsightsInner
+    )
+    |> Deserializer.deserialize(
+      :metricValues,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsMetric
+    )
   end
 end
-

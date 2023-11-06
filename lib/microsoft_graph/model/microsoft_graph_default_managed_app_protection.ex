@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphDefaultManagedAppProtection do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -57,70 +57,112 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphDefaultManagedAppProtection do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :version => String.t | nil,
-    :allowedDataStorageLocations => [MicrosoftGraph.Model.MicrosoftGraphManagedAppDataStorageLocation.t] | nil,
-    :allowedInboundDataTransferSources => MicrosoftGraph.Model.MicrosoftGraphManagedAppDataTransferLevel.t | nil,
-    :allowedOutboundClipboardSharingLevel => MicrosoftGraph.Model.MicrosoftGraphManagedAppClipboardSharingLevel.t | nil,
-    :allowedOutboundDataTransferDestinations => MicrosoftGraph.Model.MicrosoftGraphManagedAppDataTransferLevel.t | nil,
-    :contactSyncBlocked => boolean() | nil,
-    :dataBackupBlocked => boolean() | nil,
-    :deviceComplianceRequired => boolean() | nil,
-    :disableAppPinIfDevicePinIsSet => boolean() | nil,
-    :fingerprintBlocked => boolean() | nil,
-    :managedBrowser => MicrosoftGraph.Model.MicrosoftGraphManagedBrowserType.t | nil,
-    :managedBrowserToOpenLinksRequired => boolean() | nil,
-    :maximumPinRetries => integer() | nil,
-    :minimumPinLength => integer() | nil,
-    :minimumRequiredAppVersion => String.t | nil,
-    :minimumRequiredOsVersion => String.t | nil,
-    :minimumWarningAppVersion => String.t | nil,
-    :minimumWarningOsVersion => String.t | nil,
-    :organizationalCredentialsRequired => boolean() | nil,
-    :periodBeforePinReset => String.t | nil,
-    :periodOfflineBeforeAccessCheck => String.t | nil,
-    :periodOfflineBeforeWipeIsEnforced => String.t | nil,
-    :periodOnlineBeforeAccessCheck => String.t | nil,
-    :pinCharacterSet => MicrosoftGraph.Model.MicrosoftGraphManagedAppPinCharacterSet.t | nil,
-    :pinRequired => boolean() | nil,
-    :printBlocked => boolean() | nil,
-    :saveAsBlocked => boolean() | nil,
-    :simplePinBlocked => boolean() | nil,
-    :appDataEncryptionType => MicrosoftGraph.Model.MicrosoftGraphManagedAppDataEncryptionType.t | nil,
-    :apps => [MicrosoftGraph.Model.MicrosoftGraphManagedMobileApp.t] | nil,
-    :customSettings => [MicrosoftGraph.Model.MicrosoftGraphKeyValuePair.t] | nil,
-    :deployedAppCount => integer() | nil,
-    :deploymentSummary => MicrosoftGraph.Model.DefaultManagedAppProtectionDeploymentSummary.t | nil,
-    :disableAppEncryptionIfDeviceEncryptionIsEnabled => boolean() | nil,
-    :encryptAppData => boolean() | nil,
-    :faceIdBlocked => boolean() | nil,
-    :minimumRequiredPatchVersion => String.t | nil,
-    :minimumRequiredSdkVersion => String.t | nil,
-    :minimumWarningPatchVersion => String.t | nil,
-    :screenCaptureBlocked => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :version => String.t() | nil,
+          :allowedDataStorageLocations =>
+            [MicrosoftGraph.Model.MicrosoftGraphManagedAppDataStorageLocation.t()] | nil,
+          :allowedInboundDataTransferSources =>
+            MicrosoftGraph.Model.MicrosoftGraphManagedAppDataTransferLevel.t() | nil,
+          :allowedOutboundClipboardSharingLevel =>
+            MicrosoftGraph.Model.MicrosoftGraphManagedAppClipboardSharingLevel.t() | nil,
+          :allowedOutboundDataTransferDestinations =>
+            MicrosoftGraph.Model.MicrosoftGraphManagedAppDataTransferLevel.t() | nil,
+          :contactSyncBlocked => boolean() | nil,
+          :dataBackupBlocked => boolean() | nil,
+          :deviceComplianceRequired => boolean() | nil,
+          :disableAppPinIfDevicePinIsSet => boolean() | nil,
+          :fingerprintBlocked => boolean() | nil,
+          :managedBrowser => MicrosoftGraph.Model.MicrosoftGraphManagedBrowserType.t() | nil,
+          :managedBrowserToOpenLinksRequired => boolean() | nil,
+          :maximumPinRetries => integer() | nil,
+          :minimumPinLength => integer() | nil,
+          :minimumRequiredAppVersion => String.t() | nil,
+          :minimumRequiredOsVersion => String.t() | nil,
+          :minimumWarningAppVersion => String.t() | nil,
+          :minimumWarningOsVersion => String.t() | nil,
+          :organizationalCredentialsRequired => boolean() | nil,
+          :periodBeforePinReset => String.t() | nil,
+          :periodOfflineBeforeAccessCheck => String.t() | nil,
+          :periodOfflineBeforeWipeIsEnforced => String.t() | nil,
+          :periodOnlineBeforeAccessCheck => String.t() | nil,
+          :pinCharacterSet =>
+            MicrosoftGraph.Model.MicrosoftGraphManagedAppPinCharacterSet.t() | nil,
+          :pinRequired => boolean() | nil,
+          :printBlocked => boolean() | nil,
+          :saveAsBlocked => boolean() | nil,
+          :simplePinBlocked => boolean() | nil,
+          :appDataEncryptionType =>
+            MicrosoftGraph.Model.MicrosoftGraphManagedAppDataEncryptionType.t() | nil,
+          :apps => [MicrosoftGraph.Model.MicrosoftGraphManagedMobileApp.t()] | nil,
+          :customSettings => [MicrosoftGraph.Model.MicrosoftGraphKeyValuePair.t()] | nil,
+          :deployedAppCount => integer() | nil,
+          :deploymentSummary =>
+            MicrosoftGraph.Model.DefaultManagedAppProtectionDeploymentSummary.t() | nil,
+          :disableAppEncryptionIfDeviceEncryptionIsEnabled => boolean() | nil,
+          :encryptAppData => boolean() | nil,
+          :faceIdBlocked => boolean() | nil,
+          :minimumRequiredPatchVersion => String.t() | nil,
+          :minimumRequiredSdkVersion => String.t() | nil,
+          :minimumWarningPatchVersion => String.t() | nil,
+          :screenCaptureBlocked => boolean() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:allowedDataStorageLocations, :list, MicrosoftGraph.Model.MicrosoftGraphManagedAppDataStorageLocation)
-     |> Deserializer.deserialize(:allowedInboundDataTransferSources, :struct, MicrosoftGraph.Model.MicrosoftGraphManagedAppDataTransferLevel)
-     |> Deserializer.deserialize(:allowedOutboundClipboardSharingLevel, :struct, MicrosoftGraph.Model.MicrosoftGraphManagedAppClipboardSharingLevel)
-     |> Deserializer.deserialize(:allowedOutboundDataTransferDestinations, :struct, MicrosoftGraph.Model.MicrosoftGraphManagedAppDataTransferLevel)
-     |> Deserializer.deserialize(:managedBrowser, :struct, MicrosoftGraph.Model.MicrosoftGraphManagedBrowserType)
-     |> Deserializer.deserialize(:pinCharacterSet, :struct, MicrosoftGraph.Model.MicrosoftGraphManagedAppPinCharacterSet)
-     |> Deserializer.deserialize(:appDataEncryptionType, :struct, MicrosoftGraph.Model.MicrosoftGraphManagedAppDataEncryptionType)
-     |> Deserializer.deserialize(:apps, :list, MicrosoftGraph.Model.MicrosoftGraphManagedMobileApp)
-     |> Deserializer.deserialize(:customSettings, :list, MicrosoftGraph.Model.MicrosoftGraphKeyValuePair)
-     |> Deserializer.deserialize(:deploymentSummary, :struct, MicrosoftGraph.Model.DefaultManagedAppProtectionDeploymentSummary)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :allowedDataStorageLocations,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphManagedAppDataStorageLocation
+    )
+    |> Deserializer.deserialize(
+      :allowedInboundDataTransferSources,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphManagedAppDataTransferLevel
+    )
+    |> Deserializer.deserialize(
+      :allowedOutboundClipboardSharingLevel,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphManagedAppClipboardSharingLevel
+    )
+    |> Deserializer.deserialize(
+      :allowedOutboundDataTransferDestinations,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphManagedAppDataTransferLevel
+    )
+    |> Deserializer.deserialize(
+      :managedBrowser,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphManagedBrowserType
+    )
+    |> Deserializer.deserialize(
+      :pinCharacterSet,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphManagedAppPinCharacterSet
+    )
+    |> Deserializer.deserialize(
+      :appDataEncryptionType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphManagedAppDataEncryptionType
+    )
+    |> Deserializer.deserialize(:apps, :list, MicrosoftGraph.Model.MicrosoftGraphManagedMobileApp)
+    |> Deserializer.deserialize(
+      :customSettings,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphKeyValuePair
+    )
+    |> Deserializer.deserialize(
+      :deploymentSummary,
+      :struct,
+      MicrosoftGraph.Model.DefaultManagedAppProtectionDeploymentSummary
+    )
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphDeletedItemContainer do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,19 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphDeletedItemContainer do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :workflows => [MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflow.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :workflows => [MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflow.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:workflows, :list, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflow)
+    |> Deserializer.deserialize(
+      :workflows,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflow
+    )
   end
 end
-

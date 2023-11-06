@@ -23,8 +23,19 @@ defmodule MicrosoftGraph.Api.DirectoryOnPremisesDirectorySynchronization do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnPremisesDirectorySynchronization.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_create_on_premises_synchronization(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphOnPremisesDirectorySynchronization.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphOnPremisesDirectorySynchronization.t} | {:error, Tesla.Env.t}
-  def directory_create_on_premises_synchronization(connection, microsoft_graph_on_premises_directory_synchronization, _opts \\ []) do
+  @spec directory_create_on_premises_synchronization(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphOnPremisesDirectorySynchronization.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphOnPremisesDirectorySynchronization.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_create_on_premises_synchronization(
+        connection,
+        microsoft_graph_on_premises_directory_synchronization,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -56,8 +67,15 @@ defmodule MicrosoftGraph.Api.DirectoryOnPremisesDirectorySynchronization do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_delete_on_premises_synchronization(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_delete_on_premises_synchronization(connection, on_premises_directory_synchronization_id, opts \\ []) do
+  @spec directory_delete_on_premises_synchronization(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_delete_on_premises_synchronization(
+        connection,
+        on_premises_directory_synchronization_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -95,8 +113,15 @@ defmodule MicrosoftGraph.Api.DirectoryOnPremisesDirectorySynchronization do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnPremisesDirectorySynchronization.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_get_on_premises_synchronization(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphOnPremisesDirectorySynchronization.t} | {:error, Tesla.Env.t}
-  def directory_get_on_premises_synchronization(connection, on_premises_directory_synchronization_id, opts \\ []) do
+  @spec directory_get_on_premises_synchronization(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphOnPremisesDirectorySynchronization.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_get_on_premises_synchronization(
+        connection,
+        on_premises_directory_synchronization_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -140,7 +165,11 @@ defmodule MicrosoftGraph.Api.DirectoryOnPremisesDirectorySynchronization do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnPremisesDirectorySynchronizationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_list_on_premises_synchronization(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnPremisesDirectorySynchronizationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec directory_list_on_premises_synchronization(Tesla.Env.client(), keyword()) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphOnPremisesDirectorySynchronizationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def directory_list_on_premises_synchronization(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -163,7 +192,8 @@ defmodule MicrosoftGraph.Api.DirectoryOnPremisesDirectorySynchronization do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphOnPremisesDirectorySynchronizationCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphOnPremisesDirectorySynchronizationCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -184,7 +214,10 @@ defmodule MicrosoftGraph.Api.DirectoryOnPremisesDirectorySynchronization do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_on_premises_synchronization_get_count_df9d(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec directory_on_premises_synchronization_get_count_df9d(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def directory_on_premises_synchronization_get_count_df9d(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -223,8 +256,21 @@ defmodule MicrosoftGraph.Api.DirectoryOnPremisesDirectorySynchronization do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnPremisesDirectorySynchronization.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_update_on_premises_synchronization(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphOnPremisesDirectorySynchronization.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphOnPremisesDirectorySynchronization.t} | {:error, Tesla.Env.t}
-  def directory_update_on_premises_synchronization(connection, on_premises_directory_synchronization_id, microsoft_graph_on_premises_directory_synchronization, _opts \\ []) do
+  @spec directory_update_on_premises_synchronization(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphOnPremisesDirectorySynchronization.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphOnPremisesDirectorySynchronization.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_update_on_premises_synchronization(
+        connection,
+        on_premises_directory_synchronization_id,
+        microsoft_graph_on_premises_directory_synchronization,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

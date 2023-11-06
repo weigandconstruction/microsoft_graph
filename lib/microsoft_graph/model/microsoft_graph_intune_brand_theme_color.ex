@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphIntuneBrandThemeColor do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :b => integer() | nil,
-    :g => integer() | nil,
-    :r => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :b => integer() | nil,
+          :g => integer() | nil,
+          :r => integer() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

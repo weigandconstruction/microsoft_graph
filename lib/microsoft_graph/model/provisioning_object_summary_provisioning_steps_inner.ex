@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.ProvisioningObjectSummaryProvisioningStepsInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,21 +17,33 @@ defmodule MicrosoftGraph.Model.ProvisioningObjectSummaryProvisioningStepsInner d
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :description => String.t | nil,
-    :details => MicrosoftGraph.Model.MicrosoftGraphProvisioningStepDetails.t | nil,
-    :name => String.t | nil,
-    :provisioningStepType => MicrosoftGraph.Model.MicrosoftGraphProvisioningStepProvisioningStepType.t | nil,
-    :status => MicrosoftGraph.Model.MicrosoftGraphProvisioningStepStatus.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :description => String.t() | nil,
+          :details => MicrosoftGraph.Model.MicrosoftGraphProvisioningStepDetails.t() | nil,
+          :name => String.t() | nil,
+          :provisioningStepType =>
+            MicrosoftGraph.Model.MicrosoftGraphProvisioningStepProvisioningStepType.t() | nil,
+          :status => MicrosoftGraph.Model.MicrosoftGraphProvisioningStepStatus.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:details, :struct, MicrosoftGraph.Model.MicrosoftGraphProvisioningStepDetails)
-     |> Deserializer.deserialize(:provisioningStepType, :struct, MicrosoftGraph.Model.MicrosoftGraphProvisioningStepProvisioningStepType)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.MicrosoftGraphProvisioningStepStatus)
+    |> Deserializer.deserialize(
+      :details,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphProvisioningStepDetails
+    )
+    |> Deserializer.deserialize(
+      :provisioningStepType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphProvisioningStepProvisioningStepType
+    )
+    |> Deserializer.deserialize(
+      :status,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphProvisioningStepStatus
+    )
   end
 end
-

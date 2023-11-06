@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphPublicErrorResponse do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,15 +13,18 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphPublicErrorResponse do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :error => MicrosoftGraph.Model.MicrosoftGraphPublicErrorResponseError.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :error => MicrosoftGraph.Model.MicrosoftGraphPublicErrorResponseError.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:error, :struct, MicrosoftGraph.Model.MicrosoftGraphPublicErrorResponseError)
+    |> Deserializer.deserialize(
+      :error,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphPublicErrorResponseError
+    )
   end
 end
-

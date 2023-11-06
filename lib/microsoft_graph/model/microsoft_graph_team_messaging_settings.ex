@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphTeamMessagingSettings do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,16 +17,15 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphTeamMessagingSettings do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :allowChannelMentions => boolean() | nil,
-    :allowOwnerDeleteMessages => boolean() | nil,
-    :allowTeamMentions => boolean() | nil,
-    :allowUserDeleteMessages => boolean() | nil,
-    :allowUserEditMessages => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :allowChannelMentions => boolean() | nil,
+          :allowOwnerDeleteMessages => boolean() | nil,
+          :allowTeamMentions => boolean() | nil,
+          :allowUserDeleteMessages => boolean() | nil,
+          :allowUserEditMessages => boolean() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.CustomTaskExtensionCalloutDataTask do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -22,26 +22,39 @@ defmodule MicrosoftGraph.Model.CustomTaskExtensionCalloutDataTask do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :arguments => [MicrosoftGraph.Model.MicrosoftGraphKeyValuePair.t] | nil,
-    :category => MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleTaskCategory.t | nil,
-    :continueOnError => boolean() | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :executionSequence => integer() | nil,
-    :isEnabled => boolean() | nil,
-    :taskDefinitionId => String.t | nil,
-    :taskProcessingResults => [MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResult.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :arguments => [MicrosoftGraph.Model.MicrosoftGraphKeyValuePair.t()] | nil,
+          :category =>
+            MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleTaskCategory.t() | nil,
+          :continueOnError => boolean() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :executionSequence => integer() | nil,
+          :isEnabled => boolean() | nil,
+          :taskDefinitionId => String.t() | nil,
+          :taskProcessingResults =>
+            [MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResult.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:arguments, :list, MicrosoftGraph.Model.MicrosoftGraphKeyValuePair)
-     |> Deserializer.deserialize(:category, :struct, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleTaskCategory)
-     |> Deserializer.deserialize(:taskProcessingResults, :list, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResult)
+    |> Deserializer.deserialize(
+      :arguments,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphKeyValuePair
+    )
+    |> Deserializer.deserialize(
+      :category,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleTaskCategory
+    )
+    |> Deserializer.deserialize(
+      :taskProcessingResults,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResult
+    )
   end
 end
-

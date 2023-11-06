@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.BookingServiceCustomQuestionsInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.BookingServiceCustomQuestionsInner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :isRequired => boolean() | nil,
-    :questionId => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :isRequired => boolean() | nil,
+          :questionId => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

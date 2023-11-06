@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityArticle do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -22,28 +22,39 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityArticle do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :body => MicrosoftGraph.Model.MicrosoftGraphSecurityFormattedContent.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :imageUrl => String.t | nil,
-    :indicators => [MicrosoftGraph.Model.MicrosoftGraphSecurityArticleIndicator.t] | nil,
-    :isFeatured => boolean() | nil,
-    :lastUpdatedDateTime => DateTime.t | nil,
-    :summary => MicrosoftGraph.Model.MicrosoftGraphSecurityFormattedContent.t | nil,
-    :tags => [String.t] | nil,
-    :title => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :body => MicrosoftGraph.Model.MicrosoftGraphSecurityFormattedContent.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :imageUrl => String.t() | nil,
+          :indicators => [MicrosoftGraph.Model.MicrosoftGraphSecurityArticleIndicator.t()] | nil,
+          :isFeatured => boolean() | nil,
+          :lastUpdatedDateTime => DateTime.t() | nil,
+          :summary => MicrosoftGraph.Model.MicrosoftGraphSecurityFormattedContent.t() | nil,
+          :tags => [String.t()] | nil,
+          :title => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:body, :struct, MicrosoftGraph.Model.MicrosoftGraphSecurityFormattedContent)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:indicators, :list, MicrosoftGraph.Model.MicrosoftGraphSecurityArticleIndicator)
-     |> Deserializer.deserialize(:lastUpdatedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:summary, :struct, MicrosoftGraph.Model.MicrosoftGraphSecurityFormattedContent)
+    |> Deserializer.deserialize(
+      :body,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityFormattedContent
+    )
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :indicators,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityArticleIndicator
+    )
+    |> Deserializer.deserialize(:lastUpdatedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :summary,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityFormattedContent
+    )
   end
 end
-

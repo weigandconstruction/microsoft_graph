@@ -24,12 +24,27 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAppConsentApprovalRoute do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserConsentRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_app_consent_app_consent_requests_create_user_consent_requests(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphUserConsentRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUserConsentRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_app_consent_app_consent_requests_create_user_consent_requests(connection, app_consent_request_id, microsoft_graph_user_consent_request, _opts \\ []) do
+  @spec identity_governance_app_consent_app_consent_requests_create_user_consent_requests(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUserConsentRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUserConsentRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_app_consent_app_consent_requests_create_user_consent_requests(
+        connection,
+        app_consent_request_id,
+        microsoft_graph_user_consent_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/appConsent/appConsentRequests/#{app_consent_request_id}/userConsentRequests")
+      |> url(
+        "/identityGovernance/appConsent/appConsentRequests/#{app_consent_request_id}/userConsentRequests"
+      )
       |> add_param(:body, :body, microsoft_graph_user_consent_request)
       |> Enum.into([])
 
@@ -58,8 +73,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAppConsentApprovalRoute do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_app_consent_app_consent_requests_delete_user_consent_requests(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_app_consent_app_consent_requests_delete_user_consent_requests(connection, app_consent_request_id, user_consent_request_id, opts \\ []) do
+  @spec identity_governance_app_consent_app_consent_requests_delete_user_consent_requests(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_app_consent_app_consent_requests_delete_user_consent_requests(
+        connection,
+        app_consent_request_id,
+        user_consent_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -67,7 +95,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAppConsentApprovalRoute do
     request =
       %{}
       |> method(:delete)
-      |> url("/identityGovernance/appConsent/appConsentRequests/#{app_consent_request_id}/userConsentRequests/#{user_consent_request_id}")
+      |> url(
+        "/identityGovernance/appConsent/appConsentRequests/#{app_consent_request_id}/userConsentRequests/#{user_consent_request_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -95,7 +125,13 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAppConsentApprovalRoute do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_app_consent_app_consent_requests_get_count_d9b5(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_governance_app_consent_app_consent_requests_get_count_d9b5(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_governance_app_consent_app_consent_requests_get_count_d9b5(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -136,8 +172,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAppConsentApprovalRoute do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserConsentRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_app_consent_app_consent_requests_get_user_consent_requests(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUserConsentRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_app_consent_app_consent_requests_get_user_consent_requests(connection, app_consent_request_id, user_consent_request_id, opts \\ []) do
+  @spec identity_governance_app_consent_app_consent_requests_get_user_consent_requests(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUserConsentRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_app_consent_app_consent_requests_get_user_consent_requests(
+        connection,
+        app_consent_request_id,
+        user_consent_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -146,7 +195,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAppConsentApprovalRoute do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/appConsent/appConsentRequests/#{app_consent_request_id}/userConsentRequests/#{user_consent_request_id}")
+      |> url(
+        "/identityGovernance/appConsent/appConsentRequests/#{app_consent_request_id}/userConsentRequests/#{user_consent_request_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -182,8 +233,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAppConsentApprovalRoute do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserConsentRequestCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_app_consent_app_consent_requests_list_user_consent_requests(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUserConsentRequestCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_app_consent_app_consent_requests_list_user_consent_requests(connection, app_consent_request_id, opts \\ []) do
+  @spec identity_governance_app_consent_app_consent_requests_list_user_consent_requests(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUserConsentRequestCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_app_consent_app_consent_requests_list_user_consent_requests(
+        connection,
+        app_consent_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -198,7 +260,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAppConsentApprovalRoute do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/appConsent/appConsentRequests/#{app_consent_request_id}/userConsentRequests")
+      |> url(
+        "/identityGovernance/appConsent/appConsentRequests/#{app_consent_request_id}/userConsentRequests"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -227,12 +291,29 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAppConsentApprovalRoute do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserConsentRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_app_consent_app_consent_requests_update_user_consent_requests(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphUserConsentRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUserConsentRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_app_consent_app_consent_requests_update_user_consent_requests(connection, app_consent_request_id, user_consent_request_id, microsoft_graph_user_consent_request, _opts \\ []) do
+  @spec identity_governance_app_consent_app_consent_requests_update_user_consent_requests(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUserConsentRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUserConsentRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_app_consent_app_consent_requests_update_user_consent_requests(
+        connection,
+        app_consent_request_id,
+        user_consent_request_id,
+        microsoft_graph_user_consent_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/appConsent/appConsentRequests/#{app_consent_request_id}/userConsentRequests/#{user_consent_request_id}")
+      |> url(
+        "/identityGovernance/appConsent/appConsentRequests/#{app_consent_request_id}/userConsentRequests/#{user_consent_request_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_user_consent_request)
       |> Enum.into([])
 
@@ -261,12 +342,29 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAppConsentApprovalRoute do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphApprovalStage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_app_consent_app_consent_requests_user_consent_requests_approval_create_stages(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphApprovalStage.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphApprovalStage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_app_consent_app_consent_requests_user_consent_requests_approval_create_stages(connection, app_consent_request_id, user_consent_request_id, microsoft_graph_approval_stage, _opts \\ []) do
+  @spec identity_governance_app_consent_app_consent_requests_user_consent_requests_approval_create_stages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphApprovalStage.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphApprovalStage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_app_consent_app_consent_requests_user_consent_requests_approval_create_stages(
+        connection,
+        app_consent_request_id,
+        user_consent_request_id,
+        microsoft_graph_approval_stage,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/appConsent/appConsentRequests/#{app_consent_request_id}/userConsentRequests/#{user_consent_request_id}/approval/stages")
+      |> url(
+        "/identityGovernance/appConsent/appConsentRequests/#{app_consent_request_id}/userConsentRequests/#{user_consent_request_id}/approval/stages"
+      )
       |> add_param(:body, :body, microsoft_graph_approval_stage)
       |> Enum.into([])
 
@@ -296,8 +394,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAppConsentApprovalRoute do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_app_consent_app_consent_requests_user_consent_requests_approval_delete_stages(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_app_consent_app_consent_requests_user_consent_requests_approval_delete_stages(connection, app_consent_request_id, user_consent_request_id, approval_stage_id, opts \\ []) do
+  @spec identity_governance_app_consent_app_consent_requests_user_consent_requests_approval_delete_stages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_app_consent_app_consent_requests_user_consent_requests_approval_delete_stages(
+        connection,
+        app_consent_request_id,
+        user_consent_request_id,
+        approval_stage_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -305,7 +418,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAppConsentApprovalRoute do
     request =
       %{}
       |> method(:delete)
-      |> url("/identityGovernance/appConsent/appConsentRequests/#{app_consent_request_id}/userConsentRequests/#{user_consent_request_id}/approval/stages/#{approval_stage_id}")
+      |> url(
+        "/identityGovernance/appConsent/appConsentRequests/#{app_consent_request_id}/userConsentRequests/#{user_consent_request_id}/approval/stages/#{approval_stage_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -337,8 +452,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAppConsentApprovalRoute do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphApprovalStage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_app_consent_app_consent_requests_user_consent_requests_approval_get_stages(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphApprovalStage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_app_consent_app_consent_requests_user_consent_requests_approval_get_stages(connection, app_consent_request_id, user_consent_request_id, approval_stage_id, opts \\ []) do
+  @spec identity_governance_app_consent_app_consent_requests_user_consent_requests_approval_get_stages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphApprovalStage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_app_consent_app_consent_requests_user_consent_requests_approval_get_stages(
+        connection,
+        app_consent_request_id,
+        user_consent_request_id,
+        approval_stage_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -347,7 +477,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAppConsentApprovalRoute do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/appConsent/appConsentRequests/#{app_consent_request_id}/userConsentRequests/#{user_consent_request_id}/approval/stages/#{approval_stage_id}")
+      |> url(
+        "/identityGovernance/appConsent/appConsentRequests/#{app_consent_request_id}/userConsentRequests/#{user_consent_request_id}/approval/stages/#{approval_stage_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -384,8 +516,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAppConsentApprovalRoute do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphApprovalStageCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_app_consent_app_consent_requests_user_consent_requests_approval_list_stages(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphApprovalStageCollectionResponse.t} | {:error, Tesla.Env.t}
-  def identity_governance_app_consent_app_consent_requests_user_consent_requests_approval_list_stages(connection, app_consent_request_id, user_consent_request_id, opts \\ []) do
+  @spec identity_governance_app_consent_app_consent_requests_user_consent_requests_approval_list_stages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphApprovalStageCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_app_consent_app_consent_requests_user_consent_requests_approval_list_stages(
+        connection,
+        app_consent_request_id,
+        user_consent_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -400,7 +545,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAppConsentApprovalRoute do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/appConsent/appConsentRequests/#{app_consent_request_id}/userConsentRequests/#{user_consent_request_id}/approval/stages")
+      |> url(
+        "/identityGovernance/appConsent/appConsentRequests/#{app_consent_request_id}/userConsentRequests/#{user_consent_request_id}/approval/stages"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -430,8 +577,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAppConsentApprovalRoute do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_app_consent_app_consent_requests_user_consent_requests_approval_stages_get_count3a21(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_app_consent_app_consent_requests_user_consent_requests_approval_stages_get_count3a21(connection, app_consent_request_id, user_consent_request_id, opts \\ []) do
+  @spec identity_governance_app_consent_app_consent_requests_user_consent_requests_approval_stages_get_count3a21(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_app_consent_app_consent_requests_user_consent_requests_approval_stages_get_count3a21(
+        connection,
+        app_consent_request_id,
+        user_consent_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -440,7 +600,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAppConsentApprovalRoute do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/appConsent/appConsentRequests/#{app_consent_request_id}/userConsentRequests/#{user_consent_request_id}/approval/stages/$count")
+      |> url(
+        "/identityGovernance/appConsent/appConsentRequests/#{app_consent_request_id}/userConsentRequests/#{user_consent_request_id}/approval/stages/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -471,12 +633,31 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAppConsentApprovalRoute do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphApprovalStage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_app_consent_app_consent_requests_user_consent_requests_approval_update_stages(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphApprovalStage.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphApprovalStage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_app_consent_app_consent_requests_user_consent_requests_approval_update_stages(connection, app_consent_request_id, user_consent_request_id, approval_stage_id, microsoft_graph_approval_stage, _opts \\ []) do
+  @spec identity_governance_app_consent_app_consent_requests_user_consent_requests_approval_update_stages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphApprovalStage.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphApprovalStage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_app_consent_app_consent_requests_user_consent_requests_approval_update_stages(
+        connection,
+        app_consent_request_id,
+        user_consent_request_id,
+        approval_stage_id,
+        microsoft_graph_approval_stage,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/appConsent/appConsentRequests/#{app_consent_request_id}/userConsentRequests/#{user_consent_request_id}/approval/stages/#{approval_stage_id}")
+      |> url(
+        "/identityGovernance/appConsent/appConsentRequests/#{app_consent_request_id}/userConsentRequests/#{user_consent_request_id}/approval/stages/#{approval_stage_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_approval_stage)
       |> Enum.into([])
 
@@ -505,8 +686,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAppConsentApprovalRoute do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_app_consent_app_consent_requests_user_consent_requests_delete_approval(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_app_consent_app_consent_requests_user_consent_requests_delete_approval(connection, app_consent_request_id, user_consent_request_id, opts \\ []) do
+  @spec identity_governance_app_consent_app_consent_requests_user_consent_requests_delete_approval(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_app_consent_app_consent_requests_user_consent_requests_delete_approval(
+        connection,
+        app_consent_request_id,
+        user_consent_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -514,7 +708,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAppConsentApprovalRoute do
     request =
       %{}
       |> method(:delete)
-      |> url("/identityGovernance/appConsent/appConsentRequests/#{app_consent_request_id}/userConsentRequests/#{user_consent_request_id}/approval")
+      |> url(
+        "/identityGovernance/appConsent/appConsentRequests/#{app_consent_request_id}/userConsentRequests/#{user_consent_request_id}/approval"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -545,8 +741,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAppConsentApprovalRoute do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphApproval.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_app_consent_app_consent_requests_user_consent_requests_get_approval(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphApproval.t} | {:error, Tesla.Env.t}
-  def identity_governance_app_consent_app_consent_requests_user_consent_requests_get_approval(connection, app_consent_request_id, user_consent_request_id, opts \\ []) do
+  @spec identity_governance_app_consent_app_consent_requests_user_consent_requests_get_approval(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphApproval.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_app_consent_app_consent_requests_user_consent_requests_get_approval(
+        connection,
+        app_consent_request_id,
+        user_consent_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -555,7 +764,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAppConsentApprovalRoute do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/appConsent/appConsentRequests/#{app_consent_request_id}/userConsentRequests/#{user_consent_request_id}/approval")
+      |> url(
+        "/identityGovernance/appConsent/appConsentRequests/#{app_consent_request_id}/userConsentRequests/#{user_consent_request_id}/approval"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -584,8 +795,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAppConsentApprovalRoute do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_app_consent_app_consent_requests_user_consent_requests_get_count_cf9d(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_app_consent_app_consent_requests_user_consent_requests_get_count_cf9d(connection, app_consent_request_id, opts \\ []) do
+  @spec identity_governance_app_consent_app_consent_requests_user_consent_requests_get_count_cf9d(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_app_consent_app_consent_requests_user_consent_requests_get_count_cf9d(
+        connection,
+        app_consent_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -594,7 +816,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAppConsentApprovalRoute do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/appConsent/appConsentRequests/#{app_consent_request_id}/userConsentRequests/$count")
+      |> url(
+        "/identityGovernance/appConsent/appConsentRequests/#{app_consent_request_id}/userConsentRequests/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -623,12 +847,29 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAppConsentApprovalRoute do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphApproval.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_app_consent_app_consent_requests_user_consent_requests_update_approval(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphApproval.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphApproval.t} | {:error, Tesla.Env.t}
-  def identity_governance_app_consent_app_consent_requests_user_consent_requests_update_approval(connection, app_consent_request_id, user_consent_request_id, microsoft_graph_approval, _opts \\ []) do
+  @spec identity_governance_app_consent_app_consent_requests_user_consent_requests_update_approval(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphApproval.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphApproval.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_app_consent_app_consent_requests_user_consent_requests_update_approval(
+        connection,
+        app_consent_request_id,
+        user_consent_request_id,
+        microsoft_graph_approval,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/appConsent/appConsentRequests/#{app_consent_request_id}/userConsentRequests/#{user_consent_request_id}/approval")
+      |> url(
+        "/identityGovernance/appConsent/appConsentRequests/#{app_consent_request_id}/userConsentRequests/#{user_consent_request_id}/approval"
+      )
       |> add_param(:body, :body, microsoft_graph_approval)
       |> Enum.into([])
 
@@ -655,8 +896,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAppConsentApprovalRoute do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAppConsentRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_app_consent_create_app_consent_requests(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphAppConsentRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAppConsentRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_app_consent_create_app_consent_requests(connection, microsoft_graph_app_consent_request, _opts \\ []) do
+  @spec identity_governance_app_consent_create_app_consent_requests(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphAppConsentRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAppConsentRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_app_consent_create_app_consent_requests(
+        connection,
+        microsoft_graph_app_consent_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -688,8 +940,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAppConsentApprovalRoute do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_app_consent_delete_app_consent_requests(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_app_consent_delete_app_consent_requests(connection, app_consent_request_id, opts \\ []) do
+  @spec identity_governance_app_consent_delete_app_consent_requests(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_app_consent_delete_app_consent_requests(
+        connection,
+        app_consent_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -727,8 +990,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAppConsentApprovalRoute do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAppConsentRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_app_consent_get_app_consent_requests(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAppConsentRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_app_consent_get_app_consent_requests(connection, app_consent_request_id, opts \\ []) do
+  @spec identity_governance_app_consent_get_app_consent_requests(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAppConsentRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_app_consent_get_app_consent_requests(
+        connection,
+        app_consent_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -772,7 +1046,10 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAppConsentApprovalRoute do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAppConsentRequestCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_app_consent_list_app_consent_requests(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAppConsentRequestCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_governance_app_consent_list_app_consent_requests(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAppConsentRequestCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_governance_app_consent_list_app_consent_requests(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -816,8 +1093,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAppConsentApprovalRoute do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAppConsentRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_app_consent_update_app_consent_requests(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphAppConsentRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAppConsentRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_app_consent_update_app_consent_requests(connection, app_consent_request_id, microsoft_graph_app_consent_request, _opts \\ []) do
+  @spec identity_governance_app_consent_update_app_consent_requests(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAppConsentRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAppConsentRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_app_consent_update_app_consent_requests(
+        connection,
+        app_consent_request_id,
+        microsoft_graph_app_consent_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -848,7 +1138,10 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAppConsentApprovalRoute do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_delete_app_consent(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_governance_delete_app_consent(Tesla.Env.client(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_governance_delete_app_consent(connection, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -885,7 +1178,10 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAppConsentApprovalRoute do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAppConsentApprovalRoute.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_get_app_consent(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAppConsentApprovalRoute.t} | {:error, Tesla.Env.t}
+  @spec identity_governance_get_app_consent(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAppConsentApprovalRoute.t()}
+          | {:error, Tesla.Env.t()}
   def identity_governance_get_app_consent(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -922,8 +1218,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAppConsentApprovalRoute do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAppConsentApprovalRoute.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_update_app_consent(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphAppConsentApprovalRoute.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAppConsentApprovalRoute.t} | {:error, Tesla.Env.t}
-  def identity_governance_update_app_consent(connection, microsoft_graph_app_consent_approval_route, _opts \\ []) do
+  @spec identity_governance_update_app_consent(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphAppConsentApprovalRoute.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAppConsentApprovalRoute.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_update_app_consent(
+        connection,
+        microsoft_graph_app_consent_approval_route,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

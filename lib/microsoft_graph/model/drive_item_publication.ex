@@ -15,17 +15,21 @@ defmodule MicrosoftGraph.Model.DriveItemPublication do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :checkedOutBy => MicrosoftGraph.Model.MicrosoftGraphPublicationFacetCheckedOutBy.t | nil,
-    :level => String.t | nil,
-    :versionId => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :checkedOutBy =>
+            MicrosoftGraph.Model.MicrosoftGraphPublicationFacetCheckedOutBy.t() | nil,
+          :level => String.t() | nil,
+          :versionId => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:checkedOutBy, :struct, MicrosoftGraph.Model.MicrosoftGraphPublicationFacetCheckedOutBy)
+    |> Deserializer.deserialize(
+      :checkedOutBy,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphPublicationFacetCheckedOutBy
+    )
   end
 end
-

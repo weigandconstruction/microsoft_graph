@@ -24,7 +24,10 @@ defmodule MicrosoftGraph.Api.EducationEducationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEducationRoot.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_education_root_get_education_root(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationRoot.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec education_education_root_get_education_root(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationRoot.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def education_education_root_get_education_root(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -61,8 +64,19 @@ defmodule MicrosoftGraph.Api.EducationEducationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEducationRoot.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_education_root_update_education_root(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphEducationRoot.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationRoot.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_education_root_update_education_root(connection, microsoft_graph_education_root, _opts \\ []) do
+  @spec education_education_root_update_education_root(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphEducationRoot.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationRoot.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_education_root_update_education_root(
+        connection,
+        microsoft_graph_education_root,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

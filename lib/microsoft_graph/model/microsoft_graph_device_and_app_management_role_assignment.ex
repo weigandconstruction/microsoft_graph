@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphDeviceAndAppManagementRoleAssignment do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,20 +18,23 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphDeviceAndAppManagementRoleAssignmen
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :resourceScopes => [String.t] | nil,
-    :roleDefinition => MicrosoftGraph.Model.RoleAssignmentRoleDefinition.t | nil,
-    :members => [String.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :resourceScopes => [String.t()] | nil,
+          :roleDefinition => MicrosoftGraph.Model.RoleAssignmentRoleDefinition.t() | nil,
+          :members => [String.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:roleDefinition, :struct, MicrosoftGraph.Model.RoleAssignmentRoleDefinition)
+    |> Deserializer.deserialize(
+      :roleDefinition,
+      :struct,
+      MicrosoftGraph.Model.RoleAssignmentRoleDefinition
+    )
   end
 end
-

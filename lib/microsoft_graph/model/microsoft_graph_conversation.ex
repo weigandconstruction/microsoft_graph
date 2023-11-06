@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphConversation do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,22 +19,25 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphConversation do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :hasAttachments => boolean() | nil,
-    :lastDeliveredDateTime => DateTime.t | nil,
-    :preview => String.t | nil,
-    :threads => [MicrosoftGraph.Model.MicrosoftGraphConversationThread.t] | nil,
-    :topic => String.t | nil,
-    :uniqueSenders => [String.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :hasAttachments => boolean() | nil,
+          :lastDeliveredDateTime => DateTime.t() | nil,
+          :preview => String.t() | nil,
+          :threads => [MicrosoftGraph.Model.MicrosoftGraphConversationThread.t()] | nil,
+          :topic => String.t() | nil,
+          :uniqueSenders => [String.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:lastDeliveredDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:threads, :list, MicrosoftGraph.Model.MicrosoftGraphConversationThread)
+    |> Deserializer.deserialize(:lastDeliveredDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :threads,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphConversationThread
+    )
   end
 end
-

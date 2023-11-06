@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleManagementPolicyExpirationRule do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,18 +16,21 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleManagementPolicyExpirati
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :target => MicrosoftGraph.Model.UnifiedRoleManagementPolicyRuleTarget.t | nil,
-    :isExpirationRequired => boolean() | nil,
-    :maximumDuration => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :target => MicrosoftGraph.Model.UnifiedRoleManagementPolicyRuleTarget.t() | nil,
+          :isExpirationRequired => boolean() | nil,
+          :maximumDuration => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:target, :struct, MicrosoftGraph.Model.UnifiedRoleManagementPolicyRuleTarget)
+    |> Deserializer.deserialize(
+      :target,
+      :struct,
+      MicrosoftGraph.Model.UnifiedRoleManagementPolicyRuleTarget
+    )
   end
 end
-

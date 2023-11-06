@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphDirectory do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -20,28 +20,60 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphDirectory do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :administrativeUnits => [MicrosoftGraph.Model.MicrosoftGraphAdministrativeUnit.t] | nil,
-    :attributeSets => [MicrosoftGraph.Model.MicrosoftGraphAttributeSet.t] | nil,
-    :customSecurityAttributeDefinitions => [MicrosoftGraph.Model.MicrosoftGraphCustomSecurityAttributeDefinition.t] | nil,
-    :deletedItems => [MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t] | nil,
-    :deviceLocalCredentials => [MicrosoftGraph.Model.MicrosoftGraphDeviceLocalCredentialInfo.t] | nil,
-    :federationConfigurations => [MicrosoftGraph.Model.MicrosoftGraphIdentityProviderBase.t] | nil,
-    :onPremisesSynchronization => [MicrosoftGraph.Model.MicrosoftGraphOnPremisesDirectorySynchronization.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :administrativeUnits =>
+            [MicrosoftGraph.Model.MicrosoftGraphAdministrativeUnit.t()] | nil,
+          :attributeSets => [MicrosoftGraph.Model.MicrosoftGraphAttributeSet.t()] | nil,
+          :customSecurityAttributeDefinitions =>
+            [MicrosoftGraph.Model.MicrosoftGraphCustomSecurityAttributeDefinition.t()] | nil,
+          :deletedItems => [MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()] | nil,
+          :deviceLocalCredentials =>
+            [MicrosoftGraph.Model.MicrosoftGraphDeviceLocalCredentialInfo.t()] | nil,
+          :federationConfigurations =>
+            [MicrosoftGraph.Model.MicrosoftGraphIdentityProviderBase.t()] | nil,
+          :onPremisesSynchronization =>
+            [MicrosoftGraph.Model.MicrosoftGraphOnPremisesDirectorySynchronization.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:administrativeUnits, :list, MicrosoftGraph.Model.MicrosoftGraphAdministrativeUnit)
-     |> Deserializer.deserialize(:attributeSets, :list, MicrosoftGraph.Model.MicrosoftGraphAttributeSet)
-     |> Deserializer.deserialize(:customSecurityAttributeDefinitions, :list, MicrosoftGraph.Model.MicrosoftGraphCustomSecurityAttributeDefinition)
-     |> Deserializer.deserialize(:deletedItems, :list, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject)
-     |> Deserializer.deserialize(:deviceLocalCredentials, :list, MicrosoftGraph.Model.MicrosoftGraphDeviceLocalCredentialInfo)
-     |> Deserializer.deserialize(:federationConfigurations, :list, MicrosoftGraph.Model.MicrosoftGraphIdentityProviderBase)
-     |> Deserializer.deserialize(:onPremisesSynchronization, :list, MicrosoftGraph.Model.MicrosoftGraphOnPremisesDirectorySynchronization)
+    |> Deserializer.deserialize(
+      :administrativeUnits,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAdministrativeUnit
+    )
+    |> Deserializer.deserialize(
+      :attributeSets,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAttributeSet
+    )
+    |> Deserializer.deserialize(
+      :customSecurityAttributeDefinitions,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphCustomSecurityAttributeDefinition
+    )
+    |> Deserializer.deserialize(
+      :deletedItems,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDirectoryObject
+    )
+    |> Deserializer.deserialize(
+      :deviceLocalCredentials,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDeviceLocalCredentialInfo
+    )
+    |> Deserializer.deserialize(
+      :federationConfigurations,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphIdentityProviderBase
+    )
+    |> Deserializer.deserialize(
+      :onPremisesSynchronization,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphOnPremisesDirectorySynchronization
+    )
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookTablesCount2XxResponse do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,11 +12,10 @@ defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookTablesCount2XxRe
   ]
 
   @type t :: %__MODULE__{
-    :value => integer() | nil
-  }
+          :value => integer() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

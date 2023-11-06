@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAndroidGeneralDeviceConfiguration do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -72,89 +72,157 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAndroidGeneralDeviceConfiguration d
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :assignments => [MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationAssignment.t] | nil,
-    :createdDateTime => DateTime.t | nil,
-    :description => String.t | nil,
-    :deviceSettingStateSummaries => [MicrosoftGraph.Model.MicrosoftGraphSettingStateDeviceSummary.t] | nil,
-    :deviceStatusOverview => MicrosoftGraph.Model.DeviceConfigurationDeviceStatusOverview.t | nil,
-    :deviceStatuses => [MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceStatus.t] | nil,
-    :displayName => String.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :userStatusOverview => MicrosoftGraph.Model.DeviceConfigurationUserStatusOverview.t | nil,
-    :userStatuses => [MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserStatus.t] | nil,
-    :version => integer() | nil,
-    :kioskModeApps => [MicrosoftGraph.Model.MicrosoftGraphIosNetworkUsageRuleManagedAppsInner.t] | nil,
-    :cellularBlockWiFiTethering => boolean() | nil,
-    :bluetoothBlocked => boolean() | nil,
-    :webBrowserBlockPopups => boolean() | nil,
-    :passwordExpirationDays => integer() | nil,
-    :cellularBlockMessaging => boolean() | nil,
-    :compliantAppListType => MicrosoftGraph.Model.MicrosoftGraphAppListType.t | nil,
-    :factoryResetBlocked => boolean() | nil,
-    :appsBlockClipboardSharing => boolean() | nil,
-    :webBrowserCookieSettings => MicrosoftGraph.Model.MicrosoftGraphWebBrowserCookieSettings.t | nil,
-    :appsInstallAllowList => [MicrosoftGraph.Model.MicrosoftGraphIosNetworkUsageRuleManagedAppsInner.t] | nil,
-    :compliantAppsList => [MicrosoftGraph.Model.MicrosoftGraphIosNetworkUsageRuleManagedAppsInner.t] | nil,
-    :diagnosticDataBlockSubmission => boolean() | nil,
-    :storageBlockRemovableStorage => boolean() | nil,
-    :voiceDialingBlocked => boolean() | nil,
-    :nfcBlocked => boolean() | nil,
-    :cellularBlockDataRoaming => boolean() | nil,
-    :securityRequireVerifyApps => boolean() | nil,
-    :webBrowserBlockJavaScript => boolean() | nil,
-    :storageRequireDeviceEncryption => boolean() | nil,
-    :appsBlockCopyPaste => boolean() | nil,
-    :passwordRequiredType => MicrosoftGraph.Model.MicrosoftGraphAndroidRequiredPasswordType.t | nil,
-    :wiFiBlocked => boolean() | nil,
-    :storageRequireRemovableStorageEncryption => boolean() | nil,
-    :voiceAssistantBlocked => boolean() | nil,
-    :googlePlayStoreBlocked => boolean() | nil,
-    :locationServicesBlocked => boolean() | nil,
-    :storageBlockGoogleBackup => boolean() | nil,
-    :appsBlockYouTube => boolean() | nil,
-    :googleAccountBlockAutoSync => boolean() | nil,
-    :deviceSharingAllowed => boolean() | nil,
-    :cellularBlockVoiceRoaming => boolean() | nil,
-    :webBrowserBlockAutofill => boolean() | nil,
-    :appsLaunchBlockList => [MicrosoftGraph.Model.MicrosoftGraphIosNetworkUsageRuleManagedAppsInner.t] | nil,
-    :screenCaptureBlocked => boolean() | nil,
-    :passwordRequired => boolean() | nil,
-    :passwordPreviousPasswordBlockCount => integer() | nil,
-    :powerOffBlocked => boolean() | nil,
-    :passwordMinutesOfInactivityBeforeScreenTimeout => integer() | nil,
-    :passwordMinimumLength => integer() | nil,
-    :cameraBlocked => boolean() | nil,
-    :kioskModeBlockSleepButton => boolean() | nil,
-    :passwordBlockTrustAgents => boolean() | nil,
-    :passwordSignInFailureCountBeforeFactoryReset => integer() | nil,
-    :webBrowserBlocked => boolean() | nil,
-    :kioskModeBlockVolumeButtons => boolean() | nil,
-    :passwordBlockFingerprintUnlock => boolean() | nil,
-    :appsHideList => [MicrosoftGraph.Model.MicrosoftGraphIosNetworkUsageRuleManagedAppsInner.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :assignments =>
+            [MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationAssignment.t()] | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :deviceSettingStateSummaries =>
+            [MicrosoftGraph.Model.MicrosoftGraphSettingStateDeviceSummary.t()] | nil,
+          :deviceStatusOverview =>
+            MicrosoftGraph.Model.DeviceConfigurationDeviceStatusOverview.t() | nil,
+          :deviceStatuses =>
+            [MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceStatus.t()] | nil,
+          :displayName => String.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :userStatusOverview =>
+            MicrosoftGraph.Model.DeviceConfigurationUserStatusOverview.t() | nil,
+          :userStatuses =>
+            [MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserStatus.t()] | nil,
+          :version => integer() | nil,
+          :kioskModeApps =>
+            [MicrosoftGraph.Model.MicrosoftGraphIosNetworkUsageRuleManagedAppsInner.t()] | nil,
+          :cellularBlockWiFiTethering => boolean() | nil,
+          :bluetoothBlocked => boolean() | nil,
+          :webBrowserBlockPopups => boolean() | nil,
+          :passwordExpirationDays => integer() | nil,
+          :cellularBlockMessaging => boolean() | nil,
+          :compliantAppListType => MicrosoftGraph.Model.MicrosoftGraphAppListType.t() | nil,
+          :factoryResetBlocked => boolean() | nil,
+          :appsBlockClipboardSharing => boolean() | nil,
+          :webBrowserCookieSettings =>
+            MicrosoftGraph.Model.MicrosoftGraphWebBrowserCookieSettings.t() | nil,
+          :appsInstallAllowList =>
+            [MicrosoftGraph.Model.MicrosoftGraphIosNetworkUsageRuleManagedAppsInner.t()] | nil,
+          :compliantAppsList =>
+            [MicrosoftGraph.Model.MicrosoftGraphIosNetworkUsageRuleManagedAppsInner.t()] | nil,
+          :diagnosticDataBlockSubmission => boolean() | nil,
+          :storageBlockRemovableStorage => boolean() | nil,
+          :voiceDialingBlocked => boolean() | nil,
+          :nfcBlocked => boolean() | nil,
+          :cellularBlockDataRoaming => boolean() | nil,
+          :securityRequireVerifyApps => boolean() | nil,
+          :webBrowserBlockJavaScript => boolean() | nil,
+          :storageRequireDeviceEncryption => boolean() | nil,
+          :appsBlockCopyPaste => boolean() | nil,
+          :passwordRequiredType =>
+            MicrosoftGraph.Model.MicrosoftGraphAndroidRequiredPasswordType.t() | nil,
+          :wiFiBlocked => boolean() | nil,
+          :storageRequireRemovableStorageEncryption => boolean() | nil,
+          :voiceAssistantBlocked => boolean() | nil,
+          :googlePlayStoreBlocked => boolean() | nil,
+          :locationServicesBlocked => boolean() | nil,
+          :storageBlockGoogleBackup => boolean() | nil,
+          :appsBlockYouTube => boolean() | nil,
+          :googleAccountBlockAutoSync => boolean() | nil,
+          :deviceSharingAllowed => boolean() | nil,
+          :cellularBlockVoiceRoaming => boolean() | nil,
+          :webBrowserBlockAutofill => boolean() | nil,
+          :appsLaunchBlockList =>
+            [MicrosoftGraph.Model.MicrosoftGraphIosNetworkUsageRuleManagedAppsInner.t()] | nil,
+          :screenCaptureBlocked => boolean() | nil,
+          :passwordRequired => boolean() | nil,
+          :passwordPreviousPasswordBlockCount => integer() | nil,
+          :powerOffBlocked => boolean() | nil,
+          :passwordMinutesOfInactivityBeforeScreenTimeout => integer() | nil,
+          :passwordMinimumLength => integer() | nil,
+          :cameraBlocked => boolean() | nil,
+          :kioskModeBlockSleepButton => boolean() | nil,
+          :passwordBlockTrustAgents => boolean() | nil,
+          :passwordSignInFailureCountBeforeFactoryReset => integer() | nil,
+          :webBrowserBlocked => boolean() | nil,
+          :kioskModeBlockVolumeButtons => boolean() | nil,
+          :passwordBlockFingerprintUnlock => boolean() | nil,
+          :appsHideList =>
+            [MicrosoftGraph.Model.MicrosoftGraphIosNetworkUsageRuleManagedAppsInner.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:assignments, :list, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationAssignment)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:deviceSettingStateSummaries, :list, MicrosoftGraph.Model.MicrosoftGraphSettingStateDeviceSummary)
-     |> Deserializer.deserialize(:deviceStatusOverview, :struct, MicrosoftGraph.Model.DeviceConfigurationDeviceStatusOverview)
-     |> Deserializer.deserialize(:deviceStatuses, :list, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceStatus)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:userStatusOverview, :struct, MicrosoftGraph.Model.DeviceConfigurationUserStatusOverview)
-     |> Deserializer.deserialize(:userStatuses, :list, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserStatus)
-     |> Deserializer.deserialize(:kioskModeApps, :list, MicrosoftGraph.Model.MicrosoftGraphIosNetworkUsageRuleManagedAppsInner)
-     |> Deserializer.deserialize(:compliantAppListType, :struct, MicrosoftGraph.Model.MicrosoftGraphAppListType)
-     |> Deserializer.deserialize(:webBrowserCookieSettings, :struct, MicrosoftGraph.Model.MicrosoftGraphWebBrowserCookieSettings)
-     |> Deserializer.deserialize(:appsInstallAllowList, :list, MicrosoftGraph.Model.MicrosoftGraphIosNetworkUsageRuleManagedAppsInner)
-     |> Deserializer.deserialize(:compliantAppsList, :list, MicrosoftGraph.Model.MicrosoftGraphIosNetworkUsageRuleManagedAppsInner)
-     |> Deserializer.deserialize(:passwordRequiredType, :struct, MicrosoftGraph.Model.MicrosoftGraphAndroidRequiredPasswordType)
-     |> Deserializer.deserialize(:appsLaunchBlockList, :list, MicrosoftGraph.Model.MicrosoftGraphIosNetworkUsageRuleManagedAppsInner)
-     |> Deserializer.deserialize(:appsHideList, :list, MicrosoftGraph.Model.MicrosoftGraphIosNetworkUsageRuleManagedAppsInner)
+    |> Deserializer.deserialize(
+      :assignments,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationAssignment
+    )
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :deviceSettingStateSummaries,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSettingStateDeviceSummary
+    )
+    |> Deserializer.deserialize(
+      :deviceStatusOverview,
+      :struct,
+      MicrosoftGraph.Model.DeviceConfigurationDeviceStatusOverview
+    )
+    |> Deserializer.deserialize(
+      :deviceStatuses,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceStatus
+    )
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :userStatusOverview,
+      :struct,
+      MicrosoftGraph.Model.DeviceConfigurationUserStatusOverview
+    )
+    |> Deserializer.deserialize(
+      :userStatuses,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserStatus
+    )
+    |> Deserializer.deserialize(
+      :kioskModeApps,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphIosNetworkUsageRuleManagedAppsInner
+    )
+    |> Deserializer.deserialize(
+      :compliantAppListType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAppListType
+    )
+    |> Deserializer.deserialize(
+      :webBrowserCookieSettings,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphWebBrowserCookieSettings
+    )
+    |> Deserializer.deserialize(
+      :appsInstallAllowList,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphIosNetworkUsageRuleManagedAppsInner
+    )
+    |> Deserializer.deserialize(
+      :compliantAppsList,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphIosNetworkUsageRuleManagedAppsInner
+    )
+    |> Deserializer.deserialize(
+      :passwordRequiredType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAndroidRequiredPasswordType
+    )
+    |> Deserializer.deserialize(
+      :appsLaunchBlockList,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphIosNetworkUsageRuleManagedAppsInner
+    )
+    |> Deserializer.deserialize(
+      :appsHideList,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphIosNetworkUsageRuleManagedAppsInner
+    )
   end
 end
-

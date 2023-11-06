@@ -17,20 +17,19 @@ defmodule MicrosoftGraph.Model.SiteTermStore do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :defaultLanguageTag => String.t | nil,
-    :groups => [MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t] | nil,
-    :languageTags => [String.t] | nil,
-    :sets => [MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :defaultLanguageTag => String.t() | nil,
+          :groups => [MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t()] | nil,
+          :languageTags => [String.t()] | nil,
+          :sets => [MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:groups, :list, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup)
-     |> Deserializer.deserialize(:sets, :list, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet)
+    |> Deserializer.deserialize(:groups, :list, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup)
+    |> Deserializer.deserialize(:sets, :list, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet)
   end
 end
-

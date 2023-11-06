@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAndroidWorkProfileGeneralDeviceConfiguration do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -58,71 +58,122 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAndroidWorkProfileGeneralDeviceConf
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :assignments => [MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationAssignment.t] | nil,
-    :createdDateTime => DateTime.t | nil,
-    :description => String.t | nil,
-    :deviceSettingStateSummaries => [MicrosoftGraph.Model.MicrosoftGraphSettingStateDeviceSummary.t] | nil,
-    :deviceStatusOverview => MicrosoftGraph.Model.DeviceConfigurationDeviceStatusOverview.t | nil,
-    :deviceStatuses => [MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceStatus.t] | nil,
-    :displayName => String.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :userStatusOverview => MicrosoftGraph.Model.DeviceConfigurationUserStatusOverview.t | nil,
-    :userStatuses => [MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserStatus.t] | nil,
-    :version => integer() | nil,
-    :workProfilePasswordSignInFailureCountBeforeFactoryReset => integer() | nil,
-    :passwordExpirationDays => integer() | nil,
-    :workProfileBlockCrossProfileContactsSearch => boolean() | nil,
-    :workProfilePasswordMinSymbolCharacters => integer() | nil,
-    :workProfilePasswordMinUpperCaseCharacters => integer() | nil,
-    :workProfilePasswordPreviousPasswordBlockCount => integer() | nil,
-    :workProfileBlockAddingAccounts => boolean() | nil,
-    :workProfileBlockCamera => boolean() | nil,
-    :workProfileDataSharingType => MicrosoftGraph.Model.MicrosoftGraphAndroidWorkProfileCrossProfileDataSharingType.t | nil,
-    :securityRequireVerifyApps => boolean() | nil,
-    :passwordRequiredType => MicrosoftGraph.Model.MicrosoftGraphAndroidWorkProfileRequiredPasswordType.t | nil,
-    :workProfileBlockCrossProfileCopyPaste => boolean() | nil,
-    :workProfilePasswordMinutesOfInactivityBeforeScreenTimeout => integer() | nil,
-    :workProfileDefaultAppPermissionPolicy => MicrosoftGraph.Model.MicrosoftGraphAndroidWorkProfileDefaultAppPermissionPolicyType.t | nil,
-    :workProfilePasswordBlockTrustAgents => boolean() | nil,
-    :workProfileBlockNotificationsWhileDeviceLocked => boolean() | nil,
-    :workProfilePasswordMinimumLength => integer() | nil,
-    :workProfilePasswordBlockFingerprintUnlock => boolean() | nil,
-    :workProfilePasswordMinLetterCharacters => integer() | nil,
-    :workProfilePasswordRequiredType => MicrosoftGraph.Model.MicrosoftGraphAndroidWorkProfileRequiredPasswordType.t | nil,
-    :workProfilePasswordMinNonLetterCharacters => integer() | nil,
-    :workProfileRequirePassword => boolean() | nil,
-    :workProfileBluetoothEnableContactSharing => boolean() | nil,
-    :workProfileBlockScreenCapture => boolean() | nil,
-    :workProfileBlockCrossProfileCallerId => boolean() | nil,
-    :passwordPreviousPasswordBlockCount => integer() | nil,
-    :workProfilePasswordMinLowerCaseCharacters => integer() | nil,
-    :passwordMinutesOfInactivityBeforeScreenTimeout => integer() | nil,
-    :passwordMinimumLength => integer() | nil,
-    :passwordBlockTrustAgents => boolean() | nil,
-    :passwordSignInFailureCountBeforeFactoryReset => integer() | nil,
-    :workProfilePasswordMinNumericCharacters => integer() | nil,
-    :workProfilePasswordExpirationDays => integer() | nil,
-    :passwordBlockFingerprintUnlock => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :assignments =>
+            [MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationAssignment.t()] | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :deviceSettingStateSummaries =>
+            [MicrosoftGraph.Model.MicrosoftGraphSettingStateDeviceSummary.t()] | nil,
+          :deviceStatusOverview =>
+            MicrosoftGraph.Model.DeviceConfigurationDeviceStatusOverview.t() | nil,
+          :deviceStatuses =>
+            [MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceStatus.t()] | nil,
+          :displayName => String.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :userStatusOverview =>
+            MicrosoftGraph.Model.DeviceConfigurationUserStatusOverview.t() | nil,
+          :userStatuses =>
+            [MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserStatus.t()] | nil,
+          :version => integer() | nil,
+          :workProfilePasswordSignInFailureCountBeforeFactoryReset => integer() | nil,
+          :passwordExpirationDays => integer() | nil,
+          :workProfileBlockCrossProfileContactsSearch => boolean() | nil,
+          :workProfilePasswordMinSymbolCharacters => integer() | nil,
+          :workProfilePasswordMinUpperCaseCharacters => integer() | nil,
+          :workProfilePasswordPreviousPasswordBlockCount => integer() | nil,
+          :workProfileBlockAddingAccounts => boolean() | nil,
+          :workProfileBlockCamera => boolean() | nil,
+          :workProfileDataSharingType =>
+            MicrosoftGraph.Model.MicrosoftGraphAndroidWorkProfileCrossProfileDataSharingType.t()
+            | nil,
+          :securityRequireVerifyApps => boolean() | nil,
+          :passwordRequiredType =>
+            MicrosoftGraph.Model.MicrosoftGraphAndroidWorkProfileRequiredPasswordType.t() | nil,
+          :workProfileBlockCrossProfileCopyPaste => boolean() | nil,
+          :workProfilePasswordMinutesOfInactivityBeforeScreenTimeout => integer() | nil,
+          :workProfileDefaultAppPermissionPolicy =>
+            MicrosoftGraph.Model.MicrosoftGraphAndroidWorkProfileDefaultAppPermissionPolicyType.t()
+            | nil,
+          :workProfilePasswordBlockTrustAgents => boolean() | nil,
+          :workProfileBlockNotificationsWhileDeviceLocked => boolean() | nil,
+          :workProfilePasswordMinimumLength => integer() | nil,
+          :workProfilePasswordBlockFingerprintUnlock => boolean() | nil,
+          :workProfilePasswordMinLetterCharacters => integer() | nil,
+          :workProfilePasswordRequiredType =>
+            MicrosoftGraph.Model.MicrosoftGraphAndroidWorkProfileRequiredPasswordType.t() | nil,
+          :workProfilePasswordMinNonLetterCharacters => integer() | nil,
+          :workProfileRequirePassword => boolean() | nil,
+          :workProfileBluetoothEnableContactSharing => boolean() | nil,
+          :workProfileBlockScreenCapture => boolean() | nil,
+          :workProfileBlockCrossProfileCallerId => boolean() | nil,
+          :passwordPreviousPasswordBlockCount => integer() | nil,
+          :workProfilePasswordMinLowerCaseCharacters => integer() | nil,
+          :passwordMinutesOfInactivityBeforeScreenTimeout => integer() | nil,
+          :passwordMinimumLength => integer() | nil,
+          :passwordBlockTrustAgents => boolean() | nil,
+          :passwordSignInFailureCountBeforeFactoryReset => integer() | nil,
+          :workProfilePasswordMinNumericCharacters => integer() | nil,
+          :workProfilePasswordExpirationDays => integer() | nil,
+          :passwordBlockFingerprintUnlock => boolean() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:assignments, :list, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationAssignment)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:deviceSettingStateSummaries, :list, MicrosoftGraph.Model.MicrosoftGraphSettingStateDeviceSummary)
-     |> Deserializer.deserialize(:deviceStatusOverview, :struct, MicrosoftGraph.Model.DeviceConfigurationDeviceStatusOverview)
-     |> Deserializer.deserialize(:deviceStatuses, :list, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceStatus)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:userStatusOverview, :struct, MicrosoftGraph.Model.DeviceConfigurationUserStatusOverview)
-     |> Deserializer.deserialize(:userStatuses, :list, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserStatus)
-     |> Deserializer.deserialize(:workProfileDataSharingType, :struct, MicrosoftGraph.Model.MicrosoftGraphAndroidWorkProfileCrossProfileDataSharingType)
-     |> Deserializer.deserialize(:passwordRequiredType, :struct, MicrosoftGraph.Model.MicrosoftGraphAndroidWorkProfileRequiredPasswordType)
-     |> Deserializer.deserialize(:workProfileDefaultAppPermissionPolicy, :struct, MicrosoftGraph.Model.MicrosoftGraphAndroidWorkProfileDefaultAppPermissionPolicyType)
-     |> Deserializer.deserialize(:workProfilePasswordRequiredType, :struct, MicrosoftGraph.Model.MicrosoftGraphAndroidWorkProfileRequiredPasswordType)
+    |> Deserializer.deserialize(
+      :assignments,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationAssignment
+    )
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :deviceSettingStateSummaries,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSettingStateDeviceSummary
+    )
+    |> Deserializer.deserialize(
+      :deviceStatusOverview,
+      :struct,
+      MicrosoftGraph.Model.DeviceConfigurationDeviceStatusOverview
+    )
+    |> Deserializer.deserialize(
+      :deviceStatuses,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceStatus
+    )
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :userStatusOverview,
+      :struct,
+      MicrosoftGraph.Model.DeviceConfigurationUserStatusOverview
+    )
+    |> Deserializer.deserialize(
+      :userStatuses,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserStatus
+    )
+    |> Deserializer.deserialize(
+      :workProfileDataSharingType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAndroidWorkProfileCrossProfileDataSharingType
+    )
+    |> Deserializer.deserialize(
+      :passwordRequiredType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAndroidWorkProfileRequiredPasswordType
+    )
+    |> Deserializer.deserialize(
+      :workProfileDefaultAppPermissionPolicy,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAndroidWorkProfileDefaultAppPermissionPolicyType
+    )
+    |> Deserializer.deserialize(
+      :workProfilePasswordRequiredType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAndroidWorkProfileRequiredPasswordType
+    )
   end
 end
-

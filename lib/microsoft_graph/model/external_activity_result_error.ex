@@ -17,20 +17,27 @@ defmodule MicrosoftGraph.Model.ExternalActivityResultError do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :code => String.t | nil,
-    :details => [MicrosoftGraph.Model.MicrosoftGraphPublicErrorDetailsInner.t] | nil,
-    :innerError => MicrosoftGraph.Model.MicrosoftGraphPublicErrorInnerError.t | nil,
-    :message => String.t | nil,
-    :target => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :code => String.t() | nil,
+          :details => [MicrosoftGraph.Model.MicrosoftGraphPublicErrorDetailsInner.t()] | nil,
+          :innerError => MicrosoftGraph.Model.MicrosoftGraphPublicErrorInnerError.t() | nil,
+          :message => String.t() | nil,
+          :target => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:details, :list, MicrosoftGraph.Model.MicrosoftGraphPublicErrorDetailsInner)
-     |> Deserializer.deserialize(:innerError, :struct, MicrosoftGraph.Model.MicrosoftGraphPublicErrorInnerError)
+    |> Deserializer.deserialize(
+      :details,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphPublicErrorDetailsInner
+    )
+    |> Deserializer.deserialize(
+      :innerError,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphPublicErrorInnerError
+    )
   end
 end
-

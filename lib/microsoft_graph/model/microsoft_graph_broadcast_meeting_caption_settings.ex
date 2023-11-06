@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphBroadcastMeetingCaptionSettings do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphBroadcastMeetingCaptionSettings do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :isCaptionEnabled => boolean() | nil,
-    :spokenLanguage => String.t | nil,
-    :translationLanguages => [String.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :isCaptionEnabled => boolean() | nil,
+          :spokenLanguage => String.t() | nil,
+          :translationLanguages => [String.t()] | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

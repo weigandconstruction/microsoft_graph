@@ -24,7 +24,10 @@ defmodule MicrosoftGraph.Api.SolutionsBookingCurrency do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_booking_currencies_get_count_f6c6(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec solutions_booking_currencies_get_count_f6c6(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def solutions_booking_currencies_get_count_f6c6(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -61,8 +64,19 @@ defmodule MicrosoftGraph.Api.SolutionsBookingCurrency do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBookingCurrency.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_create_booking_currencies(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphBookingCurrency.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingCurrency.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def solutions_create_booking_currencies(connection, microsoft_graph_booking_currency, _opts \\ []) do
+  @spec solutions_create_booking_currencies(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphBookingCurrency.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingCurrency.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def solutions_create_booking_currencies(
+        connection,
+        microsoft_graph_booking_currency,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -94,7 +108,10 @@ defmodule MicrosoftGraph.Api.SolutionsBookingCurrency do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_delete_booking_currencies(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec solutions_delete_booking_currencies(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def solutions_delete_booking_currencies(connection, booking_currency_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -133,7 +150,10 @@ defmodule MicrosoftGraph.Api.SolutionsBookingCurrency do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBookingCurrency.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_get_booking_currencies(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingCurrency.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec solutions_get_booking_currencies(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingCurrency.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def solutions_get_booking_currencies(connection, booking_currency_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -178,7 +198,10 @@ defmodule MicrosoftGraph.Api.SolutionsBookingCurrency do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBookingCurrencyCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_list_booking_currencies(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingCurrencyCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec solutions_list_booking_currencies(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingCurrencyCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def solutions_list_booking_currencies(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -222,8 +245,21 @@ defmodule MicrosoftGraph.Api.SolutionsBookingCurrency do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBookingCurrency.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_update_booking_currencies(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphBookingCurrency.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingCurrency.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def solutions_update_booking_currencies(connection, booking_currency_id, microsoft_graph_booking_currency, _opts \\ []) do
+  @spec solutions_update_booking_currencies(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphBookingCurrency.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingCurrency.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def solutions_update_booking_currencies(
+        connection,
+        booking_currency_id,
+        microsoft_graph_booking_currency,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

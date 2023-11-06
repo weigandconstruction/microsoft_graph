@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphRemoteItemImage do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :height => integer() | nil,
-    :width => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :height => integer() | nil,
+          :width => integer() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

@@ -17,16 +17,15 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphDeviceExchangeAccessStateSummary do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :allowedDeviceCount => integer() | nil,
-    :blockedDeviceCount => integer() | nil,
-    :quarantinedDeviceCount => integer() | nil,
-    :unavailableDeviceCount => integer() | nil,
-    :unknownDeviceCount => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :allowedDeviceCount => integer() | nil,
+          :blockedDeviceCount => integer() | nil,
+          :quarantinedDeviceCount => integer() | nil,
+          :unavailableDeviceCount => integer() | nil,
+          :unknownDeviceCount => integer() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

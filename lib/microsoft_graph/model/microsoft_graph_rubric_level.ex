@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphRubricLevel do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,19 +16,26 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphRubricLevel do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :description => MicrosoftGraph.Model.MicrosoftGraphRubricLevelDescription.t | nil,
-    :displayName => String.t | nil,
-    :grading => MicrosoftGraph.Model.MicrosoftGraphRubricLevelGrading.t | nil,
-    :levelId => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :description => MicrosoftGraph.Model.MicrosoftGraphRubricLevelDescription.t() | nil,
+          :displayName => String.t() | nil,
+          :grading => MicrosoftGraph.Model.MicrosoftGraphRubricLevelGrading.t() | nil,
+          :levelId => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:description, :struct, MicrosoftGraph.Model.MicrosoftGraphRubricLevelDescription)
-     |> Deserializer.deserialize(:grading, :struct, MicrosoftGraph.Model.MicrosoftGraphRubricLevelGrading)
+    |> Deserializer.deserialize(
+      :description,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphRubricLevelDescription
+    )
+    |> Deserializer.deserialize(
+      :grading,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphRubricLevelGrading
+    )
   end
 end
-

@@ -24,8 +24,19 @@ defmodule MicrosoftGraph.Api.PrintPrintTaskDefinition do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTaskDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_create_task_definitions(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphPrintTaskDefinition.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTaskDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def print_create_task_definitions(connection, microsoft_graph_print_task_definition, _opts \\ []) do
+  @spec print_create_task_definitions(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphPrintTaskDefinition.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTaskDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def print_create_task_definitions(
+        connection,
+        microsoft_graph_print_task_definition,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -58,7 +69,10 @@ defmodule MicrosoftGraph.Api.PrintPrintTaskDefinition do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_delete_task_definitions(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec print_delete_task_definitions(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def print_delete_task_definitions(connection, print_task_definition_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -97,7 +111,10 @@ defmodule MicrosoftGraph.Api.PrintPrintTaskDefinition do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTaskDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_get_task_definitions(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTaskDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec print_get_task_definitions(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTaskDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def print_get_task_definitions(connection, print_task_definition_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -142,7 +159,10 @@ defmodule MicrosoftGraph.Api.PrintPrintTaskDefinition do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTaskDefinitionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_list_task_definitions(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTaskDefinitionCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec print_list_task_definitions(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTaskDefinitionCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def print_list_task_definitions(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -186,8 +206,21 @@ defmodule MicrosoftGraph.Api.PrintPrintTaskDefinition do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_task_definitions_create_tasks(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphPrintTask.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTask.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def print_task_definitions_create_tasks(connection, print_task_definition_id, microsoft_graph_print_task, _opts \\ []) do
+  @spec print_task_definitions_create_tasks(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPrintTask.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTask.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def print_task_definitions_create_tasks(
+        connection,
+        print_task_definition_id,
+        microsoft_graph_print_task,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -220,8 +253,16 @@ defmodule MicrosoftGraph.Api.PrintPrintTaskDefinition do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_task_definitions_delete_tasks(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def print_task_definitions_delete_tasks(connection, print_task_definition_id, print_task_id, opts \\ []) do
+  @spec print_task_definitions_delete_tasks(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def print_task_definitions_delete_tasks(
+        connection,
+        print_task_definition_id,
+        print_task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -257,7 +298,10 @@ defmodule MicrosoftGraph.Api.PrintPrintTaskDefinition do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_task_definitions_get_count_ee04(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec print_task_definitions_get_count_ee04(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def print_task_definitions_get_count_ee04(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -298,8 +342,16 @@ defmodule MicrosoftGraph.Api.PrintPrintTaskDefinition do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_task_definitions_get_tasks(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTask.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def print_task_definitions_get_tasks(connection, print_task_definition_id, print_task_id, opts \\ []) do
+  @spec print_task_definitions_get_tasks(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTask.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def print_task_definitions_get_tasks(
+        connection,
+        print_task_definition_id,
+        print_task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -344,7 +396,10 @@ defmodule MicrosoftGraph.Api.PrintPrintTaskDefinition do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTaskCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_task_definitions_list_tasks(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTaskCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec print_task_definitions_list_tasks(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTaskCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def print_task_definitions_list_tasks(connection, print_task_definition_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -389,7 +444,10 @@ defmodule MicrosoftGraph.Api.PrintPrintTaskDefinition do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_task_definitions_tasks_get_count0c4f(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec print_task_definitions_tasks_get_count0c4f(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def print_task_definitions_tasks_get_count0c4f(connection, print_task_definition_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -430,8 +488,21 @@ defmodule MicrosoftGraph.Api.PrintPrintTaskDefinition do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTaskDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_task_definitions_tasks_get_definition(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTaskDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def print_task_definitions_tasks_get_definition(connection, print_task_definition_id, print_task_id, opts \\ []) do
+  @spec print_task_definitions_tasks_get_definition(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTaskDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def print_task_definitions_tasks_get_definition(
+        connection,
+        print_task_definition_id,
+        print_task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -440,7 +511,9 @@ defmodule MicrosoftGraph.Api.PrintPrintTaskDefinition do
     request =
       %{}
       |> method(:get)
-      |> url("/print/taskDefinitions/#{print_task_definition_id}/tasks/#{print_task_id}/definition")
+      |> url(
+        "/print/taskDefinitions/#{print_task_definition_id}/tasks/#{print_task_id}/definition"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -471,8 +544,21 @@ defmodule MicrosoftGraph.Api.PrintPrintTaskDefinition do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTaskTrigger.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_task_definitions_tasks_get_trigger(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTaskTrigger.t} | {:error, Tesla.Env.t}
-  def print_task_definitions_tasks_get_trigger(connection, print_task_definition_id, print_task_id, opts \\ []) do
+  @spec print_task_definitions_tasks_get_trigger(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTaskTrigger.t()}
+          | {:error, Tesla.Env.t()}
+  def print_task_definitions_tasks_get_trigger(
+        connection,
+        print_task_definition_id,
+        print_task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -511,8 +597,23 @@ defmodule MicrosoftGraph.Api.PrintPrintTaskDefinition do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_task_definitions_update_tasks(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphPrintTask.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTask.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def print_task_definitions_update_tasks(connection, print_task_definition_id, print_task_id, microsoft_graph_print_task, _opts \\ []) do
+  @spec print_task_definitions_update_tasks(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPrintTask.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTask.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def print_task_definitions_update_tasks(
+        connection,
+        print_task_definition_id,
+        print_task_id,
+        microsoft_graph_print_task,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -545,8 +646,21 @@ defmodule MicrosoftGraph.Api.PrintPrintTaskDefinition do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTaskDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_update_task_definitions(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphPrintTaskDefinition.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTaskDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def print_update_task_definitions(connection, print_task_definition_id, microsoft_graph_print_task_definition, _opts \\ []) do
+  @spec print_update_task_definitions(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPrintTaskDefinition.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTaskDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def print_update_task_definitions(
+        connection,
+        print_task_definition_id,
+        microsoft_graph_print_task_definition,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

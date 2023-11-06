@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.ApplicationsApplicationSynchronizationJobsSynchronizationJobSchemaParseExpressionRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,17 +14,28 @@ defmodule MicrosoftGraph.Model.ApplicationsApplicationSynchronizationJobsSynchro
   ]
 
   @type t :: %__MODULE__{
-    :expression => String.t | nil,
-    :targetAttributeDefinition => MicrosoftGraph.Model.ApplicationsApplicationSynchronizationJobsSynchronizationJobSchemaParseExpressionRequestTargetAttributeDefinition.t | nil,
-    :testInputObject => MicrosoftGraph.Model.ApplicationsApplicationSynchronizationJobsSynchronizationJobSchemaParseExpressionRequestTestInputObject.t | nil
-  }
+          :expression => String.t() | nil,
+          :targetAttributeDefinition =>
+            MicrosoftGraph.Model.ApplicationsApplicationSynchronizationJobsSynchronizationJobSchemaParseExpressionRequestTargetAttributeDefinition.t()
+            | nil,
+          :testInputObject =>
+            MicrosoftGraph.Model.ApplicationsApplicationSynchronizationJobsSynchronizationJobSchemaParseExpressionRequestTestInputObject.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:targetAttributeDefinition, :struct, MicrosoftGraph.Model.ApplicationsApplicationSynchronizationJobsSynchronizationJobSchemaParseExpressionRequestTargetAttributeDefinition)
-     |> Deserializer.deserialize(:testInputObject, :struct, MicrosoftGraph.Model.ApplicationsApplicationSynchronizationJobsSynchronizationJobSchemaParseExpressionRequestTestInputObject)
+    |> Deserializer.deserialize(
+      :targetAttributeDefinition,
+      :struct,
+      MicrosoftGraph.Model.ApplicationsApplicationSynchronizationJobsSynchronizationJobSchemaParseExpressionRequestTargetAttributeDefinition
+    )
+    |> Deserializer.deserialize(
+      :testInputObject,
+      :struct,
+      MicrosoftGraph.Model.ApplicationsApplicationSynchronizationJobsSynchronizationJobSchemaParseExpressionRequestTestInputObject
+    )
   end
 end
-

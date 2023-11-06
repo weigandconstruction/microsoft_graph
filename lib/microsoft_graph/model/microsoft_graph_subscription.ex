@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSubscription do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -27,29 +27,28 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSubscription do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :applicationId => String.t | nil,
-    :changeType => String.t | nil,
-    :clientState => String.t | nil,
-    :creatorId => String.t | nil,
-    :encryptionCertificate => String.t | nil,
-    :encryptionCertificateId => String.t | nil,
-    :expirationDateTime => DateTime.t | nil,
-    :includeResourceData => boolean() | nil,
-    :latestSupportedTlsVersion => String.t | nil,
-    :lifecycleNotificationUrl => String.t | nil,
-    :notificationQueryOptions => String.t | nil,
-    :notificationUrl => String.t | nil,
-    :notificationUrlAppId => String.t | nil,
-    :resource => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :applicationId => String.t() | nil,
+          :changeType => String.t() | nil,
+          :clientState => String.t() | nil,
+          :creatorId => String.t() | nil,
+          :encryptionCertificate => String.t() | nil,
+          :encryptionCertificateId => String.t() | nil,
+          :expirationDateTime => DateTime.t() | nil,
+          :includeResourceData => boolean() | nil,
+          :latestSupportedTlsVersion => String.t() | nil,
+          :lifecycleNotificationUrl => String.t() | nil,
+          :notificationQueryOptions => String.t() | nil,
+          :notificationUrl => String.t() | nil,
+          :notificationUrlAppId => String.t() | nil,
+          :resource => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:expirationDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:expirationDateTime, :datetime, nil)
   end
 end
-

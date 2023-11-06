@@ -15,17 +15,20 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphPayloadCoachmarkCoachmarkLocation d
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :length => integer() | nil,
-    :offset => integer() | nil,
-    :type => MicrosoftGraph.Model.MicrosoftGraphCoachmarkLocationType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :length => integer() | nil,
+          :offset => integer() | nil,
+          :type => MicrosoftGraph.Model.MicrosoftGraphCoachmarkLocationType.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:type, :struct, MicrosoftGraph.Model.MicrosoftGraphCoachmarkLocationType)
+    |> Deserializer.deserialize(
+      :type,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCoachmarkLocationType
+    )
   end
 end
-

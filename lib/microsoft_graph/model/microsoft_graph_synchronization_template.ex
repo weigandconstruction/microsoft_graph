@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSynchronizationTemplate do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -20,23 +20,30 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSynchronizationTemplate do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :applicationId => String.t | nil,
-    :default => boolean() | nil,
-    :description => String.t | nil,
-    :discoverable => boolean() | nil,
-    :factoryTag => String.t | nil,
-    :metadata => [MicrosoftGraph.Model.SynchronizationTemplateMetadataInner.t] | nil,
-    :schema => MicrosoftGraph.Model.SynchronizationTemplateSchema.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :applicationId => String.t() | nil,
+          :default => boolean() | nil,
+          :description => String.t() | nil,
+          :discoverable => boolean() | nil,
+          :factoryTag => String.t() | nil,
+          :metadata => [MicrosoftGraph.Model.SynchronizationTemplateMetadataInner.t()] | nil,
+          :schema => MicrosoftGraph.Model.SynchronizationTemplateSchema.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:metadata, :list, MicrosoftGraph.Model.SynchronizationTemplateMetadataInner)
-     |> Deserializer.deserialize(:schema, :struct, MicrosoftGraph.Model.SynchronizationTemplateSchema)
+    |> Deserializer.deserialize(
+      :metadata,
+      :list,
+      MicrosoftGraph.Model.SynchronizationTemplateMetadataInner
+    )
+    |> Deserializer.deserialize(
+      :schema,
+      :struct,
+      MicrosoftGraph.Model.SynchronizationTemplateSchema
+    )
   end
 end
-

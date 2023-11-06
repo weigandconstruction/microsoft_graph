@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.UsersUserFindMeetingTimesRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,24 +19,44 @@ defmodule MicrosoftGraph.Model.UsersUserFindMeetingTimesRequest do
   ]
 
   @type t :: %__MODULE__{
-    :attendees => [MicrosoftGraph.Model.UsersUserFindMeetingTimesRequestAttendeesInner.t] | nil,
-    :isOrganizerOptional => boolean() | nil,
-    :locationConstraint => MicrosoftGraph.Model.UsersUserFindMeetingTimesRequestLocationConstraint.t | nil,
-    :maxCandidates => integer() | nil,
-    :meetingDuration => String.t | nil,
-    :minimumAttendeePercentage => MicrosoftGraph.Model.UsersUserFindMeetingTimesRequestMinimumAttendeePercentage.t | nil,
-    :returnSuggestionReasons => boolean() | nil,
-    :timeConstraint => MicrosoftGraph.Model.UsersUserFindMeetingTimesRequestTimeConstraint.t | nil
-  }
+          :attendees =>
+            [MicrosoftGraph.Model.UsersUserFindMeetingTimesRequestAttendeesInner.t()] | nil,
+          :isOrganizerOptional => boolean() | nil,
+          :locationConstraint =>
+            MicrosoftGraph.Model.UsersUserFindMeetingTimesRequestLocationConstraint.t() | nil,
+          :maxCandidates => integer() | nil,
+          :meetingDuration => String.t() | nil,
+          :minimumAttendeePercentage =>
+            MicrosoftGraph.Model.UsersUserFindMeetingTimesRequestMinimumAttendeePercentage.t()
+            | nil,
+          :returnSuggestionReasons => boolean() | nil,
+          :timeConstraint =>
+            MicrosoftGraph.Model.UsersUserFindMeetingTimesRequestTimeConstraint.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:attendees, :list, MicrosoftGraph.Model.UsersUserFindMeetingTimesRequestAttendeesInner)
-     |> Deserializer.deserialize(:locationConstraint, :struct, MicrosoftGraph.Model.UsersUserFindMeetingTimesRequestLocationConstraint)
-     |> Deserializer.deserialize(:minimumAttendeePercentage, :struct, MicrosoftGraph.Model.UsersUserFindMeetingTimesRequestMinimumAttendeePercentage)
-     |> Deserializer.deserialize(:timeConstraint, :struct, MicrosoftGraph.Model.UsersUserFindMeetingTimesRequestTimeConstraint)
+    |> Deserializer.deserialize(
+      :attendees,
+      :list,
+      MicrosoftGraph.Model.UsersUserFindMeetingTimesRequestAttendeesInner
+    )
+    |> Deserializer.deserialize(
+      :locationConstraint,
+      :struct,
+      MicrosoftGraph.Model.UsersUserFindMeetingTimesRequestLocationConstraint
+    )
+    |> Deserializer.deserialize(
+      :minimumAttendeePercentage,
+      :struct,
+      MicrosoftGraph.Model.UsersUserFindMeetingTimesRequestMinimumAttendeePercentage
+    )
+    |> Deserializer.deserialize(
+      :timeConstraint,
+      :struct,
+      MicrosoftGraph.Model.UsersUserFindMeetingTimesRequestTimeConstraint
+    )
   end
 end
-

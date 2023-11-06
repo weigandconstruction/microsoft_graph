@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityUserAccount do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,17 +18,16 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityUserAccount do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :accountName => String.t | nil,
-    :azureAdUserId => String.t | nil,
-    :displayName => String.t | nil,
-    :domainName => String.t | nil,
-    :userPrincipalName => String.t | nil,
-    :userSid => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :accountName => String.t() | nil,
+          :azureAdUserId => String.t() | nil,
+          :displayName => String.t() | nil,
+          :domainName => String.t() | nil,
+          :userPrincipalName => String.t() | nil,
+          :userSid => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

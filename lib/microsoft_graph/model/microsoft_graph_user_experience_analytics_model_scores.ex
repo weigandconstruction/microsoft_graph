@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsModelScores do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -22,29 +22,61 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsModelScores 
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :appReliabilityScore => MicrosoftGraph.Model.UserExperienceAnalyticsDeviceScoresAppReliabilityScore.t | nil,
-    :batteryHealthScore => MicrosoftGraph.Model.UserExperienceAnalyticsDeviceScoresBatteryHealthScore.t | nil,
-    :endpointAnalyticsScore => MicrosoftGraph.Model.UserExperienceAnalyticsDeviceScoresEndpointAnalyticsScore.t | nil,
-    :healthStatus => MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsHealthState.t | nil,
-    :manufacturer => String.t | nil,
-    :model => String.t | nil,
-    :modelDeviceCount => integer() | nil,
-    :startupPerformanceScore => MicrosoftGraph.Model.UserExperienceAnalyticsDeviceScoresStartupPerformanceScore.t | nil,
-    :workFromAnywhereScore => MicrosoftGraph.Model.UserExperienceAnalyticsDeviceScoresWorkFromAnywhereScore.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :appReliabilityScore =>
+            MicrosoftGraph.Model.UserExperienceAnalyticsDeviceScoresAppReliabilityScore.t() | nil,
+          :batteryHealthScore =>
+            MicrosoftGraph.Model.UserExperienceAnalyticsDeviceScoresBatteryHealthScore.t() | nil,
+          :endpointAnalyticsScore =>
+            MicrosoftGraph.Model.UserExperienceAnalyticsDeviceScoresEndpointAnalyticsScore.t()
+            | nil,
+          :healthStatus =>
+            MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsHealthState.t() | nil,
+          :manufacturer => String.t() | nil,
+          :model => String.t() | nil,
+          :modelDeviceCount => integer() | nil,
+          :startupPerformanceScore =>
+            MicrosoftGraph.Model.UserExperienceAnalyticsDeviceScoresStartupPerformanceScore.t()
+            | nil,
+          :workFromAnywhereScore =>
+            MicrosoftGraph.Model.UserExperienceAnalyticsDeviceScoresWorkFromAnywhereScore.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:appReliabilityScore, :struct, MicrosoftGraph.Model.UserExperienceAnalyticsDeviceScoresAppReliabilityScore)
-     |> Deserializer.deserialize(:batteryHealthScore, :struct, MicrosoftGraph.Model.UserExperienceAnalyticsDeviceScoresBatteryHealthScore)
-     |> Deserializer.deserialize(:endpointAnalyticsScore, :struct, MicrosoftGraph.Model.UserExperienceAnalyticsDeviceScoresEndpointAnalyticsScore)
-     |> Deserializer.deserialize(:healthStatus, :struct, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsHealthState)
-     |> Deserializer.deserialize(:startupPerformanceScore, :struct, MicrosoftGraph.Model.UserExperienceAnalyticsDeviceScoresStartupPerformanceScore)
-     |> Deserializer.deserialize(:workFromAnywhereScore, :struct, MicrosoftGraph.Model.UserExperienceAnalyticsDeviceScoresWorkFromAnywhereScore)
+    |> Deserializer.deserialize(
+      :appReliabilityScore,
+      :struct,
+      MicrosoftGraph.Model.UserExperienceAnalyticsDeviceScoresAppReliabilityScore
+    )
+    |> Deserializer.deserialize(
+      :batteryHealthScore,
+      :struct,
+      MicrosoftGraph.Model.UserExperienceAnalyticsDeviceScoresBatteryHealthScore
+    )
+    |> Deserializer.deserialize(
+      :endpointAnalyticsScore,
+      :struct,
+      MicrosoftGraph.Model.UserExperienceAnalyticsDeviceScoresEndpointAnalyticsScore
+    )
+    |> Deserializer.deserialize(
+      :healthStatus,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsHealthState
+    )
+    |> Deserializer.deserialize(
+      :startupPerformanceScore,
+      :struct,
+      MicrosoftGraph.Model.UserExperienceAnalyticsDeviceScoresStartupPerformanceScore
+    )
+    |> Deserializer.deserialize(
+      :workFromAnywhereScore,
+      :struct,
+      MicrosoftGraph.Model.UserExperienceAnalyticsDeviceScoresWorkFromAnywhereScore
+    )
   end
 end
-

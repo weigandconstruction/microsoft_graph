@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphODataErrorsInnerError do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,17 +15,16 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphODataErrorsInnerError do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :Date => DateTime.t | nil,
-    :"client-request-id" => String.t | nil,
-    :"request-id" => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :Date => DateTime.t() | nil,
+          :"client-request-id" => String.t() | nil,
+          :"request-id" => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:Date, :datetime, nil)
+    |> Deserializer.deserialize(:Date, :datetime, nil)
   end
 end
-

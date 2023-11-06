@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphCalendarSharingMessageAction do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,19 +15,33 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphCalendarSharingMessageAction do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :action => MicrosoftGraph.Model.MicrosoftGraphCalendarSharingMessageActionAction.t | nil,
-    :actionType => MicrosoftGraph.Model.MicrosoftGraphCalendarSharingMessageActionActionType.t | nil,
-    :importance => MicrosoftGraph.Model.MicrosoftGraphCalendarSharingMessageActionImportance.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :action =>
+            MicrosoftGraph.Model.MicrosoftGraphCalendarSharingMessageActionAction.t() | nil,
+          :actionType =>
+            MicrosoftGraph.Model.MicrosoftGraphCalendarSharingMessageActionActionType.t() | nil,
+          :importance =>
+            MicrosoftGraph.Model.MicrosoftGraphCalendarSharingMessageActionImportance.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:action, :struct, MicrosoftGraph.Model.MicrosoftGraphCalendarSharingMessageActionAction)
-     |> Deserializer.deserialize(:actionType, :struct, MicrosoftGraph.Model.MicrosoftGraphCalendarSharingMessageActionActionType)
-     |> Deserializer.deserialize(:importance, :struct, MicrosoftGraph.Model.MicrosoftGraphCalendarSharingMessageActionImportance)
+    |> Deserializer.deserialize(
+      :action,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCalendarSharingMessageActionAction
+    )
+    |> Deserializer.deserialize(
+      :actionType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCalendarSharingMessageActionActionType
+    )
+    |> Deserializer.deserialize(
+      :importance,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCalendarSharingMessageActionImportance
+    )
   end
 end
-

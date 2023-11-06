@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphIncompleteData do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,15 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphIncompleteData do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :missingDataBeforeDateTime => DateTime.t | nil,
-    :wasThrottled => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :missingDataBeforeDateTime => DateTime.t() | nil,
+          :wasThrottled => boolean() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:missingDataBeforeDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:missingDataBeforeDateTime, :datetime, nil)
   end
 end
-

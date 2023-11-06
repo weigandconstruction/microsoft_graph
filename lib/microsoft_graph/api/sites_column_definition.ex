@@ -25,7 +25,10 @@ defmodule MicrosoftGraph.Api.SitesColumnDefinition do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_columns_get_count_a8bb(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_columns_get_count_a8bb(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_columns_get_count_a8bb(connection, site_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -66,7 +69,10 @@ defmodule MicrosoftGraph.Api.SitesColumnDefinition do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_columns_get_source_column(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_columns_get_source_column(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_columns_get_source_column(connection, site_id, column_definition_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -105,7 +111,15 @@ defmodule MicrosoftGraph.Api.SitesColumnDefinition do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_create_columns(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_create_columns(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_create_columns(connection, site_id, microsoft_graph_column_definition, _opts \\ []) do
     request =
       %{}
@@ -139,7 +153,10 @@ defmodule MicrosoftGraph.Api.SitesColumnDefinition do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_delete_columns(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_delete_columns(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_delete_columns(connection, site_id, column_definition_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -177,7 +194,10 @@ defmodule MicrosoftGraph.Api.SitesColumnDefinition do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_external_columns_get_count3855(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_external_columns_get_count3855(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_external_columns_get_count3855(connection, site_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -218,7 +238,10 @@ defmodule MicrosoftGraph.Api.SitesColumnDefinition do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_get_columns(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_get_columns(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_get_columns(connection, site_id, column_definition_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -258,7 +281,10 @@ defmodule MicrosoftGraph.Api.SitesColumnDefinition do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_get_external_columns(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_get_external_columns(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_get_external_columns(connection, site_id, column_definition_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -304,7 +330,10 @@ defmodule MicrosoftGraph.Api.SitesColumnDefinition do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinitionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_list_columns(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinitionCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec sites_list_columns(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinitionCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def sites_list_columns(connection, site_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -355,7 +384,10 @@ defmodule MicrosoftGraph.Api.SitesColumnDefinition do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinitionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_list_external_columns(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinitionCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec sites_list_external_columns(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinitionCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def sites_list_external_columns(connection, site_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -400,8 +432,23 @@ defmodule MicrosoftGraph.Api.SitesColumnDefinition do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_update_columns(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_update_columns(connection, site_id, column_definition_id, microsoft_graph_column_definition, _opts \\ []) do
+  @spec sites_update_columns(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_update_columns(
+        connection,
+        site_id,
+        column_definition_id,
+        microsoft_graph_column_definition,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

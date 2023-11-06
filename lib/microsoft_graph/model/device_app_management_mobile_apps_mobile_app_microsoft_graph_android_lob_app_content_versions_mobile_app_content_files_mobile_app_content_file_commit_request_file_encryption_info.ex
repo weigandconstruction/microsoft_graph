@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DeviceAppManagementMobileAppsMobileAppMicrosoftGraphAndroidLobAppContentVersionsMobileAppContentFilesMobileAppContentFileCommitRequestFileEncryptionInfo do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,18 +19,17 @@ defmodule MicrosoftGraph.Model.DeviceAppManagementMobileAppsMobileAppMicrosoftGr
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :encryptionKey => String.t | nil,
-    :fileDigest => String.t | nil,
-    :fileDigestAlgorithm => String.t | nil,
-    :initializationVector => String.t | nil,
-    :mac => String.t | nil,
-    :macKey => String.t | nil,
-    :profileIdentifier => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :encryptionKey => String.t() | nil,
+          :fileDigest => String.t() | nil,
+          :fileDigestAlgorithm => String.t() | nil,
+          :initializationVector => String.t() | nil,
+          :mac => String.t() | nil,
+          :macKey => String.t() | nil,
+          :profileIdentifier => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

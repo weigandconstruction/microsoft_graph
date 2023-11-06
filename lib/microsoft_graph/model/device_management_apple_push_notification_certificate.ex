@@ -21,24 +21,23 @@ defmodule MicrosoftGraph.Model.DeviceManagementApplePushNotificationCertificate 
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :appleIdentifier => String.t | nil,
-    :certificate => String.t | nil,
-    :certificateSerialNumber => String.t | nil,
-    :certificateUploadFailureReason => String.t | nil,
-    :certificateUploadStatus => String.t | nil,
-    :expirationDateTime => DateTime.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :topicIdentifier => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :appleIdentifier => String.t() | nil,
+          :certificate => String.t() | nil,
+          :certificateSerialNumber => String.t() | nil,
+          :certificateUploadFailureReason => String.t() | nil,
+          :certificateUploadStatus => String.t() | nil,
+          :expirationDateTime => DateTime.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :topicIdentifier => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:expirationDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:expirationDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
   end
 end
-

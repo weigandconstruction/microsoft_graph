@@ -22,25 +22,34 @@ defmodule MicrosoftGraph.Model.UnifiedRoleAssignmentRoleDefinition do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :inheritsPermissionsFrom => [MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t] | nil,
-    :isBuiltIn => boolean() | nil,
-    :isEnabled => boolean() | nil,
-    :resourceScopes => [String.t] | nil,
-    :rolePermissions => [MicrosoftGraph.Model.MicrosoftGraphUnifiedRolePermission.t] | nil,
-    :templateId => String.t | nil,
-    :version => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :inheritsPermissionsFrom =>
+            [MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t()] | nil,
+          :isBuiltIn => boolean() | nil,
+          :isEnabled => boolean() | nil,
+          :resourceScopes => [String.t()] | nil,
+          :rolePermissions =>
+            [MicrosoftGraph.Model.MicrosoftGraphUnifiedRolePermission.t()] | nil,
+          :templateId => String.t() | nil,
+          :version => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:inheritsPermissionsFrom, :list, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition)
-     |> Deserializer.deserialize(:rolePermissions, :list, MicrosoftGraph.Model.MicrosoftGraphUnifiedRolePermission)
+    |> Deserializer.deserialize(
+      :inheritsPermissionsFrom,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition
+    )
+    |> Deserializer.deserialize(
+      :rolePermissions,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphUnifiedRolePermission
+    )
   end
 end
-

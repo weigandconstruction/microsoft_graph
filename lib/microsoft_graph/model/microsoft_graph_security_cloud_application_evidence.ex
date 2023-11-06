@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityCloudApplicationEvidence do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -24,29 +24,41 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityCloudApplicationEvidence do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :createdDateTime => DateTime.t | nil,
-    :detailedRoles => [String.t] | nil,
-    :remediationStatus => MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRemediationStatus.t | nil,
-    :remediationStatusDetails => String.t | nil,
-    :roles => [MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRole.t] | nil,
-    :tags => [String.t] | nil,
-    :verdict => MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceVerdict.t | nil,
-    :appId => integer() | nil,
-    :displayName => String.t | nil,
-    :instanceId => integer() | nil,
-    :instanceName => String.t | nil,
-    :saasAppId => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :createdDateTime => DateTime.t() | nil,
+          :detailedRoles => [String.t()] | nil,
+          :remediationStatus =>
+            MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRemediationStatus.t() | nil,
+          :remediationStatusDetails => String.t() | nil,
+          :roles => [MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRole.t()] | nil,
+          :tags => [String.t()] | nil,
+          :verdict => MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceVerdict.t() | nil,
+          :appId => integer() | nil,
+          :displayName => String.t() | nil,
+          :instanceId => integer() | nil,
+          :instanceName => String.t() | nil,
+          :saasAppId => integer() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:remediationStatus, :struct, MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRemediationStatus)
-     |> Deserializer.deserialize(:roles, :list, MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRole)
-     |> Deserializer.deserialize(:verdict, :struct, MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceVerdict)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :remediationStatus,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRemediationStatus
+    )
+    |> Deserializer.deserialize(
+      :roles,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRole
+    )
+    |> Deserializer.deserialize(
+      :verdict,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceVerdict
+    )
   end
 end
-

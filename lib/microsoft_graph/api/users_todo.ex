@@ -24,7 +24,10 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_delete_todo(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_delete_todo(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_delete_todo(connection, user_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -63,7 +66,10 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTodo.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_get_todo(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTodo.t} | {:error, Tesla.Env.t}
+  @spec users_get_todo(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTodo.t()}
+          | {:error, Tesla.Env.t()}
   def users_get_todo(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -102,7 +108,15 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTodoTaskList.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_create_lists(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphTodoTaskList.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTodoTaskList.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_todo_create_lists(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTodoTaskList.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTodoTaskList.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_todo_create_lists(connection, user_id, microsoft_graph_todo_task_list, _opts \\ []) do
     request =
       %{}
@@ -137,7 +151,10 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_delete_lists(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_todo_delete_lists(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_todo_delete_lists(connection, user_id, todo_task_list_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -177,7 +194,10 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTodoTaskList.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_get_lists(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTodoTaskList.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_todo_get_lists(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTodoTaskList.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_todo_get_lists(connection, user_id, todo_task_list_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -223,7 +243,10 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTodoTaskListCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_list_lists(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTodoTaskListCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_todo_list_lists(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTodoTaskListCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_todo_list_lists(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -268,8 +291,23 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_lists_create_extensions(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphExtension.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_todo_lists_create_extensions(connection, user_id, todo_task_list_id, microsoft_graph_extension, _opts \\ []) do
+  @spec users_todo_lists_create_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphExtension.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_todo_lists_create_extensions(
+        connection,
+        user_id,
+        todo_task_list_id,
+        microsoft_graph_extension,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -303,8 +341,23 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTodoTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_lists_create_tasks(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTodoTask.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTodoTask.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_todo_lists_create_tasks(connection, user_id, todo_task_list_id, microsoft_graph_todo_task, _opts \\ []) do
+  @spec users_todo_lists_create_tasks(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTodoTask.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTodoTask.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_todo_lists_create_tasks(
+        connection,
+        user_id,
+        todo_task_list_id,
+        microsoft_graph_todo_task,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -338,8 +391,23 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_lists_delete_extensions(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_todo_lists_delete_extensions(connection, user_id, todo_task_list_id, extension_id, opts \\ []) do
+  @spec users_todo_lists_delete_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_todo_lists_delete_extensions(
+        connection,
+        user_id,
+        todo_task_list_id,
+        extension_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -378,8 +446,23 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_lists_delete_tasks(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_todo_lists_delete_tasks(connection, user_id, todo_task_list_id, todo_task_id, opts \\ []) do
+  @spec users_todo_lists_delete_tasks(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_todo_lists_delete_tasks(
+        connection,
+        user_id,
+        todo_task_list_id,
+        todo_task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -417,8 +500,21 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_lists_extensions_get_count27f6(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_todo_lists_extensions_get_count27f6(connection, user_id, todo_task_list_id, opts \\ []) do
+  @spec users_todo_lists_extensions_get_count27f6(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_todo_lists_extensions_get_count27f6(
+        connection,
+        user_id,
+        todo_task_list_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -456,7 +552,10 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_lists_get_count47c4(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_todo_lists_get_count47c4(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_todo_lists_get_count47c4(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -498,8 +597,23 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_lists_get_extensions(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_todo_lists_get_extensions(connection, user_id, todo_task_list_id, extension_id, opts \\ []) do
+  @spec users_todo_lists_get_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_todo_lists_get_extensions(
+        connection,
+        user_id,
+        todo_task_list_id,
+        extension_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -540,7 +654,16 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTodoTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_lists_get_tasks(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTodoTask.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_todo_lists_get_tasks(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTodoTask.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_todo_lists_get_tasks(connection, user_id, todo_task_list_id, todo_task_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -587,7 +710,10 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_lists_list_extensions(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec users_todo_lists_list_extensions(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def users_todo_lists_list_extensions(connection, user_id, todo_task_list_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -640,7 +766,10 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTodoTaskCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_lists_list_tasks(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTodoTaskCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_todo_lists_list_tasks(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTodoTaskCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_todo_lists_list_tasks(connection, user_id, todo_task_list_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -686,8 +815,23 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_lists_tasks_attachment_sessions_get_count53ee(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_todo_lists_tasks_attachment_sessions_get_count53ee(connection, user_id, todo_task_list_id, todo_task_id, opts \\ []) do
+  @spec users_todo_lists_tasks_attachment_sessions_get_count53ee(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_todo_lists_tasks_attachment_sessions_get_count53ee(
+        connection,
+        user_id,
+        todo_task_list_id,
+        todo_task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$filter" => :query
     }
@@ -695,7 +839,9 @@ defmodule MicrosoftGraph.Api.UsersTodo do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/attachmentSessions/$count")
+      |> url(
+        "/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/attachmentSessions/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -725,8 +871,23 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_lists_tasks_attachments_get_count_e9c9(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_todo_lists_tasks_attachments_get_count_e9c9(connection, user_id, todo_task_list_id, todo_task_id, opts \\ []) do
+  @spec users_todo_lists_tasks_attachments_get_count_e9c9(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_todo_lists_tasks_attachments_get_count_e9c9(
+        connection,
+        user_id,
+        todo_task_list_id,
+        todo_task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$filter" => :query
     }
@@ -734,7 +895,9 @@ defmodule MicrosoftGraph.Api.UsersTodo do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/attachments/$count")
+      |> url(
+        "/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/attachments/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -765,8 +928,23 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_lists_tasks_checklist_items_get_count_f104(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_todo_lists_tasks_checklist_items_get_count_f104(connection, user_id, todo_task_list_id, todo_task_id, opts \\ []) do
+  @spec users_todo_lists_tasks_checklist_items_get_count_f104(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_todo_lists_tasks_checklist_items_get_count_f104(
+        connection,
+        user_id,
+        todo_task_list_id,
+        todo_task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -775,7 +953,9 @@ defmodule MicrosoftGraph.Api.UsersTodo do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/checklistItems/$count")
+      |> url(
+        "/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/checklistItems/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -806,12 +986,31 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttachmentBase.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_lists_tasks_create_attachments(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphAttachmentBase.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachmentBase.t} | {:error, Tesla.Env.t}
-  def users_todo_lists_tasks_create_attachments(connection, user_id, todo_task_list_id, todo_task_id, microsoft_graph_attachment_base, _opts \\ []) do
+  @spec users_todo_lists_tasks_create_attachments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAttachmentBase.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachmentBase.t()}
+          | {:error, Tesla.Env.t()}
+  def users_todo_lists_tasks_create_attachments(
+        connection,
+        user_id,
+        todo_task_list_id,
+        todo_task_id,
+        microsoft_graph_attachment_base,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/attachments")
+      |> url(
+        "/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/attachments"
+      )
       |> add_param(:body, :body, microsoft_graph_attachment_base)
       |> Enum.into([])
 
@@ -842,12 +1041,31 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChecklistItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_lists_tasks_create_checklist_items(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphChecklistItem.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphChecklistItem.t} | {:error, Tesla.Env.t}
-  def users_todo_lists_tasks_create_checklist_items(connection, user_id, todo_task_list_id, todo_task_id, microsoft_graph_checklist_item, _opts \\ []) do
+  @spec users_todo_lists_tasks_create_checklist_items(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphChecklistItem.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphChecklistItem.t()}
+          | {:error, Tesla.Env.t()}
+  def users_todo_lists_tasks_create_checklist_items(
+        connection,
+        user_id,
+        todo_task_list_id,
+        todo_task_id,
+        microsoft_graph_checklist_item,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/checklistItems")
+      |> url(
+        "/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/checklistItems"
+      )
       |> add_param(:body, :body, microsoft_graph_checklist_item)
       |> Enum.into([])
 
@@ -877,8 +1095,25 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_lists_tasks_create_extensions(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphExtension.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_todo_lists_tasks_create_extensions(connection, user_id, todo_task_list_id, todo_task_id, microsoft_graph_extension, _opts \\ []) do
+  @spec users_todo_lists_tasks_create_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphExtension.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_todo_lists_tasks_create_extensions(
+        connection,
+        user_id,
+        todo_task_list_id,
+        todo_task_id,
+        microsoft_graph_extension,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -913,12 +1148,31 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphLinkedResource.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_lists_tasks_create_linked_resources(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphLinkedResource.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphLinkedResource.t} | {:error, Tesla.Env.t}
-  def users_todo_lists_tasks_create_linked_resources(connection, user_id, todo_task_list_id, todo_task_id, microsoft_graph_linked_resource, _opts \\ []) do
+  @spec users_todo_lists_tasks_create_linked_resources(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphLinkedResource.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphLinkedResource.t()}
+          | {:error, Tesla.Env.t()}
+  def users_todo_lists_tasks_create_linked_resources(
+        connection,
+        user_id,
+        todo_task_list_id,
+        todo_task_id,
+        microsoft_graph_linked_resource,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/linkedResources")
+      |> url(
+        "/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/linkedResources"
+      )
       |> add_param(:body, :body, microsoft_graph_linked_resource)
       |> Enum.into([])
 
@@ -949,8 +1203,25 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_lists_tasks_delete_attachment_sessions(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_todo_lists_tasks_delete_attachment_sessions(connection, user_id, todo_task_list_id, todo_task_id, attachment_session_id, opts \\ []) do
+  @spec users_todo_lists_tasks_delete_attachment_sessions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_todo_lists_tasks_delete_attachment_sessions(
+        connection,
+        user_id,
+        todo_task_list_id,
+        todo_task_id,
+        attachment_session_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -958,7 +1229,9 @@ defmodule MicrosoftGraph.Api.UsersTodo do
     request =
       %{}
       |> method(:delete)
-      |> url("/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/attachmentSessions/#{attachment_session_id}")
+      |> url(
+        "/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/attachmentSessions/#{attachment_session_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -990,8 +1263,25 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_lists_tasks_delete_attachments(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_todo_lists_tasks_delete_attachments(connection, user_id, todo_task_list_id, todo_task_id, attachment_base_id, opts \\ []) do
+  @spec users_todo_lists_tasks_delete_attachments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_todo_lists_tasks_delete_attachments(
+        connection,
+        user_id,
+        todo_task_list_id,
+        todo_task_id,
+        attachment_base_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -999,7 +1289,9 @@ defmodule MicrosoftGraph.Api.UsersTodo do
     request =
       %{}
       |> method(:delete)
-      |> url("/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/attachments/#{attachment_base_id}")
+      |> url(
+        "/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/attachments/#{attachment_base_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1031,8 +1323,25 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_lists_tasks_delete_checklist_items(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_todo_lists_tasks_delete_checklist_items(connection, user_id, todo_task_list_id, todo_task_id, checklist_item_id, opts \\ []) do
+  @spec users_todo_lists_tasks_delete_checklist_items(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_todo_lists_tasks_delete_checklist_items(
+        connection,
+        user_id,
+        todo_task_list_id,
+        todo_task_id,
+        checklist_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1040,7 +1349,9 @@ defmodule MicrosoftGraph.Api.UsersTodo do
     request =
       %{}
       |> method(:delete)
-      |> url("/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/checklistItems/#{checklist_item_id}")
+      |> url(
+        "/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/checklistItems/#{checklist_item_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1071,8 +1382,25 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_lists_tasks_delete_extensions(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_todo_lists_tasks_delete_extensions(connection, user_id, todo_task_list_id, todo_task_id, extension_id, opts \\ []) do
+  @spec users_todo_lists_tasks_delete_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_todo_lists_tasks_delete_extensions(
+        connection,
+        user_id,
+        todo_task_list_id,
+        todo_task_id,
+        extension_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1080,7 +1408,9 @@ defmodule MicrosoftGraph.Api.UsersTodo do
     request =
       %{}
       |> method(:delete)
-      |> url("/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/extensions/#{extension_id}")
+      |> url(
+        "/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/extensions/#{extension_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1112,8 +1442,25 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_lists_tasks_delete_linked_resources(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_todo_lists_tasks_delete_linked_resources(connection, user_id, todo_task_list_id, todo_task_id, linked_resource_id, opts \\ []) do
+  @spec users_todo_lists_tasks_delete_linked_resources(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_todo_lists_tasks_delete_linked_resources(
+        connection,
+        user_id,
+        todo_task_list_id,
+        todo_task_id,
+        linked_resource_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1121,7 +1468,9 @@ defmodule MicrosoftGraph.Api.UsersTodo do
     request =
       %{}
       |> method(:delete)
-      |> url("/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/linkedResources/#{linked_resource_id}")
+      |> url(
+        "/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/linkedResources/#{linked_resource_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1152,8 +1501,23 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_lists_tasks_extensions_get_count_c962(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_todo_lists_tasks_extensions_get_count_c962(connection, user_id, todo_task_list_id, todo_task_id, opts \\ []) do
+  @spec users_todo_lists_tasks_extensions_get_count_c962(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_todo_lists_tasks_extensions_get_count_c962(
+        connection,
+        user_id,
+        todo_task_list_id,
+        todo_task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1162,7 +1526,9 @@ defmodule MicrosoftGraph.Api.UsersTodo do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/extensions/$count")
+      |> url(
+        "/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/extensions/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1193,8 +1559,25 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttachmentSession.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_lists_tasks_get_attachment_sessions(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachmentSession.t} | {:error, Tesla.Env.t}
-  def users_todo_lists_tasks_get_attachment_sessions(connection, user_id, todo_task_list_id, todo_task_id, attachment_session_id, opts \\ []) do
+  @spec users_todo_lists_tasks_get_attachment_sessions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachmentSession.t()}
+          | {:error, Tesla.Env.t()}
+  def users_todo_lists_tasks_get_attachment_sessions(
+        connection,
+        user_id,
+        todo_task_list_id,
+        todo_task_id,
+        attachment_session_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query
     }
@@ -1202,7 +1585,9 @@ defmodule MicrosoftGraph.Api.UsersTodo do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/attachmentSessions/#{attachment_session_id}")
+      |> url(
+        "/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/attachmentSessions/#{attachment_session_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1233,12 +1618,31 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_lists_tasks_get_attachment_sessions_content(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
-  def users_todo_lists_tasks_get_attachment_sessions_content(connection, user_id, todo_task_list_id, todo_task_id, attachment_session_id, _opts \\ []) do
+  @spec users_todo_lists_tasks_get_attachment_sessions_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
+  def users_todo_lists_tasks_get_attachment_sessions_content(
+        connection,
+        user_id,
+        todo_task_list_id,
+        todo_task_id,
+        attachment_session_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/attachmentSessions/#{attachment_session_id}/content")
+      |> url(
+        "/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/attachmentSessions/#{attachment_session_id}/content"
+      )
       |> Enum.into([])
 
     connection
@@ -1269,8 +1673,25 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttachmentBase.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_lists_tasks_get_attachments(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachmentBase.t} | {:error, Tesla.Env.t}
-  def users_todo_lists_tasks_get_attachments(connection, user_id, todo_task_list_id, todo_task_id, attachment_base_id, opts \\ []) do
+  @spec users_todo_lists_tasks_get_attachments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachmentBase.t()}
+          | {:error, Tesla.Env.t()}
+  def users_todo_lists_tasks_get_attachments(
+        connection,
+        user_id,
+        todo_task_list_id,
+        todo_task_id,
+        attachment_base_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query
     }
@@ -1278,7 +1699,9 @@ defmodule MicrosoftGraph.Api.UsersTodo do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/attachments/#{attachment_base_id}")
+      |> url(
+        "/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/attachments/#{attachment_base_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1308,12 +1731,31 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_lists_tasks_get_attachments_content(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
-  def users_todo_lists_tasks_get_attachments_content(connection, user_id, todo_task_list_id, todo_task_id, attachment_base_id, _opts \\ []) do
+  @spec users_todo_lists_tasks_get_attachments_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
+  def users_todo_lists_tasks_get_attachments_content(
+        connection,
+        user_id,
+        todo_task_list_id,
+        todo_task_id,
+        attachment_base_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/attachments/#{attachment_base_id}/$value")
+      |> url(
+        "/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/attachments/#{attachment_base_id}/$value"
+      )
       |> Enum.into([])
 
     connection
@@ -1345,8 +1787,25 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChecklistItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_lists_tasks_get_checklist_items(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphChecklistItem.t} | {:error, Tesla.Env.t}
-  def users_todo_lists_tasks_get_checklist_items(connection, user_id, todo_task_list_id, todo_task_id, checklist_item_id, opts \\ []) do
+  @spec users_todo_lists_tasks_get_checklist_items(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphChecklistItem.t()}
+          | {:error, Tesla.Env.t()}
+  def users_todo_lists_tasks_get_checklist_items(
+        connection,
+        user_id,
+        todo_task_list_id,
+        todo_task_id,
+        checklist_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1355,7 +1814,9 @@ defmodule MicrosoftGraph.Api.UsersTodo do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/checklistItems/#{checklist_item_id}")
+      |> url(
+        "/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/checklistItems/#{checklist_item_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1385,7 +1846,15 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_lists_tasks_get_count9520(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_todo_lists_tasks_get_count9520(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_todo_lists_tasks_get_count9520(connection, user_id, todo_task_list_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -1428,8 +1897,25 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_lists_tasks_get_extensions(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_todo_lists_tasks_get_extensions(connection, user_id, todo_task_list_id, todo_task_id, extension_id, opts \\ []) do
+  @spec users_todo_lists_tasks_get_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_todo_lists_tasks_get_extensions(
+        connection,
+        user_id,
+        todo_task_list_id,
+        todo_task_id,
+        extension_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1438,7 +1924,9 @@ defmodule MicrosoftGraph.Api.UsersTodo do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/extensions/#{extension_id}")
+      |> url(
+        "/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/extensions/#{extension_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1471,8 +1959,25 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphLinkedResource.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_lists_tasks_get_linked_resources(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphLinkedResource.t} | {:error, Tesla.Env.t}
-  def users_todo_lists_tasks_get_linked_resources(connection, user_id, todo_task_list_id, todo_task_id, linked_resource_id, opts \\ []) do
+  @spec users_todo_lists_tasks_get_linked_resources(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphLinkedResource.t()}
+          | {:error, Tesla.Env.t()}
+  def users_todo_lists_tasks_get_linked_resources(
+        connection,
+        user_id,
+        todo_task_list_id,
+        todo_task_id,
+        linked_resource_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1481,7 +1986,9 @@ defmodule MicrosoftGraph.Api.UsersTodo do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/linkedResources/#{linked_resource_id}")
+      |> url(
+        "/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/linkedResources/#{linked_resource_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1512,8 +2019,23 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_lists_tasks_linked_resources_get_count58c2(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_todo_lists_tasks_linked_resources_get_count58c2(connection, user_id, todo_task_list_id, todo_task_id, opts \\ []) do
+  @spec users_todo_lists_tasks_linked_resources_get_count58c2(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_todo_lists_tasks_linked_resources_get_count58c2(
+        connection,
+        user_id,
+        todo_task_list_id,
+        todo_task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1522,7 +2044,9 @@ defmodule MicrosoftGraph.Api.UsersTodo do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/linkedResources/$count")
+      |> url(
+        "/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/linkedResources/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1557,8 +2081,23 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttachmentSessionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_lists_tasks_list_attachment_sessions(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachmentSessionCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_todo_lists_tasks_list_attachment_sessions(connection, user_id, todo_task_list_id, todo_task_id, opts \\ []) do
+  @spec users_todo_lists_tasks_list_attachment_sessions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachmentSessionCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_todo_lists_tasks_list_attachment_sessions(
+        connection,
+        user_id,
+        todo_task_list_id,
+        todo_task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1571,7 +2110,9 @@ defmodule MicrosoftGraph.Api.UsersTodo do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/attachmentSessions")
+      |> url(
+        "/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/attachmentSessions"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1607,8 +2148,23 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttachmentBaseCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_lists_tasks_list_attachments(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachmentBaseCollectionResponse.t} | {:error, Tesla.Env.t}
-  def users_todo_lists_tasks_list_attachments(connection, user_id, todo_task_list_id, todo_task_id, opts \\ []) do
+  @spec users_todo_lists_tasks_list_attachments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachmentBaseCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def users_todo_lists_tasks_list_attachments(
+        connection,
+        user_id,
+        todo_task_list_id,
+        todo_task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1621,7 +2177,9 @@ defmodule MicrosoftGraph.Api.UsersTodo do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/attachments")
+      |> url(
+        "/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/attachments"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1659,8 +2217,23 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChecklistItemCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_lists_tasks_list_checklist_items(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChecklistItemCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_todo_lists_tasks_list_checklist_items(connection, user_id, todo_task_list_id, todo_task_id, opts \\ []) do
+  @spec users_todo_lists_tasks_list_checklist_items(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChecklistItemCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_todo_lists_tasks_list_checklist_items(
+        connection,
+        user_id,
+        todo_task_list_id,
+        todo_task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1675,7 +2248,9 @@ defmodule MicrosoftGraph.Api.UsersTodo do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/checklistItems")
+      |> url(
+        "/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/checklistItems"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1713,8 +2288,23 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_lists_tasks_list_extensions(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionCollectionResponse.t} | {:error, Tesla.Env.t}
-  def users_todo_lists_tasks_list_extensions(connection, user_id, todo_task_list_id, todo_task_id, opts \\ []) do
+  @spec users_todo_lists_tasks_list_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def users_todo_lists_tasks_list_extensions(
+        connection,
+        user_id,
+        todo_task_list_id,
+        todo_task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1767,8 +2357,23 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphLinkedResourceCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_lists_tasks_list_linked_resources(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphLinkedResourceCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_todo_lists_tasks_list_linked_resources(connection, user_id, todo_task_list_id, todo_task_id, opts \\ []) do
+  @spec users_todo_lists_tasks_list_linked_resources(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphLinkedResourceCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_todo_lists_tasks_list_linked_resources(
+        connection,
+        user_id,
+        todo_task_list_id,
+        todo_task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1783,7 +2388,9 @@ defmodule MicrosoftGraph.Api.UsersTodo do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/linkedResources")
+      |> url(
+        "/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/linkedResources"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1814,12 +2421,33 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttachmentSession.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_lists_tasks_update_attachment_sessions(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphAttachmentSession.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachmentSession.t} | {:error, Tesla.Env.t}
-  def users_todo_lists_tasks_update_attachment_sessions(connection, user_id, todo_task_list_id, todo_task_id, attachment_session_id, microsoft_graph_attachment_session, _opts \\ []) do
+  @spec users_todo_lists_tasks_update_attachment_sessions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAttachmentSession.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachmentSession.t()}
+          | {:error, Tesla.Env.t()}
+  def users_todo_lists_tasks_update_attachment_sessions(
+        connection,
+        user_id,
+        todo_task_list_id,
+        todo_task_id,
+        attachment_session_id,
+        microsoft_graph_attachment_session,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/attachmentSessions/#{attachment_session_id}")
+      |> url(
+        "/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/attachmentSessions/#{attachment_session_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_attachment_session)
       |> Enum.into([])
 
@@ -1851,12 +2479,33 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttachmentSession.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_lists_tasks_update_attachment_sessions_content(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachmentSession.t} | {:error, Tesla.Env.t}
-  def users_todo_lists_tasks_update_attachment_sessions_content(connection, user_id, todo_task_list_id, todo_task_id, attachment_session_id, body, _opts \\ []) do
+  @spec users_todo_lists_tasks_update_attachment_sessions_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachmentSession.t()}
+          | {:error, Tesla.Env.t()}
+  def users_todo_lists_tasks_update_attachment_sessions_content(
+        connection,
+        user_id,
+        todo_task_list_id,
+        todo_task_id,
+        attachment_session_id,
+        body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)
-      |> url("/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/attachmentSessions/#{attachment_session_id}/content")
+      |> url(
+        "/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/attachmentSessions/#{attachment_session_id}/content"
+      )
       |> add_param(:body, :body, body)
       |> Enum.into([])
 
@@ -1887,12 +2536,33 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_lists_tasks_update_attachments_content(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_todo_lists_tasks_update_attachments_content(connection, user_id, todo_task_list_id, todo_task_id, attachment_base_id, body, _opts \\ []) do
+  @spec users_todo_lists_tasks_update_attachments_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_todo_lists_tasks_update_attachments_content(
+        connection,
+        user_id,
+        todo_task_list_id,
+        todo_task_id,
+        attachment_base_id,
+        body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)
-      |> url("/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/attachments/#{attachment_base_id}/$value")
+      |> url(
+        "/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/attachments/#{attachment_base_id}/$value"
+      )
       |> add_param(:body, :body, body)
       |> Enum.into([])
 
@@ -1924,12 +2594,33 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChecklistItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_lists_tasks_update_checklist_items(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphChecklistItem.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphChecklistItem.t} | {:error, Tesla.Env.t}
-  def users_todo_lists_tasks_update_checklist_items(connection, user_id, todo_task_list_id, todo_task_id, checklist_item_id, microsoft_graph_checklist_item, _opts \\ []) do
+  @spec users_todo_lists_tasks_update_checklist_items(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphChecklistItem.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphChecklistItem.t()}
+          | {:error, Tesla.Env.t()}
+  def users_todo_lists_tasks_update_checklist_items(
+        connection,
+        user_id,
+        todo_task_list_id,
+        todo_task_id,
+        checklist_item_id,
+        microsoft_graph_checklist_item,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/checklistItems/#{checklist_item_id}")
+      |> url(
+        "/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/checklistItems/#{checklist_item_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_checklist_item)
       |> Enum.into([])
 
@@ -1960,12 +2651,33 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_lists_tasks_update_extensions(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphExtension.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_todo_lists_tasks_update_extensions(connection, user_id, todo_task_list_id, todo_task_id, extension_id, microsoft_graph_extension, _opts \\ []) do
+  @spec users_todo_lists_tasks_update_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphExtension.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_todo_lists_tasks_update_extensions(
+        connection,
+        user_id,
+        todo_task_list_id,
+        todo_task_id,
+        extension_id,
+        microsoft_graph_extension,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/extensions/#{extension_id}")
+      |> url(
+        "/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/extensions/#{extension_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_extension)
       |> Enum.into([])
 
@@ -1997,12 +2709,33 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphLinkedResource.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_lists_tasks_update_linked_resources(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphLinkedResource.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphLinkedResource.t} | {:error, Tesla.Env.t}
-  def users_todo_lists_tasks_update_linked_resources(connection, user_id, todo_task_list_id, todo_task_id, linked_resource_id, microsoft_graph_linked_resource, _opts \\ []) do
+  @spec users_todo_lists_tasks_update_linked_resources(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphLinkedResource.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphLinkedResource.t()}
+          | {:error, Tesla.Env.t()}
+  def users_todo_lists_tasks_update_linked_resources(
+        connection,
+        user_id,
+        todo_task_list_id,
+        todo_task_id,
+        linked_resource_id,
+        microsoft_graph_linked_resource,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/linkedResources/#{linked_resource_id}")
+      |> url(
+        "/users/#{user_id}/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/linkedResources/#{linked_resource_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_linked_resource)
       |> Enum.into([])
 
@@ -2032,8 +2765,25 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_lists_update_extensions(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphExtension.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_todo_lists_update_extensions(connection, user_id, todo_task_list_id, extension_id, microsoft_graph_extension, _opts \\ []) do
+  @spec users_todo_lists_update_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphExtension.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_todo_lists_update_extensions(
+        connection,
+        user_id,
+        todo_task_list_id,
+        extension_id,
+        microsoft_graph_extension,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -2068,8 +2818,25 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTodoTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_lists_update_tasks(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTodoTask.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTodoTask.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_todo_lists_update_tasks(connection, user_id, todo_task_list_id, todo_task_id, microsoft_graph_todo_task, _opts \\ []) do
+  @spec users_todo_lists_update_tasks(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTodoTask.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTodoTask.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_todo_lists_update_tasks(
+        connection,
+        user_id,
+        todo_task_list_id,
+        todo_task_id,
+        microsoft_graph_todo_task,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -2103,8 +2870,23 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTodoTaskList.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_todo_update_lists(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTodoTaskList.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTodoTaskList.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_todo_update_lists(connection, user_id, todo_task_list_id, microsoft_graph_todo_task_list, _opts \\ []) do
+  @spec users_todo_update_lists(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTodoTaskList.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTodoTaskList.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_todo_update_lists(
+        connection,
+        user_id,
+        todo_task_list_id,
+        microsoft_graph_todo_task_list,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -2136,7 +2918,15 @@ defmodule MicrosoftGraph.Api.UsersTodo do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTodo.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_update_todo(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphTodo.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTodo.t} | {:error, Tesla.Env.t}
+  @spec users_update_todo(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTodo.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTodo.t()}
+          | {:error, Tesla.Env.t()}
   def users_update_todo(connection, user_id, microsoft_graph_todo, _opts \\ []) do
     request =
       %{}

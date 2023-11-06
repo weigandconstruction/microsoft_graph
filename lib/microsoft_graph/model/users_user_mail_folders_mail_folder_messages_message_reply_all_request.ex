@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,15 +13,20 @@ defmodule MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageRepl
   ]
 
   @type t :: %__MODULE__{
-    :Comment => String.t | nil,
-    :Message => MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t | nil
-  }
+          :Comment => String.t() | nil,
+          :Message =>
+            MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:Message, :struct, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage)
+    |> Deserializer.deserialize(
+      :Message,
+      :struct,
+      MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage
+    )
   end
 end
-

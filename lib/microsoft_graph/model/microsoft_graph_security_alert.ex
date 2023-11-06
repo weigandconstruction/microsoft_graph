@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityAlert do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -44,59 +44,82 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityAlert do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :actorDisplayName => String.t | nil,
-    :additionalData => MicrosoftGraph.Model.AlertAdditionalData.t | nil,
-    :alertPolicyId => String.t | nil,
-    :alertWebUrl => String.t | nil,
-    :assignedTo => String.t | nil,
-    :category => String.t | nil,
-    :classification => MicrosoftGraph.Model.AlertClassification.t | nil,
-    :comments => [MicrosoftGraph.Model.AlertCommentsInner.t] | nil,
-    :createdDateTime => DateTime.t | nil,
-    :description => String.t | nil,
-    :detectionSource => MicrosoftGraph.Model.AlertDetectionSource.t | nil,
-    :detectorId => String.t | nil,
-    :determination => MicrosoftGraph.Model.AlertDetermination.t | nil,
-    :evidence => [MicrosoftGraph.Model.AlertEvidenceInner.t] | nil,
-    :firstActivityDateTime => DateTime.t | nil,
-    :incidentId => String.t | nil,
-    :incidentWebUrl => String.t | nil,
-    :lastActivityDateTime => DateTime.t | nil,
-    :lastUpdateDateTime => DateTime.t | nil,
-    :mitreTechniques => [String.t] | nil,
-    :productName => String.t | nil,
-    :providerAlertId => String.t | nil,
-    :recommendedActions => String.t | nil,
-    :resolvedDateTime => DateTime.t | nil,
-    :serviceSource => MicrosoftGraph.Model.MicrosoftGraphSecurityServiceSource.t | nil,
-    :severity => MicrosoftGraph.Model.MicrosoftGraphSecurityAlertSeverity.t | nil,
-    :status => MicrosoftGraph.Model.MicrosoftGraphSecurityAlertStatus.t | nil,
-    :tenantId => String.t | nil,
-    :threatDisplayName => String.t | nil,
-    :threatFamilyName => String.t | nil,
-    :title => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :actorDisplayName => String.t() | nil,
+          :additionalData => MicrosoftGraph.Model.AlertAdditionalData.t() | nil,
+          :alertPolicyId => String.t() | nil,
+          :alertWebUrl => String.t() | nil,
+          :assignedTo => String.t() | nil,
+          :category => String.t() | nil,
+          :classification => MicrosoftGraph.Model.AlertClassification.t() | nil,
+          :comments => [MicrosoftGraph.Model.AlertCommentsInner.t()] | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :detectionSource => MicrosoftGraph.Model.AlertDetectionSource.t() | nil,
+          :detectorId => String.t() | nil,
+          :determination => MicrosoftGraph.Model.AlertDetermination.t() | nil,
+          :evidence => [MicrosoftGraph.Model.AlertEvidenceInner.t()] | nil,
+          :firstActivityDateTime => DateTime.t() | nil,
+          :incidentId => String.t() | nil,
+          :incidentWebUrl => String.t() | nil,
+          :lastActivityDateTime => DateTime.t() | nil,
+          :lastUpdateDateTime => DateTime.t() | nil,
+          :mitreTechniques => [String.t()] | nil,
+          :productName => String.t() | nil,
+          :providerAlertId => String.t() | nil,
+          :recommendedActions => String.t() | nil,
+          :resolvedDateTime => DateTime.t() | nil,
+          :serviceSource => MicrosoftGraph.Model.MicrosoftGraphSecurityServiceSource.t() | nil,
+          :severity => MicrosoftGraph.Model.MicrosoftGraphSecurityAlertSeverity.t() | nil,
+          :status => MicrosoftGraph.Model.MicrosoftGraphSecurityAlertStatus.t() | nil,
+          :tenantId => String.t() | nil,
+          :threatDisplayName => String.t() | nil,
+          :threatFamilyName => String.t() | nil,
+          :title => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:additionalData, :struct, MicrosoftGraph.Model.AlertAdditionalData)
-     |> Deserializer.deserialize(:classification, :struct, MicrosoftGraph.Model.AlertClassification)
-     |> Deserializer.deserialize(:comments, :list, MicrosoftGraph.Model.AlertCommentsInner)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:detectionSource, :struct, MicrosoftGraph.Model.AlertDetectionSource)
-     |> Deserializer.deserialize(:determination, :struct, MicrosoftGraph.Model.AlertDetermination)
-     |> Deserializer.deserialize(:evidence, :list, MicrosoftGraph.Model.AlertEvidenceInner)
-     |> Deserializer.deserialize(:firstActivityDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastActivityDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastUpdateDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:resolvedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:serviceSource, :struct, MicrosoftGraph.Model.MicrosoftGraphSecurityServiceSource)
-     |> Deserializer.deserialize(:severity, :struct, MicrosoftGraph.Model.MicrosoftGraphSecurityAlertSeverity)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.MicrosoftGraphSecurityAlertStatus)
+    |> Deserializer.deserialize(
+      :additionalData,
+      :struct,
+      MicrosoftGraph.Model.AlertAdditionalData
+    )
+    |> Deserializer.deserialize(
+      :classification,
+      :struct,
+      MicrosoftGraph.Model.AlertClassification
+    )
+    |> Deserializer.deserialize(:comments, :list, MicrosoftGraph.Model.AlertCommentsInner)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :detectionSource,
+      :struct,
+      MicrosoftGraph.Model.AlertDetectionSource
+    )
+    |> Deserializer.deserialize(:determination, :struct, MicrosoftGraph.Model.AlertDetermination)
+    |> Deserializer.deserialize(:evidence, :list, MicrosoftGraph.Model.AlertEvidenceInner)
+    |> Deserializer.deserialize(:firstActivityDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastActivityDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastUpdateDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:resolvedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :serviceSource,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityServiceSource
+    )
+    |> Deserializer.deserialize(
+      :severity,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityAlertSeverity
+    )
+    |> Deserializer.deserialize(
+      :status,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityAlertStatus
+    )
   end
 end
-

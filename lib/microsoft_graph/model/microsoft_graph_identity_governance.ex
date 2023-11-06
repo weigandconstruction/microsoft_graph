@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphIdentityGovernance do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,25 +18,53 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphIdentityGovernance do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :accessReviews => MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceAccessReviews.t | nil,
-    :appConsent => MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceAppConsent.t | nil,
-    :entitlementManagement => MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceEntitlementManagement.t | nil,
-    :lifecycleWorkflows => MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleWorkflows.t | nil,
-    :privilegedAccess => MicrosoftGraph.Model.MicrosoftGraphIdentityGovernancePrivilegedAccess.t | nil,
-    :termsOfUse => MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTermsOfUse.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :accessReviews =>
+            MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceAccessReviews.t() | nil,
+          :appConsent =>
+            MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceAppConsent.t() | nil,
+          :entitlementManagement =>
+            MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceEntitlementManagement.t() | nil,
+          :lifecycleWorkflows =>
+            MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleWorkflows.t() | nil,
+          :privilegedAccess =>
+            MicrosoftGraph.Model.MicrosoftGraphIdentityGovernancePrivilegedAccess.t() | nil,
+          :termsOfUse => MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTermsOfUse.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:accessReviews, :struct, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceAccessReviews)
-     |> Deserializer.deserialize(:appConsent, :struct, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceAppConsent)
-     |> Deserializer.deserialize(:entitlementManagement, :struct, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceEntitlementManagement)
-     |> Deserializer.deserialize(:lifecycleWorkflows, :struct, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleWorkflows)
-     |> Deserializer.deserialize(:privilegedAccess, :struct, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernancePrivilegedAccess)
-     |> Deserializer.deserialize(:termsOfUse, :struct, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTermsOfUse)
+    |> Deserializer.deserialize(
+      :accessReviews,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceAccessReviews
+    )
+    |> Deserializer.deserialize(
+      :appConsent,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceAppConsent
+    )
+    |> Deserializer.deserialize(
+      :entitlementManagement,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceEntitlementManagement
+    )
+    |> Deserializer.deserialize(
+      :lifecycleWorkflows,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleWorkflows
+    )
+    |> Deserializer.deserialize(
+      :privilegedAccess,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphIdentityGovernancePrivilegedAccess
+    )
+    |> Deserializer.deserialize(
+      :termsOfUse,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTermsOfUse
+    )
   end
 end
-

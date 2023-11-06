@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphRenameAction do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphRenameAction do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :newName => String.t | nil,
-    :oldName => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :newName => String.t() | nil,
+          :oldName => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

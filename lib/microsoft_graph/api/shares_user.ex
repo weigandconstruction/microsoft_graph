@@ -26,7 +26,10 @@ defmodule MicrosoftGraph.Api.SharesUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec shares_created_by_user_get_mailbox_settings(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
+  @spec shares_created_by_user_get_mailbox_settings(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
   def shares_created_by_user_get_mailbox_settings(connection, shared_drive_item_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -71,8 +74,19 @@ defmodule MicrosoftGraph.Api.SharesUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec shares_created_by_user_list_service_provisioning_errors(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def shares_created_by_user_list_service_provisioning_errors(connection, shared_drive_item_id, opts \\ []) do
+  @spec shares_created_by_user_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def shares_created_by_user_list_service_provisioning_errors(
+        connection,
+        shared_drive_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -117,8 +131,19 @@ defmodule MicrosoftGraph.Api.SharesUser do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec shares_created_by_user_service_provisioning_errors_get_count_abf4(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def shares_created_by_user_service_provisioning_errors_get_count_abf4(connection, shared_drive_item_id, opts \\ []) do
+  @spec shares_created_by_user_service_provisioning_errors_get_count_abf4(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def shares_created_by_user_service_provisioning_errors_get_count_abf4(
+        connection,
+        shared_drive_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$search" => :query,
@@ -156,8 +181,21 @@ defmodule MicrosoftGraph.Api.SharesUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec shares_created_by_user_update_mailbox_settings(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def shares_created_by_user_update_mailbox_settings(connection, shared_drive_item_id, microsoft_graph_mailbox_settings, _opts \\ []) do
+  @spec shares_created_by_user_update_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def shares_created_by_user_update_mailbox_settings(
+        connection,
+        shared_drive_item_id,
+        microsoft_graph_mailbox_settings,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -191,7 +229,10 @@ defmodule MicrosoftGraph.Api.SharesUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec shares_get_created_by_user(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec shares_get_created_by_user(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def shares_get_created_by_user(connection, shared_drive_item_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -231,7 +272,10 @@ defmodule MicrosoftGraph.Api.SharesUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec shares_get_last_modified_by_user(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec shares_get_last_modified_by_user(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def shares_get_last_modified_by_user(connection, shared_drive_item_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -271,8 +315,19 @@ defmodule MicrosoftGraph.Api.SharesUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec shares_last_modified_by_user_get_mailbox_settings(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def shares_last_modified_by_user_get_mailbox_settings(connection, shared_drive_item_id, opts \\ []) do
+  @spec shares_last_modified_by_user_get_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def shares_last_modified_by_user_get_mailbox_settings(
+        connection,
+        shared_drive_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -316,8 +371,19 @@ defmodule MicrosoftGraph.Api.SharesUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec shares_last_modified_by_user_list_service_provisioning_errors(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def shares_last_modified_by_user_list_service_provisioning_errors(connection, shared_drive_item_id, opts \\ []) do
+  @spec shares_last_modified_by_user_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def shares_last_modified_by_user_list_service_provisioning_errors(
+        connection,
+        shared_drive_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -361,8 +427,19 @@ defmodule MicrosoftGraph.Api.SharesUser do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec shares_last_modified_by_user_service_provisioning_errors_get_count_a885(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def shares_last_modified_by_user_service_provisioning_errors_get_count_a885(connection, shared_drive_item_id, opts \\ []) do
+  @spec shares_last_modified_by_user_service_provisioning_errors_get_count_a885(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def shares_last_modified_by_user_service_provisioning_errors_get_count_a885(
+        connection,
+        shared_drive_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -371,7 +448,9 @@ defmodule MicrosoftGraph.Api.SharesUser do
     request =
       %{}
       |> method(:get)
-      |> url("/shares/#{shared_drive_item_id}/lastModifiedByUser/serviceProvisioningErrors/$count")
+      |> url(
+        "/shares/#{shared_drive_item_id}/lastModifiedByUser/serviceProvisioningErrors/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -399,8 +478,21 @@ defmodule MicrosoftGraph.Api.SharesUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec shares_last_modified_by_user_update_mailbox_settings(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def shares_last_modified_by_user_update_mailbox_settings(connection, shared_drive_item_id, microsoft_graph_mailbox_settings, _opts \\ []) do
+  @spec shares_last_modified_by_user_update_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def shares_last_modified_by_user_update_mailbox_settings(
+        connection,
+        shared_drive_item_id,
+        microsoft_graph_mailbox_settings,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

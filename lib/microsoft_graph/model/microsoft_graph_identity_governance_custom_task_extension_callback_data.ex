@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceCustomTaskExtensionCallbackData do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,15 +13,19 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceCustomTaskExtensi
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :operationStatus => MicrosoftGraph.Model.CustomTaskExtensionCallbackDataOperationStatus.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :operationStatus =>
+            MicrosoftGraph.Model.CustomTaskExtensionCallbackDataOperationStatus.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:operationStatus, :struct, MicrosoftGraph.Model.CustomTaskExtensionCallbackDataOperationStatus)
+    |> Deserializer.deserialize(
+      :operationStatus,
+      :struct,
+      MicrosoftGraph.Model.CustomTaskExtensionCallbackDataOperationStatus
+    )
   end
 end
-

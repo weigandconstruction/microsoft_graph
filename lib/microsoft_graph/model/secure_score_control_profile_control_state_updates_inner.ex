@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.SecureScoreControlProfileControlStateUpdatesInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,19 +17,18 @@ defmodule MicrosoftGraph.Model.SecureScoreControlProfileControlStateUpdatesInner
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :assignedTo => String.t | nil,
-    :comment => String.t | nil,
-    :state => String.t | nil,
-    :updatedBy => String.t | nil,
-    :updatedDateTime => DateTime.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :assignedTo => String.t() | nil,
+          :comment => String.t() | nil,
+          :state => String.t() | nil,
+          :updatedBy => String.t() | nil,
+          :updatedDateTime => DateTime.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:updatedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:updatedDateTime, :datetime, nil)
   end
 end
-

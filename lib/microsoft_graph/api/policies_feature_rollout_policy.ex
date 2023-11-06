@@ -24,8 +24,19 @@ defmodule MicrosoftGraph.Api.PoliciesFeatureRolloutPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphFeatureRolloutPolicy.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_create_feature_rollout_policies(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphFeatureRolloutPolicy.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphFeatureRolloutPolicy.t} | {:error, Tesla.Env.t}
-  def policies_create_feature_rollout_policies(connection, microsoft_graph_feature_rollout_policy, _opts \\ []) do
+  @spec policies_create_feature_rollout_policies(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphFeatureRolloutPolicy.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphFeatureRolloutPolicy.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_create_feature_rollout_policies(
+        connection,
+        microsoft_graph_feature_rollout_policy,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -58,7 +69,10 @@ defmodule MicrosoftGraph.Api.PoliciesFeatureRolloutPolicy do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_delete_feature_rollout_policies(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec policies_delete_feature_rollout_policies(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def policies_delete_feature_rollout_policies(connection, feature_rollout_policy_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -96,8 +110,19 @@ defmodule MicrosoftGraph.Api.PoliciesFeatureRolloutPolicy do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_feature_rollout_policies_applies_to_get_count_b7fc(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_feature_rollout_policies_applies_to_get_count_b7fc(connection, feature_rollout_policy_id, opts \\ []) do
+  @spec policies_feature_rollout_policies_applies_to_get_count_b7fc(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_feature_rollout_policies_applies_to_get_count_b7fc(
+        connection,
+        feature_rollout_policy_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -135,8 +160,21 @@ defmodule MicrosoftGraph.Api.PoliciesFeatureRolloutPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_feature_rollout_policies_create_applies_to(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_feature_rollout_policies_create_applies_to(connection, feature_rollout_policy_id, microsoft_graph_directory_object, _opts \\ []) do
+  @spec policies_feature_rollout_policies_create_applies_to(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_feature_rollout_policies_create_applies_to(
+        connection,
+        feature_rollout_policy_id,
+        microsoft_graph_directory_object,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -169,8 +207,21 @@ defmodule MicrosoftGraph.Api.PoliciesFeatureRolloutPolicy do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_feature_rollout_policies_create_ref_applies_to(Tesla.Env.client, String.t, %{optional(String.t) => Map.t}, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_feature_rollout_policies_create_ref_applies_to(connection, feature_rollout_policy_id, request_body, _opts \\ []) do
+  @spec policies_feature_rollout_policies_create_ref_applies_to(
+          Tesla.Env.client(),
+          String.t(),
+          %{optional(String.t()) => Map.t()},
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_feature_rollout_policies_create_ref_applies_to(
+        connection,
+        feature_rollout_policy_id,
+        request_body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -205,8 +256,21 @@ defmodule MicrosoftGraph.Api.PoliciesFeatureRolloutPolicy do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_feature_rollout_policies_delete_ref_applies_to(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_feature_rollout_policies_delete_ref_applies_to(connection, feature_rollout_policy_id, directory_object_id, opts \\ []) do
+  @spec policies_feature_rollout_policies_delete_ref_applies_to(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_feature_rollout_policies_delete_ref_applies_to(
+        connection,
+        feature_rollout_policy_id,
+        directory_object_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers,
       :"@id" => :query
@@ -215,7 +279,9 @@ defmodule MicrosoftGraph.Api.PoliciesFeatureRolloutPolicy do
     request =
       %{}
       |> method(:delete)
-      |> url("/policies/featureRolloutPolicies/#{feature_rollout_policy_id}/appliesTo/#{directory_object_id}/$ref")
+      |> url(
+        "/policies/featureRolloutPolicies/#{feature_rollout_policy_id}/appliesTo/#{directory_object_id}/$ref"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -243,7 +309,10 @@ defmodule MicrosoftGraph.Api.PoliciesFeatureRolloutPolicy do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_feature_rollout_policies_get_count_bb08(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec policies_feature_rollout_policies_get_count_bb08(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def policies_feature_rollout_policies_get_count_bb08(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -289,8 +358,19 @@ defmodule MicrosoftGraph.Api.PoliciesFeatureRolloutPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_feature_rollout_policies_list_applies_to(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t} | {:error, Tesla.Env.t}
-  def policies_feature_rollout_policies_list_applies_to(connection, feature_rollout_policy_id, opts \\ []) do
+  @spec policies_feature_rollout_policies_list_applies_to(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_feature_rollout_policies_list_applies_to(
+        connection,
+        feature_rollout_policy_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -339,8 +419,19 @@ defmodule MicrosoftGraph.Api.PoliciesFeatureRolloutPolicy do
   - `{:ok, MicrosoftGraph.Model.StringCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_feature_rollout_policies_list_ref_applies_to(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.StringCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_feature_rollout_policies_list_ref_applies_to(connection, feature_rollout_policy_id, opts \\ []) do
+  @spec policies_feature_rollout_policies_list_ref_applies_to(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.StringCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_feature_rollout_policies_list_ref_applies_to(
+        connection,
+        feature_rollout_policy_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -383,7 +474,10 @@ defmodule MicrosoftGraph.Api.PoliciesFeatureRolloutPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphFeatureRolloutPolicy.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_get_feature_rollout_policies(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphFeatureRolloutPolicy.t} | {:error, Tesla.Env.t}
+  @spec policies_get_feature_rollout_policies(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphFeatureRolloutPolicy.t()}
+          | {:error, Tesla.Env.t()}
   def policies_get_feature_rollout_policies(connection, feature_rollout_policy_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -428,7 +522,10 @@ defmodule MicrosoftGraph.Api.PoliciesFeatureRolloutPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphFeatureRolloutPolicyCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_list_feature_rollout_policies(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphFeatureRolloutPolicyCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec policies_list_feature_rollout_policies(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphFeatureRolloutPolicyCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def policies_list_feature_rollout_policies(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -473,8 +570,21 @@ defmodule MicrosoftGraph.Api.PoliciesFeatureRolloutPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphFeatureRolloutPolicy.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_update_feature_rollout_policies(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphFeatureRolloutPolicy.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphFeatureRolloutPolicy.t} | {:error, Tesla.Env.t}
-  def policies_update_feature_rollout_policies(connection, feature_rollout_policy_id, microsoft_graph_feature_rollout_policy, _opts \\ []) do
+  @spec policies_update_feature_rollout_policies(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphFeatureRolloutPolicy.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphFeatureRolloutPolicy.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_update_feature_rollout_policies(
+        connection,
+        feature_rollout_policy_id,
+        microsoft_graph_feature_rollout_policy,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

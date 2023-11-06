@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsProperty do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -20,23 +20,31 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsProperty do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :aliases => [String.t] | nil,
-    :isQueryable => boolean() | nil,
-    :isRefinable => boolean() | nil,
-    :isRetrievable => boolean() | nil,
-    :isSearchable => boolean() | nil,
-    :labels => [MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsPropertyLabelsInner.t] | nil,
-    :name => String.t | nil,
-    :type => MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsPropertyType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :aliases => [String.t()] | nil,
+          :isQueryable => boolean() | nil,
+          :isRefinable => boolean() | nil,
+          :isRetrievable => boolean() | nil,
+          :isSearchable => boolean() | nil,
+          :labels =>
+            [MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsPropertyLabelsInner.t()] | nil,
+          :name => String.t() | nil,
+          :type => MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsPropertyType.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:labels, :list, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsPropertyLabelsInner)
-     |> Deserializer.deserialize(:type, :struct, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsPropertyType)
+    |> Deserializer.deserialize(
+      :labels,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsPropertyLabelsInner
+    )
+    |> Deserializer.deserialize(
+      :type,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsPropertyType
+    )
   end
 end
-

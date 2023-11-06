@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphRemoteDesktopSecurityConfiguration do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,17 +15,20 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphRemoteDesktopSecurityConfiguration 
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :isRemoteDesktopProtocolEnabled => boolean() | nil,
-    :targetDeviceGroups => [MicrosoftGraph.Model.MicrosoftGraphTargetDeviceGroup.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :isRemoteDesktopProtocolEnabled => boolean() | nil,
+          :targetDeviceGroups => [MicrosoftGraph.Model.MicrosoftGraphTargetDeviceGroup.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:targetDeviceGroups, :list, MicrosoftGraph.Model.MicrosoftGraphTargetDeviceGroup)
+    |> Deserializer.deserialize(
+      :targetDeviceGroups,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphTargetDeviceGroup
+    )
   end
 end
-

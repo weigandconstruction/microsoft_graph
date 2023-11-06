@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphProxiedDomain do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :ipAddressOrFQDN => String.t | nil,
-    :proxy => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :ipAddressOrFQDN => String.t() | nil,
+          :proxy => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

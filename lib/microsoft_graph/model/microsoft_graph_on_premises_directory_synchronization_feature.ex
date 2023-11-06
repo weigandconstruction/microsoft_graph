@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphOnPremisesDirectorySynchronizationFeature do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -31,30 +31,29 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphOnPremisesDirectorySynchronizationF
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :blockCloudObjectTakeoverThroughHardMatchEnabled => boolean() | nil,
-    :blockSoftMatchEnabled => boolean() | nil,
-    :bypassDirSyncOverridesEnabled => boolean() | nil,
-    :cloudPasswordPolicyForPasswordSyncedUsersEnabled => boolean() | nil,
-    :concurrentCredentialUpdateEnabled => boolean() | nil,
-    :concurrentOrgIdProvisioningEnabled => boolean() | nil,
-    :deviceWritebackEnabled => boolean() | nil,
-    :directoryExtensionsEnabled => boolean() | nil,
-    :fopeConflictResolutionEnabled => boolean() | nil,
-    :groupWriteBackEnabled => boolean() | nil,
-    :passwordSyncEnabled => boolean() | nil,
-    :passwordWritebackEnabled => boolean() | nil,
-    :quarantineUponProxyAddressesConflictEnabled => boolean() | nil,
-    :quarantineUponUpnConflictEnabled => boolean() | nil,
-    :softMatchOnUpnEnabled => boolean() | nil,
-    :synchronizeUpnForManagedUsersEnabled => boolean() | nil,
-    :unifiedGroupWritebackEnabled => boolean() | nil,
-    :userForcePasswordChangeOnLogonEnabled => boolean() | nil,
-    :userWritebackEnabled => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :blockCloudObjectTakeoverThroughHardMatchEnabled => boolean() | nil,
+          :blockSoftMatchEnabled => boolean() | nil,
+          :bypassDirSyncOverridesEnabled => boolean() | nil,
+          :cloudPasswordPolicyForPasswordSyncedUsersEnabled => boolean() | nil,
+          :concurrentCredentialUpdateEnabled => boolean() | nil,
+          :concurrentOrgIdProvisioningEnabled => boolean() | nil,
+          :deviceWritebackEnabled => boolean() | nil,
+          :directoryExtensionsEnabled => boolean() | nil,
+          :fopeConflictResolutionEnabled => boolean() | nil,
+          :groupWriteBackEnabled => boolean() | nil,
+          :passwordSyncEnabled => boolean() | nil,
+          :passwordWritebackEnabled => boolean() | nil,
+          :quarantineUponProxyAddressesConflictEnabled => boolean() | nil,
+          :quarantineUponUpnConflictEnabled => boolean() | nil,
+          :softMatchOnUpnEnabled => boolean() | nil,
+          :synchronizeUpnForManagedUsersEnabled => boolean() | nil,
+          :unifiedGroupWritebackEnabled => boolean() | nil,
+          :userForcePasswordChangeOnLogonEnabled => boolean() | nil,
+          :userWritebackEnabled => boolean() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

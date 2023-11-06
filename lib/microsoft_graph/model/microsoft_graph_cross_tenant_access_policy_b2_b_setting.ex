@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyB2BSetting do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,17 +14,28 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyB2BSetting d
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :applications => MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyB2BSettingApplications.t | nil,
-    :usersAndGroups => MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyB2BSettingUsersAndGroups.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :applications =>
+            MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyB2BSettingApplications.t()
+            | nil,
+          :usersAndGroups =>
+            MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyB2BSettingUsersAndGroups.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:applications, :struct, MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyB2BSettingApplications)
-     |> Deserializer.deserialize(:usersAndGroups, :struct, MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyB2BSettingUsersAndGroups)
+    |> Deserializer.deserialize(
+      :applications,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyB2BSettingApplications
+    )
+    |> Deserializer.deserialize(
+      :usersAndGroups,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyB2BSettingUsersAndGroups
+    )
   end
 end
-

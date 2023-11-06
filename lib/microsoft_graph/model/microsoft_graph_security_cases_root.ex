@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityCasesRoot do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,20 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityCasesRoot do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :ediscoveryCases => [MicrosoftGraph.Model.MicrosoftGraphSecurityEdiscoveryCase.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :ediscoveryCases =>
+            [MicrosoftGraph.Model.MicrosoftGraphSecurityEdiscoveryCase.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:ediscoveryCases, :list, MicrosoftGraph.Model.MicrosoftGraphSecurityEdiscoveryCase)
+    |> Deserializer.deserialize(
+      :ediscoveryCases,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityEdiscoveryCase
+    )
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.GroupsGroupSitesRemoveRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,14 +12,17 @@ defmodule MicrosoftGraph.Model.GroupsGroupSitesRemoveRequest do
   ]
 
   @type t :: %__MODULE__{
-    :value => [MicrosoftGraph.Model.CollectionOfSiteAllOfValueInner.t] | nil
-  }
+          :value => [MicrosoftGraph.Model.CollectionOfSiteAllOfValueInner.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:value, :list, MicrosoftGraph.Model.CollectionOfSiteAllOfValueInner)
+    |> Deserializer.deserialize(
+      :value,
+      :list,
+      MicrosoftGraph.Model.CollectionOfSiteAllOfValueInner
+    )
   end
 end
-

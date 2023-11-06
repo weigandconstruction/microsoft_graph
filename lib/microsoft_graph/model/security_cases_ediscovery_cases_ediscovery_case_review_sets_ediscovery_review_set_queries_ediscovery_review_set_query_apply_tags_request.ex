@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseReviewSetsEdiscoveryReviewSetQueriesEdiscoveryReviewSetQueryApplyTagsRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,16 +13,25 @@ defmodule MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseReviewS
   ]
 
   @type t :: %__MODULE__{
-    :tagsToAdd => [MicrosoftGraph.Model.CollectionOfEdiscoveryReviewTagAllOfValueInner.t] | nil,
-    :tagsToRemove => [MicrosoftGraph.Model.CollectionOfEdiscoveryReviewTagAllOfValueInner.t] | nil
-  }
+          :tagsToAdd =>
+            [MicrosoftGraph.Model.CollectionOfEdiscoveryReviewTagAllOfValueInner.t()] | nil,
+          :tagsToRemove =>
+            [MicrosoftGraph.Model.CollectionOfEdiscoveryReviewTagAllOfValueInner.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:tagsToAdd, :list, MicrosoftGraph.Model.CollectionOfEdiscoveryReviewTagAllOfValueInner)
-     |> Deserializer.deserialize(:tagsToRemove, :list, MicrosoftGraph.Model.CollectionOfEdiscoveryReviewTagAllOfValueInner)
+    |> Deserializer.deserialize(
+      :tagsToAdd,
+      :list,
+      MicrosoftGraph.Model.CollectionOfEdiscoveryReviewTagAllOfValueInner
+    )
+    |> Deserializer.deserialize(
+      :tagsToRemove,
+      :list,
+      MicrosoftGraph.Model.CollectionOfEdiscoveryReviewTagAllOfValueInner
+    )
   end
 end
-

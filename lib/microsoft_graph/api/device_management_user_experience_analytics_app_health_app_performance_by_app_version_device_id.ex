@@ -23,19 +23,38 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsAppHealthApp
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_create_user_experience_analytics_app_health_application_performance_by_app_version_device_id(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_create_user_experience_analytics_app_health_application_performance_by_app_version_device_id(connection, microsoft_graph_user_experience_analytics_app_health_app_performance_by_app_version_device_id, _opts \\ []) do
+  @spec device_management_create_user_experience_analytics_app_health_application_performance_by_app_version_device_id(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_create_user_experience_analytics_app_health_application_performance_by_app_version_device_id(
+        connection,
+        microsoft_graph_user_experience_analytics_app_health_app_performance_by_app_version_device_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceManagement/userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId")
-      |> add_param(:body, :body, microsoft_graph_user_experience_analytics_app_health_app_performance_by_app_version_device_id)
+      |> url(
+        "/deviceManagement/userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId"
+      )
+      |> add_param(
+        :body,
+        :body,
+        microsoft_graph_user_experience_analytics_app_health_app_performance_by_app_version_device_id
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -56,8 +75,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsAppHealthApp
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_delete_user_experience_analytics_app_health_application_performance_by_app_version_device_id(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_delete_user_experience_analytics_app_health_application_performance_by_app_version_device_id(connection, user_experience_analytics_app_health_app_performance_by_app_version_device_id_id, opts \\ []) do
+  @spec device_management_delete_user_experience_analytics_app_health_application_performance_by_app_version_device_id(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_delete_user_experience_analytics_app_health_application_performance_by_app_version_device_id(
+        connection,
+        user_experience_analytics_app_health_app_performance_by_app_version_device_id_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -65,7 +95,9 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsAppHealthApp
     request =
       %{}
       |> method(:delete)
-      |> url("/deviceManagement/userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId/#{user_experience_analytics_app_health_app_performance_by_app_version_device_id_id}")
+      |> url(
+        "/deviceManagement/userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId/#{user_experience_analytics_app_health_app_performance_by_app_version_device_id_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -95,8 +127,20 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsAppHealthApp
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_get_user_experience_analytics_app_health_application_performance_by_app_version_device_id(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_get_user_experience_analytics_app_health_application_performance_by_app_version_device_id(connection, user_experience_analytics_app_health_app_performance_by_app_version_device_id_id, opts \\ []) do
+  @spec device_management_get_user_experience_analytics_app_health_application_performance_by_app_version_device_id(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_get_user_experience_analytics_app_health_application_performance_by_app_version_device_id(
+        connection,
+        user_experience_analytics_app_health_app_performance_by_app_version_device_id_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -105,14 +149,17 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsAppHealthApp
     request =
       %{}
       |> method(:get)
-      |> url("/deviceManagement/userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId/#{user_experience_analytics_app_health_app_performance_by_app_version_device_id_id}")
+      |> url(
+        "/deviceManagement/userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId/#{user_experience_analytics_app_health_app_performance_by_app_version_device_id_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -140,8 +187,18 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsAppHealthApp
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceIdCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_list_user_experience_analytics_app_health_application_performance_by_app_version_device_id(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceIdCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_list_user_experience_analytics_app_health_application_performance_by_app_version_device_id(connection, opts \\ []) do
+  @spec device_management_list_user_experience_analytics_app_health_application_performance_by_app_version_device_id(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceIdCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_list_user_experience_analytics_app_health_application_performance_by_app_version_device_id(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -156,14 +213,17 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsAppHealthApp
     request =
       %{}
       |> method(:get)
-      |> url("/deviceManagement/userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId")
+      |> url(
+        "/deviceManagement/userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceIdCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceIdCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -184,19 +244,40 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsAppHealthApp
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_update_user_experience_analytics_app_health_application_performance_by_app_version_device_id(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_update_user_experience_analytics_app_health_application_performance_by_app_version_device_id(connection, user_experience_analytics_app_health_app_performance_by_app_version_device_id_id, microsoft_graph_user_experience_analytics_app_health_app_performance_by_app_version_device_id, _opts \\ []) do
+  @spec device_management_update_user_experience_analytics_app_health_application_performance_by_app_version_device_id(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_update_user_experience_analytics_app_health_application_performance_by_app_version_device_id(
+        connection,
+        user_experience_analytics_app_health_app_performance_by_app_version_device_id_id,
+        microsoft_graph_user_experience_analytics_app_health_app_performance_by_app_version_device_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/deviceManagement/userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId/#{user_experience_analytics_app_health_app_performance_by_app_version_device_id_id}")
-      |> add_param(:body, :body, microsoft_graph_user_experience_analytics_app_health_app_performance_by_app_version_device_id)
+      |> url(
+        "/deviceManagement/userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId/#{user_experience_analytics_app_health_app_performance_by_app_version_device_id_id}"
+      )
+      |> add_param(
+        :body,
+        :body,
+        microsoft_graph_user_experience_analytics_app_health_app_performance_by_app_version_device_id
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -217,8 +298,17 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsAppHealthApp
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_user_experience_analytics_app_health_application_performance_by_app_version_device_id_get_count_d4df(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_user_experience_analytics_app_health_application_performance_by_app_version_device_id_get_count_d4df(connection, opts \\ []) do
+  @spec device_management_user_experience_analytics_app_health_application_performance_by_app_version_device_id_get_count_d4df(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_user_experience_analytics_app_health_application_performance_by_app_version_device_id_get_count_d4df(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -227,7 +317,9 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsAppHealthApp
     request =
       %{}
       |> method(:get)
-      |> url("/deviceManagement/userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId/$count")
+      |> url(
+        "/deviceManagement/userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 

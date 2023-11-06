@@ -14,17 +14,24 @@ defmodule MicrosoftGraph.Model.ParticipantRecordingInfo do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :initiator => MicrosoftGraph.Model.MicrosoftGraphRecordingInfoInitiator.t | nil,
-    :recordingStatus => MicrosoftGraph.Model.MicrosoftGraphRecordingStatus.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :initiator => MicrosoftGraph.Model.MicrosoftGraphRecordingInfoInitiator.t() | nil,
+          :recordingStatus => MicrosoftGraph.Model.MicrosoftGraphRecordingStatus.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:initiator, :struct, MicrosoftGraph.Model.MicrosoftGraphRecordingInfoInitiator)
-     |> Deserializer.deserialize(:recordingStatus, :struct, MicrosoftGraph.Model.MicrosoftGraphRecordingStatus)
+    |> Deserializer.deserialize(
+      :initiator,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphRecordingInfoInitiator
+    )
+    |> Deserializer.deserialize(
+      :recordingStatus,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphRecordingStatus
+    )
   end
 end
-

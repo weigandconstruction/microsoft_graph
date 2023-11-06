@@ -25,8 +25,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_create_ref_owners(Tesla.Env.client, String.t, %{optional(String.t) => Map.t}, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_create_ref_owners(connection, service_principal_id, request_body, _opts \\ []) do
+  @spec service_principals_create_ref_owners(
+          Tesla.Env.client(),
+          String.t(),
+          %{optional(String.t()) => Map.t()},
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_create_ref_owners(
+        connection,
+        service_principal_id,
+        request_body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -59,8 +72,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_created_objects_get_count0714(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_created_objects_get_count0714(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_created_objects_get_count0714(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_created_objects_get_count0714(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -98,8 +122,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_created_objects_get_count_as_service_principal768a(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_created_objects_get_count_as_service_principal768a(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_created_objects_get_count_as_service_principal768a(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_created_objects_get_count_as_service_principal768a(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -108,7 +143,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
     request =
       %{}
       |> method(:get)
-      |> url("/servicePrincipals/#{service_principal_id}/createdObjects/graph.servicePrincipal/$count")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/createdObjects/graph.servicePrincipal/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -139,8 +176,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_delete_ref_owners(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_delete_ref_owners(connection, service_principal_id, directory_object_id, opts \\ []) do
+  @spec service_principals_delete_ref_owners(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_delete_ref_owners(
+        connection,
+        service_principal_id,
+        directory_object_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers,
       :"@id" => :query
@@ -180,8 +230,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_get_created_objects(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_get_created_objects(connection, service_principal_id, directory_object_id, opts \\ []) do
+  @spec service_principals_get_created_objects(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_get_created_objects(
+        connection,
+        service_principal_id,
+        directory_object_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -220,8 +283,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServicePrincipal.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_get_created_objects_as_service_principal(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServicePrincipal.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_get_created_objects_as_service_principal(connection, service_principal_id, directory_object_id, opts \\ []) do
+  @spec service_principals_get_created_objects_as_service_principal(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServicePrincipal.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_get_created_objects_as_service_principal(
+        connection,
+        service_principal_id,
+        directory_object_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -230,7 +306,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
     request =
       %{}
       |> method(:get)
-      |> url("/servicePrincipals/#{service_principal_id}/createdObjects/#{directory_object_id}/graph.servicePrincipal")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/createdObjects/#{directory_object_id}/graph.servicePrincipal"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -262,8 +340,16 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_get_member_of(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_get_member_of(connection, service_principal_id, directory_object_id, opts \\ []) do
+  @spec service_principals_get_member_of(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_get_member_of(
+        connection,
+        service_principal_id,
+        directory_object_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$select" => :query,
@@ -304,8 +390,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAdministrativeUnit.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_get_member_of_as_administrative_unit(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAdministrativeUnit.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_get_member_of_as_administrative_unit(connection, service_principal_id, directory_object_id, opts \\ []) do
+  @spec service_principals_get_member_of_as_administrative_unit(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAdministrativeUnit.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_get_member_of_as_administrative_unit(
+        connection,
+        service_principal_id,
+        directory_object_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$select" => :query,
@@ -315,7 +414,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
     request =
       %{}
       |> method(:get)
-      |> url("/servicePrincipals/#{service_principal_id}/memberOf/#{directory_object_id}/graph.administrativeUnit")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/memberOf/#{directory_object_id}/graph.administrativeUnit"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -346,8 +447,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryRole.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_get_member_of_as_directory_role(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryRole.t} | {:error, Tesla.Env.t}
-  def service_principals_get_member_of_as_directory_role(connection, service_principal_id, directory_object_id, opts \\ []) do
+  @spec service_principals_get_member_of_as_directory_role(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryRole.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_get_member_of_as_directory_role(
+        connection,
+        service_principal_id,
+        directory_object_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$select" => :query,
@@ -357,7 +471,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
     request =
       %{}
       |> method(:get)
-      |> url("/servicePrincipals/#{service_principal_id}/memberOf/#{directory_object_id}/graph.directoryRole")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/memberOf/#{directory_object_id}/graph.directoryRole"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -388,8 +504,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_get_member_of_as_group(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_get_member_of_as_group(connection, service_principal_id, directory_object_id, opts \\ []) do
+  @spec service_principals_get_member_of_as_group(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_get_member_of_as_group(
+        connection,
+        service_principal_id,
+        directory_object_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$select" => :query,
@@ -399,7 +528,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
     request =
       %{}
       |> method(:get)
-      |> url("/servicePrincipals/#{service_principal_id}/memberOf/#{directory_object_id}/graph.group")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/memberOf/#{directory_object_id}/graph.group"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -430,8 +561,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_get_owned_objects(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_get_owned_objects(connection, service_principal_id, directory_object_id, opts \\ []) do
+  @spec service_principals_get_owned_objects(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_get_owned_objects(
+        connection,
+        service_principal_id,
+        directory_object_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -470,8 +614,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_get_owned_objects_as_app_role_assignment(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignment.t} | {:error, Tesla.Env.t}
-  def service_principals_get_owned_objects_as_app_role_assignment(connection, service_principal_id, directory_object_id, opts \\ []) do
+  @spec service_principals_get_owned_objects_as_app_role_assignment(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignment.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_get_owned_objects_as_app_role_assignment(
+        connection,
+        service_principal_id,
+        directory_object_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -480,7 +637,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
     request =
       %{}
       |> method(:get)
-      |> url("/servicePrincipals/#{service_principal_id}/ownedObjects/#{directory_object_id}/graph.appRoleAssignment")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/ownedObjects/#{directory_object_id}/graph.appRoleAssignment"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -510,8 +669,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphApplication.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_get_owned_objects_as_application(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphApplication.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_get_owned_objects_as_application(connection, service_principal_id, directory_object_id, opts \\ []) do
+  @spec service_principals_get_owned_objects_as_application(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphApplication.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_get_owned_objects_as_application(
+        connection,
+        service_principal_id,
+        directory_object_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -520,7 +692,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
     request =
       %{}
       |> method(:get)
-      |> url("/servicePrincipals/#{service_principal_id}/ownedObjects/#{directory_object_id}/graph.application")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/ownedObjects/#{directory_object_id}/graph.application"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -550,8 +724,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEndpoint.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_get_owned_objects_as_endpoint(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphEndpoint.t} | {:error, Tesla.Env.t}
-  def service_principals_get_owned_objects_as_endpoint(connection, service_principal_id, directory_object_id, opts \\ []) do
+  @spec service_principals_get_owned_objects_as_endpoint(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphEndpoint.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_get_owned_objects_as_endpoint(
+        connection,
+        service_principal_id,
+        directory_object_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -560,7 +747,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
     request =
       %{}
       |> method(:get)
-      |> url("/servicePrincipals/#{service_principal_id}/ownedObjects/#{directory_object_id}/graph.endpoint")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/ownedObjects/#{directory_object_id}/graph.endpoint"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -590,8 +779,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_get_owned_objects_as_group(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_get_owned_objects_as_group(connection, service_principal_id, directory_object_id, opts \\ []) do
+  @spec service_principals_get_owned_objects_as_group(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_get_owned_objects_as_group(
+        connection,
+        service_principal_id,
+        directory_object_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -600,7 +802,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
     request =
       %{}
       |> method(:get)
-      |> url("/servicePrincipals/#{service_principal_id}/ownedObjects/#{directory_object_id}/graph.group")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/ownedObjects/#{directory_object_id}/graph.group"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -630,8 +834,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServicePrincipal.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_get_owned_objects_as_service_principal(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServicePrincipal.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_get_owned_objects_as_service_principal(connection, service_principal_id, directory_object_id, opts \\ []) do
+  @spec service_principals_get_owned_objects_as_service_principal(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServicePrincipal.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_get_owned_objects_as_service_principal(
+        connection,
+        service_principal_id,
+        directory_object_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -640,7 +857,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
     request =
       %{}
       |> method(:get)
-      |> url("/servicePrincipals/#{service_principal_id}/ownedObjects/#{directory_object_id}/graph.servicePrincipal")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/ownedObjects/#{directory_object_id}/graph.servicePrincipal"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -671,8 +890,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_get_owners_as_app_role_assignment(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignment.t} | {:error, Tesla.Env.t}
-  def service_principals_get_owners_as_app_role_assignment(connection, service_principal_id, directory_object_id, opts \\ []) do
+  @spec service_principals_get_owners_as_app_role_assignment(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignment.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_get_owners_as_app_role_assignment(
+        connection,
+        service_principal_id,
+        directory_object_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$select" => :query,
@@ -682,7 +914,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
     request =
       %{}
       |> method(:get)
-      |> url("/servicePrincipals/#{service_principal_id}/owners/#{directory_object_id}/graph.appRoleAssignment")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/owners/#{directory_object_id}/graph.appRoleAssignment"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -713,8 +947,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEndpoint.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_get_owners_as_endpoint(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphEndpoint.t} | {:error, Tesla.Env.t}
-  def service_principals_get_owners_as_endpoint(connection, service_principal_id, directory_object_id, opts \\ []) do
+  @spec service_principals_get_owners_as_endpoint(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphEndpoint.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_get_owners_as_endpoint(
+        connection,
+        service_principal_id,
+        directory_object_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$select" => :query,
@@ -724,7 +971,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
     request =
       %{}
       |> method(:get)
-      |> url("/servicePrincipals/#{service_principal_id}/owners/#{directory_object_id}/graph.endpoint")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/owners/#{directory_object_id}/graph.endpoint"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -755,8 +1004,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServicePrincipal.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_get_owners_as_service_principal(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServicePrincipal.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_get_owners_as_service_principal(connection, service_principal_id, directory_object_id, opts \\ []) do
+  @spec service_principals_get_owners_as_service_principal(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServicePrincipal.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_get_owners_as_service_principal(
+        connection,
+        service_principal_id,
+        directory_object_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$select" => :query,
@@ -766,7 +1028,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
     request =
       %{}
       |> method(:get)
-      |> url("/servicePrincipals/#{service_principal_id}/owners/#{directory_object_id}/graph.servicePrincipal")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/owners/#{directory_object_id}/graph.servicePrincipal"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -797,8 +1061,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_get_owners_as_user(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_get_owners_as_user(connection, service_principal_id, directory_object_id, opts \\ []) do
+  @spec service_principals_get_owners_as_user(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_get_owners_as_user(
+        connection,
+        service_principal_id,
+        directory_object_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$select" => :query,
@@ -808,7 +1085,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
     request =
       %{}
       |> method(:get)
-      |> url("/servicePrincipals/#{service_principal_id}/owners/#{directory_object_id}/graph.user")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/owners/#{directory_object_id}/graph.user"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -839,8 +1118,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_get_transitive_member_of(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_get_transitive_member_of(connection, service_principal_id, directory_object_id, opts \\ []) do
+  @spec service_principals_get_transitive_member_of(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_get_transitive_member_of(
+        connection,
+        service_principal_id,
+        directory_object_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$select" => :query,
@@ -850,7 +1142,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
     request =
       %{}
       |> method(:get)
-      |> url("/servicePrincipals/#{service_principal_id}/transitiveMemberOf/#{directory_object_id}")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/transitiveMemberOf/#{directory_object_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -881,8 +1175,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAdministrativeUnit.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_get_transitive_member_of_as_administrative_unit(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAdministrativeUnit.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_get_transitive_member_of_as_administrative_unit(connection, service_principal_id, directory_object_id, opts \\ []) do
+  @spec service_principals_get_transitive_member_of_as_administrative_unit(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAdministrativeUnit.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_get_transitive_member_of_as_administrative_unit(
+        connection,
+        service_principal_id,
+        directory_object_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$select" => :query,
@@ -892,7 +1199,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
     request =
       %{}
       |> method(:get)
-      |> url("/servicePrincipals/#{service_principal_id}/transitiveMemberOf/#{directory_object_id}/graph.administrativeUnit")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/transitiveMemberOf/#{directory_object_id}/graph.administrativeUnit"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -923,8 +1232,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryRole.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_get_transitive_member_of_as_directory_role(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryRole.t} | {:error, Tesla.Env.t}
-  def service_principals_get_transitive_member_of_as_directory_role(connection, service_principal_id, directory_object_id, opts \\ []) do
+  @spec service_principals_get_transitive_member_of_as_directory_role(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryRole.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_get_transitive_member_of_as_directory_role(
+        connection,
+        service_principal_id,
+        directory_object_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$select" => :query,
@@ -934,7 +1256,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
     request =
       %{}
       |> method(:get)
-      |> url("/servicePrincipals/#{service_principal_id}/transitiveMemberOf/#{directory_object_id}/graph.directoryRole")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/transitiveMemberOf/#{directory_object_id}/graph.directoryRole"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -965,8 +1289,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_get_transitive_member_of_as_group(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_get_transitive_member_of_as_group(connection, service_principal_id, directory_object_id, opts \\ []) do
+  @spec service_principals_get_transitive_member_of_as_group(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_get_transitive_member_of_as_group(
+        connection,
+        service_principal_id,
+        directory_object_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$select" => :query,
@@ -976,7 +1313,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
     request =
       %{}
       |> method(:get)
-      |> url("/servicePrincipals/#{service_principal_id}/transitiveMemberOf/#{directory_object_id}/graph.group")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/transitiveMemberOf/#{directory_object_id}/graph.group"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1012,7 +1351,10 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_list_created_objects(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec service_principals_list_created_objects(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def service_principals_list_created_objects(connection, service_principal_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1063,8 +1405,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServicePrincipalCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_list_created_objects_as_service_principal(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServicePrincipalCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_list_created_objects_as_service_principal(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_list_created_objects_as_service_principal(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServicePrincipalCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_list_created_objects_as_service_principal(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1116,7 +1469,10 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_list_member_of(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec service_principals_list_member_of(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def service_principals_list_member_of(connection, service_principal_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -1169,8 +1525,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAdministrativeUnitCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_list_member_of_as_administrative_unit(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAdministrativeUnitCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_list_member_of_as_administrative_unit(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_list_member_of_as_administrative_unit(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAdministrativeUnitCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_list_member_of_as_administrative_unit(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$top" => :query,
@@ -1222,8 +1589,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryRoleCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_list_member_of_as_directory_role(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryRoleCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_list_member_of_as_directory_role(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_list_member_of_as_directory_role(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryRoleCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_list_member_of_as_directory_role(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$top" => :query,
@@ -1275,7 +1653,10 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphGroupCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_list_member_of_as_group(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphGroupCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec service_principals_list_member_of_as_group(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphGroupCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def service_principals_list_member_of_as_group(connection, service_principal_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -1328,7 +1709,10 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_list_owned_objects(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec service_principals_list_owned_objects(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def service_principals_list_owned_objects(connection, service_principal_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1379,8 +1763,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignmentCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_list_owned_objects_as_app_role_assignment(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignmentCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_list_owned_objects_as_app_role_assignment(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_list_owned_objects_as_app_role_assignment(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignmentCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_list_owned_objects_as_app_role_assignment(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1430,8 +1825,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphApplicationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_list_owned_objects_as_application(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphApplicationCollectionResponse.t} | {:error, Tesla.Env.t}
-  def service_principals_list_owned_objects_as_application(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_list_owned_objects_as_application(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphApplicationCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_list_owned_objects_as_application(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1481,8 +1887,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEndpointCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_list_owned_objects_as_endpoint(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphEndpointCollectionResponse.t} | {:error, Tesla.Env.t}
-  def service_principals_list_owned_objects_as_endpoint(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_list_owned_objects_as_endpoint(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphEndpointCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_list_owned_objects_as_endpoint(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1532,7 +1949,10 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphGroupCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_list_owned_objects_as_group(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphGroupCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec service_principals_list_owned_objects_as_group(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphGroupCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def service_principals_list_owned_objects_as_group(connection, service_principal_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1583,8 +2003,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServicePrincipalCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_list_owned_objects_as_service_principal(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServicePrincipalCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_list_owned_objects_as_service_principal(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_list_owned_objects_as_service_principal(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServicePrincipalCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_list_owned_objects_as_service_principal(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1636,7 +2067,10 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_list_owners(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec service_principals_list_owners(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def service_principals_list_owners(connection, service_principal_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -1689,8 +2123,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignmentCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_list_owners_as_app_role_assignment(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignmentCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_list_owners_as_app_role_assignment(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_list_owners_as_app_role_assignment(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignmentCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_list_owners_as_app_role_assignment(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$top" => :query,
@@ -1742,7 +2187,10 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEndpointCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_list_owners_as_endpoint(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphEndpointCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec service_principals_list_owners_as_endpoint(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphEndpointCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def service_principals_list_owners_as_endpoint(connection, service_principal_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -1795,8 +2243,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServicePrincipalCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_list_owners_as_service_principal(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServicePrincipalCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_list_owners_as_service_principal(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_list_owners_as_service_principal(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServicePrincipalCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_list_owners_as_service_principal(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$top" => :query,
@@ -1848,7 +2307,10 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_list_owners_as_user(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUserCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec service_principals_list_owners_as_user(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUserCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def service_principals_list_owners_as_user(connection, service_principal_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -1900,7 +2362,10 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.StringCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_list_ref_owners(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.StringCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec service_principals_list_ref_owners(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.StringCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def service_principals_list_ref_owners(connection, service_principal_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -1951,7 +2416,10 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_list_transitive_member_of(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec service_principals_list_transitive_member_of(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def service_principals_list_transitive_member_of(connection, service_principal_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -2004,8 +2472,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAdministrativeUnitCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_list_transitive_member_of_as_administrative_unit(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAdministrativeUnitCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_list_transitive_member_of_as_administrative_unit(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_list_transitive_member_of_as_administrative_unit(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAdministrativeUnitCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_list_transitive_member_of_as_administrative_unit(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$top" => :query,
@@ -2021,7 +2500,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
     request =
       %{}
       |> method(:get)
-      |> url("/servicePrincipals/#{service_principal_id}/transitiveMemberOf/graph.administrativeUnit")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/transitiveMemberOf/graph.administrativeUnit"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2057,8 +2538,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryRoleCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_list_transitive_member_of_as_directory_role(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryRoleCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_list_transitive_member_of_as_directory_role(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_list_transitive_member_of_as_directory_role(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryRoleCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_list_transitive_member_of_as_directory_role(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$top" => :query,
@@ -2110,8 +2602,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphGroupCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_list_transitive_member_of_as_group(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphGroupCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_list_transitive_member_of_as_group(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_list_transitive_member_of_as_group(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphGroupCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_list_transitive_member_of_as_group(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$top" => :query,
@@ -2157,8 +2660,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_member_of_get_count_as_administrative_unit472e(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_member_of_get_count_as_administrative_unit472e(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_member_of_get_count_as_administrative_unit472e(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_member_of_get_count_as_administrative_unit472e(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$search" => :query,
@@ -2168,7 +2682,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
     request =
       %{}
       |> method(:get)
-      |> url("/servicePrincipals/#{service_principal_id}/memberOf/graph.administrativeUnit/$count")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/memberOf/graph.administrativeUnit/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2198,8 +2714,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_member_of_get_count_as_directory_role_fa4e(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_member_of_get_count_as_directory_role_fa4e(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_member_of_get_count_as_directory_role_fa4e(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_member_of_get_count_as_directory_role_fa4e(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$search" => :query,
@@ -2239,8 +2766,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_member_of_get_count_as_group96d9(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_member_of_get_count_as_group96d9(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_member_of_get_count_as_group96d9(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_member_of_get_count_as_group96d9(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$search" => :query,
@@ -2280,7 +2818,10 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_member_of_get_count_be11(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec service_principals_member_of_get_count_be11(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def service_principals_member_of_get_count_be11(connection, service_principal_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -2320,7 +2861,10 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_owned_objects_get_count7ae7(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec service_principals_owned_objects_get_count7ae7(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def service_principals_owned_objects_get_count7ae7(connection, service_principal_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -2359,8 +2903,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_owned_objects_get_count_as_app_role_assignment793c(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_owned_objects_get_count_as_app_role_assignment793c(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_owned_objects_get_count_as_app_role_assignment793c(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_owned_objects_get_count_as_app_role_assignment793c(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -2369,7 +2924,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
     request =
       %{}
       |> method(:get)
-      |> url("/servicePrincipals/#{service_principal_id}/ownedObjects/graph.appRoleAssignment/$count")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/ownedObjects/graph.appRoleAssignment/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2398,8 +2955,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_owned_objects_get_count_as_application2b95(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_owned_objects_get_count_as_application2b95(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_owned_objects_get_count_as_application2b95(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_owned_objects_get_count_as_application2b95(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -2437,8 +3005,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_owned_objects_get_count_as_endpoint4594(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_owned_objects_get_count_as_endpoint4594(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_owned_objects_get_count_as_endpoint4594(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_owned_objects_get_count_as_endpoint4594(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -2476,8 +3055,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_owned_objects_get_count_as_group_fc2e(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_owned_objects_get_count_as_group_fc2e(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_owned_objects_get_count_as_group_fc2e(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_owned_objects_get_count_as_group_fc2e(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -2515,8 +3105,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_owned_objects_get_count_as_service_principal19c0(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_owned_objects_get_count_as_service_principal19c0(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_owned_objects_get_count_as_service_principal19c0(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_owned_objects_get_count_as_service_principal19c0(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -2525,7 +3126,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
     request =
       %{}
       |> method(:get)
-      |> url("/servicePrincipals/#{service_principal_id}/ownedObjects/graph.servicePrincipal/$count")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/ownedObjects/graph.servicePrincipal/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2555,8 +3158,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_owners_get_count_as_app_role_assignment_abce(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_owners_get_count_as_app_role_assignment_abce(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_owners_get_count_as_app_role_assignment_abce(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_owners_get_count_as_app_role_assignment_abce(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$search" => :query,
@@ -2596,8 +3210,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_owners_get_count_as_endpoint9454(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_owners_get_count_as_endpoint9454(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_owners_get_count_as_endpoint9454(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_owners_get_count_as_endpoint9454(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$search" => :query,
@@ -2637,8 +3262,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_owners_get_count_as_service_principal_c35b(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_owners_get_count_as_service_principal_c35b(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_owners_get_count_as_service_principal_c35b(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_owners_get_count_as_service_principal_c35b(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$search" => :query,
@@ -2678,8 +3314,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_owners_get_count_as_user_aab7(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_owners_get_count_as_user_aab7(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_owners_get_count_as_user_aab7(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_owners_get_count_as_user_aab7(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$search" => :query,
@@ -2719,7 +3366,10 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_owners_get_count_ec9a(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec service_principals_owners_get_count_ec9a(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def service_principals_owners_get_count_ec9a(connection, service_principal_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -2760,8 +3410,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_transitive_member_of_get_count4794(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_transitive_member_of_get_count4794(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_transitive_member_of_get_count4794(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_transitive_member_of_get_count4794(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$search" => :query,
@@ -2801,8 +3462,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_transitive_member_of_get_count_as_administrative_unit4450(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_transitive_member_of_get_count_as_administrative_unit4450(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_transitive_member_of_get_count_as_administrative_unit4450(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_transitive_member_of_get_count_as_administrative_unit4450(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$search" => :query,
@@ -2812,7 +3484,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
     request =
       %{}
       |> method(:get)
-      |> url("/servicePrincipals/#{service_principal_id}/transitiveMemberOf/graph.administrativeUnit/$count")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/transitiveMemberOf/graph.administrativeUnit/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2842,8 +3516,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_transitive_member_of_get_count_as_directory_role8951(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_transitive_member_of_get_count_as_directory_role8951(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_transitive_member_of_get_count_as_directory_role8951(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_transitive_member_of_get_count_as_directory_role8951(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$search" => :query,
@@ -2853,7 +3538,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
     request =
       %{}
       |> method(:get)
-      |> url("/servicePrincipals/#{service_principal_id}/transitiveMemberOf/graph.directoryRole/$count")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/transitiveMemberOf/graph.directoryRole/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2883,8 +3570,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsDirectoryObject do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_transitive_member_of_get_count_as_group_e005(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_transitive_member_of_get_count_as_group_e005(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_transitive_member_of_get_count_as_group_e005(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_transitive_member_of_get_count_as_group_e005(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$search" => :query,

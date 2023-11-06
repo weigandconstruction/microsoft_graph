@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAppLogCollectionRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,20 +17,23 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAppLogCollectionRequest do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :completedDateTime => DateTime.t | nil,
-    :customLogFolders => [String.t] | nil,
-    :errorMessage => String.t | nil,
-    :status => MicrosoftGraph.Model.MicrosoftGraphAppLogUploadState.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :completedDateTime => DateTime.t() | nil,
+          :customLogFolders => [String.t()] | nil,
+          :errorMessage => String.t() | nil,
+          :status => MicrosoftGraph.Model.MicrosoftGraphAppLogUploadState.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:completedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.MicrosoftGraphAppLogUploadState)
+    |> Deserializer.deserialize(:completedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :status,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAppLogUploadState
+    )
   end
 end
-

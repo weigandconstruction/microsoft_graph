@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.ChatMessageAttachmentsInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,18 +19,17 @@ defmodule MicrosoftGraph.Model.ChatMessageAttachmentsInner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :content => String.t | nil,
-    :contentType => String.t | nil,
-    :contentUrl => String.t | nil,
-    :id => String.t | nil,
-    :name => String.t | nil,
-    :teamsAppId => String.t | nil,
-    :thumbnailUrl => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :content => String.t() | nil,
+          :contentType => String.t() | nil,
+          :contentUrl => String.t() | nil,
+          :id => String.t() | nil,
+          :name => String.t() | nil,
+          :teamsAppId => String.t() | nil,
+          :thumbnailUrl => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

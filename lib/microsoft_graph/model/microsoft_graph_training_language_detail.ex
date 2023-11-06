@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphTrainingLanguageDetail do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -22,27 +22,34 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphTrainingLanguageDetail do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :content => String.t | nil,
-    :createdBy => MicrosoftGraph.Model.TrainingLanguageDetailCreatedBy.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :isDefaultLangauge => boolean() | nil,
-    :lastModifiedBy => MicrosoftGraph.Model.TrainingLanguageDetailLastModifiedBy.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :locale => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :content => String.t() | nil,
+          :createdBy => MicrosoftGraph.Model.TrainingLanguageDetailCreatedBy.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :isDefaultLangauge => boolean() | nil,
+          :lastModifiedBy => MicrosoftGraph.Model.TrainingLanguageDetailLastModifiedBy.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :locale => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.TrainingLanguageDetailCreatedBy)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastModifiedBy, :struct, MicrosoftGraph.Model.TrainingLanguageDetailLastModifiedBy)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :createdBy,
+      :struct,
+      MicrosoftGraph.Model.TrainingLanguageDetailCreatedBy
+    )
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :lastModifiedBy,
+      :struct,
+      MicrosoftGraph.Model.TrainingLanguageDetailLastModifiedBy
+    )
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
   end
 end
-

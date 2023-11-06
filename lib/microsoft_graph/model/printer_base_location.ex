@@ -29,32 +29,39 @@ defmodule MicrosoftGraph.Model.PrinterBaseLocation do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :altitudeInMeters => integer() | nil,
-    :building => String.t | nil,
-    :city => String.t | nil,
-    :countryOrRegion => String.t | nil,
-    :floor => String.t | nil,
-    :floorDescription => String.t | nil,
-    :latitude => MicrosoftGraph.Model.MicrosoftGraphPrinterLocationLatitude.t | nil,
-    :longitude => MicrosoftGraph.Model.MicrosoftGraphPrinterLocationLongitude.t | nil,
-    :organization => [String.t] | nil,
-    :postalCode => String.t | nil,
-    :roomDescription => String.t | nil,
-    :roomName => String.t | nil,
-    :site => String.t | nil,
-    :stateOrProvince => String.t | nil,
-    :streetAddress => String.t | nil,
-    :subdivision => [String.t] | nil,
-    :subunit => [String.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :altitudeInMeters => integer() | nil,
+          :building => String.t() | nil,
+          :city => String.t() | nil,
+          :countryOrRegion => String.t() | nil,
+          :floor => String.t() | nil,
+          :floorDescription => String.t() | nil,
+          :latitude => MicrosoftGraph.Model.MicrosoftGraphPrinterLocationLatitude.t() | nil,
+          :longitude => MicrosoftGraph.Model.MicrosoftGraphPrinterLocationLongitude.t() | nil,
+          :organization => [String.t()] | nil,
+          :postalCode => String.t() | nil,
+          :roomDescription => String.t() | nil,
+          :roomName => String.t() | nil,
+          :site => String.t() | nil,
+          :stateOrProvince => String.t() | nil,
+          :streetAddress => String.t() | nil,
+          :subdivision => [String.t()] | nil,
+          :subunit => [String.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:latitude, :struct, MicrosoftGraph.Model.MicrosoftGraphPrinterLocationLatitude)
-     |> Deserializer.deserialize(:longitude, :struct, MicrosoftGraph.Model.MicrosoftGraphPrinterLocationLongitude)
+    |> Deserializer.deserialize(
+      :latitude,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphPrinterLocationLatitude
+    )
+    |> Deserializer.deserialize(
+      :longitude,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphPrinterLocationLongitude
+    )
   end
 end
-

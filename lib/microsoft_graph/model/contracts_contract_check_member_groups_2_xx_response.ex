@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.ContractsContractCheckMemberGroups2XxResponse do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.ContractsContractCheckMemberGroups2XxResponse do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.count" => integer() | nil,
-    :"@odata.nextLink" => String.t | nil,
-    :value => [String.t] | nil
-  }
+          :"@odata.count" => integer() | nil,
+          :"@odata.nextLink" => String.t() | nil,
+          :value => [String.t()] | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

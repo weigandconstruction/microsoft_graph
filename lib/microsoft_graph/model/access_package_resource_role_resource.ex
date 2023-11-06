@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.AccessPackageResourceRoleResource do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -22,28 +22,39 @@ defmodule MicrosoftGraph.Model.AccessPackageResourceRoleResource do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :environment => MicrosoftGraph.Model.AccessPackageResourceEnvironment.t | nil,
-    :modifiedDateTime => DateTime.t | nil,
-    :originId => String.t | nil,
-    :originSystem => String.t | nil,
-    :roles => [MicrosoftGraph.Model.MicrosoftGraphAccessPackageResourceRole.t] | nil,
-    :scopes => [MicrosoftGraph.Model.MicrosoftGraphAccessPackageResourceScope.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :environment => MicrosoftGraph.Model.AccessPackageResourceEnvironment.t() | nil,
+          :modifiedDateTime => DateTime.t() | nil,
+          :originId => String.t() | nil,
+          :originSystem => String.t() | nil,
+          :roles => [MicrosoftGraph.Model.MicrosoftGraphAccessPackageResourceRole.t()] | nil,
+          :scopes => [MicrosoftGraph.Model.MicrosoftGraphAccessPackageResourceScope.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:environment, :struct, MicrosoftGraph.Model.AccessPackageResourceEnvironment)
-     |> Deserializer.deserialize(:modifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:roles, :list, MicrosoftGraph.Model.MicrosoftGraphAccessPackageResourceRole)
-     |> Deserializer.deserialize(:scopes, :list, MicrosoftGraph.Model.MicrosoftGraphAccessPackageResourceScope)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :environment,
+      :struct,
+      MicrosoftGraph.Model.AccessPackageResourceEnvironment
+    )
+    |> Deserializer.deserialize(:modifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :roles,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAccessPackageResourceRole
+    )
+    |> Deserializer.deserialize(
+      :scopes,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAccessPackageResourceScope
+    )
   end
 end
-

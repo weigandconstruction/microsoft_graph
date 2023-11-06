@@ -33,46 +33,114 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaCalleeDevice do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :captureDeviceDriver => String.t | nil,
-    :captureDeviceName => String.t | nil,
-    :captureNotFunctioningEventRatio => MicrosoftGraph.Model.MicrosoftGraphCallRecordsDeviceInfoCaptureNotFunctioningEventRatio.t | nil,
-    :cpuInsufficentEventRatio => MicrosoftGraph.Model.MicrosoftGraphCallRecordsDeviceInfoCpuInsufficentEventRatio.t | nil,
-    :deviceClippingEventRatio => MicrosoftGraph.Model.MicrosoftGraphCallRecordsDeviceInfoDeviceClippingEventRatio.t | nil,
-    :deviceGlitchEventRatio => MicrosoftGraph.Model.MicrosoftGraphCallRecordsDeviceInfoDeviceGlitchEventRatio.t | nil,
-    :howlingEventCount => integer() | nil,
-    :initialSignalLevelRootMeanSquare => MicrosoftGraph.Model.MicrosoftGraphCallRecordsDeviceInfoInitialSignalLevelRootMeanSquare.t | nil,
-    :lowSpeechLevelEventRatio => MicrosoftGraph.Model.MicrosoftGraphCallRecordsDeviceInfoLowSpeechLevelEventRatio.t | nil,
-    :lowSpeechToNoiseEventRatio => MicrosoftGraph.Model.MicrosoftGraphCallRecordsDeviceInfoLowSpeechToNoiseEventRatio.t | nil,
-    :micGlitchRate => MicrosoftGraph.Model.MicrosoftGraphCallRecordsDeviceInfoMicGlitchRate.t | nil,
-    :receivedNoiseLevel => integer() | nil,
-    :receivedSignalLevel => integer() | nil,
-    :renderDeviceDriver => String.t | nil,
-    :renderDeviceName => String.t | nil,
-    :renderMuteEventRatio => MicrosoftGraph.Model.MicrosoftGraphCallRecordsDeviceInfoRenderMuteEventRatio.t | nil,
-    :renderNotFunctioningEventRatio => MicrosoftGraph.Model.MicrosoftGraphCallRecordsDeviceInfoRenderNotFunctioningEventRatio.t | nil,
-    :renderZeroVolumeEventRatio => MicrosoftGraph.Model.MicrosoftGraphCallRecordsDeviceInfoRenderZeroVolumeEventRatio.t | nil,
-    :sentNoiseLevel => integer() | nil,
-    :sentSignalLevel => integer() | nil,
-    :speakerGlitchRate => MicrosoftGraph.Model.MicrosoftGraphCallRecordsDeviceInfoSpeakerGlitchRate.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :captureDeviceDriver => String.t() | nil,
+          :captureDeviceName => String.t() | nil,
+          :captureNotFunctioningEventRatio =>
+            MicrosoftGraph.Model.MicrosoftGraphCallRecordsDeviceInfoCaptureNotFunctioningEventRatio.t()
+            | nil,
+          :cpuInsufficentEventRatio =>
+            MicrosoftGraph.Model.MicrosoftGraphCallRecordsDeviceInfoCpuInsufficentEventRatio.t()
+            | nil,
+          :deviceClippingEventRatio =>
+            MicrosoftGraph.Model.MicrosoftGraphCallRecordsDeviceInfoDeviceClippingEventRatio.t()
+            | nil,
+          :deviceGlitchEventRatio =>
+            MicrosoftGraph.Model.MicrosoftGraphCallRecordsDeviceInfoDeviceGlitchEventRatio.t()
+            | nil,
+          :howlingEventCount => integer() | nil,
+          :initialSignalLevelRootMeanSquare =>
+            MicrosoftGraph.Model.MicrosoftGraphCallRecordsDeviceInfoInitialSignalLevelRootMeanSquare.t()
+            | nil,
+          :lowSpeechLevelEventRatio =>
+            MicrosoftGraph.Model.MicrosoftGraphCallRecordsDeviceInfoLowSpeechLevelEventRatio.t()
+            | nil,
+          :lowSpeechToNoiseEventRatio =>
+            MicrosoftGraph.Model.MicrosoftGraphCallRecordsDeviceInfoLowSpeechToNoiseEventRatio.t()
+            | nil,
+          :micGlitchRate =>
+            MicrosoftGraph.Model.MicrosoftGraphCallRecordsDeviceInfoMicGlitchRate.t() | nil,
+          :receivedNoiseLevel => integer() | nil,
+          :receivedSignalLevel => integer() | nil,
+          :renderDeviceDriver => String.t() | nil,
+          :renderDeviceName => String.t() | nil,
+          :renderMuteEventRatio =>
+            MicrosoftGraph.Model.MicrosoftGraphCallRecordsDeviceInfoRenderMuteEventRatio.t() | nil,
+          :renderNotFunctioningEventRatio =>
+            MicrosoftGraph.Model.MicrosoftGraphCallRecordsDeviceInfoRenderNotFunctioningEventRatio.t()
+            | nil,
+          :renderZeroVolumeEventRatio =>
+            MicrosoftGraph.Model.MicrosoftGraphCallRecordsDeviceInfoRenderZeroVolumeEventRatio.t()
+            | nil,
+          :sentNoiseLevel => integer() | nil,
+          :sentSignalLevel => integer() | nil,
+          :speakerGlitchRate =>
+            MicrosoftGraph.Model.MicrosoftGraphCallRecordsDeviceInfoSpeakerGlitchRate.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:captureNotFunctioningEventRatio, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsDeviceInfoCaptureNotFunctioningEventRatio)
-     |> Deserializer.deserialize(:cpuInsufficentEventRatio, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsDeviceInfoCpuInsufficentEventRatio)
-     |> Deserializer.deserialize(:deviceClippingEventRatio, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsDeviceInfoDeviceClippingEventRatio)
-     |> Deserializer.deserialize(:deviceGlitchEventRatio, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsDeviceInfoDeviceGlitchEventRatio)
-     |> Deserializer.deserialize(:initialSignalLevelRootMeanSquare, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsDeviceInfoInitialSignalLevelRootMeanSquare)
-     |> Deserializer.deserialize(:lowSpeechLevelEventRatio, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsDeviceInfoLowSpeechLevelEventRatio)
-     |> Deserializer.deserialize(:lowSpeechToNoiseEventRatio, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsDeviceInfoLowSpeechToNoiseEventRatio)
-     |> Deserializer.deserialize(:micGlitchRate, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsDeviceInfoMicGlitchRate)
-     |> Deserializer.deserialize(:renderMuteEventRatio, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsDeviceInfoRenderMuteEventRatio)
-     |> Deserializer.deserialize(:renderNotFunctioningEventRatio, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsDeviceInfoRenderNotFunctioningEventRatio)
-     |> Deserializer.deserialize(:renderZeroVolumeEventRatio, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsDeviceInfoRenderZeroVolumeEventRatio)
-     |> Deserializer.deserialize(:speakerGlitchRate, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsDeviceInfoSpeakerGlitchRate)
+    |> Deserializer.deserialize(
+      :captureNotFunctioningEventRatio,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsDeviceInfoCaptureNotFunctioningEventRatio
+    )
+    |> Deserializer.deserialize(
+      :cpuInsufficentEventRatio,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsDeviceInfoCpuInsufficentEventRatio
+    )
+    |> Deserializer.deserialize(
+      :deviceClippingEventRatio,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsDeviceInfoDeviceClippingEventRatio
+    )
+    |> Deserializer.deserialize(
+      :deviceGlitchEventRatio,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsDeviceInfoDeviceGlitchEventRatio
+    )
+    |> Deserializer.deserialize(
+      :initialSignalLevelRootMeanSquare,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsDeviceInfoInitialSignalLevelRootMeanSquare
+    )
+    |> Deserializer.deserialize(
+      :lowSpeechLevelEventRatio,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsDeviceInfoLowSpeechLevelEventRatio
+    )
+    |> Deserializer.deserialize(
+      :lowSpeechToNoiseEventRatio,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsDeviceInfoLowSpeechToNoiseEventRatio
+    )
+    |> Deserializer.deserialize(
+      :micGlitchRate,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsDeviceInfoMicGlitchRate
+    )
+    |> Deserializer.deserialize(
+      :renderMuteEventRatio,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsDeviceInfoRenderMuteEventRatio
+    )
+    |> Deserializer.deserialize(
+      :renderNotFunctioningEventRatio,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsDeviceInfoRenderNotFunctioningEventRatio
+    )
+    |> Deserializer.deserialize(
+      :renderZeroVolumeEventRatio,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsDeviceInfoRenderZeroVolumeEventRatio
+    )
+    |> Deserializer.deserialize(
+      :speakerGlitchRate,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsDeviceInfoSpeakerGlitchRate
+    )
   end
 end
-

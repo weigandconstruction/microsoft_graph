@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSharingDetailSharingReference do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSharingDetailSharingReference do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :type => String.t | nil,
-    :webUrl => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :type => String.t() | nil,
+          :webUrl => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphScheduleInformationScheduleItemsInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,22 +18,29 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphScheduleInformationScheduleItemsInn
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :end => MicrosoftGraph.Model.MicrosoftGraphScheduleItemEnd.t | nil,
-    :isPrivate => boolean() | nil,
-    :location => String.t | nil,
-    :start => MicrosoftGraph.Model.MicrosoftGraphScheduleItemStart.t | nil,
-    :status => MicrosoftGraph.Model.MicrosoftGraphScheduleItemStatus.t | nil,
-    :subject => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :end => MicrosoftGraph.Model.MicrosoftGraphScheduleItemEnd.t() | nil,
+          :isPrivate => boolean() | nil,
+          :location => String.t() | nil,
+          :start => MicrosoftGraph.Model.MicrosoftGraphScheduleItemStart.t() | nil,
+          :status => MicrosoftGraph.Model.MicrosoftGraphScheduleItemStatus.t() | nil,
+          :subject => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:end, :struct, MicrosoftGraph.Model.MicrosoftGraphScheduleItemEnd)
-     |> Deserializer.deserialize(:start, :struct, MicrosoftGraph.Model.MicrosoftGraphScheduleItemStart)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.MicrosoftGraphScheduleItemStatus)
+    |> Deserializer.deserialize(:end, :struct, MicrosoftGraph.Model.MicrosoftGraphScheduleItemEnd)
+    |> Deserializer.deserialize(
+      :start,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphScheduleItemStart
+    )
+    |> Deserializer.deserialize(
+      :status,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphScheduleItemStatus
+    )
   end
 end
-

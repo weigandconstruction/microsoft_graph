@@ -23,8 +23,19 @@ defmodule MicrosoftGraph.Api.FilterOperatorsFilterOperatorSchema do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphFilterOperatorSchema.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec filter_operators_filter_operator_schema_create_filter_operator_schema(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphFilterOperatorSchema.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphFilterOperatorSchema.t} | {:error, Tesla.Env.t}
-  def filter_operators_filter_operator_schema_create_filter_operator_schema(connection, microsoft_graph_filter_operator_schema, _opts \\ []) do
+  @spec filter_operators_filter_operator_schema_create_filter_operator_schema(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphFilterOperatorSchema.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphFilterOperatorSchema.t()}
+          | {:error, Tesla.Env.t()}
+  def filter_operators_filter_operator_schema_create_filter_operator_schema(
+        connection,
+        microsoft_graph_filter_operator_schema,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -56,8 +67,19 @@ defmodule MicrosoftGraph.Api.FilterOperatorsFilterOperatorSchema do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec filter_operators_filter_operator_schema_delete_filter_operator_schema(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def filter_operators_filter_operator_schema_delete_filter_operator_schema(connection, filter_operator_schema_id, opts \\ []) do
+  @spec filter_operators_filter_operator_schema_delete_filter_operator_schema(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def filter_operators_filter_operator_schema_delete_filter_operator_schema(
+        connection,
+        filter_operator_schema_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -94,8 +116,19 @@ defmodule MicrosoftGraph.Api.FilterOperatorsFilterOperatorSchema do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphFilterOperatorSchema.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec filter_operators_filter_operator_schema_get_filter_operator_schema(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphFilterOperatorSchema.t} | {:error, Tesla.Env.t}
-  def filter_operators_filter_operator_schema_get_filter_operator_schema(connection, filter_operator_schema_id, opts \\ []) do
+  @spec filter_operators_filter_operator_schema_get_filter_operator_schema(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphFilterOperatorSchema.t()}
+          | {:error, Tesla.Env.t()}
+  def filter_operators_filter_operator_schema_get_filter_operator_schema(
+        connection,
+        filter_operator_schema_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -138,7 +171,13 @@ defmodule MicrosoftGraph.Api.FilterOperatorsFilterOperatorSchema do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphFilterOperatorSchemaCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec filter_operators_filter_operator_schema_list_filter_operator_schema(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphFilterOperatorSchemaCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec filter_operators_filter_operator_schema_list_filter_operator_schema(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphFilterOperatorSchemaCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def filter_operators_filter_operator_schema_list_filter_operator_schema(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -182,8 +221,21 @@ defmodule MicrosoftGraph.Api.FilterOperatorsFilterOperatorSchema do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphFilterOperatorSchema.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec filter_operators_filter_operator_schema_update_filter_operator_schema(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphFilterOperatorSchema.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphFilterOperatorSchema.t} | {:error, Tesla.Env.t}
-  def filter_operators_filter_operator_schema_update_filter_operator_schema(connection, filter_operator_schema_id, microsoft_graph_filter_operator_schema, _opts \\ []) do
+  @spec filter_operators_filter_operator_schema_update_filter_operator_schema(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphFilterOperatorSchema.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphFilterOperatorSchema.t()}
+          | {:error, Tesla.Env.t()}
+  def filter_operators_filter_operator_schema_update_filter_operator_schema(
+        connection,
+        filter_operator_schema_id,
+        microsoft_graph_filter_operator_schema,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -215,7 +267,10 @@ defmodule MicrosoftGraph.Api.FilterOperatorsFilterOperatorSchema do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec filter_operators_get_count_b21d(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec filter_operators_get_count_b21d(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def filter_operators_get_count_b21d(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,

@@ -14,16 +14,19 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionProxied
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :displayName => String.t | nil,
-    :proxiedDomains => [MicrosoftGraph.Model.MicrosoftGraphProxiedDomain.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :displayName => String.t() | nil,
+          :proxiedDomains => [MicrosoftGraph.Model.MicrosoftGraphProxiedDomain.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:proxiedDomains, :list, MicrosoftGraph.Model.MicrosoftGraphProxiedDomain)
+    |> Deserializer.deserialize(
+      :proxiedDomains,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphProxiedDomain
+    )
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphChatMessageInfo do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,25 +19,32 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphChatMessageInfo do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :body => MicrosoftGraph.Model.ChatMessageInfoBody.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :eventDetail => MicrosoftGraph.Model.ChatMessageInfoEventDetail.t | nil,
-    :from => MicrosoftGraph.Model.ChatMessageInfoFrom.t | nil,
-    :isDeleted => boolean() | nil,
-    :messageType => MicrosoftGraph.Model.MicrosoftGraphChatMessageType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :body => MicrosoftGraph.Model.ChatMessageInfoBody.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :eventDetail => MicrosoftGraph.Model.ChatMessageInfoEventDetail.t() | nil,
+          :from => MicrosoftGraph.Model.ChatMessageInfoFrom.t() | nil,
+          :isDeleted => boolean() | nil,
+          :messageType => MicrosoftGraph.Model.MicrosoftGraphChatMessageType.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:body, :struct, MicrosoftGraph.Model.ChatMessageInfoBody)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:eventDetail, :struct, MicrosoftGraph.Model.ChatMessageInfoEventDetail)
-     |> Deserializer.deserialize(:from, :struct, MicrosoftGraph.Model.ChatMessageInfoFrom)
-     |> Deserializer.deserialize(:messageType, :struct, MicrosoftGraph.Model.MicrosoftGraphChatMessageType)
+    |> Deserializer.deserialize(:body, :struct, MicrosoftGraph.Model.ChatMessageInfoBody)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :eventDetail,
+      :struct,
+      MicrosoftGraph.Model.ChatMessageInfoEventDetail
+    )
+    |> Deserializer.deserialize(:from, :struct, MicrosoftGraph.Model.ChatMessageInfoFrom)
+    |> Deserializer.deserialize(
+      :messageType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphChatMessageType
+    )
   end
 end
-

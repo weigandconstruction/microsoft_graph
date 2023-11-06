@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DirectoryRoleTemplatesDirectoryRoleTemplateCheckMemberObjectsRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,11 +12,10 @@ defmodule MicrosoftGraph.Model.DirectoryRoleTemplatesDirectoryRoleTemplateCheckM
   ]
 
   @type t :: %__MODULE__{
-    :ids => [String.t] | nil
-  }
+          :ids => [String.t()] | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.SitesSiteListsListContentTypesContentTypeAssociateWithHubSitesRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,12 +13,11 @@ defmodule MicrosoftGraph.Model.SitesSiteListsListContentTypesContentTypeAssociat
   ]
 
   @type t :: %__MODULE__{
-    :hubSiteUrls => [String.t] | nil,
-    :propagateToExistingLists => boolean() | nil
-  }
+          :hubSiteUrls => [String.t()] | nil,
+          :propagateToExistingLists => boolean() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

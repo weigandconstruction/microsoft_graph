@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAccessPackageAssignmentRequestRequirements do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -20,23 +20,32 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAccessPackageAssignmentRequestRequi
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :allowCustomAssignmentSchedule => boolean() | nil,
-    :isApprovalRequiredForAdd => boolean() | nil,
-    :isApprovalRequiredForUpdate => boolean() | nil,
-    :policyDescription => String.t | nil,
-    :policyDisplayName => String.t | nil,
-    :policyId => String.t | nil,
-    :questions => [MicrosoftGraph.Model.MicrosoftGraphAccessPackageQuestion.t] | nil,
-    :schedule => MicrosoftGraph.Model.MicrosoftGraphAccessPackageAssignmentRequestRequirementsSchedule.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :allowCustomAssignmentSchedule => boolean() | nil,
+          :isApprovalRequiredForAdd => boolean() | nil,
+          :isApprovalRequiredForUpdate => boolean() | nil,
+          :policyDescription => String.t() | nil,
+          :policyDisplayName => String.t() | nil,
+          :policyId => String.t() | nil,
+          :questions => [MicrosoftGraph.Model.MicrosoftGraphAccessPackageQuestion.t()] | nil,
+          :schedule =>
+            MicrosoftGraph.Model.MicrosoftGraphAccessPackageAssignmentRequestRequirementsSchedule.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:questions, :list, MicrosoftGraph.Model.MicrosoftGraphAccessPackageQuestion)
-     |> Deserializer.deserialize(:schedule, :struct, MicrosoftGraph.Model.MicrosoftGraphAccessPackageAssignmentRequestRequirementsSchedule)
+    |> Deserializer.deserialize(
+      :questions,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAccessPackageQuestion
+    )
+    |> Deserializer.deserialize(
+      :schedule,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAccessPackageAssignmentRequestRequirementsSchedule
+    )
   end
 end
-

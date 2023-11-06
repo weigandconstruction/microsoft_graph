@@ -14,16 +14,15 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphIosHomeScreenFolderPage do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :apps => [MicrosoftGraph.Model.MicrosoftGraphIosHomeScreenApp.t] | nil,
-    :displayName => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :apps => [MicrosoftGraph.Model.MicrosoftGraphIosHomeScreenApp.t()] | nil,
+          :displayName => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:apps, :list, MicrosoftGraph.Model.MicrosoftGraphIosHomeScreenApp)
+    |> Deserializer.deserialize(:apps, :list, MicrosoftGraph.Model.MicrosoftGraphIosHomeScreenApp)
   end
 end
-

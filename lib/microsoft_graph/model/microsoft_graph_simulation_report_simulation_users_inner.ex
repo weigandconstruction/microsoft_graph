@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSimulationReportSimulationUsersInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -21,27 +21,44 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSimulationReportSimulationUsersInne
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :assignedTrainingsCount => integer() | nil,
-    :completedTrainingsCount => integer() | nil,
-    :compromisedDateTime => DateTime.t | nil,
-    :inProgressTrainingsCount => integer() | nil,
-    :isCompromised => boolean() | nil,
-    :reportedPhishDateTime => DateTime.t | nil,
-    :simulationEvents => [MicrosoftGraph.Model.MicrosoftGraphUserSimulationDetailsSimulationEventsInner.t] | nil,
-    :simulationUser => MicrosoftGraph.Model.MicrosoftGraphAttackSimulationSimulationUserCoverageAttackSimulationUser.t | nil,
-    :trainingEvents => [MicrosoftGraph.Model.MicrosoftGraphUserSimulationDetailsTrainingEventsInner.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :assignedTrainingsCount => integer() | nil,
+          :completedTrainingsCount => integer() | nil,
+          :compromisedDateTime => DateTime.t() | nil,
+          :inProgressTrainingsCount => integer() | nil,
+          :isCompromised => boolean() | nil,
+          :reportedPhishDateTime => DateTime.t() | nil,
+          :simulationEvents =>
+            [MicrosoftGraph.Model.MicrosoftGraphUserSimulationDetailsSimulationEventsInner.t()]
+            | nil,
+          :simulationUser =>
+            MicrosoftGraph.Model.MicrosoftGraphAttackSimulationSimulationUserCoverageAttackSimulationUser.t()
+            | nil,
+          :trainingEvents =>
+            [MicrosoftGraph.Model.MicrosoftGraphUserSimulationDetailsTrainingEventsInner.t()]
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:compromisedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:reportedPhishDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:simulationEvents, :list, MicrosoftGraph.Model.MicrosoftGraphUserSimulationDetailsSimulationEventsInner)
-     |> Deserializer.deserialize(:simulationUser, :struct, MicrosoftGraph.Model.MicrosoftGraphAttackSimulationSimulationUserCoverageAttackSimulationUser)
-     |> Deserializer.deserialize(:trainingEvents, :list, MicrosoftGraph.Model.MicrosoftGraphUserSimulationDetailsTrainingEventsInner)
+    |> Deserializer.deserialize(:compromisedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:reportedPhishDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :simulationEvents,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphUserSimulationDetailsSimulationEventsInner
+    )
+    |> Deserializer.deserialize(
+      :simulationUser,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAttackSimulationSimulationUserCoverageAttackSimulationUser
+    )
+    |> Deserializer.deserialize(
+      :trainingEvents,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphUserSimulationDetailsTrainingEventsInner
+    )
   end
 end
-

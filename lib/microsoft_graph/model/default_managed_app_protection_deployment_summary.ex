@@ -18,21 +18,28 @@ defmodule MicrosoftGraph.Model.DefaultManagedAppProtectionDeploymentSummary do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :configurationDeployedUserCount => integer() | nil,
-    :configurationDeploymentSummaryPerApp => [MicrosoftGraph.Model.ManagedAppPolicyDeploymentSummaryConfigurationDeploymentSummaryPerAppInner.t] | nil,
-    :displayName => String.t | nil,
-    :lastRefreshTime => DateTime.t | nil,
-    :version => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :configurationDeployedUserCount => integer() | nil,
+          :configurationDeploymentSummaryPerApp =>
+            [
+              MicrosoftGraph.Model.ManagedAppPolicyDeploymentSummaryConfigurationDeploymentSummaryPerAppInner.t()
+            ]
+            | nil,
+          :displayName => String.t() | nil,
+          :lastRefreshTime => DateTime.t() | nil,
+          :version => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:configurationDeploymentSummaryPerApp, :list, MicrosoftGraph.Model.ManagedAppPolicyDeploymentSummaryConfigurationDeploymentSummaryPerAppInner)
-     |> Deserializer.deserialize(:lastRefreshTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :configurationDeploymentSummaryPerApp,
+      :list,
+      MicrosoftGraph.Model.ManagedAppPolicyDeploymentSummaryConfigurationDeploymentSummaryPerAppInner
+    )
+    |> Deserializer.deserialize(:lastRefreshTime, :datetime, nil)
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphIosUpdateDeviceStatus do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -24,29 +24,36 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphIosUpdateDeviceStatus do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :complianceGracePeriodExpirationDateTime => DateTime.t | nil,
-    :deviceDisplayName => String.t | nil,
-    :deviceId => String.t | nil,
-    :deviceModel => String.t | nil,
-    :installStatus => MicrosoftGraph.Model.MicrosoftGraphIosUpdatesInstallStatus.t | nil,
-    :lastReportedDateTime => DateTime.t | nil,
-    :osVersion => String.t | nil,
-    :status => MicrosoftGraph.Model.MicrosoftGraphComplianceStatus.t | nil,
-    :userId => String.t | nil,
-    :userName => String.t | nil,
-    :userPrincipalName => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :complianceGracePeriodExpirationDateTime => DateTime.t() | nil,
+          :deviceDisplayName => String.t() | nil,
+          :deviceId => String.t() | nil,
+          :deviceModel => String.t() | nil,
+          :installStatus => MicrosoftGraph.Model.MicrosoftGraphIosUpdatesInstallStatus.t() | nil,
+          :lastReportedDateTime => DateTime.t() | nil,
+          :osVersion => String.t() | nil,
+          :status => MicrosoftGraph.Model.MicrosoftGraphComplianceStatus.t() | nil,
+          :userId => String.t() | nil,
+          :userName => String.t() | nil,
+          :userPrincipalName => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:complianceGracePeriodExpirationDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:installStatus, :struct, MicrosoftGraph.Model.MicrosoftGraphIosUpdatesInstallStatus)
-     |> Deserializer.deserialize(:lastReportedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.MicrosoftGraphComplianceStatus)
+    |> Deserializer.deserialize(:complianceGracePeriodExpirationDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :installStatus,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphIosUpdatesInstallStatus
+    )
+    |> Deserializer.deserialize(:lastReportedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :status,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphComplianceStatus
+    )
   end
 end
-

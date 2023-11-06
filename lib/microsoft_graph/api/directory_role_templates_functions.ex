@@ -29,7 +29,10 @@ defmodule MicrosoftGraph.Api.DirectoryRoleTemplatesFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfDirectoryObject1.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_role_templates_delta(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfDirectoryObject1.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec directory_role_templates_delta(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfDirectoryObject1.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def directory_role_templates_delta(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,

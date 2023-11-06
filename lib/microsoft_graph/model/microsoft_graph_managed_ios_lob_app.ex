@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphManagedIosLobApp do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -40,52 +40,81 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphManagedIosLobApp do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :assignments => [MicrosoftGraph.Model.MicrosoftGraphMobileAppAssignment.t] | nil,
-    :categories => [MicrosoftGraph.Model.MicrosoftGraphMobileAppCategory.t] | nil,
-    :createdDateTime => DateTime.t | nil,
-    :description => String.t | nil,
-    :developer => String.t | nil,
-    :displayName => String.t | nil,
-    :informationUrl => String.t | nil,
-    :isFeatured => boolean() | nil,
-    :largeIcon => MicrosoftGraph.Model.MobileAppLargeIcon.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :notes => String.t | nil,
-    :owner => String.t | nil,
-    :privacyInformationUrl => String.t | nil,
-    :publisher => String.t | nil,
-    :publishingState => MicrosoftGraph.Model.MicrosoftGraphMobileAppPublishingState.t | nil,
-    :appAvailability => MicrosoftGraph.Model.MicrosoftGraphManagedAppAvailability.t | nil,
-    :version => String.t | nil,
-    :committedContentVersion => String.t | nil,
-    :contentVersions => [MicrosoftGraph.Model.MicrosoftGraphMobileAppContent.t] | nil,
-    :fileName => String.t | nil,
-    :size => integer() | nil,
-    :applicableDeviceType => MicrosoftGraph.Model.MicrosoftGraphIosDeviceType.t | nil,
-    :buildNumber => String.t | nil,
-    :bundleId => String.t | nil,
-    :expirationDateTime => DateTime.t | nil,
-    :minimumSupportedOperatingSystem => MicrosoftGraph.Model.IosStoreAppMinimumSupportedOperatingSystem.t | nil,
-    :versionNumber => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :assignments => [MicrosoftGraph.Model.MicrosoftGraphMobileAppAssignment.t()] | nil,
+          :categories => [MicrosoftGraph.Model.MicrosoftGraphMobileAppCategory.t()] | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :developer => String.t() | nil,
+          :displayName => String.t() | nil,
+          :informationUrl => String.t() | nil,
+          :isFeatured => boolean() | nil,
+          :largeIcon => MicrosoftGraph.Model.MobileAppLargeIcon.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :notes => String.t() | nil,
+          :owner => String.t() | nil,
+          :privacyInformationUrl => String.t() | nil,
+          :publisher => String.t() | nil,
+          :publishingState =>
+            MicrosoftGraph.Model.MicrosoftGraphMobileAppPublishingState.t() | nil,
+          :appAvailability => MicrosoftGraph.Model.MicrosoftGraphManagedAppAvailability.t() | nil,
+          :version => String.t() | nil,
+          :committedContentVersion => String.t() | nil,
+          :contentVersions => [MicrosoftGraph.Model.MicrosoftGraphMobileAppContent.t()] | nil,
+          :fileName => String.t() | nil,
+          :size => integer() | nil,
+          :applicableDeviceType => MicrosoftGraph.Model.MicrosoftGraphIosDeviceType.t() | nil,
+          :buildNumber => String.t() | nil,
+          :bundleId => String.t() | nil,
+          :expirationDateTime => DateTime.t() | nil,
+          :minimumSupportedOperatingSystem =>
+            MicrosoftGraph.Model.IosStoreAppMinimumSupportedOperatingSystem.t() | nil,
+          :versionNumber => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:assignments, :list, MicrosoftGraph.Model.MicrosoftGraphMobileAppAssignment)
-     |> Deserializer.deserialize(:categories, :list, MicrosoftGraph.Model.MicrosoftGraphMobileAppCategory)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:largeIcon, :struct, MicrosoftGraph.Model.MobileAppLargeIcon)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:publishingState, :struct, MicrosoftGraph.Model.MicrosoftGraphMobileAppPublishingState)
-     |> Deserializer.deserialize(:appAvailability, :struct, MicrosoftGraph.Model.MicrosoftGraphManagedAppAvailability)
-     |> Deserializer.deserialize(:contentVersions, :list, MicrosoftGraph.Model.MicrosoftGraphMobileAppContent)
-     |> Deserializer.deserialize(:applicableDeviceType, :struct, MicrosoftGraph.Model.MicrosoftGraphIosDeviceType)
-     |> Deserializer.deserialize(:expirationDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:minimumSupportedOperatingSystem, :struct, MicrosoftGraph.Model.IosStoreAppMinimumSupportedOperatingSystem)
+    |> Deserializer.deserialize(
+      :assignments,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphMobileAppAssignment
+    )
+    |> Deserializer.deserialize(
+      :categories,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphMobileAppCategory
+    )
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:largeIcon, :struct, MicrosoftGraph.Model.MobileAppLargeIcon)
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :publishingState,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphMobileAppPublishingState
+    )
+    |> Deserializer.deserialize(
+      :appAvailability,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphManagedAppAvailability
+    )
+    |> Deserializer.deserialize(
+      :contentVersions,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphMobileAppContent
+    )
+    |> Deserializer.deserialize(
+      :applicableDeviceType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphIosDeviceType
+    )
+    |> Deserializer.deserialize(:expirationDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :minimumSupportedOperatingSystem,
+      :struct,
+      MicrosoftGraph.Model.IosStoreAppMinimumSupportedOperatingSystem
+    )
   end
 end
-

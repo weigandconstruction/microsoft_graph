@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphPinnedChatMessageInfo do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,19 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphPinnedChatMessageInfo do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :message => MicrosoftGraph.Model.PinnedChatMessageInfoMessage.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :message => MicrosoftGraph.Model.PinnedChatMessageInfoMessage.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:message, :struct, MicrosoftGraph.Model.PinnedChatMessageInfoMessage)
+    |> Deserializer.deserialize(
+      :message,
+      :struct,
+      MicrosoftGraph.Model.PinnedChatMessageInfoMessage
+    )
   end
 end
-

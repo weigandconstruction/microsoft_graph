@@ -23,22 +23,21 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphDeviceProtectionOverview do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :cleanDeviceCount => integer() | nil,
-    :criticalFailuresDeviceCount => integer() | nil,
-    :inactiveThreatAgentDeviceCount => integer() | nil,
-    :pendingFullScanDeviceCount => integer() | nil,
-    :pendingManualStepsDeviceCount => integer() | nil,
-    :pendingOfflineScanDeviceCount => integer() | nil,
-    :pendingQuickScanDeviceCount => integer() | nil,
-    :pendingRestartDeviceCount => integer() | nil,
-    :pendingSignatureUpdateDeviceCount => integer() | nil,
-    :totalReportedDeviceCount => integer() | nil,
-    :unknownStateThreatAgentDeviceCount => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :cleanDeviceCount => integer() | nil,
+          :criticalFailuresDeviceCount => integer() | nil,
+          :inactiveThreatAgentDeviceCount => integer() | nil,
+          :pendingFullScanDeviceCount => integer() | nil,
+          :pendingManualStepsDeviceCount => integer() | nil,
+          :pendingOfflineScanDeviceCount => integer() | nil,
+          :pendingQuickScanDeviceCount => integer() | nil,
+          :pendingRestartDeviceCount => integer() | nil,
+          :pendingSignatureUpdateDeviceCount => integer() | nil,
+          :totalReportedDeviceCount => integer() | nil,
+          :unknownStateThreatAgentDeviceCount => integer() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

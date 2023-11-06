@@ -17,16 +17,15 @@ defmodule MicrosoftGraph.Model.ColumnDefinitionText do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :allowMultipleLines => boolean() | nil,
-    :appendChangesToExistingText => boolean() | nil,
-    :linesForEditing => integer() | nil,
-    :maxLength => integer() | nil,
-    :textType => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :allowMultipleLines => boolean() | nil,
+          :appendChangesToExistingText => boolean() | nil,
+          :linesForEditing => integer() | nil,
+          :maxLength => integer() | nil,
+          :textType => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

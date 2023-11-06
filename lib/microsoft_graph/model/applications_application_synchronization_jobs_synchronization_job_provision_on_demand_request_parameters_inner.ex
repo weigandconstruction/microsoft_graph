@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.ApplicationsApplicationSynchronizationJobsSynchronizationJobProvisionOnDemandRequestParametersInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,23 @@ defmodule MicrosoftGraph.Model.ApplicationsApplicationSynchronizationJobsSynchro
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :ruleId => String.t | nil,
-    :subjects => [MicrosoftGraph.Model.MicrosoftGraphSynchronizationJobApplicationParametersSubjectsInner.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :ruleId => String.t() | nil,
+          :subjects =>
+            [
+              MicrosoftGraph.Model.MicrosoftGraphSynchronizationJobApplicationParametersSubjectsInner.t()
+            ]
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:subjects, :list, MicrosoftGraph.Model.MicrosoftGraphSynchronizationJobApplicationParametersSubjectsInner)
+    |> Deserializer.deserialize(
+      :subjects,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSynchronizationJobApplicationParametersSubjectsInner
+    )
   end
 end
-

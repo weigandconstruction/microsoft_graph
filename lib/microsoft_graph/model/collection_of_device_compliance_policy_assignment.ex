@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.CollectionOfDeviceCompliancePolicyAssignment do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,23 @@ defmodule MicrosoftGraph.Model.CollectionOfDeviceCompliancePolicyAssignment do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.count" => integer() | nil,
-    :"@odata.nextLink" => String.t | nil,
-    :value => [MicrosoftGraph.Model.DeviceManagementDeviceCompliancePoliciesDeviceCompliancePolicyAssignRequestAssignmentsInner.t] | nil
-  }
+          :"@odata.count" => integer() | nil,
+          :"@odata.nextLink" => String.t() | nil,
+          :value =>
+            [
+              MicrosoftGraph.Model.DeviceManagementDeviceCompliancePoliciesDeviceCompliancePolicyAssignRequestAssignmentsInner.t()
+            ]
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:value, :list, MicrosoftGraph.Model.DeviceManagementDeviceCompliancePoliciesDeviceCompliancePolicyAssignRequestAssignmentsInner)
+    |> Deserializer.deserialize(
+      :value,
+      :list,
+      MicrosoftGraph.Model.DeviceManagementDeviceCompliancePoliciesDeviceCompliancePolicyAssignRequestAssignmentsInner
+    )
   end
 end
-

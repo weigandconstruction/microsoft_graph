@@ -30,7 +30,10 @@ defmodule MicrosoftGraph.Api.MeServiceProvisioningError do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_list_service_provisioning_errors(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_list_service_provisioning_errors(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_list_service_provisioning_errors(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -74,7 +77,10 @@ defmodule MicrosoftGraph.Api.MeServiceProvisioningError do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_service_provisioning_errors_get_count81cf(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_service_provisioning_errors_get_count81cf(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_service_provisioning_errors_get_count81cf(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,

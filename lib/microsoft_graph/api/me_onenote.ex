@@ -23,7 +23,10 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_delete_onenote(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_delete_onenote(Tesla.Env.client(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_delete_onenote(connection, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -60,7 +63,10 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenote.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_get_onenote(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenote.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_get_onenote(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenote.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_get_onenote(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -98,7 +104,14 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphNotebook.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_create_notebooks(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphNotebook.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphNotebook.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_create_notebooks(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphNotebook.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphNotebook.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_create_notebooks(connection, microsoft_graph_notebook, _opts \\ []) do
     request =
       %{}
@@ -130,7 +143,14 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteOperation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_create_operations(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphOnenoteOperation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteOperation.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_create_operations(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphOnenoteOperation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteOperation.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_create_operations(connection, microsoft_graph_onenote_operation, _opts \\ []) do
     request =
       %{}
@@ -163,7 +183,14 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_create_pages(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_create_pages(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_create_pages(connection, microsoft_graph_onenote_page, _opts \\ []) do
     request =
       %{}
@@ -195,7 +222,14 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteResource.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_create_resources(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphOnenoteResource.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteResource.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_create_resources(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphOnenoteResource.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteResource.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_create_resources(connection, microsoft_graph_onenote_resource, _opts \\ []) do
     request =
       %{}
@@ -227,7 +261,14 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_create_section_groups(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_create_section_groups(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_create_section_groups(connection, microsoft_graph_section_group, _opts \\ []) do
     request =
       %{}
@@ -259,7 +300,14 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_create_sections(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_create_sections(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_create_sections(connection, microsoft_graph_onenote_section, _opts \\ []) do
     request =
       %{}
@@ -292,7 +340,10 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_delete_notebooks(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_delete_notebooks(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_delete_notebooks(connection, notebook_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -329,7 +380,10 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_delete_operations(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_delete_operations(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_delete_operations(connection, onenote_operation_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -367,7 +421,10 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_delete_pages(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_delete_pages(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_delete_pages(connection, onenote_page_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -404,7 +461,10 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_delete_resources(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_delete_resources(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_delete_resources(connection, onenote_resource_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -441,7 +501,10 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_delete_section_groups(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_delete_section_groups(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_delete_section_groups(connection, section_group_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -478,7 +541,10 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_delete_sections(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_delete_sections(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_delete_sections(connection, onenote_section_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -517,7 +583,10 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphNotebook.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_get_notebooks(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphNotebook.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_get_notebooks(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphNotebook.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_get_notebooks(connection, notebook_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -557,7 +626,10 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteOperation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_get_operations(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteOperation.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_get_operations(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteOperation.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_get_operations(connection, onenote_operation_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -597,7 +669,10 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_get_pages(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_get_pages(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_get_pages(connection, onenote_page_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -635,7 +710,10 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_get_pages_content(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_get_pages_content(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_get_pages_content(connection, onenote_page_id, _opts \\ []) do
     request =
       %{}
@@ -669,7 +747,10 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteResource.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_get_resources(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteResource.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_get_resources(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteResource.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_get_resources(connection, onenote_resource_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -707,7 +788,10 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_get_resources_content(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_get_resources_content(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_get_resources_content(connection, onenote_resource_id, _opts \\ []) do
     request =
       %{}
@@ -741,7 +825,10 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_get_section_groups(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_get_section_groups(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_get_section_groups(connection, section_group_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -781,7 +868,10 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_get_sections(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_get_sections(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_get_sections(connection, onenote_section_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -826,7 +916,10 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphNotebookCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_list_notebooks(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphNotebookCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_list_notebooks(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphNotebookCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_list_notebooks(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -877,7 +970,10 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteOperationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_list_operations(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteOperationCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_list_operations(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteOperationCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_list_operations(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -928,7 +1024,10 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePageCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_list_pages(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePageCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_list_pages(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePageCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_list_pages(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -979,7 +1078,10 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteResourceCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_list_resources(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteResourceCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_list_resources(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteResourceCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_list_resources(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1030,7 +1132,10 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroupCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_list_section_groups(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroupCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_list_section_groups(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroupCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_list_section_groups(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1081,7 +1186,10 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSectionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_list_sections(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSectionCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_list_sections(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSectionCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_list_sections(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1126,8 +1234,21 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_create_section_groups(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_create_section_groups(connection, notebook_id, microsoft_graph_section_group, _opts \\ []) do
+  @spec me_onenote_notebooks_create_section_groups(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_create_section_groups(
+        connection,
+        notebook_id,
+        microsoft_graph_section_group,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1160,8 +1281,21 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_create_sections(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_create_sections(connection, notebook_id, microsoft_graph_onenote_section, _opts \\ []) do
+  @spec me_onenote_notebooks_create_sections(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_create_sections(
+        connection,
+        notebook_id,
+        microsoft_graph_onenote_section,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1194,8 +1328,21 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_delete_section_groups(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_delete_section_groups(connection, notebook_id, section_group_id, opts \\ []) do
+  @spec me_onenote_notebooks_delete_section_groups(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_delete_section_groups(
+        connection,
+        notebook_id,
+        section_group_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1232,8 +1379,21 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_delete_sections(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_delete_sections(connection, notebook_id, onenote_section_id, opts \\ []) do
+  @spec me_onenote_notebooks_delete_sections(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_delete_sections(
+        connection,
+        notebook_id,
+        onenote_section_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1269,7 +1429,10 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_get_count6c1a(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_notebooks_get_count6c1a(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_notebooks_get_count6c1a(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -1310,8 +1473,21 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_get_section_groups(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_get_section_groups(connection, notebook_id, section_group_id, opts \\ []) do
+  @spec me_onenote_notebooks_get_section_groups(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_get_section_groups(
+        connection,
+        notebook_id,
+        section_group_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1351,7 +1527,10 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_get_sections(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_notebooks_get_sections(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_notebooks_get_sections(connection, notebook_id, onenote_section_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -1397,7 +1576,10 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroupCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_list_section_groups(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroupCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_notebooks_list_section_groups(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroupCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_notebooks_list_section_groups(connection, notebook_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1449,7 +1631,10 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSectionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_list_sections(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSectionCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_notebooks_list_sections(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSectionCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_notebooks_list_sections(connection, notebook_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1495,8 +1680,23 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_section_groups_create_sections(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_section_groups_create_sections(connection, notebook_id, section_group_id, microsoft_graph_onenote_section, _opts \\ []) do
+  @spec me_onenote_notebooks_section_groups_create_sections(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_section_groups_create_sections(
+        connection,
+        notebook_id,
+        section_group_id,
+        microsoft_graph_onenote_section,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1530,8 +1730,23 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_section_groups_delete_sections(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_section_groups_delete_sections(connection, notebook_id, section_group_id, onenote_section_id, opts \\ []) do
+  @spec me_onenote_notebooks_section_groups_delete_sections(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_section_groups_delete_sections(
+        connection,
+        notebook_id,
+        section_group_id,
+        onenote_section_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1539,7 +1754,9 @@ defmodule MicrosoftGraph.Api.MeOnenote do
     request =
       %{}
       |> method(:delete)
-      |> url("/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}")
+      |> url(
+        "/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1568,7 +1785,14 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_section_groups_get_count_ab55(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_notebooks_section_groups_get_count_ab55(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_notebooks_section_groups_get_count_ab55(connection, notebook_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -1609,8 +1833,21 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphNotebook.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_section_groups_get_parent_notebook(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphNotebook.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_section_groups_get_parent_notebook(connection, notebook_id, section_group_id, opts \\ []) do
+  @spec me_onenote_notebooks_section_groups_get_parent_notebook(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphNotebook.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_section_groups_get_parent_notebook(
+        connection,
+        notebook_id,
+        section_group_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1619,7 +1856,9 @@ defmodule MicrosoftGraph.Api.MeOnenote do
     request =
       %{}
       |> method(:get)
-      |> url("/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/parentNotebook")
+      |> url(
+        "/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/parentNotebook"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1650,8 +1889,21 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_section_groups_get_parent_section_group(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_section_groups_get_parent_section_group(connection, notebook_id, section_group_id, opts \\ []) do
+  @spec me_onenote_notebooks_section_groups_get_parent_section_group(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_section_groups_get_parent_section_group(
+        connection,
+        notebook_id,
+        section_group_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1660,7 +1912,9 @@ defmodule MicrosoftGraph.Api.MeOnenote do
     request =
       %{}
       |> method(:get)
-      |> url("/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/parentSectionGroup")
+      |> url(
+        "/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/parentSectionGroup"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1692,8 +1946,23 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_section_groups_get_section_groups(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_section_groups_get_section_groups(connection, notebook_id, section_group_id, section_group_id1, opts \\ []) do
+  @spec me_onenote_notebooks_section_groups_get_section_groups(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_section_groups_get_section_groups(
+        connection,
+        notebook_id,
+        section_group_id,
+        section_group_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1702,7 +1971,9 @@ defmodule MicrosoftGraph.Api.MeOnenote do
     request =
       %{}
       |> method(:get)
-      |> url("/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sectionGroups/#{section_group_id1}")
+      |> url(
+        "/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sectionGroups/#{section_group_id1}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1734,8 +2005,23 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_section_groups_get_sections(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_section_groups_get_sections(connection, notebook_id, section_group_id, onenote_section_id, opts \\ []) do
+  @spec me_onenote_notebooks_section_groups_get_sections(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_section_groups_get_sections(
+        connection,
+        notebook_id,
+        section_group_id,
+        onenote_section_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1744,7 +2030,9 @@ defmodule MicrosoftGraph.Api.MeOnenote do
     request =
       %{}
       |> method(:get)
-      |> url("/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}")
+      |> url(
+        "/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1781,8 +2069,21 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroupCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_section_groups_list_section_groups(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroupCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_section_groups_list_section_groups(connection, notebook_id, section_group_id, opts \\ []) do
+  @spec me_onenote_notebooks_section_groups_list_section_groups(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroupCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_section_groups_list_section_groups(
+        connection,
+        notebook_id,
+        section_group_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1797,7 +2098,9 @@ defmodule MicrosoftGraph.Api.MeOnenote do
     request =
       %{}
       |> method(:get)
-      |> url("/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sectionGroups")
+      |> url(
+        "/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sectionGroups"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1834,8 +2137,21 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSectionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_section_groups_list_sections(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSectionCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_section_groups_list_sections(connection, notebook_id, section_group_id, opts \\ []) do
+  @spec me_onenote_notebooks_section_groups_list_sections(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSectionCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_section_groups_list_sections(
+        connection,
+        notebook_id,
+        section_group_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1880,8 +2196,21 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_section_groups_section_groups_get_count_ab55(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_section_groups_section_groups_get_count_ab55(connection, notebook_id, section_group_id, opts \\ []) do
+  @spec me_onenote_notebooks_section_groups_section_groups_get_count_ab55(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_section_groups_section_groups_get_count_ab55(
+        connection,
+        notebook_id,
+        section_group_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1890,7 +2219,9 @@ defmodule MicrosoftGraph.Api.MeOnenote do
     request =
       %{}
       |> method(:get)
-      |> url("/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sectionGroups/$count")
+      |> url(
+        "/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sectionGroups/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1921,12 +2252,31 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_section_groups_sections_create_pages(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_section_groups_sections_create_pages(connection, notebook_id, section_group_id, onenote_section_id, microsoft_graph_onenote_page, _opts \\ []) do
+  @spec me_onenote_notebooks_section_groups_sections_create_pages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_section_groups_sections_create_pages(
+        connection,
+        notebook_id,
+        section_group_id,
+        onenote_section_id,
+        microsoft_graph_onenote_page,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages")
+      |> url(
+        "/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages"
+      )
       |> add_param(:body, :body, microsoft_graph_onenote_page)
       |> Enum.into([])
 
@@ -1957,8 +2307,25 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_section_groups_sections_delete_pages(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_section_groups_sections_delete_pages(connection, notebook_id, section_group_id, onenote_section_id, onenote_page_id, opts \\ []) do
+  @spec me_onenote_notebooks_section_groups_sections_delete_pages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_section_groups_sections_delete_pages(
+        connection,
+        notebook_id,
+        section_group_id,
+        onenote_section_id,
+        onenote_page_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1966,7 +2333,9 @@ defmodule MicrosoftGraph.Api.MeOnenote do
     request =
       %{}
       |> method(:delete)
-      |> url("/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}")
+      |> url(
+        "/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1996,8 +2365,21 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_section_groups_sections_get_count505d(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_section_groups_sections_get_count505d(connection, notebook_id, section_group_id, opts \\ []) do
+  @spec me_onenote_notebooks_section_groups_sections_get_count505d(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_section_groups_sections_get_count505d(
+        connection,
+        notebook_id,
+        section_group_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -2006,7 +2388,9 @@ defmodule MicrosoftGraph.Api.MeOnenote do
     request =
       %{}
       |> method(:get)
-      |> url("/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/$count")
+      |> url(
+        "/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2039,8 +2423,25 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_section_groups_sections_get_pages(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_section_groups_sections_get_pages(connection, notebook_id, section_group_id, onenote_section_id, onenote_page_id, opts \\ []) do
+  @spec me_onenote_notebooks_section_groups_sections_get_pages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_section_groups_sections_get_pages(
+        connection,
+        notebook_id,
+        section_group_id,
+        onenote_section_id,
+        onenote_page_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2049,7 +2450,9 @@ defmodule MicrosoftGraph.Api.MeOnenote do
     request =
       %{}
       |> method(:get)
-      |> url("/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}")
+      |> url(
+        "/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2080,12 +2483,31 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_section_groups_sections_get_pages_content(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_section_groups_sections_get_pages_content(connection, notebook_id, section_group_id, onenote_section_id, onenote_page_id, _opts \\ []) do
+  @spec me_onenote_notebooks_section_groups_sections_get_pages_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_section_groups_sections_get_pages_content(
+        connection,
+        notebook_id,
+        section_group_id,
+        onenote_section_id,
+        onenote_page_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/content")
+      |> url(
+        "/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/content"
+      )
       |> Enum.into([])
 
     connection
@@ -2116,8 +2538,23 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphNotebook.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_section_groups_sections_get_parent_notebook(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphNotebook.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_section_groups_sections_get_parent_notebook(connection, notebook_id, section_group_id, onenote_section_id, opts \\ []) do
+  @spec me_onenote_notebooks_section_groups_sections_get_parent_notebook(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphNotebook.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_section_groups_sections_get_parent_notebook(
+        connection,
+        notebook_id,
+        section_group_id,
+        onenote_section_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2126,7 +2563,9 @@ defmodule MicrosoftGraph.Api.MeOnenote do
     request =
       %{}
       |> method(:get)
-      |> url("/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/parentNotebook")
+      |> url(
+        "/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/parentNotebook"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2158,8 +2597,23 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_section_groups_sections_get_parent_section_group(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_section_groups_sections_get_parent_section_group(connection, notebook_id, section_group_id, onenote_section_id, opts \\ []) do
+  @spec me_onenote_notebooks_section_groups_sections_get_parent_section_group(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_section_groups_sections_get_parent_section_group(
+        connection,
+        notebook_id,
+        section_group_id,
+        onenote_section_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2168,7 +2622,9 @@ defmodule MicrosoftGraph.Api.MeOnenote do
     request =
       %{}
       |> method(:get)
-      |> url("/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/parentSectionGroup")
+      |> url(
+        "/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/parentSectionGroup"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2206,8 +2662,23 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePageCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_section_groups_sections_list_pages(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePageCollectionResponse.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_section_groups_sections_list_pages(connection, notebook_id, section_group_id, onenote_section_id, opts \\ []) do
+  @spec me_onenote_notebooks_section_groups_sections_list_pages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePageCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_section_groups_sections_list_pages(
+        connection,
+        notebook_id,
+        section_group_id,
+        onenote_section_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -2222,7 +2693,9 @@ defmodule MicrosoftGraph.Api.MeOnenote do
     request =
       %{}
       |> method(:get)
-      |> url("/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages")
+      |> url(
+        "/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2253,8 +2726,23 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_section_groups_sections_pages_get_count85ea(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_section_groups_sections_pages_get_count85ea(connection, notebook_id, section_group_id, onenote_section_id, opts \\ []) do
+  @spec me_onenote_notebooks_section_groups_sections_pages_get_count85ea(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_section_groups_sections_pages_get_count85ea(
+        connection,
+        notebook_id,
+        section_group_id,
+        onenote_section_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -2263,7 +2751,9 @@ defmodule MicrosoftGraph.Api.MeOnenote do
     request =
       %{}
       |> method(:get)
-      |> url("/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/$count")
+      |> url(
+        "/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2296,8 +2786,25 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphNotebook.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_section_groups_sections_pages_get_parent_notebook(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphNotebook.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_section_groups_sections_pages_get_parent_notebook(connection, notebook_id, section_group_id, onenote_section_id, onenote_page_id, opts \\ []) do
+  @spec me_onenote_notebooks_section_groups_sections_pages_get_parent_notebook(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphNotebook.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_section_groups_sections_pages_get_parent_notebook(
+        connection,
+        notebook_id,
+        section_group_id,
+        onenote_section_id,
+        onenote_page_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2306,7 +2813,9 @@ defmodule MicrosoftGraph.Api.MeOnenote do
     request =
       %{}
       |> method(:get)
-      |> url("/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/parentNotebook")
+      |> url(
+        "/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/parentNotebook"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2339,8 +2848,25 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_section_groups_sections_pages_get_parent_section(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_section_groups_sections_pages_get_parent_section(connection, notebook_id, section_group_id, onenote_section_id, onenote_page_id, opts \\ []) do
+  @spec me_onenote_notebooks_section_groups_sections_pages_get_parent_section(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_section_groups_sections_pages_get_parent_section(
+        connection,
+        notebook_id,
+        section_group_id,
+        onenote_section_id,
+        onenote_page_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2349,7 +2875,9 @@ defmodule MicrosoftGraph.Api.MeOnenote do
     request =
       %{}
       |> method(:get)
-      |> url("/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/parentSection")
+      |> url(
+        "/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/parentSection"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2380,12 +2908,33 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_section_groups_sections_update_pages(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_section_groups_sections_update_pages(connection, notebook_id, section_group_id, onenote_section_id, onenote_page_id, microsoft_graph_onenote_page, _opts \\ []) do
+  @spec me_onenote_notebooks_section_groups_sections_update_pages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_section_groups_sections_update_pages(
+        connection,
+        notebook_id,
+        section_group_id,
+        onenote_section_id,
+        onenote_page_id,
+        microsoft_graph_onenote_page,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}")
+      |> url(
+        "/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_onenote_page)
       |> Enum.into([])
 
@@ -2417,12 +2966,33 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_section_groups_sections_update_pages_content(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_section_groups_sections_update_pages_content(connection, notebook_id, section_group_id, onenote_section_id, onenote_page_id, body, _opts \\ []) do
+  @spec me_onenote_notebooks_section_groups_sections_update_pages_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_section_groups_sections_update_pages_content(
+        connection,
+        notebook_id,
+        section_group_id,
+        onenote_section_id,
+        onenote_page_id,
+        body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)
-      |> url("/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/content")
+      |> url(
+        "/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/content"
+      )
       |> add_param(:body, :body, body)
       |> Enum.into([])
 
@@ -2452,12 +3022,31 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_section_groups_update_sections(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_section_groups_update_sections(connection, notebook_id, section_group_id, onenote_section_id, microsoft_graph_onenote_section, _opts \\ []) do
+  @spec me_onenote_notebooks_section_groups_update_sections(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_section_groups_update_sections(
+        connection,
+        notebook_id,
+        section_group_id,
+        onenote_section_id,
+        microsoft_graph_onenote_section,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}")
+      |> url(
+        "/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_onenote_section)
       |> Enum.into([])
 
@@ -2487,8 +3076,23 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_sections_create_pages(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_sections_create_pages(connection, notebook_id, onenote_section_id, microsoft_graph_onenote_page, _opts \\ []) do
+  @spec me_onenote_notebooks_sections_create_pages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_sections_create_pages(
+        connection,
+        notebook_id,
+        onenote_section_id,
+        microsoft_graph_onenote_page,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -2522,8 +3126,23 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_sections_delete_pages(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_sections_delete_pages(connection, notebook_id, onenote_section_id, onenote_page_id, opts \\ []) do
+  @spec me_onenote_notebooks_sections_delete_pages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_sections_delete_pages(
+        connection,
+        notebook_id,
+        onenote_section_id,
+        onenote_page_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -2531,7 +3150,9 @@ defmodule MicrosoftGraph.Api.MeOnenote do
     request =
       %{}
       |> method(:delete)
-      |> url("/me/onenote/notebooks/#{notebook_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}")
+      |> url(
+        "/me/onenote/notebooks/#{notebook_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2560,7 +3181,10 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_sections_get_count1a52(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_notebooks_sections_get_count1a52(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_notebooks_sections_get_count1a52(connection, notebook_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -2602,8 +3226,23 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_sections_get_pages(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_sections_get_pages(connection, notebook_id, onenote_section_id, onenote_page_id, opts \\ []) do
+  @spec me_onenote_notebooks_sections_get_pages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_sections_get_pages(
+        connection,
+        notebook_id,
+        onenote_section_id,
+        onenote_page_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2612,7 +3251,9 @@ defmodule MicrosoftGraph.Api.MeOnenote do
     request =
       %{}
       |> method(:get)
-      |> url("/me/onenote/notebooks/#{notebook_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}")
+      |> url(
+        "/me/onenote/notebooks/#{notebook_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2642,12 +3283,29 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_sections_get_pages_content(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_sections_get_pages_content(connection, notebook_id, onenote_section_id, onenote_page_id, _opts \\ []) do
+  @spec me_onenote_notebooks_sections_get_pages_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_sections_get_pages_content(
+        connection,
+        notebook_id,
+        onenote_section_id,
+        onenote_page_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/me/onenote/notebooks/#{notebook_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/content")
+      |> url(
+        "/me/onenote/notebooks/#{notebook_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/content"
+      )
       |> Enum.into([])
 
     connection
@@ -2677,8 +3335,21 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphNotebook.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_sections_get_parent_notebook(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphNotebook.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_sections_get_parent_notebook(connection, notebook_id, onenote_section_id, opts \\ []) do
+  @spec me_onenote_notebooks_sections_get_parent_notebook(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphNotebook.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_sections_get_parent_notebook(
+        connection,
+        notebook_id,
+        onenote_section_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2718,8 +3389,21 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_sections_get_parent_section_group(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_sections_get_parent_section_group(connection, notebook_id, onenote_section_id, opts \\ []) do
+  @spec me_onenote_notebooks_sections_get_parent_section_group(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_sections_get_parent_section_group(
+        connection,
+        notebook_id,
+        onenote_section_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2728,7 +3412,9 @@ defmodule MicrosoftGraph.Api.MeOnenote do
     request =
       %{}
       |> method(:get)
-      |> url("/me/onenote/notebooks/#{notebook_id}/sections/#{onenote_section_id}/parentSectionGroup")
+      |> url(
+        "/me/onenote/notebooks/#{notebook_id}/sections/#{onenote_section_id}/parentSectionGroup"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2765,8 +3451,21 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePageCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_sections_list_pages(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePageCollectionResponse.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_sections_list_pages(connection, notebook_id, onenote_section_id, opts \\ []) do
+  @spec me_onenote_notebooks_sections_list_pages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePageCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_sections_list_pages(
+        connection,
+        notebook_id,
+        onenote_section_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -2811,8 +3510,21 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_sections_pages_get_count044d(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_sections_pages_get_count044d(connection, notebook_id, onenote_section_id, opts \\ []) do
+  @spec me_onenote_notebooks_sections_pages_get_count044d(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_sections_pages_get_count044d(
+        connection,
+        notebook_id,
+        onenote_section_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -2853,8 +3565,23 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphNotebook.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_sections_pages_get_parent_notebook(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphNotebook.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_sections_pages_get_parent_notebook(connection, notebook_id, onenote_section_id, onenote_page_id, opts \\ []) do
+  @spec me_onenote_notebooks_sections_pages_get_parent_notebook(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphNotebook.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_sections_pages_get_parent_notebook(
+        connection,
+        notebook_id,
+        onenote_section_id,
+        onenote_page_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2863,7 +3590,9 @@ defmodule MicrosoftGraph.Api.MeOnenote do
     request =
       %{}
       |> method(:get)
-      |> url("/me/onenote/notebooks/#{notebook_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/parentNotebook")
+      |> url(
+        "/me/onenote/notebooks/#{notebook_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/parentNotebook"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2895,8 +3624,23 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_sections_pages_get_parent_section(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_sections_pages_get_parent_section(connection, notebook_id, onenote_section_id, onenote_page_id, opts \\ []) do
+  @spec me_onenote_notebooks_sections_pages_get_parent_section(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_sections_pages_get_parent_section(
+        connection,
+        notebook_id,
+        onenote_section_id,
+        onenote_page_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2905,7 +3649,9 @@ defmodule MicrosoftGraph.Api.MeOnenote do
     request =
       %{}
       |> method(:get)
-      |> url("/me/onenote/notebooks/#{notebook_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/parentSection")
+      |> url(
+        "/me/onenote/notebooks/#{notebook_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/parentSection"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2935,12 +3681,31 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_sections_update_pages(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_sections_update_pages(connection, notebook_id, onenote_section_id, onenote_page_id, microsoft_graph_onenote_page, _opts \\ []) do
+  @spec me_onenote_notebooks_sections_update_pages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_sections_update_pages(
+        connection,
+        notebook_id,
+        onenote_section_id,
+        onenote_page_id,
+        microsoft_graph_onenote_page,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/me/onenote/notebooks/#{notebook_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}")
+      |> url(
+        "/me/onenote/notebooks/#{notebook_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_onenote_page)
       |> Enum.into([])
 
@@ -2971,12 +3736,31 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_sections_update_pages_content(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_sections_update_pages_content(connection, notebook_id, onenote_section_id, onenote_page_id, body, _opts \\ []) do
+  @spec me_onenote_notebooks_sections_update_pages_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_sections_update_pages_content(
+        connection,
+        notebook_id,
+        onenote_section_id,
+        onenote_page_id,
+        body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)
-      |> url("/me/onenote/notebooks/#{notebook_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/content")
+      |> url(
+        "/me/onenote/notebooks/#{notebook_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/content"
+      )
       |> add_param(:body, :body, body)
       |> Enum.into([])
 
@@ -3005,8 +3789,23 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_update_section_groups(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_update_section_groups(connection, notebook_id, section_group_id, microsoft_graph_section_group, _opts \\ []) do
+  @spec me_onenote_notebooks_update_section_groups(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_update_section_groups(
+        connection,
+        notebook_id,
+        section_group_id,
+        microsoft_graph_section_group,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -3039,8 +3838,23 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_update_sections(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_update_sections(connection, notebook_id, onenote_section_id, microsoft_graph_onenote_section, _opts \\ []) do
+  @spec me_onenote_notebooks_update_sections(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_update_sections(
+        connection,
+        notebook_id,
+        onenote_section_id,
+        microsoft_graph_onenote_section,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -3072,7 +3886,10 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_operations_get_count7b8c(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_operations_get_count7b8c(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_operations_get_count7b8c(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -3110,7 +3927,10 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_pages_get_count_d1a4(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_pages_get_count_d1a4(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_pages_get_count_d1a4(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -3150,7 +3970,10 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphNotebook.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_pages_get_parent_notebook(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphNotebook.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_pages_get_parent_notebook(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphNotebook.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_pages_get_parent_notebook(connection, onenote_page_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -3190,7 +4013,10 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_pages_get_parent_section(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_pages_get_parent_section(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_pages_get_parent_section(connection, onenote_page_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -3228,7 +4054,10 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_resources_get_count_d3f1(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_resources_get_count_d3f1(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_resources_get_count_d3f1(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -3267,8 +4096,21 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_section_groups_create_sections(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_section_groups_create_sections(connection, section_group_id, microsoft_graph_onenote_section, _opts \\ []) do
+  @spec me_onenote_section_groups_create_sections(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_section_groups_create_sections(
+        connection,
+        section_group_id,
+        microsoft_graph_onenote_section,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -3301,8 +4143,21 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_section_groups_delete_sections(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_section_groups_delete_sections(connection, section_group_id, onenote_section_id, opts \\ []) do
+  @spec me_onenote_section_groups_delete_sections(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_section_groups_delete_sections(
+        connection,
+        section_group_id,
+        onenote_section_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -3338,7 +4193,10 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_section_groups_get_count_e635(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_section_groups_get_count_e635(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_section_groups_get_count_e635(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -3378,7 +4236,10 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphNotebook.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_section_groups_get_parent_notebook(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphNotebook.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_section_groups_get_parent_notebook(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphNotebook.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_section_groups_get_parent_notebook(connection, section_group_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -3418,7 +4279,14 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_section_groups_get_parent_section_group(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_section_groups_get_parent_section_group(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_section_groups_get_parent_section_group(connection, section_group_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -3459,8 +4327,21 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_section_groups_get_section_groups(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_section_groups_get_section_groups(connection, section_group_id, section_group_id1, opts \\ []) do
+  @spec me_onenote_section_groups_get_section_groups(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_section_groups_get_section_groups(
+        connection,
+        section_group_id,
+        section_group_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3500,8 +4381,21 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_section_groups_get_sections(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_section_groups_get_sections(connection, section_group_id, onenote_section_id, opts \\ []) do
+  @spec me_onenote_section_groups_get_sections(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_section_groups_get_sections(
+        connection,
+        section_group_id,
+        onenote_section_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3546,7 +4440,10 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroupCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_section_groups_list_section_groups(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroupCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_section_groups_list_section_groups(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroupCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_section_groups_list_section_groups(connection, section_group_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -3598,7 +4495,10 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSectionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_section_groups_list_sections(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSectionCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_section_groups_list_sections(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSectionCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_section_groups_list_sections(connection, section_group_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -3643,8 +4543,19 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_section_groups_section_groups_get_count_ef22(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_section_groups_section_groups_get_count_ef22(connection, section_group_id, opts \\ []) do
+  @spec me_onenote_section_groups_section_groups_get_count_ef22(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_section_groups_section_groups_get_count_ef22(
+        connection,
+        section_group_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -3683,8 +4594,23 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_section_groups_sections_create_pages(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_section_groups_sections_create_pages(connection, section_group_id, onenote_section_id, microsoft_graph_onenote_page, _opts \\ []) do
+  @spec me_onenote_section_groups_sections_create_pages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_section_groups_sections_create_pages(
+        connection,
+        section_group_id,
+        onenote_section_id,
+        microsoft_graph_onenote_page,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -3718,8 +4644,23 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_section_groups_sections_delete_pages(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_section_groups_sections_delete_pages(connection, section_group_id, onenote_section_id, onenote_page_id, opts \\ []) do
+  @spec me_onenote_section_groups_sections_delete_pages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_section_groups_sections_delete_pages(
+        connection,
+        section_group_id,
+        onenote_section_id,
+        onenote_page_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -3727,7 +4668,9 @@ defmodule MicrosoftGraph.Api.MeOnenote do
     request =
       %{}
       |> method(:delete)
-      |> url("/me/onenote/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}")
+      |> url(
+        "/me/onenote/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3756,7 +4699,14 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_section_groups_sections_get_count_fa35(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_section_groups_sections_get_count_fa35(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_section_groups_sections_get_count_fa35(connection, section_group_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -3798,8 +4748,23 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_section_groups_sections_get_pages(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_section_groups_sections_get_pages(connection, section_group_id, onenote_section_id, onenote_page_id, opts \\ []) do
+  @spec me_onenote_section_groups_sections_get_pages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_section_groups_sections_get_pages(
+        connection,
+        section_group_id,
+        onenote_section_id,
+        onenote_page_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3808,7 +4773,9 @@ defmodule MicrosoftGraph.Api.MeOnenote do
     request =
       %{}
       |> method(:get)
-      |> url("/me/onenote/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}")
+      |> url(
+        "/me/onenote/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3838,12 +4805,29 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_section_groups_sections_get_pages_content(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
-  def me_onenote_section_groups_sections_get_pages_content(connection, section_group_id, onenote_section_id, onenote_page_id, _opts \\ []) do
+  @spec me_onenote_section_groups_sections_get_pages_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_section_groups_sections_get_pages_content(
+        connection,
+        section_group_id,
+        onenote_section_id,
+        onenote_page_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/me/onenote/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/content")
+      |> url(
+        "/me/onenote/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/content"
+      )
       |> Enum.into([])
 
     connection
@@ -3873,8 +4857,21 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphNotebook.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_section_groups_sections_get_parent_notebook(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphNotebook.t} | {:error, Tesla.Env.t}
-  def me_onenote_section_groups_sections_get_parent_notebook(connection, section_group_id, onenote_section_id, opts \\ []) do
+  @spec me_onenote_section_groups_sections_get_parent_notebook(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphNotebook.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_section_groups_sections_get_parent_notebook(
+        connection,
+        section_group_id,
+        onenote_section_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3883,7 +4880,9 @@ defmodule MicrosoftGraph.Api.MeOnenote do
     request =
       %{}
       |> method(:get)
-      |> url("/me/onenote/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/parentNotebook")
+      |> url(
+        "/me/onenote/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/parentNotebook"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3914,8 +4913,21 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_section_groups_sections_get_parent_section_group(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_section_groups_sections_get_parent_section_group(connection, section_group_id, onenote_section_id, opts \\ []) do
+  @spec me_onenote_section_groups_sections_get_parent_section_group(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_section_groups_sections_get_parent_section_group(
+        connection,
+        section_group_id,
+        onenote_section_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3924,7 +4936,9 @@ defmodule MicrosoftGraph.Api.MeOnenote do
     request =
       %{}
       |> method(:get)
-      |> url("/me/onenote/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/parentSectionGroup")
+      |> url(
+        "/me/onenote/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/parentSectionGroup"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3961,8 +4975,21 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePageCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_section_groups_sections_list_pages(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePageCollectionResponse.t} | {:error, Tesla.Env.t}
-  def me_onenote_section_groups_sections_list_pages(connection, section_group_id, onenote_section_id, opts \\ []) do
+  @spec me_onenote_section_groups_sections_list_pages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePageCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_section_groups_sections_list_pages(
+        connection,
+        section_group_id,
+        onenote_section_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -4007,8 +5034,21 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_section_groups_sections_pages_get_count_e774(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_section_groups_sections_pages_get_count_e774(connection, section_group_id, onenote_section_id, opts \\ []) do
+  @spec me_onenote_section_groups_sections_pages_get_count_e774(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_section_groups_sections_pages_get_count_e774(
+        connection,
+        section_group_id,
+        onenote_section_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -4017,7 +5057,9 @@ defmodule MicrosoftGraph.Api.MeOnenote do
     request =
       %{}
       |> method(:get)
-      |> url("/me/onenote/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/$count")
+      |> url(
+        "/me/onenote/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4049,8 +5091,23 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphNotebook.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_section_groups_sections_pages_get_parent_notebook(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphNotebook.t} | {:error, Tesla.Env.t}
-  def me_onenote_section_groups_sections_pages_get_parent_notebook(connection, section_group_id, onenote_section_id, onenote_page_id, opts \\ []) do
+  @spec me_onenote_section_groups_sections_pages_get_parent_notebook(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphNotebook.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_section_groups_sections_pages_get_parent_notebook(
+        connection,
+        section_group_id,
+        onenote_section_id,
+        onenote_page_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -4059,7 +5116,9 @@ defmodule MicrosoftGraph.Api.MeOnenote do
     request =
       %{}
       |> method(:get)
-      |> url("/me/onenote/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/parentNotebook")
+      |> url(
+        "/me/onenote/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/parentNotebook"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4091,8 +5150,23 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_section_groups_sections_pages_get_parent_section(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_section_groups_sections_pages_get_parent_section(connection, section_group_id, onenote_section_id, onenote_page_id, opts \\ []) do
+  @spec me_onenote_section_groups_sections_pages_get_parent_section(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_section_groups_sections_pages_get_parent_section(
+        connection,
+        section_group_id,
+        onenote_section_id,
+        onenote_page_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -4101,7 +5175,9 @@ defmodule MicrosoftGraph.Api.MeOnenote do
     request =
       %{}
       |> method(:get)
-      |> url("/me/onenote/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/parentSection")
+      |> url(
+        "/me/onenote/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/parentSection"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4131,12 +5207,31 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_section_groups_sections_update_pages(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_section_groups_sections_update_pages(connection, section_group_id, onenote_section_id, onenote_page_id, microsoft_graph_onenote_page, _opts \\ []) do
+  @spec me_onenote_section_groups_sections_update_pages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_section_groups_sections_update_pages(
+        connection,
+        section_group_id,
+        onenote_section_id,
+        onenote_page_id,
+        microsoft_graph_onenote_page,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/me/onenote/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}")
+      |> url(
+        "/me/onenote/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_onenote_page)
       |> Enum.into([])
 
@@ -4167,12 +5262,31 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_section_groups_sections_update_pages_content(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_section_groups_sections_update_pages_content(connection, section_group_id, onenote_section_id, onenote_page_id, body, _opts \\ []) do
+  @spec me_onenote_section_groups_sections_update_pages_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_section_groups_sections_update_pages_content(
+        connection,
+        section_group_id,
+        onenote_section_id,
+        onenote_page_id,
+        body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)
-      |> url("/me/onenote/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/content")
+      |> url(
+        "/me/onenote/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/content"
+      )
       |> add_param(:body, :body, body)
       |> Enum.into([])
 
@@ -4201,8 +5315,23 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_section_groups_update_sections(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_section_groups_update_sections(connection, section_group_id, onenote_section_id, microsoft_graph_onenote_section, _opts \\ []) do
+  @spec me_onenote_section_groups_update_sections(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_section_groups_update_sections(
+        connection,
+        section_group_id,
+        onenote_section_id,
+        microsoft_graph_onenote_section,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -4235,8 +5364,21 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_sections_create_pages(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_sections_create_pages(connection, onenote_section_id, microsoft_graph_onenote_page, _opts \\ []) do
+  @spec me_onenote_sections_create_pages(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_sections_create_pages(
+        connection,
+        onenote_section_id,
+        microsoft_graph_onenote_page,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -4269,8 +5411,16 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_sections_delete_pages(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_sections_delete_pages(connection, onenote_section_id, onenote_page_id, opts \\ []) do
+  @spec me_onenote_sections_delete_pages(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_sections_delete_pages(
+        connection,
+        onenote_section_id,
+        onenote_page_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -4306,7 +5456,10 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_sections_get_count_dbb4(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_sections_get_count_dbb4(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_sections_get_count_dbb4(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -4347,7 +5500,10 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_sections_get_pages(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_sections_get_pages(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_sections_get_pages(connection, onenote_section_id, onenote_page_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -4386,8 +5542,21 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_sections_get_pages_content(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
-  def me_onenote_sections_get_pages_content(connection, onenote_section_id, onenote_page_id, _opts \\ []) do
+  @spec me_onenote_sections_get_pages_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_sections_get_pages_content(
+        connection,
+        onenote_section_id,
+        onenote_page_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
@@ -4420,7 +5589,10 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphNotebook.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_sections_get_parent_notebook(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphNotebook.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_sections_get_parent_notebook(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphNotebook.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_sections_get_parent_notebook(connection, onenote_section_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -4460,7 +5632,10 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_sections_get_parent_section_group(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_sections_get_parent_section_group(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_sections_get_parent_section_group(connection, onenote_section_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -4506,7 +5681,10 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePageCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_sections_list_pages(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePageCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_sections_list_pages(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePageCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_sections_list_pages(connection, onenote_section_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -4551,7 +5729,10 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_sections_pages_get_count_bb75(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_sections_pages_get_count_bb75(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_sections_pages_get_count_bb75(connection, onenote_section_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -4592,8 +5773,21 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphNotebook.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_sections_pages_get_parent_notebook(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphNotebook.t} | {:error, Tesla.Env.t}
-  def me_onenote_sections_pages_get_parent_notebook(connection, onenote_section_id, onenote_page_id, opts \\ []) do
+  @spec me_onenote_sections_pages_get_parent_notebook(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphNotebook.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_sections_pages_get_parent_notebook(
+        connection,
+        onenote_section_id,
+        onenote_page_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -4633,8 +5827,21 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_sections_pages_get_parent_section(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_sections_pages_get_parent_section(connection, onenote_section_id, onenote_page_id, opts \\ []) do
+  @spec me_onenote_sections_pages_get_parent_section(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_sections_pages_get_parent_section(
+        connection,
+        onenote_section_id,
+        onenote_page_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -4672,8 +5879,23 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_sections_update_pages(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_sections_update_pages(connection, onenote_section_id, onenote_page_id, microsoft_graph_onenote_page, _opts \\ []) do
+  @spec me_onenote_sections_update_pages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_sections_update_pages(
+        connection,
+        onenote_section_id,
+        onenote_page_id,
+        microsoft_graph_onenote_page,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -4707,8 +5929,23 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_sections_update_pages_content(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_sections_update_pages_content(connection, onenote_section_id, onenote_page_id, body, _opts \\ []) do
+  @spec me_onenote_sections_update_pages_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_sections_update_pages_content(
+        connection,
+        onenote_section_id,
+        onenote_page_id,
+        body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)
@@ -4740,7 +5977,15 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphNotebook.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_update_notebooks(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphNotebook.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphNotebook.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_update_notebooks(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphNotebook.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphNotebook.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_update_notebooks(connection, notebook_id, microsoft_graph_notebook, _opts \\ []) do
     request =
       %{}
@@ -4773,8 +6018,21 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteOperation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_update_operations(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphOnenoteOperation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteOperation.t} | {:error, Tesla.Env.t}
-  def me_onenote_update_operations(connection, onenote_operation_id, microsoft_graph_onenote_operation, _opts \\ []) do
+  @spec me_onenote_update_operations(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphOnenoteOperation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteOperation.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_update_operations(
+        connection,
+        onenote_operation_id,
+        microsoft_graph_onenote_operation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -4806,8 +6064,21 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_update_pages(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_update_pages(connection, onenote_page_id, microsoft_graph_onenote_page, _opts \\ []) do
+  @spec me_onenote_update_pages(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_update_pages(
+        connection,
+        onenote_page_id,
+        microsoft_graph_onenote_page,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -4840,7 +6111,10 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_update_pages_content(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_update_pages_content(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_update_pages_content(connection, onenote_page_id, body, _opts \\ []) do
     request =
       %{}
@@ -4873,8 +6147,21 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteResource.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_update_resources(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphOnenoteResource.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteResource.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_update_resources(connection, onenote_resource_id, microsoft_graph_onenote_resource, _opts \\ []) do
+  @spec me_onenote_update_resources(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphOnenoteResource.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteResource.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_update_resources(
+        connection,
+        onenote_resource_id,
+        microsoft_graph_onenote_resource,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -4907,7 +6194,10 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteResource.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_update_resources_content(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteResource.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_update_resources_content(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteResource.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_update_resources_content(connection, onenote_resource_id, body, _opts \\ []) do
     request =
       %{}
@@ -4940,8 +6230,21 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_update_section_groups(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_update_section_groups(connection, section_group_id, microsoft_graph_section_group, _opts \\ []) do
+  @spec me_onenote_update_section_groups(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_update_section_groups(
+        connection,
+        section_group_id,
+        microsoft_graph_section_group,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -4973,8 +6276,21 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_update_sections(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_update_sections(connection, onenote_section_id, microsoft_graph_onenote_section, _opts \\ []) do
+  @spec me_onenote_update_sections(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_update_sections(
+        connection,
+        onenote_section_id,
+        microsoft_graph_onenote_section,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -5005,7 +6321,14 @@ defmodule MicrosoftGraph.Api.MeOnenote do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnenote.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_update_onenote(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphOnenote.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenote.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_update_onenote(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphOnenote.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnenote.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_update_onenote(connection, microsoft_graph_onenote, _opts \\ []) do
     request =
       %{}

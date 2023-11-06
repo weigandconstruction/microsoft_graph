@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalization do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -21,25 +21,32 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalization do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :displayName => String.t | nil,
-    :fileData => MicrosoftGraph.Model.AgreementFilePropertiesFileData.t | nil,
-    :fileName => String.t | nil,
-    :isDefault => boolean() | nil,
-    :isMajorVersion => boolean() | nil,
-    :language => String.t | nil,
-    :versions => [MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersion.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :displayName => String.t() | nil,
+          :fileData => MicrosoftGraph.Model.AgreementFilePropertiesFileData.t() | nil,
+          :fileName => String.t() | nil,
+          :isDefault => boolean() | nil,
+          :isMajorVersion => boolean() | nil,
+          :language => String.t() | nil,
+          :versions => [MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersion.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:fileData, :struct, MicrosoftGraph.Model.AgreementFilePropertiesFileData)
-     |> Deserializer.deserialize(:versions, :list, MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersion)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :fileData,
+      :struct,
+      MicrosoftGraph.Model.AgreementFilePropertiesFileData
+    )
+    |> Deserializer.deserialize(
+      :versions,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersion
+    )
   end
 end
-

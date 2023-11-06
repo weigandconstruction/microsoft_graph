@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphCallTranscript do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,22 +19,25 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphCallTranscript do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :content => String.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :meetingId => String.t | nil,
-    :meetingOrganizer => MicrosoftGraph.Model.CallTranscriptMeetingOrganizer.t | nil,
-    :metadataContent => String.t | nil,
-    :transcriptContentUrl => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :content => String.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :meetingId => String.t() | nil,
+          :meetingOrganizer => MicrosoftGraph.Model.CallTranscriptMeetingOrganizer.t() | nil,
+          :metadataContent => String.t() | nil,
+          :transcriptContentUrl => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:meetingOrganizer, :struct, MicrosoftGraph.Model.CallTranscriptMeetingOrganizer)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :meetingOrganizer,
+      :struct,
+      MicrosoftGraph.Model.CallTranscriptMeetingOrganizer
+    )
   end
 end
-

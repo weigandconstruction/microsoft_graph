@@ -25,12 +25,27 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_access_review_schedule_definition_instances_access_review_instance_accept_recommendations(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_access_review_schedule_definition_instances_access_review_instance_accept_recommendations(connection, access_review_schedule_definition_id, access_review_instance_id, _opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_access_review_schedule_definition_instances_access_review_instance_accept_recommendations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_access_review_schedule_definition_instances_access_review_instance_accept_recommendations(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/acceptRecommendations")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/acceptRecommendations"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -59,12 +74,27 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_access_review_schedule_definition_instances_access_review_instance_apply_decisions(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_access_review_schedule_definition_instances_access_review_instance_apply_decisions(connection, access_review_schedule_definition_id, access_review_instance_id, _opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_access_review_schedule_definition_instances_access_review_instance_apply_decisions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_access_review_schedule_definition_instances_access_review_instance_apply_decisions(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/applyDecisions")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/applyDecisions"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -94,13 +124,34 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_access_review_schedule_definition_instances_access_review_instance_batch_record_decisions(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.IdentityGovernanceAccessReviewsDefinitionsAccessReviewScheduleDefinitionInstancesAccessReviewInstanceBatchRecordDecisionsRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_access_review_schedule_definition_instances_access_review_instance_batch_record_decisions(connection, access_review_schedule_definition_id, access_review_instance_id, identity_governance_access_reviews_definitions_access_review_schedule_definition_instances_access_review_instance_batch_record_decisions_request, _opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_access_review_schedule_definition_instances_access_review_instance_batch_record_decisions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.IdentityGovernanceAccessReviewsDefinitionsAccessReviewScheduleDefinitionInstancesAccessReviewInstanceBatchRecordDecisionsRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_access_review_schedule_definition_instances_access_review_instance_batch_record_decisions(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        identity_governance_access_reviews_definitions_access_review_schedule_definition_instances_access_review_instance_batch_record_decisions_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/batchRecordDecisions")
-      |> add_param(:body, :body, identity_governance_access_reviews_definitions_access_review_schedule_definition_instances_access_review_instance_batch_record_decisions_request)
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/batchRecordDecisions"
+      )
+      |> add_param(
+        :body,
+        :body,
+        identity_governance_access_reviews_definitions_access_review_schedule_definition_instances_access_review_instance_batch_record_decisions_request
+      )
       |> Enum.into([])
 
     connection
@@ -128,12 +179,27 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_access_review_schedule_definition_instances_access_review_instance_reset_decisions(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_access_review_schedule_definition_instances_access_review_instance_reset_decisions(connection, access_review_schedule_definition_id, access_review_instance_id, _opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_access_review_schedule_definition_instances_access_review_instance_reset_decisions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_access_review_schedule_definition_instances_access_review_instance_reset_decisions(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/resetDecisions")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/resetDecisions"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -162,12 +228,27 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_access_review_schedule_definition_instances_access_review_instance_send_reminder(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_access_review_schedule_definition_instances_access_review_instance_send_reminder(connection, access_review_schedule_definition_id, access_review_instance_id, _opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_access_review_schedule_definition_instances_access_review_instance_send_reminder(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_access_review_schedule_definition_instances_access_review_instance_send_reminder(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/sendReminder")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/sendReminder"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -197,12 +278,29 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_access_review_schedule_definition_instances_access_review_instance_stages_access_review_stage_stop(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_access_review_schedule_definition_instances_access_review_instance_stages_access_review_stage_stop(connection, access_review_schedule_definition_id, access_review_instance_id, access_review_stage_id, _opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_access_review_schedule_definition_instances_access_review_instance_stages_access_review_stage_stop(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_access_review_schedule_definition_instances_access_review_instance_stages_access_review_stage_stop(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        access_review_stage_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/stages/#{access_review_stage_id}/stop")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/stages/#{access_review_stage_id}/stop"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -231,12 +329,27 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_access_review_schedule_definition_instances_access_review_instance_stop(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_access_review_schedule_definition_instances_access_review_instance_stop(connection, access_review_schedule_definition_id, access_review_instance_id, _opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_access_review_schedule_definition_instances_access_review_instance_stop(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_access_review_schedule_definition_instances_access_review_instance_stop(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/stop")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/stop"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -263,12 +376,25 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_access_review_schedule_definition_stop(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_access_review_schedule_definition_stop(connection, access_review_schedule_definition_id, _opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_access_review_schedule_definition_stop(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_access_review_schedule_definition_stop(
+        connection,
+        access_review_schedule_definition_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/stop")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/stop"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -297,19 +423,36 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceActions do
   - `{:ok, MicrosoftGraph.Model.IdentityGovernanceAccessReviewsHistoryDefinitionsAccessReviewHistoryDefinitionInstancesAccessReviewHistoryInstanceGenerateDownloadUri2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_history_definitions_access_review_history_definition_instances_access_review_history_instance_generate_download_uri(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.IdentityGovernanceAccessReviewsHistoryDefinitionsAccessReviewHistoryDefinitionInstancesAccessReviewHistoryInstanceGenerateDownloadUri2XxResponse.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_history_definitions_access_review_history_definition_instances_access_review_history_instance_generate_download_uri(connection, access_review_history_definition_id, access_review_history_instance_id, _opts \\ []) do
+  @spec identity_governance_access_reviews_history_definitions_access_review_history_definition_instances_access_review_history_instance_generate_download_uri(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.IdentityGovernanceAccessReviewsHistoryDefinitionsAccessReviewHistoryDefinitionInstancesAccessReviewHistoryInstanceGenerateDownloadUri2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_history_definitions_access_review_history_definition_instances_access_review_history_instance_generate_download_uri(
+        connection,
+        access_review_history_definition_id,
+        access_review_history_instance_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/accessReviews/historyDefinitions/#{access_review_history_definition_id}/instances/#{access_review_history_instance_id}/generateDownloadUri")
+      |> url(
+        "/identityGovernance/accessReviews/historyDefinitions/#{access_review_history_definition_id}/instances/#{access_review_history_instance_id}/generateDownloadUri"
+      )
       |> ensure_body()
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.IdentityGovernanceAccessReviewsHistoryDefinitionsAccessReviewHistoryDefinitionInstancesAccessReviewHistoryInstanceGenerateDownloadUri2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.IdentityGovernanceAccessReviewsHistoryDefinitionsAccessReviewHistoryDefinitionInstancesAccessReviewHistoryInstanceGenerateDownloadUri2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -330,19 +473,34 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceActions do
   - `{:ok, MicrosoftGraph.Model.IdentityGovernanceEntitlementManagementAccessPackagesAccessPackageGetApplicablePolicyRequirements2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_entitlement_management_access_packages_access_package_get_applicable_policy_requirements(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.IdentityGovernanceEntitlementManagementAccessPackagesAccessPackageGetApplicablePolicyRequirements2XxResponse.t} | {:error, Tesla.Env.t}
-  def identity_governance_entitlement_management_access_packages_access_package_get_applicable_policy_requirements(connection, access_package_id, _opts \\ []) do
+  @spec identity_governance_entitlement_management_access_packages_access_package_get_applicable_policy_requirements(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.IdentityGovernanceEntitlementManagementAccessPackagesAccessPackageGetApplicablePolicyRequirements2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_entitlement_management_access_packages_access_package_get_applicable_policy_requirements(
+        connection,
+        access_package_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/entitlementManagement/accessPackages/#{access_package_id}/getApplicablePolicyRequirements")
+      |> url(
+        "/identityGovernance/entitlementManagement/accessPackages/#{access_package_id}/getApplicablePolicyRequirements"
+      )
       |> ensure_body()
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.IdentityGovernanceEntitlementManagementAccessPackagesAccessPackageGetApplicablePolicyRequirements2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.IdentityGovernanceEntitlementManagementAccessPackagesAccessPackageGetApplicablePolicyRequirements2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -363,12 +521,25 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_entitlement_management_assignment_requests_access_package_assignment_request_cancel(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_entitlement_management_assignment_requests_access_package_assignment_request_cancel(connection, access_package_assignment_request_id, _opts \\ []) do
+  @spec identity_governance_entitlement_management_assignment_requests_access_package_assignment_request_cancel(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_entitlement_management_assignment_requests_access_package_assignment_request_cancel(
+        connection,
+        access_package_assignment_request_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/entitlementManagement/assignmentRequests/#{access_package_assignment_request_id}/cancel")
+      |> url(
+        "/identityGovernance/entitlementManagement/assignmentRequests/#{access_package_assignment_request_id}/cancel"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -396,12 +567,25 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_entitlement_management_assignment_requests_access_package_assignment_request_reprocess(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_entitlement_management_assignment_requests_access_package_assignment_request_reprocess(connection, access_package_assignment_request_id, _opts \\ []) do
+  @spec identity_governance_entitlement_management_assignment_requests_access_package_assignment_request_reprocess(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_entitlement_management_assignment_requests_access_package_assignment_request_reprocess(
+        connection,
+        access_package_assignment_request_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/entitlementManagement/assignmentRequests/#{access_package_assignment_request_id}/reprocess")
+      |> url(
+        "/identityGovernance/entitlementManagement/assignmentRequests/#{access_package_assignment_request_id}/reprocess"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -430,13 +614,32 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_entitlement_management_assignment_requests_access_package_assignment_request_resume(Tesla.Env.client, String.t, MicrosoftGraph.Model.IdentityGovernanceEntitlementManagementAssignmentRequestsAccessPackageAssignmentRequestResumeRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_entitlement_management_assignment_requests_access_package_assignment_request_resume(connection, access_package_assignment_request_id, identity_governance_entitlement_management_assignment_requests_access_package_assignment_request_resume_request, _opts \\ []) do
+  @spec identity_governance_entitlement_management_assignment_requests_access_package_assignment_request_resume(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.IdentityGovernanceEntitlementManagementAssignmentRequestsAccessPackageAssignmentRequestResumeRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_entitlement_management_assignment_requests_access_package_assignment_request_resume(
+        connection,
+        access_package_assignment_request_id,
+        identity_governance_entitlement_management_assignment_requests_access_package_assignment_request_resume_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/entitlementManagement/assignmentRequests/#{access_package_assignment_request_id}/resume")
-      |> add_param(:body, :body, identity_governance_entitlement_management_assignment_requests_access_package_assignment_request_resume_request)
+      |> url(
+        "/identityGovernance/entitlementManagement/assignmentRequests/#{access_package_assignment_request_id}/resume"
+      )
+      |> add_param(
+        :body,
+        :body,
+        identity_governance_entitlement_management_assignment_requests_access_package_assignment_request_resume_request
+      )
       |> Enum.into([])
 
     connection
@@ -463,12 +666,25 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_entitlement_management_assignments_access_package_assignment_reprocess(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_entitlement_management_assignments_access_package_assignment_reprocess(connection, access_package_assignment_id, _opts \\ []) do
+  @spec identity_governance_entitlement_management_assignments_access_package_assignment_reprocess(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_entitlement_management_assignments_access_package_assignment_reprocess(
+        connection,
+        access_package_assignment_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/entitlementManagement/assignments/#{access_package_assignment_id}/reprocess")
+      |> url(
+        "/identityGovernance/entitlementManagement/assignments/#{access_package_assignment_id}/reprocess"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -497,13 +713,32 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_activate(Tesla.Env.client, String.t, MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowActivateRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_activate(connection, workflow_id, identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_activate_request, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_activate(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowActivateRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_activate(
+        connection,
+        workflow_id,
+        identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_activate_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/microsoft.graph.identityGovernance.activate")
-      |> add_param(:body, :body, identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_activate_request)
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/microsoft.graph.identityGovernance.activate"
+      )
+      |> add_param(
+        :body,
+        :body,
+        identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_activate_request
+      )
       |> Enum.into([])
 
     connection
@@ -531,19 +766,40 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceActions do
   - `{:ok, MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowsWorkflowCreateNewVersionRequestWorkflow.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_create_new_version(Tesla.Env.client, String.t, MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowsWorkflowCreateNewVersionRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowsWorkflowCreateNewVersionRequestWorkflow.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_create_new_version(connection, workflow_id, identity_governance_lifecycle_workflows_workflows_workflow_create_new_version_request, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_create_new_version(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowsWorkflowCreateNewVersionRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowsWorkflowCreateNewVersionRequestWorkflow.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_create_new_version(
+        connection,
+        workflow_id,
+        identity_governance_lifecycle_workflows_workflows_workflow_create_new_version_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/microsoft.graph.identityGovernance.createNewVersion")
-      |> add_param(:body, :body, identity_governance_lifecycle_workflows_workflows_workflow_create_new_version_request)
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/microsoft.graph.identityGovernance.createNewVersion"
+      )
+      |> add_param(
+        :body,
+        :body,
+        identity_governance_lifecycle_workflows_workflows_workflow_create_new_version_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowsWorkflowCreateNewVersionRequestWorkflow},
+      {"2XX",
+       MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowsWorkflowCreateNewVersionRequestWorkflow},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -564,19 +820,34 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceActions do
   - `{:ok, MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowsWorkflowCreateNewVersionRequestWorkflow.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_restore(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowsWorkflowCreateNewVersionRequestWorkflow.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_restore(connection, workflow_id, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_restore(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowsWorkflowCreateNewVersionRequestWorkflow.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_restore(
+        connection,
+        workflow_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/microsoft.graph.identityGovernance.restore")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/microsoft.graph.identityGovernance.restore"
+      )
       |> ensure_body()
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowsWorkflowCreateNewVersionRequestWorkflow},
+      {"2XX",
+       MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowsWorkflowCreateNewVersionRequestWorkflow},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -600,13 +871,36 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_runs_run_task_processing_results_task_processing_result_resume(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowTemplatesWorkflowTemplateTasksTaskTaskProcessingResultsTaskProcessingResultResumeRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_runs_run_task_processing_results_task_processing_result_resume(connection, workflow_id, run_id, task_processing_result_id, identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_runs_run_task_processing_results_task_processing_result_resume(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowTemplatesWorkflowTemplateTasksTaskTaskProcessingResultsTaskProcessingResultResumeRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_runs_run_task_processing_results_task_processing_result_resume(
+        connection,
+        workflow_id,
+        run_id,
+        task_processing_result_id,
+        identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/taskProcessingResults/#{task_processing_result_id}/microsoft.graph.identityGovernance.resume")
-      |> add_param(:body, :body, identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request)
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/taskProcessingResults/#{task_processing_result_id}/microsoft.graph.identityGovernance.resume"
+      )
+      |> add_param(
+        :body,
+        :body,
+        identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request
+      )
       |> Enum.into([])
 
     connection
@@ -637,13 +931,38 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_runs_run_user_processing_results_user_processing_result_task_processing_results_task_processing_result_resume(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowTemplatesWorkflowTemplateTasksTaskTaskProcessingResultsTaskProcessingResultResumeRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_runs_run_user_processing_results_user_processing_result_task_processing_results_task_processing_result_resume(connection, workflow_id, run_id, user_processing_result_id, task_processing_result_id, identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_runs_run_user_processing_results_user_processing_result_task_processing_results_task_processing_result_resume(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowTemplatesWorkflowTemplateTasksTaskTaskProcessingResultsTaskProcessingResultResumeRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_runs_run_user_processing_results_user_processing_result_task_processing_results_task_processing_result_resume(
+        connection,
+        workflow_id,
+        run_id,
+        user_processing_result_id,
+        task_processing_result_id,
+        identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/microsoft.graph.identityGovernance.resume")
-      |> add_param(:body, :body, identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request)
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/microsoft.graph.identityGovernance.resume"
+      )
+      |> add_param(
+        :body,
+        :body,
+        identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request
+      )
       |> Enum.into([])
 
     connection
@@ -673,13 +992,36 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_task_reports_task_report_task_processing_results_task_processing_result_resume(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowTemplatesWorkflowTemplateTasksTaskTaskProcessingResultsTaskProcessingResultResumeRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_task_reports_task_report_task_processing_results_task_processing_result_resume(connection, workflow_id, task_report_id, task_processing_result_id, identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_task_reports_task_report_task_processing_results_task_processing_result_resume(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowTemplatesWorkflowTemplateTasksTaskTaskProcessingResultsTaskProcessingResultResumeRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_task_reports_task_report_task_processing_results_task_processing_result_resume(
+        connection,
+        workflow_id,
+        task_report_id,
+        task_processing_result_id,
+        identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/taskReports/#{task_report_id}/taskProcessingResults/#{task_processing_result_id}/microsoft.graph.identityGovernance.resume")
-      |> add_param(:body, :body, identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request)
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/taskReports/#{task_report_id}/taskProcessingResults/#{task_processing_result_id}/microsoft.graph.identityGovernance.resume"
+      )
+      |> add_param(
+        :body,
+        :body,
+        identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request
+      )
       |> Enum.into([])
 
     connection
@@ -709,13 +1051,36 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_tasks_task_task_processing_results_task_processing_result_resume(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowTemplatesWorkflowTemplateTasksTaskTaskProcessingResultsTaskProcessingResultResumeRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_tasks_task_task_processing_results_task_processing_result_resume(connection, workflow_id, task_id, task_processing_result_id, identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_tasks_task_task_processing_results_task_processing_result_resume(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowTemplatesWorkflowTemplateTasksTaskTaskProcessingResultsTaskProcessingResultResumeRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_tasks_task_task_processing_results_task_processing_result_resume(
+        connection,
+        workflow_id,
+        task_id,
+        task_processing_result_id,
+        identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/microsoft.graph.identityGovernance.resume")
-      |> add_param(:body, :body, identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request)
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/microsoft.graph.identityGovernance.resume"
+      )
+      |> add_param(
+        :body,
+        :body,
+        identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request
+      )
       |> Enum.into([])
 
     connection
@@ -745,13 +1110,36 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_user_processing_results_user_processing_result_task_processing_results_task_processing_result_resume(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowTemplatesWorkflowTemplateTasksTaskTaskProcessingResultsTaskProcessingResultResumeRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_user_processing_results_user_processing_result_task_processing_results_task_processing_result_resume(connection, workflow_id, user_processing_result_id, task_processing_result_id, identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_user_processing_results_user_processing_result_task_processing_results_task_processing_result_resume(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowTemplatesWorkflowTemplateTasksTaskTaskProcessingResultsTaskProcessingResultResumeRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_user_processing_results_user_processing_result_task_processing_results_task_processing_result_resume(
+        connection,
+        workflow_id,
+        user_processing_result_id,
+        task_processing_result_id,
+        identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/microsoft.graph.identityGovernance.resume")
-      |> add_param(:body, :body, identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request)
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/microsoft.graph.identityGovernance.resume"
+      )
+      |> add_param(
+        :body,
+        :body,
+        identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request
+      )
       |> Enum.into([])
 
     connection
@@ -782,13 +1170,38 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_versions_workflow_version_tasks_task_task_processing_results_task_processing_result_resume(Tesla.Env.client, String.t, integer(), String.t, String.t, MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowTemplatesWorkflowTemplateTasksTaskTaskProcessingResultsTaskProcessingResultResumeRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_versions_workflow_version_tasks_task_task_processing_results_task_processing_result_resume(connection, workflow_id, workflow_version_version_number, task_id, task_processing_result_id, identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_versions_workflow_version_tasks_task_task_processing_results_task_processing_result_resume(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowTemplatesWorkflowTemplateTasksTaskTaskProcessingResultsTaskProcessingResultResumeRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_versions_workflow_version_tasks_task_task_processing_results_task_processing_result_resume(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        task_id,
+        task_processing_result_id,
+        identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/microsoft.graph.identityGovernance.resume")
-      |> add_param(:body, :body, identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request)
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/microsoft.graph.identityGovernance.resume"
+      )
+      |> add_param(
+        :body,
+        :body,
+        identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request
+      )
       |> Enum.into([])
 
     connection
@@ -818,13 +1231,36 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowTemplatesWorkflowTemplateTasksTaskTaskProcessingResultsTaskProcessingResultResumeRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume(connection, workflow_template_id, task_id, task_processing_result_id, identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowTemplatesWorkflowTemplateTasksTaskTaskProcessingResultsTaskProcessingResultResumeRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume(
+        connection,
+        workflow_template_id,
+        task_id,
+        task_processing_result_id,
+        identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/lifecycleWorkflows/workflowTemplates/#{workflow_template_id}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/microsoft.graph.identityGovernance.resume")
-      |> add_param(:body, :body, identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request)
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflowTemplates/#{workflow_template_id}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/microsoft.graph.identityGovernance.resume"
+      )
+      |> add_param(
+        :body,
+        :body,
+        identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request
+      )
       |> Enum.into([])
 
     connection
@@ -852,13 +1288,32 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_workflow_activate(Tesla.Env.client, String.t, MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowActivateRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_workflow_activate(connection, workflow_id, identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_activate_request, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_workflow_activate(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowActivateRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_workflow_activate(
+        connection,
+        workflow_id,
+        identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_activate_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/microsoft.graph.identityGovernance.activate")
-      |> add_param(:body, :body, identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_activate_request)
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/microsoft.graph.identityGovernance.activate"
+      )
+      |> add_param(
+        :body,
+        :body,
+        identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_activate_request
+      )
       |> Enum.into([])
 
     connection
@@ -886,19 +1341,40 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceActions do
   - `{:ok, MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowsWorkflowCreateNewVersionRequestWorkflow.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_workflow_create_new_version(Tesla.Env.client, String.t, MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowsWorkflowCreateNewVersionRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowsWorkflowCreateNewVersionRequestWorkflow.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_workflow_create_new_version(connection, workflow_id, identity_governance_lifecycle_workflows_workflows_workflow_create_new_version_request, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_workflow_create_new_version(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowsWorkflowCreateNewVersionRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowsWorkflowCreateNewVersionRequestWorkflow.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_workflow_create_new_version(
+        connection,
+        workflow_id,
+        identity_governance_lifecycle_workflows_workflows_workflow_create_new_version_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/microsoft.graph.identityGovernance.createNewVersion")
-      |> add_param(:body, :body, identity_governance_lifecycle_workflows_workflows_workflow_create_new_version_request)
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/microsoft.graph.identityGovernance.createNewVersion"
+      )
+      |> add_param(
+        :body,
+        :body,
+        identity_governance_lifecycle_workflows_workflows_workflow_create_new_version_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowsWorkflowCreateNewVersionRequestWorkflow},
+      {"2XX",
+       MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowsWorkflowCreateNewVersionRequestWorkflow},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -919,19 +1395,34 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceActions do
   - `{:ok, MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowsWorkflowCreateNewVersionRequestWorkflow.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_workflow_restore(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowsWorkflowCreateNewVersionRequestWorkflow.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_workflow_restore(connection, workflow_id, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_workflow_restore(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowsWorkflowCreateNewVersionRequestWorkflow.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_workflow_restore(
+        connection,
+        workflow_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/microsoft.graph.identityGovernance.restore")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/microsoft.graph.identityGovernance.restore"
+      )
       |> ensure_body()
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowsWorkflowCreateNewVersionRequestWorkflow},
+      {"2XX",
+       MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowsWorkflowCreateNewVersionRequestWorkflow},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -955,13 +1446,36 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_workflow_runs_run_task_processing_results_task_processing_result_resume(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowTemplatesWorkflowTemplateTasksTaskTaskProcessingResultsTaskProcessingResultResumeRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_workflow_runs_run_task_processing_results_task_processing_result_resume(connection, workflow_id, run_id, task_processing_result_id, identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_workflow_runs_run_task_processing_results_task_processing_result_resume(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowTemplatesWorkflowTemplateTasksTaskTaskProcessingResultsTaskProcessingResultResumeRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_workflow_runs_run_task_processing_results_task_processing_result_resume(
+        connection,
+        workflow_id,
+        run_id,
+        task_processing_result_id,
+        identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/taskProcessingResults/#{task_processing_result_id}/microsoft.graph.identityGovernance.resume")
-      |> add_param(:body, :body, identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request)
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/taskProcessingResults/#{task_processing_result_id}/microsoft.graph.identityGovernance.resume"
+      )
+      |> add_param(
+        :body,
+        :body,
+        identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request
+      )
       |> Enum.into([])
 
     connection
@@ -992,13 +1506,38 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_workflow_runs_run_user_processing_results_user_processing_result_task_processing_results_task_processing_result_resume(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowTemplatesWorkflowTemplateTasksTaskTaskProcessingResultsTaskProcessingResultResumeRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_workflow_runs_run_user_processing_results_user_processing_result_task_processing_results_task_processing_result_resume(connection, workflow_id, run_id, user_processing_result_id, task_processing_result_id, identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_workflow_runs_run_user_processing_results_user_processing_result_task_processing_results_task_processing_result_resume(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowTemplatesWorkflowTemplateTasksTaskTaskProcessingResultsTaskProcessingResultResumeRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_workflow_runs_run_user_processing_results_user_processing_result_task_processing_results_task_processing_result_resume(
+        connection,
+        workflow_id,
+        run_id,
+        user_processing_result_id,
+        task_processing_result_id,
+        identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/microsoft.graph.identityGovernance.resume")
-      |> add_param(:body, :body, identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request)
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/microsoft.graph.identityGovernance.resume"
+      )
+      |> add_param(
+        :body,
+        :body,
+        identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request
+      )
       |> Enum.into([])
 
     connection
@@ -1028,13 +1567,36 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_workflow_task_reports_task_report_task_processing_results_task_processing_result_resume(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowTemplatesWorkflowTemplateTasksTaskTaskProcessingResultsTaskProcessingResultResumeRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_workflow_task_reports_task_report_task_processing_results_task_processing_result_resume(connection, workflow_id, task_report_id, task_processing_result_id, identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_workflow_task_reports_task_report_task_processing_results_task_processing_result_resume(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowTemplatesWorkflowTemplateTasksTaskTaskProcessingResultsTaskProcessingResultResumeRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_workflow_task_reports_task_report_task_processing_results_task_processing_result_resume(
+        connection,
+        workflow_id,
+        task_report_id,
+        task_processing_result_id,
+        identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/taskReports/#{task_report_id}/taskProcessingResults/#{task_processing_result_id}/microsoft.graph.identityGovernance.resume")
-      |> add_param(:body, :body, identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request)
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/taskReports/#{task_report_id}/taskProcessingResults/#{task_processing_result_id}/microsoft.graph.identityGovernance.resume"
+      )
+      |> add_param(
+        :body,
+        :body,
+        identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request
+      )
       |> Enum.into([])
 
     connection
@@ -1064,13 +1626,36 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_workflow_tasks_task_task_processing_results_task_processing_result_resume(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowTemplatesWorkflowTemplateTasksTaskTaskProcessingResultsTaskProcessingResultResumeRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_workflow_tasks_task_task_processing_results_task_processing_result_resume(connection, workflow_id, task_id, task_processing_result_id, identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_workflow_tasks_task_task_processing_results_task_processing_result_resume(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowTemplatesWorkflowTemplateTasksTaskTaskProcessingResultsTaskProcessingResultResumeRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_workflow_tasks_task_task_processing_results_task_processing_result_resume(
+        connection,
+        workflow_id,
+        task_id,
+        task_processing_result_id,
+        identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/microsoft.graph.identityGovernance.resume")
-      |> add_param(:body, :body, identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request)
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/microsoft.graph.identityGovernance.resume"
+      )
+      |> add_param(
+        :body,
+        :body,
+        identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request
+      )
       |> Enum.into([])
 
     connection
@@ -1100,13 +1685,36 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_workflow_user_processing_results_user_processing_result_task_processing_results_task_processing_result_resume(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowTemplatesWorkflowTemplateTasksTaskTaskProcessingResultsTaskProcessingResultResumeRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_workflow_user_processing_results_user_processing_result_task_processing_results_task_processing_result_resume(connection, workflow_id, user_processing_result_id, task_processing_result_id, identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_workflow_user_processing_results_user_processing_result_task_processing_results_task_processing_result_resume(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowTemplatesWorkflowTemplateTasksTaskTaskProcessingResultsTaskProcessingResultResumeRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_workflow_user_processing_results_user_processing_result_task_processing_results_task_processing_result_resume(
+        connection,
+        workflow_id,
+        user_processing_result_id,
+        task_processing_result_id,
+        identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/microsoft.graph.identityGovernance.resume")
-      |> add_param(:body, :body, identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request)
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/microsoft.graph.identityGovernance.resume"
+      )
+      |> add_param(
+        :body,
+        :body,
+        identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request
+      )
       |> Enum.into([])
 
     connection
@@ -1137,13 +1745,38 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_workflow_versions_workflow_version_tasks_task_task_processing_results_task_processing_result_resume(Tesla.Env.client, String.t, integer(), String.t, String.t, MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowTemplatesWorkflowTemplateTasksTaskTaskProcessingResultsTaskProcessingResultResumeRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_workflow_versions_workflow_version_tasks_task_task_processing_results_task_processing_result_resume(connection, workflow_id, workflow_version_version_number, task_id, task_processing_result_id, identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_workflow_versions_workflow_version_tasks_task_task_processing_results_task_processing_result_resume(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowTemplatesWorkflowTemplateTasksTaskTaskProcessingResultsTaskProcessingResultResumeRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_workflow_versions_workflow_version_tasks_task_task_processing_results_task_processing_result_resume(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        task_id,
+        task_processing_result_id,
+        identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/microsoft.graph.identityGovernance.resume")
-      |> add_param(:body, :body, identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request)
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/microsoft.graph.identityGovernance.resume"
+      )
+      |> add_param(
+        :body,
+        :body,
+        identity_governance_lifecycle_workflows_workflow_templates_workflow_template_tasks_task_task_processing_results_task_processing_result_resume_request
+      )
       |> Enum.into([])
 
     connection
@@ -1170,12 +1803,25 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_assignment_schedule_requests_privileged_access_group_assignment_schedule_request_cancel(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_assignment_schedule_requests_privileged_access_group_assignment_schedule_request_cancel(connection, privileged_access_group_assignment_schedule_request_id, _opts \\ []) do
+  @spec identity_governance_privileged_access_group_assignment_schedule_requests_privileged_access_group_assignment_schedule_request_cancel(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_assignment_schedule_requests_privileged_access_group_assignment_schedule_request_cancel(
+        connection,
+        privileged_access_group_assignment_schedule_request_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/privilegedAccess/group/assignmentScheduleRequests/#{privileged_access_group_assignment_schedule_request_id}/cancel")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/assignmentScheduleRequests/#{privileged_access_group_assignment_schedule_request_id}/cancel"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -1203,12 +1849,25 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_eligibility_schedule_requests_privileged_access_group_eligibility_schedule_request_cancel(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_eligibility_schedule_requests_privileged_access_group_eligibility_schedule_request_cancel(connection, privileged_access_group_eligibility_schedule_request_id, _opts \\ []) do
+  @spec identity_governance_privileged_access_group_eligibility_schedule_requests_privileged_access_group_eligibility_schedule_request_cancel(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_eligibility_schedule_requests_privileged_access_group_eligibility_schedule_request_cancel(
+        connection,
+        privileged_access_group_eligibility_schedule_request_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/privilegedAccess/group/eligibilityScheduleRequests/#{privileged_access_group_eligibility_schedule_request_id}/cancel")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/eligibilityScheduleRequests/#{privileged_access_group_eligibility_schedule_request_id}/cancel"
+      )
       |> ensure_body()
       |> Enum.into([])
 

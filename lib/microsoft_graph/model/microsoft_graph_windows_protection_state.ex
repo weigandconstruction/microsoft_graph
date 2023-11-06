@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphWindowsProtectionState do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -34,41 +34,53 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphWindowsProtectionState do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :antiMalwareVersion => String.t | nil,
-    :detectedMalwareState => [MicrosoftGraph.Model.MicrosoftGraphWindowsDeviceMalwareState.t] | nil,
-    :deviceState => MicrosoftGraph.Model.WindowsProtectionStateDeviceState.t | nil,
-    :engineVersion => String.t | nil,
-    :fullScanOverdue => boolean() | nil,
-    :fullScanRequired => boolean() | nil,
-    :isVirtualMachine => boolean() | nil,
-    :lastFullScanDateTime => DateTime.t | nil,
-    :lastFullScanSignatureVersion => String.t | nil,
-    :lastQuickScanDateTime => DateTime.t | nil,
-    :lastQuickScanSignatureVersion => String.t | nil,
-    :lastReportedDateTime => DateTime.t | nil,
-    :malwareProtectionEnabled => boolean() | nil,
-    :networkInspectionSystemEnabled => boolean() | nil,
-    :productStatus => MicrosoftGraph.Model.WindowsProtectionStateProductStatus.t | nil,
-    :quickScanOverdue => boolean() | nil,
-    :realTimeProtectionEnabled => boolean() | nil,
-    :rebootRequired => boolean() | nil,
-    :signatureUpdateOverdue => boolean() | nil,
-    :signatureVersion => String.t | nil,
-    :tamperProtectionEnabled => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :antiMalwareVersion => String.t() | nil,
+          :detectedMalwareState =>
+            [MicrosoftGraph.Model.MicrosoftGraphWindowsDeviceMalwareState.t()] | nil,
+          :deviceState => MicrosoftGraph.Model.WindowsProtectionStateDeviceState.t() | nil,
+          :engineVersion => String.t() | nil,
+          :fullScanOverdue => boolean() | nil,
+          :fullScanRequired => boolean() | nil,
+          :isVirtualMachine => boolean() | nil,
+          :lastFullScanDateTime => DateTime.t() | nil,
+          :lastFullScanSignatureVersion => String.t() | nil,
+          :lastQuickScanDateTime => DateTime.t() | nil,
+          :lastQuickScanSignatureVersion => String.t() | nil,
+          :lastReportedDateTime => DateTime.t() | nil,
+          :malwareProtectionEnabled => boolean() | nil,
+          :networkInspectionSystemEnabled => boolean() | nil,
+          :productStatus => MicrosoftGraph.Model.WindowsProtectionStateProductStatus.t() | nil,
+          :quickScanOverdue => boolean() | nil,
+          :realTimeProtectionEnabled => boolean() | nil,
+          :rebootRequired => boolean() | nil,
+          :signatureUpdateOverdue => boolean() | nil,
+          :signatureVersion => String.t() | nil,
+          :tamperProtectionEnabled => boolean() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:detectedMalwareState, :list, MicrosoftGraph.Model.MicrosoftGraphWindowsDeviceMalwareState)
-     |> Deserializer.deserialize(:deviceState, :struct, MicrosoftGraph.Model.WindowsProtectionStateDeviceState)
-     |> Deserializer.deserialize(:lastFullScanDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastQuickScanDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastReportedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:productStatus, :struct, MicrosoftGraph.Model.WindowsProtectionStateProductStatus)
+    |> Deserializer.deserialize(
+      :detectedMalwareState,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphWindowsDeviceMalwareState
+    )
+    |> Deserializer.deserialize(
+      :deviceState,
+      :struct,
+      MicrosoftGraph.Model.WindowsProtectionStateDeviceState
+    )
+    |> Deserializer.deserialize(:lastFullScanDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastQuickScanDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastReportedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :productStatus,
+      :struct,
+      MicrosoftGraph.Model.WindowsProtectionStateProductStatus
+    )
   end
 end
-

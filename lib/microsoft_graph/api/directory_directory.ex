@@ -24,7 +24,10 @@ defmodule MicrosoftGraph.Api.DirectoryDirectory do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectory.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_directory_get_directory(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectory.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec directory_directory_get_directory(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectory.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def directory_directory_get_directory(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -61,7 +64,14 @@ defmodule MicrosoftGraph.Api.DirectoryDirectory do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectory.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_directory_update_directory(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphDirectory.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectory.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec directory_directory_update_directory(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphDirectory.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectory.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def directory_directory_update_directory(connection, microsoft_graph_directory, _opts \\ []) do
     request =
       %{}

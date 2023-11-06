@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.UserSettings do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,18 +16,21 @@ defmodule MicrosoftGraph.Model.UserSettings do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :contributionToContentDiscoveryAsOrganizationDisabled => boolean() | nil,
-    :contributionToContentDiscoveryDisabled => boolean() | nil,
-    :shiftPreferences => MicrosoftGraph.Model.UserSettingsShiftPreferences.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :contributionToContentDiscoveryAsOrganizationDisabled => boolean() | nil,
+          :contributionToContentDiscoveryDisabled => boolean() | nil,
+          :shiftPreferences => MicrosoftGraph.Model.UserSettingsShiftPreferences.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:shiftPreferences, :struct, MicrosoftGraph.Model.UserSettingsShiftPreferences)
+    |> Deserializer.deserialize(
+      :shiftPreferences,
+      :struct,
+      MicrosoftGraph.Model.UserSettingsShiftPreferences
+    )
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphInvitation do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -23,26 +23,30 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphInvitation do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :inviteRedeemUrl => String.t | nil,
-    :inviteRedirectUrl => String.t | nil,
-    :invitedUser => MicrosoftGraph.Model.InvitationInvitedUser.t | nil,
-    :invitedUserDisplayName => String.t | nil,
-    :invitedUserEmailAddress => String.t | nil,
-    :invitedUserMessageInfo => MicrosoftGraph.Model.InvitationInvitedUserMessageInfo.t | nil,
-    :invitedUserType => String.t | nil,
-    :resetRedemption => boolean() | nil,
-    :sendInvitationMessage => boolean() | nil,
-    :status => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :inviteRedeemUrl => String.t() | nil,
+          :inviteRedirectUrl => String.t() | nil,
+          :invitedUser => MicrosoftGraph.Model.InvitationInvitedUser.t() | nil,
+          :invitedUserDisplayName => String.t() | nil,
+          :invitedUserEmailAddress => String.t() | nil,
+          :invitedUserMessageInfo =>
+            MicrosoftGraph.Model.InvitationInvitedUserMessageInfo.t() | nil,
+          :invitedUserType => String.t() | nil,
+          :resetRedemption => boolean() | nil,
+          :sendInvitationMessage => boolean() | nil,
+          :status => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:invitedUser, :struct, MicrosoftGraph.Model.InvitationInvitedUser)
-     |> Deserializer.deserialize(:invitedUserMessageInfo, :struct, MicrosoftGraph.Model.InvitationInvitedUserMessageInfo)
+    |> Deserializer.deserialize(:invitedUser, :struct, MicrosoftGraph.Model.InvitationInvitedUser)
+    |> Deserializer.deserialize(
+      :invitedUserMessageInfo,
+      :struct,
+      MicrosoftGraph.Model.InvitationInvitedUserMessageInfo
+    )
   end
 end
-

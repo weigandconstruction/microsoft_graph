@@ -16,18 +16,22 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSharedPcAccountManagerPolicy do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :accountDeletionPolicy => MicrosoftGraph.Model.MicrosoftGraphSharedPcAccountDeletionPolicyType.t | nil,
-    :cacheAccountsAboveDiskFreePercentage => integer() | nil,
-    :inactiveThresholdDays => integer() | nil,
-    :removeAccountsBelowDiskFreePercentage => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :accountDeletionPolicy =>
+            MicrosoftGraph.Model.MicrosoftGraphSharedPcAccountDeletionPolicyType.t() | nil,
+          :cacheAccountsAboveDiskFreePercentage => integer() | nil,
+          :inactiveThresholdDays => integer() | nil,
+          :removeAccountsBelowDiskFreePercentage => integer() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:accountDeletionPolicy, :struct, MicrosoftGraph.Model.MicrosoftGraphSharedPcAccountDeletionPolicyType)
+    |> Deserializer.deserialize(
+      :accountDeletionPolicy,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSharedPcAccountDeletionPolicyType
+    )
   end
 end
-

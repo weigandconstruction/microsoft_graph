@@ -23,8 +23,19 @@ defmodule MicrosoftGraph.Api.DataPolicyOperationsDataPolicyOperation do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDataPolicyOperation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec data_policy_operations_data_policy_operation_create_data_policy_operation(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphDataPolicyOperation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDataPolicyOperation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def data_policy_operations_data_policy_operation_create_data_policy_operation(connection, microsoft_graph_data_policy_operation, _opts \\ []) do
+  @spec data_policy_operations_data_policy_operation_create_data_policy_operation(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphDataPolicyOperation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDataPolicyOperation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def data_policy_operations_data_policy_operation_create_data_policy_operation(
+        connection,
+        microsoft_graph_data_policy_operation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -56,8 +67,19 @@ defmodule MicrosoftGraph.Api.DataPolicyOperationsDataPolicyOperation do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec data_policy_operations_data_policy_operation_delete_data_policy_operation(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def data_policy_operations_data_policy_operation_delete_data_policy_operation(connection, data_policy_operation_id, opts \\ []) do
+  @spec data_policy_operations_data_policy_operation_delete_data_policy_operation(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def data_policy_operations_data_policy_operation_delete_data_policy_operation(
+        connection,
+        data_policy_operation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -95,8 +117,19 @@ defmodule MicrosoftGraph.Api.DataPolicyOperationsDataPolicyOperation do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDataPolicyOperation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec data_policy_operations_data_policy_operation_get_data_policy_operation(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDataPolicyOperation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def data_policy_operations_data_policy_operation_get_data_policy_operation(connection, data_policy_operation_id, opts \\ []) do
+  @spec data_policy_operations_data_policy_operation_get_data_policy_operation(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDataPolicyOperation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def data_policy_operations_data_policy_operation_get_data_policy_operation(
+        connection,
+        data_policy_operation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -140,8 +173,17 @@ defmodule MicrosoftGraph.Api.DataPolicyOperationsDataPolicyOperation do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDataPolicyOperationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec data_policy_operations_data_policy_operation_list_data_policy_operation(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDataPolicyOperationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def data_policy_operations_data_policy_operation_list_data_policy_operation(connection, opts \\ []) do
+  @spec data_policy_operations_data_policy_operation_list_data_policy_operation(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDataPolicyOperationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def data_policy_operations_data_policy_operation_list_data_policy_operation(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -184,8 +226,21 @@ defmodule MicrosoftGraph.Api.DataPolicyOperationsDataPolicyOperation do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDataPolicyOperation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec data_policy_operations_data_policy_operation_update_data_policy_operation(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphDataPolicyOperation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDataPolicyOperation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def data_policy_operations_data_policy_operation_update_data_policy_operation(connection, data_policy_operation_id, microsoft_graph_data_policy_operation, _opts \\ []) do
+  @spec data_policy_operations_data_policy_operation_update_data_policy_operation(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDataPolicyOperation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDataPolicyOperation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def data_policy_operations_data_policy_operation_update_data_policy_operation(
+        connection,
+        data_policy_operation_id,
+        microsoft_graph_data_policy_operation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -217,7 +272,10 @@ defmodule MicrosoftGraph.Api.DataPolicyOperationsDataPolicyOperation do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec data_policy_operations_get_count_b129(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec data_policy_operations_get_count_b129(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def data_policy_operations_get_count_b129(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,

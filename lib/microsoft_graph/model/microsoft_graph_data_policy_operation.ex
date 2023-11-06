@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphDataPolicyOperation do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,24 +19,27 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphDataPolicyOperation do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :completedDateTime => DateTime.t | nil,
-    :progress => MicrosoftGraph.Model.DataPolicyOperationProgress.t | nil,
-    :status => MicrosoftGraph.Model.DataPolicyOperationStatus.t | nil,
-    :storageLocation => String.t | nil,
-    :submittedDateTime => DateTime.t | nil,
-    :userId => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :completedDateTime => DateTime.t() | nil,
+          :progress => MicrosoftGraph.Model.DataPolicyOperationProgress.t() | nil,
+          :status => MicrosoftGraph.Model.DataPolicyOperationStatus.t() | nil,
+          :storageLocation => String.t() | nil,
+          :submittedDateTime => DateTime.t() | nil,
+          :userId => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:completedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:progress, :struct, MicrosoftGraph.Model.DataPolicyOperationProgress)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.DataPolicyOperationStatus)
-     |> Deserializer.deserialize(:submittedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:completedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :progress,
+      :struct,
+      MicrosoftGraph.Model.DataPolicyOperationProgress
+    )
+    |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.DataPolicyOperationStatus)
+    |> Deserializer.deserialize(:submittedDateTime, :datetime, nil)
   end
 end
-

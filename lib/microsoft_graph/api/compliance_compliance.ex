@@ -24,7 +24,10 @@ defmodule MicrosoftGraph.Api.ComplianceCompliance do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCompliance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec compliance_compliance_get_compliance(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphCompliance.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec compliance_compliance_get_compliance(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphCompliance.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def compliance_compliance_get_compliance(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -61,7 +64,14 @@ defmodule MicrosoftGraph.Api.ComplianceCompliance do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCompliance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec compliance_compliance_update_compliance(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphCompliance.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphCompliance.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec compliance_compliance_update_compliance(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphCompliance.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphCompliance.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def compliance_compliance_update_compliance(connection, microsoft_graph_compliance, _opts \\ []) do
     request =
       %{}

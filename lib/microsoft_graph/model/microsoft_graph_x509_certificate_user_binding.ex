@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphX509CertificateUserBinding do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphX509CertificateUserBinding do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :priority => integer() | nil,
-    :userProperty => String.t | nil,
-    :x509CertificateField => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :priority => integer() | nil,
+          :userProperty => String.t() | nil,
+          :x509CertificateField => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

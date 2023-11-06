@@ -24,8 +24,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementImportedWindowsAutopilotDeviceIdent
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphImportedWindowsAutopilotDeviceIdentity.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_create_imported_windows_autopilot_device_identities(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphImportedWindowsAutopilotDeviceIdentity.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphImportedWindowsAutopilotDeviceIdentity.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_create_imported_windows_autopilot_device_identities(connection, microsoft_graph_imported_windows_autopilot_device_identity, _opts \\ []) do
+  @spec device_management_create_imported_windows_autopilot_device_identities(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphImportedWindowsAutopilotDeviceIdentity.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphImportedWindowsAutopilotDeviceIdentity.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_create_imported_windows_autopilot_device_identities(
+        connection,
+        microsoft_graph_imported_windows_autopilot_device_identity,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -58,8 +69,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementImportedWindowsAutopilotDeviceIdent
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_delete_imported_windows_autopilot_device_identities(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_delete_imported_windows_autopilot_device_identities(connection, imported_windows_autopilot_device_identity_id, opts \\ []) do
+  @spec device_management_delete_imported_windows_autopilot_device_identities(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_delete_imported_windows_autopilot_device_identities(
+        connection,
+        imported_windows_autopilot_device_identity_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -67,7 +89,9 @@ defmodule MicrosoftGraph.Api.DeviceManagementImportedWindowsAutopilotDeviceIdent
     request =
       %{}
       |> method(:delete)
-      |> url("/deviceManagement/importedWindowsAutopilotDeviceIdentities/#{imported_windows_autopilot_device_identity_id}")
+      |> url(
+        "/deviceManagement/importedWindowsAutopilotDeviceIdentities/#{imported_windows_autopilot_device_identity_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -97,8 +121,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementImportedWindowsAutopilotDeviceIdent
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphImportedWindowsAutopilotDeviceIdentity.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_get_imported_windows_autopilot_device_identities(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphImportedWindowsAutopilotDeviceIdentity.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_get_imported_windows_autopilot_device_identities(connection, imported_windows_autopilot_device_identity_id, opts \\ []) do
+  @spec device_management_get_imported_windows_autopilot_device_identities(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphImportedWindowsAutopilotDeviceIdentity.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_get_imported_windows_autopilot_device_identities(
+        connection,
+        imported_windows_autopilot_device_identity_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -107,7 +142,9 @@ defmodule MicrosoftGraph.Api.DeviceManagementImportedWindowsAutopilotDeviceIdent
     request =
       %{}
       |> method(:get)
-      |> url("/deviceManagement/importedWindowsAutopilotDeviceIdentities/#{imported_windows_autopilot_device_identity_id}")
+      |> url(
+        "/deviceManagement/importedWindowsAutopilotDeviceIdentities/#{imported_windows_autopilot_device_identity_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -135,8 +172,17 @@ defmodule MicrosoftGraph.Api.DeviceManagementImportedWindowsAutopilotDeviceIdent
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_imported_windows_autopilot_device_identities_get_count36aa(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_imported_windows_autopilot_device_identities_get_count36aa(connection, opts \\ []) do
+  @spec device_management_imported_windows_autopilot_device_identities_get_count36aa(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_imported_windows_autopilot_device_identities_get_count36aa(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -180,7 +226,14 @@ defmodule MicrosoftGraph.Api.DeviceManagementImportedWindowsAutopilotDeviceIdent
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphImportedWindowsAutopilotDeviceIdentityCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_list_imported_windows_autopilot_device_identities(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphImportedWindowsAutopilotDeviceIdentityCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec device_management_list_imported_windows_autopilot_device_identities(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphImportedWindowsAutopilotDeviceIdentityCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def device_management_list_imported_windows_autopilot_device_identities(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -203,7 +256,8 @@ defmodule MicrosoftGraph.Api.DeviceManagementImportedWindowsAutopilotDeviceIdent
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphImportedWindowsAutopilotDeviceIdentityCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphImportedWindowsAutopilotDeviceIdentityCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -224,12 +278,27 @@ defmodule MicrosoftGraph.Api.DeviceManagementImportedWindowsAutopilotDeviceIdent
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphImportedWindowsAutopilotDeviceIdentity.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_update_imported_windows_autopilot_device_identities(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphImportedWindowsAutopilotDeviceIdentity.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphImportedWindowsAutopilotDeviceIdentity.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_update_imported_windows_autopilot_device_identities(connection, imported_windows_autopilot_device_identity_id, microsoft_graph_imported_windows_autopilot_device_identity, _opts \\ []) do
+  @spec device_management_update_imported_windows_autopilot_device_identities(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphImportedWindowsAutopilotDeviceIdentity.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphImportedWindowsAutopilotDeviceIdentity.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_update_imported_windows_autopilot_device_identities(
+        connection,
+        imported_windows_autopilot_device_identity_id,
+        microsoft_graph_imported_windows_autopilot_device_identity,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/deviceManagement/importedWindowsAutopilotDeviceIdentities/#{imported_windows_autopilot_device_identity_id}")
+      |> url(
+        "/deviceManagement/importedWindowsAutopilotDeviceIdentities/#{imported_windows_autopilot_device_identity_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_imported_windows_autopilot_device_identity)
       |> Enum.into([])
 

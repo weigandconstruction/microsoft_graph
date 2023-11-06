@@ -24,8 +24,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementNotificationMessageTemplate do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphNotificationMessageTemplate.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_create_notification_message_templates(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphNotificationMessageTemplate.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphNotificationMessageTemplate.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_create_notification_message_templates(connection, microsoft_graph_notification_message_template, _opts \\ []) do
+  @spec device_management_create_notification_message_templates(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphNotificationMessageTemplate.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphNotificationMessageTemplate.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_create_notification_message_templates(
+        connection,
+        microsoft_graph_notification_message_template,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -58,8 +69,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementNotificationMessageTemplate do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_delete_notification_message_templates(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_delete_notification_message_templates(connection, notification_message_template_id, opts \\ []) do
+  @spec device_management_delete_notification_message_templates(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_delete_notification_message_templates(
+        connection,
+        notification_message_template_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -97,8 +119,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementNotificationMessageTemplate do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphNotificationMessageTemplate.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_get_notification_message_templates(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphNotificationMessageTemplate.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_get_notification_message_templates(connection, notification_message_template_id, opts \\ []) do
+  @spec device_management_get_notification_message_templates(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphNotificationMessageTemplate.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_get_notification_message_templates(
+        connection,
+        notification_message_template_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -142,7 +175,11 @@ defmodule MicrosoftGraph.Api.DeviceManagementNotificationMessageTemplate do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphNotificationMessageTemplateCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_list_notification_message_templates(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphNotificationMessageTemplateCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec device_management_list_notification_message_templates(Tesla.Env.client(), keyword()) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphNotificationMessageTemplateCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def device_management_list_notification_message_templates(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -187,12 +224,27 @@ defmodule MicrosoftGraph.Api.DeviceManagementNotificationMessageTemplate do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphLocalizedNotificationMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_notification_message_templates_create_localized_notification_messages(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphLocalizedNotificationMessage.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphLocalizedNotificationMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_notification_message_templates_create_localized_notification_messages(connection, notification_message_template_id, microsoft_graph_localized_notification_message, _opts \\ []) do
+  @spec device_management_notification_message_templates_create_localized_notification_messages(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphLocalizedNotificationMessage.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphLocalizedNotificationMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_notification_message_templates_create_localized_notification_messages(
+        connection,
+        notification_message_template_id,
+        microsoft_graph_localized_notification_message,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceManagement/notificationMessageTemplates/#{notification_message_template_id}/localizedNotificationMessages")
+      |> url(
+        "/deviceManagement/notificationMessageTemplates/#{notification_message_template_id}/localizedNotificationMessages"
+      )
       |> add_param(:body, :body, microsoft_graph_localized_notification_message)
       |> Enum.into([])
 
@@ -222,8 +274,21 @@ defmodule MicrosoftGraph.Api.DeviceManagementNotificationMessageTemplate do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_notification_message_templates_delete_localized_notification_messages(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_notification_message_templates_delete_localized_notification_messages(connection, notification_message_template_id, localized_notification_message_id, opts \\ []) do
+  @spec device_management_notification_message_templates_delete_localized_notification_messages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_notification_message_templates_delete_localized_notification_messages(
+        connection,
+        notification_message_template_id,
+        localized_notification_message_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -231,7 +296,9 @@ defmodule MicrosoftGraph.Api.DeviceManagementNotificationMessageTemplate do
     request =
       %{}
       |> method(:delete)
-      |> url("/deviceManagement/notificationMessageTemplates/#{notification_message_template_id}/localizedNotificationMessages/#{localized_notification_message_id}")
+      |> url(
+        "/deviceManagement/notificationMessageTemplates/#{notification_message_template_id}/localizedNotificationMessages/#{localized_notification_message_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -259,7 +326,13 @@ defmodule MicrosoftGraph.Api.DeviceManagementNotificationMessageTemplate do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_notification_message_templates_get_count1654(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec device_management_notification_message_templates_get_count1654(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def device_management_notification_message_templates_get_count1654(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -300,8 +373,21 @@ defmodule MicrosoftGraph.Api.DeviceManagementNotificationMessageTemplate do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphLocalizedNotificationMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_notification_message_templates_get_localized_notification_messages(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphLocalizedNotificationMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_notification_message_templates_get_localized_notification_messages(connection, notification_message_template_id, localized_notification_message_id, opts \\ []) do
+  @spec device_management_notification_message_templates_get_localized_notification_messages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphLocalizedNotificationMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_notification_message_templates_get_localized_notification_messages(
+        connection,
+        notification_message_template_id,
+        localized_notification_message_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -310,7 +396,9 @@ defmodule MicrosoftGraph.Api.DeviceManagementNotificationMessageTemplate do
     request =
       %{}
       |> method(:get)
-      |> url("/deviceManagement/notificationMessageTemplates/#{notification_message_template_id}/localizedNotificationMessages/#{localized_notification_message_id}")
+      |> url(
+        "/deviceManagement/notificationMessageTemplates/#{notification_message_template_id}/localizedNotificationMessages/#{localized_notification_message_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -346,8 +434,20 @@ defmodule MicrosoftGraph.Api.DeviceManagementNotificationMessageTemplate do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphLocalizedNotificationMessageCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_notification_message_templates_list_localized_notification_messages(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphLocalizedNotificationMessageCollectionResponse.t} | {:error, Tesla.Env.t}
-  def device_management_notification_message_templates_list_localized_notification_messages(connection, notification_message_template_id, opts \\ []) do
+  @spec device_management_notification_message_templates_list_localized_notification_messages(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphLocalizedNotificationMessageCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_notification_message_templates_list_localized_notification_messages(
+        connection,
+        notification_message_template_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -362,7 +462,9 @@ defmodule MicrosoftGraph.Api.DeviceManagementNotificationMessageTemplate do
     request =
       %{}
       |> method(:get)
-      |> url("/deviceManagement/notificationMessageTemplates/#{notification_message_template_id}/localizedNotificationMessages")
+      |> url(
+        "/deviceManagement/notificationMessageTemplates/#{notification_message_template_id}/localizedNotificationMessages"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -391,8 +493,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementNotificationMessageTemplate do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_notification_message_templates_localized_notification_messages_get_count_dee6(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_notification_message_templates_localized_notification_messages_get_count_dee6(connection, notification_message_template_id, opts \\ []) do
+  @spec device_management_notification_message_templates_localized_notification_messages_get_count_dee6(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_notification_message_templates_localized_notification_messages_get_count_dee6(
+        connection,
+        notification_message_template_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -401,7 +514,9 @@ defmodule MicrosoftGraph.Api.DeviceManagementNotificationMessageTemplate do
     request =
       %{}
       |> method(:get)
-      |> url("/deviceManagement/notificationMessageTemplates/#{notification_message_template_id}/localizedNotificationMessages/$count")
+      |> url(
+        "/deviceManagement/notificationMessageTemplates/#{notification_message_template_id}/localizedNotificationMessages/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -431,12 +546,29 @@ defmodule MicrosoftGraph.Api.DeviceManagementNotificationMessageTemplate do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphLocalizedNotificationMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_notification_message_templates_update_localized_notification_messages(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphLocalizedNotificationMessage.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphLocalizedNotificationMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_notification_message_templates_update_localized_notification_messages(connection, notification_message_template_id, localized_notification_message_id, microsoft_graph_localized_notification_message, _opts \\ []) do
+  @spec device_management_notification_message_templates_update_localized_notification_messages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphLocalizedNotificationMessage.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphLocalizedNotificationMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_notification_message_templates_update_localized_notification_messages(
+        connection,
+        notification_message_template_id,
+        localized_notification_message_id,
+        microsoft_graph_localized_notification_message,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/deviceManagement/notificationMessageTemplates/#{notification_message_template_id}/localizedNotificationMessages/#{localized_notification_message_id}")
+      |> url(
+        "/deviceManagement/notificationMessageTemplates/#{notification_message_template_id}/localizedNotificationMessages/#{localized_notification_message_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_localized_notification_message)
       |> Enum.into([])
 
@@ -465,8 +597,21 @@ defmodule MicrosoftGraph.Api.DeviceManagementNotificationMessageTemplate do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphNotificationMessageTemplate.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_update_notification_message_templates(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphNotificationMessageTemplate.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphNotificationMessageTemplate.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_update_notification_message_templates(connection, notification_message_template_id, microsoft_graph_notification_message_template, _opts \\ []) do
+  @spec device_management_update_notification_message_templates(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphNotificationMessageTemplate.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphNotificationMessageTemplate.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_update_notification_message_templates(
+        connection,
+        notification_message_template_id,
+        microsoft_graph_notification_message_template,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

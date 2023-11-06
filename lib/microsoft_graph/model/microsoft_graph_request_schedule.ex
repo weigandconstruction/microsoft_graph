@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphRequestSchedule do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,19 +15,26 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphRequestSchedule do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :expiration => MicrosoftGraph.Model.MicrosoftGraphRequestScheduleExpiration.t | nil,
-    :recurrence => MicrosoftGraph.Model.MicrosoftGraphRequestScheduleRecurrence.t | nil,
-    :startDateTime => DateTime.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :expiration => MicrosoftGraph.Model.MicrosoftGraphRequestScheduleExpiration.t() | nil,
+          :recurrence => MicrosoftGraph.Model.MicrosoftGraphRequestScheduleRecurrence.t() | nil,
+          :startDateTime => DateTime.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:expiration, :struct, MicrosoftGraph.Model.MicrosoftGraphRequestScheduleExpiration)
-     |> Deserializer.deserialize(:recurrence, :struct, MicrosoftGraph.Model.MicrosoftGraphRequestScheduleRecurrence)
-     |> Deserializer.deserialize(:startDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :expiration,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphRequestScheduleExpiration
+    )
+    |> Deserializer.deserialize(
+      :recurrence,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphRequestScheduleRecurrence
+    )
+    |> Deserializer.deserialize(:startDateTime, :datetime, nil)
   end
 end
-

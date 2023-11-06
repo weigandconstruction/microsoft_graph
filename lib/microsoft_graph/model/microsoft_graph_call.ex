@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphCall do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -37,57 +37,83 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphCall do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :audioRoutingGroups => [MicrosoftGraph.Model.MicrosoftGraphAudioRoutingGroup.t] | nil,
-    :callChainId => String.t | nil,
-    :callOptions => MicrosoftGraph.Model.CallCallOptions.t | nil,
-    :callRoutes => [MicrosoftGraph.Model.CallCallRoutesInner.t] | nil,
-    :callbackUri => String.t | nil,
-    :chatInfo => MicrosoftGraph.Model.CallChatInfo.t | nil,
-    :contentSharingSessions => [MicrosoftGraph.Model.MicrosoftGraphContentSharingSession.t] | nil,
-    :direction => MicrosoftGraph.Model.CallDirection.t | nil,
-    :incomingContext => MicrosoftGraph.Model.CallIncomingContext.t | nil,
-    :mediaConfig => MicrosoftGraph.Model.CallMediaConfig.t | nil,
-    :mediaState => MicrosoftGraph.Model.CallMediaState.t | nil,
-    :meetingInfo => MicrosoftGraph.Model.CallMeetingInfo.t | nil,
-    :myParticipantId => String.t | nil,
-    :operations => [MicrosoftGraph.Model.MicrosoftGraphCommsOperation.t] | nil,
-    :participants => [MicrosoftGraph.Model.MicrosoftGraphParticipant.t] | nil,
-    :requestedModalities => [MicrosoftGraph.Model.CommunicationsCallsCallAnswerRequestAcceptedModalitiesInner.t] | nil,
-    :resultInfo => MicrosoftGraph.Model.CallResultInfo.t | nil,
-    :source => MicrosoftGraph.Model.CallSource.t | nil,
-    :state => MicrosoftGraph.Model.CallState.t | nil,
-    :subject => String.t | nil,
-    :targets => [MicrosoftGraph.Model.CallTargetsInner.t] | nil,
-    :tenantId => String.t | nil,
-    :toneInfo => MicrosoftGraph.Model.CallToneInfo.t | nil,
-    :transcription => MicrosoftGraph.Model.CallTranscription.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :audioRoutingGroups => [MicrosoftGraph.Model.MicrosoftGraphAudioRoutingGroup.t()] | nil,
+          :callChainId => String.t() | nil,
+          :callOptions => MicrosoftGraph.Model.CallCallOptions.t() | nil,
+          :callRoutes => [MicrosoftGraph.Model.CallCallRoutesInner.t()] | nil,
+          :callbackUri => String.t() | nil,
+          :chatInfo => MicrosoftGraph.Model.CallChatInfo.t() | nil,
+          :contentSharingSessions =>
+            [MicrosoftGraph.Model.MicrosoftGraphContentSharingSession.t()] | nil,
+          :direction => MicrosoftGraph.Model.CallDirection.t() | nil,
+          :incomingContext => MicrosoftGraph.Model.CallIncomingContext.t() | nil,
+          :mediaConfig => MicrosoftGraph.Model.CallMediaConfig.t() | nil,
+          :mediaState => MicrosoftGraph.Model.CallMediaState.t() | nil,
+          :meetingInfo => MicrosoftGraph.Model.CallMeetingInfo.t() | nil,
+          :myParticipantId => String.t() | nil,
+          :operations => [MicrosoftGraph.Model.MicrosoftGraphCommsOperation.t()] | nil,
+          :participants => [MicrosoftGraph.Model.MicrosoftGraphParticipant.t()] | nil,
+          :requestedModalities =>
+            [MicrosoftGraph.Model.CommunicationsCallsCallAnswerRequestAcceptedModalitiesInner.t()]
+            | nil,
+          :resultInfo => MicrosoftGraph.Model.CallResultInfo.t() | nil,
+          :source => MicrosoftGraph.Model.CallSource.t() | nil,
+          :state => MicrosoftGraph.Model.CallState.t() | nil,
+          :subject => String.t() | nil,
+          :targets => [MicrosoftGraph.Model.CallTargetsInner.t()] | nil,
+          :tenantId => String.t() | nil,
+          :toneInfo => MicrosoftGraph.Model.CallToneInfo.t() | nil,
+          :transcription => MicrosoftGraph.Model.CallTranscription.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:audioRoutingGroups, :list, MicrosoftGraph.Model.MicrosoftGraphAudioRoutingGroup)
-     |> Deserializer.deserialize(:callOptions, :struct, MicrosoftGraph.Model.CallCallOptions)
-     |> Deserializer.deserialize(:callRoutes, :list, MicrosoftGraph.Model.CallCallRoutesInner)
-     |> Deserializer.deserialize(:chatInfo, :struct, MicrosoftGraph.Model.CallChatInfo)
-     |> Deserializer.deserialize(:contentSharingSessions, :list, MicrosoftGraph.Model.MicrosoftGraphContentSharingSession)
-     |> Deserializer.deserialize(:direction, :struct, MicrosoftGraph.Model.CallDirection)
-     |> Deserializer.deserialize(:incomingContext, :struct, MicrosoftGraph.Model.CallIncomingContext)
-     |> Deserializer.deserialize(:mediaConfig, :struct, MicrosoftGraph.Model.CallMediaConfig)
-     |> Deserializer.deserialize(:mediaState, :struct, MicrosoftGraph.Model.CallMediaState)
-     |> Deserializer.deserialize(:meetingInfo, :struct, MicrosoftGraph.Model.CallMeetingInfo)
-     |> Deserializer.deserialize(:operations, :list, MicrosoftGraph.Model.MicrosoftGraphCommsOperation)
-     |> Deserializer.deserialize(:participants, :list, MicrosoftGraph.Model.MicrosoftGraphParticipant)
-     |> Deserializer.deserialize(:requestedModalities, :list, MicrosoftGraph.Model.CommunicationsCallsCallAnswerRequestAcceptedModalitiesInner)
-     |> Deserializer.deserialize(:resultInfo, :struct, MicrosoftGraph.Model.CallResultInfo)
-     |> Deserializer.deserialize(:source, :struct, MicrosoftGraph.Model.CallSource)
-     |> Deserializer.deserialize(:state, :struct, MicrosoftGraph.Model.CallState)
-     |> Deserializer.deserialize(:targets, :list, MicrosoftGraph.Model.CallTargetsInner)
-     |> Deserializer.deserialize(:toneInfo, :struct, MicrosoftGraph.Model.CallToneInfo)
-     |> Deserializer.deserialize(:transcription, :struct, MicrosoftGraph.Model.CallTranscription)
+    |> Deserializer.deserialize(
+      :audioRoutingGroups,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAudioRoutingGroup
+    )
+    |> Deserializer.deserialize(:callOptions, :struct, MicrosoftGraph.Model.CallCallOptions)
+    |> Deserializer.deserialize(:callRoutes, :list, MicrosoftGraph.Model.CallCallRoutesInner)
+    |> Deserializer.deserialize(:chatInfo, :struct, MicrosoftGraph.Model.CallChatInfo)
+    |> Deserializer.deserialize(
+      :contentSharingSessions,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphContentSharingSession
+    )
+    |> Deserializer.deserialize(:direction, :struct, MicrosoftGraph.Model.CallDirection)
+    |> Deserializer.deserialize(
+      :incomingContext,
+      :struct,
+      MicrosoftGraph.Model.CallIncomingContext
+    )
+    |> Deserializer.deserialize(:mediaConfig, :struct, MicrosoftGraph.Model.CallMediaConfig)
+    |> Deserializer.deserialize(:mediaState, :struct, MicrosoftGraph.Model.CallMediaState)
+    |> Deserializer.deserialize(:meetingInfo, :struct, MicrosoftGraph.Model.CallMeetingInfo)
+    |> Deserializer.deserialize(
+      :operations,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphCommsOperation
+    )
+    |> Deserializer.deserialize(
+      :participants,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphParticipant
+    )
+    |> Deserializer.deserialize(
+      :requestedModalities,
+      :list,
+      MicrosoftGraph.Model.CommunicationsCallsCallAnswerRequestAcceptedModalitiesInner
+    )
+    |> Deserializer.deserialize(:resultInfo, :struct, MicrosoftGraph.Model.CallResultInfo)
+    |> Deserializer.deserialize(:source, :struct, MicrosoftGraph.Model.CallSource)
+    |> Deserializer.deserialize(:state, :struct, MicrosoftGraph.Model.CallState)
+    |> Deserializer.deserialize(:targets, :list, MicrosoftGraph.Model.CallTargetsInner)
+    |> Deserializer.deserialize(:toneInfo, :struct, MicrosoftGraph.Model.CallToneInfo)
+    |> Deserializer.deserialize(:transcription, :struct, MicrosoftGraph.Model.CallTranscription)
   end
 end
-

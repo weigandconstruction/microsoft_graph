@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionNetworkLearningSummary do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionNetwork
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :deviceCount => integer() | nil,
-    :url => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :deviceCount => integer() | nil,
+          :url => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

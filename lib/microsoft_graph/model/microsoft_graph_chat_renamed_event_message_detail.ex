@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphChatRenamedEventMessageDetail do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,17 +15,20 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphChatRenamedEventMessageDetail do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :chatDisplayName => String.t | nil,
-    :chatId => String.t | nil,
-    :initiator => MicrosoftGraph.Model.ChannelRenamedEventMessageDetailInitiator.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :chatDisplayName => String.t() | nil,
+          :chatId => String.t() | nil,
+          :initiator => MicrosoftGraph.Model.ChannelRenamedEventMessageDetailInitiator.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:initiator, :struct, MicrosoftGraph.Model.ChannelRenamedEventMessageDetailInitiator)
+    |> Deserializer.deserialize(
+      :initiator,
+      :struct,
+      MicrosoftGraph.Model.ChannelRenamedEventMessageDetailInitiator
+    )
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphLearningSelfInitiatedCourse do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -21,25 +21,28 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphLearningSelfInitiatedCourse do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :completedDateTime => DateTime.t | nil,
-    :completionPercentage => integer() | nil,
-    :externalcourseActivityId => String.t | nil,
-    :learnerUserId => String.t | nil,
-    :learningContentId => String.t | nil,
-    :learningProviderId => String.t | nil,
-    :status => MicrosoftGraph.Model.LearningCourseActivityStatus.t | nil,
-    :startedDateTime => DateTime.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :completedDateTime => DateTime.t() | nil,
+          :completionPercentage => integer() | nil,
+          :externalcourseActivityId => String.t() | nil,
+          :learnerUserId => String.t() | nil,
+          :learningContentId => String.t() | nil,
+          :learningProviderId => String.t() | nil,
+          :status => MicrosoftGraph.Model.LearningCourseActivityStatus.t() | nil,
+          :startedDateTime => DateTime.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:completedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.LearningCourseActivityStatus)
-     |> Deserializer.deserialize(:startedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:completedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :status,
+      :struct,
+      MicrosoftGraph.Model.LearningCourseActivityStatus
+    )
+    |> Deserializer.deserialize(:startedDateTime, :datetime, nil)
   end
 end
-

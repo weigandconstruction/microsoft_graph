@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResult do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -24,32 +24,47 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingRes
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :completedDateTime => DateTime.t | nil,
-    :failedTasksCount => integer() | nil,
-    :processingStatus => MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleWorkflowProcessingStatus.t | nil,
-    :scheduledDateTime => DateTime.t | nil,
-    :startedDateTime => DateTime.t | nil,
-    :subject => MicrosoftGraph.Model.MicrosoftGraphUser.t | nil,
-    :taskProcessingResults => [MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResult.t] | nil,
-    :totalTasksCount => integer() | nil,
-    :totalUnprocessedTasksCount => integer() | nil,
-    :workflowExecutionType => MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowExecutionType.t | nil,
-    :workflowVersion => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :completedDateTime => DateTime.t() | nil,
+          :failedTasksCount => integer() | nil,
+          :processingStatus =>
+            MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleWorkflowProcessingStatus.t()
+            | nil,
+          :scheduledDateTime => DateTime.t() | nil,
+          :startedDateTime => DateTime.t() | nil,
+          :subject => MicrosoftGraph.Model.MicrosoftGraphUser.t() | nil,
+          :taskProcessingResults =>
+            [MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResult.t()] | nil,
+          :totalTasksCount => integer() | nil,
+          :totalUnprocessedTasksCount => integer() | nil,
+          :workflowExecutionType =>
+            MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowExecutionType.t() | nil,
+          :workflowVersion => integer() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:completedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:processingStatus, :struct, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleWorkflowProcessingStatus)
-     |> Deserializer.deserialize(:scheduledDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:startedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:subject, :struct, MicrosoftGraph.Model.MicrosoftGraphUser)
-     |> Deserializer.deserialize(:taskProcessingResults, :list, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResult)
-     |> Deserializer.deserialize(:workflowExecutionType, :struct, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowExecutionType)
+    |> Deserializer.deserialize(:completedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :processingStatus,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleWorkflowProcessingStatus
+    )
+    |> Deserializer.deserialize(:scheduledDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:startedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:subject, :struct, MicrosoftGraph.Model.MicrosoftGraphUser)
+    |> Deserializer.deserialize(
+      :taskProcessingResults,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResult
+    )
+    |> Deserializer.deserialize(
+      :workflowExecutionType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowExecutionType
+    )
   end
 end
-

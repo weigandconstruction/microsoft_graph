@@ -25,7 +25,15 @@ defmodule MicrosoftGraph.Api.SitesPermission do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPermission.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_create_permissions(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphPermission.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPermission.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_create_permissions(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPermission.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPermission.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_create_permissions(connection, site_id, microsoft_graph_permission, _opts \\ []) do
     request =
       %{}
@@ -60,7 +68,10 @@ defmodule MicrosoftGraph.Api.SitesPermission do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_delete_permissions(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_delete_permissions(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_delete_permissions(connection, site_id, permission_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -100,7 +111,10 @@ defmodule MicrosoftGraph.Api.SitesPermission do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPermission.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_get_permissions(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPermission.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_get_permissions(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPermission.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_get_permissions(connection, site_id, permission_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -146,7 +160,10 @@ defmodule MicrosoftGraph.Api.SitesPermission do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPermissionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_list_permissions(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPermissionCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec sites_list_permissions(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPermissionCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def sites_list_permissions(connection, site_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -191,7 +208,10 @@ defmodule MicrosoftGraph.Api.SitesPermission do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_permissions_get_count511e(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_permissions_get_count511e(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_permissions_get_count511e(connection, site_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -231,8 +251,23 @@ defmodule MicrosoftGraph.Api.SitesPermission do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPermission.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_update_permissions(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphPermission.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPermission.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_update_permissions(connection, site_id, permission_id, microsoft_graph_permission, _opts \\ []) do
+  @spec sites_update_permissions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPermission.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPermission.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_update_permissions(
+        connection,
+        site_id,
+        permission_id,
+        microsoft_graph_permission,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

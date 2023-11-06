@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphRiskUserActivity do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,15 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphRiskUserActivity do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :detail => MicrosoftGraph.Model.RiskyUserRiskDetail.t | nil,
-    :riskEventTypes => [String.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :detail => MicrosoftGraph.Model.RiskyUserRiskDetail.t() | nil,
+          :riskEventTypes => [String.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:detail, :struct, MicrosoftGraph.Model.RiskyUserRiskDetail)
+    |> Deserializer.deserialize(:detail, :struct, MicrosoftGraph.Model.RiskyUserRiskDetail)
   end
 end
-

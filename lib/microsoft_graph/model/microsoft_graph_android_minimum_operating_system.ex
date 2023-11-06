@@ -28,27 +28,26 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAndroidMinimumOperatingSystem do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :v10_0 => boolean() | nil,
-    :v11_0 => boolean() | nil,
-    :v4_0 => boolean() | nil,
-    :v4_0_3 => boolean() | nil,
-    :v4_1 => boolean() | nil,
-    :v4_2 => boolean() | nil,
-    :v4_3 => boolean() | nil,
-    :v4_4 => boolean() | nil,
-    :v5_0 => boolean() | nil,
-    :v5_1 => boolean() | nil,
-    :v6_0 => boolean() | nil,
-    :v7_0 => boolean() | nil,
-    :v7_1 => boolean() | nil,
-    :v8_0 => boolean() | nil,
-    :v8_1 => boolean() | nil,
-    :v9_0 => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :v10_0 => boolean() | nil,
+          :v11_0 => boolean() | nil,
+          :v4_0 => boolean() | nil,
+          :v4_0_3 => boolean() | nil,
+          :v4_1 => boolean() | nil,
+          :v4_2 => boolean() | nil,
+          :v4_3 => boolean() | nil,
+          :v4_4 => boolean() | nil,
+          :v5_0 => boolean() | nil,
+          :v5_1 => boolean() | nil,
+          :v6_0 => boolean() | nil,
+          :v7_0 => boolean() | nil,
+          :v7_1 => boolean() | nil,
+          :v8_0 => boolean() | nil,
+          :v8_1 => boolean() | nil,
+          :v9_0 => boolean() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

@@ -17,23 +17,44 @@ defmodule MicrosoftGraph.Model.PlaceGeoCoordinates do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :accuracy => MicrosoftGraph.Model.MicrosoftGraphOutlookGeoCoordinatesAccuracy.t | nil,
-    :altitude => MicrosoftGraph.Model.MicrosoftGraphOutlookGeoCoordinatesAltitude.t | nil,
-    :altitudeAccuracy => MicrosoftGraph.Model.MicrosoftGraphOutlookGeoCoordinatesAltitudeAccuracy.t | nil,
-    :latitude => MicrosoftGraph.Model.MicrosoftGraphOutlookGeoCoordinatesLatitude.t | nil,
-    :longitude => MicrosoftGraph.Model.MicrosoftGraphOutlookGeoCoordinatesLongitude.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :accuracy => MicrosoftGraph.Model.MicrosoftGraphOutlookGeoCoordinatesAccuracy.t() | nil,
+          :altitude => MicrosoftGraph.Model.MicrosoftGraphOutlookGeoCoordinatesAltitude.t() | nil,
+          :altitudeAccuracy =>
+            MicrosoftGraph.Model.MicrosoftGraphOutlookGeoCoordinatesAltitudeAccuracy.t() | nil,
+          :latitude => MicrosoftGraph.Model.MicrosoftGraphOutlookGeoCoordinatesLatitude.t() | nil,
+          :longitude =>
+            MicrosoftGraph.Model.MicrosoftGraphOutlookGeoCoordinatesLongitude.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:accuracy, :struct, MicrosoftGraph.Model.MicrosoftGraphOutlookGeoCoordinatesAccuracy)
-     |> Deserializer.deserialize(:altitude, :struct, MicrosoftGraph.Model.MicrosoftGraphOutlookGeoCoordinatesAltitude)
-     |> Deserializer.deserialize(:altitudeAccuracy, :struct, MicrosoftGraph.Model.MicrosoftGraphOutlookGeoCoordinatesAltitudeAccuracy)
-     |> Deserializer.deserialize(:latitude, :struct, MicrosoftGraph.Model.MicrosoftGraphOutlookGeoCoordinatesLatitude)
-     |> Deserializer.deserialize(:longitude, :struct, MicrosoftGraph.Model.MicrosoftGraphOutlookGeoCoordinatesLongitude)
+    |> Deserializer.deserialize(
+      :accuracy,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphOutlookGeoCoordinatesAccuracy
+    )
+    |> Deserializer.deserialize(
+      :altitude,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphOutlookGeoCoordinatesAltitude
+    )
+    |> Deserializer.deserialize(
+      :altitudeAccuracy,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphOutlookGeoCoordinatesAltitudeAccuracy
+    )
+    |> Deserializer.deserialize(
+      :latitude,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphOutlookGeoCoordinatesLatitude
+    )
+    |> Deserializer.deserialize(
+      :longitude,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphOutlookGeoCoordinatesLongitude
+    )
   end
 end
-

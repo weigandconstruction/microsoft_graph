@@ -16,19 +16,27 @@ defmodule MicrosoftGraph.Model.SynchronizationJobSchema do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :directories => [MicrosoftGraph.Model.MicrosoftGraphDirectoryDefinition.t] | nil,
-    :synchronizationRules => [MicrosoftGraph.Model.SynchronizationSchemaSynchronizationRulesInner.t] | nil,
-    :version => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :directories => [MicrosoftGraph.Model.MicrosoftGraphDirectoryDefinition.t()] | nil,
+          :synchronizationRules =>
+            [MicrosoftGraph.Model.SynchronizationSchemaSynchronizationRulesInner.t()] | nil,
+          :version => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:directories, :list, MicrosoftGraph.Model.MicrosoftGraphDirectoryDefinition)
-     |> Deserializer.deserialize(:synchronizationRules, :list, MicrosoftGraph.Model.SynchronizationSchemaSynchronizationRulesInner)
+    |> Deserializer.deserialize(
+      :directories,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDirectoryDefinition
+    )
+    |> Deserializer.deserialize(
+      :synchronizationRules,
+      :list,
+      MicrosoftGraph.Model.SynchronizationSchemaSynchronizationRulesInner
+    )
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphEducationOutcome do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,18 +15,21 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphEducationOutcome do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :lastModifiedBy => MicrosoftGraph.Model.EducationOutcomeLastModifiedBy.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :lastModifiedBy => MicrosoftGraph.Model.EducationOutcomeLastModifiedBy.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:lastModifiedBy, :struct, MicrosoftGraph.Model.EducationOutcomeLastModifiedBy)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :lastModifiedBy,
+      :struct,
+      MicrosoftGraph.Model.EducationOutcomeLastModifiedBy
+    )
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
   end
 end
-

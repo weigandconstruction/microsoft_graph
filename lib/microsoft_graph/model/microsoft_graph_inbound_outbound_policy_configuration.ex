@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphInboundOutboundPolicyConfiguration do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphInboundOutboundPolicyConfiguration 
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :inboundAllowed => boolean() | nil,
-    :outboundAllowed => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :inboundAllowed => boolean() | nil,
+          :outboundAllowed => boolean() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

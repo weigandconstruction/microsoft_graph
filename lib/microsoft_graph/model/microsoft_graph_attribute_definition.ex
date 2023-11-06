@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAttributeDefinition do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -24,30 +24,49 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAttributeDefinition do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :anchor => boolean() | nil,
-    :apiExpressions => [MicrosoftGraph.Model.MicrosoftGraphAttributeDefinitionApiExpressionsInner.t] | nil,
-    :caseExact => boolean() | nil,
-    :defaultValue => String.t | nil,
-    :flowNullValues => boolean() | nil,
-    :metadata => [MicrosoftGraph.Model.MicrosoftGraphAttributeDefinitionMetadataInner.t] | nil,
-    :multivalued => boolean() | nil,
-    :mutability => MicrosoftGraph.Model.MicrosoftGraphMutability.t | nil,
-    :name => String.t | nil,
-    :referencedObjects => [MicrosoftGraph.Model.MicrosoftGraphAttributeDefinitionReferencedObjectsInner.t] | nil,
-    :required => boolean() | nil,
-    :type => MicrosoftGraph.Model.MicrosoftGraphAttributeType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :anchor => boolean() | nil,
+          :apiExpressions =>
+            [MicrosoftGraph.Model.MicrosoftGraphAttributeDefinitionApiExpressionsInner.t()] | nil,
+          :caseExact => boolean() | nil,
+          :defaultValue => String.t() | nil,
+          :flowNullValues => boolean() | nil,
+          :metadata =>
+            [MicrosoftGraph.Model.MicrosoftGraphAttributeDefinitionMetadataInner.t()] | nil,
+          :multivalued => boolean() | nil,
+          :mutability => MicrosoftGraph.Model.MicrosoftGraphMutability.t() | nil,
+          :name => String.t() | nil,
+          :referencedObjects =>
+            [MicrosoftGraph.Model.MicrosoftGraphAttributeDefinitionReferencedObjectsInner.t()]
+            | nil,
+          :required => boolean() | nil,
+          :type => MicrosoftGraph.Model.MicrosoftGraphAttributeType.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:apiExpressions, :list, MicrosoftGraph.Model.MicrosoftGraphAttributeDefinitionApiExpressionsInner)
-     |> Deserializer.deserialize(:metadata, :list, MicrosoftGraph.Model.MicrosoftGraphAttributeDefinitionMetadataInner)
-     |> Deserializer.deserialize(:mutability, :struct, MicrosoftGraph.Model.MicrosoftGraphMutability)
-     |> Deserializer.deserialize(:referencedObjects, :list, MicrosoftGraph.Model.MicrosoftGraphAttributeDefinitionReferencedObjectsInner)
-     |> Deserializer.deserialize(:type, :struct, MicrosoftGraph.Model.MicrosoftGraphAttributeType)
+    |> Deserializer.deserialize(
+      :apiExpressions,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAttributeDefinitionApiExpressionsInner
+    )
+    |> Deserializer.deserialize(
+      :metadata,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAttributeDefinitionMetadataInner
+    )
+    |> Deserializer.deserialize(
+      :mutability,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphMutability
+    )
+    |> Deserializer.deserialize(
+      :referencedObjects,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAttributeDefinitionReferencedObjectsInner
+    )
+    |> Deserializer.deserialize(:type, :struct, MicrosoftGraph.Model.MicrosoftGraphAttributeType)
   end
 end
-

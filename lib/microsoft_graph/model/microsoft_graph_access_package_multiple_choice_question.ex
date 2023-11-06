@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAccessPackageMultipleChoiceQuestion do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -20,23 +20,32 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAccessPackageMultipleChoiceQuestion
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :isAnswerEditable => boolean() | nil,
-    :isRequired => boolean() | nil,
-    :localizations => [MicrosoftGraph.Model.AccessPackageQuestionLocalizationsInner.t] | nil,
-    :sequence => integer() | nil,
-    :text => String.t | nil,
-    :choices => [MicrosoftGraph.Model.AccessPackageMultipleChoiceQuestionChoicesInner.t] | nil,
-    :isMultipleSelectionAllowed => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :isAnswerEditable => boolean() | nil,
+          :isRequired => boolean() | nil,
+          :localizations =>
+            [MicrosoftGraph.Model.AccessPackageQuestionLocalizationsInner.t()] | nil,
+          :sequence => integer() | nil,
+          :text => String.t() | nil,
+          :choices =>
+            [MicrosoftGraph.Model.AccessPackageMultipleChoiceQuestionChoicesInner.t()] | nil,
+          :isMultipleSelectionAllowed => boolean() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:localizations, :list, MicrosoftGraph.Model.AccessPackageQuestionLocalizationsInner)
-     |> Deserializer.deserialize(:choices, :list, MicrosoftGraph.Model.AccessPackageMultipleChoiceQuestionChoicesInner)
+    |> Deserializer.deserialize(
+      :localizations,
+      :list,
+      MicrosoftGraph.Model.AccessPackageQuestionLocalizationsInner
+    )
+    |> Deserializer.deserialize(
+      :choices,
+      :list,
+      MicrosoftGraph.Model.AccessPackageMultipleChoiceQuestionChoicesInner
+    )
   end
 end
-

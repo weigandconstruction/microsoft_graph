@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphCallRecordsSession do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -21,29 +21,36 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphCallRecordsSession do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :callee => MicrosoftGraph.Model.SessionCallee.t | nil,
-    :caller => MicrosoftGraph.Model.SessionCaller.t | nil,
-    :endDateTime => DateTime.t | nil,
-    :failureInfo => MicrosoftGraph.Model.SessionFailureInfo.t | nil,
-    :isTest => boolean() | nil,
-    :modalities => [MicrosoftGraph.Model.MicrosoftGraphCallRecordsModality.t] | nil,
-    :segments => [MicrosoftGraph.Model.MicrosoftGraphCallRecordsSegment.t] | nil,
-    :startDateTime => DateTime.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :callee => MicrosoftGraph.Model.SessionCallee.t() | nil,
+          :caller => MicrosoftGraph.Model.SessionCaller.t() | nil,
+          :endDateTime => DateTime.t() | nil,
+          :failureInfo => MicrosoftGraph.Model.SessionFailureInfo.t() | nil,
+          :isTest => boolean() | nil,
+          :modalities => [MicrosoftGraph.Model.MicrosoftGraphCallRecordsModality.t()] | nil,
+          :segments => [MicrosoftGraph.Model.MicrosoftGraphCallRecordsSegment.t()] | nil,
+          :startDateTime => DateTime.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:callee, :struct, MicrosoftGraph.Model.SessionCallee)
-     |> Deserializer.deserialize(:caller, :struct, MicrosoftGraph.Model.SessionCaller)
-     |> Deserializer.deserialize(:endDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:failureInfo, :struct, MicrosoftGraph.Model.SessionFailureInfo)
-     |> Deserializer.deserialize(:modalities, :list, MicrosoftGraph.Model.MicrosoftGraphCallRecordsModality)
-     |> Deserializer.deserialize(:segments, :list, MicrosoftGraph.Model.MicrosoftGraphCallRecordsSegment)
-     |> Deserializer.deserialize(:startDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:callee, :struct, MicrosoftGraph.Model.SessionCallee)
+    |> Deserializer.deserialize(:caller, :struct, MicrosoftGraph.Model.SessionCaller)
+    |> Deserializer.deserialize(:endDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:failureInfo, :struct, MicrosoftGraph.Model.SessionFailureInfo)
+    |> Deserializer.deserialize(
+      :modalities,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsModality
+    )
+    |> Deserializer.deserialize(
+      :segments,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsSegment
+    )
+    |> Deserializer.deserialize(:startDateTime, :datetime, nil)
   end
 end
-

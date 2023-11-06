@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphApplicationTemplate do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -21,20 +21,19 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphApplicationTemplate do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :categories => [String.t] | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :homePageUrl => String.t | nil,
-    :logoUrl => String.t | nil,
-    :publisher => String.t | nil,
-    :supportedProvisioningTypes => [String.t] | nil,
-    :supportedSingleSignOnModes => [String.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :categories => [String.t()] | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :homePageUrl => String.t() | nil,
+          :logoUrl => String.t() | nil,
+          :publisher => String.t() | nil,
+          :supportedProvisioningTypes => [String.t()] | nil,
+          :supportedSingleSignOnModes => [String.t()] | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

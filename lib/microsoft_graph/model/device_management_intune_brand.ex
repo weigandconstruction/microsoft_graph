@@ -26,30 +26,43 @@ defmodule MicrosoftGraph.Model.DeviceManagementIntuneBrand do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :contactITEmailAddress => String.t | nil,
-    :contactITName => String.t | nil,
-    :contactITNotes => String.t | nil,
-    :contactITPhoneNumber => String.t | nil,
-    :darkBackgroundLogo => MicrosoftGraph.Model.MicrosoftGraphIntuneBrandDarkBackgroundLogo.t | nil,
-    :displayName => String.t | nil,
-    :lightBackgroundLogo => MicrosoftGraph.Model.MicrosoftGraphIntuneBrandLightBackgroundLogo.t | nil,
-    :onlineSupportSiteName => String.t | nil,
-    :onlineSupportSiteUrl => String.t | nil,
-    :privacyUrl => String.t | nil,
-    :showDisplayNameNextToLogo => boolean() | nil,
-    :showLogo => boolean() | nil,
-    :showNameNextToLogo => boolean() | nil,
-    :themeColor => MicrosoftGraph.Model.MicrosoftGraphIntuneBrandThemeColor.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :contactITEmailAddress => String.t() | nil,
+          :contactITName => String.t() | nil,
+          :contactITNotes => String.t() | nil,
+          :contactITPhoneNumber => String.t() | nil,
+          :darkBackgroundLogo =>
+            MicrosoftGraph.Model.MicrosoftGraphIntuneBrandDarkBackgroundLogo.t() | nil,
+          :displayName => String.t() | nil,
+          :lightBackgroundLogo =>
+            MicrosoftGraph.Model.MicrosoftGraphIntuneBrandLightBackgroundLogo.t() | nil,
+          :onlineSupportSiteName => String.t() | nil,
+          :onlineSupportSiteUrl => String.t() | nil,
+          :privacyUrl => String.t() | nil,
+          :showDisplayNameNextToLogo => boolean() | nil,
+          :showLogo => boolean() | nil,
+          :showNameNextToLogo => boolean() | nil,
+          :themeColor => MicrosoftGraph.Model.MicrosoftGraphIntuneBrandThemeColor.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:darkBackgroundLogo, :struct, MicrosoftGraph.Model.MicrosoftGraphIntuneBrandDarkBackgroundLogo)
-     |> Deserializer.deserialize(:lightBackgroundLogo, :struct, MicrosoftGraph.Model.MicrosoftGraphIntuneBrandLightBackgroundLogo)
-     |> Deserializer.deserialize(:themeColor, :struct, MicrosoftGraph.Model.MicrosoftGraphIntuneBrandThemeColor)
+    |> Deserializer.deserialize(
+      :darkBackgroundLogo,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphIntuneBrandDarkBackgroundLogo
+    )
+    |> Deserializer.deserialize(
+      :lightBackgroundLogo,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphIntuneBrandLightBackgroundLogo
+    )
+    |> Deserializer.deserialize(
+      :themeColor,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphIntuneBrandThemeColor
+    )
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAccessPackageAssignmentPolicy do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -28,42 +28,94 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAccessPackageAssignmentPolicy do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :accessPackage => MicrosoftGraph.Model.AccessPackageAssignmentPolicyAccessPackage.t | nil,
-    :allowedTargetScope => MicrosoftGraph.Model.AccessPackageAssignmentPolicyAllowedTargetScope.t | nil,
-    :automaticRequestSettings => MicrosoftGraph.Model.AccessPackageAssignmentPolicyAutomaticRequestSettings.t | nil,
-    :catalog => MicrosoftGraph.Model.AccessPackageAssignmentPolicyCatalog.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :customExtensionStageSettings => [MicrosoftGraph.Model.MicrosoftGraphCustomExtensionStageSetting.t] | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :expiration => MicrosoftGraph.Model.AccessPackageAssignmentPolicyExpiration.t | nil,
-    :modifiedDateTime => DateTime.t | nil,
-    :questions => [MicrosoftGraph.Model.MicrosoftGraphAccessPackageQuestion.t] | nil,
-    :requestApprovalSettings => MicrosoftGraph.Model.AccessPackageAssignmentPolicyRequestApprovalSettings.t | nil,
-    :requestorSettings => MicrosoftGraph.Model.AccessPackageAssignmentPolicyRequestorSettings.t | nil,
-    :reviewSettings => MicrosoftGraph.Model.AccessPackageAssignmentPolicyReviewSettings.t | nil,
-    :specificAllowedTargets => [MicrosoftGraph.Model.MicrosoftGraphUnifiedApprovalStageEscalationApproversInner.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :accessPackage =>
+            MicrosoftGraph.Model.AccessPackageAssignmentPolicyAccessPackage.t() | nil,
+          :allowedTargetScope =>
+            MicrosoftGraph.Model.AccessPackageAssignmentPolicyAllowedTargetScope.t() | nil,
+          :automaticRequestSettings =>
+            MicrosoftGraph.Model.AccessPackageAssignmentPolicyAutomaticRequestSettings.t() | nil,
+          :catalog => MicrosoftGraph.Model.AccessPackageAssignmentPolicyCatalog.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :customExtensionStageSettings =>
+            [MicrosoftGraph.Model.MicrosoftGraphCustomExtensionStageSetting.t()] | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :expiration => MicrosoftGraph.Model.AccessPackageAssignmentPolicyExpiration.t() | nil,
+          :modifiedDateTime => DateTime.t() | nil,
+          :questions => [MicrosoftGraph.Model.MicrosoftGraphAccessPackageQuestion.t()] | nil,
+          :requestApprovalSettings =>
+            MicrosoftGraph.Model.AccessPackageAssignmentPolicyRequestApprovalSettings.t() | nil,
+          :requestorSettings =>
+            MicrosoftGraph.Model.AccessPackageAssignmentPolicyRequestorSettings.t() | nil,
+          :reviewSettings =>
+            MicrosoftGraph.Model.AccessPackageAssignmentPolicyReviewSettings.t() | nil,
+          :specificAllowedTargets =>
+            [MicrosoftGraph.Model.MicrosoftGraphUnifiedApprovalStageEscalationApproversInner.t()]
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:accessPackage, :struct, MicrosoftGraph.Model.AccessPackageAssignmentPolicyAccessPackage)
-     |> Deserializer.deserialize(:allowedTargetScope, :struct, MicrosoftGraph.Model.AccessPackageAssignmentPolicyAllowedTargetScope)
-     |> Deserializer.deserialize(:automaticRequestSettings, :struct, MicrosoftGraph.Model.AccessPackageAssignmentPolicyAutomaticRequestSettings)
-     |> Deserializer.deserialize(:catalog, :struct, MicrosoftGraph.Model.AccessPackageAssignmentPolicyCatalog)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:customExtensionStageSettings, :list, MicrosoftGraph.Model.MicrosoftGraphCustomExtensionStageSetting)
-     |> Deserializer.deserialize(:expiration, :struct, MicrosoftGraph.Model.AccessPackageAssignmentPolicyExpiration)
-     |> Deserializer.deserialize(:modifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:questions, :list, MicrosoftGraph.Model.MicrosoftGraphAccessPackageQuestion)
-     |> Deserializer.deserialize(:requestApprovalSettings, :struct, MicrosoftGraph.Model.AccessPackageAssignmentPolicyRequestApprovalSettings)
-     |> Deserializer.deserialize(:requestorSettings, :struct, MicrosoftGraph.Model.AccessPackageAssignmentPolicyRequestorSettings)
-     |> Deserializer.deserialize(:reviewSettings, :struct, MicrosoftGraph.Model.AccessPackageAssignmentPolicyReviewSettings)
-     |> Deserializer.deserialize(:specificAllowedTargets, :list, MicrosoftGraph.Model.MicrosoftGraphUnifiedApprovalStageEscalationApproversInner)
+    |> Deserializer.deserialize(
+      :accessPackage,
+      :struct,
+      MicrosoftGraph.Model.AccessPackageAssignmentPolicyAccessPackage
+    )
+    |> Deserializer.deserialize(
+      :allowedTargetScope,
+      :struct,
+      MicrosoftGraph.Model.AccessPackageAssignmentPolicyAllowedTargetScope
+    )
+    |> Deserializer.deserialize(
+      :automaticRequestSettings,
+      :struct,
+      MicrosoftGraph.Model.AccessPackageAssignmentPolicyAutomaticRequestSettings
+    )
+    |> Deserializer.deserialize(
+      :catalog,
+      :struct,
+      MicrosoftGraph.Model.AccessPackageAssignmentPolicyCatalog
+    )
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :customExtensionStageSettings,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphCustomExtensionStageSetting
+    )
+    |> Deserializer.deserialize(
+      :expiration,
+      :struct,
+      MicrosoftGraph.Model.AccessPackageAssignmentPolicyExpiration
+    )
+    |> Deserializer.deserialize(:modifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :questions,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAccessPackageQuestion
+    )
+    |> Deserializer.deserialize(
+      :requestApprovalSettings,
+      :struct,
+      MicrosoftGraph.Model.AccessPackageAssignmentPolicyRequestApprovalSettings
+    )
+    |> Deserializer.deserialize(
+      :requestorSettings,
+      :struct,
+      MicrosoftGraph.Model.AccessPackageAssignmentPolicyRequestorSettings
+    )
+    |> Deserializer.deserialize(
+      :reviewSettings,
+      :struct,
+      MicrosoftGraph.Model.AccessPackageAssignmentPolicyReviewSettings
+    )
+    |> Deserializer.deserialize(
+      :specificAllowedTargets,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphUnifiedApprovalStageEscalationApproversInner
+    )
   end
 end
-

@@ -23,30 +23,33 @@ defmodule MicrosoftGraph.Model.SimulationLoginPage do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :content => String.t | nil,
-    :createdBy => MicrosoftGraph.Model.LoginPageCreatedBy.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :language => String.t | nil,
-    :lastModifiedBy => MicrosoftGraph.Model.LoginPageLastModifiedBy.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :source => MicrosoftGraph.Model.EndUserNotificationSource.t | nil,
-    :status => MicrosoftGraph.Model.LoginPageStatus.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :content => String.t() | nil,
+          :createdBy => MicrosoftGraph.Model.LoginPageCreatedBy.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :language => String.t() | nil,
+          :lastModifiedBy => MicrosoftGraph.Model.LoginPageLastModifiedBy.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :source => MicrosoftGraph.Model.EndUserNotificationSource.t() | nil,
+          :status => MicrosoftGraph.Model.LoginPageStatus.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.LoginPageCreatedBy)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastModifiedBy, :struct, MicrosoftGraph.Model.LoginPageLastModifiedBy)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:source, :struct, MicrosoftGraph.Model.EndUserNotificationSource)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.LoginPageStatus)
+    |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.LoginPageCreatedBy)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :lastModifiedBy,
+      :struct,
+      MicrosoftGraph.Model.LoginPageLastModifiedBy
+    )
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:source, :struct, MicrosoftGraph.Model.EndUserNotificationSource)
+    |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.LoginPageStatus)
   end
 end
-

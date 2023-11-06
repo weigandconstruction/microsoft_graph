@@ -23,28 +23,56 @@ defmodule MicrosoftGraph.Model.MessageRuleActions do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :assignCategories => [String.t] | nil,
-    :copyToFolder => String.t | nil,
-    :delete => boolean() | nil,
-    :forwardAsAttachmentTo => [MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequestToRecipientsInner.t] | nil,
-    :forwardTo => [MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequestToRecipientsInner.t] | nil,
-    :markAsRead => boolean() | nil,
-    :markImportance => MicrosoftGraph.Model.MicrosoftGraphMessageRuleActionsMarkImportance.t | nil,
-    :moveToFolder => String.t | nil,
-    :permanentDelete => boolean() | nil,
-    :redirectTo => [MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequestToRecipientsInner.t] | nil,
-    :stopProcessingRules => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :assignCategories => [String.t()] | nil,
+          :copyToFolder => String.t() | nil,
+          :delete => boolean() | nil,
+          :forwardAsAttachmentTo =>
+            [
+              MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequestToRecipientsInner.t()
+            ]
+            | nil,
+          :forwardTo =>
+            [
+              MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequestToRecipientsInner.t()
+            ]
+            | nil,
+          :markAsRead => boolean() | nil,
+          :markImportance =>
+            MicrosoftGraph.Model.MicrosoftGraphMessageRuleActionsMarkImportance.t() | nil,
+          :moveToFolder => String.t() | nil,
+          :permanentDelete => boolean() | nil,
+          :redirectTo =>
+            [
+              MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequestToRecipientsInner.t()
+            ]
+            | nil,
+          :stopProcessingRules => boolean() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:forwardAsAttachmentTo, :list, MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequestToRecipientsInner)
-     |> Deserializer.deserialize(:forwardTo, :list, MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequestToRecipientsInner)
-     |> Deserializer.deserialize(:markImportance, :struct, MicrosoftGraph.Model.MicrosoftGraphMessageRuleActionsMarkImportance)
-     |> Deserializer.deserialize(:redirectTo, :list, MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequestToRecipientsInner)
+    |> Deserializer.deserialize(
+      :forwardAsAttachmentTo,
+      :list,
+      MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequestToRecipientsInner
+    )
+    |> Deserializer.deserialize(
+      :forwardTo,
+      :list,
+      MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequestToRecipientsInner
+    )
+    |> Deserializer.deserialize(
+      :markImportance,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphMessageRuleActionsMarkImportance
+    )
+    |> Deserializer.deserialize(
+      :redirectTo,
+      :list,
+      MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequestToRecipientsInner
+    )
   end
 end
-

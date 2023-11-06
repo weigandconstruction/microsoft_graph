@@ -14,16 +14,19 @@ defmodule MicrosoftGraph.Model.WorkbookChartAxisTitleFormat do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :font => MicrosoftGraph.Model.WorkbookChartAxisTitleFormatFont.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :font => MicrosoftGraph.Model.WorkbookChartAxisTitleFormatFont.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:font, :struct, MicrosoftGraph.Model.WorkbookChartAxisTitleFormatFont)
+    |> Deserializer.deserialize(
+      :font,
+      :struct,
+      MicrosoftGraph.Model.WorkbookChartAxisTitleFormatFont
+    )
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphDocumentSetDefaultContentsInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,17 +15,21 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphDocumentSetDefaultContentsInner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :contentType => MicrosoftGraph.Model.MicrosoftGraphDocumentSetContentContentType.t | nil,
-    :fileName => String.t | nil,
-    :folderName => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :contentType =>
+            MicrosoftGraph.Model.MicrosoftGraphDocumentSetContentContentType.t() | nil,
+          :fileName => String.t() | nil,
+          :folderName => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:contentType, :struct, MicrosoftGraph.Model.MicrosoftGraphDocumentSetContentContentType)
+    |> Deserializer.deserialize(
+      :contentType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphDocumentSetContentContentType
+    )
   end
 end
-

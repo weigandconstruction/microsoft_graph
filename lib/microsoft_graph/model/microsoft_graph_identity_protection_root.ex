@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphIdentityProtectionRoot do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,21 +16,34 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphIdentityProtectionRoot do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :riskDetections => [MicrosoftGraph.Model.MicrosoftGraphRiskDetection.t] | nil,
-    :riskyServicePrincipals => [MicrosoftGraph.Model.MicrosoftGraphRiskyServicePrincipal.t] | nil,
-    :riskyUsers => [MicrosoftGraph.Model.MicrosoftGraphRiskyUser.t] | nil,
-    :servicePrincipalRiskDetections => [MicrosoftGraph.Model.MicrosoftGraphServicePrincipalRiskDetection.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :riskDetections => [MicrosoftGraph.Model.MicrosoftGraphRiskDetection.t()] | nil,
+          :riskyServicePrincipals =>
+            [MicrosoftGraph.Model.MicrosoftGraphRiskyServicePrincipal.t()] | nil,
+          :riskyUsers => [MicrosoftGraph.Model.MicrosoftGraphRiskyUser.t()] | nil,
+          :servicePrincipalRiskDetections =>
+            [MicrosoftGraph.Model.MicrosoftGraphServicePrincipalRiskDetection.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:riskDetections, :list, MicrosoftGraph.Model.MicrosoftGraphRiskDetection)
-     |> Deserializer.deserialize(:riskyServicePrincipals, :list, MicrosoftGraph.Model.MicrosoftGraphRiskyServicePrincipal)
-     |> Deserializer.deserialize(:riskyUsers, :list, MicrosoftGraph.Model.MicrosoftGraphRiskyUser)
-     |> Deserializer.deserialize(:servicePrincipalRiskDetections, :list, MicrosoftGraph.Model.MicrosoftGraphServicePrincipalRiskDetection)
+    |> Deserializer.deserialize(
+      :riskDetections,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphRiskDetection
+    )
+    |> Deserializer.deserialize(
+      :riskyServicePrincipals,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphRiskyServicePrincipal
+    )
+    |> Deserializer.deserialize(:riskyUsers, :list, MicrosoftGraph.Model.MicrosoftGraphRiskyUser)
+    |> Deserializer.deserialize(
+      :servicePrincipalRiskDetections,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphServicePrincipalRiskDetection
+    )
   end
 end
-

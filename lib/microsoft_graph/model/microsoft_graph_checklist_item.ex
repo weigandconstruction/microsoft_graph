@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphChecklistItem do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,20 +17,19 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphChecklistItem do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :checkedDateTime => DateTime.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :displayName => String.t | nil,
-    :isChecked => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :checkedDateTime => DateTime.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :displayName => String.t() | nil,
+          :isChecked => boolean() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:checkedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:checkedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
   end
 end
-

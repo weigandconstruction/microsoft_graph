@@ -24,7 +24,10 @@ defmodule MicrosoftGraph.Api.AdminPeopleAdminSettings do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPeopleAdminSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_get_people(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPeopleAdminSettings.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec admin_get_people(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPeopleAdminSettings.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def admin_get_people(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -61,8 +64,19 @@ defmodule MicrosoftGraph.Api.AdminPeopleAdminSettings do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphProfileCardProperty.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_people_create_profile_card_properties(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphProfileCardProperty.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphProfileCardProperty.t} | {:error, Tesla.Env.t}
-  def admin_people_create_profile_card_properties(connection, microsoft_graph_profile_card_property, _opts \\ []) do
+  @spec admin_people_create_profile_card_properties(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphProfileCardProperty.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphProfileCardProperty.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_people_create_profile_card_properties(
+        connection,
+        microsoft_graph_profile_card_property,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -94,8 +108,15 @@ defmodule MicrosoftGraph.Api.AdminPeopleAdminSettings do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_people_delete_profile_card_properties(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def admin_people_delete_profile_card_properties(connection, profile_card_property_id, opts \\ []) do
+  @spec admin_people_delete_profile_card_properties(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_people_delete_profile_card_properties(
+        connection,
+        profile_card_property_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -132,7 +153,10 @@ defmodule MicrosoftGraph.Api.AdminPeopleAdminSettings do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphProfileCardProperty.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_people_get_profile_card_properties(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphProfileCardProperty.t} | {:error, Tesla.Env.t}
+  @spec admin_people_get_profile_card_properties(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphProfileCardProperty.t()}
+          | {:error, Tesla.Env.t()}
   def admin_people_get_profile_card_properties(connection, profile_card_property_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -176,7 +200,10 @@ defmodule MicrosoftGraph.Api.AdminPeopleAdminSettings do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphProfileCardPropertyCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_people_list_profile_card_properties(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphProfileCardPropertyCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec admin_people_list_profile_card_properties(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphProfileCardPropertyCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def admin_people_list_profile_card_properties(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -220,7 +247,10 @@ defmodule MicrosoftGraph.Api.AdminPeopleAdminSettings do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_people_profile_card_properties_get_count9f88(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec admin_people_profile_card_properties_get_count9f88(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def admin_people_profile_card_properties_get_count9f88(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -258,8 +288,21 @@ defmodule MicrosoftGraph.Api.AdminPeopleAdminSettings do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphProfileCardProperty.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_people_update_profile_card_properties(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphProfileCardProperty.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphProfileCardProperty.t} | {:error, Tesla.Env.t}
-  def admin_people_update_profile_card_properties(connection, profile_card_property_id, microsoft_graph_profile_card_property, _opts \\ []) do
+  @spec admin_people_update_profile_card_properties(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphProfileCardProperty.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphProfileCardProperty.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_people_update_profile_card_properties(
+        connection,
+        profile_card_property_id,
+        microsoft_graph_profile_card_property,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -290,7 +333,14 @@ defmodule MicrosoftGraph.Api.AdminPeopleAdminSettings do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPeopleAdminSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_update_people(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphPeopleAdminSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPeopleAdminSettings.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec admin_update_people(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphPeopleAdminSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPeopleAdminSettings.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def admin_update_people(connection, microsoft_graph_people_admin_settings, _opts \\ []) do
     request =
       %{}

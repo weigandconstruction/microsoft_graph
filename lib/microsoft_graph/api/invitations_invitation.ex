@@ -24,7 +24,10 @@ defmodule MicrosoftGraph.Api.InvitationsInvitation do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec invitations_get_count8ff1(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec invitations_get_count8ff1(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def invitations_get_count8ff1(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -62,8 +65,19 @@ defmodule MicrosoftGraph.Api.InvitationsInvitation do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphInvitation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec invitations_invitation_create_invitation(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphInvitation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphInvitation.t} | {:error, Tesla.Env.t}
-  def invitations_invitation_create_invitation(connection, microsoft_graph_invitation, _opts \\ []) do
+  @spec invitations_invitation_create_invitation(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphInvitation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphInvitation.t()}
+          | {:error, Tesla.Env.t()}
+  def invitations_invitation_create_invitation(
+        connection,
+        microsoft_graph_invitation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -95,7 +109,10 @@ defmodule MicrosoftGraph.Api.InvitationsInvitation do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec invitations_invitation_delete_invitation(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec invitations_invitation_delete_invitation(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def invitations_invitation_delete_invitation(connection, invitation_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -133,7 +150,10 @@ defmodule MicrosoftGraph.Api.InvitationsInvitation do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphInvitation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec invitations_invitation_get_invitation(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphInvitation.t} | {:error, Tesla.Env.t}
+  @spec invitations_invitation_get_invitation(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphInvitation.t()}
+          | {:error, Tesla.Env.t()}
   def invitations_invitation_get_invitation(connection, invitation_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -177,7 +197,10 @@ defmodule MicrosoftGraph.Api.InvitationsInvitation do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphInvitationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec invitations_invitation_list_invitation(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphInvitationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec invitations_invitation_list_invitation(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphInvitationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def invitations_invitation_list_invitation(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -221,8 +244,21 @@ defmodule MicrosoftGraph.Api.InvitationsInvitation do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphInvitation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec invitations_invitation_update_invitation(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphInvitation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphInvitation.t} | {:error, Tesla.Env.t}
-  def invitations_invitation_update_invitation(connection, invitation_id, microsoft_graph_invitation, _opts \\ []) do
+  @spec invitations_invitation_update_invitation(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphInvitation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphInvitation.t()}
+          | {:error, Tesla.Env.t()}
+  def invitations_invitation_update_invitation(
+        connection,
+        invitation_id,
+        microsoft_graph_invitation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

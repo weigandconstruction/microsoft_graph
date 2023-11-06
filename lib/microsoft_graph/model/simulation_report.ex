@@ -14,17 +14,25 @@ defmodule MicrosoftGraph.Model.SimulationReport do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :overview => MicrosoftGraph.Model.MicrosoftGraphSimulationReportOverview.t | nil,
-    :simulationUsers => [MicrosoftGraph.Model.MicrosoftGraphSimulationReportSimulationUsersInner.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :overview => MicrosoftGraph.Model.MicrosoftGraphSimulationReportOverview.t() | nil,
+          :simulationUsers =>
+            [MicrosoftGraph.Model.MicrosoftGraphSimulationReportSimulationUsersInner.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:overview, :struct, MicrosoftGraph.Model.MicrosoftGraphSimulationReportOverview)
-     |> Deserializer.deserialize(:simulationUsers, :list, MicrosoftGraph.Model.MicrosoftGraphSimulationReportSimulationUsersInner)
+    |> Deserializer.deserialize(
+      :overview,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSimulationReportOverview
+    )
+    |> Deserializer.deserialize(
+      :simulationUsers,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSimulationReportSimulationUsersInner
+    )
   end
 end
-

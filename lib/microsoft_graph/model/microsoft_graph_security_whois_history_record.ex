@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityWhoisHistoryRecord do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -31,47 +31,62 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityWhoisHistoryRecord do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :abuse => MicrosoftGraph.Model.WhoisBaseRecordAbuse.t | nil,
-    :admin => MicrosoftGraph.Model.WhoisBaseRecordAdmin.t | nil,
-    :billing => MicrosoftGraph.Model.WhoisBaseRecordBilling.t | nil,
-    :domainStatus => String.t | nil,
-    :expirationDateTime => DateTime.t | nil,
-    :firstSeenDateTime => DateTime.t | nil,
-    :host => MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t | nil,
-    :lastSeenDateTime => DateTime.t | nil,
-    :lastUpdateDateTime => DateTime.t | nil,
-    :nameservers => [MicrosoftGraph.Model.WhoisBaseRecordNameserversInner.t] | nil,
-    :noc => MicrosoftGraph.Model.WhoisBaseRecordNoc.t | nil,
-    :rawWhoisText => String.t | nil,
-    :registrant => MicrosoftGraph.Model.WhoisBaseRecordRegistrant.t | nil,
-    :registrar => MicrosoftGraph.Model.WhoisBaseRecordRegistrar.t | nil,
-    :registrationDateTime => DateTime.t | nil,
-    :technical => MicrosoftGraph.Model.WhoisBaseRecordTechnical.t | nil,
-    :whoisServer => String.t | nil,
-    :zone => MicrosoftGraph.Model.WhoisBaseRecordZone.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :abuse => MicrosoftGraph.Model.WhoisBaseRecordAbuse.t() | nil,
+          :admin => MicrosoftGraph.Model.WhoisBaseRecordAdmin.t() | nil,
+          :billing => MicrosoftGraph.Model.WhoisBaseRecordBilling.t() | nil,
+          :domainStatus => String.t() | nil,
+          :expirationDateTime => DateTime.t() | nil,
+          :firstSeenDateTime => DateTime.t() | nil,
+          :host => MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t() | nil,
+          :lastSeenDateTime => DateTime.t() | nil,
+          :lastUpdateDateTime => DateTime.t() | nil,
+          :nameservers => [MicrosoftGraph.Model.WhoisBaseRecordNameserversInner.t()] | nil,
+          :noc => MicrosoftGraph.Model.WhoisBaseRecordNoc.t() | nil,
+          :rawWhoisText => String.t() | nil,
+          :registrant => MicrosoftGraph.Model.WhoisBaseRecordRegistrant.t() | nil,
+          :registrar => MicrosoftGraph.Model.WhoisBaseRecordRegistrar.t() | nil,
+          :registrationDateTime => DateTime.t() | nil,
+          :technical => MicrosoftGraph.Model.WhoisBaseRecordTechnical.t() | nil,
+          :whoisServer => String.t() | nil,
+          :zone => MicrosoftGraph.Model.WhoisBaseRecordZone.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:abuse, :struct, MicrosoftGraph.Model.WhoisBaseRecordAbuse)
-     |> Deserializer.deserialize(:admin, :struct, MicrosoftGraph.Model.WhoisBaseRecordAdmin)
-     |> Deserializer.deserialize(:billing, :struct, MicrosoftGraph.Model.WhoisBaseRecordBilling)
-     |> Deserializer.deserialize(:expirationDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:firstSeenDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:host, :struct, MicrosoftGraph.Model.MicrosoftGraphSecurityHost)
-     |> Deserializer.deserialize(:lastSeenDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastUpdateDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:nameservers, :list, MicrosoftGraph.Model.WhoisBaseRecordNameserversInner)
-     |> Deserializer.deserialize(:noc, :struct, MicrosoftGraph.Model.WhoisBaseRecordNoc)
-     |> Deserializer.deserialize(:registrant, :struct, MicrosoftGraph.Model.WhoisBaseRecordRegistrant)
-     |> Deserializer.deserialize(:registrar, :struct, MicrosoftGraph.Model.WhoisBaseRecordRegistrar)
-     |> Deserializer.deserialize(:registrationDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:technical, :struct, MicrosoftGraph.Model.WhoisBaseRecordTechnical)
-     |> Deserializer.deserialize(:zone, :struct, MicrosoftGraph.Model.WhoisBaseRecordZone)
+    |> Deserializer.deserialize(:abuse, :struct, MicrosoftGraph.Model.WhoisBaseRecordAbuse)
+    |> Deserializer.deserialize(:admin, :struct, MicrosoftGraph.Model.WhoisBaseRecordAdmin)
+    |> Deserializer.deserialize(:billing, :struct, MicrosoftGraph.Model.WhoisBaseRecordBilling)
+    |> Deserializer.deserialize(:expirationDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:firstSeenDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:host, :struct, MicrosoftGraph.Model.MicrosoftGraphSecurityHost)
+    |> Deserializer.deserialize(:lastSeenDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastUpdateDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :nameservers,
+      :list,
+      MicrosoftGraph.Model.WhoisBaseRecordNameserversInner
+    )
+    |> Deserializer.deserialize(:noc, :struct, MicrosoftGraph.Model.WhoisBaseRecordNoc)
+    |> Deserializer.deserialize(
+      :registrant,
+      :struct,
+      MicrosoftGraph.Model.WhoisBaseRecordRegistrant
+    )
+    |> Deserializer.deserialize(
+      :registrar,
+      :struct,
+      MicrosoftGraph.Model.WhoisBaseRecordRegistrar
+    )
+    |> Deserializer.deserialize(:registrationDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :technical,
+      :struct,
+      MicrosoftGraph.Model.WhoisBaseRecordTechnical
+    )
+    |> Deserializer.deserialize(:zone, :struct, MicrosoftGraph.Model.WhoisBaseRecordZone)
   end
 end
-

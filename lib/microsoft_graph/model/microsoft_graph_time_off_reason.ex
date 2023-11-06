@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphTimeOffReason do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,24 +19,27 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphTimeOffReason do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :lastModifiedBy => MicrosoftGraph.Model.ChangeTrackedEntityLastModifiedBy.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :displayName => String.t | nil,
-    :iconType => MicrosoftGraph.Model.TimeOffReasonIconType.t | nil,
-    :isActive => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :lastModifiedBy => MicrosoftGraph.Model.ChangeTrackedEntityLastModifiedBy.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :displayName => String.t() | nil,
+          :iconType => MicrosoftGraph.Model.TimeOffReasonIconType.t() | nil,
+          :isActive => boolean() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastModifiedBy, :struct, MicrosoftGraph.Model.ChangeTrackedEntityLastModifiedBy)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:iconType, :struct, MicrosoftGraph.Model.TimeOffReasonIconType)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :lastModifiedBy,
+      :struct,
+      MicrosoftGraph.Model.ChangeTrackedEntityLastModifiedBy
+    )
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:iconType, :struct, MicrosoftGraph.Model.TimeOffReasonIconType)
   end
 end
-

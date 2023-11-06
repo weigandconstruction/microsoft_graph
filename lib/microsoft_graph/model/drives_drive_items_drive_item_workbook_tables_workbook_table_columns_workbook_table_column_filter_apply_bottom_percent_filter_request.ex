@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookTablesWorkbookTableColumnsWorkbookTableColumnFilterApplyBottomPercentFilterRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,11 +12,10 @@ defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookTablesWorkbookTa
   ]
 
   @type t :: %__MODULE__{
-    :percent => integer() | nil
-  }
+          :percent => integer() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

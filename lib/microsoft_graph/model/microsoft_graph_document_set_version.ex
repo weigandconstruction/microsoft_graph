@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphDocumentSetVersion do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -22,30 +22,41 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphDocumentSetVersion do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :lastModifiedBy => MicrosoftGraph.Model.BaseItemVersionLastModifiedBy.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :publication => MicrosoftGraph.Model.BaseItemVersionPublication.t | nil,
-    :fields => MicrosoftGraph.Model.ListItemVersionFields.t | nil,
-    :comment => String.t | nil,
-    :createdBy => MicrosoftGraph.Model.DocumentSetVersionCreatedBy.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :items => [MicrosoftGraph.Model.DocumentSetVersionItemsInner.t] | nil,
-    :shouldCaptureMinorVersion => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :lastModifiedBy => MicrosoftGraph.Model.BaseItemVersionLastModifiedBy.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :publication => MicrosoftGraph.Model.BaseItemVersionPublication.t() | nil,
+          :fields => MicrosoftGraph.Model.ListItemVersionFields.t() | nil,
+          :comment => String.t() | nil,
+          :createdBy => MicrosoftGraph.Model.DocumentSetVersionCreatedBy.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :items => [MicrosoftGraph.Model.DocumentSetVersionItemsInner.t()] | nil,
+          :shouldCaptureMinorVersion => boolean() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:lastModifiedBy, :struct, MicrosoftGraph.Model.BaseItemVersionLastModifiedBy)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:publication, :struct, MicrosoftGraph.Model.BaseItemVersionPublication)
-     |> Deserializer.deserialize(:fields, :struct, MicrosoftGraph.Model.ListItemVersionFields)
-     |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.DocumentSetVersionCreatedBy)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:items, :list, MicrosoftGraph.Model.DocumentSetVersionItemsInner)
+    |> Deserializer.deserialize(
+      :lastModifiedBy,
+      :struct,
+      MicrosoftGraph.Model.BaseItemVersionLastModifiedBy
+    )
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :publication,
+      :struct,
+      MicrosoftGraph.Model.BaseItemVersionPublication
+    )
+    |> Deserializer.deserialize(:fields, :struct, MicrosoftGraph.Model.ListItemVersionFields)
+    |> Deserializer.deserialize(
+      :createdBy,
+      :struct,
+      MicrosoftGraph.Model.DocumentSetVersionCreatedBy
+    )
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:items, :list, MicrosoftGraph.Model.DocumentSetVersionItemsInner)
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphCloudCommunications do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,21 +16,28 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphCloudCommunications do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :callRecords => [MicrosoftGraph.Model.MicrosoftGraphCallRecordsCallRecord.t] | nil,
-    :calls => [MicrosoftGraph.Model.MicrosoftGraphCall.t] | nil,
-    :onlineMeetings => [MicrosoftGraph.Model.MicrosoftGraphOnlineMeeting.t] | nil,
-    :presences => [MicrosoftGraph.Model.MicrosoftGraphPresence.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :callRecords => [MicrosoftGraph.Model.MicrosoftGraphCallRecordsCallRecord.t()] | nil,
+          :calls => [MicrosoftGraph.Model.MicrosoftGraphCall.t()] | nil,
+          :onlineMeetings => [MicrosoftGraph.Model.MicrosoftGraphOnlineMeeting.t()] | nil,
+          :presences => [MicrosoftGraph.Model.MicrosoftGraphPresence.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:callRecords, :list, MicrosoftGraph.Model.MicrosoftGraphCallRecordsCallRecord)
-     |> Deserializer.deserialize(:calls, :list, MicrosoftGraph.Model.MicrosoftGraphCall)
-     |> Deserializer.deserialize(:onlineMeetings, :list, MicrosoftGraph.Model.MicrosoftGraphOnlineMeeting)
-     |> Deserializer.deserialize(:presences, :list, MicrosoftGraph.Model.MicrosoftGraphPresence)
+    |> Deserializer.deserialize(
+      :callRecords,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsCallRecord
+    )
+    |> Deserializer.deserialize(:calls, :list, MicrosoftGraph.Model.MicrosoftGraphCall)
+    |> Deserializer.deserialize(
+      :onlineMeetings,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphOnlineMeeting
+    )
+    |> Deserializer.deserialize(:presences, :list, MicrosoftGraph.Model.MicrosoftGraphPresence)
   end
 end
-

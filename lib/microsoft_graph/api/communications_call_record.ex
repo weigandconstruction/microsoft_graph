@@ -24,8 +24,21 @@ defmodule MicrosoftGraph.Api.CommunicationsCallRecord do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCallRecordsSession.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_call_records_create_sessions(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphCallRecordsSession.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphCallRecordsSession.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def communications_call_records_create_sessions(connection, call_record_id, microsoft_graph_call_records_session, _opts \\ []) do
+  @spec communications_call_records_create_sessions(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphCallRecordsSession.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphCallRecordsSession.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_call_records_create_sessions(
+        connection,
+        call_record_id,
+        microsoft_graph_call_records_session,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -58,8 +71,21 @@ defmodule MicrosoftGraph.Api.CommunicationsCallRecord do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_call_records_delete_sessions(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def communications_call_records_delete_sessions(connection, call_record_id, session_id, opts \\ []) do
+  @spec communications_call_records_delete_sessions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_call_records_delete_sessions(
+        connection,
+        call_record_id,
+        session_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -95,7 +121,10 @@ defmodule MicrosoftGraph.Api.CommunicationsCallRecord do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_call_records_get_count_e558(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec communications_call_records_get_count_e558(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def communications_call_records_get_count_e558(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -136,7 +165,15 @@ defmodule MicrosoftGraph.Api.CommunicationsCallRecord do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCallRecordsSession.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_call_records_get_sessions(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphCallRecordsSession.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec communications_call_records_get_sessions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphCallRecordsSession.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def communications_call_records_get_sessions(connection, call_record_id, session_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -182,7 +219,10 @@ defmodule MicrosoftGraph.Api.CommunicationsCallRecord do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCallRecordsSessionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_call_records_list_sessions(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphCallRecordsSessionCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec communications_call_records_list_sessions(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphCallRecordsSessionCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def communications_call_records_list_sessions(connection, call_record_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -227,8 +267,23 @@ defmodule MicrosoftGraph.Api.CommunicationsCallRecord do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCallRecordsSegment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_call_records_sessions_create_segments(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphCallRecordsSegment.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphCallRecordsSegment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def communications_call_records_sessions_create_segments(connection, call_record_id, session_id, microsoft_graph_call_records_segment, _opts \\ []) do
+  @spec communications_call_records_sessions_create_segments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphCallRecordsSegment.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphCallRecordsSegment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_call_records_sessions_create_segments(
+        connection,
+        call_record_id,
+        session_id,
+        microsoft_graph_call_records_segment,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -262,8 +317,23 @@ defmodule MicrosoftGraph.Api.CommunicationsCallRecord do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_call_records_sessions_delete_segments(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def communications_call_records_sessions_delete_segments(connection, call_record_id, session_id, segment_id, opts \\ []) do
+  @spec communications_call_records_sessions_delete_segments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_call_records_sessions_delete_segments(
+        connection,
+        call_record_id,
+        session_id,
+        segment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -271,7 +341,9 @@ defmodule MicrosoftGraph.Api.CommunicationsCallRecord do
     request =
       %{}
       |> method(:delete)
-      |> url("/communications/callRecords/#{call_record_id}/sessions/#{session_id}/segments/#{segment_id}")
+      |> url(
+        "/communications/callRecords/#{call_record_id}/sessions/#{session_id}/segments/#{segment_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -300,7 +372,14 @@ defmodule MicrosoftGraph.Api.CommunicationsCallRecord do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_call_records_sessions_get_count_c743(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec communications_call_records_sessions_get_count_c743(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def communications_call_records_sessions_get_count_c743(connection, call_record_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -342,8 +421,23 @@ defmodule MicrosoftGraph.Api.CommunicationsCallRecord do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCallRecordsSegment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_call_records_sessions_get_segments(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphCallRecordsSegment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def communications_call_records_sessions_get_segments(connection, call_record_id, session_id, segment_id, opts \\ []) do
+  @spec communications_call_records_sessions_get_segments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphCallRecordsSegment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_call_records_sessions_get_segments(
+        connection,
+        call_record_id,
+        session_id,
+        segment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -352,7 +446,9 @@ defmodule MicrosoftGraph.Api.CommunicationsCallRecord do
     request =
       %{}
       |> method(:get)
-      |> url("/communications/callRecords/#{call_record_id}/sessions/#{session_id}/segments/#{segment_id}")
+      |> url(
+        "/communications/callRecords/#{call_record_id}/sessions/#{session_id}/segments/#{segment_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -389,8 +485,21 @@ defmodule MicrosoftGraph.Api.CommunicationsCallRecord do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCallRecordsSegmentCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_call_records_sessions_list_segments(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphCallRecordsSegmentCollectionResponse.t} | {:error, Tesla.Env.t}
-  def communications_call_records_sessions_list_segments(connection, call_record_id, session_id, opts \\ []) do
+  @spec communications_call_records_sessions_list_segments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphCallRecordsSegmentCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_call_records_sessions_list_segments(
+        connection,
+        call_record_id,
+        session_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -435,8 +544,21 @@ defmodule MicrosoftGraph.Api.CommunicationsCallRecord do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_call_records_sessions_segments_get_count4fed(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def communications_call_records_sessions_segments_get_count4fed(connection, call_record_id, session_id, opts \\ []) do
+  @spec communications_call_records_sessions_segments_get_count4fed(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_call_records_sessions_segments_get_count4fed(
+        connection,
+        call_record_id,
+        session_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -445,7 +567,9 @@ defmodule MicrosoftGraph.Api.CommunicationsCallRecord do
     request =
       %{}
       |> method(:get)
-      |> url("/communications/callRecords/#{call_record_id}/sessions/#{session_id}/segments/$count")
+      |> url(
+        "/communications/callRecords/#{call_record_id}/sessions/#{session_id}/segments/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -475,12 +599,31 @@ defmodule MicrosoftGraph.Api.CommunicationsCallRecord do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCallRecordsSegment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_call_records_sessions_update_segments(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphCallRecordsSegment.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphCallRecordsSegment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def communications_call_records_sessions_update_segments(connection, call_record_id, session_id, segment_id, microsoft_graph_call_records_segment, _opts \\ []) do
+  @spec communications_call_records_sessions_update_segments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphCallRecordsSegment.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphCallRecordsSegment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_call_records_sessions_update_segments(
+        connection,
+        call_record_id,
+        session_id,
+        segment_id,
+        microsoft_graph_call_records_segment,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/communications/callRecords/#{call_record_id}/sessions/#{session_id}/segments/#{segment_id}")
+      |> url(
+        "/communications/callRecords/#{call_record_id}/sessions/#{session_id}/segments/#{segment_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_call_records_segment)
       |> Enum.into([])
 
@@ -509,8 +652,23 @@ defmodule MicrosoftGraph.Api.CommunicationsCallRecord do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCallRecordsSession.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_call_records_update_sessions(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphCallRecordsSession.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphCallRecordsSession.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def communications_call_records_update_sessions(connection, call_record_id, session_id, microsoft_graph_call_records_session, _opts \\ []) do
+  @spec communications_call_records_update_sessions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphCallRecordsSession.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphCallRecordsSession.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_call_records_update_sessions(
+        connection,
+        call_record_id,
+        session_id,
+        microsoft_graph_call_records_session,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -541,8 +699,19 @@ defmodule MicrosoftGraph.Api.CommunicationsCallRecord do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCallRecordsCallRecord.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_create_call_records(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphCallRecordsCallRecord.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphCallRecordsCallRecord.t} | {:error, Tesla.Env.t}
-  def communications_create_call_records(connection, microsoft_graph_call_records_call_record, _opts \\ []) do
+  @spec communications_create_call_records(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphCallRecordsCallRecord.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphCallRecordsCallRecord.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_create_call_records(
+        connection,
+        microsoft_graph_call_records_call_record,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -574,7 +743,10 @@ defmodule MicrosoftGraph.Api.CommunicationsCallRecord do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_delete_call_records(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec communications_delete_call_records(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def communications_delete_call_records(connection, call_record_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -613,7 +785,10 @@ defmodule MicrosoftGraph.Api.CommunicationsCallRecord do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCallRecordsCallRecord.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_get_call_records(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphCallRecordsCallRecord.t} | {:error, Tesla.Env.t}
+  @spec communications_get_call_records(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphCallRecordsCallRecord.t()}
+          | {:error, Tesla.Env.t()}
   def communications_get_call_records(connection, call_record_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -658,7 +833,10 @@ defmodule MicrosoftGraph.Api.CommunicationsCallRecord do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCallRecordsCallRecordCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_list_call_records(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphCallRecordsCallRecordCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec communications_list_call_records(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphCallRecordsCallRecordCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def communications_list_call_records(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -702,8 +880,21 @@ defmodule MicrosoftGraph.Api.CommunicationsCallRecord do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCallRecordsCallRecord.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_update_call_records(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphCallRecordsCallRecord.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphCallRecordsCallRecord.t} | {:error, Tesla.Env.t}
-  def communications_update_call_records(connection, call_record_id, microsoft_graph_call_records_call_record, _opts \\ []) do
+  @spec communications_update_call_records(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphCallRecordsCallRecord.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphCallRecordsCallRecord.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_update_call_records(
+        connection,
+        call_record_id,
+        microsoft_graph_call_records_call_record,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

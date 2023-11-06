@@ -23,13 +23,29 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsWorkFromAnyw
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereMetric.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_create_user_experience_analytics_work_from_anywhere_metrics(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereMetric.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereMetric.t} | {:error, Tesla.Env.t}
-  def device_management_create_user_experience_analytics_work_from_anywhere_metrics(connection, microsoft_graph_user_experience_analytics_work_from_anywhere_metric, _opts \\ []) do
+  @spec device_management_create_user_experience_analytics_work_from_anywhere_metrics(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereMetric.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereMetric.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_create_user_experience_analytics_work_from_anywhere_metrics(
+        connection,
+        microsoft_graph_user_experience_analytics_work_from_anywhere_metric,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/deviceManagement/userExperienceAnalyticsWorkFromAnywhereMetrics")
-      |> add_param(:body, :body, microsoft_graph_user_experience_analytics_work_from_anywhere_metric)
+      |> add_param(
+        :body,
+        :body,
+        microsoft_graph_user_experience_analytics_work_from_anywhere_metric
+      )
       |> Enum.into([])
 
     connection
@@ -56,8 +72,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsWorkFromAnyw
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_delete_user_experience_analytics_work_from_anywhere_metrics(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_delete_user_experience_analytics_work_from_anywhere_metrics(connection, user_experience_analytics_work_from_anywhere_metric_id, opts \\ []) do
+  @spec device_management_delete_user_experience_analytics_work_from_anywhere_metrics(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_delete_user_experience_analytics_work_from_anywhere_metrics(
+        connection,
+        user_experience_analytics_work_from_anywhere_metric_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -65,7 +92,9 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsWorkFromAnyw
     request =
       %{}
       |> method(:delete)
-      |> url("/deviceManagement/userExperienceAnalyticsWorkFromAnywhereMetrics/#{user_experience_analytics_work_from_anywhere_metric_id}")
+      |> url(
+        "/deviceManagement/userExperienceAnalyticsWorkFromAnywhereMetrics/#{user_experience_analytics_work_from_anywhere_metric_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -95,8 +124,20 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsWorkFromAnyw
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereMetric.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_get_user_experience_analytics_work_from_anywhere_metrics(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereMetric.t} | {:error, Tesla.Env.t}
-  def device_management_get_user_experience_analytics_work_from_anywhere_metrics(connection, user_experience_analytics_work_from_anywhere_metric_id, opts \\ []) do
+  @spec device_management_get_user_experience_analytics_work_from_anywhere_metrics(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereMetric.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_get_user_experience_analytics_work_from_anywhere_metrics(
+        connection,
+        user_experience_analytics_work_from_anywhere_metric_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -105,7 +146,9 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsWorkFromAnyw
     request =
       %{}
       |> method(:get)
-      |> url("/deviceManagement/userExperienceAnalyticsWorkFromAnywhereMetrics/#{user_experience_analytics_work_from_anywhere_metric_id}")
+      |> url(
+        "/deviceManagement/userExperienceAnalyticsWorkFromAnywhereMetrics/#{user_experience_analytics_work_from_anywhere_metric_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -140,8 +183,18 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsWorkFromAnyw
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereMetricCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_list_user_experience_analytics_work_from_anywhere_metrics(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereMetricCollectionResponse.t} | {:error, Tesla.Env.t}
-  def device_management_list_user_experience_analytics_work_from_anywhere_metrics(connection, opts \\ []) do
+  @spec device_management_list_user_experience_analytics_work_from_anywhere_metrics(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereMetricCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_list_user_experience_analytics_work_from_anywhere_metrics(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -163,7 +216,8 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsWorkFromAnyw
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereMetricCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereMetricCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -184,13 +238,33 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsWorkFromAnyw
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereMetric.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_update_user_experience_analytics_work_from_anywhere_metrics(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereMetric.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereMetric.t} | {:error, Tesla.Env.t}
-  def device_management_update_user_experience_analytics_work_from_anywhere_metrics(connection, user_experience_analytics_work_from_anywhere_metric_id, microsoft_graph_user_experience_analytics_work_from_anywhere_metric, _opts \\ []) do
+  @spec device_management_update_user_experience_analytics_work_from_anywhere_metrics(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereMetric.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereMetric.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_update_user_experience_analytics_work_from_anywhere_metrics(
+        connection,
+        user_experience_analytics_work_from_anywhere_metric_id,
+        microsoft_graph_user_experience_analytics_work_from_anywhere_metric,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/deviceManagement/userExperienceAnalyticsWorkFromAnywhereMetrics/#{user_experience_analytics_work_from_anywhere_metric_id}")
-      |> add_param(:body, :body, microsoft_graph_user_experience_analytics_work_from_anywhere_metric)
+      |> url(
+        "/deviceManagement/userExperienceAnalyticsWorkFromAnywhereMetrics/#{user_experience_analytics_work_from_anywhere_metric_id}"
+      )
+      |> add_param(
+        :body,
+        :body,
+        microsoft_graph_user_experience_analytics_work_from_anywhere_metric
+      )
       |> Enum.into([])
 
     connection
@@ -217,13 +291,33 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsWorkFromAnyw
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereDevice.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_user_experience_analytics_work_from_anywhere_metrics_create_metric_devices(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereDevice.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereDevice.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_user_experience_analytics_work_from_anywhere_metrics_create_metric_devices(connection, user_experience_analytics_work_from_anywhere_metric_id, microsoft_graph_user_experience_analytics_work_from_anywhere_device, _opts \\ []) do
+  @spec device_management_user_experience_analytics_work_from_anywhere_metrics_create_metric_devices(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereDevice.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereDevice.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_user_experience_analytics_work_from_anywhere_metrics_create_metric_devices(
+        connection,
+        user_experience_analytics_work_from_anywhere_metric_id,
+        microsoft_graph_user_experience_analytics_work_from_anywhere_device,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceManagement/userExperienceAnalyticsWorkFromAnywhereMetrics/#{user_experience_analytics_work_from_anywhere_metric_id}/metricDevices")
-      |> add_param(:body, :body, microsoft_graph_user_experience_analytics_work_from_anywhere_device)
+      |> url(
+        "/deviceManagement/userExperienceAnalyticsWorkFromAnywhereMetrics/#{user_experience_analytics_work_from_anywhere_metric_id}/metricDevices"
+      )
+      |> add_param(
+        :body,
+        :body,
+        microsoft_graph_user_experience_analytics_work_from_anywhere_device
+      )
       |> Enum.into([])
 
     connection
@@ -251,8 +345,21 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsWorkFromAnyw
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_user_experience_analytics_work_from_anywhere_metrics_delete_metric_devices(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_user_experience_analytics_work_from_anywhere_metrics_delete_metric_devices(connection, user_experience_analytics_work_from_anywhere_metric_id, user_experience_analytics_work_from_anywhere_device_id, opts \\ []) do
+  @spec device_management_user_experience_analytics_work_from_anywhere_metrics_delete_metric_devices(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_user_experience_analytics_work_from_anywhere_metrics_delete_metric_devices(
+        connection,
+        user_experience_analytics_work_from_anywhere_metric_id,
+        user_experience_analytics_work_from_anywhere_device_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -260,7 +367,9 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsWorkFromAnyw
     request =
       %{}
       |> method(:delete)
-      |> url("/deviceManagement/userExperienceAnalyticsWorkFromAnywhereMetrics/#{user_experience_analytics_work_from_anywhere_metric_id}/metricDevices/#{user_experience_analytics_work_from_anywhere_device_id}")
+      |> url(
+        "/deviceManagement/userExperienceAnalyticsWorkFromAnywhereMetrics/#{user_experience_analytics_work_from_anywhere_metric_id}/metricDevices/#{user_experience_analytics_work_from_anywhere_device_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -288,8 +397,17 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsWorkFromAnyw
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_user_experience_analytics_work_from_anywhere_metrics_get_count2efc(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_user_experience_analytics_work_from_anywhere_metrics_get_count2efc(connection, opts \\ []) do
+  @spec device_management_user_experience_analytics_work_from_anywhere_metrics_get_count2efc(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_user_experience_analytics_work_from_anywhere_metrics_get_count2efc(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -329,8 +447,22 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsWorkFromAnyw
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereDevice.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_user_experience_analytics_work_from_anywhere_metrics_get_metric_devices(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereDevice.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_user_experience_analytics_work_from_anywhere_metrics_get_metric_devices(connection, user_experience_analytics_work_from_anywhere_metric_id, user_experience_analytics_work_from_anywhere_device_id, opts \\ []) do
+  @spec device_management_user_experience_analytics_work_from_anywhere_metrics_get_metric_devices(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereDevice.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_user_experience_analytics_work_from_anywhere_metrics_get_metric_devices(
+        connection,
+        user_experience_analytics_work_from_anywhere_metric_id,
+        user_experience_analytics_work_from_anywhere_device_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -339,7 +471,9 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsWorkFromAnyw
     request =
       %{}
       |> method(:get)
-      |> url("/deviceManagement/userExperienceAnalyticsWorkFromAnywhereMetrics/#{user_experience_analytics_work_from_anywhere_metric_id}/metricDevices/#{user_experience_analytics_work_from_anywhere_device_id}")
+      |> url(
+        "/deviceManagement/userExperienceAnalyticsWorkFromAnywhereMetrics/#{user_experience_analytics_work_from_anywhere_metric_id}/metricDevices/#{user_experience_analytics_work_from_anywhere_device_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -375,8 +509,20 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsWorkFromAnyw
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereDeviceCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_user_experience_analytics_work_from_anywhere_metrics_list_metric_devices(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereDeviceCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_user_experience_analytics_work_from_anywhere_metrics_list_metric_devices(connection, user_experience_analytics_work_from_anywhere_metric_id, opts \\ []) do
+  @spec device_management_user_experience_analytics_work_from_anywhere_metrics_list_metric_devices(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereDeviceCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_user_experience_analytics_work_from_anywhere_metrics_list_metric_devices(
+        connection,
+        user_experience_analytics_work_from_anywhere_metric_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -391,14 +537,17 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsWorkFromAnyw
     request =
       %{}
       |> method(:get)
-      |> url("/deviceManagement/userExperienceAnalyticsWorkFromAnywhereMetrics/#{user_experience_analytics_work_from_anywhere_metric_id}/metricDevices")
+      |> url(
+        "/deviceManagement/userExperienceAnalyticsWorkFromAnywhereMetrics/#{user_experience_analytics_work_from_anywhere_metric_id}/metricDevices"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereDeviceCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereDeviceCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -420,8 +569,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsWorkFromAnyw
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_user_experience_analytics_work_from_anywhere_metrics_metric_devices_get_count_bd0e(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_user_experience_analytics_work_from_anywhere_metrics_metric_devices_get_count_bd0e(connection, user_experience_analytics_work_from_anywhere_metric_id, opts \\ []) do
+  @spec device_management_user_experience_analytics_work_from_anywhere_metrics_metric_devices_get_count_bd0e(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_user_experience_analytics_work_from_anywhere_metrics_metric_devices_get_count_bd0e(
+        connection,
+        user_experience_analytics_work_from_anywhere_metric_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -430,7 +590,9 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsWorkFromAnyw
     request =
       %{}
       |> method(:get)
-      |> url("/deviceManagement/userExperienceAnalyticsWorkFromAnywhereMetrics/#{user_experience_analytics_work_from_anywhere_metric_id}/metricDevices/$count")
+      |> url(
+        "/deviceManagement/userExperienceAnalyticsWorkFromAnywhereMetrics/#{user_experience_analytics_work_from_anywhere_metric_id}/metricDevices/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -459,13 +621,35 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsWorkFromAnyw
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereDevice.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_user_experience_analytics_work_from_anywhere_metrics_update_metric_devices(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereDevice.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereDevice.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_user_experience_analytics_work_from_anywhere_metrics_update_metric_devices(connection, user_experience_analytics_work_from_anywhere_metric_id, user_experience_analytics_work_from_anywhere_device_id, microsoft_graph_user_experience_analytics_work_from_anywhere_device, _opts \\ []) do
+  @spec device_management_user_experience_analytics_work_from_anywhere_metrics_update_metric_devices(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereDevice.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereDevice.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_user_experience_analytics_work_from_anywhere_metrics_update_metric_devices(
+        connection,
+        user_experience_analytics_work_from_anywhere_metric_id,
+        user_experience_analytics_work_from_anywhere_device_id,
+        microsoft_graph_user_experience_analytics_work_from_anywhere_device,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/deviceManagement/userExperienceAnalyticsWorkFromAnywhereMetrics/#{user_experience_analytics_work_from_anywhere_metric_id}/metricDevices/#{user_experience_analytics_work_from_anywhere_device_id}")
-      |> add_param(:body, :body, microsoft_graph_user_experience_analytics_work_from_anywhere_device)
+      |> url(
+        "/deviceManagement/userExperienceAnalyticsWorkFromAnywhereMetrics/#{user_experience_analytics_work_from_anywhere_metric_id}/metricDevices/#{user_experience_analytics_work_from_anywhere_device_id}"
+      )
+      |> add_param(
+        :body,
+        :body,
+        microsoft_graph_user_experience_analytics_work_from_anywhere_device
+      )
       |> Enum.into([])
 
     connection

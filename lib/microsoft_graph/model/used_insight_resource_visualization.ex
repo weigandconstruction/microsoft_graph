@@ -20,19 +20,18 @@ defmodule MicrosoftGraph.Model.UsedInsightResourceVisualization do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :containerDisplayName => String.t | nil,
-    :containerType => String.t | nil,
-    :containerWebUrl => String.t | nil,
-    :mediaType => String.t | nil,
-    :previewImageUrl => String.t | nil,
-    :previewText => String.t | nil,
-    :title => String.t | nil,
-    :type => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :containerDisplayName => String.t() | nil,
+          :containerType => String.t() | nil,
+          :containerWebUrl => String.t() | nil,
+          :mediaType => String.t() | nil,
+          :previewImageUrl => String.t() | nil,
+          :previewText => String.t() | nil,
+          :title => String.t() | nil,
+          :type => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

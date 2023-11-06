@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.UsersUserAssignLicenseRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,15 +13,18 @@ defmodule MicrosoftGraph.Model.UsersUserAssignLicenseRequest do
   ]
 
   @type t :: %__MODULE__{
-    :addLicenses => [MicrosoftGraph.Model.MicrosoftGraphAssignedLicense.t] | nil,
-    :removeLicenses => [String.t] | nil
-  }
+          :addLicenses => [MicrosoftGraph.Model.MicrosoftGraphAssignedLicense.t()] | nil,
+          :removeLicenses => [String.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:addLicenses, :list, MicrosoftGraph.Model.MicrosoftGraphAssignedLicense)
+    |> Deserializer.deserialize(
+      :addLicenses,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAssignedLicense
+    )
   end
 end
-

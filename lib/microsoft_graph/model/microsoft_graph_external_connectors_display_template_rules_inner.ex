@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsDisplayTemplateRulesInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,19 +16,27 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsDisplayTemplateRu
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :operation => MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsRuleOperation.t | nil,
-    :property => String.t | nil,
-    :values => [String.t] | nil,
-    :valuesJoinedBy => MicrosoftGraph.Model.MicrosoftGraphBinaryOperator.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :operation =>
+            MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsRuleOperation.t() | nil,
+          :property => String.t() | nil,
+          :values => [String.t()] | nil,
+          :valuesJoinedBy => MicrosoftGraph.Model.MicrosoftGraphBinaryOperator.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:operation, :struct, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsRuleOperation)
-     |> Deserializer.deserialize(:valuesJoinedBy, :struct, MicrosoftGraph.Model.MicrosoftGraphBinaryOperator)
+    |> Deserializer.deserialize(
+      :operation,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsRuleOperation
+    )
+    |> Deserializer.deserialize(
+      :valuesJoinedBy,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphBinaryOperator
+    )
   end
 end
-

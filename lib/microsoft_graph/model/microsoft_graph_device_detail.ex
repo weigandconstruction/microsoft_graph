@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphDeviceDetail do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,18 +19,17 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphDeviceDetail do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :browser => String.t | nil,
-    :deviceId => String.t | nil,
-    :displayName => String.t | nil,
-    :isCompliant => boolean() | nil,
-    :isManaged => boolean() | nil,
-    :operatingSystem => String.t | nil,
-    :trustType => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :browser => String.t() | nil,
+          :deviceId => String.t() | nil,
+          :displayName => String.t() | nil,
+          :isCompliant => boolean() | nil,
+          :isManaged => boolean() | nil,
+          :operatingSystem => String.t() | nil,
+          :trustType => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

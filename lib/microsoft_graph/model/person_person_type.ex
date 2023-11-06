@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.PersonPersonType do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :class => String.t | nil,
-    :subclass => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :class => String.t() | nil,
+          :subclass => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

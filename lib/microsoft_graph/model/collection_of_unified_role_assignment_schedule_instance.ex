@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.CollectionOfUnifiedRoleAssignmentScheduleInstance do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,23 @@ defmodule MicrosoftGraph.Model.CollectionOfUnifiedRoleAssignmentScheduleInstance
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.count" => integer() | nil,
-    :"@odata.nextLink" => String.t | nil,
-    :value => [MicrosoftGraph.Model.CollectionOfUnifiedRoleAssignmentScheduleInstanceAllOfValueInner.t] | nil
-  }
+          :"@odata.count" => integer() | nil,
+          :"@odata.nextLink" => String.t() | nil,
+          :value =>
+            [
+              MicrosoftGraph.Model.CollectionOfUnifiedRoleAssignmentScheduleInstanceAllOfValueInner.t()
+            ]
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:value, :list, MicrosoftGraph.Model.CollectionOfUnifiedRoleAssignmentScheduleInstanceAllOfValueInner)
+    |> Deserializer.deserialize(
+      :value,
+      :list,
+      MicrosoftGraph.Model.CollectionOfUnifiedRoleAssignmentScheduleInstanceAllOfValueInner
+    )
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphCommunicationsEncryptedIdentity do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphCommunicationsEncryptedIdentity do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :displayName => String.t | nil,
-    :id => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :displayName => String.t() | nil,
+          :id => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

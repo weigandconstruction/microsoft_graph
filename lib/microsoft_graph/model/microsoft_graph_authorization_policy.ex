@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAuthorizationPolicy do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -24,28 +24,36 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAuthorizationPolicy do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :deletedDateTime => DateTime.t | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :allowEmailVerifiedUsersToJoinOrganization => boolean() | nil,
-    :allowInvitesFrom => MicrosoftGraph.Model.AuthorizationPolicyAllowInvitesFrom.t | nil,
-    :allowUserConsentForRiskyApps => boolean() | nil,
-    :allowedToSignUpEmailBasedSubscriptions => boolean() | nil,
-    :allowedToUseSSPR => boolean() | nil,
-    :blockMsolPowerShell => boolean() | nil,
-    :defaultUserRolePermissions => MicrosoftGraph.Model.MicrosoftGraphDefaultUserRolePermissions.t | nil,
-    :guestUserRoleId => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :deletedDateTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :allowEmailVerifiedUsersToJoinOrganization => boolean() | nil,
+          :allowInvitesFrom => MicrosoftGraph.Model.AuthorizationPolicyAllowInvitesFrom.t() | nil,
+          :allowUserConsentForRiskyApps => boolean() | nil,
+          :allowedToSignUpEmailBasedSubscriptions => boolean() | nil,
+          :allowedToUseSSPR => boolean() | nil,
+          :blockMsolPowerShell => boolean() | nil,
+          :defaultUserRolePermissions =>
+            MicrosoftGraph.Model.MicrosoftGraphDefaultUserRolePermissions.t() | nil,
+          :guestUserRoleId => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:deletedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:allowInvitesFrom, :struct, MicrosoftGraph.Model.AuthorizationPolicyAllowInvitesFrom)
-     |> Deserializer.deserialize(:defaultUserRolePermissions, :struct, MicrosoftGraph.Model.MicrosoftGraphDefaultUserRolePermissions)
+    |> Deserializer.deserialize(:deletedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :allowInvitesFrom,
+      :struct,
+      MicrosoftGraph.Model.AuthorizationPolicyAllowInvitesFrom
+    )
+    |> Deserializer.deserialize(
+      :defaultUserRolePermissions,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphDefaultUserRolePermissions
+    )
   end
 end
-

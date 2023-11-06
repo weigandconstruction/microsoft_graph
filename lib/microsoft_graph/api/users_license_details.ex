@@ -24,8 +24,21 @@ defmodule MicrosoftGraph.Api.UsersLicenseDetails do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphLicenseDetails.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_create_license_details(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphLicenseDetails.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphLicenseDetails.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_create_license_details(connection, user_id, microsoft_graph_license_details, _opts \\ []) do
+  @spec users_create_license_details(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphLicenseDetails.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphLicenseDetails.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_create_license_details(
+        connection,
+        user_id,
+        microsoft_graph_license_details,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -58,7 +71,10 @@ defmodule MicrosoftGraph.Api.UsersLicenseDetails do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_delete_license_details(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_delete_license_details(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_delete_license_details(connection, user_id, license_details_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -98,7 +114,10 @@ defmodule MicrosoftGraph.Api.UsersLicenseDetails do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphLicenseDetails.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_get_license_details(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphLicenseDetails.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_get_license_details(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphLicenseDetails.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_get_license_details(connection, user_id, license_details_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -137,7 +156,10 @@ defmodule MicrosoftGraph.Api.UsersLicenseDetails do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_license_details_get_count_a83d(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_license_details_get_count_a83d(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_license_details_get_count_a83d(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -183,7 +205,10 @@ defmodule MicrosoftGraph.Api.UsersLicenseDetails do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphLicenseDetailsCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_list_license_details(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphLicenseDetailsCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec users_list_license_details(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphLicenseDetailsCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def users_list_license_details(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -228,8 +253,23 @@ defmodule MicrosoftGraph.Api.UsersLicenseDetails do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphLicenseDetails.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_update_license_details(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphLicenseDetails.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphLicenseDetails.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_update_license_details(connection, user_id, license_details_id, microsoft_graph_license_details, _opts \\ []) do
+  @spec users_update_license_details(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphLicenseDetails.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphLicenseDetails.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_update_license_details(
+        connection,
+        user_id,
+        license_details_id,
+        microsoft_graph_license_details,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

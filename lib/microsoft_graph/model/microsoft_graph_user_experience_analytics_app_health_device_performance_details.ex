@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsAppHealthDevicePerformanceDetails do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -20,22 +20,21 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsAppHealthDev
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :appDisplayName => String.t | nil,
-    :appPublisher => String.t | nil,
-    :appVersion => String.t | nil,
-    :deviceDisplayName => String.t | nil,
-    :deviceId => String.t | nil,
-    :eventDateTime => DateTime.t | nil,
-    :eventType => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :appDisplayName => String.t() | nil,
+          :appPublisher => String.t() | nil,
+          :appVersion => String.t() | nil,
+          :deviceDisplayName => String.t() | nil,
+          :deviceId => String.t() | nil,
+          :eventDateTime => DateTime.t() | nil,
+          :eventType => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:eventDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:eventDateTime, :datetime, nil)
   end
 end
-

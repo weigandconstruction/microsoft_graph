@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSignInLocation do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,18 +16,22 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSignInLocation do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :city => String.t | nil,
-    :countryOrRegion => String.t | nil,
-    :geoCoordinates => MicrosoftGraph.Model.MicrosoftGraphSignInLocationGeoCoordinates.t | nil,
-    :state => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :city => String.t() | nil,
+          :countryOrRegion => String.t() | nil,
+          :geoCoordinates =>
+            MicrosoftGraph.Model.MicrosoftGraphSignInLocationGeoCoordinates.t() | nil,
+          :state => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:geoCoordinates, :struct, MicrosoftGraph.Model.MicrosoftGraphSignInLocationGeoCoordinates)
+    |> Deserializer.deserialize(
+      :geoCoordinates,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSignInLocationGeoCoordinates
+    )
   end
 end
-

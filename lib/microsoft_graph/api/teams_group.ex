@@ -25,7 +25,10 @@ defmodule MicrosoftGraph.Api.TeamsGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_get_group(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_get_group(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_get_group(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -70,7 +73,10 @@ defmodule MicrosoftGraph.Api.TeamsGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_group_list_service_provisioning_errors(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_group_list_service_provisioning_errors(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_group_list_service_provisioning_errors(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -115,7 +121,14 @@ defmodule MicrosoftGraph.Api.TeamsGroup do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_group_service_provisioning_errors_get_count_f5fe(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_group_service_provisioning_errors_get_count_f5fe(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_group_service_provisioning_errors_get_count_f5fe(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,

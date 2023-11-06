@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphDeviceEnrollmentPlatformRestrictionsConfiguration do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -25,34 +25,68 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphDeviceEnrollmentPlatformRestriction
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :assignments => [MicrosoftGraph.Model.MicrosoftGraphEnrollmentConfigurationAssignment.t] | nil,
-    :createdDateTime => DateTime.t | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :priority => integer() | nil,
-    :version => integer() | nil,
-    :androidRestriction => MicrosoftGraph.Model.DeviceEnrollmentPlatformRestrictionsConfigurationAndroidRestriction.t | nil,
-    :iosRestriction => MicrosoftGraph.Model.DeviceEnrollmentPlatformRestrictionsConfigurationIosRestriction.t | nil,
-    :macOSRestriction => MicrosoftGraph.Model.DeviceEnrollmentPlatformRestrictionsConfigurationMacOsRestriction.t | nil,
-    :windowsMobileRestriction => MicrosoftGraph.Model.DeviceEnrollmentPlatformRestrictionsConfigurationWindowsMobileRestriction.t | nil,
-    :windowsRestriction => MicrosoftGraph.Model.DeviceEnrollmentPlatformRestrictionsConfigurationWindowsRestriction.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :assignments =>
+            [MicrosoftGraph.Model.MicrosoftGraphEnrollmentConfigurationAssignment.t()] | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :priority => integer() | nil,
+          :version => integer() | nil,
+          :androidRestriction =>
+            MicrosoftGraph.Model.DeviceEnrollmentPlatformRestrictionsConfigurationAndroidRestriction.t()
+            | nil,
+          :iosRestriction =>
+            MicrosoftGraph.Model.DeviceEnrollmentPlatformRestrictionsConfigurationIosRestriction.t()
+            | nil,
+          :macOSRestriction =>
+            MicrosoftGraph.Model.DeviceEnrollmentPlatformRestrictionsConfigurationMacOsRestriction.t()
+            | nil,
+          :windowsMobileRestriction =>
+            MicrosoftGraph.Model.DeviceEnrollmentPlatformRestrictionsConfigurationWindowsMobileRestriction.t()
+            | nil,
+          :windowsRestriction =>
+            MicrosoftGraph.Model.DeviceEnrollmentPlatformRestrictionsConfigurationWindowsRestriction.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:assignments, :list, MicrosoftGraph.Model.MicrosoftGraphEnrollmentConfigurationAssignment)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:androidRestriction, :struct, MicrosoftGraph.Model.DeviceEnrollmentPlatformRestrictionsConfigurationAndroidRestriction)
-     |> Deserializer.deserialize(:iosRestriction, :struct, MicrosoftGraph.Model.DeviceEnrollmentPlatformRestrictionsConfigurationIosRestriction)
-     |> Deserializer.deserialize(:macOSRestriction, :struct, MicrosoftGraph.Model.DeviceEnrollmentPlatformRestrictionsConfigurationMacOsRestriction)
-     |> Deserializer.deserialize(:windowsMobileRestriction, :struct, MicrosoftGraph.Model.DeviceEnrollmentPlatformRestrictionsConfigurationWindowsMobileRestriction)
-     |> Deserializer.deserialize(:windowsRestriction, :struct, MicrosoftGraph.Model.DeviceEnrollmentPlatformRestrictionsConfigurationWindowsRestriction)
+    |> Deserializer.deserialize(
+      :assignments,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphEnrollmentConfigurationAssignment
+    )
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :androidRestriction,
+      :struct,
+      MicrosoftGraph.Model.DeviceEnrollmentPlatformRestrictionsConfigurationAndroidRestriction
+    )
+    |> Deserializer.deserialize(
+      :iosRestriction,
+      :struct,
+      MicrosoftGraph.Model.DeviceEnrollmentPlatformRestrictionsConfigurationIosRestriction
+    )
+    |> Deserializer.deserialize(
+      :macOSRestriction,
+      :struct,
+      MicrosoftGraph.Model.DeviceEnrollmentPlatformRestrictionsConfigurationMacOsRestriction
+    )
+    |> Deserializer.deserialize(
+      :windowsMobileRestriction,
+      :struct,
+      MicrosoftGraph.Model.DeviceEnrollmentPlatformRestrictionsConfigurationWindowsMobileRestriction
+    )
+    |> Deserializer.deserialize(
+      :windowsRestriction,
+      :struct,
+      MicrosoftGraph.Model.DeviceEnrollmentPlatformRestrictionsConfigurationWindowsRestriction
+    )
   end
 end
-

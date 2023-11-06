@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.ApplicationsApplicationSynchronizationTemplatesSynchronizationTemplateSchemaDirectoriesDirectoryDefinitionDiscover2XxResponse do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,23 +19,31 @@ defmodule MicrosoftGraph.Model.ApplicationsApplicationSynchronizationTemplatesSy
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :discoverabilities => MicrosoftGraph.Model.MicrosoftGraphDirectoryDefinitionDiscoverabilities.t | nil,
-    :discoveryDateTime => DateTime.t | nil,
-    :name => String.t | nil,
-    :objects => [MicrosoftGraph.Model.DirectoryDefinitionObjectsInner.t] | nil,
-    :readOnly => boolean() | nil,
-    :version => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :discoverabilities =>
+            MicrosoftGraph.Model.MicrosoftGraphDirectoryDefinitionDiscoverabilities.t() | nil,
+          :discoveryDateTime => DateTime.t() | nil,
+          :name => String.t() | nil,
+          :objects => [MicrosoftGraph.Model.DirectoryDefinitionObjectsInner.t()] | nil,
+          :readOnly => boolean() | nil,
+          :version => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:discoverabilities, :struct, MicrosoftGraph.Model.MicrosoftGraphDirectoryDefinitionDiscoverabilities)
-     |> Deserializer.deserialize(:discoveryDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:objects, :list, MicrosoftGraph.Model.DirectoryDefinitionObjectsInner)
+    |> Deserializer.deserialize(
+      :discoverabilities,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphDirectoryDefinitionDiscoverabilities
+    )
+    |> Deserializer.deserialize(:discoveryDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :objects,
+      :list,
+      MicrosoftGraph.Model.DirectoryDefinitionObjectsInner
+    )
   end
 end
-

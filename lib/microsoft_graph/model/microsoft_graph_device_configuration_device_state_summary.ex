@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceStateSummary do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -20,19 +20,18 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceStateSumma
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :compliantDeviceCount => integer() | nil,
-    :conflictDeviceCount => integer() | nil,
-    :errorDeviceCount => integer() | nil,
-    :nonCompliantDeviceCount => integer() | nil,
-    :notApplicableDeviceCount => integer() | nil,
-    :remediatedDeviceCount => integer() | nil,
-    :unknownDeviceCount => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :compliantDeviceCount => integer() | nil,
+          :conflictDeviceCount => integer() | nil,
+          :errorDeviceCount => integer() | nil,
+          :nonCompliantDeviceCount => integer() | nil,
+          :notApplicableDeviceCount => integer() | nil,
+          :remediatedDeviceCount => integer() | nil,
+          :unknownDeviceCount => integer() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

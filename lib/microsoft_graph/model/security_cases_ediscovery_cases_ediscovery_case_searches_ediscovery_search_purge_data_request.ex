@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseSearchesEdiscoverySearchPurgeDataRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,16 +13,27 @@ defmodule MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseSearche
   ]
 
   @type t :: %__MODULE__{
-    :purgeAreas => MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseSearchesEdiscoverySearchPurgeDataRequestPurgeAreas.t | nil,
-    :purgeType => MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseSearchesEdiscoverySearchPurgeDataRequestPurgeType.t | nil
-  }
+          :purgeAreas =>
+            MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseSearchesEdiscoverySearchPurgeDataRequestPurgeAreas.t()
+            | nil,
+          :purgeType =>
+            MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseSearchesEdiscoverySearchPurgeDataRequestPurgeType.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:purgeAreas, :struct, MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseSearchesEdiscoverySearchPurgeDataRequestPurgeAreas)
-     |> Deserializer.deserialize(:purgeType, :struct, MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseSearchesEdiscoverySearchPurgeDataRequestPurgeType)
+    |> Deserializer.deserialize(
+      :purgeAreas,
+      :struct,
+      MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseSearchesEdiscoverySearchPurgeDataRequestPurgeAreas
+    )
+    |> Deserializer.deserialize(
+      :purgeType,
+      :struct,
+      MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseSearchesEdiscoverySearchPurgeDataRequestPurgeType
+    )
   end
 end
-

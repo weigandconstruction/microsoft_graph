@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphFido2AuthenticationMethod do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,22 +19,26 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphFido2AuthenticationMethod do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :aaGuid => String.t | nil,
-    :attestationCertificates => [String.t] | nil,
-    :attestationLevel => MicrosoftGraph.Model.Fido2AuthenticationMethodAttestationLevel.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :displayName => String.t | nil,
-    :model => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :aaGuid => String.t() | nil,
+          :attestationCertificates => [String.t()] | nil,
+          :attestationLevel =>
+            MicrosoftGraph.Model.Fido2AuthenticationMethodAttestationLevel.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :displayName => String.t() | nil,
+          :model => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:attestationLevel, :struct, MicrosoftGraph.Model.Fido2AuthenticationMethodAttestationLevel)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :attestationLevel,
+      :struct,
+      MicrosoftGraph.Model.Fido2AuthenticationMethodAttestationLevel
+    )
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
   end
 end
-

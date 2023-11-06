@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphUpdateAllowedCombinationsResult do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,19 +16,28 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphUpdateAllowedCombinationsResult do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :additionalInformation => String.t | nil,
-    :conditionalAccessReferences => [String.t] | nil,
-    :currentCombinations => [MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodModes.t] | nil,
-    :previousCombinations => [MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodModes.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :additionalInformation => String.t() | nil,
+          :conditionalAccessReferences => [String.t()] | nil,
+          :currentCombinations =>
+            [MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodModes.t()] | nil,
+          :previousCombinations =>
+            [MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodModes.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:currentCombinations, :list, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodModes)
-     |> Deserializer.deserialize(:previousCombinations, :list, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodModes)
+    |> Deserializer.deserialize(
+      :currentCombinations,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodModes
+    )
+    |> Deserializer.deserialize(
+      :previousCombinations,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodModes
+    )
   end
 end
-

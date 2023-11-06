@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityMailboxEvidence do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -22,28 +22,44 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityMailboxEvidence do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :createdDateTime => DateTime.t | nil,
-    :detailedRoles => [String.t] | nil,
-    :remediationStatus => MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRemediationStatus.t | nil,
-    :remediationStatusDetails => String.t | nil,
-    :roles => [MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRole.t] | nil,
-    :tags => [String.t] | nil,
-    :verdict => MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceVerdict.t | nil,
-    :displayName => String.t | nil,
-    :primaryAddress => String.t | nil,
-    :userAccount => MicrosoftGraph.Model.MailboxEvidenceUserAccount.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :createdDateTime => DateTime.t() | nil,
+          :detailedRoles => [String.t()] | nil,
+          :remediationStatus =>
+            MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRemediationStatus.t() | nil,
+          :remediationStatusDetails => String.t() | nil,
+          :roles => [MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRole.t()] | nil,
+          :tags => [String.t()] | nil,
+          :verdict => MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceVerdict.t() | nil,
+          :displayName => String.t() | nil,
+          :primaryAddress => String.t() | nil,
+          :userAccount => MicrosoftGraph.Model.MailboxEvidenceUserAccount.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:remediationStatus, :struct, MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRemediationStatus)
-     |> Deserializer.deserialize(:roles, :list, MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRole)
-     |> Deserializer.deserialize(:verdict, :struct, MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceVerdict)
-     |> Deserializer.deserialize(:userAccount, :struct, MicrosoftGraph.Model.MailboxEvidenceUserAccount)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :remediationStatus,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRemediationStatus
+    )
+    |> Deserializer.deserialize(
+      :roles,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRole
+    )
+    |> Deserializer.deserialize(
+      :verdict,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceVerdict
+    )
+    |> Deserializer.deserialize(
+      :userAccount,
+      :struct,
+      MicrosoftGraph.Model.MailboxEvidenceUserAccount
+    )
   end
 end
-

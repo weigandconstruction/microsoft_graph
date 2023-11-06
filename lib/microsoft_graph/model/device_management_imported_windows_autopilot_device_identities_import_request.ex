@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DeviceManagementImportedWindowsAutopilotDeviceIdentitiesImportRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,14 +12,21 @@ defmodule MicrosoftGraph.Model.DeviceManagementImportedWindowsAutopilotDeviceIde
   ]
 
   @type t :: %__MODULE__{
-    :importedWindowsAutopilotDeviceIdentities => [MicrosoftGraph.Model.DeviceManagementImportedWindowsAutopilotDeviceIdentitiesImportRequestImportedWindowsAutopilotDeviceIdentitiesInner.t] | nil
-  }
+          :importedWindowsAutopilotDeviceIdentities =>
+            [
+              MicrosoftGraph.Model.DeviceManagementImportedWindowsAutopilotDeviceIdentitiesImportRequestImportedWindowsAutopilotDeviceIdentitiesInner.t()
+            ]
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:importedWindowsAutopilotDeviceIdentities, :list, MicrosoftGraph.Model.DeviceManagementImportedWindowsAutopilotDeviceIdentitiesImportRequestImportedWindowsAutopilotDeviceIdentitiesInner)
+    |> Deserializer.deserialize(
+      :importedWindowsAutopilotDeviceIdentities,
+      :list,
+      MicrosoftGraph.Model.DeviceManagementImportedWindowsAutopilotDeviceIdentitiesImportRequestImportedWindowsAutopilotDeviceIdentitiesInner
+    )
   end
 end
-

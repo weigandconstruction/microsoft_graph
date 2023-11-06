@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.UserPrint do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,15 +13,18 @@ defmodule MicrosoftGraph.Model.UserPrint do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :recentPrinterShares => [MicrosoftGraph.Model.MicrosoftGraphPrinterShare.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :recentPrinterShares => [MicrosoftGraph.Model.MicrosoftGraphPrinterShare.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:recentPrinterShares, :list, MicrosoftGraph.Model.MicrosoftGraphPrinterShare)
+    |> Deserializer.deserialize(
+      :recentPrinterShares,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphPrinterShare
+    )
   end
 end
-

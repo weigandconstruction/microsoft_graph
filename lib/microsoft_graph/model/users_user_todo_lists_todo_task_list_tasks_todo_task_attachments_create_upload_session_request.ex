@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.UsersUserTodoListsTodoTaskListTasksTodoTaskAttachmentsCreateUploadSessionRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,14 +12,17 @@ defmodule MicrosoftGraph.Model.UsersUserTodoListsTodoTaskListTasksTodoTaskAttach
   ]
 
   @type t :: %__MODULE__{
-    :attachmentInfo => MicrosoftGraph.Model.MicrosoftGraphAttachmentInfo.t | nil
-  }
+          :attachmentInfo => MicrosoftGraph.Model.MicrosoftGraphAttachmentInfo.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:attachmentInfo, :struct, MicrosoftGraph.Model.MicrosoftGraphAttachmentInfo)
+    |> Deserializer.deserialize(
+      :attachmentInfo,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAttachmentInfo
+    )
   end
 end
-

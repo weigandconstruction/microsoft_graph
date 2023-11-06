@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphPost do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -30,43 +30,60 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphPost do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :categories => [String.t] | nil,
-    :changeKey => String.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :attachments => [MicrosoftGraph.Model.MicrosoftGraphAttachment.t] | nil,
-    :body => MicrosoftGraph.Model.PostBody.t | nil,
-    :conversationId => String.t | nil,
-    :conversationThreadId => String.t | nil,
-    :extensions => [MicrosoftGraph.Model.MicrosoftGraphExtension.t] | nil,
-    :from => MicrosoftGraph.Model.MicrosoftGraphRecipient.t | nil,
-    :hasAttachments => boolean() | nil,
-    :inReplyTo => MicrosoftGraph.Model.PostInReplyTo.t | nil,
-    :multiValueExtendedProperties => [MicrosoftGraph.Model.MicrosoftGraphMultiValueLegacyExtendedProperty.t] | nil,
-    :newParticipants => [MicrosoftGraph.Model.MicrosoftGraphRecipient.t] | nil,
-    :receivedDateTime => DateTime.t | nil,
-    :sender => MicrosoftGraph.Model.PostSender.t | nil,
-    :singleValueExtendedProperties => [MicrosoftGraph.Model.MicrosoftGraphSingleValueLegacyExtendedProperty.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :categories => [String.t()] | nil,
+          :changeKey => String.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :attachments => [MicrosoftGraph.Model.MicrosoftGraphAttachment.t()] | nil,
+          :body => MicrosoftGraph.Model.PostBody.t() | nil,
+          :conversationId => String.t() | nil,
+          :conversationThreadId => String.t() | nil,
+          :extensions => [MicrosoftGraph.Model.MicrosoftGraphExtension.t()] | nil,
+          :from => MicrosoftGraph.Model.MicrosoftGraphRecipient.t() | nil,
+          :hasAttachments => boolean() | nil,
+          :inReplyTo => MicrosoftGraph.Model.PostInReplyTo.t() | nil,
+          :multiValueExtendedProperties =>
+            [MicrosoftGraph.Model.MicrosoftGraphMultiValueLegacyExtendedProperty.t()] | nil,
+          :newParticipants => [MicrosoftGraph.Model.MicrosoftGraphRecipient.t()] | nil,
+          :receivedDateTime => DateTime.t() | nil,
+          :sender => MicrosoftGraph.Model.PostSender.t() | nil,
+          :singleValueExtendedProperties =>
+            [MicrosoftGraph.Model.MicrosoftGraphSingleValueLegacyExtendedProperty.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:attachments, :list, MicrosoftGraph.Model.MicrosoftGraphAttachment)
-     |> Deserializer.deserialize(:body, :struct, MicrosoftGraph.Model.PostBody)
-     |> Deserializer.deserialize(:extensions, :list, MicrosoftGraph.Model.MicrosoftGraphExtension)
-     |> Deserializer.deserialize(:from, :struct, MicrosoftGraph.Model.MicrosoftGraphRecipient)
-     |> Deserializer.deserialize(:inReplyTo, :struct, MicrosoftGraph.Model.PostInReplyTo)
-     |> Deserializer.deserialize(:multiValueExtendedProperties, :list, MicrosoftGraph.Model.MicrosoftGraphMultiValueLegacyExtendedProperty)
-     |> Deserializer.deserialize(:newParticipants, :list, MicrosoftGraph.Model.MicrosoftGraphRecipient)
-     |> Deserializer.deserialize(:receivedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:sender, :struct, MicrosoftGraph.Model.PostSender)
-     |> Deserializer.deserialize(:singleValueExtendedProperties, :list, MicrosoftGraph.Model.MicrosoftGraphSingleValueLegacyExtendedProperty)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :attachments,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAttachment
+    )
+    |> Deserializer.deserialize(:body, :struct, MicrosoftGraph.Model.PostBody)
+    |> Deserializer.deserialize(:extensions, :list, MicrosoftGraph.Model.MicrosoftGraphExtension)
+    |> Deserializer.deserialize(:from, :struct, MicrosoftGraph.Model.MicrosoftGraphRecipient)
+    |> Deserializer.deserialize(:inReplyTo, :struct, MicrosoftGraph.Model.PostInReplyTo)
+    |> Deserializer.deserialize(
+      :multiValueExtendedProperties,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphMultiValueLegacyExtendedProperty
+    )
+    |> Deserializer.deserialize(
+      :newParticipants,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphRecipient
+    )
+    |> Deserializer.deserialize(:receivedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:sender, :struct, MicrosoftGraph.Model.PostSender)
+    |> Deserializer.deserialize(
+      :singleValueExtendedProperties,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSingleValueLegacyExtendedProperty
+    )
   end
 end
-

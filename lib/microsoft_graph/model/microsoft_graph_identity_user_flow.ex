@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlow do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,18 +15,26 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlow do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :userFlowType => MicrosoftGraph.Model.MicrosoftGraphUserFlowType.t | nil,
-    :userFlowTypeVersion => MicrosoftGraph.Model.IdentityUserFlowUserFlowTypeVersion.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :userFlowType => MicrosoftGraph.Model.MicrosoftGraphUserFlowType.t() | nil,
+          :userFlowTypeVersion =>
+            MicrosoftGraph.Model.IdentityUserFlowUserFlowTypeVersion.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:userFlowType, :struct, MicrosoftGraph.Model.MicrosoftGraphUserFlowType)
-     |> Deserializer.deserialize(:userFlowTypeVersion, :struct, MicrosoftGraph.Model.IdentityUserFlowUserFlowTypeVersion)
+    |> Deserializer.deserialize(
+      :userFlowType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphUserFlowType
+    )
+    |> Deserializer.deserialize(
+      :userFlowTypeVersion,
+      :struct,
+      MicrosoftGraph.Model.IdentityUserFlowUserFlowTypeVersion
+    )
   end
 end
-

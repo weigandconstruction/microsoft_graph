@@ -23,7 +23,10 @@ defmodule MicrosoftGraph.Api.TeamworkTeamsAppSettings do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teamwork_delete_teams_app_settings(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teamwork_delete_teams_app_settings(Tesla.Env.client(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teamwork_delete_teams_app_settings(connection, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -61,7 +64,10 @@ defmodule MicrosoftGraph.Api.TeamworkTeamsAppSettings do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teamwork_get_teams_app_settings(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppSettings.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teamwork_get_teams_app_settings(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppSettings.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teamwork_get_teams_app_settings(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -99,8 +105,19 @@ defmodule MicrosoftGraph.Api.TeamworkTeamsAppSettings do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teamwork_update_teams_app_settings(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphTeamsAppSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppSettings.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teamwork_update_teams_app_settings(connection, microsoft_graph_teams_app_settings, _opts \\ []) do
+  @spec teamwork_update_teams_app_settings(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphTeamsAppSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppSettings.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teamwork_update_teams_app_settings(
+        connection,
+        microsoft_graph_teams_app_settings,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

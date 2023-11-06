@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphPkcs12Certificate do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphPkcs12Certificate do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :password => String.t | nil,
-    :pkcs12Value => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :password => String.t() | nil,
+          :pkcs12Value => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

@@ -25,8 +25,17 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementDeviceAppManagement do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceAppManagement.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_device_app_management_get_device_app_management(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceAppManagement.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_device_app_management_get_device_app_management(connection, opts \\ []) do
+  @spec device_app_management_device_app_management_get_device_app_management(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceAppManagement.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_device_app_management_get_device_app_management(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -63,8 +72,19 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementDeviceAppManagement do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceAppManagement.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_device_app_management_update_device_app_management(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphDeviceAppManagement.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceAppManagement.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_device_app_management_update_device_app_management(connection, microsoft_graph_device_app_management, _opts \\ []) do
+  @spec device_app_management_device_app_management_update_device_app_management(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphDeviceAppManagement.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceAppManagement.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_device_app_management_update_device_app_management(
+        connection,
+        microsoft_graph_device_app_management,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSettingTemplateValue do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,15 +16,14 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSettingTemplateValue do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :defaultValue => String.t | nil,
-    :description => String.t | nil,
-    :name => String.t | nil,
-    :type => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :defaultValue => String.t() | nil,
+          :description => String.t() | nil,
+          :name => String.t() | nil,
+          :type => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

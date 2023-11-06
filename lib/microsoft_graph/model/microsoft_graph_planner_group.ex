@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphPlannerGroup do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,15 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphPlannerGroup do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :plans => [MicrosoftGraph.Model.MicrosoftGraphPlannerPlan.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :plans => [MicrosoftGraph.Model.MicrosoftGraphPlannerPlan.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:plans, :list, MicrosoftGraph.Model.MicrosoftGraphPlannerPlan)
+    |> Deserializer.deserialize(:plans, :list, MicrosoftGraph.Model.MicrosoftGraphPlannerPlan)
   end
 end
-

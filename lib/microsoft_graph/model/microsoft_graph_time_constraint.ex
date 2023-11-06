@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphTimeConstraint do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,17 +14,29 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphTimeConstraint do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :activityDomain => MicrosoftGraph.Model.MicrosoftGraphTimeConstraintActivityDomain.t | nil,
-    :timeSlots => [MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequestProposedNewTime.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :activityDomain =>
+            MicrosoftGraph.Model.MicrosoftGraphTimeConstraintActivityDomain.t() | nil,
+          :timeSlots =>
+            [
+              MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequestProposedNewTime.t()
+            ]
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:activityDomain, :struct, MicrosoftGraph.Model.MicrosoftGraphTimeConstraintActivityDomain)
-     |> Deserializer.deserialize(:timeSlots, :list, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequestProposedNewTime)
+    |> Deserializer.deserialize(
+      :activityDomain,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphTimeConstraintActivityDomain
+    )
+    |> Deserializer.deserialize(
+      :timeSlots,
+      :list,
+      MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequestProposedNewTime
+    )
   end
 end
-

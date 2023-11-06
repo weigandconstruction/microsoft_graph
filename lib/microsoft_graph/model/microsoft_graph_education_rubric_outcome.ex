@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphEducationRubricOutcome do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,26 +19,57 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphEducationRubricOutcome do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :lastModifiedBy => MicrosoftGraph.Model.EducationOutcomeLastModifiedBy.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :publishedRubricQualityFeedback => [MicrosoftGraph.Model.EducationRubricOutcomePublishedRubricQualityFeedbackInner.t] | nil,
-    :publishedRubricQualitySelectedLevels => [MicrosoftGraph.Model.EducationRubricOutcomePublishedRubricQualitySelectedLevelsInner.t] | nil,
-    :rubricQualityFeedback => [MicrosoftGraph.Model.EducationRubricOutcomePublishedRubricQualityFeedbackInner.t] | nil,
-    :rubricQualitySelectedLevels => [MicrosoftGraph.Model.EducationRubricOutcomePublishedRubricQualitySelectedLevelsInner.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :lastModifiedBy => MicrosoftGraph.Model.EducationOutcomeLastModifiedBy.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :publishedRubricQualityFeedback =>
+            [MicrosoftGraph.Model.EducationRubricOutcomePublishedRubricQualityFeedbackInner.t()]
+            | nil,
+          :publishedRubricQualitySelectedLevels =>
+            [
+              MicrosoftGraph.Model.EducationRubricOutcomePublishedRubricQualitySelectedLevelsInner.t()
+            ]
+            | nil,
+          :rubricQualityFeedback =>
+            [MicrosoftGraph.Model.EducationRubricOutcomePublishedRubricQualityFeedbackInner.t()]
+            | nil,
+          :rubricQualitySelectedLevels =>
+            [
+              MicrosoftGraph.Model.EducationRubricOutcomePublishedRubricQualitySelectedLevelsInner.t()
+            ]
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:lastModifiedBy, :struct, MicrosoftGraph.Model.EducationOutcomeLastModifiedBy)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:publishedRubricQualityFeedback, :list, MicrosoftGraph.Model.EducationRubricOutcomePublishedRubricQualityFeedbackInner)
-     |> Deserializer.deserialize(:publishedRubricQualitySelectedLevels, :list, MicrosoftGraph.Model.EducationRubricOutcomePublishedRubricQualitySelectedLevelsInner)
-     |> Deserializer.deserialize(:rubricQualityFeedback, :list, MicrosoftGraph.Model.EducationRubricOutcomePublishedRubricQualityFeedbackInner)
-     |> Deserializer.deserialize(:rubricQualitySelectedLevels, :list, MicrosoftGraph.Model.EducationRubricOutcomePublishedRubricQualitySelectedLevelsInner)
+    |> Deserializer.deserialize(
+      :lastModifiedBy,
+      :struct,
+      MicrosoftGraph.Model.EducationOutcomeLastModifiedBy
+    )
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :publishedRubricQualityFeedback,
+      :list,
+      MicrosoftGraph.Model.EducationRubricOutcomePublishedRubricQualityFeedbackInner
+    )
+    |> Deserializer.deserialize(
+      :publishedRubricQualitySelectedLevels,
+      :list,
+      MicrosoftGraph.Model.EducationRubricOutcomePublishedRubricQualitySelectedLevelsInner
+    )
+    |> Deserializer.deserialize(
+      :rubricQualityFeedback,
+      :list,
+      MicrosoftGraph.Model.EducationRubricOutcomePublishedRubricQualityFeedbackInner
+    )
+    |> Deserializer.deserialize(
+      :rubricQualitySelectedLevels,
+      :list,
+      MicrosoftGraph.Model.EducationRubricOutcomePublishedRubricQualitySelectedLevelsInner
+    )
   end
 end
-

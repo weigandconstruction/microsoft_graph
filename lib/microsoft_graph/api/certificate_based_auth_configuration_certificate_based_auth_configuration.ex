@@ -23,8 +23,19 @@ defmodule MicrosoftGraph.Api.CertificateBasedAuthConfigurationCertificateBasedAu
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCertificateBasedAuthConfiguration.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec certificate_based_auth_configuration_certificate_based_auth_configuration_create_certificate_based_auth_configuration(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphCertificateBasedAuthConfiguration.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphCertificateBasedAuthConfiguration.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def certificate_based_auth_configuration_certificate_based_auth_configuration_create_certificate_based_auth_configuration(connection, microsoft_graph_certificate_based_auth_configuration, _opts \\ []) do
+  @spec certificate_based_auth_configuration_certificate_based_auth_configuration_create_certificate_based_auth_configuration(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphCertificateBasedAuthConfiguration.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphCertificateBasedAuthConfiguration.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def certificate_based_auth_configuration_certificate_based_auth_configuration_create_certificate_based_auth_configuration(
+        connection,
+        microsoft_graph_certificate_based_auth_configuration,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -56,8 +67,19 @@ defmodule MicrosoftGraph.Api.CertificateBasedAuthConfigurationCertificateBasedAu
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec certificate_based_auth_configuration_certificate_based_auth_configuration_delete_certificate_based_auth_configuration(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def certificate_based_auth_configuration_certificate_based_auth_configuration_delete_certificate_based_auth_configuration(connection, certificate_based_auth_configuration_id, opts \\ []) do
+  @spec certificate_based_auth_configuration_certificate_based_auth_configuration_delete_certificate_based_auth_configuration(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def certificate_based_auth_configuration_certificate_based_auth_configuration_delete_certificate_based_auth_configuration(
+        connection,
+        certificate_based_auth_configuration_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -94,8 +116,19 @@ defmodule MicrosoftGraph.Api.CertificateBasedAuthConfigurationCertificateBasedAu
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCertificateBasedAuthConfiguration.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec certificate_based_auth_configuration_certificate_based_auth_configuration_get_certificate_based_auth_configuration(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphCertificateBasedAuthConfiguration.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def certificate_based_auth_configuration_certificate_based_auth_configuration_get_certificate_based_auth_configuration(connection, certificate_based_auth_configuration_id, opts \\ []) do
+  @spec certificate_based_auth_configuration_certificate_based_auth_configuration_get_certificate_based_auth_configuration(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphCertificateBasedAuthConfiguration.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def certificate_based_auth_configuration_certificate_based_auth_configuration_get_certificate_based_auth_configuration(
+        connection,
+        certificate_based_auth_configuration_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -138,8 +171,18 @@ defmodule MicrosoftGraph.Api.CertificateBasedAuthConfigurationCertificateBasedAu
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCertificateBasedAuthConfigurationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec certificate_based_auth_configuration_certificate_based_auth_configuration_list_certificate_based_auth_configuration(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphCertificateBasedAuthConfigurationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def certificate_based_auth_configuration_certificate_based_auth_configuration_list_certificate_based_auth_configuration(connection, opts \\ []) do
+  @spec certificate_based_auth_configuration_certificate_based_auth_configuration_list_certificate_based_auth_configuration(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphCertificateBasedAuthConfigurationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def certificate_based_auth_configuration_certificate_based_auth_configuration_list_certificate_based_auth_configuration(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -161,7 +204,8 @@ defmodule MicrosoftGraph.Api.CertificateBasedAuthConfigurationCertificateBasedAu
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphCertificateBasedAuthConfigurationCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphCertificateBasedAuthConfigurationCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -182,8 +226,21 @@ defmodule MicrosoftGraph.Api.CertificateBasedAuthConfigurationCertificateBasedAu
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCertificateBasedAuthConfiguration.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec certificate_based_auth_configuration_certificate_based_auth_configuration_update_certificate_based_auth_configuration(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphCertificateBasedAuthConfiguration.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphCertificateBasedAuthConfiguration.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def certificate_based_auth_configuration_certificate_based_auth_configuration_update_certificate_based_auth_configuration(connection, certificate_based_auth_configuration_id, microsoft_graph_certificate_based_auth_configuration, _opts \\ []) do
+  @spec certificate_based_auth_configuration_certificate_based_auth_configuration_update_certificate_based_auth_configuration(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphCertificateBasedAuthConfiguration.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphCertificateBasedAuthConfiguration.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def certificate_based_auth_configuration_certificate_based_auth_configuration_update_certificate_based_auth_configuration(
+        connection,
+        certificate_based_auth_configuration_id,
+        microsoft_graph_certificate_based_auth_configuration,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -215,7 +272,10 @@ defmodule MicrosoftGraph.Api.CertificateBasedAuthConfigurationCertificateBasedAu
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec certificate_based_auth_configuration_get_count_e291(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec certificate_based_auth_configuration_get_count_e291(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def certificate_based_auth_configuration_get_count_e291(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,

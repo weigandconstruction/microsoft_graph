@@ -18,17 +18,16 @@ defmodule MicrosoftGraph.Model.OnlineMeetingAudioConferencing do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :conferenceId => String.t | nil,
-    :dialinUrl => String.t | nil,
-    :tollFreeNumber => String.t | nil,
-    :tollFreeNumbers => [String.t] | nil,
-    :tollNumber => String.t | nil,
-    :tollNumbers => [String.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :conferenceId => String.t() | nil,
+          :dialinUrl => String.t() | nil,
+          :tollFreeNumber => String.t() | nil,
+          :tollFreeNumbers => [String.t()] | nil,
+          :tollNumber => String.t() | nil,
+          :tollNumbers => [String.t()] | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

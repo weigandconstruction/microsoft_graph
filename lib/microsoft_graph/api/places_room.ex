@@ -24,7 +24,15 @@ defmodule MicrosoftGraph.Api.PlacesRoom do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphRoom.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec places_create_rooms(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphRoom.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphRoom.t} | {:error, Tesla.Env.t}
+  @spec places_create_rooms(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphRoom.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphRoom.t()}
+          | {:error, Tesla.Env.t()}
   def places_create_rooms(connection, place_id, microsoft_graph_room, _opts \\ []) do
     request =
       %{}
@@ -58,7 +66,10 @@ defmodule MicrosoftGraph.Api.PlacesRoom do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec places_delete_rooms(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec places_delete_rooms(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def places_delete_rooms(connection, place_id, room_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -97,7 +108,10 @@ defmodule MicrosoftGraph.Api.PlacesRoom do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphRoom.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec places_get_rooms(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphRoom.t} | {:error, Tesla.Env.t}
+  @spec places_get_rooms(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphRoom.t()}
+          | {:error, Tesla.Env.t()}
   def places_get_rooms(connection, place_id, room_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -142,7 +156,10 @@ defmodule MicrosoftGraph.Api.PlacesRoom do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphRoomCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec places_list_rooms(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphRoomCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec places_list_rooms(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphRoomCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def places_list_rooms(connection, place_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -187,7 +204,10 @@ defmodule MicrosoftGraph.Api.PlacesRoom do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec places_rooms_get_count_b534(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec places_rooms_get_count_b534(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def places_rooms_get_count_b534(connection, place_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -226,7 +246,16 @@ defmodule MicrosoftGraph.Api.PlacesRoom do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphRoom.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec places_update_rooms(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphRoom.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphRoom.t} | {:error, Tesla.Env.t}
+  @spec places_update_rooms(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphRoom.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphRoom.t()}
+          | {:error, Tesla.Env.t()}
   def places_update_rooms(connection, place_id, room_id, microsoft_graph_room, _opts \\ []) do
     request =
       %{}

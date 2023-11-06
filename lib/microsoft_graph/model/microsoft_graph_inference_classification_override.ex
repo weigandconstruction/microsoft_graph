@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphInferenceClassificationOverride do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,18 +15,26 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphInferenceClassificationOverride do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :classifyAs => MicrosoftGraph.Model.InferenceClassificationOverrideClassifyAs.t | nil,
-    :senderEmailAddress => MicrosoftGraph.Model.InferenceClassificationOverrideSenderEmailAddress.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :classifyAs => MicrosoftGraph.Model.InferenceClassificationOverrideClassifyAs.t() | nil,
+          :senderEmailAddress =>
+            MicrosoftGraph.Model.InferenceClassificationOverrideSenderEmailAddress.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:classifyAs, :struct, MicrosoftGraph.Model.InferenceClassificationOverrideClassifyAs)
-     |> Deserializer.deserialize(:senderEmailAddress, :struct, MicrosoftGraph.Model.InferenceClassificationOverrideSenderEmailAddress)
+    |> Deserializer.deserialize(
+      :classifyAs,
+      :struct,
+      MicrosoftGraph.Model.InferenceClassificationOverrideClassifyAs
+    )
+    |> Deserializer.deserialize(
+      :senderEmailAddress,
+      :struct,
+      MicrosoftGraph.Model.InferenceClassificationOverrideSenderEmailAddress
+    )
   end
 end
-

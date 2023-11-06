@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphBookingService do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -34,41 +34,65 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphBookingService do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :additionalInformation => String.t | nil,
-    :customQuestions => [MicrosoftGraph.Model.BookingServiceCustomQuestionsInner.t] | nil,
-    :defaultDuration => String.t | nil,
-    :defaultLocation => MicrosoftGraph.Model.BookingServiceDefaultLocation.t | nil,
-    :defaultPrice => MicrosoftGraph.Model.BookingServiceDefaultPrice.t | nil,
-    :defaultPriceType => MicrosoftGraph.Model.MicrosoftGraphBookingPriceType.t | nil,
-    :defaultReminders => [MicrosoftGraph.Model.BookingServiceDefaultRemindersInner.t] | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :isAnonymousJoinEnabled => boolean() | nil,
-    :isHiddenFromCustomers => boolean() | nil,
-    :isLocationOnline => boolean() | nil,
-    :languageTag => String.t | nil,
-    :maximumAttendeesCount => integer() | nil,
-    :notes => String.t | nil,
-    :postBuffer => String.t | nil,
-    :preBuffer => String.t | nil,
-    :schedulingPolicy => MicrosoftGraph.Model.BookingServiceSchedulingPolicy.t | nil,
-    :smsNotificationsEnabled => boolean() | nil,
-    :staffMemberIds => [String.t] | nil,
-    :webUrl => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :additionalInformation => String.t() | nil,
+          :customQuestions => [MicrosoftGraph.Model.BookingServiceCustomQuestionsInner.t()] | nil,
+          :defaultDuration => String.t() | nil,
+          :defaultLocation => MicrosoftGraph.Model.BookingServiceDefaultLocation.t() | nil,
+          :defaultPrice => MicrosoftGraph.Model.BookingServiceDefaultPrice.t() | nil,
+          :defaultPriceType => MicrosoftGraph.Model.MicrosoftGraphBookingPriceType.t() | nil,
+          :defaultReminders =>
+            [MicrosoftGraph.Model.BookingServiceDefaultRemindersInner.t()] | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :isAnonymousJoinEnabled => boolean() | nil,
+          :isHiddenFromCustomers => boolean() | nil,
+          :isLocationOnline => boolean() | nil,
+          :languageTag => String.t() | nil,
+          :maximumAttendeesCount => integer() | nil,
+          :notes => String.t() | nil,
+          :postBuffer => String.t() | nil,
+          :preBuffer => String.t() | nil,
+          :schedulingPolicy => MicrosoftGraph.Model.BookingServiceSchedulingPolicy.t() | nil,
+          :smsNotificationsEnabled => boolean() | nil,
+          :staffMemberIds => [String.t()] | nil,
+          :webUrl => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:customQuestions, :list, MicrosoftGraph.Model.BookingServiceCustomQuestionsInner)
-     |> Deserializer.deserialize(:defaultLocation, :struct, MicrosoftGraph.Model.BookingServiceDefaultLocation)
-     |> Deserializer.deserialize(:defaultPrice, :struct, MicrosoftGraph.Model.BookingServiceDefaultPrice)
-     |> Deserializer.deserialize(:defaultPriceType, :struct, MicrosoftGraph.Model.MicrosoftGraphBookingPriceType)
-     |> Deserializer.deserialize(:defaultReminders, :list, MicrosoftGraph.Model.BookingServiceDefaultRemindersInner)
-     |> Deserializer.deserialize(:schedulingPolicy, :struct, MicrosoftGraph.Model.BookingServiceSchedulingPolicy)
+    |> Deserializer.deserialize(
+      :customQuestions,
+      :list,
+      MicrosoftGraph.Model.BookingServiceCustomQuestionsInner
+    )
+    |> Deserializer.deserialize(
+      :defaultLocation,
+      :struct,
+      MicrosoftGraph.Model.BookingServiceDefaultLocation
+    )
+    |> Deserializer.deserialize(
+      :defaultPrice,
+      :struct,
+      MicrosoftGraph.Model.BookingServiceDefaultPrice
+    )
+    |> Deserializer.deserialize(
+      :defaultPriceType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphBookingPriceType
+    )
+    |> Deserializer.deserialize(
+      :defaultReminders,
+      :list,
+      MicrosoftGraph.Model.BookingServiceDefaultRemindersInner
+    )
+    |> Deserializer.deserialize(
+      :schedulingPolicy,
+      :struct,
+      MicrosoftGraph.Model.BookingServiceSchedulingPolicy
+    )
   end
 end
-

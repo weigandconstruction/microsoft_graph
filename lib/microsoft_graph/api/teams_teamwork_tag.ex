@@ -25,7 +25,15 @@ defmodule MicrosoftGraph.Api.TeamsTeamworkTag do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkTag.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_create_tags(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphTeamworkTag.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkTag.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_create_tags(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTeamworkTag.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkTag.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_create_tags(connection, team_id, microsoft_graph_teamwork_tag, _opts \\ []) do
     request =
       %{}
@@ -60,7 +68,10 @@ defmodule MicrosoftGraph.Api.TeamsTeamworkTag do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_delete_tags(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_delete_tags(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_delete_tags(connection, team_id, teamwork_tag_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -100,7 +111,10 @@ defmodule MicrosoftGraph.Api.TeamsTeamworkTag do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkTag.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_get_tags(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkTag.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_get_tags(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkTag.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_get_tags(connection, team_id, teamwork_tag_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -146,7 +160,10 @@ defmodule MicrosoftGraph.Api.TeamsTeamworkTag do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkTagCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_list_tags(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkTagCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec teams_list_tags(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkTagCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def teams_list_tags(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -192,8 +209,23 @@ defmodule MicrosoftGraph.Api.TeamsTeamworkTag do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkTagMember.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_tags_create_members(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTeamworkTagMember.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkTagMember.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_tags_create_members(connection, team_id, teamwork_tag_id, microsoft_graph_teamwork_tag_member, _opts \\ []) do
+  @spec teams_tags_create_members(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTeamworkTagMember.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkTagMember.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_tags_create_members(
+        connection,
+        team_id,
+        teamwork_tag_id,
+        microsoft_graph_teamwork_tag_member,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -228,8 +260,23 @@ defmodule MicrosoftGraph.Api.TeamsTeamworkTag do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_tags_delete_members(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_tags_delete_members(connection, team_id, teamwork_tag_id, teamwork_tag_member_id, opts \\ []) do
+  @spec teams_tags_delete_members(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_tags_delete_members(
+        connection,
+        team_id,
+        teamwork_tag_id,
+        teamwork_tag_member_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -266,7 +313,10 @@ defmodule MicrosoftGraph.Api.TeamsTeamworkTag do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_tags_get_count_db00(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_tags_get_count_db00(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_tags_get_count_db00(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -308,8 +358,17 @@ defmodule MicrosoftGraph.Api.TeamsTeamworkTag do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkTagMember.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_tags_get_members(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkTagMember.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_tags_get_members(connection, team_id, teamwork_tag_id, teamwork_tag_member_id, opts \\ []) do
+  @spec teams_tags_get_members(Tesla.Env.client(), String.t(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkTagMember.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_tags_get_members(
+        connection,
+        team_id,
+        teamwork_tag_id,
+        teamwork_tag_member_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -355,7 +414,10 @@ defmodule MicrosoftGraph.Api.TeamsTeamworkTag do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkTagMemberCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_tags_list_members(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkTagMemberCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_tags_list_members(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkTagMemberCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_tags_list_members(connection, team_id, teamwork_tag_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -401,7 +463,10 @@ defmodule MicrosoftGraph.Api.TeamsTeamworkTag do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_tags_members_get_count_cbc7(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_tags_members_get_count_cbc7(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_tags_members_get_count_cbc7(connection, team_id, teamwork_tag_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -441,8 +506,25 @@ defmodule MicrosoftGraph.Api.TeamsTeamworkTag do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkTagMember.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_tags_update_members(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTeamworkTagMember.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkTagMember.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_tags_update_members(connection, team_id, teamwork_tag_id, teamwork_tag_member_id, microsoft_graph_teamwork_tag_member, _opts \\ []) do
+  @spec teams_tags_update_members(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTeamworkTagMember.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkTagMember.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_tags_update_members(
+        connection,
+        team_id,
+        teamwork_tag_id,
+        teamwork_tag_member_id,
+        microsoft_graph_teamwork_tag_member,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -476,8 +558,23 @@ defmodule MicrosoftGraph.Api.TeamsTeamworkTag do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkTag.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_update_tags(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTeamworkTag.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkTag.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_update_tags(connection, team_id, teamwork_tag_id, microsoft_graph_teamwork_tag, _opts \\ []) do
+  @spec teams_update_tags(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTeamworkTag.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkTag.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_update_tags(
+        connection,
+        team_id,
+        teamwork_tag_id,
+        microsoft_graph_teamwork_tag,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

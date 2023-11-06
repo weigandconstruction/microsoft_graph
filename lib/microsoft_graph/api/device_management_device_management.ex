@@ -25,7 +25,10 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceManagement do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceManagement.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_management_get_device_management(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceManagement.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec device_management_device_management_get_device_management(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceManagement.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def device_management_device_management_get_device_management(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -63,8 +66,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceManagement do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceManagement.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_management_update_device_management(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphDeviceManagement.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceManagement.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_device_management_update_device_management(connection, microsoft_graph_device_management, _opts \\ []) do
+  @spec device_management_device_management_update_device_management(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphDeviceManagement.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceManagement.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_management_update_device_management(
+        connection,
+        microsoft_graph_device_management,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

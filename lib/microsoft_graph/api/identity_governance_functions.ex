@@ -32,8 +32,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfAccessReviewInstanceDecisionItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_access_review_schedule_definition_instances_access_review_instance_decisions_filter_by_current_user(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceDecisionItemFilterByCurrentUserOptions.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.CollectionOfAccessReviewInstanceDecisionItem.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_access_review_schedule_definition_instances_access_review_instance_decisions_filter_by_current_user(connection, access_review_schedule_definition_id, access_review_instance_id, on, opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_access_review_schedule_definition_instances_access_review_instance_decisions_filter_by_current_user(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceDecisionItemFilterByCurrentUserOptions.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.CollectionOfAccessReviewInstanceDecisionItem.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_access_review_schedule_definition_instances_access_review_instance_decisions_filter_by_current_user(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        on,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -47,7 +62,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/decisions/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/decisions/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -84,8 +101,25 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfAccessReviewInstanceDecisionItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_access_review_schedule_definition_instances_access_review_instance_stages_access_review_stage_decisions_filter_by_current_user(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceDecisionItemFilterByCurrentUserOptions.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.CollectionOfAccessReviewInstanceDecisionItem.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_access_review_schedule_definition_instances_access_review_instance_stages_access_review_stage_decisions_filter_by_current_user(connection, access_review_schedule_definition_id, access_review_instance_id, access_review_stage_id, on, opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_access_review_schedule_definition_instances_access_review_instance_stages_access_review_stage_decisions_filter_by_current_user(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceDecisionItemFilterByCurrentUserOptions.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.CollectionOfAccessReviewInstanceDecisionItem.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_access_review_schedule_definition_instances_access_review_instance_stages_access_review_stage_decisions_filter_by_current_user(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        access_review_stage_id,
+        on,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -99,7 +133,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/stages/#{access_review_stage_id}/decisions/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/stages/#{access_review_stage_id}/decisions/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -135,8 +171,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfAccessReviewStage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_access_review_schedule_definition_instances_access_review_instance_stages_filter_by_current_user(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphAccessReviewStageFilterByCurrentUserOptions.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.CollectionOfAccessReviewStage.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_access_review_schedule_definition_instances_access_review_instance_stages_filter_by_current_user(connection, access_review_schedule_definition_id, access_review_instance_id, on, opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_access_review_schedule_definition_instances_access_review_instance_stages_filter_by_current_user(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAccessReviewStageFilterByCurrentUserOptions.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.CollectionOfAccessReviewStage.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_access_review_schedule_definition_instances_access_review_instance_stages_filter_by_current_user(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        on,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -150,7 +201,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/stages/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/stages/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -185,8 +238,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfAccessReviewInstance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_access_review_schedule_definition_instances_filter_by_current_user(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceFilterByCurrentUserOptions.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.CollectionOfAccessReviewInstance.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_access_review_schedule_definition_instances_filter_by_current_user(connection, access_review_schedule_definition_id, on, opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_access_review_schedule_definition_instances_filter_by_current_user(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceFilterByCurrentUserOptions.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.CollectionOfAccessReviewInstance.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_access_review_schedule_definition_instances_filter_by_current_user(
+        connection,
+        access_review_schedule_definition_id,
+        on,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -200,7 +266,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -234,8 +302,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfAccessReviewScheduleDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_filter_by_current_user(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphAccessReviewScheduleDefinitionFilterByCurrentUserOptions.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.CollectionOfAccessReviewScheduleDefinition.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_filter_by_current_user(connection, on, opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_filter_by_current_user(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphAccessReviewScheduleDefinitionFilterByCurrentUserOptions.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.CollectionOfAccessReviewScheduleDefinition.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_filter_by_current_user(
+        connection,
+        on,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -249,7 +328,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/accessReviews/definitions/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -284,8 +365,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfUserConsentRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_app_consent_app_consent_requests_app_consent_request_user_consent_requests_filter_by_current_user(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphConsentRequestFilterByCurrentUserOptions.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfUserConsentRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_app_consent_app_consent_requests_app_consent_request_user_consent_requests_filter_by_current_user(connection, app_consent_request_id, on, opts \\ []) do
+  @spec identity_governance_app_consent_app_consent_requests_app_consent_request_user_consent_requests_filter_by_current_user(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphConsentRequestFilterByCurrentUserOptions.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfUserConsentRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_app_consent_app_consent_requests_app_consent_request_user_consent_requests_filter_by_current_user(
+        connection,
+        app_consent_request_id,
+        on,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -299,7 +393,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/appConsent/appConsentRequests/#{app_consent_request_id}/userConsentRequests/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)")
+      |> url(
+        "/identityGovernance/appConsent/appConsentRequests/#{app_consent_request_id}/userConsentRequests/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -333,8 +429,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfAppConsentRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_app_consent_app_consent_requests_filter_by_current_user(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphConsentRequestFilterByCurrentUserOptions.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfAppConsentRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_app_consent_app_consent_requests_filter_by_current_user(connection, on, opts \\ []) do
+  @spec identity_governance_app_consent_app_consent_requests_filter_by_current_user(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphConsentRequestFilterByCurrentUserOptions.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfAppConsentRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_app_consent_app_consent_requests_filter_by_current_user(
+        connection,
+        on,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -348,7 +455,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/appConsent/appConsentRequests/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)")
+      |> url(
+        "/identityGovernance/appConsent/appConsentRequests/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -382,8 +491,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfApproval.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_entitlement_management_access_package_assignment_approvals_filter_by_current_user(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphApprovalFilterByCurrentUserOptions.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfApproval.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_entitlement_management_access_package_assignment_approvals_filter_by_current_user(connection, on, opts \\ []) do
+  @spec identity_governance_entitlement_management_access_package_assignment_approvals_filter_by_current_user(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphApprovalFilterByCurrentUserOptions.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfApproval.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_entitlement_management_access_package_assignment_approvals_filter_by_current_user(
+        connection,
+        on,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -397,7 +517,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/entitlementManagement/accessPackageAssignmentApprovals/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)")
+      |> url(
+        "/identityGovernance/entitlementManagement/accessPackageAssignmentApprovals/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -431,8 +553,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfAccessPackage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_entitlement_management_access_packages_filter_by_current_user(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphAccessPackageFilterByCurrentUserOptions.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.CollectionOfAccessPackage.t} | {:error, Tesla.Env.t}
-  def identity_governance_entitlement_management_access_packages_filter_by_current_user(connection, on, opts \\ []) do
+  @spec identity_governance_entitlement_management_access_packages_filter_by_current_user(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphAccessPackageFilterByCurrentUserOptions.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.CollectionOfAccessPackage.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_entitlement_management_access_packages_filter_by_current_user(
+        connection,
+        on,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -446,7 +579,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/entitlementManagement/accessPackages/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)")
+      |> url(
+        "/identityGovernance/entitlementManagement/accessPackages/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -480,8 +615,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfAccessPackageAssignmentRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_entitlement_management_assignment_requests_filter_by_current_user(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphAccessPackageAssignmentRequestFilterByCurrentUserOptions.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfAccessPackageAssignmentRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_entitlement_management_assignment_requests_filter_by_current_user(connection, on, opts \\ []) do
+  @spec identity_governance_entitlement_management_assignment_requests_filter_by_current_user(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphAccessPackageAssignmentRequestFilterByCurrentUserOptions.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfAccessPackageAssignmentRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_entitlement_management_assignment_requests_filter_by_current_user(
+        connection,
+        on,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -495,7 +641,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/entitlementManagement/assignmentRequests/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)")
+      |> url(
+        "/identityGovernance/entitlementManagement/assignmentRequests/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -528,8 +676,17 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfAccessPackageAssignment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_entitlement_management_assignments_additional_access894c(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfAccessPackageAssignment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_entitlement_management_assignments_additional_access894c(connection, opts \\ []) do
+  @spec identity_governance_entitlement_management_assignments_additional_access894c(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfAccessPackageAssignment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_entitlement_management_assignments_additional_access894c(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -578,8 +735,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfAccessPackageAssignment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_entitlement_management_assignments_additional_access9b62(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfAccessPackageAssignment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_entitlement_management_assignments_additional_access9b62(connection, access_package_id, incompatible_access_package_id, opts \\ []) do
+  @spec identity_governance_entitlement_management_assignments_additional_access9b62(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfAccessPackageAssignment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_entitlement_management_assignments_additional_access9b62(
+        connection,
+        access_package_id,
+        incompatible_access_package_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -593,7 +763,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/entitlementManagement/assignments/additionalAccess(accessPackageId&#x3D;&#39;#{access_package_id}&#39;,incompatibleAccessPackageId&#x3D;&#39;#{incompatible_access_package_id}&#39;)")
+      |> url(
+        "/identityGovernance/entitlementManagement/assignments/additionalAccess(accessPackageId&#x3D;&#39;#{access_package_id}&#39;,incompatibleAccessPackageId&#x3D;&#39;#{incompatible_access_package_id}&#39;)"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -627,8 +799,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfAccessPackageAssignment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_entitlement_management_assignments_filter_by_current_user(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphAccessPackageAssignmentFilterByCurrentUserOptions.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfAccessPackageAssignment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_entitlement_management_assignments_filter_by_current_user(connection, on, opts \\ []) do
+  @spec identity_governance_entitlement_management_assignments_filter_by_current_user(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphAccessPackageAssignmentFilterByCurrentUserOptions.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfAccessPackageAssignment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_entitlement_management_assignments_filter_by_current_user(
+        connection,
+        on,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -642,7 +825,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/entitlementManagement/assignments/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)")
+      |> url(
+        "/identityGovernance/entitlementManagement/assignments/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -672,18 +857,39 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceFunctions do
   - `{:ok, MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowUserProcessingResultsSummary2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_runs_run_user_processing_results_summary(Tesla.Env.client, String.t, String.t, DateTime.t, DateTime.t, keyword()) :: {:ok, MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowUserProcessingResultsSummary2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_runs_run_user_processing_results_summary(connection, workflow_id, run_id, start_date_time, end_date_time, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_runs_run_user_processing_results_summary(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          DateTime.t(),
+          DateTime.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowUserProcessingResultsSummary2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_runs_run_user_processing_results_summary(
+        connection,
+        workflow_id,
+        run_id,
+        start_date_time,
+        end_date_time,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/microsoft.graph.identityGovernance.summary(startDateTime&#x3D;#{start_date_time},endDateTime&#x3D;#{end_date_time})")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/microsoft.graph.identityGovernance.summary(startDateTime&#x3D;#{start_date_time},endDateTime&#x3D;#{end_date_time})"
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowUserProcessingResultsSummary2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowUserProcessingResultsSummary2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -705,18 +911,37 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceFunctions do
   - `{:ok, MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowRunsSummary2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_runs_summary(Tesla.Env.client, String.t, DateTime.t, DateTime.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowRunsSummary2XxResponse.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_runs_summary(connection, workflow_id, start_date_time, end_date_time, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_runs_summary(
+          Tesla.Env.client(),
+          String.t(),
+          DateTime.t(),
+          DateTime.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowRunsSummary2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_runs_summary(
+        connection,
+        workflow_id,
+        start_date_time,
+        end_date_time,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/microsoft.graph.identityGovernance.summary(startDateTime&#x3D;#{start_date_time},endDateTime&#x3D;#{end_date_time})")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/microsoft.graph.identityGovernance.summary(startDateTime&#x3D;#{start_date_time},endDateTime&#x3D;#{end_date_time})"
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowRunsSummary2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowRunsSummary2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -738,18 +963,37 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceFunctions do
   - `{:ok, MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowTaskReportsSummary2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_task_reports_summary(Tesla.Env.client, String.t, DateTime.t, DateTime.t, keyword()) :: {:ok, MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowTaskReportsSummary2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_task_reports_summary(connection, workflow_id, start_date_time, end_date_time, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_task_reports_summary(
+          Tesla.Env.client(),
+          String.t(),
+          DateTime.t(),
+          DateTime.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowTaskReportsSummary2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_task_reports_summary(
+        connection,
+        workflow_id,
+        start_date_time,
+        end_date_time,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/taskReports/microsoft.graph.identityGovernance.summary(startDateTime&#x3D;#{start_date_time},endDateTime&#x3D;#{end_date_time})")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/taskReports/microsoft.graph.identityGovernance.summary(startDateTime&#x3D;#{start_date_time},endDateTime&#x3D;#{end_date_time})"
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowTaskReportsSummary2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowTaskReportsSummary2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -771,18 +1015,37 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceFunctions do
   - `{:ok, MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowUserProcessingResultsSummary2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_user_processing_results_summary(Tesla.Env.client, String.t, DateTime.t, DateTime.t, keyword()) :: {:ok, MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowUserProcessingResultsSummary2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_user_processing_results_summary(connection, workflow_id, start_date_time, end_date_time, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_user_processing_results_summary(
+          Tesla.Env.client(),
+          String.t(),
+          DateTime.t(),
+          DateTime.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowUserProcessingResultsSummary2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_workflow_user_processing_results_summary(
+        connection,
+        workflow_id,
+        start_date_time,
+        end_date_time,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/userProcessingResults/microsoft.graph.identityGovernance.summary(startDateTime&#x3D;#{start_date_time},endDateTime&#x3D;#{end_date_time})")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/userProcessingResults/microsoft.graph.identityGovernance.summary(startDateTime&#x3D;#{start_date_time},endDateTime&#x3D;#{end_date_time})"
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowUserProcessingResultsSummary2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowUserProcessingResultsSummary2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -805,18 +1068,39 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceFunctions do
   - `{:ok, MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowUserProcessingResultsSummary2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_workflow_runs_run_user_processing_results_summary(Tesla.Env.client, String.t, String.t, DateTime.t, DateTime.t, keyword()) :: {:ok, MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowUserProcessingResultsSummary2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_workflow_runs_run_user_processing_results_summary(connection, workflow_id, run_id, start_date_time, end_date_time, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_workflow_runs_run_user_processing_results_summary(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          DateTime.t(),
+          DateTime.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowUserProcessingResultsSummary2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_workflow_runs_run_user_processing_results_summary(
+        connection,
+        workflow_id,
+        run_id,
+        start_date_time,
+        end_date_time,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/microsoft.graph.identityGovernance.summary(startDateTime&#x3D;#{start_date_time},endDateTime&#x3D;#{end_date_time})")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/microsoft.graph.identityGovernance.summary(startDateTime&#x3D;#{start_date_time},endDateTime&#x3D;#{end_date_time})"
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowUserProcessingResultsSummary2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowUserProcessingResultsSummary2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -838,18 +1122,37 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceFunctions do
   - `{:ok, MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowRunsSummary2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_workflow_runs_summary(Tesla.Env.client, String.t, DateTime.t, DateTime.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowRunsSummary2XxResponse.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_workflow_runs_summary(connection, workflow_id, start_date_time, end_date_time, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_workflow_runs_summary(
+          Tesla.Env.client(),
+          String.t(),
+          DateTime.t(),
+          DateTime.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowRunsSummary2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_workflow_runs_summary(
+        connection,
+        workflow_id,
+        start_date_time,
+        end_date_time,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/microsoft.graph.identityGovernance.summary(startDateTime&#x3D;#{start_date_time},endDateTime&#x3D;#{end_date_time})")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/microsoft.graph.identityGovernance.summary(startDateTime&#x3D;#{start_date_time},endDateTime&#x3D;#{end_date_time})"
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowRunsSummary2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowRunsSummary2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -871,18 +1174,37 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceFunctions do
   - `{:ok, MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowTaskReportsSummary2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_workflow_task_reports_summary(Tesla.Env.client, String.t, DateTime.t, DateTime.t, keyword()) :: {:ok, MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowTaskReportsSummary2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_workflow_task_reports_summary(connection, workflow_id, start_date_time, end_date_time, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_workflow_task_reports_summary(
+          Tesla.Env.client(),
+          String.t(),
+          DateTime.t(),
+          DateTime.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowTaskReportsSummary2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_workflow_task_reports_summary(
+        connection,
+        workflow_id,
+        start_date_time,
+        end_date_time,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/taskReports/microsoft.graph.identityGovernance.summary(startDateTime&#x3D;#{start_date_time},endDateTime&#x3D;#{end_date_time})")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/taskReports/microsoft.graph.identityGovernance.summary(startDateTime&#x3D;#{start_date_time},endDateTime&#x3D;#{end_date_time})"
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowTaskReportsSummary2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowTaskReportsSummary2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -904,18 +1226,37 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceFunctions do
   - `{:ok, MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowUserProcessingResultsSummary2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_workflow_user_processing_results_summary(Tesla.Env.client, String.t, DateTime.t, DateTime.t, keyword()) :: {:ok, MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowUserProcessingResultsSummary2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_workflow_user_processing_results_summary(connection, workflow_id, start_date_time, end_date_time, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_workflow_user_processing_results_summary(
+          Tesla.Env.client(),
+          String.t(),
+          DateTime.t(),
+          DateTime.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowUserProcessingResultsSummary2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_workflow_user_processing_results_summary(
+        connection,
+        workflow_id,
+        start_date_time,
+        end_date_time,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/userProcessingResults/microsoft.graph.identityGovernance.summary(startDateTime&#x3D;#{start_date_time},endDateTime&#x3D;#{end_date_time})")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/userProcessingResults/microsoft.graph.identityGovernance.summary(startDateTime&#x3D;#{start_date_time},endDateTime&#x3D;#{end_date_time})"
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowUserProcessingResultsSummary2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowUserProcessingResultsSummary2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -942,8 +1283,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfApproval.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_assignment_approvals_filter_by_current_user(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphApprovalFilterByCurrentUserOptions.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfApproval.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_assignment_approvals_filter_by_current_user(connection, on, opts \\ []) do
+  @spec identity_governance_privileged_access_group_assignment_approvals_filter_by_current_user(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphApprovalFilterByCurrentUserOptions.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfApproval.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_assignment_approvals_filter_by_current_user(
+        connection,
+        on,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -957,7 +1309,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/privilegedAccess/group/assignmentApprovals/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/assignmentApprovals/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -991,8 +1345,20 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfPrivilegedAccessGroupAssignmentScheduleInstance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_assignment_schedule_instances_filter_by_current_user(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphAssignmentScheduleInstanceFilterByCurrentUserOptions.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfPrivilegedAccessGroupAssignmentScheduleInstance.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_assignment_schedule_instances_filter_by_current_user(connection, on, opts \\ []) do
+  @spec identity_governance_privileged_access_group_assignment_schedule_instances_filter_by_current_user(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphAssignmentScheduleInstanceFilterByCurrentUserOptions.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.CollectionOfPrivilegedAccessGroupAssignmentScheduleInstance.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_assignment_schedule_instances_filter_by_current_user(
+        connection,
+        on,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1006,7 +1372,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/privilegedAccess/group/assignmentScheduleInstances/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/assignmentScheduleInstances/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1040,8 +1408,20 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfPrivilegedAccessGroupAssignmentScheduleRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_assignment_schedule_requests_filter_by_current_user(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphAssignmentScheduleRequestFilterByCurrentUserOptions.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.CollectionOfPrivilegedAccessGroupAssignmentScheduleRequest.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_assignment_schedule_requests_filter_by_current_user(connection, on, opts \\ []) do
+  @spec identity_governance_privileged_access_group_assignment_schedule_requests_filter_by_current_user(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphAssignmentScheduleRequestFilterByCurrentUserOptions.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.CollectionOfPrivilegedAccessGroupAssignmentScheduleRequest.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_assignment_schedule_requests_filter_by_current_user(
+        connection,
+        on,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1055,7 +1435,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/privilegedAccess/group/assignmentScheduleRequests/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/assignmentScheduleRequests/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1089,8 +1471,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfPrivilegedAccessGroupAssignmentSchedule.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_assignment_schedules_filter_by_current_user(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphAssignmentScheduleFilterByCurrentUserOptions.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfPrivilegedAccessGroupAssignmentSchedule.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_assignment_schedules_filter_by_current_user(connection, on, opts \\ []) do
+  @spec identity_governance_privileged_access_group_assignment_schedules_filter_by_current_user(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphAssignmentScheduleFilterByCurrentUserOptions.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfPrivilegedAccessGroupAssignmentSchedule.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_assignment_schedules_filter_by_current_user(
+        connection,
+        on,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1104,7 +1497,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/privilegedAccess/group/assignmentSchedules/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/assignmentSchedules/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1138,8 +1533,20 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfPrivilegedAccessGroupEligibilityScheduleInstance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_eligibility_schedule_instances_filter_by_current_user(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphEligibilityScheduleInstanceFilterByCurrentUserOptions.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfPrivilegedAccessGroupEligibilityScheduleInstance.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_eligibility_schedule_instances_filter_by_current_user(connection, on, opts \\ []) do
+  @spec identity_governance_privileged_access_group_eligibility_schedule_instances_filter_by_current_user(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphEligibilityScheduleInstanceFilterByCurrentUserOptions.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.CollectionOfPrivilegedAccessGroupEligibilityScheduleInstance.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_eligibility_schedule_instances_filter_by_current_user(
+        connection,
+        on,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1153,7 +1560,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/privilegedAccess/group/eligibilityScheduleInstances/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/eligibilityScheduleInstances/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1187,8 +1596,20 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfPrivilegedAccessGroupEligibilityScheduleRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_eligibility_schedule_requests_filter_by_current_user(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphEligibilityScheduleRequestFilterByCurrentUserOptions.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfPrivilegedAccessGroupEligibilityScheduleRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_eligibility_schedule_requests_filter_by_current_user(connection, on, opts \\ []) do
+  @spec identity_governance_privileged_access_group_eligibility_schedule_requests_filter_by_current_user(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphEligibilityScheduleRequestFilterByCurrentUserOptions.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.CollectionOfPrivilegedAccessGroupEligibilityScheduleRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_eligibility_schedule_requests_filter_by_current_user(
+        connection,
+        on,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1202,7 +1623,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/privilegedAccess/group/eligibilityScheduleRequests/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/eligibilityScheduleRequests/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1236,8 +1659,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfPrivilegedAccessGroupEligibilitySchedule.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_eligibility_schedules_filter_by_current_user(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphEligibilityScheduleFilterByCurrentUserOptions.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.CollectionOfPrivilegedAccessGroupEligibilitySchedule.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_eligibility_schedules_filter_by_current_user(connection, on, opts \\ []) do
+  @spec identity_governance_privileged_access_group_eligibility_schedules_filter_by_current_user(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphEligibilityScheduleFilterByCurrentUserOptions.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.CollectionOfPrivilegedAccessGroupEligibilitySchedule.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_eligibility_schedules_filter_by_current_user(
+        connection,
+        on,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1251,7 +1685,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/privilegedAccess/group/eligibilitySchedules/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/eligibilitySchedules/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 

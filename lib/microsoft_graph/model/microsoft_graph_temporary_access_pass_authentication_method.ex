@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphTemporaryAccessPassAuthenticationMethod do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -20,23 +20,22 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphTemporaryAccessPassAuthenticationMe
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :isUsable => boolean() | nil,
-    :isUsableOnce => boolean() | nil,
-    :lifetimeInMinutes => integer() | nil,
-    :methodUsabilityReason => String.t | nil,
-    :startDateTime => DateTime.t | nil,
-    :temporaryAccessPass => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :isUsable => boolean() | nil,
+          :isUsableOnce => boolean() | nil,
+          :lifetimeInMinutes => integer() | nil,
+          :methodUsabilityReason => String.t() | nil,
+          :startDateTime => DateTime.t() | nil,
+          :temporaryAccessPass => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:startDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:startDateTime, :datetime, nil)
   end
 end
-

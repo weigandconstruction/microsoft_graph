@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnyw
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :devicesNotAutopilotRegistered => integer() | nil,
-    :devicesWithoutAutopilotProfileAssigned => integer() | nil,
-    :totalWindows10DevicesWithoutTenantAttached => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :devicesNotAutopilotRegistered => integer() | nil,
+          :devicesWithoutAutopilotProfileAssigned => integer() | nil,
+          :totalWindows10DevicesWithoutTenantAttached => integer() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.AlertHostStatesInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -21,20 +21,19 @@ defmodule MicrosoftGraph.Model.AlertHostStatesInner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :fqdn => String.t | nil,
-    :isAzureAdJoined => boolean() | nil,
-    :isAzureAdRegistered => boolean() | nil,
-    :isHybridAzureDomainJoined => boolean() | nil,
-    :netBiosName => String.t | nil,
-    :os => String.t | nil,
-    :privateIpAddress => String.t | nil,
-    :publicIpAddress => String.t | nil,
-    :riskScore => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :fqdn => String.t() | nil,
+          :isAzureAdJoined => boolean() | nil,
+          :isAzureAdRegistered => boolean() | nil,
+          :isHybridAzureDomainJoined => boolean() | nil,
+          :netBiosName => String.t() | nil,
+          :os => String.t() | nil,
+          :privateIpAddress => String.t() | nil,
+          :publicIpAddress => String.t() | nil,
+          :riskScore => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

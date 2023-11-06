@@ -24,8 +24,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementDetectedApp do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDetectedApp.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_create_detected_apps(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphDetectedApp.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDetectedApp.t} | {:error, Tesla.Env.t}
-  def device_management_create_detected_apps(connection, microsoft_graph_detected_app, _opts \\ []) do
+  @spec device_management_create_detected_apps(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphDetectedApp.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDetectedApp.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_create_detected_apps(
+        connection,
+        microsoft_graph_detected_app,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -58,7 +69,10 @@ defmodule MicrosoftGraph.Api.DeviceManagementDetectedApp do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_delete_detected_apps(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec device_management_delete_detected_apps(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def device_management_delete_detected_apps(connection, detected_app_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -95,7 +109,10 @@ defmodule MicrosoftGraph.Api.DeviceManagementDetectedApp do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_detected_apps_get_count0228(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec device_management_detected_apps_get_count0228(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def device_management_detected_apps_get_count0228(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -136,8 +153,21 @@ defmodule MicrosoftGraph.Api.DeviceManagementDetectedApp do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphManagedDevice.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_detected_apps_get_managed_devices(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphManagedDevice.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_detected_apps_get_managed_devices(connection, detected_app_id, managed_device_id, opts \\ []) do
+  @spec device_management_detected_apps_get_managed_devices(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphManagedDevice.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_detected_apps_get_managed_devices(
+        connection,
+        detected_app_id,
+        managed_device_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -146,7 +176,9 @@ defmodule MicrosoftGraph.Api.DeviceManagementDetectedApp do
     request =
       %{}
       |> method(:get)
-      |> url("/deviceManagement/detectedApps/#{detected_app_id}/managedDevices/#{managed_device_id}")
+      |> url(
+        "/deviceManagement/detectedApps/#{detected_app_id}/managedDevices/#{managed_device_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -182,8 +214,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementDetectedApp do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphManagedDeviceCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_detected_apps_list_managed_devices(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphManagedDeviceCollectionResponse.t} | {:error, Tesla.Env.t}
-  def device_management_detected_apps_list_managed_devices(connection, detected_app_id, opts \\ []) do
+  @spec device_management_detected_apps_list_managed_devices(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphManagedDeviceCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_detected_apps_list_managed_devices(
+        connection,
+        detected_app_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -227,8 +270,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementDetectedApp do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_detected_apps_managed_devices_get_count_d78c(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_detected_apps_managed_devices_get_count_d78c(connection, detected_app_id, opts \\ []) do
+  @spec device_management_detected_apps_managed_devices_get_count_d78c(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_detected_apps_managed_devices_get_count_d78c(
+        connection,
+        detected_app_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -267,7 +321,10 @@ defmodule MicrosoftGraph.Api.DeviceManagementDetectedApp do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDetectedApp.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_get_detected_apps(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDetectedApp.t} | {:error, Tesla.Env.t}
+  @spec device_management_get_detected_apps(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDetectedApp.t()}
+          | {:error, Tesla.Env.t()}
   def device_management_get_detected_apps(connection, detected_app_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -312,7 +369,10 @@ defmodule MicrosoftGraph.Api.DeviceManagementDetectedApp do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDetectedAppCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_list_detected_apps(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDetectedAppCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec device_management_list_detected_apps(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDetectedAppCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def device_management_list_detected_apps(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -357,8 +417,21 @@ defmodule MicrosoftGraph.Api.DeviceManagementDetectedApp do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDetectedApp.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_update_detected_apps(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphDetectedApp.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDetectedApp.t} | {:error, Tesla.Env.t}
-  def device_management_update_detected_apps(connection, detected_app_id, microsoft_graph_detected_app, _opts \\ []) do
+  @spec device_management_update_detected_apps(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDetectedApp.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDetectedApp.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_update_detected_apps(
+        connection,
+        detected_app_id,
+        microsoft_graph_detected_app,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

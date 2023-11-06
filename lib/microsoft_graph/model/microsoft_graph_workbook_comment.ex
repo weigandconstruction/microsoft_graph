@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphWorkbookComment do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,18 +16,21 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphWorkbookComment do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :content => String.t | nil,
-    :contentType => String.t | nil,
-    :replies => [MicrosoftGraph.Model.MicrosoftGraphWorkbookCommentReply.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :content => String.t() | nil,
+          :contentType => String.t() | nil,
+          :replies => [MicrosoftGraph.Model.MicrosoftGraphWorkbookCommentReply.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:replies, :list, MicrosoftGraph.Model.MicrosoftGraphWorkbookCommentReply)
+    |> Deserializer.deserialize(
+      :replies,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphWorkbookCommentReply
+    )
   end
 end
-

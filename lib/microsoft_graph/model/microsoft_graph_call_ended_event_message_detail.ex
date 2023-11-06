@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphCallEndedEventMessageDetail do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,21 +17,34 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphCallEndedEventMessageDetail do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :callDuration => String.t | nil,
-    :callEventType => MicrosoftGraph.Model.CallEndedEventMessageDetailCallEventType.t | nil,
-    :callId => String.t | nil,
-    :callParticipants => [MicrosoftGraph.Model.CallEndedEventMessageDetailCallParticipantsInner.t] | nil,
-    :initiator => MicrosoftGraph.Model.ChannelRenamedEventMessageDetailInitiator.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :callDuration => String.t() | nil,
+          :callEventType =>
+            MicrosoftGraph.Model.CallEndedEventMessageDetailCallEventType.t() | nil,
+          :callId => String.t() | nil,
+          :callParticipants =>
+            [MicrosoftGraph.Model.CallEndedEventMessageDetailCallParticipantsInner.t()] | nil,
+          :initiator => MicrosoftGraph.Model.ChannelRenamedEventMessageDetailInitiator.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:callEventType, :struct, MicrosoftGraph.Model.CallEndedEventMessageDetailCallEventType)
-     |> Deserializer.deserialize(:callParticipants, :list, MicrosoftGraph.Model.CallEndedEventMessageDetailCallParticipantsInner)
-     |> Deserializer.deserialize(:initiator, :struct, MicrosoftGraph.Model.ChannelRenamedEventMessageDetailInitiator)
+    |> Deserializer.deserialize(
+      :callEventType,
+      :struct,
+      MicrosoftGraph.Model.CallEndedEventMessageDetailCallEventType
+    )
+    |> Deserializer.deserialize(
+      :callParticipants,
+      :list,
+      MicrosoftGraph.Model.CallEndedEventMessageDetailCallParticipantsInner
+    )
+    |> Deserializer.deserialize(
+      :initiator,
+      :struct,
+      MicrosoftGraph.Model.ChannelRenamedEventMessageDetailInitiator
+    )
   end
 end
-

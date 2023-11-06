@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.UserInsights do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,20 +16,19 @@ defmodule MicrosoftGraph.Model.UserInsights do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :shared => [MicrosoftGraph.Model.MicrosoftGraphSharedInsight.t] | nil,
-    :trending => [MicrosoftGraph.Model.MicrosoftGraphTrending.t] | nil,
-    :used => [MicrosoftGraph.Model.MicrosoftGraphUsedInsight.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :shared => [MicrosoftGraph.Model.MicrosoftGraphSharedInsight.t()] | nil,
+          :trending => [MicrosoftGraph.Model.MicrosoftGraphTrending.t()] | nil,
+          :used => [MicrosoftGraph.Model.MicrosoftGraphUsedInsight.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:shared, :list, MicrosoftGraph.Model.MicrosoftGraphSharedInsight)
-     |> Deserializer.deserialize(:trending, :list, MicrosoftGraph.Model.MicrosoftGraphTrending)
-     |> Deserializer.deserialize(:used, :list, MicrosoftGraph.Model.MicrosoftGraphUsedInsight)
+    |> Deserializer.deserialize(:shared, :list, MicrosoftGraph.Model.MicrosoftGraphSharedInsight)
+    |> Deserializer.deserialize(:trending, :list, MicrosoftGraph.Model.MicrosoftGraphTrending)
+    |> Deserializer.deserialize(:used, :list, MicrosoftGraph.Model.MicrosoftGraphUsedInsight)
   end
 end
-

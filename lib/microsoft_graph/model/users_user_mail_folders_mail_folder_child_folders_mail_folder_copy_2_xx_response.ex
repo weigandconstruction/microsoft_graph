@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.UsersUserMailFoldersMailFolderChildFoldersMailFolderCopy2XxResponse do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -24,30 +24,47 @@ defmodule MicrosoftGraph.Model.UsersUserMailFoldersMailFolderChildFoldersMailFol
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :childFolderCount => integer() | nil,
-    :childFolders => [MicrosoftGraph.Model.MicrosoftGraphMailFolder.t] | nil,
-    :displayName => String.t | nil,
-    :isHidden => boolean() | nil,
-    :messageRules => [MicrosoftGraph.Model.MicrosoftGraphMessageRule.t] | nil,
-    :messages => [MicrosoftGraph.Model.MicrosoftGraphMessage.t] | nil,
-    :multiValueExtendedProperties => [MicrosoftGraph.Model.MicrosoftGraphMultiValueLegacyExtendedProperty.t] | nil,
-    :parentFolderId => String.t | nil,
-    :singleValueExtendedProperties => [MicrosoftGraph.Model.MicrosoftGraphSingleValueLegacyExtendedProperty.t] | nil,
-    :totalItemCount => integer() | nil,
-    :unreadItemCount => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :childFolderCount => integer() | nil,
+          :childFolders => [MicrosoftGraph.Model.MicrosoftGraphMailFolder.t()] | nil,
+          :displayName => String.t() | nil,
+          :isHidden => boolean() | nil,
+          :messageRules => [MicrosoftGraph.Model.MicrosoftGraphMessageRule.t()] | nil,
+          :messages => [MicrosoftGraph.Model.MicrosoftGraphMessage.t()] | nil,
+          :multiValueExtendedProperties =>
+            [MicrosoftGraph.Model.MicrosoftGraphMultiValueLegacyExtendedProperty.t()] | nil,
+          :parentFolderId => String.t() | nil,
+          :singleValueExtendedProperties =>
+            [MicrosoftGraph.Model.MicrosoftGraphSingleValueLegacyExtendedProperty.t()] | nil,
+          :totalItemCount => integer() | nil,
+          :unreadItemCount => integer() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:childFolders, :list, MicrosoftGraph.Model.MicrosoftGraphMailFolder)
-     |> Deserializer.deserialize(:messageRules, :list, MicrosoftGraph.Model.MicrosoftGraphMessageRule)
-     |> Deserializer.deserialize(:messages, :list, MicrosoftGraph.Model.MicrosoftGraphMessage)
-     |> Deserializer.deserialize(:multiValueExtendedProperties, :list, MicrosoftGraph.Model.MicrosoftGraphMultiValueLegacyExtendedProperty)
-     |> Deserializer.deserialize(:singleValueExtendedProperties, :list, MicrosoftGraph.Model.MicrosoftGraphSingleValueLegacyExtendedProperty)
+    |> Deserializer.deserialize(
+      :childFolders,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphMailFolder
+    )
+    |> Deserializer.deserialize(
+      :messageRules,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphMessageRule
+    )
+    |> Deserializer.deserialize(:messages, :list, MicrosoftGraph.Model.MicrosoftGraphMessage)
+    |> Deserializer.deserialize(
+      :multiValueExtendedProperties,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphMultiValueLegacyExtendedProperty
+    )
+    |> Deserializer.deserialize(
+      :singleValueExtendedProperties,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSingleValueLegacyExtendedProperty
+    )
   end
 end
-

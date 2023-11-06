@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphEmployeeExperience do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,17 +14,25 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphEmployeeExperience do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :learningCourseActivities => [MicrosoftGraph.Model.MicrosoftGraphLearningCourseActivity.t] | nil,
-    :learningProviders => [MicrosoftGraph.Model.MicrosoftGraphLearningProvider.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :learningCourseActivities =>
+            [MicrosoftGraph.Model.MicrosoftGraphLearningCourseActivity.t()] | nil,
+          :learningProviders => [MicrosoftGraph.Model.MicrosoftGraphLearningProvider.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:learningCourseActivities, :list, MicrosoftGraph.Model.MicrosoftGraphLearningCourseActivity)
-     |> Deserializer.deserialize(:learningProviders, :list, MicrosoftGraph.Model.MicrosoftGraphLearningProvider)
+    |> Deserializer.deserialize(
+      :learningCourseActivities,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphLearningCourseActivity
+    )
+    |> Deserializer.deserialize(
+      :learningProviders,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphLearningProvider
+    )
   end
 end
-

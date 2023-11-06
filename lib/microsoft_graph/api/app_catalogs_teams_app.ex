@@ -24,7 +24,14 @@ defmodule MicrosoftGraph.Api.AppCatalogsTeamsApp do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsApp.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec app_catalogs_create_teams_apps(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphTeamsApp.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsApp.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec app_catalogs_create_teams_apps(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphTeamsApp.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsApp.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def app_catalogs_create_teams_apps(connection, microsoft_graph_teams_app, _opts \\ []) do
     request =
       %{}
@@ -58,7 +65,10 @@ defmodule MicrosoftGraph.Api.AppCatalogsTeamsApp do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec app_catalogs_delete_teams_apps(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec app_catalogs_delete_teams_apps(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def app_catalogs_delete_teams_apps(connection, teams_app_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -96,7 +106,10 @@ defmodule MicrosoftGraph.Api.AppCatalogsTeamsApp do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsApp.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec app_catalogs_get_teams_apps(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsApp.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec app_catalogs_get_teams_apps(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsApp.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def app_catalogs_get_teams_apps(connection, teams_app_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -141,7 +154,10 @@ defmodule MicrosoftGraph.Api.AppCatalogsTeamsApp do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec app_catalogs_list_teams_apps(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec app_catalogs_list_teams_apps(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def app_catalogs_list_teams_apps(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -186,8 +202,21 @@ defmodule MicrosoftGraph.Api.AppCatalogsTeamsApp do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec app_catalogs_teams_apps_app_definitions_delete_bot(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def app_catalogs_teams_apps_app_definitions_delete_bot(connection, teams_app_id, teams_app_definition_id, opts \\ []) do
+  @spec app_catalogs_teams_apps_app_definitions_delete_bot(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def app_catalogs_teams_apps_app_definitions_delete_bot(
+        connection,
+        teams_app_id,
+        teams_app_definition_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -195,7 +224,9 @@ defmodule MicrosoftGraph.Api.AppCatalogsTeamsApp do
     request =
       %{}
       |> method(:delete)
-      |> url("/appCatalogs/teamsApps/#{teams_app_id}/appDefinitions/#{teams_app_definition_id}/bot")
+      |> url(
+        "/appCatalogs/teamsApps/#{teams_app_id}/appDefinitions/#{teams_app_definition_id}/bot"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -226,8 +257,21 @@ defmodule MicrosoftGraph.Api.AppCatalogsTeamsApp do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkBot.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec app_catalogs_teams_apps_app_definitions_get_bot(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkBot.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def app_catalogs_teams_apps_app_definitions_get_bot(connection, teams_app_id, teams_app_definition_id, opts \\ []) do
+  @spec app_catalogs_teams_apps_app_definitions_get_bot(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkBot.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def app_catalogs_teams_apps_app_definitions_get_bot(
+        connection,
+        teams_app_id,
+        teams_app_definition_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -236,7 +280,9 @@ defmodule MicrosoftGraph.Api.AppCatalogsTeamsApp do
     request =
       %{}
       |> method(:get)
-      |> url("/appCatalogs/teamsApps/#{teams_app_id}/appDefinitions/#{teams_app_definition_id}/bot")
+      |> url(
+        "/appCatalogs/teamsApps/#{teams_app_id}/appDefinitions/#{teams_app_definition_id}/bot"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -265,7 +311,14 @@ defmodule MicrosoftGraph.Api.AppCatalogsTeamsApp do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec app_catalogs_teams_apps_app_definitions_get_count_ad4f(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec app_catalogs_teams_apps_app_definitions_get_count_ad4f(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def app_catalogs_teams_apps_app_definitions_get_count_ad4f(connection, teams_app_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -304,12 +357,29 @@ defmodule MicrosoftGraph.Api.AppCatalogsTeamsApp do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkBot.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec app_catalogs_teams_apps_app_definitions_update_bot(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTeamworkBot.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkBot.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def app_catalogs_teams_apps_app_definitions_update_bot(connection, teams_app_id, teams_app_definition_id, microsoft_graph_teamwork_bot, _opts \\ []) do
+  @spec app_catalogs_teams_apps_app_definitions_update_bot(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTeamworkBot.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkBot.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def app_catalogs_teams_apps_app_definitions_update_bot(
+        connection,
+        teams_app_id,
+        teams_app_definition_id,
+        microsoft_graph_teamwork_bot,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/appCatalogs/teamsApps/#{teams_app_id}/appDefinitions/#{teams_app_definition_id}/bot")
+      |> url(
+        "/appCatalogs/teamsApps/#{teams_app_id}/appDefinitions/#{teams_app_definition_id}/bot"
+      )
       |> add_param(:body, :body, microsoft_graph_teamwork_bot)
       |> Enum.into([])
 
@@ -338,8 +408,21 @@ defmodule MicrosoftGraph.Api.AppCatalogsTeamsApp do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec app_catalogs_teams_apps_create_app_definitions(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphTeamsAppDefinition.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def app_catalogs_teams_apps_create_app_definitions(connection, teams_app_id, microsoft_graph_teams_app_definition, _opts \\ []) do
+  @spec app_catalogs_teams_apps_create_app_definitions(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTeamsAppDefinition.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def app_catalogs_teams_apps_create_app_definitions(
+        connection,
+        teams_app_id,
+        microsoft_graph_teams_app_definition,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -372,8 +455,21 @@ defmodule MicrosoftGraph.Api.AppCatalogsTeamsApp do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec app_catalogs_teams_apps_delete_app_definitions(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def app_catalogs_teams_apps_delete_app_definitions(connection, teams_app_id, teams_app_definition_id, opts \\ []) do
+  @spec app_catalogs_teams_apps_delete_app_definitions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def app_catalogs_teams_apps_delete_app_definitions(
+        connection,
+        teams_app_id,
+        teams_app_definition_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -412,8 +508,21 @@ defmodule MicrosoftGraph.Api.AppCatalogsTeamsApp do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec app_catalogs_teams_apps_get_app_definitions(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def app_catalogs_teams_apps_get_app_definitions(connection, teams_app_id, teams_app_definition_id, opts \\ []) do
+  @spec app_catalogs_teams_apps_get_app_definitions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def app_catalogs_teams_apps_get_app_definitions(
+        connection,
+        teams_app_id,
+        teams_app_definition_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -450,7 +559,10 @@ defmodule MicrosoftGraph.Api.AppCatalogsTeamsApp do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec app_catalogs_teams_apps_get_count_d4ad(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec app_catalogs_teams_apps_get_count_d4ad(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def app_catalogs_teams_apps_get_count_d4ad(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -496,7 +608,10 @@ defmodule MicrosoftGraph.Api.AppCatalogsTeamsApp do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppDefinitionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec app_catalogs_teams_apps_list_app_definitions(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppDefinitionCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec app_catalogs_teams_apps_list_app_definitions(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppDefinitionCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def app_catalogs_teams_apps_list_app_definitions(connection, teams_app_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -542,8 +657,23 @@ defmodule MicrosoftGraph.Api.AppCatalogsTeamsApp do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec app_catalogs_teams_apps_update_app_definitions(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTeamsAppDefinition.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def app_catalogs_teams_apps_update_app_definitions(connection, teams_app_id, teams_app_definition_id, microsoft_graph_teams_app_definition, _opts \\ []) do
+  @spec app_catalogs_teams_apps_update_app_definitions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTeamsAppDefinition.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def app_catalogs_teams_apps_update_app_definitions(
+        connection,
+        teams_app_id,
+        teams_app_definition_id,
+        microsoft_graph_teams_app_definition,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -575,8 +705,21 @@ defmodule MicrosoftGraph.Api.AppCatalogsTeamsApp do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsApp.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec app_catalogs_update_teams_apps(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphTeamsApp.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsApp.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def app_catalogs_update_teams_apps(connection, teams_app_id, microsoft_graph_teams_app, _opts \\ []) do
+  @spec app_catalogs_update_teams_apps(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTeamsApp.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsApp.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def app_catalogs_update_teams_apps(
+        connection,
+        teams_app_id,
+        microsoft_graph_teams_app,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

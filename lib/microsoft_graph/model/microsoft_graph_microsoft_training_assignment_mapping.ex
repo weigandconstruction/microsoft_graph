@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphMicrosoftTrainingAssignmentMapping do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,19 +15,31 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphMicrosoftTrainingAssignmentMapping 
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :settingType => MicrosoftGraph.Model.MicrosoftGraphTrainingSettingSettingType.t | nil,
-    :assignedTo => [MicrosoftGraph.Model.MicrosoftTrainingAssignmentMappingAssignedToInner.t] | nil,
-    :training => MicrosoftGraph.Model.MicrosoftTrainingAssignmentMappingTraining.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :settingType => MicrosoftGraph.Model.MicrosoftGraphTrainingSettingSettingType.t() | nil,
+          :assignedTo =>
+            [MicrosoftGraph.Model.MicrosoftTrainingAssignmentMappingAssignedToInner.t()] | nil,
+          :training => MicrosoftGraph.Model.MicrosoftTrainingAssignmentMappingTraining.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:settingType, :struct, MicrosoftGraph.Model.MicrosoftGraphTrainingSettingSettingType)
-     |> Deserializer.deserialize(:assignedTo, :list, MicrosoftGraph.Model.MicrosoftTrainingAssignmentMappingAssignedToInner)
-     |> Deserializer.deserialize(:training, :struct, MicrosoftGraph.Model.MicrosoftTrainingAssignmentMappingTraining)
+    |> Deserializer.deserialize(
+      :settingType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphTrainingSettingSettingType
+    )
+    |> Deserializer.deserialize(
+      :assignedTo,
+      :list,
+      MicrosoftGraph.Model.MicrosoftTrainingAssignmentMappingAssignedToInner
+    )
+    |> Deserializer.deserialize(
+      :training,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftTrainingAssignmentMappingTraining
+    )
   end
 end
-

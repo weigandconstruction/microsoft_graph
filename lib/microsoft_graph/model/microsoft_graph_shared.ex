@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphShared do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,20 +16,23 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphShared do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :owner => MicrosoftGraph.Model.MicrosoftGraphSharedOwner.t | nil,
-    :scope => String.t | nil,
-    :sharedBy => MicrosoftGraph.Model.MicrosoftGraphSharedSharedBy.t | nil,
-    :sharedDateTime => DateTime.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :owner => MicrosoftGraph.Model.MicrosoftGraphSharedOwner.t() | nil,
+          :scope => String.t() | nil,
+          :sharedBy => MicrosoftGraph.Model.MicrosoftGraphSharedSharedBy.t() | nil,
+          :sharedDateTime => DateTime.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:owner, :struct, MicrosoftGraph.Model.MicrosoftGraphSharedOwner)
-     |> Deserializer.deserialize(:sharedBy, :struct, MicrosoftGraph.Model.MicrosoftGraphSharedSharedBy)
-     |> Deserializer.deserialize(:sharedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:owner, :struct, MicrosoftGraph.Model.MicrosoftGraphSharedOwner)
+    |> Deserializer.deserialize(
+      :sharedBy,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSharedSharedBy
+    )
+    |> Deserializer.deserialize(:sharedDateTime, :datetime, nil)
   end
 end
-

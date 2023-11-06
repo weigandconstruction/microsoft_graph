@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphEducationAssignmentPointsGradeType do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,15 +13,18 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphEducationAssignmentPointsGradeType 
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :maxPoints => MicrosoftGraph.Model.EducationAssignmentPointsGradeTypeMaxPoints.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :maxPoints => MicrosoftGraph.Model.EducationAssignmentPointsGradeTypeMaxPoints.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:maxPoints, :struct, MicrosoftGraph.Model.EducationAssignmentPointsGradeTypeMaxPoints)
+    |> Deserializer.deserialize(
+      :maxPoints,
+      :struct,
+      MicrosoftGraph.Model.EducationAssignmentPointsGradeTypeMaxPoints
+    )
   end
 end
-

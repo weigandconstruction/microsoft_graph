@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphLicenseUnitsDetail do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,15 +16,14 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphLicenseUnitsDetail do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :enabled => integer() | nil,
-    :lockedOut => integer() | nil,
-    :suspended => integer() | nil,
-    :warning => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :enabled => integer() | nil,
+          :lockedOut => integer() | nil,
+          :suspended => integer() | nil,
+          :warning => integer() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

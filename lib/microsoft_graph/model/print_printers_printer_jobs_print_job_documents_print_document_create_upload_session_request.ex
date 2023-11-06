@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.PrintPrintersPrinterJobsPrintJobDocumentsPrintDocumentCreateUploadSessionRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,14 +12,18 @@ defmodule MicrosoftGraph.Model.PrintPrintersPrinterJobsPrintJobDocumentsPrintDoc
   ]
 
   @type t :: %__MODULE__{
-    :properties => MicrosoftGraph.Model.MicrosoftGraphPrintDocumentUploadProperties.t | nil
-  }
+          :properties =>
+            MicrosoftGraph.Model.MicrosoftGraphPrintDocumentUploadProperties.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:properties, :struct, MicrosoftGraph.Model.MicrosoftGraphPrintDocumentUploadProperties)
+    |> Deserializer.deserialize(
+      :properties,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphPrintDocumentUploadProperties
+    )
   end
 end
-

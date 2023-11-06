@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAccessReviewNotificationRecipientQueryScope do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAccessReviewNotificationRecipientQu
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :query => String.t | nil,
-    :queryRoot => String.t | nil,
-    :queryType => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :query => String.t() | nil,
+          :queryRoot => String.t() | nil,
+          :queryType => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

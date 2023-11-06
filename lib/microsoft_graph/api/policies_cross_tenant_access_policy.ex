@@ -24,8 +24,20 @@ defmodule MicrosoftGraph.Api.PoliciesCrossTenantAccessPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyConfigurationPartner.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_cross_tenant_access_policy_create_partners(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyConfigurationPartner.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyConfigurationPartner.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_cross_tenant_access_policy_create_partners(connection, microsoft_graph_cross_tenant_access_policy_configuration_partner, _opts \\ []) do
+  @spec policies_cross_tenant_access_policy_create_partners(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyConfigurationPartner.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyConfigurationPartner.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_cross_tenant_access_policy_create_partners(
+        connection,
+        microsoft_graph_cross_tenant_access_policy_configuration_partner,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -56,7 +68,10 @@ defmodule MicrosoftGraph.Api.PoliciesCrossTenantAccessPolicy do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_cross_tenant_access_policy_delete_default(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec policies_cross_tenant_access_policy_delete_default(Tesla.Env.client(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def policies_cross_tenant_access_policy_delete_default(connection, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -94,8 +109,19 @@ defmodule MicrosoftGraph.Api.PoliciesCrossTenantAccessPolicy do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_cross_tenant_access_policy_delete_partners(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_cross_tenant_access_policy_delete_partners(connection, cross_tenant_access_policy_configuration_partner_tenant_id, opts \\ []) do
+  @spec policies_cross_tenant_access_policy_delete_partners(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_cross_tenant_access_policy_delete_partners(
+        connection,
+        cross_tenant_access_policy_configuration_partner_tenant_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -103,7 +129,9 @@ defmodule MicrosoftGraph.Api.PoliciesCrossTenantAccessPolicy do
     request =
       %{}
       |> method(:delete)
-      |> url("/policies/crossTenantAccessPolicy/partners/#{cross_tenant_access_policy_configuration_partner_tenant_id}")
+      |> url(
+        "/policies/crossTenantAccessPolicy/partners/#{cross_tenant_access_policy_configuration_partner_tenant_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -132,7 +160,11 @@ defmodule MicrosoftGraph.Api.PoliciesCrossTenantAccessPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyConfigurationDefault.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_cross_tenant_access_policy_get_default(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyConfigurationDefault.t} | {:error, Tesla.Env.t}
+  @spec policies_cross_tenant_access_policy_get_default(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyConfigurationDefault.t()}
+          | {:error, Tesla.Env.t()}
   def policies_cross_tenant_access_policy_get_default(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -172,8 +204,20 @@ defmodule MicrosoftGraph.Api.PoliciesCrossTenantAccessPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyConfigurationPartner.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_cross_tenant_access_policy_get_partners(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyConfigurationPartner.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_cross_tenant_access_policy_get_partners(connection, cross_tenant_access_policy_configuration_partner_tenant_id, opts \\ []) do
+  @spec policies_cross_tenant_access_policy_get_partners(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyConfigurationPartner.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_cross_tenant_access_policy_get_partners(
+        connection,
+        cross_tenant_access_policy_configuration_partner_tenant_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -182,7 +226,9 @@ defmodule MicrosoftGraph.Api.PoliciesCrossTenantAccessPolicy do
     request =
       %{}
       |> method(:get)
-      |> url("/policies/crossTenantAccessPolicy/partners/#{cross_tenant_access_policy_configuration_partner_tenant_id}")
+      |> url(
+        "/policies/crossTenantAccessPolicy/partners/#{cross_tenant_access_policy_configuration_partner_tenant_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -217,7 +263,11 @@ defmodule MicrosoftGraph.Api.PoliciesCrossTenantAccessPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyConfigurationPartnerCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_cross_tenant_access_policy_list_partners(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyConfigurationPartnerCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec policies_cross_tenant_access_policy_list_partners(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyConfigurationPartnerCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def policies_cross_tenant_access_policy_list_partners(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -240,7 +290,8 @@ defmodule MicrosoftGraph.Api.PoliciesCrossTenantAccessPolicy do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyConfigurationPartnerCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyConfigurationPartnerCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -262,8 +313,19 @@ defmodule MicrosoftGraph.Api.PoliciesCrossTenantAccessPolicy do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_cross_tenant_access_policy_partners_delete_identity_synchronization(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_cross_tenant_access_policy_partners_delete_identity_synchronization(connection, cross_tenant_access_policy_configuration_partner_tenant_id, opts \\ []) do
+  @spec policies_cross_tenant_access_policy_partners_delete_identity_synchronization(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_cross_tenant_access_policy_partners_delete_identity_synchronization(
+        connection,
+        cross_tenant_access_policy_configuration_partner_tenant_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -271,7 +333,9 @@ defmodule MicrosoftGraph.Api.PoliciesCrossTenantAccessPolicy do
     request =
       %{}
       |> method(:delete)
-      |> url("/policies/crossTenantAccessPolicy/partners/#{cross_tenant_access_policy_configuration_partner_tenant_id}/identitySynchronization")
+      |> url(
+        "/policies/crossTenantAccessPolicy/partners/#{cross_tenant_access_policy_configuration_partner_tenant_id}/identitySynchronization"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -299,7 +363,10 @@ defmodule MicrosoftGraph.Api.PoliciesCrossTenantAccessPolicy do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_cross_tenant_access_policy_partners_get_count_d5d2(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec policies_cross_tenant_access_policy_partners_get_count_d5d2(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def policies_cross_tenant_access_policy_partners_get_count_d5d2(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -339,8 +406,19 @@ defmodule MicrosoftGraph.Api.PoliciesCrossTenantAccessPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCrossTenantIdentitySyncPolicyPartner.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_cross_tenant_access_policy_partners_get_identity_synchronization(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphCrossTenantIdentitySyncPolicyPartner.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_cross_tenant_access_policy_partners_get_identity_synchronization(connection, cross_tenant_access_policy_configuration_partner_tenant_id, opts \\ []) do
+  @spec policies_cross_tenant_access_policy_partners_get_identity_synchronization(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphCrossTenantIdentitySyncPolicyPartner.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_cross_tenant_access_policy_partners_get_identity_synchronization(
+        connection,
+        cross_tenant_access_policy_configuration_partner_tenant_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -349,7 +427,9 @@ defmodule MicrosoftGraph.Api.PoliciesCrossTenantAccessPolicy do
     request =
       %{}
       |> method(:get)
-      |> url("/policies/crossTenantAccessPolicy/partners/#{cross_tenant_access_policy_configuration_partner_tenant_id}/identitySynchronization")
+      |> url(
+        "/policies/crossTenantAccessPolicy/partners/#{cross_tenant_access_policy_configuration_partner_tenant_id}/identitySynchronization"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -377,12 +457,27 @@ defmodule MicrosoftGraph.Api.PoliciesCrossTenantAccessPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCrossTenantIdentitySyncPolicyPartner.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_cross_tenant_access_policy_partners_update_identity_synchronization(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphCrossTenantIdentitySyncPolicyPartner.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphCrossTenantIdentitySyncPolicyPartner.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_cross_tenant_access_policy_partners_update_identity_synchronization(connection, cross_tenant_access_policy_configuration_partner_tenant_id, microsoft_graph_cross_tenant_identity_sync_policy_partner, _opts \\ []) do
+  @spec policies_cross_tenant_access_policy_partners_update_identity_synchronization(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphCrossTenantIdentitySyncPolicyPartner.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphCrossTenantIdentitySyncPolicyPartner.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_cross_tenant_access_policy_partners_update_identity_synchronization(
+        connection,
+        cross_tenant_access_policy_configuration_partner_tenant_id,
+        microsoft_graph_cross_tenant_identity_sync_policy_partner,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)
-      |> url("/policies/crossTenantAccessPolicy/partners/#{cross_tenant_access_policy_configuration_partner_tenant_id}/identitySynchronization")
+      |> url(
+        "/policies/crossTenantAccessPolicy/partners/#{cross_tenant_access_policy_configuration_partner_tenant_id}/identitySynchronization"
+      )
       |> add_param(:body, :body, microsoft_graph_cross_tenant_identity_sync_policy_partner)
       |> Enum.into([])
 
@@ -410,8 +505,20 @@ defmodule MicrosoftGraph.Api.PoliciesCrossTenantAccessPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyConfigurationDefault.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_cross_tenant_access_policy_update_default(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyConfigurationDefault.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyConfigurationDefault.t} | {:error, Tesla.Env.t}
-  def policies_cross_tenant_access_policy_update_default(connection, microsoft_graph_cross_tenant_access_policy_configuration_default, _opts \\ []) do
+  @spec policies_cross_tenant_access_policy_update_default(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyConfigurationDefault.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyConfigurationDefault.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_cross_tenant_access_policy_update_default(
+        connection,
+        microsoft_graph_cross_tenant_access_policy_configuration_default,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -444,12 +551,28 @@ defmodule MicrosoftGraph.Api.PoliciesCrossTenantAccessPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyConfigurationPartner.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_cross_tenant_access_policy_update_partners(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyConfigurationPartner.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyConfigurationPartner.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_cross_tenant_access_policy_update_partners(connection, cross_tenant_access_policy_configuration_partner_tenant_id, microsoft_graph_cross_tenant_access_policy_configuration_partner, _opts \\ []) do
+  @spec policies_cross_tenant_access_policy_update_partners(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyConfigurationPartner.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyConfigurationPartner.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_cross_tenant_access_policy_update_partners(
+        connection,
+        cross_tenant_access_policy_configuration_partner_tenant_id,
+        microsoft_graph_cross_tenant_access_policy_configuration_partner,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/policies/crossTenantAccessPolicy/partners/#{cross_tenant_access_policy_configuration_partner_tenant_id}")
+      |> url(
+        "/policies/crossTenantAccessPolicy/partners/#{cross_tenant_access_policy_configuration_partner_tenant_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_cross_tenant_access_policy_configuration_partner)
       |> Enum.into([])
 
@@ -476,7 +599,10 @@ defmodule MicrosoftGraph.Api.PoliciesCrossTenantAccessPolicy do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_delete_cross_tenant_access_policy(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec policies_delete_cross_tenant_access_policy(Tesla.Env.client(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def policies_delete_cross_tenant_access_policy(connection, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -514,7 +640,10 @@ defmodule MicrosoftGraph.Api.PoliciesCrossTenantAccessPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicy.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_get_cross_tenant_access_policy(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicy.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec policies_get_cross_tenant_access_policy(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicy.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def policies_get_cross_tenant_access_policy(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -552,8 +681,19 @@ defmodule MicrosoftGraph.Api.PoliciesCrossTenantAccessPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicy.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_update_cross_tenant_access_policy(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicy.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicy.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_update_cross_tenant_access_policy(connection, microsoft_graph_cross_tenant_access_policy, _opts \\ []) do
+  @spec policies_update_cross_tenant_access_policy(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicy.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicy.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_update_cross_tenant_access_policy(
+        connection,
+        microsoft_graph_cross_tenant_access_policy,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

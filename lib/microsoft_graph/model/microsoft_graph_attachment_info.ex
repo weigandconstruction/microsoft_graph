@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAttachmentInfo do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,18 +16,22 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAttachmentInfo do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :attachmentType => MicrosoftGraph.Model.MicrosoftGraphAttachmentInfoAttachmentType.t | nil,
-    :contentType => String.t | nil,
-    :name => String.t | nil,
-    :size => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :attachmentType =>
+            MicrosoftGraph.Model.MicrosoftGraphAttachmentInfoAttachmentType.t() | nil,
+          :contentType => String.t() | nil,
+          :name => String.t() | nil,
+          :size => integer() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:attachmentType, :struct, MicrosoftGraph.Model.MicrosoftGraphAttachmentInfoAttachmentType)
+    |> Deserializer.deserialize(
+      :attachmentType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAttachmentInfoAttachmentType
+    )
   end
 end
-

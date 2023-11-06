@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.SitesSiteOnenotePagesOnenotePagePreview2XxResponse do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,19 @@ defmodule MicrosoftGraph.Model.SitesSiteOnenotePagesOnenotePagePreview2XxRespons
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :links => MicrosoftGraph.Model.MicrosoftGraphOnenotePagePreviewLinks.t | nil,
-    :previewText => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :links => MicrosoftGraph.Model.MicrosoftGraphOnenotePagePreviewLinks.t() | nil,
+          :previewText => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:links, :struct, MicrosoftGraph.Model.MicrosoftGraphOnenotePagePreviewLinks)
+    |> Deserializer.deserialize(
+      :links,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphOnenotePagePreviewLinks
+    )
   end
 end
-

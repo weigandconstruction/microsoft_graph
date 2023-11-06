@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphServiceUpdateMessage do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -29,40 +29,64 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphServiceUpdateMessage do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :details => [MicrosoftGraph.Model.MeJoinedTeamsTeamSendActivityNotificationRequestTemplateParametersInner.t] | nil,
-    :endDateTime => DateTime.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :startDateTime => DateTime.t | nil,
-    :title => String.t | nil,
-    :actionRequiredByDateTime => DateTime.t | nil,
-    :attachments => [MicrosoftGraph.Model.MicrosoftGraphServiceAnnouncementAttachment.t] | nil,
-    :attachmentsArchive => String.t | nil,
-    :body => MicrosoftGraph.Model.MicrosoftGraphItemBody.t | nil,
-    :category => MicrosoftGraph.Model.MicrosoftGraphServiceUpdateCategory.t | nil,
-    :hasAttachments => boolean() | nil,
-    :isMajorChange => boolean() | nil,
-    :services => [String.t] | nil,
-    :severity => MicrosoftGraph.Model.MicrosoftGraphServiceUpdateSeverity.t | nil,
-    :tags => [String.t] | nil,
-    :viewPoint => MicrosoftGraph.Model.ServiceUpdateMessageViewPoint.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :details =>
+            [
+              MicrosoftGraph.Model.MeJoinedTeamsTeamSendActivityNotificationRequestTemplateParametersInner.t()
+            ]
+            | nil,
+          :endDateTime => DateTime.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :startDateTime => DateTime.t() | nil,
+          :title => String.t() | nil,
+          :actionRequiredByDateTime => DateTime.t() | nil,
+          :attachments =>
+            [MicrosoftGraph.Model.MicrosoftGraphServiceAnnouncementAttachment.t()] | nil,
+          :attachmentsArchive => String.t() | nil,
+          :body => MicrosoftGraph.Model.MicrosoftGraphItemBody.t() | nil,
+          :category => MicrosoftGraph.Model.MicrosoftGraphServiceUpdateCategory.t() | nil,
+          :hasAttachments => boolean() | nil,
+          :isMajorChange => boolean() | nil,
+          :services => [String.t()] | nil,
+          :severity => MicrosoftGraph.Model.MicrosoftGraphServiceUpdateSeverity.t() | nil,
+          :tags => [String.t()] | nil,
+          :viewPoint => MicrosoftGraph.Model.ServiceUpdateMessageViewPoint.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:details, :list, MicrosoftGraph.Model.MeJoinedTeamsTeamSendActivityNotificationRequestTemplateParametersInner)
-     |> Deserializer.deserialize(:endDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:startDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:actionRequiredByDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:attachments, :list, MicrosoftGraph.Model.MicrosoftGraphServiceAnnouncementAttachment)
-     |> Deserializer.deserialize(:body, :struct, MicrosoftGraph.Model.MicrosoftGraphItemBody)
-     |> Deserializer.deserialize(:category, :struct, MicrosoftGraph.Model.MicrosoftGraphServiceUpdateCategory)
-     |> Deserializer.deserialize(:severity, :struct, MicrosoftGraph.Model.MicrosoftGraphServiceUpdateSeverity)
-     |> Deserializer.deserialize(:viewPoint, :struct, MicrosoftGraph.Model.ServiceUpdateMessageViewPoint)
+    |> Deserializer.deserialize(
+      :details,
+      :list,
+      MicrosoftGraph.Model.MeJoinedTeamsTeamSendActivityNotificationRequestTemplateParametersInner
+    )
+    |> Deserializer.deserialize(:endDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:startDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:actionRequiredByDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :attachments,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphServiceAnnouncementAttachment
+    )
+    |> Deserializer.deserialize(:body, :struct, MicrosoftGraph.Model.MicrosoftGraphItemBody)
+    |> Deserializer.deserialize(
+      :category,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphServiceUpdateCategory
+    )
+    |> Deserializer.deserialize(
+      :severity,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphServiceUpdateSeverity
+    )
+    |> Deserializer.deserialize(
+      :viewPoint,
+      :struct,
+      MicrosoftGraph.Model.ServiceUpdateMessageViewPoint
+    )
   end
 end
-

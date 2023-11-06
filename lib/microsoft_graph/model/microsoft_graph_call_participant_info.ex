@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphCallParticipantInfo do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,15 +13,19 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphCallParticipantInfo do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :participant => MicrosoftGraph.Model.MicrosoftGraphCallParticipantInfoParticipant.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :participant =>
+            MicrosoftGraph.Model.MicrosoftGraphCallParticipantInfoParticipant.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:participant, :struct, MicrosoftGraph.Model.MicrosoftGraphCallParticipantInfoParticipant)
+    |> Deserializer.deserialize(
+      :participant,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallParticipantInfoParticipant
+    )
   end
 end
-

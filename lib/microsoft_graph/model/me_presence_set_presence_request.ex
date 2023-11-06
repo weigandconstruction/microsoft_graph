@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MePresenceSetPresenceRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.MePresenceSetPresenceRequest do
   ]
 
   @type t :: %__MODULE__{
-    :activity => String.t | nil,
-    :availability => String.t | nil,
-    :expirationDuration => String.t | nil,
-    :sessionId => String.t | nil
-  }
+          :activity => String.t() | nil,
+          :availability => String.t() | nil,
+          :expirationDuration => String.t() | nil,
+          :sessionId => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

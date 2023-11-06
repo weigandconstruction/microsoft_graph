@@ -27,26 +27,25 @@ defmodule MicrosoftGraph.Model.UserOnPremisesExtensionAttributes do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :extensionAttribute1 => String.t | nil,
-    :extensionAttribute10 => String.t | nil,
-    :extensionAttribute11 => String.t | nil,
-    :extensionAttribute12 => String.t | nil,
-    :extensionAttribute13 => String.t | nil,
-    :extensionAttribute14 => String.t | nil,
-    :extensionAttribute15 => String.t | nil,
-    :extensionAttribute2 => String.t | nil,
-    :extensionAttribute3 => String.t | nil,
-    :extensionAttribute4 => String.t | nil,
-    :extensionAttribute5 => String.t | nil,
-    :extensionAttribute6 => String.t | nil,
-    :extensionAttribute7 => String.t | nil,
-    :extensionAttribute8 => String.t | nil,
-    :extensionAttribute9 => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :extensionAttribute1 => String.t() | nil,
+          :extensionAttribute10 => String.t() | nil,
+          :extensionAttribute11 => String.t() | nil,
+          :extensionAttribute12 => String.t() | nil,
+          :extensionAttribute13 => String.t() | nil,
+          :extensionAttribute14 => String.t() | nil,
+          :extensionAttribute15 => String.t() | nil,
+          :extensionAttribute2 => String.t() | nil,
+          :extensionAttribute3 => String.t() | nil,
+          :extensionAttribute4 => String.t() | nil,
+          :extensionAttribute5 => String.t() | nil,
+          :extensionAttribute6 => String.t() | nil,
+          :extensionAttribute7 => String.t() | nil,
+          :extensionAttribute8 => String.t() | nil,
+          :extensionAttribute9 => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

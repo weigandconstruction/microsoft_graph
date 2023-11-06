@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.SitesSitePermissionsPermissionGrantRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,15 +13,20 @@ defmodule MicrosoftGraph.Model.SitesSitePermissionsPermissionGrantRequest do
   ]
 
   @type t :: %__MODULE__{
-    :recipients => [MicrosoftGraph.Model.SitesSitePermissionsPermissionGrantRequestRecipientsInner.t] | nil,
-    :roles => [String.t] | nil
-  }
+          :recipients =>
+            [MicrosoftGraph.Model.SitesSitePermissionsPermissionGrantRequestRecipientsInner.t()]
+            | nil,
+          :roles => [String.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:recipients, :list, MicrosoftGraph.Model.SitesSitePermissionsPermissionGrantRequestRecipientsInner)
+    |> Deserializer.deserialize(
+      :recipients,
+      :list,
+      MicrosoftGraph.Model.SitesSitePermissionsPermissionGrantRequestRecipientsInner
+    )
   end
 end
-

@@ -24,7 +24,10 @@ defmodule MicrosoftGraph.Api.SchemaExtensionsSchemaExtension do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec schema_extensions_get_count_e324(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec schema_extensions_get_count_e324(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def schema_extensions_get_count_e324(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -62,8 +65,19 @@ defmodule MicrosoftGraph.Api.SchemaExtensionsSchemaExtension do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSchemaExtension.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec schema_extensions_schema_extension_create_schema_extension(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphSchemaExtension.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSchemaExtension.t} | {:error, Tesla.Env.t}
-  def schema_extensions_schema_extension_create_schema_extension(connection, microsoft_graph_schema_extension, _opts \\ []) do
+  @spec schema_extensions_schema_extension_create_schema_extension(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphSchemaExtension.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSchemaExtension.t()}
+          | {:error, Tesla.Env.t()}
+  def schema_extensions_schema_extension_create_schema_extension(
+        connection,
+        microsoft_graph_schema_extension,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -96,8 +110,19 @@ defmodule MicrosoftGraph.Api.SchemaExtensionsSchemaExtension do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec schema_extensions_schema_extension_delete_schema_extension(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def schema_extensions_schema_extension_delete_schema_extension(connection, schema_extension_id, opts \\ []) do
+  @spec schema_extensions_schema_extension_delete_schema_extension(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def schema_extensions_schema_extension_delete_schema_extension(
+        connection,
+        schema_extension_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -135,8 +160,19 @@ defmodule MicrosoftGraph.Api.SchemaExtensionsSchemaExtension do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSchemaExtension.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec schema_extensions_schema_extension_get_schema_extension(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSchemaExtension.t} | {:error, Tesla.Env.t}
-  def schema_extensions_schema_extension_get_schema_extension(connection, schema_extension_id, opts \\ []) do
+  @spec schema_extensions_schema_extension_get_schema_extension(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSchemaExtension.t()}
+          | {:error, Tesla.Env.t()}
+  def schema_extensions_schema_extension_get_schema_extension(
+        connection,
+        schema_extension_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -180,7 +216,10 @@ defmodule MicrosoftGraph.Api.SchemaExtensionsSchemaExtension do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSchemaExtensionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec schema_extensions_schema_extension_list_schema_extension(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSchemaExtensionCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec schema_extensions_schema_extension_list_schema_extension(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSchemaExtensionCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def schema_extensions_schema_extension_list_schema_extension(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -225,8 +264,21 @@ defmodule MicrosoftGraph.Api.SchemaExtensionsSchemaExtension do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSchemaExtension.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec schema_extensions_schema_extension_update_schema_extension(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphSchemaExtension.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSchemaExtension.t} | {:error, Tesla.Env.t}
-  def schema_extensions_schema_extension_update_schema_extension(connection, schema_extension_id, microsoft_graph_schema_extension, _opts \\ []) do
+  @spec schema_extensions_schema_extension_update_schema_extension(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSchemaExtension.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSchemaExtension.t()}
+          | {:error, Tesla.Env.t()}
+  def schema_extensions_schema_extension_update_schema_extension(
+        connection,
+        schema_extension_id,
+        microsoft_graph_schema_extension,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

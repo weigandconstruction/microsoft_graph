@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphConditionalAccessSessionControls do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,22 +17,45 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphConditionalAccessSessionControls do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :applicationEnforcedRestrictions => MicrosoftGraph.Model.MicrosoftGraphConditionalAccessSessionControlsApplicationEnforcedRestrictions.t | nil,
-    :cloudAppSecurity => MicrosoftGraph.Model.MicrosoftGraphConditionalAccessSessionControlsCloudAppSecurity.t | nil,
-    :disableResilienceDefaults => boolean() | nil,
-    :persistentBrowser => MicrosoftGraph.Model.MicrosoftGraphConditionalAccessSessionControlsPersistentBrowser.t | nil,
-    :signInFrequency => MicrosoftGraph.Model.MicrosoftGraphConditionalAccessSessionControlsSignInFrequency.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :applicationEnforcedRestrictions =>
+            MicrosoftGraph.Model.MicrosoftGraphConditionalAccessSessionControlsApplicationEnforcedRestrictions.t()
+            | nil,
+          :cloudAppSecurity =>
+            MicrosoftGraph.Model.MicrosoftGraphConditionalAccessSessionControlsCloudAppSecurity.t()
+            | nil,
+          :disableResilienceDefaults => boolean() | nil,
+          :persistentBrowser =>
+            MicrosoftGraph.Model.MicrosoftGraphConditionalAccessSessionControlsPersistentBrowser.t()
+            | nil,
+          :signInFrequency =>
+            MicrosoftGraph.Model.MicrosoftGraphConditionalAccessSessionControlsSignInFrequency.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:applicationEnforcedRestrictions, :struct, MicrosoftGraph.Model.MicrosoftGraphConditionalAccessSessionControlsApplicationEnforcedRestrictions)
-     |> Deserializer.deserialize(:cloudAppSecurity, :struct, MicrosoftGraph.Model.MicrosoftGraphConditionalAccessSessionControlsCloudAppSecurity)
-     |> Deserializer.deserialize(:persistentBrowser, :struct, MicrosoftGraph.Model.MicrosoftGraphConditionalAccessSessionControlsPersistentBrowser)
-     |> Deserializer.deserialize(:signInFrequency, :struct, MicrosoftGraph.Model.MicrosoftGraphConditionalAccessSessionControlsSignInFrequency)
+    |> Deserializer.deserialize(
+      :applicationEnforcedRestrictions,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphConditionalAccessSessionControlsApplicationEnforcedRestrictions
+    )
+    |> Deserializer.deserialize(
+      :cloudAppSecurity,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphConditionalAccessSessionControlsCloudAppSecurity
+    )
+    |> Deserializer.deserialize(
+      :persistentBrowser,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphConditionalAccessSessionControlsPersistentBrowser
+    )
+    |> Deserializer.deserialize(
+      :signInFrequency,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphConditionalAccessSessionControlsSignInFrequency
+    )
   end
 end
-

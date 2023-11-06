@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphRecurrenceRange do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,21 +17,24 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphRecurrenceRange do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :endDate => Date.t | nil,
-    :numberOfOccurrences => integer() | nil,
-    :recurrenceTimeZone => String.t | nil,
-    :startDate => Date.t | nil,
-    :type => MicrosoftGraph.Model.MicrosoftGraphRecurrenceRangeType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :endDate => Date.t() | nil,
+          :numberOfOccurrences => integer() | nil,
+          :recurrenceTimeZone => String.t() | nil,
+          :startDate => Date.t() | nil,
+          :type => MicrosoftGraph.Model.MicrosoftGraphRecurrenceRangeType.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:endDate, :date, nil)
-     |> Deserializer.deserialize(:startDate, :date, nil)
-     |> Deserializer.deserialize(:type, :struct, MicrosoftGraph.Model.MicrosoftGraphRecurrenceRangeType)
+    |> Deserializer.deserialize(:endDate, :date, nil)
+    |> Deserializer.deserialize(:startDate, :date, nil)
+    |> Deserializer.deserialize(
+      :type,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphRecurrenceRangeType
+    )
   end
 end
-

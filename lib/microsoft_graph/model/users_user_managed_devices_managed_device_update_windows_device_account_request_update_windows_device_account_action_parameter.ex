@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.UsersUserManagedDevicesManagedDeviceUpdateWindowsDeviceAccountRequestUpdateWindowsDeviceAccountActionParameter do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,20 +18,25 @@ defmodule MicrosoftGraph.Model.UsersUserManagedDevicesManagedDeviceUpdateWindows
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :calendarSyncEnabled => boolean() | nil,
-    :deviceAccount => MicrosoftGraph.Model.MicrosoftGraphUpdateWindowsDeviceAccountActionParameterDeviceAccount.t | nil,
-    :deviceAccountEmail => String.t | nil,
-    :exchangeServer => String.t | nil,
-    :passwordRotationEnabled => boolean() | nil,
-    :sessionInitiationProtocalAddress => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :calendarSyncEnabled => boolean() | nil,
+          :deviceAccount =>
+            MicrosoftGraph.Model.MicrosoftGraphUpdateWindowsDeviceAccountActionParameterDeviceAccount.t()
+            | nil,
+          :deviceAccountEmail => String.t() | nil,
+          :exchangeServer => String.t() | nil,
+          :passwordRotationEnabled => boolean() | nil,
+          :sessionInitiationProtocalAddress => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:deviceAccount, :struct, MicrosoftGraph.Model.MicrosoftGraphUpdateWindowsDeviceAccountActionParameterDeviceAccount)
+    |> Deserializer.deserialize(
+      :deviceAccount,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphUpdateWindowsDeviceAccountActionParameterDeviceAccount
+    )
   end
 end
-

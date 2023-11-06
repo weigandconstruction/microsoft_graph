@@ -25,7 +25,15 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphList.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_create_lists(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphList.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphList.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_create_lists(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphList.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphList.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_create_lists(connection, site_id, microsoft_graph_list, _opts \\ []) do
     request =
       %{}
@@ -59,7 +67,10 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_delete_lists(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_delete_lists(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_delete_lists(connection, site_id, list_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -99,7 +110,10 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphList.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_get_lists(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphList.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_get_lists(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphList.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_get_lists(connection, site_id, list_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -145,7 +159,10 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphListCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_list_lists(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphListCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_list_lists(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphListCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_list_lists(connection, site_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -191,7 +208,10 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_columns_get_count77c0(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_lists_columns_get_count77c0(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_lists_columns_get_count77c0(connection, site_id, list_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -233,8 +253,23 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_columns_get_source_column(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_lists_columns_get_source_column(connection, site_id, list_id, column_definition_id, opts \\ []) do
+  @spec sites_lists_columns_get_source_column(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_columns_get_source_column(
+        connection,
+        site_id,
+        list_id,
+        column_definition_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -274,8 +309,23 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_content_types_base_types_get_count8008(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_lists_content_types_base_types_get_count8008(connection, site_id, list_id, content_type_id, opts \\ []) do
+  @spec sites_lists_content_types_base_types_get_count8008(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_content_types_base_types_get_count8008(
+        connection,
+        site_id,
+        list_id,
+        content_type_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -284,7 +334,9 @@ defmodule MicrosoftGraph.Api.SitesList do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/lists/#{list_id}/contentTypes/#{content_type_id}/baseTypes/$count")
+      |> url(
+        "/sites/#{site_id}/lists/#{list_id}/contentTypes/#{content_type_id}/baseTypes/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -315,8 +367,23 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_content_types_column_links_get_count9230(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_lists_content_types_column_links_get_count9230(connection, site_id, list_id, content_type_id, opts \\ []) do
+  @spec sites_lists_content_types_column_links_get_count9230(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_content_types_column_links_get_count9230(
+        connection,
+        site_id,
+        list_id,
+        content_type_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -325,7 +392,9 @@ defmodule MicrosoftGraph.Api.SitesList do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/lists/#{list_id}/contentTypes/#{content_type_id}/columnLinks/$count")
+      |> url(
+        "/sites/#{site_id}/lists/#{list_id}/contentTypes/#{content_type_id}/columnLinks/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -356,8 +425,23 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_content_types_column_positions_get_count36a3(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_lists_content_types_column_positions_get_count36a3(connection, site_id, list_id, content_type_id, opts \\ []) do
+  @spec sites_lists_content_types_column_positions_get_count36a3(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_content_types_column_positions_get_count36a3(
+        connection,
+        site_id,
+        list_id,
+        content_type_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -366,7 +450,9 @@ defmodule MicrosoftGraph.Api.SitesList do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/lists/#{list_id}/contentTypes/#{content_type_id}/columnPositions/$count")
+      |> url(
+        "/sites/#{site_id}/lists/#{list_id}/contentTypes/#{content_type_id}/columnPositions/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -397,8 +483,23 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_content_types_columns_get_count9911(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_lists_content_types_columns_get_count9911(connection, site_id, list_id, content_type_id, opts \\ []) do
+  @spec sites_lists_content_types_columns_get_count9911(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_content_types_columns_get_count9911(
+        connection,
+        site_id,
+        list_id,
+        content_type_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -440,8 +541,25 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_content_types_columns_get_source_column(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_lists_content_types_columns_get_source_column(connection, site_id, list_id, content_type_id, column_definition_id, opts \\ []) do
+  @spec sites_lists_content_types_columns_get_source_column(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_content_types_columns_get_source_column(
+        connection,
+        site_id,
+        list_id,
+        content_type_id,
+        column_definition_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -450,7 +568,9 @@ defmodule MicrosoftGraph.Api.SitesList do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/lists/#{list_id}/contentTypes/#{content_type_id}/columns/#{column_definition_id}/sourceColumn")
+      |> url(
+        "/sites/#{site_id}/lists/#{list_id}/contentTypes/#{content_type_id}/columns/#{column_definition_id}/sourceColumn"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -480,8 +600,25 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnLink.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_content_types_create_column_links(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphColumnLink.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnLink.t} | {:error, Tesla.Env.t}
-  def sites_lists_content_types_create_column_links(connection, site_id, list_id, content_type_id, microsoft_graph_column_link, _opts \\ []) do
+  @spec sites_lists_content_types_create_column_links(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphColumnLink.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnLink.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_content_types_create_column_links(
+        connection,
+        site_id,
+        list_id,
+        content_type_id,
+        microsoft_graph_column_link,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -516,8 +653,25 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_content_types_create_columns(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_lists_content_types_create_columns(connection, site_id, list_id, content_type_id, microsoft_graph_column_definition, _opts \\ []) do
+  @spec sites_lists_content_types_create_columns(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_content_types_create_columns(
+        connection,
+        site_id,
+        list_id,
+        content_type_id,
+        microsoft_graph_column_definition,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -552,8 +706,25 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_content_types_delete_column_links(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_lists_content_types_delete_column_links(connection, site_id, list_id, content_type_id, column_link_id, opts \\ []) do
+  @spec sites_lists_content_types_delete_column_links(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_content_types_delete_column_links(
+        connection,
+        site_id,
+        list_id,
+        content_type_id,
+        column_link_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -561,7 +732,9 @@ defmodule MicrosoftGraph.Api.SitesList do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/lists/#{list_id}/contentTypes/#{content_type_id}/columnLinks/#{column_link_id}")
+      |> url(
+        "/sites/#{site_id}/lists/#{list_id}/contentTypes/#{content_type_id}/columnLinks/#{column_link_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -593,8 +766,25 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_content_types_delete_columns(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_lists_content_types_delete_columns(connection, site_id, list_id, content_type_id, column_definition_id, opts \\ []) do
+  @spec sites_lists_content_types_delete_columns(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_content_types_delete_columns(
+        connection,
+        site_id,
+        list_id,
+        content_type_id,
+        column_definition_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -602,7 +792,9 @@ defmodule MicrosoftGraph.Api.SitesList do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/lists/#{list_id}/contentTypes/#{content_type_id}/columns/#{column_definition_id}")
+      |> url(
+        "/sites/#{site_id}/lists/#{list_id}/contentTypes/#{content_type_id}/columns/#{column_definition_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -634,8 +826,23 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContentType.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_content_types_get_base(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphContentType.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_lists_content_types_get_base(connection, site_id, list_id, content_type_id, opts \\ []) do
+  @spec sites_lists_content_types_get_base(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphContentType.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_content_types_get_base(
+        connection,
+        site_id,
+        list_id,
+        content_type_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -677,8 +884,25 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContentType.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_content_types_get_base_types(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphContentType.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_lists_content_types_get_base_types(connection, site_id, list_id, content_type_id, content_type_id1, opts \\ []) do
+  @spec sites_lists_content_types_get_base_types(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphContentType.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_content_types_get_base_types(
+        connection,
+        site_id,
+        list_id,
+        content_type_id,
+        content_type_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -687,7 +911,9 @@ defmodule MicrosoftGraph.Api.SitesList do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/lists/#{list_id}/contentTypes/#{content_type_id}/baseTypes/#{content_type_id1}")
+      |> url(
+        "/sites/#{site_id}/lists/#{list_id}/contentTypes/#{content_type_id}/baseTypes/#{content_type_id1}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -720,8 +946,25 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnLink.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_content_types_get_column_links(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnLink.t} | {:error, Tesla.Env.t}
-  def sites_lists_content_types_get_column_links(connection, site_id, list_id, content_type_id, column_link_id, opts \\ []) do
+  @spec sites_lists_content_types_get_column_links(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnLink.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_content_types_get_column_links(
+        connection,
+        site_id,
+        list_id,
+        content_type_id,
+        column_link_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -730,7 +973,9 @@ defmodule MicrosoftGraph.Api.SitesList do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/lists/#{list_id}/contentTypes/#{content_type_id}/columnLinks/#{column_link_id}")
+      |> url(
+        "/sites/#{site_id}/lists/#{list_id}/contentTypes/#{content_type_id}/columnLinks/#{column_link_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -763,8 +1008,25 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_content_types_get_column_positions(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_lists_content_types_get_column_positions(connection, site_id, list_id, content_type_id, column_definition_id, opts \\ []) do
+  @spec sites_lists_content_types_get_column_positions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_content_types_get_column_positions(
+        connection,
+        site_id,
+        list_id,
+        content_type_id,
+        column_definition_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -773,7 +1035,9 @@ defmodule MicrosoftGraph.Api.SitesList do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/lists/#{list_id}/contentTypes/#{content_type_id}/columnPositions/#{column_definition_id}")
+      |> url(
+        "/sites/#{site_id}/lists/#{list_id}/contentTypes/#{content_type_id}/columnPositions/#{column_definition_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -806,8 +1070,25 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_content_types_get_columns(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_lists_content_types_get_columns(connection, site_id, list_id, content_type_id, column_definition_id, opts \\ []) do
+  @spec sites_lists_content_types_get_columns(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_content_types_get_columns(
+        connection,
+        site_id,
+        list_id,
+        content_type_id,
+        column_definition_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -816,7 +1097,9 @@ defmodule MicrosoftGraph.Api.SitesList do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/lists/#{list_id}/contentTypes/#{content_type_id}/columns/#{column_definition_id}")
+      |> url(
+        "/sites/#{site_id}/lists/#{list_id}/contentTypes/#{content_type_id}/columns/#{column_definition_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -846,7 +1129,15 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_content_types_get_count_d8bd(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_lists_content_types_get_count_d8bd(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_lists_content_types_get_count_d8bd(connection, site_id, list_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -894,8 +1185,23 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContentTypeCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_content_types_list_base_types(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphContentTypeCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_lists_content_types_list_base_types(connection, site_id, list_id, content_type_id, opts \\ []) do
+  @spec sites_lists_content_types_list_base_types(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphContentTypeCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_content_types_list_base_types(
+        connection,
+        site_id,
+        list_id,
+        content_type_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -948,8 +1254,23 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnLinkCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_content_types_list_column_links(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnLinkCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_lists_content_types_list_column_links(connection, site_id, list_id, content_type_id, opts \\ []) do
+  @spec sites_lists_content_types_list_column_links(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnLinkCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_content_types_list_column_links(
+        connection,
+        site_id,
+        list_id,
+        content_type_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1002,8 +1323,23 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinitionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_content_types_list_column_positions(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinitionCollectionResponse.t} | {:error, Tesla.Env.t}
-  def sites_lists_content_types_list_column_positions(connection, site_id, list_id, content_type_id, opts \\ []) do
+  @spec sites_lists_content_types_list_column_positions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinitionCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_content_types_list_column_positions(
+        connection,
+        site_id,
+        list_id,
+        content_type_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1056,8 +1392,23 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinitionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_content_types_list_columns(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinitionCollectionResponse.t} | {:error, Tesla.Env.t}
-  def sites_lists_content_types_list_columns(connection, site_id, list_id, content_type_id, opts \\ []) do
+  @spec sites_lists_content_types_list_columns(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinitionCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_content_types_list_columns(
+        connection,
+        site_id,
+        list_id,
+        content_type_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1103,12 +1454,33 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnLink.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_content_types_update_column_links(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphColumnLink.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnLink.t} | {:error, Tesla.Env.t}
-  def sites_lists_content_types_update_column_links(connection, site_id, list_id, content_type_id, column_link_id, microsoft_graph_column_link, _opts \\ []) do
+  @spec sites_lists_content_types_update_column_links(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphColumnLink.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnLink.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_content_types_update_column_links(
+        connection,
+        site_id,
+        list_id,
+        content_type_id,
+        column_link_id,
+        microsoft_graph_column_link,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/lists/#{list_id}/contentTypes/#{content_type_id}/columnLinks/#{column_link_id}")
+      |> url(
+        "/sites/#{site_id}/lists/#{list_id}/contentTypes/#{content_type_id}/columnLinks/#{column_link_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_column_link)
       |> Enum.into([])
 
@@ -1140,12 +1512,33 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_content_types_update_columns(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_lists_content_types_update_columns(connection, site_id, list_id, content_type_id, column_definition_id, microsoft_graph_column_definition, _opts \\ []) do
+  @spec sites_lists_content_types_update_columns(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_content_types_update_columns(
+        connection,
+        site_id,
+        list_id,
+        content_type_id,
+        column_definition_id,
+        microsoft_graph_column_definition,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/lists/#{list_id}/contentTypes/#{content_type_id}/columns/#{column_definition_id}")
+      |> url(
+        "/sites/#{site_id}/lists/#{list_id}/contentTypes/#{content_type_id}/columns/#{column_definition_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_column_definition)
       |> Enum.into([])
 
@@ -1175,8 +1568,23 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_create_columns(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_lists_create_columns(connection, site_id, list_id, microsoft_graph_column_definition, _opts \\ []) do
+  @spec sites_lists_create_columns(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_create_columns(
+        connection,
+        site_id,
+        list_id,
+        microsoft_graph_column_definition,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1209,8 +1617,23 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContentType.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_create_content_types(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphContentType.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphContentType.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_lists_create_content_types(connection, site_id, list_id, microsoft_graph_content_type, _opts \\ []) do
+  @spec sites_lists_create_content_types(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphContentType.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphContentType.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_create_content_types(
+        connection,
+        site_id,
+        list_id,
+        microsoft_graph_content_type,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1244,8 +1667,23 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphListItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_create_items(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphListItem.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphListItem.t} | {:error, Tesla.Env.t}
-  def sites_lists_create_items(connection, site_id, list_id, microsoft_graph_list_item, _opts \\ []) do
+  @spec sites_lists_create_items(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphListItem.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphListItem.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_create_items(
+        connection,
+        site_id,
+        list_id,
+        microsoft_graph_list_item,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1278,8 +1716,23 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_create_operations(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_lists_create_operations(connection, site_id, list_id, microsoft_graph_rich_long_running_operation, _opts \\ []) do
+  @spec sites_lists_create_operations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_create_operations(
+        connection,
+        site_id,
+        list_id,
+        microsoft_graph_rich_long_running_operation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1312,8 +1765,23 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSubscription.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_create_subscriptions(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphSubscription.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSubscription.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_lists_create_subscriptions(connection, site_id, list_id, microsoft_graph_subscription, _opts \\ []) do
+  @spec sites_lists_create_subscriptions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSubscription.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSubscription.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_create_subscriptions(
+        connection,
+        site_id,
+        list_id,
+        microsoft_graph_subscription,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1348,7 +1816,15 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_created_by_user_get_mailbox_settings(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
+  @spec sites_lists_created_by_user_get_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
   def sites_lists_created_by_user_get_mailbox_settings(connection, site_id, list_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -1394,8 +1870,21 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_created_by_user_list_service_provisioning_errors(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_lists_created_by_user_list_service_provisioning_errors(connection, site_id, list_id, opts \\ []) do
+  @spec sites_lists_created_by_user_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_created_by_user_list_service_provisioning_errors(
+        connection,
+        site_id,
+        list_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1440,8 +1929,21 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_created_by_user_service_provisioning_errors_get_count0c92(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_lists_created_by_user_service_provisioning_errors_get_count0c92(connection, site_id, list_id, opts \\ []) do
+  @spec sites_lists_created_by_user_service_provisioning_errors_get_count0c92(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_created_by_user_service_provisioning_errors_get_count0c92(
+        connection,
+        site_id,
+        list_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1479,8 +1981,23 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_created_by_user_update_mailbox_settings(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def sites_lists_created_by_user_update_mailbox_settings(connection, site_id, list_id, microsoft_graph_mailbox_settings, _opts \\ []) do
+  @spec sites_lists_created_by_user_update_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_created_by_user_update_mailbox_settings(
+        connection,
+        site_id,
+        list_id,
+        microsoft_graph_mailbox_settings,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -1514,7 +2031,16 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_delete_columns(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_lists_delete_columns(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_lists_delete_columns(connection, site_id, list_id, column_definition_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -1553,7 +2079,16 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_delete_content_types(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_lists_delete_content_types(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_lists_delete_content_types(connection, site_id, list_id, content_type_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -1593,7 +2128,16 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_delete_items(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_lists_delete_items(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_lists_delete_items(connection, site_id, list_id, list_item_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -1632,8 +2176,23 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_delete_operations(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_lists_delete_operations(connection, site_id, list_id, rich_long_running_operation_id, opts \\ []) do
+  @spec sites_lists_delete_operations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_delete_operations(
+        connection,
+        site_id,
+        list_id,
+        rich_long_running_operation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1671,7 +2230,16 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_delete_subscriptions(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_lists_delete_subscriptions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_lists_delete_subscriptions(connection, site_id, list_id, subscription_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -1712,7 +2280,10 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_get_columns(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_lists_get_columns(Tesla.Env.client(), String.t(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_lists_get_columns(connection, site_id, list_id, column_definition_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -1754,7 +2325,16 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContentType.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_get_content_types(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphContentType.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_lists_get_content_types(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphContentType.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_lists_get_content_types(connection, site_id, list_id, content_type_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -1793,7 +2373,10 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_get_count_e06a(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_lists_get_count_e06a(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_lists_get_count_e06a(connection, site_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -1834,7 +2417,10 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_get_created_by_user(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_lists_get_created_by_user(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_lists_get_created_by_user(connection, site_id, list_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -1875,7 +2461,10 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDrive.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_get_drive(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDrive.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_lists_get_drive(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDrive.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_lists_get_drive(connection, site_id, list_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -1917,7 +2506,10 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphListItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_get_items(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphListItem.t} | {:error, Tesla.Env.t}
+  @spec sites_lists_get_items(Tesla.Env.client(), String.t(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphListItem.t()}
+          | {:error, Tesla.Env.t()}
   def sites_lists_get_items(connection, site_id, list_id, list_item_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -1958,7 +2550,15 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_get_last_modified_by_user(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_lists_get_last_modified_by_user(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_lists_get_last_modified_by_user(connection, site_id, list_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -2000,8 +2600,23 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_get_operations(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_lists_get_operations(connection, site_id, list_id, rich_long_running_operation_id, opts \\ []) do
+  @spec sites_lists_get_operations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_get_operations(
+        connection,
+        site_id,
+        list_id,
+        rich_long_running_operation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2042,7 +2657,16 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSubscription.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_get_subscriptions(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSubscription.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_lists_get_subscriptions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSubscription.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_lists_get_subscriptions(connection, site_id, list_id, subscription_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -2083,8 +2707,25 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDocumentSetVersion.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_items_create_document_set_versions(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphDocumentSetVersion.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDocumentSetVersion.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_lists_items_create_document_set_versions(connection, site_id, list_id, list_item_id, microsoft_graph_document_set_version, _opts \\ []) do
+  @spec sites_lists_items_create_document_set_versions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDocumentSetVersion.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDocumentSetVersion.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_items_create_document_set_versions(
+        connection,
+        site_id,
+        list_id,
+        list_item_id,
+        microsoft_graph_document_set_version,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -2118,8 +2759,25 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphListItemVersion.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_items_create_versions(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphListItemVersion.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphListItemVersion.t} | {:error, Tesla.Env.t}
-  def sites_lists_items_create_versions(connection, site_id, list_id, list_item_id, microsoft_graph_list_item_version, _opts \\ []) do
+  @spec sites_lists_items_create_versions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphListItemVersion.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphListItemVersion.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_items_create_versions(
+        connection,
+        site_id,
+        list_id,
+        list_item_id,
+        microsoft_graph_list_item_version,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -2155,8 +2813,23 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_items_created_by_user_get_mailbox_settings(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def sites_lists_items_created_by_user_get_mailbox_settings(connection, site_id, list_id, list_item_id, opts \\ []) do
+  @spec sites_lists_items_created_by_user_get_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_items_created_by_user_get_mailbox_settings(
+        connection,
+        site_id,
+        list_id,
+        list_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2165,7 +2838,9 @@ defmodule MicrosoftGraph.Api.SitesList do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/lists/#{list_id}/items/#{list_item_id}/createdByUser/mailboxSettings")
+      |> url(
+        "/sites/#{site_id}/lists/#{list_id}/items/#{list_item_id}/createdByUser/mailboxSettings"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2202,8 +2877,23 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_items_created_by_user_list_service_provisioning_errors(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_lists_items_created_by_user_list_service_provisioning_errors(connection, site_id, list_id, list_item_id, opts \\ []) do
+  @spec sites_lists_items_created_by_user_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_items_created_by_user_list_service_provisioning_errors(
+        connection,
+        site_id,
+        list_id,
+        list_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -2218,7 +2908,9 @@ defmodule MicrosoftGraph.Api.SitesList do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/lists/#{list_id}/items/#{list_item_id}/createdByUser/serviceProvisioningErrors")
+      |> url(
+        "/sites/#{site_id}/lists/#{list_id}/items/#{list_item_id}/createdByUser/serviceProvisioningErrors"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2249,8 +2941,23 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_items_created_by_user_service_provisioning_errors_get_count_bafa(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_lists_items_created_by_user_service_provisioning_errors_get_count_bafa(connection, site_id, list_id, list_item_id, opts \\ []) do
+  @spec sites_lists_items_created_by_user_service_provisioning_errors_get_count_bafa(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_items_created_by_user_service_provisioning_errors_get_count_bafa(
+        connection,
+        site_id,
+        list_id,
+        list_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -2259,7 +2966,9 @@ defmodule MicrosoftGraph.Api.SitesList do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/lists/#{list_id}/items/#{list_item_id}/createdByUser/serviceProvisioningErrors/$count")
+      |> url(
+        "/sites/#{site_id}/lists/#{list_id}/items/#{list_item_id}/createdByUser/serviceProvisioningErrors/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2289,12 +2998,31 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_items_created_by_user_update_mailbox_settings(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def sites_lists_items_created_by_user_update_mailbox_settings(connection, site_id, list_id, list_item_id, microsoft_graph_mailbox_settings, _opts \\ []) do
+  @spec sites_lists_items_created_by_user_update_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_items_created_by_user_update_mailbox_settings(
+        connection,
+        site_id,
+        list_id,
+        list_item_id,
+        microsoft_graph_mailbox_settings,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/lists/#{list_id}/items/#{list_item_id}/createdByUser/mailboxSettings")
+      |> url(
+        "/sites/#{site_id}/lists/#{list_id}/items/#{list_item_id}/createdByUser/mailboxSettings"
+      )
       |> add_param(:body, :body, microsoft_graph_mailbox_settings)
       |> Enum.into([])
 
@@ -2326,8 +3054,25 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_items_delete_document_set_versions(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_lists_items_delete_document_set_versions(connection, site_id, list_id, list_item_id, document_set_version_id, opts \\ []) do
+  @spec sites_lists_items_delete_document_set_versions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_items_delete_document_set_versions(
+        connection,
+        site_id,
+        list_id,
+        list_item_id,
+        document_set_version_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -2335,7 +3080,9 @@ defmodule MicrosoftGraph.Api.SitesList do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/lists/#{list_id}/items/#{list_item_id}/documentSetVersions/#{document_set_version_id}")
+      |> url(
+        "/sites/#{site_id}/lists/#{list_id}/items/#{list_item_id}/documentSetVersions/#{document_set_version_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2365,7 +3112,16 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_items_delete_fields(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_lists_items_delete_fields(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_lists_items_delete_fields(connection, site_id, list_id, list_item_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -2405,8 +3161,25 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_items_delete_versions(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_lists_items_delete_versions(connection, site_id, list_id, list_item_id, list_item_version_id, opts \\ []) do
+  @spec sites_lists_items_delete_versions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_items_delete_versions(
+        connection,
+        site_id,
+        list_id,
+        list_item_id,
+        list_item_version_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -2414,7 +3187,9 @@ defmodule MicrosoftGraph.Api.SitesList do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/lists/#{list_id}/items/#{list_item_id}/versions/#{list_item_version_id}")
+      |> url(
+        "/sites/#{site_id}/lists/#{list_id}/items/#{list_item_id}/versions/#{list_item_version_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2445,8 +3220,25 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_items_document_set_versions_delete_fields(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_lists_items_document_set_versions_delete_fields(connection, site_id, list_id, list_item_id, document_set_version_id, opts \\ []) do
+  @spec sites_lists_items_document_set_versions_delete_fields(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_items_document_set_versions_delete_fields(
+        connection,
+        site_id,
+        list_id,
+        list_item_id,
+        document_set_version_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -2454,7 +3246,9 @@ defmodule MicrosoftGraph.Api.SitesList do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/lists/#{list_id}/items/#{list_item_id}/documentSetVersions/#{document_set_version_id}/fields")
+      |> url(
+        "/sites/#{site_id}/lists/#{list_id}/items/#{list_item_id}/documentSetVersions/#{document_set_version_id}/fields"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2485,8 +3279,23 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_items_document_set_versions_get_count3ae5(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_lists_items_document_set_versions_get_count3ae5(connection, site_id, list_id, list_item_id, opts \\ []) do
+  @spec sites_lists_items_document_set_versions_get_count3ae5(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_items_document_set_versions_get_count3ae5(
+        connection,
+        site_id,
+        list_id,
+        list_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -2495,7 +3304,9 @@ defmodule MicrosoftGraph.Api.SitesList do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/lists/#{list_id}/items/#{list_item_id}/documentSetVersions/$count")
+      |> url(
+        "/sites/#{site_id}/lists/#{list_id}/items/#{list_item_id}/documentSetVersions/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2528,8 +3339,25 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphFieldValueSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_items_document_set_versions_get_fields(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphFieldValueSet.t} | {:error, Tesla.Env.t}
-  def sites_lists_items_document_set_versions_get_fields(connection, site_id, list_id, list_item_id, document_set_version_id, opts \\ []) do
+  @spec sites_lists_items_document_set_versions_get_fields(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphFieldValueSet.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_items_document_set_versions_get_fields(
+        connection,
+        site_id,
+        list_id,
+        list_item_id,
+        document_set_version_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2538,7 +3366,9 @@ defmodule MicrosoftGraph.Api.SitesList do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/lists/#{list_id}/items/#{list_item_id}/documentSetVersions/#{document_set_version_id}/fields")
+      |> url(
+        "/sites/#{site_id}/lists/#{list_id}/items/#{list_item_id}/documentSetVersions/#{document_set_version_id}/fields"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2569,12 +3399,33 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphFieldValueSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_items_document_set_versions_update_fields(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphFieldValueSet.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphFieldValueSet.t} | {:error, Tesla.Env.t}
-  def sites_lists_items_document_set_versions_update_fields(connection, site_id, list_id, list_item_id, document_set_version_id, microsoft_graph_field_value_set, _opts \\ []) do
+  @spec sites_lists_items_document_set_versions_update_fields(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphFieldValueSet.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphFieldValueSet.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_items_document_set_versions_update_fields(
+        connection,
+        site_id,
+        list_id,
+        list_item_id,
+        document_set_version_id,
+        microsoft_graph_field_value_set,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/lists/#{list_id}/items/#{list_item_id}/documentSetVersions/#{document_set_version_id}/fields")
+      |> url(
+        "/sites/#{site_id}/lists/#{list_id}/items/#{list_item_id}/documentSetVersions/#{document_set_version_id}/fields"
+      )
       |> add_param(:body, :body, microsoft_graph_field_value_set)
       |> Enum.into([])
 
@@ -2606,7 +3457,16 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphItemAnalytics.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_items_get_analytics(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphItemAnalytics.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_lists_items_get_analytics(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphItemAnalytics.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_lists_items_get_analytics(connection, site_id, list_id, list_item_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -2648,8 +3508,23 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_items_get_created_by_user(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_lists_items_get_created_by_user(connection, site_id, list_id, list_item_id, opts \\ []) do
+  @spec sites_lists_items_get_created_by_user(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_items_get_created_by_user(
+        connection,
+        site_id,
+        list_id,
+        list_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2691,8 +3566,25 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDocumentSetVersion.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_items_get_document_set_versions(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDocumentSetVersion.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_lists_items_get_document_set_versions(connection, site_id, list_id, list_item_id, document_set_version_id, opts \\ []) do
+  @spec sites_lists_items_get_document_set_versions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDocumentSetVersion.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_items_get_document_set_versions(
+        connection,
+        site_id,
+        list_id,
+        list_item_id,
+        document_set_version_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2701,7 +3593,9 @@ defmodule MicrosoftGraph.Api.SitesList do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/lists/#{list_id}/items/#{list_item_id}/documentSetVersions/#{document_set_version_id}")
+      |> url(
+        "/sites/#{site_id}/lists/#{list_id}/items/#{list_item_id}/documentSetVersions/#{document_set_version_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2733,7 +3627,16 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_items_get_drive_item(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_lists_items_get_drive_item(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_lists_items_get_drive_item(connection, site_id, list_id, list_item_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -2773,8 +3676,23 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_items_get_drive_item_content(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
-  def sites_lists_items_get_drive_item_content(connection, site_id, list_id, list_item_id, _opts \\ []) do
+  @spec sites_lists_items_get_drive_item_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_items_get_drive_item_content(
+        connection,
+        site_id,
+        list_id,
+        list_item_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
@@ -2809,7 +3727,16 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphFieldValueSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_items_get_fields(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphFieldValueSet.t} | {:error, Tesla.Env.t}
+  @spec sites_lists_items_get_fields(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphFieldValueSet.t()}
+          | {:error, Tesla.Env.t()}
   def sites_lists_items_get_fields(connection, site_id, list_id, list_item_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -2851,8 +3778,23 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_items_get_last_modified_by_user(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_lists_items_get_last_modified_by_user(connection, site_id, list_id, list_item_id, opts \\ []) do
+  @spec sites_lists_items_get_last_modified_by_user(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_items_get_last_modified_by_user(
+        connection,
+        site_id,
+        list_id,
+        list_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2894,8 +3836,25 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphListItemVersion.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_items_get_versions(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphListItemVersion.t} | {:error, Tesla.Env.t}
-  def sites_lists_items_get_versions(connection, site_id, list_id, list_item_id, list_item_version_id, opts \\ []) do
+  @spec sites_lists_items_get_versions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphListItemVersion.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_items_get_versions(
+        connection,
+        site_id,
+        list_id,
+        list_item_id,
+        list_item_version_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2904,7 +3863,9 @@ defmodule MicrosoftGraph.Api.SitesList do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/lists/#{list_id}/items/#{list_item_id}/versions/#{list_item_version_id}")
+      |> url(
+        "/sites/#{site_id}/lists/#{list_id}/items/#{list_item_id}/versions/#{list_item_version_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2936,8 +3897,23 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_items_last_modified_by_user_get_mailbox_settings(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def sites_lists_items_last_modified_by_user_get_mailbox_settings(connection, site_id, list_id, list_item_id, opts \\ []) do
+  @spec sites_lists_items_last_modified_by_user_get_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_items_last_modified_by_user_get_mailbox_settings(
+        connection,
+        site_id,
+        list_id,
+        list_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2946,7 +3922,9 @@ defmodule MicrosoftGraph.Api.SitesList do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/lists/#{list_id}/items/#{list_item_id}/lastModifiedByUser/mailboxSettings")
+      |> url(
+        "/sites/#{site_id}/lists/#{list_id}/items/#{list_item_id}/lastModifiedByUser/mailboxSettings"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2983,8 +3961,23 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_items_last_modified_by_user_list_service_provisioning_errors(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_lists_items_last_modified_by_user_list_service_provisioning_errors(connection, site_id, list_id, list_item_id, opts \\ []) do
+  @spec sites_lists_items_last_modified_by_user_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_items_last_modified_by_user_list_service_provisioning_errors(
+        connection,
+        site_id,
+        list_id,
+        list_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -2999,7 +3992,9 @@ defmodule MicrosoftGraph.Api.SitesList do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/lists/#{list_id}/items/#{list_item_id}/lastModifiedByUser/serviceProvisioningErrors")
+      |> url(
+        "/sites/#{site_id}/lists/#{list_id}/items/#{list_item_id}/lastModifiedByUser/serviceProvisioningErrors"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3030,8 +4025,23 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_items_last_modified_by_user_service_provisioning_errors_get_count_fc39(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_lists_items_last_modified_by_user_service_provisioning_errors_get_count_fc39(connection, site_id, list_id, list_item_id, opts \\ []) do
+  @spec sites_lists_items_last_modified_by_user_service_provisioning_errors_get_count_fc39(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_items_last_modified_by_user_service_provisioning_errors_get_count_fc39(
+        connection,
+        site_id,
+        list_id,
+        list_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -3040,7 +4050,9 @@ defmodule MicrosoftGraph.Api.SitesList do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/lists/#{list_id}/items/#{list_item_id}/lastModifiedByUser/serviceProvisioningErrors/$count")
+      |> url(
+        "/sites/#{site_id}/lists/#{list_id}/items/#{list_item_id}/lastModifiedByUser/serviceProvisioningErrors/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3070,12 +4082,31 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_items_last_modified_by_user_update_mailbox_settings(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def sites_lists_items_last_modified_by_user_update_mailbox_settings(connection, site_id, list_id, list_item_id, microsoft_graph_mailbox_settings, _opts \\ []) do
+  @spec sites_lists_items_last_modified_by_user_update_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_items_last_modified_by_user_update_mailbox_settings(
+        connection,
+        site_id,
+        list_id,
+        list_item_id,
+        microsoft_graph_mailbox_settings,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/lists/#{list_id}/items/#{list_item_id}/lastModifiedByUser/mailboxSettings")
+      |> url(
+        "/sites/#{site_id}/lists/#{list_id}/items/#{list_item_id}/lastModifiedByUser/mailboxSettings"
+      )
       |> add_param(:body, :body, microsoft_graph_mailbox_settings)
       |> Enum.into([])
 
@@ -3113,8 +4144,23 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDocumentSetVersionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_items_list_document_set_versions(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDocumentSetVersionCollectionResponse.t} | {:error, Tesla.Env.t}
-  def sites_lists_items_list_document_set_versions(connection, site_id, list_id, list_item_id, opts \\ []) do
+  @spec sites_lists_items_list_document_set_versions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDocumentSetVersionCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_items_list_document_set_versions(
+        connection,
+        site_id,
+        list_id,
+        list_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -3167,7 +4213,16 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphListItemVersionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_items_list_versions(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphListItemVersionCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_lists_items_list_versions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphListItemVersionCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_lists_items_list_versions(connection, site_id, list_id, list_item_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -3214,12 +4269,33 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDocumentSetVersion.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_items_update_document_set_versions(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphDocumentSetVersion.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDocumentSetVersion.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_lists_items_update_document_set_versions(connection, site_id, list_id, list_item_id, document_set_version_id, microsoft_graph_document_set_version, _opts \\ []) do
+  @spec sites_lists_items_update_document_set_versions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDocumentSetVersion.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDocumentSetVersion.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_items_update_document_set_versions(
+        connection,
+        site_id,
+        list_id,
+        list_item_id,
+        document_set_version_id,
+        microsoft_graph_document_set_version,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/lists/#{list_id}/items/#{list_item_id}/documentSetVersions/#{document_set_version_id}")
+      |> url(
+        "/sites/#{site_id}/lists/#{list_id}/items/#{list_item_id}/documentSetVersions/#{document_set_version_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_document_set_version)
       |> Enum.into([])
 
@@ -3250,8 +4326,25 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_items_update_drive_item_content(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_lists_items_update_drive_item_content(connection, site_id, list_id, list_item_id, body, _opts \\ []) do
+  @spec sites_lists_items_update_drive_item_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_items_update_drive_item_content(
+        connection,
+        site_id,
+        list_id,
+        list_item_id,
+        body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)
@@ -3286,8 +4379,25 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphFieldValueSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_items_update_fields(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphFieldValueSet.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphFieldValueSet.t} | {:error, Tesla.Env.t}
-  def sites_lists_items_update_fields(connection, site_id, list_id, list_item_id, microsoft_graph_field_value_set, _opts \\ []) do
+  @spec sites_lists_items_update_fields(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphFieldValueSet.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphFieldValueSet.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_items_update_fields(
+        connection,
+        site_id,
+        list_id,
+        list_item_id,
+        microsoft_graph_field_value_set,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -3322,12 +4432,33 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphListItemVersion.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_items_update_versions(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphListItemVersion.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphListItemVersion.t} | {:error, Tesla.Env.t}
-  def sites_lists_items_update_versions(connection, site_id, list_id, list_item_id, list_item_version_id, microsoft_graph_list_item_version, _opts \\ []) do
+  @spec sites_lists_items_update_versions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphListItemVersion.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphListItemVersion.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_items_update_versions(
+        connection,
+        site_id,
+        list_id,
+        list_item_id,
+        list_item_version_id,
+        microsoft_graph_list_item_version,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/lists/#{list_id}/items/#{list_item_id}/versions/#{list_item_version_id}")
+      |> url(
+        "/sites/#{site_id}/lists/#{list_id}/items/#{list_item_id}/versions/#{list_item_version_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_list_item_version)
       |> Enum.into([])
 
@@ -3358,8 +4489,25 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_items_versions_delete_fields(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_lists_items_versions_delete_fields(connection, site_id, list_id, list_item_id, list_item_version_id, opts \\ []) do
+  @spec sites_lists_items_versions_delete_fields(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_items_versions_delete_fields(
+        connection,
+        site_id,
+        list_id,
+        list_item_id,
+        list_item_version_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -3367,7 +4515,9 @@ defmodule MicrosoftGraph.Api.SitesList do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/lists/#{list_id}/items/#{list_item_id}/versions/#{list_item_version_id}/fields")
+      |> url(
+        "/sites/#{site_id}/lists/#{list_id}/items/#{list_item_id}/versions/#{list_item_version_id}/fields"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3398,8 +4548,23 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_items_versions_get_count_d8e9(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_lists_items_versions_get_count_d8e9(connection, site_id, list_id, list_item_id, opts \\ []) do
+  @spec sites_lists_items_versions_get_count_d8e9(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_items_versions_get_count_d8e9(
+        connection,
+        site_id,
+        list_id,
+        list_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -3441,8 +4606,25 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphFieldValueSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_items_versions_get_fields(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphFieldValueSet.t} | {:error, Tesla.Env.t}
-  def sites_lists_items_versions_get_fields(connection, site_id, list_id, list_item_id, list_item_version_id, opts \\ []) do
+  @spec sites_lists_items_versions_get_fields(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphFieldValueSet.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_items_versions_get_fields(
+        connection,
+        site_id,
+        list_id,
+        list_item_id,
+        list_item_version_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3451,7 +4633,9 @@ defmodule MicrosoftGraph.Api.SitesList do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/lists/#{list_id}/items/#{list_item_id}/versions/#{list_item_version_id}/fields")
+      |> url(
+        "/sites/#{site_id}/lists/#{list_id}/items/#{list_item_id}/versions/#{list_item_version_id}/fields"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3482,12 +4666,33 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphFieldValueSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_items_versions_update_fields(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphFieldValueSet.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphFieldValueSet.t} | {:error, Tesla.Env.t}
-  def sites_lists_items_versions_update_fields(connection, site_id, list_id, list_item_id, list_item_version_id, microsoft_graph_field_value_set, _opts \\ []) do
+  @spec sites_lists_items_versions_update_fields(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphFieldValueSet.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphFieldValueSet.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_items_versions_update_fields(
+        connection,
+        site_id,
+        list_id,
+        list_item_id,
+        list_item_version_id,
+        microsoft_graph_field_value_set,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/lists/#{list_id}/items/#{list_item_id}/versions/#{list_item_version_id}/fields")
+      |> url(
+        "/sites/#{site_id}/lists/#{list_id}/items/#{list_item_id}/versions/#{list_item_version_id}/fields"
+      )
       |> add_param(:body, :body, microsoft_graph_field_value_set)
       |> Enum.into([])
 
@@ -3518,8 +4723,21 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_last_modified_by_user_get_mailbox_settings(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def sites_lists_last_modified_by_user_get_mailbox_settings(connection, site_id, list_id, opts \\ []) do
+  @spec sites_lists_last_modified_by_user_get_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_last_modified_by_user_get_mailbox_settings(
+        connection,
+        site_id,
+        list_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3564,8 +4782,21 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_last_modified_by_user_list_service_provisioning_errors(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_lists_last_modified_by_user_list_service_provisioning_errors(connection, site_id, list_id, opts \\ []) do
+  @spec sites_lists_last_modified_by_user_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_last_modified_by_user_list_service_provisioning_errors(
+        connection,
+        site_id,
+        list_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -3610,8 +4841,21 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_last_modified_by_user_service_provisioning_errors_get_count39cb(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_lists_last_modified_by_user_service_provisioning_errors_get_count39cb(connection, site_id, list_id, opts \\ []) do
+  @spec sites_lists_last_modified_by_user_service_provisioning_errors_get_count39cb(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_last_modified_by_user_service_provisioning_errors_get_count39cb(
+        connection,
+        site_id,
+        list_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -3620,7 +4864,9 @@ defmodule MicrosoftGraph.Api.SitesList do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/lists/#{list_id}/lastModifiedByUser/serviceProvisioningErrors/$count")
+      |> url(
+        "/sites/#{site_id}/lists/#{list_id}/lastModifiedByUser/serviceProvisioningErrors/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3649,8 +4895,23 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_last_modified_by_user_update_mailbox_settings(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def sites_lists_last_modified_by_user_update_mailbox_settings(connection, site_id, list_id, microsoft_graph_mailbox_settings, _opts \\ []) do
+  @spec sites_lists_last_modified_by_user_update_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_last_modified_by_user_update_mailbox_settings(
+        connection,
+        site_id,
+        list_id,
+        microsoft_graph_mailbox_settings,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -3691,7 +4952,10 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinitionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_list_columns(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinitionCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec sites_lists_list_columns(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinitionCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def sites_lists_list_columns(connection, site_id, list_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -3744,7 +5008,10 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContentTypeCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_list_content_types(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphContentTypeCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_lists_list_content_types(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphContentTypeCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_lists_list_content_types(connection, site_id, list_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -3796,7 +5063,10 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphListItemCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_list_items(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphListItemCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_lists_list_items(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphListItemCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_lists_list_items(connection, site_id, list_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -3848,7 +5118,11 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_list_operations(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperationCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec sites_lists_list_operations(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperationCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def sites_lists_list_operations(connection, site_id, list_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -3901,7 +5175,10 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSubscriptionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_list_subscriptions(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSubscriptionCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_lists_list_subscriptions(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSubscriptionCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_lists_list_subscriptions(connection, site_id, list_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -3947,7 +5224,15 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_operations_get_count_f5fa(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_lists_operations_get_count_f5fa(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_lists_operations_get_count_f5fa(connection, site_id, list_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -3987,7 +5272,15 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_subscriptions_get_count77bf(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_lists_subscriptions_get_count77bf(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_lists_subscriptions_get_count77bf(connection, site_id, list_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -4027,8 +5320,25 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_update_columns(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_lists_update_columns(connection, site_id, list_id, column_definition_id, microsoft_graph_column_definition, _opts \\ []) do
+  @spec sites_lists_update_columns(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_update_columns(
+        connection,
+        site_id,
+        list_id,
+        column_definition_id,
+        microsoft_graph_column_definition,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -4062,8 +5372,25 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContentType.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_update_content_types(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphContentType.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphContentType.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_lists_update_content_types(connection, site_id, list_id, content_type_id, microsoft_graph_content_type, _opts \\ []) do
+  @spec sites_lists_update_content_types(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphContentType.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphContentType.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_update_content_types(
+        connection,
+        site_id,
+        list_id,
+        content_type_id,
+        microsoft_graph_content_type,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -4097,8 +5424,25 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphListItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_update_items(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphListItem.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphListItem.t} | {:error, Tesla.Env.t}
-  def sites_lists_update_items(connection, site_id, list_id, list_item_id, microsoft_graph_list_item, _opts \\ []) do
+  @spec sites_lists_update_items(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphListItem.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphListItem.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_update_items(
+        connection,
+        site_id,
+        list_id,
+        list_item_id,
+        microsoft_graph_list_item,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -4132,8 +5476,25 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_update_operations(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_lists_update_operations(connection, site_id, list_id, rich_long_running_operation_id, microsoft_graph_rich_long_running_operation, _opts \\ []) do
+  @spec sites_lists_update_operations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_update_operations(
+        connection,
+        site_id,
+        list_id,
+        rich_long_running_operation_id,
+        microsoft_graph_rich_long_running_operation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -4167,8 +5528,25 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSubscription.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_lists_update_subscriptions(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphSubscription.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSubscription.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_lists_update_subscriptions(connection, site_id, list_id, subscription_id, microsoft_graph_subscription, _opts \\ []) do
+  @spec sites_lists_update_subscriptions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSubscription.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSubscription.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_lists_update_subscriptions(
+        connection,
+        site_id,
+        list_id,
+        subscription_id,
+        microsoft_graph_subscription,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -4201,7 +5579,16 @@ defmodule MicrosoftGraph.Api.SitesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphList.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_update_lists(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphList.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphList.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_update_lists(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphList.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphList.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_update_lists(connection, site_id, list_id, microsoft_graph_list, _opts \\ []) do
     request =
       %{}

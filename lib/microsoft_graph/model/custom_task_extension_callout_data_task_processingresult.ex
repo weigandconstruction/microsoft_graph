@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.CustomTaskExtensionCalloutDataTaskProcessingresult do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -20,27 +20,36 @@ defmodule MicrosoftGraph.Model.CustomTaskExtensionCalloutDataTaskProcessingresul
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :completedDateTime => DateTime.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :failureReason => String.t | nil,
-    :processingStatus => MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleWorkflowProcessingStatus.t | nil,
-    :startedDateTime => DateTime.t | nil,
-    :subject => MicrosoftGraph.Model.MicrosoftGraphUser.t | nil,
-    :task => MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :completedDateTime => DateTime.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :failureReason => String.t() | nil,
+          :processingStatus =>
+            MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleWorkflowProcessingStatus.t()
+            | nil,
+          :startedDateTime => DateTime.t() | nil,
+          :subject => MicrosoftGraph.Model.MicrosoftGraphUser.t() | nil,
+          :task => MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:completedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:processingStatus, :struct, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleWorkflowProcessingStatus)
-     |> Deserializer.deserialize(:startedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:subject, :struct, MicrosoftGraph.Model.MicrosoftGraphUser)
-     |> Deserializer.deserialize(:task, :struct, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask)
+    |> Deserializer.deserialize(:completedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :processingStatus,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleWorkflowProcessingStatus
+    )
+    |> Deserializer.deserialize(:startedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:subject, :struct, MicrosoftGraph.Model.MicrosoftGraphUser)
+    |> Deserializer.deserialize(
+      :task,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask
+    )
   end
 end
-

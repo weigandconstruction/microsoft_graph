@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphMobileAppTroubleshootingEvent do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,20 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphMobileAppTroubleshootingEvent do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :appLogCollectionRequests => [MicrosoftGraph.Model.MicrosoftGraphAppLogCollectionRequest.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :appLogCollectionRequests =>
+            [MicrosoftGraph.Model.MicrosoftGraphAppLogCollectionRequest.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:appLogCollectionRequests, :list, MicrosoftGraph.Model.MicrosoftGraphAppLogCollectionRequest)
+    |> Deserializer.deserialize(
+      :appLogCollectionRequests,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAppLogCollectionRequest
+    )
   end
 end
-

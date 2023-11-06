@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAuthoredNote do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,20 +16,19 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAuthoredNote do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :author => MicrosoftGraph.Model.AuthoredNoteAuthor.t | nil,
-    :content => MicrosoftGraph.Model.AuthoredNoteContent.t | nil,
-    :createdDateTime => DateTime.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :author => MicrosoftGraph.Model.AuthoredNoteAuthor.t() | nil,
+          :content => MicrosoftGraph.Model.AuthoredNoteContent.t() | nil,
+          :createdDateTime => DateTime.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:author, :struct, MicrosoftGraph.Model.AuthoredNoteAuthor)
-     |> Deserializer.deserialize(:content, :struct, MicrosoftGraph.Model.AuthoredNoteContent)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:author, :struct, MicrosoftGraph.Model.AuthoredNoteAuthor)
+    |> Deserializer.deserialize(:content, :struct, MicrosoftGraph.Model.AuthoredNoteContent)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
   end
 end
-

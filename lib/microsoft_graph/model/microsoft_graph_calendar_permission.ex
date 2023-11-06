@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphCalendarPermission do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,22 +18,29 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphCalendarPermission do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :allowedRoles => [MicrosoftGraph.Model.CalendarPermissionAllowedRolesInner.t] | nil,
-    :emailAddress => MicrosoftGraph.Model.CalendarPermissionEmailAddress.t | nil,
-    :isInsideOrganization => boolean() | nil,
-    :isRemovable => boolean() | nil,
-    :role => MicrosoftGraph.Model.CalendarPermissionRole.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :allowedRoles => [MicrosoftGraph.Model.CalendarPermissionAllowedRolesInner.t()] | nil,
+          :emailAddress => MicrosoftGraph.Model.CalendarPermissionEmailAddress.t() | nil,
+          :isInsideOrganization => boolean() | nil,
+          :isRemovable => boolean() | nil,
+          :role => MicrosoftGraph.Model.CalendarPermissionRole.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:allowedRoles, :list, MicrosoftGraph.Model.CalendarPermissionAllowedRolesInner)
-     |> Deserializer.deserialize(:emailAddress, :struct, MicrosoftGraph.Model.CalendarPermissionEmailAddress)
-     |> Deserializer.deserialize(:role, :struct, MicrosoftGraph.Model.CalendarPermissionRole)
+    |> Deserializer.deserialize(
+      :allowedRoles,
+      :list,
+      MicrosoftGraph.Model.CalendarPermissionAllowedRolesInner
+    )
+    |> Deserializer.deserialize(
+      :emailAddress,
+      :struct,
+      MicrosoftGraph.Model.CalendarPermissionEmailAddress
+    )
+    |> Deserializer.deserialize(:role, :struct, MicrosoftGraph.Model.CalendarPermissionRole)
   end
 end
-

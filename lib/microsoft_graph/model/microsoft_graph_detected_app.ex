@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphDetectedApp do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -20,23 +20,30 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphDetectedApp do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :deviceCount => integer() | nil,
-    :displayName => String.t | nil,
-    :managedDevices => [MicrosoftGraph.Model.MicrosoftGraphManagedDevice.t] | nil,
-    :platform => MicrosoftGraph.Model.MicrosoftGraphDetectedAppPlatformType.t | nil,
-    :publisher => String.t | nil,
-    :sizeInByte => integer() | nil,
-    :version => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :deviceCount => integer() | nil,
+          :displayName => String.t() | nil,
+          :managedDevices => [MicrosoftGraph.Model.MicrosoftGraphManagedDevice.t()] | nil,
+          :platform => MicrosoftGraph.Model.MicrosoftGraphDetectedAppPlatformType.t() | nil,
+          :publisher => String.t() | nil,
+          :sizeInByte => integer() | nil,
+          :version => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:managedDevices, :list, MicrosoftGraph.Model.MicrosoftGraphManagedDevice)
-     |> Deserializer.deserialize(:platform, :struct, MicrosoftGraph.Model.MicrosoftGraphDetectedAppPlatformType)
+    |> Deserializer.deserialize(
+      :managedDevices,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphManagedDevice
+    )
+    |> Deserializer.deserialize(
+      :platform,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphDetectedAppPlatformType
+    )
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.CollectionOfSite do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,19 @@ defmodule MicrosoftGraph.Model.CollectionOfSite do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.deltaLink" => String.t | nil,
-    :"@odata.nextLink" => String.t | nil,
-    :value => [MicrosoftGraph.Model.CollectionOfSiteAllOfValueInner.t] | nil
-  }
+          :"@odata.deltaLink" => String.t() | nil,
+          :"@odata.nextLink" => String.t() | nil,
+          :value => [MicrosoftGraph.Model.CollectionOfSiteAllOfValueInner.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:value, :list, MicrosoftGraph.Model.CollectionOfSiteAllOfValueInner)
+    |> Deserializer.deserialize(
+      :value,
+      :list,
+      MicrosoftGraph.Model.CollectionOfSiteAllOfValueInner
+    )
   end
 end
-

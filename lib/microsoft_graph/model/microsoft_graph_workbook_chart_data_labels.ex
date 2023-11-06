@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphWorkbookChartDataLabels do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -22,24 +22,27 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphWorkbookChartDataLabels do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :format => MicrosoftGraph.Model.WorkbookChartDataLabelsFormat.t | nil,
-    :position => String.t | nil,
-    :separator => String.t | nil,
-    :showBubbleSize => boolean() | nil,
-    :showCategoryName => boolean() | nil,
-    :showLegendKey => boolean() | nil,
-    :showPercentage => boolean() | nil,
-    :showSeriesName => boolean() | nil,
-    :showValue => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :format => MicrosoftGraph.Model.WorkbookChartDataLabelsFormat.t() | nil,
+          :position => String.t() | nil,
+          :separator => String.t() | nil,
+          :showBubbleSize => boolean() | nil,
+          :showCategoryName => boolean() | nil,
+          :showLegendKey => boolean() | nil,
+          :showPercentage => boolean() | nil,
+          :showSeriesName => boolean() | nil,
+          :showValue => boolean() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:format, :struct, MicrosoftGraph.Model.WorkbookChartDataLabelsFormat)
+    |> Deserializer.deserialize(
+      :format,
+      :struct,
+      MicrosoftGraph.Model.WorkbookChartDataLabelsFormat
+    )
   end
 end
-

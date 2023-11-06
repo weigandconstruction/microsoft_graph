@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,11 +12,10 @@ defmodule MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessage
   ]
 
   @type t :: %__MODULE__{
-    :reactionType => String.t | nil
-  }
+          :reactionType => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

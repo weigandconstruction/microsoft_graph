@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperation do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -22,27 +22,30 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperation do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :lastActionDateTime => DateTime.t | nil,
-    :resourceLocation => String.t | nil,
-    :status => MicrosoftGraph.Model.LongRunningOperationStatus.t | nil,
-    :statusDetail => String.t | nil,
-    :error => MicrosoftGraph.Model.RichLongRunningOperationError.t | nil,
-    :percentageComplete => integer() | nil,
-    :resourceId => String.t | nil,
-    :type => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :lastActionDateTime => DateTime.t() | nil,
+          :resourceLocation => String.t() | nil,
+          :status => MicrosoftGraph.Model.LongRunningOperationStatus.t() | nil,
+          :statusDetail => String.t() | nil,
+          :error => MicrosoftGraph.Model.RichLongRunningOperationError.t() | nil,
+          :percentageComplete => integer() | nil,
+          :resourceId => String.t() | nil,
+          :type => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastActionDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.LongRunningOperationStatus)
-     |> Deserializer.deserialize(:error, :struct, MicrosoftGraph.Model.RichLongRunningOperationError)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastActionDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.LongRunningOperationStatus)
+    |> Deserializer.deserialize(
+      :error,
+      :struct,
+      MicrosoftGraph.Model.RichLongRunningOperationError
+    )
   end
 end
-

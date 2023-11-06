@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DomainsDomainForceDeleteRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,11 +12,10 @@ defmodule MicrosoftGraph.Model.DomainsDomainForceDeleteRequest do
   ]
 
   @type t :: %__MODULE__{
-    :disableUserAccounts => boolean() | nil
-  }
+          :disableUserAccounts => boolean() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphRubricQualityCriteriaInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,15 +13,18 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphRubricQualityCriteriaInner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :description => MicrosoftGraph.Model.MicrosoftGraphRubricCriterionDescription.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :description => MicrosoftGraph.Model.MicrosoftGraphRubricCriterionDescription.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:description, :struct, MicrosoftGraph.Model.MicrosoftGraphRubricCriterionDescription)
+    |> Deserializer.deserialize(
+      :description,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphRubricCriterionDescription
+    )
   end
 end
-

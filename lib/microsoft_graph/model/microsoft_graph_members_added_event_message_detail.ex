@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphMembersAddedEventMessageDetail do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,19 +15,26 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphMembersAddedEventMessageDetail do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :initiator => MicrosoftGraph.Model.ChannelRenamedEventMessageDetailInitiator.t | nil,
-    :members => [MicrosoftGraph.Model.ChatsChatUnhideForUserRequestUser.t] | nil,
-    :visibleHistoryStartDateTime => DateTime.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :initiator => MicrosoftGraph.Model.ChannelRenamedEventMessageDetailInitiator.t() | nil,
+          :members => [MicrosoftGraph.Model.ChatsChatUnhideForUserRequestUser.t()] | nil,
+          :visibleHistoryStartDateTime => DateTime.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:initiator, :struct, MicrosoftGraph.Model.ChannelRenamedEventMessageDetailInitiator)
-     |> Deserializer.deserialize(:members, :list, MicrosoftGraph.Model.ChatsChatUnhideForUserRequestUser)
-     |> Deserializer.deserialize(:visibleHistoryStartDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :initiator,
+      :struct,
+      MicrosoftGraph.Model.ChannelRenamedEventMessageDetailInitiator
+    )
+    |> Deserializer.deserialize(
+      :members,
+      :list,
+      MicrosoftGraph.Model.ChatsChatUnhideForUserRequestUser
+    )
+    |> Deserializer.deserialize(:visibleHistoryStartDateTime, :datetime, nil)
   end
 end
-

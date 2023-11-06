@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphIntuneBrandLightBackgroundLogo do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :type => String.t | nil,
-    :value => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :type => String.t() | nil,
+          :value => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,21 @@ defmodule MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAccep
   ]
 
   @type t :: %__MODULE__{
-    :Comment => String.t | nil,
-    :ProposedNewTime => MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequestProposedNewTime.t | nil,
-    :SendResponse => boolean() | nil
-  }
+          :Comment => String.t() | nil,
+          :ProposedNewTime =>
+            MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequestProposedNewTime.t()
+            | nil,
+          :SendResponse => boolean() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:ProposedNewTime, :struct, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequestProposedNewTime)
+    |> Deserializer.deserialize(
+      :ProposedNewTime,
+      :struct,
+      MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequestProposedNewTime
+    )
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphPrintJobConfigurationPageRangesInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphPrintJobConfigurationPageRangesInne
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :end => integer() | nil,
-    :start => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :end => integer() | nil,
+          :start => integer() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

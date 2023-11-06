@@ -26,7 +26,10 @@ defmodule MicrosoftGraph.Api.MeManagedAppRegistration do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphManagedAppRegistration.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_get_managed_app_registrations(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphManagedAppRegistration.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_get_managed_app_registrations(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphManagedAppRegistration.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_get_managed_app_registrations(connection, managed_app_registration_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -71,7 +74,10 @@ defmodule MicrosoftGraph.Api.MeManagedAppRegistration do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphManagedAppRegistrationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_list_managed_app_registrations(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphManagedAppRegistrationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_list_managed_app_registrations(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphManagedAppRegistrationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_list_managed_app_registrations(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -115,7 +121,10 @@ defmodule MicrosoftGraph.Api.MeManagedAppRegistration do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_managed_app_registrations_get_count3124(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_managed_app_registrations_get_count3124(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_managed_app_registrations_get_count3124(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,

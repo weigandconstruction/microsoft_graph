@@ -23,7 +23,10 @@ defmodule MicrosoftGraph.Api.MeUserTeamwork do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_delete_teamwork(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_delete_teamwork(Tesla.Env.client(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_delete_teamwork(connection, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -61,7 +64,10 @@ defmodule MicrosoftGraph.Api.MeUserTeamwork do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserTeamwork.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_get_teamwork(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUserTeamwork.t} | {:error, Tesla.Env.t}
+  @spec me_get_teamwork(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUserTeamwork.t()}
+          | {:error, Tesla.Env.t()}
   def me_get_teamwork(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -99,7 +105,10 @@ defmodule MicrosoftGraph.Api.MeUserTeamwork do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_teamwork_associated_teams_get_count9609(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_teamwork_associated_teams_get_count9609(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_teamwork_associated_teams_get_count9609(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -138,7 +147,10 @@ defmodule MicrosoftGraph.Api.MeUserTeamwork do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeam.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_teamwork_associated_teams_get_team(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeam.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_teamwork_associated_teams_get_team(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeam.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_teamwork_associated_teams_get_team(connection, associated_team_info_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -175,8 +187,19 @@ defmodule MicrosoftGraph.Api.MeUserTeamwork do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAssociatedTeamInfo.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_teamwork_create_associated_teams(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphAssociatedTeamInfo.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAssociatedTeamInfo.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_teamwork_create_associated_teams(connection, microsoft_graph_associated_team_info, _opts \\ []) do
+  @spec me_teamwork_create_associated_teams(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphAssociatedTeamInfo.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAssociatedTeamInfo.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_teamwork_create_associated_teams(
+        connection,
+        microsoft_graph_associated_team_info,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -208,8 +231,19 @@ defmodule MicrosoftGraph.Api.MeUserTeamwork do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserScopeTeamsAppInstallation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_teamwork_create_installed_apps(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphUserScopeTeamsAppInstallation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUserScopeTeamsAppInstallation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_teamwork_create_installed_apps(connection, microsoft_graph_user_scope_teams_app_installation, _opts \\ []) do
+  @spec me_teamwork_create_installed_apps(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphUserScopeTeamsAppInstallation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUserScopeTeamsAppInstallation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_teamwork_create_installed_apps(
+        connection,
+        microsoft_graph_user_scope_teams_app_installation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -241,7 +275,10 @@ defmodule MicrosoftGraph.Api.MeUserTeamwork do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_teamwork_delete_associated_teams(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_teamwork_delete_associated_teams(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_teamwork_delete_associated_teams(connection, associated_team_info_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -279,8 +316,15 @@ defmodule MicrosoftGraph.Api.MeUserTeamwork do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_teamwork_delete_installed_apps(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_teamwork_delete_installed_apps(connection, user_scope_teams_app_installation_id, opts \\ []) do
+  @spec me_teamwork_delete_installed_apps(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_teamwork_delete_installed_apps(
+        connection,
+        user_scope_teams_app_installation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -318,7 +362,10 @@ defmodule MicrosoftGraph.Api.MeUserTeamwork do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAssociatedTeamInfo.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_teamwork_get_associated_teams(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAssociatedTeamInfo.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_teamwork_get_associated_teams(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAssociatedTeamInfo.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_teamwork_get_associated_teams(connection, associated_team_info_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -358,7 +405,10 @@ defmodule MicrosoftGraph.Api.MeUserTeamwork do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserScopeTeamsAppInstallation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_teamwork_get_installed_apps(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUserScopeTeamsAppInstallation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_teamwork_get_installed_apps(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUserScopeTeamsAppInstallation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_teamwork_get_installed_apps(connection, user_scope_teams_app_installation_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -398,8 +448,15 @@ defmodule MicrosoftGraph.Api.MeUserTeamwork do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_teamwork_installed_apps_get_chat(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphChat.t} | {:error, Tesla.Env.t}
-  def me_teamwork_installed_apps_get_chat(connection, user_scope_teams_app_installation_id, opts \\ []) do
+  @spec me_teamwork_installed_apps_get_chat(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphChat.t()}
+          | {:error, Tesla.Env.t()}
+  def me_teamwork_installed_apps_get_chat(
+        connection,
+        user_scope_teams_app_installation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -436,7 +493,10 @@ defmodule MicrosoftGraph.Api.MeUserTeamwork do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_teamwork_installed_apps_get_count2917(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_teamwork_installed_apps_get_count2917(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_teamwork_installed_apps_get_count2917(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -476,8 +536,15 @@ defmodule MicrosoftGraph.Api.MeUserTeamwork do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsApp.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_teamwork_installed_apps_get_teams_app(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsApp.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_teamwork_installed_apps_get_teams_app(connection, user_scope_teams_app_installation_id, opts \\ []) do
+  @spec me_teamwork_installed_apps_get_teams_app(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsApp.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_teamwork_installed_apps_get_teams_app(
+        connection,
+        user_scope_teams_app_installation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -516,8 +583,19 @@ defmodule MicrosoftGraph.Api.MeUserTeamwork do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_teamwork_installed_apps_get_teams_app_definition(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_teamwork_installed_apps_get_teams_app_definition(connection, user_scope_teams_app_installation_id, opts \\ []) do
+  @spec me_teamwork_installed_apps_get_teams_app_definition(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_teamwork_installed_apps_get_teams_app_definition(
+        connection,
+        user_scope_teams_app_installation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -526,7 +604,9 @@ defmodule MicrosoftGraph.Api.MeUserTeamwork do
     request =
       %{}
       |> method(:get)
-      |> url("/me/teamwork/installedApps/#{user_scope_teams_app_installation_id}/teamsAppDefinition")
+      |> url(
+        "/me/teamwork/installedApps/#{user_scope_teams_app_installation_id}/teamsAppDefinition"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -561,7 +641,10 @@ defmodule MicrosoftGraph.Api.MeUserTeamwork do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAssociatedTeamInfoCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_teamwork_list_associated_teams(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAssociatedTeamInfoCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_teamwork_list_associated_teams(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAssociatedTeamInfoCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_teamwork_list_associated_teams(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -612,7 +695,11 @@ defmodule MicrosoftGraph.Api.MeUserTeamwork do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserScopeTeamsAppInstallationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_teamwork_list_installed_apps(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUserScopeTeamsAppInstallationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_teamwork_list_installed_apps(Tesla.Env.client(), keyword()) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphUserScopeTeamsAppInstallationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_teamwork_list_installed_apps(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -656,8 +743,21 @@ defmodule MicrosoftGraph.Api.MeUserTeamwork do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAssociatedTeamInfo.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_teamwork_update_associated_teams(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphAssociatedTeamInfo.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAssociatedTeamInfo.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_teamwork_update_associated_teams(connection, associated_team_info_id, microsoft_graph_associated_team_info, _opts \\ []) do
+  @spec me_teamwork_update_associated_teams(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAssociatedTeamInfo.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAssociatedTeamInfo.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_teamwork_update_associated_teams(
+        connection,
+        associated_team_info_id,
+        microsoft_graph_associated_team_info,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -689,8 +789,21 @@ defmodule MicrosoftGraph.Api.MeUserTeamwork do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserScopeTeamsAppInstallation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_teamwork_update_installed_apps(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphUserScopeTeamsAppInstallation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUserScopeTeamsAppInstallation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_teamwork_update_installed_apps(connection, user_scope_teams_app_installation_id, microsoft_graph_user_scope_teams_app_installation, _opts \\ []) do
+  @spec me_teamwork_update_installed_apps(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUserScopeTeamsAppInstallation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUserScopeTeamsAppInstallation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_teamwork_update_installed_apps(
+        connection,
+        user_scope_teams_app_installation_id,
+        microsoft_graph_user_scope_teams_app_installation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -721,7 +834,14 @@ defmodule MicrosoftGraph.Api.MeUserTeamwork do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserTeamwork.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_update_teamwork(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphUserTeamwork.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUserTeamwork.t} | {:error, Tesla.Env.t}
+  @spec me_update_teamwork(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphUserTeamwork.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUserTeamwork.t()}
+          | {:error, Tesla.Env.t()}
   def me_update_teamwork(connection, microsoft_graph_user_teamwork, _opts \\ []) do
     request =
       %{}

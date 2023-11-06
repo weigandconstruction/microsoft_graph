@@ -23,8 +23,17 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsWorkFromAnyw
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_delete_user_experience_analytics_work_from_anywhere_hardware_readiness_metric(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_delete_user_experience_analytics_work_from_anywhere_hardware_readiness_metric(connection, opts \\ []) do
+  @spec device_management_delete_user_experience_analytics_work_from_anywhere_hardware_readiness_metric(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_delete_user_experience_analytics_work_from_anywhere_hardware_readiness_metric(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -61,8 +70,18 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsWorkFromAnyw
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_get_user_experience_analytics_work_from_anywhere_hardware_readiness_metric(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_get_user_experience_analytics_work_from_anywhere_hardware_readiness_metric(connection, opts \\ []) do
+  @spec device_management_get_user_experience_analytics_work_from_anywhere_hardware_readiness_metric(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_get_user_experience_analytics_work_from_anywhere_hardware_readiness_metric(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -78,7 +97,8 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsWorkFromAnyw
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -98,19 +118,36 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsWorkFromAnyw
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_update_user_experience_analytics_work_from_anywhere_hardware_readiness_metric(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_update_user_experience_analytics_work_from_anywhere_hardware_readiness_metric(connection, microsoft_graph_user_experience_analytics_work_from_anywhere_hardware_readiness_metric, _opts \\ []) do
+  @spec device_management_update_user_experience_analytics_work_from_anywhere_hardware_readiness_metric(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_update_user_experience_analytics_work_from_anywhere_hardware_readiness_metric(
+        connection,
+        microsoft_graph_user_experience_analytics_work_from_anywhere_hardware_readiness_metric,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
       |> url("/deviceManagement/userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric")
-      |> add_param(:body, :body, microsoft_graph_user_experience_analytics_work_from_anywhere_hardware_readiness_metric)
+      |> add_param(
+        :body,
+        :body,
+        microsoft_graph_user_experience_analytics_work_from_anywhere_hardware_readiness_metric
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])

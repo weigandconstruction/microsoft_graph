@@ -24,7 +24,13 @@ defmodule MicrosoftGraph.Api.EmployeeExperienceEmployeeExperience do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEmployeeExperience.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec employee_experience_employee_experience_get_employee_experience(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphEmployeeExperience.t} | {:error, Tesla.Env.t}
+  @spec employee_experience_employee_experience_get_employee_experience(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphEmployeeExperience.t()}
+          | {:error, Tesla.Env.t()}
   def employee_experience_employee_experience_get_employee_experience(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -61,8 +67,19 @@ defmodule MicrosoftGraph.Api.EmployeeExperienceEmployeeExperience do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEmployeeExperience.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec employee_experience_employee_experience_update_employee_experience(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphEmployeeExperience.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphEmployeeExperience.t} | {:error, Tesla.Env.t}
-  def employee_experience_employee_experience_update_employee_experience(connection, microsoft_graph_employee_experience, _opts \\ []) do
+  @spec employee_experience_employee_experience_update_employee_experience(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphEmployeeExperience.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphEmployeeExperience.t()}
+          | {:error, Tesla.Env.t()}
+  def employee_experience_employee_experience_update_employee_experience(
+        connection,
+        microsoft_graph_employee_experience,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

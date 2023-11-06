@@ -16,18 +16,21 @@ defmodule MicrosoftGraph.Model.DeviceEvidenceVmMetadata do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :cloudProvider => MicrosoftGraph.Model.MicrosoftGraphSecurityVmCloudProvider.t | nil,
-    :resourceId => String.t | nil,
-    :subscriptionId => String.t | nil,
-    :vmId => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :cloudProvider => MicrosoftGraph.Model.MicrosoftGraphSecurityVmCloudProvider.t() | nil,
+          :resourceId => String.t() | nil,
+          :subscriptionId => String.t() | nil,
+          :vmId => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:cloudProvider, :struct, MicrosoftGraph.Model.MicrosoftGraphSecurityVmCloudProvider)
+    |> Deserializer.deserialize(
+      :cloudProvider,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityVmCloudProvider
+    )
   end
 end
-

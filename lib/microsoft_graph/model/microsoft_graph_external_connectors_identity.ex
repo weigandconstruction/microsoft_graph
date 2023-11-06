@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsIdentity do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,15 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsIdentity do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :type => MicrosoftGraph.Model.IdentityType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :type => MicrosoftGraph.Model.IdentityType.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:type, :struct, MicrosoftGraph.Model.IdentityType)
+    |> Deserializer.deserialize(:type, :struct, MicrosoftGraph.Model.IdentityType)
   end
 end
-

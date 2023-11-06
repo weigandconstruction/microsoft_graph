@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphInviteParticipantsOperation do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,21 +17,33 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphInviteParticipantsOperation do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :clientContext => String.t | nil,
-    :resultInfo => MicrosoftGraph.Model.CommsOperationResultInfo.t | nil,
-    :status => MicrosoftGraph.Model.MicrosoftGraphOperationStatus.t | nil,
-    :participants => [MicrosoftGraph.Model.MicrosoftGraphInvitationParticipantInfo.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :clientContext => String.t() | nil,
+          :resultInfo => MicrosoftGraph.Model.CommsOperationResultInfo.t() | nil,
+          :status => MicrosoftGraph.Model.MicrosoftGraphOperationStatus.t() | nil,
+          :participants =>
+            [MicrosoftGraph.Model.MicrosoftGraphInvitationParticipantInfo.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:resultInfo, :struct, MicrosoftGraph.Model.CommsOperationResultInfo)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.MicrosoftGraphOperationStatus)
-     |> Deserializer.deserialize(:participants, :list, MicrosoftGraph.Model.MicrosoftGraphInvitationParticipantInfo)
+    |> Deserializer.deserialize(
+      :resultInfo,
+      :struct,
+      MicrosoftGraph.Model.CommsOperationResultInfo
+    )
+    |> Deserializer.deserialize(
+      :status,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphOperationStatus
+    )
+    |> Deserializer.deserialize(
+      :participants,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphInvitationParticipantInfo
+    )
   end
 end
-

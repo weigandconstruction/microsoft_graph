@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphResourceOperation do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,15 +16,14 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphResourceOperation do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :actionName => String.t | nil,
-    :description => String.t | nil,
-    :resourceName => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :actionName => String.t() | nil,
+          :description => String.t() | nil,
+          :resourceName => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

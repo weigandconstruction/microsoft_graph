@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.CollectionOfOAuth2PermissionGrantAllOfValueInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,17 +18,16 @@ defmodule MicrosoftGraph.Model.CollectionOfOAuth2PermissionGrantAllOfValueInner 
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :clientId => String.t | nil,
-    :consentType => String.t | nil,
-    :principalId => String.t | nil,
-    :resourceId => String.t | nil,
-    :scope => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :clientId => String.t() | nil,
+          :consentType => String.t() | nil,
+          :principalId => String.t() | nil,
+          :resourceId => String.t() | nil,
+          :scope => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.UsersUserOnlineMeetingsCreateOrGetRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,22 +17,31 @@ defmodule MicrosoftGraph.Model.UsersUserOnlineMeetingsCreateOrGetRequest do
   ]
 
   @type t :: %__MODULE__{
-    :chatInfo => MicrosoftGraph.Model.UsersUserOnlineMeetingsCreateOrGetRequestChatInfo.t | nil,
-    :endDateTime => DateTime.t | nil,
-    :externalId => String.t | nil,
-    :participants => MicrosoftGraph.Model.UsersUserOnlineMeetingsCreateOrGetRequestParticipants.t | nil,
-    :startDateTime => DateTime.t | nil,
-    :subject => String.t | nil
-  }
+          :chatInfo =>
+            MicrosoftGraph.Model.UsersUserOnlineMeetingsCreateOrGetRequestChatInfo.t() | nil,
+          :endDateTime => DateTime.t() | nil,
+          :externalId => String.t() | nil,
+          :participants =>
+            MicrosoftGraph.Model.UsersUserOnlineMeetingsCreateOrGetRequestParticipants.t() | nil,
+          :startDateTime => DateTime.t() | nil,
+          :subject => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:chatInfo, :struct, MicrosoftGraph.Model.UsersUserOnlineMeetingsCreateOrGetRequestChatInfo)
-     |> Deserializer.deserialize(:endDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:participants, :struct, MicrosoftGraph.Model.UsersUserOnlineMeetingsCreateOrGetRequestParticipants)
-     |> Deserializer.deserialize(:startDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :chatInfo,
+      :struct,
+      MicrosoftGraph.Model.UsersUserOnlineMeetingsCreateOrGetRequestChatInfo
+    )
+    |> Deserializer.deserialize(:endDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :participants,
+      :struct,
+      MicrosoftGraph.Model.UsersUserOnlineMeetingsCreateOrGetRequestParticipants
+    )
+    |> Deserializer.deserialize(:startDateTime, :datetime, nil)
   end
 end
-

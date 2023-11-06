@@ -24,7 +24,10 @@ defmodule MicrosoftGraph.Api.ChatsChatMessageInfo do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec chats_delete_last_message_preview(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec chats_delete_last_message_preview(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def chats_delete_last_message_preview(connection, chat_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -63,7 +66,10 @@ defmodule MicrosoftGraph.Api.ChatsChatMessageInfo do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageInfo.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec chats_get_last_message_preview(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageInfo.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec chats_get_last_message_preview(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageInfo.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def chats_get_last_message_preview(connection, chat_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -101,8 +107,21 @@ defmodule MicrosoftGraph.Api.ChatsChatMessageInfo do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageInfo.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec chats_update_last_message_preview(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphChatMessageInfo.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageInfo.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def chats_update_last_message_preview(connection, chat_id, microsoft_graph_chat_message_info, _opts \\ []) do
+  @spec chats_update_last_message_preview(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphChatMessageInfo.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageInfo.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def chats_update_last_message_preview(
+        connection,
+        chat_id,
+        microsoft_graph_chat_message_info,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

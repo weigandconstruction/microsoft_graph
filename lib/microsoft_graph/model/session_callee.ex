@@ -13,15 +13,18 @@ defmodule MicrosoftGraph.Model.SessionCallee do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :userAgent => MicrosoftGraph.Model.MicrosoftGraphCallRecordsEndpointUserAgent.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :userAgent => MicrosoftGraph.Model.MicrosoftGraphCallRecordsEndpointUserAgent.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:userAgent, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsEndpointUserAgent)
+    |> Deserializer.deserialize(
+      :userAgent,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsEndpointUserAgent
+    )
   end
 end
-

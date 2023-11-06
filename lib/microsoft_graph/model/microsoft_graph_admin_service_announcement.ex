@@ -16,20 +16,31 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAdminServiceAnnouncement do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :healthOverviews => [MicrosoftGraph.Model.MicrosoftGraphServiceHealth.t] | nil,
-    :issues => [MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssue.t] | nil,
-    :messages => [MicrosoftGraph.Model.MicrosoftGraphServiceUpdateMessage.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :healthOverviews => [MicrosoftGraph.Model.MicrosoftGraphServiceHealth.t()] | nil,
+          :issues => [MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssue.t()] | nil,
+          :messages => [MicrosoftGraph.Model.MicrosoftGraphServiceUpdateMessage.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:healthOverviews, :list, MicrosoftGraph.Model.MicrosoftGraphServiceHealth)
-     |> Deserializer.deserialize(:issues, :list, MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssue)
-     |> Deserializer.deserialize(:messages, :list, MicrosoftGraph.Model.MicrosoftGraphServiceUpdateMessage)
+    |> Deserializer.deserialize(
+      :healthOverviews,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphServiceHealth
+    )
+    |> Deserializer.deserialize(
+      :issues,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssue
+    )
+    |> Deserializer.deserialize(
+      :messages,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphServiceUpdateMessage
+    )
   end
 end
-

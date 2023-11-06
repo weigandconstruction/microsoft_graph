@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookNamesAddFormulaLocalRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookNamesAddFormulaL
   ]
 
   @type t :: %__MODULE__{
-    :comment => String.t | nil,
-    :formula => String.t | nil,
-    :name => String.t | nil
-  }
+          :comment => String.t() | nil,
+          :formula => String.t() | nil,
+          :name => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

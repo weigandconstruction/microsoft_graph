@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceEntitlementManagement do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -25,38 +25,92 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceEntitlementManage
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :accessPackageAssignmentApprovals => [MicrosoftGraph.Model.MicrosoftGraphApproval.t] | nil,
-    :accessPackages => [MicrosoftGraph.Model.MicrosoftGraphAccessPackage.t] | nil,
-    :assignmentPolicies => [MicrosoftGraph.Model.MicrosoftGraphAccessPackageAssignmentPolicy.t] | nil,
-    :assignmentRequests => [MicrosoftGraph.Model.MicrosoftGraphAccessPackageAssignmentRequest.t] | nil,
-    :assignments => [MicrosoftGraph.Model.MicrosoftGraphAccessPackageAssignment.t] | nil,
-    :catalogs => [MicrosoftGraph.Model.MicrosoftGraphAccessPackageCatalog.t] | nil,
-    :connectedOrganizations => [MicrosoftGraph.Model.MicrosoftGraphConnectedOrganization.t] | nil,
-    :resourceEnvironments => [MicrosoftGraph.Model.MicrosoftGraphAccessPackageResourceEnvironment.t] | nil,
-    :resourceRequests => [MicrosoftGraph.Model.MicrosoftGraphAccessPackageResourceRequest.t] | nil,
-    :resourceRoleScopes => [MicrosoftGraph.Model.MicrosoftGraphAccessPackageResourceRoleScope.t] | nil,
-    :resources => [MicrosoftGraph.Model.MicrosoftGraphAccessPackageResource.t] | nil,
-    :settings => MicrosoftGraph.Model.EntitlementManagementSettings.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :accessPackageAssignmentApprovals =>
+            [MicrosoftGraph.Model.MicrosoftGraphApproval.t()] | nil,
+          :accessPackages => [MicrosoftGraph.Model.MicrosoftGraphAccessPackage.t()] | nil,
+          :assignmentPolicies =>
+            [MicrosoftGraph.Model.MicrosoftGraphAccessPackageAssignmentPolicy.t()] | nil,
+          :assignmentRequests =>
+            [MicrosoftGraph.Model.MicrosoftGraphAccessPackageAssignmentRequest.t()] | nil,
+          :assignments => [MicrosoftGraph.Model.MicrosoftGraphAccessPackageAssignment.t()] | nil,
+          :catalogs => [MicrosoftGraph.Model.MicrosoftGraphAccessPackageCatalog.t()] | nil,
+          :connectedOrganizations =>
+            [MicrosoftGraph.Model.MicrosoftGraphConnectedOrganization.t()] | nil,
+          :resourceEnvironments =>
+            [MicrosoftGraph.Model.MicrosoftGraphAccessPackageResourceEnvironment.t()] | nil,
+          :resourceRequests =>
+            [MicrosoftGraph.Model.MicrosoftGraphAccessPackageResourceRequest.t()] | nil,
+          :resourceRoleScopes =>
+            [MicrosoftGraph.Model.MicrosoftGraphAccessPackageResourceRoleScope.t()] | nil,
+          :resources => [MicrosoftGraph.Model.MicrosoftGraphAccessPackageResource.t()] | nil,
+          :settings => MicrosoftGraph.Model.EntitlementManagementSettings.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:accessPackageAssignmentApprovals, :list, MicrosoftGraph.Model.MicrosoftGraphApproval)
-     |> Deserializer.deserialize(:accessPackages, :list, MicrosoftGraph.Model.MicrosoftGraphAccessPackage)
-     |> Deserializer.deserialize(:assignmentPolicies, :list, MicrosoftGraph.Model.MicrosoftGraphAccessPackageAssignmentPolicy)
-     |> Deserializer.deserialize(:assignmentRequests, :list, MicrosoftGraph.Model.MicrosoftGraphAccessPackageAssignmentRequest)
-     |> Deserializer.deserialize(:assignments, :list, MicrosoftGraph.Model.MicrosoftGraphAccessPackageAssignment)
-     |> Deserializer.deserialize(:catalogs, :list, MicrosoftGraph.Model.MicrosoftGraphAccessPackageCatalog)
-     |> Deserializer.deserialize(:connectedOrganizations, :list, MicrosoftGraph.Model.MicrosoftGraphConnectedOrganization)
-     |> Deserializer.deserialize(:resourceEnvironments, :list, MicrosoftGraph.Model.MicrosoftGraphAccessPackageResourceEnvironment)
-     |> Deserializer.deserialize(:resourceRequests, :list, MicrosoftGraph.Model.MicrosoftGraphAccessPackageResourceRequest)
-     |> Deserializer.deserialize(:resourceRoleScopes, :list, MicrosoftGraph.Model.MicrosoftGraphAccessPackageResourceRoleScope)
-     |> Deserializer.deserialize(:resources, :list, MicrosoftGraph.Model.MicrosoftGraphAccessPackageResource)
-     |> Deserializer.deserialize(:settings, :struct, MicrosoftGraph.Model.EntitlementManagementSettings)
+    |> Deserializer.deserialize(
+      :accessPackageAssignmentApprovals,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphApproval
+    )
+    |> Deserializer.deserialize(
+      :accessPackages,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAccessPackage
+    )
+    |> Deserializer.deserialize(
+      :assignmentPolicies,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAccessPackageAssignmentPolicy
+    )
+    |> Deserializer.deserialize(
+      :assignmentRequests,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAccessPackageAssignmentRequest
+    )
+    |> Deserializer.deserialize(
+      :assignments,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAccessPackageAssignment
+    )
+    |> Deserializer.deserialize(
+      :catalogs,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAccessPackageCatalog
+    )
+    |> Deserializer.deserialize(
+      :connectedOrganizations,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphConnectedOrganization
+    )
+    |> Deserializer.deserialize(
+      :resourceEnvironments,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAccessPackageResourceEnvironment
+    )
+    |> Deserializer.deserialize(
+      :resourceRequests,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAccessPackageResourceRequest
+    )
+    |> Deserializer.deserialize(
+      :resourceRoleScopes,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAccessPackageResourceRoleScope
+    )
+    |> Deserializer.deserialize(
+      :resources,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAccessPackageResource
+    )
+    |> Deserializer.deserialize(
+      :settings,
+      :struct,
+      MicrosoftGraph.Model.EntitlementManagementSettings
+    )
   end
 end
-

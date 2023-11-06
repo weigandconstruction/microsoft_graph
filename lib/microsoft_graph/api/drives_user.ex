@@ -26,7 +26,10 @@ defmodule MicrosoftGraph.Api.DrivesUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_created_by_user_get_mailbox_settings(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
+  @spec drives_created_by_user_get_mailbox_settings(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
   def drives_created_by_user_get_mailbox_settings(connection, drive_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -71,7 +74,14 @@ defmodule MicrosoftGraph.Api.DrivesUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_created_by_user_list_service_provisioning_errors(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_created_by_user_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_created_by_user_list_service_provisioning_errors(connection, drive_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -116,8 +126,19 @@ defmodule MicrosoftGraph.Api.DrivesUser do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_created_by_user_service_provisioning_errors_get_count37a0(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_created_by_user_service_provisioning_errors_get_count37a0(connection, drive_id, opts \\ []) do
+  @spec drives_created_by_user_service_provisioning_errors_get_count37a0(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_created_by_user_service_provisioning_errors_get_count37a0(
+        connection,
+        drive_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -154,8 +175,21 @@ defmodule MicrosoftGraph.Api.DrivesUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_created_by_user_update_mailbox_settings(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def drives_created_by_user_update_mailbox_settings(connection, drive_id, microsoft_graph_mailbox_settings, _opts \\ []) do
+  @spec drives_created_by_user_update_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_created_by_user_update_mailbox_settings(
+        connection,
+        drive_id,
+        microsoft_graph_mailbox_settings,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -189,7 +223,10 @@ defmodule MicrosoftGraph.Api.DrivesUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_get_created_by_user(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_get_created_by_user(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_get_created_by_user(connection, drive_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -229,7 +266,10 @@ defmodule MicrosoftGraph.Api.DrivesUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_get_last_modified_by_user(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_get_last_modified_by_user(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_get_last_modified_by_user(connection, drive_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -269,7 +309,14 @@ defmodule MicrosoftGraph.Api.DrivesUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_last_modified_by_user_get_mailbox_settings(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
+  @spec drives_last_modified_by_user_get_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
   def drives_last_modified_by_user_get_mailbox_settings(connection, drive_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -314,8 +361,19 @@ defmodule MicrosoftGraph.Api.DrivesUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_last_modified_by_user_list_service_provisioning_errors(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_last_modified_by_user_list_service_provisioning_errors(connection, drive_id, opts \\ []) do
+  @spec drives_last_modified_by_user_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_last_modified_by_user_list_service_provisioning_errors(
+        connection,
+        drive_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -359,8 +417,19 @@ defmodule MicrosoftGraph.Api.DrivesUser do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_last_modified_by_user_service_provisioning_errors_get_count54d5(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_last_modified_by_user_service_provisioning_errors_get_count54d5(connection, drive_id, opts \\ []) do
+  @spec drives_last_modified_by_user_service_provisioning_errors_get_count54d5(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_last_modified_by_user_service_provisioning_errors_get_count54d5(
+        connection,
+        drive_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -397,8 +466,21 @@ defmodule MicrosoftGraph.Api.DrivesUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_last_modified_by_user_update_mailbox_settings(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def drives_last_modified_by_user_update_mailbox_settings(connection, drive_id, microsoft_graph_mailbox_settings, _opts \\ []) do
+  @spec drives_last_modified_by_user_update_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_last_modified_by_user_update_mailbox_settings(
+        connection,
+        drive_id,
+        microsoft_graph_mailbox_settings,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

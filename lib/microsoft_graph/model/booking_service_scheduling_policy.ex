@@ -17,16 +17,15 @@ defmodule MicrosoftGraph.Model.BookingServiceSchedulingPolicy do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :allowStaffSelection => boolean() | nil,
-    :maximumAdvance => String.t | nil,
-    :minimumLeadTime => String.t | nil,
-    :sendConfirmationsToOwner => boolean() | nil,
-    :timeSlotInterval => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :allowStaffSelection => boolean() | nil,
+          :maximumAdvance => String.t() | nil,
+          :minimumLeadTime => String.t() | nil,
+          :sendConfirmationsToOwner => boolean() | nil,
+          :timeSlotInterval => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

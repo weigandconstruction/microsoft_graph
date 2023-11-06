@@ -24,8 +24,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceEnrollmentConfiguration do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceEnrollmentConfiguration.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_create_device_enrollment_configurations(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphDeviceEnrollmentConfiguration.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceEnrollmentConfiguration.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_create_device_enrollment_configurations(connection, microsoft_graph_device_enrollment_configuration, _opts \\ []) do
+  @spec device_management_create_device_enrollment_configurations(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphDeviceEnrollmentConfiguration.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceEnrollmentConfiguration.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_create_device_enrollment_configurations(
+        connection,
+        microsoft_graph_device_enrollment_configuration,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -58,8 +69,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceEnrollmentConfiguration do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_delete_device_enrollment_configurations(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_delete_device_enrollment_configurations(connection, device_enrollment_configuration_id, opts \\ []) do
+  @spec device_management_delete_device_enrollment_configurations(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_delete_device_enrollment_configurations(
+        connection,
+        device_enrollment_configuration_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -67,7 +89,9 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceEnrollmentConfiguration do
     request =
       %{}
       |> method(:delete)
-      |> url("/deviceManagement/deviceEnrollmentConfigurations/#{device_enrollment_configuration_id}")
+      |> url(
+        "/deviceManagement/deviceEnrollmentConfigurations/#{device_enrollment_configuration_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -96,8 +120,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceEnrollmentConfiguration do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_enrollment_configurations_assignments_get_count_f0d7(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_device_enrollment_configurations_assignments_get_count_f0d7(connection, device_enrollment_configuration_id, opts \\ []) do
+  @spec device_management_device_enrollment_configurations_assignments_get_count_f0d7(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_enrollment_configurations_assignments_get_count_f0d7(
+        connection,
+        device_enrollment_configuration_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -106,7 +141,9 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceEnrollmentConfiguration do
     request =
       %{}
       |> method(:get)
-      |> url("/deviceManagement/deviceEnrollmentConfigurations/#{device_enrollment_configuration_id}/assignments/$count")
+      |> url(
+        "/deviceManagement/deviceEnrollmentConfigurations/#{device_enrollment_configuration_id}/assignments/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -135,12 +172,27 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceEnrollmentConfiguration do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEnrollmentConfigurationAssignment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_enrollment_configurations_create_assignments(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphEnrollmentConfigurationAssignment.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphEnrollmentConfigurationAssignment.t} | {:error, Tesla.Env.t}
-  def device_management_device_enrollment_configurations_create_assignments(connection, device_enrollment_configuration_id, microsoft_graph_enrollment_configuration_assignment, _opts \\ []) do
+  @spec device_management_device_enrollment_configurations_create_assignments(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphEnrollmentConfigurationAssignment.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphEnrollmentConfigurationAssignment.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_enrollment_configurations_create_assignments(
+        connection,
+        device_enrollment_configuration_id,
+        microsoft_graph_enrollment_configuration_assignment,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceManagement/deviceEnrollmentConfigurations/#{device_enrollment_configuration_id}/assignments")
+      |> url(
+        "/deviceManagement/deviceEnrollmentConfigurations/#{device_enrollment_configuration_id}/assignments"
+      )
       |> add_param(:body, :body, microsoft_graph_enrollment_configuration_assignment)
       |> Enum.into([])
 
@@ -170,8 +222,21 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceEnrollmentConfiguration do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_enrollment_configurations_delete_assignments(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_device_enrollment_configurations_delete_assignments(connection, device_enrollment_configuration_id, enrollment_configuration_assignment_id, opts \\ []) do
+  @spec device_management_device_enrollment_configurations_delete_assignments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_enrollment_configurations_delete_assignments(
+        connection,
+        device_enrollment_configuration_id,
+        enrollment_configuration_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -179,7 +244,9 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceEnrollmentConfiguration do
     request =
       %{}
       |> method(:delete)
-      |> url("/deviceManagement/deviceEnrollmentConfigurations/#{device_enrollment_configuration_id}/assignments/#{enrollment_configuration_assignment_id}")
+      |> url(
+        "/deviceManagement/deviceEnrollmentConfigurations/#{device_enrollment_configuration_id}/assignments/#{enrollment_configuration_assignment_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -210,8 +277,21 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceEnrollmentConfiguration do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEnrollmentConfigurationAssignment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_enrollment_configurations_get_assignments(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphEnrollmentConfigurationAssignment.t} | {:error, Tesla.Env.t}
-  def device_management_device_enrollment_configurations_get_assignments(connection, device_enrollment_configuration_id, enrollment_configuration_assignment_id, opts \\ []) do
+  @spec device_management_device_enrollment_configurations_get_assignments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphEnrollmentConfigurationAssignment.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_enrollment_configurations_get_assignments(
+        connection,
+        device_enrollment_configuration_id,
+        enrollment_configuration_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -220,7 +300,9 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceEnrollmentConfiguration do
     request =
       %{}
       |> method(:get)
-      |> url("/deviceManagement/deviceEnrollmentConfigurations/#{device_enrollment_configuration_id}/assignments/#{enrollment_configuration_assignment_id}")
+      |> url(
+        "/deviceManagement/deviceEnrollmentConfigurations/#{device_enrollment_configuration_id}/assignments/#{enrollment_configuration_assignment_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -248,7 +330,13 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceEnrollmentConfiguration do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_enrollment_configurations_get_count69e5(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec device_management_device_enrollment_configurations_get_count69e5(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def device_management_device_enrollment_configurations_get_count69e5(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -294,8 +382,20 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceEnrollmentConfiguration do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEnrollmentConfigurationAssignmentCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_enrollment_configurations_list_assignments(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEnrollmentConfigurationAssignmentCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_device_enrollment_configurations_list_assignments(connection, device_enrollment_configuration_id, opts \\ []) do
+  @spec device_management_device_enrollment_configurations_list_assignments(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphEnrollmentConfigurationAssignmentCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_enrollment_configurations_list_assignments(
+        connection,
+        device_enrollment_configuration_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -310,14 +410,17 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceEnrollmentConfiguration do
     request =
       %{}
       |> method(:get)
-      |> url("/deviceManagement/deviceEnrollmentConfigurations/#{device_enrollment_configuration_id}/assignments")
+      |> url(
+        "/deviceManagement/deviceEnrollmentConfigurations/#{device_enrollment_configuration_id}/assignments"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphEnrollmentConfigurationAssignmentCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphEnrollmentConfigurationAssignmentCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -340,12 +443,29 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceEnrollmentConfiguration do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEnrollmentConfigurationAssignment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_enrollment_configurations_update_assignments(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphEnrollmentConfigurationAssignment.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphEnrollmentConfigurationAssignment.t} | {:error, Tesla.Env.t}
-  def device_management_device_enrollment_configurations_update_assignments(connection, device_enrollment_configuration_id, enrollment_configuration_assignment_id, microsoft_graph_enrollment_configuration_assignment, _opts \\ []) do
+  @spec device_management_device_enrollment_configurations_update_assignments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphEnrollmentConfigurationAssignment.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphEnrollmentConfigurationAssignment.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_enrollment_configurations_update_assignments(
+        connection,
+        device_enrollment_configuration_id,
+        enrollment_configuration_assignment_id,
+        microsoft_graph_enrollment_configuration_assignment,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/deviceManagement/deviceEnrollmentConfigurations/#{device_enrollment_configuration_id}/assignments/#{enrollment_configuration_assignment_id}")
+      |> url(
+        "/deviceManagement/deviceEnrollmentConfigurations/#{device_enrollment_configuration_id}/assignments/#{enrollment_configuration_assignment_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_enrollment_configuration_assignment)
       |> Enum.into([])
 
@@ -375,8 +495,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceEnrollmentConfiguration do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceEnrollmentConfiguration.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_get_device_enrollment_configurations(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceEnrollmentConfiguration.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_get_device_enrollment_configurations(connection, device_enrollment_configuration_id, opts \\ []) do
+  @spec device_management_get_device_enrollment_configurations(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceEnrollmentConfiguration.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_get_device_enrollment_configurations(
+        connection,
+        device_enrollment_configuration_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -385,7 +516,9 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceEnrollmentConfiguration do
     request =
       %{}
       |> method(:get)
-      |> url("/deviceManagement/deviceEnrollmentConfigurations/#{device_enrollment_configuration_id}")
+      |> url(
+        "/deviceManagement/deviceEnrollmentConfigurations/#{device_enrollment_configuration_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -420,7 +553,11 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceEnrollmentConfiguration do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceEnrollmentConfigurationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_list_device_enrollment_configurations(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceEnrollmentConfigurationCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec device_management_list_device_enrollment_configurations(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphDeviceEnrollmentConfigurationCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def device_management_list_device_enrollment_configurations(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -465,12 +602,27 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceEnrollmentConfiguration do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceEnrollmentConfiguration.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_update_device_enrollment_configurations(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphDeviceEnrollmentConfiguration.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceEnrollmentConfiguration.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_update_device_enrollment_configurations(connection, device_enrollment_configuration_id, microsoft_graph_device_enrollment_configuration, _opts \\ []) do
+  @spec device_management_update_device_enrollment_configurations(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDeviceEnrollmentConfiguration.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceEnrollmentConfiguration.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_update_device_enrollment_configurations(
+        connection,
+        device_enrollment_configuration_id,
+        microsoft_graph_device_enrollment_configuration,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/deviceManagement/deviceEnrollmentConfigurations/#{device_enrollment_configuration_id}")
+      |> url(
+        "/deviceManagement/deviceEnrollmentConfigurations/#{device_enrollment_configuration_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_device_enrollment_configuration)
       |> Enum.into([])
 

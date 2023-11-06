@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphUserLastSignInRecommendationInsightSetting do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,20 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphUserLastSignInRecommendationInsight
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :recommendationLookBackDuration => String.t | nil,
-    :signInScope => MicrosoftGraph.Model.UserLastSignInRecommendationInsightSettingSignInScope.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :recommendationLookBackDuration => String.t() | nil,
+          :signInScope =>
+            MicrosoftGraph.Model.UserLastSignInRecommendationInsightSettingSignInScope.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:signInScope, :struct, MicrosoftGraph.Model.UserLastSignInRecommendationInsightSettingSignInScope)
+    |> Deserializer.deserialize(
+      :signInScope,
+      :struct,
+      MicrosoftGraph.Model.UserLastSignInRecommendationInsightSettingSignInScope
+    )
   end
 end
-

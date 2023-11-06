@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAzureCommunicationServicesUserIdentity do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAzureCommunicationServicesUserIdent
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :displayName => String.t | nil,
-    :id => String.t | nil,
-    :azureCommunicationServicesResourceId => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :displayName => String.t() | nil,
+          :id => String.t() | nil,
+          :azureCommunicationServicesResourceId => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

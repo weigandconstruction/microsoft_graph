@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphWorkbookRangeView do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -25,35 +25,62 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphWorkbookRangeView do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :cellAddresses => MicrosoftGraph.Model.WorkbookRangeViewCellAddresses.t | nil,
-    :columnCount => integer() | nil,
-    :formulas => MicrosoftGraph.Model.WorkbookRangeViewFormulas.t | nil,
-    :formulasLocal => MicrosoftGraph.Model.WorkbookRangeViewFormulasLocal.t | nil,
-    :formulasR1C1 => MicrosoftGraph.Model.WorkbookRangeViewFormulasR1C1.t | nil,
-    :index => integer() | nil,
-    :numberFormat => MicrosoftGraph.Model.WorkbookRangeViewNumberFormat.t | nil,
-    :rowCount => integer() | nil,
-    :rows => [MicrosoftGraph.Model.MicrosoftGraphWorkbookRangeView.t] | nil,
-    :text => MicrosoftGraph.Model.WorkbookRangeViewText.t | nil,
-    :valueTypes => MicrosoftGraph.Model.WorkbookRangeViewValueTypes.t | nil,
-    :values => MicrosoftGraph.Model.WorkbookRangeViewValues.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :cellAddresses => MicrosoftGraph.Model.WorkbookRangeViewCellAddresses.t() | nil,
+          :columnCount => integer() | nil,
+          :formulas => MicrosoftGraph.Model.WorkbookRangeViewFormulas.t() | nil,
+          :formulasLocal => MicrosoftGraph.Model.WorkbookRangeViewFormulasLocal.t() | nil,
+          :formulasR1C1 => MicrosoftGraph.Model.WorkbookRangeViewFormulasR1C1.t() | nil,
+          :index => integer() | nil,
+          :numberFormat => MicrosoftGraph.Model.WorkbookRangeViewNumberFormat.t() | nil,
+          :rowCount => integer() | nil,
+          :rows => [MicrosoftGraph.Model.MicrosoftGraphWorkbookRangeView.t()] | nil,
+          :text => MicrosoftGraph.Model.WorkbookRangeViewText.t() | nil,
+          :valueTypes => MicrosoftGraph.Model.WorkbookRangeViewValueTypes.t() | nil,
+          :values => MicrosoftGraph.Model.WorkbookRangeViewValues.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:cellAddresses, :struct, MicrosoftGraph.Model.WorkbookRangeViewCellAddresses)
-     |> Deserializer.deserialize(:formulas, :struct, MicrosoftGraph.Model.WorkbookRangeViewFormulas)
-     |> Deserializer.deserialize(:formulasLocal, :struct, MicrosoftGraph.Model.WorkbookRangeViewFormulasLocal)
-     |> Deserializer.deserialize(:formulasR1C1, :struct, MicrosoftGraph.Model.WorkbookRangeViewFormulasR1C1)
-     |> Deserializer.deserialize(:numberFormat, :struct, MicrosoftGraph.Model.WorkbookRangeViewNumberFormat)
-     |> Deserializer.deserialize(:rows, :list, MicrosoftGraph.Model.MicrosoftGraphWorkbookRangeView)
-     |> Deserializer.deserialize(:text, :struct, MicrosoftGraph.Model.WorkbookRangeViewText)
-     |> Deserializer.deserialize(:valueTypes, :struct, MicrosoftGraph.Model.WorkbookRangeViewValueTypes)
-     |> Deserializer.deserialize(:values, :struct, MicrosoftGraph.Model.WorkbookRangeViewValues)
+    |> Deserializer.deserialize(
+      :cellAddresses,
+      :struct,
+      MicrosoftGraph.Model.WorkbookRangeViewCellAddresses
+    )
+    |> Deserializer.deserialize(
+      :formulas,
+      :struct,
+      MicrosoftGraph.Model.WorkbookRangeViewFormulas
+    )
+    |> Deserializer.deserialize(
+      :formulasLocal,
+      :struct,
+      MicrosoftGraph.Model.WorkbookRangeViewFormulasLocal
+    )
+    |> Deserializer.deserialize(
+      :formulasR1C1,
+      :struct,
+      MicrosoftGraph.Model.WorkbookRangeViewFormulasR1C1
+    )
+    |> Deserializer.deserialize(
+      :numberFormat,
+      :struct,
+      MicrosoftGraph.Model.WorkbookRangeViewNumberFormat
+    )
+    |> Deserializer.deserialize(
+      :rows,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphWorkbookRangeView
+    )
+    |> Deserializer.deserialize(:text, :struct, MicrosoftGraph.Model.WorkbookRangeViewText)
+    |> Deserializer.deserialize(
+      :valueTypes,
+      :struct,
+      MicrosoftGraph.Model.WorkbookRangeViewValueTypes
+    )
+    |> Deserializer.deserialize(:values, :struct, MicrosoftGraph.Model.WorkbookRangeViewValues)
   end
 end
-

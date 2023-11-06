@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.CallChatInfo do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :messageId => String.t | nil,
-    :replyChainMessageId => String.t | nil,
-    :threadId => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :messageId => String.t() | nil,
+          :replyChainMessageId => String.t() | nil,
+          :threadId => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

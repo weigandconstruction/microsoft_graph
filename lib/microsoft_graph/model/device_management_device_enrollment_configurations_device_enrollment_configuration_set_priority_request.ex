@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DeviceManagementDeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationSetPriorityRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,11 +12,10 @@ defmodule MicrosoftGraph.Model.DeviceManagementDeviceEnrollmentConfigurationsDev
   ]
 
   @type t :: %__MODULE__{
-    :priority => integer() | nil
-  }
+          :priority => integer() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

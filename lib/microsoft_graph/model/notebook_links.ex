@@ -14,17 +14,26 @@ defmodule MicrosoftGraph.Model.NotebookLinks do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :oneNoteClientUrl => MicrosoftGraph.Model.MicrosoftGraphRecentNotebookLinksOneNoteClientUrl.t | nil,
-    :oneNoteWebUrl => MicrosoftGraph.Model.MicrosoftGraphRecentNotebookLinksOneNoteWebUrl.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :oneNoteClientUrl =>
+            MicrosoftGraph.Model.MicrosoftGraphRecentNotebookLinksOneNoteClientUrl.t() | nil,
+          :oneNoteWebUrl =>
+            MicrosoftGraph.Model.MicrosoftGraphRecentNotebookLinksOneNoteWebUrl.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:oneNoteClientUrl, :struct, MicrosoftGraph.Model.MicrosoftGraphRecentNotebookLinksOneNoteClientUrl)
-     |> Deserializer.deserialize(:oneNoteWebUrl, :struct, MicrosoftGraph.Model.MicrosoftGraphRecentNotebookLinksOneNoteWebUrl)
+    |> Deserializer.deserialize(
+      :oneNoteClientUrl,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphRecentNotebookLinksOneNoteClientUrl
+    )
+    |> Deserializer.deserialize(
+      :oneNoteWebUrl,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphRecentNotebookLinksOneNoteWebUrl
+    )
   end
 end
-

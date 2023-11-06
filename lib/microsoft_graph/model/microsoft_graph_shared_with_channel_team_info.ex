@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSharedWithChannelTeamInfo do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,21 +18,24 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSharedWithChannelTeamInfo do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :displayName => String.t | nil,
-    :team => MicrosoftGraph.Model.TeamInfoTeam.t | nil,
-    :tenantId => String.t | nil,
-    :allowedMembers => [MicrosoftGraph.Model.MicrosoftGraphConversationMember.t] | nil,
-    :isHostTeam => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :displayName => String.t() | nil,
+          :team => MicrosoftGraph.Model.TeamInfoTeam.t() | nil,
+          :tenantId => String.t() | nil,
+          :allowedMembers => [MicrosoftGraph.Model.MicrosoftGraphConversationMember.t()] | nil,
+          :isHostTeam => boolean() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:team, :struct, MicrosoftGraph.Model.TeamInfoTeam)
-     |> Deserializer.deserialize(:allowedMembers, :list, MicrosoftGraph.Model.MicrosoftGraphConversationMember)
+    |> Deserializer.deserialize(:team, :struct, MicrosoftGraph.Model.TeamInfoTeam)
+    |> Deserializer.deserialize(
+      :allowedMembers,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphConversationMember
+    )
   end
 end
-

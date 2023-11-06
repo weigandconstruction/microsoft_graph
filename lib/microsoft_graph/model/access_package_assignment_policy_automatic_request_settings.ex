@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.AccessPackageAssignmentPolicyAutomaticRequestSett
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :gracePeriodBeforeAccessRemoval => String.t | nil,
-    :removeAccessWhenTargetLeavesAllowedTargets => boolean() | nil,
-    :requestAccessForAllowedTargets => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :gracePeriodBeforeAccessRemoval => String.t() | nil,
+          :removeAccessWhenTargetLeavesAllowedTargets => boolean() | nil,
+          :requestAccessForAllowedTargets => boolean() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

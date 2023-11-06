@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphMobileAppContentFile do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -22,26 +22,30 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphMobileAppContentFile do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :azureStorageUri => String.t | nil,
-    :azureStorageUriExpirationDateTime => DateTime.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :isCommitted => boolean() | nil,
-    :manifest => String.t | nil,
-    :name => String.t | nil,
-    :size => integer() | nil,
-    :sizeEncrypted => integer() | nil,
-    :uploadState => MicrosoftGraph.Model.MicrosoftGraphMobileAppContentFileUploadState.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :azureStorageUri => String.t() | nil,
+          :azureStorageUriExpirationDateTime => DateTime.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :isCommitted => boolean() | nil,
+          :manifest => String.t() | nil,
+          :name => String.t() | nil,
+          :size => integer() | nil,
+          :sizeEncrypted => integer() | nil,
+          :uploadState =>
+            MicrosoftGraph.Model.MicrosoftGraphMobileAppContentFileUploadState.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:azureStorageUriExpirationDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:uploadState, :struct, MicrosoftGraph.Model.MicrosoftGraphMobileAppContentFileUploadState)
+    |> Deserializer.deserialize(:azureStorageUriExpirationDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :uploadState,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphMobileAppContentFileUploadState
+    )
   end
 end
-

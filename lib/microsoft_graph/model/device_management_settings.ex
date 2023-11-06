@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.DeviceManagementSettings do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :deviceComplianceCheckinThresholdDays => integer() | nil,
-    :isScheduledActionEnabled => boolean() | nil,
-    :secureByDefault => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :deviceComplianceCheckinThresholdDays => integer() | nil,
+          :isScheduledActionEnabled => boolean() | nil,
+          :secureByDefault => boolean() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

@@ -29,7 +29,10 @@ defmodule MicrosoftGraph.Api.ContactsFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfOrgContact.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec contacts_delta(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.CollectionOfOrgContact.t} | {:error, Tesla.Env.t}
+  @spec contacts_delta(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.CollectionOfOrgContact.t()}
+          | {:error, Tesla.Env.t()}
   def contacts_delta(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,

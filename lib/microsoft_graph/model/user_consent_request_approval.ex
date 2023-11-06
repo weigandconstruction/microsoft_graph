@@ -14,16 +14,15 @@ defmodule MicrosoftGraph.Model.UserConsentRequestApproval do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :stages => [MicrosoftGraph.Model.MicrosoftGraphApprovalStage.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :stages => [MicrosoftGraph.Model.MicrosoftGraphApprovalStage.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:stages, :list, MicrosoftGraph.Model.MicrosoftGraphApprovalStage)
+    |> Deserializer.deserialize(:stages, :list, MicrosoftGraph.Model.MicrosoftGraphApprovalStage)
   end
 end
-

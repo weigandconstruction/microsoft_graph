@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsAppHealthApplicationPerformance do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -22,24 +22,29 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsAppHealthApp
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :activeDeviceCount => integer() | nil,
-    :appCrashCount => integer() | nil,
-    :appDisplayName => String.t | nil,
-    :appHangCount => integer() | nil,
-    :appHealthScore => MicrosoftGraph.Model.UserExperienceAnalyticsAppHealthApplicationPerformanceAppHealthScore.t | nil,
-    :appName => String.t | nil,
-    :appPublisher => String.t | nil,
-    :appUsageDuration => integer() | nil,
-    :meanTimeToFailureInMinutes => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :activeDeviceCount => integer() | nil,
+          :appCrashCount => integer() | nil,
+          :appDisplayName => String.t() | nil,
+          :appHangCount => integer() | nil,
+          :appHealthScore =>
+            MicrosoftGraph.Model.UserExperienceAnalyticsAppHealthApplicationPerformanceAppHealthScore.t()
+            | nil,
+          :appName => String.t() | nil,
+          :appPublisher => String.t() | nil,
+          :appUsageDuration => integer() | nil,
+          :meanTimeToFailureInMinutes => integer() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:appHealthScore, :struct, MicrosoftGraph.Model.UserExperienceAnalyticsAppHealthApplicationPerformanceAppHealthScore)
+    |> Deserializer.deserialize(
+      :appHealthScore,
+      :struct,
+      MicrosoftGraph.Model.UserExperienceAnalyticsAppHealthApplicationPerformanceAppHealthScore
+    )
   end
 end
-

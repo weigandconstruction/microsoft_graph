@@ -15,17 +15,22 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphBitLockerRemovableDrivePolicy do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :blockCrossOrganizationWriteAccess => boolean() | nil,
-    :encryptionMethod => MicrosoftGraph.Model.MicrosoftGraphBitLockerRemovableDrivePolicyEncryptionMethod.t | nil,
-    :requireEncryptionForWriteAccess => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :blockCrossOrganizationWriteAccess => boolean() | nil,
+          :encryptionMethod =>
+            MicrosoftGraph.Model.MicrosoftGraphBitLockerRemovableDrivePolicyEncryptionMethod.t()
+            | nil,
+          :requireEncryptionForWriteAccess => boolean() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:encryptionMethod, :struct, MicrosoftGraph.Model.MicrosoftGraphBitLockerRemovableDrivePolicyEncryptionMethod)
+    |> Deserializer.deserialize(
+      :encryptionMethod,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphBitLockerRemovableDrivePolicyEncryptionMethod
+    )
   end
 end
-

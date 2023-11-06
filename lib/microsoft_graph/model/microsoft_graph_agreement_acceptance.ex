@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAgreementAcceptance do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -26,30 +26,29 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAgreementAcceptance do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :agreementFileId => String.t | nil,
-    :agreementId => String.t | nil,
-    :deviceDisplayName => String.t | nil,
-    :deviceId => String.t | nil,
-    :deviceOSType => String.t | nil,
-    :deviceOSVersion => String.t | nil,
-    :expirationDateTime => DateTime.t | nil,
-    :recordedDateTime => DateTime.t | nil,
-    :state => MicrosoftGraph.Model.AgreementAcceptanceState.t | nil,
-    :userDisplayName => String.t | nil,
-    :userEmail => String.t | nil,
-    :userId => String.t | nil,
-    :userPrincipalName => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :agreementFileId => String.t() | nil,
+          :agreementId => String.t() | nil,
+          :deviceDisplayName => String.t() | nil,
+          :deviceId => String.t() | nil,
+          :deviceOSType => String.t() | nil,
+          :deviceOSVersion => String.t() | nil,
+          :expirationDateTime => DateTime.t() | nil,
+          :recordedDateTime => DateTime.t() | nil,
+          :state => MicrosoftGraph.Model.AgreementAcceptanceState.t() | nil,
+          :userDisplayName => String.t() | nil,
+          :userEmail => String.t() | nil,
+          :userId => String.t() | nil,
+          :userPrincipalName => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:expirationDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:recordedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:state, :struct, MicrosoftGraph.Model.AgreementAcceptanceState)
+    |> Deserializer.deserialize(:expirationDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:recordedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:state, :struct, MicrosoftGraph.Model.AgreementAcceptanceState)
   end
 end
-

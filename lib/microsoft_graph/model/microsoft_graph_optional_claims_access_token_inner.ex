@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphOptionalClaimsAccessTokenInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,15 +16,14 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphOptionalClaimsAccessTokenInner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :additionalProperties => [String.t] | nil,
-    :essential => boolean() | nil,
-    :name => String.t | nil,
-    :source => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :additionalProperties => [String.t()] | nil,
+          :essential => boolean() | nil,
+          :name => String.t() | nil,
+          :source => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

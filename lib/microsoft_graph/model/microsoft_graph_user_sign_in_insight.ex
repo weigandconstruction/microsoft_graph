@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphUserSignInInsight do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,18 +15,17 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphUserSignInInsight do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :insightCreatedDateTime => DateTime.t | nil,
-    :lastSignInDateTime => DateTime.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :insightCreatedDateTime => DateTime.t() | nil,
+          :lastSignInDateTime => DateTime.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:insightCreatedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastSignInDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:insightCreatedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastSignInDateTime, :datetime, nil)
   end
 end
-

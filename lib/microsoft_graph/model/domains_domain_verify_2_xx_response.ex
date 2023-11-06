@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DomainsDomainVerify2XxResponse do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -30,36 +30,54 @@ defmodule MicrosoftGraph.Model.DomainsDomainVerify2XxResponse do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :authenticationType => String.t | nil,
-    :availabilityStatus => String.t | nil,
-    :domainNameReferences => [MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t] | nil,
-    :federationConfiguration => [MicrosoftGraph.Model.MicrosoftGraphInternalDomainFederation.t] | nil,
-    :isAdminManaged => boolean() | nil,
-    :isDefault => boolean() | nil,
-    :isInitial => boolean() | nil,
-    :isRoot => boolean() | nil,
-    :isVerified => boolean() | nil,
-    :manufacturer => String.t | nil,
-    :model => String.t | nil,
-    :passwordNotificationWindowInDays => integer() | nil,
-    :passwordValidityPeriodInDays => integer() | nil,
-    :serviceConfigurationRecords => [MicrosoftGraph.Model.MicrosoftGraphDomainDnsRecord.t] | nil,
-    :state => MicrosoftGraph.Model.DomainState.t | nil,
-    :supportedServices => [String.t] | nil,
-    :verificationDnsRecords => [MicrosoftGraph.Model.MicrosoftGraphDomainDnsRecord.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :authenticationType => String.t() | nil,
+          :availabilityStatus => String.t() | nil,
+          :domainNameReferences => [MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()] | nil,
+          :federationConfiguration =>
+            [MicrosoftGraph.Model.MicrosoftGraphInternalDomainFederation.t()] | nil,
+          :isAdminManaged => boolean() | nil,
+          :isDefault => boolean() | nil,
+          :isInitial => boolean() | nil,
+          :isRoot => boolean() | nil,
+          :isVerified => boolean() | nil,
+          :manufacturer => String.t() | nil,
+          :model => String.t() | nil,
+          :passwordNotificationWindowInDays => integer() | nil,
+          :passwordValidityPeriodInDays => integer() | nil,
+          :serviceConfigurationRecords =>
+            [MicrosoftGraph.Model.MicrosoftGraphDomainDnsRecord.t()] | nil,
+          :state => MicrosoftGraph.Model.DomainState.t() | nil,
+          :supportedServices => [String.t()] | nil,
+          :verificationDnsRecords =>
+            [MicrosoftGraph.Model.MicrosoftGraphDomainDnsRecord.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:domainNameReferences, :list, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject)
-     |> Deserializer.deserialize(:federationConfiguration, :list, MicrosoftGraph.Model.MicrosoftGraphInternalDomainFederation)
-     |> Deserializer.deserialize(:serviceConfigurationRecords, :list, MicrosoftGraph.Model.MicrosoftGraphDomainDnsRecord)
-     |> Deserializer.deserialize(:state, :struct, MicrosoftGraph.Model.DomainState)
-     |> Deserializer.deserialize(:verificationDnsRecords, :list, MicrosoftGraph.Model.MicrosoftGraphDomainDnsRecord)
+    |> Deserializer.deserialize(
+      :domainNameReferences,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDirectoryObject
+    )
+    |> Deserializer.deserialize(
+      :federationConfiguration,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphInternalDomainFederation
+    )
+    |> Deserializer.deserialize(
+      :serviceConfigurationRecords,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDomainDnsRecord
+    )
+    |> Deserializer.deserialize(:state, :struct, MicrosoftGraph.Model.DomainState)
+    |> Deserializer.deserialize(
+      :verificationDnsRecords,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDomainDnsRecord
+    )
   end
 end
-

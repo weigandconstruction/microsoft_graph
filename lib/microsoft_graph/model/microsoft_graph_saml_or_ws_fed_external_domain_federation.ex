@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSamlOrWsFedExternalDomainFederation do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -20,23 +20,31 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSamlOrWsFedExternalDomainFederation
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :displayName => String.t | nil,
-    :issuerUri => String.t | nil,
-    :metadataExchangeUri => String.t | nil,
-    :passiveSignInUri => String.t | nil,
-    :preferredAuthenticationProtocol => MicrosoftGraph.Model.SamlOrWsFedProviderPreferredAuthenticationProtocol.t | nil,
-    :signingCertificate => String.t | nil,
-    :domains => [MicrosoftGraph.Model.MicrosoftGraphExternalDomainName.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :displayName => String.t() | nil,
+          :issuerUri => String.t() | nil,
+          :metadataExchangeUri => String.t() | nil,
+          :passiveSignInUri => String.t() | nil,
+          :preferredAuthenticationProtocol =>
+            MicrosoftGraph.Model.SamlOrWsFedProviderPreferredAuthenticationProtocol.t() | nil,
+          :signingCertificate => String.t() | nil,
+          :domains => [MicrosoftGraph.Model.MicrosoftGraphExternalDomainName.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:preferredAuthenticationProtocol, :struct, MicrosoftGraph.Model.SamlOrWsFedProviderPreferredAuthenticationProtocol)
-     |> Deserializer.deserialize(:domains, :list, MicrosoftGraph.Model.MicrosoftGraphExternalDomainName)
+    |> Deserializer.deserialize(
+      :preferredAuthenticationProtocol,
+      :struct,
+      MicrosoftGraph.Model.SamlOrWsFedProviderPreferredAuthenticationProtocol
+    )
+    |> Deserializer.deserialize(
+      :domains,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphExternalDomainName
+    )
   end
 end
-

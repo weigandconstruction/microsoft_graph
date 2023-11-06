@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.Win32LobAppReturnCodesInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,19 @@ defmodule MicrosoftGraph.Model.Win32LobAppReturnCodesInner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :returnCode => integer() | nil,
-    :type => MicrosoftGraph.Model.MicrosoftGraphWin32LobAppReturnCodeType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :returnCode => integer() | nil,
+          :type => MicrosoftGraph.Model.MicrosoftGraphWin32LobAppReturnCodeType.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:type, :struct, MicrosoftGraph.Model.MicrosoftGraphWin32LobAppReturnCodeType)
+    |> Deserializer.deserialize(
+      :type,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphWin32LobAppReturnCodeType
+    )
   end
 end
-

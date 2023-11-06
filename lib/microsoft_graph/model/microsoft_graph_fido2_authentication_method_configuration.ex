@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphFido2AuthenticationMethodConfiguration do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,24 +19,42 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphFido2AuthenticationMethodConfigurat
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :excludeTargets => [MicrosoftGraph.Model.AuthenticationMethodConfigurationExcludeTargetsInner.t] | nil,
-    :state => MicrosoftGraph.Model.AuthenticationMethodConfigurationState.t | nil,
-    :includeTargets => [MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodTarget.t] | nil,
-    :isAttestationEnforced => boolean() | nil,
-    :isSelfServiceRegistrationAllowed => boolean() | nil,
-    :keyRestrictions => MicrosoftGraph.Model.Fido2AuthenticationMethodConfigurationKeyRestrictions.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :excludeTargets =>
+            [MicrosoftGraph.Model.AuthenticationMethodConfigurationExcludeTargetsInner.t()] | nil,
+          :state => MicrosoftGraph.Model.AuthenticationMethodConfigurationState.t() | nil,
+          :includeTargets =>
+            [MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodTarget.t()] | nil,
+          :isAttestationEnforced => boolean() | nil,
+          :isSelfServiceRegistrationAllowed => boolean() | nil,
+          :keyRestrictions =>
+            MicrosoftGraph.Model.Fido2AuthenticationMethodConfigurationKeyRestrictions.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:excludeTargets, :list, MicrosoftGraph.Model.AuthenticationMethodConfigurationExcludeTargetsInner)
-     |> Deserializer.deserialize(:state, :struct, MicrosoftGraph.Model.AuthenticationMethodConfigurationState)
-     |> Deserializer.deserialize(:includeTargets, :list, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodTarget)
-     |> Deserializer.deserialize(:keyRestrictions, :struct, MicrosoftGraph.Model.Fido2AuthenticationMethodConfigurationKeyRestrictions)
+    |> Deserializer.deserialize(
+      :excludeTargets,
+      :list,
+      MicrosoftGraph.Model.AuthenticationMethodConfigurationExcludeTargetsInner
+    )
+    |> Deserializer.deserialize(
+      :state,
+      :struct,
+      MicrosoftGraph.Model.AuthenticationMethodConfigurationState
+    )
+    |> Deserializer.deserialize(
+      :includeTargets,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodTarget
+    )
+    |> Deserializer.deserialize(
+      :keyRestrictions,
+      :struct,
+      MicrosoftGraph.Model.Fido2AuthenticationMethodConfigurationKeyRestrictions
+    )
   end
 end
-

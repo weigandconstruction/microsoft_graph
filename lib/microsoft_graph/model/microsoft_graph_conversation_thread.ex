@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphConversationThread do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -22,27 +22,34 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphConversationThread do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :ccRecipients => [MicrosoftGraph.Model.MicrosoftGraphRecipient.t] | nil,
-    :hasAttachments => boolean() | nil,
-    :isLocked => boolean() | nil,
-    :lastDeliveredDateTime => DateTime.t | nil,
-    :posts => [MicrosoftGraph.Model.MicrosoftGraphPost.t] | nil,
-    :preview => String.t | nil,
-    :toRecipients => [MicrosoftGraph.Model.MicrosoftGraphRecipient.t] | nil,
-    :topic => String.t | nil,
-    :uniqueSenders => [String.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :ccRecipients => [MicrosoftGraph.Model.MicrosoftGraphRecipient.t()] | nil,
+          :hasAttachments => boolean() | nil,
+          :isLocked => boolean() | nil,
+          :lastDeliveredDateTime => DateTime.t() | nil,
+          :posts => [MicrosoftGraph.Model.MicrosoftGraphPost.t()] | nil,
+          :preview => String.t() | nil,
+          :toRecipients => [MicrosoftGraph.Model.MicrosoftGraphRecipient.t()] | nil,
+          :topic => String.t() | nil,
+          :uniqueSenders => [String.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:ccRecipients, :list, MicrosoftGraph.Model.MicrosoftGraphRecipient)
-     |> Deserializer.deserialize(:lastDeliveredDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:posts, :list, MicrosoftGraph.Model.MicrosoftGraphPost)
-     |> Deserializer.deserialize(:toRecipients, :list, MicrosoftGraph.Model.MicrosoftGraphRecipient)
+    |> Deserializer.deserialize(
+      :ccRecipients,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphRecipient
+    )
+    |> Deserializer.deserialize(:lastDeliveredDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:posts, :list, MicrosoftGraph.Model.MicrosoftGraphPost)
+    |> Deserializer.deserialize(
+      :toRecipients,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphRecipient
+    )
   end
 end
-

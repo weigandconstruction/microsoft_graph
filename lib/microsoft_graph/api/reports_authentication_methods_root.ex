@@ -23,8 +23,19 @@ defmodule MicrosoftGraph.Api.ReportsAuthenticationMethodsRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserRegistrationDetails.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_authentication_methods_create_user_registration_details(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphUserRegistrationDetails.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUserRegistrationDetails.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def reports_authentication_methods_create_user_registration_details(connection, microsoft_graph_user_registration_details, _opts \\ []) do
+  @spec reports_authentication_methods_create_user_registration_details(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphUserRegistrationDetails.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUserRegistrationDetails.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def reports_authentication_methods_create_user_registration_details(
+        connection,
+        microsoft_graph_user_registration_details,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -56,8 +67,19 @@ defmodule MicrosoftGraph.Api.ReportsAuthenticationMethodsRoot do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_authentication_methods_delete_user_registration_details(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def reports_authentication_methods_delete_user_registration_details(connection, user_registration_details_id, opts \\ []) do
+  @spec reports_authentication_methods_delete_user_registration_details(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def reports_authentication_methods_delete_user_registration_details(
+        connection,
+        user_registration_details_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -65,7 +87,9 @@ defmodule MicrosoftGraph.Api.ReportsAuthenticationMethodsRoot do
     request =
       %{}
       |> method(:delete)
-      |> url("/reports/authenticationMethods/userRegistrationDetails/#{user_registration_details_id}")
+      |> url(
+        "/reports/authenticationMethods/userRegistrationDetails/#{user_registration_details_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -95,8 +119,19 @@ defmodule MicrosoftGraph.Api.ReportsAuthenticationMethodsRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserRegistrationDetails.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_authentication_methods_get_user_registration_details(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUserRegistrationDetails.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def reports_authentication_methods_get_user_registration_details(connection, user_registration_details_id, opts \\ []) do
+  @spec reports_authentication_methods_get_user_registration_details(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUserRegistrationDetails.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def reports_authentication_methods_get_user_registration_details(
+        connection,
+        user_registration_details_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -105,7 +140,9 @@ defmodule MicrosoftGraph.Api.ReportsAuthenticationMethodsRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/reports/authenticationMethods/userRegistrationDetails/#{user_registration_details_id}")
+      |> url(
+        "/reports/authenticationMethods/userRegistrationDetails/#{user_registration_details_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -140,7 +177,13 @@ defmodule MicrosoftGraph.Api.ReportsAuthenticationMethodsRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserRegistrationDetailsCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_authentication_methods_list_user_registration_details(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUserRegistrationDetailsCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec reports_authentication_methods_list_user_registration_details(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUserRegistrationDetailsCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def reports_authentication_methods_list_user_registration_details(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -184,12 +227,27 @@ defmodule MicrosoftGraph.Api.ReportsAuthenticationMethodsRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserRegistrationDetails.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_authentication_methods_update_user_registration_details(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphUserRegistrationDetails.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUserRegistrationDetails.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def reports_authentication_methods_update_user_registration_details(connection, user_registration_details_id, microsoft_graph_user_registration_details, _opts \\ []) do
+  @spec reports_authentication_methods_update_user_registration_details(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUserRegistrationDetails.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUserRegistrationDetails.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def reports_authentication_methods_update_user_registration_details(
+        connection,
+        user_registration_details_id,
+        microsoft_graph_user_registration_details,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/reports/authenticationMethods/userRegistrationDetails/#{user_registration_details_id}")
+      |> url(
+        "/reports/authenticationMethods/userRegistrationDetails/#{user_registration_details_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_user_registration_details)
       |> Enum.into([])
 
@@ -217,8 +275,17 @@ defmodule MicrosoftGraph.Api.ReportsAuthenticationMethodsRoot do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_authentication_methods_user_registration_details_get_count0ab7(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def reports_authentication_methods_user_registration_details_get_count0ab7(connection, opts \\ []) do
+  @spec reports_authentication_methods_user_registration_details_get_count0ab7(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def reports_authentication_methods_user_registration_details_get_count0ab7(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -254,7 +321,10 @@ defmodule MicrosoftGraph.Api.ReportsAuthenticationMethodsRoot do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_delete_authentication_methods(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec reports_delete_authentication_methods(Tesla.Env.client(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def reports_delete_authentication_methods(connection, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -292,7 +362,10 @@ defmodule MicrosoftGraph.Api.ReportsAuthenticationMethodsRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodsRoot.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_authentication_methods(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodsRoot.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec reports_get_authentication_methods(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodsRoot.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_authentication_methods(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -329,8 +402,19 @@ defmodule MicrosoftGraph.Api.ReportsAuthenticationMethodsRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodsRoot.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_update_authentication_methods(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodsRoot.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodsRoot.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def reports_update_authentication_methods(connection, microsoft_graph_authentication_methods_root, _opts \\ []) do
+  @spec reports_update_authentication_methods(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodsRoot.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodsRoot.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def reports_update_authentication_methods(
+        connection,
+        microsoft_graph_authentication_methods_root,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

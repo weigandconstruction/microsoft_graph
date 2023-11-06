@@ -23,7 +23,14 @@ defmodule MicrosoftGraph.Api.SecuritySecureScore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecureScore.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_create_secure_scores(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphSecureScore.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecureScore.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_create_secure_scores(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphSecureScore.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecureScore.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_create_secure_scores(connection, microsoft_graph_secure_score, _opts \\ []) do
     request =
       %{}
@@ -56,7 +63,10 @@ defmodule MicrosoftGraph.Api.SecuritySecureScore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_delete_secure_scores(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_delete_secure_scores(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_delete_secure_scores(connection, secure_score_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -95,7 +105,10 @@ defmodule MicrosoftGraph.Api.SecuritySecureScore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecureScore.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_get_secure_scores(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecureScore.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_get_secure_scores(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecureScore.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_get_secure_scores(connection, secure_score_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -140,7 +153,10 @@ defmodule MicrosoftGraph.Api.SecuritySecureScore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecureScoreCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_list_secure_scores(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecureScoreCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec security_list_secure_scores(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecureScoreCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def security_list_secure_scores(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -184,7 +200,10 @@ defmodule MicrosoftGraph.Api.SecuritySecureScore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_secure_scores_get_count_cb39(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_secure_scores_get_count_cb39(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_secure_scores_get_count_cb39(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -222,8 +241,21 @@ defmodule MicrosoftGraph.Api.SecuritySecureScore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecureScore.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_update_secure_scores(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphSecureScore.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecureScore.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_update_secure_scores(connection, secure_score_id, microsoft_graph_secure_score, _opts \\ []) do
+  @spec security_update_secure_scores(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSecureScore.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecureScore.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_update_secure_scores(
+        connection,
+        secure_score_id,
+        microsoft_graph_secure_score,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

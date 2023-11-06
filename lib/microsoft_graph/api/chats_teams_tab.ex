@@ -25,7 +25,15 @@ defmodule MicrosoftGraph.Api.ChatsTeamsTab do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec chats_create_tabs(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t} | {:error, Tesla.Env.t}
+  @spec chats_create_tabs(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t()}
+          | {:error, Tesla.Env.t()}
   def chats_create_tabs(connection, chat_id, microsoft_graph_teams_tab, _opts \\ []) do
     request =
       %{}
@@ -60,7 +68,10 @@ defmodule MicrosoftGraph.Api.ChatsTeamsTab do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec chats_delete_tabs(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec chats_delete_tabs(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def chats_delete_tabs(connection, chat_id, teams_tab_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -100,7 +111,10 @@ defmodule MicrosoftGraph.Api.ChatsTeamsTab do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec chats_get_tabs(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t} | {:error, Tesla.Env.t}
+  @spec chats_get_tabs(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t()}
+          | {:error, Tesla.Env.t()}
   def chats_get_tabs(connection, chat_id, teams_tab_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -146,7 +160,10 @@ defmodule MicrosoftGraph.Api.ChatsTeamsTab do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTabCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec chats_list_tabs(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTabCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec chats_list_tabs(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTabCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def chats_list_tabs(connection, chat_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -191,7 +208,10 @@ defmodule MicrosoftGraph.Api.ChatsTeamsTab do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec chats_tabs_get_count_b645(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec chats_tabs_get_count_b645(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def chats_tabs_get_count_b645(connection, chat_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -232,7 +252,10 @@ defmodule MicrosoftGraph.Api.ChatsTeamsTab do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsApp.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec chats_tabs_get_teams_app(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsApp.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec chats_tabs_get_teams_app(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsApp.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def chats_tabs_get_teams_app(connection, chat_id, teams_tab_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -272,7 +295,16 @@ defmodule MicrosoftGraph.Api.ChatsTeamsTab do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec chats_update_tabs(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t} | {:error, Tesla.Env.t}
+  @spec chats_update_tabs(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t()}
+          | {:error, Tesla.Env.t()}
   def chats_update_tabs(connection, chat_id, teams_tab_id, microsoft_graph_teams_tab, _opts \\ []) do
     request =
       %{}

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsSchema do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,17 +15,16 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsSchema do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :baseType => String.t | nil,
-    :properties => [MicrosoftGraph.Model.SchemaPropertiesInner.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :baseType => String.t() | nil,
+          :properties => [MicrosoftGraph.Model.SchemaPropertiesInner.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:properties, :list, MicrosoftGraph.Model.SchemaPropertiesInner)
+    |> Deserializer.deserialize(:properties, :list, MicrosoftGraph.Model.SchemaPropertiesInner)
   end
 end
-

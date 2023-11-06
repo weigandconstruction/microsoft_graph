@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphTeamworkApplicationIdentity do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,17 +15,21 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphTeamworkApplicationIdentity do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :displayName => String.t | nil,
-    :id => String.t | nil,
-    :applicationIdentityType => MicrosoftGraph.Model.TeamworkApplicationIdentityApplicationIdentityType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :displayName => String.t() | nil,
+          :id => String.t() | nil,
+          :applicationIdentityType =>
+            MicrosoftGraph.Model.TeamworkApplicationIdentityApplicationIdentityType.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:applicationIdentityType, :struct, MicrosoftGraph.Model.TeamworkApplicationIdentityApplicationIdentityType)
+    |> Deserializer.deserialize(
+      :applicationIdentityType,
+      :struct,
+      MicrosoftGraph.Model.TeamworkApplicationIdentityApplicationIdentityType
+    )
   end
 end
-

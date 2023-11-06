@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.ShiftPreferencesAvailabilityInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,18 +15,26 @@ defmodule MicrosoftGraph.Model.ShiftPreferencesAvailabilityInner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :recurrence => MicrosoftGraph.Model.MicrosoftGraphShiftAvailabilityRecurrence.t | nil,
-    :timeSlots => [MicrosoftGraph.Model.MicrosoftGraphShiftAvailabilityTimeSlotsInner.t] | nil,
-    :timeZone => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :recurrence => MicrosoftGraph.Model.MicrosoftGraphShiftAvailabilityRecurrence.t() | nil,
+          :timeSlots =>
+            [MicrosoftGraph.Model.MicrosoftGraphShiftAvailabilityTimeSlotsInner.t()] | nil,
+          :timeZone => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:recurrence, :struct, MicrosoftGraph.Model.MicrosoftGraphShiftAvailabilityRecurrence)
-     |> Deserializer.deserialize(:timeSlots, :list, MicrosoftGraph.Model.MicrosoftGraphShiftAvailabilityTimeSlotsInner)
+    |> Deserializer.deserialize(
+      :recurrence,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphShiftAvailabilityRecurrence
+    )
+    |> Deserializer.deserialize(
+      :timeSlots,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphShiftAvailabilityTimeSlotsInner
+    )
   end
 end
-

@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.PrivilegedAccessScheduleRequestTicketInfo do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :ticketNumber => String.t | nil,
-    :ticketSystem => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :ticketNumber => String.t() | nil,
+          :ticketSystem => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.CollectionOfOAuth2PermissionGrant do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,20 @@ defmodule MicrosoftGraph.Model.CollectionOfOAuth2PermissionGrant do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.deltaLink" => String.t | nil,
-    :"@odata.nextLink" => String.t | nil,
-    :value => [MicrosoftGraph.Model.CollectionOfOAuth2PermissionGrantAllOfValueInner.t] | nil
-  }
+          :"@odata.deltaLink" => String.t() | nil,
+          :"@odata.nextLink" => String.t() | nil,
+          :value =>
+            [MicrosoftGraph.Model.CollectionOfOAuth2PermissionGrantAllOfValueInner.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:value, :list, MicrosoftGraph.Model.CollectionOfOAuth2PermissionGrantAllOfValueInner)
+    |> Deserializer.deserialize(
+      :value,
+      :list,
+      MicrosoftGraph.Model.CollectionOfOAuth2PermissionGrantAllOfValueInner
+    )
   end
 end
-

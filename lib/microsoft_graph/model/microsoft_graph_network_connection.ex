@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphNetworkConnection do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -32,37 +32,48 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphNetworkConnection do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :applicationName => String.t | nil,
-    :destinationAddress => String.t | nil,
-    :destinationDomain => String.t | nil,
-    :destinationLocation => String.t | nil,
-    :destinationPort => String.t | nil,
-    :destinationUrl => String.t | nil,
-    :direction => MicrosoftGraph.Model.MicrosoftGraphNetworkConnectionDirection.t | nil,
-    :domainRegisteredDateTime => DateTime.t | nil,
-    :localDnsName => String.t | nil,
-    :natDestinationAddress => String.t | nil,
-    :natDestinationPort => String.t | nil,
-    :natSourceAddress => String.t | nil,
-    :natSourcePort => String.t | nil,
-    :protocol => MicrosoftGraph.Model.MicrosoftGraphNetworkConnectionProtocol.t | nil,
-    :riskScore => String.t | nil,
-    :sourceAddress => String.t | nil,
-    :sourceLocation => String.t | nil,
-    :sourcePort => String.t | nil,
-    :status => MicrosoftGraph.Model.MicrosoftGraphNetworkConnectionStatus.t | nil,
-    :urlParameters => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :applicationName => String.t() | nil,
+          :destinationAddress => String.t() | nil,
+          :destinationDomain => String.t() | nil,
+          :destinationLocation => String.t() | nil,
+          :destinationPort => String.t() | nil,
+          :destinationUrl => String.t() | nil,
+          :direction => MicrosoftGraph.Model.MicrosoftGraphNetworkConnectionDirection.t() | nil,
+          :domainRegisteredDateTime => DateTime.t() | nil,
+          :localDnsName => String.t() | nil,
+          :natDestinationAddress => String.t() | nil,
+          :natDestinationPort => String.t() | nil,
+          :natSourceAddress => String.t() | nil,
+          :natSourcePort => String.t() | nil,
+          :protocol => MicrosoftGraph.Model.MicrosoftGraphNetworkConnectionProtocol.t() | nil,
+          :riskScore => String.t() | nil,
+          :sourceAddress => String.t() | nil,
+          :sourceLocation => String.t() | nil,
+          :sourcePort => String.t() | nil,
+          :status => MicrosoftGraph.Model.MicrosoftGraphNetworkConnectionStatus.t() | nil,
+          :urlParameters => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:direction, :struct, MicrosoftGraph.Model.MicrosoftGraphNetworkConnectionDirection)
-     |> Deserializer.deserialize(:domainRegisteredDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:protocol, :struct, MicrosoftGraph.Model.MicrosoftGraphNetworkConnectionProtocol)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.MicrosoftGraphNetworkConnectionStatus)
+    |> Deserializer.deserialize(
+      :direction,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphNetworkConnectionDirection
+    )
+    |> Deserializer.deserialize(:domainRegisteredDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :protocol,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphNetworkConnectionProtocol
+    )
+    |> Deserializer.deserialize(
+      :status,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphNetworkConnectionStatus
+    )
   end
 end
-

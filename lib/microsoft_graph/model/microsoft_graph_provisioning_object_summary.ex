@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphProvisioningObjectSummary do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -29,41 +29,87 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphProvisioningObjectSummary do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :activityDateTime => DateTime.t | nil,
-    :changeId => String.t | nil,
-    :cycleId => String.t | nil,
-    :durationInMilliseconds => integer() | nil,
-    :initiatedBy => MicrosoftGraph.Model.ProvisioningObjectSummaryInitiatedBy.t | nil,
-    :jobId => String.t | nil,
-    :modifiedProperties => [MicrosoftGraph.Model.ProvisioningObjectSummaryModifiedPropertiesInner.t] | nil,
-    :provisioningAction => MicrosoftGraph.Model.ProvisioningObjectSummaryProvisioningAction.t | nil,
-    :provisioningStatusInfo => MicrosoftGraph.Model.ProvisioningObjectSummaryProvisioningStatusInfo.t | nil,
-    :provisioningSteps => [MicrosoftGraph.Model.ProvisioningObjectSummaryProvisioningStepsInner.t] | nil,
-    :servicePrincipal => MicrosoftGraph.Model.ProvisioningObjectSummaryServicePrincipal.t | nil,
-    :sourceIdentity => MicrosoftGraph.Model.ProvisioningObjectSummarySourceIdentity.t | nil,
-    :sourceSystem => MicrosoftGraph.Model.ProvisioningObjectSummarySourceSystem.t | nil,
-    :targetIdentity => MicrosoftGraph.Model.ProvisioningObjectSummaryTargetIdentity.t | nil,
-    :targetSystem => MicrosoftGraph.Model.ProvisioningObjectSummaryTargetSystem.t | nil,
-    :tenantId => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :activityDateTime => DateTime.t() | nil,
+          :changeId => String.t() | nil,
+          :cycleId => String.t() | nil,
+          :durationInMilliseconds => integer() | nil,
+          :initiatedBy => MicrosoftGraph.Model.ProvisioningObjectSummaryInitiatedBy.t() | nil,
+          :jobId => String.t() | nil,
+          :modifiedProperties =>
+            [MicrosoftGraph.Model.ProvisioningObjectSummaryModifiedPropertiesInner.t()] | nil,
+          :provisioningAction =>
+            MicrosoftGraph.Model.ProvisioningObjectSummaryProvisioningAction.t() | nil,
+          :provisioningStatusInfo =>
+            MicrosoftGraph.Model.ProvisioningObjectSummaryProvisioningStatusInfo.t() | nil,
+          :provisioningSteps =>
+            [MicrosoftGraph.Model.ProvisioningObjectSummaryProvisioningStepsInner.t()] | nil,
+          :servicePrincipal =>
+            MicrosoftGraph.Model.ProvisioningObjectSummaryServicePrincipal.t() | nil,
+          :sourceIdentity =>
+            MicrosoftGraph.Model.ProvisioningObjectSummarySourceIdentity.t() | nil,
+          :sourceSystem => MicrosoftGraph.Model.ProvisioningObjectSummarySourceSystem.t() | nil,
+          :targetIdentity =>
+            MicrosoftGraph.Model.ProvisioningObjectSummaryTargetIdentity.t() | nil,
+          :targetSystem => MicrosoftGraph.Model.ProvisioningObjectSummaryTargetSystem.t() | nil,
+          :tenantId => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:activityDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:initiatedBy, :struct, MicrosoftGraph.Model.ProvisioningObjectSummaryInitiatedBy)
-     |> Deserializer.deserialize(:modifiedProperties, :list, MicrosoftGraph.Model.ProvisioningObjectSummaryModifiedPropertiesInner)
-     |> Deserializer.deserialize(:provisioningAction, :struct, MicrosoftGraph.Model.ProvisioningObjectSummaryProvisioningAction)
-     |> Deserializer.deserialize(:provisioningStatusInfo, :struct, MicrosoftGraph.Model.ProvisioningObjectSummaryProvisioningStatusInfo)
-     |> Deserializer.deserialize(:provisioningSteps, :list, MicrosoftGraph.Model.ProvisioningObjectSummaryProvisioningStepsInner)
-     |> Deserializer.deserialize(:servicePrincipal, :struct, MicrosoftGraph.Model.ProvisioningObjectSummaryServicePrincipal)
-     |> Deserializer.deserialize(:sourceIdentity, :struct, MicrosoftGraph.Model.ProvisioningObjectSummarySourceIdentity)
-     |> Deserializer.deserialize(:sourceSystem, :struct, MicrosoftGraph.Model.ProvisioningObjectSummarySourceSystem)
-     |> Deserializer.deserialize(:targetIdentity, :struct, MicrosoftGraph.Model.ProvisioningObjectSummaryTargetIdentity)
-     |> Deserializer.deserialize(:targetSystem, :struct, MicrosoftGraph.Model.ProvisioningObjectSummaryTargetSystem)
+    |> Deserializer.deserialize(:activityDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :initiatedBy,
+      :struct,
+      MicrosoftGraph.Model.ProvisioningObjectSummaryInitiatedBy
+    )
+    |> Deserializer.deserialize(
+      :modifiedProperties,
+      :list,
+      MicrosoftGraph.Model.ProvisioningObjectSummaryModifiedPropertiesInner
+    )
+    |> Deserializer.deserialize(
+      :provisioningAction,
+      :struct,
+      MicrosoftGraph.Model.ProvisioningObjectSummaryProvisioningAction
+    )
+    |> Deserializer.deserialize(
+      :provisioningStatusInfo,
+      :struct,
+      MicrosoftGraph.Model.ProvisioningObjectSummaryProvisioningStatusInfo
+    )
+    |> Deserializer.deserialize(
+      :provisioningSteps,
+      :list,
+      MicrosoftGraph.Model.ProvisioningObjectSummaryProvisioningStepsInner
+    )
+    |> Deserializer.deserialize(
+      :servicePrincipal,
+      :struct,
+      MicrosoftGraph.Model.ProvisioningObjectSummaryServicePrincipal
+    )
+    |> Deserializer.deserialize(
+      :sourceIdentity,
+      :struct,
+      MicrosoftGraph.Model.ProvisioningObjectSummarySourceIdentity
+    )
+    |> Deserializer.deserialize(
+      :sourceSystem,
+      :struct,
+      MicrosoftGraph.Model.ProvisioningObjectSummarySourceSystem
+    )
+    |> Deserializer.deserialize(
+      :targetIdentity,
+      :struct,
+      MicrosoftGraph.Model.ProvisioningObjectSummaryTargetIdentity
+    )
+    |> Deserializer.deserialize(
+      :targetSystem,
+      :struct,
+      MicrosoftGraph.Model.ProvisioningObjectSummaryTargetSystem
+    )
   end
 end
-

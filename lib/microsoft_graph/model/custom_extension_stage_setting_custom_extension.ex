@@ -18,22 +18,36 @@ defmodule MicrosoftGraph.Model.CustomExtensionStageSettingCustomExtension do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :authenticationConfiguration => MicrosoftGraph.Model.CustomCalloutExtensionAuthenticationConfiguration.t | nil,
-    :clientConfiguration => MicrosoftGraph.Model.CustomCalloutExtensionClientConfiguration.t | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :endpointConfiguration => MicrosoftGraph.Model.CustomCalloutExtensionEndpointConfiguration.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :authenticationConfiguration =>
+            MicrosoftGraph.Model.CustomCalloutExtensionAuthenticationConfiguration.t() | nil,
+          :clientConfiguration =>
+            MicrosoftGraph.Model.CustomCalloutExtensionClientConfiguration.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :endpointConfiguration =>
+            MicrosoftGraph.Model.CustomCalloutExtensionEndpointConfiguration.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:authenticationConfiguration, :struct, MicrosoftGraph.Model.CustomCalloutExtensionAuthenticationConfiguration)
-     |> Deserializer.deserialize(:clientConfiguration, :struct, MicrosoftGraph.Model.CustomCalloutExtensionClientConfiguration)
-     |> Deserializer.deserialize(:endpointConfiguration, :struct, MicrosoftGraph.Model.CustomCalloutExtensionEndpointConfiguration)
+    |> Deserializer.deserialize(
+      :authenticationConfiguration,
+      :struct,
+      MicrosoftGraph.Model.CustomCalloutExtensionAuthenticationConfiguration
+    )
+    |> Deserializer.deserialize(
+      :clientConfiguration,
+      :struct,
+      MicrosoftGraph.Model.CustomCalloutExtensionClientConfiguration
+    )
+    |> Deserializer.deserialize(
+      :endpointConfiguration,
+      :struct,
+      MicrosoftGraph.Model.CustomCalloutExtensionEndpointConfiguration
+    )
   end
 end
-

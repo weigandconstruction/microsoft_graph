@@ -25,19 +25,38 @@ defmodule MicrosoftGraph.Api.IdentityActions do
   - `{:ok, MicrosoftGraph.Model.IdentityB2xUserFlowsB2xIdentityUserFlowApiConnectorConfigurationPostFederationSignupUploadClientCertificate2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_api_connectors_identity_api_connector_upload_client_certificate(Tesla.Env.client, String.t, MicrosoftGraph.Model.IdentityB2xUserFlowsB2xIdentityUserFlowApiConnectorConfigurationPostFederationSignupUploadClientCertificateRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.IdentityB2xUserFlowsB2xIdentityUserFlowApiConnectorConfigurationPostFederationSignupUploadClientCertificate2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_api_connectors_identity_api_connector_upload_client_certificate(connection, identity_api_connector_id, identity_b2x_user_flows_b2x_identity_user_flow_api_connector_configuration_post_federation_signup_upload_client_certificate_request, _opts \\ []) do
+  @spec identity_api_connectors_identity_api_connector_upload_client_certificate(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.IdentityB2xUserFlowsB2xIdentityUserFlowApiConnectorConfigurationPostFederationSignupUploadClientCertificateRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.IdentityB2xUserFlowsB2xIdentityUserFlowApiConnectorConfigurationPostFederationSignupUploadClientCertificate2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_api_connectors_identity_api_connector_upload_client_certificate(
+        connection,
+        identity_api_connector_id,
+        identity_b2x_user_flows_b2x_identity_user_flow_api_connector_configuration_post_federation_signup_upload_client_certificate_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/identity/apiConnectors/#{identity_api_connector_id}/uploadClientCertificate")
-      |> add_param(:body, :body, identity_b2x_user_flows_b2x_identity_user_flow_api_connector_configuration_post_federation_signup_upload_client_certificate_request)
+      |> add_param(
+        :body,
+        :body,
+        identity_b2x_user_flows_b2x_identity_user_flow_api_connector_configuration_post_federation_signup_upload_client_certificate_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.IdentityB2xUserFlowsB2xIdentityUserFlowApiConnectorConfigurationPostFederationSignupUploadClientCertificate2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.IdentityB2xUserFlowsB2xIdentityUserFlowApiConnectorConfigurationPostFederationSignupUploadClientCertificate2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -59,19 +78,40 @@ defmodule MicrosoftGraph.Api.IdentityActions do
   - `{:ok, MicrosoftGraph.Model.IdentityB2xUserFlowsB2xIdentityUserFlowApiConnectorConfigurationPostFederationSignupUploadClientCertificate2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_b2x_identity_user_flow_api_connector_configuration_post_attribute_collection_upload_client_certificate(Tesla.Env.client, String.t, MicrosoftGraph.Model.IdentityB2xUserFlowsB2xIdentityUserFlowApiConnectorConfigurationPostFederationSignupUploadClientCertificateRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.IdentityB2xUserFlowsB2xIdentityUserFlowApiConnectorConfigurationPostFederationSignupUploadClientCertificate2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_b2x_identity_user_flow_api_connector_configuration_post_attribute_collection_upload_client_certificate(connection, b2x_identity_user_flow_id, identity_b2x_user_flows_b2x_identity_user_flow_api_connector_configuration_post_federation_signup_upload_client_certificate_request, _opts \\ []) do
+  @spec identity_b2x_user_flows_b2x_identity_user_flow_api_connector_configuration_post_attribute_collection_upload_client_certificate(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.IdentityB2xUserFlowsB2xIdentityUserFlowApiConnectorConfigurationPostFederationSignupUploadClientCertificateRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.IdentityB2xUserFlowsB2xIdentityUserFlowApiConnectorConfigurationPostFederationSignupUploadClientCertificate2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_b2x_identity_user_flow_api_connector_configuration_post_attribute_collection_upload_client_certificate(
+        connection,
+        b2x_identity_user_flow_id,
+        identity_b2x_user_flows_b2x_identity_user_flow_api_connector_configuration_post_federation_signup_upload_client_certificate_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/apiConnectorConfiguration/postAttributeCollection/uploadClientCertificate")
-      |> add_param(:body, :body, identity_b2x_user_flows_b2x_identity_user_flow_api_connector_configuration_post_federation_signup_upload_client_certificate_request)
+      |> url(
+        "/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/apiConnectorConfiguration/postAttributeCollection/uploadClientCertificate"
+      )
+      |> add_param(
+        :body,
+        :body,
+        identity_b2x_user_flows_b2x_identity_user_flow_api_connector_configuration_post_federation_signup_upload_client_certificate_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.IdentityB2xUserFlowsB2xIdentityUserFlowApiConnectorConfigurationPostFederationSignupUploadClientCertificate2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.IdentityB2xUserFlowsB2xIdentityUserFlowApiConnectorConfigurationPostFederationSignupUploadClientCertificate2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -93,19 +133,40 @@ defmodule MicrosoftGraph.Api.IdentityActions do
   - `{:ok, MicrosoftGraph.Model.IdentityB2xUserFlowsB2xIdentityUserFlowApiConnectorConfigurationPostFederationSignupUploadClientCertificate2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_b2x_identity_user_flow_api_connector_configuration_post_federation_signup_upload_client_certificate(Tesla.Env.client, String.t, MicrosoftGraph.Model.IdentityB2xUserFlowsB2xIdentityUserFlowApiConnectorConfigurationPostFederationSignupUploadClientCertificateRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.IdentityB2xUserFlowsB2xIdentityUserFlowApiConnectorConfigurationPostFederationSignupUploadClientCertificate2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_b2x_identity_user_flow_api_connector_configuration_post_federation_signup_upload_client_certificate(connection, b2x_identity_user_flow_id, identity_b2x_user_flows_b2x_identity_user_flow_api_connector_configuration_post_federation_signup_upload_client_certificate_request, _opts \\ []) do
+  @spec identity_b2x_user_flows_b2x_identity_user_flow_api_connector_configuration_post_federation_signup_upload_client_certificate(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.IdentityB2xUserFlowsB2xIdentityUserFlowApiConnectorConfigurationPostFederationSignupUploadClientCertificateRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.IdentityB2xUserFlowsB2xIdentityUserFlowApiConnectorConfigurationPostFederationSignupUploadClientCertificate2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_b2x_identity_user_flow_api_connector_configuration_post_federation_signup_upload_client_certificate(
+        connection,
+        b2x_identity_user_flow_id,
+        identity_b2x_user_flows_b2x_identity_user_flow_api_connector_configuration_post_federation_signup_upload_client_certificate_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/apiConnectorConfiguration/postFederationSignup/uploadClientCertificate")
-      |> add_param(:body, :body, identity_b2x_user_flows_b2x_identity_user_flow_api_connector_configuration_post_federation_signup_upload_client_certificate_request)
+      |> url(
+        "/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/apiConnectorConfiguration/postFederationSignup/uploadClientCertificate"
+      )
+      |> add_param(
+        :body,
+        :body,
+        identity_b2x_user_flows_b2x_identity_user_flow_api_connector_configuration_post_federation_signup_upload_client_certificate_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.IdentityB2xUserFlowsB2xIdentityUserFlowApiConnectorConfigurationPostFederationSignupUploadClientCertificate2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.IdentityB2xUserFlowsB2xIdentityUserFlowApiConnectorConfigurationPostFederationSignupUploadClientCertificate2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -127,13 +188,32 @@ defmodule MicrosoftGraph.Api.IdentityActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_b2x_identity_user_flow_user_attribute_assignments_set_order(Tesla.Env.client, String.t, MicrosoftGraph.Model.IdentityB2xUserFlowsB2xIdentityUserFlowUserAttributeAssignmentsSetOrderRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_b2x_identity_user_flow_user_attribute_assignments_set_order(connection, b2x_identity_user_flow_id, identity_b2x_user_flows_b2x_identity_user_flow_user_attribute_assignments_set_order_request, _opts \\ []) do
+  @spec identity_b2x_user_flows_b2x_identity_user_flow_user_attribute_assignments_set_order(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.IdentityB2xUserFlowsB2xIdentityUserFlowUserAttributeAssignmentsSetOrderRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_b2x_identity_user_flow_user_attribute_assignments_set_order(
+        connection,
+        b2x_identity_user_flow_id,
+        identity_b2x_user_flows_b2x_identity_user_flow_user_attribute_assignments_set_order_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/userAttributeAssignments/setOrder")
-      |> add_param(:body, :body, identity_b2x_user_flows_b2x_identity_user_flow_user_attribute_assignments_set_order_request)
+      |> url(
+        "/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/userAttributeAssignments/setOrder"
+      )
+      |> add_param(
+        :body,
+        :body,
+        identity_b2x_user_flows_b2x_identity_user_flow_user_attribute_assignments_set_order_request
+      )
       |> Enum.into([])
 
     connection
@@ -161,19 +241,40 @@ defmodule MicrosoftGraph.Api.IdentityActions do
   - `{:ok, MicrosoftGraph.Model.IdentityConditionalAccessAuthenticationStrengthPoliciesAuthenticationStrengthPolicyUpdateAllowedCombinations2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_conditional_access_authentication_strength_policies_authentication_strength_policy_update_allowed_combinations(Tesla.Env.client, String.t, MicrosoftGraph.Model.IdentityConditionalAccessAuthenticationStrengthPoliciesAuthenticationStrengthPolicyUpdateAllowedCombinationsRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.IdentityConditionalAccessAuthenticationStrengthPoliciesAuthenticationStrengthPolicyUpdateAllowedCombinations2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_conditional_access_authentication_strength_policies_authentication_strength_policy_update_allowed_combinations(connection, authentication_strength_policy_id, identity_conditional_access_authentication_strength_policies_authentication_strength_policy_update_allowed_combinations_request, _opts \\ []) do
+  @spec identity_conditional_access_authentication_strength_policies_authentication_strength_policy_update_allowed_combinations(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.IdentityConditionalAccessAuthenticationStrengthPoliciesAuthenticationStrengthPolicyUpdateAllowedCombinationsRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.IdentityConditionalAccessAuthenticationStrengthPoliciesAuthenticationStrengthPolicyUpdateAllowedCombinations2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_conditional_access_authentication_strength_policies_authentication_strength_policy_update_allowed_combinations(
+        connection,
+        authentication_strength_policy_id,
+        identity_conditional_access_authentication_strength_policies_authentication_strength_policy_update_allowed_combinations_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identity/conditionalAccess/authenticationStrength/policies/#{authentication_strength_policy_id}/updateAllowedCombinations")
-      |> add_param(:body, :body, identity_conditional_access_authentication_strength_policies_authentication_strength_policy_update_allowed_combinations_request)
+      |> url(
+        "/identity/conditionalAccess/authenticationStrength/policies/#{authentication_strength_policy_id}/updateAllowedCombinations"
+      )
+      |> add_param(
+        :body,
+        :body,
+        identity_conditional_access_authentication_strength_policies_authentication_strength_policy_update_allowed_combinations_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.IdentityConditionalAccessAuthenticationStrengthPoliciesAuthenticationStrengthPolicyUpdateAllowedCombinations2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.IdentityConditionalAccessAuthenticationStrengthPoliciesAuthenticationStrengthPolicyUpdateAllowedCombinations2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])

@@ -25,34 +25,49 @@ defmodule MicrosoftGraph.Model.OnenotePageParentSection do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :self => String.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :createdBy => MicrosoftGraph.Model.OnenoteEntityHierarchyModelCreatedBy.t | nil,
-    :displayName => String.t | nil,
-    :lastModifiedBy => MicrosoftGraph.Model.OnenoteEntityHierarchyModelCreatedBy.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :isDefault => boolean() | nil,
-    :links => MicrosoftGraph.Model.OnenoteSectionLinks.t | nil,
-    :pages => [MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t] | nil,
-    :pagesUrl => String.t | nil,
-    :parentNotebook => MicrosoftGraph.Model.OnenoteSectionParentNotebook.t | nil,
-    :parentSectionGroup => MicrosoftGraph.Model.OnenoteSectionParentSectionGroup.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :self => String.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :createdBy => MicrosoftGraph.Model.OnenoteEntityHierarchyModelCreatedBy.t() | nil,
+          :displayName => String.t() | nil,
+          :lastModifiedBy => MicrosoftGraph.Model.OnenoteEntityHierarchyModelCreatedBy.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :isDefault => boolean() | nil,
+          :links => MicrosoftGraph.Model.OnenoteSectionLinks.t() | nil,
+          :pages => [MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t()] | nil,
+          :pagesUrl => String.t() | nil,
+          :parentNotebook => MicrosoftGraph.Model.OnenoteSectionParentNotebook.t() | nil,
+          :parentSectionGroup => MicrosoftGraph.Model.OnenoteSectionParentSectionGroup.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.OnenoteEntityHierarchyModelCreatedBy)
-     |> Deserializer.deserialize(:lastModifiedBy, :struct, MicrosoftGraph.Model.OnenoteEntityHierarchyModelCreatedBy)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:links, :struct, MicrosoftGraph.Model.OnenoteSectionLinks)
-     |> Deserializer.deserialize(:pages, :list, MicrosoftGraph.Model.MicrosoftGraphOnenotePage)
-     |> Deserializer.deserialize(:parentNotebook, :struct, MicrosoftGraph.Model.OnenoteSectionParentNotebook)
-     |> Deserializer.deserialize(:parentSectionGroup, :struct, MicrosoftGraph.Model.OnenoteSectionParentSectionGroup)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :createdBy,
+      :struct,
+      MicrosoftGraph.Model.OnenoteEntityHierarchyModelCreatedBy
+    )
+    |> Deserializer.deserialize(
+      :lastModifiedBy,
+      :struct,
+      MicrosoftGraph.Model.OnenoteEntityHierarchyModelCreatedBy
+    )
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:links, :struct, MicrosoftGraph.Model.OnenoteSectionLinks)
+    |> Deserializer.deserialize(:pages, :list, MicrosoftGraph.Model.MicrosoftGraphOnenotePage)
+    |> Deserializer.deserialize(
+      :parentNotebook,
+      :struct,
+      MicrosoftGraph.Model.OnenoteSectionParentNotebook
+    )
+    |> Deserializer.deserialize(
+      :parentSectionGroup,
+      :struct,
+      MicrosoftGraph.Model.OnenoteSectionParentSectionGroup
+    )
   end
 end
-

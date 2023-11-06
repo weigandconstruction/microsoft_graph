@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphRoleDefinition do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,21 +18,32 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphRoleDefinition do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :isBuiltIn => boolean() | nil,
-    :roleAssignments => [MicrosoftGraph.Model.MicrosoftGraphRoleAssignment.t] | nil,
-    :rolePermissions => [MicrosoftGraph.Model.DeviceManagementGetEffectivePermissions2XxResponseAllOfValueInner.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :isBuiltIn => boolean() | nil,
+          :roleAssignments => [MicrosoftGraph.Model.MicrosoftGraphRoleAssignment.t()] | nil,
+          :rolePermissions =>
+            [
+              MicrosoftGraph.Model.DeviceManagementGetEffectivePermissions2XxResponseAllOfValueInner.t()
+            ]
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:roleAssignments, :list, MicrosoftGraph.Model.MicrosoftGraphRoleAssignment)
-     |> Deserializer.deserialize(:rolePermissions, :list, MicrosoftGraph.Model.DeviceManagementGetEffectivePermissions2XxResponseAllOfValueInner)
+    |> Deserializer.deserialize(
+      :roleAssignments,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphRoleAssignment
+    )
+    |> Deserializer.deserialize(
+      :rolePermissions,
+      :list,
+      MicrosoftGraph.Model.DeviceManagementGetEffectivePermissions2XxResponseAllOfValueInner
+    )
   end
 end
-

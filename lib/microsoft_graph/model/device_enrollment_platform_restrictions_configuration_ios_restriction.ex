@@ -16,15 +16,14 @@ defmodule MicrosoftGraph.Model.DeviceEnrollmentPlatformRestrictionsConfiguration
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :osMaximumVersion => String.t | nil,
-    :osMinimumVersion => String.t | nil,
-    :personalDeviceEnrollmentBlocked => boolean() | nil,
-    :platformBlocked => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :osMaximumVersion => String.t() | nil,
+          :osMinimumVersion => String.t() | nil,
+          :personalDeviceEnrollmentBlocked => boolean() | nil,
+          :platformBlocked => boolean() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

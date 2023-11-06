@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.ManagedDeviceDeviceCategory do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

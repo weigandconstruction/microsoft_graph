@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSectionLinks do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,17 +14,25 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSectionLinks do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :oneNoteClientUrl => MicrosoftGraph.Model.MicrosoftGraphSectionLinksOneNoteClientUrl.t | nil,
-    :oneNoteWebUrl => MicrosoftGraph.Model.MicrosoftGraphSectionLinksOneNoteWebUrl.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :oneNoteClientUrl =>
+            MicrosoftGraph.Model.MicrosoftGraphSectionLinksOneNoteClientUrl.t() | nil,
+          :oneNoteWebUrl => MicrosoftGraph.Model.MicrosoftGraphSectionLinksOneNoteWebUrl.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:oneNoteClientUrl, :struct, MicrosoftGraph.Model.MicrosoftGraphSectionLinksOneNoteClientUrl)
-     |> Deserializer.deserialize(:oneNoteWebUrl, :struct, MicrosoftGraph.Model.MicrosoftGraphSectionLinksOneNoteWebUrl)
+    |> Deserializer.deserialize(
+      :oneNoteClientUrl,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSectionLinksOneNoteClientUrl
+    )
+    |> Deserializer.deserialize(
+      :oneNoteWebUrl,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSectionLinksOneNoteWebUrl
+    )
   end
 end
-

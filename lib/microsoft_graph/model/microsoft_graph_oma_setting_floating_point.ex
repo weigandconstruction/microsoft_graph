@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphOmaSettingFloatingPoint do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,18 +16,21 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphOmaSettingFloatingPoint do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :omaUri => String.t | nil,
-    :value => MicrosoftGraph.Model.OmaSettingFloatingPointValue.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :omaUri => String.t() | nil,
+          :value => MicrosoftGraph.Model.OmaSettingFloatingPointValue.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:value, :struct, MicrosoftGraph.Model.OmaSettingFloatingPointValue)
+    |> Deserializer.deserialize(
+      :value,
+      :struct,
+      MicrosoftGraph.Model.OmaSettingFloatingPointValue
+    )
   end
 end
-

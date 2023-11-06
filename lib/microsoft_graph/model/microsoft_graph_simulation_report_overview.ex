@@ -16,20 +16,39 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSimulationReportOverview do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :recommendedActions => [MicrosoftGraph.Model.MicrosoftGraphSimulationReportOverviewRecommendedActionsInner.t] | nil,
-    :resolvedTargetsCount => integer() | nil,
-    :simulationEventsContent => MicrosoftGraph.Model.MicrosoftGraphSimulationReportOverviewSimulationEventsContent.t | nil,
-    :trainingEventsContent => MicrosoftGraph.Model.MicrosoftGraphSimulationReportOverviewTrainingEventsContent.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :recommendedActions =>
+            [
+              MicrosoftGraph.Model.MicrosoftGraphSimulationReportOverviewRecommendedActionsInner.t()
+            ]
+            | nil,
+          :resolvedTargetsCount => integer() | nil,
+          :simulationEventsContent =>
+            MicrosoftGraph.Model.MicrosoftGraphSimulationReportOverviewSimulationEventsContent.t()
+            | nil,
+          :trainingEventsContent =>
+            MicrosoftGraph.Model.MicrosoftGraphSimulationReportOverviewTrainingEventsContent.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:recommendedActions, :list, MicrosoftGraph.Model.MicrosoftGraphSimulationReportOverviewRecommendedActionsInner)
-     |> Deserializer.deserialize(:simulationEventsContent, :struct, MicrosoftGraph.Model.MicrosoftGraphSimulationReportOverviewSimulationEventsContent)
-     |> Deserializer.deserialize(:trainingEventsContent, :struct, MicrosoftGraph.Model.MicrosoftGraphSimulationReportOverviewTrainingEventsContent)
+    |> Deserializer.deserialize(
+      :recommendedActions,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSimulationReportOverviewRecommendedActionsInner
+    )
+    |> Deserializer.deserialize(
+      :simulationEventsContent,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSimulationReportOverviewSimulationEventsContent
+    )
+    |> Deserializer.deserialize(
+      :trainingEventsContent,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSimulationReportOverviewTrainingEventsContent
+    )
   end
 end
-

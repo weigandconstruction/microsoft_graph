@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.CollectionOfDirectoryObject1 do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,19 @@ defmodule MicrosoftGraph.Model.CollectionOfDirectoryObject1 do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.deltaLink" => String.t | nil,
-    :"@odata.nextLink" => String.t | nil,
-    :value => [MicrosoftGraph.Model.OrganizationOrganizationRestore2XxResponse.t] | nil
-  }
+          :"@odata.deltaLink" => String.t() | nil,
+          :"@odata.nextLink" => String.t() | nil,
+          :value => [MicrosoftGraph.Model.OrganizationOrganizationRestore2XxResponse.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:value, :list, MicrosoftGraph.Model.OrganizationOrganizationRestore2XxResponse)
+    |> Deserializer.deserialize(
+      :value,
+      :list,
+      MicrosoftGraph.Model.OrganizationOrganizationRestore2XxResponse
+    )
   end
 end
-

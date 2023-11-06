@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphRiskyUser do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -22,28 +22,31 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphRiskyUser do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :history => [MicrosoftGraph.Model.MicrosoftGraphRiskyUserHistoryItem.t] | nil,
-    :isDeleted => boolean() | nil,
-    :isProcessing => boolean() | nil,
-    :riskDetail => MicrosoftGraph.Model.RiskyUserRiskDetail.t | nil,
-    :riskLastUpdatedDateTime => DateTime.t | nil,
-    :riskLevel => MicrosoftGraph.Model.RiskyUserRiskLevel.t | nil,
-    :riskState => MicrosoftGraph.Model.RiskyUserRiskState.t | nil,
-    :userDisplayName => String.t | nil,
-    :userPrincipalName => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :history => [MicrosoftGraph.Model.MicrosoftGraphRiskyUserHistoryItem.t()] | nil,
+          :isDeleted => boolean() | nil,
+          :isProcessing => boolean() | nil,
+          :riskDetail => MicrosoftGraph.Model.RiskyUserRiskDetail.t() | nil,
+          :riskLastUpdatedDateTime => DateTime.t() | nil,
+          :riskLevel => MicrosoftGraph.Model.RiskyUserRiskLevel.t() | nil,
+          :riskState => MicrosoftGraph.Model.RiskyUserRiskState.t() | nil,
+          :userDisplayName => String.t() | nil,
+          :userPrincipalName => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:history, :list, MicrosoftGraph.Model.MicrosoftGraphRiskyUserHistoryItem)
-     |> Deserializer.deserialize(:riskDetail, :struct, MicrosoftGraph.Model.RiskyUserRiskDetail)
-     |> Deserializer.deserialize(:riskLastUpdatedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:riskLevel, :struct, MicrosoftGraph.Model.RiskyUserRiskLevel)
-     |> Deserializer.deserialize(:riskState, :struct, MicrosoftGraph.Model.RiskyUserRiskState)
+    |> Deserializer.deserialize(
+      :history,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphRiskyUserHistoryItem
+    )
+    |> Deserializer.deserialize(:riskDetail, :struct, MicrosoftGraph.Model.RiskyUserRiskDetail)
+    |> Deserializer.deserialize(:riskLastUpdatedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:riskLevel, :struct, MicrosoftGraph.Model.RiskyUserRiskLevel)
+    |> Deserializer.deserialize(:riskState, :struct, MicrosoftGraph.Model.RiskyUserRiskState)
   end
 end
-

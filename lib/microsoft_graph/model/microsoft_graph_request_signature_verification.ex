@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphRequestSignatureVerification do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,21 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphRequestSignatureVerification do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :allowedWeakAlgorithms => MicrosoftGraph.Model.MicrosoftGraphRequestSignatureVerificationAllowedWeakAlgorithms.t | nil,
-    :isSignedRequestRequired => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :allowedWeakAlgorithms =>
+            MicrosoftGraph.Model.MicrosoftGraphRequestSignatureVerificationAllowedWeakAlgorithms.t()
+            | nil,
+          :isSignedRequestRequired => boolean() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:allowedWeakAlgorithms, :struct, MicrosoftGraph.Model.MicrosoftGraphRequestSignatureVerificationAllowedWeakAlgorithms)
+    |> Deserializer.deserialize(
+      :allowedWeakAlgorithms,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphRequestSignatureVerificationAllowedWeakAlgorithms
+    )
   end
 end
-

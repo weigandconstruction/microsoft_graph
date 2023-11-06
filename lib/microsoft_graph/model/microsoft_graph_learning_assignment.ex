@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphLearningAssignment do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -25,32 +25,43 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphLearningAssignment do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :completedDateTime => DateTime.t | nil,
-    :completionPercentage => integer() | nil,
-    :externalcourseActivityId => String.t | nil,
-    :learnerUserId => String.t | nil,
-    :learningContentId => String.t | nil,
-    :learningProviderId => String.t | nil,
-    :status => MicrosoftGraph.Model.LearningCourseActivityStatus.t | nil,
-    :assignedDateTime => DateTime.t | nil,
-    :assignerUserId => String.t | nil,
-    :assignmentType => MicrosoftGraph.Model.MicrosoftGraphAssignmentType.t | nil,
-    :dueDateTime => MicrosoftGraph.Model.LearningAssignmentDueDateTime.t | nil,
-    :notes => MicrosoftGraph.Model.LearningAssignmentNotes.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :completedDateTime => DateTime.t() | nil,
+          :completionPercentage => integer() | nil,
+          :externalcourseActivityId => String.t() | nil,
+          :learnerUserId => String.t() | nil,
+          :learningContentId => String.t() | nil,
+          :learningProviderId => String.t() | nil,
+          :status => MicrosoftGraph.Model.LearningCourseActivityStatus.t() | nil,
+          :assignedDateTime => DateTime.t() | nil,
+          :assignerUserId => String.t() | nil,
+          :assignmentType => MicrosoftGraph.Model.MicrosoftGraphAssignmentType.t() | nil,
+          :dueDateTime => MicrosoftGraph.Model.LearningAssignmentDueDateTime.t() | nil,
+          :notes => MicrosoftGraph.Model.LearningAssignmentNotes.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:completedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.LearningCourseActivityStatus)
-     |> Deserializer.deserialize(:assignedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:assignmentType, :struct, MicrosoftGraph.Model.MicrosoftGraphAssignmentType)
-     |> Deserializer.deserialize(:dueDateTime, :struct, MicrosoftGraph.Model.LearningAssignmentDueDateTime)
-     |> Deserializer.deserialize(:notes, :struct, MicrosoftGraph.Model.LearningAssignmentNotes)
+    |> Deserializer.deserialize(:completedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :status,
+      :struct,
+      MicrosoftGraph.Model.LearningCourseActivityStatus
+    )
+    |> Deserializer.deserialize(:assignedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :assignmentType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAssignmentType
+    )
+    |> Deserializer.deserialize(
+      :dueDateTime,
+      :struct,
+      MicrosoftGraph.Model.LearningAssignmentDueDateTime
+    )
+    |> Deserializer.deserialize(:notes, :struct, MicrosoftGraph.Model.LearningAssignmentNotes)
   end
 end
-

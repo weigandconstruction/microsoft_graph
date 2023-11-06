@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphInsightValueDouble do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,15 +13,14 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphInsightValueDouble do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :value => MicrosoftGraph.Model.InsightValueDoubleValue.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :value => MicrosoftGraph.Model.InsightValueDoubleValue.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:value, :struct, MicrosoftGraph.Model.InsightValueDoubleValue)
+    |> Deserializer.deserialize(:value, :struct, MicrosoftGraph.Model.InsightValueDoubleValue)
   end
 end
-

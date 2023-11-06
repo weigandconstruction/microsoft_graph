@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphMacOsLobChildApp do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :buildNumber => String.t | nil,
-    :bundleId => String.t | nil,
-    :versionNumber => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :buildNumber => String.t() | nil,
+          :bundleId => String.t() | nil,
+          :versionNumber => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

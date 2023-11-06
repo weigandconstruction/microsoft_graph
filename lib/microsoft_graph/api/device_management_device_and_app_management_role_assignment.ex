@@ -24,8 +24,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceAndAppManagementRoleAssignmen
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceAndAppManagementRoleAssignment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_create_role_assignments(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphDeviceAndAppManagementRoleAssignment.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceAndAppManagementRoleAssignment.t} | {:error, Tesla.Env.t}
-  def device_management_create_role_assignments(connection, microsoft_graph_device_and_app_management_role_assignment, _opts \\ []) do
+  @spec device_management_create_role_assignments(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphDeviceAndAppManagementRoleAssignment.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceAndAppManagementRoleAssignment.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_create_role_assignments(
+        connection,
+        microsoft_graph_device_and_app_management_role_assignment,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -58,8 +69,15 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceAndAppManagementRoleAssignmen
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_delete_role_assignments(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_delete_role_assignments(connection, device_and_app_management_role_assignment_id, opts \\ []) do
+  @spec device_management_delete_role_assignments(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_delete_role_assignments(
+        connection,
+        device_and_app_management_role_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -97,8 +115,15 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceAndAppManagementRoleAssignmen
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceAndAppManagementRoleAssignment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_get_role_assignments(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceAndAppManagementRoleAssignment.t} | {:error, Tesla.Env.t}
-  def device_management_get_role_assignments(connection, device_and_app_management_role_assignment_id, opts \\ []) do
+  @spec device_management_get_role_assignments(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceAndAppManagementRoleAssignment.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_get_role_assignments(
+        connection,
+        device_and_app_management_role_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -142,7 +167,11 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceAndAppManagementRoleAssignmen
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceAndAppManagementRoleAssignmentCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_list_role_assignments(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceAndAppManagementRoleAssignmentCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec device_management_list_role_assignments(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphDeviceAndAppManagementRoleAssignmentCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def device_management_list_role_assignments(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -165,7 +194,8 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceAndAppManagementRoleAssignmen
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphDeviceAndAppManagementRoleAssignmentCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphDeviceAndAppManagementRoleAssignmentCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -186,7 +216,10 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceAndAppManagementRoleAssignmen
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_role_assignments_get_count13e6(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec device_management_role_assignments_get_count13e6(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def device_management_role_assignments_get_count13e6(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -226,8 +259,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceAndAppManagementRoleAssignmen
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphRoleDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_role_assignments_get_role_definition(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphRoleDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_role_assignments_get_role_definition(connection, device_and_app_management_role_assignment_id, opts \\ []) do
+  @spec device_management_role_assignments_get_role_definition(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphRoleDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_role_assignments_get_role_definition(
+        connection,
+        device_and_app_management_role_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -236,7 +280,9 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceAndAppManagementRoleAssignmen
     request =
       %{}
       |> method(:get)
-      |> url("/deviceManagement/roleAssignments/#{device_and_app_management_role_assignment_id}/roleDefinition")
+      |> url(
+        "/deviceManagement/roleAssignments/#{device_and_app_management_role_assignment_id}/roleDefinition"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -265,8 +311,21 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceAndAppManagementRoleAssignmen
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceAndAppManagementRoleAssignment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_update_role_assignments(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphDeviceAndAppManagementRoleAssignment.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceAndAppManagementRoleAssignment.t} | {:error, Tesla.Env.t}
-  def device_management_update_role_assignments(connection, device_and_app_management_role_assignment_id, microsoft_graph_device_and_app_management_role_assignment, _opts \\ []) do
+  @spec device_management_update_role_assignments(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDeviceAndAppManagementRoleAssignment.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceAndAppManagementRoleAssignment.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_update_role_assignments(
+        connection,
+        device_and_app_management_role_assignment_id,
+        microsoft_graph_device_and_app_management_role_assignment,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

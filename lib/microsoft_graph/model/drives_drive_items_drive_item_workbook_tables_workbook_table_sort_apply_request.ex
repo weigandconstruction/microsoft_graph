@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookTablesWorkbookTableSortApplyRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,23 @@ defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookTablesWorkbookTa
   ]
 
   @type t :: %__MODULE__{
-    :fields => [MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookTablesWorkbookTableSortApplyRequestFieldsInner.t] | nil,
-    :matchCase => boolean() | nil,
-    :method => String.t | nil
-  }
+          :fields =>
+            [
+              MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookTablesWorkbookTableSortApplyRequestFieldsInner.t()
+            ]
+            | nil,
+          :matchCase => boolean() | nil,
+          :method => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:fields, :list, MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookTablesWorkbookTableSortApplyRequestFieldsInner)
+    |> Deserializer.deserialize(
+      :fields,
+      :list,
+      MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookTablesWorkbookTableSortApplyRequestFieldsInner
+    )
   end
 end
-

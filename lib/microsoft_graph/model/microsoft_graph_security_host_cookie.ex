@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityHostCookie do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,22 +18,21 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityHostCookie do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :domain => String.t | nil,
-    :firstSeenDateTime => DateTime.t | nil,
-    :host => MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t | nil,
-    :lastSeenDateTime => DateTime.t | nil,
-    :name => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :domain => String.t() | nil,
+          :firstSeenDateTime => DateTime.t() | nil,
+          :host => MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t() | nil,
+          :lastSeenDateTime => DateTime.t() | nil,
+          :name => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:firstSeenDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:host, :struct, MicrosoftGraph.Model.MicrosoftGraphSecurityHost)
-     |> Deserializer.deserialize(:lastSeenDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:firstSeenDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:host, :struct, MicrosoftGraph.Model.MicrosoftGraphSecurityHost)
+    |> Deserializer.deserialize(:lastSeenDateTime, :datetime, nil)
   end
 end
-

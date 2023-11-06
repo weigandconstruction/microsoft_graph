@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookWorksheetsWorkbookWorksheetChartsWorkbookChartTitleFormatFillSetSolidColorRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,11 +12,10 @@ defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookWorksheetsWorkbo
   ]
 
   @type t :: %__MODULE__{
-    :color => String.t | nil
-  }
+          :color => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

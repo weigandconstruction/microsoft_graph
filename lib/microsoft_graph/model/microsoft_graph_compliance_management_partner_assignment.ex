@@ -13,15 +13,20 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphComplianceManagementPartnerAssignme
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :target => MicrosoftGraph.Model.MicrosoftGraphComplianceManagementPartnerAssignmentTarget.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :target =>
+            MicrosoftGraph.Model.MicrosoftGraphComplianceManagementPartnerAssignmentTarget.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:target, :struct, MicrosoftGraph.Model.MicrosoftGraphComplianceManagementPartnerAssignmentTarget)
+    |> Deserializer.deserialize(
+      :target,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphComplianceManagementPartnerAssignmentTarget
+    )
   end
 end
-

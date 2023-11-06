@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.SharePointIdentitySetSiteGroup do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :displayName => String.t | nil,
-    :id => String.t | nil,
-    :loginName => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :displayName => String.t() | nil,
+          :id => String.t() | nil,
+          :loginName => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

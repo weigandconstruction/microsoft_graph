@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphTeamworkTagMember do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,15 +16,14 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphTeamworkTagMember do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :displayName => String.t | nil,
-    :tenantId => String.t | nil,
-    :userId => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :displayName => String.t() | nil,
+          :tenantId => String.t() | nil,
+          :userId => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

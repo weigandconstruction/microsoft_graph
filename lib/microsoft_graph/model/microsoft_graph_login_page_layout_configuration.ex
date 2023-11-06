@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphLoginPageLayoutConfiguration do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,17 +15,22 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphLoginPageLayoutConfiguration do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :isFooterShown => boolean() | nil,
-    :isHeaderShown => boolean() | nil,
-    :layoutTemplateType => MicrosoftGraph.Model.MicrosoftGraphLoginPageLayoutConfigurationLayoutTemplateType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :isFooterShown => boolean() | nil,
+          :isHeaderShown => boolean() | nil,
+          :layoutTemplateType =>
+            MicrosoftGraph.Model.MicrosoftGraphLoginPageLayoutConfigurationLayoutTemplateType.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:layoutTemplateType, :struct, MicrosoftGraph.Model.MicrosoftGraphLoginPageLayoutConfigurationLayoutTemplateType)
+    |> Deserializer.deserialize(
+      :layoutTemplateType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphLoginPageLayoutConfigurationLayoutTemplateType
+    )
   end
 end
-

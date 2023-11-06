@@ -21,23 +21,27 @@ defmodule MicrosoftGraph.Model.SslCertificateSubject do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :address => MicrosoftGraph.Model.MicrosoftGraphSecuritySslCertificateEntityAddress.t | nil,
-    :alternateNames => [String.t] | nil,
-    :commonName => String.t | nil,
-    :email => String.t | nil,
-    :givenName => String.t | nil,
-    :organizationName => String.t | nil,
-    :organizationUnitName => String.t | nil,
-    :serialNumber => String.t | nil,
-    :surname => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :address =>
+            MicrosoftGraph.Model.MicrosoftGraphSecuritySslCertificateEntityAddress.t() | nil,
+          :alternateNames => [String.t()] | nil,
+          :commonName => String.t() | nil,
+          :email => String.t() | nil,
+          :givenName => String.t() | nil,
+          :organizationName => String.t() | nil,
+          :organizationUnitName => String.t() | nil,
+          :serialNumber => String.t() | nil,
+          :surname => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:address, :struct, MicrosoftGraph.Model.MicrosoftGraphSecuritySslCertificateEntityAddress)
+    |> Deserializer.deserialize(
+      :address,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSecuritySslCertificateEntityAddress
+    )
   end
 end
-

@@ -20,19 +20,18 @@ defmodule MicrosoftGraph.Model.AuditEventActor do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :applicationDisplayName => String.t | nil,
-    :applicationId => String.t | nil,
-    :auditActorType => String.t | nil,
-    :ipAddress => String.t | nil,
-    :servicePrincipalName => String.t | nil,
-    :userId => String.t | nil,
-    :userPermissions => [String.t] | nil,
-    :userPrincipalName => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :applicationDisplayName => String.t() | nil,
+          :applicationId => String.t() | nil,
+          :auditActorType => String.t() | nil,
+          :ipAddress => String.t() | nil,
+          :servicePrincipalName => String.t() | nil,
+          :userId => String.t() | nil,
+          :userPermissions => [String.t()] | nil,
+          :userPrincipalName => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

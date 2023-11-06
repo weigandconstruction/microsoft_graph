@@ -24,13 +24,28 @@ defmodule MicrosoftGraph.Api.ContactsActions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfExtensionProperty.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec contacts_get_available_extension_properties(Tesla.Env.client, MicrosoftGraph.Model.DirectoryDeletedItemsGetAvailableExtensionPropertiesRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfExtensionProperty.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def contacts_get_available_extension_properties(connection, directory_deleted_items_get_available_extension_properties_request, _opts \\ []) do
+  @spec contacts_get_available_extension_properties(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.DirectoryDeletedItemsGetAvailableExtensionPropertiesRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfExtensionProperty.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def contacts_get_available_extension_properties(
+        connection,
+        directory_deleted_items_get_available_extension_properties_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/contacts/getAvailableExtensionProperties")
-      |> add_param(:body, :body, directory_deleted_items_get_available_extension_properties_request)
+      |> add_param(
+        :body,
+        :body,
+        directory_deleted_items_get_available_extension_properties_request
+      )
       |> Enum.into([])
 
     connection
@@ -57,7 +72,14 @@ defmodule MicrosoftGraph.Api.ContactsActions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec contacts_get_by_ids(Tesla.Env.client, MicrosoftGraph.Model.ContactsGetByIdsRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.CollectionOfDirectoryObject.t} | {:error, Tesla.Env.t}
+  @spec contacts_get_by_ids(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.ContactsGetByIdsRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.CollectionOfDirectoryObject.t()}
+          | {:error, Tesla.Env.t()}
   def contacts_get_by_ids(connection, contacts_get_by_ids_request, _opts \\ []) do
     request =
       %{}
@@ -91,8 +113,21 @@ defmodule MicrosoftGraph.Api.ContactsActions do
   - `{:ok, MicrosoftGraph.Model.ContractsContractCheckMemberGroups2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec contacts_org_contact_check_member_groups(Tesla.Env.client, String.t, MicrosoftGraph.Model.ContractsContractCheckMemberGroupsRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.ContractsContractCheckMemberGroups2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def contacts_org_contact_check_member_groups(connection, org_contact_id, contracts_contract_check_member_groups_request, _opts \\ []) do
+  @spec contacts_org_contact_check_member_groups(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.ContractsContractCheckMemberGroupsRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.ContractsContractCheckMemberGroups2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def contacts_org_contact_check_member_groups(
+        connection,
+        org_contact_id,
+        contracts_contract_check_member_groups_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -124,13 +159,30 @@ defmodule MicrosoftGraph.Api.ContactsActions do
   - `{:ok, MicrosoftGraph.Model.ContractsContractCheckMemberGroups2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec contacts_org_contact_check_member_objects(Tesla.Env.client, String.t, MicrosoftGraph.Model.DirectoryRoleTemplatesDirectoryRoleTemplateCheckMemberObjectsRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.ContractsContractCheckMemberGroups2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def contacts_org_contact_check_member_objects(connection, org_contact_id, directory_role_templates_directory_role_template_check_member_objects_request, _opts \\ []) do
+  @spec contacts_org_contact_check_member_objects(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.DirectoryRoleTemplatesDirectoryRoleTemplateCheckMemberObjectsRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.ContractsContractCheckMemberGroups2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def contacts_org_contact_check_member_objects(
+        connection,
+        org_contact_id,
+        directory_role_templates_directory_role_template_check_member_objects_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/contacts/#{org_contact_id}/checkMemberObjects")
-      |> add_param(:body, :body, directory_role_templates_directory_role_template_check_member_objects_request)
+      |> add_param(
+        :body,
+        :body,
+        directory_role_templates_directory_role_template_check_member_objects_request
+      )
       |> Enum.into([])
 
     connection
@@ -158,8 +210,21 @@ defmodule MicrosoftGraph.Api.ContactsActions do
   - `{:ok, MicrosoftGraph.Model.ContractsContractCheckMemberGroups2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec contacts_org_contact_get_member_groups(Tesla.Env.client, String.t, MicrosoftGraph.Model.ContactsOrgContactGetMemberGroupsRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.ContractsContractCheckMemberGroups2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def contacts_org_contact_get_member_groups(connection, org_contact_id, contacts_org_contact_get_member_groups_request, _opts \\ []) do
+  @spec contacts_org_contact_get_member_groups(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.ContactsOrgContactGetMemberGroupsRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.ContractsContractCheckMemberGroups2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def contacts_org_contact_get_member_groups(
+        connection,
+        org_contact_id,
+        contacts_org_contact_get_member_groups_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -192,8 +257,21 @@ defmodule MicrosoftGraph.Api.ContactsActions do
   - `{:ok, MicrosoftGraph.Model.ContractsContractCheckMemberGroups2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec contacts_org_contact_get_member_objects(Tesla.Env.client, String.t, MicrosoftGraph.Model.ContactsOrgContactGetMemberGroupsRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.ContractsContractCheckMemberGroups2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def contacts_org_contact_get_member_objects(connection, org_contact_id, contacts_org_contact_get_member_groups_request, _opts \\ []) do
+  @spec contacts_org_contact_get_member_objects(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.ContactsOrgContactGetMemberGroupsRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.ContractsContractCheckMemberGroups2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def contacts_org_contact_get_member_objects(
+        connection,
+        org_contact_id,
+        contacts_org_contact_get_member_groups_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -225,7 +303,10 @@ defmodule MicrosoftGraph.Api.ContactsActions do
   - `{:ok, MicrosoftGraph.Model.OrganizationOrganizationRestore2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec contacts_org_contact_restore(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.OrganizationOrganizationRestore2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec contacts_org_contact_restore(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.OrganizationOrganizationRestore2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def contacts_org_contact_restore(connection, org_contact_id, _opts \\ []) do
     request =
       %{}
@@ -257,7 +338,10 @@ defmodule MicrosoftGraph.Api.ContactsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec contacts_org_contact_retry_service_provisioning(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec contacts_org_contact_retry_service_provisioning(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def contacts_org_contact_retry_service_provisioning(connection, org_contact_id, _opts \\ []) do
     request =
       %{}
@@ -290,7 +374,14 @@ defmodule MicrosoftGraph.Api.ContactsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec contacts_validate_properties(Tesla.Env.client, MicrosoftGraph.Model.ContactsValidatePropertiesRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec contacts_validate_properties(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.ContactsValidatePropertiesRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def contacts_validate_properties(connection, contacts_validate_properties_request, _opts \\ []) do
     request =
       %{}

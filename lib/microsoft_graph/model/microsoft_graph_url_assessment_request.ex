@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphUrlAssessmentRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -22,31 +22,59 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphUrlAssessmentRequest do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :category => MicrosoftGraph.Model.MicrosoftGraphThreatCategory.t | nil,
-    :contentType => MicrosoftGraph.Model.ThreatAssessmentRequestContentType.t | nil,
-    :createdBy => MicrosoftGraph.Model.ThreatAssessmentRequestCreatedBy.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :expectedAssessment => MicrosoftGraph.Model.MicrosoftGraphThreatExpectedAssessment.t | nil,
-    :requestSource => MicrosoftGraph.Model.ThreatAssessmentRequestRequestSource.t | nil,
-    :results => [MicrosoftGraph.Model.MicrosoftGraphThreatAssessmentResult.t] | nil,
-    :status => MicrosoftGraph.Model.ThreatAssessmentRequestStatus.t | nil,
-    :url => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :category => MicrosoftGraph.Model.MicrosoftGraphThreatCategory.t() | nil,
+          :contentType => MicrosoftGraph.Model.ThreatAssessmentRequestContentType.t() | nil,
+          :createdBy => MicrosoftGraph.Model.ThreatAssessmentRequestCreatedBy.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :expectedAssessment =>
+            MicrosoftGraph.Model.MicrosoftGraphThreatExpectedAssessment.t() | nil,
+          :requestSource => MicrosoftGraph.Model.ThreatAssessmentRequestRequestSource.t() | nil,
+          :results => [MicrosoftGraph.Model.MicrosoftGraphThreatAssessmentResult.t()] | nil,
+          :status => MicrosoftGraph.Model.ThreatAssessmentRequestStatus.t() | nil,
+          :url => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:category, :struct, MicrosoftGraph.Model.MicrosoftGraphThreatCategory)
-     |> Deserializer.deserialize(:contentType, :struct, MicrosoftGraph.Model.ThreatAssessmentRequestContentType)
-     |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.ThreatAssessmentRequestCreatedBy)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:expectedAssessment, :struct, MicrosoftGraph.Model.MicrosoftGraphThreatExpectedAssessment)
-     |> Deserializer.deserialize(:requestSource, :struct, MicrosoftGraph.Model.ThreatAssessmentRequestRequestSource)
-     |> Deserializer.deserialize(:results, :list, MicrosoftGraph.Model.MicrosoftGraphThreatAssessmentResult)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.ThreatAssessmentRequestStatus)
+    |> Deserializer.deserialize(
+      :category,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphThreatCategory
+    )
+    |> Deserializer.deserialize(
+      :contentType,
+      :struct,
+      MicrosoftGraph.Model.ThreatAssessmentRequestContentType
+    )
+    |> Deserializer.deserialize(
+      :createdBy,
+      :struct,
+      MicrosoftGraph.Model.ThreatAssessmentRequestCreatedBy
+    )
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :expectedAssessment,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphThreatExpectedAssessment
+    )
+    |> Deserializer.deserialize(
+      :requestSource,
+      :struct,
+      MicrosoftGraph.Model.ThreatAssessmentRequestRequestSource
+    )
+    |> Deserializer.deserialize(
+      :results,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphThreatAssessmentResult
+    )
+    |> Deserializer.deserialize(
+      :status,
+      :struct,
+      MicrosoftGraph.Model.ThreatAssessmentRequestStatus
+    )
   end
 end
-

@@ -24,7 +24,10 @@ defmodule MicrosoftGraph.Api.PrintPrint do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrint.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_print_get_print(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrint.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec print_print_get_print(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPrint.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def print_print_get_print(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -61,7 +64,14 @@ defmodule MicrosoftGraph.Api.PrintPrint do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrint.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_print_update_print(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphPrint.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrint.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec print_print_update_print(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphPrint.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPrint.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def print_print_update_print(connection, microsoft_graph_print, _opts \\ []) do
     request =
       %{}

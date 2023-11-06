@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphThumbnailSet do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,22 +17,21 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphThumbnailSet do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :large => MicrosoftGraph.Model.ThumbnailSetLarge.t | nil,
-    :medium => MicrosoftGraph.Model.ThumbnailSetMedium.t | nil,
-    :small => MicrosoftGraph.Model.ThumbnailSetSmall.t | nil,
-    :source => MicrosoftGraph.Model.ThumbnailSetSource.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :large => MicrosoftGraph.Model.ThumbnailSetLarge.t() | nil,
+          :medium => MicrosoftGraph.Model.ThumbnailSetMedium.t() | nil,
+          :small => MicrosoftGraph.Model.ThumbnailSetSmall.t() | nil,
+          :source => MicrosoftGraph.Model.ThumbnailSetSource.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:large, :struct, MicrosoftGraph.Model.ThumbnailSetLarge)
-     |> Deserializer.deserialize(:medium, :struct, MicrosoftGraph.Model.ThumbnailSetMedium)
-     |> Deserializer.deserialize(:small, :struct, MicrosoftGraph.Model.ThumbnailSetSmall)
-     |> Deserializer.deserialize(:source, :struct, MicrosoftGraph.Model.ThumbnailSetSource)
+    |> Deserializer.deserialize(:large, :struct, MicrosoftGraph.Model.ThumbnailSetLarge)
+    |> Deserializer.deserialize(:medium, :struct, MicrosoftGraph.Model.ThumbnailSetMedium)
+    |> Deserializer.deserialize(:small, :struct, MicrosoftGraph.Model.ThumbnailSetSmall)
+    |> Deserializer.deserialize(:source, :struct, MicrosoftGraph.Model.ThumbnailSetSource)
   end
 end
-

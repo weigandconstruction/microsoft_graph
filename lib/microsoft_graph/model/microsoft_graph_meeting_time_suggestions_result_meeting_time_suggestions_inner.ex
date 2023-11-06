@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphMeetingTimeSuggestionsResultMeetingTimeSuggestionsInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,25 +19,52 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphMeetingTimeSuggestionsResultMeeting
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :attendeeAvailability => [MicrosoftGraph.Model.MicrosoftGraphMeetingTimeSuggestionAttendeeAvailabilityInner.t] | nil,
-    :confidence => MicrosoftGraph.Model.MicrosoftGraphMeetingTimeSuggestionConfidence.t | nil,
-    :locations => [MicrosoftGraph.Model.PersonPostalAddressesInner.t] | nil,
-    :meetingTimeSlot => MicrosoftGraph.Model.MicrosoftGraphMeetingTimeSuggestionMeetingTimeSlot.t | nil,
-    :order => integer() | nil,
-    :organizerAvailability => MicrosoftGraph.Model.MicrosoftGraphMeetingTimeSuggestionOrganizerAvailability.t | nil,
-    :suggestionReason => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :attendeeAvailability =>
+            [
+              MicrosoftGraph.Model.MicrosoftGraphMeetingTimeSuggestionAttendeeAvailabilityInner.t()
+            ]
+            | nil,
+          :confidence =>
+            MicrosoftGraph.Model.MicrosoftGraphMeetingTimeSuggestionConfidence.t() | nil,
+          :locations => [MicrosoftGraph.Model.PersonPostalAddressesInner.t()] | nil,
+          :meetingTimeSlot =>
+            MicrosoftGraph.Model.MicrosoftGraphMeetingTimeSuggestionMeetingTimeSlot.t() | nil,
+          :order => integer() | nil,
+          :organizerAvailability =>
+            MicrosoftGraph.Model.MicrosoftGraphMeetingTimeSuggestionOrganizerAvailability.t()
+            | nil,
+          :suggestionReason => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:attendeeAvailability, :list, MicrosoftGraph.Model.MicrosoftGraphMeetingTimeSuggestionAttendeeAvailabilityInner)
-     |> Deserializer.deserialize(:confidence, :struct, MicrosoftGraph.Model.MicrosoftGraphMeetingTimeSuggestionConfidence)
-     |> Deserializer.deserialize(:locations, :list, MicrosoftGraph.Model.PersonPostalAddressesInner)
-     |> Deserializer.deserialize(:meetingTimeSlot, :struct, MicrosoftGraph.Model.MicrosoftGraphMeetingTimeSuggestionMeetingTimeSlot)
-     |> Deserializer.deserialize(:organizerAvailability, :struct, MicrosoftGraph.Model.MicrosoftGraphMeetingTimeSuggestionOrganizerAvailability)
+    |> Deserializer.deserialize(
+      :attendeeAvailability,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphMeetingTimeSuggestionAttendeeAvailabilityInner
+    )
+    |> Deserializer.deserialize(
+      :confidence,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphMeetingTimeSuggestionConfidence
+    )
+    |> Deserializer.deserialize(
+      :locations,
+      :list,
+      MicrosoftGraph.Model.PersonPostalAddressesInner
+    )
+    |> Deserializer.deserialize(
+      :meetingTimeSlot,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphMeetingTimeSuggestionMeetingTimeSlot
+    )
+    |> Deserializer.deserialize(
+      :organizerAvailability,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphMeetingTimeSuggestionOrganizerAvailability
+    )
   end
 end
-

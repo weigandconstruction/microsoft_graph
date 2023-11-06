@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.SignInStatus do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :additionalDetails => String.t | nil,
-    :errorCode => integer() | nil,
-    :failureReason => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :additionalDetails => String.t() | nil,
+          :errorCode => integer() | nil,
+          :failureReason => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

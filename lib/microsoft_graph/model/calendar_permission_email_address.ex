@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.CalendarPermissionEmailAddress do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :address => String.t | nil,
-    :name => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :address => String.t() | nil,
+          :name => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

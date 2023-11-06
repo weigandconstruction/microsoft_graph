@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.UsersUserChatsChatInstalledAppsTeamsAppInstallationUpgradeRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,14 +12,19 @@ defmodule MicrosoftGraph.Model.UsersUserChatsChatInstalledAppsTeamsAppInstallati
   ]
 
   @type t :: %__MODULE__{
-    :consentedPermissionSet => MicrosoftGraph.Model.UsersUserChatsChatInstalledAppsTeamsAppInstallationUpgradeRequestConsentedPermissionSet.t | nil
-  }
+          :consentedPermissionSet =>
+            MicrosoftGraph.Model.UsersUserChatsChatInstalledAppsTeamsAppInstallationUpgradeRequestConsentedPermissionSet.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:consentedPermissionSet, :struct, MicrosoftGraph.Model.UsersUserChatsChatInstalledAppsTeamsAppInstallationUpgradeRequestConsentedPermissionSet)
+    |> Deserializer.deserialize(
+      :consentedPermissionSet,
+      :struct,
+      MicrosoftGraph.Model.UsersUserChatsChatInstalledAppsTeamsAppInstallationUpgradeRequestConsentedPermissionSet
+    )
   end
 end
-

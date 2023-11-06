@@ -24,7 +24,10 @@ defmodule MicrosoftGraph.Api.SearchSearchEntity do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSearchEntity.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec search_search_entity_get_search_entity(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSearchEntity.t} | {:error, Tesla.Env.t}
+  @spec search_search_entity_get_search_entity(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSearchEntity.t()}
+          | {:error, Tesla.Env.t()}
   def search_search_entity_get_search_entity(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -61,8 +64,19 @@ defmodule MicrosoftGraph.Api.SearchSearchEntity do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSearchEntity.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec search_search_entity_update_search_entity(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphSearchEntity.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSearchEntity.t} | {:error, Tesla.Env.t}
-  def search_search_entity_update_search_entity(connection, microsoft_graph_search_entity, _opts \\ []) do
+  @spec search_search_entity_update_search_entity(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphSearchEntity.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSearchEntity.t()}
+          | {:error, Tesla.Env.t()}
+  def search_search_entity_update_search_entity(
+        connection,
+        microsoft_graph_search_entity,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

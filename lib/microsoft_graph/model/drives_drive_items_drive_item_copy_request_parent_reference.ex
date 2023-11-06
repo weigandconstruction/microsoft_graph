@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemCopyRequestParentReference do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -20,22 +20,26 @@ defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemCopyRequestParentReferen
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :driveId => String.t | nil,
-    :driveType => String.t | nil,
-    :id => String.t | nil,
-    :name => String.t | nil,
-    :path => String.t | nil,
-    :shareId => String.t | nil,
-    :sharepointIds => MicrosoftGraph.Model.MicrosoftGraphItemReferenceSharepointIds.t | nil,
-    :siteId => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :driveId => String.t() | nil,
+          :driveType => String.t() | nil,
+          :id => String.t() | nil,
+          :name => String.t() | nil,
+          :path => String.t() | nil,
+          :shareId => String.t() | nil,
+          :sharepointIds =>
+            MicrosoftGraph.Model.MicrosoftGraphItemReferenceSharepointIds.t() | nil,
+          :siteId => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:sharepointIds, :struct, MicrosoftGraph.Model.MicrosoftGraphItemReferenceSharepointIds)
+    |> Deserializer.deserialize(
+      :sharepointIds,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphItemReferenceSharepointIds
+    )
   end
 end
-

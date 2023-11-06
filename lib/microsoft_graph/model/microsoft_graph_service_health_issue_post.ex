@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssuePost do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,19 +15,27 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssuePost do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :createdDateTime => DateTime.t | nil,
-    :description => MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssuePostDescription.t | nil,
-    :postType => MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssuePostPostType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :createdDateTime => DateTime.t() | nil,
+          :description =>
+            MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssuePostDescription.t() | nil,
+          :postType => MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssuePostPostType.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:description, :struct, MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssuePostDescription)
-     |> Deserializer.deserialize(:postType, :struct, MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssuePostPostType)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :description,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssuePostDescription
+    )
+    |> Deserializer.deserialize(
+      :postType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssuePostPostType
+    )
   end
 end
-

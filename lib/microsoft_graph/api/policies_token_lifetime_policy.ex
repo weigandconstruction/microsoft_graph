@@ -24,8 +24,19 @@ defmodule MicrosoftGraph.Api.PoliciesTokenLifetimePolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTokenLifetimePolicy.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_create_token_lifetime_policies(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphTokenLifetimePolicy.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTokenLifetimePolicy.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_create_token_lifetime_policies(connection, microsoft_graph_token_lifetime_policy, _opts \\ []) do
+  @spec policies_create_token_lifetime_policies(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphTokenLifetimePolicy.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTokenLifetimePolicy.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_create_token_lifetime_policies(
+        connection,
+        microsoft_graph_token_lifetime_policy,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -58,7 +69,10 @@ defmodule MicrosoftGraph.Api.PoliciesTokenLifetimePolicy do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_delete_token_lifetime_policies(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec policies_delete_token_lifetime_policies(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def policies_delete_token_lifetime_policies(connection, token_lifetime_policy_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -97,7 +111,10 @@ defmodule MicrosoftGraph.Api.PoliciesTokenLifetimePolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTokenLifetimePolicy.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_get_token_lifetime_policies(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTokenLifetimePolicy.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec policies_get_token_lifetime_policies(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTokenLifetimePolicy.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def policies_get_token_lifetime_policies(connection, token_lifetime_policy_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -142,7 +159,10 @@ defmodule MicrosoftGraph.Api.PoliciesTokenLifetimePolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTokenLifetimePolicyCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_list_token_lifetime_policies(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTokenLifetimePolicyCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec policies_list_token_lifetime_policies(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTokenLifetimePolicyCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def policies_list_token_lifetime_policies(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -187,8 +207,19 @@ defmodule MicrosoftGraph.Api.PoliciesTokenLifetimePolicy do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_token_lifetime_policies_applies_to_get_count3209(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_token_lifetime_policies_applies_to_get_count3209(connection, token_lifetime_policy_id, opts \\ []) do
+  @spec policies_token_lifetime_policies_applies_to_get_count3209(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_token_lifetime_policies_applies_to_get_count3209(
+        connection,
+        token_lifetime_policy_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -227,8 +258,21 @@ defmodule MicrosoftGraph.Api.PoliciesTokenLifetimePolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_token_lifetime_policies_get_applies_to(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_token_lifetime_policies_get_applies_to(connection, token_lifetime_policy_id, directory_object_id, opts \\ []) do
+  @spec policies_token_lifetime_policies_get_applies_to(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_token_lifetime_policies_get_applies_to(
+        connection,
+        token_lifetime_policy_id,
+        directory_object_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -237,7 +281,9 @@ defmodule MicrosoftGraph.Api.PoliciesTokenLifetimePolicy do
     request =
       %{}
       |> method(:get)
-      |> url("/policies/tokenLifetimePolicies/#{token_lifetime_policy_id}/appliesTo/#{directory_object_id}")
+      |> url(
+        "/policies/tokenLifetimePolicies/#{token_lifetime_policy_id}/appliesTo/#{directory_object_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -265,7 +311,10 @@ defmodule MicrosoftGraph.Api.PoliciesTokenLifetimePolicy do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_token_lifetime_policies_get_count12df(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec policies_token_lifetime_policies_get_count12df(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def policies_token_lifetime_policies_get_count12df(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -310,8 +359,19 @@ defmodule MicrosoftGraph.Api.PoliciesTokenLifetimePolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_token_lifetime_policies_list_applies_to(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t} | {:error, Tesla.Env.t}
-  def policies_token_lifetime_policies_list_applies_to(connection, token_lifetime_policy_id, opts \\ []) do
+  @spec policies_token_lifetime_policies_list_applies_to(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_token_lifetime_policies_list_applies_to(
+        connection,
+        token_lifetime_policy_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -355,8 +415,21 @@ defmodule MicrosoftGraph.Api.PoliciesTokenLifetimePolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTokenLifetimePolicy.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_update_token_lifetime_policies(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphTokenLifetimePolicy.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTokenLifetimePolicy.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_update_token_lifetime_policies(connection, token_lifetime_policy_id, microsoft_graph_token_lifetime_policy, _opts \\ []) do
+  @spec policies_update_token_lifetime_policies(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTokenLifetimePolicy.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTokenLifetimePolicy.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_update_token_lifetime_policies(
+        connection,
+        token_lifetime_policy_id,
+        microsoft_graph_token_lifetime_policy,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

@@ -25,7 +25,14 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_created_objects_get_count_as_service_principal1751(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_created_objects_get_count_as_service_principal1751(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_created_objects_get_count_as_service_principal1751(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -64,7 +71,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_created_objects_get_count_c0ed(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_created_objects_get_count_c0ed(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_created_objects_get_count_c0ed(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -103,7 +113,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_delete_manager(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_delete_manager(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_delete_manager(connection, user_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -141,7 +154,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_delete_ref_manager(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_delete_ref_manager(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_delete_ref_manager(connection, user_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -180,7 +196,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_direct_reports_get_count0678(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_direct_reports_get_count0678(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_direct_reports_get_count0678(connection, user_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -221,7 +240,14 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_direct_reports_get_count_as_org_contact88c4(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_direct_reports_get_count_as_org_contact88c4(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_direct_reports_get_count_as_org_contact88c4(connection, user_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -262,7 +288,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_direct_reports_get_count_as_user_c9c7(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_direct_reports_get_count_as_user_c9c7(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_direct_reports_get_count_as_user_c9c7(connection, user_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -304,7 +333,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_get_created_objects(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_get_created_objects(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_get_created_objects(connection, user_id, directory_object_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -344,8 +376,21 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServicePrincipal.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_get_created_objects_as_service_principal(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServicePrincipal.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_get_created_objects_as_service_principal(connection, user_id, directory_object_id, opts \\ []) do
+  @spec users_get_created_objects_as_service_principal(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServicePrincipal.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_get_created_objects_as_service_principal(
+        connection,
+        user_id,
+        directory_object_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -386,7 +431,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_get_direct_reports(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_get_direct_reports(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_get_direct_reports(connection, user_id, directory_object_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -428,8 +476,21 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOrgContact.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_get_direct_reports_as_org_contact(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphOrgContact.t} | {:error, Tesla.Env.t}
-  def users_get_direct_reports_as_org_contact(connection, user_id, directory_object_id, opts \\ []) do
+  @spec users_get_direct_reports_as_org_contact(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphOrgContact.t()}
+          | {:error, Tesla.Env.t()}
+  def users_get_direct_reports_as_org_contact(
+        connection,
+        user_id,
+        directory_object_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$select" => :query,
@@ -470,7 +531,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_get_direct_reports_as_user(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_get_direct_reports_as_user(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_get_direct_reports_as_user(connection, user_id, directory_object_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -511,7 +575,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_get_manager(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_get_manager(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_get_manager(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -553,7 +620,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_get_member_of(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_get_member_of(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_get_member_of(connection, user_id, directory_object_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -595,8 +665,21 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAdministrativeUnit.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_get_member_of_as_administrative_unit(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAdministrativeUnit.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_get_member_of_as_administrative_unit(connection, user_id, directory_object_id, opts \\ []) do
+  @spec users_get_member_of_as_administrative_unit(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAdministrativeUnit.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_get_member_of_as_administrative_unit(
+        connection,
+        user_id,
+        directory_object_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$select" => :query,
@@ -637,7 +720,15 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryRole.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_get_member_of_as_directory_role(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryRole.t} | {:error, Tesla.Env.t}
+  @spec users_get_member_of_as_directory_role(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryRole.t()}
+          | {:error, Tesla.Env.t()}
   def users_get_member_of_as_directory_role(connection, user_id, directory_object_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -679,7 +770,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_get_member_of_as_group(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_get_member_of_as_group(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_get_member_of_as_group(connection, user_id, directory_object_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -722,7 +816,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_get_owned_devices(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_get_owned_devices(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_get_owned_devices(connection, user_id, directory_object_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -764,8 +861,21 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_get_owned_devices_as_app_role_assignment(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignment.t} | {:error, Tesla.Env.t}
-  def users_get_owned_devices_as_app_role_assignment(connection, user_id, directory_object_id, opts \\ []) do
+  @spec users_get_owned_devices_as_app_role_assignment(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignment.t()}
+          | {:error, Tesla.Env.t()}
+  def users_get_owned_devices_as_app_role_assignment(
+        connection,
+        user_id,
+        directory_object_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$select" => :query,
@@ -806,7 +916,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDevice.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_get_owned_devices_as_device(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDevice.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_get_owned_devices_as_device(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDevice.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_get_owned_devices_as_device(connection, user_id, directory_object_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -848,7 +961,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEndpoint.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_get_owned_devices_as_endpoint(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphEndpoint.t} | {:error, Tesla.Env.t}
+  @spec users_get_owned_devices_as_endpoint(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphEndpoint.t()}
+          | {:error, Tesla.Env.t()}
   def users_get_owned_devices_as_endpoint(connection, user_id, directory_object_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -891,7 +1007,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_get_owned_objects(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_get_owned_objects(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_get_owned_objects(connection, user_id, directory_object_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -933,7 +1052,15 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphApplication.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_get_owned_objects_as_application(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphApplication.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_get_owned_objects_as_application(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphApplication.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_get_owned_objects_as_application(connection, user_id, directory_object_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -975,7 +1102,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_get_owned_objects_as_group(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_get_owned_objects_as_group(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_get_owned_objects_as_group(connection, user_id, directory_object_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -1017,8 +1147,21 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServicePrincipal.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_get_owned_objects_as_service_principal(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServicePrincipal.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_get_owned_objects_as_service_principal(connection, user_id, directory_object_id, opts \\ []) do
+  @spec users_get_owned_objects_as_service_principal(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServicePrincipal.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_get_owned_objects_as_service_principal(
+        connection,
+        user_id,
+        directory_object_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$select" => :query,
@@ -1056,7 +1199,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_get_ref_manager(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
+  @spec users_get_ref_manager(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
   def users_get_ref_manager(connection, user_id, _opts \\ []) do
     request =
       %{}
@@ -1092,7 +1238,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_get_registered_devices(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_get_registered_devices(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_get_registered_devices(connection, user_id, directory_object_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -1134,8 +1283,21 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_get_registered_devices_as_app_role_assignment(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignment.t} | {:error, Tesla.Env.t}
-  def users_get_registered_devices_as_app_role_assignment(connection, user_id, directory_object_id, opts \\ []) do
+  @spec users_get_registered_devices_as_app_role_assignment(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignment.t()}
+          | {:error, Tesla.Env.t()}
+  def users_get_registered_devices_as_app_role_assignment(
+        connection,
+        user_id,
+        directory_object_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$select" => :query,
@@ -1176,7 +1338,15 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDevice.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_get_registered_devices_as_device(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDevice.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_get_registered_devices_as_device(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDevice.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_get_registered_devices_as_device(connection, user_id, directory_object_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -1218,8 +1388,21 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEndpoint.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_get_registered_devices_as_endpoint(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphEndpoint.t} | {:error, Tesla.Env.t}
-  def users_get_registered_devices_as_endpoint(connection, user_id, directory_object_id, opts \\ []) do
+  @spec users_get_registered_devices_as_endpoint(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphEndpoint.t()}
+          | {:error, Tesla.Env.t()}
+  def users_get_registered_devices_as_endpoint(
+        connection,
+        user_id,
+        directory_object_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$select" => :query,
@@ -1261,7 +1444,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_get_transitive_member_of(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_get_transitive_member_of(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_get_transitive_member_of(connection, user_id, directory_object_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -1303,8 +1489,21 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAdministrativeUnit.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_get_transitive_member_of_as_administrative_unit(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAdministrativeUnit.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_get_transitive_member_of_as_administrative_unit(connection, user_id, directory_object_id, opts \\ []) do
+  @spec users_get_transitive_member_of_as_administrative_unit(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAdministrativeUnit.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_get_transitive_member_of_as_administrative_unit(
+        connection,
+        user_id,
+        directory_object_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$select" => :query,
@@ -1314,7 +1513,9 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/transitiveMemberOf/#{directory_object_id}/graph.administrativeUnit")
+      |> url(
+        "/users/#{user_id}/transitiveMemberOf/#{directory_object_id}/graph.administrativeUnit"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1345,8 +1546,21 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryRole.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_get_transitive_member_of_as_directory_role(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryRole.t} | {:error, Tesla.Env.t}
-  def users_get_transitive_member_of_as_directory_role(connection, user_id, directory_object_id, opts \\ []) do
+  @spec users_get_transitive_member_of_as_directory_role(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryRole.t()}
+          | {:error, Tesla.Env.t()}
+  def users_get_transitive_member_of_as_directory_role(
+        connection,
+        user_id,
+        directory_object_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$select" => :query,
@@ -1387,8 +1601,21 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_get_transitive_member_of_as_group(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_get_transitive_member_of_as_group(connection, user_id, directory_object_id, opts \\ []) do
+  @spec users_get_transitive_member_of_as_group(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_get_transitive_member_of_as_group(
+        connection,
+        user_id,
+        directory_object_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$select" => :query,
@@ -1434,7 +1661,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_list_created_objects(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec users_list_created_objects(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def users_list_created_objects(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1485,7 +1715,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServicePrincipalCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_list_created_objects_as_service_principal(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServicePrincipalCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_list_created_objects_as_service_principal(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServicePrincipalCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_list_created_objects_as_service_principal(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1538,7 +1771,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_list_direct_reports(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec users_list_direct_reports(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def users_list_direct_reports(connection, user_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -1591,7 +1827,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOrgContactCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_list_direct_reports_as_org_contact(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOrgContactCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_list_direct_reports_as_org_contact(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOrgContactCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_list_direct_reports_as_org_contact(connection, user_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -1644,7 +1883,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_list_direct_reports_as_user(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUserCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec users_list_direct_reports_as_user(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUserCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def users_list_direct_reports_as_user(connection, user_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -1698,7 +1940,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_list_member_of(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec users_list_member_of(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def users_list_member_of(connection, user_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -1751,7 +1996,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAdministrativeUnitCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_list_member_of_as_administrative_unit(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAdministrativeUnitCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_list_member_of_as_administrative_unit(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAdministrativeUnitCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_list_member_of_as_administrative_unit(connection, user_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -1804,7 +2052,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryRoleCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_list_member_of_as_directory_role(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryRoleCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_list_member_of_as_directory_role(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryRoleCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_list_member_of_as_directory_role(connection, user_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -1857,7 +2108,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphGroupCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_list_member_of_as_group(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphGroupCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_list_member_of_as_group(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphGroupCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_list_member_of_as_group(connection, user_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -1911,7 +2165,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_list_owned_devices(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec users_list_owned_devices(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def users_list_owned_devices(connection, user_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -1964,7 +2221,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignmentCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_list_owned_devices_as_app_role_assignment(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignmentCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_list_owned_devices_as_app_role_assignment(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignmentCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_list_owned_devices_as_app_role_assignment(connection, user_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -2017,7 +2277,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_list_owned_devices_as_device(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_list_owned_devices_as_device(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_list_owned_devices_as_device(connection, user_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -2070,7 +2333,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEndpointCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_list_owned_devices_as_endpoint(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphEndpointCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec users_list_owned_devices_as_endpoint(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphEndpointCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def users_list_owned_devices_as_endpoint(connection, user_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -2124,7 +2390,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_list_owned_objects(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec users_list_owned_objects(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def users_list_owned_objects(connection, user_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -2177,7 +2446,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphApplicationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_list_owned_objects_as_application(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphApplicationCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec users_list_owned_objects_as_application(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphApplicationCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def users_list_owned_objects_as_application(connection, user_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -2230,7 +2502,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphGroupCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_list_owned_objects_as_group(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphGroupCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_list_owned_objects_as_group(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphGroupCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_list_owned_objects_as_group(connection, user_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -2283,7 +2558,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServicePrincipalCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_list_owned_objects_as_service_principal(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServicePrincipalCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_list_owned_objects_as_service_principal(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServicePrincipalCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_list_owned_objects_as_service_principal(connection, user_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -2337,7 +2615,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_list_registered_devices(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec users_list_registered_devices(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def users_list_registered_devices(connection, user_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -2390,7 +2671,14 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignmentCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_list_registered_devices_as_app_role_assignment(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignmentCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_list_registered_devices_as_app_role_assignment(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignmentCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_list_registered_devices_as_app_role_assignment(connection, user_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -2443,7 +2731,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_list_registered_devices_as_device(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_list_registered_devices_as_device(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_list_registered_devices_as_device(connection, user_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -2496,7 +2787,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEndpointCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_list_registered_devices_as_endpoint(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphEndpointCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec users_list_registered_devices_as_endpoint(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphEndpointCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def users_list_registered_devices_as_endpoint(connection, user_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -2550,7 +2844,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_list_transitive_member_of(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec users_list_transitive_member_of(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def users_list_transitive_member_of(connection, user_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -2603,7 +2900,14 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAdministrativeUnitCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_list_transitive_member_of_as_administrative_unit(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAdministrativeUnitCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_list_transitive_member_of_as_administrative_unit(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAdministrativeUnitCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_list_transitive_member_of_as_administrative_unit(connection, user_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -2656,7 +2960,14 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryRoleCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_list_transitive_member_of_as_directory_role(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryRoleCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_list_transitive_member_of_as_directory_role(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryRoleCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_list_transitive_member_of_as_directory_role(connection, user_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -2709,7 +3020,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphGroupCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_list_transitive_member_of_as_group(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphGroupCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_list_transitive_member_of_as_group(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphGroupCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_list_transitive_member_of_as_group(connection, user_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -2756,7 +3070,14 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_member_of_get_count_as_administrative_unit88a9(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_member_of_get_count_as_administrative_unit88a9(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_member_of_get_count_as_administrative_unit88a9(connection, user_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -2797,7 +3118,14 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_member_of_get_count_as_directory_role_b036(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_member_of_get_count_as_directory_role_b036(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_member_of_get_count_as_directory_role_b036(connection, user_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -2838,7 +3166,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_member_of_get_count_as_group48c0(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_member_of_get_count_as_group48c0(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_member_of_get_count_as_group48c0(connection, user_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -2879,7 +3210,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_member_of_get_count_fc20(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_member_of_get_count_fc20(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_member_of_get_count_fc20(connection, user_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -2920,7 +3254,14 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_owned_devices_get_count_as_app_role_assignment59f6(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_owned_devices_get_count_as_app_role_assignment59f6(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_owned_devices_get_count_as_app_role_assignment59f6(connection, user_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -2961,7 +3302,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_owned_devices_get_count_as_device64a9(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_owned_devices_get_count_as_device64a9(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_owned_devices_get_count_as_device64a9(connection, user_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -3002,7 +3346,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_owned_devices_get_count_as_endpoint_bd17(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_owned_devices_get_count_as_endpoint_bd17(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_owned_devices_get_count_as_endpoint_bd17(connection, user_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -3043,7 +3390,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_owned_devices_get_count_e76d(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_owned_devices_get_count_e76d(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_owned_devices_get_count_e76d(connection, user_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -3084,7 +3434,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_owned_objects_get_count2c09(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_owned_objects_get_count2c09(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_owned_objects_get_count2c09(connection, user_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -3125,7 +3478,14 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_owned_objects_get_count_as_application1b6d(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_owned_objects_get_count_as_application1b6d(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_owned_objects_get_count_as_application1b6d(connection, user_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -3166,7 +3526,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_owned_objects_get_count_as_group7af3(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_owned_objects_get_count_as_group7af3(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_owned_objects_get_count_as_group7af3(connection, user_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -3207,7 +3570,14 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_owned_objects_get_count_as_service_principal370f(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_owned_objects_get_count_as_service_principal370f(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_owned_objects_get_count_as_service_principal370f(connection, user_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -3248,7 +3618,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_registered_devices_get_count0403(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_registered_devices_get_count0403(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_registered_devices_get_count0403(connection, user_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -3289,8 +3662,19 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_registered_devices_get_count_as_app_role_assignment_cd2d(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_registered_devices_get_count_as_app_role_assignment_cd2d(connection, user_id, opts \\ []) do
+  @spec users_registered_devices_get_count_as_app_role_assignment_cd2d(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_registered_devices_get_count_as_app_role_assignment_cd2d(
+        connection,
+        user_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$search" => :query,
@@ -3330,7 +3714,14 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_registered_devices_get_count_as_device16e2(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_registered_devices_get_count_as_device16e2(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_registered_devices_get_count_as_device16e2(connection, user_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -3371,7 +3762,14 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_registered_devices_get_count_as_endpoint87c6(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_registered_devices_get_count_as_endpoint87c6(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_registered_devices_get_count_as_endpoint87c6(connection, user_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -3412,8 +3810,19 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_transitive_member_of_get_count_as_administrative_unit9c79(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_transitive_member_of_get_count_as_administrative_unit9c79(connection, user_id, opts \\ []) do
+  @spec users_transitive_member_of_get_count_as_administrative_unit9c79(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_transitive_member_of_get_count_as_administrative_unit9c79(
+        connection,
+        user_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$search" => :query,
@@ -3453,7 +3862,14 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_transitive_member_of_get_count_as_directory_role462d(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_transitive_member_of_get_count_as_directory_role462d(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_transitive_member_of_get_count_as_directory_role462d(connection, user_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -3494,7 +3910,14 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_transitive_member_of_get_count_as_group062f(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_transitive_member_of_get_count_as_group062f(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_transitive_member_of_get_count_as_group062f(connection, user_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -3535,7 +3958,10 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_transitive_member_of_get_count_b904(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_transitive_member_of_get_count_b904(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_transitive_member_of_get_count_b904(connection, user_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -3575,7 +4001,15 @@ defmodule MicrosoftGraph.Api.UsersDirectoryObject do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_update_ref_manager(Tesla.Env.client, String.t, MicrosoftGraph.Model.ReferenceUpdate.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_update_ref_manager(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.ReferenceUpdate.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_update_ref_manager(connection, user_id, reference_update, _opts \\ []) do
     request =
       %{}

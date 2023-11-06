@@ -24,7 +24,10 @@ defmodule MicrosoftGraph.Api.AuditLogsAuditLogRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAuditLogRoot.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec audit_logs_audit_log_root_get_audit_log_root(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAuditLogRoot.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec audit_logs_audit_log_root_get_audit_log_root(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAuditLogRoot.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def audit_logs_audit_log_root_get_audit_log_root(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -61,8 +64,19 @@ defmodule MicrosoftGraph.Api.AuditLogsAuditLogRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAuditLogRoot.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec audit_logs_audit_log_root_update_audit_log_root(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphAuditLogRoot.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAuditLogRoot.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def audit_logs_audit_log_root_update_audit_log_root(connection, microsoft_graph_audit_log_root, _opts \\ []) do
+  @spec audit_logs_audit_log_root_update_audit_log_root(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphAuditLogRoot.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAuditLogRoot.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def audit_logs_audit_log_root_update_audit_log_root(
+        connection,
+        microsoft_graph_audit_log_root,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

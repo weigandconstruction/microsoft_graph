@@ -23,8 +23,19 @@ defmodule MicrosoftGraph.Api.CommunicationsOnlineMeeting do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnlineMeeting.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_create_online_meetings(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphOnlineMeeting.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphOnlineMeeting.t} | {:error, Tesla.Env.t}
-  def communications_create_online_meetings(connection, microsoft_graph_online_meeting, _opts \\ []) do
+  @spec communications_create_online_meetings(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphOnlineMeeting.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphOnlineMeeting.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_create_online_meetings(
+        connection,
+        microsoft_graph_online_meeting,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -56,7 +67,10 @@ defmodule MicrosoftGraph.Api.CommunicationsOnlineMeeting do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_delete_online_meetings(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec communications_delete_online_meetings(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def communications_delete_online_meetings(connection, online_meeting_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -94,7 +108,10 @@ defmodule MicrosoftGraph.Api.CommunicationsOnlineMeeting do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnlineMeeting.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_get_online_meetings(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphOnlineMeeting.t} | {:error, Tesla.Env.t}
+  @spec communications_get_online_meetings(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphOnlineMeeting.t()}
+          | {:error, Tesla.Env.t()}
   def communications_get_online_meetings(connection, online_meeting_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -131,8 +148,19 @@ defmodule MicrosoftGraph.Api.CommunicationsOnlineMeeting do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_get_online_meetings_attendee_report(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
-  def communications_get_online_meetings_attendee_report(connection, online_meeting_id, _opts \\ []) do
+  @spec communications_get_online_meetings_attendee_report(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_get_online_meetings_attendee_report(
+        connection,
+        online_meeting_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
@@ -170,7 +198,10 @@ defmodule MicrosoftGraph.Api.CommunicationsOnlineMeeting do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnlineMeetingCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_list_online_meetings(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOnlineMeetingCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec communications_list_online_meetings(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOnlineMeetingCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def communications_list_online_meetings(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -216,8 +247,21 @@ defmodule MicrosoftGraph.Api.CommunicationsOnlineMeeting do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_online_meetings_attendance_reports_attendance_records_get_count73e4(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def communications_online_meetings_attendance_reports_attendance_records_get_count73e4(connection, online_meeting_id, meeting_attendance_report_id, opts \\ []) do
+  @spec communications_online_meetings_attendance_reports_attendance_records_get_count73e4(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_online_meetings_attendance_reports_attendance_records_get_count73e4(
+        connection,
+        online_meeting_id,
+        meeting_attendance_report_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -226,7 +270,9 @@ defmodule MicrosoftGraph.Api.CommunicationsOnlineMeeting do
     request =
       %{}
       |> method(:get)
-      |> url("/communications/onlineMeetings/#{online_meeting_id}/attendanceReports/#{meeting_attendance_report_id}/attendanceRecords/$count")
+      |> url(
+        "/communications/onlineMeetings/#{online_meeting_id}/attendanceReports/#{meeting_attendance_report_id}/attendanceRecords/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -255,12 +301,29 @@ defmodule MicrosoftGraph.Api.CommunicationsOnlineMeeting do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttendanceRecord.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_online_meetings_attendance_reports_create_attendance_records(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphAttendanceRecord.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAttendanceRecord.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def communications_online_meetings_attendance_reports_create_attendance_records(connection, online_meeting_id, meeting_attendance_report_id, microsoft_graph_attendance_record, _opts \\ []) do
+  @spec communications_online_meetings_attendance_reports_create_attendance_records(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAttendanceRecord.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAttendanceRecord.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_online_meetings_attendance_reports_create_attendance_records(
+        connection,
+        online_meeting_id,
+        meeting_attendance_report_id,
+        microsoft_graph_attendance_record,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/communications/onlineMeetings/#{online_meeting_id}/attendanceReports/#{meeting_attendance_report_id}/attendanceRecords")
+      |> url(
+        "/communications/onlineMeetings/#{online_meeting_id}/attendanceReports/#{meeting_attendance_report_id}/attendanceRecords"
+      )
       |> add_param(:body, :body, microsoft_graph_attendance_record)
       |> Enum.into([])
 
@@ -290,8 +353,23 @@ defmodule MicrosoftGraph.Api.CommunicationsOnlineMeeting do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_online_meetings_attendance_reports_delete_attendance_records(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def communications_online_meetings_attendance_reports_delete_attendance_records(connection, online_meeting_id, meeting_attendance_report_id, attendance_record_id, opts \\ []) do
+  @spec communications_online_meetings_attendance_reports_delete_attendance_records(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_online_meetings_attendance_reports_delete_attendance_records(
+        connection,
+        online_meeting_id,
+        meeting_attendance_report_id,
+        attendance_record_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -299,7 +377,9 @@ defmodule MicrosoftGraph.Api.CommunicationsOnlineMeeting do
     request =
       %{}
       |> method(:delete)
-      |> url("/communications/onlineMeetings/#{online_meeting_id}/attendanceReports/#{meeting_attendance_report_id}/attendanceRecords/#{attendance_record_id}")
+      |> url(
+        "/communications/onlineMeetings/#{online_meeting_id}/attendanceReports/#{meeting_attendance_report_id}/attendanceRecords/#{attendance_record_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -331,8 +411,23 @@ defmodule MicrosoftGraph.Api.CommunicationsOnlineMeeting do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttendanceRecord.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_online_meetings_attendance_reports_get_attendance_records(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAttendanceRecord.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def communications_online_meetings_attendance_reports_get_attendance_records(connection, online_meeting_id, meeting_attendance_report_id, attendance_record_id, opts \\ []) do
+  @spec communications_online_meetings_attendance_reports_get_attendance_records(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAttendanceRecord.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_online_meetings_attendance_reports_get_attendance_records(
+        connection,
+        online_meeting_id,
+        meeting_attendance_report_id,
+        attendance_record_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -341,7 +436,9 @@ defmodule MicrosoftGraph.Api.CommunicationsOnlineMeeting do
     request =
       %{}
       |> method(:get)
-      |> url("/communications/onlineMeetings/#{online_meeting_id}/attendanceReports/#{meeting_attendance_report_id}/attendanceRecords/#{attendance_record_id}")
+      |> url(
+        "/communications/onlineMeetings/#{online_meeting_id}/attendanceReports/#{meeting_attendance_report_id}/attendanceRecords/#{attendance_record_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -370,8 +467,19 @@ defmodule MicrosoftGraph.Api.CommunicationsOnlineMeeting do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_online_meetings_attendance_reports_get_count_c621(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def communications_online_meetings_attendance_reports_get_count_c621(connection, online_meeting_id, opts \\ []) do
+  @spec communications_online_meetings_attendance_reports_get_count_c621(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_online_meetings_attendance_reports_get_count_c621(
+        connection,
+        online_meeting_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -417,8 +525,21 @@ defmodule MicrosoftGraph.Api.CommunicationsOnlineMeeting do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttendanceRecordCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_online_meetings_attendance_reports_list_attendance_records(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAttendanceRecordCollectionResponse.t} | {:error, Tesla.Env.t}
-  def communications_online_meetings_attendance_reports_list_attendance_records(connection, online_meeting_id, meeting_attendance_report_id, opts \\ []) do
+  @spec communications_online_meetings_attendance_reports_list_attendance_records(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAttendanceRecordCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_online_meetings_attendance_reports_list_attendance_records(
+        connection,
+        online_meeting_id,
+        meeting_attendance_report_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -433,7 +554,9 @@ defmodule MicrosoftGraph.Api.CommunicationsOnlineMeeting do
     request =
       %{}
       |> method(:get)
-      |> url("/communications/onlineMeetings/#{online_meeting_id}/attendanceReports/#{meeting_attendance_report_id}/attendanceRecords")
+      |> url(
+        "/communications/onlineMeetings/#{online_meeting_id}/attendanceReports/#{meeting_attendance_report_id}/attendanceRecords"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -463,12 +586,31 @@ defmodule MicrosoftGraph.Api.CommunicationsOnlineMeeting do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttendanceRecord.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_online_meetings_attendance_reports_update_attendance_records(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphAttendanceRecord.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAttendanceRecord.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def communications_online_meetings_attendance_reports_update_attendance_records(connection, online_meeting_id, meeting_attendance_report_id, attendance_record_id, microsoft_graph_attendance_record, _opts \\ []) do
+  @spec communications_online_meetings_attendance_reports_update_attendance_records(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAttendanceRecord.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAttendanceRecord.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_online_meetings_attendance_reports_update_attendance_records(
+        connection,
+        online_meeting_id,
+        meeting_attendance_report_id,
+        attendance_record_id,
+        microsoft_graph_attendance_record,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/communications/onlineMeetings/#{online_meeting_id}/attendanceReports/#{meeting_attendance_report_id}/attendanceRecords/#{attendance_record_id}")
+      |> url(
+        "/communications/onlineMeetings/#{online_meeting_id}/attendanceReports/#{meeting_attendance_report_id}/attendanceRecords/#{attendance_record_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_attendance_record)
       |> Enum.into([])
 
@@ -496,8 +638,21 @@ defmodule MicrosoftGraph.Api.CommunicationsOnlineMeeting do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMeetingAttendanceReport.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_online_meetings_create_attendance_reports(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphMeetingAttendanceReport.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphMeetingAttendanceReport.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def communications_online_meetings_create_attendance_reports(connection, online_meeting_id, microsoft_graph_meeting_attendance_report, _opts \\ []) do
+  @spec communications_online_meetings_create_attendance_reports(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMeetingAttendanceReport.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphMeetingAttendanceReport.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_online_meetings_create_attendance_reports(
+        connection,
+        online_meeting_id,
+        microsoft_graph_meeting_attendance_report,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -529,8 +684,21 @@ defmodule MicrosoftGraph.Api.CommunicationsOnlineMeeting do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCallTranscript.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_online_meetings_create_transcripts(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphCallTranscript.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphCallTranscript.t} | {:error, Tesla.Env.t}
-  def communications_online_meetings_create_transcripts(connection, online_meeting_id, microsoft_graph_call_transcript, _opts \\ []) do
+  @spec communications_online_meetings_create_transcripts(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphCallTranscript.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphCallTranscript.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_online_meetings_create_transcripts(
+        connection,
+        online_meeting_id,
+        microsoft_graph_call_transcript,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -563,8 +731,21 @@ defmodule MicrosoftGraph.Api.CommunicationsOnlineMeeting do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_online_meetings_delete_attendance_reports(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def communications_online_meetings_delete_attendance_reports(connection, online_meeting_id, meeting_attendance_report_id, opts \\ []) do
+  @spec communications_online_meetings_delete_attendance_reports(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_online_meetings_delete_attendance_reports(
+        connection,
+        online_meeting_id,
+        meeting_attendance_report_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -572,7 +753,9 @@ defmodule MicrosoftGraph.Api.CommunicationsOnlineMeeting do
     request =
       %{}
       |> method(:delete)
-      |> url("/communications/onlineMeetings/#{online_meeting_id}/attendanceReports/#{meeting_attendance_report_id}")
+      |> url(
+        "/communications/onlineMeetings/#{online_meeting_id}/attendanceReports/#{meeting_attendance_report_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -601,8 +784,21 @@ defmodule MicrosoftGraph.Api.CommunicationsOnlineMeeting do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_online_meetings_delete_transcripts(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def communications_online_meetings_delete_transcripts(connection, online_meeting_id, call_transcript_id, opts \\ []) do
+  @spec communications_online_meetings_delete_transcripts(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_online_meetings_delete_transcripts(
+        connection,
+        online_meeting_id,
+        call_transcript_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -610,7 +806,9 @@ defmodule MicrosoftGraph.Api.CommunicationsOnlineMeeting do
     request =
       %{}
       |> method(:delete)
-      |> url("/communications/onlineMeetings/#{online_meeting_id}/transcripts/#{call_transcript_id}")
+      |> url(
+        "/communications/onlineMeetings/#{online_meeting_id}/transcripts/#{call_transcript_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -641,8 +839,21 @@ defmodule MicrosoftGraph.Api.CommunicationsOnlineMeeting do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMeetingAttendanceReport.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_online_meetings_get_attendance_reports(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphMeetingAttendanceReport.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def communications_online_meetings_get_attendance_reports(connection, online_meeting_id, meeting_attendance_report_id, opts \\ []) do
+  @spec communications_online_meetings_get_attendance_reports(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphMeetingAttendanceReport.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_online_meetings_get_attendance_reports(
+        connection,
+        online_meeting_id,
+        meeting_attendance_report_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -651,7 +862,9 @@ defmodule MicrosoftGraph.Api.CommunicationsOnlineMeeting do
     request =
       %{}
       |> method(:get)
-      |> url("/communications/onlineMeetings/#{online_meeting_id}/attendanceReports/#{meeting_attendance_report_id}")
+      |> url(
+        "/communications/onlineMeetings/#{online_meeting_id}/attendanceReports/#{meeting_attendance_report_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -679,7 +892,10 @@ defmodule MicrosoftGraph.Api.CommunicationsOnlineMeeting do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_online_meetings_get_count91a5(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec communications_online_meetings_get_count91a5(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def communications_online_meetings_get_count91a5(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -720,8 +936,21 @@ defmodule MicrosoftGraph.Api.CommunicationsOnlineMeeting do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCallTranscript.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_online_meetings_get_transcripts(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphCallTranscript.t} | {:error, Tesla.Env.t}
-  def communications_online_meetings_get_transcripts(connection, online_meeting_id, call_transcript_id, opts \\ []) do
+  @spec communications_online_meetings_get_transcripts(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphCallTranscript.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_online_meetings_get_transcripts(
+        connection,
+        online_meeting_id,
+        call_transcript_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -730,7 +959,9 @@ defmodule MicrosoftGraph.Api.CommunicationsOnlineMeeting do
     request =
       %{}
       |> method(:get)
-      |> url("/communications/onlineMeetings/#{online_meeting_id}/transcripts/#{call_transcript_id}")
+      |> url(
+        "/communications/onlineMeetings/#{online_meeting_id}/transcripts/#{call_transcript_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -759,12 +990,27 @@ defmodule MicrosoftGraph.Api.CommunicationsOnlineMeeting do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_online_meetings_get_transcripts_content(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
-  def communications_online_meetings_get_transcripts_content(connection, online_meeting_id, call_transcript_id, _opts \\ []) do
+  @spec communications_online_meetings_get_transcripts_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_online_meetings_get_transcripts_content(
+        connection,
+        online_meeting_id,
+        call_transcript_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/communications/onlineMeetings/#{online_meeting_id}/transcripts/#{call_transcript_id}/content")
+      |> url(
+        "/communications/onlineMeetings/#{online_meeting_id}/transcripts/#{call_transcript_id}/content"
+      )
       |> Enum.into([])
 
     connection
@@ -792,12 +1038,27 @@ defmodule MicrosoftGraph.Api.CommunicationsOnlineMeeting do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_online_meetings_get_transcripts_metadata_content(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
-  def communications_online_meetings_get_transcripts_metadata_content(connection, online_meeting_id, call_transcript_id, _opts \\ []) do
+  @spec communications_online_meetings_get_transcripts_metadata_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_online_meetings_get_transcripts_metadata_content(
+        connection,
+        online_meeting_id,
+        call_transcript_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/communications/onlineMeetings/#{online_meeting_id}/transcripts/#{call_transcript_id}/metadataContent")
+      |> url(
+        "/communications/onlineMeetings/#{online_meeting_id}/transcripts/#{call_transcript_id}/metadataContent"
+      )
       |> Enum.into([])
 
     connection
@@ -832,8 +1093,19 @@ defmodule MicrosoftGraph.Api.CommunicationsOnlineMeeting do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMeetingAttendanceReportCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_online_meetings_list_attendance_reports(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphMeetingAttendanceReportCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def communications_online_meetings_list_attendance_reports(connection, online_meeting_id, opts \\ []) do
+  @spec communications_online_meetings_list_attendance_reports(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphMeetingAttendanceReportCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_online_meetings_list_attendance_reports(
+        connection,
+        online_meeting_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -884,7 +1156,10 @@ defmodule MicrosoftGraph.Api.CommunicationsOnlineMeeting do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCallTranscriptCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_online_meetings_list_transcripts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphCallTranscriptCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec communications_online_meetings_list_transcripts(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphCallTranscriptCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def communications_online_meetings_list_transcripts(connection, online_meeting_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -929,8 +1204,19 @@ defmodule MicrosoftGraph.Api.CommunicationsOnlineMeeting do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_online_meetings_transcripts_get_count7670(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def communications_online_meetings_transcripts_get_count7670(connection, online_meeting_id, opts \\ []) do
+  @spec communications_online_meetings_transcripts_get_count7670(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_online_meetings_transcripts_get_count7670(
+        connection,
+        online_meeting_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -968,12 +1254,29 @@ defmodule MicrosoftGraph.Api.CommunicationsOnlineMeeting do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMeetingAttendanceReport.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_online_meetings_update_attendance_reports(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphMeetingAttendanceReport.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphMeetingAttendanceReport.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def communications_online_meetings_update_attendance_reports(connection, online_meeting_id, meeting_attendance_report_id, microsoft_graph_meeting_attendance_report, _opts \\ []) do
+  @spec communications_online_meetings_update_attendance_reports(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMeetingAttendanceReport.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphMeetingAttendanceReport.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_online_meetings_update_attendance_reports(
+        connection,
+        online_meeting_id,
+        meeting_attendance_report_id,
+        microsoft_graph_meeting_attendance_report,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/communications/onlineMeetings/#{online_meeting_id}/attendanceReports/#{meeting_attendance_report_id}")
+      |> url(
+        "/communications/onlineMeetings/#{online_meeting_id}/attendanceReports/#{meeting_attendance_report_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_meeting_attendance_report)
       |> Enum.into([])
 
@@ -1002,12 +1305,29 @@ defmodule MicrosoftGraph.Api.CommunicationsOnlineMeeting do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCallTranscript.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_online_meetings_update_transcripts(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphCallTranscript.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphCallTranscript.t} | {:error, Tesla.Env.t}
-  def communications_online_meetings_update_transcripts(connection, online_meeting_id, call_transcript_id, microsoft_graph_call_transcript, _opts \\ []) do
+  @spec communications_online_meetings_update_transcripts(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphCallTranscript.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphCallTranscript.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_online_meetings_update_transcripts(
+        connection,
+        online_meeting_id,
+        call_transcript_id,
+        microsoft_graph_call_transcript,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/communications/onlineMeetings/#{online_meeting_id}/transcripts/#{call_transcript_id}")
+      |> url(
+        "/communications/onlineMeetings/#{online_meeting_id}/transcripts/#{call_transcript_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_call_transcript)
       |> Enum.into([])
 
@@ -1037,12 +1357,29 @@ defmodule MicrosoftGraph.Api.CommunicationsOnlineMeeting do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCallTranscript.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_online_meetings_update_transcripts_content(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphCallTranscript.t} | {:error, Tesla.Env.t}
-  def communications_online_meetings_update_transcripts_content(connection, online_meeting_id, call_transcript_id, body, _opts \\ []) do
+  @spec communications_online_meetings_update_transcripts_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphCallTranscript.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_online_meetings_update_transcripts_content(
+        connection,
+        online_meeting_id,
+        call_transcript_id,
+        body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)
-      |> url("/communications/onlineMeetings/#{online_meeting_id}/transcripts/#{call_transcript_id}/content")
+      |> url(
+        "/communications/onlineMeetings/#{online_meeting_id}/transcripts/#{call_transcript_id}/content"
+      )
       |> add_param(:body, :body, body)
       |> Enum.into([])
 
@@ -1072,12 +1409,29 @@ defmodule MicrosoftGraph.Api.CommunicationsOnlineMeeting do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_online_meetings_update_transcripts_metadata_content(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def communications_online_meetings_update_transcripts_metadata_content(connection, online_meeting_id, call_transcript_id, body, _opts \\ []) do
+  @spec communications_online_meetings_update_transcripts_metadata_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_online_meetings_update_transcripts_metadata_content(
+        connection,
+        online_meeting_id,
+        call_transcript_id,
+        body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)
-      |> url("/communications/onlineMeetings/#{online_meeting_id}/transcripts/#{call_transcript_id}/metadataContent")
+      |> url(
+        "/communications/onlineMeetings/#{online_meeting_id}/transcripts/#{call_transcript_id}/metadataContent"
+      )
       |> add_param(:body, :body, body)
       |> Enum.into([])
 
@@ -1105,8 +1459,21 @@ defmodule MicrosoftGraph.Api.CommunicationsOnlineMeeting do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOnlineMeeting.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_update_online_meetings(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphOnlineMeeting.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphOnlineMeeting.t} | {:error, Tesla.Env.t}
-  def communications_update_online_meetings(connection, online_meeting_id, microsoft_graph_online_meeting, _opts \\ []) do
+  @spec communications_update_online_meetings(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphOnlineMeeting.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphOnlineMeeting.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_update_online_meetings(
+        connection,
+        online_meeting_id,
+        microsoft_graph_online_meeting,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -1138,8 +1505,21 @@ defmodule MicrosoftGraph.Api.CommunicationsOnlineMeeting do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_update_online_meetings_attendee_report(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def communications_update_online_meetings_attendee_report(connection, online_meeting_id, body, _opts \\ []) do
+  @spec communications_update_online_meetings_attendee_report(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_update_online_meetings_attendee_report(
+        connection,
+        online_meeting_id,
+        body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)

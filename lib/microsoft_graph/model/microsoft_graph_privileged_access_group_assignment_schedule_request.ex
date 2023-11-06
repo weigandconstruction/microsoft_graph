@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentScheduleRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -32,44 +32,83 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentSche
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :approvalId => String.t | nil,
-    :completedDateTime => DateTime.t | nil,
-    :createdBy => MicrosoftGraph.Model.RequestCreatedBy.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :customData => String.t | nil,
-    :status => String.t | nil,
-    :action => MicrosoftGraph.Model.PrivilegedAccessScheduleRequestAction.t | nil,
-    :isValidationOnly => boolean() | nil,
-    :justification => String.t | nil,
-    :scheduleInfo => MicrosoftGraph.Model.PrivilegedAccessScheduleRequestScheduleInfo.t | nil,
-    :ticketInfo => MicrosoftGraph.Model.PrivilegedAccessScheduleRequestTicketInfo.t | nil,
-    :accessId => MicrosoftGraph.Model.PrivilegedAccessGroupAssignmentScheduleRequestAccessId.t | nil,
-    :activatedUsing => MicrosoftGraph.Model.PrivilegedAccessGroupAssignmentScheduleRequestActivatedUsing.t | nil,
-    :group => MicrosoftGraph.Model.PrivilegedAccessGroupAssignmentScheduleRequestGroup.t | nil,
-    :groupId => String.t | nil,
-    :principal => MicrosoftGraph.Model.PrivilegedAccessGroupAssignmentScheduleRequestPrincipal.t | nil,
-    :principalId => String.t | nil,
-    :targetSchedule => MicrosoftGraph.Model.PrivilegedAccessGroupAssignmentScheduleRequestTargetSchedule.t | nil,
-    :targetScheduleId => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :approvalId => String.t() | nil,
+          :completedDateTime => DateTime.t() | nil,
+          :createdBy => MicrosoftGraph.Model.RequestCreatedBy.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :customData => String.t() | nil,
+          :status => String.t() | nil,
+          :action => MicrosoftGraph.Model.PrivilegedAccessScheduleRequestAction.t() | nil,
+          :isValidationOnly => boolean() | nil,
+          :justification => String.t() | nil,
+          :scheduleInfo =>
+            MicrosoftGraph.Model.PrivilegedAccessScheduleRequestScheduleInfo.t() | nil,
+          :ticketInfo => MicrosoftGraph.Model.PrivilegedAccessScheduleRequestTicketInfo.t() | nil,
+          :accessId =>
+            MicrosoftGraph.Model.PrivilegedAccessGroupAssignmentScheduleRequestAccessId.t() | nil,
+          :activatedUsing =>
+            MicrosoftGraph.Model.PrivilegedAccessGroupAssignmentScheduleRequestActivatedUsing.t()
+            | nil,
+          :group =>
+            MicrosoftGraph.Model.PrivilegedAccessGroupAssignmentScheduleRequestGroup.t() | nil,
+          :groupId => String.t() | nil,
+          :principal =>
+            MicrosoftGraph.Model.PrivilegedAccessGroupAssignmentScheduleRequestPrincipal.t() | nil,
+          :principalId => String.t() | nil,
+          :targetSchedule =>
+            MicrosoftGraph.Model.PrivilegedAccessGroupAssignmentScheduleRequestTargetSchedule.t()
+            | nil,
+          :targetScheduleId => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:completedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.RequestCreatedBy)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:action, :struct, MicrosoftGraph.Model.PrivilegedAccessScheduleRequestAction)
-     |> Deserializer.deserialize(:scheduleInfo, :struct, MicrosoftGraph.Model.PrivilegedAccessScheduleRequestScheduleInfo)
-     |> Deserializer.deserialize(:ticketInfo, :struct, MicrosoftGraph.Model.PrivilegedAccessScheduleRequestTicketInfo)
-     |> Deserializer.deserialize(:accessId, :struct, MicrosoftGraph.Model.PrivilegedAccessGroupAssignmentScheduleRequestAccessId)
-     |> Deserializer.deserialize(:activatedUsing, :struct, MicrosoftGraph.Model.PrivilegedAccessGroupAssignmentScheduleRequestActivatedUsing)
-     |> Deserializer.deserialize(:group, :struct, MicrosoftGraph.Model.PrivilegedAccessGroupAssignmentScheduleRequestGroup)
-     |> Deserializer.deserialize(:principal, :struct, MicrosoftGraph.Model.PrivilegedAccessGroupAssignmentScheduleRequestPrincipal)
-     |> Deserializer.deserialize(:targetSchedule, :struct, MicrosoftGraph.Model.PrivilegedAccessGroupAssignmentScheduleRequestTargetSchedule)
+    |> Deserializer.deserialize(:completedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.RequestCreatedBy)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :action,
+      :struct,
+      MicrosoftGraph.Model.PrivilegedAccessScheduleRequestAction
+    )
+    |> Deserializer.deserialize(
+      :scheduleInfo,
+      :struct,
+      MicrosoftGraph.Model.PrivilegedAccessScheduleRequestScheduleInfo
+    )
+    |> Deserializer.deserialize(
+      :ticketInfo,
+      :struct,
+      MicrosoftGraph.Model.PrivilegedAccessScheduleRequestTicketInfo
+    )
+    |> Deserializer.deserialize(
+      :accessId,
+      :struct,
+      MicrosoftGraph.Model.PrivilegedAccessGroupAssignmentScheduleRequestAccessId
+    )
+    |> Deserializer.deserialize(
+      :activatedUsing,
+      :struct,
+      MicrosoftGraph.Model.PrivilegedAccessGroupAssignmentScheduleRequestActivatedUsing
+    )
+    |> Deserializer.deserialize(
+      :group,
+      :struct,
+      MicrosoftGraph.Model.PrivilegedAccessGroupAssignmentScheduleRequestGroup
+    )
+    |> Deserializer.deserialize(
+      :principal,
+      :struct,
+      MicrosoftGraph.Model.PrivilegedAccessGroupAssignmentScheduleRequestPrincipal
+    )
+    |> Deserializer.deserialize(
+      :targetSchedule,
+      :struct,
+      MicrosoftGraph.Model.PrivilegedAccessGroupAssignmentScheduleRequestTargetSchedule
+    )
   end
 end
-

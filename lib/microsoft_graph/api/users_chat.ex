@@ -26,8 +26,23 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppInstallation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_create_installed_apps(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTeamsAppInstallation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppInstallation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_chats_create_installed_apps(connection, user_id, chat_id, microsoft_graph_teams_app_installation, _opts \\ []) do
+  @spec users_chats_create_installed_apps(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTeamsAppInstallation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppInstallation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_chats_create_installed_apps(
+        connection,
+        user_id,
+        chat_id,
+        microsoft_graph_teams_app_installation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -61,8 +76,23 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_create_members(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_chats_create_members(connection, user_id, chat_id, microsoft_graph_conversation_member, _opts \\ []) do
+  @spec users_chats_create_members(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphConversationMember.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_chats_create_members(
+        connection,
+        user_id,
+        chat_id,
+        microsoft_graph_conversation_member,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -96,8 +126,23 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_create_messages(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_chats_create_messages(connection, user_id, chat_id, microsoft_graph_chat_message, _opts \\ []) do
+  @spec users_chats_create_messages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphChatMessage.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_chats_create_messages(
+        connection,
+        user_id,
+        chat_id,
+        microsoft_graph_chat_message,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -130,8 +175,23 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_create_permission_grants(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_chats_create_permission_grants(connection, user_id, chat_id, microsoft_graph_resource_specific_permission_grant, _opts \\ []) do
+  @spec users_chats_create_permission_grants(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_chats_create_permission_grants(
+        connection,
+        user_id,
+        chat_id,
+        microsoft_graph_resource_specific_permission_grant,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -165,8 +225,23 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPinnedChatMessageInfo.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_create_pinned_messages(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphPinnedChatMessageInfo.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPinnedChatMessageInfo.t} | {:error, Tesla.Env.t}
-  def users_chats_create_pinned_messages(connection, user_id, chat_id, microsoft_graph_pinned_chat_message_info, _opts \\ []) do
+  @spec users_chats_create_pinned_messages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPinnedChatMessageInfo.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPinnedChatMessageInfo.t()}
+          | {:error, Tesla.Env.t()}
+  def users_chats_create_pinned_messages(
+        connection,
+        user_id,
+        chat_id,
+        microsoft_graph_pinned_chat_message_info,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -200,8 +275,23 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_create_tabs(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t} | {:error, Tesla.Env.t}
-  def users_chats_create_tabs(connection, user_id, chat_id, microsoft_graph_teams_tab, _opts \\ []) do
+  @spec users_chats_create_tabs(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t()}
+          | {:error, Tesla.Env.t()}
+  def users_chats_create_tabs(
+        connection,
+        user_id,
+        chat_id,
+        microsoft_graph_teams_tab,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -236,8 +326,23 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_delete_installed_apps(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_chats_delete_installed_apps(connection, user_id, chat_id, teams_app_installation_id, opts \\ []) do
+  @spec users_chats_delete_installed_apps(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_chats_delete_installed_apps(
+        connection,
+        user_id,
+        chat_id,
+        teams_app_installation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -274,7 +379,15 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_delete_last_message_preview(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_chats_delete_last_message_preview(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_chats_delete_last_message_preview(connection, user_id, chat_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -314,7 +427,16 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_delete_members(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_chats_delete_members(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_chats_delete_members(connection, user_id, chat_id, conversation_member_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -353,7 +475,16 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_delete_messages(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_chats_delete_messages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_chats_delete_messages(connection, user_id, chat_id, chat_message_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -392,8 +523,23 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_delete_permission_grants(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_chats_delete_permission_grants(connection, user_id, chat_id, resource_specific_permission_grant_id, opts \\ []) do
+  @spec users_chats_delete_permission_grants(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_chats_delete_permission_grants(
+        connection,
+        user_id,
+        chat_id,
+        resource_specific_permission_grant_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -401,7 +547,9 @@ defmodule MicrosoftGraph.Api.UsersChat do
     request =
       %{}
       |> method(:delete)
-      |> url("/users/#{user_id}/chats/#{chat_id}/permissionGrants/#{resource_specific_permission_grant_id}")
+      |> url(
+        "/users/#{user_id}/chats/#{chat_id}/permissionGrants/#{resource_specific_permission_grant_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -432,8 +580,23 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_delete_pinned_messages(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_chats_delete_pinned_messages(connection, user_id, chat_id, pinned_chat_message_info_id, opts \\ []) do
+  @spec users_chats_delete_pinned_messages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_chats_delete_pinned_messages(
+        connection,
+        user_id,
+        chat_id,
+        pinned_chat_message_info_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -472,7 +635,10 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_delete_tabs(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_chats_delete_tabs(Tesla.Env.client(), String.t(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_chats_delete_tabs(connection, user_id, chat_id, teams_tab_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -510,7 +676,10 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_get_count38c2(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_chats_get_count38c2(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_chats_get_count38c2(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -552,8 +721,23 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppInstallation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_get_installed_apps(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppInstallation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_chats_get_installed_apps(connection, user_id, chat_id, teams_app_installation_id, opts \\ []) do
+  @spec users_chats_get_installed_apps(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppInstallation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_chats_get_installed_apps(
+        connection,
+        user_id,
+        chat_id,
+        teams_app_installation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -593,7 +777,15 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageInfo.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_get_last_message_preview(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageInfo.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_chats_get_last_message_preview(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageInfo.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_chats_get_last_message_preview(connection, user_id, chat_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -635,7 +827,10 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_get_members(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_chats_get_members(Tesla.Env.client(), String.t(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_chats_get_members(connection, user_id, chat_id, conversation_member_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -677,7 +872,16 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_get_messages(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_chats_get_messages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_chats_get_messages(connection, user_id, chat_id, chat_message_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -719,8 +923,23 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_get_permission_grants(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_chats_get_permission_grants(connection, user_id, chat_id, resource_specific_permission_grant_id, opts \\ []) do
+  @spec users_chats_get_permission_grants(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_chats_get_permission_grants(
+        connection,
+        user_id,
+        chat_id,
+        resource_specific_permission_grant_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -729,7 +948,9 @@ defmodule MicrosoftGraph.Api.UsersChat do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/chats/#{chat_id}/permissionGrants/#{resource_specific_permission_grant_id}")
+      |> url(
+        "/users/#{user_id}/chats/#{chat_id}/permissionGrants/#{resource_specific_permission_grant_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -761,8 +982,23 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPinnedChatMessageInfo.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_get_pinned_messages(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPinnedChatMessageInfo.t} | {:error, Tesla.Env.t}
-  def users_chats_get_pinned_messages(connection, user_id, chat_id, pinned_chat_message_info_id, opts \\ []) do
+  @spec users_chats_get_pinned_messages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPinnedChatMessageInfo.t()}
+          | {:error, Tesla.Env.t()}
+  def users_chats_get_pinned_messages(
+        connection,
+        user_id,
+        chat_id,
+        pinned_chat_message_info_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -803,7 +1039,10 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_get_tabs(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t} | {:error, Tesla.Env.t}
+  @spec users_chats_get_tabs(Tesla.Env.client(), String.t(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t()}
+          | {:error, Tesla.Env.t()}
   def users_chats_get_tabs(connection, user_id, chat_id, teams_tab_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -843,7 +1082,15 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_installed_apps_get_count0d67(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_chats_installed_apps_get_count0d67(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_chats_installed_apps_get_count0d67(connection, user_id, chat_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -885,8 +1132,23 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsApp.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_installed_apps_get_teams_app(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsApp.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_chats_installed_apps_get_teams_app(connection, user_id, chat_id, teams_app_installation_id, opts \\ []) do
+  @spec users_chats_installed_apps_get_teams_app(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsApp.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_chats_installed_apps_get_teams_app(
+        connection,
+        user_id,
+        chat_id,
+        teams_app_installation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -895,7 +1157,9 @@ defmodule MicrosoftGraph.Api.UsersChat do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/chats/#{chat_id}/installedApps/#{teams_app_installation_id}/teamsApp")
+      |> url(
+        "/users/#{user_id}/chats/#{chat_id}/installedApps/#{teams_app_installation_id}/teamsApp"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -927,8 +1191,23 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_installed_apps_get_teams_app_definition(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_chats_installed_apps_get_teams_app_definition(connection, user_id, chat_id, teams_app_installation_id, opts \\ []) do
+  @spec users_chats_installed_apps_get_teams_app_definition(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_chats_installed_apps_get_teams_app_definition(
+        connection,
+        user_id,
+        chat_id,
+        teams_app_installation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -937,7 +1216,9 @@ defmodule MicrosoftGraph.Api.UsersChat do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/chats/#{chat_id}/installedApps/#{teams_app_installation_id}/teamsAppDefinition")
+      |> url(
+        "/users/#{user_id}/chats/#{chat_id}/installedApps/#{teams_app_installation_id}/teamsAppDefinition"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -974,7 +1255,10 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppInstallationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_list_installed_apps(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppInstallationCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec users_chats_list_installed_apps(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppInstallationCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def users_chats_list_installed_apps(connection, user_id, chat_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1027,7 +1311,10 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMemberCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_list_members(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMemberCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_chats_list_members(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMemberCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_chats_list_members(connection, user_id, chat_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1080,7 +1367,10 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_list_messages(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_chats_list_messages(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_chats_list_messages(connection, user_id, chat_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1133,7 +1423,11 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrantCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_list_permission_grants(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrantCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_chats_list_permission_grants(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrantCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_chats_list_permission_grants(connection, user_id, chat_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1156,7 +1450,8 @@ defmodule MicrosoftGraph.Api.UsersChat do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrantCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrantCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -1186,7 +1481,10 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPinnedChatMessageInfoCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_list_pinned_messages(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPinnedChatMessageInfoCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec users_chats_list_pinned_messages(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPinnedChatMessageInfoCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def users_chats_list_pinned_messages(connection, user_id, chat_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1239,7 +1537,10 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTabCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_list_tabs(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTabCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_chats_list_tabs(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTabCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_chats_list_tabs(connection, user_id, chat_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1285,7 +1586,10 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_members_get_count_b25d(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_chats_members_get_count_b25d(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_chats_members_get_count_b25d(connection, user_id, chat_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -1325,8 +1629,25 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_messages_create_hosted_contents(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_chats_messages_create_hosted_contents(connection, user_id, chat_id, chat_message_id, microsoft_graph_chat_message_hosted_content, _opts \\ []) do
+  @spec users_chats_messages_create_hosted_contents(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_chats_messages_create_hosted_contents(
+        connection,
+        user_id,
+        chat_id,
+        chat_message_id,
+        microsoft_graph_chat_message_hosted_content,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1361,8 +1682,25 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_messages_create_replies(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_chats_messages_create_replies(connection, user_id, chat_id, chat_message_id, microsoft_graph_chat_message, _opts \\ []) do
+  @spec users_chats_messages_create_replies(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphChatMessage.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_chats_messages_create_replies(
+        connection,
+        user_id,
+        chat_id,
+        chat_message_id,
+        microsoft_graph_chat_message,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1397,8 +1735,25 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_messages_delete_hosted_contents(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_chats_messages_delete_hosted_contents(connection, user_id, chat_id, chat_message_id, chat_message_hosted_content_id, opts \\ []) do
+  @spec users_chats_messages_delete_hosted_contents(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_chats_messages_delete_hosted_contents(
+        connection,
+        user_id,
+        chat_id,
+        chat_message_id,
+        chat_message_hosted_content_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1406,7 +1761,9 @@ defmodule MicrosoftGraph.Api.UsersChat do
     request =
       %{}
       |> method(:delete)
-      |> url("/users/#{user_id}/chats/#{chat_id}/messages/#{chat_message_id}/hostedContents/#{chat_message_hosted_content_id}")
+      |> url(
+        "/users/#{user_id}/chats/#{chat_id}/messages/#{chat_message_id}/hostedContents/#{chat_message_hosted_content_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1437,8 +1794,25 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_messages_delete_replies(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_chats_messages_delete_replies(connection, user_id, chat_id, chat_message_id, chat_message_id1, opts \\ []) do
+  @spec users_chats_messages_delete_replies(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_chats_messages_delete_replies(
+        connection,
+        user_id,
+        chat_id,
+        chat_message_id,
+        chat_message_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1446,7 +1820,9 @@ defmodule MicrosoftGraph.Api.UsersChat do
     request =
       %{}
       |> method(:delete)
-      |> url("/users/#{user_id}/chats/#{chat_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}")
+      |> url(
+        "/users/#{user_id}/chats/#{chat_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1476,7 +1852,10 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_messages_get_count_c95d(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_chats_messages_get_count_c95d(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_chats_messages_get_count_c95d(connection, user_id, chat_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -1519,8 +1898,25 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_messages_get_hosted_contents(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_chats_messages_get_hosted_contents(connection, user_id, chat_id, chat_message_id, chat_message_hosted_content_id, opts \\ []) do
+  @spec users_chats_messages_get_hosted_contents(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_chats_messages_get_hosted_contents(
+        connection,
+        user_id,
+        chat_id,
+        chat_message_id,
+        chat_message_hosted_content_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1529,7 +1925,9 @@ defmodule MicrosoftGraph.Api.UsersChat do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/chats/#{chat_id}/messages/#{chat_message_id}/hostedContents/#{chat_message_hosted_content_id}")
+      |> url(
+        "/users/#{user_id}/chats/#{chat_id}/messages/#{chat_message_id}/hostedContents/#{chat_message_hosted_content_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1559,12 +1957,31 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_messages_get_hosted_contents_content(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
-  def users_chats_messages_get_hosted_contents_content(connection, user_id, chat_id, chat_message_id, chat_message_hosted_content_id, _opts \\ []) do
+  @spec users_chats_messages_get_hosted_contents_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
+  def users_chats_messages_get_hosted_contents_content(
+        connection,
+        user_id,
+        chat_id,
+        chat_message_id,
+        chat_message_hosted_content_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/chats/#{chat_id}/messages/#{chat_message_id}/hostedContents/#{chat_message_hosted_content_id}/$value")
+      |> url(
+        "/users/#{user_id}/chats/#{chat_id}/messages/#{chat_message_id}/hostedContents/#{chat_message_hosted_content_id}/$value"
+      )
       |> Enum.into([])
 
     connection
@@ -1596,8 +2013,25 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_messages_get_replies(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_chats_messages_get_replies(connection, user_id, chat_id, chat_message_id, chat_message_id1, opts \\ []) do
+  @spec users_chats_messages_get_replies(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_chats_messages_get_replies(
+        connection,
+        user_id,
+        chat_id,
+        chat_message_id,
+        chat_message_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1606,7 +2040,9 @@ defmodule MicrosoftGraph.Api.UsersChat do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/chats/#{chat_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}")
+      |> url(
+        "/users/#{user_id}/chats/#{chat_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1637,8 +2073,23 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_messages_hosted_contents_get_count_e922(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_chats_messages_hosted_contents_get_count_e922(connection, user_id, chat_id, chat_message_id, opts \\ []) do
+  @spec users_chats_messages_hosted_contents_get_count_e922(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_chats_messages_hosted_contents_get_count_e922(
+        connection,
+        user_id,
+        chat_id,
+        chat_message_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1647,7 +2098,9 @@ defmodule MicrosoftGraph.Api.UsersChat do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/chats/#{chat_id}/messages/#{chat_message_id}/hostedContents/$count")
+      |> url(
+        "/users/#{user_id}/chats/#{chat_id}/messages/#{chat_message_id}/hostedContents/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1685,8 +2138,24 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContentCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_messages_list_hosted_contents(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContentCollectionResponse.t} | {:error, Tesla.Env.t}
-  def users_chats_messages_list_hosted_contents(connection, user_id, chat_id, chat_message_id, opts \\ []) do
+  @spec users_chats_messages_list_hosted_contents(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContentCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def users_chats_messages_list_hosted_contents(
+        connection,
+        user_id,
+        chat_id,
+        chat_message_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1739,7 +2208,16 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_messages_list_replies(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_chats_messages_list_replies(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_chats_messages_list_replies(connection, user_id, chat_id, chat_message_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1786,12 +2264,33 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_messages_replies_create_hosted_contents(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_chats_messages_replies_create_hosted_contents(connection, user_id, chat_id, chat_message_id, chat_message_id1, microsoft_graph_chat_message_hosted_content, _opts \\ []) do
+  @spec users_chats_messages_replies_create_hosted_contents(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_chats_messages_replies_create_hosted_contents(
+        connection,
+        user_id,
+        chat_id,
+        chat_message_id,
+        chat_message_id1,
+        microsoft_graph_chat_message_hosted_content,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/users/#{user_id}/chats/#{chat_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/hostedContents")
+      |> url(
+        "/users/#{user_id}/chats/#{chat_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/hostedContents"
+      )
       |> add_param(:body, :body, microsoft_graph_chat_message_hosted_content)
       |> Enum.into([])
 
@@ -1823,8 +2322,27 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_messages_replies_delete_hosted_contents(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_chats_messages_replies_delete_hosted_contents(connection, user_id, chat_id, chat_message_id, chat_message_id1, chat_message_hosted_content_id, opts \\ []) do
+  @spec users_chats_messages_replies_delete_hosted_contents(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_chats_messages_replies_delete_hosted_contents(
+        connection,
+        user_id,
+        chat_id,
+        chat_message_id,
+        chat_message_id1,
+        chat_message_hosted_content_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1832,7 +2350,9 @@ defmodule MicrosoftGraph.Api.UsersChat do
     request =
       %{}
       |> method(:delete)
-      |> url("/users/#{user_id}/chats/#{chat_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/hostedContents/#{chat_message_hosted_content_id}")
+      |> url(
+        "/users/#{user_id}/chats/#{chat_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/hostedContents/#{chat_message_hosted_content_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1863,8 +2383,23 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_messages_replies_get_count_cecc(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_chats_messages_replies_get_count_cecc(connection, user_id, chat_id, chat_message_id, opts \\ []) do
+  @spec users_chats_messages_replies_get_count_cecc(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_chats_messages_replies_get_count_cecc(
+        connection,
+        user_id,
+        chat_id,
+        chat_message_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1907,8 +2442,27 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_messages_replies_get_hosted_contents(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_chats_messages_replies_get_hosted_contents(connection, user_id, chat_id, chat_message_id, chat_message_id1, chat_message_hosted_content_id, opts \\ []) do
+  @spec users_chats_messages_replies_get_hosted_contents(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_chats_messages_replies_get_hosted_contents(
+        connection,
+        user_id,
+        chat_id,
+        chat_message_id,
+        chat_message_id1,
+        chat_message_hosted_content_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1917,7 +2471,9 @@ defmodule MicrosoftGraph.Api.UsersChat do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/chats/#{chat_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/hostedContents/#{chat_message_hosted_content_id}")
+      |> url(
+        "/users/#{user_id}/chats/#{chat_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/hostedContents/#{chat_message_hosted_content_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1948,12 +2504,33 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_messages_replies_get_hosted_contents_content(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
-  def users_chats_messages_replies_get_hosted_contents_content(connection, user_id, chat_id, chat_message_id, chat_message_id1, chat_message_hosted_content_id, _opts \\ []) do
+  @spec users_chats_messages_replies_get_hosted_contents_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
+  def users_chats_messages_replies_get_hosted_contents_content(
+        connection,
+        user_id,
+        chat_id,
+        chat_message_id,
+        chat_message_id1,
+        chat_message_hosted_content_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/chats/#{chat_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/hostedContents/#{chat_message_hosted_content_id}/$value")
+      |> url(
+        "/users/#{user_id}/chats/#{chat_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/hostedContents/#{chat_message_hosted_content_id}/$value"
+      )
       |> Enum.into([])
 
     connection
@@ -1984,8 +2561,25 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_messages_replies_hosted_contents_get_count34f5(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_chats_messages_replies_hosted_contents_get_count34f5(connection, user_id, chat_id, chat_message_id, chat_message_id1, opts \\ []) do
+  @spec users_chats_messages_replies_hosted_contents_get_count34f5(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_chats_messages_replies_hosted_contents_get_count34f5(
+        connection,
+        user_id,
+        chat_id,
+        chat_message_id,
+        chat_message_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1994,7 +2588,9 @@ defmodule MicrosoftGraph.Api.UsersChat do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/chats/#{chat_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/hostedContents/$count")
+      |> url(
+        "/users/#{user_id}/chats/#{chat_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/hostedContents/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2033,8 +2629,26 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContentCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_messages_replies_list_hosted_contents(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContentCollectionResponse.t} | {:error, Tesla.Env.t}
-  def users_chats_messages_replies_list_hosted_contents(connection, user_id, chat_id, chat_message_id, chat_message_id1, opts \\ []) do
+  @spec users_chats_messages_replies_list_hosted_contents(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContentCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def users_chats_messages_replies_list_hosted_contents(
+        connection,
+        user_id,
+        chat_id,
+        chat_message_id,
+        chat_message_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -2049,7 +2663,9 @@ defmodule MicrosoftGraph.Api.UsersChat do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/chats/#{chat_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/hostedContents")
+      |> url(
+        "/users/#{user_id}/chats/#{chat_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/hostedContents"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2081,12 +2697,35 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_messages_replies_update_hosted_contents(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_chats_messages_replies_update_hosted_contents(connection, user_id, chat_id, chat_message_id, chat_message_id1, chat_message_hosted_content_id, microsoft_graph_chat_message_hosted_content, _opts \\ []) do
+  @spec users_chats_messages_replies_update_hosted_contents(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_chats_messages_replies_update_hosted_contents(
+        connection,
+        user_id,
+        chat_id,
+        chat_message_id,
+        chat_message_id1,
+        chat_message_hosted_content_id,
+        microsoft_graph_chat_message_hosted_content,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/users/#{user_id}/chats/#{chat_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/hostedContents/#{chat_message_hosted_content_id}")
+      |> url(
+        "/users/#{user_id}/chats/#{chat_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/hostedContents/#{chat_message_hosted_content_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_chat_message_hosted_content)
       |> Enum.into([])
 
@@ -2118,12 +2757,35 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_messages_replies_update_hosted_contents_content(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_chats_messages_replies_update_hosted_contents_content(connection, user_id, chat_id, chat_message_id, chat_message_id1, chat_message_hosted_content_id, body, _opts \\ []) do
+  @spec users_chats_messages_replies_update_hosted_contents_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_chats_messages_replies_update_hosted_contents_content(
+        connection,
+        user_id,
+        chat_id,
+        chat_message_id,
+        chat_message_id1,
+        chat_message_hosted_content_id,
+        body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)
-      |> url("/users/#{user_id}/chats/#{chat_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/hostedContents/#{chat_message_hosted_content_id}/$value")
+      |> url(
+        "/users/#{user_id}/chats/#{chat_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/hostedContents/#{chat_message_hosted_content_id}/$value"
+      )
       |> add_param(:body, :body, body)
       |> Enum.into([])
 
@@ -2154,12 +2816,33 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_messages_update_hosted_contents(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_chats_messages_update_hosted_contents(connection, user_id, chat_id, chat_message_id, chat_message_hosted_content_id, microsoft_graph_chat_message_hosted_content, _opts \\ []) do
+  @spec users_chats_messages_update_hosted_contents(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_chats_messages_update_hosted_contents(
+        connection,
+        user_id,
+        chat_id,
+        chat_message_id,
+        chat_message_hosted_content_id,
+        microsoft_graph_chat_message_hosted_content,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/users/#{user_id}/chats/#{chat_id}/messages/#{chat_message_id}/hostedContents/#{chat_message_hosted_content_id}")
+      |> url(
+        "/users/#{user_id}/chats/#{chat_id}/messages/#{chat_message_id}/hostedContents/#{chat_message_hosted_content_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_chat_message_hosted_content)
       |> Enum.into([])
 
@@ -2190,12 +2873,33 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_messages_update_hosted_contents_content(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_chats_messages_update_hosted_contents_content(connection, user_id, chat_id, chat_message_id, chat_message_hosted_content_id, body, _opts \\ []) do
+  @spec users_chats_messages_update_hosted_contents_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_chats_messages_update_hosted_contents_content(
+        connection,
+        user_id,
+        chat_id,
+        chat_message_id,
+        chat_message_hosted_content_id,
+        body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)
-      |> url("/users/#{user_id}/chats/#{chat_id}/messages/#{chat_message_id}/hostedContents/#{chat_message_hosted_content_id}/$value")
+      |> url(
+        "/users/#{user_id}/chats/#{chat_id}/messages/#{chat_message_id}/hostedContents/#{chat_message_hosted_content_id}/$value"
+      )
       |> add_param(:body, :body, body)
       |> Enum.into([])
 
@@ -2226,12 +2930,33 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_messages_update_replies(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_chats_messages_update_replies(connection, user_id, chat_id, chat_message_id, chat_message_id1, microsoft_graph_chat_message, _opts \\ []) do
+  @spec users_chats_messages_update_replies(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphChatMessage.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_chats_messages_update_replies(
+        connection,
+        user_id,
+        chat_id,
+        chat_message_id,
+        chat_message_id1,
+        microsoft_graph_chat_message,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/users/#{user_id}/chats/#{chat_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}")
+      |> url(
+        "/users/#{user_id}/chats/#{chat_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}"
+      )
       |> add_param(:body, :body, microsoft_graph_chat_message)
       |> Enum.into([])
 
@@ -2261,7 +2986,15 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_permission_grants_get_count8aa5(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_chats_permission_grants_get_count8aa5(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_chats_permission_grants_get_count8aa5(connection, user_id, chat_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -2301,7 +3034,15 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_pinned_messages_get_count_bc2d(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_chats_pinned_messages_get_count_bc2d(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_chats_pinned_messages_get_count_bc2d(connection, user_id, chat_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -2343,8 +3084,23 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_pinned_messages_get_message(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_chats_pinned_messages_get_message(connection, user_id, chat_id, pinned_chat_message_info_id, opts \\ []) do
+  @spec users_chats_pinned_messages_get_message(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_chats_pinned_messages_get_message(
+        connection,
+        user_id,
+        chat_id,
+        pinned_chat_message_info_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2353,7 +3109,9 @@ defmodule MicrosoftGraph.Api.UsersChat do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/chats/#{chat_id}/pinnedMessages/#{pinned_chat_message_info_id}/message")
+      |> url(
+        "/users/#{user_id}/chats/#{chat_id}/pinnedMessages/#{pinned_chat_message_info_id}/message"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2383,7 +3141,10 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_tabs_get_count_bf26(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_chats_tabs_get_count_bf26(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_chats_tabs_get_count_bf26(connection, user_id, chat_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -2425,7 +3186,16 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsApp.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_tabs_get_teams_app(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsApp.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_chats_tabs_get_teams_app(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsApp.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_chats_tabs_get_teams_app(connection, user_id, chat_id, teams_tab_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -2465,8 +3235,25 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppInstallation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_update_installed_apps(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTeamsAppInstallation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppInstallation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_chats_update_installed_apps(connection, user_id, chat_id, teams_app_installation_id, microsoft_graph_teams_app_installation, _opts \\ []) do
+  @spec users_chats_update_installed_apps(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTeamsAppInstallation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppInstallation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_chats_update_installed_apps(
+        connection,
+        user_id,
+        chat_id,
+        teams_app_installation_id,
+        microsoft_graph_teams_app_installation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -2499,8 +3286,23 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageInfo.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_update_last_message_preview(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphChatMessageInfo.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageInfo.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_chats_update_last_message_preview(connection, user_id, chat_id, microsoft_graph_chat_message_info, _opts \\ []) do
+  @spec users_chats_update_last_message_preview(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphChatMessageInfo.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageInfo.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_chats_update_last_message_preview(
+        connection,
+        user_id,
+        chat_id,
+        microsoft_graph_chat_message_info,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -2534,8 +3336,25 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_update_members(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_chats_update_members(connection, user_id, chat_id, conversation_member_id, microsoft_graph_conversation_member, _opts \\ []) do
+  @spec users_chats_update_members(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphConversationMember.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_chats_update_members(
+        connection,
+        user_id,
+        chat_id,
+        conversation_member_id,
+        microsoft_graph_conversation_member,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -2569,8 +3388,25 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_update_messages(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_chats_update_messages(connection, user_id, chat_id, chat_message_id, microsoft_graph_chat_message, _opts \\ []) do
+  @spec users_chats_update_messages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphChatMessage.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_chats_update_messages(
+        connection,
+        user_id,
+        chat_id,
+        chat_message_id,
+        microsoft_graph_chat_message,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -2604,12 +3440,31 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_update_permission_grants(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_chats_update_permission_grants(connection, user_id, chat_id, resource_specific_permission_grant_id, microsoft_graph_resource_specific_permission_grant, _opts \\ []) do
+  @spec users_chats_update_permission_grants(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_chats_update_permission_grants(
+        connection,
+        user_id,
+        chat_id,
+        resource_specific_permission_grant_id,
+        microsoft_graph_resource_specific_permission_grant,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/users/#{user_id}/chats/#{chat_id}/permissionGrants/#{resource_specific_permission_grant_id}")
+      |> url(
+        "/users/#{user_id}/chats/#{chat_id}/permissionGrants/#{resource_specific_permission_grant_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_resource_specific_permission_grant)
       |> Enum.into([])
 
@@ -2639,8 +3494,25 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPinnedChatMessageInfo.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_update_pinned_messages(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphPinnedChatMessageInfo.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPinnedChatMessageInfo.t} | {:error, Tesla.Env.t}
-  def users_chats_update_pinned_messages(connection, user_id, chat_id, pinned_chat_message_info_id, microsoft_graph_pinned_chat_message_info, _opts \\ []) do
+  @spec users_chats_update_pinned_messages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPinnedChatMessageInfo.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPinnedChatMessageInfo.t()}
+          | {:error, Tesla.Env.t()}
+  def users_chats_update_pinned_messages(
+        connection,
+        user_id,
+        chat_id,
+        pinned_chat_message_info_id,
+        microsoft_graph_pinned_chat_message_info,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -2675,8 +3547,25 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_chats_update_tabs(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t} | {:error, Tesla.Env.t}
-  def users_chats_update_tabs(connection, user_id, chat_id, teams_tab_id, microsoft_graph_teams_tab, _opts \\ []) do
+  @spec users_chats_update_tabs(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t()}
+          | {:error, Tesla.Env.t()}
+  def users_chats_update_tabs(
+        connection,
+        user_id,
+        chat_id,
+        teams_tab_id,
+        microsoft_graph_teams_tab,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -2708,7 +3597,15 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_create_chats(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphChat.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphChat.t} | {:error, Tesla.Env.t}
+  @spec users_create_chats(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphChat.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphChat.t()}
+          | {:error, Tesla.Env.t()}
   def users_create_chats(connection, user_id, microsoft_graph_chat, _opts \\ []) do
     request =
       %{}
@@ -2742,7 +3639,10 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_delete_chats(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_delete_chats(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_delete_chats(connection, user_id, chat_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -2782,7 +3682,10 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_get_chats(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphChat.t} | {:error, Tesla.Env.t}
+  @spec users_get_chats(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphChat.t()}
+          | {:error, Tesla.Env.t()}
   def users_get_chats(connection, user_id, chat_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -2828,7 +3731,10 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_list_chats(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphChatCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec users_list_chats(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphChatCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def users_list_chats(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -2873,7 +3779,16 @@ defmodule MicrosoftGraph.Api.UsersChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_update_chats(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphChat.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphChat.t} | {:error, Tesla.Env.t}
+  @spec users_update_chats(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphChat.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphChat.t()}
+          | {:error, Tesla.Env.t()}
   def users_update_chats(connection, user_id, chat_id, microsoft_graph_chat, _opts \\ []) do
     request =
       %{}

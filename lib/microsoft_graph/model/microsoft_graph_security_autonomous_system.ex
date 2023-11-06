@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityAutonomousSystem do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,15 +16,14 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityAutonomousSystem do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :name => String.t | nil,
-    :number => integer() | nil,
-    :organization => String.t | nil,
-    :value => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :name => String.t() | nil,
+          :number => integer() | nil,
+          :organization => String.t() | nil,
+          :value => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

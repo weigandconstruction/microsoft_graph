@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.UsersUserExportPersonalDataRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,11 +12,10 @@ defmodule MicrosoftGraph.Model.UsersUserExportPersonalDataRequest do
   ]
 
   @type t :: %__MODULE__{
-    :storageLocation => String.t | nil
-  }
+          :storageLocation => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphIpNamedLocation do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,22 +18,21 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphIpNamedLocation do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :displayName => String.t | nil,
-    :modifiedDateTime => DateTime.t | nil,
-    :ipRanges => [MicrosoftGraph.Model.MicrosoftGraphIpRange.t] | nil,
-    :isTrusted => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :displayName => String.t() | nil,
+          :modifiedDateTime => DateTime.t() | nil,
+          :ipRanges => [MicrosoftGraph.Model.MicrosoftGraphIpRange.t()] | nil,
+          :isTrusted => boolean() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:modifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:ipRanges, :list, MicrosoftGraph.Model.MicrosoftGraphIpRange)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:modifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:ipRanges, :list, MicrosoftGraph.Model.MicrosoftGraphIpRange)
   end
 end
-

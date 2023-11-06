@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAdd2XxResponseAllOfValueInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,15 +13,18 @@ defmodule MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAdd2XxResponseAllOfValueI
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :error => MicrosoftGraph.Model.MicrosoftGraphActionResultPartError.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :error => MicrosoftGraph.Model.MicrosoftGraphActionResultPartError.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:error, :struct, MicrosoftGraph.Model.MicrosoftGraphActionResultPartError)
+    |> Deserializer.deserialize(
+      :error,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphActionResultPartError
+    )
   end
 end
-

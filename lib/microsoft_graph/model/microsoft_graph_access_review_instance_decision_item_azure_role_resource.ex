@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceDecisionItemAzureRoleResource do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,18 +16,22 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceDecisionItemAzu
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :displayName => String.t | nil,
-    :id => String.t | nil,
-    :type => String.t | nil,
-    :scope => MicrosoftGraph.Model.AccessReviewInstanceDecisionItemAzureRoleResourceScope.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :displayName => String.t() | nil,
+          :id => String.t() | nil,
+          :type => String.t() | nil,
+          :scope =>
+            MicrosoftGraph.Model.AccessReviewInstanceDecisionItemAzureRoleResourceScope.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:scope, :struct, MicrosoftGraph.Model.AccessReviewInstanceDecisionItemAzureRoleResourceScope)
+    |> Deserializer.deserialize(
+      :scope,
+      :struct,
+      MicrosoftGraph.Model.AccessReviewInstanceDecisionItemAzureRoleResourceScope
+    )
   end
 end
-

@@ -26,7 +26,10 @@ defmodule MicrosoftGraph.Api.UsersPerson do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPerson.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_get_people(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPerson.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_get_people(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPerson.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_get_people(connection, user_id, person_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query
@@ -70,7 +73,10 @@ defmodule MicrosoftGraph.Api.UsersPerson do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPersonCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_list_people(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPersonCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_list_people(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPersonCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_list_people(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -114,7 +120,10 @@ defmodule MicrosoftGraph.Api.UsersPerson do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_people_get_count_d516(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_people_get_count_d516(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_people_get_count_d516(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,

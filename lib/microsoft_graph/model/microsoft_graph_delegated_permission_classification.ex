@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphDelegatedPermissionClassification do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,18 +16,22 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphDelegatedPermissionClassification d
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :classification => MicrosoftGraph.Model.DelegatedPermissionClassificationClassification.t | nil,
-    :permissionId => String.t | nil,
-    :permissionName => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :classification =>
+            MicrosoftGraph.Model.DelegatedPermissionClassificationClassification.t() | nil,
+          :permissionId => String.t() | nil,
+          :permissionName => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:classification, :struct, MicrosoftGraph.Model.DelegatedPermissionClassificationClassification)
+    |> Deserializer.deserialize(
+      :classification,
+      :struct,
+      MicrosoftGraph.Model.DelegatedPermissionClassificationClassification
+    )
   end
 end
-

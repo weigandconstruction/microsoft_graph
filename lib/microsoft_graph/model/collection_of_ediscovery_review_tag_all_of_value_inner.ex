@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.CollectionOfEdiscoveryReviewTagAllOfValueInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -20,26 +20,35 @@ defmodule MicrosoftGraph.Model.CollectionOfEdiscoveryReviewTagAllOfValueInner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :createdBy => MicrosoftGraph.Model.CaseLastModifiedBy.t | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :childSelectability => MicrosoftGraph.Model.EdiscoveryReviewTagChildSelectability.t | nil,
-    :childTags => [MicrosoftGraph.Model.MicrosoftGraphSecurityEdiscoveryReviewTag.t] | nil,
-    :parent => MicrosoftGraph.Model.EdiscoveryReviewTagParent.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :createdBy => MicrosoftGraph.Model.CaseLastModifiedBy.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :childSelectability =>
+            MicrosoftGraph.Model.EdiscoveryReviewTagChildSelectability.t() | nil,
+          :childTags =>
+            [MicrosoftGraph.Model.MicrosoftGraphSecurityEdiscoveryReviewTag.t()] | nil,
+          :parent => MicrosoftGraph.Model.EdiscoveryReviewTagParent.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.CaseLastModifiedBy)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:childSelectability, :struct, MicrosoftGraph.Model.EdiscoveryReviewTagChildSelectability)
-     |> Deserializer.deserialize(:childTags, :list, MicrosoftGraph.Model.MicrosoftGraphSecurityEdiscoveryReviewTag)
-     |> Deserializer.deserialize(:parent, :struct, MicrosoftGraph.Model.EdiscoveryReviewTagParent)
+    |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.CaseLastModifiedBy)
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :childSelectability,
+      :struct,
+      MicrosoftGraph.Model.EdiscoveryReviewTagChildSelectability
+    )
+    |> Deserializer.deserialize(
+      :childTags,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityEdiscoveryReviewTag
+    )
+    |> Deserializer.deserialize(:parent, :struct, MicrosoftGraph.Model.EdiscoveryReviewTagParent)
   end
 end
-

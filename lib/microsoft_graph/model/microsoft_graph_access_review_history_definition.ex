@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAccessReviewHistoryDefinition do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -23,33 +23,59 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAccessReviewHistoryDefinition do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :createdBy => MicrosoftGraph.Model.MicrosoftGraphUserIdentity.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :decisions => [MicrosoftGraph.Model.AccessReviewHistoryDefinitionDecisionsInner.t] | nil,
-    :displayName => String.t | nil,
-    :instances => [MicrosoftGraph.Model.MicrosoftGraphAccessReviewHistoryInstance.t] | nil,
-    :reviewHistoryPeriodEndDateTime => DateTime.t | nil,
-    :reviewHistoryPeriodStartDateTime => DateTime.t | nil,
-    :scheduleSettings => MicrosoftGraph.Model.AccessReviewHistoryDefinitionScheduleSettings.t | nil,
-    :scopes => [MicrosoftGraph.Model.MicrosoftGraphAccessReviewScope.t] | nil,
-    :status => MicrosoftGraph.Model.AccessReviewHistoryDefinitionStatus.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :createdBy => MicrosoftGraph.Model.MicrosoftGraphUserIdentity.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :decisions =>
+            [MicrosoftGraph.Model.AccessReviewHistoryDefinitionDecisionsInner.t()] | nil,
+          :displayName => String.t() | nil,
+          :instances =>
+            [MicrosoftGraph.Model.MicrosoftGraphAccessReviewHistoryInstance.t()] | nil,
+          :reviewHistoryPeriodEndDateTime => DateTime.t() | nil,
+          :reviewHistoryPeriodStartDateTime => DateTime.t() | nil,
+          :scheduleSettings =>
+            MicrosoftGraph.Model.AccessReviewHistoryDefinitionScheduleSettings.t() | nil,
+          :scopes => [MicrosoftGraph.Model.MicrosoftGraphAccessReviewScope.t()] | nil,
+          :status => MicrosoftGraph.Model.AccessReviewHistoryDefinitionStatus.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.MicrosoftGraphUserIdentity)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:decisions, :list, MicrosoftGraph.Model.AccessReviewHistoryDefinitionDecisionsInner)
-     |> Deserializer.deserialize(:instances, :list, MicrosoftGraph.Model.MicrosoftGraphAccessReviewHistoryInstance)
-     |> Deserializer.deserialize(:reviewHistoryPeriodEndDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:reviewHistoryPeriodStartDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:scheduleSettings, :struct, MicrosoftGraph.Model.AccessReviewHistoryDefinitionScheduleSettings)
-     |> Deserializer.deserialize(:scopes, :list, MicrosoftGraph.Model.MicrosoftGraphAccessReviewScope)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.AccessReviewHistoryDefinitionStatus)
+    |> Deserializer.deserialize(
+      :createdBy,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphUserIdentity
+    )
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :decisions,
+      :list,
+      MicrosoftGraph.Model.AccessReviewHistoryDefinitionDecisionsInner
+    )
+    |> Deserializer.deserialize(
+      :instances,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAccessReviewHistoryInstance
+    )
+    |> Deserializer.deserialize(:reviewHistoryPeriodEndDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:reviewHistoryPeriodStartDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :scheduleSettings,
+      :struct,
+      MicrosoftGraph.Model.AccessReviewHistoryDefinitionScheduleSettings
+    )
+    |> Deserializer.deserialize(
+      :scopes,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAccessReviewScope
+    )
+    |> Deserializer.deserialize(
+      :status,
+      :struct,
+      MicrosoftGraph.Model.AccessReviewHistoryDefinitionStatus
+    )
   end
 end
-

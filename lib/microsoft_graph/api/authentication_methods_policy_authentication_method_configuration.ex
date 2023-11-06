@@ -24,8 +24,17 @@ defmodule MicrosoftGraph.Api.AuthenticationMethodsPolicyAuthenticationMethodConf
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec authentication_methods_policy_authentication_method_configurations_get_count_e7d5(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def authentication_methods_policy_authentication_method_configurations_get_count_e7d5(connection, opts \\ []) do
+  @spec authentication_methods_policy_authentication_method_configurations_get_count_e7d5(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def authentication_methods_policy_authentication_method_configurations_get_count_e7d5(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -61,8 +70,19 @@ defmodule MicrosoftGraph.Api.AuthenticationMethodsPolicyAuthenticationMethodConf
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodConfiguration.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec authentication_methods_policy_create_authentication_method_configurations(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodConfiguration.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodConfiguration.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def authentication_methods_policy_create_authentication_method_configurations(connection, microsoft_graph_authentication_method_configuration, _opts \\ []) do
+  @spec authentication_methods_policy_create_authentication_method_configurations(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodConfiguration.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodConfiguration.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def authentication_methods_policy_create_authentication_method_configurations(
+        connection,
+        microsoft_graph_authentication_method_configuration,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -94,8 +114,19 @@ defmodule MicrosoftGraph.Api.AuthenticationMethodsPolicyAuthenticationMethodConf
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec authentication_methods_policy_delete_authentication_method_configurations(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def authentication_methods_policy_delete_authentication_method_configurations(connection, authentication_method_configuration_id, opts \\ []) do
+  @spec authentication_methods_policy_delete_authentication_method_configurations(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def authentication_methods_policy_delete_authentication_method_configurations(
+        connection,
+        authentication_method_configuration_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -103,7 +134,9 @@ defmodule MicrosoftGraph.Api.AuthenticationMethodsPolicyAuthenticationMethodConf
     request =
       %{}
       |> method(:delete)
-      |> url("/authenticationMethodsPolicy/authenticationMethodConfigurations/#{authentication_method_configuration_id}")
+      |> url(
+        "/authenticationMethodsPolicy/authenticationMethodConfigurations/#{authentication_method_configuration_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -133,8 +166,19 @@ defmodule MicrosoftGraph.Api.AuthenticationMethodsPolicyAuthenticationMethodConf
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodConfiguration.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec authentication_methods_policy_get_authentication_method_configurations(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodConfiguration.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def authentication_methods_policy_get_authentication_method_configurations(connection, authentication_method_configuration_id, opts \\ []) do
+  @spec authentication_methods_policy_get_authentication_method_configurations(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodConfiguration.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def authentication_methods_policy_get_authentication_method_configurations(
+        connection,
+        authentication_method_configuration_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -143,7 +187,9 @@ defmodule MicrosoftGraph.Api.AuthenticationMethodsPolicyAuthenticationMethodConf
     request =
       %{}
       |> method(:get)
-      |> url("/authenticationMethodsPolicy/authenticationMethodConfigurations/#{authentication_method_configuration_id}")
+      |> url(
+        "/authenticationMethodsPolicy/authenticationMethodConfigurations/#{authentication_method_configuration_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -178,8 +224,18 @@ defmodule MicrosoftGraph.Api.AuthenticationMethodsPolicyAuthenticationMethodConf
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodConfigurationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec authentication_methods_policy_list_authentication_method_configurations(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodConfigurationCollectionResponse.t} | {:error, Tesla.Env.t}
-  def authentication_methods_policy_list_authentication_method_configurations(connection, opts \\ []) do
+  @spec authentication_methods_policy_list_authentication_method_configurations(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodConfigurationCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def authentication_methods_policy_list_authentication_method_configurations(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -201,7 +257,8 @@ defmodule MicrosoftGraph.Api.AuthenticationMethodsPolicyAuthenticationMethodConf
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodConfigurationCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodConfigurationCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -222,12 +279,27 @@ defmodule MicrosoftGraph.Api.AuthenticationMethodsPolicyAuthenticationMethodConf
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodConfiguration.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec authentication_methods_policy_update_authentication_method_configurations(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodConfiguration.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodConfiguration.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def authentication_methods_policy_update_authentication_method_configurations(connection, authentication_method_configuration_id, microsoft_graph_authentication_method_configuration, _opts \\ []) do
+  @spec authentication_methods_policy_update_authentication_method_configurations(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodConfiguration.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodConfiguration.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def authentication_methods_policy_update_authentication_method_configurations(
+        connection,
+        authentication_method_configuration_id,
+        microsoft_graph_authentication_method_configuration,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/authenticationMethodsPolicy/authenticationMethodConfigurations/#{authentication_method_configuration_id}")
+      |> url(
+        "/authenticationMethodsPolicy/authenticationMethodConfigurations/#{authentication_method_configuration_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_authentication_method_configuration)
       |> Enum.into([])
 

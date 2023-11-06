@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphLocateDeviceActionResult do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,22 +17,29 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphLocateDeviceActionResult do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :actionName => String.t | nil,
-    :actionState => MicrosoftGraph.Model.MicrosoftGraphActionState.t | nil,
-    :lastUpdatedDateTime => DateTime.t | nil,
-    :startDateTime => DateTime.t | nil,
-    :deviceLocation => MicrosoftGraph.Model.LocateDeviceActionResultDeviceLocation.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :actionName => String.t() | nil,
+          :actionState => MicrosoftGraph.Model.MicrosoftGraphActionState.t() | nil,
+          :lastUpdatedDateTime => DateTime.t() | nil,
+          :startDateTime => DateTime.t() | nil,
+          :deviceLocation => MicrosoftGraph.Model.LocateDeviceActionResultDeviceLocation.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:actionState, :struct, MicrosoftGraph.Model.MicrosoftGraphActionState)
-     |> Deserializer.deserialize(:lastUpdatedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:startDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:deviceLocation, :struct, MicrosoftGraph.Model.LocateDeviceActionResultDeviceLocation)
+    |> Deserializer.deserialize(
+      :actionState,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphActionState
+    )
+    |> Deserializer.deserialize(:lastUpdatedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:startDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :deviceLocation,
+      :struct,
+      MicrosoftGraph.Model.LocateDeviceActionResultDeviceLocation
+    )
   end
 end
-

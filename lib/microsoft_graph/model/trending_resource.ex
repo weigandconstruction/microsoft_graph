@@ -13,12 +13,11 @@ defmodule MicrosoftGraph.Model.TrendingResource do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

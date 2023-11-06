@@ -18,21 +18,29 @@ defmodule MicrosoftGraph.Model.CallSource do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :countryCode => String.t | nil,
-    :endpointType => MicrosoftGraph.Model.MicrosoftGraphParticipantInfoEndpointType.t | nil,
-    :identity => MicrosoftGraph.Model.MicrosoftGraphIdentitySet.t | nil,
-    :languageId => String.t | nil,
-    :participantId => String.t | nil,
-    :region => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :countryCode => String.t() | nil,
+          :endpointType =>
+            MicrosoftGraph.Model.MicrosoftGraphParticipantInfoEndpointType.t() | nil,
+          :identity => MicrosoftGraph.Model.MicrosoftGraphIdentitySet.t() | nil,
+          :languageId => String.t() | nil,
+          :participantId => String.t() | nil,
+          :region => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:endpointType, :struct, MicrosoftGraph.Model.MicrosoftGraphParticipantInfoEndpointType)
-     |> Deserializer.deserialize(:identity, :struct, MicrosoftGraph.Model.MicrosoftGraphIdentitySet)
+    |> Deserializer.deserialize(
+      :endpointType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphParticipantInfoEndpointType
+    )
+    |> Deserializer.deserialize(
+      :identity,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphIdentitySet
+    )
   end
 end
-

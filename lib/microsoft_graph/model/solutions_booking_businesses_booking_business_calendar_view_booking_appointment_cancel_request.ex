@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.SolutionsBookingBusinessesBookingBusinessCalendarViewBookingAppointmentCancelRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,11 +12,10 @@ defmodule MicrosoftGraph.Model.SolutionsBookingBusinessesBookingBusinessCalendar
   ]
 
   @type t :: %__MODULE__{
-    :cancellationMessage => String.t | nil
-  }
+          :cancellationMessage => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

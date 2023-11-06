@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphParticipantLeftNotification do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,17 +15,20 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphParticipantLeftNotification do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :call => MicrosoftGraph.Model.ParticipantLeftNotificationCall.t | nil,
-    :participantId => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :call => MicrosoftGraph.Model.ParticipantLeftNotificationCall.t() | nil,
+          :participantId => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:call, :struct, MicrosoftGraph.Model.ParticipantLeftNotificationCall)
+    |> Deserializer.deserialize(
+      :call,
+      :struct,
+      MicrosoftGraph.Model.ParticipantLeftNotificationCall
+    )
   end
 end
-

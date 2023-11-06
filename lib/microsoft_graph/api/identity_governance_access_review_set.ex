@@ -24,8 +24,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewScheduleDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_create_definitions(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphAccessReviewScheduleDefinition.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewScheduleDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_create_definitions(connection, microsoft_graph_access_review_schedule_definition, _opts \\ []) do
+  @spec identity_governance_access_reviews_create_definitions(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphAccessReviewScheduleDefinition.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewScheduleDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_create_definitions(
+        connection,
+        microsoft_graph_access_review_schedule_definition,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -57,8 +68,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewHistoryDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_create_history_definitions(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphAccessReviewHistoryDefinition.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewHistoryDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_create_history_definitions(connection, microsoft_graph_access_review_history_definition, _opts \\ []) do
+  @spec identity_governance_access_reviews_create_history_definitions(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphAccessReviewHistoryDefinition.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewHistoryDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_create_history_definitions(
+        connection,
+        microsoft_graph_access_review_history_definition,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -90,12 +112,27 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_create_instances(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstance.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstance.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_create_instances(connection, access_review_schedule_definition_id, microsoft_graph_access_review_instance, _opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_create_instances(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstance.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstance.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_create_instances(
+        connection,
+        access_review_schedule_definition_id,
+        microsoft_graph_access_review_instance,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances"
+      )
       |> add_param(:body, :body, microsoft_graph_access_review_instance)
       |> Enum.into([])
 
@@ -124,8 +161,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_delete_instances(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_delete_instances(connection, access_review_schedule_definition_id, access_review_instance_id, opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_delete_instances(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_delete_instances(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -133,7 +183,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
     request =
       %{}
       |> method(:delete)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -161,7 +213,13 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_get_count6cbe(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_governance_access_reviews_definitions_get_count6cbe(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_governance_access_reviews_definitions_get_count6cbe(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -202,8 +260,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_get_instances(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstance.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_get_instances(connection, access_review_schedule_definition_id, access_review_instance_id, opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_get_instances(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstance.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_get_instances(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -212,7 +283,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -242,8 +315,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_instances_contacted_reviewers_get_count_fe5f(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_instances_contacted_reviewers_get_count_fe5f(connection, access_review_schedule_definition_id, access_review_instance_id, opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_instances_contacted_reviewers_get_count_fe5f(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_instances_contacted_reviewers_get_count_fe5f(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -252,7 +338,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/contactedReviewers/$count")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/contactedReviewers/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -281,12 +369,29 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewReviewer.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_instances_create_contacted_reviewers(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphAccessReviewReviewer.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewReviewer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_instances_create_contacted_reviewers(connection, access_review_schedule_definition_id, access_review_instance_id, microsoft_graph_access_review_reviewer, _opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_instances_create_contacted_reviewers(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAccessReviewReviewer.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewReviewer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_instances_create_contacted_reviewers(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        microsoft_graph_access_review_reviewer,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/contactedReviewers")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/contactedReviewers"
+      )
       |> add_param(:body, :body, microsoft_graph_access_review_reviewer)
       |> Enum.into([])
 
@@ -315,12 +420,29 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceDecisionItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_instances_create_decisions(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceDecisionItem.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceDecisionItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_instances_create_decisions(connection, access_review_schedule_definition_id, access_review_instance_id, microsoft_graph_access_review_instance_decision_item, _opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_instances_create_decisions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceDecisionItem.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceDecisionItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_instances_create_decisions(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        microsoft_graph_access_review_instance_decision_item,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/decisions")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/decisions"
+      )
       |> add_param(:body, :body, microsoft_graph_access_review_instance_decision_item)
       |> Enum.into([])
 
@@ -349,12 +471,29 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewStage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_instances_create_stages(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphAccessReviewStage.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewStage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_instances_create_stages(connection, access_review_schedule_definition_id, access_review_instance_id, microsoft_graph_access_review_stage, _opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_instances_create_stages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAccessReviewStage.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewStage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_instances_create_stages(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        microsoft_graph_access_review_stage,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/stages")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/stages"
+      )
       |> add_param(:body, :body, microsoft_graph_access_review_stage)
       |> Enum.into([])
 
@@ -384,12 +523,31 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphGovernanceInsight.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_instances_decisions_create_insights(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphGovernanceInsight.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphGovernanceInsight.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_instances_decisions_create_insights(connection, access_review_schedule_definition_id, access_review_instance_id, access_review_instance_decision_item_id, microsoft_graph_governance_insight, _opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_instances_decisions_create_insights(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphGovernanceInsight.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphGovernanceInsight.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_instances_decisions_create_insights(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        access_review_instance_decision_item_id,
+        microsoft_graph_governance_insight,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/decisions/#{access_review_instance_decision_item_id}/insights")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/decisions/#{access_review_instance_decision_item_id}/insights"
+      )
       |> add_param(:body, :body, microsoft_graph_governance_insight)
       |> Enum.into([])
 
@@ -420,8 +578,25 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_instances_decisions_delete_insights(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_instances_decisions_delete_insights(connection, access_review_schedule_definition_id, access_review_instance_id, access_review_instance_decision_item_id, governance_insight_id, opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_instances_decisions_delete_insights(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_instances_decisions_delete_insights(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        access_review_instance_decision_item_id,
+        governance_insight_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -429,7 +604,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
     request =
       %{}
       |> method(:delete)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/decisions/#{access_review_instance_decision_item_id}/insights/#{governance_insight_id}")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/decisions/#{access_review_instance_decision_item_id}/insights/#{governance_insight_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -459,8 +636,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_instances_decisions_get_count_c10a(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_instances_decisions_get_count_c10a(connection, access_review_schedule_definition_id, access_review_instance_id, opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_instances_decisions_get_count_c10a(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_instances_decisions_get_count_c10a(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -469,7 +659,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/decisions/$count")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/decisions/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -502,8 +694,25 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphGovernanceInsight.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_instances_decisions_get_insights(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphGovernanceInsight.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_instances_decisions_get_insights(connection, access_review_schedule_definition_id, access_review_instance_id, access_review_instance_decision_item_id, governance_insight_id, opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_instances_decisions_get_insights(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphGovernanceInsight.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_instances_decisions_get_insights(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        access_review_instance_decision_item_id,
+        governance_insight_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -512,7 +721,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/decisions/#{access_review_instance_decision_item_id}/insights/#{governance_insight_id}")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/decisions/#{access_review_instance_decision_item_id}/insights/#{governance_insight_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -543,8 +754,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_instances_decisions_insights_get_count9dc2(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_instances_decisions_insights_get_count9dc2(connection, access_review_schedule_definition_id, access_review_instance_id, access_review_instance_decision_item_id, opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_instances_decisions_insights_get_count9dc2(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_instances_decisions_insights_get_count9dc2(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        access_review_instance_decision_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -553,7 +779,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/decisions/#{access_review_instance_decision_item_id}/insights/$count")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/decisions/#{access_review_instance_decision_item_id}/insights/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -591,8 +819,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphGovernanceInsightCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_instances_decisions_list_insights(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphGovernanceInsightCollectionResponse.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_instances_decisions_list_insights(connection, access_review_schedule_definition_id, access_review_instance_id, access_review_instance_decision_item_id, opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_instances_decisions_list_insights(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphGovernanceInsightCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_instances_decisions_list_insights(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        access_review_instance_decision_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -607,7 +850,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/decisions/#{access_review_instance_decision_item_id}/insights")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/decisions/#{access_review_instance_decision_item_id}/insights"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -638,12 +883,33 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphGovernanceInsight.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_instances_decisions_update_insights(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphGovernanceInsight.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphGovernanceInsight.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_instances_decisions_update_insights(connection, access_review_schedule_definition_id, access_review_instance_id, access_review_instance_decision_item_id, governance_insight_id, microsoft_graph_governance_insight, _opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_instances_decisions_update_insights(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphGovernanceInsight.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphGovernanceInsight.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_instances_decisions_update_insights(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        access_review_instance_decision_item_id,
+        governance_insight_id,
+        microsoft_graph_governance_insight,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/decisions/#{access_review_instance_decision_item_id}/insights/#{governance_insight_id}")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/decisions/#{access_review_instance_decision_item_id}/insights/#{governance_insight_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_governance_insight)
       |> Enum.into([])
 
@@ -673,8 +939,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_instances_delete_contacted_reviewers(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_instances_delete_contacted_reviewers(connection, access_review_schedule_definition_id, access_review_instance_id, access_review_reviewer_id, opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_instances_delete_contacted_reviewers(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_instances_delete_contacted_reviewers(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        access_review_reviewer_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -682,7 +963,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
     request =
       %{}
       |> method(:delete)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/contactedReviewers/#{access_review_reviewer_id}")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/contactedReviewers/#{access_review_reviewer_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -712,8 +995,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_instances_delete_decisions(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_instances_delete_decisions(connection, access_review_schedule_definition_id, access_review_instance_id, access_review_instance_decision_item_id, opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_instances_delete_decisions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_instances_delete_decisions(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        access_review_instance_decision_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -721,7 +1019,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
     request =
       %{}
       |> method(:delete)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/decisions/#{access_review_instance_decision_item_id}")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/decisions/#{access_review_instance_decision_item_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -751,8 +1051,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_instances_delete_stages(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_instances_delete_stages(connection, access_review_schedule_definition_id, access_review_instance_id, access_review_stage_id, opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_instances_delete_stages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_instances_delete_stages(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        access_review_stage_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -760,7 +1075,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
     request =
       %{}
       |> method(:delete)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/stages/#{access_review_stage_id}")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/stages/#{access_review_stage_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -792,8 +1109,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewReviewer.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_instances_get_contacted_reviewers(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewReviewer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_instances_get_contacted_reviewers(connection, access_review_schedule_definition_id, access_review_instance_id, access_review_reviewer_id, opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_instances_get_contacted_reviewers(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewReviewer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_instances_get_contacted_reviewers(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        access_review_reviewer_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -802,7 +1134,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/contactedReviewers/#{access_review_reviewer_id}")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/contactedReviewers/#{access_review_reviewer_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -831,8 +1165,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_instances_get_count_b022(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_instances_get_count_b022(connection, access_review_schedule_definition_id, opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_instances_get_count_b022(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_instances_get_count_b022(
+        connection,
+        access_review_schedule_definition_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -841,7 +1186,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/$count")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -873,8 +1220,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceDecisionItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_instances_get_decisions(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceDecisionItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_instances_get_decisions(connection, access_review_schedule_definition_id, access_review_instance_id, access_review_instance_decision_item_id, opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_instances_get_decisions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceDecisionItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_instances_get_decisions(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        access_review_instance_decision_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -883,7 +1245,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/decisions/#{access_review_instance_decision_item_id}")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/decisions/#{access_review_instance_decision_item_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -915,8 +1279,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewStage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_instances_get_stages(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewStage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_instances_get_stages(connection, access_review_schedule_definition_id, access_review_instance_id, access_review_stage_id, opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_instances_get_stages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewStage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_instances_get_stages(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        access_review_stage_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -925,7 +1304,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/stages/#{access_review_stage_id}")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/stages/#{access_review_stage_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -962,8 +1343,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewReviewerCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_instances_list_contacted_reviewers(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewReviewerCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_instances_list_contacted_reviewers(connection, access_review_schedule_definition_id, access_review_instance_id, opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_instances_list_contacted_reviewers(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewReviewerCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_instances_list_contacted_reviewers(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -978,7 +1372,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/contactedReviewers")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/contactedReviewers"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1015,8 +1411,22 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceDecisionItemCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_instances_list_decisions(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceDecisionItemCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_instances_list_decisions(connection, access_review_schedule_definition_id, access_review_instance_id, opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_instances_list_decisions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceDecisionItemCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_instances_list_decisions(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1031,14 +1441,17 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/decisions")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/decisions"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceDecisionItemCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceDecisionItemCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -1068,8 +1481,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewStageCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_instances_list_stages(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewStageCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_instances_list_stages(connection, access_review_schedule_definition_id, access_review_instance_id, opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_instances_list_stages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewStageCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_instances_list_stages(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1084,7 +1510,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/stages")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/stages"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1114,12 +1542,31 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceDecisionItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_instances_stages_create_decisions(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceDecisionItem.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceDecisionItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_instances_stages_create_decisions(connection, access_review_schedule_definition_id, access_review_instance_id, access_review_stage_id, microsoft_graph_access_review_instance_decision_item, _opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_instances_stages_create_decisions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceDecisionItem.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceDecisionItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_instances_stages_create_decisions(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        access_review_stage_id,
+        microsoft_graph_access_review_instance_decision_item,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/stages/#{access_review_stage_id}/decisions")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/stages/#{access_review_stage_id}/decisions"
+      )
       |> add_param(:body, :body, microsoft_graph_access_review_instance_decision_item)
       |> Enum.into([])
 
@@ -1150,12 +1597,33 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphGovernanceInsight.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_instances_stages_decisions_create_insights(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphGovernanceInsight.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphGovernanceInsight.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_instances_stages_decisions_create_insights(connection, access_review_schedule_definition_id, access_review_instance_id, access_review_stage_id, access_review_instance_decision_item_id, microsoft_graph_governance_insight, _opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_instances_stages_decisions_create_insights(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphGovernanceInsight.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphGovernanceInsight.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_instances_stages_decisions_create_insights(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        access_review_stage_id,
+        access_review_instance_decision_item_id,
+        microsoft_graph_governance_insight,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/stages/#{access_review_stage_id}/decisions/#{access_review_instance_decision_item_id}/insights")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/stages/#{access_review_stage_id}/decisions/#{access_review_instance_decision_item_id}/insights"
+      )
       |> add_param(:body, :body, microsoft_graph_governance_insight)
       |> Enum.into([])
 
@@ -1187,8 +1655,27 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_instances_stages_decisions_delete_insights(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_instances_stages_decisions_delete_insights(connection, access_review_schedule_definition_id, access_review_instance_id, access_review_stage_id, access_review_instance_decision_item_id, governance_insight_id, opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_instances_stages_decisions_delete_insights(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_instances_stages_decisions_delete_insights(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        access_review_stage_id,
+        access_review_instance_decision_item_id,
+        governance_insight_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1196,7 +1683,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
     request =
       %{}
       |> method(:delete)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/stages/#{access_review_stage_id}/decisions/#{access_review_instance_decision_item_id}/insights/#{governance_insight_id}")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/stages/#{access_review_stage_id}/decisions/#{access_review_instance_decision_item_id}/insights/#{governance_insight_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1227,8 +1716,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_instances_stages_decisions_get_count35e1(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_instances_stages_decisions_get_count35e1(connection, access_review_schedule_definition_id, access_review_instance_id, access_review_stage_id, opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_instances_stages_decisions_get_count35e1(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_instances_stages_decisions_get_count35e1(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        access_review_stage_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1237,7 +1741,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/stages/#{access_review_stage_id}/decisions/$count")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/stages/#{access_review_stage_id}/decisions/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1271,8 +1777,27 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphGovernanceInsight.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_instances_stages_decisions_get_insights(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphGovernanceInsight.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_instances_stages_decisions_get_insights(connection, access_review_schedule_definition_id, access_review_instance_id, access_review_stage_id, access_review_instance_decision_item_id, governance_insight_id, opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_instances_stages_decisions_get_insights(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphGovernanceInsight.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_instances_stages_decisions_get_insights(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        access_review_stage_id,
+        access_review_instance_decision_item_id,
+        governance_insight_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1281,7 +1806,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/stages/#{access_review_stage_id}/decisions/#{access_review_instance_decision_item_id}/insights/#{governance_insight_id}")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/stages/#{access_review_stage_id}/decisions/#{access_review_instance_decision_item_id}/insights/#{governance_insight_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1313,8 +1840,25 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_instances_stages_decisions_insights_get_count_fabb(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_instances_stages_decisions_insights_get_count_fabb(connection, access_review_schedule_definition_id, access_review_instance_id, access_review_stage_id, access_review_instance_decision_item_id, opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_instances_stages_decisions_insights_get_count_fabb(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_instances_stages_decisions_insights_get_count_fabb(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        access_review_stage_id,
+        access_review_instance_decision_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1323,7 +1867,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/stages/#{access_review_stage_id}/decisions/#{access_review_instance_decision_item_id}/insights/$count")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/stages/#{access_review_stage_id}/decisions/#{access_review_instance_decision_item_id}/insights/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1362,8 +1908,25 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphGovernanceInsightCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_instances_stages_decisions_list_insights(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphGovernanceInsightCollectionResponse.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_instances_stages_decisions_list_insights(connection, access_review_schedule_definition_id, access_review_instance_id, access_review_stage_id, access_review_instance_decision_item_id, opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_instances_stages_decisions_list_insights(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphGovernanceInsightCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_instances_stages_decisions_list_insights(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        access_review_stage_id,
+        access_review_instance_decision_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1378,7 +1941,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/stages/#{access_review_stage_id}/decisions/#{access_review_instance_decision_item_id}/insights")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/stages/#{access_review_stage_id}/decisions/#{access_review_instance_decision_item_id}/insights"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1410,12 +1975,35 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphGovernanceInsight.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_instances_stages_decisions_update_insights(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphGovernanceInsight.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphGovernanceInsight.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_instances_stages_decisions_update_insights(connection, access_review_schedule_definition_id, access_review_instance_id, access_review_stage_id, access_review_instance_decision_item_id, governance_insight_id, microsoft_graph_governance_insight, _opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_instances_stages_decisions_update_insights(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphGovernanceInsight.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphGovernanceInsight.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_instances_stages_decisions_update_insights(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        access_review_stage_id,
+        access_review_instance_decision_item_id,
+        governance_insight_id,
+        microsoft_graph_governance_insight,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/stages/#{access_review_stage_id}/decisions/#{access_review_instance_decision_item_id}/insights/#{governance_insight_id}")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/stages/#{access_review_stage_id}/decisions/#{access_review_instance_decision_item_id}/insights/#{governance_insight_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_governance_insight)
       |> Enum.into([])
 
@@ -1446,8 +2034,25 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_instances_stages_delete_decisions(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_instances_stages_delete_decisions(connection, access_review_schedule_definition_id, access_review_instance_id, access_review_stage_id, access_review_instance_decision_item_id, opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_instances_stages_delete_decisions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_instances_stages_delete_decisions(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        access_review_stage_id,
+        access_review_instance_decision_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1455,7 +2060,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
     request =
       %{}
       |> method(:delete)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/stages/#{access_review_stage_id}/decisions/#{access_review_instance_decision_item_id}")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/stages/#{access_review_stage_id}/decisions/#{access_review_instance_decision_item_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1485,8 +2092,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_instances_stages_get_count_f2c5(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_instances_stages_get_count_f2c5(connection, access_review_schedule_definition_id, access_review_instance_id, opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_instances_stages_get_count_f2c5(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_instances_stages_get_count_f2c5(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1495,7 +2115,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/stages/$count")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/stages/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1528,8 +2150,25 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceDecisionItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_instances_stages_get_decisions(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceDecisionItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_instances_stages_get_decisions(connection, access_review_schedule_definition_id, access_review_instance_id, access_review_stage_id, access_review_instance_decision_item_id, opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_instances_stages_get_decisions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceDecisionItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_instances_stages_get_decisions(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        access_review_stage_id,
+        access_review_instance_decision_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1538,7 +2177,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/stages/#{access_review_stage_id}/decisions/#{access_review_instance_decision_item_id}")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/stages/#{access_review_stage_id}/decisions/#{access_review_instance_decision_item_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1576,8 +2217,24 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceDecisionItemCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_instances_stages_list_decisions(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceDecisionItemCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_instances_stages_list_decisions(connection, access_review_schedule_definition_id, access_review_instance_id, access_review_stage_id, opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_instances_stages_list_decisions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceDecisionItemCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_instances_stages_list_decisions(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        access_review_stage_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1592,14 +2249,17 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/stages/#{access_review_stage_id}/decisions")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/stages/#{access_review_stage_id}/decisions"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceDecisionItemCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceDecisionItemCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -1624,12 +2284,33 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceDecisionItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_instances_stages_update_decisions(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceDecisionItem.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceDecisionItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_instances_stages_update_decisions(connection, access_review_schedule_definition_id, access_review_instance_id, access_review_stage_id, access_review_instance_decision_item_id, microsoft_graph_access_review_instance_decision_item, _opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_instances_stages_update_decisions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceDecisionItem.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceDecisionItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_instances_stages_update_decisions(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        access_review_stage_id,
+        access_review_instance_decision_item_id,
+        microsoft_graph_access_review_instance_decision_item,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/stages/#{access_review_stage_id}/decisions/#{access_review_instance_decision_item_id}")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/stages/#{access_review_stage_id}/decisions/#{access_review_instance_decision_item_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_access_review_instance_decision_item)
       |> Enum.into([])
 
@@ -1659,12 +2340,31 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewReviewer.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_instances_update_contacted_reviewers(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphAccessReviewReviewer.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewReviewer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_instances_update_contacted_reviewers(connection, access_review_schedule_definition_id, access_review_instance_id, access_review_reviewer_id, microsoft_graph_access_review_reviewer, _opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_instances_update_contacted_reviewers(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAccessReviewReviewer.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewReviewer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_instances_update_contacted_reviewers(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        access_review_reviewer_id,
+        microsoft_graph_access_review_reviewer,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/contactedReviewers/#{access_review_reviewer_id}")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/contactedReviewers/#{access_review_reviewer_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_access_review_reviewer)
       |> Enum.into([])
 
@@ -1694,12 +2394,31 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceDecisionItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_instances_update_decisions(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceDecisionItem.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceDecisionItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_instances_update_decisions(connection, access_review_schedule_definition_id, access_review_instance_id, access_review_instance_decision_item_id, microsoft_graph_access_review_instance_decision_item, _opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_instances_update_decisions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceDecisionItem.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceDecisionItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_instances_update_decisions(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        access_review_instance_decision_item_id,
+        microsoft_graph_access_review_instance_decision_item,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/decisions/#{access_review_instance_decision_item_id}")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/decisions/#{access_review_instance_decision_item_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_access_review_instance_decision_item)
       |> Enum.into([])
 
@@ -1730,12 +2449,31 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewStage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_instances_update_stages(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphAccessReviewStage.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewStage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_instances_update_stages(connection, access_review_schedule_definition_id, access_review_instance_id, access_review_stage_id, microsoft_graph_access_review_stage, _opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_instances_update_stages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAccessReviewStage.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewStage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_instances_update_stages(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        access_review_stage_id,
+        microsoft_graph_access_review_stage,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/stages/#{access_review_stage_id}")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}/stages/#{access_review_stage_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_access_review_stage)
       |> Enum.into([])
 
@@ -1771,8 +2509,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_list_instances(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_list_instances(connection, access_review_schedule_definition_id, opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_list_instances(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_list_instances(
+        connection,
+        access_review_schedule_definition_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1787,7 +2536,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1817,12 +2568,29 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_definitions_update_instances(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstance.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstance.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_definitions_update_instances(connection, access_review_schedule_definition_id, access_review_instance_id, microsoft_graph_access_review_instance, _opts \\ []) do
+  @spec identity_governance_access_reviews_definitions_update_instances(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstance.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstance.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_definitions_update_instances(
+        connection,
+        access_review_schedule_definition_id,
+        access_review_instance_id,
+        microsoft_graph_access_review_instance,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}/instances/#{access_review_instance_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_access_review_instance)
       |> Enum.into([])
 
@@ -1851,8 +2619,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_delete_definitions(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_delete_definitions(connection, access_review_schedule_definition_id, opts \\ []) do
+  @spec identity_governance_access_reviews_delete_definitions(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_delete_definitions(
+        connection,
+        access_review_schedule_definition_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1860,7 +2639,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
     request =
       %{}
       |> method(:delete)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1888,8 +2669,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_delete_history_definitions(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_delete_history_definitions(connection, access_review_history_definition_id, opts \\ []) do
+  @spec identity_governance_access_reviews_delete_history_definitions(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_delete_history_definitions(
+        connection,
+        access_review_history_definition_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1897,7 +2689,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
     request =
       %{}
       |> method(:delete)
-      |> url("/identityGovernance/accessReviews/historyDefinitions/#{access_review_history_definition_id}")
+      |> url(
+        "/identityGovernance/accessReviews/historyDefinitions/#{access_review_history_definition_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1927,8 +2721,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewScheduleDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_get_definitions(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewScheduleDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_get_definitions(connection, access_review_schedule_definition_id, opts \\ []) do
+  @spec identity_governance_access_reviews_get_definitions(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewScheduleDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_get_definitions(
+        connection,
+        access_review_schedule_definition_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1937,7 +2742,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1967,8 +2774,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewHistoryDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_get_history_definitions(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewHistoryDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_get_history_definitions(connection, access_review_history_definition_id, opts \\ []) do
+  @spec identity_governance_access_reviews_get_history_definitions(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewHistoryDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_get_history_definitions(
+        connection,
+        access_review_history_definition_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1977,7 +2795,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/accessReviews/historyDefinitions/#{access_review_history_definition_id}")
+      |> url(
+        "/identityGovernance/accessReviews/historyDefinitions/#{access_review_history_definition_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2005,12 +2825,27 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewHistoryInstance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_history_definitions_create_instances(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphAccessReviewHistoryInstance.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewHistoryInstance.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_history_definitions_create_instances(connection, access_review_history_definition_id, microsoft_graph_access_review_history_instance, _opts \\ []) do
+  @spec identity_governance_access_reviews_history_definitions_create_instances(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAccessReviewHistoryInstance.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewHistoryInstance.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_history_definitions_create_instances(
+        connection,
+        access_review_history_definition_id,
+        microsoft_graph_access_review_history_instance,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/accessReviews/historyDefinitions/#{access_review_history_definition_id}/instances")
+      |> url(
+        "/identityGovernance/accessReviews/historyDefinitions/#{access_review_history_definition_id}/instances"
+      )
       |> add_param(:body, :body, microsoft_graph_access_review_history_instance)
       |> Enum.into([])
 
@@ -2039,8 +2874,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_history_definitions_delete_instances(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_history_definitions_delete_instances(connection, access_review_history_definition_id, access_review_history_instance_id, opts \\ []) do
+  @spec identity_governance_access_reviews_history_definitions_delete_instances(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_history_definitions_delete_instances(
+        connection,
+        access_review_history_definition_id,
+        access_review_history_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -2048,7 +2896,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
     request =
       %{}
       |> method(:delete)
-      |> url("/identityGovernance/accessReviews/historyDefinitions/#{access_review_history_definition_id}/instances/#{access_review_history_instance_id}")
+      |> url(
+        "/identityGovernance/accessReviews/historyDefinitions/#{access_review_history_definition_id}/instances/#{access_review_history_instance_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2076,7 +2926,13 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_history_definitions_get_count6aff(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_governance_access_reviews_history_definitions_get_count6aff(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_governance_access_reviews_history_definitions_get_count6aff(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -2117,8 +2973,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewHistoryInstance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_history_definitions_get_instances(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewHistoryInstance.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_history_definitions_get_instances(connection, access_review_history_definition_id, access_review_history_instance_id, opts \\ []) do
+  @spec identity_governance_access_reviews_history_definitions_get_instances(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewHistoryInstance.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_history_definitions_get_instances(
+        connection,
+        access_review_history_definition_id,
+        access_review_history_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2127,7 +2996,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/accessReviews/historyDefinitions/#{access_review_history_definition_id}/instances/#{access_review_history_instance_id}")
+      |> url(
+        "/identityGovernance/accessReviews/historyDefinitions/#{access_review_history_definition_id}/instances/#{access_review_history_instance_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2156,8 +3027,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_history_definitions_instances_get_count_cbe7(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_history_definitions_instances_get_count_cbe7(connection, access_review_history_definition_id, opts \\ []) do
+  @spec identity_governance_access_reviews_history_definitions_instances_get_count_cbe7(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_history_definitions_instances_get_count_cbe7(
+        connection,
+        access_review_history_definition_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -2166,7 +3048,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/accessReviews/historyDefinitions/#{access_review_history_definition_id}/instances/$count")
+      |> url(
+        "/identityGovernance/accessReviews/historyDefinitions/#{access_review_history_definition_id}/instances/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2202,8 +3086,20 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewHistoryInstanceCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_history_definitions_list_instances(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewHistoryInstanceCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_history_definitions_list_instances(connection, access_review_history_definition_id, opts \\ []) do
+  @spec identity_governance_access_reviews_history_definitions_list_instances(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphAccessReviewHistoryInstanceCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_history_definitions_list_instances(
+        connection,
+        access_review_history_definition_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -2218,7 +3114,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/accessReviews/historyDefinitions/#{access_review_history_definition_id}/instances")
+      |> url(
+        "/identityGovernance/accessReviews/historyDefinitions/#{access_review_history_definition_id}/instances"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2247,12 +3145,29 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewHistoryInstance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_history_definitions_update_instances(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphAccessReviewHistoryInstance.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewHistoryInstance.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_history_definitions_update_instances(connection, access_review_history_definition_id, access_review_history_instance_id, microsoft_graph_access_review_history_instance, _opts \\ []) do
+  @spec identity_governance_access_reviews_history_definitions_update_instances(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAccessReviewHistoryInstance.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewHistoryInstance.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_history_definitions_update_instances(
+        connection,
+        access_review_history_definition_id,
+        access_review_history_instance_id,
+        microsoft_graph_access_review_history_instance,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/accessReviews/historyDefinitions/#{access_review_history_definition_id}/instances/#{access_review_history_instance_id}")
+      |> url(
+        "/identityGovernance/accessReviews/historyDefinitions/#{access_review_history_definition_id}/instances/#{access_review_history_instance_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_access_review_history_instance)
       |> Enum.into([])
 
@@ -2287,7 +3202,11 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewScheduleDefinitionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_list_definitions(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewScheduleDefinitionCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_governance_access_reviews_list_definitions(Tesla.Env.client(), keyword()) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphAccessReviewScheduleDefinitionCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_governance_access_reviews_list_definitions(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -2310,7 +3229,8 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphAccessReviewScheduleDefinitionCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphAccessReviewScheduleDefinitionCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -2338,7 +3258,11 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewHistoryDefinitionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_list_history_definitions(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewHistoryDefinitionCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec identity_governance_access_reviews_list_history_definitions(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphAccessReviewHistoryDefinitionCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def identity_governance_access_reviews_list_history_definitions(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -2383,12 +3307,27 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewScheduleDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_update_definitions(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphAccessReviewScheduleDefinition.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewScheduleDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_update_definitions(connection, access_review_schedule_definition_id, microsoft_graph_access_review_schedule_definition, _opts \\ []) do
+  @spec identity_governance_access_reviews_update_definitions(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAccessReviewScheduleDefinition.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewScheduleDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_update_definitions(
+        connection,
+        access_review_schedule_definition_id,
+        microsoft_graph_access_review_schedule_definition,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}")
+      |> url(
+        "/identityGovernance/accessReviews/definitions/#{access_review_schedule_definition_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_access_review_schedule_definition)
       |> Enum.into([])
 
@@ -2416,12 +3355,27 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewHistoryDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_access_reviews_update_history_definitions(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphAccessReviewHistoryDefinition.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewHistoryDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_access_reviews_update_history_definitions(connection, access_review_history_definition_id, microsoft_graph_access_review_history_definition, _opts \\ []) do
+  @spec identity_governance_access_reviews_update_history_definitions(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAccessReviewHistoryDefinition.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewHistoryDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_access_reviews_update_history_definitions(
+        connection,
+        access_review_history_definition_id,
+        microsoft_graph_access_review_history_definition,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/accessReviews/historyDefinitions/#{access_review_history_definition_id}")
+      |> url(
+        "/identityGovernance/accessReviews/historyDefinitions/#{access_review_history_definition_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_access_review_history_definition)
       |> Enum.into([])
 
@@ -2448,7 +3402,10 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_delete_access_reviews(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_governance_delete_access_reviews(Tesla.Env.client(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_governance_delete_access_reviews(connection, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -2485,7 +3442,10 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_get_access_reviews(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewSet.t} | {:error, Tesla.Env.t}
+  @spec identity_governance_get_access_reviews(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewSet.t()}
+          | {:error, Tesla.Env.t()}
   def identity_governance_get_access_reviews(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -2522,8 +3482,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceAccessReviewSet do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_update_access_reviews(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphAccessReviewSet.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewSet.t} | {:error, Tesla.Env.t}
-  def identity_governance_update_access_reviews(connection, microsoft_graph_access_review_set, _opts \\ []) do
+  @spec identity_governance_update_access_reviews(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphAccessReviewSet.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAccessReviewSet.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_update_access_reviews(
+        connection,
+        microsoft_graph_access_review_set,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

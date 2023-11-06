@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphServicePrincipalLockConfiguration do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,16 +17,15 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphServicePrincipalLockConfiguration d
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :allProperties => boolean() | nil,
-    :credentialsWithUsageSign => boolean() | nil,
-    :credentialsWithUsageVerify => boolean() | nil,
-    :isEnabled => boolean() | nil,
-    :tokenEncryptionKeyId => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :allProperties => boolean() | nil,
+          :credentialsWithUsageSign => boolean() | nil,
+          :credentialsWithUsageVerify => boolean() | nil,
+          :isEnabled => boolean() | nil,
+          :tokenEncryptionKeyId => boolean() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

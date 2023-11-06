@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphTeleconferenceDeviceQuality do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -22,24 +22,28 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphTeleconferenceDeviceQuality do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :callChainId => String.t | nil,
-    :cloudServiceDeploymentEnvironment => String.t | nil,
-    :cloudServiceDeploymentId => String.t | nil,
-    :cloudServiceInstanceName => String.t | nil,
-    :cloudServiceName => String.t | nil,
-    :deviceDescription => String.t | nil,
-    :deviceName => String.t | nil,
-    :mediaLegId => String.t | nil,
-    :mediaQualityList => [MicrosoftGraph.Model.MicrosoftGraphTeleconferenceDeviceMediaQuality.t] | nil,
-    :participantId => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :callChainId => String.t() | nil,
+          :cloudServiceDeploymentEnvironment => String.t() | nil,
+          :cloudServiceDeploymentId => String.t() | nil,
+          :cloudServiceInstanceName => String.t() | nil,
+          :cloudServiceName => String.t() | nil,
+          :deviceDescription => String.t() | nil,
+          :deviceName => String.t() | nil,
+          :mediaLegId => String.t() | nil,
+          :mediaQualityList =>
+            [MicrosoftGraph.Model.MicrosoftGraphTeleconferenceDeviceMediaQuality.t()] | nil,
+          :participantId => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:mediaQualityList, :list, MicrosoftGraph.Model.MicrosoftGraphTeleconferenceDeviceMediaQuality)
+    |> Deserializer.deserialize(
+      :mediaQualityList,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphTeleconferenceDeviceMediaQuality
+    )
   end
 end
-

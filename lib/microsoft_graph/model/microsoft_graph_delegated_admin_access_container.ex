@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminAccessContainer do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,20 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminAccessContainer do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :accessContainerId => String.t | nil,
-    :accessContainerType => MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminAccessContainerType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :accessContainerId => String.t() | nil,
+          :accessContainerType =>
+            MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminAccessContainerType.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:accessContainerType, :struct, MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminAccessContainerType)
+    |> Deserializer.deserialize(
+      :accessContainerType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminAccessContainerType
+    )
   end
 end
-

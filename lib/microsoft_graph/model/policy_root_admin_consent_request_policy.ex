@@ -19,21 +19,25 @@ defmodule MicrosoftGraph.Model.PolicyRootAdminConsentRequestPolicy do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :isEnabled => boolean() | nil,
-    :notifyReviewers => boolean() | nil,
-    :remindersEnabled => boolean() | nil,
-    :requestDurationInDays => integer() | nil,
-    :reviewers => [MicrosoftGraph.Model.AccessReviewScheduleDefinitionFallbackReviewersInner.t] | nil,
-    :version => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :isEnabled => boolean() | nil,
+          :notifyReviewers => boolean() | nil,
+          :remindersEnabled => boolean() | nil,
+          :requestDurationInDays => integer() | nil,
+          :reviewers =>
+            [MicrosoftGraph.Model.AccessReviewScheduleDefinitionFallbackReviewersInner.t()] | nil,
+          :version => integer() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:reviewers, :list, MicrosoftGraph.Model.AccessReviewScheduleDefinitionFallbackReviewersInner)
+    |> Deserializer.deserialize(
+      :reviewers,
+      :list,
+      MicrosoftGraph.Model.AccessReviewScheduleDefinitionFallbackReviewersInner
+    )
   end
 end
-

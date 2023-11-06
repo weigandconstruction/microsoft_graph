@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyTargetConfiguration do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,17 +14,30 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyTargetConfig
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :accessType => MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyTargetConfigurationAccessType.t | nil,
-    :targets => [MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyTargetConfigurationTargetsInner.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :accessType =>
+            MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyTargetConfigurationAccessType.t()
+            | nil,
+          :targets =>
+            [
+              MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyTargetConfigurationTargetsInner.t()
+            ]
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:accessType, :struct, MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyTargetConfigurationAccessType)
-     |> Deserializer.deserialize(:targets, :list, MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyTargetConfigurationTargetsInner)
+    |> Deserializer.deserialize(
+      :accessType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyTargetConfigurationAccessType
+    )
+    |> Deserializer.deserialize(
+      :targets,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyTargetConfigurationTargetsInner
+    )
   end
 end
-

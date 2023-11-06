@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphDeviceLogCollectionResponse do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -21,27 +21,34 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphDeviceLogCollectionResponse do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :enrolledByUser => String.t | nil,
-    :expirationDateTimeUTC => DateTime.t | nil,
-    :initiatedByUserPrincipalName => String.t | nil,
-    :managedDeviceId => String.t | nil,
-    :receivedDateTimeUTC => DateTime.t | nil,
-    :requestedDateTimeUTC => DateTime.t | nil,
-    :sizeInKB => MicrosoftGraph.Model.DeviceLogCollectionResponseSizeInKb.t | nil,
-    :status => MicrosoftGraph.Model.MicrosoftGraphAppLogUploadState.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :enrolledByUser => String.t() | nil,
+          :expirationDateTimeUTC => DateTime.t() | nil,
+          :initiatedByUserPrincipalName => String.t() | nil,
+          :managedDeviceId => String.t() | nil,
+          :receivedDateTimeUTC => DateTime.t() | nil,
+          :requestedDateTimeUTC => DateTime.t() | nil,
+          :sizeInKB => MicrosoftGraph.Model.DeviceLogCollectionResponseSizeInKb.t() | nil,
+          :status => MicrosoftGraph.Model.MicrosoftGraphAppLogUploadState.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:expirationDateTimeUTC, :datetime, nil)
-     |> Deserializer.deserialize(:receivedDateTimeUTC, :datetime, nil)
-     |> Deserializer.deserialize(:requestedDateTimeUTC, :datetime, nil)
-     |> Deserializer.deserialize(:sizeInKB, :struct, MicrosoftGraph.Model.DeviceLogCollectionResponseSizeInKb)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.MicrosoftGraphAppLogUploadState)
+    |> Deserializer.deserialize(:expirationDateTimeUTC, :datetime, nil)
+    |> Deserializer.deserialize(:receivedDateTimeUTC, :datetime, nil)
+    |> Deserializer.deserialize(:requestedDateTimeUTC, :datetime, nil)
+    |> Deserializer.deserialize(
+      :sizeInKB,
+      :struct,
+      MicrosoftGraph.Model.DeviceLogCollectionResponseSizeInKb
+    )
+    |> Deserializer.deserialize(
+      :status,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAppLogUploadState
+    )
   end
 end
-

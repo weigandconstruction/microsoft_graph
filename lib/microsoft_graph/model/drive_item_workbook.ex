@@ -20,28 +20,43 @@ defmodule MicrosoftGraph.Model.DriveItemWorkbook do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :application => MicrosoftGraph.Model.WorkbookApplication.t | nil,
-    :comments => [MicrosoftGraph.Model.MicrosoftGraphWorkbookComment.t] | nil,
-    :functions => MicrosoftGraph.Model.WorkbookFunctions.t | nil,
-    :names => [MicrosoftGraph.Model.MicrosoftGraphWorkbookNamedItem.t] | nil,
-    :operations => [MicrosoftGraph.Model.MicrosoftGraphWorkbookOperation.t] | nil,
-    :tables => [MicrosoftGraph.Model.MicrosoftGraphWorkbookTable.t] | nil,
-    :worksheets => [MicrosoftGraph.Model.MicrosoftGraphWorkbookWorksheet.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :application => MicrosoftGraph.Model.WorkbookApplication.t() | nil,
+          :comments => [MicrosoftGraph.Model.MicrosoftGraphWorkbookComment.t()] | nil,
+          :functions => MicrosoftGraph.Model.WorkbookFunctions.t() | nil,
+          :names => [MicrosoftGraph.Model.MicrosoftGraphWorkbookNamedItem.t()] | nil,
+          :operations => [MicrosoftGraph.Model.MicrosoftGraphWorkbookOperation.t()] | nil,
+          :tables => [MicrosoftGraph.Model.MicrosoftGraphWorkbookTable.t()] | nil,
+          :worksheets => [MicrosoftGraph.Model.MicrosoftGraphWorkbookWorksheet.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:application, :struct, MicrosoftGraph.Model.WorkbookApplication)
-     |> Deserializer.deserialize(:comments, :list, MicrosoftGraph.Model.MicrosoftGraphWorkbookComment)
-     |> Deserializer.deserialize(:functions, :struct, MicrosoftGraph.Model.WorkbookFunctions)
-     |> Deserializer.deserialize(:names, :list, MicrosoftGraph.Model.MicrosoftGraphWorkbookNamedItem)
-     |> Deserializer.deserialize(:operations, :list, MicrosoftGraph.Model.MicrosoftGraphWorkbookOperation)
-     |> Deserializer.deserialize(:tables, :list, MicrosoftGraph.Model.MicrosoftGraphWorkbookTable)
-     |> Deserializer.deserialize(:worksheets, :list, MicrosoftGraph.Model.MicrosoftGraphWorkbookWorksheet)
+    |> Deserializer.deserialize(:application, :struct, MicrosoftGraph.Model.WorkbookApplication)
+    |> Deserializer.deserialize(
+      :comments,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphWorkbookComment
+    )
+    |> Deserializer.deserialize(:functions, :struct, MicrosoftGraph.Model.WorkbookFunctions)
+    |> Deserializer.deserialize(
+      :names,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphWorkbookNamedItem
+    )
+    |> Deserializer.deserialize(
+      :operations,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphWorkbookOperation
+    )
+    |> Deserializer.deserialize(:tables, :list, MicrosoftGraph.Model.MicrosoftGraphWorkbookTable)
+    |> Deserializer.deserialize(
+      :worksheets,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphWorkbookWorksheet
+    )
   end
 end
-

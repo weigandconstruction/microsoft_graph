@@ -23,8 +23,19 @@ defmodule MicrosoftGraph.Api.AuditLogsProvisioningObjectSummary do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphProvisioningObjectSummary.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec audit_logs_create_provisioning(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphProvisioningObjectSummary.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphProvisioningObjectSummary.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def audit_logs_create_provisioning(connection, microsoft_graph_provisioning_object_summary, _opts \\ []) do
+  @spec audit_logs_create_provisioning(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphProvisioningObjectSummary.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphProvisioningObjectSummary.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def audit_logs_create_provisioning(
+        connection,
+        microsoft_graph_provisioning_object_summary,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -56,7 +67,10 @@ defmodule MicrosoftGraph.Api.AuditLogsProvisioningObjectSummary do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec audit_logs_delete_provisioning(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec audit_logs_delete_provisioning(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def audit_logs_delete_provisioning(connection, provisioning_object_summary_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -94,7 +108,10 @@ defmodule MicrosoftGraph.Api.AuditLogsProvisioningObjectSummary do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphProvisioningObjectSummary.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec audit_logs_get_provisioning(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphProvisioningObjectSummary.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec audit_logs_get_provisioning(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphProvisioningObjectSummary.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def audit_logs_get_provisioning(connection, provisioning_object_summary_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -139,7 +156,11 @@ defmodule MicrosoftGraph.Api.AuditLogsProvisioningObjectSummary do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphProvisioningObjectSummaryCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec audit_logs_list_provisioning(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphProvisioningObjectSummaryCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec audit_logs_list_provisioning(Tesla.Env.client(), keyword()) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphProvisioningObjectSummaryCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def audit_logs_list_provisioning(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -183,7 +204,10 @@ defmodule MicrosoftGraph.Api.AuditLogsProvisioningObjectSummary do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec audit_logs_provisioning_get_count2f99(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec audit_logs_provisioning_get_count2f99(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def audit_logs_provisioning_get_count2f99(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -221,8 +245,21 @@ defmodule MicrosoftGraph.Api.AuditLogsProvisioningObjectSummary do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphProvisioningObjectSummary.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec audit_logs_update_provisioning(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphProvisioningObjectSummary.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphProvisioningObjectSummary.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def audit_logs_update_provisioning(connection, provisioning_object_summary_id, microsoft_graph_provisioning_object_summary, _opts \\ []) do
+  @spec audit_logs_update_provisioning(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphProvisioningObjectSummary.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphProvisioningObjectSummary.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def audit_logs_update_provisioning(
+        connection,
+        provisioning_object_summary_id,
+        microsoft_graph_provisioning_object_summary,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

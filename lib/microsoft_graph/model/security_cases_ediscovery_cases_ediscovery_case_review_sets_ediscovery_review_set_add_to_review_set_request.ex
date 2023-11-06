@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseReviewSetsEdiscoveryReviewSetAddToReviewSetRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,16 +13,27 @@ defmodule MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseReviewS
   ]
 
   @type t :: %__MODULE__{
-    :additionalDataOptions => MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseReviewSetsEdiscoveryReviewSetAddToReviewSetRequestAdditionalDataOptions.t | nil,
-    :search => MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseReviewSetsEdiscoveryReviewSetAddToReviewSetRequestSearch.t | nil
-  }
+          :additionalDataOptions =>
+            MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseReviewSetsEdiscoveryReviewSetAddToReviewSetRequestAdditionalDataOptions.t()
+            | nil,
+          :search =>
+            MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseReviewSetsEdiscoveryReviewSetAddToReviewSetRequestSearch.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:additionalDataOptions, :struct, MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseReviewSetsEdiscoveryReviewSetAddToReviewSetRequestAdditionalDataOptions)
-     |> Deserializer.deserialize(:search, :struct, MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseReviewSetsEdiscoveryReviewSetAddToReviewSetRequestSearch)
+    |> Deserializer.deserialize(
+      :additionalDataOptions,
+      :struct,
+      MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseReviewSetsEdiscoveryReviewSetAddToReviewSetRequestAdditionalDataOptions
+    )
+    |> Deserializer.deserialize(
+      :search,
+      :struct,
+      MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseReviewSetsEdiscoveryReviewSetAddToReviewSetRequestSearch
+    )
   end
 end
-

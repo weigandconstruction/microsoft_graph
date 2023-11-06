@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphMessageRulePredicatesWithinSizeRang
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :maximumSize => integer() | nil,
-    :minimumSize => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :maximumSize => integer() | nil,
+          :minimumSize => integer() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

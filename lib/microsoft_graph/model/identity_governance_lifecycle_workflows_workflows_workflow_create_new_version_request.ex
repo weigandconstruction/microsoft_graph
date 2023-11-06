@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowsWorkflowCreateNewVersionRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,14 +12,19 @@ defmodule MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowsWork
   ]
 
   @type t :: %__MODULE__{
-    :workflow => MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowsWorkflowCreateNewVersionRequestWorkflow.t | nil
-  }
+          :workflow =>
+            MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowsWorkflowCreateNewVersionRequestWorkflow.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:workflow, :struct, MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowsWorkflowCreateNewVersionRequestWorkflow)
+    |> Deserializer.deserialize(
+      :workflow,
+      :struct,
+      MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowsWorkflowCreateNewVersionRequestWorkflow
+    )
   end
 end
-

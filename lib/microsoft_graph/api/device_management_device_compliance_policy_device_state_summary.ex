@@ -23,8 +23,17 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceCompliancePolicyDeviceStateSu
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_delete_device_compliance_policy_device_state_summary(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_delete_device_compliance_policy_device_state_summary(connection, opts \\ []) do
+  @spec device_management_delete_device_compliance_policy_device_state_summary(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_delete_device_compliance_policy_device_state_summary(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -61,7 +70,13 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceCompliancePolicyDeviceStateSu
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceCompliancePolicyDeviceStateSummary.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_get_device_compliance_policy_device_state_summary(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceCompliancePolicyDeviceStateSummary.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec device_management_get_device_compliance_policy_device_state_summary(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceCompliancePolicyDeviceStateSummary.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def device_management_get_device_compliance_policy_device_state_summary(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -99,8 +114,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceCompliancePolicyDeviceStateSu
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceCompliancePolicyDeviceStateSummary.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_update_device_compliance_policy_device_state_summary(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphDeviceCompliancePolicyDeviceStateSummary.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceCompliancePolicyDeviceStateSummary.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_update_device_compliance_policy_device_state_summary(connection, microsoft_graph_device_compliance_policy_device_state_summary, _opts \\ []) do
+  @spec device_management_update_device_compliance_policy_device_state_summary(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphDeviceCompliancePolicyDeviceStateSummary.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceCompliancePolicyDeviceStateSummary.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_update_device_compliance_policy_device_state_summary(
+        connection,
+        microsoft_graph_device_compliance_policy_device_state_summary,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

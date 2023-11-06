@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphBookingCustomerInformation do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -20,23 +20,31 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphBookingCustomerInformation do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :customQuestionAnswers => [MicrosoftGraph.Model.BookingCustomerInformationCustomQuestionAnswersInner.t] | nil,
-    :customerId => String.t | nil,
-    :emailAddress => String.t | nil,
-    :location => MicrosoftGraph.Model.BookingCustomerInformationLocation.t | nil,
-    :name => String.t | nil,
-    :notes => String.t | nil,
-    :phone => String.t | nil,
-    :timeZone => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :customQuestionAnswers =>
+            [MicrosoftGraph.Model.BookingCustomerInformationCustomQuestionAnswersInner.t()] | nil,
+          :customerId => String.t() | nil,
+          :emailAddress => String.t() | nil,
+          :location => MicrosoftGraph.Model.BookingCustomerInformationLocation.t() | nil,
+          :name => String.t() | nil,
+          :notes => String.t() | nil,
+          :phone => String.t() | nil,
+          :timeZone => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:customQuestionAnswers, :list, MicrosoftGraph.Model.BookingCustomerInformationCustomQuestionAnswersInner)
-     |> Deserializer.deserialize(:location, :struct, MicrosoftGraph.Model.BookingCustomerInformationLocation)
+    |> Deserializer.deserialize(
+      :customQuestionAnswers,
+      :list,
+      MicrosoftGraph.Model.BookingCustomerInformationCustomQuestionAnswersInner
+    )
+    |> Deserializer.deserialize(
+      :location,
+      :struct,
+      MicrosoftGraph.Model.BookingCustomerInformationLocation
+    )
   end
 end
-

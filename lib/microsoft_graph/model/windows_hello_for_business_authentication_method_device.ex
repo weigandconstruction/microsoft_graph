@@ -42,54 +42,74 @@ defmodule MicrosoftGraph.Model.WindowsHelloForBusinessAuthenticationMethodDevice
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :deletedDateTime => DateTime.t | nil,
-    :accountEnabled => boolean() | nil,
-    :alternativeSecurityIds => [MicrosoftGraph.Model.MicrosoftGraphAlternativeSecurityId.t] | nil,
-    :approximateLastSignInDateTime => DateTime.t | nil,
-    :complianceExpirationDateTime => DateTime.t | nil,
-    :deviceCategory => String.t | nil,
-    :deviceId => String.t | nil,
-    :deviceMetadata => String.t | nil,
-    :deviceOwnership => String.t | nil,
-    :deviceVersion => integer() | nil,
-    :displayName => String.t | nil,
-    :enrollmentProfileName => String.t | nil,
-    :extensions => [MicrosoftGraph.Model.MicrosoftGraphExtension.t] | nil,
-    :isCompliant => boolean() | nil,
-    :isManaged => boolean() | nil,
-    :mdmAppId => String.t | nil,
-    :memberOf => [MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t] | nil,
-    :onPremisesLastSyncDateTime => DateTime.t | nil,
-    :onPremisesSyncEnabled => boolean() | nil,
-    :operatingSystem => String.t | nil,
-    :operatingSystemVersion => String.t | nil,
-    :physicalIds => [String.t] | nil,
-    :profileType => String.t | nil,
-    :registeredOwners => [MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t] | nil,
-    :registeredUsers => [MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t] | nil,
-    :registrationDateTime => DateTime.t | nil,
-    :systemLabels => [String.t] | nil,
-    :transitiveMemberOf => [MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t] | nil,
-    :trustType => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :deletedDateTime => DateTime.t() | nil,
+          :accountEnabled => boolean() | nil,
+          :alternativeSecurityIds =>
+            [MicrosoftGraph.Model.MicrosoftGraphAlternativeSecurityId.t()] | nil,
+          :approximateLastSignInDateTime => DateTime.t() | nil,
+          :complianceExpirationDateTime => DateTime.t() | nil,
+          :deviceCategory => String.t() | nil,
+          :deviceId => String.t() | nil,
+          :deviceMetadata => String.t() | nil,
+          :deviceOwnership => String.t() | nil,
+          :deviceVersion => integer() | nil,
+          :displayName => String.t() | nil,
+          :enrollmentProfileName => String.t() | nil,
+          :extensions => [MicrosoftGraph.Model.MicrosoftGraphExtension.t()] | nil,
+          :isCompliant => boolean() | nil,
+          :isManaged => boolean() | nil,
+          :mdmAppId => String.t() | nil,
+          :memberOf => [MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()] | nil,
+          :onPremisesLastSyncDateTime => DateTime.t() | nil,
+          :onPremisesSyncEnabled => boolean() | nil,
+          :operatingSystem => String.t() | nil,
+          :operatingSystemVersion => String.t() | nil,
+          :physicalIds => [String.t()] | nil,
+          :profileType => String.t() | nil,
+          :registeredOwners => [MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()] | nil,
+          :registeredUsers => [MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()] | nil,
+          :registrationDateTime => DateTime.t() | nil,
+          :systemLabels => [String.t()] | nil,
+          :transitiveMemberOf => [MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()] | nil,
+          :trustType => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:deletedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:alternativeSecurityIds, :list, MicrosoftGraph.Model.MicrosoftGraphAlternativeSecurityId)
-     |> Deserializer.deserialize(:approximateLastSignInDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:complianceExpirationDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:extensions, :list, MicrosoftGraph.Model.MicrosoftGraphExtension)
-     |> Deserializer.deserialize(:memberOf, :list, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject)
-     |> Deserializer.deserialize(:onPremisesLastSyncDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:registeredOwners, :list, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject)
-     |> Deserializer.deserialize(:registeredUsers, :list, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject)
-     |> Deserializer.deserialize(:registrationDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:transitiveMemberOf, :list, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject)
+    |> Deserializer.deserialize(:deletedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :alternativeSecurityIds,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAlternativeSecurityId
+    )
+    |> Deserializer.deserialize(:approximateLastSignInDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:complianceExpirationDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:extensions, :list, MicrosoftGraph.Model.MicrosoftGraphExtension)
+    |> Deserializer.deserialize(
+      :memberOf,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDirectoryObject
+    )
+    |> Deserializer.deserialize(:onPremisesLastSyncDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :registeredOwners,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDirectoryObject
+    )
+    |> Deserializer.deserialize(
+      :registeredUsers,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDirectoryObject
+    )
+    |> Deserializer.deserialize(:registrationDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :transitiveMemberOf,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDirectoryObject
+    )
   end
 end
-

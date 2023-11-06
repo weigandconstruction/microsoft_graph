@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphResellerDelegatedAdminRelationship do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -28,39 +28,66 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphResellerDelegatedAdminRelationship 
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :accessAssignments => [MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminAccessAssignment.t] | nil,
-    :accessDetails => MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminAccessDetails.t | nil,
-    :activatedDateTime => DateTime.t | nil,
-    :autoExtendDuration => String.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :customer => MicrosoftGraph.Model.DelegatedAdminRelationshipCustomer.t | nil,
-    :displayName => String.t | nil,
-    :duration => String.t | nil,
-    :endDateTime => DateTime.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :operations => [MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminRelationshipOperation.t] | nil,
-    :requests => [MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminRelationshipRequest.t] | nil,
-    :status => MicrosoftGraph.Model.DelegatedAdminRelationshipStatus.t | nil,
-    :indirectProviderTenantId => String.t | nil,
-    :isPartnerConsentPending => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :accessAssignments =>
+            [MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminAccessAssignment.t()] | nil,
+          :accessDetails =>
+            MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminAccessDetails.t() | nil,
+          :activatedDateTime => DateTime.t() | nil,
+          :autoExtendDuration => String.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :customer => MicrosoftGraph.Model.DelegatedAdminRelationshipCustomer.t() | nil,
+          :displayName => String.t() | nil,
+          :duration => String.t() | nil,
+          :endDateTime => DateTime.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :operations =>
+            [MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminRelationshipOperation.t()] | nil,
+          :requests =>
+            [MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminRelationshipRequest.t()] | nil,
+          :status => MicrosoftGraph.Model.DelegatedAdminRelationshipStatus.t() | nil,
+          :indirectProviderTenantId => String.t() | nil,
+          :isPartnerConsentPending => boolean() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:accessAssignments, :list, MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminAccessAssignment)
-     |> Deserializer.deserialize(:accessDetails, :struct, MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminAccessDetails)
-     |> Deserializer.deserialize(:activatedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:customer, :struct, MicrosoftGraph.Model.DelegatedAdminRelationshipCustomer)
-     |> Deserializer.deserialize(:endDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:operations, :list, MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminRelationshipOperation)
-     |> Deserializer.deserialize(:requests, :list, MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminRelationshipRequest)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.DelegatedAdminRelationshipStatus)
+    |> Deserializer.deserialize(
+      :accessAssignments,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminAccessAssignment
+    )
+    |> Deserializer.deserialize(
+      :accessDetails,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminAccessDetails
+    )
+    |> Deserializer.deserialize(:activatedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :customer,
+      :struct,
+      MicrosoftGraph.Model.DelegatedAdminRelationshipCustomer
+    )
+    |> Deserializer.deserialize(:endDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :operations,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminRelationshipOperation
+    )
+    |> Deserializer.deserialize(
+      :requests,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminRelationshipRequest
+    )
+    |> Deserializer.deserialize(
+      :status,
+      :struct,
+      MicrosoftGraph.Model.DelegatedAdminRelationshipStatus
+    )
   end
 end
-

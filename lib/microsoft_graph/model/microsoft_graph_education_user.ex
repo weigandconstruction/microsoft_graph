@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphEducationUser do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -51,72 +51,131 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphEducationUser do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :classes => [MicrosoftGraph.Model.MicrosoftGraphEducationClass.t] | nil,
-    :schools => [MicrosoftGraph.Model.MicrosoftGraphEducationSchool.t] | nil,
-    :createdBy => MicrosoftGraph.Model.EducationUserCreatedBy.t | nil,
-    :businessPhones => [String.t] | nil,
-    :middleName => String.t | nil,
-    :passwordPolicies => String.t | nil,
-    :user => MicrosoftGraph.Model.EducationUserUser.t | nil,
-    :accountEnabled => boolean() | nil,
-    :student => MicrosoftGraph.Model.EducationUserStudent.t | nil,
-    :provisionedPlans => [MicrosoftGraph.Model.MicrosoftGraphProvisionedPlan.t] | nil,
-    :rubrics => [MicrosoftGraph.Model.MicrosoftGraphEducationRubric.t] | nil,
-    :mailingAddress => MicrosoftGraph.Model.EducationUserMailingAddress.t | nil,
-    :refreshTokensValidFromDateTime => DateTime.t | nil,
-    :onPremisesInfo => MicrosoftGraph.Model.EducationUserOnPremisesInfo.t | nil,
-    :assignedLicenses => [MicrosoftGraph.Model.MicrosoftGraphAssignedLicense.t] | nil,
-    :givenName => String.t | nil,
-    :residenceAddress => MicrosoftGraph.Model.EducationUserResidenceAddress.t | nil,
-    :assignments => [MicrosoftGraph.Model.MicrosoftGraphEducationAssignment.t] | nil,
-    :mail => String.t | nil,
-    :officeLocation => String.t | nil,
-    :primaryRole => MicrosoftGraph.Model.MicrosoftGraphEducationUserRole.t | nil,
-    :taughtClasses => [MicrosoftGraph.Model.MicrosoftGraphEducationClass.t] | nil,
-    :assignedPlans => [MicrosoftGraph.Model.MicrosoftGraphAssignedPlan.t] | nil,
-    :department => String.t | nil,
-    :passwordProfile => MicrosoftGraph.Model.EducationUserPasswordProfile.t | nil,
-    :externalSource => MicrosoftGraph.Model.EducationUserExternalSource.t | nil,
-    :mailNickname => String.t | nil,
-    :teacher => MicrosoftGraph.Model.EducationUserTeacher.t | nil,
-    :userType => String.t | nil,
-    :showInAddressList => boolean() | nil,
-    :mobilePhone => String.t | nil,
-    :userPrincipalName => String.t | nil,
-    :displayName => String.t | nil,
-    :preferredLanguage => String.t | nil,
-    :surname => String.t | nil,
-    :usageLocation => String.t | nil,
-    :relatedContacts => [MicrosoftGraph.Model.EducationUserRelatedContactsInner.t] | nil,
-    :externalSourceDetail => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :classes => [MicrosoftGraph.Model.MicrosoftGraphEducationClass.t()] | nil,
+          :schools => [MicrosoftGraph.Model.MicrosoftGraphEducationSchool.t()] | nil,
+          :createdBy => MicrosoftGraph.Model.EducationUserCreatedBy.t() | nil,
+          :businessPhones => [String.t()] | nil,
+          :middleName => String.t() | nil,
+          :passwordPolicies => String.t() | nil,
+          :user => MicrosoftGraph.Model.EducationUserUser.t() | nil,
+          :accountEnabled => boolean() | nil,
+          :student => MicrosoftGraph.Model.EducationUserStudent.t() | nil,
+          :provisionedPlans => [MicrosoftGraph.Model.MicrosoftGraphProvisionedPlan.t()] | nil,
+          :rubrics => [MicrosoftGraph.Model.MicrosoftGraphEducationRubric.t()] | nil,
+          :mailingAddress => MicrosoftGraph.Model.EducationUserMailingAddress.t() | nil,
+          :refreshTokensValidFromDateTime => DateTime.t() | nil,
+          :onPremisesInfo => MicrosoftGraph.Model.EducationUserOnPremisesInfo.t() | nil,
+          :assignedLicenses => [MicrosoftGraph.Model.MicrosoftGraphAssignedLicense.t()] | nil,
+          :givenName => String.t() | nil,
+          :residenceAddress => MicrosoftGraph.Model.EducationUserResidenceAddress.t() | nil,
+          :assignments => [MicrosoftGraph.Model.MicrosoftGraphEducationAssignment.t()] | nil,
+          :mail => String.t() | nil,
+          :officeLocation => String.t() | nil,
+          :primaryRole => MicrosoftGraph.Model.MicrosoftGraphEducationUserRole.t() | nil,
+          :taughtClasses => [MicrosoftGraph.Model.MicrosoftGraphEducationClass.t()] | nil,
+          :assignedPlans => [MicrosoftGraph.Model.MicrosoftGraphAssignedPlan.t()] | nil,
+          :department => String.t() | nil,
+          :passwordProfile => MicrosoftGraph.Model.EducationUserPasswordProfile.t() | nil,
+          :externalSource => MicrosoftGraph.Model.EducationUserExternalSource.t() | nil,
+          :mailNickname => String.t() | nil,
+          :teacher => MicrosoftGraph.Model.EducationUserTeacher.t() | nil,
+          :userType => String.t() | nil,
+          :showInAddressList => boolean() | nil,
+          :mobilePhone => String.t() | nil,
+          :userPrincipalName => String.t() | nil,
+          :displayName => String.t() | nil,
+          :preferredLanguage => String.t() | nil,
+          :surname => String.t() | nil,
+          :usageLocation => String.t() | nil,
+          :relatedContacts => [MicrosoftGraph.Model.EducationUserRelatedContactsInner.t()] | nil,
+          :externalSourceDetail => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:classes, :list, MicrosoftGraph.Model.MicrosoftGraphEducationClass)
-     |> Deserializer.deserialize(:schools, :list, MicrosoftGraph.Model.MicrosoftGraphEducationSchool)
-     |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.EducationUserCreatedBy)
-     |> Deserializer.deserialize(:user, :struct, MicrosoftGraph.Model.EducationUserUser)
-     |> Deserializer.deserialize(:student, :struct, MicrosoftGraph.Model.EducationUserStudent)
-     |> Deserializer.deserialize(:provisionedPlans, :list, MicrosoftGraph.Model.MicrosoftGraphProvisionedPlan)
-     |> Deserializer.deserialize(:rubrics, :list, MicrosoftGraph.Model.MicrosoftGraphEducationRubric)
-     |> Deserializer.deserialize(:mailingAddress, :struct, MicrosoftGraph.Model.EducationUserMailingAddress)
-     |> Deserializer.deserialize(:refreshTokensValidFromDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:onPremisesInfo, :struct, MicrosoftGraph.Model.EducationUserOnPremisesInfo)
-     |> Deserializer.deserialize(:assignedLicenses, :list, MicrosoftGraph.Model.MicrosoftGraphAssignedLicense)
-     |> Deserializer.deserialize(:residenceAddress, :struct, MicrosoftGraph.Model.EducationUserResidenceAddress)
-     |> Deserializer.deserialize(:assignments, :list, MicrosoftGraph.Model.MicrosoftGraphEducationAssignment)
-     |> Deserializer.deserialize(:primaryRole, :struct, MicrosoftGraph.Model.MicrosoftGraphEducationUserRole)
-     |> Deserializer.deserialize(:taughtClasses, :list, MicrosoftGraph.Model.MicrosoftGraphEducationClass)
-     |> Deserializer.deserialize(:assignedPlans, :list, MicrosoftGraph.Model.MicrosoftGraphAssignedPlan)
-     |> Deserializer.deserialize(:passwordProfile, :struct, MicrosoftGraph.Model.EducationUserPasswordProfile)
-     |> Deserializer.deserialize(:externalSource, :struct, MicrosoftGraph.Model.EducationUserExternalSource)
-     |> Deserializer.deserialize(:teacher, :struct, MicrosoftGraph.Model.EducationUserTeacher)
-     |> Deserializer.deserialize(:relatedContacts, :list, MicrosoftGraph.Model.EducationUserRelatedContactsInner)
+    |> Deserializer.deserialize(
+      :classes,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphEducationClass
+    )
+    |> Deserializer.deserialize(
+      :schools,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphEducationSchool
+    )
+    |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.EducationUserCreatedBy)
+    |> Deserializer.deserialize(:user, :struct, MicrosoftGraph.Model.EducationUserUser)
+    |> Deserializer.deserialize(:student, :struct, MicrosoftGraph.Model.EducationUserStudent)
+    |> Deserializer.deserialize(
+      :provisionedPlans,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphProvisionedPlan
+    )
+    |> Deserializer.deserialize(
+      :rubrics,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphEducationRubric
+    )
+    |> Deserializer.deserialize(
+      :mailingAddress,
+      :struct,
+      MicrosoftGraph.Model.EducationUserMailingAddress
+    )
+    |> Deserializer.deserialize(:refreshTokensValidFromDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :onPremisesInfo,
+      :struct,
+      MicrosoftGraph.Model.EducationUserOnPremisesInfo
+    )
+    |> Deserializer.deserialize(
+      :assignedLicenses,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAssignedLicense
+    )
+    |> Deserializer.deserialize(
+      :residenceAddress,
+      :struct,
+      MicrosoftGraph.Model.EducationUserResidenceAddress
+    )
+    |> Deserializer.deserialize(
+      :assignments,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphEducationAssignment
+    )
+    |> Deserializer.deserialize(
+      :primaryRole,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphEducationUserRole
+    )
+    |> Deserializer.deserialize(
+      :taughtClasses,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphEducationClass
+    )
+    |> Deserializer.deserialize(
+      :assignedPlans,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAssignedPlan
+    )
+    |> Deserializer.deserialize(
+      :passwordProfile,
+      :struct,
+      MicrosoftGraph.Model.EducationUserPasswordProfile
+    )
+    |> Deserializer.deserialize(
+      :externalSource,
+      :struct,
+      MicrosoftGraph.Model.EducationUserExternalSource
+    )
+    |> Deserializer.deserialize(:teacher, :struct, MicrosoftGraph.Model.EducationUserTeacher)
+    |> Deserializer.deserialize(
+      :relatedContacts,
+      :list,
+      MicrosoftGraph.Model.EducationUserRelatedContactsInner
+    )
   end
 end
-

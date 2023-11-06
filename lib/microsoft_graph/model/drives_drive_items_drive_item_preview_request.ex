@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemPreviewRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,15 +13,20 @@ defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemPreviewRequest do
   ]
 
   @type t :: %__MODULE__{
-    :page => String.t | nil,
-    :zoom => MicrosoftGraph.Model.UsersUserFindMeetingTimesRequestMinimumAttendeePercentage.t | nil
-  }
+          :page => String.t() | nil,
+          :zoom =>
+            MicrosoftGraph.Model.UsersUserFindMeetingTimesRequestMinimumAttendeePercentage.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:zoom, :struct, MicrosoftGraph.Model.UsersUserFindMeetingTimesRequestMinimumAttendeePercentage)
+    |> Deserializer.deserialize(
+      :zoom,
+      :struct,
+      MicrosoftGraph.Model.UsersUserFindMeetingTimesRequestMinimumAttendeePercentage
+    )
   end
 end
-

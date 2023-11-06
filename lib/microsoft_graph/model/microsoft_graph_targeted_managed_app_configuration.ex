@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphTargetedManagedAppConfiguration do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -24,31 +24,44 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphTargetedManagedAppConfiguration do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :version => String.t | nil,
-    :customSettings => [MicrosoftGraph.Model.MicrosoftGraphKeyValuePair.t] | nil,
-    :apps => [MicrosoftGraph.Model.MicrosoftGraphManagedMobileApp.t] | nil,
-    :assignments => [MicrosoftGraph.Model.MicrosoftGraphTargetedManagedAppPolicyAssignment.t] | nil,
-    :deployedAppCount => integer() | nil,
-    :deploymentSummary => MicrosoftGraph.Model.DefaultManagedAppProtectionDeploymentSummary.t | nil,
-    :isAssigned => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :version => String.t() | nil,
+          :customSettings => [MicrosoftGraph.Model.MicrosoftGraphKeyValuePair.t()] | nil,
+          :apps => [MicrosoftGraph.Model.MicrosoftGraphManagedMobileApp.t()] | nil,
+          :assignments =>
+            [MicrosoftGraph.Model.MicrosoftGraphTargetedManagedAppPolicyAssignment.t()] | nil,
+          :deployedAppCount => integer() | nil,
+          :deploymentSummary =>
+            MicrosoftGraph.Model.DefaultManagedAppProtectionDeploymentSummary.t() | nil,
+          :isAssigned => boolean() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:customSettings, :list, MicrosoftGraph.Model.MicrosoftGraphKeyValuePair)
-     |> Deserializer.deserialize(:apps, :list, MicrosoftGraph.Model.MicrosoftGraphManagedMobileApp)
-     |> Deserializer.deserialize(:assignments, :list, MicrosoftGraph.Model.MicrosoftGraphTargetedManagedAppPolicyAssignment)
-     |> Deserializer.deserialize(:deploymentSummary, :struct, MicrosoftGraph.Model.DefaultManagedAppProtectionDeploymentSummary)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :customSettings,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphKeyValuePair
+    )
+    |> Deserializer.deserialize(:apps, :list, MicrosoftGraph.Model.MicrosoftGraphManagedMobileApp)
+    |> Deserializer.deserialize(
+      :assignments,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphTargetedManagedAppPolicyAssignment
+    )
+    |> Deserializer.deserialize(
+      :deploymentSummary,
+      :struct,
+      MicrosoftGraph.Model.DefaultManagedAppProtectionDeploymentSummary
+    )
   end
 end
-

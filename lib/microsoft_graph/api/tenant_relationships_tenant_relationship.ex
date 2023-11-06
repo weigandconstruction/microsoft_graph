@@ -24,7 +24,13 @@ defmodule MicrosoftGraph.Api.TenantRelationshipsTenantRelationship do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTenantRelationship.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec tenant_relationships_tenant_relationship_get_tenant_relationship(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTenantRelationship.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec tenant_relationships_tenant_relationship_get_tenant_relationship(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTenantRelationship.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def tenant_relationships_tenant_relationship_get_tenant_relationship(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -61,8 +67,19 @@ defmodule MicrosoftGraph.Api.TenantRelationshipsTenantRelationship do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTenantRelationship.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec tenant_relationships_tenant_relationship_update_tenant_relationship(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphTenantRelationship.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTenantRelationship.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def tenant_relationships_tenant_relationship_update_tenant_relationship(connection, microsoft_graph_tenant_relationship, _opts \\ []) do
+  @spec tenant_relationships_tenant_relationship_update_tenant_relationship(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphTenantRelationship.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTenantRelationship.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def tenant_relationships_tenant_relationship_update_tenant_relationship(
+        connection,
+        microsoft_graph_tenant_relationship,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

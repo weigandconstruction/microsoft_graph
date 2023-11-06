@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.EdiscoveryCaseSettingsOcr do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :isEnabled => boolean() | nil,
-    :maxImageSize => integer() | nil,
-    :timeout => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :isEnabled => boolean() | nil,
+          :maxImageSize => integer() | nil,
+          :timeout => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

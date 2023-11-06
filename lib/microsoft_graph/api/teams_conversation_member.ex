@@ -25,7 +25,15 @@ defmodule MicrosoftGraph.Api.TeamsConversationMember do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_create_members(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_create_members(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphConversationMember.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_create_members(connection, team_id, microsoft_graph_conversation_member, _opts \\ []) do
     request =
       %{}
@@ -60,7 +68,10 @@ defmodule MicrosoftGraph.Api.TeamsConversationMember do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_delete_members(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_delete_members(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_delete_members(connection, team_id, conversation_member_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -100,7 +111,10 @@ defmodule MicrosoftGraph.Api.TeamsConversationMember do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_get_members(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_get_members(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_get_members(connection, team_id, conversation_member_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -146,7 +160,10 @@ defmodule MicrosoftGraph.Api.TeamsConversationMember do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMemberCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_list_members(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMemberCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_list_members(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMemberCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_list_members(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -191,7 +208,10 @@ defmodule MicrosoftGraph.Api.TeamsConversationMember do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_members_get_count717b(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_members_get_count717b(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_members_get_count717b(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -231,8 +251,23 @@ defmodule MicrosoftGraph.Api.TeamsConversationMember do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_update_members(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_update_members(connection, team_id, conversation_member_id, microsoft_graph_conversation_member, _opts \\ []) do
+  @spec teams_update_members(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphConversationMember.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_update_members(
+        connection,
+        team_id,
+        conversation_member_id,
+        microsoft_graph_conversation_member,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

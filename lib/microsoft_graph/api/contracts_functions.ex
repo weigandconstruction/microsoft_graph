@@ -29,7 +29,10 @@ defmodule MicrosoftGraph.Api.ContractsFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfDirectoryObject1.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec contracts_delta(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfDirectoryObject1.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec contracts_delta(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfDirectoryObject1.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def contracts_delta(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAccessReviewScheduleSettings do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -25,29 +25,47 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAccessReviewScheduleSettings do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :applyActions => [MicrosoftGraph.Model.MicrosoftGraphAccessReviewScheduleSettingsApplyActionsInner.t] | nil,
-    :autoApplyDecisionsEnabled => boolean() | nil,
-    :decisionHistoriesForReviewersEnabled => boolean() | nil,
-    :defaultDecision => String.t | nil,
-    :defaultDecisionEnabled => boolean() | nil,
-    :instanceDurationInDays => integer() | nil,
-    :justificationRequiredOnApproval => boolean() | nil,
-    :mailNotificationsEnabled => boolean() | nil,
-    :recommendationInsightSettings => [MicrosoftGraph.Model.MicrosoftGraphAccessReviewStageSettingsRecommendationInsightSettingsInner.t] | nil,
-    :recommendationLookBackDuration => String.t | nil,
-    :recommendationsEnabled => boolean() | nil,
-    :recurrence => MicrosoftGraph.Model.MicrosoftGraphAccessReviewScheduleSettingsRecurrence.t | nil,
-    :reminderNotificationsEnabled => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :applyActions =>
+            [MicrosoftGraph.Model.MicrosoftGraphAccessReviewScheduleSettingsApplyActionsInner.t()]
+            | nil,
+          :autoApplyDecisionsEnabled => boolean() | nil,
+          :decisionHistoriesForReviewersEnabled => boolean() | nil,
+          :defaultDecision => String.t() | nil,
+          :defaultDecisionEnabled => boolean() | nil,
+          :instanceDurationInDays => integer() | nil,
+          :justificationRequiredOnApproval => boolean() | nil,
+          :mailNotificationsEnabled => boolean() | nil,
+          :recommendationInsightSettings =>
+            [
+              MicrosoftGraph.Model.MicrosoftGraphAccessReviewStageSettingsRecommendationInsightSettingsInner.t()
+            ]
+            | nil,
+          :recommendationLookBackDuration => String.t() | nil,
+          :recommendationsEnabled => boolean() | nil,
+          :recurrence =>
+            MicrosoftGraph.Model.MicrosoftGraphAccessReviewScheduleSettingsRecurrence.t() | nil,
+          :reminderNotificationsEnabled => boolean() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:applyActions, :list, MicrosoftGraph.Model.MicrosoftGraphAccessReviewScheduleSettingsApplyActionsInner)
-     |> Deserializer.deserialize(:recommendationInsightSettings, :list, MicrosoftGraph.Model.MicrosoftGraphAccessReviewStageSettingsRecommendationInsightSettingsInner)
-     |> Deserializer.deserialize(:recurrence, :struct, MicrosoftGraph.Model.MicrosoftGraphAccessReviewScheduleSettingsRecurrence)
+    |> Deserializer.deserialize(
+      :applyActions,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAccessReviewScheduleSettingsApplyActionsInner
+    )
+    |> Deserializer.deserialize(
+      :recommendationInsightSettings,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAccessReviewStageSettingsRecommendationInsightSettingsInner
+    )
+    |> Deserializer.deserialize(
+      :recurrence,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAccessReviewScheduleSettingsRecurrence
+    )
   end
 end
-

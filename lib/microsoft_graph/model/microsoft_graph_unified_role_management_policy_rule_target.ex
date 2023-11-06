@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleManagementPolicyRuleTarget do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,21 +18,32 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleManagementPolicyRuleTarg
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :caller => String.t | nil,
-    :enforcedSettings => [String.t] | nil,
-    :inheritableSettings => [String.t] | nil,
-    :level => String.t | nil,
-    :operations => [MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleManagementPolicyRuleTargetOperationsInner.t] | nil,
-    :targetObjects => [MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :caller => String.t() | nil,
+          :enforcedSettings => [String.t()] | nil,
+          :inheritableSettings => [String.t()] | nil,
+          :level => String.t() | nil,
+          :operations =>
+            [
+              MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleManagementPolicyRuleTargetOperationsInner.t()
+            ]
+            | nil,
+          :targetObjects => [MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:operations, :list, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleManagementPolicyRuleTargetOperationsInner)
-     |> Deserializer.deserialize(:targetObjects, :list, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject)
+    |> Deserializer.deserialize(
+      :operations,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleManagementPolicyRuleTargetOperationsInner
+    )
+    |> Deserializer.deserialize(
+      :targetObjects,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDirectoryObject
+    )
   end
 end
-

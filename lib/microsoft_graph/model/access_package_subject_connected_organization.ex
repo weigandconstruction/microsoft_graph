@@ -21,28 +21,40 @@ defmodule MicrosoftGraph.Model.AccessPackageSubjectConnectedOrganization do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :externalSponsors => [MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t] | nil,
-    :identitySources => [MicrosoftGraph.Model.ConnectedOrganizationIdentitySourcesInner.t] | nil,
-    :internalSponsors => [MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t] | nil,
-    :modifiedDateTime => DateTime.t | nil,
-    :state => MicrosoftGraph.Model.ConnectedOrganizationState.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :externalSponsors => [MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()] | nil,
+          :identitySources =>
+            [MicrosoftGraph.Model.ConnectedOrganizationIdentitySourcesInner.t()] | nil,
+          :internalSponsors => [MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()] | nil,
+          :modifiedDateTime => DateTime.t() | nil,
+          :state => MicrosoftGraph.Model.ConnectedOrganizationState.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:externalSponsors, :list, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject)
-     |> Deserializer.deserialize(:identitySources, :list, MicrosoftGraph.Model.ConnectedOrganizationIdentitySourcesInner)
-     |> Deserializer.deserialize(:internalSponsors, :list, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject)
-     |> Deserializer.deserialize(:modifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:state, :struct, MicrosoftGraph.Model.ConnectedOrganizationState)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :externalSponsors,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDirectoryObject
+    )
+    |> Deserializer.deserialize(
+      :identitySources,
+      :list,
+      MicrosoftGraph.Model.ConnectedOrganizationIdentitySourcesInner
+    )
+    |> Deserializer.deserialize(
+      :internalSponsors,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDirectoryObject
+    )
+    |> Deserializer.deserialize(:modifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:state, :struct, MicrosoftGraph.Model.ConnectedOrganizationState)
   end
 end
-

@@ -24,7 +24,10 @@ defmodule MicrosoftGraph.Api.GroupSettingTemplatesGroupSettingTemplate do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec group_setting_templates_get_count_f6d8(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec group_setting_templates_get_count_f6d8(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def group_setting_templates_get_count_f6d8(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -61,8 +64,19 @@ defmodule MicrosoftGraph.Api.GroupSettingTemplatesGroupSettingTemplate do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphGroupSettingTemplate.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec group_setting_templates_group_setting_template_create_group_setting_template(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphGroupSettingTemplate.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphGroupSettingTemplate.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def group_setting_templates_group_setting_template_create_group_setting_template(connection, microsoft_graph_group_setting_template, _opts \\ []) do
+  @spec group_setting_templates_group_setting_template_create_group_setting_template(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphGroupSettingTemplate.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphGroupSettingTemplate.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def group_setting_templates_group_setting_template_create_group_setting_template(
+        connection,
+        microsoft_graph_group_setting_template,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -94,8 +108,19 @@ defmodule MicrosoftGraph.Api.GroupSettingTemplatesGroupSettingTemplate do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec group_setting_templates_group_setting_template_delete_group_setting_template(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def group_setting_templates_group_setting_template_delete_group_setting_template(connection, group_setting_template_id, opts \\ []) do
+  @spec group_setting_templates_group_setting_template_delete_group_setting_template(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def group_setting_templates_group_setting_template_delete_group_setting_template(
+        connection,
+        group_setting_template_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -133,8 +158,19 @@ defmodule MicrosoftGraph.Api.GroupSettingTemplatesGroupSettingTemplate do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphGroupSettingTemplate.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec group_setting_templates_group_setting_template_get_group_setting_template(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphGroupSettingTemplate.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def group_setting_templates_group_setting_template_get_group_setting_template(connection, group_setting_template_id, opts \\ []) do
+  @spec group_setting_templates_group_setting_template_get_group_setting_template(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphGroupSettingTemplate.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def group_setting_templates_group_setting_template_get_group_setting_template(
+        connection,
+        group_setting_template_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -178,8 +214,17 @@ defmodule MicrosoftGraph.Api.GroupSettingTemplatesGroupSettingTemplate do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphGroupSettingTemplateCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec group_setting_templates_group_setting_template_list_group_setting_template(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphGroupSettingTemplateCollectionResponse.t} | {:error, Tesla.Env.t}
-  def group_setting_templates_group_setting_template_list_group_setting_template(connection, opts \\ []) do
+  @spec group_setting_templates_group_setting_template_list_group_setting_template(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphGroupSettingTemplateCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def group_setting_templates_group_setting_template_list_group_setting_template(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -222,8 +267,21 @@ defmodule MicrosoftGraph.Api.GroupSettingTemplatesGroupSettingTemplate do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphGroupSettingTemplate.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec group_setting_templates_group_setting_template_update_group_setting_template(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphGroupSettingTemplate.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphGroupSettingTemplate.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def group_setting_templates_group_setting_template_update_group_setting_template(connection, group_setting_template_id, microsoft_graph_group_setting_template, _opts \\ []) do
+  @spec group_setting_templates_group_setting_template_update_group_setting_template(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphGroupSettingTemplate.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphGroupSettingTemplate.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def group_setting_templates_group_setting_template_update_group_setting_template(
+        connection,
+        group_setting_template_id,
+        microsoft_graph_group_setting_template,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

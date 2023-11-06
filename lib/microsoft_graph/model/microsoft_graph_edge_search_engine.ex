@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphEdgeSearchEngine do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,15 +13,19 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphEdgeSearchEngine do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :edgeSearchEngineType => MicrosoftGraph.Model.MicrosoftGraphEdgeSearchEngineType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :edgeSearchEngineType =>
+            MicrosoftGraph.Model.MicrosoftGraphEdgeSearchEngineType.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:edgeSearchEngineType, :struct, MicrosoftGraph.Model.MicrosoftGraphEdgeSearchEngineType)
+    |> Deserializer.deserialize(
+      :edgeSearchEngineType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphEdgeSearchEngineType
+    )
   end
 end
-

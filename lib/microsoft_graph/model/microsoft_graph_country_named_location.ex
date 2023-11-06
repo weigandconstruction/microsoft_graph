@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphCountryNamedLocation do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,23 +19,27 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphCountryNamedLocation do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :displayName => String.t | nil,
-    :modifiedDateTime => DateTime.t | nil,
-    :countriesAndRegions => [String.t] | nil,
-    :countryLookupMethod => MicrosoftGraph.Model.CountryNamedLocationCountryLookupMethod.t | nil,
-    :includeUnknownCountriesAndRegions => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :displayName => String.t() | nil,
+          :modifiedDateTime => DateTime.t() | nil,
+          :countriesAndRegions => [String.t()] | nil,
+          :countryLookupMethod =>
+            MicrosoftGraph.Model.CountryNamedLocationCountryLookupMethod.t() | nil,
+          :includeUnknownCountriesAndRegions => boolean() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:modifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:countryLookupMethod, :struct, MicrosoftGraph.Model.CountryNamedLocationCountryLookupMethod)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:modifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :countryLookupMethod,
+      :struct,
+      MicrosoftGraph.Model.CountryNamedLocationCountryLookupMethod
+    )
   end
 end
-

@@ -25,8 +25,21 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_calendar_permissions_get_count3d5b(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_calendar_permissions_get_count3d5b(connection, calendar_group_id, calendar_id, opts \\ []) do
+  @spec me_calendar_groups_calendars_calendar_permissions_get_count3d5b(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_calendar_permissions_get_count3d5b(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$filter" => :query
     }
@@ -34,7 +47,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:get)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarPermissions/$count")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarPermissions/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -64,8 +79,23 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_calendar_view_attachments_get_count_e147(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_calendar_view_attachments_get_count_e147(connection, calendar_group_id, calendar_id, event_id, opts \\ []) do
+  @spec me_calendar_groups_calendars_calendar_view_attachments_get_count_e147(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_calendar_view_attachments_get_count_e147(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$filter" => :query
     }
@@ -73,7 +103,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:get)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/attachments/$count")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/attachments/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -104,12 +136,31 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttachment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_calendar_view_create_attachments(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphAttachment.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_calendar_view_create_attachments(connection, calendar_group_id, calendar_id, event_id, microsoft_graph_attachment, _opts \\ []) do
+  @spec me_calendar_groups_calendars_calendar_view_create_attachments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAttachment.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_calendar_view_create_attachments(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        microsoft_graph_attachment,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/attachments")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/attachments"
+      )
       |> add_param(:body, :body, microsoft_graph_attachment)
       |> Enum.into([])
 
@@ -140,12 +191,31 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_calendar_view_create_extensions(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphExtension.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_calendar_view_create_extensions(connection, calendar_group_id, calendar_id, event_id, microsoft_graph_extension, _opts \\ []) do
+  @spec me_calendar_groups_calendars_calendar_view_create_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphExtension.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_calendar_view_create_extensions(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        microsoft_graph_extension,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/extensions")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/extensions"
+      )
       |> add_param(:body, :body, microsoft_graph_extension)
       |> Enum.into([])
 
@@ -177,8 +247,25 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_calendar_view_delete_attachments(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_calendar_view_delete_attachments(connection, calendar_group_id, calendar_id, event_id, attachment_id, opts \\ []) do
+  @spec me_calendar_groups_calendars_calendar_view_delete_attachments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_calendar_view_delete_attachments(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        attachment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -186,7 +273,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:delete)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/attachments/#{attachment_id}")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/attachments/#{attachment_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -217,8 +306,25 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_calendar_view_delete_extensions(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_calendar_view_delete_extensions(connection, calendar_group_id, calendar_id, event_id, extension_id, opts \\ []) do
+  @spec me_calendar_groups_calendars_calendar_view_delete_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_calendar_view_delete_extensions(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        extension_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -226,7 +332,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:delete)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/extensions/#{extension_id}")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/extensions/#{extension_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -256,8 +364,23 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_calendar_view_extensions_get_count_a2ad(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_calendar_view_extensions_get_count_a2ad(connection, calendar_group_id, calendar_id, event_id, opts \\ []) do
+  @spec me_calendar_groups_calendars_calendar_view_extensions_get_count_a2ad(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_calendar_view_extensions_get_count_a2ad(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$filter" => :query
     }
@@ -265,7 +388,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:get)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/extensions/$count")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/extensions/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -298,8 +423,25 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttachment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_calendar_view_get_attachments(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_calendar_view_get_attachments(connection, calendar_group_id, calendar_id, event_id, attachment_id, opts \\ []) do
+  @spec me_calendar_groups_calendars_calendar_view_get_attachments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_calendar_view_get_attachments(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        attachment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -308,7 +450,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:get)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/attachments/#{attachment_id}")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/attachments/#{attachment_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -339,8 +483,23 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCalendar.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_calendar_view_get_calendar(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphCalendar.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_calendar_view_get_calendar(connection, calendar_group_id, calendar_id, event_id, opts \\ []) do
+  @spec me_calendar_groups_calendars_calendar_view_get_calendar(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphCalendar.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_calendar_view_get_calendar(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query
     }
@@ -348,7 +507,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:get)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/calendar")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/calendar"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -377,8 +538,21 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_calendar_view_get_count5d8d(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_calendar_view_get_count5d8d(connection, calendar_group_id, calendar_id, opts \\ []) do
+  @spec me_calendar_groups_calendars_calendar_view_get_count5d8d(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_calendar_view_get_count5d8d(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$filter" => :query
     }
@@ -386,7 +560,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:get)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/$count")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -419,8 +595,25 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_calendar_view_get_extensions(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_calendar_view_get_extensions(connection, calendar_group_id, calendar_id, event_id, extension_id, opts \\ []) do
+  @spec me_calendar_groups_calendars_calendar_view_get_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_calendar_view_get_extensions(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        extension_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -429,7 +622,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:get)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/extensions/#{extension_id}")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/extensions/#{extension_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -463,8 +658,29 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEvent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_calendar_view_get_instances(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEvent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_calendar_view_get_instances(connection, calendar_group_id, calendar_id, event_id, event_id1, start_date_time, end_date_time, opts \\ []) do
+  @spec me_calendar_groups_calendars_calendar_view_get_instances(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEvent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_calendar_view_get_instances(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        event_id1,
+        start_date_time,
+        end_date_time,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query
     }
@@ -472,7 +688,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:get)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}"
+      )
       |> add_param(:query, :startDateTime, start_date_time)
       |> add_param(:query, :endDateTime, end_date_time)
       |> add_optional_params(optional_params, opts)
@@ -505,8 +723,25 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_calendar_view_instances_attachments_get_count_dd0d(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_calendar_view_instances_attachments_get_count_dd0d(connection, calendar_group_id, calendar_id, event_id, event_id1, opts \\ []) do
+  @spec me_calendar_groups_calendars_calendar_view_instances_attachments_get_count_dd0d(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_calendar_view_instances_attachments_get_count_dd0d(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        event_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$filter" => :query
     }
@@ -514,7 +749,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:get)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/attachments/$count")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/attachments/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -546,12 +783,33 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttachment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_calendar_view_instances_create_attachments(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphAttachment.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_calendar_view_instances_create_attachments(connection, calendar_group_id, calendar_id, event_id, event_id1, microsoft_graph_attachment, _opts \\ []) do
+  @spec me_calendar_groups_calendars_calendar_view_instances_create_attachments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAttachment.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_calendar_view_instances_create_attachments(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        event_id1,
+        microsoft_graph_attachment,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/attachments")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/attachments"
+      )
       |> add_param(:body, :body, microsoft_graph_attachment)
       |> Enum.into([])
 
@@ -583,12 +841,33 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_calendar_view_instances_create_extensions(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphExtension.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_calendar_view_instances_create_extensions(connection, calendar_group_id, calendar_id, event_id, event_id1, microsoft_graph_extension, _opts \\ []) do
+  @spec me_calendar_groups_calendars_calendar_view_instances_create_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphExtension.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_calendar_view_instances_create_extensions(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        event_id1,
+        microsoft_graph_extension,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/extensions")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/extensions"
+      )
       |> add_param(:body, :body, microsoft_graph_extension)
       |> Enum.into([])
 
@@ -621,8 +900,27 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_calendar_view_instances_delete_attachments(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_calendar_view_instances_delete_attachments(connection, calendar_group_id, calendar_id, event_id, event_id1, attachment_id, opts \\ []) do
+  @spec me_calendar_groups_calendars_calendar_view_instances_delete_attachments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_calendar_view_instances_delete_attachments(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        event_id1,
+        attachment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -630,7 +928,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:delete)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/attachments/#{attachment_id}")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/attachments/#{attachment_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -662,8 +962,27 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_calendar_view_instances_delete_extensions(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_calendar_view_instances_delete_extensions(connection, calendar_group_id, calendar_id, event_id, event_id1, extension_id, opts \\ []) do
+  @spec me_calendar_groups_calendars_calendar_view_instances_delete_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_calendar_view_instances_delete_extensions(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        event_id1,
+        extension_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -671,7 +990,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:delete)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/extensions/#{extension_id}")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/extensions/#{extension_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -702,8 +1023,25 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_calendar_view_instances_extensions_get_count2132(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_calendar_view_instances_extensions_get_count2132(connection, calendar_group_id, calendar_id, event_id, event_id1, opts \\ []) do
+  @spec me_calendar_groups_calendars_calendar_view_instances_extensions_get_count2132(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_calendar_view_instances_extensions_get_count2132(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        event_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$filter" => :query
     }
@@ -711,7 +1049,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:get)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/extensions/$count")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/extensions/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -745,8 +1085,27 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttachment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_calendar_view_instances_get_attachments(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_calendar_view_instances_get_attachments(connection, calendar_group_id, calendar_id, event_id, event_id1, attachment_id, opts \\ []) do
+  @spec me_calendar_groups_calendars_calendar_view_instances_get_attachments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_calendar_view_instances_get_attachments(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        event_id1,
+        attachment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -755,7 +1114,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:get)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/attachments/#{attachment_id}")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/attachments/#{attachment_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -787,8 +1148,25 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCalendar.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_calendar_view_instances_get_calendar(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphCalendar.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_calendar_view_instances_get_calendar(connection, calendar_group_id, calendar_id, event_id, event_id1, opts \\ []) do
+  @spec me_calendar_groups_calendars_calendar_view_instances_get_calendar(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphCalendar.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_calendar_view_instances_get_calendar(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        event_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query
     }
@@ -796,7 +1174,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:get)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/calendar")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/calendar"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -826,8 +1206,23 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_calendar_view_instances_get_count_dd0e(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_calendar_view_instances_get_count_dd0e(connection, calendar_group_id, calendar_id, event_id, opts \\ []) do
+  @spec me_calendar_groups_calendars_calendar_view_instances_get_count_dd0e(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_calendar_view_instances_get_count_dd0e(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$filter" => :query
     }
@@ -835,7 +1230,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:get)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/instances/$count")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/instances/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -869,8 +1266,27 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_calendar_view_instances_get_extensions(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_calendar_view_instances_get_extensions(connection, calendar_group_id, calendar_id, event_id, event_id1, extension_id, opts \\ []) do
+  @spec me_calendar_groups_calendars_calendar_view_instances_get_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_calendar_view_instances_get_extensions(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        event_id1,
+        extension_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -879,7 +1295,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:get)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/extensions/#{extension_id}")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/extensions/#{extension_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -917,8 +1335,25 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttachmentCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_calendar_view_instances_list_attachments(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachmentCollectionResponse.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_calendar_view_instances_list_attachments(connection, calendar_group_id, calendar_id, event_id, event_id1, opts \\ []) do
+  @spec me_calendar_groups_calendars_calendar_view_instances_list_attachments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachmentCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_calendar_view_instances_list_attachments(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        event_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -932,7 +1367,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:get)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/attachments")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/attachments"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -970,8 +1407,25 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_calendar_view_instances_list_extensions(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionCollectionResponse.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_calendar_view_instances_list_extensions(connection, calendar_group_id, calendar_id, event_id, event_id1, opts \\ []) do
+  @spec me_calendar_groups_calendars_calendar_view_instances_list_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_calendar_view_instances_list_extensions(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        event_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -985,7 +1439,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:get)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/extensions")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/extensions"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1017,12 +1473,35 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_calendar_view_instances_update_extensions(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphExtension.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_calendar_view_instances_update_extensions(connection, calendar_group_id, calendar_id, event_id, event_id1, extension_id, microsoft_graph_extension, _opts \\ []) do
+  @spec me_calendar_groups_calendars_calendar_view_instances_update_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphExtension.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_calendar_view_instances_update_extensions(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        event_id1,
+        extension_id,
+        microsoft_graph_extension,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/extensions/#{extension_id}")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/extensions/#{extension_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_extension)
       |> Enum.into([])
 
@@ -1059,8 +1538,23 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttachmentCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_calendar_view_list_attachments(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachmentCollectionResponse.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_calendar_view_list_attachments(connection, calendar_group_id, calendar_id, event_id, opts \\ []) do
+  @spec me_calendar_groups_calendars_calendar_view_list_attachments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachmentCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_calendar_view_list_attachments(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1074,7 +1568,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:get)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/attachments")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/attachments"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1111,8 +1607,23 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_calendar_view_list_extensions(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionCollectionResponse.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_calendar_view_list_extensions(connection, calendar_group_id, calendar_id, event_id, opts \\ []) do
+  @spec me_calendar_groups_calendars_calendar_view_list_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_calendar_view_list_extensions(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1126,7 +1637,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:get)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/extensions")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/extensions"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1164,8 +1677,27 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEventCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_calendar_view_list_instances(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEventCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_calendar_view_list_instances(connection, calendar_group_id, calendar_id, event_id, start_date_time, end_date_time, opts \\ []) do
+  @spec me_calendar_groups_calendars_calendar_view_list_instances(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEventCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_calendar_view_list_instances(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        start_date_time,
+        end_date_time,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1178,7 +1710,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:get)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/instances")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/instances"
+      )
       |> add_param(:query, :startDateTime, start_date_time)
       |> add_param(:query, :endDateTime, end_date_time)
       |> add_optional_params(optional_params, opts)
@@ -1211,12 +1745,33 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_calendar_view_update_extensions(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphExtension.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_calendar_view_update_extensions(connection, calendar_group_id, calendar_id, event_id, extension_id, microsoft_graph_extension, _opts \\ []) do
+  @spec me_calendar_groups_calendars_calendar_view_update_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphExtension.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_calendar_view_update_extensions(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        extension_id,
+        microsoft_graph_extension,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/extensions/#{extension_id}")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/extensions/#{extension_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_extension)
       |> Enum.into([])
 
@@ -1246,12 +1801,29 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCalendarPermission.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_create_calendar_permissions(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphCalendarPermission.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphCalendarPermission.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_create_calendar_permissions(connection, calendar_group_id, calendar_id, microsoft_graph_calendar_permission, _opts \\ []) do
+  @spec me_calendar_groups_calendars_create_calendar_permissions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphCalendarPermission.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphCalendarPermission.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_create_calendar_permissions(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        microsoft_graph_calendar_permission,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarPermissions")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarPermissions"
+      )
       |> add_param(:body, :body, microsoft_graph_calendar_permission)
       |> Enum.into([])
 
@@ -1281,8 +1853,23 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEvent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_create_events(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphEvent.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEvent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_create_events(connection, calendar_group_id, calendar_id, microsoft_graph_event, _opts \\ []) do
+  @spec me_calendar_groups_calendars_create_events(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphEvent.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEvent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_create_events(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        microsoft_graph_event,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1317,8 +1904,23 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_delete_calendar_permissions(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_delete_calendar_permissions(connection, calendar_group_id, calendar_id, calendar_permission_id, opts \\ []) do
+  @spec me_calendar_groups_calendars_delete_calendar_permissions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_delete_calendar_permissions(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        calendar_permission_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1326,7 +1928,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:delete)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarPermissions/#{calendar_permission_id}")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarPermissions/#{calendar_permission_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1356,8 +1960,23 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_delete_events(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_delete_events(connection, calendar_group_id, calendar_id, event_id, opts \\ []) do
+  @spec me_calendar_groups_calendars_delete_events(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_delete_events(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1365,7 +1984,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:delete)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1395,8 +2016,23 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_events_attachments_get_count2b84(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_events_attachments_get_count2b84(connection, calendar_group_id, calendar_id, event_id, opts \\ []) do
+  @spec me_calendar_groups_calendars_events_attachments_get_count2b84(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_events_attachments_get_count2b84(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$filter" => :query
     }
@@ -1404,7 +2040,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:get)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/attachments/$count")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/attachments/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1435,12 +2073,31 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttachment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_events_create_attachments(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphAttachment.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_events_create_attachments(connection, calendar_group_id, calendar_id, event_id, microsoft_graph_attachment, _opts \\ []) do
+  @spec me_calendar_groups_calendars_events_create_attachments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAttachment.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_events_create_attachments(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        microsoft_graph_attachment,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/attachments")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/attachments"
+      )
       |> add_param(:body, :body, microsoft_graph_attachment)
       |> Enum.into([])
 
@@ -1471,12 +2128,31 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_events_create_extensions(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphExtension.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_events_create_extensions(connection, calendar_group_id, calendar_id, event_id, microsoft_graph_extension, _opts \\ []) do
+  @spec me_calendar_groups_calendars_events_create_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphExtension.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_events_create_extensions(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        microsoft_graph_extension,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/extensions")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/extensions"
+      )
       |> add_param(:body, :body, microsoft_graph_extension)
       |> Enum.into([])
 
@@ -1508,8 +2184,25 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_events_delete_attachments(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_events_delete_attachments(connection, calendar_group_id, calendar_id, event_id, attachment_id, opts \\ []) do
+  @spec me_calendar_groups_calendars_events_delete_attachments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_events_delete_attachments(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        attachment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1517,7 +2210,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:delete)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/attachments/#{attachment_id}")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/attachments/#{attachment_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1548,8 +2243,25 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_events_delete_extensions(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_events_delete_extensions(connection, calendar_group_id, calendar_id, event_id, extension_id, opts \\ []) do
+  @spec me_calendar_groups_calendars_events_delete_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_events_delete_extensions(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        extension_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1557,7 +2269,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:delete)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/extensions/#{extension_id}")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/extensions/#{extension_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1587,8 +2301,23 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_events_extensions_get_count_baf0(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_events_extensions_get_count_baf0(connection, calendar_group_id, calendar_id, event_id, opts \\ []) do
+  @spec me_calendar_groups_calendars_events_extensions_get_count_baf0(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_events_extensions_get_count_baf0(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$filter" => :query
     }
@@ -1596,7 +2325,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:get)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/extensions/$count")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/extensions/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1629,8 +2360,25 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttachment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_events_get_attachments(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_events_get_attachments(connection, calendar_group_id, calendar_id, event_id, attachment_id, opts \\ []) do
+  @spec me_calendar_groups_calendars_events_get_attachments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_events_get_attachments(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        attachment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1639,7 +2387,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:get)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/attachments/#{attachment_id}")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/attachments/#{attachment_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1670,8 +2420,23 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCalendar.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_events_get_calendar(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphCalendar.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_events_get_calendar(connection, calendar_group_id, calendar_id, event_id, opts \\ []) do
+  @spec me_calendar_groups_calendars_events_get_calendar(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphCalendar.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_events_get_calendar(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query
     }
@@ -1679,7 +2444,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:get)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/calendar")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/calendar"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1708,8 +2475,21 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_events_get_count4a49(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_events_get_count4a49(connection, calendar_group_id, calendar_id, opts \\ []) do
+  @spec me_calendar_groups_calendars_events_get_count4a49(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_events_get_count4a49(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$filter" => :query
     }
@@ -1750,8 +2530,25 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_events_get_extensions(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_events_get_extensions(connection, calendar_group_id, calendar_id, event_id, extension_id, opts \\ []) do
+  @spec me_calendar_groups_calendars_events_get_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_events_get_extensions(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        extension_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1760,7 +2557,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:get)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/extensions/#{extension_id}")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/extensions/#{extension_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1794,8 +2593,29 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEvent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_events_get_instances(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEvent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_events_get_instances(connection, calendar_group_id, calendar_id, event_id, event_id1, start_date_time, end_date_time, opts \\ []) do
+  @spec me_calendar_groups_calendars_events_get_instances(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEvent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_events_get_instances(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        event_id1,
+        start_date_time,
+        end_date_time,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query
     }
@@ -1803,7 +2623,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:get)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}"
+      )
       |> add_param(:query, :startDateTime, start_date_time)
       |> add_param(:query, :endDateTime, end_date_time)
       |> add_optional_params(optional_params, opts)
@@ -1836,8 +2658,25 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_events_instances_attachments_get_count_d238(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_events_instances_attachments_get_count_d238(connection, calendar_group_id, calendar_id, event_id, event_id1, opts \\ []) do
+  @spec me_calendar_groups_calendars_events_instances_attachments_get_count_d238(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_events_instances_attachments_get_count_d238(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        event_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$filter" => :query
     }
@@ -1845,7 +2684,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:get)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/attachments/$count")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/attachments/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1877,12 +2718,33 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttachment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_events_instances_create_attachments(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphAttachment.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_events_instances_create_attachments(connection, calendar_group_id, calendar_id, event_id, event_id1, microsoft_graph_attachment, _opts \\ []) do
+  @spec me_calendar_groups_calendars_events_instances_create_attachments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAttachment.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_events_instances_create_attachments(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        event_id1,
+        microsoft_graph_attachment,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/attachments")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/attachments"
+      )
       |> add_param(:body, :body, microsoft_graph_attachment)
       |> Enum.into([])
 
@@ -1914,12 +2776,33 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_events_instances_create_extensions(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphExtension.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_events_instances_create_extensions(connection, calendar_group_id, calendar_id, event_id, event_id1, microsoft_graph_extension, _opts \\ []) do
+  @spec me_calendar_groups_calendars_events_instances_create_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphExtension.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_events_instances_create_extensions(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        event_id1,
+        microsoft_graph_extension,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/extensions")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/extensions"
+      )
       |> add_param(:body, :body, microsoft_graph_extension)
       |> Enum.into([])
 
@@ -1952,8 +2835,27 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_events_instances_delete_attachments(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_events_instances_delete_attachments(connection, calendar_group_id, calendar_id, event_id, event_id1, attachment_id, opts \\ []) do
+  @spec me_calendar_groups_calendars_events_instances_delete_attachments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_events_instances_delete_attachments(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        event_id1,
+        attachment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1961,7 +2863,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:delete)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/attachments/#{attachment_id}")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/attachments/#{attachment_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1993,8 +2897,27 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_events_instances_delete_extensions(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_events_instances_delete_extensions(connection, calendar_group_id, calendar_id, event_id, event_id1, extension_id, opts \\ []) do
+  @spec me_calendar_groups_calendars_events_instances_delete_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_events_instances_delete_extensions(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        event_id1,
+        extension_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -2002,7 +2925,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:delete)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/extensions/#{extension_id}")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/extensions/#{extension_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2033,8 +2958,25 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_events_instances_extensions_get_count421a(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_events_instances_extensions_get_count421a(connection, calendar_group_id, calendar_id, event_id, event_id1, opts \\ []) do
+  @spec me_calendar_groups_calendars_events_instances_extensions_get_count421a(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_events_instances_extensions_get_count421a(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        event_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$filter" => :query
     }
@@ -2042,7 +2984,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:get)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/extensions/$count")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/extensions/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2076,8 +3020,27 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttachment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_events_instances_get_attachments(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_events_instances_get_attachments(connection, calendar_group_id, calendar_id, event_id, event_id1, attachment_id, opts \\ []) do
+  @spec me_calendar_groups_calendars_events_instances_get_attachments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_events_instances_get_attachments(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        event_id1,
+        attachment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2086,7 +3049,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:get)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/attachments/#{attachment_id}")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/attachments/#{attachment_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2118,8 +3083,25 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCalendar.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_events_instances_get_calendar(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphCalendar.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_events_instances_get_calendar(connection, calendar_group_id, calendar_id, event_id, event_id1, opts \\ []) do
+  @spec me_calendar_groups_calendars_events_instances_get_calendar(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphCalendar.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_events_instances_get_calendar(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        event_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query
     }
@@ -2127,7 +3109,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:get)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/calendar")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/calendar"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2157,8 +3141,23 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_events_instances_get_count_eab7(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_events_instances_get_count_eab7(connection, calendar_group_id, calendar_id, event_id, opts \\ []) do
+  @spec me_calendar_groups_calendars_events_instances_get_count_eab7(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_events_instances_get_count_eab7(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$filter" => :query
     }
@@ -2166,7 +3165,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:get)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/instances/$count")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/instances/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2200,8 +3201,27 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_events_instances_get_extensions(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_events_instances_get_extensions(connection, calendar_group_id, calendar_id, event_id, event_id1, extension_id, opts \\ []) do
+  @spec me_calendar_groups_calendars_events_instances_get_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_events_instances_get_extensions(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        event_id1,
+        extension_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2210,7 +3230,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:get)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/extensions/#{extension_id}")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/extensions/#{extension_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2248,8 +3270,25 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttachmentCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_events_instances_list_attachments(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachmentCollectionResponse.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_events_instances_list_attachments(connection, calendar_group_id, calendar_id, event_id, event_id1, opts \\ []) do
+  @spec me_calendar_groups_calendars_events_instances_list_attachments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachmentCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_events_instances_list_attachments(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        event_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -2263,7 +3302,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:get)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/attachments")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/attachments"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2301,8 +3342,25 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_events_instances_list_extensions(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionCollectionResponse.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_events_instances_list_extensions(connection, calendar_group_id, calendar_id, event_id, event_id1, opts \\ []) do
+  @spec me_calendar_groups_calendars_events_instances_list_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_events_instances_list_extensions(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        event_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -2316,7 +3374,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:get)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/extensions")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/extensions"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2348,12 +3408,35 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_events_instances_update_extensions(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphExtension.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_events_instances_update_extensions(connection, calendar_group_id, calendar_id, event_id, event_id1, extension_id, microsoft_graph_extension, _opts \\ []) do
+  @spec me_calendar_groups_calendars_events_instances_update_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphExtension.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_events_instances_update_extensions(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        event_id1,
+        extension_id,
+        microsoft_graph_extension,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/extensions/#{extension_id}")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/extensions/#{extension_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_extension)
       |> Enum.into([])
 
@@ -2390,8 +3473,23 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttachmentCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_events_list_attachments(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachmentCollectionResponse.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_events_list_attachments(connection, calendar_group_id, calendar_id, event_id, opts \\ []) do
+  @spec me_calendar_groups_calendars_events_list_attachments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachmentCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_events_list_attachments(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -2405,7 +3503,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:get)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/attachments")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/attachments"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2442,8 +3542,23 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_events_list_extensions(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionCollectionResponse.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_events_list_extensions(connection, calendar_group_id, calendar_id, event_id, opts \\ []) do
+  @spec me_calendar_groups_calendars_events_list_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_events_list_extensions(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -2457,7 +3572,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:get)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/extensions")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/extensions"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2495,8 +3612,27 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEventCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_events_list_instances(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEventCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_events_list_instances(connection, calendar_group_id, calendar_id, event_id, start_date_time, end_date_time, opts \\ []) do
+  @spec me_calendar_groups_calendars_events_list_instances(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEventCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_events_list_instances(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        start_date_time,
+        end_date_time,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -2509,7 +3645,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:get)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/instances")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/instances"
+      )
       |> add_param(:query, :startDateTime, start_date_time)
       |> add_param(:query, :endDateTime, end_date_time)
       |> add_optional_params(optional_params, opts)
@@ -2542,12 +3680,33 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_events_update_extensions(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphExtension.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_events_update_extensions(connection, calendar_group_id, calendar_id, event_id, extension_id, microsoft_graph_extension, _opts \\ []) do
+  @spec me_calendar_groups_calendars_events_update_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphExtension.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_events_update_extensions(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        extension_id,
+        microsoft_graph_extension,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/extensions/#{extension_id}")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/extensions/#{extension_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_extension)
       |> Enum.into([])
 
@@ -2578,8 +3737,23 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCalendarPermission.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_get_calendar_permissions(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphCalendarPermission.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_get_calendar_permissions(connection, calendar_group_id, calendar_id, calendar_permission_id, opts \\ []) do
+  @spec me_calendar_groups_calendars_get_calendar_permissions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphCalendarPermission.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_get_calendar_permissions(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        calendar_permission_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query
     }
@@ -2587,7 +3761,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:get)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarPermissions/#{calendar_permission_id}")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarPermissions/#{calendar_permission_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2618,8 +3794,23 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEvent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_get_calendar_view(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEvent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_get_calendar_view(connection, calendar_group_id, calendar_id, event_id, opts \\ []) do
+  @spec me_calendar_groups_calendars_get_calendar_view(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEvent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_get_calendar_view(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query
     }
@@ -2627,7 +3818,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:get)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2655,7 +3848,10 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_get_count9aae(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_calendar_groups_calendars_get_count9aae(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_calendar_groups_calendars_get_count9aae(connection, calendar_group_id, opts \\ []) do
     optional_params = %{
       :"$filter" => :query
@@ -2696,8 +3892,23 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEvent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_get_events(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEvent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_get_events(connection, calendar_group_id, calendar_id, event_id, opts \\ []) do
+  @spec me_calendar_groups_calendars_get_events(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEvent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_get_events(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2706,7 +3917,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:get)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2741,8 +3954,21 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCalendarPermissionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_list_calendar_permissions(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphCalendarPermissionCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_list_calendar_permissions(connection, calendar_group_id, calendar_id, opts \\ []) do
+  @spec me_calendar_groups_calendars_list_calendar_permissions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphCalendarPermissionCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_list_calendar_permissions(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -2755,7 +3981,9 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
     request =
       %{}
       |> method(:get)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarPermissions")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarPermissions"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2790,8 +4018,21 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEventCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_list_calendar_view(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEventCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_list_calendar_view(connection, calendar_group_id, calendar_id, opts \\ []) do
+  @spec me_calendar_groups_calendars_list_calendar_view(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEventCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_list_calendar_view(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -2840,8 +4081,21 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEventCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_list_events(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEventCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_list_events(connection, calendar_group_id, calendar_id, opts \\ []) do
+  @spec me_calendar_groups_calendars_list_events(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEventCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_list_events(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -2886,12 +4140,31 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCalendarPermission.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_update_calendar_permissions(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphCalendarPermission.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphCalendarPermission.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_update_calendar_permissions(connection, calendar_group_id, calendar_id, calendar_permission_id, microsoft_graph_calendar_permission, _opts \\ []) do
+  @spec me_calendar_groups_calendars_update_calendar_permissions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphCalendarPermission.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphCalendarPermission.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_update_calendar_permissions(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        calendar_permission_id,
+        microsoft_graph_calendar_permission,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarPermissions/#{calendar_permission_id}")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarPermissions/#{calendar_permission_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_calendar_permission)
       |> Enum.into([])
 
@@ -2922,12 +4195,31 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEvent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendars_update_events(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphEvent.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEvent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendars_update_events(connection, calendar_group_id, calendar_id, event_id, microsoft_graph_event, _opts \\ []) do
+  @spec me_calendar_groups_calendars_update_events(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphEvent.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEvent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendars_update_events(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        microsoft_graph_event,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_event)
       |> Enum.into([])
 
@@ -2956,8 +4248,21 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCalendar.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_create_calendars(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphCalendar.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphCalendar.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_create_calendars(connection, calendar_group_id, microsoft_graph_calendar, _opts \\ []) do
+  @spec me_calendar_groups_create_calendars(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphCalendar.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphCalendar.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_create_calendars(
+        connection,
+        calendar_group_id,
+        microsoft_graph_calendar,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -2990,7 +4295,10 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_delete_calendars(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_calendar_groups_delete_calendars(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_calendar_groups_delete_calendars(connection, calendar_group_id, calendar_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -3029,7 +4337,10 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCalendar.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_get_calendars(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphCalendar.t} | {:error, Tesla.Env.t}
+  @spec me_calendar_groups_get_calendars(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphCalendar.t()}
+          | {:error, Tesla.Env.t()}
   def me_calendar_groups_get_calendars(connection, calendar_group_id, calendar_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query
@@ -3065,7 +4376,10 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_get_count9c6e(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_calendar_groups_get_count9c6e(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_calendar_groups_get_count9c6e(connection, opts \\ []) do
     optional_params = %{
       :"$filter" => :query
@@ -3108,7 +4422,10 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCalendarCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_list_calendars(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphCalendarCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_calendar_groups_list_calendars(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphCalendarCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_calendar_groups_list_calendars(connection, calendar_group_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -3151,8 +4468,23 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCalendar.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_update_calendars(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphCalendar.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphCalendar.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_update_calendars(connection, calendar_group_id, calendar_id, microsoft_graph_calendar, _opts \\ []) do
+  @spec me_calendar_groups_update_calendars(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphCalendar.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphCalendar.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_update_calendars(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        microsoft_graph_calendar,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -3184,7 +4516,14 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCalendarGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_create_calendar_groups(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphCalendarGroup.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphCalendarGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_create_calendar_groups(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphCalendarGroup.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphCalendarGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_create_calendar_groups(connection, microsoft_graph_calendar_group, _opts \\ []) do
     request =
       %{}
@@ -3218,7 +4557,10 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_delete_calendar_groups(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_delete_calendar_groups(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_delete_calendar_groups(connection, calendar_group_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -3256,7 +4598,10 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCalendarGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_get_calendar_groups(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphCalendarGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_get_calendar_groups(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphCalendarGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_get_calendar_groups(connection, calendar_group_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query
@@ -3298,7 +4643,10 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCalendarGroupCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_list_calendar_groups(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphCalendarGroupCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec me_list_calendar_groups(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphCalendarGroupCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def me_list_calendar_groups(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -3341,8 +4689,21 @@ defmodule MicrosoftGraph.Api.MeCalendarGroup do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCalendarGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_update_calendar_groups(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphCalendarGroup.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphCalendarGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_update_calendar_groups(connection, calendar_group_id, microsoft_graph_calendar_group, _opts \\ []) do
+  @spec me_update_calendar_groups(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphCalendarGroup.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphCalendarGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_update_calendar_groups(
+        connection,
+        calendar_group_id,
+        microsoft_graph_calendar_group,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

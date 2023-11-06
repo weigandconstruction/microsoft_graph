@@ -21,29 +21,55 @@ defmodule MicrosoftGraph.Model.AccessPackageAssignmentRequestAssignment do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :accessPackage => MicrosoftGraph.Model.AccessPackageAssignmentAccessPackage.t | nil,
-    :assignmentPolicy => MicrosoftGraph.Model.AccessPackageAssignmentAssignmentPolicy.t | nil,
-    :customExtensionCalloutInstances => [MicrosoftGraph.Model.AccessPackageAssignmentCustomExtensionCalloutInstancesInner.t] | nil,
-    :expiredDateTime => DateTime.t | nil,
-    :schedule => MicrosoftGraph.Model.AccessPackageAssignmentSchedule.t | nil,
-    :state => MicrosoftGraph.Model.AccessPackageAssignmentState.t | nil,
-    :status => String.t | nil,
-    :target => MicrosoftGraph.Model.AccessPackageAssignmentTarget.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :accessPackage => MicrosoftGraph.Model.AccessPackageAssignmentAccessPackage.t() | nil,
+          :assignmentPolicy =>
+            MicrosoftGraph.Model.AccessPackageAssignmentAssignmentPolicy.t() | nil,
+          :customExtensionCalloutInstances =>
+            [MicrosoftGraph.Model.AccessPackageAssignmentCustomExtensionCalloutInstancesInner.t()]
+            | nil,
+          :expiredDateTime => DateTime.t() | nil,
+          :schedule => MicrosoftGraph.Model.AccessPackageAssignmentSchedule.t() | nil,
+          :state => MicrosoftGraph.Model.AccessPackageAssignmentState.t() | nil,
+          :status => String.t() | nil,
+          :target => MicrosoftGraph.Model.AccessPackageAssignmentTarget.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:accessPackage, :struct, MicrosoftGraph.Model.AccessPackageAssignmentAccessPackage)
-     |> Deserializer.deserialize(:assignmentPolicy, :struct, MicrosoftGraph.Model.AccessPackageAssignmentAssignmentPolicy)
-     |> Deserializer.deserialize(:customExtensionCalloutInstances, :list, MicrosoftGraph.Model.AccessPackageAssignmentCustomExtensionCalloutInstancesInner)
-     |> Deserializer.deserialize(:expiredDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:schedule, :struct, MicrosoftGraph.Model.AccessPackageAssignmentSchedule)
-     |> Deserializer.deserialize(:state, :struct, MicrosoftGraph.Model.AccessPackageAssignmentState)
-     |> Deserializer.deserialize(:target, :struct, MicrosoftGraph.Model.AccessPackageAssignmentTarget)
+    |> Deserializer.deserialize(
+      :accessPackage,
+      :struct,
+      MicrosoftGraph.Model.AccessPackageAssignmentAccessPackage
+    )
+    |> Deserializer.deserialize(
+      :assignmentPolicy,
+      :struct,
+      MicrosoftGraph.Model.AccessPackageAssignmentAssignmentPolicy
+    )
+    |> Deserializer.deserialize(
+      :customExtensionCalloutInstances,
+      :list,
+      MicrosoftGraph.Model.AccessPackageAssignmentCustomExtensionCalloutInstancesInner
+    )
+    |> Deserializer.deserialize(:expiredDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :schedule,
+      :struct,
+      MicrosoftGraph.Model.AccessPackageAssignmentSchedule
+    )
+    |> Deserializer.deserialize(
+      :state,
+      :struct,
+      MicrosoftGraph.Model.AccessPackageAssignmentState
+    )
+    |> Deserializer.deserialize(
+      :target,
+      :struct,
+      MicrosoftGraph.Model.AccessPackageAssignmentTarget
+    )
   end
 end
-

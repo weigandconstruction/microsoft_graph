@@ -21,27 +21,38 @@ defmodule MicrosoftGraph.Model.WorkbookRangeWorksheet do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :charts => [MicrosoftGraph.Model.MicrosoftGraphWorkbookChart.t] | nil,
-    :name => String.t | nil,
-    :names => [MicrosoftGraph.Model.MicrosoftGraphWorkbookNamedItem.t] | nil,
-    :pivotTables => [MicrosoftGraph.Model.MicrosoftGraphWorkbookPivotTable.t] | nil,
-    :position => integer() | nil,
-    :protection => MicrosoftGraph.Model.WorkbookWorksheetProtection.t | nil,
-    :tables => [MicrosoftGraph.Model.MicrosoftGraphWorkbookTable.t] | nil,
-    :visibility => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :charts => [MicrosoftGraph.Model.MicrosoftGraphWorkbookChart.t()] | nil,
+          :name => String.t() | nil,
+          :names => [MicrosoftGraph.Model.MicrosoftGraphWorkbookNamedItem.t()] | nil,
+          :pivotTables => [MicrosoftGraph.Model.MicrosoftGraphWorkbookPivotTable.t()] | nil,
+          :position => integer() | nil,
+          :protection => MicrosoftGraph.Model.WorkbookWorksheetProtection.t() | nil,
+          :tables => [MicrosoftGraph.Model.MicrosoftGraphWorkbookTable.t()] | nil,
+          :visibility => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:charts, :list, MicrosoftGraph.Model.MicrosoftGraphWorkbookChart)
-     |> Deserializer.deserialize(:names, :list, MicrosoftGraph.Model.MicrosoftGraphWorkbookNamedItem)
-     |> Deserializer.deserialize(:pivotTables, :list, MicrosoftGraph.Model.MicrosoftGraphWorkbookPivotTable)
-     |> Deserializer.deserialize(:protection, :struct, MicrosoftGraph.Model.WorkbookWorksheetProtection)
-     |> Deserializer.deserialize(:tables, :list, MicrosoftGraph.Model.MicrosoftGraphWorkbookTable)
+    |> Deserializer.deserialize(:charts, :list, MicrosoftGraph.Model.MicrosoftGraphWorkbookChart)
+    |> Deserializer.deserialize(
+      :names,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphWorkbookNamedItem
+    )
+    |> Deserializer.deserialize(
+      :pivotTables,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphWorkbookPivotTable
+    )
+    |> Deserializer.deserialize(
+      :protection,
+      :struct,
+      MicrosoftGraph.Model.WorkbookWorksheetProtection
+    )
+    |> Deserializer.deserialize(:tables, :list, MicrosoftGraph.Model.MicrosoftGraphWorkbookTable)
   end
 end
-

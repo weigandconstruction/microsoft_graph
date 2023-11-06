@@ -23,8 +23,19 @@ defmodule MicrosoftGraph.Api.DirectoryDeviceLocalCredentialInfo do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceLocalCredentialInfo.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_create_device_local_credentials(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphDeviceLocalCredentialInfo.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceLocalCredentialInfo.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_create_device_local_credentials(connection, microsoft_graph_device_local_credential_info, _opts \\ []) do
+  @spec directory_create_device_local_credentials(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphDeviceLocalCredentialInfo.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceLocalCredentialInfo.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_create_device_local_credentials(
+        connection,
+        microsoft_graph_device_local_credential_info,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -56,8 +67,15 @@ defmodule MicrosoftGraph.Api.DirectoryDeviceLocalCredentialInfo do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_delete_device_local_credentials(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_delete_device_local_credentials(connection, device_local_credential_info_id, opts \\ []) do
+  @spec directory_delete_device_local_credentials(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_delete_device_local_credentials(
+        connection,
+        device_local_credential_info_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -93,7 +111,10 @@ defmodule MicrosoftGraph.Api.DirectoryDeviceLocalCredentialInfo do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_device_local_credentials_get_count43fe(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec directory_device_local_credentials_get_count43fe(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def directory_device_local_credentials_get_count43fe(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -132,8 +153,15 @@ defmodule MicrosoftGraph.Api.DirectoryDeviceLocalCredentialInfo do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceLocalCredentialInfo.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_get_device_local_credentials(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceLocalCredentialInfo.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_get_device_local_credentials(connection, device_local_credential_info_id, opts \\ []) do
+  @spec directory_get_device_local_credentials(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceLocalCredentialInfo.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_get_device_local_credentials(
+        connection,
+        device_local_credential_info_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query
     }
@@ -174,7 +202,11 @@ defmodule MicrosoftGraph.Api.DirectoryDeviceLocalCredentialInfo do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceLocalCredentialInfoCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_list_device_local_credentials(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceLocalCredentialInfoCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec directory_list_device_local_credentials(Tesla.Env.client(), keyword()) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphDeviceLocalCredentialInfoCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def directory_list_device_local_credentials(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -216,8 +248,21 @@ defmodule MicrosoftGraph.Api.DirectoryDeviceLocalCredentialInfo do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceLocalCredentialInfo.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_update_device_local_credentials(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphDeviceLocalCredentialInfo.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceLocalCredentialInfo.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_update_device_local_credentials(connection, device_local_credential_info_id, microsoft_graph_device_local_credential_info, _opts \\ []) do
+  @spec directory_update_device_local_credentials(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDeviceLocalCredentialInfo.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceLocalCredentialInfo.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_update_device_local_credentials(
+        connection,
+        device_local_credential_info_id,
+        microsoft_graph_device_local_credential_info,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

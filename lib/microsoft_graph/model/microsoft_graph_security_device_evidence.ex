@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityDeviceEvidence do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -35,47 +35,79 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityDeviceEvidence do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :createdDateTime => DateTime.t | nil,
-    :detailedRoles => [String.t] | nil,
-    :remediationStatus => MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRemediationStatus.t | nil,
-    :remediationStatusDetails => String.t | nil,
-    :roles => [MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRole.t] | nil,
-    :tags => [String.t] | nil,
-    :verdict => MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceVerdict.t | nil,
-    :azureAdDeviceId => String.t | nil,
-    :defenderAvStatus => MicrosoftGraph.Model.DeviceEvidenceDefenderAvStatus.t | nil,
-    :deviceDnsName => String.t | nil,
-    :firstSeenDateTime => DateTime.t | nil,
-    :healthStatus => MicrosoftGraph.Model.DeviceEvidenceHealthStatus.t | nil,
-    :ipInterfaces => [String.t] | nil,
-    :loggedOnUsers => [MicrosoftGraph.Model.DeviceEvidenceLoggedOnUsersInner.t] | nil,
-    :mdeDeviceId => String.t | nil,
-    :onboardingStatus => MicrosoftGraph.Model.DeviceEvidenceOnboardingStatus.t | nil,
-    :osBuild => integer() | nil,
-    :osPlatform => String.t | nil,
-    :rbacGroupId => integer() | nil,
-    :rbacGroupName => String.t | nil,
-    :riskScore => MicrosoftGraph.Model.DeviceEvidenceRiskScore.t | nil,
-    :version => String.t | nil,
-    :vmMetadata => MicrosoftGraph.Model.DeviceEvidenceVmMetadata.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :createdDateTime => DateTime.t() | nil,
+          :detailedRoles => [String.t()] | nil,
+          :remediationStatus =>
+            MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRemediationStatus.t() | nil,
+          :remediationStatusDetails => String.t() | nil,
+          :roles => [MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRole.t()] | nil,
+          :tags => [String.t()] | nil,
+          :verdict => MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceVerdict.t() | nil,
+          :azureAdDeviceId => String.t() | nil,
+          :defenderAvStatus => MicrosoftGraph.Model.DeviceEvidenceDefenderAvStatus.t() | nil,
+          :deviceDnsName => String.t() | nil,
+          :firstSeenDateTime => DateTime.t() | nil,
+          :healthStatus => MicrosoftGraph.Model.DeviceEvidenceHealthStatus.t() | nil,
+          :ipInterfaces => [String.t()] | nil,
+          :loggedOnUsers => [MicrosoftGraph.Model.DeviceEvidenceLoggedOnUsersInner.t()] | nil,
+          :mdeDeviceId => String.t() | nil,
+          :onboardingStatus => MicrosoftGraph.Model.DeviceEvidenceOnboardingStatus.t() | nil,
+          :osBuild => integer() | nil,
+          :osPlatform => String.t() | nil,
+          :rbacGroupId => integer() | nil,
+          :rbacGroupName => String.t() | nil,
+          :riskScore => MicrosoftGraph.Model.DeviceEvidenceRiskScore.t() | nil,
+          :version => String.t() | nil,
+          :vmMetadata => MicrosoftGraph.Model.DeviceEvidenceVmMetadata.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:remediationStatus, :struct, MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRemediationStatus)
-     |> Deserializer.deserialize(:roles, :list, MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRole)
-     |> Deserializer.deserialize(:verdict, :struct, MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceVerdict)
-     |> Deserializer.deserialize(:defenderAvStatus, :struct, MicrosoftGraph.Model.DeviceEvidenceDefenderAvStatus)
-     |> Deserializer.deserialize(:firstSeenDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:healthStatus, :struct, MicrosoftGraph.Model.DeviceEvidenceHealthStatus)
-     |> Deserializer.deserialize(:loggedOnUsers, :list, MicrosoftGraph.Model.DeviceEvidenceLoggedOnUsersInner)
-     |> Deserializer.deserialize(:onboardingStatus, :struct, MicrosoftGraph.Model.DeviceEvidenceOnboardingStatus)
-     |> Deserializer.deserialize(:riskScore, :struct, MicrosoftGraph.Model.DeviceEvidenceRiskScore)
-     |> Deserializer.deserialize(:vmMetadata, :struct, MicrosoftGraph.Model.DeviceEvidenceVmMetadata)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :remediationStatus,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRemediationStatus
+    )
+    |> Deserializer.deserialize(
+      :roles,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRole
+    )
+    |> Deserializer.deserialize(
+      :verdict,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceVerdict
+    )
+    |> Deserializer.deserialize(
+      :defenderAvStatus,
+      :struct,
+      MicrosoftGraph.Model.DeviceEvidenceDefenderAvStatus
+    )
+    |> Deserializer.deserialize(:firstSeenDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :healthStatus,
+      :struct,
+      MicrosoftGraph.Model.DeviceEvidenceHealthStatus
+    )
+    |> Deserializer.deserialize(
+      :loggedOnUsers,
+      :list,
+      MicrosoftGraph.Model.DeviceEvidenceLoggedOnUsersInner
+    )
+    |> Deserializer.deserialize(
+      :onboardingStatus,
+      :struct,
+      MicrosoftGraph.Model.DeviceEvidenceOnboardingStatus
+    )
+    |> Deserializer.deserialize(:riskScore, :struct, MicrosoftGraph.Model.DeviceEvidenceRiskScore)
+    |> Deserializer.deserialize(
+      :vmMetadata,
+      :struct,
+      MicrosoftGraph.Model.DeviceEvidenceVmMetadata
+    )
   end
 end
-

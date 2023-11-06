@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAccessReviewScheduleDefinition do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -28,40 +28,83 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAccessReviewScheduleDefinition do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :additionalNotificationRecipients => [MicrosoftGraph.Model.AccessReviewScheduleDefinitionAdditionalNotificationRecipientsInner.t] | nil,
-    :createdBy => MicrosoftGraph.Model.AccessReviewScheduleDefinitionCreatedBy.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :descriptionForAdmins => String.t | nil,
-    :descriptionForReviewers => String.t | nil,
-    :displayName => String.t | nil,
-    :fallbackReviewers => [MicrosoftGraph.Model.AccessReviewScheduleDefinitionFallbackReviewersInner.t] | nil,
-    :instanceEnumerationScope => MicrosoftGraph.Model.AccessReviewScheduleDefinitionInstanceEnumerationScope.t | nil,
-    :instances => [MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstance.t] | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :reviewers => [MicrosoftGraph.Model.AccessReviewScheduleDefinitionFallbackReviewersInner.t] | nil,
-    :scope => MicrosoftGraph.Model.AccessReviewScheduleDefinitionScope.t | nil,
-    :settings => MicrosoftGraph.Model.AccessReviewScheduleDefinitionSettings.t | nil,
-    :stageSettings => [MicrosoftGraph.Model.AccessReviewScheduleDefinitionStageSettingsInner.t] | nil,
-    :status => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :additionalNotificationRecipients =>
+            [
+              MicrosoftGraph.Model.AccessReviewScheduleDefinitionAdditionalNotificationRecipientsInner.t()
+            ]
+            | nil,
+          :createdBy => MicrosoftGraph.Model.AccessReviewScheduleDefinitionCreatedBy.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :descriptionForAdmins => String.t() | nil,
+          :descriptionForReviewers => String.t() | nil,
+          :displayName => String.t() | nil,
+          :fallbackReviewers =>
+            [MicrosoftGraph.Model.AccessReviewScheduleDefinitionFallbackReviewersInner.t()] | nil,
+          :instanceEnumerationScope =>
+            MicrosoftGraph.Model.AccessReviewScheduleDefinitionInstanceEnumerationScope.t() | nil,
+          :instances => [MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstance.t()] | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :reviewers =>
+            [MicrosoftGraph.Model.AccessReviewScheduleDefinitionFallbackReviewersInner.t()] | nil,
+          :scope => MicrosoftGraph.Model.AccessReviewScheduleDefinitionScope.t() | nil,
+          :settings => MicrosoftGraph.Model.AccessReviewScheduleDefinitionSettings.t() | nil,
+          :stageSettings =>
+            [MicrosoftGraph.Model.AccessReviewScheduleDefinitionStageSettingsInner.t()] | nil,
+          :status => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:additionalNotificationRecipients, :list, MicrosoftGraph.Model.AccessReviewScheduleDefinitionAdditionalNotificationRecipientsInner)
-     |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.AccessReviewScheduleDefinitionCreatedBy)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:fallbackReviewers, :list, MicrosoftGraph.Model.AccessReviewScheduleDefinitionFallbackReviewersInner)
-     |> Deserializer.deserialize(:instanceEnumerationScope, :struct, MicrosoftGraph.Model.AccessReviewScheduleDefinitionInstanceEnumerationScope)
-     |> Deserializer.deserialize(:instances, :list, MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstance)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:reviewers, :list, MicrosoftGraph.Model.AccessReviewScheduleDefinitionFallbackReviewersInner)
-     |> Deserializer.deserialize(:scope, :struct, MicrosoftGraph.Model.AccessReviewScheduleDefinitionScope)
-     |> Deserializer.deserialize(:settings, :struct, MicrosoftGraph.Model.AccessReviewScheduleDefinitionSettings)
-     |> Deserializer.deserialize(:stageSettings, :list, MicrosoftGraph.Model.AccessReviewScheduleDefinitionStageSettingsInner)
+    |> Deserializer.deserialize(
+      :additionalNotificationRecipients,
+      :list,
+      MicrosoftGraph.Model.AccessReviewScheduleDefinitionAdditionalNotificationRecipientsInner
+    )
+    |> Deserializer.deserialize(
+      :createdBy,
+      :struct,
+      MicrosoftGraph.Model.AccessReviewScheduleDefinitionCreatedBy
+    )
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :fallbackReviewers,
+      :list,
+      MicrosoftGraph.Model.AccessReviewScheduleDefinitionFallbackReviewersInner
+    )
+    |> Deserializer.deserialize(
+      :instanceEnumerationScope,
+      :struct,
+      MicrosoftGraph.Model.AccessReviewScheduleDefinitionInstanceEnumerationScope
+    )
+    |> Deserializer.deserialize(
+      :instances,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstance
+    )
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :reviewers,
+      :list,
+      MicrosoftGraph.Model.AccessReviewScheduleDefinitionFallbackReviewersInner
+    )
+    |> Deserializer.deserialize(
+      :scope,
+      :struct,
+      MicrosoftGraph.Model.AccessReviewScheduleDefinitionScope
+    )
+    |> Deserializer.deserialize(
+      :settings,
+      :struct,
+      MicrosoftGraph.Model.AccessReviewScheduleDefinitionSettings
+    )
+    |> Deserializer.deserialize(
+      :stageSettings,
+      :list,
+      MicrosoftGraph.Model.AccessReviewScheduleDefinitionStageSettingsInner
+    )
   end
 end
-

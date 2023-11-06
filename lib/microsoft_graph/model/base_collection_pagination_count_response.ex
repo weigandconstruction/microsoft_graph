@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.BaseCollectionPaginationCountResponse do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,12 +13,11 @@ defmodule MicrosoftGraph.Model.BaseCollectionPaginationCountResponse do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.count" => integer() | nil,
-    :"@odata.nextLink" => String.t | nil
-  }
+          :"@odata.count" => integer() | nil,
+          :"@odata.nextLink" => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

@@ -24,7 +24,10 @@ defmodule MicrosoftGraph.Api.SecuritySecurity do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurity.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_security_get_security(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurity.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_security_get_security(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurity.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_security_get_security(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -61,7 +64,14 @@ defmodule MicrosoftGraph.Api.SecuritySecurity do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurity.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_security_update_security(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphSecurity.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurity.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_security_update_security(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphSecurity.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurity.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_security_update_security(connection, microsoft_graph_security, _opts \\ []) do
     request =
       %{}

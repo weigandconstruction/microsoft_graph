@@ -20,22 +20,27 @@ defmodule MicrosoftGraph.Model.AccessPackageAssignmentPolicyRequestorSettings do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :allowCustomAssignmentSchedule => boolean() | nil,
-    :enableOnBehalfRequestorsToAddAccess => boolean() | nil,
-    :enableOnBehalfRequestorsToRemoveAccess => boolean() | nil,
-    :enableOnBehalfRequestorsToUpdateAccess => boolean() | nil,
-    :enableTargetsToSelfAddAccess => boolean() | nil,
-    :enableTargetsToSelfRemoveAccess => boolean() | nil,
-    :enableTargetsToSelfUpdateAccess => boolean() | nil,
-    :onBehalfRequestors => [MicrosoftGraph.Model.MicrosoftGraphUnifiedApprovalStageEscalationApproversInner.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :allowCustomAssignmentSchedule => boolean() | nil,
+          :enableOnBehalfRequestorsToAddAccess => boolean() | nil,
+          :enableOnBehalfRequestorsToRemoveAccess => boolean() | nil,
+          :enableOnBehalfRequestorsToUpdateAccess => boolean() | nil,
+          :enableTargetsToSelfAddAccess => boolean() | nil,
+          :enableTargetsToSelfRemoveAccess => boolean() | nil,
+          :enableTargetsToSelfUpdateAccess => boolean() | nil,
+          :onBehalfRequestors =>
+            [MicrosoftGraph.Model.MicrosoftGraphUnifiedApprovalStageEscalationApproversInner.t()]
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:onBehalfRequestors, :list, MicrosoftGraph.Model.MicrosoftGraphUnifiedApprovalStageEscalationApproversInner)
+    |> Deserializer.deserialize(
+      :onBehalfRequestors,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphUnifiedApprovalStageEscalationApproversInner
+    )
   end
 end
-

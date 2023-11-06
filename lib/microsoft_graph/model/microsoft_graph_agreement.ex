@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAgreement do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -21,26 +21,37 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAgreement do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :acceptances => [MicrosoftGraph.Model.MicrosoftGraphAgreementAcceptance.t] | nil,
-    :displayName => String.t | nil,
-    :file => MicrosoftGraph.Model.AgreementFile.t | nil,
-    :files => [MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalization.t] | nil,
-    :isPerDeviceAcceptanceRequired => boolean() | nil,
-    :isViewingBeforeAcceptanceRequired => boolean() | nil,
-    :termsExpiration => MicrosoftGraph.Model.AgreementTermsExpiration.t | nil,
-    :userReacceptRequiredFrequency => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :acceptances => [MicrosoftGraph.Model.MicrosoftGraphAgreementAcceptance.t()] | nil,
+          :displayName => String.t() | nil,
+          :file => MicrosoftGraph.Model.AgreementFile.t() | nil,
+          :files => [MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalization.t()] | nil,
+          :isPerDeviceAcceptanceRequired => boolean() | nil,
+          :isViewingBeforeAcceptanceRequired => boolean() | nil,
+          :termsExpiration => MicrosoftGraph.Model.AgreementTermsExpiration.t() | nil,
+          :userReacceptRequiredFrequency => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:acceptances, :list, MicrosoftGraph.Model.MicrosoftGraphAgreementAcceptance)
-     |> Deserializer.deserialize(:file, :struct, MicrosoftGraph.Model.AgreementFile)
-     |> Deserializer.deserialize(:files, :list, MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalization)
-     |> Deserializer.deserialize(:termsExpiration, :struct, MicrosoftGraph.Model.AgreementTermsExpiration)
+    |> Deserializer.deserialize(
+      :acceptances,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAgreementAcceptance
+    )
+    |> Deserializer.deserialize(:file, :struct, MicrosoftGraph.Model.AgreementFile)
+    |> Deserializer.deserialize(
+      :files,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalization
+    )
+    |> Deserializer.deserialize(
+      :termsExpiration,
+      :struct,
+      MicrosoftGraph.Model.AgreementTermsExpiration
+    )
   end
 end
-

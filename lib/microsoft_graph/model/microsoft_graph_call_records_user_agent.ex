@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphCallRecordsUserAgent do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphCallRecordsUserAgent do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :applicationVersion => String.t | nil,
-    :headerValue => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :applicationVersion => String.t() | nil,
+          :headerValue => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

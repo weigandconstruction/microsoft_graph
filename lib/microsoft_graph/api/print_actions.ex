@@ -24,7 +24,14 @@ defmodule MicrosoftGraph.Api.PrintActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_printers_create(Tesla.Env.client, MicrosoftGraph.Model.PrintPrintersCreateRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec print_printers_create(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.PrintPrintersCreateRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def print_printers_create(connection, print_printers_create_request, _opts \\ []) do
     request =
       %{}
@@ -59,8 +66,23 @@ defmodule MicrosoftGraph.Api.PrintActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_printers_printer_jobs_print_job_abort(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.PrintSharesPrinterShareJobsPrintJobAbortRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def print_printers_printer_jobs_print_job_abort(connection, printer_id, print_job_id, print_shares_printer_share_jobs_print_job_abort_request, _opts \\ []) do
+  @spec print_printers_printer_jobs_print_job_abort(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.PrintSharesPrinterShareJobsPrintJobAbortRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def print_printers_printer_jobs_print_job_abort(
+        connection,
+        printer_id,
+        print_job_id,
+        print_shares_printer_share_jobs_print_job_abort_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -93,8 +115,21 @@ defmodule MicrosoftGraph.Api.PrintActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_printers_printer_jobs_print_job_cancel(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def print_printers_printer_jobs_print_job_cancel(connection, printer_id, print_job_id, _opts \\ []) do
+  @spec print_printers_printer_jobs_print_job_cancel(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def print_printers_printer_jobs_print_job_cancel(
+        connection,
+        printer_id,
+        print_job_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -129,19 +164,44 @@ defmodule MicrosoftGraph.Api.PrintActions do
   - `{:ok, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_printers_printer_jobs_print_job_documents_print_document_create_upload_session(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.PrintPrintersPrinterJobsPrintJobDocumentsPrintDocumentCreateUploadSessionRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def print_printers_printer_jobs_print_job_documents_print_document_create_upload_session(connection, printer_id, print_job_id, print_document_id, print_printers_printer_jobs_print_job_documents_print_document_create_upload_session_request, _opts \\ []) do
+  @spec print_printers_printer_jobs_print_job_documents_print_document_create_upload_session(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.PrintPrintersPrinterJobsPrintJobDocumentsPrintDocumentCreateUploadSessionRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def print_printers_printer_jobs_print_job_documents_print_document_create_upload_session(
+        connection,
+        printer_id,
+        print_job_id,
+        print_document_id,
+        print_printers_printer_jobs_print_job_documents_print_document_create_upload_session_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/print/printers/#{printer_id}/jobs/#{print_job_id}/documents/#{print_document_id}/createUploadSession")
-      |> add_param(:body, :body, print_printers_printer_jobs_print_job_documents_print_document_create_upload_session_request)
+      |> url(
+        "/print/printers/#{printer_id}/jobs/#{print_job_id}/documents/#{print_document_id}/createUploadSession"
+      )
+      |> add_param(
+        :body,
+        :body,
+        print_printers_printer_jobs_print_job_documents_print_document_create_upload_session_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -164,8 +224,23 @@ defmodule MicrosoftGraph.Api.PrintActions do
   - `{:ok, MicrosoftGraph.Model.PrintSharesPrinterShareJobsPrintJobRedirect2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_printers_printer_jobs_print_job_redirect(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.PrintSharesPrinterShareJobsPrintJobRedirectRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.PrintSharesPrinterShareJobsPrintJobRedirect2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def print_printers_printer_jobs_print_job_redirect(connection, printer_id, print_job_id, print_shares_printer_share_jobs_print_job_redirect_request, _opts \\ []) do
+  @spec print_printers_printer_jobs_print_job_redirect(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.PrintSharesPrinterShareJobsPrintJobRedirectRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.PrintSharesPrinterShareJobsPrintJobRedirect2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def print_printers_printer_jobs_print_job_redirect(
+        connection,
+        printer_id,
+        print_job_id,
+        print_shares_printer_share_jobs_print_job_redirect_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -198,8 +273,21 @@ defmodule MicrosoftGraph.Api.PrintActions do
   - `{:ok, MicrosoftGraph.Model.PrintPrintersPrinterJobsPrintJobStart2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_printers_printer_jobs_print_job_start(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.PrintPrintersPrinterJobsPrintJobStart2XxResponse.t} | {:error, Tesla.Env.t}
-  def print_printers_printer_jobs_print_job_start(connection, printer_id, print_job_id, _opts \\ []) do
+  @spec print_printers_printer_jobs_print_job_start(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.PrintPrintersPrinterJobsPrintJobStart2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def print_printers_printer_jobs_print_job_start(
+        connection,
+        printer_id,
+        print_job_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -231,7 +319,10 @@ defmodule MicrosoftGraph.Api.PrintActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_printers_printer_restore_factory_defaults(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec print_printers_printer_restore_factory_defaults(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def print_printers_printer_restore_factory_defaults(connection, printer_id, _opts \\ []) do
     request =
       %{}
@@ -266,8 +357,23 @@ defmodule MicrosoftGraph.Api.PrintActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_shares_printer_share_jobs_print_job_abort(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.PrintSharesPrinterShareJobsPrintJobAbortRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def print_shares_printer_share_jobs_print_job_abort(connection, printer_share_id, print_job_id, print_shares_printer_share_jobs_print_job_abort_request, _opts \\ []) do
+  @spec print_shares_printer_share_jobs_print_job_abort(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.PrintSharesPrinterShareJobsPrintJobAbortRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def print_shares_printer_share_jobs_print_job_abort(
+        connection,
+        printer_share_id,
+        print_job_id,
+        print_shares_printer_share_jobs_print_job_abort_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -300,8 +406,21 @@ defmodule MicrosoftGraph.Api.PrintActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_shares_printer_share_jobs_print_job_cancel(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def print_shares_printer_share_jobs_print_job_cancel(connection, printer_share_id, print_job_id, _opts \\ []) do
+  @spec print_shares_printer_share_jobs_print_job_cancel(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def print_shares_printer_share_jobs_print_job_cancel(
+        connection,
+        printer_share_id,
+        print_job_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -336,19 +455,44 @@ defmodule MicrosoftGraph.Api.PrintActions do
   - `{:ok, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_shares_printer_share_jobs_print_job_documents_print_document_create_upload_session(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.PrintPrintersPrinterJobsPrintJobDocumentsPrintDocumentCreateUploadSessionRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def print_shares_printer_share_jobs_print_job_documents_print_document_create_upload_session(connection, printer_share_id, print_job_id, print_document_id, print_printers_printer_jobs_print_job_documents_print_document_create_upload_session_request, _opts \\ []) do
+  @spec print_shares_printer_share_jobs_print_job_documents_print_document_create_upload_session(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.PrintPrintersPrinterJobsPrintJobDocumentsPrintDocumentCreateUploadSessionRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def print_shares_printer_share_jobs_print_job_documents_print_document_create_upload_session(
+        connection,
+        printer_share_id,
+        print_job_id,
+        print_document_id,
+        print_printers_printer_jobs_print_job_documents_print_document_create_upload_session_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/print/shares/#{printer_share_id}/jobs/#{print_job_id}/documents/#{print_document_id}/createUploadSession")
-      |> add_param(:body, :body, print_printers_printer_jobs_print_job_documents_print_document_create_upload_session_request)
+      |> url(
+        "/print/shares/#{printer_share_id}/jobs/#{print_job_id}/documents/#{print_document_id}/createUploadSession"
+      )
+      |> add_param(
+        :body,
+        :body,
+        print_printers_printer_jobs_print_job_documents_print_document_create_upload_session_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -371,8 +515,23 @@ defmodule MicrosoftGraph.Api.PrintActions do
   - `{:ok, MicrosoftGraph.Model.PrintSharesPrinterShareJobsPrintJobRedirect2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_shares_printer_share_jobs_print_job_redirect(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.PrintSharesPrinterShareJobsPrintJobRedirectRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.PrintSharesPrinterShareJobsPrintJobRedirect2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def print_shares_printer_share_jobs_print_job_redirect(connection, printer_share_id, print_job_id, print_shares_printer_share_jobs_print_job_redirect_request, _opts \\ []) do
+  @spec print_shares_printer_share_jobs_print_job_redirect(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.PrintSharesPrinterShareJobsPrintJobRedirectRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.PrintSharesPrinterShareJobsPrintJobRedirect2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def print_shares_printer_share_jobs_print_job_redirect(
+        connection,
+        printer_share_id,
+        print_job_id,
+        print_shares_printer_share_jobs_print_job_redirect_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -405,8 +564,21 @@ defmodule MicrosoftGraph.Api.PrintActions do
   - `{:ok, MicrosoftGraph.Model.PrintPrintersPrinterJobsPrintJobStart2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_shares_printer_share_jobs_print_job_start(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.PrintPrintersPrinterJobsPrintJobStart2XxResponse.t} | {:error, Tesla.Env.t}
-  def print_shares_printer_share_jobs_print_job_start(connection, printer_share_id, print_job_id, _opts \\ []) do
+  @spec print_shares_printer_share_jobs_print_job_start(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.PrintPrintersPrinterJobsPrintJobStart2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def print_shares_printer_share_jobs_print_job_start(
+        connection,
+        printer_share_id,
+        print_job_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)

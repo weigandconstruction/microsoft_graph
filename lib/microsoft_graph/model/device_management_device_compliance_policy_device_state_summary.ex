@@ -22,21 +22,20 @@ defmodule MicrosoftGraph.Model.DeviceManagementDeviceCompliancePolicyDeviceState
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :compliantDeviceCount => integer() | nil,
-    :configManagerCount => integer() | nil,
-    :conflictDeviceCount => integer() | nil,
-    :errorDeviceCount => integer() | nil,
-    :inGracePeriodCount => integer() | nil,
-    :nonCompliantDeviceCount => integer() | nil,
-    :notApplicableDeviceCount => integer() | nil,
-    :remediatedDeviceCount => integer() | nil,
-    :unknownDeviceCount => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :compliantDeviceCount => integer() | nil,
+          :configManagerCount => integer() | nil,
+          :conflictDeviceCount => integer() | nil,
+          :errorDeviceCount => integer() | nil,
+          :inGracePeriodCount => integer() | nil,
+          :nonCompliantDeviceCount => integer() | nil,
+          :notApplicableDeviceCount => integer() | nil,
+          :remediatedDeviceCount => integer() | nil,
+          :unknownDeviceCount => integer() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

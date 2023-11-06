@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityHostPortBanner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,20 +17,19 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityHostPortBanner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :banner => String.t | nil,
-    :firstSeenDateTime => DateTime.t | nil,
-    :lastSeenDateTime => DateTime.t | nil,
-    :scanProtocol => String.t | nil,
-    :timesObserved => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :banner => String.t() | nil,
+          :firstSeenDateTime => DateTime.t() | nil,
+          :lastSeenDateTime => DateTime.t() | nil,
+          :scanProtocol => String.t() | nil,
+          :timesObserved => integer() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:firstSeenDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastSeenDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:firstSeenDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastSeenDateTime, :datetime, nil)
   end
 end
-

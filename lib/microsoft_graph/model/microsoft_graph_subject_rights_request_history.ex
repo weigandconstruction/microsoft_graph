@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSubjectRightsRequestHistory do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,22 +17,35 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSubjectRightsRequestHistory do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :changedBy => MicrosoftGraph.Model.MicrosoftGraphSubjectRightsRequestHistoryChangedBy.t | nil,
-    :eventDateTime => DateTime.t | nil,
-    :stage => MicrosoftGraph.Model.MicrosoftGraphSubjectRightsRequestHistoryStage.t | nil,
-    :stageStatus => MicrosoftGraph.Model.MicrosoftGraphSubjectRightsRequestHistoryStageStatus.t | nil,
-    :type => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :changedBy =>
+            MicrosoftGraph.Model.MicrosoftGraphSubjectRightsRequestHistoryChangedBy.t() | nil,
+          :eventDateTime => DateTime.t() | nil,
+          :stage => MicrosoftGraph.Model.MicrosoftGraphSubjectRightsRequestHistoryStage.t() | nil,
+          :stageStatus =>
+            MicrosoftGraph.Model.MicrosoftGraphSubjectRightsRequestHistoryStageStatus.t() | nil,
+          :type => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:changedBy, :struct, MicrosoftGraph.Model.MicrosoftGraphSubjectRightsRequestHistoryChangedBy)
-     |> Deserializer.deserialize(:eventDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:stage, :struct, MicrosoftGraph.Model.MicrosoftGraphSubjectRightsRequestHistoryStage)
-     |> Deserializer.deserialize(:stageStatus, :struct, MicrosoftGraph.Model.MicrosoftGraphSubjectRightsRequestHistoryStageStatus)
+    |> Deserializer.deserialize(
+      :changedBy,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSubjectRightsRequestHistoryChangedBy
+    )
+    |> Deserializer.deserialize(:eventDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :stage,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSubjectRightsRequestHistoryStage
+    )
+    |> Deserializer.deserialize(
+      :stageStatus,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSubjectRightsRequestHistoryStageStatus
+    )
   end
 end
-

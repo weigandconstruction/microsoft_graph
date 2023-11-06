@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseReviewSetsEdiscoveryReviewSetAddToReviewSetRequestSearch do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -26,37 +26,64 @@ defmodule MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseReviewS
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :contentQuery => String.t | nil,
-    :createdBy => MicrosoftGraph.Model.CaseLastModifiedBy.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :lastModifiedBy => MicrosoftGraph.Model.CaseLastModifiedBy.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :addToReviewSetOperation => MicrosoftGraph.Model.EdiscoverySearchAddToReviewSetOperation.t | nil,
-    :additionalSources => [MicrosoftGraph.Model.MicrosoftGraphSecurityDataSource.t] | nil,
-    :custodianSources => [MicrosoftGraph.Model.MicrosoftGraphSecurityDataSource.t] | nil,
-    :dataSourceScopes => MicrosoftGraph.Model.EdiscoverySearchDataSourceScopes.t | nil,
-    :lastEstimateStatisticsOperation => MicrosoftGraph.Model.EdiscoverySearchLastEstimateStatisticsOperation.t | nil,
-    :noncustodialSources => [MicrosoftGraph.Model.MicrosoftGraphSecurityEdiscoveryNoncustodialDataSource.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :contentQuery => String.t() | nil,
+          :createdBy => MicrosoftGraph.Model.CaseLastModifiedBy.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :lastModifiedBy => MicrosoftGraph.Model.CaseLastModifiedBy.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :addToReviewSetOperation =>
+            MicrosoftGraph.Model.EdiscoverySearchAddToReviewSetOperation.t() | nil,
+          :additionalSources => [MicrosoftGraph.Model.MicrosoftGraphSecurityDataSource.t()] | nil,
+          :custodianSources => [MicrosoftGraph.Model.MicrosoftGraphSecurityDataSource.t()] | nil,
+          :dataSourceScopes => MicrosoftGraph.Model.EdiscoverySearchDataSourceScopes.t() | nil,
+          :lastEstimateStatisticsOperation =>
+            MicrosoftGraph.Model.EdiscoverySearchLastEstimateStatisticsOperation.t() | nil,
+          :noncustodialSources =>
+            [MicrosoftGraph.Model.MicrosoftGraphSecurityEdiscoveryNoncustodialDataSource.t()]
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.CaseLastModifiedBy)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastModifiedBy, :struct, MicrosoftGraph.Model.CaseLastModifiedBy)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:addToReviewSetOperation, :struct, MicrosoftGraph.Model.EdiscoverySearchAddToReviewSetOperation)
-     |> Deserializer.deserialize(:additionalSources, :list, MicrosoftGraph.Model.MicrosoftGraphSecurityDataSource)
-     |> Deserializer.deserialize(:custodianSources, :list, MicrosoftGraph.Model.MicrosoftGraphSecurityDataSource)
-     |> Deserializer.deserialize(:dataSourceScopes, :struct, MicrosoftGraph.Model.EdiscoverySearchDataSourceScopes)
-     |> Deserializer.deserialize(:lastEstimateStatisticsOperation, :struct, MicrosoftGraph.Model.EdiscoverySearchLastEstimateStatisticsOperation)
-     |> Deserializer.deserialize(:noncustodialSources, :list, MicrosoftGraph.Model.MicrosoftGraphSecurityEdiscoveryNoncustodialDataSource)
+    |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.CaseLastModifiedBy)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastModifiedBy, :struct, MicrosoftGraph.Model.CaseLastModifiedBy)
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :addToReviewSetOperation,
+      :struct,
+      MicrosoftGraph.Model.EdiscoverySearchAddToReviewSetOperation
+    )
+    |> Deserializer.deserialize(
+      :additionalSources,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityDataSource
+    )
+    |> Deserializer.deserialize(
+      :custodianSources,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityDataSource
+    )
+    |> Deserializer.deserialize(
+      :dataSourceScopes,
+      :struct,
+      MicrosoftGraph.Model.EdiscoverySearchDataSourceScopes
+    )
+    |> Deserializer.deserialize(
+      :lastEstimateStatisticsOperation,
+      :struct,
+      MicrosoftGraph.Model.EdiscoverySearchLastEstimateStatisticsOperation
+    )
+    |> Deserializer.deserialize(
+      :noncustodialSources,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityEdiscoveryNoncustodialDataSource
+    )
   end
 end
-

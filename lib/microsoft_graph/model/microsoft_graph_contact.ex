@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphContact do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -54,66 +54,83 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphContact do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :categories => [String.t] | nil,
-    :changeKey => String.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :title => String.t | nil,
-    :jobTitle => String.t | nil,
-    :businessHomePage => String.t | nil,
-    :businessPhones => [String.t] | nil,
-    :middleName => String.t | nil,
-    :fileAs => String.t | nil,
-    :emailAddresses => [MicrosoftGraph.Model.ContactEmailAddressesInner.t] | nil,
-    :businessAddress => MicrosoftGraph.Model.ContactBusinessAddress.t | nil,
-    :extensions => [MicrosoftGraph.Model.MicrosoftGraphExtension.t] | nil,
-    :generation => String.t | nil,
-    :children => [String.t] | nil,
-    :givenName => String.t | nil,
-    :homeAddress => MicrosoftGraph.Model.ContactHomeAddress.t | nil,
-    :singleValueExtendedProperties => [MicrosoftGraph.Model.MicrosoftGraphSingleValueLegacyExtendedProperty.t] | nil,
-    :initials => String.t | nil,
-    :officeLocation => String.t | nil,
-    :assistantName => String.t | nil,
-    :otherAddress => MicrosoftGraph.Model.ContactOtherAddress.t | nil,
-    :personalNotes => String.t | nil,
-    :department => String.t | nil,
-    :homePhones => [String.t] | nil,
-    :mobilePhone => String.t | nil,
-    :yomiGivenName => String.t | nil,
-    :yomiSurname => String.t | nil,
-    :nickName => String.t | nil,
-    :multiValueExtendedProperties => [MicrosoftGraph.Model.MicrosoftGraphMultiValueLegacyExtendedProperty.t] | nil,
-    :spouseName => String.t | nil,
-    :companyName => String.t | nil,
-    :manager => String.t | nil,
-    :displayName => String.t | nil,
-    :birthday => DateTime.t | nil,
-    :yomiCompanyName => String.t | nil,
-    :surname => String.t | nil,
-    :profession => String.t | nil,
-    :imAddresses => [String.t] | nil,
-    :parentFolderId => String.t | nil,
-    :photo => MicrosoftGraph.Model.ContactPhoto.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :categories => [String.t()] | nil,
+          :changeKey => String.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :title => String.t() | nil,
+          :jobTitle => String.t() | nil,
+          :businessHomePage => String.t() | nil,
+          :businessPhones => [String.t()] | nil,
+          :middleName => String.t() | nil,
+          :fileAs => String.t() | nil,
+          :emailAddresses => [MicrosoftGraph.Model.ContactEmailAddressesInner.t()] | nil,
+          :businessAddress => MicrosoftGraph.Model.ContactBusinessAddress.t() | nil,
+          :extensions => [MicrosoftGraph.Model.MicrosoftGraphExtension.t()] | nil,
+          :generation => String.t() | nil,
+          :children => [String.t()] | nil,
+          :givenName => String.t() | nil,
+          :homeAddress => MicrosoftGraph.Model.ContactHomeAddress.t() | nil,
+          :singleValueExtendedProperties =>
+            [MicrosoftGraph.Model.MicrosoftGraphSingleValueLegacyExtendedProperty.t()] | nil,
+          :initials => String.t() | nil,
+          :officeLocation => String.t() | nil,
+          :assistantName => String.t() | nil,
+          :otherAddress => MicrosoftGraph.Model.ContactOtherAddress.t() | nil,
+          :personalNotes => String.t() | nil,
+          :department => String.t() | nil,
+          :homePhones => [String.t()] | nil,
+          :mobilePhone => String.t() | nil,
+          :yomiGivenName => String.t() | nil,
+          :yomiSurname => String.t() | nil,
+          :nickName => String.t() | nil,
+          :multiValueExtendedProperties =>
+            [MicrosoftGraph.Model.MicrosoftGraphMultiValueLegacyExtendedProperty.t()] | nil,
+          :spouseName => String.t() | nil,
+          :companyName => String.t() | nil,
+          :manager => String.t() | nil,
+          :displayName => String.t() | nil,
+          :birthday => DateTime.t() | nil,
+          :yomiCompanyName => String.t() | nil,
+          :surname => String.t() | nil,
+          :profession => String.t() | nil,
+          :imAddresses => [String.t()] | nil,
+          :parentFolderId => String.t() | nil,
+          :photo => MicrosoftGraph.Model.ContactPhoto.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:emailAddresses, :list, MicrosoftGraph.Model.ContactEmailAddressesInner)
-     |> Deserializer.deserialize(:businessAddress, :struct, MicrosoftGraph.Model.ContactBusinessAddress)
-     |> Deserializer.deserialize(:extensions, :list, MicrosoftGraph.Model.MicrosoftGraphExtension)
-     |> Deserializer.deserialize(:homeAddress, :struct, MicrosoftGraph.Model.ContactHomeAddress)
-     |> Deserializer.deserialize(:singleValueExtendedProperties, :list, MicrosoftGraph.Model.MicrosoftGraphSingleValueLegacyExtendedProperty)
-     |> Deserializer.deserialize(:otherAddress, :struct, MicrosoftGraph.Model.ContactOtherAddress)
-     |> Deserializer.deserialize(:multiValueExtendedProperties, :list, MicrosoftGraph.Model.MicrosoftGraphMultiValueLegacyExtendedProperty)
-     |> Deserializer.deserialize(:birthday, :datetime, nil)
-     |> Deserializer.deserialize(:photo, :struct, MicrosoftGraph.Model.ContactPhoto)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :emailAddresses,
+      :list,
+      MicrosoftGraph.Model.ContactEmailAddressesInner
+    )
+    |> Deserializer.deserialize(
+      :businessAddress,
+      :struct,
+      MicrosoftGraph.Model.ContactBusinessAddress
+    )
+    |> Deserializer.deserialize(:extensions, :list, MicrosoftGraph.Model.MicrosoftGraphExtension)
+    |> Deserializer.deserialize(:homeAddress, :struct, MicrosoftGraph.Model.ContactHomeAddress)
+    |> Deserializer.deserialize(
+      :singleValueExtendedProperties,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSingleValueLegacyExtendedProperty
+    )
+    |> Deserializer.deserialize(:otherAddress, :struct, MicrosoftGraph.Model.ContactOtherAddress)
+    |> Deserializer.deserialize(
+      :multiValueExtendedProperties,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphMultiValueLegacyExtendedProperty
+    )
+    |> Deserializer.deserialize(:birthday, :datetime, nil)
+    |> Deserializer.deserialize(:photo, :struct, MicrosoftGraph.Model.ContactPhoto)
   end
 end
-

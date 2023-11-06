@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DeviceAppManagementManagedEBooksManagedEBookAssignRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,14 +12,21 @@ defmodule MicrosoftGraph.Model.DeviceAppManagementManagedEBooksManagedEBookAssig
   ]
 
   @type t :: %__MODULE__{
-    :managedEBookAssignments => [MicrosoftGraph.Model.DeviceAppManagementManagedEBooksManagedEBookAssignRequestManagedEBookAssignmentsInner.t] | nil
-  }
+          :managedEBookAssignments =>
+            [
+              MicrosoftGraph.Model.DeviceAppManagementManagedEBooksManagedEBookAssignRequestManagedEBookAssignmentsInner.t()
+            ]
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:managedEBookAssignments, :list, MicrosoftGraph.Model.DeviceAppManagementManagedEBooksManagedEBookAssignRequestManagedEBookAssignmentsInner)
+    |> Deserializer.deserialize(
+      :managedEBookAssignments,
+      :list,
+      MicrosoftGraph.Model.DeviceAppManagementManagedEBooksManagedEBookAssignRequestManagedEBookAssignmentsInner
+    )
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.PrintPrintersPrinterJobsPrintJobStart2XxResponse do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,19 +16,26 @@ defmodule MicrosoftGraph.Model.PrintPrintersPrinterJobsPrintJobStart2XxResponse 
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :description => String.t | nil,
-    :details => [MicrosoftGraph.Model.MicrosoftGraphPrintJobStateDetail.t] | nil,
-    :isAcquiredByPrinter => boolean() | nil,
-    :state => MicrosoftGraph.Model.MicrosoftGraphPrintJobProcessingState.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :description => String.t() | nil,
+          :details => [MicrosoftGraph.Model.MicrosoftGraphPrintJobStateDetail.t()] | nil,
+          :isAcquiredByPrinter => boolean() | nil,
+          :state => MicrosoftGraph.Model.MicrosoftGraphPrintJobProcessingState.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:details, :list, MicrosoftGraph.Model.MicrosoftGraphPrintJobStateDetail)
-     |> Deserializer.deserialize(:state, :struct, MicrosoftGraph.Model.MicrosoftGraphPrintJobProcessingState)
+    |> Deserializer.deserialize(
+      :details,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphPrintJobStateDetail
+    )
+    |> Deserializer.deserialize(
+      :state,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphPrintJobProcessingState
+    )
   end
 end
-

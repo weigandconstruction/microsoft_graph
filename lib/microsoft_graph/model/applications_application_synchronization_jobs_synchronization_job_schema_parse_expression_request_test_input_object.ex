@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.ApplicationsApplicationSynchronizationJobsSynchronizationJobSchemaParseExpressionRequestTestInputObject do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,17 +14,26 @@ defmodule MicrosoftGraph.Model.ApplicationsApplicationSynchronizationJobsSynchro
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :definition => MicrosoftGraph.Model.MicrosoftGraphExpressionInputObjectDefinition.t | nil,
-    :properties => [MicrosoftGraph.Model.MicrosoftGraphExpressionInputObjectPropertiesInner.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :definition =>
+            MicrosoftGraph.Model.MicrosoftGraphExpressionInputObjectDefinition.t() | nil,
+          :properties =>
+            [MicrosoftGraph.Model.MicrosoftGraphExpressionInputObjectPropertiesInner.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:definition, :struct, MicrosoftGraph.Model.MicrosoftGraphExpressionInputObjectDefinition)
-     |> Deserializer.deserialize(:properties, :list, MicrosoftGraph.Model.MicrosoftGraphExpressionInputObjectPropertiesInner)
+    |> Deserializer.deserialize(
+      :definition,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphExpressionInputObjectDefinition
+    )
+    |> Deserializer.deserialize(
+      :properties,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphExpressionInputObjectPropertiesInner
+    )
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceAction do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,18 +19,17 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceAction do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :actionVerb => String.t | nil,
-    :authenticationContextId => String.t | nil,
-    :description => String.t | nil,
-    :isAuthenticationContextSettable => boolean() | nil,
-    :name => String.t | nil,
-    :resourceScopeId => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :actionVerb => String.t() | nil,
+          :authenticationContextId => String.t() | nil,
+          :description => String.t() | nil,
+          :isAuthenticationContextSettable => boolean() | nil,
+          :name => String.t() | nil,
+          :resourceScopeId => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

@@ -26,31 +26,40 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSynchronizationStatusLastSuccessful
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :activityIdentifier => String.t | nil,
-    :countEntitled => integer() | nil,
-    :countEntitledForProvisioning => integer() | nil,
-    :countEscrowed => integer() | nil,
-    :countEscrowedRaw => integer() | nil,
-    :countExported => integer() | nil,
-    :countExports => integer() | nil,
-    :countImported => integer() | nil,
-    :countImportedDeltas => integer() | nil,
-    :countImportedReferenceDeltas => integer() | nil,
-    :error => MicrosoftGraph.Model.MicrosoftGraphSynchronizationTaskExecutionError.t | nil,
-    :state => MicrosoftGraph.Model.MicrosoftGraphSynchronizationTaskExecutionResult.t | nil,
-    :timeBegan => DateTime.t | nil,
-    :timeEnded => DateTime.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :activityIdentifier => String.t() | nil,
+          :countEntitled => integer() | nil,
+          :countEntitledForProvisioning => integer() | nil,
+          :countEscrowed => integer() | nil,
+          :countEscrowedRaw => integer() | nil,
+          :countExported => integer() | nil,
+          :countExports => integer() | nil,
+          :countImported => integer() | nil,
+          :countImportedDeltas => integer() | nil,
+          :countImportedReferenceDeltas => integer() | nil,
+          :error =>
+            MicrosoftGraph.Model.MicrosoftGraphSynchronizationTaskExecutionError.t() | nil,
+          :state =>
+            MicrosoftGraph.Model.MicrosoftGraphSynchronizationTaskExecutionResult.t() | nil,
+          :timeBegan => DateTime.t() | nil,
+          :timeEnded => DateTime.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:error, :struct, MicrosoftGraph.Model.MicrosoftGraphSynchronizationTaskExecutionError)
-     |> Deserializer.deserialize(:state, :struct, MicrosoftGraph.Model.MicrosoftGraphSynchronizationTaskExecutionResult)
-     |> Deserializer.deserialize(:timeBegan, :datetime, nil)
-     |> Deserializer.deserialize(:timeEnded, :datetime, nil)
+    |> Deserializer.deserialize(
+      :error,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSynchronizationTaskExecutionError
+    )
+    |> Deserializer.deserialize(
+      :state,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSynchronizationTaskExecutionResult
+    )
+    |> Deserializer.deserialize(:timeBegan, :datetime, nil)
+    |> Deserializer.deserialize(:timeEnded, :datetime, nil)
   end
 end
-

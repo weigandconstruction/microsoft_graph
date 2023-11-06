@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.ApplicationsApplicationSetVerifiedPublisherRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,11 +12,10 @@ defmodule MicrosoftGraph.Model.ApplicationsApplicationSetVerifiedPublisherReques
   ]
 
   @type t :: %__MODULE__{
-    :verifiedPublisherId => String.t | nil
-  }
+          :verifiedPublisherId => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

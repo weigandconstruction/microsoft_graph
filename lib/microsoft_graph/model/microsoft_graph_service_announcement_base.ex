@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphServiceAnnouncementBase do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,23 +18,30 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphServiceAnnouncementBase do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :details => [MicrosoftGraph.Model.MeJoinedTeamsTeamSendActivityNotificationRequestTemplateParametersInner.t] | nil,
-    :endDateTime => DateTime.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :startDateTime => DateTime.t | nil,
-    :title => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :details =>
+            [
+              MicrosoftGraph.Model.MeJoinedTeamsTeamSendActivityNotificationRequestTemplateParametersInner.t()
+            ]
+            | nil,
+          :endDateTime => DateTime.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :startDateTime => DateTime.t() | nil,
+          :title => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:details, :list, MicrosoftGraph.Model.MeJoinedTeamsTeamSendActivityNotificationRequestTemplateParametersInner)
-     |> Deserializer.deserialize(:endDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:startDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :details,
+      :list,
+      MicrosoftGraph.Model.MeJoinedTeamsTeamSendActivityNotificationRequestTemplateParametersInner
+    )
+    |> Deserializer.deserialize(:endDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:startDateTime, :datetime, nil)
   end
 end
-

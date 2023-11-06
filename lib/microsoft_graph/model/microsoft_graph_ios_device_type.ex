@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphIosDeviceType do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :iPad => boolean() | nil,
-    :iPhoneAndIPod => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :iPad => boolean() | nil,
+          :iPhoneAndIPod => boolean() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

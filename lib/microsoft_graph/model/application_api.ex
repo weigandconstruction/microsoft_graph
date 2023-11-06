@@ -17,20 +17,30 @@ defmodule MicrosoftGraph.Model.ApplicationApi do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :acceptMappedClaims => boolean() | nil,
-    :knownClientApplications => [String.t] | nil,
-    :oauth2PermissionScopes => [MicrosoftGraph.Model.MicrosoftGraphPermissionScope.t] | nil,
-    :preAuthorizedApplications => [MicrosoftGraph.Model.MicrosoftGraphApiApplicationPreAuthorizedApplicationsInner.t] | nil,
-    :requestedAccessTokenVersion => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :acceptMappedClaims => boolean() | nil,
+          :knownClientApplications => [String.t()] | nil,
+          :oauth2PermissionScopes =>
+            [MicrosoftGraph.Model.MicrosoftGraphPermissionScope.t()] | nil,
+          :preAuthorizedApplications =>
+            [MicrosoftGraph.Model.MicrosoftGraphApiApplicationPreAuthorizedApplicationsInner.t()]
+            | nil,
+          :requestedAccessTokenVersion => integer() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:oauth2PermissionScopes, :list, MicrosoftGraph.Model.MicrosoftGraphPermissionScope)
-     |> Deserializer.deserialize(:preAuthorizedApplications, :list, MicrosoftGraph.Model.MicrosoftGraphApiApplicationPreAuthorizedApplicationsInner)
+    |> Deserializer.deserialize(
+      :oauth2PermissionScopes,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphPermissionScope
+    )
+    |> Deserializer.deserialize(
+      :preAuthorizedApplications,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphApiApplicationPreAuthorizedApplicationsInner
+    )
   end
 end
-

@@ -25,8 +25,19 @@ defmodule MicrosoftGraph.Api.PoliciesActivityBasedTimeoutPolicy do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_activity_based_timeout_policies_applies_to_get_count_f5ce(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_activity_based_timeout_policies_applies_to_get_count_f5ce(connection, activity_based_timeout_policy_id, opts \\ []) do
+  @spec policies_activity_based_timeout_policies_applies_to_get_count_f5ce(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_activity_based_timeout_policies_applies_to_get_count_f5ce(
+        connection,
+        activity_based_timeout_policy_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -35,7 +46,9 @@ defmodule MicrosoftGraph.Api.PoliciesActivityBasedTimeoutPolicy do
     request =
       %{}
       |> method(:get)
-      |> url("/policies/activityBasedTimeoutPolicies/#{activity_based_timeout_policy_id}/appliesTo/$count")
+      |> url(
+        "/policies/activityBasedTimeoutPolicies/#{activity_based_timeout_policy_id}/appliesTo/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -65,8 +78,21 @@ defmodule MicrosoftGraph.Api.PoliciesActivityBasedTimeoutPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_activity_based_timeout_policies_get_applies_to(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_activity_based_timeout_policies_get_applies_to(connection, activity_based_timeout_policy_id, directory_object_id, opts \\ []) do
+  @spec policies_activity_based_timeout_policies_get_applies_to(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_activity_based_timeout_policies_get_applies_to(
+        connection,
+        activity_based_timeout_policy_id,
+        directory_object_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -75,7 +101,9 @@ defmodule MicrosoftGraph.Api.PoliciesActivityBasedTimeoutPolicy do
     request =
       %{}
       |> method(:get)
-      |> url("/policies/activityBasedTimeoutPolicies/#{activity_based_timeout_policy_id}/appliesTo/#{directory_object_id}")
+      |> url(
+        "/policies/activityBasedTimeoutPolicies/#{activity_based_timeout_policy_id}/appliesTo/#{directory_object_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -103,7 +131,10 @@ defmodule MicrosoftGraph.Api.PoliciesActivityBasedTimeoutPolicy do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_activity_based_timeout_policies_get_count1f03(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec policies_activity_based_timeout_policies_get_count1f03(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def policies_activity_based_timeout_policies_get_count1f03(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -148,8 +179,19 @@ defmodule MicrosoftGraph.Api.PoliciesActivityBasedTimeoutPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_activity_based_timeout_policies_list_applies_to(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t} | {:error, Tesla.Env.t}
-  def policies_activity_based_timeout_policies_list_applies_to(connection, activity_based_timeout_policy_id, opts \\ []) do
+  @spec policies_activity_based_timeout_policies_list_applies_to(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_activity_based_timeout_policies_list_applies_to(
+        connection,
+        activity_based_timeout_policy_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -164,7 +206,9 @@ defmodule MicrosoftGraph.Api.PoliciesActivityBasedTimeoutPolicy do
     request =
       %{}
       |> method(:get)
-      |> url("/policies/activityBasedTimeoutPolicies/#{activity_based_timeout_policy_id}/appliesTo")
+      |> url(
+        "/policies/activityBasedTimeoutPolicies/#{activity_based_timeout_policy_id}/appliesTo"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -192,8 +236,19 @@ defmodule MicrosoftGraph.Api.PoliciesActivityBasedTimeoutPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphActivityBasedTimeoutPolicy.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_create_activity_based_timeout_policies(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphActivityBasedTimeoutPolicy.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphActivityBasedTimeoutPolicy.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_create_activity_based_timeout_policies(connection, microsoft_graph_activity_based_timeout_policy, _opts \\ []) do
+  @spec policies_create_activity_based_timeout_policies(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphActivityBasedTimeoutPolicy.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphActivityBasedTimeoutPolicy.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_create_activity_based_timeout_policies(
+        connection,
+        microsoft_graph_activity_based_timeout_policy,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -226,8 +281,15 @@ defmodule MicrosoftGraph.Api.PoliciesActivityBasedTimeoutPolicy do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_delete_activity_based_timeout_policies(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_delete_activity_based_timeout_policies(connection, activity_based_timeout_policy_id, opts \\ []) do
+  @spec policies_delete_activity_based_timeout_policies(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_delete_activity_based_timeout_policies(
+        connection,
+        activity_based_timeout_policy_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -265,8 +327,15 @@ defmodule MicrosoftGraph.Api.PoliciesActivityBasedTimeoutPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphActivityBasedTimeoutPolicy.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_get_activity_based_timeout_policies(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphActivityBasedTimeoutPolicy.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_get_activity_based_timeout_policies(connection, activity_based_timeout_policy_id, opts \\ []) do
+  @spec policies_get_activity_based_timeout_policies(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphActivityBasedTimeoutPolicy.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_get_activity_based_timeout_policies(
+        connection,
+        activity_based_timeout_policy_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -310,7 +379,11 @@ defmodule MicrosoftGraph.Api.PoliciesActivityBasedTimeoutPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphActivityBasedTimeoutPolicyCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_list_activity_based_timeout_policies(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphActivityBasedTimeoutPolicyCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec policies_list_activity_based_timeout_policies(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphActivityBasedTimeoutPolicyCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def policies_list_activity_based_timeout_policies(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -355,8 +428,21 @@ defmodule MicrosoftGraph.Api.PoliciesActivityBasedTimeoutPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphActivityBasedTimeoutPolicy.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_update_activity_based_timeout_policies(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphActivityBasedTimeoutPolicy.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphActivityBasedTimeoutPolicy.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_update_activity_based_timeout_policies(connection, activity_based_timeout_policy_id, microsoft_graph_activity_based_timeout_policy, _opts \\ []) do
+  @spec policies_update_activity_based_timeout_policies(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphActivityBasedTimeoutPolicy.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphActivityBasedTimeoutPolicy.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_update_activity_based_timeout_policies(
+        connection,
+        activity_based_timeout_policy_id,
+        microsoft_graph_activity_based_timeout_policy,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

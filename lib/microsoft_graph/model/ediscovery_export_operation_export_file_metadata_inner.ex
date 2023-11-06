@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.EdiscoveryExportOperationExportFileMetadataInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.EdiscoveryExportOperationExportFileMetadataInner 
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :downloadUrl => String.t | nil,
-    :fileName => String.t | nil,
-    :size => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :downloadUrl => String.t() | nil,
+          :fileName => String.t() | nil,
+          :size => integer() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

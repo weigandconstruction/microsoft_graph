@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSynchronization do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,20 +16,35 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSynchronization do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :jobs => [MicrosoftGraph.Model.MicrosoftGraphSynchronizationJob.t] | nil,
-    :secrets => [MicrosoftGraph.Model.ApplicationsApplicationSynchronizationJobsSynchronizationJobValidateCredentialsRequestCredentialsInner.t] | nil,
-    :templates => [MicrosoftGraph.Model.MicrosoftGraphSynchronizationTemplate.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :jobs => [MicrosoftGraph.Model.MicrosoftGraphSynchronizationJob.t()] | nil,
+          :secrets =>
+            [
+              MicrosoftGraph.Model.ApplicationsApplicationSynchronizationJobsSynchronizationJobValidateCredentialsRequestCredentialsInner.t()
+            ]
+            | nil,
+          :templates => [MicrosoftGraph.Model.MicrosoftGraphSynchronizationTemplate.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:jobs, :list, MicrosoftGraph.Model.MicrosoftGraphSynchronizationJob)
-     |> Deserializer.deserialize(:secrets, :list, MicrosoftGraph.Model.ApplicationsApplicationSynchronizationJobsSynchronizationJobValidateCredentialsRequestCredentialsInner)
-     |> Deserializer.deserialize(:templates, :list, MicrosoftGraph.Model.MicrosoftGraphSynchronizationTemplate)
+    |> Deserializer.deserialize(
+      :jobs,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSynchronizationJob
+    )
+    |> Deserializer.deserialize(
+      :secrets,
+      :list,
+      MicrosoftGraph.Model.ApplicationsApplicationSynchronizationJobsSynchronizationJobValidateCredentialsRequestCredentialsInner
+    )
+    |> Deserializer.deserialize(
+      :templates,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSynchronizationTemplate
+    )
   end
 end
-

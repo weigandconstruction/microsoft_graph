@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSearchHitsContainerHitsInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,21 +19,24 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSearchHitsContainerHitsInner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :contentSource => String.t | nil,
-    :hitId => String.t | nil,
-    :isCollapsed => boolean() | nil,
-    :rank => integer() | nil,
-    :resource => MicrosoftGraph.Model.SharedInsightLastSharedMethod.t | nil,
-    :resultTemplateId => String.t | nil,
-    :summary => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :contentSource => String.t() | nil,
+          :hitId => String.t() | nil,
+          :isCollapsed => boolean() | nil,
+          :rank => integer() | nil,
+          :resource => MicrosoftGraph.Model.SharedInsightLastSharedMethod.t() | nil,
+          :resultTemplateId => String.t() | nil,
+          :summary => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:resource, :struct, MicrosoftGraph.Model.SharedInsightLastSharedMethod)
+    |> Deserializer.deserialize(
+      :resource,
+      :struct,
+      MicrosoftGraph.Model.SharedInsightLastSharedMethod
+    )
   end
 end
-

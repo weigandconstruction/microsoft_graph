@@ -23,7 +23,10 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_delete_terms_of_use(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_governance_delete_terms_of_use(Tesla.Env.client(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_governance_delete_terms_of_use(connection, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -60,7 +63,10 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermsOfUseContainer.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_get_terms_of_use(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermsOfUseContainer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_governance_get_terms_of_use(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermsOfUseContainer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_governance_get_terms_of_use(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -98,7 +104,13 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_terms_of_use_agreement_acceptances_get_count70d1(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_governance_terms_of_use_agreement_acceptances_get_count70d1(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_governance_terms_of_use_agreement_acceptances_get_count70d1(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -137,8 +149,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_terms_of_use_agreements_acceptances_get_count7e12(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_terms_of_use_agreements_acceptances_get_count7e12(connection, agreement_id, opts \\ []) do
+  @spec identity_governance_terms_of_use_agreements_acceptances_get_count7e12(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_terms_of_use_agreements_acceptances_get_count7e12(
+        connection,
+        agreement_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -175,8 +198,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementAcceptance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_terms_of_use_agreements_create_acceptances(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphAgreementAcceptance.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementAcceptance.t} | {:error, Tesla.Env.t}
-  def identity_governance_terms_of_use_agreements_create_acceptances(connection, agreement_id, microsoft_graph_agreement_acceptance, _opts \\ []) do
+  @spec identity_governance_terms_of_use_agreements_create_acceptances(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAgreementAcceptance.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementAcceptance.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_terms_of_use_agreements_create_acceptances(
+        connection,
+        agreement_id,
+        microsoft_graph_agreement_acceptance,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -209,8 +245,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalization.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_terms_of_use_agreements_create_files(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalization.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalization.t} | {:error, Tesla.Env.t}
-  def identity_governance_terms_of_use_agreements_create_files(connection, agreement_id, microsoft_graph_agreement_file_localization, _opts \\ []) do
+  @spec identity_governance_terms_of_use_agreements_create_files(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalization.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalization.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_terms_of_use_agreements_create_files(
+        connection,
+        agreement_id,
+        microsoft_graph_agreement_file_localization,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -243,8 +292,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_terms_of_use_agreements_delete_acceptances(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_terms_of_use_agreements_delete_acceptances(connection, agreement_id, agreement_acceptance_id, opts \\ []) do
+  @spec identity_governance_terms_of_use_agreements_delete_acceptances(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_terms_of_use_agreements_delete_acceptances(
+        connection,
+        agreement_id,
+        agreement_acceptance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -252,7 +314,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
     request =
       %{}
       |> method(:delete)
-      |> url("/identityGovernance/termsOfUse/agreements/#{agreement_id}/acceptances/#{agreement_acceptance_id}")
+      |> url(
+        "/identityGovernance/termsOfUse/agreements/#{agreement_id}/acceptances/#{agreement_acceptance_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -280,8 +344,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_terms_of_use_agreements_delete_file(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_terms_of_use_agreements_delete_file(connection, agreement_id, opts \\ []) do
+  @spec identity_governance_terms_of_use_agreements_delete_file(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_terms_of_use_agreements_delete_file(
+        connection,
+        agreement_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -318,8 +393,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_terms_of_use_agreements_delete_files(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_terms_of_use_agreements_delete_files(connection, agreement_id, agreement_file_localization_id, opts \\ []) do
+  @spec identity_governance_terms_of_use_agreements_delete_files(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_terms_of_use_agreements_delete_files(
+        connection,
+        agreement_id,
+        agreement_file_localization_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -327,7 +415,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
     request =
       %{}
       |> method(:delete)
-      |> url("/identityGovernance/termsOfUse/agreements/#{agreement_id}/files/#{agreement_file_localization_id}")
+      |> url(
+        "/identityGovernance/termsOfUse/agreements/#{agreement_id}/files/#{agreement_file_localization_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -355,8 +445,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalization.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_terms_of_use_agreements_file_create_localizations(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalization.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalization.t} | {:error, Tesla.Env.t}
-  def identity_governance_terms_of_use_agreements_file_create_localizations(connection, agreement_id, microsoft_graph_agreement_file_localization, _opts \\ []) do
+  @spec identity_governance_terms_of_use_agreements_file_create_localizations(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalization.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalization.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_terms_of_use_agreements_file_create_localizations(
+        connection,
+        agreement_id,
+        microsoft_graph_agreement_file_localization,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -389,8 +492,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_terms_of_use_agreements_file_delete_localizations(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_terms_of_use_agreements_file_delete_localizations(connection, agreement_id, agreement_file_localization_id, opts \\ []) do
+  @spec identity_governance_terms_of_use_agreements_file_delete_localizations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_terms_of_use_agreements_file_delete_localizations(
+        connection,
+        agreement_id,
+        agreement_file_localization_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -398,7 +514,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
     request =
       %{}
       |> method(:delete)
-      |> url("/identityGovernance/termsOfUse/agreements/#{agreement_id}/file/localizations/#{agreement_file_localization_id}")
+      |> url(
+        "/identityGovernance/termsOfUse/agreements/#{agreement_id}/file/localizations/#{agreement_file_localization_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -429,8 +547,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalization.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_terms_of_use_agreements_file_get_localizations(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalization.t} | {:error, Tesla.Env.t}
-  def identity_governance_terms_of_use_agreements_file_get_localizations(connection, agreement_id, agreement_file_localization_id, opts \\ []) do
+  @spec identity_governance_terms_of_use_agreements_file_get_localizations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalization.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_terms_of_use_agreements_file_get_localizations(
+        connection,
+        agreement_id,
+        agreement_file_localization_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -439,7 +570,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/termsOfUse/agreements/#{agreement_id}/file/localizations/#{agreement_file_localization_id}")
+      |> url(
+        "/identityGovernance/termsOfUse/agreements/#{agreement_id}/file/localizations/#{agreement_file_localization_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -475,8 +608,20 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalizationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_terms_of_use_agreements_file_list_localizations(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalizationCollectionResponse.t} | {:error, Tesla.Env.t}
-  def identity_governance_terms_of_use_agreements_file_list_localizations(connection, agreement_id, opts \\ []) do
+  @spec identity_governance_terms_of_use_agreements_file_list_localizations(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalizationCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_terms_of_use_agreements_file_list_localizations(
+        connection,
+        agreement_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -520,12 +665,29 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersion.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_terms_of_use_agreements_file_localizations_create_versions(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersion.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersion.t} | {:error, Tesla.Env.t}
-  def identity_governance_terms_of_use_agreements_file_localizations_create_versions(connection, agreement_id, agreement_file_localization_id, microsoft_graph_agreement_file_version, _opts \\ []) do
+  @spec identity_governance_terms_of_use_agreements_file_localizations_create_versions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersion.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersion.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_terms_of_use_agreements_file_localizations_create_versions(
+        connection,
+        agreement_id,
+        agreement_file_localization_id,
+        microsoft_graph_agreement_file_version,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/termsOfUse/agreements/#{agreement_id}/file/localizations/#{agreement_file_localization_id}/versions")
+      |> url(
+        "/identityGovernance/termsOfUse/agreements/#{agreement_id}/file/localizations/#{agreement_file_localization_id}/versions"
+      )
       |> add_param(:body, :body, microsoft_graph_agreement_file_version)
       |> Enum.into([])
 
@@ -555,8 +717,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_terms_of_use_agreements_file_localizations_delete_versions(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_terms_of_use_agreements_file_localizations_delete_versions(connection, agreement_id, agreement_file_localization_id, agreement_file_version_id, opts \\ []) do
+  @spec identity_governance_terms_of_use_agreements_file_localizations_delete_versions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_terms_of_use_agreements_file_localizations_delete_versions(
+        connection,
+        agreement_id,
+        agreement_file_localization_id,
+        agreement_file_version_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -564,7 +741,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
     request =
       %{}
       |> method(:delete)
-      |> url("/identityGovernance/termsOfUse/agreements/#{agreement_id}/file/localizations/#{agreement_file_localization_id}/versions/#{agreement_file_version_id}")
+      |> url(
+        "/identityGovernance/termsOfUse/agreements/#{agreement_id}/file/localizations/#{agreement_file_localization_id}/versions/#{agreement_file_version_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -593,8 +772,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_terms_of_use_agreements_file_localizations_get_count_d8c7(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_terms_of_use_agreements_file_localizations_get_count_d8c7(connection, agreement_id, opts \\ []) do
+  @spec identity_governance_terms_of_use_agreements_file_localizations_get_count_d8c7(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_terms_of_use_agreements_file_localizations_get_count_d8c7(
+        connection,
+        agreement_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -603,7 +793,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/termsOfUse/agreements/#{agreement_id}/file/localizations/$count")
+      |> url(
+        "/identityGovernance/termsOfUse/agreements/#{agreement_id}/file/localizations/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -635,8 +827,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersion.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_terms_of_use_agreements_file_localizations_get_versions(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersion.t} | {:error, Tesla.Env.t}
-  def identity_governance_terms_of_use_agreements_file_localizations_get_versions(connection, agreement_id, agreement_file_localization_id, agreement_file_version_id, opts \\ []) do
+  @spec identity_governance_terms_of_use_agreements_file_localizations_get_versions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersion.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_terms_of_use_agreements_file_localizations_get_versions(
+        connection,
+        agreement_id,
+        agreement_file_localization_id,
+        agreement_file_version_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -645,7 +852,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/termsOfUse/agreements/#{agreement_id}/file/localizations/#{agreement_file_localization_id}/versions/#{agreement_file_version_id}")
+      |> url(
+        "/identityGovernance/termsOfUse/agreements/#{agreement_id}/file/localizations/#{agreement_file_localization_id}/versions/#{agreement_file_version_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -682,8 +891,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_terms_of_use_agreements_file_localizations_list_versions(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersionCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_terms_of_use_agreements_file_localizations_list_versions(connection, agreement_id, agreement_file_localization_id, opts \\ []) do
+  @spec identity_governance_terms_of_use_agreements_file_localizations_list_versions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersionCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_terms_of_use_agreements_file_localizations_list_versions(
+        connection,
+        agreement_id,
+        agreement_file_localization_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -698,7 +920,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/termsOfUse/agreements/#{agreement_id}/file/localizations/#{agreement_file_localization_id}/versions")
+      |> url(
+        "/identityGovernance/termsOfUse/agreements/#{agreement_id}/file/localizations/#{agreement_file_localization_id}/versions"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -728,12 +952,31 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersion.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_terms_of_use_agreements_file_localizations_update_versions(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersion.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersion.t} | {:error, Tesla.Env.t}
-  def identity_governance_terms_of_use_agreements_file_localizations_update_versions(connection, agreement_id, agreement_file_localization_id, agreement_file_version_id, microsoft_graph_agreement_file_version, _opts \\ []) do
+  @spec identity_governance_terms_of_use_agreements_file_localizations_update_versions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersion.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersion.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_terms_of_use_agreements_file_localizations_update_versions(
+        connection,
+        agreement_id,
+        agreement_file_localization_id,
+        agreement_file_version_id,
+        microsoft_graph_agreement_file_version,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/termsOfUse/agreements/#{agreement_id}/file/localizations/#{agreement_file_localization_id}/versions/#{agreement_file_version_id}")
+      |> url(
+        "/identityGovernance/termsOfUse/agreements/#{agreement_id}/file/localizations/#{agreement_file_localization_id}/versions/#{agreement_file_version_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_agreement_file_version)
       |> Enum.into([])
 
@@ -763,8 +1006,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_terms_of_use_agreements_file_localizations_versions_get_count47c0(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_terms_of_use_agreements_file_localizations_versions_get_count47c0(connection, agreement_id, agreement_file_localization_id, opts \\ []) do
+  @spec identity_governance_terms_of_use_agreements_file_localizations_versions_get_count47c0(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_terms_of_use_agreements_file_localizations_versions_get_count47c0(
+        connection,
+        agreement_id,
+        agreement_file_localization_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -773,7 +1029,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/termsOfUse/agreements/#{agreement_id}/file/localizations/#{agreement_file_localization_id}/versions/$count")
+      |> url(
+        "/identityGovernance/termsOfUse/agreements/#{agreement_id}/file/localizations/#{agreement_file_localization_id}/versions/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -802,12 +1060,29 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalization.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_terms_of_use_agreements_file_update_localizations(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalization.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalization.t} | {:error, Tesla.Env.t}
-  def identity_governance_terms_of_use_agreements_file_update_localizations(connection, agreement_id, agreement_file_localization_id, microsoft_graph_agreement_file_localization, _opts \\ []) do
+  @spec identity_governance_terms_of_use_agreements_file_update_localizations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalization.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalization.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_terms_of_use_agreements_file_update_localizations(
+        connection,
+        agreement_id,
+        agreement_file_localization_id,
+        microsoft_graph_agreement_file_localization,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/termsOfUse/agreements/#{agreement_id}/file/localizations/#{agreement_file_localization_id}")
+      |> url(
+        "/identityGovernance/termsOfUse/agreements/#{agreement_id}/file/localizations/#{agreement_file_localization_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_agreement_file_localization)
       |> Enum.into([])
 
@@ -836,12 +1111,29 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersion.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_terms_of_use_agreements_files_create_versions(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersion.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersion.t} | {:error, Tesla.Env.t}
-  def identity_governance_terms_of_use_agreements_files_create_versions(connection, agreement_id, agreement_file_localization_id, microsoft_graph_agreement_file_version, _opts \\ []) do
+  @spec identity_governance_terms_of_use_agreements_files_create_versions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersion.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersion.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_terms_of_use_agreements_files_create_versions(
+        connection,
+        agreement_id,
+        agreement_file_localization_id,
+        microsoft_graph_agreement_file_version,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/termsOfUse/agreements/#{agreement_id}/files/#{agreement_file_localization_id}/versions")
+      |> url(
+        "/identityGovernance/termsOfUse/agreements/#{agreement_id}/files/#{agreement_file_localization_id}/versions"
+      )
       |> add_param(:body, :body, microsoft_graph_agreement_file_version)
       |> Enum.into([])
 
@@ -871,8 +1163,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_terms_of_use_agreements_files_delete_versions(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_terms_of_use_agreements_files_delete_versions(connection, agreement_id, agreement_file_localization_id, agreement_file_version_id, opts \\ []) do
+  @spec identity_governance_terms_of_use_agreements_files_delete_versions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_terms_of_use_agreements_files_delete_versions(
+        connection,
+        agreement_id,
+        agreement_file_localization_id,
+        agreement_file_version_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -880,7 +1187,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
     request =
       %{}
       |> method(:delete)
-      |> url("/identityGovernance/termsOfUse/agreements/#{agreement_id}/files/#{agreement_file_localization_id}/versions/#{agreement_file_version_id}")
+      |> url(
+        "/identityGovernance/termsOfUse/agreements/#{agreement_id}/files/#{agreement_file_localization_id}/versions/#{agreement_file_version_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -909,8 +1218,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_terms_of_use_agreements_files_get_count54ad(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_terms_of_use_agreements_files_get_count54ad(connection, agreement_id, opts \\ []) do
+  @spec identity_governance_terms_of_use_agreements_files_get_count54ad(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_terms_of_use_agreements_files_get_count54ad(
+        connection,
+        agreement_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -951,8 +1271,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersion.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_terms_of_use_agreements_files_get_versions(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersion.t} | {:error, Tesla.Env.t}
-  def identity_governance_terms_of_use_agreements_files_get_versions(connection, agreement_id, agreement_file_localization_id, agreement_file_version_id, opts \\ []) do
+  @spec identity_governance_terms_of_use_agreements_files_get_versions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersion.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_terms_of_use_agreements_files_get_versions(
+        connection,
+        agreement_id,
+        agreement_file_localization_id,
+        agreement_file_version_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -961,7 +1296,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/termsOfUse/agreements/#{agreement_id}/files/#{agreement_file_localization_id}/versions/#{agreement_file_version_id}")
+      |> url(
+        "/identityGovernance/termsOfUse/agreements/#{agreement_id}/files/#{agreement_file_localization_id}/versions/#{agreement_file_version_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -998,8 +1335,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_terms_of_use_agreements_files_list_versions(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersionCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_terms_of_use_agreements_files_list_versions(connection, agreement_id, agreement_file_localization_id, opts \\ []) do
+  @spec identity_governance_terms_of_use_agreements_files_list_versions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersionCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_terms_of_use_agreements_files_list_versions(
+        connection,
+        agreement_id,
+        agreement_file_localization_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1014,7 +1364,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/termsOfUse/agreements/#{agreement_id}/files/#{agreement_file_localization_id}/versions")
+      |> url(
+        "/identityGovernance/termsOfUse/agreements/#{agreement_id}/files/#{agreement_file_localization_id}/versions"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1044,12 +1396,31 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersion.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_terms_of_use_agreements_files_update_versions(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersion.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersion.t} | {:error, Tesla.Env.t}
-  def identity_governance_terms_of_use_agreements_files_update_versions(connection, agreement_id, agreement_file_localization_id, agreement_file_version_id, microsoft_graph_agreement_file_version, _opts \\ []) do
+  @spec identity_governance_terms_of_use_agreements_files_update_versions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersion.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersion.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_terms_of_use_agreements_files_update_versions(
+        connection,
+        agreement_id,
+        agreement_file_localization_id,
+        agreement_file_version_id,
+        microsoft_graph_agreement_file_version,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/termsOfUse/agreements/#{agreement_id}/files/#{agreement_file_localization_id}/versions/#{agreement_file_version_id}")
+      |> url(
+        "/identityGovernance/termsOfUse/agreements/#{agreement_id}/files/#{agreement_file_localization_id}/versions/#{agreement_file_version_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_agreement_file_version)
       |> Enum.into([])
 
@@ -1079,8 +1450,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_terms_of_use_agreements_files_versions_get_count9b3e(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_terms_of_use_agreements_files_versions_get_count9b3e(connection, agreement_id, agreement_file_localization_id, opts \\ []) do
+  @spec identity_governance_terms_of_use_agreements_files_versions_get_count9b3e(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_terms_of_use_agreements_files_versions_get_count9b3e(
+        connection,
+        agreement_id,
+        agreement_file_localization_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1089,7 +1473,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/termsOfUse/agreements/#{agreement_id}/files/#{agreement_file_localization_id}/versions/$count")
+      |> url(
+        "/identityGovernance/termsOfUse/agreements/#{agreement_id}/files/#{agreement_file_localization_id}/versions/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1120,8 +1506,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementAcceptance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_terms_of_use_agreements_get_acceptances(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementAcceptance.t} | {:error, Tesla.Env.t}
-  def identity_governance_terms_of_use_agreements_get_acceptances(connection, agreement_id, agreement_acceptance_id, opts \\ []) do
+  @spec identity_governance_terms_of_use_agreements_get_acceptances(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementAcceptance.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_terms_of_use_agreements_get_acceptances(
+        connection,
+        agreement_id,
+        agreement_acceptance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1130,7 +1529,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/termsOfUse/agreements/#{agreement_id}/acceptances/#{agreement_acceptance_id}")
+      |> url(
+        "/identityGovernance/termsOfUse/agreements/#{agreement_id}/acceptances/#{agreement_acceptance_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1158,7 +1559,10 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_terms_of_use_agreements_get_count7fcc(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_governance_terms_of_use_agreements_get_count7fcc(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_governance_terms_of_use_agreements_get_count7fcc(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -1198,7 +1602,14 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFile.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_terms_of_use_agreements_get_file(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFile.t} | {:error, Tesla.Env.t}
+  @spec identity_governance_terms_of_use_agreements_get_file(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFile.t()}
+          | {:error, Tesla.Env.t()}
   def identity_governance_terms_of_use_agreements_get_file(connection, agreement_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -1239,8 +1650,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalization.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_terms_of_use_agreements_get_files(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalization.t} | {:error, Tesla.Env.t}
-  def identity_governance_terms_of_use_agreements_get_files(connection, agreement_id, agreement_file_localization_id, opts \\ []) do
+  @spec identity_governance_terms_of_use_agreements_get_files(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalization.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_terms_of_use_agreements_get_files(
+        connection,
+        agreement_id,
+        agreement_file_localization_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1249,7 +1673,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/termsOfUse/agreements/#{agreement_id}/files/#{agreement_file_localization_id}")
+      |> url(
+        "/identityGovernance/termsOfUse/agreements/#{agreement_id}/files/#{agreement_file_localization_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1285,8 +1711,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementAcceptanceCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_terms_of_use_agreements_list_acceptances(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementAcceptanceCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_terms_of_use_agreements_list_acceptances(connection, agreement_id, opts \\ []) do
+  @spec identity_governance_terms_of_use_agreements_list_acceptances(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementAcceptanceCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_terms_of_use_agreements_list_acceptances(
+        connection,
+        agreement_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1337,7 +1774,15 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalizationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_terms_of_use_agreements_list_files(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalizationCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec identity_governance_terms_of_use_agreements_list_files(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalizationCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def identity_governance_terms_of_use_agreements_list_files(connection, agreement_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1382,12 +1827,29 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementAcceptance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_terms_of_use_agreements_update_acceptances(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphAgreementAcceptance.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementAcceptance.t} | {:error, Tesla.Env.t}
-  def identity_governance_terms_of_use_agreements_update_acceptances(connection, agreement_id, agreement_acceptance_id, microsoft_graph_agreement_acceptance, _opts \\ []) do
+  @spec identity_governance_terms_of_use_agreements_update_acceptances(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAgreementAcceptance.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementAcceptance.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_terms_of_use_agreements_update_acceptances(
+        connection,
+        agreement_id,
+        agreement_acceptance_id,
+        microsoft_graph_agreement_acceptance,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/termsOfUse/agreements/#{agreement_id}/acceptances/#{agreement_acceptance_id}")
+      |> url(
+        "/identityGovernance/termsOfUse/agreements/#{agreement_id}/acceptances/#{agreement_acceptance_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_agreement_acceptance)
       |> Enum.into([])
 
@@ -1415,8 +1877,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFile.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_terms_of_use_agreements_update_file(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphAgreementFile.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFile.t} | {:error, Tesla.Env.t}
-  def identity_governance_terms_of_use_agreements_update_file(connection, agreement_id, microsoft_graph_agreement_file, _opts \\ []) do
+  @spec identity_governance_terms_of_use_agreements_update_file(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAgreementFile.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFile.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_terms_of_use_agreements_update_file(
+        connection,
+        agreement_id,
+        microsoft_graph_agreement_file,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -1449,12 +1924,29 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalization.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_terms_of_use_agreements_update_files(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalization.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalization.t} | {:error, Tesla.Env.t}
-  def identity_governance_terms_of_use_agreements_update_files(connection, agreement_id, agreement_file_localization_id, microsoft_graph_agreement_file_localization, _opts \\ []) do
+  @spec identity_governance_terms_of_use_agreements_update_files(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalization.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalization.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_terms_of_use_agreements_update_files(
+        connection,
+        agreement_id,
+        agreement_file_localization_id,
+        microsoft_graph_agreement_file_localization,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/termsOfUse/agreements/#{agreement_id}/files/#{agreement_file_localization_id}")
+      |> url(
+        "/identityGovernance/termsOfUse/agreements/#{agreement_id}/files/#{agreement_file_localization_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_agreement_file_localization)
       |> Enum.into([])
 
@@ -1481,8 +1973,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementAcceptance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_terms_of_use_create_agreement_acceptances(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphAgreementAcceptance.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementAcceptance.t} | {:error, Tesla.Env.t}
-  def identity_governance_terms_of_use_create_agreement_acceptances(connection, microsoft_graph_agreement_acceptance, _opts \\ []) do
+  @spec identity_governance_terms_of_use_create_agreement_acceptances(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphAgreementAcceptance.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementAcceptance.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_terms_of_use_create_agreement_acceptances(
+        connection,
+        microsoft_graph_agreement_acceptance,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1514,8 +2017,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAgreement.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_terms_of_use_create_agreements(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphAgreement.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreement.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_terms_of_use_create_agreements(connection, microsoft_graph_agreement, _opts \\ []) do
+  @spec identity_governance_terms_of_use_create_agreements(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphAgreement.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreement.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_terms_of_use_create_agreements(
+        connection,
+        microsoft_graph_agreement,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1547,8 +2061,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_terms_of_use_delete_agreement_acceptances(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_terms_of_use_delete_agreement_acceptances(connection, agreement_acceptance_id, opts \\ []) do
+  @spec identity_governance_terms_of_use_delete_agreement_acceptances(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_terms_of_use_delete_agreement_acceptances(
+        connection,
+        agreement_acceptance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1585,7 +2110,14 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_terms_of_use_delete_agreements(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_governance_terms_of_use_delete_agreements(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_governance_terms_of_use_delete_agreements(connection, agreement_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -1624,8 +2156,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementAcceptance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_terms_of_use_get_agreement_acceptances(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementAcceptance.t} | {:error, Tesla.Env.t}
-  def identity_governance_terms_of_use_get_agreement_acceptances(connection, agreement_acceptance_id, opts \\ []) do
+  @spec identity_governance_terms_of_use_get_agreement_acceptances(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementAcceptance.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_terms_of_use_get_agreement_acceptances(
+        connection,
+        agreement_acceptance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1664,7 +2207,10 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAgreement.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_terms_of_use_get_agreements(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreement.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_governance_terms_of_use_get_agreements(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreement.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_governance_terms_of_use_get_agreements(connection, agreement_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -1709,7 +2255,10 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementAcceptanceCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_terms_of_use_list_agreement_acceptances(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementAcceptanceCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_governance_terms_of_use_list_agreement_acceptances(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementAcceptanceCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_governance_terms_of_use_list_agreement_acceptances(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1760,7 +2309,10 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_terms_of_use_list_agreements(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_governance_terms_of_use_list_agreements(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_governance_terms_of_use_list_agreements(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1804,8 +2356,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementAcceptance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_terms_of_use_update_agreement_acceptances(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphAgreementAcceptance.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementAcceptance.t} | {:error, Tesla.Env.t}
-  def identity_governance_terms_of_use_update_agreement_acceptances(connection, agreement_acceptance_id, microsoft_graph_agreement_acceptance, _opts \\ []) do
+  @spec identity_governance_terms_of_use_update_agreement_acceptances(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAgreementAcceptance.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementAcceptance.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_terms_of_use_update_agreement_acceptances(
+        connection,
+        agreement_acceptance_id,
+        microsoft_graph_agreement_acceptance,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -1838,8 +2403,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAgreement.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_terms_of_use_update_agreements(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphAgreement.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreement.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_terms_of_use_update_agreements(connection, agreement_id, microsoft_graph_agreement, _opts \\ []) do
+  @spec identity_governance_terms_of_use_update_agreements(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAgreement.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreement.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_terms_of_use_update_agreements(
+        connection,
+        agreement_id,
+        microsoft_graph_agreement,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -1870,8 +2448,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceTermsOfUseContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermsOfUseContainer.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_update_terms_of_use(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphTermsOfUseContainer.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermsOfUseContainer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_update_terms_of_use(connection, microsoft_graph_terms_of_use_container, _opts \\ []) do
+  @spec identity_governance_update_terms_of_use(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphTermsOfUseContainer.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermsOfUseContainer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_update_terms_of_use(
+        connection,
+        microsoft_graph_terms_of_use_container,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

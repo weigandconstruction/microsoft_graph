@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphOmaSettingInteger do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,15 +16,14 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphOmaSettingInteger do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :omaUri => String.t | nil,
-    :value => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :omaUri => String.t() | nil,
+          :value => integer() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

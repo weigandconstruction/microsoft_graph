@@ -23,8 +23,19 @@ defmodule MicrosoftGraph.Api.DirectoryIdentityProviderBase do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityProviderBase.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_create_federation_configurations(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphIdentityProviderBase.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityProviderBase.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_create_federation_configurations(connection, microsoft_graph_identity_provider_base, _opts \\ []) do
+  @spec directory_create_federation_configurations(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphIdentityProviderBase.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityProviderBase.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_create_federation_configurations(
+        connection,
+        microsoft_graph_identity_provider_base,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -57,8 +68,15 @@ defmodule MicrosoftGraph.Api.DirectoryIdentityProviderBase do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_delete_federation_configurations(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_delete_federation_configurations(connection, identity_provider_base_id, opts \\ []) do
+  @spec directory_delete_federation_configurations(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_delete_federation_configurations(
+        connection,
+        identity_provider_base_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -94,7 +112,10 @@ defmodule MicrosoftGraph.Api.DirectoryIdentityProviderBase do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_federation_configurations_get_count1592(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec directory_federation_configurations_get_count1592(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def directory_federation_configurations_get_count1592(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -134,7 +155,10 @@ defmodule MicrosoftGraph.Api.DirectoryIdentityProviderBase do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityProviderBase.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_get_federation_configurations(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityProviderBase.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec directory_get_federation_configurations(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityProviderBase.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def directory_get_federation_configurations(connection, identity_provider_base_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -179,7 +203,10 @@ defmodule MicrosoftGraph.Api.DirectoryIdentityProviderBase do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityProviderBaseCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_list_federation_configurations(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityProviderBaseCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec directory_list_federation_configurations(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityProviderBaseCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def directory_list_federation_configurations(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -223,8 +250,21 @@ defmodule MicrosoftGraph.Api.DirectoryIdentityProviderBase do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityProviderBase.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_update_federation_configurations(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphIdentityProviderBase.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityProviderBase.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_update_federation_configurations(connection, identity_provider_base_id, microsoft_graph_identity_provider_base, _opts \\ []) do
+  @spec directory_update_federation_configurations(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphIdentityProviderBase.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityProviderBase.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_update_federation_configurations(
+        connection,
+        identity_provider_base_id,
+        microsoft_graph_identity_provider_base,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

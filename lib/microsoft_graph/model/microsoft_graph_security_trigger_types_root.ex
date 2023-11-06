@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityTriggerTypesRoot do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,20 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityTriggerTypesRoot do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :retentionEventTypes => [MicrosoftGraph.Model.MicrosoftGraphSecurityRetentionEventType.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :retentionEventTypes =>
+            [MicrosoftGraph.Model.MicrosoftGraphSecurityRetentionEventType.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:retentionEventTypes, :list, MicrosoftGraph.Model.MicrosoftGraphSecurityRetentionEventType)
+    |> Deserializer.deserialize(
+      :retentionEventTypes,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityRetentionEventType
+    )
   end
 end
-

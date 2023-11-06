@@ -24,7 +24,10 @@ defmodule MicrosoftGraph.Api.GroupsProfilePhoto do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec groups_delete_photo(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec groups_delete_photo(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def groups_delete_photo(connection, group_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -62,7 +65,10 @@ defmodule MicrosoftGraph.Api.GroupsProfilePhoto do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec groups_get_photo(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec groups_get_photo(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def groups_get_photo(connection, group_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query
@@ -98,7 +104,10 @@ defmodule MicrosoftGraph.Api.GroupsProfilePhoto do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec groups_get_photo_content(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
+  @spec groups_get_photo_content(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
   def groups_get_photo_content(connection, group_id, _opts \\ []) do
     request =
       %{}
@@ -132,7 +141,10 @@ defmodule MicrosoftGraph.Api.GroupsProfilePhoto do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec groups_get_photos(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec groups_get_photos(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def groups_get_photos(connection, group_id, profile_photo_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query
@@ -169,7 +181,10 @@ defmodule MicrosoftGraph.Api.GroupsProfilePhoto do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec groups_get_photos_content(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
+  @spec groups_get_photos_content(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
   def groups_get_photos_content(connection, group_id, profile_photo_id, _opts \\ []) do
     request =
       %{}
@@ -206,7 +221,10 @@ defmodule MicrosoftGraph.Api.GroupsProfilePhoto do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphProfilePhotoCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec groups_list_photos(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphProfilePhotoCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec groups_list_photos(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphProfilePhotoCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def groups_list_photos(connection, group_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -247,7 +265,15 @@ defmodule MicrosoftGraph.Api.GroupsProfilePhoto do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec groups_update_photo(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec groups_update_photo(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def groups_update_photo(connection, group_id, microsoft_graph_profile_photo, _opts \\ []) do
     request =
       %{}
@@ -280,7 +306,10 @@ defmodule MicrosoftGraph.Api.GroupsProfilePhoto do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec groups_update_photo_content(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec groups_update_photo_content(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def groups_update_photo_content(connection, group_id, body, _opts \\ []) do
     request =
       %{}
@@ -314,7 +343,16 @@ defmodule MicrosoftGraph.Api.GroupsProfilePhoto do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec groups_update_photos_content(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec groups_update_photos_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def groups_update_photos_content(connection, group_id, profile_photo_id, body, _opts \\ []) do
     request =
       %{}

@@ -23,8 +23,19 @@ defmodule MicrosoftGraph.Api.PermissionGrantsResourceSpecificPermissionGrant do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec permission_grants_resource_specific_permission_grant_create_resource_specific_permission_grant(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def permission_grants_resource_specific_permission_grant_create_resource_specific_permission_grant(connection, microsoft_graph_resource_specific_permission_grant, _opts \\ []) do
+  @spec permission_grants_resource_specific_permission_grant_create_resource_specific_permission_grant(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def permission_grants_resource_specific_permission_grant_create_resource_specific_permission_grant(
+        connection,
+        microsoft_graph_resource_specific_permission_grant,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -56,8 +67,19 @@ defmodule MicrosoftGraph.Api.PermissionGrantsResourceSpecificPermissionGrant do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec permission_grants_resource_specific_permission_grant_delete_resource_specific_permission_grant(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def permission_grants_resource_specific_permission_grant_delete_resource_specific_permission_grant(connection, resource_specific_permission_grant_id, opts \\ []) do
+  @spec permission_grants_resource_specific_permission_grant_delete_resource_specific_permission_grant(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def permission_grants_resource_specific_permission_grant_delete_resource_specific_permission_grant(
+        connection,
+        resource_specific_permission_grant_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -94,8 +116,19 @@ defmodule MicrosoftGraph.Api.PermissionGrantsResourceSpecificPermissionGrant do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec permission_grants_resource_specific_permission_grant_get_resource_specific_permission_grant(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def permission_grants_resource_specific_permission_grant_get_resource_specific_permission_grant(connection, resource_specific_permission_grant_id, opts \\ []) do
+  @spec permission_grants_resource_specific_permission_grant_get_resource_specific_permission_grant(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def permission_grants_resource_specific_permission_grant_get_resource_specific_permission_grant(
+        connection,
+        resource_specific_permission_grant_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -135,8 +168,18 @@ defmodule MicrosoftGraph.Api.PermissionGrantsResourceSpecificPermissionGrant do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrantCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec permission_grants_resource_specific_permission_grant_list_resource_specific_permission_grant(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrantCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def permission_grants_resource_specific_permission_grant_list_resource_specific_permission_grant(connection, opts \\ []) do
+  @spec permission_grants_resource_specific_permission_grant_list_resource_specific_permission_grant(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrantCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def permission_grants_resource_specific_permission_grant_list_resource_specific_permission_grant(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query,
@@ -155,7 +198,8 @@ defmodule MicrosoftGraph.Api.PermissionGrantsResourceSpecificPermissionGrant do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrantCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrantCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -176,8 +220,21 @@ defmodule MicrosoftGraph.Api.PermissionGrantsResourceSpecificPermissionGrant do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec permission_grants_resource_specific_permission_grant_update_resource_specific_permission_grant(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def permission_grants_resource_specific_permission_grant_update_resource_specific_permission_grant(connection, resource_specific_permission_grant_id, microsoft_graph_resource_specific_permission_grant, _opts \\ []) do
+  @spec permission_grants_resource_specific_permission_grant_update_resource_specific_permission_grant(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def permission_grants_resource_specific_permission_grant_update_resource_specific_permission_grant(
+        connection,
+        resource_specific_permission_grant_id,
+        microsoft_graph_resource_specific_permission_grant,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

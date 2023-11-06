@@ -14,16 +14,19 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphConditionalAccessSessionControlsPer
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :isEnabled => boolean() | nil,
-    :mode => MicrosoftGraph.Model.PersistentBrowserSessionControlMode.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :isEnabled => boolean() | nil,
+          :mode => MicrosoftGraph.Model.PersistentBrowserSessionControlMode.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:mode, :struct, MicrosoftGraph.Model.PersistentBrowserSessionControlMode)
+    |> Deserializer.deserialize(
+      :mode,
+      :struct,
+      MicrosoftGraph.Model.PersistentBrowserSessionControlMode
+    )
   end
 end
-

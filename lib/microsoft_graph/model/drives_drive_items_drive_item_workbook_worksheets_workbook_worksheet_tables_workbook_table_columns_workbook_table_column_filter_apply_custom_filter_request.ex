@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookWorksheetsWorkbookWorksheetTablesWorkbookTableColumnsWorkbookTableColumnFilterApplyCustomFilterRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookWorksheetsWorkbo
   ]
 
   @type t :: %__MODULE__{
-    :criteria1 => String.t | nil,
-    :criteria2 => String.t | nil,
-    :oper => String.t | nil
-  }
+          :criteria1 => String.t() | nil,
+          :criteria2 => String.t() | nil,
+          :oper => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

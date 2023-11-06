@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSynchronizationJobRestartCriteria do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,15 +13,20 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSynchronizationJobRestartCriteria d
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :resetScope => MicrosoftGraph.Model.MicrosoftGraphSynchronizationJobRestartCriteriaResetScope.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :resetScope =>
+            MicrosoftGraph.Model.MicrosoftGraphSynchronizationJobRestartCriteriaResetScope.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:resetScope, :struct, MicrosoftGraph.Model.MicrosoftGraphSynchronizationJobRestartCriteriaResetScope)
+    |> Deserializer.deserialize(
+      :resetScope,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSynchronizationJobRestartCriteriaResetScope
+    )
   end
 end
-

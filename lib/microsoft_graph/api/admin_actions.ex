@@ -25,19 +25,38 @@ defmodule MicrosoftGraph.Api.AdminActions do
   - `{:ok, MicrosoftGraph.Model.AdminEdgeInternetExplorerModeSiteListsBrowserSiteListPublish2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_edge_internet_explorer_mode_site_lists_browser_site_list_publish(Tesla.Env.client, String.t, MicrosoftGraph.Model.AdminEdgeInternetExplorerModeSiteListsBrowserSiteListPublishRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.AdminEdgeInternetExplorerModeSiteListsBrowserSiteListPublish2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def admin_edge_internet_explorer_mode_site_lists_browser_site_list_publish(connection, browser_site_list_id, admin_edge_internet_explorer_mode_site_lists_browser_site_list_publish_request, _opts \\ []) do
+  @spec admin_edge_internet_explorer_mode_site_lists_browser_site_list_publish(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.AdminEdgeInternetExplorerModeSiteListsBrowserSiteListPublishRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.AdminEdgeInternetExplorerModeSiteListsBrowserSiteListPublish2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_edge_internet_explorer_mode_site_lists_browser_site_list_publish(
+        connection,
+        browser_site_list_id,
+        admin_edge_internet_explorer_mode_site_lists_browser_site_list_publish_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/admin/edge/internetExplorerMode/siteLists/#{browser_site_list_id}/publish")
-      |> add_param(:body, :body, admin_edge_internet_explorer_mode_site_lists_browser_site_list_publish_request)
+      |> add_param(
+        :body,
+        :body,
+        admin_edge_internet_explorer_mode_site_lists_browser_site_list_publish_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.AdminEdgeInternetExplorerModeSiteListsBrowserSiteListPublish2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.AdminEdgeInternetExplorerModeSiteListsBrowserSiteListPublish2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -58,8 +77,19 @@ defmodule MicrosoftGraph.Api.AdminActions do
   - `{:ok, MicrosoftGraph.Model.AdminServiceAnnouncementMessagesUnfavorite2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_service_announcement_messages_archive(Tesla.Env.client, MicrosoftGraph.Model.AdminServiceAnnouncementMessagesUnfavoriteRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.AdminServiceAnnouncementMessagesUnfavorite2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def admin_service_announcement_messages_archive(connection, admin_service_announcement_messages_unfavorite_request, _opts \\ []) do
+  @spec admin_service_announcement_messages_archive(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.AdminServiceAnnouncementMessagesUnfavoriteRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.AdminServiceAnnouncementMessagesUnfavorite2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_service_announcement_messages_archive(
+        connection,
+        admin_service_announcement_messages_unfavorite_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -91,8 +121,19 @@ defmodule MicrosoftGraph.Api.AdminActions do
   - `{:ok, MicrosoftGraph.Model.AdminServiceAnnouncementMessagesUnfavorite2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_service_announcement_messages_favorite(Tesla.Env.client, MicrosoftGraph.Model.AdminServiceAnnouncementMessagesUnfavoriteRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.AdminServiceAnnouncementMessagesUnfavorite2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def admin_service_announcement_messages_favorite(connection, admin_service_announcement_messages_unfavorite_request, _opts \\ []) do
+  @spec admin_service_announcement_messages_favorite(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.AdminServiceAnnouncementMessagesUnfavoriteRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.AdminServiceAnnouncementMessagesUnfavorite2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_service_announcement_messages_favorite(
+        connection,
+        admin_service_announcement_messages_unfavorite_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -124,8 +165,19 @@ defmodule MicrosoftGraph.Api.AdminActions do
   - `{:ok, MicrosoftGraph.Model.AdminServiceAnnouncementMessagesUnfavorite2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_service_announcement_messages_mark_read(Tesla.Env.client, MicrosoftGraph.Model.AdminServiceAnnouncementMessagesUnfavoriteRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.AdminServiceAnnouncementMessagesUnfavorite2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def admin_service_announcement_messages_mark_read(connection, admin_service_announcement_messages_unfavorite_request, _opts \\ []) do
+  @spec admin_service_announcement_messages_mark_read(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.AdminServiceAnnouncementMessagesUnfavoriteRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.AdminServiceAnnouncementMessagesUnfavorite2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_service_announcement_messages_mark_read(
+        connection,
+        admin_service_announcement_messages_unfavorite_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -157,8 +209,19 @@ defmodule MicrosoftGraph.Api.AdminActions do
   - `{:ok, MicrosoftGraph.Model.AdminServiceAnnouncementMessagesUnfavorite2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_service_announcement_messages_mark_unread(Tesla.Env.client, MicrosoftGraph.Model.AdminServiceAnnouncementMessagesUnfavoriteRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.AdminServiceAnnouncementMessagesUnfavorite2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def admin_service_announcement_messages_mark_unread(connection, admin_service_announcement_messages_unfavorite_request, _opts \\ []) do
+  @spec admin_service_announcement_messages_mark_unread(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.AdminServiceAnnouncementMessagesUnfavoriteRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.AdminServiceAnnouncementMessagesUnfavorite2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_service_announcement_messages_mark_unread(
+        connection,
+        admin_service_announcement_messages_unfavorite_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -190,8 +253,19 @@ defmodule MicrosoftGraph.Api.AdminActions do
   - `{:ok, MicrosoftGraph.Model.AdminServiceAnnouncementMessagesUnfavorite2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_service_announcement_messages_unarchive(Tesla.Env.client, MicrosoftGraph.Model.AdminServiceAnnouncementMessagesUnfavoriteRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.AdminServiceAnnouncementMessagesUnfavorite2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def admin_service_announcement_messages_unarchive(connection, admin_service_announcement_messages_unfavorite_request, _opts \\ []) do
+  @spec admin_service_announcement_messages_unarchive(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.AdminServiceAnnouncementMessagesUnfavoriteRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.AdminServiceAnnouncementMessagesUnfavorite2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_service_announcement_messages_unarchive(
+        connection,
+        admin_service_announcement_messages_unfavorite_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -223,8 +297,19 @@ defmodule MicrosoftGraph.Api.AdminActions do
   - `{:ok, MicrosoftGraph.Model.AdminServiceAnnouncementMessagesUnfavorite2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_service_announcement_messages_unfavorite(Tesla.Env.client, MicrosoftGraph.Model.AdminServiceAnnouncementMessagesUnfavoriteRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.AdminServiceAnnouncementMessagesUnfavorite2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def admin_service_announcement_messages_unfavorite(connection, admin_service_announcement_messages_unfavorite_request, _opts \\ []) do
+  @spec admin_service_announcement_messages_unfavorite(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.AdminServiceAnnouncementMessagesUnfavoriteRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.AdminServiceAnnouncementMessagesUnfavorite2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_service_announcement_messages_unfavorite(
+        connection,
+        admin_service_announcement_messages_unfavorite_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)

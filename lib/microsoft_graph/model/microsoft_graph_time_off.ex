@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphTimeOff do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,25 +19,32 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphTimeOff do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :lastModifiedBy => MicrosoftGraph.Model.ChangeTrackedEntityLastModifiedBy.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :draftTimeOff => MicrosoftGraph.Model.TimeOffDraftTimeOff.t | nil,
-    :sharedTimeOff => MicrosoftGraph.Model.TimeOffSharedTimeOff.t | nil,
-    :userId => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :lastModifiedBy => MicrosoftGraph.Model.ChangeTrackedEntityLastModifiedBy.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :draftTimeOff => MicrosoftGraph.Model.TimeOffDraftTimeOff.t() | nil,
+          :sharedTimeOff => MicrosoftGraph.Model.TimeOffSharedTimeOff.t() | nil,
+          :userId => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastModifiedBy, :struct, MicrosoftGraph.Model.ChangeTrackedEntityLastModifiedBy)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:draftTimeOff, :struct, MicrosoftGraph.Model.TimeOffDraftTimeOff)
-     |> Deserializer.deserialize(:sharedTimeOff, :struct, MicrosoftGraph.Model.TimeOffSharedTimeOff)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :lastModifiedBy,
+      :struct,
+      MicrosoftGraph.Model.ChangeTrackedEntityLastModifiedBy
+    )
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:draftTimeOff, :struct, MicrosoftGraph.Model.TimeOffDraftTimeOff)
+    |> Deserializer.deserialize(
+      :sharedTimeOff,
+      :struct,
+      MicrosoftGraph.Model.TimeOffSharedTimeOff
+    )
   end
 end
-

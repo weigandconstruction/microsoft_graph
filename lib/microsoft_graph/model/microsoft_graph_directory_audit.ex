@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphDirectoryAudit do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -24,30 +24,41 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphDirectoryAudit do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :activityDateTime => DateTime.t | nil,
-    :activityDisplayName => String.t | nil,
-    :additionalDetails => [MicrosoftGraph.Model.TermPropertiesInner.t] | nil,
-    :category => String.t | nil,
-    :correlationId => String.t | nil,
-    :initiatedBy => MicrosoftGraph.Model.MicrosoftGraphAuditActivityInitiator.t | nil,
-    :loggedByService => String.t | nil,
-    :operationType => String.t | nil,
-    :result => MicrosoftGraph.Model.DirectoryAuditResult.t | nil,
-    :resultReason => String.t | nil,
-    :targetResources => [MicrosoftGraph.Model.DirectoryAuditTargetResourcesInner.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :activityDateTime => DateTime.t() | nil,
+          :activityDisplayName => String.t() | nil,
+          :additionalDetails => [MicrosoftGraph.Model.TermPropertiesInner.t()] | nil,
+          :category => String.t() | nil,
+          :correlationId => String.t() | nil,
+          :initiatedBy => MicrosoftGraph.Model.MicrosoftGraphAuditActivityInitiator.t() | nil,
+          :loggedByService => String.t() | nil,
+          :operationType => String.t() | nil,
+          :result => MicrosoftGraph.Model.DirectoryAuditResult.t() | nil,
+          :resultReason => String.t() | nil,
+          :targetResources => [MicrosoftGraph.Model.DirectoryAuditTargetResourcesInner.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:activityDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:additionalDetails, :list, MicrosoftGraph.Model.TermPropertiesInner)
-     |> Deserializer.deserialize(:initiatedBy, :struct, MicrosoftGraph.Model.MicrosoftGraphAuditActivityInitiator)
-     |> Deserializer.deserialize(:result, :struct, MicrosoftGraph.Model.DirectoryAuditResult)
-     |> Deserializer.deserialize(:targetResources, :list, MicrosoftGraph.Model.DirectoryAuditTargetResourcesInner)
+    |> Deserializer.deserialize(:activityDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :additionalDetails,
+      :list,
+      MicrosoftGraph.Model.TermPropertiesInner
+    )
+    |> Deserializer.deserialize(
+      :initiatedBy,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAuditActivityInitiator
+    )
+    |> Deserializer.deserialize(:result, :struct, MicrosoftGraph.Model.DirectoryAuditResult)
+    |> Deserializer.deserialize(
+      :targetResources,
+      :list,
+      MicrosoftGraph.Model.DirectoryAuditTargetResourcesInner
+    )
   end
 end
-

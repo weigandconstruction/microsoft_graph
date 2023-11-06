@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DeviceAppManagementMobileAppsMobileAppMicrosoftGraphAndroidLobAppContentVersionsMobileAppContentFilesMobileAppContentFileCommitRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,14 +12,19 @@ defmodule MicrosoftGraph.Model.DeviceAppManagementMobileAppsMobileAppMicrosoftGr
   ]
 
   @type t :: %__MODULE__{
-    :fileEncryptionInfo => MicrosoftGraph.Model.DeviceAppManagementMobileAppsMobileAppMicrosoftGraphAndroidLobAppContentVersionsMobileAppContentFilesMobileAppContentFileCommitRequestFileEncryptionInfo.t | nil
-  }
+          :fileEncryptionInfo =>
+            MicrosoftGraph.Model.DeviceAppManagementMobileAppsMobileAppMicrosoftGraphAndroidLobAppContentVersionsMobileAppContentFilesMobileAppContentFileCommitRequestFileEncryptionInfo.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:fileEncryptionInfo, :struct, MicrosoftGraph.Model.DeviceAppManagementMobileAppsMobileAppMicrosoftGraphAndroidLobAppContentVersionsMobileAppContentFilesMobileAppContentFileCommitRequestFileEncryptionInfo)
+    |> Deserializer.deserialize(
+      :fileEncryptionInfo,
+      :struct,
+      MicrosoftGraph.Model.DeviceAppManagementMobileAppsMobileAppMicrosoftGraphAndroidLobAppContentVersionsMobileAppContentFilesMobileAppContentFileCommitRequestFileEncryptionInfo
+    )
   end
 end
-

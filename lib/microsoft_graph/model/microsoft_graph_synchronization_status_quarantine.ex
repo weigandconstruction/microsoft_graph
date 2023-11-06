@@ -18,24 +18,31 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSynchronizationStatusQuarantine do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :currentBegan => DateTime.t | nil,
-    :error => MicrosoftGraph.Model.MicrosoftGraphSynchronizationQuarantineError.t | nil,
-    :nextAttempt => DateTime.t | nil,
-    :reason => MicrosoftGraph.Model.MicrosoftGraphQuarantineReason.t | nil,
-    :seriesBegan => DateTime.t | nil,
-    :seriesCount => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :currentBegan => DateTime.t() | nil,
+          :error => MicrosoftGraph.Model.MicrosoftGraphSynchronizationQuarantineError.t() | nil,
+          :nextAttempt => DateTime.t() | nil,
+          :reason => MicrosoftGraph.Model.MicrosoftGraphQuarantineReason.t() | nil,
+          :seriesBegan => DateTime.t() | nil,
+          :seriesCount => integer() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:currentBegan, :datetime, nil)
-     |> Deserializer.deserialize(:error, :struct, MicrosoftGraph.Model.MicrosoftGraphSynchronizationQuarantineError)
-     |> Deserializer.deserialize(:nextAttempt, :datetime, nil)
-     |> Deserializer.deserialize(:reason, :struct, MicrosoftGraph.Model.MicrosoftGraphQuarantineReason)
-     |> Deserializer.deserialize(:seriesBegan, :datetime, nil)
+    |> Deserializer.deserialize(:currentBegan, :datetime, nil)
+    |> Deserializer.deserialize(
+      :error,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSynchronizationQuarantineError
+    )
+    |> Deserializer.deserialize(:nextAttempt, :datetime, nil)
+    |> Deserializer.deserialize(
+      :reason,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphQuarantineReason
+    )
+    |> Deserializer.deserialize(:seriesBegan, :datetime, nil)
   end
 end
-

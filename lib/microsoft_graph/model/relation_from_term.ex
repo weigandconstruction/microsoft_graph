@@ -21,30 +21,37 @@ defmodule MicrosoftGraph.Model.RelationFromTerm do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :children => [MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t] | nil,
-    :createdDateTime => DateTime.t | nil,
-    :descriptions => [MicrosoftGraph.Model.TermDescriptionsInner.t] | nil,
-    :labels => [MicrosoftGraph.Model.TermLabelsInner.t] | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :properties => [MicrosoftGraph.Model.TermPropertiesInner.t] | nil,
-    :relations => [MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t] | nil,
-    :set => MicrosoftGraph.Model.TermSet.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :children => [MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()] | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :descriptions => [MicrosoftGraph.Model.TermDescriptionsInner.t()] | nil,
+          :labels => [MicrosoftGraph.Model.TermLabelsInner.t()] | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :properties => [MicrosoftGraph.Model.TermPropertiesInner.t()] | nil,
+          :relations => [MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()] | nil,
+          :set => MicrosoftGraph.Model.TermSet.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:children, :list, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:descriptions, :list, MicrosoftGraph.Model.TermDescriptionsInner)
-     |> Deserializer.deserialize(:labels, :list, MicrosoftGraph.Model.TermLabelsInner)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:properties, :list, MicrosoftGraph.Model.TermPropertiesInner)
-     |> Deserializer.deserialize(:relations, :list, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation)
-     |> Deserializer.deserialize(:set, :struct, MicrosoftGraph.Model.TermSet)
+    |> Deserializer.deserialize(
+      :children,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm
+    )
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:descriptions, :list, MicrosoftGraph.Model.TermDescriptionsInner)
+    |> Deserializer.deserialize(:labels, :list, MicrosoftGraph.Model.TermLabelsInner)
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:properties, :list, MicrosoftGraph.Model.TermPropertiesInner)
+    |> Deserializer.deserialize(
+      :relations,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation
+    )
+    |> Deserializer.deserialize(:set, :struct, MicrosoftGraph.Model.TermSet)
   end
 end
-

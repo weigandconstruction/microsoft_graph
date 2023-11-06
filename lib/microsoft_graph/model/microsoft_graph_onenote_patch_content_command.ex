@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphOnenotePatchContentCommand do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,19 +16,27 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphOnenotePatchContentCommand do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :action => MicrosoftGraph.Model.MicrosoftGraphOnenotePatchActionType.t | nil,
-    :content => String.t | nil,
-    :position => MicrosoftGraph.Model.MicrosoftGraphOnenotePatchContentCommandPosition.t | nil,
-    :target => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :action => MicrosoftGraph.Model.MicrosoftGraphOnenotePatchActionType.t() | nil,
+          :content => String.t() | nil,
+          :position =>
+            MicrosoftGraph.Model.MicrosoftGraphOnenotePatchContentCommandPosition.t() | nil,
+          :target => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:action, :struct, MicrosoftGraph.Model.MicrosoftGraphOnenotePatchActionType)
-     |> Deserializer.deserialize(:position, :struct, MicrosoftGraph.Model.MicrosoftGraphOnenotePatchContentCommandPosition)
+    |> Deserializer.deserialize(
+      :action,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphOnenotePatchActionType
+    )
+    |> Deserializer.deserialize(
+      :position,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphOnenotePatchContentCommandPosition
+    )
   end
 end
-

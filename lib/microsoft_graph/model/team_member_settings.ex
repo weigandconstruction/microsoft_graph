@@ -18,17 +18,16 @@ defmodule MicrosoftGraph.Model.TeamMemberSettings do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :allowAddRemoveApps => boolean() | nil,
-    :allowCreatePrivateChannels => boolean() | nil,
-    :allowCreateUpdateChannels => boolean() | nil,
-    :allowCreateUpdateRemoveConnectors => boolean() | nil,
-    :allowCreateUpdateRemoveTabs => boolean() | nil,
-    :allowDeleteChannels => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :allowAddRemoveApps => boolean() | nil,
+          :allowCreatePrivateChannels => boolean() | nil,
+          :allowCreateUpdateChannels => boolean() | nil,
+          :allowCreateUpdateRemoveConnectors => boolean() | nil,
+          :allowCreateUpdateRemoveTabs => boolean() | nil,
+          :allowDeleteChannels => boolean() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

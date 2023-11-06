@@ -13,12 +13,11 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSearchRequestResultTemplateOptions 
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :enableResultTemplate => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :enableResultTemplate => boolean() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphRoom do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -30,34 +30,37 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphRoom do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :address => MicrosoftGraph.Model.PlaceAddress.t | nil,
-    :displayName => String.t | nil,
-    :geoCoordinates => MicrosoftGraph.Model.PlaceGeoCoordinates.t | nil,
-    :phone => String.t | nil,
-    :audioDeviceName => String.t | nil,
-    :bookingType => MicrosoftGraph.Model.RoomBookingType.t | nil,
-    :building => String.t | nil,
-    :capacity => integer() | nil,
-    :displayDeviceName => String.t | nil,
-    :emailAddress => String.t | nil,
-    :floorLabel => String.t | nil,
-    :floorNumber => integer() | nil,
-    :isWheelChairAccessible => boolean() | nil,
-    :label => String.t | nil,
-    :nickname => String.t | nil,
-    :tags => [String.t] | nil,
-    :videoDeviceName => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :address => MicrosoftGraph.Model.PlaceAddress.t() | nil,
+          :displayName => String.t() | nil,
+          :geoCoordinates => MicrosoftGraph.Model.PlaceGeoCoordinates.t() | nil,
+          :phone => String.t() | nil,
+          :audioDeviceName => String.t() | nil,
+          :bookingType => MicrosoftGraph.Model.RoomBookingType.t() | nil,
+          :building => String.t() | nil,
+          :capacity => integer() | nil,
+          :displayDeviceName => String.t() | nil,
+          :emailAddress => String.t() | nil,
+          :floorLabel => String.t() | nil,
+          :floorNumber => integer() | nil,
+          :isWheelChairAccessible => boolean() | nil,
+          :label => String.t() | nil,
+          :nickname => String.t() | nil,
+          :tags => [String.t()] | nil,
+          :videoDeviceName => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:address, :struct, MicrosoftGraph.Model.PlaceAddress)
-     |> Deserializer.deserialize(:geoCoordinates, :struct, MicrosoftGraph.Model.PlaceGeoCoordinates)
-     |> Deserializer.deserialize(:bookingType, :struct, MicrosoftGraph.Model.RoomBookingType)
+    |> Deserializer.deserialize(:address, :struct, MicrosoftGraph.Model.PlaceAddress)
+    |> Deserializer.deserialize(
+      :geoCoordinates,
+      :struct,
+      MicrosoftGraph.Model.PlaceGeoCoordinates
+    )
+    |> Deserializer.deserialize(:bookingType, :struct, MicrosoftGraph.Model.RoomBookingType)
   end
 end
-

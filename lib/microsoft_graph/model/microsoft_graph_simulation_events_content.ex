@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSimulationEventsContent do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,17 +14,26 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSimulationEventsContent do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :compromisedRate => MicrosoftGraph.Model.MicrosoftGraphSimulationEventsContentCompromisedRate.t | nil,
-    :events => [MicrosoftGraph.Model.MicrosoftGraphSimulationEventsContentEventsInner.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :compromisedRate =>
+            MicrosoftGraph.Model.MicrosoftGraphSimulationEventsContentCompromisedRate.t() | nil,
+          :events =>
+            [MicrosoftGraph.Model.MicrosoftGraphSimulationEventsContentEventsInner.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:compromisedRate, :struct, MicrosoftGraph.Model.MicrosoftGraphSimulationEventsContentCompromisedRate)
-     |> Deserializer.deserialize(:events, :list, MicrosoftGraph.Model.MicrosoftGraphSimulationEventsContentEventsInner)
+    |> Deserializer.deserialize(
+      :compromisedRate,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSimulationEventsContentCompromisedRate
+    )
+    |> Deserializer.deserialize(
+      :events,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSimulationEventsContentEventsInner
+    )
   end
 end
-

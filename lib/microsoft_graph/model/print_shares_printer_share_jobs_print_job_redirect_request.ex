@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.PrintSharesPrinterShareJobsPrintJobRedirectRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,15 +13,20 @@ defmodule MicrosoftGraph.Model.PrintSharesPrinterShareJobsPrintJobRedirectReques
   ]
 
   @type t :: %__MODULE__{
-    :configuration => MicrosoftGraph.Model.PrintSharesPrinterShareJobsPrintJobRedirectRequestConfiguration.t | nil,
-    :destinationPrinterId => String.t | nil
-  }
+          :configuration =>
+            MicrosoftGraph.Model.PrintSharesPrinterShareJobsPrintJobRedirectRequestConfiguration.t()
+            | nil,
+          :destinationPrinterId => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:configuration, :struct, MicrosoftGraph.Model.PrintSharesPrinterShareJobsPrintJobRedirectRequestConfiguration)
+    |> Deserializer.deserialize(
+      :configuration,
+      :struct,
+      MicrosoftGraph.Model.PrintSharesPrinterShareJobsPrintJobRedirectRequestConfiguration
+    )
   end
 end
-

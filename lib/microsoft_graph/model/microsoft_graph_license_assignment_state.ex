@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphLicenseAssignmentState do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,20 +18,19 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphLicenseAssignmentState do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :assignedByGroup => String.t | nil,
-    :disabledPlans => [String.t] | nil,
-    :error => String.t | nil,
-    :lastUpdatedDateTime => DateTime.t | nil,
-    :skuId => String.t | nil,
-    :state => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :assignedByGroup => String.t() | nil,
+          :disabledPlans => [String.t()] | nil,
+          :error => String.t() | nil,
+          :lastUpdatedDateTime => DateTime.t() | nil,
+          :skuId => String.t() | nil,
+          :state => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:lastUpdatedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastUpdatedDateTime, :datetime, nil)
   end
 end
-

@@ -23,7 +23,13 @@ defmodule MicrosoftGraph.Api.PoliciesIdentitySecurityDefaultsEnforcementPolicy d
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_delete_identity_security_defaults_enforcement_policy(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec policies_delete_identity_security_defaults_enforcement_policy(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def policies_delete_identity_security_defaults_enforcement_policy(connection, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -61,7 +67,10 @@ defmodule MicrosoftGraph.Api.PoliciesIdentitySecurityDefaultsEnforcementPolicy d
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentitySecurityDefaultsEnforcementPolicy.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_get_identity_security_defaults_enforcement_policy(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentitySecurityDefaultsEnforcementPolicy.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec policies_get_identity_security_defaults_enforcement_policy(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentitySecurityDefaultsEnforcementPolicy.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def policies_get_identity_security_defaults_enforcement_policy(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -99,8 +108,19 @@ defmodule MicrosoftGraph.Api.PoliciesIdentitySecurityDefaultsEnforcementPolicy d
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentitySecurityDefaultsEnforcementPolicy.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_update_identity_security_defaults_enforcement_policy(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphIdentitySecurityDefaultsEnforcementPolicy.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentitySecurityDefaultsEnforcementPolicy.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_update_identity_security_defaults_enforcement_policy(connection, microsoft_graph_identity_security_defaults_enforcement_policy, _opts \\ []) do
+  @spec policies_update_identity_security_defaults_enforcement_policy(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphIdentitySecurityDefaultsEnforcementPolicy.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentitySecurityDefaultsEnforcementPolicy.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_update_identity_security_defaults_enforcement_policy(
+        connection,
+        microsoft_graph_identity_security_defaults_enforcement_policy,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.ConditionalAccessRootAuthenticationStrength do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,20 +16,33 @@ defmodule MicrosoftGraph.Model.ConditionalAccessRootAuthenticationStrength do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :authenticationMethodModes => [MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodModeDetail.t] | nil,
-    :combinations => [MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodModes.t] | nil,
-    :policies => [MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthPolicy.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :authenticationMethodModes =>
+            [MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodModeDetail.t()] | nil,
+          :combinations =>
+            [MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodModes.t()] | nil,
+          :policies => [MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthPolicy.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:authenticationMethodModes, :list, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodModeDetail)
-     |> Deserializer.deserialize(:combinations, :list, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodModes)
-     |> Deserializer.deserialize(:policies, :list, MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthPolicy)
+    |> Deserializer.deserialize(
+      :authenticationMethodModes,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodModeDetail
+    )
+    |> Deserializer.deserialize(
+      :combinations,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodModes
+    )
+    |> Deserializer.deserialize(
+      :policies,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthPolicy
+    )
   end
 end
-

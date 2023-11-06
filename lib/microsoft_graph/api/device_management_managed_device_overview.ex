@@ -25,7 +25,10 @@ defmodule MicrosoftGraph.Api.DeviceManagementManagedDeviceOverview do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphManagedDeviceOverview.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_get_managed_device_overview(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphManagedDeviceOverview.t} | {:error, Tesla.Env.t}
+  @spec device_management_get_managed_device_overview(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphManagedDeviceOverview.t()}
+          | {:error, Tesla.Env.t()}
   def device_management_get_managed_device_overview(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,

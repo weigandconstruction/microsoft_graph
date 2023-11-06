@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.ManagedAppPolicyDeploymentSummaryConfigurationDeploymentSummaryPerAppInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,21 @@ defmodule MicrosoftGraph.Model.ManagedAppPolicyDeploymentSummaryConfigurationDep
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :configurationAppliedUserCount => integer() | nil,
-    :mobileAppIdentifier => MicrosoftGraph.Model.MicrosoftGraphManagedAppPolicyDeploymentSummaryPerAppMobileAppIdentifier.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :configurationAppliedUserCount => integer() | nil,
+          :mobileAppIdentifier =>
+            MicrosoftGraph.Model.MicrosoftGraphManagedAppPolicyDeploymentSummaryPerAppMobileAppIdentifier.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:mobileAppIdentifier, :struct, MicrosoftGraph.Model.MicrosoftGraphManagedAppPolicyDeploymentSummaryPerAppMobileAppIdentifier)
+    |> Deserializer.deserialize(
+      :mobileAppIdentifier,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphManagedAppPolicyDeploymentSummaryPerAppMobileAppIdentifier
+    )
   end
 end
-

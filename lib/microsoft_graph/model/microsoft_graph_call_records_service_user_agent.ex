@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphCallRecordsServiceUserAgent do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,17 +15,20 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphCallRecordsServiceUserAgent do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :applicationVersion => String.t | nil,
-    :headerValue => String.t | nil,
-    :role => MicrosoftGraph.Model.MicrosoftGraphCallRecordsServiceRole.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :applicationVersion => String.t() | nil,
+          :headerValue => String.t() | nil,
+          :role => MicrosoftGraph.Model.MicrosoftGraphCallRecordsServiceRole.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:role, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsServiceRole)
+    |> Deserializer.deserialize(
+      :role,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsServiceRole
+    )
   end
 end
-

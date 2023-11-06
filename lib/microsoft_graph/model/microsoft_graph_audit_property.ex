@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAuditProperty do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :displayName => String.t | nil,
-    :newValue => String.t | nil,
-    :oldValue => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :displayName => String.t() | nil,
+          :newValue => String.t() | nil,
+          :oldValue => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

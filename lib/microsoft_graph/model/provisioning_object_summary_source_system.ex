@@ -15,17 +15,16 @@ defmodule MicrosoftGraph.Model.ProvisioningObjectSummarySourceSystem do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :displayName => String.t | nil,
-    :id => String.t | nil,
-    :details => MicrosoftGraph.Model.ProvisioningSystemDetails.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :displayName => String.t() | nil,
+          :id => String.t() | nil,
+          :details => MicrosoftGraph.Model.ProvisioningSystemDetails.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:details, :struct, MicrosoftGraph.Model.ProvisioningSystemDetails)
+    |> Deserializer.deserialize(:details, :struct, MicrosoftGraph.Model.ProvisioningSystemDetails)
   end
 end
-

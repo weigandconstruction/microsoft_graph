@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphLocalizedNotificationMessage do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,20 +18,19 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphLocalizedNotificationMessage do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :isDefault => boolean() | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :locale => String.t | nil,
-    :messageTemplate => String.t | nil,
-    :subject => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :isDefault => boolean() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :locale => String.t() | nil,
+          :messageTemplate => String.t() | nil,
+          :subject => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
   end
 end
-

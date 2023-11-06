@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.ServicePrincipalsServicePrincipalAddPasswordRequestPasswordCredential do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,22 +19,21 @@ defmodule MicrosoftGraph.Model.ServicePrincipalsServicePrincipalAddPasswordReque
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :customKeyIdentifier => String.t | nil,
-    :displayName => String.t | nil,
-    :endDateTime => DateTime.t | nil,
-    :hint => String.t | nil,
-    :keyId => String.t | nil,
-    :secretText => String.t | nil,
-    :startDateTime => DateTime.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :customKeyIdentifier => String.t() | nil,
+          :displayName => String.t() | nil,
+          :endDateTime => DateTime.t() | nil,
+          :hint => String.t() | nil,
+          :keyId => String.t() | nil,
+          :secretText => String.t() | nil,
+          :startDateTime => DateTime.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:endDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:startDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:endDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:startDateTime, :datetime, nil)
   end
 end
-

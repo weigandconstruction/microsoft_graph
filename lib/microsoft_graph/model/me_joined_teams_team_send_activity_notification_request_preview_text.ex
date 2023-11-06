@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MeJoinedTeamsTeamSendActivityNotificationRequestPreviewText do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,19 @@ defmodule MicrosoftGraph.Model.MeJoinedTeamsTeamSendActivityNotificationRequestP
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :content => String.t | nil,
-    :contentType => MicrosoftGraph.Model.MicrosoftGraphItemBodyContentType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :content => String.t() | nil,
+          :contentType => MicrosoftGraph.Model.MicrosoftGraphItemBodyContentType.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:contentType, :struct, MicrosoftGraph.Model.MicrosoftGraphItemBodyContentType)
+    |> Deserializer.deserialize(
+      :contentType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphItemBodyContentType
+    )
   end
 end
-

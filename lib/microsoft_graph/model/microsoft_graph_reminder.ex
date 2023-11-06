@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphReminder do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -20,25 +20,41 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphReminder do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :changeKey => String.t | nil,
-    :eventEndTime => MicrosoftGraph.Model.MicrosoftGraphReminderEventEndTime.t | nil,
-    :eventId => String.t | nil,
-    :eventLocation => MicrosoftGraph.Model.MicrosoftGraphReminderEventLocation.t | nil,
-    :eventStartTime => MicrosoftGraph.Model.MicrosoftGraphReminderEventStartTime.t | nil,
-    :eventSubject => String.t | nil,
-    :eventWebLink => String.t | nil,
-    :reminderFireTime => MicrosoftGraph.Model.MicrosoftGraphReminderReminderFireTime.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :changeKey => String.t() | nil,
+          :eventEndTime => MicrosoftGraph.Model.MicrosoftGraphReminderEventEndTime.t() | nil,
+          :eventId => String.t() | nil,
+          :eventLocation => MicrosoftGraph.Model.MicrosoftGraphReminderEventLocation.t() | nil,
+          :eventStartTime => MicrosoftGraph.Model.MicrosoftGraphReminderEventStartTime.t() | nil,
+          :eventSubject => String.t() | nil,
+          :eventWebLink => String.t() | nil,
+          :reminderFireTime =>
+            MicrosoftGraph.Model.MicrosoftGraphReminderReminderFireTime.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:eventEndTime, :struct, MicrosoftGraph.Model.MicrosoftGraphReminderEventEndTime)
-     |> Deserializer.deserialize(:eventLocation, :struct, MicrosoftGraph.Model.MicrosoftGraphReminderEventLocation)
-     |> Deserializer.deserialize(:eventStartTime, :struct, MicrosoftGraph.Model.MicrosoftGraphReminderEventStartTime)
-     |> Deserializer.deserialize(:reminderFireTime, :struct, MicrosoftGraph.Model.MicrosoftGraphReminderReminderFireTime)
+    |> Deserializer.deserialize(
+      :eventEndTime,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphReminderEventEndTime
+    )
+    |> Deserializer.deserialize(
+      :eventLocation,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphReminderEventLocation
+    )
+    |> Deserializer.deserialize(
+      :eventStartTime,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphReminderEventStartTime
+    )
+    |> Deserializer.deserialize(
+      :reminderFireTime,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphReminderReminderFireTime
+    )
   end
 end
-

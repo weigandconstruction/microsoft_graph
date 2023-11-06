@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphPrintJob do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -22,29 +22,40 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphPrintJob do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :configuration => MicrosoftGraph.Model.MicrosoftGraphPrintJobConfiguration.t | nil,
-    :createdBy => MicrosoftGraph.Model.PrintJobCreatedBy.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :documents => [MicrosoftGraph.Model.MicrosoftGraphPrintDocument.t] | nil,
-    :isFetchable => boolean() | nil,
-    :redirectedFrom => String.t | nil,
-    :redirectedTo => String.t | nil,
-    :status => MicrosoftGraph.Model.MicrosoftGraphPrintJobStatus.t | nil,
-    :tasks => [MicrosoftGraph.Model.MicrosoftGraphPrintTask.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :configuration => MicrosoftGraph.Model.MicrosoftGraphPrintJobConfiguration.t() | nil,
+          :createdBy => MicrosoftGraph.Model.PrintJobCreatedBy.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :documents => [MicrosoftGraph.Model.MicrosoftGraphPrintDocument.t()] | nil,
+          :isFetchable => boolean() | nil,
+          :redirectedFrom => String.t() | nil,
+          :redirectedTo => String.t() | nil,
+          :status => MicrosoftGraph.Model.MicrosoftGraphPrintJobStatus.t() | nil,
+          :tasks => [MicrosoftGraph.Model.MicrosoftGraphPrintTask.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:configuration, :struct, MicrosoftGraph.Model.MicrosoftGraphPrintJobConfiguration)
-     |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.PrintJobCreatedBy)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:documents, :list, MicrosoftGraph.Model.MicrosoftGraphPrintDocument)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.MicrosoftGraphPrintJobStatus)
-     |> Deserializer.deserialize(:tasks, :list, MicrosoftGraph.Model.MicrosoftGraphPrintTask)
+    |> Deserializer.deserialize(
+      :configuration,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphPrintJobConfiguration
+    )
+    |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.PrintJobCreatedBy)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :documents,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphPrintDocument
+    )
+    |> Deserializer.deserialize(
+      :status,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphPrintJobStatus
+    )
+    |> Deserializer.deserialize(:tasks, :list, MicrosoftGraph.Model.MicrosoftGraphPrintTask)
   end
 end
-

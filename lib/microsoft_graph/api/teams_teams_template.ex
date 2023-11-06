@@ -26,7 +26,10 @@ defmodule MicrosoftGraph.Api.TeamsTeamsTemplate do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTemplate.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_get_template(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTemplate.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_get_template(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTemplate.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_get_template(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,

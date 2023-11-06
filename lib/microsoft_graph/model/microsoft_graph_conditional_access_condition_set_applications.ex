@@ -17,19 +17,24 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphConditionalAccessConditionSetApplic
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :applicationFilter => MicrosoftGraph.Model.MicrosoftGraphConditionalAccessClientApplicationsServicePrincipalFilter.t | nil,
-    :excludeApplications => [String.t] | nil,
-    :includeApplications => [String.t] | nil,
-    :includeAuthenticationContextClassReferences => [String.t] | nil,
-    :includeUserActions => [String.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :applicationFilter =>
+            MicrosoftGraph.Model.MicrosoftGraphConditionalAccessClientApplicationsServicePrincipalFilter.t()
+            | nil,
+          :excludeApplications => [String.t()] | nil,
+          :includeApplications => [String.t()] | nil,
+          :includeAuthenticationContextClassReferences => [String.t()] | nil,
+          :includeUserActions => [String.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:applicationFilter, :struct, MicrosoftGraph.Model.MicrosoftGraphConditionalAccessClientApplicationsServicePrincipalFilter)
+    |> Deserializer.deserialize(
+      :applicationFilter,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphConditionalAccessClientApplicationsServicePrincipalFilter
+    )
   end
 end
-

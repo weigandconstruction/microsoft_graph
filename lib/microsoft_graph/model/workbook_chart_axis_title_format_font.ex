@@ -19,21 +19,20 @@ defmodule MicrosoftGraph.Model.WorkbookChartAxisTitleFormatFont do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :bold => boolean() | nil,
-    :color => String.t | nil,
-    :italic => boolean() | nil,
-    :name => String.t | nil,
-    :size => MicrosoftGraph.Model.WorkbookChartFontSize.t | nil,
-    :underline => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :bold => boolean() | nil,
+          :color => String.t() | nil,
+          :italic => boolean() | nil,
+          :name => String.t() | nil,
+          :size => MicrosoftGraph.Model.WorkbookChartFontSize.t() | nil,
+          :underline => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:size, :struct, MicrosoftGraph.Model.WorkbookChartFontSize)
+    |> Deserializer.deserialize(:size, :struct, MicrosoftGraph.Model.WorkbookChartFontSize)
   end
 end
-

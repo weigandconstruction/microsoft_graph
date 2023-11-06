@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphServiceUpdateMessageViewpoint do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphServiceUpdateMessageViewpoint do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :isArchived => boolean() | nil,
-    :isFavorited => boolean() | nil,
-    :isRead => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :isArchived => boolean() | nil,
+          :isFavorited => boolean() | nil,
+          :isRead => boolean() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

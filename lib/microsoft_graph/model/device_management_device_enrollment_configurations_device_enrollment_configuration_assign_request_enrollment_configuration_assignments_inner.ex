@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DeviceManagementDeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationAssignRequestEnrollmentConfigurationAssignmentsInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,19 @@ defmodule MicrosoftGraph.Model.DeviceManagementDeviceEnrollmentConfigurationsDev
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :target => MicrosoftGraph.Model.EnrollmentConfigurationAssignmentTarget.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :target => MicrosoftGraph.Model.EnrollmentConfigurationAssignmentTarget.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:target, :struct, MicrosoftGraph.Model.EnrollmentConfigurationAssignmentTarget)
+    |> Deserializer.deserialize(
+      :target,
+      :struct,
+      MicrosoftGraph.Model.EnrollmentConfigurationAssignmentTarget
+    )
   end
 end
-

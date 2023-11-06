@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSimulationAutomationRun do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,21 +17,24 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSimulationAutomationRun do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :endDateTime => DateTime.t | nil,
-    :simulationId => String.t | nil,
-    :startDateTime => DateTime.t | nil,
-    :status => MicrosoftGraph.Model.SimulationAutomationRunStatus.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :endDateTime => DateTime.t() | nil,
+          :simulationId => String.t() | nil,
+          :startDateTime => DateTime.t() | nil,
+          :status => MicrosoftGraph.Model.SimulationAutomationRunStatus.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:endDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:startDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.SimulationAutomationRunStatus)
+    |> Deserializer.deserialize(:endDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:startDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :status,
+      :struct,
+      MicrosoftGraph.Model.SimulationAutomationRunStatus
+    )
   end
 end
-

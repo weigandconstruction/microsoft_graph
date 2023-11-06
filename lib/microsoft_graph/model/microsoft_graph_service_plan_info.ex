@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphServicePlanInfo do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,15 +16,14 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphServicePlanInfo do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :appliesTo => String.t | nil,
-    :provisioningStatus => String.t | nil,
-    :servicePlanId => String.t | nil,
-    :servicePlanName => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :appliesTo => String.t() | nil,
+          :provisioningStatus => String.t() | nil,
+          :servicePlanId => String.t() | nil,
+          :servicePlanName => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphTeleconferenceDeviceScreenSharingQuality do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -37,46 +37,90 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphTeleconferenceDeviceScreenSharingQu
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :averageInboundJitter => String.t | nil,
-    :averageInboundPacketLossRateInPercentage => MicrosoftGraph.Model.MicrosoftGraphTeleconferenceDeviceMediaQualityAverageInboundPacketLossRateInPercentage.t | nil,
-    :averageInboundRoundTripDelay => String.t | nil,
-    :averageOutboundJitter => String.t | nil,
-    :averageOutboundPacketLossRateInPercentage => MicrosoftGraph.Model.MicrosoftGraphTeleconferenceDeviceMediaQualityAverageOutboundPacketLossRateInPercentage.t | nil,
-    :averageOutboundRoundTripDelay => String.t | nil,
-    :channelIndex => integer() | nil,
-    :inboundPackets => integer() | nil,
-    :localIPAddress => String.t | nil,
-    :localPort => integer() | nil,
-    :maximumInboundJitter => String.t | nil,
-    :maximumInboundPacketLossRateInPercentage => MicrosoftGraph.Model.MicrosoftGraphTeleconferenceDeviceMediaQualityMaximumInboundPacketLossRateInPercentage.t | nil,
-    :maximumInboundRoundTripDelay => String.t | nil,
-    :maximumOutboundJitter => String.t | nil,
-    :maximumOutboundPacketLossRateInPercentage => MicrosoftGraph.Model.MicrosoftGraphTeleconferenceDeviceMediaQualityMaximumOutboundPacketLossRateInPercentage.t | nil,
-    :maximumOutboundRoundTripDelay => String.t | nil,
-    :mediaDuration => String.t | nil,
-    :networkLinkSpeedInBytes => integer() | nil,
-    :outboundPackets => integer() | nil,
-    :remoteIPAddress => String.t | nil,
-    :remotePort => integer() | nil,
-    :averageInboundBitRate => MicrosoftGraph.Model.TeleconferenceDeviceVideoQualityAverageInboundBitRate.t | nil,
-    :averageInboundFrameRate => MicrosoftGraph.Model.TeleconferenceDeviceVideoQualityAverageInboundFrameRate.t | nil,
-    :averageOutboundBitRate => MicrosoftGraph.Model.TeleconferenceDeviceVideoQualityAverageOutboundBitRate.t | nil,
-    :averageOutboundFrameRate => MicrosoftGraph.Model.TeleconferenceDeviceVideoQualityAverageOutboundFrameRate.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :averageInboundJitter => String.t() | nil,
+          :averageInboundPacketLossRateInPercentage =>
+            MicrosoftGraph.Model.MicrosoftGraphTeleconferenceDeviceMediaQualityAverageInboundPacketLossRateInPercentage.t()
+            | nil,
+          :averageInboundRoundTripDelay => String.t() | nil,
+          :averageOutboundJitter => String.t() | nil,
+          :averageOutboundPacketLossRateInPercentage =>
+            MicrosoftGraph.Model.MicrosoftGraphTeleconferenceDeviceMediaQualityAverageOutboundPacketLossRateInPercentage.t()
+            | nil,
+          :averageOutboundRoundTripDelay => String.t() | nil,
+          :channelIndex => integer() | nil,
+          :inboundPackets => integer() | nil,
+          :localIPAddress => String.t() | nil,
+          :localPort => integer() | nil,
+          :maximumInboundJitter => String.t() | nil,
+          :maximumInboundPacketLossRateInPercentage =>
+            MicrosoftGraph.Model.MicrosoftGraphTeleconferenceDeviceMediaQualityMaximumInboundPacketLossRateInPercentage.t()
+            | nil,
+          :maximumInboundRoundTripDelay => String.t() | nil,
+          :maximumOutboundJitter => String.t() | nil,
+          :maximumOutboundPacketLossRateInPercentage =>
+            MicrosoftGraph.Model.MicrosoftGraphTeleconferenceDeviceMediaQualityMaximumOutboundPacketLossRateInPercentage.t()
+            | nil,
+          :maximumOutboundRoundTripDelay => String.t() | nil,
+          :mediaDuration => String.t() | nil,
+          :networkLinkSpeedInBytes => integer() | nil,
+          :outboundPackets => integer() | nil,
+          :remoteIPAddress => String.t() | nil,
+          :remotePort => integer() | nil,
+          :averageInboundBitRate =>
+            MicrosoftGraph.Model.TeleconferenceDeviceVideoQualityAverageInboundBitRate.t() | nil,
+          :averageInboundFrameRate =>
+            MicrosoftGraph.Model.TeleconferenceDeviceVideoQualityAverageInboundFrameRate.t() | nil,
+          :averageOutboundBitRate =>
+            MicrosoftGraph.Model.TeleconferenceDeviceVideoQualityAverageOutboundBitRate.t() | nil,
+          :averageOutboundFrameRate =>
+            MicrosoftGraph.Model.TeleconferenceDeviceVideoQualityAverageOutboundFrameRate.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:averageInboundPacketLossRateInPercentage, :struct, MicrosoftGraph.Model.MicrosoftGraphTeleconferenceDeviceMediaQualityAverageInboundPacketLossRateInPercentage)
-     |> Deserializer.deserialize(:averageOutboundPacketLossRateInPercentage, :struct, MicrosoftGraph.Model.MicrosoftGraphTeleconferenceDeviceMediaQualityAverageOutboundPacketLossRateInPercentage)
-     |> Deserializer.deserialize(:maximumInboundPacketLossRateInPercentage, :struct, MicrosoftGraph.Model.MicrosoftGraphTeleconferenceDeviceMediaQualityMaximumInboundPacketLossRateInPercentage)
-     |> Deserializer.deserialize(:maximumOutboundPacketLossRateInPercentage, :struct, MicrosoftGraph.Model.MicrosoftGraphTeleconferenceDeviceMediaQualityMaximumOutboundPacketLossRateInPercentage)
-     |> Deserializer.deserialize(:averageInboundBitRate, :struct, MicrosoftGraph.Model.TeleconferenceDeviceVideoQualityAverageInboundBitRate)
-     |> Deserializer.deserialize(:averageInboundFrameRate, :struct, MicrosoftGraph.Model.TeleconferenceDeviceVideoQualityAverageInboundFrameRate)
-     |> Deserializer.deserialize(:averageOutboundBitRate, :struct, MicrosoftGraph.Model.TeleconferenceDeviceVideoQualityAverageOutboundBitRate)
-     |> Deserializer.deserialize(:averageOutboundFrameRate, :struct, MicrosoftGraph.Model.TeleconferenceDeviceVideoQualityAverageOutboundFrameRate)
+    |> Deserializer.deserialize(
+      :averageInboundPacketLossRateInPercentage,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphTeleconferenceDeviceMediaQualityAverageInboundPacketLossRateInPercentage
+    )
+    |> Deserializer.deserialize(
+      :averageOutboundPacketLossRateInPercentage,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphTeleconferenceDeviceMediaQualityAverageOutboundPacketLossRateInPercentage
+    )
+    |> Deserializer.deserialize(
+      :maximumInboundPacketLossRateInPercentage,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphTeleconferenceDeviceMediaQualityMaximumInboundPacketLossRateInPercentage
+    )
+    |> Deserializer.deserialize(
+      :maximumOutboundPacketLossRateInPercentage,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphTeleconferenceDeviceMediaQualityMaximumOutboundPacketLossRateInPercentage
+    )
+    |> Deserializer.deserialize(
+      :averageInboundBitRate,
+      :struct,
+      MicrosoftGraph.Model.TeleconferenceDeviceVideoQualityAverageInboundBitRate
+    )
+    |> Deserializer.deserialize(
+      :averageInboundFrameRate,
+      :struct,
+      MicrosoftGraph.Model.TeleconferenceDeviceVideoQualityAverageInboundFrameRate
+    )
+    |> Deserializer.deserialize(
+      :averageOutboundBitRate,
+      :struct,
+      MicrosoftGraph.Model.TeleconferenceDeviceVideoQualityAverageOutboundBitRate
+    )
+    |> Deserializer.deserialize(
+      :averageOutboundFrameRate,
+      :struct,
+      MicrosoftGraph.Model.TeleconferenceDeviceVideoQualityAverageOutboundFrameRate
+    )
   end
 end
-

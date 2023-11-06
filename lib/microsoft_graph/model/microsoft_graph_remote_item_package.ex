@@ -13,12 +13,11 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphRemoteItemPackage do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :type => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :type => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

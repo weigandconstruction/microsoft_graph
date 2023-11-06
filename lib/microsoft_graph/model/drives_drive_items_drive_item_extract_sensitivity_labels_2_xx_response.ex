@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemExtractSensitivityLabels2XxResponse do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,15 +13,20 @@ defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemExtractSensitivityLabels
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :labels => [MicrosoftGraph.Model.MicrosoftGraphExtractSensitivityLabelsResultLabelsInner.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :labels =>
+            [MicrosoftGraph.Model.MicrosoftGraphExtractSensitivityLabelsResultLabelsInner.t()]
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:labels, :list, MicrosoftGraph.Model.MicrosoftGraphExtractSensitivityLabelsResultLabelsInner)
+    |> Deserializer.deserialize(
+      :labels,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphExtractSensitivityLabelsResultLabelsInner
+    )
   end
 end
-

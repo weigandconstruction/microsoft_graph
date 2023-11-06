@@ -25,8 +25,21 @@ defmodule MicrosoftGraph.Api.AgreementsAgreementFileLocalization do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalization.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec agreements_create_files(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalization.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalization.t} | {:error, Tesla.Env.t}
-  def agreements_create_files(connection, agreement_id, microsoft_graph_agreement_file_localization, _opts \\ []) do
+  @spec agreements_create_files(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalization.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalization.t()}
+          | {:error, Tesla.Env.t()}
+  def agreements_create_files(
+        connection,
+        agreement_id,
+        microsoft_graph_agreement_file_localization,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -59,8 +72,16 @@ defmodule MicrosoftGraph.Api.AgreementsAgreementFileLocalization do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec agreements_delete_files(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def agreements_delete_files(connection, agreement_id, agreement_file_localization_id, opts \\ []) do
+  @spec agreements_delete_files(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def agreements_delete_files(
+        connection,
+        agreement_id,
+        agreement_file_localization_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -97,8 +118,23 @@ defmodule MicrosoftGraph.Api.AgreementsAgreementFileLocalization do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersion.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec agreements_files_create_versions(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersion.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersion.t} | {:error, Tesla.Env.t}
-  def agreements_files_create_versions(connection, agreement_id, agreement_file_localization_id, microsoft_graph_agreement_file_version, _opts \\ []) do
+  @spec agreements_files_create_versions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersion.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersion.t()}
+          | {:error, Tesla.Env.t()}
+  def agreements_files_create_versions(
+        connection,
+        agreement_id,
+        agreement_file_localization_id,
+        microsoft_graph_agreement_file_version,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -132,8 +168,23 @@ defmodule MicrosoftGraph.Api.AgreementsAgreementFileLocalization do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec agreements_files_delete_versions(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def agreements_files_delete_versions(connection, agreement_id, agreement_file_localization_id, agreement_file_version_id, opts \\ []) do
+  @spec agreements_files_delete_versions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def agreements_files_delete_versions(
+        connection,
+        agreement_id,
+        agreement_file_localization_id,
+        agreement_file_version_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -141,7 +192,9 @@ defmodule MicrosoftGraph.Api.AgreementsAgreementFileLocalization do
     request =
       %{}
       |> method(:delete)
-      |> url("/agreements/#{agreement_id}/files/#{agreement_file_localization_id}/versions/#{agreement_file_version_id}")
+      |> url(
+        "/agreements/#{agreement_id}/files/#{agreement_file_localization_id}/versions/#{agreement_file_version_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -170,7 +223,10 @@ defmodule MicrosoftGraph.Api.AgreementsAgreementFileLocalization do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec agreements_files_get_count_b229(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec agreements_files_get_count_b229(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def agreements_files_get_count_b229(connection, agreement_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -212,8 +268,23 @@ defmodule MicrosoftGraph.Api.AgreementsAgreementFileLocalization do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersion.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec agreements_files_get_versions(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersion.t} | {:error, Tesla.Env.t}
-  def agreements_files_get_versions(connection, agreement_id, agreement_file_localization_id, agreement_file_version_id, opts \\ []) do
+  @spec agreements_files_get_versions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersion.t()}
+          | {:error, Tesla.Env.t()}
+  def agreements_files_get_versions(
+        connection,
+        agreement_id,
+        agreement_file_localization_id,
+        agreement_file_version_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -222,7 +293,9 @@ defmodule MicrosoftGraph.Api.AgreementsAgreementFileLocalization do
     request =
       %{}
       |> method(:get)
-      |> url("/agreements/#{agreement_id}/files/#{agreement_file_localization_id}/versions/#{agreement_file_version_id}")
+      |> url(
+        "/agreements/#{agreement_id}/files/#{agreement_file_localization_id}/versions/#{agreement_file_version_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -259,8 +332,16 @@ defmodule MicrosoftGraph.Api.AgreementsAgreementFileLocalization do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec agreements_files_list_versions(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersionCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def agreements_files_list_versions(connection, agreement_id, agreement_file_localization_id, opts \\ []) do
+  @spec agreements_files_list_versions(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersionCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def agreements_files_list_versions(
+        connection,
+        agreement_id,
+        agreement_file_localization_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -305,12 +386,31 @@ defmodule MicrosoftGraph.Api.AgreementsAgreementFileLocalization do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersion.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec agreements_files_update_versions(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersion.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersion.t} | {:error, Tesla.Env.t}
-  def agreements_files_update_versions(connection, agreement_id, agreement_file_localization_id, agreement_file_version_id, microsoft_graph_agreement_file_version, _opts \\ []) do
+  @spec agreements_files_update_versions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersion.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileVersion.t()}
+          | {:error, Tesla.Env.t()}
+  def agreements_files_update_versions(
+        connection,
+        agreement_id,
+        agreement_file_localization_id,
+        agreement_file_version_id,
+        microsoft_graph_agreement_file_version,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/agreements/#{agreement_id}/files/#{agreement_file_localization_id}/versions/#{agreement_file_version_id}")
+      |> url(
+        "/agreements/#{agreement_id}/files/#{agreement_file_localization_id}/versions/#{agreement_file_version_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_agreement_file_version)
       |> Enum.into([])
 
@@ -340,8 +440,21 @@ defmodule MicrosoftGraph.Api.AgreementsAgreementFileLocalization do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec agreements_files_versions_get_count8216(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def agreements_files_versions_get_count8216(connection, agreement_id, agreement_file_localization_id, opts \\ []) do
+  @spec agreements_files_versions_get_count8216(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def agreements_files_versions_get_count8216(
+        connection,
+        agreement_id,
+        agreement_file_localization_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -350,7 +463,9 @@ defmodule MicrosoftGraph.Api.AgreementsAgreementFileLocalization do
     request =
       %{}
       |> method(:get)
-      |> url("/agreements/#{agreement_id}/files/#{agreement_file_localization_id}/versions/$count")
+      |> url(
+        "/agreements/#{agreement_id}/files/#{agreement_file_localization_id}/versions/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -381,7 +496,10 @@ defmodule MicrosoftGraph.Api.AgreementsAgreementFileLocalization do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalization.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec agreements_get_files(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalization.t} | {:error, Tesla.Env.t}
+  @spec agreements_get_files(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalization.t()}
+          | {:error, Tesla.Env.t()}
   def agreements_get_files(connection, agreement_id, agreement_file_localization_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -427,7 +545,11 @@ defmodule MicrosoftGraph.Api.AgreementsAgreementFileLocalization do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalizationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec agreements_list_files(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalizationCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec agreements_list_files(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalizationCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def agreements_list_files(connection, agreement_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -472,8 +594,23 @@ defmodule MicrosoftGraph.Api.AgreementsAgreementFileLocalization do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalization.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec agreements_update_files(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalization.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalization.t} | {:error, Tesla.Env.t}
-  def agreements_update_files(connection, agreement_id, agreement_file_localization_id, microsoft_graph_agreement_file_localization, _opts \\ []) do
+  @spec agreements_update_files(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalization.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementFileLocalization.t()}
+          | {:error, Tesla.Env.t()}
+  def agreements_update_files(
+        connection,
+        agreement_id,
+        agreement_file_localization_id,
+        microsoft_graph_agreement_file_localization,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.BlobEvidenceFileHashesInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,19 @@ defmodule MicrosoftGraph.Model.BlobEvidenceFileHashesInner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :algorithm => MicrosoftGraph.Model.MicrosoftGraphSecurityFileHashAlgorithm.t | nil,
-    :value => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :algorithm => MicrosoftGraph.Model.MicrosoftGraphSecurityFileHashAlgorithm.t() | nil,
+          :value => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:algorithm, :struct, MicrosoftGraph.Model.MicrosoftGraphSecurityFileHashAlgorithm)
+    |> Deserializer.deserialize(
+      :algorithm,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityFileHashAlgorithm
+    )
   end
 end
-

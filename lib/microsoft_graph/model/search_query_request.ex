@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.SearchQueryRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,14 +12,17 @@ defmodule MicrosoftGraph.Model.SearchQueryRequest do
   ]
 
   @type t :: %__MODULE__{
-    :requests => [MicrosoftGraph.Model.MicrosoftGraphSearchRequest.t] | nil
-  }
+          :requests => [MicrosoftGraph.Model.MicrosoftGraphSearchRequest.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:requests, :list, MicrosoftGraph.Model.MicrosoftGraphSearchRequest)
+    |> Deserializer.deserialize(
+      :requests,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSearchRequest
+    )
   end
 end
-

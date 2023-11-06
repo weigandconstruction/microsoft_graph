@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.IosMobileAppConfigurationSettingsInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,17 +15,20 @@ defmodule MicrosoftGraph.Model.IosMobileAppConfigurationSettingsInner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :appConfigKey => String.t | nil,
-    :appConfigKeyType => MicrosoftGraph.Model.MicrosoftGraphMdmAppConfigKeyType.t | nil,
-    :appConfigKeyValue => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :appConfigKey => String.t() | nil,
+          :appConfigKeyType => MicrosoftGraph.Model.MicrosoftGraphMdmAppConfigKeyType.t() | nil,
+          :appConfigKeyValue => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:appConfigKeyType, :struct, MicrosoftGraph.Model.MicrosoftGraphMdmAppConfigKeyType)
+    |> Deserializer.deserialize(
+      :appConfigKeyType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphMdmAppConfigKeyType
+    )
   end
 end
-

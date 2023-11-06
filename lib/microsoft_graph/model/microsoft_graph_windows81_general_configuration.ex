@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphWindows81GeneralConfiguration do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -57,71 +57,125 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphWindows81GeneralConfiguration do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :assignments => [MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationAssignment.t] | nil,
-    :createdDateTime => DateTime.t | nil,
-    :description => String.t | nil,
-    :deviceSettingStateSummaries => [MicrosoftGraph.Model.MicrosoftGraphSettingStateDeviceSummary.t] | nil,
-    :deviceStatusOverview => MicrosoftGraph.Model.DeviceConfigurationDeviceStatusOverview.t | nil,
-    :deviceStatuses => [MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceStatus.t] | nil,
-    :displayName => String.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :userStatusOverview => MicrosoftGraph.Model.DeviceConfigurationUserStatusOverview.t | nil,
-    :userStatuses => [MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserStatus.t] | nil,
-    :version => integer() | nil,
-    :diagnosticsBlockDataSubmission => boolean() | nil,
-    :browserRequireHighSecurityForRestrictedSites => boolean() | nil,
-    :passwordExpirationDays => integer() | nil,
-    :browserBlockAutomaticDetectionOfIntranetSites => boolean() | nil,
-    :browserBlockAutofill => boolean() | nil,
-    :passwordBlockPicturePasswordAndPin => boolean() | nil,
-    :browserRequireFirewall => boolean() | nil,
-    :browserIntranetSecurityLevel => MicrosoftGraph.Model.MicrosoftGraphSiteSecurityLevel.t | nil,
-    :accountsBlockAddingNonMicrosoftAccountEmail => boolean() | nil,
-    :browserBlockEnterpriseModeAccess => boolean() | nil,
-    :passwordMinimumCharacterSetCount => integer() | nil,
-    :browserLoggingReportLocation => String.t | nil,
-    :cellularBlockDataRoaming => boolean() | nil,
-    :browserBlockPlugins => boolean() | nil,
-    :applyOnlyToWindows81 => boolean() | nil,
-    :storageRequireDeviceEncryption => boolean() | nil,
-    :passwordRequiredType => MicrosoftGraph.Model.MicrosoftGraphRequiredPasswordType.t | nil,
-    :browserTrustedSitesSecurityLevel => MicrosoftGraph.Model.MicrosoftGraphSiteSecurityLevel.t | nil,
-    :browserBlockJavaScript => boolean() | nil,
-    :browserBlockSingleWordEntryOnIntranetSites => boolean() | nil,
-    :browserRequireSmartScreen => boolean() | nil,
-    :updatesRequireAutomaticUpdates => boolean() | nil,
-    :passwordPreviousPasswordBlockCount => integer() | nil,
-    :browserBlockSendingDoNotTrackHeader => boolean() | nil,
-    :passwordMinutesOfInactivityBeforeScreenTimeout => integer() | nil,
-    :userAccountControlSettings => MicrosoftGraph.Model.MicrosoftGraphWindowsUserAccountControlSettings.t | nil,
-    :passwordMinimumLength => integer() | nil,
-    :browserEnterpriseModeSiteListLocation => String.t | nil,
-    :browserRequireFraudWarning => boolean() | nil,
-    :passwordSignInFailureCountBeforeFactoryReset => integer() | nil,
-    :workFoldersUrl => String.t | nil,
-    :browserInternetSecurityLevel => MicrosoftGraph.Model.MicrosoftGraphInternetSiteSecurityLevel.t | nil,
-    :browserBlockPopups => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :assignments =>
+            [MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationAssignment.t()] | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :deviceSettingStateSummaries =>
+            [MicrosoftGraph.Model.MicrosoftGraphSettingStateDeviceSummary.t()] | nil,
+          :deviceStatusOverview =>
+            MicrosoftGraph.Model.DeviceConfigurationDeviceStatusOverview.t() | nil,
+          :deviceStatuses =>
+            [MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceStatus.t()] | nil,
+          :displayName => String.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :userStatusOverview =>
+            MicrosoftGraph.Model.DeviceConfigurationUserStatusOverview.t() | nil,
+          :userStatuses =>
+            [MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserStatus.t()] | nil,
+          :version => integer() | nil,
+          :diagnosticsBlockDataSubmission => boolean() | nil,
+          :browserRequireHighSecurityForRestrictedSites => boolean() | nil,
+          :passwordExpirationDays => integer() | nil,
+          :browserBlockAutomaticDetectionOfIntranetSites => boolean() | nil,
+          :browserBlockAutofill => boolean() | nil,
+          :passwordBlockPicturePasswordAndPin => boolean() | nil,
+          :browserRequireFirewall => boolean() | nil,
+          :browserIntranetSecurityLevel =>
+            MicrosoftGraph.Model.MicrosoftGraphSiteSecurityLevel.t() | nil,
+          :accountsBlockAddingNonMicrosoftAccountEmail => boolean() | nil,
+          :browserBlockEnterpriseModeAccess => boolean() | nil,
+          :passwordMinimumCharacterSetCount => integer() | nil,
+          :browserLoggingReportLocation => String.t() | nil,
+          :cellularBlockDataRoaming => boolean() | nil,
+          :browserBlockPlugins => boolean() | nil,
+          :applyOnlyToWindows81 => boolean() | nil,
+          :storageRequireDeviceEncryption => boolean() | nil,
+          :passwordRequiredType =>
+            MicrosoftGraph.Model.MicrosoftGraphRequiredPasswordType.t() | nil,
+          :browserTrustedSitesSecurityLevel =>
+            MicrosoftGraph.Model.MicrosoftGraphSiteSecurityLevel.t() | nil,
+          :browserBlockJavaScript => boolean() | nil,
+          :browserBlockSingleWordEntryOnIntranetSites => boolean() | nil,
+          :browserRequireSmartScreen => boolean() | nil,
+          :updatesRequireAutomaticUpdates => boolean() | nil,
+          :passwordPreviousPasswordBlockCount => integer() | nil,
+          :browserBlockSendingDoNotTrackHeader => boolean() | nil,
+          :passwordMinutesOfInactivityBeforeScreenTimeout => integer() | nil,
+          :userAccountControlSettings =>
+            MicrosoftGraph.Model.MicrosoftGraphWindowsUserAccountControlSettings.t() | nil,
+          :passwordMinimumLength => integer() | nil,
+          :browserEnterpriseModeSiteListLocation => String.t() | nil,
+          :browserRequireFraudWarning => boolean() | nil,
+          :passwordSignInFailureCountBeforeFactoryReset => integer() | nil,
+          :workFoldersUrl => String.t() | nil,
+          :browserInternetSecurityLevel =>
+            MicrosoftGraph.Model.MicrosoftGraphInternetSiteSecurityLevel.t() | nil,
+          :browserBlockPopups => boolean() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:assignments, :list, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationAssignment)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:deviceSettingStateSummaries, :list, MicrosoftGraph.Model.MicrosoftGraphSettingStateDeviceSummary)
-     |> Deserializer.deserialize(:deviceStatusOverview, :struct, MicrosoftGraph.Model.DeviceConfigurationDeviceStatusOverview)
-     |> Deserializer.deserialize(:deviceStatuses, :list, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceStatus)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:userStatusOverview, :struct, MicrosoftGraph.Model.DeviceConfigurationUserStatusOverview)
-     |> Deserializer.deserialize(:userStatuses, :list, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserStatus)
-     |> Deserializer.deserialize(:browserIntranetSecurityLevel, :struct, MicrosoftGraph.Model.MicrosoftGraphSiteSecurityLevel)
-     |> Deserializer.deserialize(:passwordRequiredType, :struct, MicrosoftGraph.Model.MicrosoftGraphRequiredPasswordType)
-     |> Deserializer.deserialize(:browserTrustedSitesSecurityLevel, :struct, MicrosoftGraph.Model.MicrosoftGraphSiteSecurityLevel)
-     |> Deserializer.deserialize(:userAccountControlSettings, :struct, MicrosoftGraph.Model.MicrosoftGraphWindowsUserAccountControlSettings)
-     |> Deserializer.deserialize(:browserInternetSecurityLevel, :struct, MicrosoftGraph.Model.MicrosoftGraphInternetSiteSecurityLevel)
+    |> Deserializer.deserialize(
+      :assignments,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationAssignment
+    )
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :deviceSettingStateSummaries,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSettingStateDeviceSummary
+    )
+    |> Deserializer.deserialize(
+      :deviceStatusOverview,
+      :struct,
+      MicrosoftGraph.Model.DeviceConfigurationDeviceStatusOverview
+    )
+    |> Deserializer.deserialize(
+      :deviceStatuses,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceStatus
+    )
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :userStatusOverview,
+      :struct,
+      MicrosoftGraph.Model.DeviceConfigurationUserStatusOverview
+    )
+    |> Deserializer.deserialize(
+      :userStatuses,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserStatus
+    )
+    |> Deserializer.deserialize(
+      :browserIntranetSecurityLevel,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSiteSecurityLevel
+    )
+    |> Deserializer.deserialize(
+      :passwordRequiredType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphRequiredPasswordType
+    )
+    |> Deserializer.deserialize(
+      :browserTrustedSitesSecurityLevel,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSiteSecurityLevel
+    )
+    |> Deserializer.deserialize(
+      :userAccountControlSettings,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphWindowsUserAccountControlSettings
+    )
+    |> Deserializer.deserialize(
+      :browserInternetSecurityLevel,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphInternetSiteSecurityLevel
+    )
   end
 end
-

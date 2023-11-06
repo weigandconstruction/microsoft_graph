@@ -23,7 +23,10 @@ defmodule MicrosoftGraph.Api.MeOutlookUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOutlookUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_get_outlook(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphOutlookUser.t} | {:error, Tesla.Env.t}
+  @spec me_get_outlook(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphOutlookUser.t()}
+          | {:error, Tesla.Env.t()}
   def me_get_outlook(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query
@@ -60,8 +63,19 @@ defmodule MicrosoftGraph.Api.MeOutlookUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOutlookCategory.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_outlook_create_master_categories(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphOutlookCategory.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOutlookCategory.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_outlook_create_master_categories(connection, microsoft_graph_outlook_category, _opts \\ []) do
+  @spec me_outlook_create_master_categories(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphOutlookCategory.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOutlookCategory.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_outlook_create_master_categories(
+        connection,
+        microsoft_graph_outlook_category,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -94,7 +108,10 @@ defmodule MicrosoftGraph.Api.MeOutlookUser do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_outlook_delete_master_categories(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_outlook_delete_master_categories(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_outlook_delete_master_categories(connection, outlook_category_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -132,7 +149,10 @@ defmodule MicrosoftGraph.Api.MeOutlookUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOutlookCategory.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_outlook_get_master_categories(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOutlookCategory.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_outlook_get_master_categories(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOutlookCategory.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_outlook_get_master_categories(connection, outlook_category_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query
@@ -174,7 +194,10 @@ defmodule MicrosoftGraph.Api.MeOutlookUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOutlookCategoryCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_outlook_list_master_categories(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOutlookCategoryCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_outlook_list_master_categories(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOutlookCategoryCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_outlook_list_master_categories(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -215,7 +238,10 @@ defmodule MicrosoftGraph.Api.MeOutlookUser do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_outlook_master_categories_get_count7754(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_outlook_master_categories_get_count7754(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_outlook_master_categories_get_count7754(connection, opts \\ []) do
     optional_params = %{
       :"$filter" => :query
@@ -253,8 +279,21 @@ defmodule MicrosoftGraph.Api.MeOutlookUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOutlookCategory.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_outlook_update_master_categories(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphOutlookCategory.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOutlookCategory.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_outlook_update_master_categories(connection, outlook_category_id, microsoft_graph_outlook_category, _opts \\ []) do
+  @spec me_outlook_update_master_categories(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphOutlookCategory.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOutlookCategory.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_outlook_update_master_categories(
+        connection,
+        outlook_category_id,
+        microsoft_graph_outlook_category,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

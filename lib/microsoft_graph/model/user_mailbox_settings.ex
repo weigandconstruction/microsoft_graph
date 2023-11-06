@@ -21,27 +21,50 @@ defmodule MicrosoftGraph.Model.UserMailboxSettings do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :archiveFolder => String.t | nil,
-    :automaticRepliesSetting => MicrosoftGraph.Model.MicrosoftGraphMailboxSettingsAutomaticRepliesSetting.t | nil,
-    :dateFormat => String.t | nil,
-    :delegateMeetingMessageDeliveryOptions => MicrosoftGraph.Model.MicrosoftGraphMailboxSettingsDelegateMeetingMessageDeliveryOptions.t | nil,
-    :language => MicrosoftGraph.Model.MicrosoftGraphMailboxSettingsLanguage.t | nil,
-    :timeFormat => String.t | nil,
-    :timeZone => String.t | nil,
-    :userPurpose => MicrosoftGraph.Model.MicrosoftGraphMailboxSettingsUserPurpose.t | nil,
-    :workingHours => MicrosoftGraph.Model.MicrosoftGraphMailboxSettingsWorkingHours.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :archiveFolder => String.t() | nil,
+          :automaticRepliesSetting =>
+            MicrosoftGraph.Model.MicrosoftGraphMailboxSettingsAutomaticRepliesSetting.t() | nil,
+          :dateFormat => String.t() | nil,
+          :delegateMeetingMessageDeliveryOptions =>
+            MicrosoftGraph.Model.MicrosoftGraphMailboxSettingsDelegateMeetingMessageDeliveryOptions.t()
+            | nil,
+          :language => MicrosoftGraph.Model.MicrosoftGraphMailboxSettingsLanguage.t() | nil,
+          :timeFormat => String.t() | nil,
+          :timeZone => String.t() | nil,
+          :userPurpose => MicrosoftGraph.Model.MicrosoftGraphMailboxSettingsUserPurpose.t() | nil,
+          :workingHours =>
+            MicrosoftGraph.Model.MicrosoftGraphMailboxSettingsWorkingHours.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:automaticRepliesSetting, :struct, MicrosoftGraph.Model.MicrosoftGraphMailboxSettingsAutomaticRepliesSetting)
-     |> Deserializer.deserialize(:delegateMeetingMessageDeliveryOptions, :struct, MicrosoftGraph.Model.MicrosoftGraphMailboxSettingsDelegateMeetingMessageDeliveryOptions)
-     |> Deserializer.deserialize(:language, :struct, MicrosoftGraph.Model.MicrosoftGraphMailboxSettingsLanguage)
-     |> Deserializer.deserialize(:userPurpose, :struct, MicrosoftGraph.Model.MicrosoftGraphMailboxSettingsUserPurpose)
-     |> Deserializer.deserialize(:workingHours, :struct, MicrosoftGraph.Model.MicrosoftGraphMailboxSettingsWorkingHours)
+    |> Deserializer.deserialize(
+      :automaticRepliesSetting,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphMailboxSettingsAutomaticRepliesSetting
+    )
+    |> Deserializer.deserialize(
+      :delegateMeetingMessageDeliveryOptions,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphMailboxSettingsDelegateMeetingMessageDeliveryOptions
+    )
+    |> Deserializer.deserialize(
+      :language,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphMailboxSettingsLanguage
+    )
+    |> Deserializer.deserialize(
+      :userPurpose,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphMailboxSettingsUserPurpose
+    )
+    |> Deserializer.deserialize(
+      :workingHours,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphMailboxSettingsWorkingHours
+    )
   end
 end
-

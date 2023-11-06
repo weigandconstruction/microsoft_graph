@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphCustomTimeZone do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,19 +16,26 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphCustomTimeZone do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :name => String.t | nil,
-    :bias => integer() | nil,
-    :daylightOffset => MicrosoftGraph.Model.CustomTimeZoneDaylightOffset.t | nil,
-    :standardOffset => MicrosoftGraph.Model.CustomTimeZoneStandardOffset.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :name => String.t() | nil,
+          :bias => integer() | nil,
+          :daylightOffset => MicrosoftGraph.Model.CustomTimeZoneDaylightOffset.t() | nil,
+          :standardOffset => MicrosoftGraph.Model.CustomTimeZoneStandardOffset.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:daylightOffset, :struct, MicrosoftGraph.Model.CustomTimeZoneDaylightOffset)
-     |> Deserializer.deserialize(:standardOffset, :struct, MicrosoftGraph.Model.CustomTimeZoneStandardOffset)
+    |> Deserializer.deserialize(
+      :daylightOffset,
+      :struct,
+      MicrosoftGraph.Model.CustomTimeZoneDaylightOffset
+    )
+    |> Deserializer.deserialize(
+      :standardOffset,
+      :struct,
+      MicrosoftGraph.Model.CustomTimeZoneStandardOffset
+    )
   end
 end
-

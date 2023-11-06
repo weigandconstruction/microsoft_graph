@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphBrowserSite do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -25,35 +25,60 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphBrowserSite do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :allowRedirect => boolean() | nil,
-    :comment => String.t | nil,
-    :compatibilityMode => MicrosoftGraph.Model.MicrosoftGraphBrowserSiteCompatibilityMode.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :deletedDateTime => DateTime.t | nil,
-    :history => [MicrosoftGraph.Model.MicrosoftGraphBrowserSiteHistory.t] | nil,
-    :lastModifiedBy => MicrosoftGraph.Model.BrowserSiteLastModifiedBy.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :mergeType => MicrosoftGraph.Model.MicrosoftGraphBrowserSiteMergeType.t | nil,
-    :status => MicrosoftGraph.Model.MicrosoftGraphBrowserSiteStatus.t | nil,
-    :targetEnvironment => MicrosoftGraph.Model.MicrosoftGraphBrowserSiteTargetEnvironment.t | nil,
-    :webUrl => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :allowRedirect => boolean() | nil,
+          :comment => String.t() | nil,
+          :compatibilityMode =>
+            MicrosoftGraph.Model.MicrosoftGraphBrowserSiteCompatibilityMode.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :deletedDateTime => DateTime.t() | nil,
+          :history => [MicrosoftGraph.Model.MicrosoftGraphBrowserSiteHistory.t()] | nil,
+          :lastModifiedBy => MicrosoftGraph.Model.BrowserSiteLastModifiedBy.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :mergeType => MicrosoftGraph.Model.MicrosoftGraphBrowserSiteMergeType.t() | nil,
+          :status => MicrosoftGraph.Model.MicrosoftGraphBrowserSiteStatus.t() | nil,
+          :targetEnvironment =>
+            MicrosoftGraph.Model.MicrosoftGraphBrowserSiteTargetEnvironment.t() | nil,
+          :webUrl => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:compatibilityMode, :struct, MicrosoftGraph.Model.MicrosoftGraphBrowserSiteCompatibilityMode)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:deletedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:history, :list, MicrosoftGraph.Model.MicrosoftGraphBrowserSiteHistory)
-     |> Deserializer.deserialize(:lastModifiedBy, :struct, MicrosoftGraph.Model.BrowserSiteLastModifiedBy)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:mergeType, :struct, MicrosoftGraph.Model.MicrosoftGraphBrowserSiteMergeType)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.MicrosoftGraphBrowserSiteStatus)
-     |> Deserializer.deserialize(:targetEnvironment, :struct, MicrosoftGraph.Model.MicrosoftGraphBrowserSiteTargetEnvironment)
+    |> Deserializer.deserialize(
+      :compatibilityMode,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphBrowserSiteCompatibilityMode
+    )
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:deletedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :history,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphBrowserSiteHistory
+    )
+    |> Deserializer.deserialize(
+      :lastModifiedBy,
+      :struct,
+      MicrosoftGraph.Model.BrowserSiteLastModifiedBy
+    )
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :mergeType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphBrowserSiteMergeType
+    )
+    |> Deserializer.deserialize(
+      :status,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphBrowserSiteStatus
+    )
+    |> Deserializer.deserialize(
+      :targetEnvironment,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphBrowserSiteTargetEnvironment
+    )
   end
 end
-

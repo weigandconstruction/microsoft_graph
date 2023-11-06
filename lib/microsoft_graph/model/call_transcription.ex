@@ -14,17 +14,20 @@ defmodule MicrosoftGraph.Model.CallTranscription do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :state => MicrosoftGraph.Model.MicrosoftGraphCallTranscriptionState.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :state => MicrosoftGraph.Model.MicrosoftGraphCallTranscriptionState.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:state, :struct, MicrosoftGraph.Model.MicrosoftGraphCallTranscriptionState)
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :state,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallTranscriptionState
+    )
   end
 end
-

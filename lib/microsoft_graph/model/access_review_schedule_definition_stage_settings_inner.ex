@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.AccessReviewScheduleDefinitionStageSettingsInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -20,24 +20,41 @@ defmodule MicrosoftGraph.Model.AccessReviewScheduleDefinitionStageSettingsInner 
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :decisionsThatWillMoveToNextStage => [String.t] | nil,
-    :dependsOn => [String.t] | nil,
-    :durationInDays => integer() | nil,
-    :fallbackReviewers => [MicrosoftGraph.Model.AccessReviewScheduleDefinitionFallbackReviewersInner.t] | nil,
-    :recommendationInsightSettings => [MicrosoftGraph.Model.MicrosoftGraphAccessReviewStageSettingsRecommendationInsightSettingsInner.t] | nil,
-    :recommendationsEnabled => boolean() | nil,
-    :reviewers => [MicrosoftGraph.Model.AccessReviewScheduleDefinitionFallbackReviewersInner.t] | nil,
-    :stageId => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :decisionsThatWillMoveToNextStage => [String.t()] | nil,
+          :dependsOn => [String.t()] | nil,
+          :durationInDays => integer() | nil,
+          :fallbackReviewers =>
+            [MicrosoftGraph.Model.AccessReviewScheduleDefinitionFallbackReviewersInner.t()] | nil,
+          :recommendationInsightSettings =>
+            [
+              MicrosoftGraph.Model.MicrosoftGraphAccessReviewStageSettingsRecommendationInsightSettingsInner.t()
+            ]
+            | nil,
+          :recommendationsEnabled => boolean() | nil,
+          :reviewers =>
+            [MicrosoftGraph.Model.AccessReviewScheduleDefinitionFallbackReviewersInner.t()] | nil,
+          :stageId => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:fallbackReviewers, :list, MicrosoftGraph.Model.AccessReviewScheduleDefinitionFallbackReviewersInner)
-     |> Deserializer.deserialize(:recommendationInsightSettings, :list, MicrosoftGraph.Model.MicrosoftGraphAccessReviewStageSettingsRecommendationInsightSettingsInner)
-     |> Deserializer.deserialize(:reviewers, :list, MicrosoftGraph.Model.AccessReviewScheduleDefinitionFallbackReviewersInner)
+    |> Deserializer.deserialize(
+      :fallbackReviewers,
+      :list,
+      MicrosoftGraph.Model.AccessReviewScheduleDefinitionFallbackReviewersInner
+    )
+    |> Deserializer.deserialize(
+      :recommendationInsightSettings,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAccessReviewStageSettingsRecommendationInsightSettingsInner
+    )
+    |> Deserializer.deserialize(
+      :reviewers,
+      :list,
+      MicrosoftGraph.Model.AccessReviewScheduleDefinitionFallbackReviewersInner
+    )
   end
 end
-

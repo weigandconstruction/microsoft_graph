@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphBucketAggregationDefinition do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,20 +17,28 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphBucketAggregationDefinition do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :isDescending => boolean() | nil,
-    :minimumCount => integer() | nil,
-    :prefixFilter => String.t | nil,
-    :ranges => [MicrosoftGraph.Model.MicrosoftGraphBucketAggregationDefinitionRangesInner.t] | nil,
-    :sortBy => MicrosoftGraph.Model.MicrosoftGraphBucketAggregationSortProperty.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :isDescending => boolean() | nil,
+          :minimumCount => integer() | nil,
+          :prefixFilter => String.t() | nil,
+          :ranges =>
+            [MicrosoftGraph.Model.MicrosoftGraphBucketAggregationDefinitionRangesInner.t()] | nil,
+          :sortBy => MicrosoftGraph.Model.MicrosoftGraphBucketAggregationSortProperty.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:ranges, :list, MicrosoftGraph.Model.MicrosoftGraphBucketAggregationDefinitionRangesInner)
-     |> Deserializer.deserialize(:sortBy, :struct, MicrosoftGraph.Model.MicrosoftGraphBucketAggregationSortProperty)
+    |> Deserializer.deserialize(
+      :ranges,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphBucketAggregationDefinitionRangesInner
+    )
+    |> Deserializer.deserialize(
+      :sortBy,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphBucketAggregationSortProperty
+    )
   end
 end
-

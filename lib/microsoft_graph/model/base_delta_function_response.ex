@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.BaseDeltaFunctionResponse do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,12 +13,11 @@ defmodule MicrosoftGraph.Model.BaseDeltaFunctionResponse do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.deltaLink" => String.t | nil,
-    :"@odata.nextLink" => String.t | nil
-  }
+          :"@odata.deltaLink" => String.t() | nil,
+          :"@odata.nextLink" => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

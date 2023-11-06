@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.ApplicationParentalControlSettings do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :countriesBlockedForMinors => [String.t] | nil,
-    :legalAgeGroupRule => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :countriesBlockedForMinors => [String.t()] | nil,
+          :legalAgeGroupRule => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

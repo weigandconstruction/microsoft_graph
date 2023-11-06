@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphBrowserSharedCookieHistory do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -20,24 +20,33 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphBrowserSharedCookieHistory do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :comment => String.t | nil,
-    :displayName => String.t | nil,
-    :hostOnly => boolean() | nil,
-    :hostOrDomain => String.t | nil,
-    :lastModifiedBy => MicrosoftGraph.Model.MicrosoftGraphIdentitySet.t | nil,
-    :path => String.t | nil,
-    :publishedDateTime => DateTime.t | nil,
-    :sourceEnvironment => MicrosoftGraph.Model.MicrosoftGraphBrowserSharedCookieHistorySourceEnvironment.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :comment => String.t() | nil,
+          :displayName => String.t() | nil,
+          :hostOnly => boolean() | nil,
+          :hostOrDomain => String.t() | nil,
+          :lastModifiedBy => MicrosoftGraph.Model.MicrosoftGraphIdentitySet.t() | nil,
+          :path => String.t() | nil,
+          :publishedDateTime => DateTime.t() | nil,
+          :sourceEnvironment =>
+            MicrosoftGraph.Model.MicrosoftGraphBrowserSharedCookieHistorySourceEnvironment.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:lastModifiedBy, :struct, MicrosoftGraph.Model.MicrosoftGraphIdentitySet)
-     |> Deserializer.deserialize(:publishedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:sourceEnvironment, :struct, MicrosoftGraph.Model.MicrosoftGraphBrowserSharedCookieHistorySourceEnvironment)
+    |> Deserializer.deserialize(
+      :lastModifiedBy,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphIdentitySet
+    )
+    |> Deserializer.deserialize(:publishedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :sourceEnvironment,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphBrowserSharedCookieHistorySourceEnvironment
+    )
   end
 end
-

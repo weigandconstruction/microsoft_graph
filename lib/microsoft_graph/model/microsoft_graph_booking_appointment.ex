@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphBookingAppointment do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -37,45 +37,69 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphBookingAppointment do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :additionalInformation => String.t | nil,
-    :anonymousJoinWebUrl => String.t | nil,
-    :customerTimeZone => String.t | nil,
-    :customers => [MicrosoftGraph.Model.MicrosoftGraphBookingCustomerInformationBase.t] | nil,
-    :duration => String.t | nil,
-    :endDateTime => MicrosoftGraph.Model.MicrosoftGraphDateTimeTimeZone.t | nil,
-    :filledAttendeesCount => integer() | nil,
-    :isLocationOnline => boolean() | nil,
-    :joinWebUrl => String.t | nil,
-    :maximumAttendeesCount => integer() | nil,
-    :optOutOfCustomerEmail => boolean() | nil,
-    :postBuffer => String.t | nil,
-    :preBuffer => String.t | nil,
-    :price => MicrosoftGraph.Model.BookingAppointmentPrice.t | nil,
-    :priceType => MicrosoftGraph.Model.MicrosoftGraphBookingPriceType.t | nil,
-    :reminders => [MicrosoftGraph.Model.BookingServiceDefaultRemindersInner.t] | nil,
-    :selfServiceAppointmentId => String.t | nil,
-    :serviceId => String.t | nil,
-    :serviceLocation => MicrosoftGraph.Model.BookingAppointmentServiceLocation.t | nil,
-    :serviceName => String.t | nil,
-    :serviceNotes => String.t | nil,
-    :smsNotificationsEnabled => boolean() | nil,
-    :staffMemberIds => [String.t] | nil,
-    :startDateTime => MicrosoftGraph.Model.MicrosoftGraphDateTimeTimeZone.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :additionalInformation => String.t() | nil,
+          :anonymousJoinWebUrl => String.t() | nil,
+          :customerTimeZone => String.t() | nil,
+          :customers =>
+            [MicrosoftGraph.Model.MicrosoftGraphBookingCustomerInformationBase.t()] | nil,
+          :duration => String.t() | nil,
+          :endDateTime => MicrosoftGraph.Model.MicrosoftGraphDateTimeTimeZone.t() | nil,
+          :filledAttendeesCount => integer() | nil,
+          :isLocationOnline => boolean() | nil,
+          :joinWebUrl => String.t() | nil,
+          :maximumAttendeesCount => integer() | nil,
+          :optOutOfCustomerEmail => boolean() | nil,
+          :postBuffer => String.t() | nil,
+          :preBuffer => String.t() | nil,
+          :price => MicrosoftGraph.Model.BookingAppointmentPrice.t() | nil,
+          :priceType => MicrosoftGraph.Model.MicrosoftGraphBookingPriceType.t() | nil,
+          :reminders => [MicrosoftGraph.Model.BookingServiceDefaultRemindersInner.t()] | nil,
+          :selfServiceAppointmentId => String.t() | nil,
+          :serviceId => String.t() | nil,
+          :serviceLocation => MicrosoftGraph.Model.BookingAppointmentServiceLocation.t() | nil,
+          :serviceName => String.t() | nil,
+          :serviceNotes => String.t() | nil,
+          :smsNotificationsEnabled => boolean() | nil,
+          :staffMemberIds => [String.t()] | nil,
+          :startDateTime => MicrosoftGraph.Model.MicrosoftGraphDateTimeTimeZone.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:customers, :list, MicrosoftGraph.Model.MicrosoftGraphBookingCustomerInformationBase)
-     |> Deserializer.deserialize(:endDateTime, :struct, MicrosoftGraph.Model.MicrosoftGraphDateTimeTimeZone)
-     |> Deserializer.deserialize(:price, :struct, MicrosoftGraph.Model.BookingAppointmentPrice)
-     |> Deserializer.deserialize(:priceType, :struct, MicrosoftGraph.Model.MicrosoftGraphBookingPriceType)
-     |> Deserializer.deserialize(:reminders, :list, MicrosoftGraph.Model.BookingServiceDefaultRemindersInner)
-     |> Deserializer.deserialize(:serviceLocation, :struct, MicrosoftGraph.Model.BookingAppointmentServiceLocation)
-     |> Deserializer.deserialize(:startDateTime, :struct, MicrosoftGraph.Model.MicrosoftGraphDateTimeTimeZone)
+    |> Deserializer.deserialize(
+      :customers,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphBookingCustomerInformationBase
+    )
+    |> Deserializer.deserialize(
+      :endDateTime,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphDateTimeTimeZone
+    )
+    |> Deserializer.deserialize(:price, :struct, MicrosoftGraph.Model.BookingAppointmentPrice)
+    |> Deserializer.deserialize(
+      :priceType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphBookingPriceType
+    )
+    |> Deserializer.deserialize(
+      :reminders,
+      :list,
+      MicrosoftGraph.Model.BookingServiceDefaultRemindersInner
+    )
+    |> Deserializer.deserialize(
+      :serviceLocation,
+      :struct,
+      MicrosoftGraph.Model.BookingAppointmentServiceLocation
+    )
+    |> Deserializer.deserialize(
+      :startDateTime,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphDateTimeTimeZone
+    )
   end
 end
-

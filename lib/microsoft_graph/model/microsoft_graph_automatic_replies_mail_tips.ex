@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAutomaticRepliesMailTips do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,20 +16,35 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAutomaticRepliesMailTips do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :message => String.t | nil,
-    :messageLanguage => MicrosoftGraph.Model.MicrosoftGraphAutomaticRepliesMailTipsMessageLanguage.t | nil,
-    :scheduledEndTime => MicrosoftGraph.Model.MicrosoftGraphAutomaticRepliesMailTipsScheduledEndTime.t | nil,
-    :scheduledStartTime => MicrosoftGraph.Model.MicrosoftGraphAutomaticRepliesMailTipsScheduledStartTime.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :message => String.t() | nil,
+          :messageLanguage =>
+            MicrosoftGraph.Model.MicrosoftGraphAutomaticRepliesMailTipsMessageLanguage.t() | nil,
+          :scheduledEndTime =>
+            MicrosoftGraph.Model.MicrosoftGraphAutomaticRepliesMailTipsScheduledEndTime.t() | nil,
+          :scheduledStartTime =>
+            MicrosoftGraph.Model.MicrosoftGraphAutomaticRepliesMailTipsScheduledStartTime.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:messageLanguage, :struct, MicrosoftGraph.Model.MicrosoftGraphAutomaticRepliesMailTipsMessageLanguage)
-     |> Deserializer.deserialize(:scheduledEndTime, :struct, MicrosoftGraph.Model.MicrosoftGraphAutomaticRepliesMailTipsScheduledEndTime)
-     |> Deserializer.deserialize(:scheduledStartTime, :struct, MicrosoftGraph.Model.MicrosoftGraphAutomaticRepliesMailTipsScheduledStartTime)
+    |> Deserializer.deserialize(
+      :messageLanguage,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAutomaticRepliesMailTipsMessageLanguage
+    )
+    |> Deserializer.deserialize(
+      :scheduledEndTime,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAutomaticRepliesMailTipsScheduledEndTime
+    )
+    |> Deserializer.deserialize(
+      :scheduledStartTime,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAutomaticRepliesMailTipsScheduledStartTime
+    )
   end
 end
-

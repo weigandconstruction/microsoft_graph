@@ -13,15 +13,18 @@ defmodule MicrosoftGraph.Model.SimulationIncludedAccountTarget do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :type => MicrosoftGraph.Model.MicrosoftGraphAccountTargetContentType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :type => MicrosoftGraph.Model.MicrosoftGraphAccountTargetContentType.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:type, :struct, MicrosoftGraph.Model.MicrosoftGraphAccountTargetContentType)
+    |> Deserializer.deserialize(
+      :type,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAccountTargetContentType
+    )
   end
 end
-

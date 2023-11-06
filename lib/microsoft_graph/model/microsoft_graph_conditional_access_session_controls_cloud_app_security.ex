@@ -14,16 +14,20 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphConditionalAccessSessionControlsClo
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :isEnabled => boolean() | nil,
-    :cloudAppSecurityType => MicrosoftGraph.Model.CloudAppSecuritySessionControlCloudAppSecurityType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :isEnabled => boolean() | nil,
+          :cloudAppSecurityType =>
+            MicrosoftGraph.Model.CloudAppSecuritySessionControlCloudAppSecurityType.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:cloudAppSecurityType, :struct, MicrosoftGraph.Model.CloudAppSecuritySessionControlCloudAppSecurityType)
+    |> Deserializer.deserialize(
+      :cloudAppSecurityType,
+      :struct,
+      MicrosoftGraph.Model.CloudAppSecuritySessionControlCloudAppSecurityType
+    )
   end
 end
-

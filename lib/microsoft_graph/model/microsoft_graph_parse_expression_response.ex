@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphParseExpressionResponse do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,20 +17,28 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphParseExpressionResponse do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :error => MicrosoftGraph.Model.MicrosoftGraphParseExpressionResponseError.t | nil,
-    :evaluationResult => [String.t] | nil,
-    :evaluationSucceeded => boolean() | nil,
-    :parsedExpression => MicrosoftGraph.Model.MicrosoftGraphParseExpressionResponseParsedExpression.t | nil,
-    :parsingSucceeded => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :error => MicrosoftGraph.Model.MicrosoftGraphParseExpressionResponseError.t() | nil,
+          :evaluationResult => [String.t()] | nil,
+          :evaluationSucceeded => boolean() | nil,
+          :parsedExpression =>
+            MicrosoftGraph.Model.MicrosoftGraphParseExpressionResponseParsedExpression.t() | nil,
+          :parsingSucceeded => boolean() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:error, :struct, MicrosoftGraph.Model.MicrosoftGraphParseExpressionResponseError)
-     |> Deserializer.deserialize(:parsedExpression, :struct, MicrosoftGraph.Model.MicrosoftGraphParseExpressionResponseParsedExpression)
+    |> Deserializer.deserialize(
+      :error,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphParseExpressionResponseError
+    )
+    |> Deserializer.deserialize(
+      :parsedExpression,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphParseExpressionResponseParsedExpression
+    )
   end
 end
-

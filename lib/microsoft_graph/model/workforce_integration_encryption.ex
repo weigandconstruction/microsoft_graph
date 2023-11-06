@@ -14,16 +14,20 @@ defmodule MicrosoftGraph.Model.WorkforceIntegrationEncryption do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :protocol => MicrosoftGraph.Model.MicrosoftGraphWorkforceIntegrationEncryptionProtocol.t | nil,
-    :secret => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :protocol =>
+            MicrosoftGraph.Model.MicrosoftGraphWorkforceIntegrationEncryptionProtocol.t() | nil,
+          :secret => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:protocol, :struct, MicrosoftGraph.Model.MicrosoftGraphWorkforceIntegrationEncryptionProtocol)
+    |> Deserializer.deserialize(
+      :protocol,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphWorkforceIntegrationEncryptionProtocol
+    )
   end
 end
-

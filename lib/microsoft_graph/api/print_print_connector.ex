@@ -24,7 +24,10 @@ defmodule MicrosoftGraph.Api.PrintPrintConnector do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_connectors_get_count1d73(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec print_connectors_get_count1d73(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def print_connectors_get_count1d73(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -61,7 +64,14 @@ defmodule MicrosoftGraph.Api.PrintPrintConnector do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrintConnector.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_create_connectors(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphPrintConnector.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintConnector.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec print_create_connectors(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphPrintConnector.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintConnector.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def print_create_connectors(connection, microsoft_graph_print_connector, _opts \\ []) do
     request =
       %{}
@@ -95,7 +105,10 @@ defmodule MicrosoftGraph.Api.PrintPrintConnector do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_delete_connectors(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec print_delete_connectors(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def print_delete_connectors(connection, print_connector_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -134,7 +147,10 @@ defmodule MicrosoftGraph.Api.PrintPrintConnector do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrintConnector.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_get_connectors(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintConnector.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec print_get_connectors(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintConnector.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def print_get_connectors(connection, print_connector_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -179,7 +195,10 @@ defmodule MicrosoftGraph.Api.PrintPrintConnector do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrintConnectorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_list_connectors(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintConnectorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec print_list_connectors(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintConnectorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def print_list_connectors(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -224,8 +243,21 @@ defmodule MicrosoftGraph.Api.PrintPrintConnector do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrintConnector.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_update_connectors(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphPrintConnector.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintConnector.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def print_update_connectors(connection, print_connector_id, microsoft_graph_print_connector, _opts \\ []) do
+  @spec print_update_connectors(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPrintConnector.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintConnector.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def print_update_connectors(
+        connection,
+        print_connector_id,
+        microsoft_graph_print_connector,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

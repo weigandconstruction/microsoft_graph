@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphParentalControlSettings do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphParentalControlSettings do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :countriesBlockedForMinors => [String.t] | nil,
-    :legalAgeGroupRule => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :countriesBlockedForMinors => [String.t()] | nil,
+          :legalAgeGroupRule => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

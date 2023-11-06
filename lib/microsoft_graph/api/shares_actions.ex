@@ -25,8 +25,22 @@ defmodule MicrosoftGraph.Api.SharesActions do
   - `{:ok, MicrosoftGraph.Model.SitesSiteContentTypesAddCopyFromContentTypeHub2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec shares_shared_drive_item_list_content_types_add_copy(Tesla.Env.client, String.t, MicrosoftGraph.Model.SitesSiteContentTypesAddCopyRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.SitesSiteContentTypesAddCopyFromContentTypeHub2XxResponse.t} | {:error, Tesla.Env.t}
-  def shares_shared_drive_item_list_content_types_add_copy(connection, shared_drive_item_id, sites_site_content_types_add_copy_request, _opts \\ []) do
+  @spec shares_shared_drive_item_list_content_types_add_copy(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.SitesSiteContentTypesAddCopyRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.SitesSiteContentTypesAddCopyFromContentTypeHub2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def shares_shared_drive_item_list_content_types_add_copy(
+        connection,
+        shared_drive_item_id,
+        sites_site_content_types_add_copy_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -59,8 +73,22 @@ defmodule MicrosoftGraph.Api.SharesActions do
   - `{:ok, MicrosoftGraph.Model.SitesSiteContentTypesAddCopyFromContentTypeHub2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec shares_shared_drive_item_list_content_types_add_copy_from_content_type_hub(Tesla.Env.client, String.t, MicrosoftGraph.Model.SitesSiteContentTypesAddCopyFromContentTypeHubRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.SitesSiteContentTypesAddCopyFromContentTypeHub2XxResponse.t} | {:error, Tesla.Env.t}
-  def shares_shared_drive_item_list_content_types_add_copy_from_content_type_hub(connection, shared_drive_item_id, sites_site_content_types_add_copy_from_content_type_hub_request, _opts \\ []) do
+  @spec shares_shared_drive_item_list_content_types_add_copy_from_content_type_hub(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.SitesSiteContentTypesAddCopyFromContentTypeHubRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.SitesSiteContentTypesAddCopyFromContentTypeHub2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def shares_shared_drive_item_list_content_types_add_copy_from_content_type_hub(
+        connection,
+        shared_drive_item_id,
+        sites_site_content_types_add_copy_from_content_type_hub_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -94,13 +122,34 @@ defmodule MicrosoftGraph.Api.SharesActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec shares_shared_drive_item_list_content_types_content_type_associate_with_hub_sites(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.SitesSiteListsListContentTypesContentTypeAssociateWithHubSitesRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def shares_shared_drive_item_list_content_types_content_type_associate_with_hub_sites(connection, shared_drive_item_id, content_type_id, sites_site_lists_list_content_types_content_type_associate_with_hub_sites_request, _opts \\ []) do
+  @spec shares_shared_drive_item_list_content_types_content_type_associate_with_hub_sites(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.SitesSiteListsListContentTypesContentTypeAssociateWithHubSitesRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def shares_shared_drive_item_list_content_types_content_type_associate_with_hub_sites(
+        connection,
+        shared_drive_item_id,
+        content_type_id,
+        sites_site_lists_list_content_types_content_type_associate_with_hub_sites_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/shares/#{shared_drive_item_id}/list/contentTypes/#{content_type_id}/associateWithHubSites")
-      |> add_param(:body, :body, sites_site_lists_list_content_types_content_type_associate_with_hub_sites_request)
+      |> url(
+        "/shares/#{shared_drive_item_id}/list/contentTypes/#{content_type_id}/associateWithHubSites"
+      )
+      |> add_param(
+        :body,
+        :body,
+        sites_site_lists_list_content_types_content_type_associate_with_hub_sites_request
+      )
       |> Enum.into([])
 
     connection
@@ -129,13 +178,34 @@ defmodule MicrosoftGraph.Api.SharesActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec shares_shared_drive_item_list_content_types_content_type_copy_to_default_content_location(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.GroupsGroupSitesSiteContentTypesContentTypeCopyToDefaultContentLocationRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def shares_shared_drive_item_list_content_types_content_type_copy_to_default_content_location(connection, shared_drive_item_id, content_type_id, groups_group_sites_site_content_types_content_type_copy_to_default_content_location_request, _opts \\ []) do
+  @spec shares_shared_drive_item_list_content_types_content_type_copy_to_default_content_location(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.GroupsGroupSitesSiteContentTypesContentTypeCopyToDefaultContentLocationRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def shares_shared_drive_item_list_content_types_content_type_copy_to_default_content_location(
+        connection,
+        shared_drive_item_id,
+        content_type_id,
+        groups_group_sites_site_content_types_content_type_copy_to_default_content_location_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/shares/#{shared_drive_item_id}/list/contentTypes/#{content_type_id}/copyToDefaultContentLocation")
-      |> add_param(:body, :body, groups_group_sites_site_content_types_content_type_copy_to_default_content_location_request)
+      |> url(
+        "/shares/#{shared_drive_item_id}/list/contentTypes/#{content_type_id}/copyToDefaultContentLocation"
+      )
+      |> add_param(
+        :body,
+        :body,
+        groups_group_sites_site_content_types_content_type_copy_to_default_content_location_request
+      )
       |> Enum.into([])
 
     connection
@@ -163,8 +233,21 @@ defmodule MicrosoftGraph.Api.SharesActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec shares_shared_drive_item_list_content_types_content_type_publish(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def shares_shared_drive_item_list_content_types_content_type_publish(connection, shared_drive_item_id, content_type_id, _opts \\ []) do
+  @spec shares_shared_drive_item_list_content_types_content_type_publish(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def shares_shared_drive_item_list_content_types_content_type_publish(
+        connection,
+        shared_drive_item_id,
+        content_type_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -197,8 +280,21 @@ defmodule MicrosoftGraph.Api.SharesActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec shares_shared_drive_item_list_content_types_content_type_unpublish(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def shares_shared_drive_item_list_content_types_content_type_unpublish(connection, shared_drive_item_id, content_type_id, _opts \\ []) do
+  @spec shares_shared_drive_item_list_content_types_content_type_unpublish(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def shares_shared_drive_item_list_content_types_content_type_unpublish(
+        connection,
+        shared_drive_item_id,
+        content_type_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -232,12 +328,29 @@ defmodule MicrosoftGraph.Api.SharesActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec shares_shared_drive_item_list_items_list_item_document_set_versions_document_set_version_restore(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def shares_shared_drive_item_list_items_list_item_document_set_versions_document_set_version_restore(connection, shared_drive_item_id, list_item_id, document_set_version_id, _opts \\ []) do
+  @spec shares_shared_drive_item_list_items_list_item_document_set_versions_document_set_version_restore(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def shares_shared_drive_item_list_items_list_item_document_set_versions_document_set_version_restore(
+        connection,
+        shared_drive_item_id,
+        list_item_id,
+        document_set_version_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/shares/#{shared_drive_item_id}/list/items/#{list_item_id}/documentSetVersions/#{document_set_version_id}/restore")
+      |> url(
+        "/shares/#{shared_drive_item_id}/list/items/#{list_item_id}/documentSetVersions/#{document_set_version_id}/restore"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -267,12 +380,29 @@ defmodule MicrosoftGraph.Api.SharesActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec shares_shared_drive_item_list_items_list_item_versions_list_item_version_restore_version(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def shares_shared_drive_item_list_items_list_item_versions_list_item_version_restore_version(connection, shared_drive_item_id, list_item_id, list_item_version_id, _opts \\ []) do
+  @spec shares_shared_drive_item_list_items_list_item_versions_list_item_version_restore_version(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def shares_shared_drive_item_list_items_list_item_versions_list_item_version_restore_version(
+        connection,
+        shared_drive_item_id,
+        list_item_id,
+        list_item_version_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/shares/#{shared_drive_item_id}/list/items/#{list_item_id}/versions/#{list_item_version_id}/restoreVersion")
+      |> url(
+        "/shares/#{shared_drive_item_id}/list/items/#{list_item_id}/versions/#{list_item_version_id}/restoreVersion"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -301,8 +431,21 @@ defmodule MicrosoftGraph.Api.SharesActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec shares_shared_drive_item_list_subscriptions_subscription_reauthorize(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def shares_shared_drive_item_list_subscriptions_subscription_reauthorize(connection, shared_drive_item_id, subscription_id, _opts \\ []) do
+  @spec shares_shared_drive_item_list_subscriptions_subscription_reauthorize(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def shares_shared_drive_item_list_subscriptions_subscription_reauthorize(
+        connection,
+        shared_drive_item_id,
+        subscription_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -335,8 +478,21 @@ defmodule MicrosoftGraph.Api.SharesActions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfPermission.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec shares_shared_drive_item_permission_grant(Tesla.Env.client, String.t, MicrosoftGraph.Model.SitesSitePermissionsPermissionGrantRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.CollectionOfPermission.t} | {:error, Tesla.Env.t}
-  def shares_shared_drive_item_permission_grant(connection, shared_drive_item_id, sites_site_permissions_permission_grant_request, _opts \\ []) do
+  @spec shares_shared_drive_item_permission_grant(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.SitesSitePermissionsPermissionGrantRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.CollectionOfPermission.t()}
+          | {:error, Tesla.Env.t()}
+  def shares_shared_drive_item_permission_grant(
+        connection,
+        shared_drive_item_id,
+        sites_site_permissions_permission_grant_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)

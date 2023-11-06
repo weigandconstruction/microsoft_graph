@@ -23,7 +23,14 @@ defmodule MicrosoftGraph.Api.IdentityProtectionRiskyUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphRiskyUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_protection_create_risky_users(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphRiskyUser.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphRiskyUser.t} | {:error, Tesla.Env.t}
+  @spec identity_protection_create_risky_users(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphRiskyUser.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphRiskyUser.t()}
+          | {:error, Tesla.Env.t()}
   def identity_protection_create_risky_users(connection, microsoft_graph_risky_user, _opts \\ []) do
     request =
       %{}
@@ -56,7 +63,10 @@ defmodule MicrosoftGraph.Api.IdentityProtectionRiskyUser do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_protection_delete_risky_users(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_protection_delete_risky_users(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_protection_delete_risky_users(connection, risky_user_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -95,7 +105,10 @@ defmodule MicrosoftGraph.Api.IdentityProtectionRiskyUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphRiskyUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_protection_get_risky_users(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphRiskyUser.t} | {:error, Tesla.Env.t}
+  @spec identity_protection_get_risky_users(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphRiskyUser.t()}
+          | {:error, Tesla.Env.t()}
   def identity_protection_get_risky_users(connection, risky_user_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -140,7 +153,10 @@ defmodule MicrosoftGraph.Api.IdentityProtectionRiskyUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphRiskyUserCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_protection_list_risky_users(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphRiskyUserCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_protection_list_risky_users(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphRiskyUserCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_protection_list_risky_users(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -184,8 +200,21 @@ defmodule MicrosoftGraph.Api.IdentityProtectionRiskyUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphRiskyUserHistoryItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_protection_risky_users_create_history(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphRiskyUserHistoryItem.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphRiskyUserHistoryItem.t} | {:error, Tesla.Env.t}
-  def identity_protection_risky_users_create_history(connection, risky_user_id, microsoft_graph_risky_user_history_item, _opts \\ []) do
+  @spec identity_protection_risky_users_create_history(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphRiskyUserHistoryItem.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphRiskyUserHistoryItem.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_protection_risky_users_create_history(
+        connection,
+        risky_user_id,
+        microsoft_graph_risky_user_history_item,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -218,8 +247,21 @@ defmodule MicrosoftGraph.Api.IdentityProtectionRiskyUser do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_protection_risky_users_delete_history(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_protection_risky_users_delete_history(connection, risky_user_id, risky_user_history_item_id, opts \\ []) do
+  @spec identity_protection_risky_users_delete_history(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_protection_risky_users_delete_history(
+        connection,
+        risky_user_id,
+        risky_user_history_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -227,7 +269,9 @@ defmodule MicrosoftGraph.Api.IdentityProtectionRiskyUser do
     request =
       %{}
       |> method(:delete)
-      |> url("/identityProtection/riskyUsers/#{risky_user_id}/history/#{risky_user_history_item_id}")
+      |> url(
+        "/identityProtection/riskyUsers/#{risky_user_id}/history/#{risky_user_history_item_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -255,7 +299,10 @@ defmodule MicrosoftGraph.Api.IdentityProtectionRiskyUser do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_protection_risky_users_get_count2b7d(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_protection_risky_users_get_count2b7d(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_protection_risky_users_get_count2b7d(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -296,8 +343,21 @@ defmodule MicrosoftGraph.Api.IdentityProtectionRiskyUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphRiskyUserHistoryItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_protection_risky_users_get_history(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphRiskyUserHistoryItem.t} | {:error, Tesla.Env.t}
-  def identity_protection_risky_users_get_history(connection, risky_user_id, risky_user_history_item_id, opts \\ []) do
+  @spec identity_protection_risky_users_get_history(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphRiskyUserHistoryItem.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_protection_risky_users_get_history(
+        connection,
+        risky_user_id,
+        risky_user_history_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -306,7 +366,9 @@ defmodule MicrosoftGraph.Api.IdentityProtectionRiskyUser do
     request =
       %{}
       |> method(:get)
-      |> url("/identityProtection/riskyUsers/#{risky_user_id}/history/#{risky_user_history_item_id}")
+      |> url(
+        "/identityProtection/riskyUsers/#{risky_user_id}/history/#{risky_user_history_item_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -335,7 +397,14 @@ defmodule MicrosoftGraph.Api.IdentityProtectionRiskyUser do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_protection_risky_users_history_get_count33a2(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_protection_risky_users_history_get_count33a2(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_protection_risky_users_history_get_count33a2(connection, risky_user_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -381,7 +450,10 @@ defmodule MicrosoftGraph.Api.IdentityProtectionRiskyUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphRiskyUserHistoryItemCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_protection_risky_users_list_history(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphRiskyUserHistoryItemCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_protection_risky_users_list_history(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphRiskyUserHistoryItemCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_protection_risky_users_list_history(connection, risky_user_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -426,12 +498,29 @@ defmodule MicrosoftGraph.Api.IdentityProtectionRiskyUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphRiskyUserHistoryItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_protection_risky_users_update_history(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphRiskyUserHistoryItem.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphRiskyUserHistoryItem.t} | {:error, Tesla.Env.t}
-  def identity_protection_risky_users_update_history(connection, risky_user_id, risky_user_history_item_id, microsoft_graph_risky_user_history_item, _opts \\ []) do
+  @spec identity_protection_risky_users_update_history(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphRiskyUserHistoryItem.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphRiskyUserHistoryItem.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_protection_risky_users_update_history(
+        connection,
+        risky_user_id,
+        risky_user_history_item_id,
+        microsoft_graph_risky_user_history_item,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityProtection/riskyUsers/#{risky_user_id}/history/#{risky_user_history_item_id}")
+      |> url(
+        "/identityProtection/riskyUsers/#{risky_user_id}/history/#{risky_user_history_item_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_risky_user_history_item)
       |> Enum.into([])
 
@@ -459,8 +548,21 @@ defmodule MicrosoftGraph.Api.IdentityProtectionRiskyUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphRiskyUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_protection_update_risky_users(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphRiskyUser.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphRiskyUser.t} | {:error, Tesla.Env.t}
-  def identity_protection_update_risky_users(connection, risky_user_id, microsoft_graph_risky_user, _opts \\ []) do
+  @spec identity_protection_update_risky_users(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphRiskyUser.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphRiskyUser.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_protection_update_risky_users(
+        connection,
+        risky_user_id,
+        microsoft_graph_risky_user,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

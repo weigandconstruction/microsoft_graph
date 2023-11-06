@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityCvssSummary do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,18 +15,25 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityCvssSummary do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :score => MicrosoftGraph.Model.MicrosoftGraphSecurityCvssSummaryScore.t | nil,
-    :severity => MicrosoftGraph.Model.MicrosoftGraphSecurityCvssSummarySeverity.t | nil,
-    :vectorString => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :score => MicrosoftGraph.Model.MicrosoftGraphSecurityCvssSummaryScore.t() | nil,
+          :severity => MicrosoftGraph.Model.MicrosoftGraphSecurityCvssSummarySeverity.t() | nil,
+          :vectorString => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:score, :struct, MicrosoftGraph.Model.MicrosoftGraphSecurityCvssSummaryScore)
-     |> Deserializer.deserialize(:severity, :struct, MicrosoftGraph.Model.MicrosoftGraphSecurityCvssSummarySeverity)
+    |> Deserializer.deserialize(
+      :score,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityCvssSummaryScore
+    )
+    |> Deserializer.deserialize(
+      :severity,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityCvssSummarySeverity
+    )
   end
 end
-

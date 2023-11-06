@@ -17,16 +17,15 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphChangeNotificationEncryptedContent 
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :data => String.t | nil,
-    :dataKey => String.t | nil,
-    :dataSignature => String.t | nil,
-    :encryptionCertificateId => String.t | nil,
-    :encryptionCertificateThumbprint => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :data => String.t() | nil,
+          :dataKey => String.t() | nil,
+          :dataSignature => String.t() | nil,
+          :encryptionCertificateId => String.t() | nil,
+          :encryptionCertificateThumbprint => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

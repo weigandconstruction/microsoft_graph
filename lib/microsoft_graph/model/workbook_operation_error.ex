@@ -15,17 +15,21 @@ defmodule MicrosoftGraph.Model.WorkbookOperationError do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :code => String.t | nil,
-    :innerError => MicrosoftGraph.Model.MicrosoftGraphWorkbookOperationErrorInnerError.t | nil,
-    :message => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :code => String.t() | nil,
+          :innerError =>
+            MicrosoftGraph.Model.MicrosoftGraphWorkbookOperationErrorInnerError.t() | nil,
+          :message => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:innerError, :struct, MicrosoftGraph.Model.MicrosoftGraphWorkbookOperationErrorInnerError)
+    |> Deserializer.deserialize(
+      :innerError,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphWorkbookOperationErrorInnerError
+    )
   end
 end
-

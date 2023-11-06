@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfileCountryOrRegionOfOrigin do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfileCountryO
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :code => String.t | nil,
-    :label => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :code => String.t() | nil,
+          :label => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

@@ -24,7 +24,10 @@ defmodule MicrosoftGraph.Api.MeDrive do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_drives_get_count2023(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_drives_get_count2023(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_drives_get_count2023(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -63,7 +66,10 @@ defmodule MicrosoftGraph.Api.MeDrive do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDrive.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_get_drive(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDrive.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_get_drive(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDrive.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_get_drive(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -103,7 +109,10 @@ defmodule MicrosoftGraph.Api.MeDrive do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDrive.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_get_drives(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDrive.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_get_drives(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDrive.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_get_drives(connection, drive_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -148,7 +157,10 @@ defmodule MicrosoftGraph.Api.MeDrive do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDriveCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_list_drives(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_list_drives(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_list_drives(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,

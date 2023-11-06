@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphIdentityContainer do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,24 +18,45 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphIdentityContainer do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :apiConnectors => [MicrosoftGraph.Model.MicrosoftGraphIdentityApiConnector.t] | nil,
-    :b2xUserFlows => [MicrosoftGraph.Model.MicrosoftGraphB2xIdentityUserFlow.t] | nil,
-    :conditionalAccess => MicrosoftGraph.Model.IdentityContainerConditionalAccess.t | nil,
-    :identityProviders => [MicrosoftGraph.Model.MicrosoftGraphIdentityProviderBase.t] | nil,
-    :userFlowAttributes => [MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttribute.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :apiConnectors => [MicrosoftGraph.Model.MicrosoftGraphIdentityApiConnector.t()] | nil,
+          :b2xUserFlows => [MicrosoftGraph.Model.MicrosoftGraphB2xIdentityUserFlow.t()] | nil,
+          :conditionalAccess => MicrosoftGraph.Model.IdentityContainerConditionalAccess.t() | nil,
+          :identityProviders =>
+            [MicrosoftGraph.Model.MicrosoftGraphIdentityProviderBase.t()] | nil,
+          :userFlowAttributes =>
+            [MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttribute.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:apiConnectors, :list, MicrosoftGraph.Model.MicrosoftGraphIdentityApiConnector)
-     |> Deserializer.deserialize(:b2xUserFlows, :list, MicrosoftGraph.Model.MicrosoftGraphB2xIdentityUserFlow)
-     |> Deserializer.deserialize(:conditionalAccess, :struct, MicrosoftGraph.Model.IdentityContainerConditionalAccess)
-     |> Deserializer.deserialize(:identityProviders, :list, MicrosoftGraph.Model.MicrosoftGraphIdentityProviderBase)
-     |> Deserializer.deserialize(:userFlowAttributes, :list, MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttribute)
+    |> Deserializer.deserialize(
+      :apiConnectors,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphIdentityApiConnector
+    )
+    |> Deserializer.deserialize(
+      :b2xUserFlows,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphB2xIdentityUserFlow
+    )
+    |> Deserializer.deserialize(
+      :conditionalAccess,
+      :struct,
+      MicrosoftGraph.Model.IdentityContainerConditionalAccess
+    )
+    |> Deserializer.deserialize(
+      :identityProviders,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphIdentityProviderBase
+    )
+    |> Deserializer.deserialize(
+      :userFlowAttributes,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttribute
+    )
   end
 end
-

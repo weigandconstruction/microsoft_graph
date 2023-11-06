@@ -24,8 +24,21 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_administrative_units_create_extensions(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphExtension.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_administrative_units_create_extensions(connection, administrative_unit_id, microsoft_graph_extension, _opts \\ []) do
+  @spec directory_administrative_units_create_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphExtension.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_administrative_units_create_extensions(
+        connection,
+        administrative_unit_id,
+        microsoft_graph_extension,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -57,8 +70,21 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_administrative_units_create_members(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_administrative_units_create_members(connection, administrative_unit_id, microsoft_graph_directory_object, _opts \\ []) do
+  @spec directory_administrative_units_create_members(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_administrative_units_create_members(
+        connection,
+        administrative_unit_id,
+        microsoft_graph_directory_object,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -90,8 +116,21 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_administrative_units_create_ref_members(Tesla.Env.client, String.t, %{optional(String.t) => Map.t}, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_administrative_units_create_ref_members(connection, administrative_unit_id, request_body, _opts \\ []) do
+  @spec directory_administrative_units_create_ref_members(
+          Tesla.Env.client(),
+          String.t(),
+          %{optional(String.t()) => Map.t()},
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_administrative_units_create_ref_members(
+        connection,
+        administrative_unit_id,
+        request_body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -124,8 +163,21 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphScopedRoleMembership.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_administrative_units_create_scoped_role_members(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphScopedRoleMembership.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphScopedRoleMembership.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_administrative_units_create_scoped_role_members(connection, administrative_unit_id, microsoft_graph_scoped_role_membership, _opts \\ []) do
+  @spec directory_administrative_units_create_scoped_role_members(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphScopedRoleMembership.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphScopedRoleMembership.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_administrative_units_create_scoped_role_members(
+        connection,
+        administrative_unit_id,
+        microsoft_graph_scoped_role_membership,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -158,8 +210,21 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_administrative_units_delete_extensions(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_administrative_units_delete_extensions(connection, administrative_unit_id, extension_id, opts \\ []) do
+  @spec directory_administrative_units_delete_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_administrative_units_delete_extensions(
+        connection,
+        administrative_unit_id,
+        extension_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -167,7 +232,9 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
     request =
       %{}
       |> method(:delete)
-      |> url("/directory/administrativeUnits/#{administrative_unit_id}/extensions/#{extension_id}")
+      |> url(
+        "/directory/administrativeUnits/#{administrative_unit_id}/extensions/#{extension_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -198,8 +265,21 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_administrative_units_delete_ref_members(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_administrative_units_delete_ref_members(connection, administrative_unit_id, directory_object_id, opts \\ []) do
+  @spec directory_administrative_units_delete_ref_members(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_administrative_units_delete_ref_members(
+        connection,
+        administrative_unit_id,
+        directory_object_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers,
       :"@id" => :query
@@ -208,7 +288,9 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
     request =
       %{}
       |> method(:delete)
-      |> url("/directory/administrativeUnits/#{administrative_unit_id}/members/#{directory_object_id}/$ref")
+      |> url(
+        "/directory/administrativeUnits/#{administrative_unit_id}/members/#{directory_object_id}/$ref"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -238,8 +320,21 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_administrative_units_delete_scoped_role_members(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_administrative_units_delete_scoped_role_members(connection, administrative_unit_id, scoped_role_membership_id, opts \\ []) do
+  @spec directory_administrative_units_delete_scoped_role_members(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_administrative_units_delete_scoped_role_members(
+        connection,
+        administrative_unit_id,
+        scoped_role_membership_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -247,7 +342,9 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
     request =
       %{}
       |> method(:delete)
-      |> url("/directory/administrativeUnits/#{administrative_unit_id}/scopedRoleMembers/#{scoped_role_membership_id}")
+      |> url(
+        "/directory/administrativeUnits/#{administrative_unit_id}/scopedRoleMembers/#{scoped_role_membership_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -276,8 +373,19 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_administrative_units_extensions_get_count48cb(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_administrative_units_extensions_get_count48cb(connection, administrative_unit_id, opts \\ []) do
+  @spec directory_administrative_units_extensions_get_count48cb(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_administrative_units_extensions_get_count48cb(
+        connection,
+        administrative_unit_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -314,7 +422,10 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_administrative_units_get_count_a5a1(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec directory_administrative_units_get_count_a5a1(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def directory_administrative_units_get_count_a5a1(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -355,8 +466,21 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_administrative_units_get_extensions(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_administrative_units_get_extensions(connection, administrative_unit_id, extension_id, opts \\ []) do
+  @spec directory_administrative_units_get_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_administrative_units_get_extensions(
+        connection,
+        administrative_unit_id,
+        extension_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -365,7 +489,9 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
     request =
       %{}
       |> method(:get)
-      |> url("/directory/administrativeUnits/#{administrative_unit_id}/extensions/#{extension_id}")
+      |> url(
+        "/directory/administrativeUnits/#{administrative_unit_id}/extensions/#{extension_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -396,8 +522,21 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphApplication.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_administrative_units_get_members_as_application(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphApplication.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_administrative_units_get_members_as_application(connection, administrative_unit_id, directory_object_id, opts \\ []) do
+  @spec directory_administrative_units_get_members_as_application(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphApplication.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_administrative_units_get_members_as_application(
+        connection,
+        administrative_unit_id,
+        directory_object_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$select" => :query,
@@ -407,7 +546,9 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
     request =
       %{}
       |> method(:get)
-      |> url("/directory/administrativeUnits/#{administrative_unit_id}/members/#{directory_object_id}/graph.application")
+      |> url(
+        "/directory/administrativeUnits/#{administrative_unit_id}/members/#{directory_object_id}/graph.application"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -438,8 +579,21 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDevice.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_administrative_units_get_members_as_device(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDevice.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_administrative_units_get_members_as_device(connection, administrative_unit_id, directory_object_id, opts \\ []) do
+  @spec directory_administrative_units_get_members_as_device(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDevice.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_administrative_units_get_members_as_device(
+        connection,
+        administrative_unit_id,
+        directory_object_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$select" => :query,
@@ -449,7 +603,9 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
     request =
       %{}
       |> method(:get)
-      |> url("/directory/administrativeUnits/#{administrative_unit_id}/members/#{directory_object_id}/graph.device")
+      |> url(
+        "/directory/administrativeUnits/#{administrative_unit_id}/members/#{directory_object_id}/graph.device"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -480,8 +636,21 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_administrative_units_get_members_as_group(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_administrative_units_get_members_as_group(connection, administrative_unit_id, directory_object_id, opts \\ []) do
+  @spec directory_administrative_units_get_members_as_group(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_administrative_units_get_members_as_group(
+        connection,
+        administrative_unit_id,
+        directory_object_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$select" => :query,
@@ -491,7 +660,9 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
     request =
       %{}
       |> method(:get)
-      |> url("/directory/administrativeUnits/#{administrative_unit_id}/members/#{directory_object_id}/graph.group")
+      |> url(
+        "/directory/administrativeUnits/#{administrative_unit_id}/members/#{directory_object_id}/graph.group"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -522,8 +693,21 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOrgContact.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_administrative_units_get_members_as_org_contact(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphOrgContact.t} | {:error, Tesla.Env.t}
-  def directory_administrative_units_get_members_as_org_contact(connection, administrative_unit_id, directory_object_id, opts \\ []) do
+  @spec directory_administrative_units_get_members_as_org_contact(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphOrgContact.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_administrative_units_get_members_as_org_contact(
+        connection,
+        administrative_unit_id,
+        directory_object_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$select" => :query,
@@ -533,7 +717,9 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
     request =
       %{}
       |> method(:get)
-      |> url("/directory/administrativeUnits/#{administrative_unit_id}/members/#{directory_object_id}/graph.orgContact")
+      |> url(
+        "/directory/administrativeUnits/#{administrative_unit_id}/members/#{directory_object_id}/graph.orgContact"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -564,8 +750,21 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServicePrincipal.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_administrative_units_get_members_as_service_principal(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServicePrincipal.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_administrative_units_get_members_as_service_principal(connection, administrative_unit_id, directory_object_id, opts \\ []) do
+  @spec directory_administrative_units_get_members_as_service_principal(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServicePrincipal.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_administrative_units_get_members_as_service_principal(
+        connection,
+        administrative_unit_id,
+        directory_object_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$select" => :query,
@@ -575,7 +774,9 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
     request =
       %{}
       |> method(:get)
-      |> url("/directory/administrativeUnits/#{administrative_unit_id}/members/#{directory_object_id}/graph.servicePrincipal")
+      |> url(
+        "/directory/administrativeUnits/#{administrative_unit_id}/members/#{directory_object_id}/graph.servicePrincipal"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -606,8 +807,21 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_administrative_units_get_members_as_user(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_administrative_units_get_members_as_user(connection, administrative_unit_id, directory_object_id, opts \\ []) do
+  @spec directory_administrative_units_get_members_as_user(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_administrative_units_get_members_as_user(
+        connection,
+        administrative_unit_id,
+        directory_object_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$select" => :query,
@@ -617,7 +831,9 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
     request =
       %{}
       |> method(:get)
-      |> url("/directory/administrativeUnits/#{administrative_unit_id}/members/#{directory_object_id}/graph.user")
+      |> url(
+        "/directory/administrativeUnits/#{administrative_unit_id}/members/#{directory_object_id}/graph.user"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -648,8 +864,21 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphScopedRoleMembership.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_administrative_units_get_scoped_role_members(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphScopedRoleMembership.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_administrative_units_get_scoped_role_members(connection, administrative_unit_id, scoped_role_membership_id, opts \\ []) do
+  @spec directory_administrative_units_get_scoped_role_members(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphScopedRoleMembership.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_administrative_units_get_scoped_role_members(
+        connection,
+        administrative_unit_id,
+        scoped_role_membership_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -658,7 +887,9 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
     request =
       %{}
       |> method(:get)
-      |> url("/directory/administrativeUnits/#{administrative_unit_id}/scopedRoleMembers/#{scoped_role_membership_id}")
+      |> url(
+        "/directory/administrativeUnits/#{administrative_unit_id}/scopedRoleMembers/#{scoped_role_membership_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -694,8 +925,15 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_administrative_units_list_extensions(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionCollectionResponse.t} | {:error, Tesla.Env.t}
-  def directory_administrative_units_list_extensions(connection, administrative_unit_id, opts \\ []) do
+  @spec directory_administrative_units_list_extensions(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_administrative_units_list_extensions(
+        connection,
+        administrative_unit_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -747,7 +985,10 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_administrative_units_list_members(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec directory_administrative_units_list_members(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def directory_administrative_units_list_members(connection, administrative_unit_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -800,8 +1041,19 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphApplicationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_administrative_units_list_members_as_application(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphApplicationCollectionResponse.t} | {:error, Tesla.Env.t}
-  def directory_administrative_units_list_members_as_application(connection, administrative_unit_id, opts \\ []) do
+  @spec directory_administrative_units_list_members_as_application(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphApplicationCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_administrative_units_list_members_as_application(
+        connection,
+        administrative_unit_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$top" => :query,
@@ -853,8 +1105,19 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_administrative_units_list_members_as_device(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_administrative_units_list_members_as_device(connection, administrative_unit_id, opts \\ []) do
+  @spec directory_administrative_units_list_members_as_device(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_administrative_units_list_members_as_device(
+        connection,
+        administrative_unit_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$top" => :query,
@@ -906,8 +1169,19 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphGroupCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_administrative_units_list_members_as_group(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphGroupCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_administrative_units_list_members_as_group(connection, administrative_unit_id, opts \\ []) do
+  @spec directory_administrative_units_list_members_as_group(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphGroupCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_administrative_units_list_members_as_group(
+        connection,
+        administrative_unit_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$top" => :query,
@@ -959,8 +1233,19 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOrgContactCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_administrative_units_list_members_as_org_contact(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOrgContactCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_administrative_units_list_members_as_org_contact(connection, administrative_unit_id, opts \\ []) do
+  @spec directory_administrative_units_list_members_as_org_contact(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOrgContactCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_administrative_units_list_members_as_org_contact(
+        connection,
+        administrative_unit_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$top" => :query,
@@ -1012,8 +1297,19 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServicePrincipalCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_administrative_units_list_members_as_service_principal(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServicePrincipalCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_administrative_units_list_members_as_service_principal(connection, administrative_unit_id, opts \\ []) do
+  @spec directory_administrative_units_list_members_as_service_principal(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServicePrincipalCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_administrative_units_list_members_as_service_principal(
+        connection,
+        administrative_unit_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$top" => :query,
@@ -1029,7 +1325,9 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
     request =
       %{}
       |> method(:get)
-      |> url("/directory/administrativeUnits/#{administrative_unit_id}/members/graph.servicePrincipal")
+      |> url(
+        "/directory/administrativeUnits/#{administrative_unit_id}/members/graph.servicePrincipal"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1065,8 +1363,19 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_administrative_units_list_members_as_user(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUserCollectionResponse.t} | {:error, Tesla.Env.t}
-  def directory_administrative_units_list_members_as_user(connection, administrative_unit_id, opts \\ []) do
+  @spec directory_administrative_units_list_members_as_user(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUserCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_administrative_units_list_members_as_user(
+        connection,
+        administrative_unit_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$top" => :query,
@@ -1117,8 +1426,15 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
   - `{:ok, MicrosoftGraph.Model.StringCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_administrative_units_list_ref_members(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.StringCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_administrative_units_list_ref_members(connection, administrative_unit_id, opts \\ []) do
+  @spec directory_administrative_units_list_ref_members(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.StringCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_administrative_units_list_ref_members(
+        connection,
+        administrative_unit_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$top" => :query,
@@ -1168,8 +1484,19 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphScopedRoleMembershipCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_administrative_units_list_scoped_role_members(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphScopedRoleMembershipCollectionResponse.t} | {:error, Tesla.Env.t}
-  def directory_administrative_units_list_scoped_role_members(connection, administrative_unit_id, opts \\ []) do
+  @spec directory_administrative_units_list_scoped_role_members(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphScopedRoleMembershipCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_administrative_units_list_scoped_role_members(
+        connection,
+        administrative_unit_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1214,8 +1541,19 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_administrative_units_members_get_count777a(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_administrative_units_members_get_count777a(connection, administrative_unit_id, opts \\ []) do
+  @spec directory_administrative_units_members_get_count777a(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_administrative_units_members_get_count777a(
+        connection,
+        administrative_unit_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$search" => :query,
@@ -1255,8 +1593,19 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_administrative_units_members_get_count_as_application12bb(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_administrative_units_members_get_count_as_application12bb(connection, administrative_unit_id, opts \\ []) do
+  @spec directory_administrative_units_members_get_count_as_application12bb(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_administrative_units_members_get_count_as_application12bb(
+        connection,
+        administrative_unit_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$search" => :query,
@@ -1266,7 +1615,9 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
     request =
       %{}
       |> method(:get)
-      |> url("/directory/administrativeUnits/#{administrative_unit_id}/members/graph.application/$count")
+      |> url(
+        "/directory/administrativeUnits/#{administrative_unit_id}/members/graph.application/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1296,8 +1647,19 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_administrative_units_members_get_count_as_device_a313(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_administrative_units_members_get_count_as_device_a313(connection, administrative_unit_id, opts \\ []) do
+  @spec directory_administrative_units_members_get_count_as_device_a313(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_administrative_units_members_get_count_as_device_a313(
+        connection,
+        administrative_unit_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$search" => :query,
@@ -1307,7 +1669,9 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
     request =
       %{}
       |> method(:get)
-      |> url("/directory/administrativeUnits/#{administrative_unit_id}/members/graph.device/$count")
+      |> url(
+        "/directory/administrativeUnits/#{administrative_unit_id}/members/graph.device/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1337,8 +1701,19 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_administrative_units_members_get_count_as_group_af07(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_administrative_units_members_get_count_as_group_af07(connection, administrative_unit_id, opts \\ []) do
+  @spec directory_administrative_units_members_get_count_as_group_af07(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_administrative_units_members_get_count_as_group_af07(
+        connection,
+        administrative_unit_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$search" => :query,
@@ -1348,7 +1723,9 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
     request =
       %{}
       |> method(:get)
-      |> url("/directory/administrativeUnits/#{administrative_unit_id}/members/graph.group/$count")
+      |> url(
+        "/directory/administrativeUnits/#{administrative_unit_id}/members/graph.group/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1378,8 +1755,19 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_administrative_units_members_get_count_as_org_contact7392(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_administrative_units_members_get_count_as_org_contact7392(connection, administrative_unit_id, opts \\ []) do
+  @spec directory_administrative_units_members_get_count_as_org_contact7392(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_administrative_units_members_get_count_as_org_contact7392(
+        connection,
+        administrative_unit_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$search" => :query,
@@ -1389,7 +1777,9 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
     request =
       %{}
       |> method(:get)
-      |> url("/directory/administrativeUnits/#{administrative_unit_id}/members/graph.orgContact/$count")
+      |> url(
+        "/directory/administrativeUnits/#{administrative_unit_id}/members/graph.orgContact/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1419,8 +1809,19 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_administrative_units_members_get_count_as_service_principal1d41(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_administrative_units_members_get_count_as_service_principal1d41(connection, administrative_unit_id, opts \\ []) do
+  @spec directory_administrative_units_members_get_count_as_service_principal1d41(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_administrative_units_members_get_count_as_service_principal1d41(
+        connection,
+        administrative_unit_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$search" => :query,
@@ -1430,7 +1831,9 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
     request =
       %{}
       |> method(:get)
-      |> url("/directory/administrativeUnits/#{administrative_unit_id}/members/graph.servicePrincipal/$count")
+      |> url(
+        "/directory/administrativeUnits/#{administrative_unit_id}/members/graph.servicePrincipal/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1460,8 +1863,19 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_administrative_units_members_get_count_as_user5d18(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_administrative_units_members_get_count_as_user5d18(connection, administrative_unit_id, opts \\ []) do
+  @spec directory_administrative_units_members_get_count_as_user5d18(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_administrative_units_members_get_count_as_user5d18(
+        connection,
+        administrative_unit_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$search" => :query,
@@ -1500,8 +1914,19 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_administrative_units_scoped_role_members_get_count_cb3a(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_administrative_units_scoped_role_members_get_count_cb3a(connection, administrative_unit_id, opts \\ []) do
+  @spec directory_administrative_units_scoped_role_members_get_count_cb3a(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_administrative_units_scoped_role_members_get_count_cb3a(
+        connection,
+        administrative_unit_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1539,12 +1964,29 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_administrative_units_update_extensions(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphExtension.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_administrative_units_update_extensions(connection, administrative_unit_id, extension_id, microsoft_graph_extension, _opts \\ []) do
+  @spec directory_administrative_units_update_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphExtension.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_administrative_units_update_extensions(
+        connection,
+        administrative_unit_id,
+        extension_id,
+        microsoft_graph_extension,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/directory/administrativeUnits/#{administrative_unit_id}/extensions/#{extension_id}")
+      |> url(
+        "/directory/administrativeUnits/#{administrative_unit_id}/extensions/#{extension_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_extension)
       |> Enum.into([])
 
@@ -1573,12 +2015,29 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphScopedRoleMembership.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_administrative_units_update_scoped_role_members(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphScopedRoleMembership.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphScopedRoleMembership.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_administrative_units_update_scoped_role_members(connection, administrative_unit_id, scoped_role_membership_id, microsoft_graph_scoped_role_membership, _opts \\ []) do
+  @spec directory_administrative_units_update_scoped_role_members(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphScopedRoleMembership.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphScopedRoleMembership.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_administrative_units_update_scoped_role_members(
+        connection,
+        administrative_unit_id,
+        scoped_role_membership_id,
+        microsoft_graph_scoped_role_membership,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/directory/administrativeUnits/#{administrative_unit_id}/scopedRoleMembers/#{scoped_role_membership_id}")
+      |> url(
+        "/directory/administrativeUnits/#{administrative_unit_id}/scopedRoleMembers/#{scoped_role_membership_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_scoped_role_membership)
       |> Enum.into([])
 
@@ -1606,8 +2065,19 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAdministrativeUnit.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_create_administrative_units(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphAdministrativeUnit.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAdministrativeUnit.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_create_administrative_units(connection, microsoft_graph_administrative_unit, _opts \\ []) do
+  @spec directory_create_administrative_units(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphAdministrativeUnit.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAdministrativeUnit.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_create_administrative_units(
+        connection,
+        microsoft_graph_administrative_unit,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1640,7 +2110,10 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_delete_administrative_units(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec directory_delete_administrative_units(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def directory_delete_administrative_units(connection, administrative_unit_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -1679,7 +2152,10 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAdministrativeUnit.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_get_administrative_units(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAdministrativeUnit.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec directory_get_administrative_units(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAdministrativeUnit.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def directory_get_administrative_units(connection, administrative_unit_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -1724,7 +2200,10 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAdministrativeUnitCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_list_administrative_units(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAdministrativeUnitCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec directory_list_administrative_units(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAdministrativeUnitCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def directory_list_administrative_units(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1769,8 +2248,21 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAdministrativeUnit.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_update_administrative_units(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphAdministrativeUnit.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAdministrativeUnit.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_update_administrative_units(connection, administrative_unit_id, microsoft_graph_administrative_unit, _opts \\ []) do
+  @spec directory_update_administrative_units(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAdministrativeUnit.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAdministrativeUnit.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_update_administrative_units(
+        connection,
+        administrative_unit_id,
+        microsoft_graph_administrative_unit,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

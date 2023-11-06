@@ -28,27 +28,26 @@ defmodule MicrosoftGraph.Model.DriveItemAudio do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :album => String.t | nil,
-    :albumArtist => String.t | nil,
-    :artist => String.t | nil,
-    :bitrate => integer() | nil,
-    :composers => String.t | nil,
-    :copyright => String.t | nil,
-    :disc => integer() | nil,
-    :discCount => integer() | nil,
-    :duration => integer() | nil,
-    :genre => String.t | nil,
-    :hasDrm => boolean() | nil,
-    :isVariableBitrate => boolean() | nil,
-    :title => String.t | nil,
-    :track => integer() | nil,
-    :trackCount => integer() | nil,
-    :year => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :album => String.t() | nil,
+          :albumArtist => String.t() | nil,
+          :artist => String.t() | nil,
+          :bitrate => integer() | nil,
+          :composers => String.t() | nil,
+          :copyright => String.t() | nil,
+          :disc => integer() | nil,
+          :discCount => integer() | nil,
+          :duration => integer() | nil,
+          :genre => String.t() | nil,
+          :hasDrm => boolean() | nil,
+          :isVariableBitrate => boolean() | nil,
+          :title => String.t() | nil,
+          :track => integer() | nil,
+          :trackCount => integer() | nil,
+          :year => integer() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

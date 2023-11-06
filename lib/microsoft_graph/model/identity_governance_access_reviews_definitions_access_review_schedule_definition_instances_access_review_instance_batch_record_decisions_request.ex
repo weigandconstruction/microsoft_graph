@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.IdentityGovernanceAccessReviewsDefinitionsAccessReviewScheduleDefinitionInstancesAccessReviewInstanceBatchRecordDecisionsRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.IdentityGovernanceAccessReviewsDefinitionsAccessR
   ]
 
   @type t :: %__MODULE__{
-    :decision => String.t | nil,
-    :justification => String.t | nil,
-    :principalId => String.t | nil,
-    :resourceId => String.t | nil
-  }
+          :decision => String.t() | nil,
+          :justification => String.t() | nil,
+          :principalId => String.t() | nil,
+          :resourceId => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

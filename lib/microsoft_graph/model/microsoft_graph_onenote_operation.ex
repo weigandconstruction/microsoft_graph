@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphOnenoteOperation do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -20,25 +20,24 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphOnenoteOperation do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :lastActionDateTime => DateTime.t | nil,
-    :status => MicrosoftGraph.Model.OperationStatus.t | nil,
-    :error => MicrosoftGraph.Model.OnenoteOperationError.t | nil,
-    :percentComplete => String.t | nil,
-    :resourceId => String.t | nil,
-    :resourceLocation => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :lastActionDateTime => DateTime.t() | nil,
+          :status => MicrosoftGraph.Model.OperationStatus.t() | nil,
+          :error => MicrosoftGraph.Model.OnenoteOperationError.t() | nil,
+          :percentComplete => String.t() | nil,
+          :resourceId => String.t() | nil,
+          :resourceLocation => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastActionDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.OperationStatus)
-     |> Deserializer.deserialize(:error, :struct, MicrosoftGraph.Model.OnenoteOperationError)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastActionDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.OperationStatus)
+    |> Deserializer.deserialize(:error, :struct, MicrosoftGraph.Model.OnenoteOperationError)
   end
 end
-

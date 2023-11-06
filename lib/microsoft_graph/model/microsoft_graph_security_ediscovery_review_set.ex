@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityEdiscoveryReviewSet do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,21 +17,25 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityEdiscoveryReviewSet do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :createdBy => MicrosoftGraph.Model.CaseLastModifiedBy.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :displayName => String.t | nil,
-    :queries => [MicrosoftGraph.Model.MicrosoftGraphSecurityEdiscoveryReviewSetQuery.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :createdBy => MicrosoftGraph.Model.CaseLastModifiedBy.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :displayName => String.t() | nil,
+          :queries =>
+            [MicrosoftGraph.Model.MicrosoftGraphSecurityEdiscoveryReviewSetQuery.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.CaseLastModifiedBy)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:queries, :list, MicrosoftGraph.Model.MicrosoftGraphSecurityEdiscoveryReviewSetQuery)
+    |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.CaseLastModifiedBy)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :queries,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityEdiscoveryReviewSetQuery
+    )
   end
 end
-

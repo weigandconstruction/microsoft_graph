@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAccessReviewHistoryInstance do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -20,27 +20,30 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAccessReviewHistoryInstance do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :downloadUri => String.t | nil,
-    :expirationDateTime => DateTime.t | nil,
-    :fulfilledDateTime => DateTime.t | nil,
-    :reviewHistoryPeriodEndDateTime => DateTime.t | nil,
-    :reviewHistoryPeriodStartDateTime => DateTime.t | nil,
-    :runDateTime => DateTime.t | nil,
-    :status => MicrosoftGraph.Model.AccessReviewHistoryInstanceStatus.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :downloadUri => String.t() | nil,
+          :expirationDateTime => DateTime.t() | nil,
+          :fulfilledDateTime => DateTime.t() | nil,
+          :reviewHistoryPeriodEndDateTime => DateTime.t() | nil,
+          :reviewHistoryPeriodStartDateTime => DateTime.t() | nil,
+          :runDateTime => DateTime.t() | nil,
+          :status => MicrosoftGraph.Model.AccessReviewHistoryInstanceStatus.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:expirationDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:fulfilledDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:reviewHistoryPeriodEndDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:reviewHistoryPeriodStartDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:runDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.AccessReviewHistoryInstanceStatus)
+    |> Deserializer.deserialize(:expirationDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:fulfilledDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:reviewHistoryPeriodEndDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:reviewHistoryPeriodStartDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:runDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :status,
+      :struct,
+      MicrosoftGraph.Model.AccessReviewHistoryInstanceStatus
+    )
   end
 end
-

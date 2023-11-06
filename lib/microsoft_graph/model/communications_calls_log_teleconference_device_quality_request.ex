@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.CommunicationsCallsLogTeleconferenceDeviceQualityRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,14 +12,17 @@ defmodule MicrosoftGraph.Model.CommunicationsCallsLogTeleconferenceDeviceQuality
   ]
 
   @type t :: %__MODULE__{
-    :quality => MicrosoftGraph.Model.MicrosoftGraphTeleconferenceDeviceQuality.t | nil
-  }
+          :quality => MicrosoftGraph.Model.MicrosoftGraphTeleconferenceDeviceQuality.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:quality, :struct, MicrosoftGraph.Model.MicrosoftGraphTeleconferenceDeviceQuality)
+    |> Deserializer.deserialize(
+      :quality,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphTeleconferenceDeviceQuality
+    )
   end
 end
-

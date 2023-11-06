@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphApprovalSettingsApprovalStagesInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,21 +18,32 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphApprovalSettingsApprovalStagesInner
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :approvalStageTimeOutInDays => integer() | nil,
-    :escalationApprovers => [MicrosoftGraph.Model.MicrosoftGraphUnifiedApprovalStageEscalationApproversInner.t] | nil,
-    :escalationTimeInMinutes => integer() | nil,
-    :isApproverJustificationRequired => boolean() | nil,
-    :isEscalationEnabled => boolean() | nil,
-    :primaryApprovers => [MicrosoftGraph.Model.MicrosoftGraphUnifiedApprovalStageEscalationApproversInner.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :approvalStageTimeOutInDays => integer() | nil,
+          :escalationApprovers =>
+            [MicrosoftGraph.Model.MicrosoftGraphUnifiedApprovalStageEscalationApproversInner.t()]
+            | nil,
+          :escalationTimeInMinutes => integer() | nil,
+          :isApproverJustificationRequired => boolean() | nil,
+          :isEscalationEnabled => boolean() | nil,
+          :primaryApprovers =>
+            [MicrosoftGraph.Model.MicrosoftGraphUnifiedApprovalStageEscalationApproversInner.t()]
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:escalationApprovers, :list, MicrosoftGraph.Model.MicrosoftGraphUnifiedApprovalStageEscalationApproversInner)
-     |> Deserializer.deserialize(:primaryApprovers, :list, MicrosoftGraph.Model.MicrosoftGraphUnifiedApprovalStageEscalationApproversInner)
+    |> Deserializer.deserialize(
+      :escalationApprovers,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphUnifiedApprovalStageEscalationApproversInner
+    )
+    |> Deserializer.deserialize(
+      :primaryApprovers,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphUnifiedApprovalStageEscalationApproversInner
+    )
   end
 end
-

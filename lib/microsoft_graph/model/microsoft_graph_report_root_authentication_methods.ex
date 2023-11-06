@@ -14,16 +14,20 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphReportRootAuthenticationMethods do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :userRegistrationDetails => [MicrosoftGraph.Model.MicrosoftGraphUserRegistrationDetails.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :userRegistrationDetails =>
+            [MicrosoftGraph.Model.MicrosoftGraphUserRegistrationDetails.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:userRegistrationDetails, :list, MicrosoftGraph.Model.MicrosoftGraphUserRegistrationDetails)
+    |> Deserializer.deserialize(
+      :userRegistrationDetails,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphUserRegistrationDetails
+    )
   end
 end
-

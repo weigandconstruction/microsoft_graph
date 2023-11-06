@@ -24,8 +24,19 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementIosManagedAppProtection do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIosManagedAppProtection.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_create_ios_managed_app_protections(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphIosManagedAppProtection.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIosManagedAppProtection.t} | {:error, Tesla.Env.t}
-  def device_app_management_create_ios_managed_app_protections(connection, microsoft_graph_ios_managed_app_protection, _opts \\ []) do
+  @spec device_app_management_create_ios_managed_app_protections(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphIosManagedAppProtection.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphIosManagedAppProtection.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_create_ios_managed_app_protections(
+        connection,
+        microsoft_graph_ios_managed_app_protection,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -58,8 +69,19 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementIosManagedAppProtection do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_delete_ios_managed_app_protections(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_delete_ios_managed_app_protections(connection, ios_managed_app_protection_id, opts \\ []) do
+  @spec device_app_management_delete_ios_managed_app_protections(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_delete_ios_managed_app_protections(
+        connection,
+        ios_managed_app_protection_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -97,8 +119,19 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementIosManagedAppProtection do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIosManagedAppProtection.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_get_ios_managed_app_protections(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIosManagedAppProtection.t} | {:error, Tesla.Env.t}
-  def device_app_management_get_ios_managed_app_protections(connection, ios_managed_app_protection_id, opts \\ []) do
+  @spec device_app_management_get_ios_managed_app_protections(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphIosManagedAppProtection.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_get_ios_managed_app_protections(
+        connection,
+        ios_managed_app_protection_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -136,8 +169,19 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementIosManagedAppProtection do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_ios_managed_app_protections_apps_get_count33d5(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_ios_managed_app_protections_apps_get_count33d5(connection, ios_managed_app_protection_id, opts \\ []) do
+  @spec device_app_management_ios_managed_app_protections_apps_get_count33d5(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_ios_managed_app_protections_apps_get_count33d5(
+        connection,
+        ios_managed_app_protection_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -146,7 +190,9 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementIosManagedAppProtection do
     request =
       %{}
       |> method(:get)
-      |> url("/deviceAppManagement/iosManagedAppProtections/#{ios_managed_app_protection_id}/apps/$count")
+      |> url(
+        "/deviceAppManagement/iosManagedAppProtections/#{ios_managed_app_protection_id}/apps/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -175,8 +221,19 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementIosManagedAppProtection do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_ios_managed_app_protections_assignments_get_count619f(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_ios_managed_app_protections_assignments_get_count619f(connection, ios_managed_app_protection_id, opts \\ []) do
+  @spec device_app_management_ios_managed_app_protections_assignments_get_count619f(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_ios_managed_app_protections_assignments_get_count619f(
+        connection,
+        ios_managed_app_protection_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -185,7 +242,9 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementIosManagedAppProtection do
     request =
       %{}
       |> method(:get)
-      |> url("/deviceAppManagement/iosManagedAppProtections/#{ios_managed_app_protection_id}/assignments/$count")
+      |> url(
+        "/deviceAppManagement/iosManagedAppProtections/#{ios_managed_app_protection_id}/assignments/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -214,12 +273,27 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementIosManagedAppProtection do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphManagedMobileApp.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_ios_managed_app_protections_create_apps(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphManagedMobileApp.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphManagedMobileApp.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_ios_managed_app_protections_create_apps(connection, ios_managed_app_protection_id, microsoft_graph_managed_mobile_app, _opts \\ []) do
+  @spec device_app_management_ios_managed_app_protections_create_apps(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphManagedMobileApp.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphManagedMobileApp.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_ios_managed_app_protections_create_apps(
+        connection,
+        ios_managed_app_protection_id,
+        microsoft_graph_managed_mobile_app,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceAppManagement/iosManagedAppProtections/#{ios_managed_app_protection_id}/apps")
+      |> url(
+        "/deviceAppManagement/iosManagedAppProtections/#{ios_managed_app_protection_id}/apps"
+      )
       |> add_param(:body, :body, microsoft_graph_managed_mobile_app)
       |> Enum.into([])
 
@@ -247,12 +321,27 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementIosManagedAppProtection do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTargetedManagedAppPolicyAssignment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_ios_managed_app_protections_create_assignments(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphTargetedManagedAppPolicyAssignment.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTargetedManagedAppPolicyAssignment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_ios_managed_app_protections_create_assignments(connection, ios_managed_app_protection_id, microsoft_graph_targeted_managed_app_policy_assignment, _opts \\ []) do
+  @spec device_app_management_ios_managed_app_protections_create_assignments(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTargetedManagedAppPolicyAssignment.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTargetedManagedAppPolicyAssignment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_ios_managed_app_protections_create_assignments(
+        connection,
+        ios_managed_app_protection_id,
+        microsoft_graph_targeted_managed_app_policy_assignment,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceAppManagement/iosManagedAppProtections/#{ios_managed_app_protection_id}/assignments")
+      |> url(
+        "/deviceAppManagement/iosManagedAppProtections/#{ios_managed_app_protection_id}/assignments"
+      )
       |> add_param(:body, :body, microsoft_graph_targeted_managed_app_policy_assignment)
       |> Enum.into([])
 
@@ -282,8 +371,21 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementIosManagedAppProtection do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_ios_managed_app_protections_delete_apps(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_ios_managed_app_protections_delete_apps(connection, ios_managed_app_protection_id, managed_mobile_app_id, opts \\ []) do
+  @spec device_app_management_ios_managed_app_protections_delete_apps(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_ios_managed_app_protections_delete_apps(
+        connection,
+        ios_managed_app_protection_id,
+        managed_mobile_app_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -291,7 +393,9 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementIosManagedAppProtection do
     request =
       %{}
       |> method(:delete)
-      |> url("/deviceAppManagement/iosManagedAppProtections/#{ios_managed_app_protection_id}/apps/#{managed_mobile_app_id}")
+      |> url(
+        "/deviceAppManagement/iosManagedAppProtections/#{ios_managed_app_protection_id}/apps/#{managed_mobile_app_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -320,8 +424,21 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementIosManagedAppProtection do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_ios_managed_app_protections_delete_assignments(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_ios_managed_app_protections_delete_assignments(connection, ios_managed_app_protection_id, targeted_managed_app_policy_assignment_id, opts \\ []) do
+  @spec device_app_management_ios_managed_app_protections_delete_assignments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_ios_managed_app_protections_delete_assignments(
+        connection,
+        ios_managed_app_protection_id,
+        targeted_managed_app_policy_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -329,7 +446,9 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementIosManagedAppProtection do
     request =
       %{}
       |> method(:delete)
-      |> url("/deviceAppManagement/iosManagedAppProtections/#{ios_managed_app_protection_id}/assignments/#{targeted_managed_app_policy_assignment_id}")
+      |> url(
+        "/deviceAppManagement/iosManagedAppProtections/#{ios_managed_app_protection_id}/assignments/#{targeted_managed_app_policy_assignment_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -357,8 +476,19 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementIosManagedAppProtection do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_ios_managed_app_protections_delete_deployment_summary(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_ios_managed_app_protections_delete_deployment_summary(connection, ios_managed_app_protection_id, opts \\ []) do
+  @spec device_app_management_ios_managed_app_protections_delete_deployment_summary(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_ios_managed_app_protections_delete_deployment_summary(
+        connection,
+        ios_managed_app_protection_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -366,7 +496,9 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementIosManagedAppProtection do
     request =
       %{}
       |> method(:delete)
-      |> url("/deviceAppManagement/iosManagedAppProtections/#{ios_managed_app_protection_id}/deploymentSummary")
+      |> url(
+        "/deviceAppManagement/iosManagedAppProtections/#{ios_managed_app_protection_id}/deploymentSummary"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -397,8 +529,21 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementIosManagedAppProtection do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphManagedMobileApp.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_ios_managed_app_protections_get_apps(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphManagedMobileApp.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_ios_managed_app_protections_get_apps(connection, ios_managed_app_protection_id, managed_mobile_app_id, opts \\ []) do
+  @spec device_app_management_ios_managed_app_protections_get_apps(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphManagedMobileApp.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_ios_managed_app_protections_get_apps(
+        connection,
+        ios_managed_app_protection_id,
+        managed_mobile_app_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -407,7 +552,9 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementIosManagedAppProtection do
     request =
       %{}
       |> method(:get)
-      |> url("/deviceAppManagement/iosManagedAppProtections/#{ios_managed_app_protection_id}/apps/#{managed_mobile_app_id}")
+      |> url(
+        "/deviceAppManagement/iosManagedAppProtections/#{ios_managed_app_protection_id}/apps/#{managed_mobile_app_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -438,8 +585,21 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementIosManagedAppProtection do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTargetedManagedAppPolicyAssignment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_ios_managed_app_protections_get_assignments(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTargetedManagedAppPolicyAssignment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_ios_managed_app_protections_get_assignments(connection, ios_managed_app_protection_id, targeted_managed_app_policy_assignment_id, opts \\ []) do
+  @spec device_app_management_ios_managed_app_protections_get_assignments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTargetedManagedAppPolicyAssignment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_ios_managed_app_protections_get_assignments(
+        connection,
+        ios_managed_app_protection_id,
+        targeted_managed_app_policy_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -448,7 +608,9 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementIosManagedAppProtection do
     request =
       %{}
       |> method(:get)
-      |> url("/deviceAppManagement/iosManagedAppProtections/#{ios_managed_app_protection_id}/assignments/#{targeted_managed_app_policy_assignment_id}")
+      |> url(
+        "/deviceAppManagement/iosManagedAppProtections/#{ios_managed_app_protection_id}/assignments/#{targeted_managed_app_policy_assignment_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -476,7 +638,13 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementIosManagedAppProtection do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_ios_managed_app_protections_get_count_dcdc(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec device_app_management_ios_managed_app_protections_get_count_dcdc(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def device_app_management_ios_managed_app_protections_get_count_dcdc(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -516,8 +684,19 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementIosManagedAppProtection do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphManagedAppPolicyDeploymentSummary.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_ios_managed_app_protections_get_deployment_summary(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphManagedAppPolicyDeploymentSummary.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_ios_managed_app_protections_get_deployment_summary(connection, ios_managed_app_protection_id, opts \\ []) do
+  @spec device_app_management_ios_managed_app_protections_get_deployment_summary(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphManagedAppPolicyDeploymentSummary.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_ios_managed_app_protections_get_deployment_summary(
+        connection,
+        ios_managed_app_protection_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -526,7 +705,9 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementIosManagedAppProtection do
     request =
       %{}
       |> method(:get)
-      |> url("/deviceAppManagement/iosManagedAppProtections/#{ios_managed_app_protection_id}/deploymentSummary")
+      |> url(
+        "/deviceAppManagement/iosManagedAppProtections/#{ios_managed_app_protection_id}/deploymentSummary"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -562,8 +743,19 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementIosManagedAppProtection do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphManagedMobileAppCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_ios_managed_app_protections_list_apps(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphManagedMobileAppCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_ios_managed_app_protections_list_apps(connection, ios_managed_app_protection_id, opts \\ []) do
+  @spec device_app_management_ios_managed_app_protections_list_apps(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphManagedMobileAppCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_ios_managed_app_protections_list_apps(
+        connection,
+        ios_managed_app_protection_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -578,7 +770,9 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementIosManagedAppProtection do
     request =
       %{}
       |> method(:get)
-      |> url("/deviceAppManagement/iosManagedAppProtections/#{ios_managed_app_protection_id}/apps")
+      |> url(
+        "/deviceAppManagement/iosManagedAppProtections/#{ios_managed_app_protection_id}/apps"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -614,8 +808,20 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementIosManagedAppProtection do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTargetedManagedAppPolicyAssignmentCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_ios_managed_app_protections_list_assignments(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTargetedManagedAppPolicyAssignmentCollectionResponse.t} | {:error, Tesla.Env.t}
-  def device_app_management_ios_managed_app_protections_list_assignments(connection, ios_managed_app_protection_id, opts \\ []) do
+  @spec device_app_management_ios_managed_app_protections_list_assignments(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphTargetedManagedAppPolicyAssignmentCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_ios_managed_app_protections_list_assignments(
+        connection,
+        ios_managed_app_protection_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -630,14 +836,17 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementIosManagedAppProtection do
     request =
       %{}
       |> method(:get)
-      |> url("/deviceAppManagement/iosManagedAppProtections/#{ios_managed_app_protection_id}/assignments")
+      |> url(
+        "/deviceAppManagement/iosManagedAppProtections/#{ios_managed_app_protection_id}/assignments"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphTargetedManagedAppPolicyAssignmentCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphTargetedManagedAppPolicyAssignmentCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -660,12 +869,29 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementIosManagedAppProtection do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphManagedMobileApp.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_ios_managed_app_protections_update_apps(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphManagedMobileApp.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphManagedMobileApp.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_ios_managed_app_protections_update_apps(connection, ios_managed_app_protection_id, managed_mobile_app_id, microsoft_graph_managed_mobile_app, _opts \\ []) do
+  @spec device_app_management_ios_managed_app_protections_update_apps(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphManagedMobileApp.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphManagedMobileApp.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_ios_managed_app_protections_update_apps(
+        connection,
+        ios_managed_app_protection_id,
+        managed_mobile_app_id,
+        microsoft_graph_managed_mobile_app,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/deviceAppManagement/iosManagedAppProtections/#{ios_managed_app_protection_id}/apps/#{managed_mobile_app_id}")
+      |> url(
+        "/deviceAppManagement/iosManagedAppProtections/#{ios_managed_app_protection_id}/apps/#{managed_mobile_app_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_managed_mobile_app)
       |> Enum.into([])
 
@@ -694,12 +920,29 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementIosManagedAppProtection do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTargetedManagedAppPolicyAssignment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_ios_managed_app_protections_update_assignments(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTargetedManagedAppPolicyAssignment.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTargetedManagedAppPolicyAssignment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_ios_managed_app_protections_update_assignments(connection, ios_managed_app_protection_id, targeted_managed_app_policy_assignment_id, microsoft_graph_targeted_managed_app_policy_assignment, _opts \\ []) do
+  @spec device_app_management_ios_managed_app_protections_update_assignments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTargetedManagedAppPolicyAssignment.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTargetedManagedAppPolicyAssignment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_ios_managed_app_protections_update_assignments(
+        connection,
+        ios_managed_app_protection_id,
+        targeted_managed_app_policy_assignment_id,
+        microsoft_graph_targeted_managed_app_policy_assignment,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/deviceAppManagement/iosManagedAppProtections/#{ios_managed_app_protection_id}/assignments/#{targeted_managed_app_policy_assignment_id}")
+      |> url(
+        "/deviceAppManagement/iosManagedAppProtections/#{ios_managed_app_protection_id}/assignments/#{targeted_managed_app_policy_assignment_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_targeted_managed_app_policy_assignment)
       |> Enum.into([])
 
@@ -728,12 +971,27 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementIosManagedAppProtection do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphManagedAppPolicyDeploymentSummary.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_ios_managed_app_protections_update_deployment_summary(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphManagedAppPolicyDeploymentSummary.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphManagedAppPolicyDeploymentSummary.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_ios_managed_app_protections_update_deployment_summary(connection, ios_managed_app_protection_id, microsoft_graph_managed_app_policy_deployment_summary, _opts \\ []) do
+  @spec device_app_management_ios_managed_app_protections_update_deployment_summary(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphManagedAppPolicyDeploymentSummary.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphManagedAppPolicyDeploymentSummary.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_ios_managed_app_protections_update_deployment_summary(
+        connection,
+        ios_managed_app_protection_id,
+        microsoft_graph_managed_app_policy_deployment_summary,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/deviceAppManagement/iosManagedAppProtections/#{ios_managed_app_protection_id}/deploymentSummary")
+      |> url(
+        "/deviceAppManagement/iosManagedAppProtections/#{ios_managed_app_protection_id}/deploymentSummary"
+      )
       |> add_param(:body, :body, microsoft_graph_managed_app_policy_deployment_summary)
       |> Enum.into([])
 
@@ -768,7 +1026,10 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementIosManagedAppProtection do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIosManagedAppProtectionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_list_ios_managed_app_protections(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIosManagedAppProtectionCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec device_app_management_list_ios_managed_app_protections(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIosManagedAppProtectionCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def device_app_management_list_ios_managed_app_protections(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -813,8 +1074,21 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementIosManagedAppProtection do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIosManagedAppProtection.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_update_ios_managed_app_protections(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphIosManagedAppProtection.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIosManagedAppProtection.t} | {:error, Tesla.Env.t}
-  def device_app_management_update_ios_managed_app_protections(connection, ios_managed_app_protection_id, microsoft_graph_ios_managed_app_protection, _opts \\ []) do
+  @spec device_app_management_update_ios_managed_app_protections(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphIosManagedAppProtection.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphIosManagedAppProtection.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_update_ios_managed_app_protections(
+        connection,
+        ios_managed_app_protection_id,
+        microsoft_graph_ios_managed_app_protection,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

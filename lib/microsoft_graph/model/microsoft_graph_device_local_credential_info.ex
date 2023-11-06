@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphDeviceLocalCredentialInfo do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,21 +17,24 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphDeviceLocalCredentialInfo do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :credentials => [MicrosoftGraph.Model.MicrosoftGraphDeviceLocalCredential.t] | nil,
-    :deviceName => String.t | nil,
-    :lastBackupDateTime => DateTime.t | nil,
-    :refreshDateTime => DateTime.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :credentials => [MicrosoftGraph.Model.MicrosoftGraphDeviceLocalCredential.t()] | nil,
+          :deviceName => String.t() | nil,
+          :lastBackupDateTime => DateTime.t() | nil,
+          :refreshDateTime => DateTime.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:credentials, :list, MicrosoftGraph.Model.MicrosoftGraphDeviceLocalCredential)
-     |> Deserializer.deserialize(:lastBackupDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:refreshDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :credentials,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDeviceLocalCredential
+    )
+    |> Deserializer.deserialize(:lastBackupDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:refreshDateTime, :datetime, nil)
   end
 end
-

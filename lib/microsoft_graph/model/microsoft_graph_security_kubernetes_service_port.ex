@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityKubernetesServicePort do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,20 +18,24 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityKubernetesServicePort do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :appProtocol => String.t | nil,
-    :name => String.t | nil,
-    :nodePort => integer() | nil,
-    :port => integer() | nil,
-    :protocol => MicrosoftGraph.Model.MicrosoftGraphSecurityKubernetesServicePortProtocol.t | nil,
-    :targetPort => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :appProtocol => String.t() | nil,
+          :name => String.t() | nil,
+          :nodePort => integer() | nil,
+          :port => integer() | nil,
+          :protocol =>
+            MicrosoftGraph.Model.MicrosoftGraphSecurityKubernetesServicePortProtocol.t() | nil,
+          :targetPort => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:protocol, :struct, MicrosoftGraph.Model.MicrosoftGraphSecurityKubernetesServicePortProtocol)
+    |> Deserializer.deserialize(
+      :protocol,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityKubernetesServicePortProtocol
+    )
   end
 end
-

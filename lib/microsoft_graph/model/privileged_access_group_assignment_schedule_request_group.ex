@@ -80,118 +80,198 @@ defmodule MicrosoftGraph.Model.PrivilegedAccessGroupAssignmentScheduleRequestGro
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :deletedDateTime => DateTime.t | nil,
-    :allowExternalSenders => boolean() | nil,
-    :expirationDateTime => DateTime.t | nil,
-    :assignedLabels => [MicrosoftGraph.Model.GroupAssignedLabelsInner.t] | nil,
-    :threads => [MicrosoftGraph.Model.MicrosoftGraphConversationThread.t] | nil,
-    :permissionGrants => [MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant.t] | nil,
-    :isArchived => boolean() | nil,
-    :sites => [MicrosoftGraph.Model.MicrosoftGraphSite.t] | nil,
-    :calendarView => [MicrosoftGraph.Model.MicrosoftGraphEvent.t] | nil,
-    :classification => String.t | nil,
-    :securityEnabled => boolean() | nil,
-    :rejectedSenders => [MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t] | nil,
-    :photos => [MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t] | nil,
-    :isSubscribedByMail => boolean() | nil,
-    :membershipRuleProcessingState => String.t | nil,
-    :mailEnabled => boolean() | nil,
-    :extensions => [MicrosoftGraph.Model.MicrosoftGraphExtension.t] | nil,
-    :acceptedSenders => [MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t] | nil,
-    :groupLifecyclePolicies => [MicrosoftGraph.Model.MicrosoftGraphGroupLifecyclePolicy.t] | nil,
-    :onPremisesSamAccountName => String.t | nil,
-    :appRoleAssignments => [MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignment.t] | nil,
-    :assignedLicenses => [MicrosoftGraph.Model.GroupAssignedLicensesInner.t] | nil,
-    :securityIdentifier => String.t | nil,
-    :onPremisesSecurityIdentifier => String.t | nil,
-    :groupTypes => [String.t] | nil,
-    :mail => String.t | nil,
-    :settings => [MicrosoftGraph.Model.MicrosoftGraphGroupSetting.t] | nil,
-    :drives => [MicrosoftGraph.Model.MicrosoftGraphDrive.t] | nil,
-    :planner => MicrosoftGraph.Model.GroupPlanner.t | nil,
-    :onPremisesDomainName => String.t | nil,
-    :createdOnBehalfOf => MicrosoftGraph.Model.GroupCreatedOnBehalfOf.t | nil,
-    :visibility => String.t | nil,
-    :hideFromOutlookClients => boolean() | nil,
-    :onPremisesProvisioningErrors => [MicrosoftGraph.Model.OrgContactOnPremisesProvisioningErrorsInner.t] | nil,
-    :members => [MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t] | nil,
-    :onPremisesSyncEnabled => boolean() | nil,
-    :events => [MicrosoftGraph.Model.MicrosoftGraphEvent.t] | nil,
-    :mailNickname => String.t | nil,
-    :team => MicrosoftGraph.Model.GroupTeam.t | nil,
-    :renewedDateTime => DateTime.t | nil,
-    :hideFromAddressLists => boolean() | nil,
-    :hasMembersWithLicenseErrors => boolean() | nil,
-    :unseenCount => integer() | nil,
-    :memberOf => [MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t] | nil,
-    :proxyAddresses => [String.t] | nil,
-    :displayName => String.t | nil,
-    :onPremisesLastSyncDateTime => DateTime.t | nil,
-    :transitiveMemberOf => [MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t] | nil,
-    :serviceProvisioningErrors => [MicrosoftGraph.Model.OrgContactServiceProvisioningErrorsInner.t] | nil,
-    :description => String.t | nil,
-    :preferredLanguage => String.t | nil,
-    :drive => MicrosoftGraph.Model.GroupDrive.t | nil,
-    :transitiveMembers => [MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t] | nil,
-    :onenote => MicrosoftGraph.Model.UserOnenote.t | nil,
-    :conversations => [MicrosoftGraph.Model.MicrosoftGraphConversation.t] | nil,
-    :autoSubscribeNewMembers => boolean() | nil,
-    :licenseProcessingState => MicrosoftGraph.Model.GroupLicenseProcessingState.t | nil,
-    :owners => [MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t] | nil,
-    :onPremisesNetBiosName => String.t | nil,
-    :membershipRule => String.t | nil,
-    :isAssignableToRole => boolean() | nil,
-    :calendar => MicrosoftGraph.Model.GroupCalendar.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :membersWithLicenseErrors => [MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t] | nil,
-    :preferredDataLocation => String.t | nil,
-    :photo => MicrosoftGraph.Model.GroupPhoto.t | nil,
-    :theme => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :deletedDateTime => DateTime.t() | nil,
+          :allowExternalSenders => boolean() | nil,
+          :expirationDateTime => DateTime.t() | nil,
+          :assignedLabels => [MicrosoftGraph.Model.GroupAssignedLabelsInner.t()] | nil,
+          :threads => [MicrosoftGraph.Model.MicrosoftGraphConversationThread.t()] | nil,
+          :permissionGrants =>
+            [MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant.t()] | nil,
+          :isArchived => boolean() | nil,
+          :sites => [MicrosoftGraph.Model.MicrosoftGraphSite.t()] | nil,
+          :calendarView => [MicrosoftGraph.Model.MicrosoftGraphEvent.t()] | nil,
+          :classification => String.t() | nil,
+          :securityEnabled => boolean() | nil,
+          :rejectedSenders => [MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()] | nil,
+          :photos => [MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t()] | nil,
+          :isSubscribedByMail => boolean() | nil,
+          :membershipRuleProcessingState => String.t() | nil,
+          :mailEnabled => boolean() | nil,
+          :extensions => [MicrosoftGraph.Model.MicrosoftGraphExtension.t()] | nil,
+          :acceptedSenders => [MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()] | nil,
+          :groupLifecyclePolicies =>
+            [MicrosoftGraph.Model.MicrosoftGraphGroupLifecyclePolicy.t()] | nil,
+          :onPremisesSamAccountName => String.t() | nil,
+          :appRoleAssignments => [MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignment.t()] | nil,
+          :assignedLicenses => [MicrosoftGraph.Model.GroupAssignedLicensesInner.t()] | nil,
+          :securityIdentifier => String.t() | nil,
+          :onPremisesSecurityIdentifier => String.t() | nil,
+          :groupTypes => [String.t()] | nil,
+          :mail => String.t() | nil,
+          :settings => [MicrosoftGraph.Model.MicrosoftGraphGroupSetting.t()] | nil,
+          :drives => [MicrosoftGraph.Model.MicrosoftGraphDrive.t()] | nil,
+          :planner => MicrosoftGraph.Model.GroupPlanner.t() | nil,
+          :onPremisesDomainName => String.t() | nil,
+          :createdOnBehalfOf => MicrosoftGraph.Model.GroupCreatedOnBehalfOf.t() | nil,
+          :visibility => String.t() | nil,
+          :hideFromOutlookClients => boolean() | nil,
+          :onPremisesProvisioningErrors =>
+            [MicrosoftGraph.Model.OrgContactOnPremisesProvisioningErrorsInner.t()] | nil,
+          :members => [MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()] | nil,
+          :onPremisesSyncEnabled => boolean() | nil,
+          :events => [MicrosoftGraph.Model.MicrosoftGraphEvent.t()] | nil,
+          :mailNickname => String.t() | nil,
+          :team => MicrosoftGraph.Model.GroupTeam.t() | nil,
+          :renewedDateTime => DateTime.t() | nil,
+          :hideFromAddressLists => boolean() | nil,
+          :hasMembersWithLicenseErrors => boolean() | nil,
+          :unseenCount => integer() | nil,
+          :memberOf => [MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()] | nil,
+          :proxyAddresses => [String.t()] | nil,
+          :displayName => String.t() | nil,
+          :onPremisesLastSyncDateTime => DateTime.t() | nil,
+          :transitiveMemberOf => [MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()] | nil,
+          :serviceProvisioningErrors =>
+            [MicrosoftGraph.Model.OrgContactServiceProvisioningErrorsInner.t()] | nil,
+          :description => String.t() | nil,
+          :preferredLanguage => String.t() | nil,
+          :drive => MicrosoftGraph.Model.GroupDrive.t() | nil,
+          :transitiveMembers => [MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()] | nil,
+          :onenote => MicrosoftGraph.Model.UserOnenote.t() | nil,
+          :conversations => [MicrosoftGraph.Model.MicrosoftGraphConversation.t()] | nil,
+          :autoSubscribeNewMembers => boolean() | nil,
+          :licenseProcessingState => MicrosoftGraph.Model.GroupLicenseProcessingState.t() | nil,
+          :owners => [MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()] | nil,
+          :onPremisesNetBiosName => String.t() | nil,
+          :membershipRule => String.t() | nil,
+          :isAssignableToRole => boolean() | nil,
+          :calendar => MicrosoftGraph.Model.GroupCalendar.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :membersWithLicenseErrors =>
+            [MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()] | nil,
+          :preferredDataLocation => String.t() | nil,
+          :photo => MicrosoftGraph.Model.GroupPhoto.t() | nil,
+          :theme => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:deletedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:expirationDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:assignedLabels, :list, MicrosoftGraph.Model.GroupAssignedLabelsInner)
-     |> Deserializer.deserialize(:threads, :list, MicrosoftGraph.Model.MicrosoftGraphConversationThread)
-     |> Deserializer.deserialize(:permissionGrants, :list, MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant)
-     |> Deserializer.deserialize(:sites, :list, MicrosoftGraph.Model.MicrosoftGraphSite)
-     |> Deserializer.deserialize(:calendarView, :list, MicrosoftGraph.Model.MicrosoftGraphEvent)
-     |> Deserializer.deserialize(:rejectedSenders, :list, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject)
-     |> Deserializer.deserialize(:photos, :list, MicrosoftGraph.Model.MicrosoftGraphProfilePhoto)
-     |> Deserializer.deserialize(:extensions, :list, MicrosoftGraph.Model.MicrosoftGraphExtension)
-     |> Deserializer.deserialize(:acceptedSenders, :list, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject)
-     |> Deserializer.deserialize(:groupLifecyclePolicies, :list, MicrosoftGraph.Model.MicrosoftGraphGroupLifecyclePolicy)
-     |> Deserializer.deserialize(:appRoleAssignments, :list, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignment)
-     |> Deserializer.deserialize(:assignedLicenses, :list, MicrosoftGraph.Model.GroupAssignedLicensesInner)
-     |> Deserializer.deserialize(:settings, :list, MicrosoftGraph.Model.MicrosoftGraphGroupSetting)
-     |> Deserializer.deserialize(:drives, :list, MicrosoftGraph.Model.MicrosoftGraphDrive)
-     |> Deserializer.deserialize(:planner, :struct, MicrosoftGraph.Model.GroupPlanner)
-     |> Deserializer.deserialize(:createdOnBehalfOf, :struct, MicrosoftGraph.Model.GroupCreatedOnBehalfOf)
-     |> Deserializer.deserialize(:onPremisesProvisioningErrors, :list, MicrosoftGraph.Model.OrgContactOnPremisesProvisioningErrorsInner)
-     |> Deserializer.deserialize(:members, :list, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject)
-     |> Deserializer.deserialize(:events, :list, MicrosoftGraph.Model.MicrosoftGraphEvent)
-     |> Deserializer.deserialize(:team, :struct, MicrosoftGraph.Model.GroupTeam)
-     |> Deserializer.deserialize(:renewedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:memberOf, :list, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject)
-     |> Deserializer.deserialize(:onPremisesLastSyncDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:transitiveMemberOf, :list, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject)
-     |> Deserializer.deserialize(:serviceProvisioningErrors, :list, MicrosoftGraph.Model.OrgContactServiceProvisioningErrorsInner)
-     |> Deserializer.deserialize(:drive, :struct, MicrosoftGraph.Model.GroupDrive)
-     |> Deserializer.deserialize(:transitiveMembers, :list, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject)
-     |> Deserializer.deserialize(:onenote, :struct, MicrosoftGraph.Model.UserOnenote)
-     |> Deserializer.deserialize(:conversations, :list, MicrosoftGraph.Model.MicrosoftGraphConversation)
-     |> Deserializer.deserialize(:licenseProcessingState, :struct, MicrosoftGraph.Model.GroupLicenseProcessingState)
-     |> Deserializer.deserialize(:owners, :list, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject)
-     |> Deserializer.deserialize(:calendar, :struct, MicrosoftGraph.Model.GroupCalendar)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:membersWithLicenseErrors, :list, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject)
-     |> Deserializer.deserialize(:photo, :struct, MicrosoftGraph.Model.GroupPhoto)
+    |> Deserializer.deserialize(:deletedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:expirationDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :assignedLabels,
+      :list,
+      MicrosoftGraph.Model.GroupAssignedLabelsInner
+    )
+    |> Deserializer.deserialize(
+      :threads,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphConversationThread
+    )
+    |> Deserializer.deserialize(
+      :permissionGrants,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant
+    )
+    |> Deserializer.deserialize(:sites, :list, MicrosoftGraph.Model.MicrosoftGraphSite)
+    |> Deserializer.deserialize(:calendarView, :list, MicrosoftGraph.Model.MicrosoftGraphEvent)
+    |> Deserializer.deserialize(
+      :rejectedSenders,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDirectoryObject
+    )
+    |> Deserializer.deserialize(:photos, :list, MicrosoftGraph.Model.MicrosoftGraphProfilePhoto)
+    |> Deserializer.deserialize(:extensions, :list, MicrosoftGraph.Model.MicrosoftGraphExtension)
+    |> Deserializer.deserialize(
+      :acceptedSenders,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDirectoryObject
+    )
+    |> Deserializer.deserialize(
+      :groupLifecyclePolicies,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphGroupLifecyclePolicy
+    )
+    |> Deserializer.deserialize(
+      :appRoleAssignments,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignment
+    )
+    |> Deserializer.deserialize(
+      :assignedLicenses,
+      :list,
+      MicrosoftGraph.Model.GroupAssignedLicensesInner
+    )
+    |> Deserializer.deserialize(:settings, :list, MicrosoftGraph.Model.MicrosoftGraphGroupSetting)
+    |> Deserializer.deserialize(:drives, :list, MicrosoftGraph.Model.MicrosoftGraphDrive)
+    |> Deserializer.deserialize(:planner, :struct, MicrosoftGraph.Model.GroupPlanner)
+    |> Deserializer.deserialize(
+      :createdOnBehalfOf,
+      :struct,
+      MicrosoftGraph.Model.GroupCreatedOnBehalfOf
+    )
+    |> Deserializer.deserialize(
+      :onPremisesProvisioningErrors,
+      :list,
+      MicrosoftGraph.Model.OrgContactOnPremisesProvisioningErrorsInner
+    )
+    |> Deserializer.deserialize(
+      :members,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDirectoryObject
+    )
+    |> Deserializer.deserialize(:events, :list, MicrosoftGraph.Model.MicrosoftGraphEvent)
+    |> Deserializer.deserialize(:team, :struct, MicrosoftGraph.Model.GroupTeam)
+    |> Deserializer.deserialize(:renewedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :memberOf,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDirectoryObject
+    )
+    |> Deserializer.deserialize(:onPremisesLastSyncDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :transitiveMemberOf,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDirectoryObject
+    )
+    |> Deserializer.deserialize(
+      :serviceProvisioningErrors,
+      :list,
+      MicrosoftGraph.Model.OrgContactServiceProvisioningErrorsInner
+    )
+    |> Deserializer.deserialize(:drive, :struct, MicrosoftGraph.Model.GroupDrive)
+    |> Deserializer.deserialize(
+      :transitiveMembers,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDirectoryObject
+    )
+    |> Deserializer.deserialize(:onenote, :struct, MicrosoftGraph.Model.UserOnenote)
+    |> Deserializer.deserialize(
+      :conversations,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphConversation
+    )
+    |> Deserializer.deserialize(
+      :licenseProcessingState,
+      :struct,
+      MicrosoftGraph.Model.GroupLicenseProcessingState
+    )
+    |> Deserializer.deserialize(
+      :owners,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDirectoryObject
+    )
+    |> Deserializer.deserialize(:calendar, :struct, MicrosoftGraph.Model.GroupCalendar)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :membersWithLicenseErrors,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDirectoryObject
+    )
+    |> Deserializer.deserialize(:photo, :struct, MicrosoftGraph.Model.GroupPhoto)
   end
 end
-

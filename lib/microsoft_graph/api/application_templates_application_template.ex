@@ -26,8 +26,19 @@ defmodule MicrosoftGraph.Api.ApplicationTemplatesApplicationTemplate do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphApplicationTemplate.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec application_templates_application_template_get_application_template(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphApplicationTemplate.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def application_templates_application_template_get_application_template(connection, application_template_id, opts \\ []) do
+  @spec application_templates_application_template_get_application_template(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphApplicationTemplate.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def application_templates_application_template_get_application_template(
+        connection,
+        application_template_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -71,7 +82,13 @@ defmodule MicrosoftGraph.Api.ApplicationTemplatesApplicationTemplate do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphApplicationTemplateCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec application_templates_application_template_list_application_template(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphApplicationTemplateCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec application_templates_application_template_list_application_template(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphApplicationTemplateCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def application_templates_application_template_list_application_template(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -115,7 +132,10 @@ defmodule MicrosoftGraph.Api.ApplicationTemplatesApplicationTemplate do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec application_templates_get_count_d1a3(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec application_templates_get_count_d1a3(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def application_templates_get_count_d1a3(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,

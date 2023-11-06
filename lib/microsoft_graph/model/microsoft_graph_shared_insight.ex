@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSharedInsight do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,26 +19,46 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSharedInsight do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :lastShared => MicrosoftGraph.Model.SharedInsightLastShared.t | nil,
-    :lastSharedMethod => MicrosoftGraph.Model.SharedInsightLastSharedMethod.t | nil,
-    :resource => MicrosoftGraph.Model.SharedInsightResource.t | nil,
-    :resourceReference => MicrosoftGraph.Model.SharedInsightResourceReference.t | nil,
-    :resourceVisualization => MicrosoftGraph.Model.UsedInsightResourceVisualization.t | nil,
-    :sharingHistory => [MicrosoftGraph.Model.SharedInsightSharingHistoryInner.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :lastShared => MicrosoftGraph.Model.SharedInsightLastShared.t() | nil,
+          :lastSharedMethod => MicrosoftGraph.Model.SharedInsightLastSharedMethod.t() | nil,
+          :resource => MicrosoftGraph.Model.SharedInsightResource.t() | nil,
+          :resourceReference => MicrosoftGraph.Model.SharedInsightResourceReference.t() | nil,
+          :resourceVisualization =>
+            MicrosoftGraph.Model.UsedInsightResourceVisualization.t() | nil,
+          :sharingHistory => [MicrosoftGraph.Model.SharedInsightSharingHistoryInner.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:lastShared, :struct, MicrosoftGraph.Model.SharedInsightLastShared)
-     |> Deserializer.deserialize(:lastSharedMethod, :struct, MicrosoftGraph.Model.SharedInsightLastSharedMethod)
-     |> Deserializer.deserialize(:resource, :struct, MicrosoftGraph.Model.SharedInsightResource)
-     |> Deserializer.deserialize(:resourceReference, :struct, MicrosoftGraph.Model.SharedInsightResourceReference)
-     |> Deserializer.deserialize(:resourceVisualization, :struct, MicrosoftGraph.Model.UsedInsightResourceVisualization)
-     |> Deserializer.deserialize(:sharingHistory, :list, MicrosoftGraph.Model.SharedInsightSharingHistoryInner)
+    |> Deserializer.deserialize(
+      :lastShared,
+      :struct,
+      MicrosoftGraph.Model.SharedInsightLastShared
+    )
+    |> Deserializer.deserialize(
+      :lastSharedMethod,
+      :struct,
+      MicrosoftGraph.Model.SharedInsightLastSharedMethod
+    )
+    |> Deserializer.deserialize(:resource, :struct, MicrosoftGraph.Model.SharedInsightResource)
+    |> Deserializer.deserialize(
+      :resourceReference,
+      :struct,
+      MicrosoftGraph.Model.SharedInsightResourceReference
+    )
+    |> Deserializer.deserialize(
+      :resourceVisualization,
+      :struct,
+      MicrosoftGraph.Model.UsedInsightResourceVisualization
+    )
+    |> Deserializer.deserialize(
+      :sharingHistory,
+      :list,
+      MicrosoftGraph.Model.SharedInsightSharingHistoryInner
+    )
   end
 end
-

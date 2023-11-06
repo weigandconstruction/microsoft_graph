@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphOnenoteEntityHierarchyModel do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,24 +19,31 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphOnenoteEntityHierarchyModel do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :self => String.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :createdBy => MicrosoftGraph.Model.OnenoteEntityHierarchyModelCreatedBy.t | nil,
-    :displayName => String.t | nil,
-    :lastModifiedBy => MicrosoftGraph.Model.OnenoteEntityHierarchyModelCreatedBy.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :self => String.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :createdBy => MicrosoftGraph.Model.OnenoteEntityHierarchyModelCreatedBy.t() | nil,
+          :displayName => String.t() | nil,
+          :lastModifiedBy => MicrosoftGraph.Model.OnenoteEntityHierarchyModelCreatedBy.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.OnenoteEntityHierarchyModelCreatedBy)
-     |> Deserializer.deserialize(:lastModifiedBy, :struct, MicrosoftGraph.Model.OnenoteEntityHierarchyModelCreatedBy)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :createdBy,
+      :struct,
+      MicrosoftGraph.Model.OnenoteEntityHierarchyModelCreatedBy
+    )
+    |> Deserializer.deserialize(
+      :lastModifiedBy,
+      :struct,
+      MicrosoftGraph.Model.OnenoteEntityHierarchyModelCreatedBy
+    )
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
   end
 end
-

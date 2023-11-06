@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAccessPackageAnswerAnsweredQuestion do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,20 +18,24 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAccessPackageAnswerAnsweredQuestion
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :isAnswerEditable => boolean() | nil,
-    :isRequired => boolean() | nil,
-    :localizations => [MicrosoftGraph.Model.AccessPackageQuestionLocalizationsInner.t] | nil,
-    :sequence => integer() | nil,
-    :text => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :isAnswerEditable => boolean() | nil,
+          :isRequired => boolean() | nil,
+          :localizations =>
+            [MicrosoftGraph.Model.AccessPackageQuestionLocalizationsInner.t()] | nil,
+          :sequence => integer() | nil,
+          :text => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:localizations, :list, MicrosoftGraph.Model.AccessPackageQuestionLocalizationsInner)
+    |> Deserializer.deserialize(
+      :localizations,
+      :list,
+      MicrosoftGraph.Model.AccessPackageQuestionLocalizationsInner
+    )
   end
 end
-

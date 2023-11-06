@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphFilterGroup do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,19 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphFilterGroup do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :clauses => [MicrosoftGraph.Model.MicrosoftGraphFilterGroupClausesInner.t] | nil,
-    :name => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :clauses => [MicrosoftGraph.Model.MicrosoftGraphFilterGroupClausesInner.t()] | nil,
+          :name => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:clauses, :list, MicrosoftGraph.Model.MicrosoftGraphFilterGroupClausesInner)
+    |> Deserializer.deserialize(
+      :clauses,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphFilterGroupClausesInner
+    )
   end
 end
-

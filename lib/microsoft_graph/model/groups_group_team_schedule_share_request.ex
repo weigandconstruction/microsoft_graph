@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.GroupsGroupTeamScheduleShareRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,17 +14,16 @@ defmodule MicrosoftGraph.Model.GroupsGroupTeamScheduleShareRequest do
   ]
 
   @type t :: %__MODULE__{
-    :endDateTime => DateTime.t | nil,
-    :notifyTeam => boolean() | nil,
-    :startDateTime => DateTime.t | nil
-  }
+          :endDateTime => DateTime.t() | nil,
+          :notifyTeam => boolean() | nil,
+          :startDateTime => DateTime.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:endDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:startDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:endDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:startDateTime, :datetime, nil)
   end
 end
-

@@ -23,7 +23,10 @@ defmodule MicrosoftGraph.Api.AdminSharepoint do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_delete_sharepoint(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec admin_delete_sharepoint(Tesla.Env.client(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def admin_delete_sharepoint(connection, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -60,7 +63,10 @@ defmodule MicrosoftGraph.Api.AdminSharepoint do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSharepoint.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_get_sharepoint(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSharepoint.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec admin_get_sharepoint(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSharepoint.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def admin_get_sharepoint(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -97,7 +103,10 @@ defmodule MicrosoftGraph.Api.AdminSharepoint do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_sharepoint_delete_settings(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec admin_sharepoint_delete_settings(Tesla.Env.client(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def admin_sharepoint_delete_settings(connection, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -135,7 +144,10 @@ defmodule MicrosoftGraph.Api.AdminSharepoint do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSharepointSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_sharepoint_get_settings(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSharepointSettings.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec admin_sharepoint_get_settings(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSharepointSettings.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def admin_sharepoint_get_settings(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -173,8 +185,19 @@ defmodule MicrosoftGraph.Api.AdminSharepoint do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSharepointSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_sharepoint_update_settings(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphSharepointSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSharepointSettings.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def admin_sharepoint_update_settings(connection, microsoft_graph_sharepoint_settings, _opts \\ []) do
+  @spec admin_sharepoint_update_settings(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphSharepointSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSharepointSettings.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_sharepoint_update_settings(
+        connection,
+        microsoft_graph_sharepoint_settings,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -205,7 +228,14 @@ defmodule MicrosoftGraph.Api.AdminSharepoint do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSharepoint.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_update_sharepoint(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphSharepoint.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSharepoint.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec admin_update_sharepoint(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphSharepoint.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSharepoint.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def admin_update_sharepoint(connection, microsoft_graph_sharepoint, _opts \\ []) do
     request =
       %{}

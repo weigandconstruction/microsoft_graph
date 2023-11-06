@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphBroadcastMeetingSettings do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,21 +18,30 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphBroadcastMeetingSettings do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :allowedAudience => MicrosoftGraph.Model.MicrosoftGraphBroadcastMeetingSettingsAllowedAudience.t | nil,
-    :captions => MicrosoftGraph.Model.MicrosoftGraphBroadcastMeetingSettingsCaptions.t | nil,
-    :isAttendeeReportEnabled => boolean() | nil,
-    :isQuestionAndAnswerEnabled => boolean() | nil,
-    :isRecordingEnabled => boolean() | nil,
-    :isVideoOnDemandEnabled => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :allowedAudience =>
+            MicrosoftGraph.Model.MicrosoftGraphBroadcastMeetingSettingsAllowedAudience.t() | nil,
+          :captions =>
+            MicrosoftGraph.Model.MicrosoftGraphBroadcastMeetingSettingsCaptions.t() | nil,
+          :isAttendeeReportEnabled => boolean() | nil,
+          :isQuestionAndAnswerEnabled => boolean() | nil,
+          :isRecordingEnabled => boolean() | nil,
+          :isVideoOnDemandEnabled => boolean() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:allowedAudience, :struct, MicrosoftGraph.Model.MicrosoftGraphBroadcastMeetingSettingsAllowedAudience)
-     |> Deserializer.deserialize(:captions, :struct, MicrosoftGraph.Model.MicrosoftGraphBroadcastMeetingSettingsCaptions)
+    |> Deserializer.deserialize(
+      :allowedAudience,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphBroadcastMeetingSettingsAllowedAudience
+    )
+    |> Deserializer.deserialize(
+      :captions,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphBroadcastMeetingSettingsCaptions
+    )
   end
 end
-

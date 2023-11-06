@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphEducationRoot do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,21 +16,28 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphEducationRoot do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :classes => [MicrosoftGraph.Model.MicrosoftGraphEducationClass.t] | nil,
-    :me => MicrosoftGraph.Model.MicrosoftGraphEducationRootMe.t | nil,
-    :schools => [MicrosoftGraph.Model.MicrosoftGraphEducationSchool.t] | nil,
-    :users => [MicrosoftGraph.Model.MicrosoftGraphEducationUser.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :classes => [MicrosoftGraph.Model.MicrosoftGraphEducationClass.t()] | nil,
+          :me => MicrosoftGraph.Model.MicrosoftGraphEducationRootMe.t() | nil,
+          :schools => [MicrosoftGraph.Model.MicrosoftGraphEducationSchool.t()] | nil,
+          :users => [MicrosoftGraph.Model.MicrosoftGraphEducationUser.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:classes, :list, MicrosoftGraph.Model.MicrosoftGraphEducationClass)
-     |> Deserializer.deserialize(:me, :struct, MicrosoftGraph.Model.MicrosoftGraphEducationRootMe)
-     |> Deserializer.deserialize(:schools, :list, MicrosoftGraph.Model.MicrosoftGraphEducationSchool)
-     |> Deserializer.deserialize(:users, :list, MicrosoftGraph.Model.MicrosoftGraphEducationUser)
+    |> Deserializer.deserialize(
+      :classes,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphEducationClass
+    )
+    |> Deserializer.deserialize(:me, :struct, MicrosoftGraph.Model.MicrosoftGraphEducationRootMe)
+    |> Deserializer.deserialize(
+      :schools,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphEducationSchool
+    )
+    |> Deserializer.deserialize(:users, :list, MicrosoftGraph.Model.MicrosoftGraphEducationUser)
   end
 end
-

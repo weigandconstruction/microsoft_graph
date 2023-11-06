@@ -24,7 +24,10 @@ defmodule MicrosoftGraph.Api.PlannerPlanner do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlanner.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec planner_planner_get_planner(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPlanner.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec planner_planner_get_planner(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPlanner.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def planner_planner_get_planner(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -61,7 +64,14 @@ defmodule MicrosoftGraph.Api.PlannerPlanner do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlanner.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec planner_planner_update_planner(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphPlanner.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPlanner.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec planner_planner_update_planner(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphPlanner.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPlanner.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def planner_planner_update_planner(connection, microsoft_graph_planner, _opts \\ []) do
     request =
       %{}

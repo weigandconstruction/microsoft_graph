@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphObjectMappingAttributeMappingsInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,23 +19,34 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphObjectMappingAttributeMappingsInner
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :defaultValue => String.t | nil,
-    :exportMissingReferences => boolean() | nil,
-    :flowBehavior => MicrosoftGraph.Model.MicrosoftGraphAttributeFlowBehavior.t | nil,
-    :flowType => MicrosoftGraph.Model.MicrosoftGraphAttributeFlowType.t | nil,
-    :matchingPriority => integer() | nil,
-    :source => MicrosoftGraph.Model.MicrosoftGraphAttributeMappingSource.t | nil,
-    :targetAttributeName => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :defaultValue => String.t() | nil,
+          :exportMissingReferences => boolean() | nil,
+          :flowBehavior => MicrosoftGraph.Model.MicrosoftGraphAttributeFlowBehavior.t() | nil,
+          :flowType => MicrosoftGraph.Model.MicrosoftGraphAttributeFlowType.t() | nil,
+          :matchingPriority => integer() | nil,
+          :source => MicrosoftGraph.Model.MicrosoftGraphAttributeMappingSource.t() | nil,
+          :targetAttributeName => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:flowBehavior, :struct, MicrosoftGraph.Model.MicrosoftGraphAttributeFlowBehavior)
-     |> Deserializer.deserialize(:flowType, :struct, MicrosoftGraph.Model.MicrosoftGraphAttributeFlowType)
-     |> Deserializer.deserialize(:source, :struct, MicrosoftGraph.Model.MicrosoftGraphAttributeMappingSource)
+    |> Deserializer.deserialize(
+      :flowBehavior,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAttributeFlowBehavior
+    )
+    |> Deserializer.deserialize(
+      :flowType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAttributeFlowType
+    )
+    |> Deserializer.deserialize(
+      :source,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAttributeMappingSource
+    )
   end
 end
-

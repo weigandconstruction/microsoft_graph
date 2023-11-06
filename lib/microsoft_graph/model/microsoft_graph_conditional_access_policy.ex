@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphConditionalAccessPolicy do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -22,29 +22,46 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphConditionalAccessPolicy do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :conditions => MicrosoftGraph.Model.MicrosoftGraphConditionalAccessConditionSet.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :grantControls => MicrosoftGraph.Model.ConditionalAccessPolicyGrantControls.t | nil,
-    :modifiedDateTime => DateTime.t | nil,
-    :sessionControls => MicrosoftGraph.Model.ConditionalAccessPolicySessionControls.t | nil,
-    :state => MicrosoftGraph.Model.MicrosoftGraphConditionalAccessPolicyState.t | nil,
-    :templateId => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :conditions =>
+            MicrosoftGraph.Model.MicrosoftGraphConditionalAccessConditionSet.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :grantControls => MicrosoftGraph.Model.ConditionalAccessPolicyGrantControls.t() | nil,
+          :modifiedDateTime => DateTime.t() | nil,
+          :sessionControls =>
+            MicrosoftGraph.Model.ConditionalAccessPolicySessionControls.t() | nil,
+          :state => MicrosoftGraph.Model.MicrosoftGraphConditionalAccessPolicyState.t() | nil,
+          :templateId => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:conditions, :struct, MicrosoftGraph.Model.MicrosoftGraphConditionalAccessConditionSet)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:grantControls, :struct, MicrosoftGraph.Model.ConditionalAccessPolicyGrantControls)
-     |> Deserializer.deserialize(:modifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:sessionControls, :struct, MicrosoftGraph.Model.ConditionalAccessPolicySessionControls)
-     |> Deserializer.deserialize(:state, :struct, MicrosoftGraph.Model.MicrosoftGraphConditionalAccessPolicyState)
+    |> Deserializer.deserialize(
+      :conditions,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphConditionalAccessConditionSet
+    )
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :grantControls,
+      :struct,
+      MicrosoftGraph.Model.ConditionalAccessPolicyGrantControls
+    )
+    |> Deserializer.deserialize(:modifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :sessionControls,
+      :struct,
+      MicrosoftGraph.Model.ConditionalAccessPolicySessionControls
+    )
+    |> Deserializer.deserialize(
+      :state,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphConditionalAccessPolicyState
+    )
   end
 end
-

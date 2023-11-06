@@ -24,8 +24,21 @@ defmodule MicrosoftGraph.Api.MeContact do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_contacts_create_extensions(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphExtension.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_contacts_create_extensions(connection, contact_id, microsoft_graph_extension, _opts \\ []) do
+  @spec me_contacts_create_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphExtension.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_contacts_create_extensions(
+        connection,
+        contact_id,
+        microsoft_graph_extension,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -58,7 +71,10 @@ defmodule MicrosoftGraph.Api.MeContact do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_contacts_delete_extensions(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_contacts_delete_extensions(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_contacts_delete_extensions(connection, contact_id, extension_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -95,7 +111,10 @@ defmodule MicrosoftGraph.Api.MeContact do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_contacts_extensions_get_count10dd(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_contacts_extensions_get_count10dd(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_contacts_extensions_get_count10dd(connection, contact_id, opts \\ []) do
     optional_params = %{
       :"$filter" => :query
@@ -132,7 +151,10 @@ defmodule MicrosoftGraph.Api.MeContact do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_contacts_get_count9c39(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_contacts_get_count9c39(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_contacts_get_count9c39(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -173,7 +195,10 @@ defmodule MicrosoftGraph.Api.MeContact do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_contacts_get_extensions(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_contacts_get_extensions(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_contacts_get_extensions(connection, contact_id, extension_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -212,7 +237,10 @@ defmodule MicrosoftGraph.Api.MeContact do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_contacts_get_photo(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_contacts_get_photo(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_contacts_get_photo(connection, contact_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query
@@ -248,7 +276,10 @@ defmodule MicrosoftGraph.Api.MeContact do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_contacts_get_photo_content(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
+  @spec me_contacts_get_photo_content(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
   def me_contacts_get_photo_content(connection, contact_id, _opts \\ []) do
     request =
       %{}
@@ -287,7 +318,10 @@ defmodule MicrosoftGraph.Api.MeContact do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_contacts_list_extensions(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec me_contacts_list_extensions(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def me_contacts_list_extensions(connection, contact_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -331,8 +365,23 @@ defmodule MicrosoftGraph.Api.MeContact do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_contacts_update_extensions(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphExtension.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_contacts_update_extensions(connection, contact_id, extension_id, microsoft_graph_extension, _opts \\ []) do
+  @spec me_contacts_update_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphExtension.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_contacts_update_extensions(
+        connection,
+        contact_id,
+        extension_id,
+        microsoft_graph_extension,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -364,7 +413,15 @@ defmodule MicrosoftGraph.Api.MeContact do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_contacts_update_photo(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_contacts_update_photo(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_contacts_update_photo(connection, contact_id, microsoft_graph_profile_photo, _opts \\ []) do
     request =
       %{}
@@ -397,7 +454,10 @@ defmodule MicrosoftGraph.Api.MeContact do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_contacts_update_photo_content(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_contacts_update_photo_content(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_contacts_update_photo_content(connection, contact_id, body, _opts \\ []) do
     request =
       %{}
@@ -430,7 +490,14 @@ defmodule MicrosoftGraph.Api.MeContact do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContact.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_create_contacts(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphContact.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphContact.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_create_contacts(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphContact.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphContact.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_create_contacts(connection, microsoft_graph_contact, _opts \\ []) do
     request =
       %{}
@@ -464,7 +531,10 @@ defmodule MicrosoftGraph.Api.MeContact do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_delete_contacts(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_delete_contacts(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_delete_contacts(connection, contact_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -503,7 +573,10 @@ defmodule MicrosoftGraph.Api.MeContact do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContact.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_get_contacts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphContact.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_get_contacts(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphContact.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_get_contacts(connection, contact_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -548,7 +621,10 @@ defmodule MicrosoftGraph.Api.MeContact do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContactCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_list_contacts(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphContactCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_list_contacts(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphContactCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_list_contacts(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -593,7 +669,15 @@ defmodule MicrosoftGraph.Api.MeContact do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContact.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_update_contacts(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphContact.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphContact.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_update_contacts(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphContact.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphContact.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_update_contacts(connection, contact_id, microsoft_graph_contact, _opts \\ []) do
     request =
       %{}

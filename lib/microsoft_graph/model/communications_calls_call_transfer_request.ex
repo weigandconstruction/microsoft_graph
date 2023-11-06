@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.CommunicationsCallsCallTransferRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,16 +13,25 @@ defmodule MicrosoftGraph.Model.CommunicationsCallsCallTransferRequest do
   ]
 
   @type t :: %__MODULE__{
-    :transferTarget => MicrosoftGraph.Model.MicrosoftGraphInvitationParticipantInfo.t | nil,
-    :transferee => MicrosoftGraph.Model.CommunicationsCallsCallTransferRequestTransferee.t | nil
-  }
+          :transferTarget =>
+            MicrosoftGraph.Model.MicrosoftGraphInvitationParticipantInfo.t() | nil,
+          :transferee =>
+            MicrosoftGraph.Model.CommunicationsCallsCallTransferRequestTransferee.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:transferTarget, :struct, MicrosoftGraph.Model.MicrosoftGraphInvitationParticipantInfo)
-     |> Deserializer.deserialize(:transferee, :struct, MicrosoftGraph.Model.CommunicationsCallsCallTransferRequestTransferee)
+    |> Deserializer.deserialize(
+      :transferTarget,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphInvitationParticipantInfo
+    )
+    |> Deserializer.deserialize(
+      :transferee,
+      :struct,
+      MicrosoftGraph.Model.CommunicationsCallsCallTransferRequestTransferee
+    )
   end
 end
-

@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphWebApplicationImplicitGrantSettings
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :enableAccessTokenIssuance => boolean() | nil,
-    :enableIdTokenIssuance => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :enableAccessTokenIssuance => boolean() | nil,
+          :enableIdTokenIssuance => boolean() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

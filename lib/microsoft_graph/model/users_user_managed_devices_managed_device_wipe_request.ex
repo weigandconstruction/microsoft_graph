@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.UsersUserManagedDevicesManagedDeviceWipeRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.UsersUserManagedDevicesManagedDeviceWipeRequest d
   ]
 
   @type t :: %__MODULE__{
-    :keepEnrollmentData => boolean() | nil,
-    :keepUserData => boolean() | nil,
-    :macOsUnlockCode => String.t | nil,
-    :persistEsimDataPlan => boolean() | nil
-  }
+          :keepEnrollmentData => boolean() | nil,
+          :keepUserData => boolean() | nil,
+          :macOsUnlockCode => String.t() | nil,
+          :persistEsimDataPlan => boolean() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflow do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -32,47 +32,97 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflow do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :category => MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleWorkflowCategory.t | nil,
-    :createdBy => MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowBaseCreatedBy.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :executionConditions => MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowBaseExecutionConditions.t | nil,
-    :isEnabled => boolean() | nil,
-    :isSchedulingEnabled => boolean() | nil,
-    :lastModifiedBy => MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowBaseLastModifiedBy.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :tasks => [MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t] | nil,
-    :deletedDateTime => DateTime.t | nil,
-    :executionScope => [MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResult.t] | nil,
-    :id => String.t | nil,
-    :nextScheduleRunDateTime => DateTime.t | nil,
-    :runs => [MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceRun.t] | nil,
-    :taskReports => [MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskReport.t] | nil,
-    :userProcessingResults => [MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResult.t] | nil,
-    :version => integer() | nil,
-    :versions => [MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowVersion.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :category =>
+            MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleWorkflowCategory.t()
+            | nil,
+          :createdBy =>
+            MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowBaseCreatedBy.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :executionConditions =>
+            MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowBaseExecutionConditions.t()
+            | nil,
+          :isEnabled => boolean() | nil,
+          :isSchedulingEnabled => boolean() | nil,
+          :lastModifiedBy =>
+            MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowBaseLastModifiedBy.t()
+            | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :tasks => [MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t()] | nil,
+          :deletedDateTime => DateTime.t() | nil,
+          :executionScope =>
+            [MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResult.t()] | nil,
+          :id => String.t() | nil,
+          :nextScheduleRunDateTime => DateTime.t() | nil,
+          :runs => [MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceRun.t()] | nil,
+          :taskReports =>
+            [MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskReport.t()] | nil,
+          :userProcessingResults =>
+            [MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResult.t()] | nil,
+          :version => integer() | nil,
+          :versions =>
+            [MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowVersion.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:category, :struct, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleWorkflowCategory)
-     |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowBaseCreatedBy)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:executionConditions, :struct, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowBaseExecutionConditions)
-     |> Deserializer.deserialize(:lastModifiedBy, :struct, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowBaseLastModifiedBy)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:tasks, :list, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask)
-     |> Deserializer.deserialize(:deletedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:executionScope, :list, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResult)
-     |> Deserializer.deserialize(:nextScheduleRunDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:runs, :list, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceRun)
-     |> Deserializer.deserialize(:taskReports, :list, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskReport)
-     |> Deserializer.deserialize(:userProcessingResults, :list, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResult)
-     |> Deserializer.deserialize(:versions, :list, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowVersion)
+    |> Deserializer.deserialize(
+      :category,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleWorkflowCategory
+    )
+    |> Deserializer.deserialize(
+      :createdBy,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowBaseCreatedBy
+    )
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :executionConditions,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowBaseExecutionConditions
+    )
+    |> Deserializer.deserialize(
+      :lastModifiedBy,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowBaseLastModifiedBy
+    )
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :tasks,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask
+    )
+    |> Deserializer.deserialize(:deletedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :executionScope,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResult
+    )
+    |> Deserializer.deserialize(:nextScheduleRunDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :runs,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceRun
+    )
+    |> Deserializer.deserialize(
+      :taskReports,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskReport
+    )
+    |> Deserializer.deserialize(
+      :userProcessingResults,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResult
+    )
+    |> Deserializer.deserialize(
+      :versions,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowVersion
+    )
   end
 end
-

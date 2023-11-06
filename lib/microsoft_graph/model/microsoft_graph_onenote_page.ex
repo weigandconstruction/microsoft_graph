@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphOnenotePage do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -26,32 +26,39 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphOnenotePage do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :self => String.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :content => String.t | nil,
-    :contentUrl => String.t | nil,
-    :createdByAppId => String.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :level => integer() | nil,
-    :links => MicrosoftGraph.Model.OnenotePageLinks.t | nil,
-    :order => integer() | nil,
-    :parentNotebook => MicrosoftGraph.Model.OnenotePageParentNotebook.t | nil,
-    :parentSection => MicrosoftGraph.Model.OnenotePageParentSection.t | nil,
-    :title => String.t | nil,
-    :userTags => [String.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :self => String.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :content => String.t() | nil,
+          :contentUrl => String.t() | nil,
+          :createdByAppId => String.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :level => integer() | nil,
+          :links => MicrosoftGraph.Model.OnenotePageLinks.t() | nil,
+          :order => integer() | nil,
+          :parentNotebook => MicrosoftGraph.Model.OnenotePageParentNotebook.t() | nil,
+          :parentSection => MicrosoftGraph.Model.OnenotePageParentSection.t() | nil,
+          :title => String.t() | nil,
+          :userTags => [String.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:links, :struct, MicrosoftGraph.Model.OnenotePageLinks)
-     |> Deserializer.deserialize(:parentNotebook, :struct, MicrosoftGraph.Model.OnenotePageParentNotebook)
-     |> Deserializer.deserialize(:parentSection, :struct, MicrosoftGraph.Model.OnenotePageParentSection)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:links, :struct, MicrosoftGraph.Model.OnenotePageLinks)
+    |> Deserializer.deserialize(
+      :parentNotebook,
+      :struct,
+      MicrosoftGraph.Model.OnenotePageParentNotebook
+    )
+    |> Deserializer.deserialize(
+      :parentSection,
+      :struct,
+      MicrosoftGraph.Model.OnenotePageParentSection
+    )
   end
 end
-

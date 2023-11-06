@@ -13,12 +13,11 @@ defmodule MicrosoftGraph.Model.AuthenticationFlowsPolicySelfServiceSignUp do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :isEnabled => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :isEnabled => boolean() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

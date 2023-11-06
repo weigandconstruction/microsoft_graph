@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphMicrosoftManagedTrainingSetting do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,19 +15,28 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphMicrosoftManagedTrainingSetting do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :settingType => MicrosoftGraph.Model.MicrosoftGraphTrainingSettingSettingType.t | nil,
-    :completionDateTime => DateTime.t | nil,
-    :trainingCompletionDuration => MicrosoftGraph.Model.MicrosoftManagedTrainingSettingTrainingCompletionDuration.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :settingType => MicrosoftGraph.Model.MicrosoftGraphTrainingSettingSettingType.t() | nil,
+          :completionDateTime => DateTime.t() | nil,
+          :trainingCompletionDuration =>
+            MicrosoftGraph.Model.MicrosoftManagedTrainingSettingTrainingCompletionDuration.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:settingType, :struct, MicrosoftGraph.Model.MicrosoftGraphTrainingSettingSettingType)
-     |> Deserializer.deserialize(:completionDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:trainingCompletionDuration, :struct, MicrosoftGraph.Model.MicrosoftManagedTrainingSettingTrainingCompletionDuration)
+    |> Deserializer.deserialize(
+      :settingType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphTrainingSettingSettingType
+    )
+    |> Deserializer.deserialize(:completionDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :trainingCompletionDuration,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftManagedTrainingSettingTrainingCompletionDuration
+    )
   end
 end
-

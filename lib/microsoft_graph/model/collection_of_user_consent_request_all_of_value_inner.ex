@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.CollectionOfUserConsentRequestAllOfValueInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -21,26 +21,29 @@ defmodule MicrosoftGraph.Model.CollectionOfUserConsentRequestAllOfValueInner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :approvalId => String.t | nil,
-    :completedDateTime => DateTime.t | nil,
-    :createdBy => MicrosoftGraph.Model.RequestCreatedBy.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :customData => String.t | nil,
-    :status => String.t | nil,
-    :approval => MicrosoftGraph.Model.UserConsentRequestApproval.t | nil,
-    :reason => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :approvalId => String.t() | nil,
+          :completedDateTime => DateTime.t() | nil,
+          :createdBy => MicrosoftGraph.Model.RequestCreatedBy.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :customData => String.t() | nil,
+          :status => String.t() | nil,
+          :approval => MicrosoftGraph.Model.UserConsentRequestApproval.t() | nil,
+          :reason => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:completedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.RequestCreatedBy)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:approval, :struct, MicrosoftGraph.Model.UserConsentRequestApproval)
+    |> Deserializer.deserialize(:completedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.RequestCreatedBy)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :approval,
+      :struct,
+      MicrosoftGraph.Model.UserConsentRequestApproval
+    )
   end
 end
-

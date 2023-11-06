@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphWorkforceIntegration do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -22,28 +22,40 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphWorkforceIntegration do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :lastModifiedBy => MicrosoftGraph.Model.ChangeTrackedEntityLastModifiedBy.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :apiVersion => integer() | nil,
-    :displayName => String.t | nil,
-    :encryption => MicrosoftGraph.Model.WorkforceIntegrationEncryption.t | nil,
-    :isActive => boolean() | nil,
-    :supportedEntities => MicrosoftGraph.Model.WorkforceIntegrationSupportedEntities.t | nil,
-    :url => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :lastModifiedBy => MicrosoftGraph.Model.ChangeTrackedEntityLastModifiedBy.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :apiVersion => integer() | nil,
+          :displayName => String.t() | nil,
+          :encryption => MicrosoftGraph.Model.WorkforceIntegrationEncryption.t() | nil,
+          :isActive => boolean() | nil,
+          :supportedEntities =>
+            MicrosoftGraph.Model.WorkforceIntegrationSupportedEntities.t() | nil,
+          :url => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastModifiedBy, :struct, MicrosoftGraph.Model.ChangeTrackedEntityLastModifiedBy)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:encryption, :struct, MicrosoftGraph.Model.WorkforceIntegrationEncryption)
-     |> Deserializer.deserialize(:supportedEntities, :struct, MicrosoftGraph.Model.WorkforceIntegrationSupportedEntities)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :lastModifiedBy,
+      :struct,
+      MicrosoftGraph.Model.ChangeTrackedEntityLastModifiedBy
+    )
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :encryption,
+      :struct,
+      MicrosoftGraph.Model.WorkforceIntegrationEncryption
+    )
+    |> Deserializer.deserialize(
+      :supportedEntities,
+      :struct,
+      MicrosoftGraph.Model.WorkforceIntegrationSupportedEntities
+    )
   end
 end
-

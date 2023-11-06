@@ -17,20 +17,30 @@ defmodule MicrosoftGraph.Model.ConditionalAccessPolicyGrantControls do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :authenticationStrength => MicrosoftGraph.Model.MicrosoftGraphConditionalAccessGrantControlsAuthenticationStrength.t | nil,
-    :builtInControls => [MicrosoftGraph.Model.MicrosoftGraphConditionalAccessGrantControl.t] | nil,
-    :customAuthenticationFactors => [String.t] | nil,
-    :operator => String.t | nil,
-    :termsOfUse => [String.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :authenticationStrength =>
+            MicrosoftGraph.Model.MicrosoftGraphConditionalAccessGrantControlsAuthenticationStrength.t()
+            | nil,
+          :builtInControls =>
+            [MicrosoftGraph.Model.MicrosoftGraphConditionalAccessGrantControl.t()] | nil,
+          :customAuthenticationFactors => [String.t()] | nil,
+          :operator => String.t() | nil,
+          :termsOfUse => [String.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:authenticationStrength, :struct, MicrosoftGraph.Model.MicrosoftGraphConditionalAccessGrantControlsAuthenticationStrength)
-     |> Deserializer.deserialize(:builtInControls, :list, MicrosoftGraph.Model.MicrosoftGraphConditionalAccessGrantControl)
+    |> Deserializer.deserialize(
+      :authenticationStrength,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphConditionalAccessGrantControlsAuthenticationStrength
+    )
+    |> Deserializer.deserialize(
+      :builtInControls,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphConditionalAccessGrantControl
+    )
   end
 end
-

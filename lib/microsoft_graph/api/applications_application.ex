@@ -24,8 +24,19 @@ defmodule MicrosoftGraph.Api.ApplicationsApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphApplication.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_application_create_application(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphApplication.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphApplication.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def applications_application_create_application(connection, microsoft_graph_application, _opts \\ []) do
+  @spec applications_application_create_application(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphApplication.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphApplication.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def applications_application_create_application(
+        connection,
+        microsoft_graph_application,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -58,7 +69,10 @@ defmodule MicrosoftGraph.Api.ApplicationsApplication do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_application_delete_application(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec applications_application_delete_application(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def applications_application_delete_application(connection, application_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -96,7 +110,14 @@ defmodule MicrosoftGraph.Api.ApplicationsApplication do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_application_delete_application_by_app_id(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec applications_application_delete_application_by_app_id(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def applications_application_delete_application_by_app_id(connection, app_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -135,7 +156,10 @@ defmodule MicrosoftGraph.Api.ApplicationsApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphApplication.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_application_get_application(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphApplication.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec applications_application_get_application(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphApplication.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def applications_application_get_application(connection, application_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -175,7 +199,14 @@ defmodule MicrosoftGraph.Api.ApplicationsApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphApplication.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_application_get_application_by_app_id(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphApplication.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec applications_application_get_application_by_app_id(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphApplication.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def applications_application_get_application_by_app_id(connection, app_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -213,7 +244,10 @@ defmodule MicrosoftGraph.Api.ApplicationsApplication do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_application_get_logo(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
+  @spec applications_application_get_logo(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
   def applications_application_get_logo(connection, application_id, _opts \\ []) do
     request =
       %{}
@@ -253,7 +287,10 @@ defmodule MicrosoftGraph.Api.ApplicationsApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphApplicationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_application_list_application(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphApplicationCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec applications_application_list_application(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphApplicationCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def applications_application_list_application(connection, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -299,8 +336,21 @@ defmodule MicrosoftGraph.Api.ApplicationsApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphApplication.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_application_update_application(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphApplication.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphApplication.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def applications_application_update_application(connection, application_id, microsoft_graph_application, _opts \\ []) do
+  @spec applications_application_update_application(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphApplication.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphApplication.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def applications_application_update_application(
+        connection,
+        application_id,
+        microsoft_graph_application,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -333,8 +383,21 @@ defmodule MicrosoftGraph.Api.ApplicationsApplication do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphApplication.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_application_update_application_by_app_id(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphApplication.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphApplication.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def applications_application_update_application_by_app_id(connection, app_id, microsoft_graph_application, _opts \\ []) do
+  @spec applications_application_update_application_by_app_id(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphApplication.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphApplication.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def applications_application_update_application_by_app_id(
+        connection,
+        app_id,
+        microsoft_graph_application,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -367,7 +430,15 @@ defmodule MicrosoftGraph.Api.ApplicationsApplication do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_application_update_logo(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec applications_application_update_logo(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def applications_application_update_logo(connection, application_id, body, _opts \\ []) do
     request =
       %{}
@@ -401,7 +472,10 @@ defmodule MicrosoftGraph.Api.ApplicationsApplication do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_get_count8398(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec applications_get_count8398(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def applications_get_count8398(connection, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,

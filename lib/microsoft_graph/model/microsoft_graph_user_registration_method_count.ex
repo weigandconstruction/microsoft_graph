@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphUserRegistrationMethodCount do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphUserRegistrationMethodCount do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :authenticationMethod => String.t | nil,
-    :userCount => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :authenticationMethod => String.t() | nil,
+          :userCount => integer() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

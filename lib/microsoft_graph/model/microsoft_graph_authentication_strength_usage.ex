@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthUsage do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,17 +14,24 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthUsage do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :mfa => [MicrosoftGraph.Model.MicrosoftGraphConditionalAccessPolicy.t] | nil,
-    :none => [MicrosoftGraph.Model.MicrosoftGraphConditionalAccessPolicy.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :mfa => [MicrosoftGraph.Model.MicrosoftGraphConditionalAccessPolicy.t()] | nil,
+          :none => [MicrosoftGraph.Model.MicrosoftGraphConditionalAccessPolicy.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:mfa, :list, MicrosoftGraph.Model.MicrosoftGraphConditionalAccessPolicy)
-     |> Deserializer.deserialize(:none, :list, MicrosoftGraph.Model.MicrosoftGraphConditionalAccessPolicy)
+    |> Deserializer.deserialize(
+      :mfa,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphConditionalAccessPolicy
+    )
+    |> Deserializer.deserialize(
+      :none,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphConditionalAccessPolicy
+    )
   end
 end
-

@@ -14,17 +14,27 @@ defmodule MicrosoftGraph.Model.ParticipantRestrictedExperience do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :contentSharingDisabled => MicrosoftGraph.Model.MicrosoftGraphOnlineMeetingRestrictedContentSharingDisabled.t | nil,
-    :videoDisabled => MicrosoftGraph.Model.MicrosoftGraphOnlineMeetingRestrictedVideoDisabled.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :contentSharingDisabled =>
+            MicrosoftGraph.Model.MicrosoftGraphOnlineMeetingRestrictedContentSharingDisabled.t()
+            | nil,
+          :videoDisabled =>
+            MicrosoftGraph.Model.MicrosoftGraphOnlineMeetingRestrictedVideoDisabled.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:contentSharingDisabled, :struct, MicrosoftGraph.Model.MicrosoftGraphOnlineMeetingRestrictedContentSharingDisabled)
-     |> Deserializer.deserialize(:videoDisabled, :struct, MicrosoftGraph.Model.MicrosoftGraphOnlineMeetingRestrictedVideoDisabled)
+    |> Deserializer.deserialize(
+      :contentSharingDisabled,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphOnlineMeetingRestrictedContentSharingDisabled
+    )
+    |> Deserializer.deserialize(
+      :videoDisabled,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphOnlineMeetingRestrictedVideoDisabled
+    )
   end
 end
-

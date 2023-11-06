@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DeviceManagementDeviceConfigurationsDeviceConfigurationAssignRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,14 +12,21 @@ defmodule MicrosoftGraph.Model.DeviceManagementDeviceConfigurationsDeviceConfigu
   ]
 
   @type t :: %__MODULE__{
-    :assignments => [MicrosoftGraph.Model.DeviceManagementDeviceConfigurationsDeviceConfigurationAssignRequestAssignmentsInner.t] | nil
-  }
+          :assignments =>
+            [
+              MicrosoftGraph.Model.DeviceManagementDeviceConfigurationsDeviceConfigurationAssignRequestAssignmentsInner.t()
+            ]
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:assignments, :list, MicrosoftGraph.Model.DeviceManagementDeviceConfigurationsDeviceConfigurationAssignRequestAssignmentsInner)
+    |> Deserializer.deserialize(
+      :assignments,
+      :list,
+      MicrosoftGraph.Model.DeviceManagementDeviceConfigurationsDeviceConfigurationAssignRequestAssignmentsInner
+    )
   end
 end
-

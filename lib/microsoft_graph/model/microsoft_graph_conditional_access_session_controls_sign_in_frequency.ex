@@ -17,21 +17,34 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphConditionalAccessSessionControlsSig
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :isEnabled => boolean() | nil,
-    :authenticationType => MicrosoftGraph.Model.SignInFrequencySessionControlAuthenticationType.t | nil,
-    :frequencyInterval => MicrosoftGraph.Model.SignInFrequencySessionControlFrequencyInterval.t | nil,
-    :type => MicrosoftGraph.Model.SignInFrequencySessionControlType.t | nil,
-    :value => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :isEnabled => boolean() | nil,
+          :authenticationType =>
+            MicrosoftGraph.Model.SignInFrequencySessionControlAuthenticationType.t() | nil,
+          :frequencyInterval =>
+            MicrosoftGraph.Model.SignInFrequencySessionControlFrequencyInterval.t() | nil,
+          :type => MicrosoftGraph.Model.SignInFrequencySessionControlType.t() | nil,
+          :value => integer() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:authenticationType, :struct, MicrosoftGraph.Model.SignInFrequencySessionControlAuthenticationType)
-     |> Deserializer.deserialize(:frequencyInterval, :struct, MicrosoftGraph.Model.SignInFrequencySessionControlFrequencyInterval)
-     |> Deserializer.deserialize(:type, :struct, MicrosoftGraph.Model.SignInFrequencySessionControlType)
+    |> Deserializer.deserialize(
+      :authenticationType,
+      :struct,
+      MicrosoftGraph.Model.SignInFrequencySessionControlAuthenticationType
+    )
+    |> Deserializer.deserialize(
+      :frequencyInterval,
+      :struct,
+      MicrosoftGraph.Model.SignInFrequencySessionControlFrequencyInterval
+    )
+    |> Deserializer.deserialize(
+      :type,
+      :struct,
+      MicrosoftGraph.Model.SignInFrequencySessionControlType
+    )
   end
 end
-

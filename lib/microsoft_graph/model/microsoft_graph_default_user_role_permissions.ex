@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphDefaultUserRolePermissions do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,17 +18,16 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphDefaultUserRolePermissions do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :allowedToCreateApps => boolean() | nil,
-    :allowedToCreateSecurityGroups => boolean() | nil,
-    :allowedToCreateTenants => boolean() | nil,
-    :allowedToReadBitlockerKeysForOwnedDevice => boolean() | nil,
-    :allowedToReadOtherUsers => boolean() | nil,
-    :permissionGrantPoliciesAssigned => [String.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :allowedToCreateApps => boolean() | nil,
+          :allowedToCreateSecurityGroups => boolean() | nil,
+          :allowedToCreateTenants => boolean() | nil,
+          :allowedToReadBitlockerKeysForOwnedDevice => boolean() | nil,
+          :allowedToReadOtherUsers => boolean() | nil,
+          :permissionGrantPoliciesAssigned => [String.t()] | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

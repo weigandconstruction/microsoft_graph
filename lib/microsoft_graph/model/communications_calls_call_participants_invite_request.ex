@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.CommunicationsCallsCallParticipantsInviteRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,15 +13,19 @@ defmodule MicrosoftGraph.Model.CommunicationsCallsCallParticipantsInviteRequest 
   ]
 
   @type t :: %__MODULE__{
-    :clientContext => String.t | nil,
-    :participants => [MicrosoftGraph.Model.MicrosoftGraphInvitationParticipantInfo.t] | nil
-  }
+          :clientContext => String.t() | nil,
+          :participants =>
+            [MicrosoftGraph.Model.MicrosoftGraphInvitationParticipantInfo.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:participants, :list, MicrosoftGraph.Model.MicrosoftGraphInvitationParticipantInfo)
+    |> Deserializer.deserialize(
+      :participants,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphInvitationParticipantInfo
+    )
   end
 end
-

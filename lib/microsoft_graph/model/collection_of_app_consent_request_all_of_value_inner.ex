@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.CollectionOfAppConsentRequestAllOfValueInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,20 +17,28 @@ defmodule MicrosoftGraph.Model.CollectionOfAppConsentRequestAllOfValueInner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :appDisplayName => String.t | nil,
-    :appId => String.t | nil,
-    :pendingScopes => [MicrosoftGraph.Model.AppConsentRequestPendingScopesInner.t] | nil,
-    :userConsentRequests => [MicrosoftGraph.Model.MicrosoftGraphUserConsentRequest.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :appDisplayName => String.t() | nil,
+          :appId => String.t() | nil,
+          :pendingScopes => [MicrosoftGraph.Model.AppConsentRequestPendingScopesInner.t()] | nil,
+          :userConsentRequests =>
+            [MicrosoftGraph.Model.MicrosoftGraphUserConsentRequest.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:pendingScopes, :list, MicrosoftGraph.Model.AppConsentRequestPendingScopesInner)
-     |> Deserializer.deserialize(:userConsentRequests, :list, MicrosoftGraph.Model.MicrosoftGraphUserConsentRequest)
+    |> Deserializer.deserialize(
+      :pendingScopes,
+      :list,
+      MicrosoftGraph.Model.AppConsentRequestPendingScopesInner
+    )
+    |> Deserializer.deserialize(
+      :userConsentRequests,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphUserConsentRequest
+    )
   end
 end
-

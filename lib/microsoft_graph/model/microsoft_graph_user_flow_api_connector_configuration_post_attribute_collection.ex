@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphUserFlowApiConnectorConfigurationPostAttributeCollection do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,18 +16,22 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphUserFlowApiConnectorConfigurationPo
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :authenticationConfiguration => MicrosoftGraph.Model.IdentityApiConnectorAuthenticationConfiguration.t | nil,
-    :displayName => String.t | nil,
-    :targetUrl => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :authenticationConfiguration =>
+            MicrosoftGraph.Model.IdentityApiConnectorAuthenticationConfiguration.t() | nil,
+          :displayName => String.t() | nil,
+          :targetUrl => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:authenticationConfiguration, :struct, MicrosoftGraph.Model.IdentityApiConnectorAuthenticationConfiguration)
+    |> Deserializer.deserialize(
+      :authenticationConfiguration,
+      :struct,
+      MicrosoftGraph.Model.IdentityApiConnectorAuthenticationConfiguration
+    )
   end
 end
-

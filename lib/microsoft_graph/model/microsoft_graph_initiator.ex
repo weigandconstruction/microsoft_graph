@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphInitiator do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,17 +15,20 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphInitiator do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :displayName => String.t | nil,
-    :id => String.t | nil,
-    :initiatorType => MicrosoftGraph.Model.InitiatorInitiatorType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :displayName => String.t() | nil,
+          :id => String.t() | nil,
+          :initiatorType => MicrosoftGraph.Model.InitiatorInitiatorType.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:initiatorType, :struct, MicrosoftGraph.Model.InitiatorInitiatorType)
+    |> Deserializer.deserialize(
+      :initiatorType,
+      :struct,
+      MicrosoftGraph.Model.InitiatorInitiatorType
+    )
   end
 end
-

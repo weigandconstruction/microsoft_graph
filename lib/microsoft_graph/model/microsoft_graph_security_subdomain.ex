@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSecuritySubdomain do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,18 +15,17 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSecuritySubdomain do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :firstSeenDateTime => DateTime.t | nil,
-    :host => MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :firstSeenDateTime => DateTime.t() | nil,
+          :host => MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:firstSeenDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:host, :struct, MicrosoftGraph.Model.MicrosoftGraphSecurityHost)
+    |> Deserializer.deserialize(:firstSeenDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:host, :struct, MicrosoftGraph.Model.MicrosoftGraphSecurityHost)
   end
 end
-

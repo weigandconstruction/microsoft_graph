@@ -16,18 +16,21 @@ defmodule MicrosoftGraph.Model.ProvisioningObjectSummaryTargetIdentity do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :displayName => String.t | nil,
-    :id => String.t | nil,
-    :details => MicrosoftGraph.Model.ProvisionedIdentityDetails.t | nil,
-    :identityType => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :displayName => String.t() | nil,
+          :id => String.t() | nil,
+          :details => MicrosoftGraph.Model.ProvisionedIdentityDetails.t() | nil,
+          :identityType => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:details, :struct, MicrosoftGraph.Model.ProvisionedIdentityDetails)
+    |> Deserializer.deserialize(
+      :details,
+      :struct,
+      MicrosoftGraph.Model.ProvisionedIdentityDetails
+    )
   end
 end
-

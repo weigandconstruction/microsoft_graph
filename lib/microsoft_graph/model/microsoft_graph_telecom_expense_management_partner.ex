@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphTelecomExpenseManagementPartner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,20 +18,19 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphTelecomExpenseManagementPartner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :appAuthorized => boolean() | nil,
-    :displayName => String.t | nil,
-    :enabled => boolean() | nil,
-    :lastConnectionDateTime => DateTime.t | nil,
-    :url => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :appAuthorized => boolean() | nil,
+          :displayName => String.t() | nil,
+          :enabled => boolean() | nil,
+          :lastConnectionDateTime => DateTime.t() | nil,
+          :url => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:lastConnectionDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastConnectionDateTime, :datetime, nil)
   end
 end
-

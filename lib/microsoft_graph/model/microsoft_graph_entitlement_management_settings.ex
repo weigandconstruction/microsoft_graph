@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphEntitlementManagementSettings do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,17 +15,22 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphEntitlementManagementSettings do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :durationUntilExternalUserDeletedAfterBlocked => String.t | nil,
-    :externalUserLifecycleAction => MicrosoftGraph.Model.EntitlementManagementSettingsExternalUserLifecycleAction.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :durationUntilExternalUserDeletedAfterBlocked => String.t() | nil,
+          :externalUserLifecycleAction =>
+            MicrosoftGraph.Model.EntitlementManagementSettingsExternalUserLifecycleAction.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:externalUserLifecycleAction, :struct, MicrosoftGraph.Model.EntitlementManagementSettingsExternalUserLifecycleAction)
+    |> Deserializer.deserialize(
+      :externalUserLifecycleAction,
+      :struct,
+      MicrosoftGraph.Model.EntitlementManagementSettingsExternalUserLifecycleAction
+    )
   end
 end
-

@@ -24,7 +24,10 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_delete_list(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_delete_list(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_delete_list(connection, drive_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -63,7 +66,10 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphList.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_get_list(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphList.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_get_list(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphList.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_get_list(connection, drive_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -102,7 +108,10 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_columns_get_count5e2e(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_list_columns_get_count5e2e(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_list_columns_get_count5e2e(connection, drive_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -143,8 +152,21 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_columns_get_source_column(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_list_columns_get_source_column(connection, drive_id, column_definition_id, opts \\ []) do
+  @spec drives_list_columns_get_source_column(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_columns_get_source_column(
+        connection,
+        drive_id,
+        column_definition_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -183,8 +205,21 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_content_types_base_types_get_count95ae(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_list_content_types_base_types_get_count95ae(connection, drive_id, content_type_id, opts \\ []) do
+  @spec drives_list_content_types_base_types_get_count95ae(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_content_types_base_types_get_count95ae(
+        connection,
+        drive_id,
+        content_type_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -223,8 +258,21 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_content_types_column_links_get_count_e5f5(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_list_content_types_column_links_get_count_e5f5(connection, drive_id, content_type_id, opts \\ []) do
+  @spec drives_list_content_types_column_links_get_count_e5f5(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_content_types_column_links_get_count_e5f5(
+        connection,
+        drive_id,
+        content_type_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -263,8 +311,21 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_content_types_column_positions_get_count6cb6(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_list_content_types_column_positions_get_count6cb6(connection, drive_id, content_type_id, opts \\ []) do
+  @spec drives_list_content_types_column_positions_get_count6cb6(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_content_types_column_positions_get_count6cb6(
+        connection,
+        drive_id,
+        content_type_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -303,8 +364,21 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_content_types_columns_get_count4b13(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_list_content_types_columns_get_count4b13(connection, drive_id, content_type_id, opts \\ []) do
+  @spec drives_list_content_types_columns_get_count4b13(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_content_types_columns_get_count4b13(
+        connection,
+        drive_id,
+        content_type_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -345,8 +419,23 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_content_types_columns_get_source_column(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_list_content_types_columns_get_source_column(connection, drive_id, content_type_id, column_definition_id, opts \\ []) do
+  @spec drives_list_content_types_columns_get_source_column(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_content_types_columns_get_source_column(
+        connection,
+        drive_id,
+        content_type_id,
+        column_definition_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -355,7 +444,9 @@ defmodule MicrosoftGraph.Api.DrivesList do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/list/contentTypes/#{content_type_id}/columns/#{column_definition_id}/sourceColumn")
+      |> url(
+        "/drives/#{drive_id}/list/contentTypes/#{content_type_id}/columns/#{column_definition_id}/sourceColumn"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -384,8 +475,23 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnLink.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_content_types_create_column_links(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphColumnLink.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnLink.t} | {:error, Tesla.Env.t}
-  def drives_list_content_types_create_column_links(connection, drive_id, content_type_id, microsoft_graph_column_link, _opts \\ []) do
+  @spec drives_list_content_types_create_column_links(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphColumnLink.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnLink.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_content_types_create_column_links(
+        connection,
+        drive_id,
+        content_type_id,
+        microsoft_graph_column_link,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -419,8 +525,23 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_content_types_create_columns(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_list_content_types_create_columns(connection, drive_id, content_type_id, microsoft_graph_column_definition, _opts \\ []) do
+  @spec drives_list_content_types_create_columns(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_content_types_create_columns(
+        connection,
+        drive_id,
+        content_type_id,
+        microsoft_graph_column_definition,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -454,8 +575,23 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_content_types_delete_column_links(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_list_content_types_delete_column_links(connection, drive_id, content_type_id, column_link_id, opts \\ []) do
+  @spec drives_list_content_types_delete_column_links(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_content_types_delete_column_links(
+        connection,
+        drive_id,
+        content_type_id,
+        column_link_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -463,7 +599,9 @@ defmodule MicrosoftGraph.Api.DrivesList do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/list/contentTypes/#{content_type_id}/columnLinks/#{column_link_id}")
+      |> url(
+        "/drives/#{drive_id}/list/contentTypes/#{content_type_id}/columnLinks/#{column_link_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -494,8 +632,23 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_content_types_delete_columns(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_list_content_types_delete_columns(connection, drive_id, content_type_id, column_definition_id, opts \\ []) do
+  @spec drives_list_content_types_delete_columns(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_content_types_delete_columns(
+        connection,
+        drive_id,
+        content_type_id,
+        column_definition_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -503,7 +656,9 @@ defmodule MicrosoftGraph.Api.DrivesList do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/list/contentTypes/#{content_type_id}/columns/#{column_definition_id}")
+      |> url(
+        "/drives/#{drive_id}/list/contentTypes/#{content_type_id}/columns/#{column_definition_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -534,7 +689,10 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContentType.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_content_types_get_base(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphContentType.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_list_content_types_get_base(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphContentType.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_list_content_types_get_base(connection, drive_id, content_type_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -576,8 +734,23 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContentType.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_content_types_get_base_types(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphContentType.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_list_content_types_get_base_types(connection, drive_id, content_type_id, content_type_id1, opts \\ []) do
+  @spec drives_list_content_types_get_base_types(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphContentType.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_content_types_get_base_types(
+        connection,
+        drive_id,
+        content_type_id,
+        content_type_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -586,7 +759,9 @@ defmodule MicrosoftGraph.Api.DrivesList do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/list/contentTypes/#{content_type_id}/baseTypes/#{content_type_id1}")
+      |> url(
+        "/drives/#{drive_id}/list/contentTypes/#{content_type_id}/baseTypes/#{content_type_id1}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -618,8 +793,23 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnLink.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_content_types_get_column_links(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnLink.t} | {:error, Tesla.Env.t}
-  def drives_list_content_types_get_column_links(connection, drive_id, content_type_id, column_link_id, opts \\ []) do
+  @spec drives_list_content_types_get_column_links(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnLink.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_content_types_get_column_links(
+        connection,
+        drive_id,
+        content_type_id,
+        column_link_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -628,7 +818,9 @@ defmodule MicrosoftGraph.Api.DrivesList do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/list/contentTypes/#{content_type_id}/columnLinks/#{column_link_id}")
+      |> url(
+        "/drives/#{drive_id}/list/contentTypes/#{content_type_id}/columnLinks/#{column_link_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -660,8 +852,23 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_content_types_get_column_positions(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_list_content_types_get_column_positions(connection, drive_id, content_type_id, column_definition_id, opts \\ []) do
+  @spec drives_list_content_types_get_column_positions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_content_types_get_column_positions(
+        connection,
+        drive_id,
+        content_type_id,
+        column_definition_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -670,7 +877,9 @@ defmodule MicrosoftGraph.Api.DrivesList do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/list/contentTypes/#{content_type_id}/columnPositions/#{column_definition_id}")
+      |> url(
+        "/drives/#{drive_id}/list/contentTypes/#{content_type_id}/columnPositions/#{column_definition_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -702,8 +911,23 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_content_types_get_columns(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_list_content_types_get_columns(connection, drive_id, content_type_id, column_definition_id, opts \\ []) do
+  @spec drives_list_content_types_get_columns(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_content_types_get_columns(
+        connection,
+        drive_id,
+        content_type_id,
+        column_definition_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -712,7 +936,9 @@ defmodule MicrosoftGraph.Api.DrivesList do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/list/contentTypes/#{content_type_id}/columns/#{column_definition_id}")
+      |> url(
+        "/drives/#{drive_id}/list/contentTypes/#{content_type_id}/columns/#{column_definition_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -741,7 +967,10 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_content_types_get_count5838(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_list_content_types_get_count5838(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_list_content_types_get_count5838(connection, drive_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -788,7 +1017,15 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContentTypeCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_content_types_list_base_types(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphContentTypeCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_list_content_types_list_base_types(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphContentTypeCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_list_content_types_list_base_types(connection, drive_id, content_type_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -841,8 +1078,21 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnLinkCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_content_types_list_column_links(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnLinkCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_list_content_types_list_column_links(connection, drive_id, content_type_id, opts \\ []) do
+  @spec drives_list_content_types_list_column_links(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnLinkCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_content_types_list_column_links(
+        connection,
+        drive_id,
+        content_type_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -894,8 +1144,21 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinitionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_content_types_list_column_positions(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinitionCollectionResponse.t} | {:error, Tesla.Env.t}
-  def drives_list_content_types_list_column_positions(connection, drive_id, content_type_id, opts \\ []) do
+  @spec drives_list_content_types_list_column_positions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinitionCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_content_types_list_column_positions(
+        connection,
+        drive_id,
+        content_type_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -947,7 +1210,15 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinitionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_content_types_list_columns(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinitionCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec drives_list_content_types_list_columns(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinitionCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def drives_list_content_types_list_columns(connection, drive_id, content_type_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -993,12 +1264,31 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnLink.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_content_types_update_column_links(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphColumnLink.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnLink.t} | {:error, Tesla.Env.t}
-  def drives_list_content_types_update_column_links(connection, drive_id, content_type_id, column_link_id, microsoft_graph_column_link, _opts \\ []) do
+  @spec drives_list_content_types_update_column_links(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphColumnLink.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnLink.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_content_types_update_column_links(
+        connection,
+        drive_id,
+        content_type_id,
+        column_link_id,
+        microsoft_graph_column_link,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/list/contentTypes/#{content_type_id}/columnLinks/#{column_link_id}")
+      |> url(
+        "/drives/#{drive_id}/list/contentTypes/#{content_type_id}/columnLinks/#{column_link_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_column_link)
       |> Enum.into([])
 
@@ -1029,12 +1319,31 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_content_types_update_columns(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_list_content_types_update_columns(connection, drive_id, content_type_id, column_definition_id, microsoft_graph_column_definition, _opts \\ []) do
+  @spec drives_list_content_types_update_columns(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_content_types_update_columns(
+        connection,
+        drive_id,
+        content_type_id,
+        column_definition_id,
+        microsoft_graph_column_definition,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/list/contentTypes/#{content_type_id}/columns/#{column_definition_id}")
+      |> url(
+        "/drives/#{drive_id}/list/contentTypes/#{content_type_id}/columns/#{column_definition_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_column_definition)
       |> Enum.into([])
 
@@ -1063,8 +1372,21 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_create_columns(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_list_create_columns(connection, drive_id, microsoft_graph_column_definition, _opts \\ []) do
+  @spec drives_list_create_columns(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_create_columns(
+        connection,
+        drive_id,
+        microsoft_graph_column_definition,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1096,8 +1418,21 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContentType.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_create_content_types(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphContentType.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphContentType.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_list_create_content_types(connection, drive_id, microsoft_graph_content_type, _opts \\ []) do
+  @spec drives_list_create_content_types(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphContentType.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphContentType.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_create_content_types(
+        connection,
+        drive_id,
+        microsoft_graph_content_type,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1130,7 +1465,15 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphListItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_create_items(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphListItem.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphListItem.t} | {:error, Tesla.Env.t}
+  @spec drives_list_create_items(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphListItem.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphListItem.t()}
+          | {:error, Tesla.Env.t()}
   def drives_list_create_items(connection, drive_id, microsoft_graph_list_item, _opts \\ []) do
     request =
       %{}
@@ -1163,8 +1506,21 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_create_operations(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_list_create_operations(connection, drive_id, microsoft_graph_rich_long_running_operation, _opts \\ []) do
+  @spec drives_list_create_operations(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_create_operations(
+        connection,
+        drive_id,
+        microsoft_graph_rich_long_running_operation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1196,8 +1552,21 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSubscription.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_create_subscriptions(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphSubscription.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSubscription.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_list_create_subscriptions(connection, drive_id, microsoft_graph_subscription, _opts \\ []) do
+  @spec drives_list_create_subscriptions(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSubscription.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSubscription.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_create_subscriptions(
+        connection,
+        drive_id,
+        microsoft_graph_subscription,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1231,7 +1600,14 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_created_by_user_get_mailbox_settings(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
+  @spec drives_list_created_by_user_get_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
   def drives_list_created_by_user_get_mailbox_settings(connection, drive_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -1276,8 +1652,19 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_created_by_user_list_service_provisioning_errors(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_list_created_by_user_list_service_provisioning_errors(connection, drive_id, opts \\ []) do
+  @spec drives_list_created_by_user_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_created_by_user_list_service_provisioning_errors(
+        connection,
+        drive_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1321,8 +1708,19 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_created_by_user_service_provisioning_errors_get_count63ab(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_list_created_by_user_service_provisioning_errors_get_count63ab(connection, drive_id, opts \\ []) do
+  @spec drives_list_created_by_user_service_provisioning_errors_get_count63ab(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_created_by_user_service_provisioning_errors_get_count63ab(
+        connection,
+        drive_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1359,8 +1757,21 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_created_by_user_update_mailbox_settings(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def drives_list_created_by_user_update_mailbox_settings(connection, drive_id, microsoft_graph_mailbox_settings, _opts \\ []) do
+  @spec drives_list_created_by_user_update_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_created_by_user_update_mailbox_settings(
+        connection,
+        drive_id,
+        microsoft_graph_mailbox_settings,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -1393,7 +1804,10 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_delete_columns(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_list_delete_columns(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_list_delete_columns(connection, drive_id, column_definition_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -1431,7 +1845,10 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_delete_content_types(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_list_delete_content_types(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_list_delete_content_types(connection, drive_id, content_type_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -1470,7 +1887,10 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_delete_items(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_list_delete_items(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_list_delete_items(connection, drive_id, list_item_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -1508,8 +1928,16 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_delete_operations(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_list_delete_operations(connection, drive_id, rich_long_running_operation_id, opts \\ []) do
+  @spec drives_list_delete_operations(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_delete_operations(
+        connection,
+        drive_id,
+        rich_long_running_operation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1546,7 +1974,10 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_delete_subscriptions(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_list_delete_subscriptions(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_list_delete_subscriptions(connection, drive_id, subscription_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -1586,7 +2017,10 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_get_columns(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_list_get_columns(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_list_get_columns(connection, drive_id, column_definition_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -1627,7 +2061,10 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContentType.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_get_content_types(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphContentType.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_list_get_content_types(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphContentType.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_list_get_content_types(connection, drive_id, content_type_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -1667,7 +2104,10 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_get_created_by_user(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_list_get_created_by_user(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_list_get_created_by_user(connection, drive_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -1707,7 +2147,10 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDrive.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_get_drive(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDrive.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_list_get_drive(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDrive.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_list_get_drive(connection, drive_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -1748,7 +2191,10 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphListItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_get_items(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphListItem.t} | {:error, Tesla.Env.t}
+  @spec drives_list_get_items(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphListItem.t()}
+          | {:error, Tesla.Env.t()}
   def drives_list_get_items(connection, drive_id, list_item_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -1788,7 +2234,10 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_get_last_modified_by_user(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_list_get_last_modified_by_user(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_list_get_last_modified_by_user(connection, drive_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -1829,7 +2278,10 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_get_operations(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_list_get_operations(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_list_get_operations(connection, drive_id, rich_long_running_operation_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -1870,7 +2322,10 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSubscription.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_get_subscriptions(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSubscription.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_list_get_subscriptions(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSubscription.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_list_get_subscriptions(connection, drive_id, subscription_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -1910,8 +2365,23 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDocumentSetVersion.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_items_create_document_set_versions(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphDocumentSetVersion.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDocumentSetVersion.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_list_items_create_document_set_versions(connection, drive_id, list_item_id, microsoft_graph_document_set_version, _opts \\ []) do
+  @spec drives_list_items_create_document_set_versions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDocumentSetVersion.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDocumentSetVersion.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_items_create_document_set_versions(
+        connection,
+        drive_id,
+        list_item_id,
+        microsoft_graph_document_set_version,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1944,8 +2414,23 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphListItemVersion.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_items_create_versions(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphListItemVersion.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphListItemVersion.t} | {:error, Tesla.Env.t}
-  def drives_list_items_create_versions(connection, drive_id, list_item_id, microsoft_graph_list_item_version, _opts \\ []) do
+  @spec drives_list_items_create_versions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphListItemVersion.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphListItemVersion.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_items_create_versions(
+        connection,
+        drive_id,
+        list_item_id,
+        microsoft_graph_list_item_version,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1980,8 +2465,21 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_items_created_by_user_get_mailbox_settings(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def drives_list_items_created_by_user_get_mailbox_settings(connection, drive_id, list_item_id, opts \\ []) do
+  @spec drives_list_items_created_by_user_get_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_items_created_by_user_get_mailbox_settings(
+        connection,
+        drive_id,
+        list_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2026,8 +2524,21 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_items_created_by_user_list_service_provisioning_errors(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_list_items_created_by_user_list_service_provisioning_errors(connection, drive_id, list_item_id, opts \\ []) do
+  @spec drives_list_items_created_by_user_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_items_created_by_user_list_service_provisioning_errors(
+        connection,
+        drive_id,
+        list_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -2042,7 +2553,9 @@ defmodule MicrosoftGraph.Api.DrivesList do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/list/items/#{list_item_id}/createdByUser/serviceProvisioningErrors")
+      |> url(
+        "/drives/#{drive_id}/list/items/#{list_item_id}/createdByUser/serviceProvisioningErrors"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2072,8 +2585,21 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_items_created_by_user_service_provisioning_errors_get_count5900(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_list_items_created_by_user_service_provisioning_errors_get_count5900(connection, drive_id, list_item_id, opts \\ []) do
+  @spec drives_list_items_created_by_user_service_provisioning_errors_get_count5900(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_items_created_by_user_service_provisioning_errors_get_count5900(
+        connection,
+        drive_id,
+        list_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -2082,7 +2608,9 @@ defmodule MicrosoftGraph.Api.DrivesList do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/list/items/#{list_item_id}/createdByUser/serviceProvisioningErrors/$count")
+      |> url(
+        "/drives/#{drive_id}/list/items/#{list_item_id}/createdByUser/serviceProvisioningErrors/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2111,8 +2639,23 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_items_created_by_user_update_mailbox_settings(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def drives_list_items_created_by_user_update_mailbox_settings(connection, drive_id, list_item_id, microsoft_graph_mailbox_settings, _opts \\ []) do
+  @spec drives_list_items_created_by_user_update_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_items_created_by_user_update_mailbox_settings(
+        connection,
+        drive_id,
+        list_item_id,
+        microsoft_graph_mailbox_settings,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -2147,8 +2690,23 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_items_delete_document_set_versions(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_list_items_delete_document_set_versions(connection, drive_id, list_item_id, document_set_version_id, opts \\ []) do
+  @spec drives_list_items_delete_document_set_versions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_items_delete_document_set_versions(
+        connection,
+        drive_id,
+        list_item_id,
+        document_set_version_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -2156,7 +2714,9 @@ defmodule MicrosoftGraph.Api.DrivesList do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/list/items/#{list_item_id}/documentSetVersions/#{document_set_version_id}")
+      |> url(
+        "/drives/#{drive_id}/list/items/#{list_item_id}/documentSetVersions/#{document_set_version_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2185,7 +2745,10 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_items_delete_fields(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_list_items_delete_fields(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_list_items_delete_fields(connection, drive_id, list_item_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -2224,8 +2787,23 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_items_delete_versions(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_list_items_delete_versions(connection, drive_id, list_item_id, list_item_version_id, opts \\ []) do
+  @spec drives_list_items_delete_versions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_items_delete_versions(
+        connection,
+        drive_id,
+        list_item_id,
+        list_item_version_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -2263,8 +2841,23 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_items_document_set_versions_delete_fields(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_list_items_document_set_versions_delete_fields(connection, drive_id, list_item_id, document_set_version_id, opts \\ []) do
+  @spec drives_list_items_document_set_versions_delete_fields(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_items_document_set_versions_delete_fields(
+        connection,
+        drive_id,
+        list_item_id,
+        document_set_version_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -2272,7 +2865,9 @@ defmodule MicrosoftGraph.Api.DrivesList do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/list/items/#{list_item_id}/documentSetVersions/#{document_set_version_id}/fields")
+      |> url(
+        "/drives/#{drive_id}/list/items/#{list_item_id}/documentSetVersions/#{document_set_version_id}/fields"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2302,8 +2897,21 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_items_document_set_versions_get_count7796(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_list_items_document_set_versions_get_count7796(connection, drive_id, list_item_id, opts \\ []) do
+  @spec drives_list_items_document_set_versions_get_count7796(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_items_document_set_versions_get_count7796(
+        connection,
+        drive_id,
+        list_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -2344,8 +2952,23 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphFieldValueSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_items_document_set_versions_get_fields(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphFieldValueSet.t} | {:error, Tesla.Env.t}
-  def drives_list_items_document_set_versions_get_fields(connection, drive_id, list_item_id, document_set_version_id, opts \\ []) do
+  @spec drives_list_items_document_set_versions_get_fields(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphFieldValueSet.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_items_document_set_versions_get_fields(
+        connection,
+        drive_id,
+        list_item_id,
+        document_set_version_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2354,7 +2977,9 @@ defmodule MicrosoftGraph.Api.DrivesList do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/list/items/#{list_item_id}/documentSetVersions/#{document_set_version_id}/fields")
+      |> url(
+        "/drives/#{drive_id}/list/items/#{list_item_id}/documentSetVersions/#{document_set_version_id}/fields"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2384,12 +3009,31 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphFieldValueSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_items_document_set_versions_update_fields(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphFieldValueSet.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphFieldValueSet.t} | {:error, Tesla.Env.t}
-  def drives_list_items_document_set_versions_update_fields(connection, drive_id, list_item_id, document_set_version_id, microsoft_graph_field_value_set, _opts \\ []) do
+  @spec drives_list_items_document_set_versions_update_fields(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphFieldValueSet.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphFieldValueSet.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_items_document_set_versions_update_fields(
+        connection,
+        drive_id,
+        list_item_id,
+        document_set_version_id,
+        microsoft_graph_field_value_set,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/list/items/#{list_item_id}/documentSetVersions/#{document_set_version_id}/fields")
+      |> url(
+        "/drives/#{drive_id}/list/items/#{list_item_id}/documentSetVersions/#{document_set_version_id}/fields"
+      )
       |> add_param(:body, :body, microsoft_graph_field_value_set)
       |> Enum.into([])
 
@@ -2420,7 +3064,10 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphItemAnalytics.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_items_get_analytics(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphItemAnalytics.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_list_items_get_analytics(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphItemAnalytics.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_list_items_get_analytics(connection, drive_id, list_item_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -2459,7 +3106,10 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_items_get_count_e46a(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_list_items_get_count_e46a(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_list_items_get_count_e46a(connection, drive_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -2500,7 +3150,15 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_items_get_created_by_user(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_list_items_get_created_by_user(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_list_items_get_created_by_user(connection, drive_id, list_item_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -2542,8 +3200,23 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDocumentSetVersion.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_items_get_document_set_versions(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDocumentSetVersion.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_list_items_get_document_set_versions(connection, drive_id, list_item_id, document_set_version_id, opts \\ []) do
+  @spec drives_list_items_get_document_set_versions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDocumentSetVersion.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_items_get_document_set_versions(
+        connection,
+        drive_id,
+        list_item_id,
+        document_set_version_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2552,7 +3225,9 @@ defmodule MicrosoftGraph.Api.DrivesList do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/list/items/#{list_item_id}/documentSetVersions/#{document_set_version_id}")
+      |> url(
+        "/drives/#{drive_id}/list/items/#{list_item_id}/documentSetVersions/#{document_set_version_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2583,7 +3258,10 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_items_get_drive_item(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_list_items_get_drive_item(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_list_items_get_drive_item(connection, drive_id, list_item_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -2622,7 +3300,15 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_items_get_drive_item_content(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
+  @spec drives_list_items_get_drive_item_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
   def drives_list_items_get_drive_item_content(connection, drive_id, list_item_id, _opts \\ []) do
     request =
       %{}
@@ -2657,7 +3343,10 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphFieldValueSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_items_get_fields(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphFieldValueSet.t} | {:error, Tesla.Env.t}
+  @spec drives_list_items_get_fields(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphFieldValueSet.t()}
+          | {:error, Tesla.Env.t()}
   def drives_list_items_get_fields(connection, drive_id, list_item_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -2698,7 +3387,15 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_items_get_last_modified_by_user(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_list_items_get_last_modified_by_user(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_list_items_get_last_modified_by_user(connection, drive_id, list_item_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -2740,8 +3437,23 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphListItemVersion.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_items_get_versions(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphListItemVersion.t} | {:error, Tesla.Env.t}
-  def drives_list_items_get_versions(connection, drive_id, list_item_id, list_item_version_id, opts \\ []) do
+  @spec drives_list_items_get_versions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphListItemVersion.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_items_get_versions(
+        connection,
+        drive_id,
+        list_item_id,
+        list_item_version_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2781,8 +3493,21 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_items_last_modified_by_user_get_mailbox_settings(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def drives_list_items_last_modified_by_user_get_mailbox_settings(connection, drive_id, list_item_id, opts \\ []) do
+  @spec drives_list_items_last_modified_by_user_get_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_items_last_modified_by_user_get_mailbox_settings(
+        connection,
+        drive_id,
+        list_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2827,8 +3552,21 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_items_last_modified_by_user_list_service_provisioning_errors(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_list_items_last_modified_by_user_list_service_provisioning_errors(connection, drive_id, list_item_id, opts \\ []) do
+  @spec drives_list_items_last_modified_by_user_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_items_last_modified_by_user_list_service_provisioning_errors(
+        connection,
+        drive_id,
+        list_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -2843,7 +3581,9 @@ defmodule MicrosoftGraph.Api.DrivesList do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/list/items/#{list_item_id}/lastModifiedByUser/serviceProvisioningErrors")
+      |> url(
+        "/drives/#{drive_id}/list/items/#{list_item_id}/lastModifiedByUser/serviceProvisioningErrors"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2873,8 +3613,21 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_items_last_modified_by_user_service_provisioning_errors_get_count06dd(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_list_items_last_modified_by_user_service_provisioning_errors_get_count06dd(connection, drive_id, list_item_id, opts \\ []) do
+  @spec drives_list_items_last_modified_by_user_service_provisioning_errors_get_count06dd(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_items_last_modified_by_user_service_provisioning_errors_get_count06dd(
+        connection,
+        drive_id,
+        list_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -2883,7 +3636,9 @@ defmodule MicrosoftGraph.Api.DrivesList do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/list/items/#{list_item_id}/lastModifiedByUser/serviceProvisioningErrors/$count")
+      |> url(
+        "/drives/#{drive_id}/list/items/#{list_item_id}/lastModifiedByUser/serviceProvisioningErrors/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2912,8 +3667,23 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_items_last_modified_by_user_update_mailbox_settings(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def drives_list_items_last_modified_by_user_update_mailbox_settings(connection, drive_id, list_item_id, microsoft_graph_mailbox_settings, _opts \\ []) do
+  @spec drives_list_items_last_modified_by_user_update_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_items_last_modified_by_user_update_mailbox_settings(
+        connection,
+        drive_id,
+        list_item_id,
+        microsoft_graph_mailbox_settings,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -2954,7 +3724,15 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDocumentSetVersionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_items_list_document_set_versions(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDocumentSetVersionCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec drives_list_items_list_document_set_versions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDocumentSetVersionCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def drives_list_items_list_document_set_versions(connection, drive_id, list_item_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -3007,7 +3785,10 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphListItemVersionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_items_list_versions(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphListItemVersionCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_list_items_list_versions(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphListItemVersionCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_list_items_list_versions(connection, drive_id, list_item_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -3053,12 +3834,31 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDocumentSetVersion.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_items_update_document_set_versions(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphDocumentSetVersion.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDocumentSetVersion.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_list_items_update_document_set_versions(connection, drive_id, list_item_id, document_set_version_id, microsoft_graph_document_set_version, _opts \\ []) do
+  @spec drives_list_items_update_document_set_versions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDocumentSetVersion.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDocumentSetVersion.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_items_update_document_set_versions(
+        connection,
+        drive_id,
+        list_item_id,
+        document_set_version_id,
+        microsoft_graph_document_set_version,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/list/items/#{list_item_id}/documentSetVersions/#{document_set_version_id}")
+      |> url(
+        "/drives/#{drive_id}/list/items/#{list_item_id}/documentSetVersions/#{document_set_version_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_document_set_version)
       |> Enum.into([])
 
@@ -3088,8 +3888,23 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_items_update_drive_item_content(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_list_items_update_drive_item_content(connection, drive_id, list_item_id, body, _opts \\ []) do
+  @spec drives_list_items_update_drive_item_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_items_update_drive_item_content(
+        connection,
+        drive_id,
+        list_item_id,
+        body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)
@@ -3123,8 +3938,23 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphFieldValueSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_items_update_fields(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphFieldValueSet.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphFieldValueSet.t} | {:error, Tesla.Env.t}
-  def drives_list_items_update_fields(connection, drive_id, list_item_id, microsoft_graph_field_value_set, _opts \\ []) do
+  @spec drives_list_items_update_fields(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphFieldValueSet.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphFieldValueSet.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_items_update_fields(
+        connection,
+        drive_id,
+        list_item_id,
+        microsoft_graph_field_value_set,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -3158,8 +3988,25 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphListItemVersion.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_items_update_versions(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphListItemVersion.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphListItemVersion.t} | {:error, Tesla.Env.t}
-  def drives_list_items_update_versions(connection, drive_id, list_item_id, list_item_version_id, microsoft_graph_list_item_version, _opts \\ []) do
+  @spec drives_list_items_update_versions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphListItemVersion.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphListItemVersion.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_items_update_versions(
+        connection,
+        drive_id,
+        list_item_id,
+        list_item_version_id,
+        microsoft_graph_list_item_version,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -3193,8 +4040,23 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_items_versions_delete_fields(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_list_items_versions_delete_fields(connection, drive_id, list_item_id, list_item_version_id, opts \\ []) do
+  @spec drives_list_items_versions_delete_fields(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_items_versions_delete_fields(
+        connection,
+        drive_id,
+        list_item_id,
+        list_item_version_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -3202,7 +4064,9 @@ defmodule MicrosoftGraph.Api.DrivesList do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/list/items/#{list_item_id}/versions/#{list_item_version_id}/fields")
+      |> url(
+        "/drives/#{drive_id}/list/items/#{list_item_id}/versions/#{list_item_version_id}/fields"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3232,7 +4096,15 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_items_versions_get_count_c6e1(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_list_items_versions_get_count_c6e1(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_list_items_versions_get_count_c6e1(connection, drive_id, list_item_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -3274,8 +4146,23 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphFieldValueSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_items_versions_get_fields(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphFieldValueSet.t} | {:error, Tesla.Env.t}
-  def drives_list_items_versions_get_fields(connection, drive_id, list_item_id, list_item_version_id, opts \\ []) do
+  @spec drives_list_items_versions_get_fields(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphFieldValueSet.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_items_versions_get_fields(
+        connection,
+        drive_id,
+        list_item_id,
+        list_item_version_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3284,7 +4171,9 @@ defmodule MicrosoftGraph.Api.DrivesList do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/list/items/#{list_item_id}/versions/#{list_item_version_id}/fields")
+      |> url(
+        "/drives/#{drive_id}/list/items/#{list_item_id}/versions/#{list_item_version_id}/fields"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3314,12 +4203,31 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphFieldValueSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_items_versions_update_fields(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphFieldValueSet.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphFieldValueSet.t} | {:error, Tesla.Env.t}
-  def drives_list_items_versions_update_fields(connection, drive_id, list_item_id, list_item_version_id, microsoft_graph_field_value_set, _opts \\ []) do
+  @spec drives_list_items_versions_update_fields(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphFieldValueSet.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphFieldValueSet.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_items_versions_update_fields(
+        connection,
+        drive_id,
+        list_item_id,
+        list_item_version_id,
+        microsoft_graph_field_value_set,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/list/items/#{list_item_id}/versions/#{list_item_version_id}/fields")
+      |> url(
+        "/drives/#{drive_id}/list/items/#{list_item_id}/versions/#{list_item_version_id}/fields"
+      )
       |> add_param(:body, :body, microsoft_graph_field_value_set)
       |> Enum.into([])
 
@@ -3349,7 +4257,14 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_last_modified_by_user_get_mailbox_settings(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
+  @spec drives_list_last_modified_by_user_get_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
   def drives_list_last_modified_by_user_get_mailbox_settings(connection, drive_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -3394,8 +4309,19 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_last_modified_by_user_list_service_provisioning_errors(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_list_last_modified_by_user_list_service_provisioning_errors(connection, drive_id, opts \\ []) do
+  @spec drives_list_last_modified_by_user_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_last_modified_by_user_list_service_provisioning_errors(
+        connection,
+        drive_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -3439,8 +4365,19 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_last_modified_by_user_service_provisioning_errors_get_count_d262(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_list_last_modified_by_user_service_provisioning_errors_get_count_d262(connection, drive_id, opts \\ []) do
+  @spec drives_list_last_modified_by_user_service_provisioning_errors_get_count_d262(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_last_modified_by_user_service_provisioning_errors_get_count_d262(
+        connection,
+        drive_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -3477,8 +4414,21 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_last_modified_by_user_update_mailbox_settings(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def drives_list_last_modified_by_user_update_mailbox_settings(connection, drive_id, microsoft_graph_mailbox_settings, _opts \\ []) do
+  @spec drives_list_last_modified_by_user_update_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_last_modified_by_user_update_mailbox_settings(
+        connection,
+        drive_id,
+        microsoft_graph_mailbox_settings,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -3518,7 +4468,10 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinitionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_list_columns(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinitionCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec drives_list_list_columns(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinitionCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def drives_list_list_columns(connection, drive_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -3570,7 +4523,10 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContentTypeCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_list_content_types(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphContentTypeCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_list_list_content_types(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphContentTypeCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_list_list_content_types(connection, drive_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -3621,7 +4577,10 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphListItemCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_list_items(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphListItemCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_list_list_items(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphListItemCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_list_list_items(connection, drive_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -3672,7 +4631,11 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_list_operations(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperationCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec drives_list_list_operations(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperationCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def drives_list_list_operations(connection, drive_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -3724,7 +4687,10 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSubscriptionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_list_subscriptions(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSubscriptionCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_list_list_subscriptions(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSubscriptionCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_list_list_subscriptions(connection, drive_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -3769,7 +4735,10 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_operations_get_count_e8e7(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_list_operations_get_count_e8e7(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_list_operations_get_count_e8e7(connection, drive_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -3808,7 +4777,10 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_subscriptions_get_count59f5(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_list_subscriptions_get_count59f5(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_list_subscriptions_get_count59f5(connection, drive_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -3847,8 +4819,23 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_update_columns(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_list_update_columns(connection, drive_id, column_definition_id, microsoft_graph_column_definition, _opts \\ []) do
+  @spec drives_list_update_columns(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_update_columns(
+        connection,
+        drive_id,
+        column_definition_id,
+        microsoft_graph_column_definition,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -3881,8 +4868,23 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContentType.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_update_content_types(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphContentType.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphContentType.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_list_update_content_types(connection, drive_id, content_type_id, microsoft_graph_content_type, _opts \\ []) do
+  @spec drives_list_update_content_types(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphContentType.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphContentType.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_update_content_types(
+        connection,
+        drive_id,
+        content_type_id,
+        microsoft_graph_content_type,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -3915,8 +4917,23 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphListItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_update_items(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphListItem.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphListItem.t} | {:error, Tesla.Env.t}
-  def drives_list_update_items(connection, drive_id, list_item_id, microsoft_graph_list_item, _opts \\ []) do
+  @spec drives_list_update_items(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphListItem.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphListItem.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_update_items(
+        connection,
+        drive_id,
+        list_item_id,
+        microsoft_graph_list_item,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -3949,8 +4966,23 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_update_operations(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_list_update_operations(connection, drive_id, rich_long_running_operation_id, microsoft_graph_rich_long_running_operation, _opts \\ []) do
+  @spec drives_list_update_operations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_update_operations(
+        connection,
+        drive_id,
+        rich_long_running_operation_id,
+        microsoft_graph_rich_long_running_operation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -3983,8 +5015,23 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSubscription.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_update_subscriptions(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphSubscription.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSubscription.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_list_update_subscriptions(connection, drive_id, subscription_id, microsoft_graph_subscription, _opts \\ []) do
+  @spec drives_list_update_subscriptions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSubscription.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSubscription.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_list_update_subscriptions(
+        connection,
+        drive_id,
+        subscription_id,
+        microsoft_graph_subscription,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -4016,7 +5063,15 @@ defmodule MicrosoftGraph.Api.DrivesList do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphList.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_update_list(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphList.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphList.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_update_list(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphList.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphList.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_update_list(connection, drive_id, microsoft_graph_list, _opts \\ []) do
     request =
       %{}

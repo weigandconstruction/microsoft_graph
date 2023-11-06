@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphTeamsTab do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,20 +17,23 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphTeamsTab do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :configuration => MicrosoftGraph.Model.TeamsTabConfiguration.t | nil,
-    :displayName => String.t | nil,
-    :teamsApp => MicrosoftGraph.Model.TeamsTabTeamsApp.t | nil,
-    :webUrl => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :configuration => MicrosoftGraph.Model.TeamsTabConfiguration.t() | nil,
+          :displayName => String.t() | nil,
+          :teamsApp => MicrosoftGraph.Model.TeamsTabTeamsApp.t() | nil,
+          :webUrl => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:configuration, :struct, MicrosoftGraph.Model.TeamsTabConfiguration)
-     |> Deserializer.deserialize(:teamsApp, :struct, MicrosoftGraph.Model.TeamsTabTeamsApp)
+    |> Deserializer.deserialize(
+      :configuration,
+      :struct,
+      MicrosoftGraph.Model.TeamsTabConfiguration
+    )
+    |> Deserializer.deserialize(:teamsApp, :struct, MicrosoftGraph.Model.TeamsTabTeamsApp)
   end
 end
-

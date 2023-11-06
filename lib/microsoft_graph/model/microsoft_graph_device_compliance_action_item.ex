@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphDeviceComplianceActionItem do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,19 +17,22 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphDeviceComplianceActionItem do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :actionType => MicrosoftGraph.Model.MicrosoftGraphDeviceComplianceActionType.t | nil,
-    :gracePeriodHours => integer() | nil,
-    :notificationMessageCCList => [String.t] | nil,
-    :notificationTemplateId => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :actionType => MicrosoftGraph.Model.MicrosoftGraphDeviceComplianceActionType.t() | nil,
+          :gracePeriodHours => integer() | nil,
+          :notificationMessageCCList => [String.t()] | nil,
+          :notificationTemplateId => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:actionType, :struct, MicrosoftGraph.Model.MicrosoftGraphDeviceComplianceActionType)
+    |> Deserializer.deserialize(
+      :actionType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphDeviceComplianceActionType
+    )
   end
 end
-

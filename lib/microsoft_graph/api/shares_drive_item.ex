@@ -26,7 +26,10 @@ defmodule MicrosoftGraph.Api.SharesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec shares_get_drive_item(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec shares_get_drive_item(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def shares_get_drive_item(connection, shared_drive_item_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -64,7 +67,10 @@ defmodule MicrosoftGraph.Api.SharesDriveItem do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec shares_get_drive_item_content(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
+  @spec shares_get_drive_item_content(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
   def shares_get_drive_item_content(connection, shared_drive_item_id, _opts \\ []) do
     request =
       %{}
@@ -99,7 +105,10 @@ defmodule MicrosoftGraph.Api.SharesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec shares_get_items(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec shares_get_items(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def shares_get_items(connection, shared_drive_item_id, drive_item_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -138,7 +147,10 @@ defmodule MicrosoftGraph.Api.SharesDriveItem do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec shares_get_items_content(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
+  @spec shares_get_items_content(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
   def shares_get_items_content(connection, shared_drive_item_id, drive_item_id, _opts \\ []) do
     request =
       %{}
@@ -172,7 +184,10 @@ defmodule MicrosoftGraph.Api.SharesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec shares_get_root(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec shares_get_root(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def shares_get_root(connection, shared_drive_item_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -210,7 +225,10 @@ defmodule MicrosoftGraph.Api.SharesDriveItem do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec shares_get_root_content(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
+  @spec shares_get_root_content(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
   def shares_get_root_content(connection, shared_drive_item_id, _opts \\ []) do
     request =
       %{}
@@ -243,7 +261,10 @@ defmodule MicrosoftGraph.Api.SharesDriveItem do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec shares_items_get_count245c(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec shares_items_get_count245c(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def shares_items_get_count245c(connection, shared_drive_item_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -289,7 +310,10 @@ defmodule MicrosoftGraph.Api.SharesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItemCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec shares_list_items(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItemCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec shares_list_items(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItemCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def shares_list_items(connection, shared_drive_item_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -334,7 +358,10 @@ defmodule MicrosoftGraph.Api.SharesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec shares_update_drive_item_content(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec shares_update_drive_item_content(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def shares_update_drive_item_content(connection, shared_drive_item_id, body, _opts \\ []) do
     request =
       %{}
@@ -369,8 +396,23 @@ defmodule MicrosoftGraph.Api.SharesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec shares_update_items_content(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def shares_update_items_content(connection, shared_drive_item_id, drive_item_id, body, _opts \\ []) do
+  @spec shares_update_items_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def shares_update_items_content(
+        connection,
+        shared_drive_item_id,
+        drive_item_id,
+        body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)
@@ -403,7 +445,10 @@ defmodule MicrosoftGraph.Api.SharesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec shares_update_root_content(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec shares_update_root_content(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def shares_update_root_content(connection, shared_drive_item_id, body, _opts \\ []) do
     request =
       %{}

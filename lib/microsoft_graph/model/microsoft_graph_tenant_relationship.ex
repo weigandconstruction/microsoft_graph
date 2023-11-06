@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphTenantRelationship do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,17 +14,26 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphTenantRelationship do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :delegatedAdminCustomers => [MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminCustomer.t] | nil,
-    :delegatedAdminRelationships => [MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminRelationship.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :delegatedAdminCustomers =>
+            [MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminCustomer.t()] | nil,
+          :delegatedAdminRelationships =>
+            [MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminRelationship.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:delegatedAdminCustomers, :list, MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminCustomer)
-     |> Deserializer.deserialize(:delegatedAdminRelationships, :list, MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminRelationship)
+    |> Deserializer.deserialize(
+      :delegatedAdminCustomers,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminCustomer
+    )
+    |> Deserializer.deserialize(
+      :delegatedAdminRelationships,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminRelationship
+    )
   end
 end
-

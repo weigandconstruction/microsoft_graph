@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphDeviceInstallState do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -21,24 +21,27 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphDeviceInstallState do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :deviceId => String.t | nil,
-    :deviceName => String.t | nil,
-    :errorCode => String.t | nil,
-    :installState => MicrosoftGraph.Model.MicrosoftGraphInstallState.t | nil,
-    :lastSyncDateTime => DateTime.t | nil,
-    :osDescription => String.t | nil,
-    :osVersion => String.t | nil,
-    :userName => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :deviceId => String.t() | nil,
+          :deviceName => String.t() | nil,
+          :errorCode => String.t() | nil,
+          :installState => MicrosoftGraph.Model.MicrosoftGraphInstallState.t() | nil,
+          :lastSyncDateTime => DateTime.t() | nil,
+          :osDescription => String.t() | nil,
+          :osVersion => String.t() | nil,
+          :userName => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:installState, :struct, MicrosoftGraph.Model.MicrosoftGraphInstallState)
-     |> Deserializer.deserialize(:lastSyncDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :installState,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphInstallState
+    )
+    |> Deserializer.deserialize(:lastSyncDateTime, :datetime, nil)
   end
 end
-

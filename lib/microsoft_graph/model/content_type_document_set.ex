@@ -19,24 +19,41 @@ defmodule MicrosoftGraph.Model.ContentTypeDocumentSet do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :allowedContentTypes => [MicrosoftGraph.Model.MicrosoftGraphDocumentSetAllowedContentTypesInner.t] | nil,
-    :defaultContents => [MicrosoftGraph.Model.MicrosoftGraphDocumentSetDefaultContentsInner.t] | nil,
-    :propagateWelcomePageChanges => boolean() | nil,
-    :sharedColumns => [MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t] | nil,
-    :shouldPrefixNameToFile => boolean() | nil,
-    :welcomePageColumns => [MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t] | nil,
-    :welcomePageUrl => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :allowedContentTypes =>
+            [MicrosoftGraph.Model.MicrosoftGraphDocumentSetAllowedContentTypesInner.t()] | nil,
+          :defaultContents =>
+            [MicrosoftGraph.Model.MicrosoftGraphDocumentSetDefaultContentsInner.t()] | nil,
+          :propagateWelcomePageChanges => boolean() | nil,
+          :sharedColumns => [MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t()] | nil,
+          :shouldPrefixNameToFile => boolean() | nil,
+          :welcomePageColumns => [MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t()] | nil,
+          :welcomePageUrl => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:allowedContentTypes, :list, MicrosoftGraph.Model.MicrosoftGraphDocumentSetAllowedContentTypesInner)
-     |> Deserializer.deserialize(:defaultContents, :list, MicrosoftGraph.Model.MicrosoftGraphDocumentSetDefaultContentsInner)
-     |> Deserializer.deserialize(:sharedColumns, :list, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition)
-     |> Deserializer.deserialize(:welcomePageColumns, :list, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition)
+    |> Deserializer.deserialize(
+      :allowedContentTypes,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDocumentSetAllowedContentTypesInner
+    )
+    |> Deserializer.deserialize(
+      :defaultContents,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDocumentSetDefaultContentsInner
+    )
+    |> Deserializer.deserialize(
+      :sharedColumns,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphColumnDefinition
+    )
+    |> Deserializer.deserialize(
+      :welcomePageColumns,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphColumnDefinition
+    )
   end
 end
-

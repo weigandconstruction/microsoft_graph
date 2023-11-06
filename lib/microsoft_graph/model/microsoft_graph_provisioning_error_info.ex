@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphProvisioningErrorInfo do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,19 +17,23 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphProvisioningErrorInfo do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :additionalDetails => String.t | nil,
-    :errorCategory => MicrosoftGraph.Model.MicrosoftGraphProvisioningErrorInfoErrorCategory.t | nil,
-    :errorCode => String.t | nil,
-    :reason => String.t | nil,
-    :recommendedAction => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :additionalDetails => String.t() | nil,
+          :errorCategory =>
+            MicrosoftGraph.Model.MicrosoftGraphProvisioningErrorInfoErrorCategory.t() | nil,
+          :errorCode => String.t() | nil,
+          :reason => String.t() | nil,
+          :recommendedAction => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:errorCategory, :struct, MicrosoftGraph.Model.MicrosoftGraphProvisioningErrorInfoErrorCategory)
+    |> Deserializer.deserialize(
+      :errorCategory,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphProvisioningErrorInfoErrorCategory
+    )
   end
 end
-

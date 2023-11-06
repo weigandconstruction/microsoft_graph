@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphApprovalStage do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -20,23 +20,26 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphApprovalStage do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :assignedToMe => boolean() | nil,
-    :displayName => String.t | nil,
-    :justification => String.t | nil,
-    :reviewResult => String.t | nil,
-    :reviewedBy => MicrosoftGraph.Model.ApprovalStageReviewedBy.t | nil,
-    :reviewedDateTime => DateTime.t | nil,
-    :status => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :assignedToMe => boolean() | nil,
+          :displayName => String.t() | nil,
+          :justification => String.t() | nil,
+          :reviewResult => String.t() | nil,
+          :reviewedBy => MicrosoftGraph.Model.ApprovalStageReviewedBy.t() | nil,
+          :reviewedDateTime => DateTime.t() | nil,
+          :status => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:reviewedBy, :struct, MicrosoftGraph.Model.ApprovalStageReviewedBy)
-     |> Deserializer.deserialize(:reviewedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :reviewedBy,
+      :struct,
+      MicrosoftGraph.Model.ApprovalStageReviewedBy
+    )
+    |> Deserializer.deserialize(:reviewedDateTime, :datetime, nil)
   end
 end
-

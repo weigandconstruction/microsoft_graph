@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAvailabilityItem do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,20 +16,31 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAvailabilityItem do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :endDateTime => MicrosoftGraph.Model.MicrosoftGraphDateTimeTimeZone.t | nil,
-    :serviceId => String.t | nil,
-    :startDateTime => MicrosoftGraph.Model.MicrosoftGraphDateTimeTimeZone.t | nil,
-    :status => MicrosoftGraph.Model.MicrosoftGraphAvailabilityItemStatus.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :endDateTime => MicrosoftGraph.Model.MicrosoftGraphDateTimeTimeZone.t() | nil,
+          :serviceId => String.t() | nil,
+          :startDateTime => MicrosoftGraph.Model.MicrosoftGraphDateTimeTimeZone.t() | nil,
+          :status => MicrosoftGraph.Model.MicrosoftGraphAvailabilityItemStatus.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:endDateTime, :struct, MicrosoftGraph.Model.MicrosoftGraphDateTimeTimeZone)
-     |> Deserializer.deserialize(:startDateTime, :struct, MicrosoftGraph.Model.MicrosoftGraphDateTimeTimeZone)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.MicrosoftGraphAvailabilityItemStatus)
+    |> Deserializer.deserialize(
+      :endDateTime,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphDateTimeTimeZone
+    )
+    |> Deserializer.deserialize(
+      :startDateTime,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphDateTimeTimeZone
+    )
+    |> Deserializer.deserialize(
+      :status,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAvailabilityItemStatus
+    )
   end
 end
-

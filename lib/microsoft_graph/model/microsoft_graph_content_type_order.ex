@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphContentTypeOrder do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphContentTypeOrder do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :default => boolean() | nil,
-    :position => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :default => boolean() | nil,
+          :position => integer() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

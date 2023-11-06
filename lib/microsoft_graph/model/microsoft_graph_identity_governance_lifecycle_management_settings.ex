@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleManagementSettings do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,17 +15,20 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleManageme
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :emailSettings => MicrosoftGraph.Model.MicrosoftGraphEmailSettings.t | nil,
-    :workflowScheduleIntervalInHours => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :emailSettings => MicrosoftGraph.Model.MicrosoftGraphEmailSettings.t() | nil,
+          :workflowScheduleIntervalInHours => integer() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:emailSettings, :struct, MicrosoftGraph.Model.MicrosoftGraphEmailSettings)
+    |> Deserializer.deserialize(
+      :emailSettings,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphEmailSettings
+    )
   end
 end
-

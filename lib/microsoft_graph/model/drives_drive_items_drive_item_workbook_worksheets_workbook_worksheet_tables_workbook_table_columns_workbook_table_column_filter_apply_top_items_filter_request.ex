@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookWorksheetsWorkbookWorksheetTablesWorkbookTableColumnsWorkbookTableColumnFilterApplyTopItemsFilterRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,11 +12,10 @@ defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookWorksheetsWorkbo
   ]
 
   @type t :: %__MODULE__{
-    :count => integer() | nil
-  }
+          :count => integer() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

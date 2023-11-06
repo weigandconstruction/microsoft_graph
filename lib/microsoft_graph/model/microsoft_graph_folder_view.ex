@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphFolderView do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :sortBy => String.t | nil,
-    :sortOrder => String.t | nil,
-    :viewType => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :sortBy => String.t() | nil,
+          :sortOrder => String.t() | nil,
+          :viewType => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

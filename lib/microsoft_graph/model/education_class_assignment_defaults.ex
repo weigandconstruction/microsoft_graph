@@ -17,20 +17,29 @@ defmodule MicrosoftGraph.Model.EducationClassAssignmentDefaults do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :addToCalendarAction => MicrosoftGraph.Model.EducationAssignmentDefaultsAddToCalendarAction.t | nil,
-    :addedStudentAction => MicrosoftGraph.Model.EducationAssignmentDefaultsAddedStudentAction.t | nil,
-    :dueTime => String.t | nil,
-    :notificationChannelUrl => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :addToCalendarAction =>
+            MicrosoftGraph.Model.EducationAssignmentDefaultsAddToCalendarAction.t() | nil,
+          :addedStudentAction =>
+            MicrosoftGraph.Model.EducationAssignmentDefaultsAddedStudentAction.t() | nil,
+          :dueTime => String.t() | nil,
+          :notificationChannelUrl => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:addToCalendarAction, :struct, MicrosoftGraph.Model.EducationAssignmentDefaultsAddToCalendarAction)
-     |> Deserializer.deserialize(:addedStudentAction, :struct, MicrosoftGraph.Model.EducationAssignmentDefaultsAddedStudentAction)
+    |> Deserializer.deserialize(
+      :addToCalendarAction,
+      :struct,
+      MicrosoftGraph.Model.EducationAssignmentDefaultsAddToCalendarAction
+    )
+    |> Deserializer.deserialize(
+      :addedStudentAction,
+      :struct,
+      MicrosoftGraph.Model.EducationAssignmentDefaultsAddedStudentAction
+    )
   end
 end
-

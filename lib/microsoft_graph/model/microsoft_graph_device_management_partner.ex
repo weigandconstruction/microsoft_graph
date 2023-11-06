@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphDeviceManagementPartner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -22,29 +22,50 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphDeviceManagementPartner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :displayName => String.t | nil,
-    :groupsRequiringPartnerEnrollment => [MicrosoftGraph.Model.DeviceManagementPartnerGroupsRequiringPartnerEnrollmentInner.t] | nil,
-    :isConfigured => boolean() | nil,
-    :lastHeartbeatDateTime => DateTime.t | nil,
-    :partnerAppType => MicrosoftGraph.Model.MicrosoftGraphDeviceManagementPartnerAppType.t | nil,
-    :partnerState => MicrosoftGraph.Model.MicrosoftGraphDeviceManagementPartnerTenantState.t | nil,
-    :singleTenantAppId => String.t | nil,
-    :whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime => DateTime.t | nil,
-    :whenPartnerDevicesWillBeRemovedDateTime => DateTime.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :displayName => String.t() | nil,
+          :groupsRequiringPartnerEnrollment =>
+            [
+              MicrosoftGraph.Model.DeviceManagementPartnerGroupsRequiringPartnerEnrollmentInner.t()
+            ]
+            | nil,
+          :isConfigured => boolean() | nil,
+          :lastHeartbeatDateTime => DateTime.t() | nil,
+          :partnerAppType =>
+            MicrosoftGraph.Model.MicrosoftGraphDeviceManagementPartnerAppType.t() | nil,
+          :partnerState =>
+            MicrosoftGraph.Model.MicrosoftGraphDeviceManagementPartnerTenantState.t() | nil,
+          :singleTenantAppId => String.t() | nil,
+          :whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime => DateTime.t() | nil,
+          :whenPartnerDevicesWillBeRemovedDateTime => DateTime.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:groupsRequiringPartnerEnrollment, :list, MicrosoftGraph.Model.DeviceManagementPartnerGroupsRequiringPartnerEnrollmentInner)
-     |> Deserializer.deserialize(:lastHeartbeatDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:partnerAppType, :struct, MicrosoftGraph.Model.MicrosoftGraphDeviceManagementPartnerAppType)
-     |> Deserializer.deserialize(:partnerState, :struct, MicrosoftGraph.Model.MicrosoftGraphDeviceManagementPartnerTenantState)
-     |> Deserializer.deserialize(:whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:whenPartnerDevicesWillBeRemovedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :groupsRequiringPartnerEnrollment,
+      :list,
+      MicrosoftGraph.Model.DeviceManagementPartnerGroupsRequiringPartnerEnrollmentInner
+    )
+    |> Deserializer.deserialize(:lastHeartbeatDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :partnerAppType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphDeviceManagementPartnerAppType
+    )
+    |> Deserializer.deserialize(
+      :partnerState,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphDeviceManagementPartnerTenantState
+    )
+    |> Deserializer.deserialize(
+      :whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime,
+      :datetime,
+      nil
+    )
+    |> Deserializer.deserialize(:whenPartnerDevicesWillBeRemovedDateTime, :datetime, nil)
   end
 end
-

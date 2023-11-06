@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalItem do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,22 +17,26 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalItem do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :acl => [MicrosoftGraph.Model.ExternalItemAclInner.t] | nil,
-    :activities => [MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalActivity.t] | nil,
-    :content => MicrosoftGraph.Model.ExternalItemContent.t | nil,
-    :properties => MicrosoftGraph.Model.ExternalItemProperties.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :acl => [MicrosoftGraph.Model.ExternalItemAclInner.t()] | nil,
+          :activities =>
+            [MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalActivity.t()] | nil,
+          :content => MicrosoftGraph.Model.ExternalItemContent.t() | nil,
+          :properties => MicrosoftGraph.Model.ExternalItemProperties.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:acl, :list, MicrosoftGraph.Model.ExternalItemAclInner)
-     |> Deserializer.deserialize(:activities, :list, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalActivity)
-     |> Deserializer.deserialize(:content, :struct, MicrosoftGraph.Model.ExternalItemContent)
-     |> Deserializer.deserialize(:properties, :struct, MicrosoftGraph.Model.ExternalItemProperties)
+    |> Deserializer.deserialize(:acl, :list, MicrosoftGraph.Model.ExternalItemAclInner)
+    |> Deserializer.deserialize(
+      :activities,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalActivity
+    )
+    |> Deserializer.deserialize(:content, :struct, MicrosoftGraph.Model.ExternalItemContent)
+    |> Deserializer.deserialize(:properties, :struct, MicrosoftGraph.Model.ExternalItemProperties)
   end
 end
-

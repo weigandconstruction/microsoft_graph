@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceStartupHistory do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -29,32 +29,37 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceStartu
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :coreBootTimeInMs => integer() | nil,
-    :coreLoginTimeInMs => integer() | nil,
-    :deviceId => String.t | nil,
-    :featureUpdateBootTimeInMs => integer() | nil,
-    :groupPolicyBootTimeInMs => integer() | nil,
-    :groupPolicyLoginTimeInMs => integer() | nil,
-    :isFeatureUpdate => boolean() | nil,
-    :isFirstLogin => boolean() | nil,
-    :operatingSystemVersion => String.t | nil,
-    :responsiveDesktopTimeInMs => integer() | nil,
-    :restartCategory => MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsOperatingSystemRestartCategory.t | nil,
-    :restartFaultBucket => String.t | nil,
-    :restartStopCode => String.t | nil,
-    :startTime => DateTime.t | nil,
-    :totalBootTimeInMs => integer() | nil,
-    :totalLoginTimeInMs => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :coreBootTimeInMs => integer() | nil,
+          :coreLoginTimeInMs => integer() | nil,
+          :deviceId => String.t() | nil,
+          :featureUpdateBootTimeInMs => integer() | nil,
+          :groupPolicyBootTimeInMs => integer() | nil,
+          :groupPolicyLoginTimeInMs => integer() | nil,
+          :isFeatureUpdate => boolean() | nil,
+          :isFirstLogin => boolean() | nil,
+          :operatingSystemVersion => String.t() | nil,
+          :responsiveDesktopTimeInMs => integer() | nil,
+          :restartCategory =>
+            MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsOperatingSystemRestartCategory.t()
+            | nil,
+          :restartFaultBucket => String.t() | nil,
+          :restartStopCode => String.t() | nil,
+          :startTime => DateTime.t() | nil,
+          :totalBootTimeInMs => integer() | nil,
+          :totalLoginTimeInMs => integer() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:restartCategory, :struct, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsOperatingSystemRestartCategory)
-     |> Deserializer.deserialize(:startTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :restartCategory,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsOperatingSystemRestartCategory
+    )
+    |> Deserializer.deserialize(:startTime, :datetime, nil)
   end
 end
-

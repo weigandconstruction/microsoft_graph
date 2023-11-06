@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAttackSimulationOperation do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -21,26 +21,29 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAttackSimulationOperation do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :lastActionDateTime => DateTime.t | nil,
-    :resourceLocation => String.t | nil,
-    :status => MicrosoftGraph.Model.LongRunningOperationStatus.t | nil,
-    :statusDetail => String.t | nil,
-    :percentageCompleted => integer() | nil,
-    :tenantId => String.t | nil,
-    :type => MicrosoftGraph.Model.AttackSimulationOperationType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :lastActionDateTime => DateTime.t() | nil,
+          :resourceLocation => String.t() | nil,
+          :status => MicrosoftGraph.Model.LongRunningOperationStatus.t() | nil,
+          :statusDetail => String.t() | nil,
+          :percentageCompleted => integer() | nil,
+          :tenantId => String.t() | nil,
+          :type => MicrosoftGraph.Model.AttackSimulationOperationType.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastActionDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.LongRunningOperationStatus)
-     |> Deserializer.deserialize(:type, :struct, MicrosoftGraph.Model.AttackSimulationOperationType)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastActionDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.LongRunningOperationStatus)
+    |> Deserializer.deserialize(
+      :type,
+      :struct,
+      MicrosoftGraph.Model.AttackSimulationOperationType
+    )
   end
 end
-

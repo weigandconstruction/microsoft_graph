@@ -25,7 +25,10 @@ defmodule MicrosoftGraph.Api.ContactsOrgContact do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec contacts_get_count60f9(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec contacts_get_count60f9(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def contacts_get_count60f9(connection, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -63,8 +66,19 @@ defmodule MicrosoftGraph.Api.ContactsOrgContact do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOrgContact.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec contacts_org_contact_create_org_contact(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphOrgContact.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphOrgContact.t} | {:error, Tesla.Env.t}
-  def contacts_org_contact_create_org_contact(connection, microsoft_graph_org_contact, _opts \\ []) do
+  @spec contacts_org_contact_create_org_contact(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphOrgContact.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphOrgContact.t()}
+          | {:error, Tesla.Env.t()}
+  def contacts_org_contact_create_org_contact(
+        connection,
+        microsoft_graph_org_contact,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -96,7 +110,10 @@ defmodule MicrosoftGraph.Api.ContactsOrgContact do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec contacts_org_contact_delete_org_contact(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec contacts_org_contact_delete_org_contact(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def contacts_org_contact_delete_org_contact(connection, org_contact_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -135,7 +152,10 @@ defmodule MicrosoftGraph.Api.ContactsOrgContact do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOrgContact.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec contacts_org_contact_get_org_contact(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphOrgContact.t} | {:error, Tesla.Env.t}
+  @spec contacts_org_contact_get_org_contact(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphOrgContact.t()}
+          | {:error, Tesla.Env.t()}
   def contacts_org_contact_get_org_contact(connection, org_contact_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -181,7 +201,10 @@ defmodule MicrosoftGraph.Api.ContactsOrgContact do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOrgContactCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec contacts_org_contact_list_org_contact(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOrgContactCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec contacts_org_contact_list_org_contact(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOrgContactCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def contacts_org_contact_list_org_contact(connection, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -226,8 +249,21 @@ defmodule MicrosoftGraph.Api.ContactsOrgContact do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOrgContact.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec contacts_org_contact_update_org_contact(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphOrgContact.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphOrgContact.t} | {:error, Tesla.Env.t}
-  def contacts_org_contact_update_org_contact(connection, org_contact_id, microsoft_graph_org_contact, _opts \\ []) do
+  @spec contacts_org_contact_update_org_contact(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphOrgContact.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphOrgContact.t()}
+          | {:error, Tesla.Env.t()}
+  def contacts_org_contact_update_org_contact(
+        connection,
+        org_contact_id,
+        microsoft_graph_org_contact,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

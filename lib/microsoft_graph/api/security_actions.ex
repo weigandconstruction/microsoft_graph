@@ -24,12 +24,25 @@ defmodule MicrosoftGraph.Api.SecurityActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_cases_ediscovery_cases_ediscovery_case_close(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_cases_ediscovery_cases_ediscovery_case_close(connection, ediscovery_case_id, _opts \\ []) do
+  @spec security_cases_ediscovery_cases_ediscovery_case_close(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_cases_ediscovery_cases_ediscovery_case_close(
+        connection,
+        ediscovery_case_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/security/cases/ediscoveryCases/#{ediscovery_case_id}/microsoft.graph.security.close")
+      |> url(
+        "/security/cases/ediscoveryCases/#{ediscovery_case_id}/microsoft.graph.security.close"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -57,13 +70,32 @@ defmodule MicrosoftGraph.Api.SecurityActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_cases_ediscovery_cases_ediscovery_case_custodians_apply_hold(Tesla.Env.client, String.t, MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseNoncustodialDataSourcesApplyHoldRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_cases_ediscovery_cases_ediscovery_case_custodians_apply_hold(connection, ediscovery_case_id, security_cases_ediscovery_cases_ediscovery_case_noncustodial_data_sources_apply_hold_request, _opts \\ []) do
+  @spec security_cases_ediscovery_cases_ediscovery_case_custodians_apply_hold(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseNoncustodialDataSourcesApplyHoldRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_cases_ediscovery_cases_ediscovery_case_custodians_apply_hold(
+        connection,
+        ediscovery_case_id,
+        security_cases_ediscovery_cases_ediscovery_case_noncustodial_data_sources_apply_hold_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/security/cases/ediscoveryCases/#{ediscovery_case_id}/custodians/microsoft.graph.security.applyHold")
-      |> add_param(:body, :body, security_cases_ediscovery_cases_ediscovery_case_noncustodial_data_sources_apply_hold_request)
+      |> url(
+        "/security/cases/ediscoveryCases/#{ediscovery_case_id}/custodians/microsoft.graph.security.applyHold"
+      )
+      |> add_param(
+        :body,
+        :body,
+        security_cases_ediscovery_cases_ediscovery_case_noncustodial_data_sources_apply_hold_request
+      )
       |> Enum.into([])
 
     connection
@@ -91,12 +123,27 @@ defmodule MicrosoftGraph.Api.SecurityActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_cases_ediscovery_cases_ediscovery_case_custodians_ediscovery_custodian_activate(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_cases_ediscovery_cases_ediscovery_case_custodians_ediscovery_custodian_activate(connection, ediscovery_case_id, ediscovery_custodian_id, _opts \\ []) do
+  @spec security_cases_ediscovery_cases_ediscovery_case_custodians_ediscovery_custodian_activate(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_cases_ediscovery_cases_ediscovery_case_custodians_ediscovery_custodian_activate(
+        connection,
+        ediscovery_case_id,
+        ediscovery_custodian_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/security/cases/ediscoveryCases/#{ediscovery_case_id}/custodians/#{ediscovery_custodian_id}/microsoft.graph.security.activate")
+      |> url(
+        "/security/cases/ediscoveryCases/#{ediscovery_case_id}/custodians/#{ediscovery_custodian_id}/microsoft.graph.security.activate"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -125,12 +172,27 @@ defmodule MicrosoftGraph.Api.SecurityActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_cases_ediscovery_cases_ediscovery_case_custodians_ediscovery_custodian_apply_hold(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_cases_ediscovery_cases_ediscovery_case_custodians_ediscovery_custodian_apply_hold(connection, ediscovery_case_id, ediscovery_custodian_id, _opts \\ []) do
+  @spec security_cases_ediscovery_cases_ediscovery_case_custodians_ediscovery_custodian_apply_hold(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_cases_ediscovery_cases_ediscovery_case_custodians_ediscovery_custodian_apply_hold(
+        connection,
+        ediscovery_case_id,
+        ediscovery_custodian_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/security/cases/ediscoveryCases/#{ediscovery_case_id}/custodians/#{ediscovery_custodian_id}/microsoft.graph.security.applyHold")
+      |> url(
+        "/security/cases/ediscoveryCases/#{ediscovery_case_id}/custodians/#{ediscovery_custodian_id}/microsoft.graph.security.applyHold"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -159,12 +221,27 @@ defmodule MicrosoftGraph.Api.SecurityActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_cases_ediscovery_cases_ediscovery_case_custodians_ediscovery_custodian_release(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_cases_ediscovery_cases_ediscovery_case_custodians_ediscovery_custodian_release(connection, ediscovery_case_id, ediscovery_custodian_id, _opts \\ []) do
+  @spec security_cases_ediscovery_cases_ediscovery_case_custodians_ediscovery_custodian_release(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_cases_ediscovery_cases_ediscovery_case_custodians_ediscovery_custodian_release(
+        connection,
+        ediscovery_case_id,
+        ediscovery_custodian_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/security/cases/ediscoveryCases/#{ediscovery_case_id}/custodians/#{ediscovery_custodian_id}/microsoft.graph.security.release")
+      |> url(
+        "/security/cases/ediscoveryCases/#{ediscovery_case_id}/custodians/#{ediscovery_custodian_id}/microsoft.graph.security.release"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -193,12 +270,27 @@ defmodule MicrosoftGraph.Api.SecurityActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_cases_ediscovery_cases_ediscovery_case_custodians_ediscovery_custodian_remove_hold(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_cases_ediscovery_cases_ediscovery_case_custodians_ediscovery_custodian_remove_hold(connection, ediscovery_case_id, ediscovery_custodian_id, _opts \\ []) do
+  @spec security_cases_ediscovery_cases_ediscovery_case_custodians_ediscovery_custodian_remove_hold(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_cases_ediscovery_cases_ediscovery_case_custodians_ediscovery_custodian_remove_hold(
+        connection,
+        ediscovery_case_id,
+        ediscovery_custodian_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/security/cases/ediscoveryCases/#{ediscovery_case_id}/custodians/#{ediscovery_custodian_id}/microsoft.graph.security.removeHold")
+      |> url(
+        "/security/cases/ediscoveryCases/#{ediscovery_case_id}/custodians/#{ediscovery_custodian_id}/microsoft.graph.security.removeHold"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -227,12 +319,27 @@ defmodule MicrosoftGraph.Api.SecurityActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_cases_ediscovery_cases_ediscovery_case_custodians_ediscovery_custodian_update_index(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_cases_ediscovery_cases_ediscovery_case_custodians_ediscovery_custodian_update_index(connection, ediscovery_case_id, ediscovery_custodian_id, _opts \\ []) do
+  @spec security_cases_ediscovery_cases_ediscovery_case_custodians_ediscovery_custodian_update_index(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_cases_ediscovery_cases_ediscovery_case_custodians_ediscovery_custodian_update_index(
+        connection,
+        ediscovery_case_id,
+        ediscovery_custodian_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/security/cases/ediscoveryCases/#{ediscovery_case_id}/custodians/#{ediscovery_custodian_id}/microsoft.graph.security.updateIndex")
+      |> url(
+        "/security/cases/ediscoveryCases/#{ediscovery_case_id}/custodians/#{ediscovery_custodian_id}/microsoft.graph.security.updateIndex"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -260,13 +367,32 @@ defmodule MicrosoftGraph.Api.SecurityActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_cases_ediscovery_cases_ediscovery_case_custodians_remove_hold(Tesla.Env.client, String.t, MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseNoncustodialDataSourcesApplyHoldRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_cases_ediscovery_cases_ediscovery_case_custodians_remove_hold(connection, ediscovery_case_id, security_cases_ediscovery_cases_ediscovery_case_noncustodial_data_sources_apply_hold_request, _opts \\ []) do
+  @spec security_cases_ediscovery_cases_ediscovery_case_custodians_remove_hold(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseNoncustodialDataSourcesApplyHoldRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_cases_ediscovery_cases_ediscovery_case_custodians_remove_hold(
+        connection,
+        ediscovery_case_id,
+        security_cases_ediscovery_cases_ediscovery_case_noncustodial_data_sources_apply_hold_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/security/cases/ediscoveryCases/#{ediscovery_case_id}/custodians/microsoft.graph.security.removeHold")
-      |> add_param(:body, :body, security_cases_ediscovery_cases_ediscovery_case_noncustodial_data_sources_apply_hold_request)
+      |> url(
+        "/security/cases/ediscoveryCases/#{ediscovery_case_id}/custodians/microsoft.graph.security.removeHold"
+      )
+      |> add_param(
+        :body,
+        :body,
+        security_cases_ediscovery_cases_ediscovery_case_noncustodial_data_sources_apply_hold_request
+      )
       |> Enum.into([])
 
     connection
@@ -293,13 +419,32 @@ defmodule MicrosoftGraph.Api.SecurityActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_cases_ediscovery_cases_ediscovery_case_noncustodial_data_sources_apply_hold(Tesla.Env.client, String.t, MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseNoncustodialDataSourcesApplyHoldRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_cases_ediscovery_cases_ediscovery_case_noncustodial_data_sources_apply_hold(connection, ediscovery_case_id, security_cases_ediscovery_cases_ediscovery_case_noncustodial_data_sources_apply_hold_request, _opts \\ []) do
+  @spec security_cases_ediscovery_cases_ediscovery_case_noncustodial_data_sources_apply_hold(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseNoncustodialDataSourcesApplyHoldRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_cases_ediscovery_cases_ediscovery_case_noncustodial_data_sources_apply_hold(
+        connection,
+        ediscovery_case_id,
+        security_cases_ediscovery_cases_ediscovery_case_noncustodial_data_sources_apply_hold_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/security/cases/ediscoveryCases/#{ediscovery_case_id}/noncustodialDataSources/microsoft.graph.security.applyHold")
-      |> add_param(:body, :body, security_cases_ediscovery_cases_ediscovery_case_noncustodial_data_sources_apply_hold_request)
+      |> url(
+        "/security/cases/ediscoveryCases/#{ediscovery_case_id}/noncustodialDataSources/microsoft.graph.security.applyHold"
+      )
+      |> add_param(
+        :body,
+        :body,
+        security_cases_ediscovery_cases_ediscovery_case_noncustodial_data_sources_apply_hold_request
+      )
       |> Enum.into([])
 
     connection
@@ -327,12 +472,27 @@ defmodule MicrosoftGraph.Api.SecurityActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_cases_ediscovery_cases_ediscovery_case_noncustodial_data_sources_ediscovery_noncustodial_data_source_apply_hold(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_cases_ediscovery_cases_ediscovery_case_noncustodial_data_sources_ediscovery_noncustodial_data_source_apply_hold(connection, ediscovery_case_id, ediscovery_noncustodial_data_source_id, _opts \\ []) do
+  @spec security_cases_ediscovery_cases_ediscovery_case_noncustodial_data_sources_ediscovery_noncustodial_data_source_apply_hold(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_cases_ediscovery_cases_ediscovery_case_noncustodial_data_sources_ediscovery_noncustodial_data_source_apply_hold(
+        connection,
+        ediscovery_case_id,
+        ediscovery_noncustodial_data_source_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/security/cases/ediscoveryCases/#{ediscovery_case_id}/noncustodialDataSources/#{ediscovery_noncustodial_data_source_id}/microsoft.graph.security.applyHold")
+      |> url(
+        "/security/cases/ediscoveryCases/#{ediscovery_case_id}/noncustodialDataSources/#{ediscovery_noncustodial_data_source_id}/microsoft.graph.security.applyHold"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -361,12 +521,27 @@ defmodule MicrosoftGraph.Api.SecurityActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_cases_ediscovery_cases_ediscovery_case_noncustodial_data_sources_ediscovery_noncustodial_data_source_release(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_cases_ediscovery_cases_ediscovery_case_noncustodial_data_sources_ediscovery_noncustodial_data_source_release(connection, ediscovery_case_id, ediscovery_noncustodial_data_source_id, _opts \\ []) do
+  @spec security_cases_ediscovery_cases_ediscovery_case_noncustodial_data_sources_ediscovery_noncustodial_data_source_release(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_cases_ediscovery_cases_ediscovery_case_noncustodial_data_sources_ediscovery_noncustodial_data_source_release(
+        connection,
+        ediscovery_case_id,
+        ediscovery_noncustodial_data_source_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/security/cases/ediscoveryCases/#{ediscovery_case_id}/noncustodialDataSources/#{ediscovery_noncustodial_data_source_id}/microsoft.graph.security.release")
+      |> url(
+        "/security/cases/ediscoveryCases/#{ediscovery_case_id}/noncustodialDataSources/#{ediscovery_noncustodial_data_source_id}/microsoft.graph.security.release"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -395,12 +570,27 @@ defmodule MicrosoftGraph.Api.SecurityActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_cases_ediscovery_cases_ediscovery_case_noncustodial_data_sources_ediscovery_noncustodial_data_source_remove_hold(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_cases_ediscovery_cases_ediscovery_case_noncustodial_data_sources_ediscovery_noncustodial_data_source_remove_hold(connection, ediscovery_case_id, ediscovery_noncustodial_data_source_id, _opts \\ []) do
+  @spec security_cases_ediscovery_cases_ediscovery_case_noncustodial_data_sources_ediscovery_noncustodial_data_source_remove_hold(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_cases_ediscovery_cases_ediscovery_case_noncustodial_data_sources_ediscovery_noncustodial_data_source_remove_hold(
+        connection,
+        ediscovery_case_id,
+        ediscovery_noncustodial_data_source_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/security/cases/ediscoveryCases/#{ediscovery_case_id}/noncustodialDataSources/#{ediscovery_noncustodial_data_source_id}/microsoft.graph.security.removeHold")
+      |> url(
+        "/security/cases/ediscoveryCases/#{ediscovery_case_id}/noncustodialDataSources/#{ediscovery_noncustodial_data_source_id}/microsoft.graph.security.removeHold"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -429,12 +619,27 @@ defmodule MicrosoftGraph.Api.SecurityActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_cases_ediscovery_cases_ediscovery_case_noncustodial_data_sources_ediscovery_noncustodial_data_source_update_index(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_cases_ediscovery_cases_ediscovery_case_noncustodial_data_sources_ediscovery_noncustodial_data_source_update_index(connection, ediscovery_case_id, ediscovery_noncustodial_data_source_id, _opts \\ []) do
+  @spec security_cases_ediscovery_cases_ediscovery_case_noncustodial_data_sources_ediscovery_noncustodial_data_source_update_index(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_cases_ediscovery_cases_ediscovery_case_noncustodial_data_sources_ediscovery_noncustodial_data_source_update_index(
+        connection,
+        ediscovery_case_id,
+        ediscovery_noncustodial_data_source_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/security/cases/ediscoveryCases/#{ediscovery_case_id}/noncustodialDataSources/#{ediscovery_noncustodial_data_source_id}/microsoft.graph.security.updateIndex")
+      |> url(
+        "/security/cases/ediscoveryCases/#{ediscovery_case_id}/noncustodialDataSources/#{ediscovery_noncustodial_data_source_id}/microsoft.graph.security.updateIndex"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -462,13 +667,32 @@ defmodule MicrosoftGraph.Api.SecurityActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_cases_ediscovery_cases_ediscovery_case_noncustodial_data_sources_remove_hold(Tesla.Env.client, String.t, MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseNoncustodialDataSourcesApplyHoldRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_cases_ediscovery_cases_ediscovery_case_noncustodial_data_sources_remove_hold(connection, ediscovery_case_id, security_cases_ediscovery_cases_ediscovery_case_noncustodial_data_sources_apply_hold_request, _opts \\ []) do
+  @spec security_cases_ediscovery_cases_ediscovery_case_noncustodial_data_sources_remove_hold(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseNoncustodialDataSourcesApplyHoldRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_cases_ediscovery_cases_ediscovery_case_noncustodial_data_sources_remove_hold(
+        connection,
+        ediscovery_case_id,
+        security_cases_ediscovery_cases_ediscovery_case_noncustodial_data_sources_apply_hold_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/security/cases/ediscoveryCases/#{ediscovery_case_id}/noncustodialDataSources/microsoft.graph.security.removeHold")
-      |> add_param(:body, :body, security_cases_ediscovery_cases_ediscovery_case_noncustodial_data_sources_apply_hold_request)
+      |> url(
+        "/security/cases/ediscoveryCases/#{ediscovery_case_id}/noncustodialDataSources/microsoft.graph.security.removeHold"
+      )
+      |> add_param(
+        :body,
+        :body,
+        security_cases_ediscovery_cases_ediscovery_case_noncustodial_data_sources_apply_hold_request
+      )
       |> Enum.into([])
 
     connection
@@ -495,12 +719,25 @@ defmodule MicrosoftGraph.Api.SecurityActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_cases_ediscovery_cases_ediscovery_case_reopen(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_cases_ediscovery_cases_ediscovery_case_reopen(connection, ediscovery_case_id, _opts \\ []) do
+  @spec security_cases_ediscovery_cases_ediscovery_case_reopen(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_cases_ediscovery_cases_ediscovery_case_reopen(
+        connection,
+        ediscovery_case_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/security/cases/ediscoveryCases/#{ediscovery_case_id}/microsoft.graph.security.reopen")
+      |> url(
+        "/security/cases/ediscoveryCases/#{ediscovery_case_id}/microsoft.graph.security.reopen"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -530,13 +767,34 @@ defmodule MicrosoftGraph.Api.SecurityActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_cases_ediscovery_cases_ediscovery_case_review_sets_ediscovery_review_set_add_to_review_set(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseReviewSetsEdiscoveryReviewSetAddToReviewSetRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_cases_ediscovery_cases_ediscovery_case_review_sets_ediscovery_review_set_add_to_review_set(connection, ediscovery_case_id, ediscovery_review_set_id, security_cases_ediscovery_cases_ediscovery_case_review_sets_ediscovery_review_set_add_to_review_set_request, _opts \\ []) do
+  @spec security_cases_ediscovery_cases_ediscovery_case_review_sets_ediscovery_review_set_add_to_review_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseReviewSetsEdiscoveryReviewSetAddToReviewSetRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_cases_ediscovery_cases_ediscovery_case_review_sets_ediscovery_review_set_add_to_review_set(
+        connection,
+        ediscovery_case_id,
+        ediscovery_review_set_id,
+        security_cases_ediscovery_cases_ediscovery_case_review_sets_ediscovery_review_set_add_to_review_set_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/security/cases/ediscoveryCases/#{ediscovery_case_id}/reviewSets/#{ediscovery_review_set_id}/microsoft.graph.security.addToReviewSet")
-      |> add_param(:body, :body, security_cases_ediscovery_cases_ediscovery_case_review_sets_ediscovery_review_set_add_to_review_set_request)
+      |> url(
+        "/security/cases/ediscoveryCases/#{ediscovery_case_id}/reviewSets/#{ediscovery_review_set_id}/microsoft.graph.security.addToReviewSet"
+      )
+      |> add_param(
+        :body,
+        :body,
+        security_cases_ediscovery_cases_ediscovery_case_review_sets_ediscovery_review_set_add_to_review_set_request
+      )
       |> Enum.into([])
 
     connection
@@ -565,13 +823,34 @@ defmodule MicrosoftGraph.Api.SecurityActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_cases_ediscovery_cases_ediscovery_case_review_sets_ediscovery_review_set_export(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseReviewSetsEdiscoveryReviewSetExportRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_cases_ediscovery_cases_ediscovery_case_review_sets_ediscovery_review_set_export(connection, ediscovery_case_id, ediscovery_review_set_id, security_cases_ediscovery_cases_ediscovery_case_review_sets_ediscovery_review_set_export_request, _opts \\ []) do
+  @spec security_cases_ediscovery_cases_ediscovery_case_review_sets_ediscovery_review_set_export(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseReviewSetsEdiscoveryReviewSetExportRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_cases_ediscovery_cases_ediscovery_case_review_sets_ediscovery_review_set_export(
+        connection,
+        ediscovery_case_id,
+        ediscovery_review_set_id,
+        security_cases_ediscovery_cases_ediscovery_case_review_sets_ediscovery_review_set_export_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/security/cases/ediscoveryCases/#{ediscovery_case_id}/reviewSets/#{ediscovery_review_set_id}/microsoft.graph.security.export")
-      |> add_param(:body, :body, security_cases_ediscovery_cases_ediscovery_case_review_sets_ediscovery_review_set_export_request)
+      |> url(
+        "/security/cases/ediscoveryCases/#{ediscovery_case_id}/reviewSets/#{ediscovery_review_set_id}/microsoft.graph.security.export"
+      )
+      |> add_param(
+        :body,
+        :body,
+        security_cases_ediscovery_cases_ediscovery_case_review_sets_ediscovery_review_set_export_request
+      )
       |> Enum.into([])
 
     connection
@@ -601,13 +880,36 @@ defmodule MicrosoftGraph.Api.SecurityActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_cases_ediscovery_cases_ediscovery_case_review_sets_ediscovery_review_set_queries_ediscovery_review_set_query_apply_tags(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseReviewSetsEdiscoveryReviewSetQueriesEdiscoveryReviewSetQueryApplyTagsRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_cases_ediscovery_cases_ediscovery_case_review_sets_ediscovery_review_set_queries_ediscovery_review_set_query_apply_tags(connection, ediscovery_case_id, ediscovery_review_set_id, ediscovery_review_set_query_id, security_cases_ediscovery_cases_ediscovery_case_review_sets_ediscovery_review_set_queries_ediscovery_review_set_query_apply_tags_request, _opts \\ []) do
+  @spec security_cases_ediscovery_cases_ediscovery_case_review_sets_ediscovery_review_set_queries_ediscovery_review_set_query_apply_tags(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseReviewSetsEdiscoveryReviewSetQueriesEdiscoveryReviewSetQueryApplyTagsRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_cases_ediscovery_cases_ediscovery_case_review_sets_ediscovery_review_set_queries_ediscovery_review_set_query_apply_tags(
+        connection,
+        ediscovery_case_id,
+        ediscovery_review_set_id,
+        ediscovery_review_set_query_id,
+        security_cases_ediscovery_cases_ediscovery_case_review_sets_ediscovery_review_set_queries_ediscovery_review_set_query_apply_tags_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/security/cases/ediscoveryCases/#{ediscovery_case_id}/reviewSets/#{ediscovery_review_set_id}/queries/#{ediscovery_review_set_query_id}/microsoft.graph.security.applyTags")
-      |> add_param(:body, :body, security_cases_ediscovery_cases_ediscovery_case_review_sets_ediscovery_review_set_queries_ediscovery_review_set_query_apply_tags_request)
+      |> url(
+        "/security/cases/ediscoveryCases/#{ediscovery_case_id}/reviewSets/#{ediscovery_review_set_id}/queries/#{ediscovery_review_set_query_id}/microsoft.graph.security.applyTags"
+      )
+      |> add_param(
+        :body,
+        :body,
+        security_cases_ediscovery_cases_ediscovery_case_review_sets_ediscovery_review_set_queries_ediscovery_review_set_query_apply_tags_request
+      )
       |> Enum.into([])
 
     connection
@@ -637,13 +939,36 @@ defmodule MicrosoftGraph.Api.SecurityActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_cases_ediscovery_cases_ediscovery_case_review_sets_ediscovery_review_set_queries_ediscovery_review_set_query_export(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseReviewSetsEdiscoveryReviewSetExportRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_cases_ediscovery_cases_ediscovery_case_review_sets_ediscovery_review_set_queries_ediscovery_review_set_query_export(connection, ediscovery_case_id, ediscovery_review_set_id, ediscovery_review_set_query_id, security_cases_ediscovery_cases_ediscovery_case_review_sets_ediscovery_review_set_export_request, _opts \\ []) do
+  @spec security_cases_ediscovery_cases_ediscovery_case_review_sets_ediscovery_review_set_queries_ediscovery_review_set_query_export(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseReviewSetsEdiscoveryReviewSetExportRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_cases_ediscovery_cases_ediscovery_case_review_sets_ediscovery_review_set_queries_ediscovery_review_set_query_export(
+        connection,
+        ediscovery_case_id,
+        ediscovery_review_set_id,
+        ediscovery_review_set_query_id,
+        security_cases_ediscovery_cases_ediscovery_case_review_sets_ediscovery_review_set_export_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/security/cases/ediscoveryCases/#{ediscovery_case_id}/reviewSets/#{ediscovery_review_set_id}/queries/#{ediscovery_review_set_query_id}/microsoft.graph.security.export")
-      |> add_param(:body, :body, security_cases_ediscovery_cases_ediscovery_case_review_sets_ediscovery_review_set_export_request)
+      |> url(
+        "/security/cases/ediscoveryCases/#{ediscovery_case_id}/reviewSets/#{ediscovery_review_set_id}/queries/#{ediscovery_review_set_query_id}/microsoft.graph.security.export"
+      )
+      |> add_param(
+        :body,
+        :body,
+        security_cases_ediscovery_cases_ediscovery_case_review_sets_ediscovery_review_set_export_request
+      )
       |> Enum.into([])
 
     connection
@@ -671,12 +996,27 @@ defmodule MicrosoftGraph.Api.SecurityActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_cases_ediscovery_cases_ediscovery_case_searches_ediscovery_search_estimate_statistics(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_cases_ediscovery_cases_ediscovery_case_searches_ediscovery_search_estimate_statistics(connection, ediscovery_case_id, ediscovery_search_id, _opts \\ []) do
+  @spec security_cases_ediscovery_cases_ediscovery_case_searches_ediscovery_search_estimate_statistics(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_cases_ediscovery_cases_ediscovery_case_searches_ediscovery_search_estimate_statistics(
+        connection,
+        ediscovery_case_id,
+        ediscovery_search_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/security/cases/ediscoveryCases/#{ediscovery_case_id}/searches/#{ediscovery_search_id}/microsoft.graph.security.estimateStatistics")
+      |> url(
+        "/security/cases/ediscoveryCases/#{ediscovery_case_id}/searches/#{ediscovery_search_id}/microsoft.graph.security.estimateStatistics"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -706,13 +1046,34 @@ defmodule MicrosoftGraph.Api.SecurityActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_cases_ediscovery_cases_ediscovery_case_searches_ediscovery_search_purge_data(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseSearchesEdiscoverySearchPurgeDataRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_cases_ediscovery_cases_ediscovery_case_searches_ediscovery_search_purge_data(connection, ediscovery_case_id, ediscovery_search_id, security_cases_ediscovery_cases_ediscovery_case_searches_ediscovery_search_purge_data_request, _opts \\ []) do
+  @spec security_cases_ediscovery_cases_ediscovery_case_searches_ediscovery_search_purge_data(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseSearchesEdiscoverySearchPurgeDataRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_cases_ediscovery_cases_ediscovery_case_searches_ediscovery_search_purge_data(
+        connection,
+        ediscovery_case_id,
+        ediscovery_search_id,
+        security_cases_ediscovery_cases_ediscovery_case_searches_ediscovery_search_purge_data_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/security/cases/ediscoveryCases/#{ediscovery_case_id}/searches/#{ediscovery_search_id}/microsoft.graph.security.purgeData")
-      |> add_param(:body, :body, security_cases_ediscovery_cases_ediscovery_case_searches_ediscovery_search_purge_data_request)
+      |> url(
+        "/security/cases/ediscoveryCases/#{ediscovery_case_id}/searches/#{ediscovery_search_id}/microsoft.graph.security.purgeData"
+      )
+      |> add_param(
+        :body,
+        :body,
+        security_cases_ediscovery_cases_ediscovery_case_searches_ediscovery_search_purge_data_request
+      )
       |> Enum.into([])
 
     connection
@@ -739,12 +1100,25 @@ defmodule MicrosoftGraph.Api.SecurityActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_cases_ediscovery_cases_ediscovery_case_settings_reset_to_default(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_cases_ediscovery_cases_ediscovery_case_settings_reset_to_default(connection, ediscovery_case_id, _opts \\ []) do
+  @spec security_cases_ediscovery_cases_ediscovery_case_settings_reset_to_default(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_cases_ediscovery_cases_ediscovery_case_settings_reset_to_default(
+        connection,
+        ediscovery_case_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/security/cases/ediscoveryCases/#{ediscovery_case_id}/settings/microsoft.graph.security.resetToDefault")
+      |> url(
+        "/security/cases/ediscoveryCases/#{ediscovery_case_id}/settings/microsoft.graph.security.resetToDefault"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -771,7 +1145,14 @@ defmodule MicrosoftGraph.Api.SecurityActions do
   - `{:ok, MicrosoftGraph.Model.SecurityRunHuntingQuery2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_run_hunting_query(Tesla.Env.client, MicrosoftGraph.Model.SecurityRunHuntingQueryRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.SecurityRunHuntingQuery2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec security_run_hunting_query(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.SecurityRunHuntingQueryRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.SecurityRunHuntingQuery2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def security_run_hunting_query(connection, security_run_hunting_query_request, _opts \\ []) do
     request =
       %{}

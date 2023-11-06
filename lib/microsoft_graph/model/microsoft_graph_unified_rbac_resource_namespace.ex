@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceNamespace do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,17 +15,21 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceNamespace do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :name => String.t | nil,
-    :resourceActions => [MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceAction.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :name => String.t() | nil,
+          :resourceActions =>
+            [MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceAction.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:resourceActions, :list, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceAction)
+    |> Deserializer.deserialize(
+      :resourceActions,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceAction
+    )
   end
 end
-

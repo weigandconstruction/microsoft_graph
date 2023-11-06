@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphWorkbookPivotTable do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,17 +15,20 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphWorkbookPivotTable do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :name => String.t | nil,
-    :worksheet => MicrosoftGraph.Model.WorkbookPivotTableWorksheet.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :name => String.t() | nil,
+          :worksheet => MicrosoftGraph.Model.WorkbookPivotTableWorksheet.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:worksheet, :struct, MicrosoftGraph.Model.WorkbookPivotTableWorksheet)
+    |> Deserializer.deserialize(
+      :worksheet,
+      :struct,
+      MicrosoftGraph.Model.WorkbookPivotTableWorksheet
+    )
   end
 end
-

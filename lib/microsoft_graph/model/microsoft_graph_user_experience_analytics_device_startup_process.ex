@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceStartupProcess do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,17 +18,16 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceStartu
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :managedDeviceId => String.t | nil,
-    :processName => String.t | nil,
-    :productName => String.t | nil,
-    :publisher => String.t | nil,
-    :startupImpactInMs => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :managedDeviceId => String.t() | nil,
+          :processName => String.t() | nil,
+          :productName => String.t() | nil,
+          :publisher => String.t() | nil,
+          :startupImpactInMs => integer() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

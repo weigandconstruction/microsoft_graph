@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAttendanceRecord do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,21 +18,25 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAttendanceRecord do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :attendanceIntervals => [MicrosoftGraph.Model.AttendanceRecordAttendanceIntervalsInner.t] | nil,
-    :emailAddress => String.t | nil,
-    :identity => MicrosoftGraph.Model.AttendanceRecordIdentity.t | nil,
-    :role => String.t | nil,
-    :totalAttendanceInSeconds => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :attendanceIntervals =>
+            [MicrosoftGraph.Model.AttendanceRecordAttendanceIntervalsInner.t()] | nil,
+          :emailAddress => String.t() | nil,
+          :identity => MicrosoftGraph.Model.AttendanceRecordIdentity.t() | nil,
+          :role => String.t() | nil,
+          :totalAttendanceInSeconds => integer() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:attendanceIntervals, :list, MicrosoftGraph.Model.AttendanceRecordAttendanceIntervalsInner)
-     |> Deserializer.deserialize(:identity, :struct, MicrosoftGraph.Model.AttendanceRecordIdentity)
+    |> Deserializer.deserialize(
+      :attendanceIntervals,
+      :list,
+      MicrosoftGraph.Model.AttendanceRecordAttendanceIntervalsInner
+    )
+    |> Deserializer.deserialize(:identity, :struct, MicrosoftGraph.Model.AttendanceRecordIdentity)
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphWorkbookFilterCriteria do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -20,23 +20,34 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphWorkbookFilterCriteria do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :color => String.t | nil,
-    :criterion1 => String.t | nil,
-    :criterion2 => String.t | nil,
-    :dynamicCriteria => String.t | nil,
-    :filterOn => String.t | nil,
-    :icon => MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookTablesWorkbookTableColumnsWorkbookTableColumnFilterApplyIconFilterRequestIcon.t | nil,
-    :operator => String.t | nil,
-    :values => MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookFunctionsImSechRequestInumber.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :color => String.t() | nil,
+          :criterion1 => String.t() | nil,
+          :criterion2 => String.t() | nil,
+          :dynamicCriteria => String.t() | nil,
+          :filterOn => String.t() | nil,
+          :icon =>
+            MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookTablesWorkbookTableColumnsWorkbookTableColumnFilterApplyIconFilterRequestIcon.t()
+            | nil,
+          :operator => String.t() | nil,
+          :values =>
+            MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookFunctionsImSechRequestInumber.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:icon, :struct, MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookTablesWorkbookTableColumnsWorkbookTableColumnFilterApplyIconFilterRequestIcon)
-     |> Deserializer.deserialize(:values, :struct, MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookFunctionsImSechRequestInumber)
+    |> Deserializer.deserialize(
+      :icon,
+      :struct,
+      MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookTablesWorkbookTableColumnsWorkbookTableColumnFilterApplyIconFilterRequestIcon
+    )
+    |> Deserializer.deserialize(
+      :values,
+      :struct,
+      MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookFunctionsImSechRequestInumber
+    )
   end
 end
-

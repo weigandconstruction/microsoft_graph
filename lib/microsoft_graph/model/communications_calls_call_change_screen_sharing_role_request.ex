@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.CommunicationsCallsCallChangeScreenSharingRoleRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,14 +12,17 @@ defmodule MicrosoftGraph.Model.CommunicationsCallsCallChangeScreenSharingRoleReq
   ]
 
   @type t :: %__MODULE__{
-    :role => MicrosoftGraph.Model.MicrosoftGraphScreenSharingRole.t | nil
-  }
+          :role => MicrosoftGraph.Model.MicrosoftGraphScreenSharingRole.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:role, :struct, MicrosoftGraph.Model.MicrosoftGraphScreenSharingRole)
+    |> Deserializer.deserialize(
+      :role,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphScreenSharingRole
+    )
   end
 end
-

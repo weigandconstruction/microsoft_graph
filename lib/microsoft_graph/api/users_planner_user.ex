@@ -24,7 +24,10 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_delete_planner(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_delete_planner(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_delete_planner(connection, user_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -63,7 +66,10 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_get_planner(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerUser.t} | {:error, Tesla.Env.t}
+  @spec users_get_planner(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerUser.t()}
+          | {:error, Tesla.Env.t()}
   def users_get_planner(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -101,7 +107,15 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerPlan.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_create_plans(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphPlannerPlan.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerPlan.t} | {:error, Tesla.Env.t}
+  @spec users_planner_create_plans(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPlannerPlan.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerPlan.t()}
+          | {:error, Tesla.Env.t()}
   def users_planner_create_plans(connection, user_id, microsoft_graph_planner_plan, _opts \\ []) do
     request =
       %{}
@@ -134,7 +148,15 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_create_tasks(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t} | {:error, Tesla.Env.t}
+  @spec users_planner_create_tasks(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t()}
+          | {:error, Tesla.Env.t()}
   def users_planner_create_tasks(connection, user_id, microsoft_graph_planner_task, _opts \\ []) do
     request =
       %{}
@@ -168,7 +190,10 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_delete_plans(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_planner_delete_plans(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_planner_delete_plans(connection, user_id, planner_plan_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -206,7 +231,10 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_delete_tasks(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_planner_delete_tasks(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_planner_delete_tasks(connection, user_id, planner_task_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -246,7 +274,10 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerPlan.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_get_plans(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerPlan.t} | {:error, Tesla.Env.t}
+  @spec users_planner_get_plans(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerPlan.t()}
+          | {:error, Tesla.Env.t()}
   def users_planner_get_plans(connection, user_id, planner_plan_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -287,7 +318,10 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_get_tasks(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t} | {:error, Tesla.Env.t}
+  @spec users_planner_get_tasks(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t()}
+          | {:error, Tesla.Env.t()}
   def users_planner_get_tasks(connection, user_id, planner_task_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -333,7 +367,10 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerPlanCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_list_plans(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerPlanCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_planner_list_plans(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerPlanCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_planner_list_plans(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -385,7 +422,10 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTaskCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_list_tasks(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTaskCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_planner_list_tasks(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTaskCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_planner_list_tasks(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -431,12 +471,31 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_plans_buckets_create_tasks(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t} | {:error, Tesla.Env.t}
-  def users_planner_plans_buckets_create_tasks(connection, user_id, planner_plan_id, planner_bucket_id, microsoft_graph_planner_task, _opts \\ []) do
+  @spec users_planner_plans_buckets_create_tasks(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_plans_buckets_create_tasks(
+        connection,
+        user_id,
+        planner_plan_id,
+        planner_bucket_id,
+        microsoft_graph_planner_task,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/users/#{user_id}/planner/plans/#{planner_plan_id}/buckets/#{planner_bucket_id}/tasks")
+      |> url(
+        "/users/#{user_id}/planner/plans/#{planner_plan_id}/buckets/#{planner_bucket_id}/tasks"
+      )
       |> add_param(:body, :body, microsoft_graph_planner_task)
       |> Enum.into([])
 
@@ -467,8 +526,25 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_plans_buckets_delete_tasks(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_planner_plans_buckets_delete_tasks(connection, user_id, planner_plan_id, planner_bucket_id, planner_task_id, opts \\ []) do
+  @spec users_planner_plans_buckets_delete_tasks(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_plans_buckets_delete_tasks(
+        connection,
+        user_id,
+        planner_plan_id,
+        planner_bucket_id,
+        planner_task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -476,7 +552,9 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
     request =
       %{}
       |> method(:delete)
-      |> url("/users/#{user_id}/planner/plans/#{planner_plan_id}/buckets/#{planner_bucket_id}/tasks/#{planner_task_id}")
+      |> url(
+        "/users/#{user_id}/planner/plans/#{planner_plan_id}/buckets/#{planner_bucket_id}/tasks/#{planner_task_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -506,7 +584,15 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_plans_buckets_get_count_f7f0(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_planner_plans_buckets_get_count_f7f0(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_planner_plans_buckets_get_count_f7f0(connection, user_id, planner_plan_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -549,8 +635,25 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_plans_buckets_get_tasks(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t} | {:error, Tesla.Env.t}
-  def users_planner_plans_buckets_get_tasks(connection, user_id, planner_plan_id, planner_bucket_id, planner_task_id, opts \\ []) do
+  @spec users_planner_plans_buckets_get_tasks(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_plans_buckets_get_tasks(
+        connection,
+        user_id,
+        planner_plan_id,
+        planner_bucket_id,
+        planner_task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -559,7 +662,9 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/planner/plans/#{planner_plan_id}/buckets/#{planner_bucket_id}/tasks/#{planner_task_id}")
+      |> url(
+        "/users/#{user_id}/planner/plans/#{planner_plan_id}/buckets/#{planner_bucket_id}/tasks/#{planner_task_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -597,8 +702,23 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTaskCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_plans_buckets_list_tasks(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTaskCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_planner_plans_buckets_list_tasks(connection, user_id, planner_plan_id, planner_bucket_id, opts \\ []) do
+  @spec users_planner_plans_buckets_list_tasks(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTaskCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_plans_buckets_list_tasks(
+        connection,
+        user_id,
+        planner_plan_id,
+        planner_bucket_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -613,7 +733,9 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/planner/plans/#{planner_plan_id}/buckets/#{planner_bucket_id}/tasks")
+      |> url(
+        "/users/#{user_id}/planner/plans/#{planner_plan_id}/buckets/#{planner_bucket_id}/tasks"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -644,8 +766,25 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_plans_buckets_tasks_delete_assigned_to_task_board_format(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_planner_plans_buckets_tasks_delete_assigned_to_task_board_format(connection, user_id, planner_plan_id, planner_bucket_id, planner_task_id, opts \\ []) do
+  @spec users_planner_plans_buckets_tasks_delete_assigned_to_task_board_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_plans_buckets_tasks_delete_assigned_to_task_board_format(
+        connection,
+        user_id,
+        planner_plan_id,
+        planner_bucket_id,
+        planner_task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -653,7 +792,9 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
     request =
       %{}
       |> method(:delete)
-      |> url("/users/#{user_id}/planner/plans/#{planner_plan_id}/buckets/#{planner_bucket_id}/tasks/#{planner_task_id}/assignedToTaskBoardFormat")
+      |> url(
+        "/users/#{user_id}/planner/plans/#{planner_plan_id}/buckets/#{planner_bucket_id}/tasks/#{planner_task_id}/assignedToTaskBoardFormat"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -684,8 +825,25 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_plans_buckets_tasks_delete_bucket_task_board_format(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_planner_plans_buckets_tasks_delete_bucket_task_board_format(connection, user_id, planner_plan_id, planner_bucket_id, planner_task_id, opts \\ []) do
+  @spec users_planner_plans_buckets_tasks_delete_bucket_task_board_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_plans_buckets_tasks_delete_bucket_task_board_format(
+        connection,
+        user_id,
+        planner_plan_id,
+        planner_bucket_id,
+        planner_task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -693,7 +851,9 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
     request =
       %{}
       |> method(:delete)
-      |> url("/users/#{user_id}/planner/plans/#{planner_plan_id}/buckets/#{planner_bucket_id}/tasks/#{planner_task_id}/bucketTaskBoardFormat")
+      |> url(
+        "/users/#{user_id}/planner/plans/#{planner_plan_id}/buckets/#{planner_bucket_id}/tasks/#{planner_task_id}/bucketTaskBoardFormat"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -724,8 +884,25 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_plans_buckets_tasks_delete_details(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_planner_plans_buckets_tasks_delete_details(connection, user_id, planner_plan_id, planner_bucket_id, planner_task_id, opts \\ []) do
+  @spec users_planner_plans_buckets_tasks_delete_details(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_plans_buckets_tasks_delete_details(
+        connection,
+        user_id,
+        planner_plan_id,
+        planner_bucket_id,
+        planner_task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -733,7 +910,9 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
     request =
       %{}
       |> method(:delete)
-      |> url("/users/#{user_id}/planner/plans/#{planner_plan_id}/buckets/#{planner_bucket_id}/tasks/#{planner_task_id}/details")
+      |> url(
+        "/users/#{user_id}/planner/plans/#{planner_plan_id}/buckets/#{planner_bucket_id}/tasks/#{planner_task_id}/details"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -764,8 +943,25 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_plans_buckets_tasks_delete_progress_task_board_format(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_planner_plans_buckets_tasks_delete_progress_task_board_format(connection, user_id, planner_plan_id, planner_bucket_id, planner_task_id, opts \\ []) do
+  @spec users_planner_plans_buckets_tasks_delete_progress_task_board_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_plans_buckets_tasks_delete_progress_task_board_format(
+        connection,
+        user_id,
+        planner_plan_id,
+        planner_bucket_id,
+        planner_task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -773,7 +969,9 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
     request =
       %{}
       |> method(:delete)
-      |> url("/users/#{user_id}/planner/plans/#{planner_plan_id}/buckets/#{planner_bucket_id}/tasks/#{planner_task_id}/progressTaskBoardFormat")
+      |> url(
+        "/users/#{user_id}/planner/plans/#{planner_plan_id}/buckets/#{planner_bucket_id}/tasks/#{planner_task_id}/progressTaskBoardFormat"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -806,8 +1004,25 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerAssignedToTaskBoardTaskFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_plans_buckets_tasks_get_assigned_to_task_board_format(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerAssignedToTaskBoardTaskFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_planner_plans_buckets_tasks_get_assigned_to_task_board_format(connection, user_id, planner_plan_id, planner_bucket_id, planner_task_id, opts \\ []) do
+  @spec users_planner_plans_buckets_tasks_get_assigned_to_task_board_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerAssignedToTaskBoardTaskFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_plans_buckets_tasks_get_assigned_to_task_board_format(
+        connection,
+        user_id,
+        planner_plan_id,
+        planner_bucket_id,
+        planner_task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -816,7 +1031,9 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/planner/plans/#{planner_plan_id}/buckets/#{planner_bucket_id}/tasks/#{planner_task_id}/assignedToTaskBoardFormat")
+      |> url(
+        "/users/#{user_id}/planner/plans/#{planner_plan_id}/buckets/#{planner_bucket_id}/tasks/#{planner_task_id}/assignedToTaskBoardFormat"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -849,8 +1066,25 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerBucketTaskBoardTaskFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_plans_buckets_tasks_get_bucket_task_board_format(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerBucketTaskBoardTaskFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_planner_plans_buckets_tasks_get_bucket_task_board_format(connection, user_id, planner_plan_id, planner_bucket_id, planner_task_id, opts \\ []) do
+  @spec users_planner_plans_buckets_tasks_get_bucket_task_board_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerBucketTaskBoardTaskFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_plans_buckets_tasks_get_bucket_task_board_format(
+        connection,
+        user_id,
+        planner_plan_id,
+        planner_bucket_id,
+        planner_task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -859,7 +1093,9 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/planner/plans/#{planner_plan_id}/buckets/#{planner_bucket_id}/tasks/#{planner_task_id}/bucketTaskBoardFormat")
+      |> url(
+        "/users/#{user_id}/planner/plans/#{planner_plan_id}/buckets/#{planner_bucket_id}/tasks/#{planner_task_id}/bucketTaskBoardFormat"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -890,8 +1126,23 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_plans_buckets_tasks_get_count_de1b(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_planner_plans_buckets_tasks_get_count_de1b(connection, user_id, planner_plan_id, planner_bucket_id, opts \\ []) do
+  @spec users_planner_plans_buckets_tasks_get_count_de1b(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_plans_buckets_tasks_get_count_de1b(
+        connection,
+        user_id,
+        planner_plan_id,
+        planner_bucket_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -900,7 +1151,9 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/planner/plans/#{planner_plan_id}/buckets/#{planner_bucket_id}/tasks/$count")
+      |> url(
+        "/users/#{user_id}/planner/plans/#{planner_plan_id}/buckets/#{planner_bucket_id}/tasks/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -933,8 +1186,25 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTaskDetails.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_plans_buckets_tasks_get_details(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTaskDetails.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_planner_plans_buckets_tasks_get_details(connection, user_id, planner_plan_id, planner_bucket_id, planner_task_id, opts \\ []) do
+  @spec users_planner_plans_buckets_tasks_get_details(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTaskDetails.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_plans_buckets_tasks_get_details(
+        connection,
+        user_id,
+        planner_plan_id,
+        planner_bucket_id,
+        planner_task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -943,7 +1213,9 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/planner/plans/#{planner_plan_id}/buckets/#{planner_bucket_id}/tasks/#{planner_task_id}/details")
+      |> url(
+        "/users/#{user_id}/planner/plans/#{planner_plan_id}/buckets/#{planner_bucket_id}/tasks/#{planner_task_id}/details"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -976,8 +1248,25 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerProgressTaskBoardTaskFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_plans_buckets_tasks_get_progress_task_board_format(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerProgressTaskBoardTaskFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_planner_plans_buckets_tasks_get_progress_task_board_format(connection, user_id, planner_plan_id, planner_bucket_id, planner_task_id, opts \\ []) do
+  @spec users_planner_plans_buckets_tasks_get_progress_task_board_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerProgressTaskBoardTaskFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_plans_buckets_tasks_get_progress_task_board_format(
+        connection,
+        user_id,
+        planner_plan_id,
+        planner_bucket_id,
+        planner_task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -986,7 +1275,9 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/planner/plans/#{planner_plan_id}/buckets/#{planner_bucket_id}/tasks/#{planner_task_id}/progressTaskBoardFormat")
+      |> url(
+        "/users/#{user_id}/planner/plans/#{planner_plan_id}/buckets/#{planner_bucket_id}/tasks/#{planner_task_id}/progressTaskBoardFormat"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1018,12 +1309,35 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerAssignedToTaskBoardTaskFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_plans_buckets_tasks_update_assigned_to_task_board_format(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphPlannerAssignedToTaskBoardTaskFormat.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerAssignedToTaskBoardTaskFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_planner_plans_buckets_tasks_update_assigned_to_task_board_format(connection, user_id, planner_plan_id, planner_bucket_id, planner_task_id, if_match, microsoft_graph_planner_assigned_to_task_board_task_format, _opts \\ []) do
+  @spec users_planner_plans_buckets_tasks_update_assigned_to_task_board_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPlannerAssignedToTaskBoardTaskFormat.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerAssignedToTaskBoardTaskFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_plans_buckets_tasks_update_assigned_to_task_board_format(
+        connection,
+        user_id,
+        planner_plan_id,
+        planner_bucket_id,
+        planner_task_id,
+        if_match,
+        microsoft_graph_planner_assigned_to_task_board_task_format,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/users/#{user_id}/planner/plans/#{planner_plan_id}/buckets/#{planner_bucket_id}/tasks/#{planner_task_id}/assignedToTaskBoardFormat")
+      |> url(
+        "/users/#{user_id}/planner/plans/#{planner_plan_id}/buckets/#{planner_bucket_id}/tasks/#{planner_task_id}/assignedToTaskBoardFormat"
+      )
       |> add_param(:headers, :"If-Match", if_match)
       |> add_param(:body, :body, microsoft_graph_planner_assigned_to_task_board_task_format)
       |> Enum.into([])
@@ -1056,12 +1370,35 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerBucketTaskBoardTaskFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_plans_buckets_tasks_update_bucket_task_board_format(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphPlannerBucketTaskBoardTaskFormat.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerBucketTaskBoardTaskFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_planner_plans_buckets_tasks_update_bucket_task_board_format(connection, user_id, planner_plan_id, planner_bucket_id, planner_task_id, if_match, microsoft_graph_planner_bucket_task_board_task_format, _opts \\ []) do
+  @spec users_planner_plans_buckets_tasks_update_bucket_task_board_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPlannerBucketTaskBoardTaskFormat.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerBucketTaskBoardTaskFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_plans_buckets_tasks_update_bucket_task_board_format(
+        connection,
+        user_id,
+        planner_plan_id,
+        planner_bucket_id,
+        planner_task_id,
+        if_match,
+        microsoft_graph_planner_bucket_task_board_task_format,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/users/#{user_id}/planner/plans/#{planner_plan_id}/buckets/#{planner_bucket_id}/tasks/#{planner_task_id}/bucketTaskBoardFormat")
+      |> url(
+        "/users/#{user_id}/planner/plans/#{planner_plan_id}/buckets/#{planner_bucket_id}/tasks/#{planner_task_id}/bucketTaskBoardFormat"
+      )
       |> add_param(:headers, :"If-Match", if_match)
       |> add_param(:body, :body, microsoft_graph_planner_bucket_task_board_task_format)
       |> Enum.into([])
@@ -1094,12 +1431,35 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTaskDetails.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_plans_buckets_tasks_update_details(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphPlannerTaskDetails.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTaskDetails.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_planner_plans_buckets_tasks_update_details(connection, user_id, planner_plan_id, planner_bucket_id, planner_task_id, if_match, microsoft_graph_planner_task_details, _opts \\ []) do
+  @spec users_planner_plans_buckets_tasks_update_details(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPlannerTaskDetails.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTaskDetails.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_plans_buckets_tasks_update_details(
+        connection,
+        user_id,
+        planner_plan_id,
+        planner_bucket_id,
+        planner_task_id,
+        if_match,
+        microsoft_graph_planner_task_details,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/users/#{user_id}/planner/plans/#{planner_plan_id}/buckets/#{planner_bucket_id}/tasks/#{planner_task_id}/details")
+      |> url(
+        "/users/#{user_id}/planner/plans/#{planner_plan_id}/buckets/#{planner_bucket_id}/tasks/#{planner_task_id}/details"
+      )
       |> add_param(:headers, :"If-Match", if_match)
       |> add_param(:body, :body, microsoft_graph_planner_task_details)
       |> Enum.into([])
@@ -1132,12 +1492,35 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerProgressTaskBoardTaskFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_plans_buckets_tasks_update_progress_task_board_format(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphPlannerProgressTaskBoardTaskFormat.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerProgressTaskBoardTaskFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_planner_plans_buckets_tasks_update_progress_task_board_format(connection, user_id, planner_plan_id, planner_bucket_id, planner_task_id, if_match, microsoft_graph_planner_progress_task_board_task_format, _opts \\ []) do
+  @spec users_planner_plans_buckets_tasks_update_progress_task_board_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPlannerProgressTaskBoardTaskFormat.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerProgressTaskBoardTaskFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_plans_buckets_tasks_update_progress_task_board_format(
+        connection,
+        user_id,
+        planner_plan_id,
+        planner_bucket_id,
+        planner_task_id,
+        if_match,
+        microsoft_graph_planner_progress_task_board_task_format,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/users/#{user_id}/planner/plans/#{planner_plan_id}/buckets/#{planner_bucket_id}/tasks/#{planner_task_id}/progressTaskBoardFormat")
+      |> url(
+        "/users/#{user_id}/planner/plans/#{planner_plan_id}/buckets/#{planner_bucket_id}/tasks/#{planner_task_id}/progressTaskBoardFormat"
+      )
       |> add_param(:headers, :"If-Match", if_match)
       |> add_param(:body, :body, microsoft_graph_planner_progress_task_board_task_format)
       |> Enum.into([])
@@ -1169,12 +1552,33 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_plans_buckets_update_tasks(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t} | {:error, Tesla.Env.t}
-  def users_planner_plans_buckets_update_tasks(connection, user_id, planner_plan_id, planner_bucket_id, planner_task_id, microsoft_graph_planner_task, _opts \\ []) do
+  @spec users_planner_plans_buckets_update_tasks(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_plans_buckets_update_tasks(
+        connection,
+        user_id,
+        planner_plan_id,
+        planner_bucket_id,
+        planner_task_id,
+        microsoft_graph_planner_task,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/users/#{user_id}/planner/plans/#{planner_plan_id}/buckets/#{planner_bucket_id}/tasks/#{planner_task_id}")
+      |> url(
+        "/users/#{user_id}/planner/plans/#{planner_plan_id}/buckets/#{planner_bucket_id}/tasks/#{planner_task_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_planner_task)
       |> Enum.into([])
 
@@ -1203,8 +1607,23 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerBucket.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_plans_create_buckets(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphPlannerBucket.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerBucket.t} | {:error, Tesla.Env.t}
-  def users_planner_plans_create_buckets(connection, user_id, planner_plan_id, microsoft_graph_planner_bucket, _opts \\ []) do
+  @spec users_planner_plans_create_buckets(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPlannerBucket.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerBucket.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_plans_create_buckets(
+        connection,
+        user_id,
+        planner_plan_id,
+        microsoft_graph_planner_bucket,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1237,8 +1656,23 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_plans_create_tasks(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t} | {:error, Tesla.Env.t}
-  def users_planner_plans_create_tasks(connection, user_id, planner_plan_id, microsoft_graph_planner_task, _opts \\ []) do
+  @spec users_planner_plans_create_tasks(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_plans_create_tasks(
+        connection,
+        user_id,
+        planner_plan_id,
+        microsoft_graph_planner_task,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1272,8 +1706,23 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_plans_delete_buckets(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_planner_plans_delete_buckets(connection, user_id, planner_plan_id, planner_bucket_id, opts \\ []) do
+  @spec users_planner_plans_delete_buckets(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_plans_delete_buckets(
+        connection,
+        user_id,
+        planner_plan_id,
+        planner_bucket_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1310,7 +1759,10 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_plans_delete_details(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_planner_plans_delete_details(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_planner_plans_delete_details(connection, user_id, planner_plan_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -1349,8 +1801,23 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_plans_delete_tasks(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_planner_plans_delete_tasks(connection, user_id, planner_plan_id, planner_task_id, opts \\ []) do
+  @spec users_planner_plans_delete_tasks(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_plans_delete_tasks(
+        connection,
+        user_id,
+        planner_plan_id,
+        planner_task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1390,8 +1857,23 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerBucket.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_plans_get_buckets(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerBucket.t} | {:error, Tesla.Env.t}
-  def users_planner_plans_get_buckets(connection, user_id, planner_plan_id, planner_bucket_id, opts \\ []) do
+  @spec users_planner_plans_get_buckets(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerBucket.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_plans_get_buckets(
+        connection,
+        user_id,
+        planner_plan_id,
+        planner_bucket_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1429,7 +1911,10 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_plans_get_count_b724(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_planner_plans_get_count_b724(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_planner_plans_get_count_b724(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -1470,7 +1955,10 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerPlanDetails.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_plans_get_details(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerPlanDetails.t} | {:error, Tesla.Env.t}
+  @spec users_planner_plans_get_details(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerPlanDetails.t()}
+          | {:error, Tesla.Env.t()}
   def users_planner_plans_get_details(connection, user_id, planner_plan_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -1512,8 +2000,23 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_plans_get_tasks(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t} | {:error, Tesla.Env.t}
-  def users_planner_plans_get_tasks(connection, user_id, planner_plan_id, planner_task_id, opts \\ []) do
+  @spec users_planner_plans_get_tasks(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_plans_get_tasks(
+        connection,
+        user_id,
+        planner_plan_id,
+        planner_task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1559,7 +2062,10 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerBucketCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_plans_list_buckets(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerBucketCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec users_planner_plans_list_buckets(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerBucketCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def users_planner_plans_list_buckets(connection, user_id, planner_plan_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1612,7 +2118,10 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTaskCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_plans_list_tasks(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTaskCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_planner_plans_list_tasks(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTaskCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_planner_plans_list_tasks(connection, user_id, planner_plan_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1658,8 +2167,23 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_plans_tasks_delete_assigned_to_task_board_format(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_planner_plans_tasks_delete_assigned_to_task_board_format(connection, user_id, planner_plan_id, planner_task_id, opts \\ []) do
+  @spec users_planner_plans_tasks_delete_assigned_to_task_board_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_plans_tasks_delete_assigned_to_task_board_format(
+        connection,
+        user_id,
+        planner_plan_id,
+        planner_task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1667,7 +2191,9 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
     request =
       %{}
       |> method(:delete)
-      |> url("/users/#{user_id}/planner/plans/#{planner_plan_id}/tasks/#{planner_task_id}/assignedToTaskBoardFormat")
+      |> url(
+        "/users/#{user_id}/planner/plans/#{planner_plan_id}/tasks/#{planner_task_id}/assignedToTaskBoardFormat"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1697,8 +2223,23 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_plans_tasks_delete_bucket_task_board_format(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_planner_plans_tasks_delete_bucket_task_board_format(connection, user_id, planner_plan_id, planner_task_id, opts \\ []) do
+  @spec users_planner_plans_tasks_delete_bucket_task_board_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_plans_tasks_delete_bucket_task_board_format(
+        connection,
+        user_id,
+        planner_plan_id,
+        planner_task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1706,7 +2247,9 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
     request =
       %{}
       |> method(:delete)
-      |> url("/users/#{user_id}/planner/plans/#{planner_plan_id}/tasks/#{planner_task_id}/bucketTaskBoardFormat")
+      |> url(
+        "/users/#{user_id}/planner/plans/#{planner_plan_id}/tasks/#{planner_task_id}/bucketTaskBoardFormat"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1736,8 +2279,23 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_plans_tasks_delete_details(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_planner_plans_tasks_delete_details(connection, user_id, planner_plan_id, planner_task_id, opts \\ []) do
+  @spec users_planner_plans_tasks_delete_details(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_plans_tasks_delete_details(
+        connection,
+        user_id,
+        planner_plan_id,
+        planner_task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1745,7 +2303,9 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
     request =
       %{}
       |> method(:delete)
-      |> url("/users/#{user_id}/planner/plans/#{planner_plan_id}/tasks/#{planner_task_id}/details")
+      |> url(
+        "/users/#{user_id}/planner/plans/#{planner_plan_id}/tasks/#{planner_task_id}/details"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1775,8 +2335,23 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_plans_tasks_delete_progress_task_board_format(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_planner_plans_tasks_delete_progress_task_board_format(connection, user_id, planner_plan_id, planner_task_id, opts \\ []) do
+  @spec users_planner_plans_tasks_delete_progress_task_board_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_plans_tasks_delete_progress_task_board_format(
+        connection,
+        user_id,
+        planner_plan_id,
+        planner_task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1784,7 +2359,9 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
     request =
       %{}
       |> method(:delete)
-      |> url("/users/#{user_id}/planner/plans/#{planner_plan_id}/tasks/#{planner_task_id}/progressTaskBoardFormat")
+      |> url(
+        "/users/#{user_id}/planner/plans/#{planner_plan_id}/tasks/#{planner_task_id}/progressTaskBoardFormat"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1816,8 +2393,23 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerAssignedToTaskBoardTaskFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_plans_tasks_get_assigned_to_task_board_format(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerAssignedToTaskBoardTaskFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_planner_plans_tasks_get_assigned_to_task_board_format(connection, user_id, planner_plan_id, planner_task_id, opts \\ []) do
+  @spec users_planner_plans_tasks_get_assigned_to_task_board_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerAssignedToTaskBoardTaskFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_plans_tasks_get_assigned_to_task_board_format(
+        connection,
+        user_id,
+        planner_plan_id,
+        planner_task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1826,7 +2418,9 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/planner/plans/#{planner_plan_id}/tasks/#{planner_task_id}/assignedToTaskBoardFormat")
+      |> url(
+        "/users/#{user_id}/planner/plans/#{planner_plan_id}/tasks/#{planner_task_id}/assignedToTaskBoardFormat"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1858,8 +2452,23 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerBucketTaskBoardTaskFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_plans_tasks_get_bucket_task_board_format(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerBucketTaskBoardTaskFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_planner_plans_tasks_get_bucket_task_board_format(connection, user_id, planner_plan_id, planner_task_id, opts \\ []) do
+  @spec users_planner_plans_tasks_get_bucket_task_board_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerBucketTaskBoardTaskFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_plans_tasks_get_bucket_task_board_format(
+        connection,
+        user_id,
+        planner_plan_id,
+        planner_task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1868,7 +2477,9 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/planner/plans/#{planner_plan_id}/tasks/#{planner_task_id}/bucketTaskBoardFormat")
+      |> url(
+        "/users/#{user_id}/planner/plans/#{planner_plan_id}/tasks/#{planner_task_id}/bucketTaskBoardFormat"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1898,7 +2509,15 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_plans_tasks_get_count082b(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_planner_plans_tasks_get_count082b(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_planner_plans_tasks_get_count082b(connection, user_id, planner_plan_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -1940,8 +2559,23 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTaskDetails.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_plans_tasks_get_details(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTaskDetails.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_planner_plans_tasks_get_details(connection, user_id, planner_plan_id, planner_task_id, opts \\ []) do
+  @spec users_planner_plans_tasks_get_details(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTaskDetails.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_plans_tasks_get_details(
+        connection,
+        user_id,
+        planner_plan_id,
+        planner_task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1950,7 +2584,9 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/planner/plans/#{planner_plan_id}/tasks/#{planner_task_id}/details")
+      |> url(
+        "/users/#{user_id}/planner/plans/#{planner_plan_id}/tasks/#{planner_task_id}/details"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1982,8 +2618,23 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerProgressTaskBoardTaskFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_plans_tasks_get_progress_task_board_format(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerProgressTaskBoardTaskFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_planner_plans_tasks_get_progress_task_board_format(connection, user_id, planner_plan_id, planner_task_id, opts \\ []) do
+  @spec users_planner_plans_tasks_get_progress_task_board_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerProgressTaskBoardTaskFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_plans_tasks_get_progress_task_board_format(
+        connection,
+        user_id,
+        planner_plan_id,
+        planner_task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1992,7 +2643,9 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/planner/plans/#{planner_plan_id}/tasks/#{planner_task_id}/progressTaskBoardFormat")
+      |> url(
+        "/users/#{user_id}/planner/plans/#{planner_plan_id}/tasks/#{planner_task_id}/progressTaskBoardFormat"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2023,12 +2676,33 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerAssignedToTaskBoardTaskFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_plans_tasks_update_assigned_to_task_board_format(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphPlannerAssignedToTaskBoardTaskFormat.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerAssignedToTaskBoardTaskFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_planner_plans_tasks_update_assigned_to_task_board_format(connection, user_id, planner_plan_id, planner_task_id, if_match, microsoft_graph_planner_assigned_to_task_board_task_format, _opts \\ []) do
+  @spec users_planner_plans_tasks_update_assigned_to_task_board_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPlannerAssignedToTaskBoardTaskFormat.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerAssignedToTaskBoardTaskFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_plans_tasks_update_assigned_to_task_board_format(
+        connection,
+        user_id,
+        planner_plan_id,
+        planner_task_id,
+        if_match,
+        microsoft_graph_planner_assigned_to_task_board_task_format,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/users/#{user_id}/planner/plans/#{planner_plan_id}/tasks/#{planner_task_id}/assignedToTaskBoardFormat")
+      |> url(
+        "/users/#{user_id}/planner/plans/#{planner_plan_id}/tasks/#{planner_task_id}/assignedToTaskBoardFormat"
+      )
       |> add_param(:headers, :"If-Match", if_match)
       |> add_param(:body, :body, microsoft_graph_planner_assigned_to_task_board_task_format)
       |> Enum.into([])
@@ -2060,12 +2734,33 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerBucketTaskBoardTaskFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_plans_tasks_update_bucket_task_board_format(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphPlannerBucketTaskBoardTaskFormat.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerBucketTaskBoardTaskFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_planner_plans_tasks_update_bucket_task_board_format(connection, user_id, planner_plan_id, planner_task_id, if_match, microsoft_graph_planner_bucket_task_board_task_format, _opts \\ []) do
+  @spec users_planner_plans_tasks_update_bucket_task_board_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPlannerBucketTaskBoardTaskFormat.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerBucketTaskBoardTaskFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_plans_tasks_update_bucket_task_board_format(
+        connection,
+        user_id,
+        planner_plan_id,
+        planner_task_id,
+        if_match,
+        microsoft_graph_planner_bucket_task_board_task_format,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/users/#{user_id}/planner/plans/#{planner_plan_id}/tasks/#{planner_task_id}/bucketTaskBoardFormat")
+      |> url(
+        "/users/#{user_id}/planner/plans/#{planner_plan_id}/tasks/#{planner_task_id}/bucketTaskBoardFormat"
+      )
       |> add_param(:headers, :"If-Match", if_match)
       |> add_param(:body, :body, microsoft_graph_planner_bucket_task_board_task_format)
       |> Enum.into([])
@@ -2097,12 +2792,33 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTaskDetails.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_plans_tasks_update_details(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphPlannerTaskDetails.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTaskDetails.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_planner_plans_tasks_update_details(connection, user_id, planner_plan_id, planner_task_id, if_match, microsoft_graph_planner_task_details, _opts \\ []) do
+  @spec users_planner_plans_tasks_update_details(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPlannerTaskDetails.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTaskDetails.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_plans_tasks_update_details(
+        connection,
+        user_id,
+        planner_plan_id,
+        planner_task_id,
+        if_match,
+        microsoft_graph_planner_task_details,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/users/#{user_id}/planner/plans/#{planner_plan_id}/tasks/#{planner_task_id}/details")
+      |> url(
+        "/users/#{user_id}/planner/plans/#{planner_plan_id}/tasks/#{planner_task_id}/details"
+      )
       |> add_param(:headers, :"If-Match", if_match)
       |> add_param(:body, :body, microsoft_graph_planner_task_details)
       |> Enum.into([])
@@ -2134,12 +2850,33 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerProgressTaskBoardTaskFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_plans_tasks_update_progress_task_board_format(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphPlannerProgressTaskBoardTaskFormat.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerProgressTaskBoardTaskFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_planner_plans_tasks_update_progress_task_board_format(connection, user_id, planner_plan_id, planner_task_id, if_match, microsoft_graph_planner_progress_task_board_task_format, _opts \\ []) do
+  @spec users_planner_plans_tasks_update_progress_task_board_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPlannerProgressTaskBoardTaskFormat.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerProgressTaskBoardTaskFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_plans_tasks_update_progress_task_board_format(
+        connection,
+        user_id,
+        planner_plan_id,
+        planner_task_id,
+        if_match,
+        microsoft_graph_planner_progress_task_board_task_format,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/users/#{user_id}/planner/plans/#{planner_plan_id}/tasks/#{planner_task_id}/progressTaskBoardFormat")
+      |> url(
+        "/users/#{user_id}/planner/plans/#{planner_plan_id}/tasks/#{planner_task_id}/progressTaskBoardFormat"
+      )
       |> add_param(:headers, :"If-Match", if_match)
       |> add_param(:body, :body, microsoft_graph_planner_progress_task_board_task_format)
       |> Enum.into([])
@@ -2170,8 +2907,25 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerBucket.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_plans_update_buckets(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphPlannerBucket.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerBucket.t} | {:error, Tesla.Env.t}
-  def users_planner_plans_update_buckets(connection, user_id, planner_plan_id, planner_bucket_id, microsoft_graph_planner_bucket, _opts \\ []) do
+  @spec users_planner_plans_update_buckets(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPlannerBucket.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerBucket.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_plans_update_buckets(
+        connection,
+        user_id,
+        planner_plan_id,
+        planner_bucket_id,
+        microsoft_graph_planner_bucket,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -2205,8 +2959,25 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerPlanDetails.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_plans_update_details(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphPlannerPlanDetails.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerPlanDetails.t} | {:error, Tesla.Env.t}
-  def users_planner_plans_update_details(connection, user_id, planner_plan_id, if_match, microsoft_graph_planner_plan_details, _opts \\ []) do
+  @spec users_planner_plans_update_details(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPlannerPlanDetails.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerPlanDetails.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_plans_update_details(
+        connection,
+        user_id,
+        planner_plan_id,
+        if_match,
+        microsoft_graph_planner_plan_details,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -2241,8 +3012,25 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_plans_update_tasks(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t} | {:error, Tesla.Env.t}
-  def users_planner_plans_update_tasks(connection, user_id, planner_plan_id, planner_task_id, microsoft_graph_planner_task, _opts \\ []) do
+  @spec users_planner_plans_update_tasks(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_plans_update_tasks(
+        connection,
+        user_id,
+        planner_plan_id,
+        planner_task_id,
+        microsoft_graph_planner_task,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -2275,8 +3063,21 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_tasks_delete_assigned_to_task_board_format(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_planner_tasks_delete_assigned_to_task_board_format(connection, user_id, planner_task_id, opts \\ []) do
+  @spec users_planner_tasks_delete_assigned_to_task_board_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_tasks_delete_assigned_to_task_board_format(
+        connection,
+        user_id,
+        planner_task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -2313,8 +3114,21 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_tasks_delete_bucket_task_board_format(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_planner_tasks_delete_bucket_task_board_format(connection, user_id, planner_task_id, opts \\ []) do
+  @spec users_planner_tasks_delete_bucket_task_board_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_tasks_delete_bucket_task_board_format(
+        connection,
+        user_id,
+        planner_task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -2351,7 +3165,10 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_tasks_delete_details(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_planner_tasks_delete_details(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_planner_tasks_delete_details(connection, user_id, planner_task_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -2389,8 +3206,21 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_tasks_delete_progress_task_board_format(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_planner_tasks_delete_progress_task_board_format(connection, user_id, planner_task_id, opts \\ []) do
+  @spec users_planner_tasks_delete_progress_task_board_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_tasks_delete_progress_task_board_format(
+        connection,
+        user_id,
+        planner_task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -2429,8 +3259,21 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerAssignedToTaskBoardTaskFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_tasks_get_assigned_to_task_board_format(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerAssignedToTaskBoardTaskFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_planner_tasks_get_assigned_to_task_board_format(connection, user_id, planner_task_id, opts \\ []) do
+  @spec users_planner_tasks_get_assigned_to_task_board_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerAssignedToTaskBoardTaskFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_tasks_get_assigned_to_task_board_format(
+        connection,
+        user_id,
+        planner_task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2470,8 +3313,21 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerBucketTaskBoardTaskFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_tasks_get_bucket_task_board_format(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerBucketTaskBoardTaskFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_planner_tasks_get_bucket_task_board_format(connection, user_id, planner_task_id, opts \\ []) do
+  @spec users_planner_tasks_get_bucket_task_board_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerBucketTaskBoardTaskFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_tasks_get_bucket_task_board_format(
+        connection,
+        user_id,
+        planner_task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2509,7 +3365,10 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_tasks_get_count8740(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_planner_tasks_get_count8740(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_planner_tasks_get_count8740(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -2550,7 +3409,10 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTaskDetails.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_tasks_get_details(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTaskDetails.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_planner_tasks_get_details(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTaskDetails.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_planner_tasks_get_details(connection, user_id, planner_task_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -2591,8 +3453,21 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerProgressTaskBoardTaskFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_tasks_get_progress_task_board_format(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerProgressTaskBoardTaskFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_planner_tasks_get_progress_task_board_format(connection, user_id, planner_task_id, opts \\ []) do
+  @spec users_planner_tasks_get_progress_task_board_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerProgressTaskBoardTaskFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_tasks_get_progress_task_board_format(
+        connection,
+        user_id,
+        planner_task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2631,8 +3506,25 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerAssignedToTaskBoardTaskFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_tasks_update_assigned_to_task_board_format(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphPlannerAssignedToTaskBoardTaskFormat.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerAssignedToTaskBoardTaskFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_planner_tasks_update_assigned_to_task_board_format(connection, user_id, planner_task_id, if_match, microsoft_graph_planner_assigned_to_task_board_task_format, _opts \\ []) do
+  @spec users_planner_tasks_update_assigned_to_task_board_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPlannerAssignedToTaskBoardTaskFormat.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerAssignedToTaskBoardTaskFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_tasks_update_assigned_to_task_board_format(
+        connection,
+        user_id,
+        planner_task_id,
+        if_match,
+        microsoft_graph_planner_assigned_to_task_board_task_format,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -2667,8 +3559,25 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerBucketTaskBoardTaskFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_tasks_update_bucket_task_board_format(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphPlannerBucketTaskBoardTaskFormat.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerBucketTaskBoardTaskFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_planner_tasks_update_bucket_task_board_format(connection, user_id, planner_task_id, if_match, microsoft_graph_planner_bucket_task_board_task_format, _opts \\ []) do
+  @spec users_planner_tasks_update_bucket_task_board_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPlannerBucketTaskBoardTaskFormat.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerBucketTaskBoardTaskFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_tasks_update_bucket_task_board_format(
+        connection,
+        user_id,
+        planner_task_id,
+        if_match,
+        microsoft_graph_planner_bucket_task_board_task_format,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -2703,8 +3612,25 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTaskDetails.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_tasks_update_details(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphPlannerTaskDetails.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTaskDetails.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_planner_tasks_update_details(connection, user_id, planner_task_id, if_match, microsoft_graph_planner_task_details, _opts \\ []) do
+  @spec users_planner_tasks_update_details(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPlannerTaskDetails.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTaskDetails.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_tasks_update_details(
+        connection,
+        user_id,
+        planner_task_id,
+        if_match,
+        microsoft_graph_planner_task_details,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -2739,8 +3665,25 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerProgressTaskBoardTaskFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_tasks_update_progress_task_board_format(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphPlannerProgressTaskBoardTaskFormat.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerProgressTaskBoardTaskFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_planner_tasks_update_progress_task_board_format(connection, user_id, planner_task_id, if_match, microsoft_graph_planner_progress_task_board_task_format, _opts \\ []) do
+  @spec users_planner_tasks_update_progress_task_board_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPlannerProgressTaskBoardTaskFormat.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerProgressTaskBoardTaskFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_tasks_update_progress_task_board_format(
+        connection,
+        user_id,
+        planner_task_id,
+        if_match,
+        microsoft_graph_planner_progress_task_board_task_format,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -2774,8 +3717,23 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerPlan.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_update_plans(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphPlannerPlan.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerPlan.t} | {:error, Tesla.Env.t}
-  def users_planner_update_plans(connection, user_id, planner_plan_id, microsoft_graph_planner_plan, _opts \\ []) do
+  @spec users_planner_update_plans(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPlannerPlan.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerPlan.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_update_plans(
+        connection,
+        user_id,
+        planner_plan_id,
+        microsoft_graph_planner_plan,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -2808,8 +3766,23 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_planner_update_tasks(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t} | {:error, Tesla.Env.t}
-  def users_planner_update_tasks(connection, user_id, planner_task_id, microsoft_graph_planner_task, _opts \\ []) do
+  @spec users_planner_update_tasks(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t()}
+          | {:error, Tesla.Env.t()}
+  def users_planner_update_tasks(
+        connection,
+        user_id,
+        planner_task_id,
+        microsoft_graph_planner_task,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -2842,8 +3815,23 @@ defmodule MicrosoftGraph.Api.UsersPlannerUser do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_update_planner(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphPlannerUser.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerUser.t} | {:error, Tesla.Env.t}
-  def users_update_planner(connection, user_id, if_match, microsoft_graph_planner_user, _opts \\ []) do
+  @spec users_update_planner(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPlannerUser.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerUser.t()}
+          | {:error, Tesla.Env.t()}
+  def users_update_planner(
+        connection,
+        user_id,
+        if_match,
+        microsoft_graph_planner_user,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

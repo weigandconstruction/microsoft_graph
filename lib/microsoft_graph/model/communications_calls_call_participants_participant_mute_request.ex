@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.CommunicationsCallsCallParticipantsParticipantMuteRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,11 +12,10 @@ defmodule MicrosoftGraph.Model.CommunicationsCallsCallParticipantsParticipantMut
   ]
 
   @type t :: %__MODULE__{
-    :clientContext => String.t | nil
-  }
+          :clientContext => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

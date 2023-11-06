@@ -24,8 +24,21 @@ defmodule MicrosoftGraph.Api.ConnectionsExternalItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec connections_create_items(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalItem.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def connections_create_items(connection, external_connection_id, microsoft_graph_external_connectors_external_item, _opts \\ []) do
+  @spec connections_create_items(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalItem.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def connections_create_items(
+        connection,
+        external_connection_id,
+        microsoft_graph_external_connectors_external_item,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -59,7 +72,10 @@ defmodule MicrosoftGraph.Api.ConnectionsExternalItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec connections_delete_items(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec connections_delete_items(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def connections_delete_items(connection, external_connection_id, external_item_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -99,7 +115,10 @@ defmodule MicrosoftGraph.Api.ConnectionsExternalItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec connections_get_items(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec connections_get_items(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def connections_get_items(connection, external_connection_id, external_item_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -139,8 +158,21 @@ defmodule MicrosoftGraph.Api.ConnectionsExternalItem do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec connections_items_activities_get_count5552(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def connections_items_activities_get_count5552(connection, external_connection_id, external_item_id, opts \\ []) do
+  @spec connections_items_activities_get_count5552(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def connections_items_activities_get_count5552(
+        connection,
+        external_connection_id,
+        external_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -181,8 +213,23 @@ defmodule MicrosoftGraph.Api.ConnectionsExternalItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsIdentity.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec connections_items_activities_get_performed_by(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsIdentity.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def connections_items_activities_get_performed_by(connection, external_connection_id, external_item_id, external_activity_id, opts \\ []) do
+  @spec connections_items_activities_get_performed_by(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsIdentity.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def connections_items_activities_get_performed_by(
+        connection,
+        external_connection_id,
+        external_item_id,
+        external_activity_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -191,7 +238,9 @@ defmodule MicrosoftGraph.Api.ConnectionsExternalItem do
     request =
       %{}
       |> method(:get)
-      |> url("/connections/#{external_connection_id}/items/#{external_item_id}/activities/#{external_activity_id}/performedBy")
+      |> url(
+        "/connections/#{external_connection_id}/items/#{external_item_id}/activities/#{external_activity_id}/performedBy"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -220,8 +269,23 @@ defmodule MicrosoftGraph.Api.ConnectionsExternalItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalActivity.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec connections_items_create_activities(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalActivity.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalActivity.t} | {:error, Tesla.Env.t}
-  def connections_items_create_activities(connection, external_connection_id, external_item_id, microsoft_graph_external_connectors_external_activity, _opts \\ []) do
+  @spec connections_items_create_activities(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalActivity.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalActivity.t()}
+          | {:error, Tesla.Env.t()}
+  def connections_items_create_activities(
+        connection,
+        external_connection_id,
+        external_item_id,
+        microsoft_graph_external_connectors_external_activity,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -255,8 +319,23 @@ defmodule MicrosoftGraph.Api.ConnectionsExternalItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec connections_items_delete_activities(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def connections_items_delete_activities(connection, external_connection_id, external_item_id, external_activity_id, opts \\ []) do
+  @spec connections_items_delete_activities(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def connections_items_delete_activities(
+        connection,
+        external_connection_id,
+        external_item_id,
+        external_activity_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -264,7 +343,9 @@ defmodule MicrosoftGraph.Api.ConnectionsExternalItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/connections/#{external_connection_id}/items/#{external_item_id}/activities/#{external_activity_id}")
+      |> url(
+        "/connections/#{external_connection_id}/items/#{external_item_id}/activities/#{external_activity_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -296,8 +377,23 @@ defmodule MicrosoftGraph.Api.ConnectionsExternalItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalActivity.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec connections_items_get_activities(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalActivity.t} | {:error, Tesla.Env.t}
-  def connections_items_get_activities(connection, external_connection_id, external_item_id, external_activity_id, opts \\ []) do
+  @spec connections_items_get_activities(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalActivity.t()}
+          | {:error, Tesla.Env.t()}
+  def connections_items_get_activities(
+        connection,
+        external_connection_id,
+        external_item_id,
+        external_activity_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -306,7 +402,9 @@ defmodule MicrosoftGraph.Api.ConnectionsExternalItem do
     request =
       %{}
       |> method(:get)
-      |> url("/connections/#{external_connection_id}/items/#{external_item_id}/activities/#{external_activity_id}")
+      |> url(
+        "/connections/#{external_connection_id}/items/#{external_item_id}/activities/#{external_activity_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -335,7 +433,10 @@ defmodule MicrosoftGraph.Api.ConnectionsExternalItem do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec connections_items_get_count_eebb(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec connections_items_get_count_eebb(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def connections_items_get_count_eebb(connection, external_connection_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -382,8 +483,17 @@ defmodule MicrosoftGraph.Api.ConnectionsExternalItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalActivityCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec connections_items_list_activities(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalActivityCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def connections_items_list_activities(connection, external_connection_id, external_item_id, opts \\ []) do
+  @spec connections_items_list_activities(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalActivityCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def connections_items_list_activities(
+        connection,
+        external_connection_id,
+        external_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -405,7 +515,8 @@ defmodule MicrosoftGraph.Api.ConnectionsExternalItem do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalActivityCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalActivityCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -428,12 +539,31 @@ defmodule MicrosoftGraph.Api.ConnectionsExternalItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalActivity.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec connections_items_update_activities(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalActivity.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalActivity.t} | {:error, Tesla.Env.t}
-  def connections_items_update_activities(connection, external_connection_id, external_item_id, external_activity_id, microsoft_graph_external_connectors_external_activity, _opts \\ []) do
+  @spec connections_items_update_activities(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalActivity.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalActivity.t()}
+          | {:error, Tesla.Env.t()}
+  def connections_items_update_activities(
+        connection,
+        external_connection_id,
+        external_item_id,
+        external_activity_id,
+        microsoft_graph_external_connectors_external_activity,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/connections/#{external_connection_id}/items/#{external_item_id}/activities/#{external_activity_id}")
+      |> url(
+        "/connections/#{external_connection_id}/items/#{external_item_id}/activities/#{external_activity_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_external_connectors_external_activity)
       |> Enum.into([])
 
@@ -469,7 +599,11 @@ defmodule MicrosoftGraph.Api.ConnectionsExternalItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalItemCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec connections_list_items(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalItemCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec connections_list_items(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalItemCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def connections_list_items(connection, external_connection_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -492,7 +626,8 @@ defmodule MicrosoftGraph.Api.ConnectionsExternalItem do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalItemCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalItemCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -514,8 +649,23 @@ defmodule MicrosoftGraph.Api.ConnectionsExternalItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec connections_update_items(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalItem.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def connections_update_items(connection, external_connection_id, external_item_id, microsoft_graph_external_connectors_external_item, _opts \\ []) do
+  @spec connections_update_items(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalItem.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def connections_update_items(
+        connection,
+        external_connection_id,
+        external_item_id,
+        microsoft_graph_external_connectors_external_item,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)

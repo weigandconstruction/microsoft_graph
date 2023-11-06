@@ -18,24 +18,45 @@ defmodule MicrosoftGraph.Model.IdentityContainerConditionalAccess do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :authenticationContextClassReferences => [MicrosoftGraph.Model.MicrosoftGraphAuthenticationContextClassReference.t] | nil,
-    :authenticationStrength => MicrosoftGraph.Model.ConditionalAccessRootAuthenticationStrength.t | nil,
-    :namedLocations => [MicrosoftGraph.Model.MicrosoftGraphNamedLocation.t] | nil,
-    :policies => [MicrosoftGraph.Model.MicrosoftGraphConditionalAccessPolicy.t] | nil,
-    :templates => [MicrosoftGraph.Model.MicrosoftGraphConditionalAccessTemplate.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :authenticationContextClassReferences =>
+            [MicrosoftGraph.Model.MicrosoftGraphAuthenticationContextClassReference.t()] | nil,
+          :authenticationStrength =>
+            MicrosoftGraph.Model.ConditionalAccessRootAuthenticationStrength.t() | nil,
+          :namedLocations => [MicrosoftGraph.Model.MicrosoftGraphNamedLocation.t()] | nil,
+          :policies => [MicrosoftGraph.Model.MicrosoftGraphConditionalAccessPolicy.t()] | nil,
+          :templates => [MicrosoftGraph.Model.MicrosoftGraphConditionalAccessTemplate.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:authenticationContextClassReferences, :list, MicrosoftGraph.Model.MicrosoftGraphAuthenticationContextClassReference)
-     |> Deserializer.deserialize(:authenticationStrength, :struct, MicrosoftGraph.Model.ConditionalAccessRootAuthenticationStrength)
-     |> Deserializer.deserialize(:namedLocations, :list, MicrosoftGraph.Model.MicrosoftGraphNamedLocation)
-     |> Deserializer.deserialize(:policies, :list, MicrosoftGraph.Model.MicrosoftGraphConditionalAccessPolicy)
-     |> Deserializer.deserialize(:templates, :list, MicrosoftGraph.Model.MicrosoftGraphConditionalAccessTemplate)
+    |> Deserializer.deserialize(
+      :authenticationContextClassReferences,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAuthenticationContextClassReference
+    )
+    |> Deserializer.deserialize(
+      :authenticationStrength,
+      :struct,
+      MicrosoftGraph.Model.ConditionalAccessRootAuthenticationStrength
+    )
+    |> Deserializer.deserialize(
+      :namedLocations,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphNamedLocation
+    )
+    |> Deserializer.deserialize(
+      :policies,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphConditionalAccessPolicy
+    )
+    |> Deserializer.deserialize(
+      :templates,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphConditionalAccessTemplate
+    )
   end
 end
-

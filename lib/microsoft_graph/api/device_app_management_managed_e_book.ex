@@ -24,8 +24,19 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedEBook do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphManagedEBook.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_create_managed_e_books(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphManagedEBook.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphManagedEBook.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_create_managed_e_books(connection, microsoft_graph_managed_e_book, _opts \\ []) do
+  @spec device_app_management_create_managed_e_books(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphManagedEBook.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphManagedEBook.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_create_managed_e_books(
+        connection,
+        microsoft_graph_managed_e_book,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -58,7 +69,10 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedEBook do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_delete_managed_e_books(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec device_app_management_delete_managed_e_books(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def device_app_management_delete_managed_e_books(connection, managed_e_book_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -97,7 +111,10 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedEBook do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphManagedEBook.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_get_managed_e_books(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphManagedEBook.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec device_app_management_get_managed_e_books(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphManagedEBook.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def device_app_management_get_managed_e_books(connection, managed_e_book_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -142,7 +159,10 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedEBook do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphManagedEBookCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_list_managed_e_books(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphManagedEBookCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec device_app_management_list_managed_e_books(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphManagedEBookCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def device_app_management_list_managed_e_books(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -187,8 +207,19 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedEBook do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_managed_e_books_assignments_get_count_b034(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_managed_e_books_assignments_get_count_b034(connection, managed_e_book_id, opts \\ []) do
+  @spec device_app_management_managed_e_books_assignments_get_count_b034(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_managed_e_books_assignments_get_count_b034(
+        connection,
+        managed_e_book_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -226,8 +257,21 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedEBook do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphManagedEBookAssignment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_managed_e_books_create_assignments(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphManagedEBookAssignment.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphManagedEBookAssignment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_managed_e_books_create_assignments(connection, managed_e_book_id, microsoft_graph_managed_e_book_assignment, _opts \\ []) do
+  @spec device_app_management_managed_e_books_create_assignments(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphManagedEBookAssignment.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphManagedEBookAssignment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_managed_e_books_create_assignments(
+        connection,
+        managed_e_book_id,
+        microsoft_graph_managed_e_book_assignment,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -260,8 +304,21 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedEBook do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceInstallState.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_managed_e_books_create_device_states(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphDeviceInstallState.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceInstallState.t} | {:error, Tesla.Env.t}
-  def device_app_management_managed_e_books_create_device_states(connection, managed_e_book_id, microsoft_graph_device_install_state, _opts \\ []) do
+  @spec device_app_management_managed_e_books_create_device_states(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDeviceInstallState.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceInstallState.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_managed_e_books_create_device_states(
+        connection,
+        managed_e_book_id,
+        microsoft_graph_device_install_state,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -294,8 +351,21 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedEBook do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserInstallStateSummary.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_managed_e_books_create_user_state_summary(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphUserInstallStateSummary.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUserInstallStateSummary.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_managed_e_books_create_user_state_summary(connection, managed_e_book_id, microsoft_graph_user_install_state_summary, _opts \\ []) do
+  @spec device_app_management_managed_e_books_create_user_state_summary(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUserInstallStateSummary.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUserInstallStateSummary.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_managed_e_books_create_user_state_summary(
+        connection,
+        managed_e_book_id,
+        microsoft_graph_user_install_state_summary,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -329,8 +399,21 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedEBook do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_managed_e_books_delete_assignments(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_managed_e_books_delete_assignments(connection, managed_e_book_id, managed_e_book_assignment_id, opts \\ []) do
+  @spec device_app_management_managed_e_books_delete_assignments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_managed_e_books_delete_assignments(
+        connection,
+        managed_e_book_id,
+        managed_e_book_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -338,7 +421,9 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedEBook do
     request =
       %{}
       |> method(:delete)
-      |> url("/deviceAppManagement/managedEBooks/#{managed_e_book_id}/assignments/#{managed_e_book_assignment_id}")
+      |> url(
+        "/deviceAppManagement/managedEBooks/#{managed_e_book_id}/assignments/#{managed_e_book_assignment_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -368,8 +453,21 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedEBook do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_managed_e_books_delete_device_states(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_managed_e_books_delete_device_states(connection, managed_e_book_id, device_install_state_id, opts \\ []) do
+  @spec device_app_management_managed_e_books_delete_device_states(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_managed_e_books_delete_device_states(
+        connection,
+        managed_e_book_id,
+        device_install_state_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -377,7 +475,9 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedEBook do
     request =
       %{}
       |> method(:delete)
-      |> url("/deviceAppManagement/managedEBooks/#{managed_e_book_id}/deviceStates/#{device_install_state_id}")
+      |> url(
+        "/deviceAppManagement/managedEBooks/#{managed_e_book_id}/deviceStates/#{device_install_state_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -405,8 +505,19 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedEBook do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_managed_e_books_delete_install_summary(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_managed_e_books_delete_install_summary(connection, managed_e_book_id, opts \\ []) do
+  @spec device_app_management_managed_e_books_delete_install_summary(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_managed_e_books_delete_install_summary(
+        connection,
+        managed_e_book_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -444,8 +555,21 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedEBook do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_managed_e_books_delete_user_state_summary(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_managed_e_books_delete_user_state_summary(connection, managed_e_book_id, user_install_state_summary_id, opts \\ []) do
+  @spec device_app_management_managed_e_books_delete_user_state_summary(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_managed_e_books_delete_user_state_summary(
+        connection,
+        managed_e_book_id,
+        user_install_state_summary_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -453,7 +577,9 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedEBook do
     request =
       %{}
       |> method(:delete)
-      |> url("/deviceAppManagement/managedEBooks/#{managed_e_book_id}/userStateSummary/#{user_install_state_summary_id}")
+      |> url(
+        "/deviceAppManagement/managedEBooks/#{managed_e_book_id}/userStateSummary/#{user_install_state_summary_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -482,8 +608,19 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedEBook do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_managed_e_books_device_states_get_count6c04(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_managed_e_books_device_states_get_count6c04(connection, managed_e_book_id, opts \\ []) do
+  @spec device_app_management_managed_e_books_device_states_get_count6c04(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_managed_e_books_device_states_get_count6c04(
+        connection,
+        managed_e_book_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -523,8 +660,21 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedEBook do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphManagedEBookAssignment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_managed_e_books_get_assignments(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphManagedEBookAssignment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_managed_e_books_get_assignments(connection, managed_e_book_id, managed_e_book_assignment_id, opts \\ []) do
+  @spec device_app_management_managed_e_books_get_assignments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphManagedEBookAssignment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_managed_e_books_get_assignments(
+        connection,
+        managed_e_book_id,
+        managed_e_book_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -533,7 +683,9 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedEBook do
     request =
       %{}
       |> method(:get)
-      |> url("/deviceAppManagement/managedEBooks/#{managed_e_book_id}/assignments/#{managed_e_book_assignment_id}")
+      |> url(
+        "/deviceAppManagement/managedEBooks/#{managed_e_book_id}/assignments/#{managed_e_book_assignment_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -561,7 +713,10 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedEBook do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_managed_e_books_get_count72ff(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec device_app_management_managed_e_books_get_count72ff(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def device_app_management_managed_e_books_get_count72ff(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -602,8 +757,21 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedEBook do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceInstallState.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_managed_e_books_get_device_states(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceInstallState.t} | {:error, Tesla.Env.t}
-  def device_app_management_managed_e_books_get_device_states(connection, managed_e_book_id, device_install_state_id, opts \\ []) do
+  @spec device_app_management_managed_e_books_get_device_states(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceInstallState.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_managed_e_books_get_device_states(
+        connection,
+        managed_e_book_id,
+        device_install_state_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -612,7 +780,9 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedEBook do
     request =
       %{}
       |> method(:get)
-      |> url("/deviceAppManagement/managedEBooks/#{managed_e_book_id}/deviceStates/#{device_install_state_id}")
+      |> url(
+        "/deviceAppManagement/managedEBooks/#{managed_e_book_id}/deviceStates/#{device_install_state_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -642,8 +812,19 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedEBook do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEBookInstallSummary.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_managed_e_books_get_install_summary(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEBookInstallSummary.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_managed_e_books_get_install_summary(connection, managed_e_book_id, opts \\ []) do
+  @spec device_app_management_managed_e_books_get_install_summary(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEBookInstallSummary.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_managed_e_books_get_install_summary(
+        connection,
+        managed_e_book_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -683,8 +864,21 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedEBook do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserInstallStateSummary.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_managed_e_books_get_user_state_summary(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUserInstallStateSummary.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_managed_e_books_get_user_state_summary(connection, managed_e_book_id, user_install_state_summary_id, opts \\ []) do
+  @spec device_app_management_managed_e_books_get_user_state_summary(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUserInstallStateSummary.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_managed_e_books_get_user_state_summary(
+        connection,
+        managed_e_book_id,
+        user_install_state_summary_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -693,7 +887,9 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedEBook do
     request =
       %{}
       |> method(:get)
-      |> url("/deviceAppManagement/managedEBooks/#{managed_e_book_id}/userStateSummary/#{user_install_state_summary_id}")
+      |> url(
+        "/deviceAppManagement/managedEBooks/#{managed_e_book_id}/userStateSummary/#{user_install_state_summary_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -729,8 +925,19 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedEBook do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphManagedEBookAssignmentCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_managed_e_books_list_assignments(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphManagedEBookAssignmentCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_managed_e_books_list_assignments(connection, managed_e_book_id, opts \\ []) do
+  @spec device_app_management_managed_e_books_list_assignments(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphManagedEBookAssignmentCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_managed_e_books_list_assignments(
+        connection,
+        managed_e_book_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -781,8 +988,19 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedEBook do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceInstallStateCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_managed_e_books_list_device_states(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceInstallStateCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_managed_e_books_list_device_states(connection, managed_e_book_id, opts \\ []) do
+  @spec device_app_management_managed_e_books_list_device_states(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceInstallStateCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_managed_e_books_list_device_states(
+        connection,
+        managed_e_book_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -833,8 +1051,19 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedEBook do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserInstallStateSummaryCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_managed_e_books_list_user_state_summary(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUserInstallStateSummaryCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_managed_e_books_list_user_state_summary(connection, managed_e_book_id, opts \\ []) do
+  @spec device_app_management_managed_e_books_list_user_state_summary(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUserInstallStateSummaryCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_managed_e_books_list_user_state_summary(
+        connection,
+        managed_e_book_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -879,12 +1108,29 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedEBook do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphManagedEBookAssignment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_managed_e_books_update_assignments(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphManagedEBookAssignment.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphManagedEBookAssignment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_managed_e_books_update_assignments(connection, managed_e_book_id, managed_e_book_assignment_id, microsoft_graph_managed_e_book_assignment, _opts \\ []) do
+  @spec device_app_management_managed_e_books_update_assignments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphManagedEBookAssignment.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphManagedEBookAssignment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_managed_e_books_update_assignments(
+        connection,
+        managed_e_book_id,
+        managed_e_book_assignment_id,
+        microsoft_graph_managed_e_book_assignment,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/deviceAppManagement/managedEBooks/#{managed_e_book_id}/assignments/#{managed_e_book_assignment_id}")
+      |> url(
+        "/deviceAppManagement/managedEBooks/#{managed_e_book_id}/assignments/#{managed_e_book_assignment_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_managed_e_book_assignment)
       |> Enum.into([])
 
@@ -914,12 +1160,29 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedEBook do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceInstallState.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_managed_e_books_update_device_states(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphDeviceInstallState.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceInstallState.t} | {:error, Tesla.Env.t}
-  def device_app_management_managed_e_books_update_device_states(connection, managed_e_book_id, device_install_state_id, microsoft_graph_device_install_state, _opts \\ []) do
+  @spec device_app_management_managed_e_books_update_device_states(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDeviceInstallState.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceInstallState.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_managed_e_books_update_device_states(
+        connection,
+        managed_e_book_id,
+        device_install_state_id,
+        microsoft_graph_device_install_state,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/deviceAppManagement/managedEBooks/#{managed_e_book_id}/deviceStates/#{device_install_state_id}")
+      |> url(
+        "/deviceAppManagement/managedEBooks/#{managed_e_book_id}/deviceStates/#{device_install_state_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_device_install_state)
       |> Enum.into([])
 
@@ -948,8 +1211,21 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedEBook do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEBookInstallSummary.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_managed_e_books_update_install_summary(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphEBookInstallSummary.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEBookInstallSummary.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_managed_e_books_update_install_summary(connection, managed_e_book_id, microsoft_graph_e_book_install_summary, _opts \\ []) do
+  @spec device_app_management_managed_e_books_update_install_summary(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphEBookInstallSummary.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEBookInstallSummary.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_managed_e_books_update_install_summary(
+        connection,
+        managed_e_book_id,
+        microsoft_graph_e_book_install_summary,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -983,12 +1259,29 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedEBook do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserInstallStateSummary.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_managed_e_books_update_user_state_summary(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphUserInstallStateSummary.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUserInstallStateSummary.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_managed_e_books_update_user_state_summary(connection, managed_e_book_id, user_install_state_summary_id, microsoft_graph_user_install_state_summary, _opts \\ []) do
+  @spec device_app_management_managed_e_books_update_user_state_summary(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUserInstallStateSummary.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUserInstallStateSummary.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_managed_e_books_update_user_state_summary(
+        connection,
+        managed_e_book_id,
+        user_install_state_summary_id,
+        microsoft_graph_user_install_state_summary,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/deviceAppManagement/managedEBooks/#{managed_e_book_id}/userStateSummary/#{user_install_state_summary_id}")
+      |> url(
+        "/deviceAppManagement/managedEBooks/#{managed_e_book_id}/userStateSummary/#{user_install_state_summary_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_user_install_state_summary)
       |> Enum.into([])
 
@@ -1017,12 +1310,29 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedEBook do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceInstallState.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_managed_e_books_user_state_summary_create_device_states(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphDeviceInstallState.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceInstallState.t} | {:error, Tesla.Env.t}
-  def device_app_management_managed_e_books_user_state_summary_create_device_states(connection, managed_e_book_id, user_install_state_summary_id, microsoft_graph_device_install_state, _opts \\ []) do
+  @spec device_app_management_managed_e_books_user_state_summary_create_device_states(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDeviceInstallState.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceInstallState.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_managed_e_books_user_state_summary_create_device_states(
+        connection,
+        managed_e_book_id,
+        user_install_state_summary_id,
+        microsoft_graph_device_install_state,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceAppManagement/managedEBooks/#{managed_e_book_id}/userStateSummary/#{user_install_state_summary_id}/deviceStates")
+      |> url(
+        "/deviceAppManagement/managedEBooks/#{managed_e_book_id}/userStateSummary/#{user_install_state_summary_id}/deviceStates"
+      )
       |> add_param(:body, :body, microsoft_graph_device_install_state)
       |> Enum.into([])
 
@@ -1052,8 +1362,23 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedEBook do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_managed_e_books_user_state_summary_delete_device_states(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_managed_e_books_user_state_summary_delete_device_states(connection, managed_e_book_id, user_install_state_summary_id, device_install_state_id, opts \\ []) do
+  @spec device_app_management_managed_e_books_user_state_summary_delete_device_states(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_managed_e_books_user_state_summary_delete_device_states(
+        connection,
+        managed_e_book_id,
+        user_install_state_summary_id,
+        device_install_state_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1061,7 +1386,9 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedEBook do
     request =
       %{}
       |> method(:delete)
-      |> url("/deviceAppManagement/managedEBooks/#{managed_e_book_id}/userStateSummary/#{user_install_state_summary_id}/deviceStates/#{device_install_state_id}")
+      |> url(
+        "/deviceAppManagement/managedEBooks/#{managed_e_book_id}/userStateSummary/#{user_install_state_summary_id}/deviceStates/#{device_install_state_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1091,8 +1418,21 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedEBook do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_managed_e_books_user_state_summary_device_states_get_count_a97e(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_managed_e_books_user_state_summary_device_states_get_count_a97e(connection, managed_e_book_id, user_install_state_summary_id, opts \\ []) do
+  @spec device_app_management_managed_e_books_user_state_summary_device_states_get_count_a97e(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_managed_e_books_user_state_summary_device_states_get_count_a97e(
+        connection,
+        managed_e_book_id,
+        user_install_state_summary_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1101,7 +1441,9 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedEBook do
     request =
       %{}
       |> method(:get)
-      |> url("/deviceAppManagement/managedEBooks/#{managed_e_book_id}/userStateSummary/#{user_install_state_summary_id}/deviceStates/$count")
+      |> url(
+        "/deviceAppManagement/managedEBooks/#{managed_e_book_id}/userStateSummary/#{user_install_state_summary_id}/deviceStates/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1130,8 +1472,19 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedEBook do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_managed_e_books_user_state_summary_get_count862d(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_managed_e_books_user_state_summary_get_count862d(connection, managed_e_book_id, opts \\ []) do
+  @spec device_app_management_managed_e_books_user_state_summary_get_count862d(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_managed_e_books_user_state_summary_get_count862d(
+        connection,
+        managed_e_book_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1172,8 +1525,23 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedEBook do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceInstallState.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_managed_e_books_user_state_summary_get_device_states(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceInstallState.t} | {:error, Tesla.Env.t}
-  def device_app_management_managed_e_books_user_state_summary_get_device_states(connection, managed_e_book_id, user_install_state_summary_id, device_install_state_id, opts \\ []) do
+  @spec device_app_management_managed_e_books_user_state_summary_get_device_states(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceInstallState.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_managed_e_books_user_state_summary_get_device_states(
+        connection,
+        managed_e_book_id,
+        user_install_state_summary_id,
+        device_install_state_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1182,7 +1550,9 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedEBook do
     request =
       %{}
       |> method(:get)
-      |> url("/deviceAppManagement/managedEBooks/#{managed_e_book_id}/userStateSummary/#{user_install_state_summary_id}/deviceStates/#{device_install_state_id}")
+      |> url(
+        "/deviceAppManagement/managedEBooks/#{managed_e_book_id}/userStateSummary/#{user_install_state_summary_id}/deviceStates/#{device_install_state_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1219,8 +1589,21 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedEBook do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceInstallStateCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_managed_e_books_user_state_summary_list_device_states(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceInstallStateCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_managed_e_books_user_state_summary_list_device_states(connection, managed_e_book_id, user_install_state_summary_id, opts \\ []) do
+  @spec device_app_management_managed_e_books_user_state_summary_list_device_states(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceInstallStateCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_managed_e_books_user_state_summary_list_device_states(
+        connection,
+        managed_e_book_id,
+        user_install_state_summary_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1235,7 +1618,9 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedEBook do
     request =
       %{}
       |> method(:get)
-      |> url("/deviceAppManagement/managedEBooks/#{managed_e_book_id}/userStateSummary/#{user_install_state_summary_id}/deviceStates")
+      |> url(
+        "/deviceAppManagement/managedEBooks/#{managed_e_book_id}/userStateSummary/#{user_install_state_summary_id}/deviceStates"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1265,12 +1650,31 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedEBook do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceInstallState.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_managed_e_books_user_state_summary_update_device_states(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphDeviceInstallState.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceInstallState.t} | {:error, Tesla.Env.t}
-  def device_app_management_managed_e_books_user_state_summary_update_device_states(connection, managed_e_book_id, user_install_state_summary_id, device_install_state_id, microsoft_graph_device_install_state, _opts \\ []) do
+  @spec device_app_management_managed_e_books_user_state_summary_update_device_states(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDeviceInstallState.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceInstallState.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_managed_e_books_user_state_summary_update_device_states(
+        connection,
+        managed_e_book_id,
+        user_install_state_summary_id,
+        device_install_state_id,
+        microsoft_graph_device_install_state,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/deviceAppManagement/managedEBooks/#{managed_e_book_id}/userStateSummary/#{user_install_state_summary_id}/deviceStates/#{device_install_state_id}")
+      |> url(
+        "/deviceAppManagement/managedEBooks/#{managed_e_book_id}/userStateSummary/#{user_install_state_summary_id}/deviceStates/#{device_install_state_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_device_install_state)
       |> Enum.into([])
 
@@ -1299,8 +1703,21 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedEBook do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphManagedEBook.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_update_managed_e_books(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphManagedEBook.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphManagedEBook.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_update_managed_e_books(connection, managed_e_book_id, microsoft_graph_managed_e_book, _opts \\ []) do
+  @spec device_app_management_update_managed_e_books(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphManagedEBook.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphManagedEBook.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_update_managed_e_books(
+        connection,
+        managed_e_book_id,
+        microsoft_graph_managed_e_book,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

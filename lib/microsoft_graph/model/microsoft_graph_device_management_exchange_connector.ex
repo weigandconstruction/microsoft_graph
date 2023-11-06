@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphDeviceManagementExchangeConnector do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -22,26 +22,35 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphDeviceManagementExchangeConnector d
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :connectorServerName => String.t | nil,
-    :exchangeAlias => String.t | nil,
-    :exchangeConnectorType => MicrosoftGraph.Model.MicrosoftGraphDeviceManagementExchangeConnectorType.t | nil,
-    :exchangeOrganization => String.t | nil,
-    :lastSyncDateTime => DateTime.t | nil,
-    :primarySmtpAddress => String.t | nil,
-    :serverName => String.t | nil,
-    :status => MicrosoftGraph.Model.MicrosoftGraphDeviceManagementExchangeConnectorStatus.t | nil,
-    :version => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :connectorServerName => String.t() | nil,
+          :exchangeAlias => String.t() | nil,
+          :exchangeConnectorType =>
+            MicrosoftGraph.Model.MicrosoftGraphDeviceManagementExchangeConnectorType.t() | nil,
+          :exchangeOrganization => String.t() | nil,
+          :lastSyncDateTime => DateTime.t() | nil,
+          :primarySmtpAddress => String.t() | nil,
+          :serverName => String.t() | nil,
+          :status =>
+            MicrosoftGraph.Model.MicrosoftGraphDeviceManagementExchangeConnectorStatus.t() | nil,
+          :version => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:exchangeConnectorType, :struct, MicrosoftGraph.Model.MicrosoftGraphDeviceManagementExchangeConnectorType)
-     |> Deserializer.deserialize(:lastSyncDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.MicrosoftGraphDeviceManagementExchangeConnectorStatus)
+    |> Deserializer.deserialize(
+      :exchangeConnectorType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphDeviceManagementExchangeConnectorType
+    )
+    |> Deserializer.deserialize(:lastSyncDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :status,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphDeviceManagementExchangeConnectorStatus
+    )
   end
 end
-

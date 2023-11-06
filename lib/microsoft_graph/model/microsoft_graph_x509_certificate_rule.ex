@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphX509CertificateRule do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,18 +15,29 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphX509CertificateRule do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :identifier => String.t | nil,
-    :x509CertificateAuthenticationMode => MicrosoftGraph.Model.MicrosoftGraphX509CertificateRuleX509CertificateAuthenticationMode.t | nil,
-    :x509CertificateRuleType => MicrosoftGraph.Model.MicrosoftGraphX509CertificateRuleX509CertificateRuleType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :identifier => String.t() | nil,
+          :x509CertificateAuthenticationMode =>
+            MicrosoftGraph.Model.MicrosoftGraphX509CertificateRuleX509CertificateAuthenticationMode.t()
+            | nil,
+          :x509CertificateRuleType =>
+            MicrosoftGraph.Model.MicrosoftGraphX509CertificateRuleX509CertificateRuleType.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:x509CertificateAuthenticationMode, :struct, MicrosoftGraph.Model.MicrosoftGraphX509CertificateRuleX509CertificateAuthenticationMode)
-     |> Deserializer.deserialize(:x509CertificateRuleType, :struct, MicrosoftGraph.Model.MicrosoftGraphX509CertificateRuleX509CertificateRuleType)
+    |> Deserializer.deserialize(
+      :x509CertificateAuthenticationMode,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphX509CertificateRuleX509CertificateAuthenticationMode
+    )
+    |> Deserializer.deserialize(
+      :x509CertificateRuleType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphX509CertificateRuleX509CertificateRuleType
+    )
   end
 end
-

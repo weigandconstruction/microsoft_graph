@@ -17,21 +17,32 @@ defmodule MicrosoftGraph.Model.PlannerTaskDetails do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :checklist => MicrosoftGraph.Model.PlannerTaskDetailsChecklist.t | nil,
-    :description => String.t | nil,
-    :previewType => MicrosoftGraph.Model.PlannerTaskDetailsPreviewType.t | nil,
-    :references => MicrosoftGraph.Model.PlannerTaskDetailsReferences.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :checklist => MicrosoftGraph.Model.PlannerTaskDetailsChecklist.t() | nil,
+          :description => String.t() | nil,
+          :previewType => MicrosoftGraph.Model.PlannerTaskDetailsPreviewType.t() | nil,
+          :references => MicrosoftGraph.Model.PlannerTaskDetailsReferences.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:checklist, :struct, MicrosoftGraph.Model.PlannerTaskDetailsChecklist)
-     |> Deserializer.deserialize(:previewType, :struct, MicrosoftGraph.Model.PlannerTaskDetailsPreviewType)
-     |> Deserializer.deserialize(:references, :struct, MicrosoftGraph.Model.PlannerTaskDetailsReferences)
+    |> Deserializer.deserialize(
+      :checklist,
+      :struct,
+      MicrosoftGraph.Model.PlannerTaskDetailsChecklist
+    )
+    |> Deserializer.deserialize(
+      :previewType,
+      :struct,
+      MicrosoftGraph.Model.PlannerTaskDetailsPreviewType
+    )
+    |> Deserializer.deserialize(
+      :references,
+      :struct,
+      MicrosoftGraph.Model.PlannerTaskDetailsReferences
+    )
   end
 end
-

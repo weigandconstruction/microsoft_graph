@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphFileHash do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,19 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphFileHash do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :hashType => MicrosoftGraph.Model.MicrosoftGraphFileHashHashType.t | nil,
-    :hashValue => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :hashType => MicrosoftGraph.Model.MicrosoftGraphFileHashHashType.t() | nil,
+          :hashValue => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:hashType, :struct, MicrosoftGraph.Model.MicrosoftGraphFileHashHashType)
+    |> Deserializer.deserialize(
+      :hashType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphFileHashHashType
+    )
   end
 end
-

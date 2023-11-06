@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereDevice do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -47,55 +47,94 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWorkFromAnyw
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :processor64BitCheckFailed => boolean() | nil,
-    :model => String.t | nil,
-    :cloudProvisioningScore => MicrosoftGraph.Model.UserExperienceAnalyticsWorkFromAnywhereDeviceCloudProvisioningScore.t | nil,
-    :windowsScore => MicrosoftGraph.Model.UserExperienceAnalyticsWorkFromAnywhereDeviceWindowsScore.t | nil,
-    :workFromAnywhereScore => MicrosoftGraph.Model.UserExperienceAnalyticsWorkFromAnywhereDeviceWorkFromAnywhereScore.t | nil,
-    :osVersion => String.t | nil,
-    :azureAdJoinType => String.t | nil,
-    :autoPilotRegistered => boolean() | nil,
-    :tpmCheckFailed => boolean() | nil,
-    :deviceName => String.t | nil,
-    :compliancePolicySetToIntune => boolean() | nil,
-    :ownership => String.t | nil,
-    :cloudManagementScore => MicrosoftGraph.Model.UserExperienceAnalyticsWorkFromAnywhereDeviceCloudManagementScore.t | nil,
-    :healthStatus => MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsHealthState.t | nil,
-    :managedBy => String.t | nil,
-    :processorCoreCountCheckFailed => boolean() | nil,
-    :storageCheckFailed => boolean() | nil,
-    :isCloudManagedGatewayEnabled => boolean() | nil,
-    :ramCheckFailed => boolean() | nil,
-    :processorFamilyCheckFailed => boolean() | nil,
-    :cloudIdentityScore => MicrosoftGraph.Model.UserExperienceAnalyticsWorkFromAnywhereDeviceCloudIdentityScore.t | nil,
-    :tenantAttached => boolean() | nil,
-    :deviceId => String.t | nil,
-    :manufacturer => String.t | nil,
-    :azureAdRegistered => boolean() | nil,
-    :serialNumber => String.t | nil,
-    :otherWorkloadsSetToIntune => boolean() | nil,
-    :upgradeEligibility => MicrosoftGraph.Model.MicrosoftGraphOperatingSystemUpgradeEligibility.t | nil,
-    :secureBootCheckFailed => boolean() | nil,
-    :osCheckFailed => boolean() | nil,
-    :osDescription => String.t | nil,
-    :autoPilotProfileAssigned => boolean() | nil,
-    :azureAdDeviceId => String.t | nil,
-    :processorSpeedCheckFailed => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :processor64BitCheckFailed => boolean() | nil,
+          :model => String.t() | nil,
+          :cloudProvisioningScore =>
+            MicrosoftGraph.Model.UserExperienceAnalyticsWorkFromAnywhereDeviceCloudProvisioningScore.t()
+            | nil,
+          :windowsScore =>
+            MicrosoftGraph.Model.UserExperienceAnalyticsWorkFromAnywhereDeviceWindowsScore.t()
+            | nil,
+          :workFromAnywhereScore =>
+            MicrosoftGraph.Model.UserExperienceAnalyticsWorkFromAnywhereDeviceWorkFromAnywhereScore.t()
+            | nil,
+          :osVersion => String.t() | nil,
+          :azureAdJoinType => String.t() | nil,
+          :autoPilotRegistered => boolean() | nil,
+          :tpmCheckFailed => boolean() | nil,
+          :deviceName => String.t() | nil,
+          :compliancePolicySetToIntune => boolean() | nil,
+          :ownership => String.t() | nil,
+          :cloudManagementScore =>
+            MicrosoftGraph.Model.UserExperienceAnalyticsWorkFromAnywhereDeviceCloudManagementScore.t()
+            | nil,
+          :healthStatus =>
+            MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsHealthState.t() | nil,
+          :managedBy => String.t() | nil,
+          :processorCoreCountCheckFailed => boolean() | nil,
+          :storageCheckFailed => boolean() | nil,
+          :isCloudManagedGatewayEnabled => boolean() | nil,
+          :ramCheckFailed => boolean() | nil,
+          :processorFamilyCheckFailed => boolean() | nil,
+          :cloudIdentityScore =>
+            MicrosoftGraph.Model.UserExperienceAnalyticsWorkFromAnywhereDeviceCloudIdentityScore.t()
+            | nil,
+          :tenantAttached => boolean() | nil,
+          :deviceId => String.t() | nil,
+          :manufacturer => String.t() | nil,
+          :azureAdRegistered => boolean() | nil,
+          :serialNumber => String.t() | nil,
+          :otherWorkloadsSetToIntune => boolean() | nil,
+          :upgradeEligibility =>
+            MicrosoftGraph.Model.MicrosoftGraphOperatingSystemUpgradeEligibility.t() | nil,
+          :secureBootCheckFailed => boolean() | nil,
+          :osCheckFailed => boolean() | nil,
+          :osDescription => String.t() | nil,
+          :autoPilotProfileAssigned => boolean() | nil,
+          :azureAdDeviceId => String.t() | nil,
+          :processorSpeedCheckFailed => boolean() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:cloudProvisioningScore, :struct, MicrosoftGraph.Model.UserExperienceAnalyticsWorkFromAnywhereDeviceCloudProvisioningScore)
-     |> Deserializer.deserialize(:windowsScore, :struct, MicrosoftGraph.Model.UserExperienceAnalyticsWorkFromAnywhereDeviceWindowsScore)
-     |> Deserializer.deserialize(:workFromAnywhereScore, :struct, MicrosoftGraph.Model.UserExperienceAnalyticsWorkFromAnywhereDeviceWorkFromAnywhereScore)
-     |> Deserializer.deserialize(:cloudManagementScore, :struct, MicrosoftGraph.Model.UserExperienceAnalyticsWorkFromAnywhereDeviceCloudManagementScore)
-     |> Deserializer.deserialize(:healthStatus, :struct, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsHealthState)
-     |> Deserializer.deserialize(:cloudIdentityScore, :struct, MicrosoftGraph.Model.UserExperienceAnalyticsWorkFromAnywhereDeviceCloudIdentityScore)
-     |> Deserializer.deserialize(:upgradeEligibility, :struct, MicrosoftGraph.Model.MicrosoftGraphOperatingSystemUpgradeEligibility)
+    |> Deserializer.deserialize(
+      :cloudProvisioningScore,
+      :struct,
+      MicrosoftGraph.Model.UserExperienceAnalyticsWorkFromAnywhereDeviceCloudProvisioningScore
+    )
+    |> Deserializer.deserialize(
+      :windowsScore,
+      :struct,
+      MicrosoftGraph.Model.UserExperienceAnalyticsWorkFromAnywhereDeviceWindowsScore
+    )
+    |> Deserializer.deserialize(
+      :workFromAnywhereScore,
+      :struct,
+      MicrosoftGraph.Model.UserExperienceAnalyticsWorkFromAnywhereDeviceWorkFromAnywhereScore
+    )
+    |> Deserializer.deserialize(
+      :cloudManagementScore,
+      :struct,
+      MicrosoftGraph.Model.UserExperienceAnalyticsWorkFromAnywhereDeviceCloudManagementScore
+    )
+    |> Deserializer.deserialize(
+      :healthStatus,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsHealthState
+    )
+    |> Deserializer.deserialize(
+      :cloudIdentityScore,
+      :struct,
+      MicrosoftGraph.Model.UserExperienceAnalyticsWorkFromAnywhereDeviceCloudIdentityScore
+    )
+    |> Deserializer.deserialize(
+      :upgradeEligibility,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphOperatingSystemUpgradeEligibility
+    )
   end
 end
-

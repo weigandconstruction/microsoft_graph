@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamsInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -42,60 +42,144 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamsInner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :audioCodec => MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamAudioCodec.t | nil,
-    :averageAudioDegradation => MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamAverageAudioDegradation.t | nil,
-    :averageAudioNetworkJitter => String.t | nil,
-    :averageBandwidthEstimate => integer() | nil,
-    :averageFreezeDuration => String.t | nil,
-    :averageJitter => String.t | nil,
-    :averagePacketLossRate => MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamAveragePacketLossRate.t | nil,
-    :averageRatioOfConcealedSamples => MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamAverageRatioOfConcealedSamples.t | nil,
-    :averageReceivedFrameRate => MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamAverageReceivedFrameRate.t | nil,
-    :averageRoundTripTime => String.t | nil,
-    :averageVideoFrameLossPercentage => MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamAverageVideoFrameLossPercentage.t | nil,
-    :averageVideoFrameRate => MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamAverageVideoFrameRate.t | nil,
-    :averageVideoPacketLossRate => MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamAverageVideoPacketLossRate.t | nil,
-    :endDateTime => DateTime.t | nil,
-    :isAudioForwardErrorCorrectionUsed => boolean() | nil,
-    :lowFrameRateRatio => MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamLowFrameRateRatio.t | nil,
-    :lowVideoProcessingCapabilityRatio => MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamLowVideoProcessingCapabilityRatio.t | nil,
-    :maxAudioNetworkJitter => String.t | nil,
-    :maxJitter => String.t | nil,
-    :maxPacketLossRate => MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamMaxPacketLossRate.t | nil,
-    :maxRatioOfConcealedSamples => MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamMaxRatioOfConcealedSamples.t | nil,
-    :maxRoundTripTime => String.t | nil,
-    :packetUtilization => integer() | nil,
-    :postForwardErrorCorrectionPacketLossRate => MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamPostForwardErrorCorrectionPacketLossRate.t | nil,
-    :rmsFreezeDuration => String.t | nil,
-    :startDateTime => DateTime.t | nil,
-    :streamDirection => MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamDirection.t | nil,
-    :streamId => String.t | nil,
-    :videoCodec => MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamVideoCodec.t | nil,
-    :wasMediaBypassed => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :audioCodec =>
+            MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamAudioCodec.t() | nil,
+          :averageAudioDegradation =>
+            MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamAverageAudioDegradation.t()
+            | nil,
+          :averageAudioNetworkJitter => String.t() | nil,
+          :averageBandwidthEstimate => integer() | nil,
+          :averageFreezeDuration => String.t() | nil,
+          :averageJitter => String.t() | nil,
+          :averagePacketLossRate =>
+            MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamAveragePacketLossRate.t()
+            | nil,
+          :averageRatioOfConcealedSamples =>
+            MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamAverageRatioOfConcealedSamples.t()
+            | nil,
+          :averageReceivedFrameRate =>
+            MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamAverageReceivedFrameRate.t()
+            | nil,
+          :averageRoundTripTime => String.t() | nil,
+          :averageVideoFrameLossPercentage =>
+            MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamAverageVideoFrameLossPercentage.t()
+            | nil,
+          :averageVideoFrameRate =>
+            MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamAverageVideoFrameRate.t()
+            | nil,
+          :averageVideoPacketLossRate =>
+            MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamAverageVideoPacketLossRate.t()
+            | nil,
+          :endDateTime => DateTime.t() | nil,
+          :isAudioForwardErrorCorrectionUsed => boolean() | nil,
+          :lowFrameRateRatio =>
+            MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamLowFrameRateRatio.t() | nil,
+          :lowVideoProcessingCapabilityRatio =>
+            MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamLowVideoProcessingCapabilityRatio.t()
+            | nil,
+          :maxAudioNetworkJitter => String.t() | nil,
+          :maxJitter => String.t() | nil,
+          :maxPacketLossRate =>
+            MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamMaxPacketLossRate.t() | nil,
+          :maxRatioOfConcealedSamples =>
+            MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamMaxRatioOfConcealedSamples.t()
+            | nil,
+          :maxRoundTripTime => String.t() | nil,
+          :packetUtilization => integer() | nil,
+          :postForwardErrorCorrectionPacketLossRate =>
+            MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamPostForwardErrorCorrectionPacketLossRate.t()
+            | nil,
+          :rmsFreezeDuration => String.t() | nil,
+          :startDateTime => DateTime.t() | nil,
+          :streamDirection =>
+            MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamDirection.t() | nil,
+          :streamId => String.t() | nil,
+          :videoCodec =>
+            MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamVideoCodec.t() | nil,
+          :wasMediaBypassed => boolean() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:audioCodec, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamAudioCodec)
-     |> Deserializer.deserialize(:averageAudioDegradation, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamAverageAudioDegradation)
-     |> Deserializer.deserialize(:averagePacketLossRate, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamAveragePacketLossRate)
-     |> Deserializer.deserialize(:averageRatioOfConcealedSamples, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamAverageRatioOfConcealedSamples)
-     |> Deserializer.deserialize(:averageReceivedFrameRate, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamAverageReceivedFrameRate)
-     |> Deserializer.deserialize(:averageVideoFrameLossPercentage, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamAverageVideoFrameLossPercentage)
-     |> Deserializer.deserialize(:averageVideoFrameRate, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamAverageVideoFrameRate)
-     |> Deserializer.deserialize(:averageVideoPacketLossRate, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamAverageVideoPacketLossRate)
-     |> Deserializer.deserialize(:endDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lowFrameRateRatio, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamLowFrameRateRatio)
-     |> Deserializer.deserialize(:lowVideoProcessingCapabilityRatio, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamLowVideoProcessingCapabilityRatio)
-     |> Deserializer.deserialize(:maxPacketLossRate, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamMaxPacketLossRate)
-     |> Deserializer.deserialize(:maxRatioOfConcealedSamples, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamMaxRatioOfConcealedSamples)
-     |> Deserializer.deserialize(:postForwardErrorCorrectionPacketLossRate, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamPostForwardErrorCorrectionPacketLossRate)
-     |> Deserializer.deserialize(:startDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:streamDirection, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamDirection)
-     |> Deserializer.deserialize(:videoCodec, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamVideoCodec)
+    |> Deserializer.deserialize(
+      :audioCodec,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamAudioCodec
+    )
+    |> Deserializer.deserialize(
+      :averageAudioDegradation,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamAverageAudioDegradation
+    )
+    |> Deserializer.deserialize(
+      :averagePacketLossRate,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamAveragePacketLossRate
+    )
+    |> Deserializer.deserialize(
+      :averageRatioOfConcealedSamples,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamAverageRatioOfConcealedSamples
+    )
+    |> Deserializer.deserialize(
+      :averageReceivedFrameRate,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamAverageReceivedFrameRate
+    )
+    |> Deserializer.deserialize(
+      :averageVideoFrameLossPercentage,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamAverageVideoFrameLossPercentage
+    )
+    |> Deserializer.deserialize(
+      :averageVideoFrameRate,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamAverageVideoFrameRate
+    )
+    |> Deserializer.deserialize(
+      :averageVideoPacketLossRate,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamAverageVideoPacketLossRate
+    )
+    |> Deserializer.deserialize(:endDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :lowFrameRateRatio,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamLowFrameRateRatio
+    )
+    |> Deserializer.deserialize(
+      :lowVideoProcessingCapabilityRatio,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamLowVideoProcessingCapabilityRatio
+    )
+    |> Deserializer.deserialize(
+      :maxPacketLossRate,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamMaxPacketLossRate
+    )
+    |> Deserializer.deserialize(
+      :maxRatioOfConcealedSamples,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamMaxRatioOfConcealedSamples
+    )
+    |> Deserializer.deserialize(
+      :postForwardErrorCorrectionPacketLossRate,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamPostForwardErrorCorrectionPacketLossRate
+    )
+    |> Deserializer.deserialize(:startDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :streamDirection,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamDirection
+    )
+    |> Deserializer.deserialize(
+      :videoCodec,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamVideoCodec
+    )
   end
 end
-

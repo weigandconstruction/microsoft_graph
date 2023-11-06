@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphTermsOfUseContainer do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,18 +15,22 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphTermsOfUseContainer do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :agreementAcceptances => [MicrosoftGraph.Model.MicrosoftGraphAgreementAcceptance.t] | nil,
-    :agreements => [MicrosoftGraph.Model.MicrosoftGraphAgreement.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :agreementAcceptances =>
+            [MicrosoftGraph.Model.MicrosoftGraphAgreementAcceptance.t()] | nil,
+          :agreements => [MicrosoftGraph.Model.MicrosoftGraphAgreement.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:agreementAcceptances, :list, MicrosoftGraph.Model.MicrosoftGraphAgreementAcceptance)
-     |> Deserializer.deserialize(:agreements, :list, MicrosoftGraph.Model.MicrosoftGraphAgreement)
+    |> Deserializer.deserialize(
+      :agreementAcceptances,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAgreementAcceptance
+    )
+    |> Deserializer.deserialize(:agreements, :list, MicrosoftGraph.Model.MicrosoftGraphAgreement)
   end
 end
-

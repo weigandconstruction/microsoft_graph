@@ -14,17 +14,25 @@ defmodule MicrosoftGraph.Model.Win32LobAppInstallExperience do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :deviceRestartBehavior => MicrosoftGraph.Model.MicrosoftGraphWin32LobAppRestartBehavior.t | nil,
-    :runAsAccount => MicrosoftGraph.Model.MicrosoftGraphRunAsAccountType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :deviceRestartBehavior =>
+            MicrosoftGraph.Model.MicrosoftGraphWin32LobAppRestartBehavior.t() | nil,
+          :runAsAccount => MicrosoftGraph.Model.MicrosoftGraphRunAsAccountType.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:deviceRestartBehavior, :struct, MicrosoftGraph.Model.MicrosoftGraphWin32LobAppRestartBehavior)
-     |> Deserializer.deserialize(:runAsAccount, :struct, MicrosoftGraph.Model.MicrosoftGraphRunAsAccountType)
+    |> Deserializer.deserialize(
+      :deviceRestartBehavior,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphWin32LobAppRestartBehavior
+    )
+    |> Deserializer.deserialize(
+      :runAsAccount,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphRunAsAccountType
+    )
   end
 end
-

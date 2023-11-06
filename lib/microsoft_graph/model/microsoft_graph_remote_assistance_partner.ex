@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphRemoteAssistancePartner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,20 +17,24 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphRemoteAssistancePartner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :displayName => String.t | nil,
-    :lastConnectionDateTime => DateTime.t | nil,
-    :onboardingStatus => MicrosoftGraph.Model.MicrosoftGraphRemoteAssistanceOnboardingStatus.t | nil,
-    :onboardingUrl => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :displayName => String.t() | nil,
+          :lastConnectionDateTime => DateTime.t() | nil,
+          :onboardingStatus =>
+            MicrosoftGraph.Model.MicrosoftGraphRemoteAssistanceOnboardingStatus.t() | nil,
+          :onboardingUrl => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:lastConnectionDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:onboardingStatus, :struct, MicrosoftGraph.Model.MicrosoftGraphRemoteAssistanceOnboardingStatus)
+    |> Deserializer.deserialize(:lastConnectionDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :onboardingStatus,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphRemoteAssistanceOnboardingStatus
+    )
   end
 end
-

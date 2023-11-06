@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAuthenticationFlowsPolicy do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,18 +16,22 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAuthenticationFlowsPolicy do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :selfServiceSignUp => MicrosoftGraph.Model.AuthenticationFlowsPolicySelfServiceSignUp.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :selfServiceSignUp =>
+            MicrosoftGraph.Model.AuthenticationFlowsPolicySelfServiceSignUp.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:selfServiceSignUp, :struct, MicrosoftGraph.Model.AuthenticationFlowsPolicySelfServiceSignUp)
+    |> Deserializer.deserialize(
+      :selfServiceSignUp,
+      :struct,
+      MicrosoftGraph.Model.AuthenticationFlowsPolicySelfServiceSignUp
+    )
   end
 end
-

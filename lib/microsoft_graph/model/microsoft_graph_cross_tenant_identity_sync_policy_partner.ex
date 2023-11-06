@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphCrossTenantIdentitySyncPolicyPartner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,17 +15,22 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphCrossTenantIdentitySyncPolicyPartne
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :displayName => String.t | nil,
-    :tenantId => String.t | nil,
-    :userSyncInbound => MicrosoftGraph.Model.MicrosoftGraphCrossTenantIdentitySyncPolicyPartnerUserSyncInbound.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :displayName => String.t() | nil,
+          :tenantId => String.t() | nil,
+          :userSyncInbound =>
+            MicrosoftGraph.Model.MicrosoftGraphCrossTenantIdentitySyncPolicyPartnerUserSyncInbound.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:userSyncInbound, :struct, MicrosoftGraph.Model.MicrosoftGraphCrossTenantIdentitySyncPolicyPartnerUserSyncInbound)
+    |> Deserializer.deserialize(
+      :userSyncInbound,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCrossTenantIdentitySyncPolicyPartnerUserSyncInbound
+    )
   end
 end
-

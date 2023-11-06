@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminRelationshipOperation do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,23 +18,31 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminRelationshipOperation
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :data => String.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :operationType => MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminRelationshipOperationType.t | nil,
-    :status => MicrosoftGraph.Model.MicrosoftGraphLongRunningOperationStatus.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :data => String.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :operationType =>
+            MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminRelationshipOperationType.t() | nil,
+          :status => MicrosoftGraph.Model.MicrosoftGraphLongRunningOperationStatus.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:operationType, :struct, MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminRelationshipOperationType)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.MicrosoftGraphLongRunningOperationStatus)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :operationType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminRelationshipOperationType
+    )
+    |> Deserializer.deserialize(
+      :status,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphLongRunningOperationStatus
+    )
   end
 end
-

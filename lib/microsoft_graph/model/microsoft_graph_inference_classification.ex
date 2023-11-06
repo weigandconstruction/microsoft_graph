@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphInferenceClassification do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,20 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphInferenceClassification do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :overrides => [MicrosoftGraph.Model.MicrosoftGraphInferenceClassificationOverride.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :overrides =>
+            [MicrosoftGraph.Model.MicrosoftGraphInferenceClassificationOverride.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:overrides, :list, MicrosoftGraph.Model.MicrosoftGraphInferenceClassificationOverride)
+    |> Deserializer.deserialize(
+      :overrides,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphInferenceClassificationOverride
+    )
   end
 end
-

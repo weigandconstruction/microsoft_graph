@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphWorkbookTable do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -27,32 +27,35 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphWorkbookTable do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :columns => [MicrosoftGraph.Model.MicrosoftGraphWorkbookTableColumn.t] | nil,
-    :highlightFirstColumn => boolean() | nil,
-    :highlightLastColumn => boolean() | nil,
-    :legacyId => String.t | nil,
-    :name => String.t | nil,
-    :rows => [MicrosoftGraph.Model.MicrosoftGraphWorkbookTableRow.t] | nil,
-    :showBandedColumns => boolean() | nil,
-    :showBandedRows => boolean() | nil,
-    :showFilterButton => boolean() | nil,
-    :showHeaders => boolean() | nil,
-    :showTotals => boolean() | nil,
-    :sort => MicrosoftGraph.Model.WorkbookTableSort.t | nil,
-    :style => String.t | nil,
-    :worksheet => MicrosoftGraph.Model.WorkbookTableWorksheet.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :columns => [MicrosoftGraph.Model.MicrosoftGraphWorkbookTableColumn.t()] | nil,
+          :highlightFirstColumn => boolean() | nil,
+          :highlightLastColumn => boolean() | nil,
+          :legacyId => String.t() | nil,
+          :name => String.t() | nil,
+          :rows => [MicrosoftGraph.Model.MicrosoftGraphWorkbookTableRow.t()] | nil,
+          :showBandedColumns => boolean() | nil,
+          :showBandedRows => boolean() | nil,
+          :showFilterButton => boolean() | nil,
+          :showHeaders => boolean() | nil,
+          :showTotals => boolean() | nil,
+          :sort => MicrosoftGraph.Model.WorkbookTableSort.t() | nil,
+          :style => String.t() | nil,
+          :worksheet => MicrosoftGraph.Model.WorkbookTableWorksheet.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:columns, :list, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableColumn)
-     |> Deserializer.deserialize(:rows, :list, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableRow)
-     |> Deserializer.deserialize(:sort, :struct, MicrosoftGraph.Model.WorkbookTableSort)
-     |> Deserializer.deserialize(:worksheet, :struct, MicrosoftGraph.Model.WorkbookTableWorksheet)
+    |> Deserializer.deserialize(
+      :columns,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphWorkbookTableColumn
+    )
+    |> Deserializer.deserialize(:rows, :list, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableRow)
+    |> Deserializer.deserialize(:sort, :struct, MicrosoftGraph.Model.WorkbookTableSort)
+    |> Deserializer.deserialize(:worksheet, :struct, MicrosoftGraph.Model.WorkbookTableWorksheet)
   end
 end
-

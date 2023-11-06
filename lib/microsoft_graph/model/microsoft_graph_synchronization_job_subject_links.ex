@@ -15,19 +15,40 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSynchronizationJobSubjectLinks do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :manager => MicrosoftGraph.Model.MicrosoftGraphSynchronizationJobApplicationParametersSubjectsInner.t | nil,
-    :members => [MicrosoftGraph.Model.MicrosoftGraphSynchronizationJobApplicationParametersSubjectsInner.t] | nil,
-    :owners => [MicrosoftGraph.Model.MicrosoftGraphSynchronizationJobApplicationParametersSubjectsInner.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :manager =>
+            MicrosoftGraph.Model.MicrosoftGraphSynchronizationJobApplicationParametersSubjectsInner.t()
+            | nil,
+          :members =>
+            [
+              MicrosoftGraph.Model.MicrosoftGraphSynchronizationJobApplicationParametersSubjectsInner.t()
+            ]
+            | nil,
+          :owners =>
+            [
+              MicrosoftGraph.Model.MicrosoftGraphSynchronizationJobApplicationParametersSubjectsInner.t()
+            ]
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:manager, :struct, MicrosoftGraph.Model.MicrosoftGraphSynchronizationJobApplicationParametersSubjectsInner)
-     |> Deserializer.deserialize(:members, :list, MicrosoftGraph.Model.MicrosoftGraphSynchronizationJobApplicationParametersSubjectsInner)
-     |> Deserializer.deserialize(:owners, :list, MicrosoftGraph.Model.MicrosoftGraphSynchronizationJobApplicationParametersSubjectsInner)
+    |> Deserializer.deserialize(
+      :manager,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSynchronizationJobApplicationParametersSubjectsInner
+    )
+    |> Deserializer.deserialize(
+      :members,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSynchronizationJobApplicationParametersSubjectsInner
+    )
+    |> Deserializer.deserialize(
+      :owners,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSynchronizationJobApplicationParametersSubjectsInner
+    )
   end
 end
-

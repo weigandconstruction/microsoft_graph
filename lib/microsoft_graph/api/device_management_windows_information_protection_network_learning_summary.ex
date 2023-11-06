@@ -24,19 +24,36 @@ defmodule MicrosoftGraph.Api.DeviceManagementWindowsInformationProtectionNetwork
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionNetworkLearningSummary.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_create_windows_information_protection_network_learning_summaries(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionNetworkLearningSummary.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionNetworkLearningSummary.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_create_windows_information_protection_network_learning_summaries(connection, microsoft_graph_windows_information_protection_network_learning_summary, _opts \\ []) do
+  @spec device_management_create_windows_information_protection_network_learning_summaries(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionNetworkLearningSummary.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionNetworkLearningSummary.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_create_windows_information_protection_network_learning_summaries(
+        connection,
+        microsoft_graph_windows_information_protection_network_learning_summary,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/deviceManagement/windowsInformationProtectionNetworkLearningSummaries")
-      |> add_param(:body, :body, microsoft_graph_windows_information_protection_network_learning_summary)
+      |> add_param(
+        :body,
+        :body,
+        microsoft_graph_windows_information_protection_network_learning_summary
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionNetworkLearningSummary},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionNetworkLearningSummary},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -58,8 +75,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementWindowsInformationProtectionNetwork
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_delete_windows_information_protection_network_learning_summaries(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_delete_windows_information_protection_network_learning_summaries(connection, windows_information_protection_network_learning_summary_id, opts \\ []) do
+  @spec device_management_delete_windows_information_protection_network_learning_summaries(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_delete_windows_information_protection_network_learning_summaries(
+        connection,
+        windows_information_protection_network_learning_summary_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -67,7 +95,9 @@ defmodule MicrosoftGraph.Api.DeviceManagementWindowsInformationProtectionNetwork
     request =
       %{}
       |> method(:delete)
-      |> url("/deviceManagement/windowsInformationProtectionNetworkLearningSummaries/#{windows_information_protection_network_learning_summary_id}")
+      |> url(
+        "/deviceManagement/windowsInformationProtectionNetworkLearningSummaries/#{windows_information_protection_network_learning_summary_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -97,8 +127,20 @@ defmodule MicrosoftGraph.Api.DeviceManagementWindowsInformationProtectionNetwork
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionNetworkLearningSummary.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_get_windows_information_protection_network_learning_summaries(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionNetworkLearningSummary.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_get_windows_information_protection_network_learning_summaries(connection, windows_information_protection_network_learning_summary_id, opts \\ []) do
+  @spec device_management_get_windows_information_protection_network_learning_summaries(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionNetworkLearningSummary.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_get_windows_information_protection_network_learning_summaries(
+        connection,
+        windows_information_protection_network_learning_summary_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -107,14 +149,17 @@ defmodule MicrosoftGraph.Api.DeviceManagementWindowsInformationProtectionNetwork
     request =
       %{}
       |> method(:get)
-      |> url("/deviceManagement/windowsInformationProtectionNetworkLearningSummaries/#{windows_information_protection_network_learning_summary_id}")
+      |> url(
+        "/deviceManagement/windowsInformationProtectionNetworkLearningSummaries/#{windows_information_protection_network_learning_summary_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionNetworkLearningSummary},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionNetworkLearningSummary},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -142,8 +187,18 @@ defmodule MicrosoftGraph.Api.DeviceManagementWindowsInformationProtectionNetwork
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionNetworkLearningSummaryCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_list_windows_information_protection_network_learning_summaries(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionNetworkLearningSummaryCollectionResponse.t} | {:error, Tesla.Env.t}
-  def device_management_list_windows_information_protection_network_learning_summaries(connection, opts \\ []) do
+  @spec device_management_list_windows_information_protection_network_learning_summaries(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionNetworkLearningSummaryCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_list_windows_information_protection_network_learning_summaries(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -165,7 +220,8 @@ defmodule MicrosoftGraph.Api.DeviceManagementWindowsInformationProtectionNetwork
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionNetworkLearningSummaryCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionNetworkLearningSummaryCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -187,19 +243,40 @@ defmodule MicrosoftGraph.Api.DeviceManagementWindowsInformationProtectionNetwork
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionNetworkLearningSummary.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_update_windows_information_protection_network_learning_summaries(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionNetworkLearningSummary.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionNetworkLearningSummary.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_update_windows_information_protection_network_learning_summaries(connection, windows_information_protection_network_learning_summary_id, microsoft_graph_windows_information_protection_network_learning_summary, _opts \\ []) do
+  @spec device_management_update_windows_information_protection_network_learning_summaries(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionNetworkLearningSummary.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionNetworkLearningSummary.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_update_windows_information_protection_network_learning_summaries(
+        connection,
+        windows_information_protection_network_learning_summary_id,
+        microsoft_graph_windows_information_protection_network_learning_summary,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/deviceManagement/windowsInformationProtectionNetworkLearningSummaries/#{windows_information_protection_network_learning_summary_id}")
-      |> add_param(:body, :body, microsoft_graph_windows_information_protection_network_learning_summary)
+      |> url(
+        "/deviceManagement/windowsInformationProtectionNetworkLearningSummaries/#{windows_information_protection_network_learning_summary_id}"
+      )
+      |> add_param(
+        :body,
+        :body,
+        microsoft_graph_windows_information_protection_network_learning_summary
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionNetworkLearningSummary},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionNetworkLearningSummary},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -220,8 +297,17 @@ defmodule MicrosoftGraph.Api.DeviceManagementWindowsInformationProtectionNetwork
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_windows_information_protection_network_learning_summaries_get_count_c2c3(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_windows_information_protection_network_learning_summaries_get_count_c2c3(connection, opts \\ []) do
+  @spec device_management_windows_information_protection_network_learning_summaries_get_count_c2c3(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_windows_information_protection_network_learning_summaries_get_count_c2c3(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query

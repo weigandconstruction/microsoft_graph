@@ -15,17 +15,21 @@ defmodule MicrosoftGraph.Model.ChatOnlineMeetingInfo do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :calendarEventId => String.t | nil,
-    :joinWebUrl => String.t | nil,
-    :organizer => MicrosoftGraph.Model.MicrosoftGraphTeamworkOnlineMeetingInfoOrganizer.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :calendarEventId => String.t() | nil,
+          :joinWebUrl => String.t() | nil,
+          :organizer =>
+            MicrosoftGraph.Model.MicrosoftGraphTeamworkOnlineMeetingInfoOrganizer.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:organizer, :struct, MicrosoftGraph.Model.MicrosoftGraphTeamworkOnlineMeetingInfoOrganizer)
+    |> Deserializer.deserialize(
+      :organizer,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphTeamworkOnlineMeetingInfoOrganizer
+    )
   end
 end
-

@@ -13,12 +13,11 @@ defmodule MicrosoftGraph.Model.DriveItemSearchResult do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :onClickTelemetryUrl => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :onClickTelemetryUrl => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

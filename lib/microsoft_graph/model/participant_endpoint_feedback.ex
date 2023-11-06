@@ -15,18 +15,25 @@ defmodule MicrosoftGraph.Model.ParticipantEndpointFeedback do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :rating => MicrosoftGraph.Model.MicrosoftGraphCallRecordsUserFeedbackRating.t | nil,
-    :text => String.t | nil,
-    :tokens => MicrosoftGraph.Model.MicrosoftGraphCallRecordsUserFeedbackTokens.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :rating => MicrosoftGraph.Model.MicrosoftGraphCallRecordsUserFeedbackRating.t() | nil,
+          :text => String.t() | nil,
+          :tokens => MicrosoftGraph.Model.MicrosoftGraphCallRecordsUserFeedbackTokens.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:rating, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsUserFeedbackRating)
-     |> Deserializer.deserialize(:tokens, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsUserFeedbackTokens)
+    |> Deserializer.deserialize(
+      :rating,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsUserFeedbackRating
+    )
+    |> Deserializer.deserialize(
+      :tokens,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsUserFeedbackTokens
+    )
   end
 end
-

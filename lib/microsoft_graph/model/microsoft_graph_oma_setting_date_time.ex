@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphOmaSettingDateTime do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,18 +16,17 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphOmaSettingDateTime do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :omaUri => String.t | nil,
-    :value => DateTime.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :omaUri => String.t() | nil,
+          :value => DateTime.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:value, :datetime, nil)
+    |> Deserializer.deserialize(:value, :datetime, nil)
   end
 end
-

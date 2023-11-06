@@ -24,7 +24,15 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreStore.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_create_term_stores(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreStore.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreStore.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_create_term_stores(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreStore.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreStore.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_create_term_stores(connection, site_id, microsoft_graph_term_store_store, _opts \\ []) do
     request =
       %{}
@@ -57,7 +65,10 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_delete_term_store(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_delete_term_store(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_delete_term_store(connection, site_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -95,7 +106,10 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_delete_term_stores(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_delete_term_stores(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_delete_term_stores(connection, site_id, store_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -134,7 +148,10 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreStore.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_get_term_store(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreStore.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_get_term_store(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreStore.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_get_term_store(connection, site_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -175,7 +192,10 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreStore.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_get_term_stores(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreStore.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_get_term_stores(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreStore.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_get_term_stores(connection, site_id, store_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -221,7 +241,10 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreStoreCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_list_term_stores(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreStoreCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_list_term_stores(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreStoreCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_list_term_stores(connection, site_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -266,8 +289,21 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_create_groups(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_create_groups(connection, site_id, microsoft_graph_term_store_group, _opts \\ []) do
+  @spec sites_term_store_create_groups(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_create_groups(
+        connection,
+        site_id,
+        microsoft_graph_term_store_group,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -300,8 +336,21 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_create_sets(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_create_sets(connection, site_id, microsoft_graph_term_store_set, _opts \\ []) do
+  @spec sites_term_store_create_sets(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_create_sets(
+        connection,
+        site_id,
+        microsoft_graph_term_store_set,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -335,7 +384,10 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_delete_groups(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_term_store_delete_groups(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_term_store_delete_groups(connection, site_id, group_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -374,7 +426,10 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_delete_sets(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_term_store_delete_sets(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_term_store_delete_sets(connection, site_id, set_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -414,7 +469,10 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_get_groups(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_term_store_get_groups(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_term_store_get_groups(connection, site_id, group_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -455,7 +513,10 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_get_sets(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_term_store_get_sets(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_term_store_get_sets(connection, site_id, set_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -494,8 +555,23 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_create_sets(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_create_sets(connection, site_id, group_id, microsoft_graph_term_store_set, _opts \\ []) do
+  @spec sites_term_store_groups_create_sets(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_create_sets(
+        connection,
+        site_id,
+        group_id,
+        microsoft_graph_term_store_set,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -529,7 +605,16 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_delete_sets(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_term_store_groups_delete_sets(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_term_store_groups_delete_sets(connection, site_id, group_id, set_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -567,7 +652,10 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_get_count_f00a(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_term_store_groups_get_count_f00a(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_term_store_groups_get_count_f00a(connection, site_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -609,7 +697,16 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_get_sets(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_term_store_groups_get_sets(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_term_store_groups_get_sets(connection, site_id, group_id, set_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -656,7 +753,10 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSetCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_list_sets(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSetCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_term_store_groups_list_sets(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSetCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_term_store_groups_list_sets(connection, site_id, group_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -704,12 +804,35 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_children_children_create_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_children_children_create_relations(connection, site_id, group_id, set_id, term_id, term_id1, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_store_groups_sets_children_children_create_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_children_children_create_relations(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -742,8 +865,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_children_children_delete_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_children_children_delete_relations(connection, site_id, group_id, set_id, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_store_groups_sets_children_children_delete_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_children_children_delete_relations(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -751,7 +895,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -783,8 +929,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_children_children_get_count_ecf0(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_children_children_get_count_ecf0(connection, site_id, group_id, set_id, term_id, opts \\ []) do
+  @spec sites_term_store_groups_sets_children_children_get_count_ecf0(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_children_children_get_count_ecf0(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -793,7 +956,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/$count")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -828,8 +993,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_children_children_get_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_children_children_get_relations(connection, site_id, group_id, set_id, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_store_groups_sets_children_children_get_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_children_children_get_relations(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -838,7 +1024,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -872,8 +1060,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_children_children_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_children_children_get_set(connection, site_id, group_id, set_id, term_id, term_id1, opts \\ []) do
+  @spec sites_term_store_groups_sets_children_children_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_children_children_get_set(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -882,7 +1089,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/set")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/set"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -922,8 +1131,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_children_children_list_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_children_children_list_relations(connection, site_id, group_id, set_id, term_id, term_id1, opts \\ []) do
+  @spec sites_term_store_groups_sets_children_children_list_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_children_children_list_relations(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -938,7 +1166,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -971,8 +1201,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_children_children_relations_get_count0d34(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_children_children_relations_get_count0d34(connection, site_id, group_id, set_id, term_id, term_id1, opts \\ []) do
+  @spec sites_term_store_groups_sets_children_children_relations_get_count0d34(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_children_children_relations_get_count0d34(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -981,7 +1230,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/$count")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1016,8 +1267,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_children_children_relations_get_from_term(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_children_children_relations_get_from_term(connection, site_id, group_id, set_id, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_store_groups_sets_children_children_relations_get_from_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_children_children_relations_get_from_term(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1026,7 +1298,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}/fromTerm")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}/fromTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1061,8 +1335,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_children_children_relations_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_children_children_relations_get_set(connection, site_id, group_id, set_id, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_store_groups_sets_children_children_relations_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_children_children_relations_get_set(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1071,7 +1366,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}/set")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}/set"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1106,8 +1403,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_children_children_relations_get_to_term(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_children_children_relations_get_to_term(connection, site_id, group_id, set_id, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_store_groups_sets_children_children_relations_get_to_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_children_children_relations_get_to_term(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1116,7 +1434,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}/toTerm")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}/toTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1149,12 +1469,37 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_children_children_update_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_children_children_update_relations(connection, site_id, group_id, set_id, term_id, term_id1, relation_id, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_store_groups_sets_children_children_update_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_children_children_update_relations(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        relation_id,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -1185,12 +1530,33 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_children_create_children(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_children_create_children(connection, site_id, group_id, set_id, term_id, microsoft_graph_term_store_term, _opts \\ []) do
+  @spec sites_term_store_groups_sets_children_create_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_children_create_children(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        microsoft_graph_term_store_term,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_term)
       |> Enum.into([])
 
@@ -1221,12 +1587,33 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_children_create_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_children_create_relations(connection, site_id, group_id, set_id, term_id, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_store_groups_sets_children_create_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_children_create_relations(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/relations")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/relations"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -1258,8 +1645,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_children_delete_children(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_children_delete_children(connection, site_id, group_id, set_id, term_id, term_id1, opts \\ []) do
+  @spec sites_term_store_groups_sets_children_delete_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_children_delete_children(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1267,7 +1673,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1299,8 +1707,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_children_delete_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_children_delete_relations(connection, site_id, group_id, set_id, term_id, relation_id, opts \\ []) do
+  @spec sites_term_store_groups_sets_children_delete_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_children_delete_relations(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1308,7 +1735,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1342,8 +1771,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_children_get_children(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_children_get_children(connection, site_id, group_id, set_id, term_id, term_id1, opts \\ []) do
+  @spec sites_term_store_groups_sets_children_get_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_children_get_children(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1352,7 +1800,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1383,8 +1833,23 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_children_get_count_ecf0(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_children_get_count_ecf0(connection, site_id, group_id, set_id, opts \\ []) do
+  @spec sites_term_store_groups_sets_children_get_count_ecf0(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_children_get_count_ecf0(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1427,8 +1892,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_children_get_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_children_get_relations(connection, site_id, group_id, set_id, term_id, relation_id, opts \\ []) do
+  @spec sites_term_store_groups_sets_children_get_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_children_get_relations(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1437,7 +1921,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1470,8 +1956,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_children_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_children_get_set(connection, site_id, group_id, set_id, term_id, opts \\ []) do
+  @spec sites_term_store_groups_sets_children_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_children_get_set(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1480,7 +1983,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/set")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/set"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1519,8 +2024,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_children_list_children(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_children_list_children(connection, site_id, group_id, set_id, term_id, opts \\ []) do
+  @spec sites_term_store_groups_sets_children_list_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_children_list_children(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1535,7 +2057,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1574,8 +2098,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_children_list_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_children_list_relations(connection, site_id, group_id, set_id, term_id, opts \\ []) do
+  @spec sites_term_store_groups_sets_children_list_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_children_list_relations(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1590,7 +2131,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/relations")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/relations"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1622,8 +2165,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_children_relations_get_count0d34(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_children_relations_get_count0d34(connection, site_id, group_id, set_id, term_id, opts \\ []) do
+  @spec sites_term_store_groups_sets_children_relations_get_count0d34(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_children_relations_get_count0d34(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1632,7 +2192,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/relations/$count")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/relations/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1666,8 +2228,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_children_relations_get_from_term(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_children_relations_get_from_term(connection, site_id, group_id, set_id, term_id, relation_id, opts \\ []) do
+  @spec sites_term_store_groups_sets_children_relations_get_from_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_children_relations_get_from_term(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1676,7 +2257,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/relations/#{relation_id}/fromTerm")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/relations/#{relation_id}/fromTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1710,8 +2293,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_children_relations_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_children_relations_get_set(connection, site_id, group_id, set_id, term_id, relation_id, opts \\ []) do
+  @spec sites_term_store_groups_sets_children_relations_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_children_relations_get_set(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1720,7 +2322,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/relations/#{relation_id}/set")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/relations/#{relation_id}/set"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1754,8 +2358,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_children_relations_get_to_term(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_children_relations_get_to_term(connection, site_id, group_id, set_id, term_id, relation_id, opts \\ []) do
+  @spec sites_term_store_groups_sets_children_relations_get_to_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_children_relations_get_to_term(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1764,7 +2387,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/relations/#{relation_id}/toTerm")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/relations/#{relation_id}/toTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1796,12 +2421,35 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_children_update_children(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_children_update_children(connection, site_id, group_id, set_id, term_id, term_id1, microsoft_graph_term_store_term, _opts \\ []) do
+  @spec sites_term_store_groups_sets_children_update_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_children_update_children(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        microsoft_graph_term_store_term,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_term)
       |> Enum.into([])
 
@@ -1833,12 +2481,35 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_children_update_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_children_update_relations(connection, site_id, group_id, set_id, term_id, relation_id, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_store_groups_sets_children_update_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_children_update_relations(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        relation_id,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/relations/#{relation_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -1869,8 +2540,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_create_children(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_create_children(connection, site_id, group_id, set_id, microsoft_graph_term_store_term, _opts \\ []) do
+  @spec sites_term_store_groups_sets_create_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_create_children(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        microsoft_graph_term_store_term,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1904,8 +2592,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_create_relations(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_create_relations(connection, site_id, group_id, set_id, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_store_groups_sets_create_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_create_relations(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1939,8 +2644,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_create_terms(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_create_terms(connection, site_id, group_id, set_id, microsoft_graph_term_store_term, _opts \\ []) do
+  @spec sites_term_store_groups_sets_create_terms(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_create_terms(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        microsoft_graph_term_store_term,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1975,8 +2697,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_delete_children(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_delete_children(connection, site_id, group_id, set_id, term_id, opts \\ []) do
+  @spec sites_term_store_groups_sets_delete_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_delete_children(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -2014,8 +2753,23 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_delete_parent_group(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_delete_parent_group(connection, site_id, group_id, set_id, opts \\ []) do
+  @spec sites_term_store_groups_sets_delete_parent_group(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_delete_parent_group(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -2054,8 +2808,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_delete_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_delete_relations(connection, site_id, group_id, set_id, relation_id, opts \\ []) do
+  @spec sites_term_store_groups_sets_delete_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_delete_relations(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -2063,7 +2834,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2095,8 +2868,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_delete_terms(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_delete_terms(connection, site_id, group_id, set_id, term_id, opts \\ []) do
+  @spec sites_term_store_groups_sets_delete_terms(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_delete_terms(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -2137,8 +2927,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_get_children(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_get_children(connection, site_id, group_id, set_id, term_id, opts \\ []) do
+  @spec sites_term_store_groups_sets_get_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_get_children(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2177,7 +2984,15 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_get_count5bbd(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_term_store_groups_sets_get_count5bbd(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_term_store_groups_sets_get_count5bbd(connection, site_id, group_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -2219,8 +3034,23 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_get_parent_group(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_get_parent_group(connection, site_id, group_id, set_id, opts \\ []) do
+  @spec sites_term_store_groups_sets_get_parent_group(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_get_parent_group(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2262,8 +3092,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_get_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_get_relations(connection, site_id, group_id, set_id, relation_id, opts \\ []) do
+  @spec sites_term_store_groups_sets_get_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_get_relations(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2272,7 +3119,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2305,8 +3154,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_get_terms(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_get_terms(connection, site_id, group_id, set_id, term_id, opts \\ []) do
+  @spec sites_term_store_groups_sets_get_terms(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_get_terms(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2353,8 +3219,23 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_list_children(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_list_children(connection, site_id, group_id, set_id, opts \\ []) do
+  @spec sites_term_store_groups_sets_list_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_list_children(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -2407,8 +3288,23 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_list_relations(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_list_relations(connection, site_id, group_id, set_id, opts \\ []) do
+  @spec sites_term_store_groups_sets_list_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_list_relations(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -2461,7 +3357,16 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_list_terms(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_term_store_groups_sets_list_terms(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_term_store_groups_sets_list_terms(connection, site_id, group_id, set_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -2508,8 +3413,23 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_relations_get_count_efa1(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_relations_get_count_efa1(connection, site_id, group_id, set_id, opts \\ []) do
+  @spec sites_term_store_groups_sets_relations_get_count_efa1(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_relations_get_count_efa1(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -2551,8 +3471,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_relations_get_from_term(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_relations_get_from_term(connection, site_id, group_id, set_id, relation_id, opts \\ []) do
+  @spec sites_term_store_groups_sets_relations_get_from_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_relations_get_from_term(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2561,7 +3498,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/relations/#{relation_id}/fromTerm")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/relations/#{relation_id}/fromTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2594,8 +3533,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_relations_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_relations_get_set(connection, site_id, group_id, set_id, relation_id, opts \\ []) do
+  @spec sites_term_store_groups_sets_relations_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_relations_get_set(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2604,7 +3560,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/relations/#{relation_id}/set")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/relations/#{relation_id}/set"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2637,8 +3595,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_relations_get_to_term(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_relations_get_to_term(connection, site_id, group_id, set_id, relation_id, opts \\ []) do
+  @spec sites_term_store_groups_sets_relations_get_to_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_relations_get_to_term(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2647,7 +3622,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/relations/#{relation_id}/toTerm")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/relations/#{relation_id}/toTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2679,12 +3656,35 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_terms_children_create_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_terms_children_create_relations(connection, site_id, group_id, set_id, term_id, term_id1, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_store_groups_sets_terms_children_create_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_terms_children_create_relations(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -2717,8 +3717,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_terms_children_delete_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_terms_children_delete_relations(connection, site_id, group_id, set_id, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_store_groups_sets_terms_children_delete_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_terms_children_delete_relations(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -2726,7 +3747,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2758,8 +3781,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_terms_children_get_count1cfd(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_terms_children_get_count1cfd(connection, site_id, group_id, set_id, term_id, opts \\ []) do
+  @spec sites_term_store_groups_sets_terms_children_get_count1cfd(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_terms_children_get_count1cfd(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -2768,7 +3808,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/$count")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2803,8 +3845,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_terms_children_get_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_terms_children_get_relations(connection, site_id, group_id, set_id, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_store_groups_sets_terms_children_get_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_terms_children_get_relations(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2813,7 +3876,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2847,8 +3912,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_terms_children_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_terms_children_get_set(connection, site_id, group_id, set_id, term_id, term_id1, opts \\ []) do
+  @spec sites_term_store_groups_sets_terms_children_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_terms_children_get_set(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2857,7 +3941,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/set")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/set"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2897,8 +3983,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_terms_children_list_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_terms_children_list_relations(connection, site_id, group_id, set_id, term_id, term_id1, opts \\ []) do
+  @spec sites_term_store_groups_sets_terms_children_list_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_terms_children_list_relations(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -2913,7 +4018,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2946,8 +4053,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_terms_children_relations_get_count5476(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_terms_children_relations_get_count5476(connection, site_id, group_id, set_id, term_id, term_id1, opts \\ []) do
+  @spec sites_term_store_groups_sets_terms_children_relations_get_count5476(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_terms_children_relations_get_count5476(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -2956,7 +4082,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/$count")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2991,8 +4119,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_terms_children_relations_get_from_term(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_terms_children_relations_get_from_term(connection, site_id, group_id, set_id, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_store_groups_sets_terms_children_relations_get_from_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_terms_children_relations_get_from_term(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3001,7 +4150,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}/fromTerm")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}/fromTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3036,8 +4187,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_terms_children_relations_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_terms_children_relations_get_set(connection, site_id, group_id, set_id, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_store_groups_sets_terms_children_relations_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_terms_children_relations_get_set(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3046,7 +4218,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}/set")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}/set"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3081,8 +4255,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_terms_children_relations_get_to_term(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_terms_children_relations_get_to_term(connection, site_id, group_id, set_id, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_store_groups_sets_terms_children_relations_get_to_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_terms_children_relations_get_to_term(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3091,7 +4286,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}/toTerm")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}/toTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3124,12 +4321,37 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_terms_children_update_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_terms_children_update_relations(connection, site_id, group_id, set_id, term_id, term_id1, relation_id, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_store_groups_sets_terms_children_update_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_terms_children_update_relations(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        relation_id,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -3160,12 +4382,33 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_terms_create_children(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_terms_create_children(connection, site_id, group_id, set_id, term_id, microsoft_graph_term_store_term, _opts \\ []) do
+  @spec sites_term_store_groups_sets_terms_create_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_terms_create_children(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        microsoft_graph_term_store_term,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_term)
       |> Enum.into([])
 
@@ -3196,12 +4439,33 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_terms_create_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_terms_create_relations(connection, site_id, group_id, set_id, term_id, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_store_groups_sets_terms_create_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_terms_create_relations(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/relations")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/relations"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -3233,8 +4497,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_terms_delete_children(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_terms_delete_children(connection, site_id, group_id, set_id, term_id, term_id1, opts \\ []) do
+  @spec sites_term_store_groups_sets_terms_delete_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_terms_delete_children(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -3242,7 +4525,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3274,8 +4559,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_terms_delete_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_terms_delete_relations(connection, site_id, group_id, set_id, term_id, relation_id, opts \\ []) do
+  @spec sites_term_store_groups_sets_terms_delete_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_terms_delete_relations(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -3283,7 +4587,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3317,8 +4623,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_terms_get_children(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_terms_get_children(connection, site_id, group_id, set_id, term_id, term_id1, opts \\ []) do
+  @spec sites_term_store_groups_sets_terms_get_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_terms_get_children(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3327,7 +4652,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3358,8 +4685,23 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_terms_get_count_ccfd(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_terms_get_count_ccfd(connection, site_id, group_id, set_id, opts \\ []) do
+  @spec sites_term_store_groups_sets_terms_get_count_ccfd(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_terms_get_count_ccfd(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -3402,8 +4744,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_terms_get_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_terms_get_relations(connection, site_id, group_id, set_id, term_id, relation_id, opts \\ []) do
+  @spec sites_term_store_groups_sets_terms_get_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_terms_get_relations(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3412,7 +4773,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3445,8 +4808,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_terms_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_terms_get_set(connection, site_id, group_id, set_id, term_id, opts \\ []) do
+  @spec sites_term_store_groups_sets_terms_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_terms_get_set(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3494,8 +4874,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_terms_list_children(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_terms_list_children(connection, site_id, group_id, set_id, term_id, opts \\ []) do
+  @spec sites_term_store_groups_sets_terms_list_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_terms_list_children(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -3510,7 +4907,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3549,8 +4948,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_terms_list_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_terms_list_relations(connection, site_id, group_id, set_id, term_id, opts \\ []) do
+  @spec sites_term_store_groups_sets_terms_list_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_terms_list_relations(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -3565,7 +4981,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/relations")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/relations"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3597,8 +5015,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_terms_relations_get_count5d1f(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_terms_relations_get_count5d1f(connection, site_id, group_id, set_id, term_id, opts \\ []) do
+  @spec sites_term_store_groups_sets_terms_relations_get_count5d1f(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_terms_relations_get_count5d1f(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -3607,7 +5042,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/relations/$count")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/relations/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3641,8 +5078,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_terms_relations_get_from_term(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_terms_relations_get_from_term(connection, site_id, group_id, set_id, term_id, relation_id, opts \\ []) do
+  @spec sites_term_store_groups_sets_terms_relations_get_from_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_terms_relations_get_from_term(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3651,7 +5107,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/relations/#{relation_id}/fromTerm")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/relations/#{relation_id}/fromTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3685,8 +5143,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_terms_relations_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_terms_relations_get_set(connection, site_id, group_id, set_id, term_id, relation_id, opts \\ []) do
+  @spec sites_term_store_groups_sets_terms_relations_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_terms_relations_get_set(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3695,7 +5172,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/relations/#{relation_id}/set")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/relations/#{relation_id}/set"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3729,8 +5208,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_terms_relations_get_to_term(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_terms_relations_get_to_term(connection, site_id, group_id, set_id, term_id, relation_id, opts \\ []) do
+  @spec sites_term_store_groups_sets_terms_relations_get_to_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_terms_relations_get_to_term(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3739,7 +5237,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/relations/#{relation_id}/toTerm")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/relations/#{relation_id}/toTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3771,12 +5271,35 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_terms_update_children(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_terms_update_children(connection, site_id, group_id, set_id, term_id, term_id1, microsoft_graph_term_store_term, _opts \\ []) do
+  @spec sites_term_store_groups_sets_terms_update_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_terms_update_children(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        microsoft_graph_term_store_term,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_term)
       |> Enum.into([])
 
@@ -3808,12 +5331,35 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_terms_update_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_terms_update_relations(connection, site_id, group_id, set_id, term_id, relation_id, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_store_groups_sets_terms_update_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_terms_update_relations(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        relation_id,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/relations/#{relation_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -3844,8 +5390,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_update_children(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_update_children(connection, site_id, group_id, set_id, term_id, microsoft_graph_term_store_term, _opts \\ []) do
+  @spec sites_term_store_groups_sets_update_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_update_children(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        microsoft_graph_term_store_term,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -3879,8 +5444,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_update_parent_group(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_update_parent_group(connection, site_id, group_id, set_id, microsoft_graph_term_store_group, _opts \\ []) do
+  @spec sites_term_store_groups_sets_update_parent_group(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_update_parent_group(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        microsoft_graph_term_store_group,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -3915,12 +5497,33 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_update_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_update_relations(connection, site_id, group_id, set_id, relation_id, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_store_groups_sets_update_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_update_relations(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        relation_id,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStore/groups/#{group_id}/sets/#{set_id}/relations/#{relation_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -3952,8 +5555,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_sets_update_terms(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_sets_update_terms(connection, site_id, group_id, set_id, term_id, microsoft_graph_term_store_term, _opts \\ []) do
+  @spec sites_term_store_groups_sets_update_terms(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_sets_update_terms(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        term_id,
+        microsoft_graph_term_store_term,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -3987,8 +5609,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_groups_update_sets(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_groups_update_sets(connection, site_id, group_id, set_id, microsoft_graph_term_store_set, _opts \\ []) do
+  @spec sites_term_store_groups_update_sets(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_groups_update_sets(
+        connection,
+        site_id,
+        group_id,
+        set_id,
+        microsoft_graph_term_store_set,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -4028,7 +5667,10 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroupCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_list_groups(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroupCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_term_store_list_groups(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroupCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_term_store_list_groups(connection, site_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -4080,7 +5722,10 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSetCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_list_sets(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSetCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_term_store_list_sets(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSetCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_term_store_list_sets(connection, site_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -4127,12 +5772,33 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_children_children_create_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_children_children_create_relations(connection, site_id, set_id, term_id, term_id1, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_store_sets_children_children_create_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_children_children_create_relations(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        term_id1,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -4164,8 +5830,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_children_children_delete_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_children_children_delete_relations(connection, site_id, set_id, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_store_sets_children_children_delete_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_children_children_delete_relations(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -4173,7 +5858,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4204,8 +5891,23 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_children_children_get_count_ca80(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_children_children_get_count_ca80(connection, site_id, set_id, term_id, opts \\ []) do
+  @spec sites_term_store_sets_children_children_get_count_ca80(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_children_children_get_count_ca80(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -4248,8 +5950,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_children_children_get_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_children_children_get_relations(connection, site_id, set_id, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_store_sets_children_children_get_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_children_children_get_relations(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -4258,7 +5979,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4291,8 +6014,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_children_children_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_children_children_get_set(connection, site_id, set_id, term_id, term_id1, opts \\ []) do
+  @spec sites_term_store_sets_children_children_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_children_children_get_set(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -4301,7 +6041,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/set")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/set"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4340,8 +6082,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_children_children_list_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_children_children_list_relations(connection, site_id, set_id, term_id, term_id1, opts \\ []) do
+  @spec sites_term_store_sets_children_children_list_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_children_children_list_relations(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -4356,7 +6115,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4388,8 +6149,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_children_children_relations_get_count_a6ec(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_children_children_relations_get_count_a6ec(connection, site_id, set_id, term_id, term_id1, opts \\ []) do
+  @spec sites_term_store_sets_children_children_relations_get_count_a6ec(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_children_children_relations_get_count_a6ec(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -4398,7 +6176,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/$count")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4432,8 +6212,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_children_children_relations_get_from_term(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_children_children_relations_get_from_term(connection, site_id, set_id, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_store_sets_children_children_relations_get_from_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_children_children_relations_get_from_term(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -4442,7 +6241,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}/fromTerm")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}/fromTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4476,8 +6277,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_children_children_relations_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_children_children_relations_get_set(connection, site_id, set_id, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_store_sets_children_children_relations_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_children_children_relations_get_set(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -4486,7 +6306,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}/set")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}/set"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4520,8 +6342,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_children_children_relations_get_to_term(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_children_children_relations_get_to_term(connection, site_id, set_id, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_store_sets_children_children_relations_get_to_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_children_children_relations_get_to_term(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -4530,7 +6371,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}/toTerm")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}/toTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4562,12 +6405,35 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_children_children_update_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_children_children_update_relations(connection, site_id, set_id, term_id, term_id1, relation_id, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_store_sets_children_children_update_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_children_children_update_relations(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        term_id1,
+        relation_id,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -4597,8 +6463,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_children_create_children(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_children_create_children(connection, site_id, set_id, term_id, microsoft_graph_term_store_term, _opts \\ []) do
+  @spec sites_term_store_sets_children_create_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_children_create_children(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        microsoft_graph_term_store_term,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -4632,8 +6515,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_children_create_relations(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_children_create_relations(connection, site_id, set_id, term_id, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_store_sets_children_create_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_children_create_relations(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -4668,8 +6568,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_children_delete_children(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_children_delete_children(connection, site_id, set_id, term_id, term_id1, opts \\ []) do
+  @spec sites_term_store_sets_children_delete_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_children_delete_children(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -4677,7 +6594,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/children/#{term_id}/children/#{term_id1}")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/children/#{term_id}/children/#{term_id1}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4708,8 +6627,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_children_delete_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_children_delete_relations(connection, site_id, set_id, term_id, relation_id, opts \\ []) do
+  @spec sites_term_store_sets_children_delete_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_children_delete_relations(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -4717,7 +6653,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/children/#{term_id}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/children/#{term_id}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4750,8 +6688,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_children_get_children(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_children_get_children(connection, site_id, set_id, term_id, term_id1, opts \\ []) do
+  @spec sites_term_store_sets_children_get_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_children_get_children(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -4760,7 +6715,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/children/#{term_id}/children/#{term_id1}")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/children/#{term_id}/children/#{term_id1}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4790,7 +6747,15 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_children_get_count_ca80(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_term_store_sets_children_get_count_ca80(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_term_store_sets_children_get_count_ca80(connection, site_id, set_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -4833,8 +6798,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_children_get_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_children_get_relations(connection, site_id, set_id, term_id, relation_id, opts \\ []) do
+  @spec sites_term_store_sets_children_get_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_children_get_relations(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -4843,7 +6825,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/children/#{term_id}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/children/#{term_id}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4875,7 +6859,16 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_children_get_set(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_term_store_sets_children_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_term_store_sets_children_get_set(connection, site_id, set_id, term_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -4923,8 +6916,23 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_children_list_children(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_children_list_children(connection, site_id, set_id, term_id, opts \\ []) do
+  @spec sites_term_store_sets_children_list_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_children_list_children(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -4977,8 +6985,23 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_children_list_relations(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_children_list_relations(connection, site_id, set_id, term_id, opts \\ []) do
+  @spec sites_term_store_sets_children_list_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_children_list_relations(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -5024,8 +7047,23 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_children_relations_get_count_a6ec(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_children_relations_get_count_a6ec(connection, site_id, set_id, term_id, opts \\ []) do
+  @spec sites_term_store_sets_children_relations_get_count_a6ec(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_children_relations_get_count_a6ec(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -5067,8 +7105,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_children_relations_get_from_term(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_children_relations_get_from_term(connection, site_id, set_id, term_id, relation_id, opts \\ []) do
+  @spec sites_term_store_sets_children_relations_get_from_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_children_relations_get_from_term(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -5077,7 +7132,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/children/#{term_id}/relations/#{relation_id}/fromTerm")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/children/#{term_id}/relations/#{relation_id}/fromTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5110,8 +7167,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_children_relations_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_children_relations_get_set(connection, site_id, set_id, term_id, relation_id, opts \\ []) do
+  @spec sites_term_store_sets_children_relations_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_children_relations_get_set(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -5120,7 +7194,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/children/#{term_id}/relations/#{relation_id}/set")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/children/#{term_id}/relations/#{relation_id}/set"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5153,8 +7229,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_children_relations_get_to_term(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_children_relations_get_to_term(connection, site_id, set_id, term_id, relation_id, opts \\ []) do
+  @spec sites_term_store_sets_children_relations_get_to_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_children_relations_get_to_term(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -5163,7 +7256,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/children/#{term_id}/relations/#{relation_id}/toTerm")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/children/#{term_id}/relations/#{relation_id}/toTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5194,12 +7289,33 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_children_update_children(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_children_update_children(connection, site_id, set_id, term_id, term_id1, microsoft_graph_term_store_term, _opts \\ []) do
+  @spec sites_term_store_sets_children_update_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_children_update_children(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        term_id1,
+        microsoft_graph_term_store_term,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/children/#{term_id}/children/#{term_id1}")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/children/#{term_id}/children/#{term_id1}"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_term)
       |> Enum.into([])
 
@@ -5230,12 +7346,33 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_children_update_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_children_update_relations(connection, site_id, set_id, term_id, relation_id, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_store_sets_children_update_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_children_update_relations(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        relation_id,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/children/#{term_id}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/children/#{term_id}/relations/#{relation_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -5265,8 +7402,23 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_create_children(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_create_children(connection, site_id, set_id, microsoft_graph_term_store_term, _opts \\ []) do
+  @spec sites_term_store_sets_create_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_create_children(
+        connection,
+        site_id,
+        set_id,
+        microsoft_graph_term_store_term,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -5299,8 +7451,23 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_create_relations(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_create_relations(connection, site_id, set_id, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_store_sets_create_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_create_relations(
+        connection,
+        site_id,
+        set_id,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -5333,8 +7500,23 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_create_terms(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_create_terms(connection, site_id, set_id, microsoft_graph_term_store_term, _opts \\ []) do
+  @spec sites_term_store_sets_create_terms(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_create_terms(
+        connection,
+        site_id,
+        set_id,
+        microsoft_graph_term_store_term,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -5368,7 +7550,16 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_delete_children(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_term_store_sets_delete_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_term_store_sets_delete_children(connection, site_id, set_id, term_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -5406,7 +7597,15 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_delete_parent_group(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_term_store_sets_delete_parent_group(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_term_store_sets_delete_parent_group(connection, site_id, set_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -5445,7 +7644,16 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_delete_relations(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_term_store_sets_delete_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_term_store_sets_delete_relations(connection, site_id, set_id, relation_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -5485,7 +7693,16 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_delete_terms(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_term_store_sets_delete_terms(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_term_store_sets_delete_terms(connection, site_id, set_id, term_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -5526,7 +7743,16 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_get_children(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
+  @spec sites_term_store_sets_get_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
   def sites_term_store_sets_get_children(connection, site_id, set_id, term_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -5565,7 +7791,10 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_get_count_dbcc(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_term_store_sets_get_count_dbcc(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_term_store_sets_get_count_dbcc(connection, site_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -5606,7 +7835,15 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_get_parent_group(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_term_store_sets_get_parent_group(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_term_store_sets_get_parent_group(connection, site_id, set_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -5648,7 +7885,16 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_get_relations(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_term_store_sets_get_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_term_store_sets_get_relations(connection, site_id, set_id, relation_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -5690,7 +7936,16 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_get_terms(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
+  @spec sites_term_store_sets_get_terms(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
   def sites_term_store_sets_get_terms(connection, site_id, set_id, term_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -5737,7 +7992,10 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_list_children(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_term_store_sets_list_children(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_term_store_sets_list_children(connection, site_id, set_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -5790,7 +8048,15 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_list_relations(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_term_store_sets_list_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_term_store_sets_list_relations(connection, site_id, set_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -5843,7 +8109,10 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_list_terms(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_term_store_sets_list_terms(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_term_store_sets_list_terms(connection, site_id, set_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -5888,8 +8157,23 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_create_sets(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_create_sets(connection, site_id, set_id, microsoft_graph_term_store_set, _opts \\ []) do
+  @spec sites_term_store_sets_parent_group_create_sets(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_create_sets(
+        connection,
+        site_id,
+        set_id,
+        microsoft_graph_term_store_set,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -5923,8 +8207,23 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_delete_sets(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_delete_sets(connection, site_id, set_id, set_id1, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_delete_sets(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_delete_sets(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -5964,8 +8263,23 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_get_sets(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_get_sets(connection, site_id, set_id, set_id1, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_get_sets(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_get_sets(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -6011,7 +8325,15 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSetCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_list_sets(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSetCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_term_store_sets_parent_group_list_sets(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSetCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_term_store_sets_parent_group_list_sets(connection, site_id, set_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -6059,12 +8381,35 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_children_children_create_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_children_children_create_relations(connection, site_id, set_id, set_id1, term_id, term_id1, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_children_children_create_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_children_children_create_relations(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}/relations")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}/relations"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -6097,8 +8442,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_children_children_delete_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_children_children_delete_relations(connection, site_id, set_id, set_id1, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_children_children_delete_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_children_children_delete_relations(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -6106,7 +8472,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6138,8 +8506,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_children_children_get_count_dda5(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_children_children_get_count_dda5(connection, site_id, set_id, set_id1, term_id, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_children_children_get_count_dda5(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_children_children_get_count_dda5(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -6148,7 +8533,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/$count")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6183,8 +8570,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_children_children_get_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_children_children_get_relations(connection, site_id, set_id, set_id1, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_children_children_get_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_children_children_get_relations(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -6193,7 +8601,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6227,8 +8637,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_children_children_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_children_children_get_set(connection, site_id, set_id, set_id1, term_id, term_id1, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_children_children_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_children_children_get_set(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -6237,7 +8666,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}/set")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}/set"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6277,8 +8708,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_children_children_list_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_children_children_list_relations(connection, site_id, set_id, set_id1, term_id, term_id1, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_children_children_list_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_children_children_list_relations(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -6293,7 +8743,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}/relations")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}/relations"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6326,8 +8778,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_children_children_relations_get_count0c01(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_children_children_relations_get_count0c01(connection, site_id, set_id, set_id1, term_id, term_id1, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_children_children_relations_get_count0c01(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_children_children_relations_get_count0c01(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -6336,7 +8807,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}/relations/$count")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}/relations/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6371,8 +8844,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_children_children_relations_get_from_term(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_children_children_relations_get_from_term(connection, site_id, set_id, set_id1, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_children_children_relations_get_from_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_children_children_relations_get_from_term(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -6381,7 +8875,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}/fromTerm")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}/fromTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6416,8 +8912,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_children_children_relations_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_children_children_relations_get_set(connection, site_id, set_id, set_id1, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_children_children_relations_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_children_children_relations_get_set(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -6426,7 +8943,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}/set")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}/set"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6461,8 +8980,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_children_children_relations_get_to_term(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_children_children_relations_get_to_term(connection, site_id, set_id, set_id1, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_children_children_relations_get_to_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_children_children_relations_get_to_term(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -6471,7 +9011,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}/toTerm")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}/toTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6504,12 +9046,37 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_children_children_update_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_children_children_update_relations(connection, site_id, set_id, set_id1, term_id, term_id1, relation_id, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_children_children_update_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_children_children_update_relations(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        relation_id,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -6540,12 +9107,33 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_children_create_children(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_children_create_children(connection, site_id, set_id, set_id1, term_id, microsoft_graph_term_store_term, _opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_children_create_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_children_create_children(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        microsoft_graph_term_store_term,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_term)
       |> Enum.into([])
 
@@ -6576,12 +9164,33 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_children_create_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_children_create_relations(connection, site_id, set_id, set_id1, term_id, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_children_create_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_children_create_relations(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/relations")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/relations"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -6613,8 +9222,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_children_delete_children(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_children_delete_children(connection, site_id, set_id, set_id1, term_id, term_id1, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_children_delete_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_children_delete_children(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -6622,7 +9250,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6654,8 +9284,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_children_delete_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_children_delete_relations(connection, site_id, set_id, set_id1, term_id, relation_id, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_children_delete_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_children_delete_relations(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -6663,7 +9312,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6697,8 +9348,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_children_get_children(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_children_get_children(connection, site_id, set_id, set_id1, term_id, term_id1, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_children_get_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_children_get_children(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -6707,7 +9377,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6738,8 +9410,23 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_children_get_count_dda5(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_children_get_count_dda5(connection, site_id, set_id, set_id1, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_children_get_count_dda5(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_children_get_count_dda5(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -6748,7 +9435,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/$count")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6782,8 +9471,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_children_get_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_children_get_relations(connection, site_id, set_id, set_id1, term_id, relation_id, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_children_get_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_children_get_relations(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -6792,7 +9500,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6825,8 +9535,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_children_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_children_get_set(connection, site_id, set_id, set_id1, term_id, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_children_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_children_get_set(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -6835,7 +9562,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/set")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/set"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6874,8 +9603,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_children_list_children(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_children_list_children(connection, site_id, set_id, set_id1, term_id, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_children_list_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_children_list_children(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -6890,7 +9636,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6929,8 +9677,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_children_list_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_children_list_relations(connection, site_id, set_id, set_id1, term_id, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_children_list_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_children_list_relations(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -6945,7 +9710,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/relations")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/relations"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6977,8 +9744,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_children_relations_get_count0c01(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_children_relations_get_count0c01(connection, site_id, set_id, set_id1, term_id, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_children_relations_get_count0c01(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_children_relations_get_count0c01(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -6987,7 +9771,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/relations/$count")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/relations/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7021,8 +9807,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_children_relations_get_from_term(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_children_relations_get_from_term(connection, site_id, set_id, set_id1, term_id, relation_id, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_children_relations_get_from_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_children_relations_get_from_term(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -7031,7 +9836,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/relations/#{relation_id}/fromTerm")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/relations/#{relation_id}/fromTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7065,8 +9872,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_children_relations_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_children_relations_get_set(connection, site_id, set_id, set_id1, term_id, relation_id, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_children_relations_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_children_relations_get_set(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -7075,7 +9901,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/relations/#{relation_id}/set")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/relations/#{relation_id}/set"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7109,8 +9937,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_children_relations_get_to_term(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_children_relations_get_to_term(connection, site_id, set_id, set_id1, term_id, relation_id, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_children_relations_get_to_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_children_relations_get_to_term(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -7119,7 +9966,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/relations/#{relation_id}/toTerm")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/relations/#{relation_id}/toTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7151,12 +10000,35 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_children_update_children(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_children_update_children(connection, site_id, set_id, set_id1, term_id, term_id1, microsoft_graph_term_store_term, _opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_children_update_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_children_update_children(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        microsoft_graph_term_store_term,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_term)
       |> Enum.into([])
 
@@ -7188,12 +10060,35 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_children_update_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_children_update_relations(connection, site_id, set_id, set_id1, term_id, relation_id, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_children_update_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_children_update_relations(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        relation_id,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/relations/#{relation_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -7224,8 +10119,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_create_children(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_create_children(connection, site_id, set_id, set_id1, microsoft_graph_term_store_term, _opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_create_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_create_children(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        microsoft_graph_term_store_term,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -7259,8 +10171,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_create_relations(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_create_relations(connection, site_id, set_id, set_id1, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_create_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_create_relations(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -7294,8 +10223,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_create_terms(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_create_terms(connection, site_id, set_id, set_id1, microsoft_graph_term_store_term, _opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_create_terms(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_create_terms(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        microsoft_graph_term_store_term,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -7330,8 +10276,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_delete_children(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_delete_children(connection, site_id, set_id, set_id1, term_id, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_delete_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_delete_children(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -7339,7 +10302,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7370,8 +10335,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_delete_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_delete_relations(connection, site_id, set_id, set_id1, relation_id, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_delete_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_delete_relations(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -7379,7 +10361,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7411,8 +10395,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_delete_terms(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_delete_terms(connection, site_id, set_id, set_id1, term_id, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_delete_terms(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_delete_terms(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -7420,7 +10421,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7453,8 +10456,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_get_children(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_get_children(connection, site_id, set_id, set_id1, term_id, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_get_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_get_children(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -7463,7 +10483,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7493,8 +10515,21 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_get_count9c40(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_get_count9c40(connection, site_id, set_id, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_get_count9c40(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_get_count9c40(
+        connection,
+        site_id,
+        set_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -7536,8 +10571,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_get_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_get_relations(connection, site_id, set_id, set_id1, relation_id, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_get_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_get_relations(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -7546,7 +10598,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7579,8 +10633,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_get_terms(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_get_terms(connection, site_id, set_id, set_id1, term_id, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_get_terms(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_get_terms(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -7589,7 +10660,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7627,8 +10700,23 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_list_children(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_list_children(connection, site_id, set_id, set_id1, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_list_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_list_children(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -7681,8 +10769,23 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_list_relations(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_list_relations(connection, site_id, set_id, set_id1, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_list_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_list_relations(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -7735,8 +10838,23 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_list_terms(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_list_terms(connection, site_id, set_id, set_id1, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_list_terms(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_list_terms(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -7782,8 +10900,23 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_relations_get_count060a(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_relations_get_count060a(connection, site_id, set_id, set_id1, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_relations_get_count060a(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_relations_get_count060a(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -7792,7 +10925,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/relations/$count")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/relations/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7825,8 +10960,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_relations_get_from_term(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_relations_get_from_term(connection, site_id, set_id, set_id1, relation_id, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_relations_get_from_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_relations_get_from_term(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -7835,7 +10987,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/relations/#{relation_id}/fromTerm")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/relations/#{relation_id}/fromTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7868,8 +11022,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_relations_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_relations_get_set(connection, site_id, set_id, set_id1, relation_id, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_relations_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_relations_get_set(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -7878,7 +11049,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/relations/#{relation_id}/set")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/relations/#{relation_id}/set"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7911,8 +11084,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_relations_get_to_term(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_relations_get_to_term(connection, site_id, set_id, set_id1, relation_id, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_relations_get_to_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_relations_get_to_term(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -7921,7 +11111,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/relations/#{relation_id}/toTerm")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/relations/#{relation_id}/toTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7953,12 +11145,35 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_terms_children_create_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_terms_children_create_relations(connection, site_id, set_id, set_id1, term_id, term_id1, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_terms_children_create_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_terms_children_create_relations(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}/relations")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}/relations"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -7991,8 +11206,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_terms_children_delete_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_terms_children_delete_relations(connection, site_id, set_id, set_id1, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_terms_children_delete_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_terms_children_delete_relations(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -8000,7 +11236,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -8032,8 +11270,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_terms_children_get_count931c(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_terms_children_get_count931c(connection, site_id, set_id, set_id1, term_id, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_terms_children_get_count931c(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_terms_children_get_count931c(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -8042,7 +11297,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/$count")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -8077,8 +11334,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_terms_children_get_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_terms_children_get_relations(connection, site_id, set_id, set_id1, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_terms_children_get_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_terms_children_get_relations(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -8087,7 +11365,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -8121,8 +11401,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_terms_children_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_terms_children_get_set(connection, site_id, set_id, set_id1, term_id, term_id1, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_terms_children_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_terms_children_get_set(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -8131,7 +11430,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}/set")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}/set"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -8171,8 +11472,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_terms_children_list_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_terms_children_list_relations(connection, site_id, set_id, set_id1, term_id, term_id1, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_terms_children_list_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_terms_children_list_relations(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -8187,7 +11507,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}/relations")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}/relations"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -8220,8 +11542,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_terms_children_relations_get_count457b(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_terms_children_relations_get_count457b(connection, site_id, set_id, set_id1, term_id, term_id1, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_terms_children_relations_get_count457b(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_terms_children_relations_get_count457b(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -8230,7 +11571,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}/relations/$count")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}/relations/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -8265,8 +11608,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_terms_children_relations_get_from_term(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_terms_children_relations_get_from_term(connection, site_id, set_id, set_id1, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_terms_children_relations_get_from_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_terms_children_relations_get_from_term(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -8275,7 +11639,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}/fromTerm")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}/fromTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -8310,8 +11676,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_terms_children_relations_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_terms_children_relations_get_set(connection, site_id, set_id, set_id1, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_terms_children_relations_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_terms_children_relations_get_set(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -8320,7 +11707,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}/set")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}/set"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -8355,8 +11744,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_terms_children_relations_get_to_term(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_terms_children_relations_get_to_term(connection, site_id, set_id, set_id1, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_terms_children_relations_get_to_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_terms_children_relations_get_to_term(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -8365,7 +11775,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}/toTerm")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}/toTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -8398,12 +11810,37 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_terms_children_update_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_terms_children_update_relations(connection, site_id, set_id, set_id1, term_id, term_id1, relation_id, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_terms_children_update_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_terms_children_update_relations(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        relation_id,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -8434,12 +11871,33 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_terms_create_children(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_terms_create_children(connection, site_id, set_id, set_id1, term_id, microsoft_graph_term_store_term, _opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_terms_create_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_terms_create_children(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        microsoft_graph_term_store_term,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_term)
       |> Enum.into([])
 
@@ -8470,12 +11928,33 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_terms_create_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_terms_create_relations(connection, site_id, set_id, set_id1, term_id, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_terms_create_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_terms_create_relations(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/relations")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/relations"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -8507,8 +11986,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_terms_delete_children(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_terms_delete_children(connection, site_id, set_id, set_id1, term_id, term_id1, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_terms_delete_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_terms_delete_children(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -8516,7 +12014,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -8548,8 +12048,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_terms_delete_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_terms_delete_relations(connection, site_id, set_id, set_id1, term_id, relation_id, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_terms_delete_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_terms_delete_relations(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -8557,7 +12076,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -8591,8 +12112,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_terms_get_children(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_terms_get_children(connection, site_id, set_id, set_id1, term_id, term_id1, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_terms_get_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_terms_get_children(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -8601,7 +12141,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -8632,8 +12174,23 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_terms_get_count_bc2b(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_terms_get_count_bc2b(connection, site_id, set_id, set_id1, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_terms_get_count_bc2b(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_terms_get_count_bc2b(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -8642,7 +12199,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/$count")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -8676,8 +12235,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_terms_get_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_terms_get_relations(connection, site_id, set_id, set_id1, term_id, relation_id, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_terms_get_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_terms_get_relations(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -8686,7 +12264,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -8719,8 +12299,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_terms_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_terms_get_set(connection, site_id, set_id, set_id1, term_id, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_terms_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_terms_get_set(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -8729,7 +12326,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/set")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/set"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -8768,8 +12367,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_terms_list_children(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_terms_list_children(connection, site_id, set_id, set_id1, term_id, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_terms_list_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_terms_list_children(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -8784,7 +12400,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -8823,8 +12441,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_terms_list_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_terms_list_relations(connection, site_id, set_id, set_id1, term_id, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_terms_list_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_terms_list_relations(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -8839,7 +12474,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/relations")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/relations"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -8871,8 +12508,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_terms_relations_get_count_b43c(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_terms_relations_get_count_b43c(connection, site_id, set_id, set_id1, term_id, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_terms_relations_get_count_b43c(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_terms_relations_get_count_b43c(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -8881,7 +12535,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/relations/$count")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/relations/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -8915,8 +12571,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_terms_relations_get_from_term(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_terms_relations_get_from_term(connection, site_id, set_id, set_id1, term_id, relation_id, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_terms_relations_get_from_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_terms_relations_get_from_term(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -8925,7 +12600,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/relations/#{relation_id}/fromTerm")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/relations/#{relation_id}/fromTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -8959,8 +12636,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_terms_relations_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_terms_relations_get_set(connection, site_id, set_id, set_id1, term_id, relation_id, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_terms_relations_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_terms_relations_get_set(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -8969,7 +12665,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/relations/#{relation_id}/set")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/relations/#{relation_id}/set"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -9003,8 +12701,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_terms_relations_get_to_term(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_terms_relations_get_to_term(connection, site_id, set_id, set_id1, term_id, relation_id, opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_terms_relations_get_to_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_terms_relations_get_to_term(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -9013,7 +12730,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/relations/#{relation_id}/toTerm")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/relations/#{relation_id}/toTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -9045,12 +12764,35 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_terms_update_children(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_terms_update_children(connection, site_id, set_id, set_id1, term_id, term_id1, microsoft_graph_term_store_term, _opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_terms_update_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_terms_update_children(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        microsoft_graph_term_store_term,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_term)
       |> Enum.into([])
 
@@ -9082,12 +12824,35 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_terms_update_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_terms_update_relations(connection, site_id, set_id, set_id1, term_id, relation_id, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_terms_update_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_terms_update_relations(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        relation_id,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/relations/#{relation_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -9118,12 +12883,33 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_update_children(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_update_children(connection, site_id, set_id, set_id1, term_id, microsoft_graph_term_store_term, _opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_update_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_update_children(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        microsoft_graph_term_store_term,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_term)
       |> Enum.into([])
 
@@ -9154,12 +12940,33 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_update_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_update_relations(connection, site_id, set_id, set_id1, relation_id, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_update_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_update_relations(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        relation_id,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/relations/#{relation_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -9191,12 +12998,33 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_sets_update_terms(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_sets_update_terms(connection, site_id, set_id, set_id1, term_id, microsoft_graph_term_store_term, _opts \\ []) do
+  @spec sites_term_store_sets_parent_group_sets_update_terms(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_sets_update_terms(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        term_id,
+        microsoft_graph_term_store_term,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_term)
       |> Enum.into([])
 
@@ -9226,8 +13054,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_parent_group_update_sets(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_parent_group_update_sets(connection, site_id, set_id, set_id1, microsoft_graph_term_store_set, _opts \\ []) do
+  @spec sites_term_store_sets_parent_group_update_sets(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_parent_group_update_sets(
+        connection,
+        site_id,
+        set_id,
+        set_id1,
+        microsoft_graph_term_store_set,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -9261,7 +13106,15 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_relations_get_count_acd9(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_term_store_sets_relations_get_count_acd9(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_term_store_sets_relations_get_count_acd9(connection, site_id, set_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -9303,8 +13156,23 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_relations_get_from_term(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_relations_get_from_term(connection, site_id, set_id, relation_id, opts \\ []) do
+  @spec sites_term_store_sets_relations_get_from_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_relations_get_from_term(
+        connection,
+        site_id,
+        set_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -9345,8 +13213,23 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_relations_get_set(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_relations_get_set(connection, site_id, set_id, relation_id, opts \\ []) do
+  @spec sites_term_store_sets_relations_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_relations_get_set(
+        connection,
+        site_id,
+        set_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -9387,8 +13270,23 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_relations_get_to_term(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_relations_get_to_term(connection, site_id, set_id, relation_id, opts \\ []) do
+  @spec sites_term_store_sets_relations_get_to_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_relations_get_to_term(
+        connection,
+        site_id,
+        set_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -9428,12 +13326,33 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_terms_children_create_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_terms_children_create_relations(connection, site_id, set_id, term_id, term_id1, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_store_sets_terms_children_create_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_terms_children_create_relations(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        term_id1,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -9465,8 +13384,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_terms_children_delete_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_terms_children_delete_relations(connection, site_id, set_id, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_store_sets_terms_children_delete_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_terms_children_delete_relations(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -9474,7 +13412,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -9505,8 +13445,23 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_terms_children_get_count4525(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_terms_children_get_count4525(connection, site_id, set_id, term_id, opts \\ []) do
+  @spec sites_term_store_sets_terms_children_get_count4525(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_terms_children_get_count4525(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -9549,8 +13504,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_terms_children_get_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_terms_children_get_relations(connection, site_id, set_id, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_store_sets_terms_children_get_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_terms_children_get_relations(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -9559,7 +13533,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -9592,8 +13568,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_terms_children_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_terms_children_get_set(connection, site_id, set_id, term_id, term_id1, opts \\ []) do
+  @spec sites_term_store_sets_terms_children_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_terms_children_get_set(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -9602,7 +13595,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/set")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/set"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -9641,8 +13636,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_terms_children_list_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_terms_children_list_relations(connection, site_id, set_id, term_id, term_id1, opts \\ []) do
+  @spec sites_term_store_sets_terms_children_list_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_terms_children_list_relations(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -9657,7 +13669,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -9689,8 +13703,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_terms_children_relations_get_count7f33(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_terms_children_relations_get_count7f33(connection, site_id, set_id, term_id, term_id1, opts \\ []) do
+  @spec sites_term_store_sets_terms_children_relations_get_count7f33(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_terms_children_relations_get_count7f33(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -9699,7 +13730,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/$count")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -9733,8 +13766,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_terms_children_relations_get_from_term(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_terms_children_relations_get_from_term(connection, site_id, set_id, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_store_sets_terms_children_relations_get_from_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_terms_children_relations_get_from_term(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -9743,7 +13795,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}/fromTerm")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}/fromTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -9777,8 +13831,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_terms_children_relations_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_terms_children_relations_get_set(connection, site_id, set_id, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_store_sets_terms_children_relations_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_terms_children_relations_get_set(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -9787,7 +13860,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}/set")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}/set"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -9821,8 +13896,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_terms_children_relations_get_to_term(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_terms_children_relations_get_to_term(connection, site_id, set_id, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_store_sets_terms_children_relations_get_to_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_terms_children_relations_get_to_term(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -9831,7 +13925,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}/toTerm")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}/toTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -9863,12 +13959,35 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_terms_children_update_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_terms_children_update_relations(connection, site_id, set_id, term_id, term_id1, relation_id, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_store_sets_terms_children_update_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_terms_children_update_relations(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        term_id1,
+        relation_id,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -9898,8 +14017,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_terms_create_children(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_terms_create_children(connection, site_id, set_id, term_id, microsoft_graph_term_store_term, _opts \\ []) do
+  @spec sites_term_store_sets_terms_create_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_terms_create_children(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        microsoft_graph_term_store_term,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -9933,8 +14069,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_terms_create_relations(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_terms_create_relations(connection, site_id, set_id, term_id, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_store_sets_terms_create_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_terms_create_relations(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -9969,8 +14122,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_terms_delete_children(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_terms_delete_children(connection, site_id, set_id, term_id, term_id1, opts \\ []) do
+  @spec sites_term_store_sets_terms_delete_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_terms_delete_children(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -10009,8 +14179,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_terms_delete_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_terms_delete_relations(connection, site_id, set_id, term_id, relation_id, opts \\ []) do
+  @spec sites_term_store_sets_terms_delete_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_terms_delete_relations(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -10018,7 +14205,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/terms/#{term_id}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/terms/#{term_id}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -10051,8 +14240,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_terms_get_children(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_terms_get_children(connection, site_id, set_id, term_id, term_id1, opts \\ []) do
+  @spec sites_term_store_sets_terms_get_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_terms_get_children(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -10091,7 +14297,15 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_terms_get_count1c96(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_term_store_sets_terms_get_count1c96(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_term_store_sets_terms_get_count1c96(connection, site_id, set_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -10134,8 +14348,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_terms_get_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_terms_get_relations(connection, site_id, set_id, term_id, relation_id, opts \\ []) do
+  @spec sites_term_store_sets_terms_get_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_terms_get_relations(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -10144,7 +14375,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/terms/#{term_id}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/terms/#{term_id}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -10176,7 +14409,16 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_terms_get_set(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_term_store_sets_terms_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_term_store_sets_terms_get_set(connection, site_id, set_id, term_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -10224,7 +14466,16 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_terms_list_children(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_term_store_sets_terms_list_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_term_store_sets_terms_list_children(connection, site_id, set_id, term_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -10278,7 +14529,16 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_terms_list_relations(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_term_store_sets_terms_list_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_term_store_sets_terms_list_relations(connection, site_id, set_id, term_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -10325,8 +14585,23 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_terms_relations_get_count017f(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_terms_relations_get_count017f(connection, site_id, set_id, term_id, opts \\ []) do
+  @spec sites_term_store_sets_terms_relations_get_count017f(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_terms_relations_get_count017f(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -10368,8 +14643,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_terms_relations_get_from_term(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_terms_relations_get_from_term(connection, site_id, set_id, term_id, relation_id, opts \\ []) do
+  @spec sites_term_store_sets_terms_relations_get_from_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_terms_relations_get_from_term(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -10378,7 +14670,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/terms/#{term_id}/relations/#{relation_id}/fromTerm")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/terms/#{term_id}/relations/#{relation_id}/fromTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -10411,8 +14705,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_terms_relations_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_terms_relations_get_set(connection, site_id, set_id, term_id, relation_id, opts \\ []) do
+  @spec sites_term_store_sets_terms_relations_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_terms_relations_get_set(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -10421,7 +14732,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/terms/#{term_id}/relations/#{relation_id}/set")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/terms/#{term_id}/relations/#{relation_id}/set"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -10454,8 +14767,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_terms_relations_get_to_term(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_terms_relations_get_to_term(connection, site_id, set_id, term_id, relation_id, opts \\ []) do
+  @spec sites_term_store_sets_terms_relations_get_to_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_terms_relations_get_to_term(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -10464,7 +14794,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/terms/#{term_id}/relations/#{relation_id}/toTerm")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/terms/#{term_id}/relations/#{relation_id}/toTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -10495,8 +14827,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_terms_update_children(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_terms_update_children(connection, site_id, set_id, term_id, term_id1, microsoft_graph_term_store_term, _opts \\ []) do
+  @spec sites_term_store_sets_terms_update_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_terms_update_children(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        term_id1,
+        microsoft_graph_term_store_term,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -10531,12 +14882,33 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_terms_update_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_terms_update_relations(connection, site_id, set_id, term_id, relation_id, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_store_sets_terms_update_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_terms_update_relations(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        relation_id,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/termStore/sets/#{set_id}/terms/#{term_id}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStore/sets/#{set_id}/terms/#{term_id}/relations/#{relation_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -10566,8 +14938,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_update_children(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_update_children(connection, site_id, set_id, term_id, microsoft_graph_term_store_term, _opts \\ []) do
+  @spec sites_term_store_sets_update_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_update_children(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        microsoft_graph_term_store_term,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -10600,8 +14989,23 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_update_parent_group(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_update_parent_group(connection, site_id, set_id, microsoft_graph_term_store_group, _opts \\ []) do
+  @spec sites_term_store_sets_update_parent_group(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_update_parent_group(
+        connection,
+        site_id,
+        set_id,
+        microsoft_graph_term_store_group,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -10635,8 +15039,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_update_relations(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_update_relations(connection, site_id, set_id, relation_id, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_store_sets_update_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_update_relations(
+        connection,
+        site_id,
+        set_id,
+        relation_id,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -10671,8 +15092,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_sets_update_terms(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_store_sets_update_terms(connection, site_id, set_id, term_id, microsoft_graph_term_store_term, _opts \\ []) do
+  @spec sites_term_store_sets_update_terms(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_sets_update_terms(
+        connection,
+        site_id,
+        set_id,
+        term_id,
+        microsoft_graph_term_store_term,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -10705,8 +15143,23 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_update_groups(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_update_groups(connection, site_id, group_id, microsoft_graph_term_store_group, _opts \\ []) do
+  @spec sites_term_store_update_groups(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_update_groups(
+        connection,
+        site_id,
+        group_id,
+        microsoft_graph_term_store_group,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -10740,8 +15193,23 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_store_update_sets(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_store_update_sets(connection, site_id, set_id, microsoft_graph_term_store_set, _opts \\ []) do
+  @spec sites_term_store_update_sets(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_store_update_sets(
+        connection,
+        site_id,
+        set_id,
+        microsoft_graph_term_store_set,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -10775,8 +15243,23 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_create_groups(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_create_groups(connection, site_id, store_id, microsoft_graph_term_store_group, _opts \\ []) do
+  @spec sites_term_stores_create_groups(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_create_groups(
+        connection,
+        site_id,
+        store_id,
+        microsoft_graph_term_store_group,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -10810,8 +15293,23 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_create_sets(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_create_sets(connection, site_id, store_id, microsoft_graph_term_store_set, _opts \\ []) do
+  @spec sites_term_stores_create_sets(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_create_sets(
+        connection,
+        site_id,
+        store_id,
+        microsoft_graph_term_store_set,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -10846,7 +15344,16 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_delete_groups(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_term_stores_delete_groups(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_term_stores_delete_groups(connection, site_id, store_id, group_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -10886,7 +15393,16 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_delete_sets(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_term_stores_delete_sets(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_term_stores_delete_sets(connection, site_id, store_id, set_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -10924,7 +15440,10 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_get_count00cb(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_term_stores_get_count00cb(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_term_stores_get_count00cb(connection, site_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -10966,7 +15485,16 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_get_groups(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_term_stores_get_groups(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_term_stores_get_groups(connection, site_id, store_id, group_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -11008,7 +15536,16 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_get_sets(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_term_stores_get_sets(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_term_stores_get_sets(connection, site_id, store_id, set_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -11048,8 +15585,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_create_sets(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_create_sets(connection, site_id, store_id, group_id, microsoft_graph_term_store_set, _opts \\ []) do
+  @spec sites_term_stores_groups_create_sets(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_create_sets(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        microsoft_graph_term_store_set,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -11084,8 +15638,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_delete_sets(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_delete_sets(connection, site_id, store_id, group_id, set_id, opts \\ []) do
+  @spec sites_term_stores_groups_delete_sets(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_delete_sets(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -11123,7 +15694,15 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_get_count6c15(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_term_stores_groups_get_count6c15(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_term_stores_groups_get_count6c15(connection, site_id, store_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -11166,8 +15745,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_get_sets(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_get_sets(connection, site_id, store_id, group_id, set_id, opts \\ []) do
+  @spec sites_term_stores_groups_get_sets(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_get_sets(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -11214,7 +15810,16 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSetCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_list_sets(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSetCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_term_stores_groups_list_sets(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSetCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_term_stores_groups_list_sets(connection, site_id, store_id, group_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -11263,12 +15868,37 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_children_children_create_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_children_children_create_relations(connection, site_id, store_id, group_id, set_id, term_id, term_id1, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_stores_groups_sets_children_children_create_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_children_children_create_relations(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -11302,8 +15932,31 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_children_children_delete_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_children_children_delete_relations(connection, site_id, store_id, group_id, set_id, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_stores_groups_sets_children_children_delete_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_children_children_delete_relations(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -11311,7 +15964,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -11344,8 +15999,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_children_children_get_count_f2a5(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_children_children_get_count_f2a5(connection, site_id, store_id, group_id, set_id, term_id, opts \\ []) do
+  @spec sites_term_stores_groups_sets_children_children_get_count_f2a5(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_children_children_get_count_f2a5(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -11354,7 +16028,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/$count")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -11390,8 +16066,31 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_children_children_get_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_children_children_get_relations(connection, site_id, store_id, group_id, set_id, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_stores_groups_sets_children_children_get_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_children_children_get_relations(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -11400,7 +16099,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -11435,8 +16136,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_children_children_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_children_children_get_set(connection, site_id, store_id, group_id, set_id, term_id, term_id1, opts \\ []) do
+  @spec sites_term_stores_groups_sets_children_children_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_children_children_get_set(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -11445,7 +16167,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/set")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/set"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -11486,8 +16210,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_children_children_list_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_children_children_list_relations(connection, site_id, store_id, group_id, set_id, term_id, term_id1, opts \\ []) do
+  @spec sites_term_stores_groups_sets_children_children_list_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_children_children_list_relations(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -11502,7 +16247,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -11536,8 +16283,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_children_children_relations_get_count_d2cc(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_children_children_relations_get_count_d2cc(connection, site_id, store_id, group_id, set_id, term_id, term_id1, opts \\ []) do
+  @spec sites_term_stores_groups_sets_children_children_relations_get_count_d2cc(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_children_children_relations_get_count_d2cc(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -11546,7 +16314,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/$count")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -11582,8 +16352,31 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_children_children_relations_get_from_term(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_children_children_relations_get_from_term(connection, site_id, store_id, group_id, set_id, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_stores_groups_sets_children_children_relations_get_from_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_children_children_relations_get_from_term(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -11592,7 +16385,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}/fromTerm")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}/fromTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -11628,8 +16423,31 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_children_children_relations_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_children_children_relations_get_set(connection, site_id, store_id, group_id, set_id, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_stores_groups_sets_children_children_relations_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_children_children_relations_get_set(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -11638,7 +16456,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}/set")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}/set"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -11674,8 +16494,31 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_children_children_relations_get_to_term(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_children_children_relations_get_to_term(connection, site_id, store_id, group_id, set_id, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_stores_groups_sets_children_children_relations_get_to_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_children_children_relations_get_to_term(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -11684,7 +16527,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}/toTerm")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}/toTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -11718,12 +16563,39 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_children_children_update_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_children_children_update_relations(connection, site_id, store_id, group_id, set_id, term_id, term_id1, relation_id, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_stores_groups_sets_children_children_update_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_children_children_update_relations(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        relation_id,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -11755,12 +16627,35 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_children_create_children(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_children_create_children(connection, site_id, store_id, group_id, set_id, term_id, microsoft_graph_term_store_term, _opts \\ []) do
+  @spec sites_term_stores_groups_sets_children_create_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_children_create_children(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        microsoft_graph_term_store_term,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_term)
       |> Enum.into([])
 
@@ -11792,12 +16687,35 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_children_create_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_children_create_relations(connection, site_id, store_id, group_id, set_id, term_id, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_stores_groups_sets_children_create_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_children_create_relations(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/relations")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/relations"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -11830,8 +16748,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_children_delete_children(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_children_delete_children(connection, site_id, store_id, group_id, set_id, term_id, term_id1, opts \\ []) do
+  @spec sites_term_stores_groups_sets_children_delete_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_children_delete_children(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -11839,7 +16778,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -11872,8 +16813,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_children_delete_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_children_delete_relations(connection, site_id, store_id, group_id, set_id, term_id, relation_id, opts \\ []) do
+  @spec sites_term_stores_groups_sets_children_delete_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_children_delete_relations(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -11881,7 +16843,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -11916,8 +16880,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_children_get_children(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_children_get_children(connection, site_id, store_id, group_id, set_id, term_id, term_id1, opts \\ []) do
+  @spec sites_term_stores_groups_sets_children_get_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_children_get_children(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -11926,7 +16911,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -11958,8 +16945,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_children_get_count_f2a5(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_children_get_count_f2a5(connection, site_id, store_id, group_id, set_id, opts \\ []) do
+  @spec sites_term_stores_groups_sets_children_get_count_f2a5(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_children_get_count_f2a5(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -11968,7 +16972,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/$count")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -12003,8 +17009,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_children_get_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_children_get_relations(connection, site_id, store_id, group_id, set_id, term_id, relation_id, opts \\ []) do
+  @spec sites_term_stores_groups_sets_children_get_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_children_get_relations(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -12013,7 +17040,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -12047,8 +17076,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_children_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_children_get_set(connection, site_id, store_id, group_id, set_id, term_id, opts \\ []) do
+  @spec sites_term_stores_groups_sets_children_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_children_get_set(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -12057,7 +17105,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/set")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/set"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -12097,8 +17147,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_children_list_children(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_children_list_children(connection, site_id, store_id, group_id, set_id, term_id, opts \\ []) do
+  @spec sites_term_stores_groups_sets_children_list_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_children_list_children(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -12113,7 +17182,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -12153,8 +17224,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_children_list_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_children_list_relations(connection, site_id, store_id, group_id, set_id, term_id, opts \\ []) do
+  @spec sites_term_stores_groups_sets_children_list_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_children_list_relations(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -12169,7 +17259,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/relations")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/relations"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -12202,8 +17294,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_children_relations_get_count_d2cc(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_children_relations_get_count_d2cc(connection, site_id, store_id, group_id, set_id, term_id, opts \\ []) do
+  @spec sites_term_stores_groups_sets_children_relations_get_count_d2cc(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_children_relations_get_count_d2cc(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -12212,7 +17323,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/relations/$count")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/relations/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -12247,8 +17360,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_children_relations_get_from_term(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_children_relations_get_from_term(connection, site_id, store_id, group_id, set_id, term_id, relation_id, opts \\ []) do
+  @spec sites_term_stores_groups_sets_children_relations_get_from_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_children_relations_get_from_term(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -12257,7 +17391,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/relations/#{relation_id}/fromTerm")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/relations/#{relation_id}/fromTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -12292,8 +17428,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_children_relations_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_children_relations_get_set(connection, site_id, store_id, group_id, set_id, term_id, relation_id, opts \\ []) do
+  @spec sites_term_stores_groups_sets_children_relations_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_children_relations_get_set(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -12302,7 +17459,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/relations/#{relation_id}/set")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/relations/#{relation_id}/set"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -12337,8 +17496,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_children_relations_get_to_term(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_children_relations_get_to_term(connection, site_id, store_id, group_id, set_id, term_id, relation_id, opts \\ []) do
+  @spec sites_term_stores_groups_sets_children_relations_get_to_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_children_relations_get_to_term(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -12347,7 +17527,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/relations/#{relation_id}/toTerm")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/relations/#{relation_id}/toTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -12380,12 +17562,37 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_children_update_children(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_children_update_children(connection, site_id, store_id, group_id, set_id, term_id, term_id1, microsoft_graph_term_store_term, _opts \\ []) do
+  @spec sites_term_stores_groups_sets_children_update_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_children_update_children(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        microsoft_graph_term_store_term,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_term)
       |> Enum.into([])
 
@@ -12418,12 +17625,37 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_children_update_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_children_update_relations(connection, site_id, store_id, group_id, set_id, term_id, relation_id, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_stores_groups_sets_children_update_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_children_update_relations(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        relation_id,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}/relations/#{relation_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -12455,12 +17687,33 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_create_children(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_create_children(connection, site_id, store_id, group_id, set_id, microsoft_graph_term_store_term, _opts \\ []) do
+  @spec sites_term_stores_groups_sets_create_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_create_children(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        microsoft_graph_term_store_term,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_term)
       |> Enum.into([])
 
@@ -12491,12 +17744,33 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_create_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_create_relations(connection, site_id, store_id, group_id, set_id, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_stores_groups_sets_create_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_create_relations(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/relations")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/relations"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -12527,8 +17801,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_create_terms(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_create_terms(connection, site_id, store_id, group_id, set_id, microsoft_graph_term_store_term, _opts \\ []) do
+  @spec sites_term_stores_groups_sets_create_terms(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_create_terms(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        microsoft_graph_term_store_term,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -12564,8 +17857,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_delete_children(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_delete_children(connection, site_id, store_id, group_id, set_id, term_id, opts \\ []) do
+  @spec sites_term_stores_groups_sets_delete_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_delete_children(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -12573,7 +17885,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -12604,8 +17918,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_delete_parent_group(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_delete_parent_group(connection, site_id, store_id, group_id, set_id, opts \\ []) do
+  @spec sites_term_stores_groups_sets_delete_parent_group(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_delete_parent_group(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -12613,7 +17944,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/parentGroup")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/parentGroup"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -12645,8 +17978,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_delete_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_delete_relations(connection, site_id, store_id, group_id, set_id, relation_id, opts \\ []) do
+  @spec sites_term_stores_groups_sets_delete_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_delete_relations(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -12654,7 +18006,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -12687,8 +18041,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_delete_terms(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_delete_terms(connection, site_id, store_id, group_id, set_id, term_id, opts \\ []) do
+  @spec sites_term_stores_groups_sets_delete_terms(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_delete_terms(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -12696,7 +18069,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -12730,8 +18105,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_get_children(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_get_children(connection, site_id, store_id, group_id, set_id, term_id, opts \\ []) do
+  @spec sites_term_stores_groups_sets_get_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_get_children(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -12740,7 +18134,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -12771,8 +18167,23 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_get_count7f44(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_get_count7f44(connection, site_id, store_id, group_id, opts \\ []) do
+  @spec sites_term_stores_groups_sets_get_count7f44(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_get_count7f44(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -12814,8 +18225,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_get_parent_group(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_get_parent_group(connection, site_id, store_id, group_id, set_id, opts \\ []) do
+  @spec sites_term_stores_groups_sets_get_parent_group(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_get_parent_group(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -12824,7 +18252,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/parentGroup")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/parentGroup"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -12858,8 +18288,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_get_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_get_relations(connection, site_id, store_id, group_id, set_id, relation_id, opts \\ []) do
+  @spec sites_term_stores_groups_sets_get_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_get_relations(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -12868,7 +18317,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -12902,8 +18353,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_get_terms(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_get_terms(connection, site_id, store_id, group_id, set_id, term_id, opts \\ []) do
+  @spec sites_term_stores_groups_sets_get_terms(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_get_terms(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -12912,7 +18382,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -12951,8 +18423,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_list_children(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_list_children(connection, site_id, store_id, group_id, set_id, opts \\ []) do
+  @spec sites_term_stores_groups_sets_list_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_list_children(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -12967,7 +18456,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -13006,8 +18497,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_list_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_list_relations(connection, site_id, store_id, group_id, set_id, opts \\ []) do
+  @spec sites_term_stores_groups_sets_list_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_list_relations(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -13022,7 +18530,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/relations")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/relations"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -13061,8 +18571,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_list_terms(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_list_terms(connection, site_id, store_id, group_id, set_id, opts \\ []) do
+  @spec sites_term_stores_groups_sets_list_terms(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_list_terms(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -13109,8 +18636,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_relations_get_count4b3b(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_relations_get_count4b3b(connection, site_id, store_id, group_id, set_id, opts \\ []) do
+  @spec sites_term_stores_groups_sets_relations_get_count4b3b(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_relations_get_count4b3b(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -13119,7 +18663,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/relations/$count")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/relations/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -13153,8 +18699,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_relations_get_from_term(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_relations_get_from_term(connection, site_id, store_id, group_id, set_id, relation_id, opts \\ []) do
+  @spec sites_term_stores_groups_sets_relations_get_from_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_relations_get_from_term(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -13163,7 +18728,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/relations/#{relation_id}/fromTerm")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/relations/#{relation_id}/fromTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -13197,8 +18764,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_relations_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_relations_get_set(connection, site_id, store_id, group_id, set_id, relation_id, opts \\ []) do
+  @spec sites_term_stores_groups_sets_relations_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_relations_get_set(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -13207,7 +18793,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/relations/#{relation_id}/set")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/relations/#{relation_id}/set"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -13241,8 +18829,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_relations_get_to_term(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_relations_get_to_term(connection, site_id, store_id, group_id, set_id, relation_id, opts \\ []) do
+  @spec sites_term_stores_groups_sets_relations_get_to_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_relations_get_to_term(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -13251,7 +18858,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/relations/#{relation_id}/toTerm")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/relations/#{relation_id}/toTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -13284,12 +18893,37 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_terms_children_create_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_terms_children_create_relations(connection, site_id, store_id, group_id, set_id, term_id, term_id1, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_stores_groups_sets_terms_children_create_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_terms_children_create_relations(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -13323,8 +18957,31 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_terms_children_delete_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_terms_children_delete_relations(connection, site_id, store_id, group_id, set_id, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_stores_groups_sets_terms_children_delete_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_terms_children_delete_relations(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -13332,7 +18989,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -13365,8 +19024,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_terms_children_get_count18db(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_terms_children_get_count18db(connection, site_id, store_id, group_id, set_id, term_id, opts \\ []) do
+  @spec sites_term_stores_groups_sets_terms_children_get_count18db(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_terms_children_get_count18db(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -13375,7 +19053,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/$count")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -13411,8 +19091,31 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_terms_children_get_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_terms_children_get_relations(connection, site_id, store_id, group_id, set_id, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_stores_groups_sets_terms_children_get_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_terms_children_get_relations(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -13421,7 +19124,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -13456,8 +19161,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_terms_children_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_terms_children_get_set(connection, site_id, store_id, group_id, set_id, term_id, term_id1, opts \\ []) do
+  @spec sites_term_stores_groups_sets_terms_children_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_terms_children_get_set(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -13466,7 +19192,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/set")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/set"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -13507,8 +19235,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_terms_children_list_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_terms_children_list_relations(connection, site_id, store_id, group_id, set_id, term_id, term_id1, opts \\ []) do
+  @spec sites_term_stores_groups_sets_terms_children_list_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_terms_children_list_relations(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -13523,7 +19272,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -13557,8 +19308,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_terms_children_relations_get_count563b(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_terms_children_relations_get_count563b(connection, site_id, store_id, group_id, set_id, term_id, term_id1, opts \\ []) do
+  @spec sites_term_stores_groups_sets_terms_children_relations_get_count563b(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_terms_children_relations_get_count563b(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -13567,7 +19339,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/$count")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -13603,8 +19377,31 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_terms_children_relations_get_from_term(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_terms_children_relations_get_from_term(connection, site_id, store_id, group_id, set_id, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_stores_groups_sets_terms_children_relations_get_from_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_terms_children_relations_get_from_term(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -13613,7 +19410,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}/fromTerm")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}/fromTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -13649,8 +19448,31 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_terms_children_relations_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_terms_children_relations_get_set(connection, site_id, store_id, group_id, set_id, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_stores_groups_sets_terms_children_relations_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_terms_children_relations_get_set(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -13659,7 +19481,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}/set")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}/set"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -13695,8 +19519,31 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_terms_children_relations_get_to_term(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_terms_children_relations_get_to_term(connection, site_id, store_id, group_id, set_id, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_stores_groups_sets_terms_children_relations_get_to_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_terms_children_relations_get_to_term(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -13705,7 +19552,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}/toTerm")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}/toTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -13739,12 +19588,39 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_terms_children_update_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_terms_children_update_relations(connection, site_id, store_id, group_id, set_id, term_id, term_id1, relation_id, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_stores_groups_sets_terms_children_update_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_terms_children_update_relations(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        relation_id,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -13776,12 +19652,35 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_terms_create_children(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_terms_create_children(connection, site_id, store_id, group_id, set_id, term_id, microsoft_graph_term_store_term, _opts \\ []) do
+  @spec sites_term_stores_groups_sets_terms_create_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_terms_create_children(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        microsoft_graph_term_store_term,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_term)
       |> Enum.into([])
 
@@ -13813,12 +19712,35 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_terms_create_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_terms_create_relations(connection, site_id, store_id, group_id, set_id, term_id, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_stores_groups_sets_terms_create_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_terms_create_relations(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/relations")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/relations"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -13851,8 +19773,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_terms_delete_children(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_terms_delete_children(connection, site_id, store_id, group_id, set_id, term_id, term_id1, opts \\ []) do
+  @spec sites_term_stores_groups_sets_terms_delete_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_terms_delete_children(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -13860,7 +19803,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -13893,8 +19838,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_terms_delete_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_terms_delete_relations(connection, site_id, store_id, group_id, set_id, term_id, relation_id, opts \\ []) do
+  @spec sites_term_stores_groups_sets_terms_delete_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_terms_delete_relations(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -13902,7 +19868,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -13937,8 +19905,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_terms_get_children(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_terms_get_children(connection, site_id, store_id, group_id, set_id, term_id, term_id1, opts \\ []) do
+  @spec sites_term_stores_groups_sets_terms_get_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_terms_get_children(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -13947,7 +19936,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -13979,8 +19970,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_terms_get_count0e2e(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_terms_get_count0e2e(connection, site_id, store_id, group_id, set_id, opts \\ []) do
+  @spec sites_term_stores_groups_sets_terms_get_count0e2e(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_terms_get_count0e2e(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -13989,7 +19997,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/$count")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -14024,8 +20034,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_terms_get_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_terms_get_relations(connection, site_id, store_id, group_id, set_id, term_id, relation_id, opts \\ []) do
+  @spec sites_term_stores_groups_sets_terms_get_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_terms_get_relations(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -14034,7 +20065,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -14068,8 +20101,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_terms_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_terms_get_set(connection, site_id, store_id, group_id, set_id, term_id, opts \\ []) do
+  @spec sites_term_stores_groups_sets_terms_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_terms_get_set(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -14078,7 +20130,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/set")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/set"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -14118,8 +20172,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_terms_list_children(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_terms_list_children(connection, site_id, store_id, group_id, set_id, term_id, opts \\ []) do
+  @spec sites_term_stores_groups_sets_terms_list_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_terms_list_children(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -14134,7 +20207,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -14174,8 +20249,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_terms_list_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_terms_list_relations(connection, site_id, store_id, group_id, set_id, term_id, opts \\ []) do
+  @spec sites_term_stores_groups_sets_terms_list_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_terms_list_relations(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -14190,7 +20284,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/relations")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/relations"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -14223,8 +20319,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_terms_relations_get_count_c55c(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_terms_relations_get_count_c55c(connection, site_id, store_id, group_id, set_id, term_id, opts \\ []) do
+  @spec sites_term_stores_groups_sets_terms_relations_get_count_c55c(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_terms_relations_get_count_c55c(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -14233,7 +20348,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/relations/$count")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/relations/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -14268,8 +20385,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_terms_relations_get_from_term(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_terms_relations_get_from_term(connection, site_id, store_id, group_id, set_id, term_id, relation_id, opts \\ []) do
+  @spec sites_term_stores_groups_sets_terms_relations_get_from_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_terms_relations_get_from_term(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -14278,7 +20416,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/relations/#{relation_id}/fromTerm")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/relations/#{relation_id}/fromTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -14313,8 +20453,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_terms_relations_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_terms_relations_get_set(connection, site_id, store_id, group_id, set_id, term_id, relation_id, opts \\ []) do
+  @spec sites_term_stores_groups_sets_terms_relations_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_terms_relations_get_set(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -14323,7 +20484,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/relations/#{relation_id}/set")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/relations/#{relation_id}/set"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -14358,8 +20521,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_terms_relations_get_to_term(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_terms_relations_get_to_term(connection, site_id, store_id, group_id, set_id, term_id, relation_id, opts \\ []) do
+  @spec sites_term_stores_groups_sets_terms_relations_get_to_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_terms_relations_get_to_term(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -14368,7 +20552,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/relations/#{relation_id}/toTerm")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/relations/#{relation_id}/toTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -14401,12 +20587,37 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_terms_update_children(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_terms_update_children(connection, site_id, store_id, group_id, set_id, term_id, term_id1, microsoft_graph_term_store_term, _opts \\ []) do
+  @spec sites_term_stores_groups_sets_terms_update_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_terms_update_children(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        term_id1,
+        microsoft_graph_term_store_term,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_term)
       |> Enum.into([])
 
@@ -14439,12 +20650,37 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_terms_update_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_terms_update_relations(connection, site_id, store_id, group_id, set_id, term_id, relation_id, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_stores_groups_sets_terms_update_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_terms_update_relations(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        relation_id,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}/relations/#{relation_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -14476,12 +20712,35 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_update_children(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_update_children(connection, site_id, store_id, group_id, set_id, term_id, microsoft_graph_term_store_term, _opts \\ []) do
+  @spec sites_term_stores_groups_sets_update_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_update_children(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        microsoft_graph_term_store_term,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/children/#{term_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_term)
       |> Enum.into([])
 
@@ -14512,12 +20771,33 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_update_parent_group(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_update_parent_group(connection, site_id, store_id, group_id, set_id, microsoft_graph_term_store_group, _opts \\ []) do
+  @spec sites_term_stores_groups_sets_update_parent_group(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_update_parent_group(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        microsoft_graph_term_store_group,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/parentGroup")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/parentGroup"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_group)
       |> Enum.into([])
 
@@ -14549,12 +20829,35 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_update_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_update_relations(connection, site_id, store_id, group_id, set_id, relation_id, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_stores_groups_sets_update_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_update_relations(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        relation_id,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/relations/#{relation_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -14587,12 +20890,35 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_sets_update_terms(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_sets_update_terms(connection, site_id, store_id, group_id, set_id, term_id, microsoft_graph_term_store_term, _opts \\ []) do
+  @spec sites_term_stores_groups_sets_update_terms(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_sets_update_terms(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        term_id,
+        microsoft_graph_term_store_term,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/groups/#{group_id}/sets/#{set_id}/terms/#{term_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_term)
       |> Enum.into([])
 
@@ -14623,8 +20949,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_groups_update_sets(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_groups_update_sets(connection, site_id, store_id, group_id, set_id, microsoft_graph_term_store_set, _opts \\ []) do
+  @spec sites_term_stores_groups_update_sets(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_groups_update_sets(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        set_id,
+        microsoft_graph_term_store_set,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -14665,7 +21010,10 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroupCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_list_groups(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroupCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_term_stores_list_groups(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroupCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_term_stores_list_groups(connection, site_id, store_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -14718,7 +21066,10 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSetCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_list_sets(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSetCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_term_stores_list_sets(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSetCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_term_stores_list_sets(connection, site_id, store_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -14766,12 +21117,35 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_children_children_create_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_children_children_create_relations(connection, site_id, store_id, set_id, term_id, term_id1, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_stores_sets_children_children_create_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_children_children_create_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        term_id1,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -14804,8 +21178,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_children_children_delete_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_children_children_delete_relations(connection, site_id, store_id, set_id, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_children_children_delete_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_children_children_delete_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -14813,7 +21208,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -14845,8 +21242,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_children_children_get_count3380(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_children_children_get_count3380(connection, site_id, store_id, set_id, term_id, opts \\ []) do
+  @spec sites_term_stores_sets_children_children_get_count3380(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_children_children_get_count3380(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -14855,7 +21269,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/children/$count")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/children/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -14890,8 +21306,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_children_children_get_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_children_children_get_relations(connection, site_id, store_id, set_id, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_children_children_get_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_children_children_get_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -14900,7 +21337,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -14934,8 +21373,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_children_children_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_children_children_get_set(connection, site_id, store_id, set_id, term_id, term_id1, opts \\ []) do
+  @spec sites_term_stores_sets_children_children_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_children_children_get_set(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -14944,7 +21402,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/set")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/set"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -14984,8 +21444,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_children_children_list_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_children_children_list_relations(connection, site_id, store_id, set_id, term_id, term_id1, opts \\ []) do
+  @spec sites_term_stores_sets_children_children_list_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_children_children_list_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -15000,7 +21479,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -15033,8 +21514,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_children_children_relations_get_count6644(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_children_children_relations_get_count6644(connection, site_id, store_id, set_id, term_id, term_id1, opts \\ []) do
+  @spec sites_term_stores_sets_children_children_relations_get_count6644(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_children_children_relations_get_count6644(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -15043,7 +21543,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/$count")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -15078,8 +21580,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_children_children_relations_get_from_term(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_children_children_relations_get_from_term(connection, site_id, store_id, set_id, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_children_children_relations_get_from_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_children_children_relations_get_from_term(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -15088,7 +21611,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}/fromTerm")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}/fromTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -15123,8 +21648,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_children_children_relations_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_children_children_relations_get_set(connection, site_id, store_id, set_id, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_children_children_relations_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_children_children_relations_get_set(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -15133,7 +21679,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}/set")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}/set"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -15168,8 +21716,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_children_children_relations_get_to_term(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_children_children_relations_get_to_term(connection, site_id, store_id, set_id, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_children_children_relations_get_to_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_children_children_relations_get_to_term(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -15178,7 +21747,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}/toTerm")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}/toTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -15211,12 +21782,37 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_children_children_update_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_children_children_update_relations(connection, site_id, store_id, set_id, term_id, term_id1, relation_id, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_stores_sets_children_children_update_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_children_children_update_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        term_id1,
+        relation_id,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -15247,12 +21843,33 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_children_create_children(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_children_create_children(connection, site_id, store_id, set_id, term_id, microsoft_graph_term_store_term, _opts \\ []) do
+  @spec sites_term_stores_sets_children_create_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_children_create_children(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        microsoft_graph_term_store_term,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/children")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/children"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_term)
       |> Enum.into([])
 
@@ -15283,12 +21900,33 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_children_create_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_children_create_relations(connection, site_id, store_id, set_id, term_id, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_stores_sets_children_create_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_children_create_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/relations")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/relations"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -15320,8 +21958,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_children_delete_children(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_children_delete_children(connection, site_id, store_id, set_id, term_id, term_id1, opts \\ []) do
+  @spec sites_term_stores_sets_children_delete_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_children_delete_children(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -15329,7 +21986,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -15361,8 +22020,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_children_delete_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_children_delete_relations(connection, site_id, store_id, set_id, term_id, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_children_delete_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_children_delete_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -15370,7 +22048,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -15404,8 +22084,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_children_get_children(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_children_get_children(connection, site_id, store_id, set_id, term_id, term_id1, opts \\ []) do
+  @spec sites_term_stores_sets_children_get_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_children_get_children(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -15414,7 +22113,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -15445,8 +22146,23 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_children_get_count3380(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_children_get_count3380(connection, site_id, store_id, set_id, opts \\ []) do
+  @spec sites_term_stores_sets_children_get_count3380(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_children_get_count3380(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -15489,8 +22205,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_children_get_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_children_get_relations(connection, site_id, store_id, set_id, term_id, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_children_get_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_children_get_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -15499,7 +22234,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -15532,8 +22269,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_children_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_children_get_set(connection, site_id, store_id, set_id, term_id, opts \\ []) do
+  @spec sites_term_stores_sets_children_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_children_get_set(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -15581,8 +22335,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_children_list_children(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_children_list_children(connection, site_id, store_id, set_id, term_id, opts \\ []) do
+  @spec sites_term_stores_sets_children_list_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_children_list_children(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -15597,7 +22368,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/children")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/children"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -15636,8 +22409,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_children_list_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_children_list_relations(connection, site_id, store_id, set_id, term_id, opts \\ []) do
+  @spec sites_term_stores_sets_children_list_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_children_list_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -15652,7 +22442,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/relations")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/relations"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -15684,8 +22476,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_children_relations_get_count6644(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_children_relations_get_count6644(connection, site_id, store_id, set_id, term_id, opts \\ []) do
+  @spec sites_term_stores_sets_children_relations_get_count6644(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_children_relations_get_count6644(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -15694,7 +22503,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/relations/$count")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/relations/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -15728,8 +22539,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_children_relations_get_from_term(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_children_relations_get_from_term(connection, site_id, store_id, set_id, term_id, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_children_relations_get_from_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_children_relations_get_from_term(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -15738,7 +22568,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/relations/#{relation_id}/fromTerm")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/relations/#{relation_id}/fromTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -15772,8 +22604,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_children_relations_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_children_relations_get_set(connection, site_id, store_id, set_id, term_id, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_children_relations_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_children_relations_get_set(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -15782,7 +22633,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/relations/#{relation_id}/set")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/relations/#{relation_id}/set"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -15816,8 +22669,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_children_relations_get_to_term(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_children_relations_get_to_term(connection, site_id, store_id, set_id, term_id, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_children_relations_get_to_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_children_relations_get_to_term(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -15826,7 +22698,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/relations/#{relation_id}/toTerm")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/relations/#{relation_id}/toTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -15858,12 +22732,35 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_children_update_children(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_children_update_children(connection, site_id, store_id, set_id, term_id, term_id1, microsoft_graph_term_store_term, _opts \\ []) do
+  @spec sites_term_stores_sets_children_update_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_children_update_children(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        term_id1,
+        microsoft_graph_term_store_term,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/children/#{term_id1}"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_term)
       |> Enum.into([])
 
@@ -15895,12 +22792,35 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_children_update_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_children_update_relations(connection, site_id, store_id, set_id, term_id, relation_id, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_stores_sets_children_update_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_children_update_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        relation_id,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/children/#{term_id}/relations/#{relation_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -15931,8 +22851,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_create_children(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_create_children(connection, site_id, store_id, set_id, microsoft_graph_term_store_term, _opts \\ []) do
+  @spec sites_term_stores_sets_create_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_create_children(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        microsoft_graph_term_store_term,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -15966,8 +22903,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_create_relations(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_create_relations(connection, site_id, store_id, set_id, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_stores_sets_create_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_create_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -16001,8 +22955,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_create_terms(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_create_terms(connection, site_id, store_id, set_id, microsoft_graph_term_store_term, _opts \\ []) do
+  @spec sites_term_stores_sets_create_terms(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_create_terms(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        microsoft_graph_term_store_term,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -16037,8 +23008,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_delete_children(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_delete_children(connection, site_id, store_id, set_id, term_id, opts \\ []) do
+  @spec sites_term_stores_sets_delete_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_delete_children(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -16076,8 +23064,23 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_delete_parent_group(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_delete_parent_group(connection, site_id, store_id, set_id, opts \\ []) do
+  @spec sites_term_stores_sets_delete_parent_group(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_delete_parent_group(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -16116,8 +23119,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_delete_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_delete_relations(connection, site_id, store_id, set_id, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_delete_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_delete_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -16157,8 +23177,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_delete_terms(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_delete_terms(connection, site_id, store_id, set_id, term_id, opts \\ []) do
+  @spec sites_term_stores_sets_delete_terms(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_delete_terms(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -16199,8 +23236,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_get_children(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_get_children(connection, site_id, store_id, set_id, term_id, opts \\ []) do
+  @spec sites_term_stores_sets_get_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_get_children(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -16239,7 +23293,15 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_get_count07f9(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_term_stores_sets_get_count07f9(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_term_stores_sets_get_count07f9(connection, site_id, store_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -16281,7 +23343,16 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_get_parent_group(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_term_stores_sets_get_parent_group(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_term_stores_sets_get_parent_group(connection, site_id, store_id, set_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -16324,8 +23395,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_get_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_get_relations(connection, site_id, store_id, set_id, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_get_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_get_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -16367,7 +23455,17 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_get_terms(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
+  @spec sites_term_stores_sets_get_terms(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
   def sites_term_stores_sets_get_terms(connection, site_id, store_id, set_id, term_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -16415,7 +23513,16 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_list_children(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_term_stores_sets_list_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_term_stores_sets_list_children(connection, site_id, store_id, set_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -16469,7 +23576,16 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_list_relations(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_term_stores_sets_list_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_term_stores_sets_list_relations(connection, site_id, store_id, set_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -16523,7 +23639,16 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_list_terms(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_term_stores_sets_list_terms(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_term_stores_sets_list_terms(connection, site_id, store_id, set_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -16569,8 +23694,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_create_sets(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_create_sets(connection, site_id, store_id, set_id, microsoft_graph_term_store_set, _opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_create_sets(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_create_sets(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        microsoft_graph_term_store_set,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -16605,8 +23747,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_delete_sets(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_delete_sets(connection, site_id, store_id, set_id, set_id1, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_delete_sets(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_delete_sets(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -16614,7 +23773,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -16647,8 +23808,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_get_sets(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_get_sets(connection, site_id, store_id, set_id, set_id1, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_get_sets(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_get_sets(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -16657,7 +23835,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -16695,8 +23875,23 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSetCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_list_sets(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSetCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_list_sets(connection, site_id, store_id, set_id, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_list_sets(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSetCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_list_sets(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -16744,12 +23939,37 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_children_children_create_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_children_children_create_relations(connection, site_id, store_id, set_id, set_id1, term_id, term_id1, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_children_children_create_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_children_children_create_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}/relations")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}/relations"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -16783,8 +24003,31 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_children_children_delete_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_children_children_delete_relations(connection, site_id, store_id, set_id, set_id1, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_children_children_delete_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_children_children_delete_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -16792,7 +24035,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -16825,8 +24070,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_children_children_get_count_a85c(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_children_children_get_count_a85c(connection, site_id, store_id, set_id, set_id1, term_id, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_children_children_get_count_a85c(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_children_children_get_count_a85c(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -16835,7 +24099,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/$count")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -16871,8 +24137,31 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_children_children_get_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_children_children_get_relations(connection, site_id, store_id, set_id, set_id1, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_children_children_get_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_children_children_get_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -16881,7 +24170,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -16916,8 +24207,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_children_children_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_children_children_get_set(connection, site_id, store_id, set_id, set_id1, term_id, term_id1, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_children_children_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_children_children_get_set(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -16926,7 +24238,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}/set")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}/set"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -16967,8 +24281,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_children_children_list_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_children_children_list_relations(connection, site_id, store_id, set_id, set_id1, term_id, term_id1, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_children_children_list_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_children_children_list_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -16983,7 +24318,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}/relations")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}/relations"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -17017,8 +24354,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_children_children_relations_get_count227b(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_children_children_relations_get_count227b(connection, site_id, store_id, set_id, set_id1, term_id, term_id1, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_children_children_relations_get_count227b(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_children_children_relations_get_count227b(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -17027,7 +24385,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}/relations/$count")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}/relations/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -17063,8 +24423,31 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_children_children_relations_get_from_term(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_children_children_relations_get_from_term(connection, site_id, store_id, set_id, set_id1, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_children_children_relations_get_from_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_children_children_relations_get_from_term(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -17073,7 +24456,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}/fromTerm")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}/fromTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -17109,8 +24494,31 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_children_children_relations_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_children_children_relations_get_set(connection, site_id, store_id, set_id, set_id1, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_children_children_relations_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_children_children_relations_get_set(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -17119,7 +24527,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}/set")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}/set"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -17155,8 +24565,31 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_children_children_relations_get_to_term(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_children_children_relations_get_to_term(connection, site_id, store_id, set_id, set_id1, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_children_children_relations_get_to_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_children_children_relations_get_to_term(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -17165,7 +24598,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}/toTerm")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}/toTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -17199,12 +24634,39 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_children_children_update_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_children_children_update_relations(connection, site_id, store_id, set_id, set_id1, term_id, term_id1, relation_id, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_children_children_update_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_children_children_update_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        relation_id,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}/relations/#{relation_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -17236,12 +24698,35 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_children_create_children(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_children_create_children(connection, site_id, store_id, set_id, set_id1, term_id, microsoft_graph_term_store_term, _opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_children_create_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_children_create_children(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        microsoft_graph_term_store_term,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_term)
       |> Enum.into([])
 
@@ -17273,12 +24758,35 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_children_create_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_children_create_relations(connection, site_id, store_id, set_id, set_id1, term_id, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_children_create_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_children_create_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/relations")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/relations"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -17311,8 +24819,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_children_delete_children(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_children_delete_children(connection, site_id, store_id, set_id, set_id1, term_id, term_id1, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_children_delete_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_children_delete_children(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -17320,7 +24849,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -17353,8 +24884,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_children_delete_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_children_delete_relations(connection, site_id, store_id, set_id, set_id1, term_id, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_children_delete_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_children_delete_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -17362,7 +24914,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -17397,8 +24951,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_children_get_children(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_children_get_children(connection, site_id, store_id, set_id, set_id1, term_id, term_id1, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_children_get_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_children_get_children(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -17407,7 +24982,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -17439,8 +25016,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_children_get_count_a85c(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_children_get_count_a85c(connection, site_id, store_id, set_id, set_id1, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_children_get_count_a85c(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_children_get_count_a85c(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -17449,7 +25043,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/$count")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -17484,8 +25080,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_children_get_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_children_get_relations(connection, site_id, store_id, set_id, set_id1, term_id, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_children_get_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_children_get_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -17494,7 +25111,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -17528,8 +25147,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_children_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_children_get_set(connection, site_id, store_id, set_id, set_id1, term_id, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_children_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_children_get_set(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -17538,7 +25176,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/set")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/set"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -17578,8 +25218,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_children_list_children(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_children_list_children(connection, site_id, store_id, set_id, set_id1, term_id, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_children_list_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_children_list_children(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -17594,7 +25253,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -17634,8 +25295,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_children_list_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_children_list_relations(connection, site_id, store_id, set_id, set_id1, term_id, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_children_list_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_children_list_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -17650,7 +25330,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/relations")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/relations"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -17683,8 +25365,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_children_relations_get_count227b(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_children_relations_get_count227b(connection, site_id, store_id, set_id, set_id1, term_id, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_children_relations_get_count227b(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_children_relations_get_count227b(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -17693,7 +25394,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/relations/$count")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/relations/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -17728,8 +25431,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_children_relations_get_from_term(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_children_relations_get_from_term(connection, site_id, store_id, set_id, set_id1, term_id, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_children_relations_get_from_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_children_relations_get_from_term(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -17738,7 +25462,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/relations/#{relation_id}/fromTerm")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/relations/#{relation_id}/fromTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -17773,8 +25499,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_children_relations_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_children_relations_get_set(connection, site_id, store_id, set_id, set_id1, term_id, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_children_relations_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_children_relations_get_set(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -17783,7 +25530,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/relations/#{relation_id}/set")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/relations/#{relation_id}/set"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -17818,8 +25567,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_children_relations_get_to_term(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_children_relations_get_to_term(connection, site_id, store_id, set_id, set_id1, term_id, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_children_relations_get_to_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_children_relations_get_to_term(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -17828,7 +25598,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/relations/#{relation_id}/toTerm")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/relations/#{relation_id}/toTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -17861,12 +25633,37 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_children_update_children(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_children_update_children(connection, site_id, store_id, set_id, set_id1, term_id, term_id1, microsoft_graph_term_store_term, _opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_children_update_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_children_update_children(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        microsoft_graph_term_store_term,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/children/#{term_id1}"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_term)
       |> Enum.into([])
 
@@ -17899,12 +25696,37 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_children_update_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_children_update_relations(connection, site_id, store_id, set_id, set_id1, term_id, relation_id, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_children_update_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_children_update_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        relation_id,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}/relations/#{relation_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -17936,12 +25758,33 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_create_children(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_create_children(connection, site_id, store_id, set_id, set_id1, microsoft_graph_term_store_term, _opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_create_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_create_children(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        microsoft_graph_term_store_term,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_term)
       |> Enum.into([])
 
@@ -17972,12 +25815,33 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_create_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_create_relations(connection, site_id, store_id, set_id, set_id1, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_create_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_create_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/relations")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/relations"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -18008,12 +25872,33 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_create_terms(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_create_terms(connection, site_id, store_id, set_id, set_id1, microsoft_graph_term_store_term, _opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_create_terms(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_create_terms(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        microsoft_graph_term_store_term,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_term)
       |> Enum.into([])
 
@@ -18045,8 +25930,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_delete_children(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_delete_children(connection, site_id, store_id, set_id, set_id1, term_id, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_delete_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_delete_children(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -18054,7 +25958,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -18086,8 +25992,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_delete_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_delete_relations(connection, site_id, store_id, set_id, set_id1, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_delete_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_delete_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -18095,7 +26020,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -18128,8 +26055,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_delete_terms(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_delete_terms(connection, site_id, store_id, set_id, set_id1, term_id, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_delete_terms(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_delete_terms(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -18137,7 +26083,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -18171,8 +26119,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_get_children(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_get_children(connection, site_id, store_id, set_id, set_id1, term_id, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_get_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_get_children(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -18181,7 +26148,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -18212,8 +26181,23 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_get_count_bf6d(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_get_count_bf6d(connection, site_id, store_id, set_id, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_get_count_bf6d(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_get_count_bf6d(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -18256,8 +26240,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_get_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_get_relations(connection, site_id, store_id, set_id, set_id1, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_get_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_get_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -18266,7 +26269,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -18300,8 +26305,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_get_terms(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_get_terms(connection, site_id, store_id, set_id, set_id1, term_id, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_get_terms(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_get_terms(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -18310,7 +26334,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -18349,8 +26375,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_list_children(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_list_children(connection, site_id, store_id, set_id, set_id1, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_list_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_list_children(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -18365,7 +26408,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -18404,8 +26449,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_list_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_list_relations(connection, site_id, store_id, set_id, set_id1, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_list_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_list_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -18420,7 +26482,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/relations")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/relations"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -18459,8 +26523,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_list_terms(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_list_terms(connection, site_id, store_id, set_id, set_id1, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_list_terms(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_list_terms(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -18475,7 +26556,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -18507,8 +26590,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_relations_get_count_c83c(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_relations_get_count_c83c(connection, site_id, store_id, set_id, set_id1, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_relations_get_count_c83c(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_relations_get_count_c83c(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -18517,7 +26617,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/relations/$count")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/relations/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -18551,8 +26653,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_relations_get_from_term(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_relations_get_from_term(connection, site_id, store_id, set_id, set_id1, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_relations_get_from_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_relations_get_from_term(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -18561,7 +26682,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/relations/#{relation_id}/fromTerm")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/relations/#{relation_id}/fromTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -18595,8 +26718,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_relations_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_relations_get_set(connection, site_id, store_id, set_id, set_id1, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_relations_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_relations_get_set(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -18605,7 +26747,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/relations/#{relation_id}/set")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/relations/#{relation_id}/set"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -18639,8 +26783,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_relations_get_to_term(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_relations_get_to_term(connection, site_id, store_id, set_id, set_id1, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_relations_get_to_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_relations_get_to_term(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -18649,7 +26812,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/relations/#{relation_id}/toTerm")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/relations/#{relation_id}/toTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -18682,12 +26847,37 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_terms_children_create_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_terms_children_create_relations(connection, site_id, store_id, set_id, set_id1, term_id, term_id1, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_terms_children_create_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_terms_children_create_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}/relations")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}/relations"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -18721,8 +26911,31 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_terms_children_delete_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_terms_children_delete_relations(connection, site_id, store_id, set_id, set_id1, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_terms_children_delete_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_terms_children_delete_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -18730,7 +26943,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -18763,8 +26978,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_terms_children_get_count775b(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_terms_children_get_count775b(connection, site_id, store_id, set_id, set_id1, term_id, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_terms_children_get_count775b(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_terms_children_get_count775b(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -18773,7 +27007,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/$count")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -18809,8 +27045,31 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_terms_children_get_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_terms_children_get_relations(connection, site_id, store_id, set_id, set_id1, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_terms_children_get_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_terms_children_get_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -18819,7 +27078,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -18854,8 +27115,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_terms_children_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_terms_children_get_set(connection, site_id, store_id, set_id, set_id1, term_id, term_id1, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_terms_children_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_terms_children_get_set(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -18864,7 +27146,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}/set")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}/set"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -18905,8 +27189,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_terms_children_list_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_terms_children_list_relations(connection, site_id, store_id, set_id, set_id1, term_id, term_id1, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_terms_children_list_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_terms_children_list_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -18921,7 +27226,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}/relations")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}/relations"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -18955,8 +27262,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_terms_children_relations_get_count_bd86(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_terms_children_relations_get_count_bd86(connection, site_id, store_id, set_id, set_id1, term_id, term_id1, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_terms_children_relations_get_count_bd86(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_terms_children_relations_get_count_bd86(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -18965,7 +27293,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}/relations/$count")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}/relations/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -19001,8 +27331,31 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_terms_children_relations_get_from_term(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_terms_children_relations_get_from_term(connection, site_id, store_id, set_id, set_id1, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_terms_children_relations_get_from_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_terms_children_relations_get_from_term(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -19011,7 +27364,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}/fromTerm")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}/fromTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -19047,8 +27402,31 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_terms_children_relations_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_terms_children_relations_get_set(connection, site_id, store_id, set_id, set_id1, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_terms_children_relations_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_terms_children_relations_get_set(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -19057,7 +27435,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}/set")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}/set"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -19093,8 +27473,31 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_terms_children_relations_get_to_term(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_terms_children_relations_get_to_term(connection, site_id, store_id, set_id, set_id1, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_terms_children_relations_get_to_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_terms_children_relations_get_to_term(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -19103,7 +27506,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}/toTerm")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}/toTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -19137,12 +27542,39 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_terms_children_update_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_terms_children_update_relations(connection, site_id, store_id, set_id, set_id1, term_id, term_id1, relation_id, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_terms_children_update_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_terms_children_update_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        relation_id,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -19174,12 +27606,35 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_terms_create_children(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_terms_create_children(connection, site_id, store_id, set_id, set_id1, term_id, microsoft_graph_term_store_term, _opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_terms_create_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_terms_create_children(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        microsoft_graph_term_store_term,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_term)
       |> Enum.into([])
 
@@ -19211,12 +27666,35 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_terms_create_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_terms_create_relations(connection, site_id, store_id, set_id, set_id1, term_id, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_terms_create_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_terms_create_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/relations")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/relations"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -19249,8 +27727,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_terms_delete_children(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_terms_delete_children(connection, site_id, store_id, set_id, set_id1, term_id, term_id1, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_terms_delete_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_terms_delete_children(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -19258,7 +27757,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -19291,8 +27792,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_terms_delete_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_terms_delete_relations(connection, site_id, store_id, set_id, set_id1, term_id, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_terms_delete_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_terms_delete_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -19300,7 +27822,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -19335,8 +27859,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_terms_get_children(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_terms_get_children(connection, site_id, store_id, set_id, set_id1, term_id, term_id1, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_terms_get_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_terms_get_children(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -19345,7 +27890,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -19377,8 +27924,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_terms_get_count261f(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_terms_get_count261f(connection, site_id, store_id, set_id, set_id1, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_terms_get_count261f(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_terms_get_count261f(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -19387,7 +27951,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/$count")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -19422,8 +27988,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_terms_get_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_terms_get_relations(connection, site_id, store_id, set_id, set_id1, term_id, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_terms_get_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_terms_get_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -19432,7 +28019,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -19466,8 +28055,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_terms_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_terms_get_set(connection, site_id, store_id, set_id, set_id1, term_id, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_terms_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_terms_get_set(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -19476,7 +28084,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/set")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/set"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -19516,8 +28126,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_terms_list_children(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_terms_list_children(connection, site_id, store_id, set_id, set_id1, term_id, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_terms_list_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_terms_list_children(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -19532,7 +28161,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -19572,8 +28203,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_terms_list_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_terms_list_relations(connection, site_id, store_id, set_id, set_id1, term_id, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_terms_list_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_terms_list_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -19588,7 +28238,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/relations")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/relations"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -19621,8 +28273,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_terms_relations_get_count0036(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_terms_relations_get_count0036(connection, site_id, store_id, set_id, set_id1, term_id, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_terms_relations_get_count0036(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_terms_relations_get_count0036(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -19631,7 +28302,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/relations/$count")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/relations/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -19666,8 +28339,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_terms_relations_get_from_term(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_terms_relations_get_from_term(connection, site_id, store_id, set_id, set_id1, term_id, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_terms_relations_get_from_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_terms_relations_get_from_term(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -19676,7 +28370,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/relations/#{relation_id}/fromTerm")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/relations/#{relation_id}/fromTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -19711,8 +28407,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_terms_relations_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_terms_relations_get_set(connection, site_id, store_id, set_id, set_id1, term_id, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_terms_relations_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_terms_relations_get_set(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -19721,7 +28438,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/relations/#{relation_id}/set")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/relations/#{relation_id}/set"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -19756,8 +28475,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_terms_relations_get_to_term(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_terms_relations_get_to_term(connection, site_id, store_id, set_id, set_id1, term_id, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_terms_relations_get_to_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_terms_relations_get_to_term(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -19766,7 +28506,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/relations/#{relation_id}/toTerm")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/relations/#{relation_id}/toTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -19799,12 +28541,37 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_terms_update_children(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_terms_update_children(connection, site_id, store_id, set_id, set_id1, term_id, term_id1, microsoft_graph_term_store_term, _opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_terms_update_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_terms_update_children(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        term_id1,
+        microsoft_graph_term_store_term,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/children/#{term_id1}"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_term)
       |> Enum.into([])
 
@@ -19837,12 +28604,37 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_terms_update_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_terms_update_relations(connection, site_id, store_id, set_id, set_id1, term_id, relation_id, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_terms_update_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_terms_update_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        relation_id,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}/relations/#{relation_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -19874,12 +28666,35 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_update_children(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_update_children(connection, site_id, store_id, set_id, set_id1, term_id, microsoft_graph_term_store_term, _opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_update_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_update_children(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        microsoft_graph_term_store_term,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/children/#{term_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_term)
       |> Enum.into([])
 
@@ -19911,12 +28726,35 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_update_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_update_relations(connection, site_id, store_id, set_id, set_id1, relation_id, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_update_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_update_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        relation_id,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/relations/#{relation_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -19949,12 +28787,35 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_sets_update_terms(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_sets_update_terms(connection, site_id, store_id, set_id, set_id1, term_id, microsoft_graph_term_store_term, _opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_sets_update_terms(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_sets_update_terms(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        term_id,
+        microsoft_graph_term_store_term,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}/terms/#{term_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_term)
       |> Enum.into([])
 
@@ -19985,12 +28846,33 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_parent_group_update_sets(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_parent_group_update_sets(connection, site_id, store_id, set_id, set_id1, microsoft_graph_term_store_set, _opts \\ []) do
+  @spec sites_term_stores_sets_parent_group_update_sets(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_parent_group_update_sets(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        set_id1,
+        microsoft_graph_term_store_set,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/parentGroup/sets/#{set_id1}"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_set)
       |> Enum.into([])
 
@@ -20021,8 +28903,23 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_relations_get_count5a39(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_relations_get_count5a39(connection, site_id, store_id, set_id, opts \\ []) do
+  @spec sites_term_stores_sets_relations_get_count5a39(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_relations_get_count5a39(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -20064,8 +28961,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_relations_get_from_term(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_relations_get_from_term(connection, site_id, store_id, set_id, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_relations_get_from_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_relations_get_from_term(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -20074,7 +28988,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/relations/#{relation_id}/fromTerm")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/relations/#{relation_id}/fromTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -20107,8 +29023,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_relations_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_relations_get_set(connection, site_id, store_id, set_id, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_relations_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_relations_get_set(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -20117,7 +29050,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/relations/#{relation_id}/set")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/relations/#{relation_id}/set"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -20150,8 +29085,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_relations_get_to_term(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_relations_get_to_term(connection, site_id, store_id, set_id, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_relations_get_to_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_relations_get_to_term(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -20160,7 +29112,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/relations/#{relation_id}/toTerm")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/relations/#{relation_id}/toTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -20192,12 +29146,35 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_terms_children_create_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_terms_children_create_relations(connection, site_id, store_id, set_id, term_id, term_id1, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_stores_sets_terms_children_create_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_terms_children_create_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        term_id1,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -20230,8 +29207,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_terms_children_delete_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_terms_children_delete_relations(connection, site_id, store_id, set_id, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_terms_children_delete_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_terms_children_delete_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -20239,7 +29237,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -20271,8 +29271,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_terms_children_get_count6a9c(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_terms_children_get_count6a9c(connection, site_id, store_id, set_id, term_id, opts \\ []) do
+  @spec sites_term_stores_sets_terms_children_get_count6a9c(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_terms_children_get_count6a9c(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -20281,7 +29298,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/terms/#{term_id}/children/$count")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/terms/#{term_id}/children/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -20316,8 +29335,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_terms_children_get_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_terms_children_get_relations(connection, site_id, store_id, set_id, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_terms_children_get_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_terms_children_get_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -20326,7 +29366,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -20360,8 +29402,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_terms_children_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_terms_children_get_set(connection, site_id, store_id, set_id, term_id, term_id1, opts \\ []) do
+  @spec sites_term_stores_sets_terms_children_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_terms_children_get_set(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -20370,7 +29431,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/set")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/set"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -20410,8 +29473,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_terms_children_list_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_terms_children_list_relations(connection, site_id, store_id, set_id, term_id, term_id1, opts \\ []) do
+  @spec sites_term_stores_sets_terms_children_list_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_terms_children_list_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -20426,7 +29508,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -20459,8 +29543,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_terms_children_relations_get_count_f9a6(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_terms_children_relations_get_count_f9a6(connection, site_id, store_id, set_id, term_id, term_id1, opts \\ []) do
+  @spec sites_term_stores_sets_terms_children_relations_get_count_f9a6(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_terms_children_relations_get_count_f9a6(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -20469,7 +29572,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/$count")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -20504,8 +29609,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_terms_children_relations_get_from_term(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_terms_children_relations_get_from_term(connection, site_id, store_id, set_id, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_terms_children_relations_get_from_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_terms_children_relations_get_from_term(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -20514,7 +29640,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}/fromTerm")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}/fromTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -20549,8 +29677,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_terms_children_relations_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_terms_children_relations_get_set(connection, site_id, store_id, set_id, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_terms_children_relations_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_terms_children_relations_get_set(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -20559,7 +29708,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}/set")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}/set"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -20594,8 +29745,29 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_terms_children_relations_get_to_term(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_terms_children_relations_get_to_term(connection, site_id, store_id, set_id, term_id, term_id1, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_terms_children_relations_get_to_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_terms_children_relations_get_to_term(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        term_id1,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -20604,7 +29776,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}/toTerm")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}/toTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -20637,12 +29811,37 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_terms_children_update_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_terms_children_update_relations(connection, site_id, store_id, set_id, term_id, term_id1, relation_id, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_stores_sets_terms_children_update_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_terms_children_update_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        term_id1,
+        relation_id,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}/relations/#{relation_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -20673,8 +29872,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_terms_create_children(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_terms_create_children(connection, site_id, store_id, set_id, term_id, microsoft_graph_term_store_term, _opts \\ []) do
+  @spec sites_term_stores_sets_terms_create_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_terms_create_children(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        microsoft_graph_term_store_term,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -20709,8 +29927,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_terms_create_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_terms_create_relations(connection, site_id, store_id, set_id, term_id, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_stores_sets_terms_create_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_terms_create_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -20746,8 +29983,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_terms_delete_children(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_terms_delete_children(connection, site_id, store_id, set_id, term_id, term_id1, opts \\ []) do
+  @spec sites_term_stores_sets_terms_delete_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_terms_delete_children(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -20755,7 +30011,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -20787,8 +30045,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_terms_delete_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_terms_delete_relations(connection, site_id, store_id, set_id, term_id, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_terms_delete_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_terms_delete_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -20796,7 +30073,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/terms/#{term_id}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/terms/#{term_id}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -20830,8 +30109,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_terms_get_children(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_terms_get_children(connection, site_id, store_id, set_id, term_id, term_id1, opts \\ []) do
+  @spec sites_term_stores_sets_terms_get_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_terms_get_children(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        term_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -20840,7 +30138,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -20871,8 +30171,23 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_terms_get_count26b6(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_terms_get_count26b6(connection, site_id, store_id, set_id, opts \\ []) do
+  @spec sites_term_stores_sets_terms_get_count26b6(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_terms_get_count26b6(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -20915,8 +30230,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_terms_get_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_terms_get_relations(connection, site_id, store_id, set_id, term_id, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_terms_get_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_terms_get_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -20925,7 +30259,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/terms/#{term_id}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/terms/#{term_id}/relations/#{relation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -20958,8 +30294,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_terms_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_terms_get_set(connection, site_id, store_id, set_id, term_id, opts \\ []) do
+  @spec sites_term_stores_sets_terms_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_terms_get_set(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -21007,8 +30360,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_terms_list_children(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_terms_list_children(connection, site_id, store_id, set_id, term_id, opts \\ []) do
+  @spec sites_term_stores_sets_terms_list_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTermCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_terms_list_children(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -21062,8 +30432,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_terms_list_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_terms_list_relations(connection, site_id, store_id, set_id, term_id, opts \\ []) do
+  @spec sites_term_stores_sets_terms_list_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_terms_list_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -21110,8 +30497,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_terms_relations_get_count3f58(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_terms_relations_get_count3f58(connection, site_id, store_id, set_id, term_id, opts \\ []) do
+  @spec sites_term_stores_sets_terms_relations_get_count3f58(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_terms_relations_get_count3f58(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -21120,7 +30524,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/terms/#{term_id}/relations/$count")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/terms/#{term_id}/relations/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -21154,8 +30560,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_terms_relations_get_from_term(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_terms_relations_get_from_term(connection, site_id, store_id, set_id, term_id, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_terms_relations_get_from_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_terms_relations_get_from_term(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -21164,7 +30589,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/terms/#{term_id}/relations/#{relation_id}/fromTerm")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/terms/#{term_id}/relations/#{relation_id}/fromTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -21198,8 +30625,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_terms_relations_get_set(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_terms_relations_get_set(connection, site_id, store_id, set_id, term_id, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_terms_relations_get_set(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_terms_relations_get_set(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -21208,7 +30654,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/terms/#{term_id}/relations/#{relation_id}/set")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/terms/#{term_id}/relations/#{relation_id}/set"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -21242,8 +30690,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_terms_relations_get_to_term(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_terms_relations_get_to_term(connection, site_id, store_id, set_id, term_id, relation_id, opts \\ []) do
+  @spec sites_term_stores_sets_terms_relations_get_to_term(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_terms_relations_get_to_term(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        relation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -21252,7 +30719,9 @@ defmodule MicrosoftGraph.Api.SitesStore do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/terms/#{term_id}/relations/#{relation_id}/toTerm")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/terms/#{term_id}/relations/#{relation_id}/toTerm"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -21284,12 +30753,35 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_terms_update_children(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_terms_update_children(connection, site_id, store_id, set_id, term_id, term_id1, microsoft_graph_term_store_term, _opts \\ []) do
+  @spec sites_term_stores_sets_terms_update_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_terms_update_children(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        term_id1,
+        microsoft_graph_term_store_term,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/terms/#{term_id}/children/#{term_id1}"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_term)
       |> Enum.into([])
 
@@ -21321,12 +30813,35 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_terms_update_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_terms_update_relations(connection, site_id, store_id, set_id, term_id, relation_id, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_stores_sets_terms_update_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_terms_update_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        relation_id,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/terms/#{term_id}/relations/#{relation_id}")
+      |> url(
+        "/sites/#{site_id}/termStores/#{store_id}/sets/#{set_id}/terms/#{term_id}/relations/#{relation_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_term_store_relation)
       |> Enum.into([])
 
@@ -21357,8 +30872,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_update_children(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_update_children(connection, site_id, store_id, set_id, term_id, microsoft_graph_term_store_term, _opts \\ []) do
+  @spec sites_term_stores_sets_update_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_update_children(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        microsoft_graph_term_store_term,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -21392,8 +30926,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_update_parent_group(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_update_parent_group(connection, site_id, store_id, set_id, microsoft_graph_term_store_group, _opts \\ []) do
+  @spec sites_term_stores_sets_update_parent_group(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_update_parent_group(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        microsoft_graph_term_store_group,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -21428,8 +30979,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_update_relations(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_update_relations(connection, site_id, store_id, set_id, relation_id, microsoft_graph_term_store_relation, _opts \\ []) do
+  @spec sites_term_stores_sets_update_relations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_update_relations(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        relation_id,
+        microsoft_graph_term_store_relation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -21465,8 +31035,27 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_sets_update_terms(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_sets_update_terms(connection, site_id, store_id, set_id, term_id, microsoft_graph_term_store_term, _opts \\ []) do
+  @spec sites_term_stores_sets_update_terms(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_sets_update_terms(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        term_id,
+        microsoft_graph_term_store_term,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -21500,8 +31089,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_update_groups(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_update_groups(connection, site_id, store_id, group_id, microsoft_graph_term_store_group, _opts \\ []) do
+  @spec sites_term_stores_update_groups(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_update_groups(
+        connection,
+        site_id,
+        store_id,
+        group_id,
+        microsoft_graph_term_store_group,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -21536,8 +31142,25 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_term_stores_update_sets(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_term_stores_update_sets(connection, site_id, store_id, set_id, microsoft_graph_term_store_set, _opts \\ []) do
+  @spec sites_term_stores_update_sets(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_term_stores_update_sets(
+        connection,
+        site_id,
+        store_id,
+        set_id,
+        microsoft_graph_term_store_set,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -21570,7 +31193,15 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreStore.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_update_term_store(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreStore.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreStore.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_update_term_store(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreStore.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreStore.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_update_term_store(connection, site_id, microsoft_graph_term_store_store, _opts \\ []) do
     request =
       %{}
@@ -21604,8 +31235,23 @@ defmodule MicrosoftGraph.Api.SitesStore do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreStore.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_update_term_stores(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTermStoreStore.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreStore.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_update_term_stores(connection, site_id, store_id, microsoft_graph_term_store_store, _opts \\ []) do
+  @spec sites_update_term_stores(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTermStoreStore.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTermStoreStore.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_update_term_stores(
+        connection,
+        site_id,
+        store_id,
+        microsoft_graph_term_store_store,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

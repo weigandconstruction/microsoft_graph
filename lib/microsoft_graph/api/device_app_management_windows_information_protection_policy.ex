@@ -24,8 +24,19 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementWindowsInformationProtectionPoli
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionPolicy.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_create_windows_information_protection_policies(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionPolicy.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionPolicy.t} | {:error, Tesla.Env.t}
-  def device_app_management_create_windows_information_protection_policies(connection, microsoft_graph_windows_information_protection_policy, _opts \\ []) do
+  @spec device_app_management_create_windows_information_protection_policies(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionPolicy.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionPolicy.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_create_windows_information_protection_policies(
+        connection,
+        microsoft_graph_windows_information_protection_policy,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -58,8 +69,19 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementWindowsInformationProtectionPoli
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_delete_windows_information_protection_policies(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_delete_windows_information_protection_policies(connection, windows_information_protection_policy_id, opts \\ []) do
+  @spec device_app_management_delete_windows_information_protection_policies(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_delete_windows_information_protection_policies(
+        connection,
+        windows_information_protection_policy_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -67,7 +89,9 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementWindowsInformationProtectionPoli
     request =
       %{}
       |> method(:delete)
-      |> url("/deviceAppManagement/windowsInformationProtectionPolicies/#{windows_information_protection_policy_id}")
+      |> url(
+        "/deviceAppManagement/windowsInformationProtectionPolicies/#{windows_information_protection_policy_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -97,8 +121,19 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementWindowsInformationProtectionPoli
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionPolicy.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_get_windows_information_protection_policies(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionPolicy.t} | {:error, Tesla.Env.t}
-  def device_app_management_get_windows_information_protection_policies(connection, windows_information_protection_policy_id, opts \\ []) do
+  @spec device_app_management_get_windows_information_protection_policies(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionPolicy.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_get_windows_information_protection_policies(
+        connection,
+        windows_information_protection_policy_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -107,7 +142,9 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementWindowsInformationProtectionPoli
     request =
       %{}
       |> method(:get)
-      |> url("/deviceAppManagement/windowsInformationProtectionPolicies/#{windows_information_protection_policy_id}")
+      |> url(
+        "/deviceAppManagement/windowsInformationProtectionPolicies/#{windows_information_protection_policy_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -142,7 +179,14 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementWindowsInformationProtectionPoli
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionPolicyCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_list_windows_information_protection_policies(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionPolicyCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec device_app_management_list_windows_information_protection_policies(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionPolicyCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def device_app_management_list_windows_information_protection_policies(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -165,7 +209,8 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementWindowsInformationProtectionPoli
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionPolicyCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionPolicyCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -187,12 +232,27 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementWindowsInformationProtectionPoli
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionPolicy.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_update_windows_information_protection_policies(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionPolicy.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionPolicy.t} | {:error, Tesla.Env.t}
-  def device_app_management_update_windows_information_protection_policies(connection, windows_information_protection_policy_id, microsoft_graph_windows_information_protection_policy, _opts \\ []) do
+  @spec device_app_management_update_windows_information_protection_policies(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionPolicy.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionPolicy.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_update_windows_information_protection_policies(
+        connection,
+        windows_information_protection_policy_id,
+        microsoft_graph_windows_information_protection_policy,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/deviceAppManagement/windowsInformationProtectionPolicies/#{windows_information_protection_policy_id}")
+      |> url(
+        "/deviceAppManagement/windowsInformationProtectionPolicies/#{windows_information_protection_policy_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_windows_information_protection_policy)
       |> Enum.into([])
 
@@ -221,8 +281,19 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementWindowsInformationProtectionPoli
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_windows_information_protection_policies_assignments_get_count9869(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_windows_information_protection_policies_assignments_get_count9869(connection, windows_information_protection_policy_id, opts \\ []) do
+  @spec device_app_management_windows_information_protection_policies_assignments_get_count9869(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_windows_information_protection_policies_assignments_get_count9869(
+        connection,
+        windows_information_protection_policy_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -231,7 +302,9 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementWindowsInformationProtectionPoli
     request =
       %{}
       |> method(:get)
-      |> url("/deviceAppManagement/windowsInformationProtectionPolicies/#{windows_information_protection_policy_id}/assignments/$count")
+      |> url(
+        "/deviceAppManagement/windowsInformationProtectionPolicies/#{windows_information_protection_policy_id}/assignments/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -259,12 +332,27 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementWindowsInformationProtectionPoli
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTargetedManagedAppPolicyAssignment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_windows_information_protection_policies_create_assignments(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphTargetedManagedAppPolicyAssignment.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTargetedManagedAppPolicyAssignment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_windows_information_protection_policies_create_assignments(connection, windows_information_protection_policy_id, microsoft_graph_targeted_managed_app_policy_assignment, _opts \\ []) do
+  @spec device_app_management_windows_information_protection_policies_create_assignments(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTargetedManagedAppPolicyAssignment.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTargetedManagedAppPolicyAssignment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_windows_information_protection_policies_create_assignments(
+        connection,
+        windows_information_protection_policy_id,
+        microsoft_graph_targeted_managed_app_policy_assignment,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceAppManagement/windowsInformationProtectionPolicies/#{windows_information_protection_policy_id}/assignments")
+      |> url(
+        "/deviceAppManagement/windowsInformationProtectionPolicies/#{windows_information_protection_policy_id}/assignments"
+      )
       |> add_param(:body, :body, microsoft_graph_targeted_managed_app_policy_assignment)
       |> Enum.into([])
 
@@ -292,12 +380,27 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementWindowsInformationProtectionPoli
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionAppLockerFile.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_windows_information_protection_policies_create_exempt_app_locker_files(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionAppLockerFile.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionAppLockerFile.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_windows_information_protection_policies_create_exempt_app_locker_files(connection, windows_information_protection_policy_id, microsoft_graph_windows_information_protection_app_locker_file, _opts \\ []) do
+  @spec device_app_management_windows_information_protection_policies_create_exempt_app_locker_files(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionAppLockerFile.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionAppLockerFile.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_windows_information_protection_policies_create_exempt_app_locker_files(
+        connection,
+        windows_information_protection_policy_id,
+        microsoft_graph_windows_information_protection_app_locker_file,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceAppManagement/windowsInformationProtectionPolicies/#{windows_information_protection_policy_id}/exemptAppLockerFiles")
+      |> url(
+        "/deviceAppManagement/windowsInformationProtectionPolicies/#{windows_information_protection_policy_id}/exemptAppLockerFiles"
+      )
       |> add_param(:body, :body, microsoft_graph_windows_information_protection_app_locker_file)
       |> Enum.into([])
 
@@ -325,12 +428,27 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementWindowsInformationProtectionPoli
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionAppLockerFile.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_windows_information_protection_policies_create_protected_app_locker_files(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionAppLockerFile.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionAppLockerFile.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_windows_information_protection_policies_create_protected_app_locker_files(connection, windows_information_protection_policy_id, microsoft_graph_windows_information_protection_app_locker_file, _opts \\ []) do
+  @spec device_app_management_windows_information_protection_policies_create_protected_app_locker_files(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionAppLockerFile.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionAppLockerFile.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_windows_information_protection_policies_create_protected_app_locker_files(
+        connection,
+        windows_information_protection_policy_id,
+        microsoft_graph_windows_information_protection_app_locker_file,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceAppManagement/windowsInformationProtectionPolicies/#{windows_information_protection_policy_id}/protectedAppLockerFiles")
+      |> url(
+        "/deviceAppManagement/windowsInformationProtectionPolicies/#{windows_information_protection_policy_id}/protectedAppLockerFiles"
+      )
       |> add_param(:body, :body, microsoft_graph_windows_information_protection_app_locker_file)
       |> Enum.into([])
 
@@ -359,8 +477,21 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementWindowsInformationProtectionPoli
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_windows_information_protection_policies_delete_assignments(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_windows_information_protection_policies_delete_assignments(connection, windows_information_protection_policy_id, targeted_managed_app_policy_assignment_id, opts \\ []) do
+  @spec device_app_management_windows_information_protection_policies_delete_assignments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_windows_information_protection_policies_delete_assignments(
+        connection,
+        windows_information_protection_policy_id,
+        targeted_managed_app_policy_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -368,7 +499,9 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementWindowsInformationProtectionPoli
     request =
       %{}
       |> method(:delete)
-      |> url("/deviceAppManagement/windowsInformationProtectionPolicies/#{windows_information_protection_policy_id}/assignments/#{targeted_managed_app_policy_assignment_id}")
+      |> url(
+        "/deviceAppManagement/windowsInformationProtectionPolicies/#{windows_information_protection_policy_id}/assignments/#{targeted_managed_app_policy_assignment_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -397,8 +530,21 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementWindowsInformationProtectionPoli
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_windows_information_protection_policies_delete_exempt_app_locker_files(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_windows_information_protection_policies_delete_exempt_app_locker_files(connection, windows_information_protection_policy_id, windows_information_protection_app_locker_file_id, opts \\ []) do
+  @spec device_app_management_windows_information_protection_policies_delete_exempt_app_locker_files(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_windows_information_protection_policies_delete_exempt_app_locker_files(
+        connection,
+        windows_information_protection_policy_id,
+        windows_information_protection_app_locker_file_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -406,7 +552,9 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementWindowsInformationProtectionPoli
     request =
       %{}
       |> method(:delete)
-      |> url("/deviceAppManagement/windowsInformationProtectionPolicies/#{windows_information_protection_policy_id}/exemptAppLockerFiles/#{windows_information_protection_app_locker_file_id}")
+      |> url(
+        "/deviceAppManagement/windowsInformationProtectionPolicies/#{windows_information_protection_policy_id}/exemptAppLockerFiles/#{windows_information_protection_app_locker_file_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -435,8 +583,21 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementWindowsInformationProtectionPoli
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_windows_information_protection_policies_delete_protected_app_locker_files(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_windows_information_protection_policies_delete_protected_app_locker_files(connection, windows_information_protection_policy_id, windows_information_protection_app_locker_file_id, opts \\ []) do
+  @spec device_app_management_windows_information_protection_policies_delete_protected_app_locker_files(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_windows_information_protection_policies_delete_protected_app_locker_files(
+        connection,
+        windows_information_protection_policy_id,
+        windows_information_protection_app_locker_file_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -444,7 +605,9 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementWindowsInformationProtectionPoli
     request =
       %{}
       |> method(:delete)
-      |> url("/deviceAppManagement/windowsInformationProtectionPolicies/#{windows_information_protection_policy_id}/protectedAppLockerFiles/#{windows_information_protection_app_locker_file_id}")
+      |> url(
+        "/deviceAppManagement/windowsInformationProtectionPolicies/#{windows_information_protection_policy_id}/protectedAppLockerFiles/#{windows_information_protection_app_locker_file_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -473,8 +636,19 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementWindowsInformationProtectionPoli
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_windows_information_protection_policies_exempt_app_locker_files_get_count65c6(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_windows_information_protection_policies_exempt_app_locker_files_get_count65c6(connection, windows_information_protection_policy_id, opts \\ []) do
+  @spec device_app_management_windows_information_protection_policies_exempt_app_locker_files_get_count65c6(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_windows_information_protection_policies_exempt_app_locker_files_get_count65c6(
+        connection,
+        windows_information_protection_policy_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -483,7 +657,9 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementWindowsInformationProtectionPoli
     request =
       %{}
       |> method(:get)
-      |> url("/deviceAppManagement/windowsInformationProtectionPolicies/#{windows_information_protection_policy_id}/exemptAppLockerFiles/$count")
+      |> url(
+        "/deviceAppManagement/windowsInformationProtectionPolicies/#{windows_information_protection_policy_id}/exemptAppLockerFiles/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -514,8 +690,21 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementWindowsInformationProtectionPoli
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTargetedManagedAppPolicyAssignment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_windows_information_protection_policies_get_assignments(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTargetedManagedAppPolicyAssignment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_windows_information_protection_policies_get_assignments(connection, windows_information_protection_policy_id, targeted_managed_app_policy_assignment_id, opts \\ []) do
+  @spec device_app_management_windows_information_protection_policies_get_assignments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTargetedManagedAppPolicyAssignment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_windows_information_protection_policies_get_assignments(
+        connection,
+        windows_information_protection_policy_id,
+        targeted_managed_app_policy_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -524,7 +713,9 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementWindowsInformationProtectionPoli
     request =
       %{}
       |> method(:get)
-      |> url("/deviceAppManagement/windowsInformationProtectionPolicies/#{windows_information_protection_policy_id}/assignments/#{targeted_managed_app_policy_assignment_id}")
+      |> url(
+        "/deviceAppManagement/windowsInformationProtectionPolicies/#{windows_information_protection_policy_id}/assignments/#{targeted_managed_app_policy_assignment_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -552,8 +743,17 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementWindowsInformationProtectionPoli
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_windows_information_protection_policies_get_count_b909(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_windows_information_protection_policies_get_count_b909(connection, opts \\ []) do
+  @spec device_app_management_windows_information_protection_policies_get_count_b909(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_windows_information_protection_policies_get_count_b909(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -593,8 +793,21 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementWindowsInformationProtectionPoli
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionAppLockerFile.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_windows_information_protection_policies_get_exempt_app_locker_files(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionAppLockerFile.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_windows_information_protection_policies_get_exempt_app_locker_files(connection, windows_information_protection_policy_id, windows_information_protection_app_locker_file_id, opts \\ []) do
+  @spec device_app_management_windows_information_protection_policies_get_exempt_app_locker_files(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionAppLockerFile.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_windows_information_protection_policies_get_exempt_app_locker_files(
+        connection,
+        windows_information_protection_policy_id,
+        windows_information_protection_app_locker_file_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -603,7 +816,9 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementWindowsInformationProtectionPoli
     request =
       %{}
       |> method(:get)
-      |> url("/deviceAppManagement/windowsInformationProtectionPolicies/#{windows_information_protection_policy_id}/exemptAppLockerFiles/#{windows_information_protection_app_locker_file_id}")
+      |> url(
+        "/deviceAppManagement/windowsInformationProtectionPolicies/#{windows_information_protection_policy_id}/exemptAppLockerFiles/#{windows_information_protection_app_locker_file_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -634,8 +849,21 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementWindowsInformationProtectionPoli
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionAppLockerFile.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_windows_information_protection_policies_get_protected_app_locker_files(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionAppLockerFile.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_windows_information_protection_policies_get_protected_app_locker_files(connection, windows_information_protection_policy_id, windows_information_protection_app_locker_file_id, opts \\ []) do
+  @spec device_app_management_windows_information_protection_policies_get_protected_app_locker_files(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionAppLockerFile.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_windows_information_protection_policies_get_protected_app_locker_files(
+        connection,
+        windows_information_protection_policy_id,
+        windows_information_protection_app_locker_file_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -644,7 +872,9 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementWindowsInformationProtectionPoli
     request =
       %{}
       |> method(:get)
-      |> url("/deviceAppManagement/windowsInformationProtectionPolicies/#{windows_information_protection_policy_id}/protectedAppLockerFiles/#{windows_information_protection_app_locker_file_id}")
+      |> url(
+        "/deviceAppManagement/windowsInformationProtectionPolicies/#{windows_information_protection_policy_id}/protectedAppLockerFiles/#{windows_information_protection_app_locker_file_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -680,8 +910,20 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementWindowsInformationProtectionPoli
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTargetedManagedAppPolicyAssignmentCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_windows_information_protection_policies_list_assignments(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTargetedManagedAppPolicyAssignmentCollectionResponse.t} | {:error, Tesla.Env.t}
-  def device_app_management_windows_information_protection_policies_list_assignments(connection, windows_information_protection_policy_id, opts \\ []) do
+  @spec device_app_management_windows_information_protection_policies_list_assignments(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphTargetedManagedAppPolicyAssignmentCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_windows_information_protection_policies_list_assignments(
+        connection,
+        windows_information_protection_policy_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -696,14 +938,17 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementWindowsInformationProtectionPoli
     request =
       %{}
       |> method(:get)
-      |> url("/deviceAppManagement/windowsInformationProtectionPolicies/#{windows_information_protection_policy_id}/assignments")
+      |> url(
+        "/deviceAppManagement/windowsInformationProtectionPolicies/#{windows_information_protection_policy_id}/assignments"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphTargetedManagedAppPolicyAssignmentCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphTargetedManagedAppPolicyAssignmentCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -732,8 +977,20 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementWindowsInformationProtectionPoli
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionAppLockerFileCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_windows_information_protection_policies_list_exempt_app_locker_files(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionAppLockerFileCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_windows_information_protection_policies_list_exempt_app_locker_files(connection, windows_information_protection_policy_id, opts \\ []) do
+  @spec device_app_management_windows_information_protection_policies_list_exempt_app_locker_files(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionAppLockerFileCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_windows_information_protection_policies_list_exempt_app_locker_files(
+        connection,
+        windows_information_protection_policy_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -748,14 +1005,17 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementWindowsInformationProtectionPoli
     request =
       %{}
       |> method(:get)
-      |> url("/deviceAppManagement/windowsInformationProtectionPolicies/#{windows_information_protection_policy_id}/exemptAppLockerFiles")
+      |> url(
+        "/deviceAppManagement/windowsInformationProtectionPolicies/#{windows_information_protection_policy_id}/exemptAppLockerFiles"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionAppLockerFileCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionAppLockerFileCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -784,8 +1044,20 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementWindowsInformationProtectionPoli
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionAppLockerFileCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_windows_information_protection_policies_list_protected_app_locker_files(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionAppLockerFileCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_windows_information_protection_policies_list_protected_app_locker_files(connection, windows_information_protection_policy_id, opts \\ []) do
+  @spec device_app_management_windows_information_protection_policies_list_protected_app_locker_files(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionAppLockerFileCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_windows_information_protection_policies_list_protected_app_locker_files(
+        connection,
+        windows_information_protection_policy_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -800,14 +1072,17 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementWindowsInformationProtectionPoli
     request =
       %{}
       |> method(:get)
-      |> url("/deviceAppManagement/windowsInformationProtectionPolicies/#{windows_information_protection_policy_id}/protectedAppLockerFiles")
+      |> url(
+        "/deviceAppManagement/windowsInformationProtectionPolicies/#{windows_information_protection_policy_id}/protectedAppLockerFiles"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionAppLockerFileCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionAppLockerFileCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -829,8 +1104,19 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementWindowsInformationProtectionPoli
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_windows_information_protection_policies_protected_app_locker_files_get_count_fa50(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_windows_information_protection_policies_protected_app_locker_files_get_count_fa50(connection, windows_information_protection_policy_id, opts \\ []) do
+  @spec device_app_management_windows_information_protection_policies_protected_app_locker_files_get_count_fa50(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_windows_information_protection_policies_protected_app_locker_files_get_count_fa50(
+        connection,
+        windows_information_protection_policy_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -839,7 +1125,9 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementWindowsInformationProtectionPoli
     request =
       %{}
       |> method(:get)
-      |> url("/deviceAppManagement/windowsInformationProtectionPolicies/#{windows_information_protection_policy_id}/protectedAppLockerFiles/$count")
+      |> url(
+        "/deviceAppManagement/windowsInformationProtectionPolicies/#{windows_information_protection_policy_id}/protectedAppLockerFiles/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -868,12 +1156,29 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementWindowsInformationProtectionPoli
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTargetedManagedAppPolicyAssignment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_windows_information_protection_policies_update_assignments(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTargetedManagedAppPolicyAssignment.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTargetedManagedAppPolicyAssignment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_windows_information_protection_policies_update_assignments(connection, windows_information_protection_policy_id, targeted_managed_app_policy_assignment_id, microsoft_graph_targeted_managed_app_policy_assignment, _opts \\ []) do
+  @spec device_app_management_windows_information_protection_policies_update_assignments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTargetedManagedAppPolicyAssignment.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTargetedManagedAppPolicyAssignment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_windows_information_protection_policies_update_assignments(
+        connection,
+        windows_information_protection_policy_id,
+        targeted_managed_app_policy_assignment_id,
+        microsoft_graph_targeted_managed_app_policy_assignment,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/deviceAppManagement/windowsInformationProtectionPolicies/#{windows_information_protection_policy_id}/assignments/#{targeted_managed_app_policy_assignment_id}")
+      |> url(
+        "/deviceAppManagement/windowsInformationProtectionPolicies/#{windows_information_protection_policy_id}/assignments/#{targeted_managed_app_policy_assignment_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_targeted_managed_app_policy_assignment)
       |> Enum.into([])
 
@@ -902,12 +1207,29 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementWindowsInformationProtectionPoli
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionAppLockerFile.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_windows_information_protection_policies_update_exempt_app_locker_files(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionAppLockerFile.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionAppLockerFile.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_windows_information_protection_policies_update_exempt_app_locker_files(connection, windows_information_protection_policy_id, windows_information_protection_app_locker_file_id, microsoft_graph_windows_information_protection_app_locker_file, _opts \\ []) do
+  @spec device_app_management_windows_information_protection_policies_update_exempt_app_locker_files(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionAppLockerFile.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionAppLockerFile.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_windows_information_protection_policies_update_exempt_app_locker_files(
+        connection,
+        windows_information_protection_policy_id,
+        windows_information_protection_app_locker_file_id,
+        microsoft_graph_windows_information_protection_app_locker_file,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/deviceAppManagement/windowsInformationProtectionPolicies/#{windows_information_protection_policy_id}/exemptAppLockerFiles/#{windows_information_protection_app_locker_file_id}")
+      |> url(
+        "/deviceAppManagement/windowsInformationProtectionPolicies/#{windows_information_protection_policy_id}/exemptAppLockerFiles/#{windows_information_protection_app_locker_file_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_windows_information_protection_app_locker_file)
       |> Enum.into([])
 
@@ -936,12 +1258,29 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementWindowsInformationProtectionPoli
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionAppLockerFile.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_windows_information_protection_policies_update_protected_app_locker_files(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionAppLockerFile.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionAppLockerFile.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_windows_information_protection_policies_update_protected_app_locker_files(connection, windows_information_protection_policy_id, windows_information_protection_app_locker_file_id, microsoft_graph_windows_information_protection_app_locker_file, _opts \\ []) do
+  @spec device_app_management_windows_information_protection_policies_update_protected_app_locker_files(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionAppLockerFile.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionAppLockerFile.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_windows_information_protection_policies_update_protected_app_locker_files(
+        connection,
+        windows_information_protection_policy_id,
+        windows_information_protection_app_locker_file_id,
+        microsoft_graph_windows_information_protection_app_locker_file,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/deviceAppManagement/windowsInformationProtectionPolicies/#{windows_information_protection_policy_id}/protectedAppLockerFiles/#{windows_information_protection_app_locker_file_id}")
+      |> url(
+        "/deviceAppManagement/windowsInformationProtectionPolicies/#{windows_information_protection_policy_id}/protectedAppLockerFiles/#{windows_information_protection_app_locker_file_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_windows_information_protection_app_locker_file)
       |> Enum.into([])
 

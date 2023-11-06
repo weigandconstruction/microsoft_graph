@@ -14,16 +14,21 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphOnPremisesDirectorySynchronizationC
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :alertThreshold => integer() | nil,
-    :synchronizationPreventionType => MicrosoftGraph.Model.MicrosoftGraphOnPremisesAccidentalDeletionPreventionSynchronizationPreventionType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :alertThreshold => integer() | nil,
+          :synchronizationPreventionType =>
+            MicrosoftGraph.Model.MicrosoftGraphOnPremisesAccidentalDeletionPreventionSynchronizationPreventionType.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:synchronizationPreventionType, :struct, MicrosoftGraph.Model.MicrosoftGraphOnPremisesAccidentalDeletionPreventionSynchronizationPreventionType)
+    |> Deserializer.deserialize(
+      :synchronizationPreventionType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphOnPremisesAccidentalDeletionPreventionSynchronizationPreventionType
+    )
   end
 end
-

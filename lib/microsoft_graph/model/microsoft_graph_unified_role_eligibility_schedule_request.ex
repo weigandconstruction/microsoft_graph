@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -34,46 +34,84 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleReque
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :approvalId => String.t | nil,
-    :completedDateTime => DateTime.t | nil,
-    :createdBy => MicrosoftGraph.Model.RequestCreatedBy.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :customData => String.t | nil,
-    :status => String.t | nil,
-    :action => MicrosoftGraph.Model.UnifiedRoleEligibilityScheduleRequestAction.t | nil,
-    :appScope => MicrosoftGraph.Model.UnifiedRoleEligibilityScheduleRequestAppScope.t | nil,
-    :appScopeId => String.t | nil,
-    :directoryScope => MicrosoftGraph.Model.UnifiedRoleEligibilityScheduleRequestDirectoryScope.t | nil,
-    :directoryScopeId => String.t | nil,
-    :isValidationOnly => boolean() | nil,
-    :justification => String.t | nil,
-    :principal => MicrosoftGraph.Model.UnifiedRoleEligibilityScheduleRequestPrincipal.t | nil,
-    :principalId => String.t | nil,
-    :roleDefinition => MicrosoftGraph.Model.UnifiedRoleAssignmentScheduleRequestRoleDefinition.t | nil,
-    :roleDefinitionId => String.t | nil,
-    :scheduleInfo => MicrosoftGraph.Model.UnifiedRoleEligibilityScheduleRequestScheduleInfo.t | nil,
-    :targetSchedule => MicrosoftGraph.Model.UnifiedRoleEligibilityScheduleRequestTargetSchedule.t | nil,
-    :targetScheduleId => String.t | nil,
-    :ticketInfo => MicrosoftGraph.Model.UnifiedRoleEligibilityScheduleRequestTicketInfo.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :approvalId => String.t() | nil,
+          :completedDateTime => DateTime.t() | nil,
+          :createdBy => MicrosoftGraph.Model.RequestCreatedBy.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :customData => String.t() | nil,
+          :status => String.t() | nil,
+          :action => MicrosoftGraph.Model.UnifiedRoleEligibilityScheduleRequestAction.t() | nil,
+          :appScope =>
+            MicrosoftGraph.Model.UnifiedRoleEligibilityScheduleRequestAppScope.t() | nil,
+          :appScopeId => String.t() | nil,
+          :directoryScope =>
+            MicrosoftGraph.Model.UnifiedRoleEligibilityScheduleRequestDirectoryScope.t() | nil,
+          :directoryScopeId => String.t() | nil,
+          :isValidationOnly => boolean() | nil,
+          :justification => String.t() | nil,
+          :principal =>
+            MicrosoftGraph.Model.UnifiedRoleEligibilityScheduleRequestPrincipal.t() | nil,
+          :principalId => String.t() | nil,
+          :roleDefinition =>
+            MicrosoftGraph.Model.UnifiedRoleAssignmentScheduleRequestRoleDefinition.t() | nil,
+          :roleDefinitionId => String.t() | nil,
+          :scheduleInfo =>
+            MicrosoftGraph.Model.UnifiedRoleEligibilityScheduleRequestScheduleInfo.t() | nil,
+          :targetSchedule =>
+            MicrosoftGraph.Model.UnifiedRoleEligibilityScheduleRequestTargetSchedule.t() | nil,
+          :targetScheduleId => String.t() | nil,
+          :ticketInfo =>
+            MicrosoftGraph.Model.UnifiedRoleEligibilityScheduleRequestTicketInfo.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:completedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.RequestCreatedBy)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:action, :struct, MicrosoftGraph.Model.UnifiedRoleEligibilityScheduleRequestAction)
-     |> Deserializer.deserialize(:appScope, :struct, MicrosoftGraph.Model.UnifiedRoleEligibilityScheduleRequestAppScope)
-     |> Deserializer.deserialize(:directoryScope, :struct, MicrosoftGraph.Model.UnifiedRoleEligibilityScheduleRequestDirectoryScope)
-     |> Deserializer.deserialize(:principal, :struct, MicrosoftGraph.Model.UnifiedRoleEligibilityScheduleRequestPrincipal)
-     |> Deserializer.deserialize(:roleDefinition, :struct, MicrosoftGraph.Model.UnifiedRoleAssignmentScheduleRequestRoleDefinition)
-     |> Deserializer.deserialize(:scheduleInfo, :struct, MicrosoftGraph.Model.UnifiedRoleEligibilityScheduleRequestScheduleInfo)
-     |> Deserializer.deserialize(:targetSchedule, :struct, MicrosoftGraph.Model.UnifiedRoleEligibilityScheduleRequestTargetSchedule)
-     |> Deserializer.deserialize(:ticketInfo, :struct, MicrosoftGraph.Model.UnifiedRoleEligibilityScheduleRequestTicketInfo)
+    |> Deserializer.deserialize(:completedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.RequestCreatedBy)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :action,
+      :struct,
+      MicrosoftGraph.Model.UnifiedRoleEligibilityScheduleRequestAction
+    )
+    |> Deserializer.deserialize(
+      :appScope,
+      :struct,
+      MicrosoftGraph.Model.UnifiedRoleEligibilityScheduleRequestAppScope
+    )
+    |> Deserializer.deserialize(
+      :directoryScope,
+      :struct,
+      MicrosoftGraph.Model.UnifiedRoleEligibilityScheduleRequestDirectoryScope
+    )
+    |> Deserializer.deserialize(
+      :principal,
+      :struct,
+      MicrosoftGraph.Model.UnifiedRoleEligibilityScheduleRequestPrincipal
+    )
+    |> Deserializer.deserialize(
+      :roleDefinition,
+      :struct,
+      MicrosoftGraph.Model.UnifiedRoleAssignmentScheduleRequestRoleDefinition
+    )
+    |> Deserializer.deserialize(
+      :scheduleInfo,
+      :struct,
+      MicrosoftGraph.Model.UnifiedRoleEligibilityScheduleRequestScheduleInfo
+    )
+    |> Deserializer.deserialize(
+      :targetSchedule,
+      :struct,
+      MicrosoftGraph.Model.UnifiedRoleEligibilityScheduleRequestTargetSchedule
+    )
+    |> Deserializer.deserialize(
+      :ticketInfo,
+      :struct,
+      MicrosoftGraph.Model.UnifiedRoleEligibilityScheduleRequestTicketInfo
+    )
   end
 end
-

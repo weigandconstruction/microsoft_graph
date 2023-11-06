@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityTopicModelingSettings do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,15 +16,14 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityTopicModelingSettings do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :dynamicallyAdjustTopicCount => boolean() | nil,
-    :ignoreNumbers => boolean() | nil,
-    :isEnabled => boolean() | nil,
-    :topicCount => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :dynamicallyAdjustTopicCount => boolean() | nil,
+          :ignoreNumbers => boolean() | nil,
+          :isEnabled => boolean() | nil,
+          :topicCount => integer() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

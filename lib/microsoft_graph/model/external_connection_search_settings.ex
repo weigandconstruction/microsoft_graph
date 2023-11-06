@@ -13,15 +13,22 @@ defmodule MicrosoftGraph.Model.ExternalConnectionSearchSettings do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :searchResultTemplates => [MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsSearchSettingsSearchResultTemplatesInner.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :searchResultTemplates =>
+            [
+              MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsSearchSettingsSearchResultTemplatesInner.t()
+            ]
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:searchResultTemplates, :list, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsSearchSettingsSearchResultTemplatesInner)
+    |> Deserializer.deserialize(
+      :searchResultTemplates,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsSearchSettingsSearchResultTemplatesInner
+    )
   end
 end
-

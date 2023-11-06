@@ -27,8 +27,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsOAuth2PermissionGrant do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOAuth2PermissionGrant.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_get_oauth2_permission_grants(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOAuth2PermissionGrant.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_get_oauth2_permission_grants(connection, service_principal_id, o_auth2_permission_grant_id, opts \\ []) do
+  @spec service_principals_get_oauth2_permission_grants(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOAuth2PermissionGrant.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_get_oauth2_permission_grants(
+        connection,
+        service_principal_id,
+        o_auth2_permission_grant_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -37,7 +50,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsOAuth2PermissionGrant do
     request =
       %{}
       |> method(:get)
-      |> url("/servicePrincipals/#{service_principal_id}/oauth2PermissionGrants/#{o_auth2_permission_grant_id}")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/oauth2PermissionGrants/#{o_auth2_permission_grant_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -73,8 +88,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsOAuth2PermissionGrant do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOAuth2PermissionGrantCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_list_oauth2_permission_grants(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOAuth2PermissionGrantCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_list_oauth2_permission_grants(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_list_oauth2_permission_grants(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOAuth2PermissionGrantCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_list_oauth2_permission_grants(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -118,8 +144,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsOAuth2PermissionGrant do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_oauth2_permission_grants_get_count_f9dc(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_oauth2_permission_grants_get_count_f9dc(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_oauth2_permission_grants_get_count_f9dc(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_oauth2_permission_grants_get_count_f9dc(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query

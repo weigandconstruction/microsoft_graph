@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphFileSecurityState do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,18 +16,21 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphFileSecurityState do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :fileHash => MicrosoftGraph.Model.MicrosoftGraphFileSecurityStateFileHash.t | nil,
-    :name => String.t | nil,
-    :path => String.t | nil,
-    :riskScore => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :fileHash => MicrosoftGraph.Model.MicrosoftGraphFileSecurityStateFileHash.t() | nil,
+          :name => String.t() | nil,
+          :path => String.t() | nil,
+          :riskScore => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:fileHash, :struct, MicrosoftGraph.Model.MicrosoftGraphFileSecurityStateFileHash)
+    |> Deserializer.deserialize(
+      :fileHash,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphFileSecurityStateFileHash
+    )
   end
 end
-

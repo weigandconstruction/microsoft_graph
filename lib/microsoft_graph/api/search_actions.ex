@@ -24,7 +24,10 @@ defmodule MicrosoftGraph.Api.SearchActions do
   - `{:ok, MicrosoftGraph.Model.SearchQuery2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec search_query(Tesla.Env.client, MicrosoftGraph.Model.SearchQueryRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.SearchQuery2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec search_query(Tesla.Env.client(), MicrosoftGraph.Model.SearchQueryRequest.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.SearchQuery2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def search_query(connection, search_query_request, _opts \\ []) do
     request =
       %{}

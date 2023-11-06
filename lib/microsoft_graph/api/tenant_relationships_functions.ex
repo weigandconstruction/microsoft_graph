@@ -23,18 +23,33 @@ defmodule MicrosoftGraph.Api.TenantRelationshipsFunctions do
   - `{:ok, MicrosoftGraph.Model.TenantRelationshipsFindTenantInformationByDomainName2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec tenant_relationships_find_tenant_information_by_domain_name(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.TenantRelationshipsFindTenantInformationByDomainName2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def tenant_relationships_find_tenant_information_by_domain_name(connection, domain_name, _opts \\ []) do
+  @spec tenant_relationships_find_tenant_information_by_domain_name(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.TenantRelationshipsFindTenantInformationByDomainName2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def tenant_relationships_find_tenant_information_by_domain_name(
+        connection,
+        domain_name,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/tenantRelationships/findTenantInformationByDomainName(domainName&#x3D;&#39;#{domain_name}&#39;)")
+      |> url(
+        "/tenantRelationships/findTenantInformationByDomainName(domainName&#x3D;&#39;#{domain_name}&#39;)"
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.TenantRelationshipsFindTenantInformationByDomainName2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.TenantRelationshipsFindTenantInformationByDomainName2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -54,18 +69,33 @@ defmodule MicrosoftGraph.Api.TenantRelationshipsFunctions do
   - `{:ok, MicrosoftGraph.Model.TenantRelationshipsFindTenantInformationByDomainName2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec tenant_relationships_find_tenant_information_by_tenant_id(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.TenantRelationshipsFindTenantInformationByDomainName2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def tenant_relationships_find_tenant_information_by_tenant_id(connection, tenant_id, _opts \\ []) do
+  @spec tenant_relationships_find_tenant_information_by_tenant_id(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.TenantRelationshipsFindTenantInformationByDomainName2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def tenant_relationships_find_tenant_information_by_tenant_id(
+        connection,
+        tenant_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/tenantRelationships/findTenantInformationByTenantId(tenantId&#x3D;&#39;#{tenant_id}&#39;)")
+      |> url(
+        "/tenantRelationships/findTenantInformationByTenantId(tenantId&#x3D;&#39;#{tenant_id}&#39;)"
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.TenantRelationshipsFindTenantInformationByDomainName2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.TenantRelationshipsFindTenantInformationByDomainName2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])

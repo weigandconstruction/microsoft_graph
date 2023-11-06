@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSearchRequestCollapsePropertiesInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSearchRequestCollapsePropertiesInne
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :fields => [String.t] | nil,
-    :limit => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :fields => [String.t()] | nil,
+          :limit => integer() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

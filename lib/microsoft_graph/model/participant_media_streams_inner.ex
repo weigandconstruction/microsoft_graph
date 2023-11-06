@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.ParticipantMediaStreamsInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,20 +17,23 @@ defmodule MicrosoftGraph.Model.ParticipantMediaStreamsInner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :direction => MicrosoftGraph.Model.MicrosoftGraphMediaDirection.t | nil,
-    :label => String.t | nil,
-    :mediaType => MicrosoftGraph.Model.MicrosoftGraphModality.t | nil,
-    :serverMuted => boolean() | nil,
-    :sourceId => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :direction => MicrosoftGraph.Model.MicrosoftGraphMediaDirection.t() | nil,
+          :label => String.t() | nil,
+          :mediaType => MicrosoftGraph.Model.MicrosoftGraphModality.t() | nil,
+          :serverMuted => boolean() | nil,
+          :sourceId => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:direction, :struct, MicrosoftGraph.Model.MicrosoftGraphMediaDirection)
-     |> Deserializer.deserialize(:mediaType, :struct, MicrosoftGraph.Model.MicrosoftGraphModality)
+    |> Deserializer.deserialize(
+      :direction,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphMediaDirection
+    )
+    |> Deserializer.deserialize(:mediaType, :struct, MicrosoftGraph.Model.MicrosoftGraphModality)
   end
 end
-

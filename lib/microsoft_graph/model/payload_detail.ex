@@ -15,17 +15,21 @@ defmodule MicrosoftGraph.Model.PayloadDetail do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :coachmarks => [MicrosoftGraph.Model.MicrosoftGraphPayloadDetailCoachmarksInner.t] | nil,
-    :content => String.t | nil,
-    :phishingUrl => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :coachmarks =>
+            [MicrosoftGraph.Model.MicrosoftGraphPayloadDetailCoachmarksInner.t()] | nil,
+          :content => String.t() | nil,
+          :phishingUrl => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:coachmarks, :list, MicrosoftGraph.Model.MicrosoftGraphPayloadDetailCoachmarksInner)
+    |> Deserializer.deserialize(
+      :coachmarks,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphPayloadDetailCoachmarksInner
+    )
   end
 end
-

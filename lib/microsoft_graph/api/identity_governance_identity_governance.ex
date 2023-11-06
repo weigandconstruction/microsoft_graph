@@ -24,7 +24,13 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceIdentityGovernance do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_identity_governance_get_identity_governance(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernance.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_governance_identity_governance_get_identity_governance(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernance.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_governance_identity_governance_get_identity_governance(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -61,8 +67,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceIdentityGovernance do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_identity_governance_update_identity_governance(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernance.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernance.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_identity_governance_update_identity_governance(connection, microsoft_graph_identity_governance, _opts \\ []) do
+  @spec identity_governance_identity_governance_update_identity_governance(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphIdentityGovernance.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernance.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_identity_governance_update_identity_governance(
+        connection,
+        microsoft_graph_identity_governance,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

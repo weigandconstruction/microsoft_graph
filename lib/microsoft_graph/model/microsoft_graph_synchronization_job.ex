@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSynchronizationJob do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,23 +18,34 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSynchronizationJob do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :schedule => MicrosoftGraph.Model.SynchronizationJobSchedule.t | nil,
-    :schema => MicrosoftGraph.Model.SynchronizationJobSchema.t | nil,
-    :status => MicrosoftGraph.Model.SynchronizationJobStatus.t | nil,
-    :synchronizationJobSettings => [MicrosoftGraph.Model.MeJoinedTeamsTeamSendActivityNotificationRequestTemplateParametersInner.t] | nil,
-    :templateId => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :schedule => MicrosoftGraph.Model.SynchronizationJobSchedule.t() | nil,
+          :schema => MicrosoftGraph.Model.SynchronizationJobSchema.t() | nil,
+          :status => MicrosoftGraph.Model.SynchronizationJobStatus.t() | nil,
+          :synchronizationJobSettings =>
+            [
+              MicrosoftGraph.Model.MeJoinedTeamsTeamSendActivityNotificationRequestTemplateParametersInner.t()
+            ]
+            | nil,
+          :templateId => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:schedule, :struct, MicrosoftGraph.Model.SynchronizationJobSchedule)
-     |> Deserializer.deserialize(:schema, :struct, MicrosoftGraph.Model.SynchronizationJobSchema)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.SynchronizationJobStatus)
-     |> Deserializer.deserialize(:synchronizationJobSettings, :list, MicrosoftGraph.Model.MeJoinedTeamsTeamSendActivityNotificationRequestTemplateParametersInner)
+    |> Deserializer.deserialize(
+      :schedule,
+      :struct,
+      MicrosoftGraph.Model.SynchronizationJobSchedule
+    )
+    |> Deserializer.deserialize(:schema, :struct, MicrosoftGraph.Model.SynchronizationJobSchema)
+    |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.SynchronizationJobStatus)
+    |> Deserializer.deserialize(
+      :synchronizationJobSettings,
+      :list,
+      MicrosoftGraph.Model.MeJoinedTeamsTeamSendActivityNotificationRequestTemplateParametersInner
+    )
   end
 end
-

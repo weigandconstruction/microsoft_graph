@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphManagedAppDiagnosticStatus do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :mitigationInstruction => String.t | nil,
-    :state => String.t | nil,
-    :validationName => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :mitigationInstruction => String.t() | nil,
+          :state => String.t() | nil,
+          :validationName => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

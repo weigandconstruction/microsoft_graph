@@ -15,17 +15,21 @@ defmodule MicrosoftGraph.Model.ChatMessageMentionedIdentitySetConversation do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :displayName => String.t | nil,
-    :id => String.t | nil,
-    :conversationIdentityType => MicrosoftGraph.Model.TeamworkConversationIdentityConversationIdentityType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :displayName => String.t() | nil,
+          :id => String.t() | nil,
+          :conversationIdentityType =>
+            MicrosoftGraph.Model.TeamworkConversationIdentityConversationIdentityType.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:conversationIdentityType, :struct, MicrosoftGraph.Model.TeamworkConversationIdentityConversationIdentityType)
+    |> Deserializer.deserialize(
+      :conversationIdentityType,
+      :struct,
+      MicrosoftGraph.Model.TeamworkConversationIdentityConversationIdentityType
+    )
   end
 end
-

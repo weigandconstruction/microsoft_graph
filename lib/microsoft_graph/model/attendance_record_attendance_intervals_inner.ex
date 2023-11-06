@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.AttendanceRecordAttendanceIntervalsInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,18 +15,17 @@ defmodule MicrosoftGraph.Model.AttendanceRecordAttendanceIntervalsInner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :durationInSeconds => integer() | nil,
-    :joinDateTime => DateTime.t | nil,
-    :leaveDateTime => DateTime.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :durationInSeconds => integer() | nil,
+          :joinDateTime => DateTime.t() | nil,
+          :leaveDateTime => DateTime.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:joinDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:leaveDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:joinDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:leaveDateTime, :datetime, nil)
   end
 end
-

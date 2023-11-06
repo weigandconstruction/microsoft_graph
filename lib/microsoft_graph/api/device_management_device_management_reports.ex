@@ -23,7 +23,10 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceManagementReports do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_delete_reports(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec device_management_delete_reports(Tesla.Env.client(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def device_management_delete_reports(connection, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -61,7 +64,10 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceManagementReports do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceManagementReports.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_get_reports(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceManagementReports.t} | {:error, Tesla.Env.t}
+  @spec device_management_get_reports(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceManagementReports.t()}
+          | {:error, Tesla.Env.t()}
   def device_management_get_reports(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -99,8 +105,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceManagementReports do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceManagementExportJob.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_reports_create_export_jobs(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphDeviceManagementExportJob.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceManagementExportJob.t} | {:error, Tesla.Env.t}
-  def device_management_reports_create_export_jobs(connection, microsoft_graph_device_management_export_job, _opts \\ []) do
+  @spec device_management_reports_create_export_jobs(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphDeviceManagementExportJob.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceManagementExportJob.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_reports_create_export_jobs(
+        connection,
+        microsoft_graph_device_management_export_job,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -133,8 +150,15 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceManagementReports do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_reports_delete_export_jobs(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_reports_delete_export_jobs(connection, device_management_export_job_id, opts \\ []) do
+  @spec device_management_reports_delete_export_jobs(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_reports_delete_export_jobs(
+        connection,
+        device_management_export_job_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -170,7 +194,10 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceManagementReports do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_reports_export_jobs_get_count5277(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec device_management_reports_export_jobs_get_count5277(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def device_management_reports_export_jobs_get_count5277(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -210,8 +237,15 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceManagementReports do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceManagementExportJob.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_reports_get_export_jobs(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceManagementExportJob.t} | {:error, Tesla.Env.t}
-  def device_management_reports_get_export_jobs(connection, device_management_export_job_id, opts \\ []) do
+  @spec device_management_reports_get_export_jobs(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceManagementExportJob.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_reports_get_export_jobs(
+        connection,
+        device_management_export_job_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -255,7 +289,11 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceManagementReports do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceManagementExportJobCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_reports_list_export_jobs(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceManagementExportJobCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec device_management_reports_list_export_jobs(Tesla.Env.client(), keyword()) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphDeviceManagementExportJobCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def device_management_reports_list_export_jobs(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -300,8 +338,21 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceManagementReports do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceManagementExportJob.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_reports_update_export_jobs(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphDeviceManagementExportJob.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceManagementExportJob.t} | {:error, Tesla.Env.t}
-  def device_management_reports_update_export_jobs(connection, device_management_export_job_id, microsoft_graph_device_management_export_job, _opts \\ []) do
+  @spec device_management_reports_update_export_jobs(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDeviceManagementExportJob.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceManagementExportJob.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_reports_update_export_jobs(
+        connection,
+        device_management_export_job_id,
+        microsoft_graph_device_management_export_job,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -333,8 +384,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceManagementReports do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceManagementReports.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_update_reports(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphDeviceManagementReports.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceManagementReports.t} | {:error, Tesla.Env.t}
-  def device_management_update_reports(connection, microsoft_graph_device_management_reports, _opts \\ []) do
+  @spec device_management_update_reports(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphDeviceManagementReports.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceManagementReports.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_update_reports(
+        connection,
+        microsoft_graph_device_management_reports,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

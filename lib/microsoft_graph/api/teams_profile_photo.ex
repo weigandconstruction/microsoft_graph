@@ -26,7 +26,10 @@ defmodule MicrosoftGraph.Api.TeamsProfilePhoto do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_get_photo(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_get_photo(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_get_photo(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -63,7 +66,10 @@ defmodule MicrosoftGraph.Api.TeamsProfilePhoto do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_get_photo_content(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
+  @spec teams_get_photo_content(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
   def teams_get_photo_content(connection, team_id, _opts \\ []) do
     request =
       %{}
@@ -95,7 +101,15 @@ defmodule MicrosoftGraph.Api.TeamsProfilePhoto do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_update_photo(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_update_photo(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_update_photo(connection, team_id, microsoft_graph_profile_photo, _opts \\ []) do
     request =
       %{}
@@ -128,7 +142,10 @@ defmodule MicrosoftGraph.Api.TeamsProfilePhoto do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_update_photo_content(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_update_photo_content(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_update_photo_content(connection, team_id, body, _opts \\ []) do
     request =
       %{}

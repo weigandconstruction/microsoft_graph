@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphPerson do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -32,38 +32,46 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphPerson do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :birthday => String.t | nil,
-    :companyName => String.t | nil,
-    :department => String.t | nil,
-    :displayName => String.t | nil,
-    :givenName => String.t | nil,
-    :imAddress => String.t | nil,
-    :isFavorite => boolean() | nil,
-    :jobTitle => String.t | nil,
-    :officeLocation => String.t | nil,
-    :personNotes => String.t | nil,
-    :personType => MicrosoftGraph.Model.PersonPersonType.t | nil,
-    :phones => [MicrosoftGraph.Model.OrgContactPhonesInner.t] | nil,
-    :postalAddresses => [MicrosoftGraph.Model.PersonPostalAddressesInner.t] | nil,
-    :profession => String.t | nil,
-    :scoredEmailAddresses => [MicrosoftGraph.Model.PersonScoredEmailAddressesInner.t] | nil,
-    :surname => String.t | nil,
-    :userPrincipalName => String.t | nil,
-    :websites => [MicrosoftGraph.Model.PersonWebsitesInner.t] | nil,
-    :yomiCompany => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :birthday => String.t() | nil,
+          :companyName => String.t() | nil,
+          :department => String.t() | nil,
+          :displayName => String.t() | nil,
+          :givenName => String.t() | nil,
+          :imAddress => String.t() | nil,
+          :isFavorite => boolean() | nil,
+          :jobTitle => String.t() | nil,
+          :officeLocation => String.t() | nil,
+          :personNotes => String.t() | nil,
+          :personType => MicrosoftGraph.Model.PersonPersonType.t() | nil,
+          :phones => [MicrosoftGraph.Model.OrgContactPhonesInner.t()] | nil,
+          :postalAddresses => [MicrosoftGraph.Model.PersonPostalAddressesInner.t()] | nil,
+          :profession => String.t() | nil,
+          :scoredEmailAddresses =>
+            [MicrosoftGraph.Model.PersonScoredEmailAddressesInner.t()] | nil,
+          :surname => String.t() | nil,
+          :userPrincipalName => String.t() | nil,
+          :websites => [MicrosoftGraph.Model.PersonWebsitesInner.t()] | nil,
+          :yomiCompany => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:personType, :struct, MicrosoftGraph.Model.PersonPersonType)
-     |> Deserializer.deserialize(:phones, :list, MicrosoftGraph.Model.OrgContactPhonesInner)
-     |> Deserializer.deserialize(:postalAddresses, :list, MicrosoftGraph.Model.PersonPostalAddressesInner)
-     |> Deserializer.deserialize(:scoredEmailAddresses, :list, MicrosoftGraph.Model.PersonScoredEmailAddressesInner)
-     |> Deserializer.deserialize(:websites, :list, MicrosoftGraph.Model.PersonWebsitesInner)
+    |> Deserializer.deserialize(:personType, :struct, MicrosoftGraph.Model.PersonPersonType)
+    |> Deserializer.deserialize(:phones, :list, MicrosoftGraph.Model.OrgContactPhonesInner)
+    |> Deserializer.deserialize(
+      :postalAddresses,
+      :list,
+      MicrosoftGraph.Model.PersonPostalAddressesInner
+    )
+    |> Deserializer.deserialize(
+      :scoredEmailAddresses,
+      :list,
+      MicrosoftGraph.Model.PersonScoredEmailAddressesInner
+    )
+    |> Deserializer.deserialize(:websites, :list, MicrosoftGraph.Model.PersonWebsitesInner)
   end
 end
-

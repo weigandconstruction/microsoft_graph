@@ -14,17 +14,24 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAccessReviewScheduleSettingsRecurre
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :pattern => MicrosoftGraph.Model.MicrosoftGraphPatternedRecurrencePattern.t | nil,
-    :range => MicrosoftGraph.Model.MicrosoftGraphPatternedRecurrenceRange.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :pattern => MicrosoftGraph.Model.MicrosoftGraphPatternedRecurrencePattern.t() | nil,
+          :range => MicrosoftGraph.Model.MicrosoftGraphPatternedRecurrenceRange.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:pattern, :struct, MicrosoftGraph.Model.MicrosoftGraphPatternedRecurrencePattern)
-     |> Deserializer.deserialize(:range, :struct, MicrosoftGraph.Model.MicrosoftGraphPatternedRecurrenceRange)
+    |> Deserializer.deserialize(
+      :pattern,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphPatternedRecurrencePattern
+    )
+    |> Deserializer.deserialize(
+      :range,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphPatternedRecurrenceRange
+    )
   end
 end
-

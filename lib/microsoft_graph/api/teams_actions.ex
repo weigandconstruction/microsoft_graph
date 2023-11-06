@@ -25,7 +25,15 @@ defmodule MicrosoftGraph.Api.TeamsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_team_archive(Tesla.Env.client, String.t, MicrosoftGraph.Model.GroupsGroupTeamArchiveRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_team_archive(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.GroupsGroupTeamArchiveRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_team_archive(connection, team_id, groups_group_team_archive_request, _opts \\ []) do
     request =
       %{}
@@ -59,7 +67,15 @@ defmodule MicrosoftGraph.Api.TeamsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_team_channels_channel_complete_migration(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_team_channels_channel_complete_migration(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_team_channels_channel_complete_migration(connection, team_id, channel_id, _opts \\ []) do
     request =
       %{}
@@ -94,8 +110,23 @@ defmodule MicrosoftGraph.Api.TeamsActions do
   - `{:ok, MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAdd2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_team_channels_channel_members_add(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAddRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAdd2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_team_channels_channel_members_add(connection, team_id, channel_id, me_joined_teams_team_members_add_request, _opts \\ []) do
+  @spec teams_team_channels_channel_members_add(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAddRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAdd2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_team_channels_channel_members_add(
+        connection,
+        team_id,
+        channel_id,
+        me_joined_teams_team_members_add_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -130,13 +161,38 @@ defmodule MicrosoftGraph.Api.TeamsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_team_channels_channel_messages_chat_message_replies_chat_message_set_reaction(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_team_channels_channel_messages_chat_message_replies_chat_message_set_reaction(connection, team_id, channel_id, chat_message_id, chat_message_id1, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request, _opts \\ []) do
+  @spec teams_team_channels_channel_messages_chat_message_replies_chat_message_set_reaction(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_team_channels_channel_messages_chat_message_replies_chat_message_set_reaction(
+        connection,
+        team_id,
+        channel_id,
+        chat_message_id,
+        chat_message_id1,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/teams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/setReaction")
-      |> add_param(:body, :body, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request)
+      |> url(
+        "/teams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/setReaction"
+      )
+      |> add_param(
+        :body,
+        :body,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request
+      )
       |> Enum.into([])
 
     connection
@@ -166,12 +222,31 @@ defmodule MicrosoftGraph.Api.TeamsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_team_channels_channel_messages_chat_message_replies_chat_message_soft_delete(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_team_channels_channel_messages_chat_message_replies_chat_message_soft_delete(connection, team_id, channel_id, chat_message_id, chat_message_id1, _opts \\ []) do
+  @spec teams_team_channels_channel_messages_chat_message_replies_chat_message_soft_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_team_channels_channel_messages_chat_message_replies_chat_message_soft_delete(
+        connection,
+        team_id,
+        channel_id,
+        chat_message_id,
+        chat_message_id1,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/teams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/softDelete")
+      |> url(
+        "/teams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/softDelete"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -202,12 +277,31 @@ defmodule MicrosoftGraph.Api.TeamsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_team_channels_channel_messages_chat_message_replies_chat_message_undo_soft_delete(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_team_channels_channel_messages_chat_message_replies_chat_message_undo_soft_delete(connection, team_id, channel_id, chat_message_id, chat_message_id1, _opts \\ []) do
+  @spec teams_team_channels_channel_messages_chat_message_replies_chat_message_undo_soft_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_team_channels_channel_messages_chat_message_replies_chat_message_undo_soft_delete(
+        connection,
+        team_id,
+        channel_id,
+        chat_message_id,
+        chat_message_id1,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/teams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/undoSoftDelete")
+      |> url(
+        "/teams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/undoSoftDelete"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -238,13 +332,38 @@ defmodule MicrosoftGraph.Api.TeamsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_team_channels_channel_messages_chat_message_replies_chat_message_unset_reaction(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_team_channels_channel_messages_chat_message_replies_chat_message_unset_reaction(connection, team_id, channel_id, chat_message_id, chat_message_id1, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request, _opts \\ []) do
+  @spec teams_team_channels_channel_messages_chat_message_replies_chat_message_unset_reaction(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_team_channels_channel_messages_chat_message_replies_chat_message_unset_reaction(
+        connection,
+        team_id,
+        channel_id,
+        chat_message_id,
+        chat_message_id1,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/teams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/unsetReaction")
-      |> add_param(:body, :body, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request)
+      |> url(
+        "/teams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/unsetReaction"
+      )
+      |> add_param(
+        :body,
+        :body,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request
+      )
       |> Enum.into([])
 
     connection
@@ -273,13 +392,34 @@ defmodule MicrosoftGraph.Api.TeamsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_team_channels_channel_messages_chat_message_set_reaction(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_team_channels_channel_messages_chat_message_set_reaction(connection, team_id, channel_id, chat_message_id, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request, _opts \\ []) do
+  @spec teams_team_channels_channel_messages_chat_message_set_reaction(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_team_channels_channel_messages_chat_message_set_reaction(
+        connection,
+        team_id,
+        channel_id,
+        chat_message_id,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/teams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/setReaction")
-      |> add_param(:body, :body, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request)
+      |> add_param(
+        :body,
+        :body,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request
+      )
       |> Enum.into([])
 
     connection
@@ -308,8 +448,23 @@ defmodule MicrosoftGraph.Api.TeamsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_team_channels_channel_messages_chat_message_soft_delete(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_team_channels_channel_messages_chat_message_soft_delete(connection, team_id, channel_id, chat_message_id, _opts \\ []) do
+  @spec teams_team_channels_channel_messages_chat_message_soft_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_team_channels_channel_messages_chat_message_soft_delete(
+        connection,
+        team_id,
+        channel_id,
+        chat_message_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -343,12 +498,29 @@ defmodule MicrosoftGraph.Api.TeamsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_team_channels_channel_messages_chat_message_undo_soft_delete(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_team_channels_channel_messages_chat_message_undo_soft_delete(connection, team_id, channel_id, chat_message_id, _opts \\ []) do
+  @spec teams_team_channels_channel_messages_chat_message_undo_soft_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_team_channels_channel_messages_chat_message_undo_soft_delete(
+        connection,
+        team_id,
+        channel_id,
+        chat_message_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/teams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/undoSoftDelete")
+      |> url(
+        "/teams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/undoSoftDelete"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -378,13 +550,34 @@ defmodule MicrosoftGraph.Api.TeamsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_team_channels_channel_messages_chat_message_unset_reaction(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_team_channels_channel_messages_chat_message_unset_reaction(connection, team_id, channel_id, chat_message_id, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request, _opts \\ []) do
+  @spec teams_team_channels_channel_messages_chat_message_unset_reaction(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_team_channels_channel_messages_chat_message_unset_reaction(
+        connection,
+        team_id,
+        channel_id,
+        chat_message_id,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/teams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/unsetReaction")
-      |> add_param(:body, :body, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request)
+      |> add_param(
+        :body,
+        :body,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request
+      )
       |> Enum.into([])
 
     connection
@@ -412,7 +605,15 @@ defmodule MicrosoftGraph.Api.TeamsActions do
   - `{:ok, MicrosoftGraph.Model.TeamsTeamChannelsChannelProvisionEmail2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_team_channels_channel_provision_email(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.TeamsTeamChannelsChannelProvisionEmail2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec teams_team_channels_channel_provision_email(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.TeamsTeamChannelsChannelProvisionEmail2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def teams_team_channels_channel_provision_email(connection, team_id, channel_id, _opts \\ []) do
     request =
       %{}
@@ -446,7 +647,15 @@ defmodule MicrosoftGraph.Api.TeamsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_team_channels_channel_remove_email(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_team_channels_channel_remove_email(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_team_channels_channel_remove_email(connection, team_id, channel_id, _opts \\ []) do
     request =
       %{}
@@ -480,7 +689,15 @@ defmodule MicrosoftGraph.Api.TeamsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_team_clone(Tesla.Env.client, String.t, MicrosoftGraph.Model.TeamsTeamCloneRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_team_clone(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.TeamsTeamCloneRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_team_clone(connection, team_id, teams_team_clone_request, _opts \\ []) do
     request =
       %{}
@@ -513,7 +730,10 @@ defmodule MicrosoftGraph.Api.TeamsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_team_complete_migration(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_team_complete_migration(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_team_complete_migration(connection, team_id, _opts \\ []) do
     request =
       %{}
@@ -548,13 +768,32 @@ defmodule MicrosoftGraph.Api.TeamsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_team_installed_apps_teams_app_installation_upgrade(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.UsersUserChatsChatInstalledAppsTeamsAppInstallationUpgradeRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_team_installed_apps_teams_app_installation_upgrade(connection, team_id, teams_app_installation_id, users_user_chats_chat_installed_apps_teams_app_installation_upgrade_request, _opts \\ []) do
+  @spec teams_team_installed_apps_teams_app_installation_upgrade(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserChatsChatInstalledAppsTeamsAppInstallationUpgradeRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_team_installed_apps_teams_app_installation_upgrade(
+        connection,
+        team_id,
+        teams_app_installation_id,
+        users_user_chats_chat_installed_apps_teams_app_installation_upgrade_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/teams/#{team_id}/installedApps/#{teams_app_installation_id}/upgrade")
-      |> add_param(:body, :body, users_user_chats_chat_installed_apps_teams_app_installation_upgrade_request)
+      |> add_param(
+        :body,
+        :body,
+        users_user_chats_chat_installed_apps_teams_app_installation_upgrade_request
+      )
       |> Enum.into([])
 
     connection
@@ -582,8 +821,21 @@ defmodule MicrosoftGraph.Api.TeamsActions do
   - `{:ok, MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAdd2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_team_members_add(Tesla.Env.client, String.t, MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAddRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAdd2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_team_members_add(connection, team_id, me_joined_teams_team_members_add_request, _opts \\ []) do
+  @spec teams_team_members_add(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAddRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAdd2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_team_members_add(
+        connection,
+        team_id,
+        me_joined_teams_team_members_add_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -615,7 +867,10 @@ defmodule MicrosoftGraph.Api.TeamsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_team_primary_channel_complete_migration(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_team_primary_channel_complete_migration(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_team_primary_channel_complete_migration(connection, team_id, _opts \\ []) do
     request =
       %{}
@@ -649,8 +904,21 @@ defmodule MicrosoftGraph.Api.TeamsActions do
   - `{:ok, MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAdd2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_team_primary_channel_members_add(Tesla.Env.client, String.t, MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAddRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAdd2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_team_primary_channel_members_add(connection, team_id, me_joined_teams_team_members_add_request, _opts \\ []) do
+  @spec teams_team_primary_channel_members_add(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAddRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAdd2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_team_primary_channel_members_add(
+        connection,
+        team_id,
+        me_joined_teams_team_members_add_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -684,13 +952,36 @@ defmodule MicrosoftGraph.Api.TeamsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_team_primary_channel_messages_chat_message_replies_chat_message_set_reaction(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_team_primary_channel_messages_chat_message_replies_chat_message_set_reaction(connection, team_id, chat_message_id, chat_message_id1, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request, _opts \\ []) do
+  @spec teams_team_primary_channel_messages_chat_message_replies_chat_message_set_reaction(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_team_primary_channel_messages_chat_message_replies_chat_message_set_reaction(
+        connection,
+        team_id,
+        chat_message_id,
+        chat_message_id1,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/teams/#{team_id}/primaryChannel/messages/#{chat_message_id}/replies/#{chat_message_id1}/setReaction")
-      |> add_param(:body, :body, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request)
+      |> url(
+        "/teams/#{team_id}/primaryChannel/messages/#{chat_message_id}/replies/#{chat_message_id1}/setReaction"
+      )
+      |> add_param(
+        :body,
+        :body,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request
+      )
       |> Enum.into([])
 
     connection
@@ -719,12 +1010,29 @@ defmodule MicrosoftGraph.Api.TeamsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_team_primary_channel_messages_chat_message_replies_chat_message_soft_delete(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_team_primary_channel_messages_chat_message_replies_chat_message_soft_delete(connection, team_id, chat_message_id, chat_message_id1, _opts \\ []) do
+  @spec teams_team_primary_channel_messages_chat_message_replies_chat_message_soft_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_team_primary_channel_messages_chat_message_replies_chat_message_soft_delete(
+        connection,
+        team_id,
+        chat_message_id,
+        chat_message_id1,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/teams/#{team_id}/primaryChannel/messages/#{chat_message_id}/replies/#{chat_message_id1}/softDelete")
+      |> url(
+        "/teams/#{team_id}/primaryChannel/messages/#{chat_message_id}/replies/#{chat_message_id1}/softDelete"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -754,12 +1062,29 @@ defmodule MicrosoftGraph.Api.TeamsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_team_primary_channel_messages_chat_message_replies_chat_message_undo_soft_delete(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_team_primary_channel_messages_chat_message_replies_chat_message_undo_soft_delete(connection, team_id, chat_message_id, chat_message_id1, _opts \\ []) do
+  @spec teams_team_primary_channel_messages_chat_message_replies_chat_message_undo_soft_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_team_primary_channel_messages_chat_message_replies_chat_message_undo_soft_delete(
+        connection,
+        team_id,
+        chat_message_id,
+        chat_message_id1,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/teams/#{team_id}/primaryChannel/messages/#{chat_message_id}/replies/#{chat_message_id1}/undoSoftDelete")
+      |> url(
+        "/teams/#{team_id}/primaryChannel/messages/#{chat_message_id}/replies/#{chat_message_id1}/undoSoftDelete"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -789,13 +1114,36 @@ defmodule MicrosoftGraph.Api.TeamsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_team_primary_channel_messages_chat_message_replies_chat_message_unset_reaction(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_team_primary_channel_messages_chat_message_replies_chat_message_unset_reaction(connection, team_id, chat_message_id, chat_message_id1, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request, _opts \\ []) do
+  @spec teams_team_primary_channel_messages_chat_message_replies_chat_message_unset_reaction(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_team_primary_channel_messages_chat_message_replies_chat_message_unset_reaction(
+        connection,
+        team_id,
+        chat_message_id,
+        chat_message_id1,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/teams/#{team_id}/primaryChannel/messages/#{chat_message_id}/replies/#{chat_message_id1}/unsetReaction")
-      |> add_param(:body, :body, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request)
+      |> url(
+        "/teams/#{team_id}/primaryChannel/messages/#{chat_message_id}/replies/#{chat_message_id1}/unsetReaction"
+      )
+      |> add_param(
+        :body,
+        :body,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request
+      )
       |> Enum.into([])
 
     connection
@@ -823,13 +1171,32 @@ defmodule MicrosoftGraph.Api.TeamsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_team_primary_channel_messages_chat_message_set_reaction(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_team_primary_channel_messages_chat_message_set_reaction(connection, team_id, chat_message_id, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request, _opts \\ []) do
+  @spec teams_team_primary_channel_messages_chat_message_set_reaction(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_team_primary_channel_messages_chat_message_set_reaction(
+        connection,
+        team_id,
+        chat_message_id,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/teams/#{team_id}/primaryChannel/messages/#{chat_message_id}/setReaction")
-      |> add_param(:body, :body, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request)
+      |> add_param(
+        :body,
+        :body,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request
+      )
       |> Enum.into([])
 
     connection
@@ -857,8 +1224,21 @@ defmodule MicrosoftGraph.Api.TeamsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_team_primary_channel_messages_chat_message_soft_delete(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_team_primary_channel_messages_chat_message_soft_delete(connection, team_id, chat_message_id, _opts \\ []) do
+  @spec teams_team_primary_channel_messages_chat_message_soft_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_team_primary_channel_messages_chat_message_soft_delete(
+        connection,
+        team_id,
+        chat_message_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -891,8 +1271,21 @@ defmodule MicrosoftGraph.Api.TeamsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_team_primary_channel_messages_chat_message_undo_soft_delete(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_team_primary_channel_messages_chat_message_undo_soft_delete(connection, team_id, chat_message_id, _opts \\ []) do
+  @spec teams_team_primary_channel_messages_chat_message_undo_soft_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_team_primary_channel_messages_chat_message_undo_soft_delete(
+        connection,
+        team_id,
+        chat_message_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -925,13 +1318,32 @@ defmodule MicrosoftGraph.Api.TeamsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_team_primary_channel_messages_chat_message_unset_reaction(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_team_primary_channel_messages_chat_message_unset_reaction(connection, team_id, chat_message_id, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request, _opts \\ []) do
+  @spec teams_team_primary_channel_messages_chat_message_unset_reaction(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_team_primary_channel_messages_chat_message_unset_reaction(
+        connection,
+        team_id,
+        chat_message_id,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/teams/#{team_id}/primaryChannel/messages/#{chat_message_id}/unsetReaction")
-      |> add_param(:body, :body, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request)
+      |> add_param(
+        :body,
+        :body,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request
+      )
       |> Enum.into([])
 
     connection
@@ -958,7 +1370,10 @@ defmodule MicrosoftGraph.Api.TeamsActions do
   - `{:ok, MicrosoftGraph.Model.TeamsTeamChannelsChannelProvisionEmail2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_team_primary_channel_provision_email(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.TeamsTeamChannelsChannelProvisionEmail2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec teams_team_primary_channel_provision_email(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.TeamsTeamChannelsChannelProvisionEmail2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def teams_team_primary_channel_provision_email(connection, team_id, _opts \\ []) do
     request =
       %{}
@@ -991,7 +1406,10 @@ defmodule MicrosoftGraph.Api.TeamsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_team_primary_channel_remove_email(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_team_primary_channel_remove_email(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_team_primary_channel_remove_email(connection, team_id, _opts \\ []) do
     request =
       %{}
@@ -1025,8 +1443,21 @@ defmodule MicrosoftGraph.Api.TeamsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_team_schedule_share(Tesla.Env.client, String.t, MicrosoftGraph.Model.GroupsGroupTeamScheduleShareRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_team_schedule_share(connection, team_id, groups_group_team_schedule_share_request, _opts \\ []) do
+  @spec teams_team_schedule_share(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.GroupsGroupTeamScheduleShareRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_team_schedule_share(
+        connection,
+        team_id,
+        groups_group_team_schedule_share_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1059,8 +1490,21 @@ defmodule MicrosoftGraph.Api.TeamsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_team_send_activity_notification(Tesla.Env.client, String.t, MicrosoftGraph.Model.MeJoinedTeamsTeamSendActivityNotificationRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_team_send_activity_notification(connection, team_id, me_joined_teams_team_send_activity_notification_request, _opts \\ []) do
+  @spec teams_team_send_activity_notification(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MeJoinedTeamsTeamSendActivityNotificationRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_team_send_activity_notification(
+        connection,
+        team_id,
+        me_joined_teams_team_send_activity_notification_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1092,7 +1536,10 @@ defmodule MicrosoftGraph.Api.TeamsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_team_unarchive(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_team_unarchive(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_team_unarchive(connection, team_id, _opts \\ []) do
     request =
       %{}

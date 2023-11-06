@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphUnifiedRolePermission do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphUnifiedRolePermission do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :allowedResourceActions => [String.t] | nil,
-    :condition => String.t | nil,
-    :excludedResourceActions => [String.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :allowedResourceActions => [String.t()] | nil,
+          :condition => String.t() | nil,
+          :excludedResourceActions => [String.t()] | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

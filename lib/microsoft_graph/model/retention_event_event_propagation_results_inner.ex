@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.RetentionEventEventPropagationResultsInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,18 +16,22 @@ defmodule MicrosoftGraph.Model.RetentionEventEventPropagationResultsInner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :location => String.t | nil,
-    :serviceName => String.t | nil,
-    :status => MicrosoftGraph.Model.MicrosoftGraphSecurityEventPropagationResultStatus.t | nil,
-    :statusInformation => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :location => String.t() | nil,
+          :serviceName => String.t() | nil,
+          :status =>
+            MicrosoftGraph.Model.MicrosoftGraphSecurityEventPropagationResultStatus.t() | nil,
+          :statusInformation => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.MicrosoftGraphSecurityEventPropagationResultStatus)
+    |> Deserializer.deserialize(
+      :status,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityEventPropagationResultStatus
+    )
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DrivesDriveListContentTypesContentTypeIsPublished2XxResponse do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,11 +12,10 @@ defmodule MicrosoftGraph.Model.DrivesDriveListContentTypesContentTypeIsPublished
   ]
 
   @type t :: %__MODULE__{
-    :value => boolean() | nil
-  }
+          :value => boolean() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

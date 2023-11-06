@@ -16,19 +16,27 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAttributeMappingSource do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :expression => String.t | nil,
-    :name => String.t | nil,
-    :parameters => [MicrosoftGraph.Model.MicrosoftGraphAttributeMappingSourceParametersInner.t] | nil,
-    :type => MicrosoftGraph.Model.MicrosoftGraphAttributeMappingSourceType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :expression => String.t() | nil,
+          :name => String.t() | nil,
+          :parameters =>
+            [MicrosoftGraph.Model.MicrosoftGraphAttributeMappingSourceParametersInner.t()] | nil,
+          :type => MicrosoftGraph.Model.MicrosoftGraphAttributeMappingSourceType.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:parameters, :list, MicrosoftGraph.Model.MicrosoftGraphAttributeMappingSourceParametersInner)
-     |> Deserializer.deserialize(:type, :struct, MicrosoftGraph.Model.MicrosoftGraphAttributeMappingSourceType)
+    |> Deserializer.deserialize(
+      :parameters,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAttributeMappingSourceParametersInner
+    )
+    |> Deserializer.deserialize(
+      :type,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAttributeMappingSourceType
+    )
   end
 end
-

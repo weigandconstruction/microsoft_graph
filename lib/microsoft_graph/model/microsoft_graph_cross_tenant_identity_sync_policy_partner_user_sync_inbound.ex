@@ -13,12 +13,11 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphCrossTenantIdentitySyncPolicyPartne
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :isSyncAllowed => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :isSyncAllowed => boolean() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

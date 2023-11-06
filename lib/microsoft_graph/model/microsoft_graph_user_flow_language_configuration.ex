@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguageConfiguration do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,20 +17,27 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguageConfiguration do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :defaultPages => [MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguagePage.t] | nil,
-    :displayName => String.t | nil,
-    :isEnabled => boolean() | nil,
-    :overridesPages => [MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguagePage.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :defaultPages => [MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguagePage.t()] | nil,
+          :displayName => String.t() | nil,
+          :isEnabled => boolean() | nil,
+          :overridesPages => [MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguagePage.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:defaultPages, :list, MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguagePage)
-     |> Deserializer.deserialize(:overridesPages, :list, MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguagePage)
+    |> Deserializer.deserialize(
+      :defaultPages,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguagePage
+    )
+    |> Deserializer.deserialize(
+      :overridesPages,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguagePage
+    )
   end
 end
-

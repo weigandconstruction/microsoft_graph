@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphPrinterCreateOperation do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,21 +17,28 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphPrinterCreateOperation do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :status => MicrosoftGraph.Model.MicrosoftGraphPrintOperationStatus.t | nil,
-    :certificate => String.t | nil,
-    :printer => MicrosoftGraph.Model.PrinterCreateOperationPrinter.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :status => MicrosoftGraph.Model.MicrosoftGraphPrintOperationStatus.t() | nil,
+          :certificate => String.t() | nil,
+          :printer => MicrosoftGraph.Model.PrinterCreateOperationPrinter.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.MicrosoftGraphPrintOperationStatus)
-     |> Deserializer.deserialize(:printer, :struct, MicrosoftGraph.Model.PrinterCreateOperationPrinter)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :status,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphPrintOperationStatus
+    )
+    |> Deserializer.deserialize(
+      :printer,
+      :struct,
+      MicrosoftGraph.Model.PrinterCreateOperationPrinter
+    )
   end
 end
-

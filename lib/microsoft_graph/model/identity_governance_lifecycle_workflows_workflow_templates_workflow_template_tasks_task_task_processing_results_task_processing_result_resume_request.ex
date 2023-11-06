@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowTemplatesWorkflowTemplateTasksTaskTaskProcessingResultsTaskProcessingResultResumeRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,21 @@ defmodule MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsWorkflowTempl
   ]
 
   @type t :: %__MODULE__{
-    :data => MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceCustomTaskExtensionCallbackData.t | nil,
-    :source => String.t | nil,
-    :type => String.t | nil
-  }
+          :data =>
+            MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceCustomTaskExtensionCallbackData.t()
+            | nil,
+          :source => String.t() | nil,
+          :type => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:data, :struct, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceCustomTaskExtensionCallbackData)
+    |> Deserializer.deserialize(
+      :data,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceCustomTaskExtensionCallbackData
+    )
   end
 end
-

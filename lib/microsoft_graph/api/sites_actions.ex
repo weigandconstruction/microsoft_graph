@@ -24,7 +24,14 @@ defmodule MicrosoftGraph.Api.SitesActions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfSite1.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_add(Tesla.Env.client, MicrosoftGraph.Model.GroupsGroupSitesRemoveRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfSite1.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_add(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.GroupsGroupSitesRemoveRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfSite1.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_add(connection, groups_group_sites_remove_request, _opts \\ []) do
     request =
       %{}
@@ -57,7 +64,14 @@ defmodule MicrosoftGraph.Api.SitesActions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfSite1.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_remove(Tesla.Env.client, MicrosoftGraph.Model.GroupsGroupSitesRemoveRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfSite1.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_remove(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.GroupsGroupSitesRemoveRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfSite1.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_remove(connection, groups_group_sites_remove_request, _opts \\ []) do
     request =
       %{}
@@ -91,8 +105,22 @@ defmodule MicrosoftGraph.Api.SitesActions do
   - `{:ok, MicrosoftGraph.Model.SitesSiteContentTypesAddCopyFromContentTypeHub2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_site_content_types_add_copy(Tesla.Env.client, String.t, MicrosoftGraph.Model.SitesSiteContentTypesAddCopyRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.SitesSiteContentTypesAddCopyFromContentTypeHub2XxResponse.t} | {:error, Tesla.Env.t}
-  def sites_site_content_types_add_copy(connection, site_id, sites_site_content_types_add_copy_request, _opts \\ []) do
+  @spec sites_site_content_types_add_copy(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.SitesSiteContentTypesAddCopyRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.SitesSiteContentTypesAddCopyFromContentTypeHub2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_site_content_types_add_copy(
+        connection,
+        site_id,
+        sites_site_content_types_add_copy_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -125,8 +153,22 @@ defmodule MicrosoftGraph.Api.SitesActions do
   - `{:ok, MicrosoftGraph.Model.SitesSiteContentTypesAddCopyFromContentTypeHub2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_site_content_types_add_copy_from_content_type_hub(Tesla.Env.client, String.t, MicrosoftGraph.Model.SitesSiteContentTypesAddCopyFromContentTypeHubRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.SitesSiteContentTypesAddCopyFromContentTypeHub2XxResponse.t} | {:error, Tesla.Env.t}
-  def sites_site_content_types_add_copy_from_content_type_hub(connection, site_id, sites_site_content_types_add_copy_from_content_type_hub_request, _opts \\ []) do
+  @spec sites_site_content_types_add_copy_from_content_type_hub(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.SitesSiteContentTypesAddCopyFromContentTypeHubRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.SitesSiteContentTypesAddCopyFromContentTypeHub2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_site_content_types_add_copy_from_content_type_hub(
+        connection,
+        site_id,
+        sites_site_content_types_add_copy_from_content_type_hub_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -160,13 +202,32 @@ defmodule MicrosoftGraph.Api.SitesActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_site_content_types_content_type_associate_with_hub_sites(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.SitesSiteListsListContentTypesContentTypeAssociateWithHubSitesRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_site_content_types_content_type_associate_with_hub_sites(connection, site_id, content_type_id, sites_site_lists_list_content_types_content_type_associate_with_hub_sites_request, _opts \\ []) do
+  @spec sites_site_content_types_content_type_associate_with_hub_sites(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.SitesSiteListsListContentTypesContentTypeAssociateWithHubSitesRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_site_content_types_content_type_associate_with_hub_sites(
+        connection,
+        site_id,
+        content_type_id,
+        sites_site_lists_list_content_types_content_type_associate_with_hub_sites_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/sites/#{site_id}/contentTypes/#{content_type_id}/associateWithHubSites")
-      |> add_param(:body, :body, sites_site_lists_list_content_types_content_type_associate_with_hub_sites_request)
+      |> add_param(
+        :body,
+        :body,
+        sites_site_lists_list_content_types_content_type_associate_with_hub_sites_request
+      )
       |> Enum.into([])
 
     connection
@@ -195,13 +256,32 @@ defmodule MicrosoftGraph.Api.SitesActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_site_content_types_content_type_copy_to_default_content_location(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.GroupsGroupSitesSiteContentTypesContentTypeCopyToDefaultContentLocationRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_site_content_types_content_type_copy_to_default_content_location(connection, site_id, content_type_id, groups_group_sites_site_content_types_content_type_copy_to_default_content_location_request, _opts \\ []) do
+  @spec sites_site_content_types_content_type_copy_to_default_content_location(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.GroupsGroupSitesSiteContentTypesContentTypeCopyToDefaultContentLocationRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_site_content_types_content_type_copy_to_default_content_location(
+        connection,
+        site_id,
+        content_type_id,
+        groups_group_sites_site_content_types_content_type_copy_to_default_content_location_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/sites/#{site_id}/contentTypes/#{content_type_id}/copyToDefaultContentLocation")
-      |> add_param(:body, :body, groups_group_sites_site_content_types_content_type_copy_to_default_content_location_request)
+      |> add_param(
+        :body,
+        :body,
+        groups_group_sites_site_content_types_content_type_copy_to_default_content_location_request
+      )
       |> Enum.into([])
 
     connection
@@ -229,8 +309,21 @@ defmodule MicrosoftGraph.Api.SitesActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_site_content_types_content_type_publish(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_site_content_types_content_type_publish(connection, site_id, content_type_id, _opts \\ []) do
+  @spec sites_site_content_types_content_type_publish(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_site_content_types_content_type_publish(
+        connection,
+        site_id,
+        content_type_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -263,8 +356,21 @@ defmodule MicrosoftGraph.Api.SitesActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_site_content_types_content_type_unpublish(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_site_content_types_content_type_unpublish(connection, site_id, content_type_id, _opts \\ []) do
+  @spec sites_site_content_types_content_type_unpublish(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_site_content_types_content_type_unpublish(
+        connection,
+        site_id,
+        content_type_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -298,8 +404,24 @@ defmodule MicrosoftGraph.Api.SitesActions do
   - `{:ok, MicrosoftGraph.Model.SitesSiteContentTypesAddCopyFromContentTypeHub2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_site_lists_list_content_types_add_copy(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.SitesSiteContentTypesAddCopyRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.SitesSiteContentTypesAddCopyFromContentTypeHub2XxResponse.t} | {:error, Tesla.Env.t}
-  def sites_site_lists_list_content_types_add_copy(connection, site_id, list_id, sites_site_content_types_add_copy_request, _opts \\ []) do
+  @spec sites_site_lists_list_content_types_add_copy(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.SitesSiteContentTypesAddCopyRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.SitesSiteContentTypesAddCopyFromContentTypeHub2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_site_lists_list_content_types_add_copy(
+        connection,
+        site_id,
+        list_id,
+        sites_site_content_types_add_copy_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -333,8 +455,24 @@ defmodule MicrosoftGraph.Api.SitesActions do
   - `{:ok, MicrosoftGraph.Model.SitesSiteContentTypesAddCopyFromContentTypeHub2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_site_lists_list_content_types_add_copy_from_content_type_hub(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.SitesSiteContentTypesAddCopyFromContentTypeHubRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.SitesSiteContentTypesAddCopyFromContentTypeHub2XxResponse.t} | {:error, Tesla.Env.t}
-  def sites_site_lists_list_content_types_add_copy_from_content_type_hub(connection, site_id, list_id, sites_site_content_types_add_copy_from_content_type_hub_request, _opts \\ []) do
+  @spec sites_site_lists_list_content_types_add_copy_from_content_type_hub(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.SitesSiteContentTypesAddCopyFromContentTypeHubRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.SitesSiteContentTypesAddCopyFromContentTypeHub2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_site_lists_list_content_types_add_copy_from_content_type_hub(
+        connection,
+        site_id,
+        list_id,
+        sites_site_content_types_add_copy_from_content_type_hub_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -369,13 +507,36 @@ defmodule MicrosoftGraph.Api.SitesActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_site_lists_list_content_types_content_type_associate_with_hub_sites(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.SitesSiteListsListContentTypesContentTypeAssociateWithHubSitesRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_site_lists_list_content_types_content_type_associate_with_hub_sites(connection, site_id, list_id, content_type_id, sites_site_lists_list_content_types_content_type_associate_with_hub_sites_request, _opts \\ []) do
+  @spec sites_site_lists_list_content_types_content_type_associate_with_hub_sites(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.SitesSiteListsListContentTypesContentTypeAssociateWithHubSitesRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_site_lists_list_content_types_content_type_associate_with_hub_sites(
+        connection,
+        site_id,
+        list_id,
+        content_type_id,
+        sites_site_lists_list_content_types_content_type_associate_with_hub_sites_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/lists/#{list_id}/contentTypes/#{content_type_id}/associateWithHubSites")
-      |> add_param(:body, :body, sites_site_lists_list_content_types_content_type_associate_with_hub_sites_request)
+      |> url(
+        "/sites/#{site_id}/lists/#{list_id}/contentTypes/#{content_type_id}/associateWithHubSites"
+      )
+      |> add_param(
+        :body,
+        :body,
+        sites_site_lists_list_content_types_content_type_associate_with_hub_sites_request
+      )
       |> Enum.into([])
 
     connection
@@ -405,13 +566,36 @@ defmodule MicrosoftGraph.Api.SitesActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_site_lists_list_content_types_content_type_copy_to_default_content_location(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.GroupsGroupSitesSiteContentTypesContentTypeCopyToDefaultContentLocationRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_site_lists_list_content_types_content_type_copy_to_default_content_location(connection, site_id, list_id, content_type_id, groups_group_sites_site_content_types_content_type_copy_to_default_content_location_request, _opts \\ []) do
+  @spec sites_site_lists_list_content_types_content_type_copy_to_default_content_location(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.GroupsGroupSitesSiteContentTypesContentTypeCopyToDefaultContentLocationRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_site_lists_list_content_types_content_type_copy_to_default_content_location(
+        connection,
+        site_id,
+        list_id,
+        content_type_id,
+        groups_group_sites_site_content_types_content_type_copy_to_default_content_location_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/lists/#{list_id}/contentTypes/#{content_type_id}/copyToDefaultContentLocation")
-      |> add_param(:body, :body, groups_group_sites_site_content_types_content_type_copy_to_default_content_location_request)
+      |> url(
+        "/sites/#{site_id}/lists/#{list_id}/contentTypes/#{content_type_id}/copyToDefaultContentLocation"
+      )
+      |> add_param(
+        :body,
+        :body,
+        groups_group_sites_site_content_types_content_type_copy_to_default_content_location_request
+      )
       |> Enum.into([])
 
     connection
@@ -440,8 +624,23 @@ defmodule MicrosoftGraph.Api.SitesActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_site_lists_list_content_types_content_type_publish(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_site_lists_list_content_types_content_type_publish(connection, site_id, list_id, content_type_id, _opts \\ []) do
+  @spec sites_site_lists_list_content_types_content_type_publish(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_site_lists_list_content_types_content_type_publish(
+        connection,
+        site_id,
+        list_id,
+        content_type_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -475,8 +674,23 @@ defmodule MicrosoftGraph.Api.SitesActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_site_lists_list_content_types_content_type_unpublish(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_site_lists_list_content_types_content_type_unpublish(connection, site_id, list_id, content_type_id, _opts \\ []) do
+  @spec sites_site_lists_list_content_types_content_type_unpublish(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_site_lists_list_content_types_content_type_unpublish(
+        connection,
+        site_id,
+        list_id,
+        content_type_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -511,12 +725,31 @@ defmodule MicrosoftGraph.Api.SitesActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_site_lists_list_items_list_item_document_set_versions_document_set_version_restore(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_site_lists_list_items_list_item_document_set_versions_document_set_version_restore(connection, site_id, list_id, list_item_id, document_set_version_id, _opts \\ []) do
+  @spec sites_site_lists_list_items_list_item_document_set_versions_document_set_version_restore(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_site_lists_list_items_list_item_document_set_versions_document_set_version_restore(
+        connection,
+        site_id,
+        list_id,
+        list_item_id,
+        document_set_version_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/lists/#{list_id}/items/#{list_item_id}/documentSetVersions/#{document_set_version_id}/restore")
+      |> url(
+        "/sites/#{site_id}/lists/#{list_id}/items/#{list_item_id}/documentSetVersions/#{document_set_version_id}/restore"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -547,12 +780,31 @@ defmodule MicrosoftGraph.Api.SitesActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_site_lists_list_items_list_item_versions_list_item_version_restore_version(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_site_lists_list_items_list_item_versions_list_item_version_restore_version(connection, site_id, list_id, list_item_id, list_item_version_id, _opts \\ []) do
+  @spec sites_site_lists_list_items_list_item_versions_list_item_version_restore_version(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_site_lists_list_items_list_item_versions_list_item_version_restore_version(
+        connection,
+        site_id,
+        list_id,
+        list_item_id,
+        list_item_version_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/lists/#{list_id}/items/#{list_item_id}/versions/#{list_item_version_id}/restoreVersion")
+      |> url(
+        "/sites/#{site_id}/lists/#{list_id}/items/#{list_item_id}/versions/#{list_item_version_id}/restoreVersion"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -582,8 +834,23 @@ defmodule MicrosoftGraph.Api.SitesActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_site_lists_list_subscriptions_subscription_reauthorize(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_site_lists_list_subscriptions_subscription_reauthorize(connection, site_id, list_id, subscription_id, _opts \\ []) do
+  @spec sites_site_lists_list_subscriptions_subscription_reauthorize(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_site_lists_list_subscriptions_subscription_reauthorize(
+        connection,
+        site_id,
+        list_id,
+        subscription_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -616,8 +883,22 @@ defmodule MicrosoftGraph.Api.SitesActions do
   - `{:ok, MicrosoftGraph.Model.UsersUserOnenoteNotebooksGetNotebookFromWebUrl2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_site_onenote_notebooks_get_notebook_from_web_url(Tesla.Env.client, String.t, MicrosoftGraph.Model.UsersUserOnenoteNotebooksGetNotebookFromWebUrlRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserOnenoteNotebooksGetNotebookFromWebUrl2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_site_onenote_notebooks_get_notebook_from_web_url(connection, site_id, users_user_onenote_notebooks_get_notebook_from_web_url_request, _opts \\ []) do
+  @spec sites_site_onenote_notebooks_get_notebook_from_web_url(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserOnenoteNotebooksGetNotebookFromWebUrlRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.UsersUserOnenoteNotebooksGetNotebookFromWebUrl2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_site_onenote_notebooks_get_notebook_from_web_url(
+        connection,
+        site_id,
+        users_user_onenote_notebooks_get_notebook_from_web_url_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -651,8 +932,24 @@ defmodule MicrosoftGraph.Api.SitesActions do
   - `{:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_site_onenote_notebooks_notebook_copy_notebook(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeOnenoteNotebooksNotebookCopyNotebookRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_site_onenote_notebooks_notebook_copy_notebook(connection, site_id, notebook_id, me_onenote_notebooks_notebook_copy_notebook_request, _opts \\ []) do
+  @spec sites_site_onenote_notebooks_notebook_copy_notebook(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeOnenoteNotebooksNotebookCopyNotebookRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_site_onenote_notebooks_notebook_copy_notebook(
+        connection,
+        site_id,
+        notebook_id,
+        me_onenote_notebooks_notebook_copy_notebook_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -663,7 +960,8 @@ defmodule MicrosoftGraph.Api.SitesActions do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -688,19 +986,46 @@ defmodule MicrosoftGraph.Api.SitesActions do
   - `{:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_site_onenote_notebooks_notebook_section_groups_section_group_sections_onenote_section_copy_to_notebook(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MeOnenoteSectionsOnenoteSectionCopyToSectionGroupRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_site_onenote_notebooks_notebook_section_groups_section_group_sections_onenote_section_copy_to_notebook(connection, site_id, notebook_id, section_group_id, onenote_section_id, me_onenote_sections_onenote_section_copy_to_section_group_request, _opts \\ []) do
+  @spec sites_site_onenote_notebooks_notebook_section_groups_section_group_sections_onenote_section_copy_to_notebook(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeOnenoteSectionsOnenoteSectionCopyToSectionGroupRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_site_onenote_notebooks_notebook_section_groups_section_group_sections_onenote_section_copy_to_notebook(
+        connection,
+        site_id,
+        notebook_id,
+        section_group_id,
+        onenote_section_id,
+        me_onenote_sections_onenote_section_copy_to_section_group_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/copyToNotebook")
-      |> add_param(:body, :body, me_onenote_sections_onenote_section_copy_to_section_group_request)
+      |> url(
+        "/sites/#{site_id}/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/copyToNotebook"
+      )
+      |> add_param(
+        :body,
+        :body,
+        me_onenote_sections_onenote_section_copy_to_section_group_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -725,19 +1050,46 @@ defmodule MicrosoftGraph.Api.SitesActions do
   - `{:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_site_onenote_notebooks_notebook_section_groups_section_group_sections_onenote_section_copy_to_section_group(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MeOnenoteSectionsOnenoteSectionCopyToSectionGroupRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_site_onenote_notebooks_notebook_section_groups_section_group_sections_onenote_section_copy_to_section_group(connection, site_id, notebook_id, section_group_id, onenote_section_id, me_onenote_sections_onenote_section_copy_to_section_group_request, _opts \\ []) do
+  @spec sites_site_onenote_notebooks_notebook_section_groups_section_group_sections_onenote_section_copy_to_section_group(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeOnenoteSectionsOnenoteSectionCopyToSectionGroupRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_site_onenote_notebooks_notebook_section_groups_section_group_sections_onenote_section_copy_to_section_group(
+        connection,
+        site_id,
+        notebook_id,
+        section_group_id,
+        onenote_section_id,
+        me_onenote_sections_onenote_section_copy_to_section_group_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/copyToSectionGroup")
-      |> add_param(:body, :body, me_onenote_sections_onenote_section_copy_to_section_group_request)
+      |> url(
+        "/sites/#{site_id}/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/copyToSectionGroup"
+      )
+      |> add_param(
+        :body,
+        :body,
+        me_onenote_sections_onenote_section_copy_to_section_group_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -763,19 +1115,48 @@ defmodule MicrosoftGraph.Api.SitesActions do
   - `{:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_site_onenote_notebooks_notebook_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSectionRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_site_onenote_notebooks_notebook_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section(connection, site_id, notebook_id, section_group_id, onenote_section_id, onenote_page_id, me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section_request, _opts \\ []) do
+  @spec sites_site_onenote_notebooks_notebook_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSectionRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_site_onenote_notebooks_notebook_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section(
+        connection,
+        site_id,
+        notebook_id,
+        section_group_id,
+        onenote_section_id,
+        onenote_page_id,
+        me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/copyToSection")
-      |> add_param(:body, :body, me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section_request)
+      |> url(
+        "/sites/#{site_id}/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/copyToSection"
+      )
+      |> add_param(
+        :body,
+        :body,
+        me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -800,13 +1181,40 @@ defmodule MicrosoftGraph.Api.SitesActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_site_onenote_notebooks_notebook_section_groups_section_group_sections_onenote_section_pages_onenote_page_onenote_patch_content(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.UsersUserOnenotePagesOnenotePageOnenotePatchContentRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_site_onenote_notebooks_notebook_section_groups_section_group_sections_onenote_section_pages_onenote_page_onenote_patch_content(connection, site_id, notebook_id, section_group_id, onenote_section_id, onenote_page_id, users_user_onenote_pages_onenote_page_onenote_patch_content_request, _opts \\ []) do
+  @spec sites_site_onenote_notebooks_notebook_section_groups_section_group_sections_onenote_section_pages_onenote_page_onenote_patch_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserOnenotePagesOnenotePageOnenotePatchContentRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_site_onenote_notebooks_notebook_section_groups_section_group_sections_onenote_section_pages_onenote_page_onenote_patch_content(
+        connection,
+        site_id,
+        notebook_id,
+        section_group_id,
+        onenote_section_id,
+        onenote_page_id,
+        users_user_onenote_pages_onenote_page_onenote_patch_content_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/onenotePatchContent")
-      |> add_param(:body, :body, users_user_onenote_pages_onenote_page_onenote_patch_content_request)
+      |> url(
+        "/sites/#{site_id}/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/onenotePatchContent"
+      )
+      |> add_param(
+        :body,
+        :body,
+        users_user_onenote_pages_onenote_page_onenote_patch_content_request
+      )
       |> Enum.into([])
 
     connection
@@ -836,19 +1244,44 @@ defmodule MicrosoftGraph.Api.SitesActions do
   - `{:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_site_onenote_notebooks_notebook_sections_onenote_section_copy_to_notebook(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MeOnenoteSectionsOnenoteSectionCopyToSectionGroupRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_site_onenote_notebooks_notebook_sections_onenote_section_copy_to_notebook(connection, site_id, notebook_id, onenote_section_id, me_onenote_sections_onenote_section_copy_to_section_group_request, _opts \\ []) do
+  @spec sites_site_onenote_notebooks_notebook_sections_onenote_section_copy_to_notebook(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeOnenoteSectionsOnenoteSectionCopyToSectionGroupRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_site_onenote_notebooks_notebook_sections_onenote_section_copy_to_notebook(
+        connection,
+        site_id,
+        notebook_id,
+        onenote_section_id,
+        me_onenote_sections_onenote_section_copy_to_section_group_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/onenote/notebooks/#{notebook_id}/sections/#{onenote_section_id}/copyToNotebook")
-      |> add_param(:body, :body, me_onenote_sections_onenote_section_copy_to_section_group_request)
+      |> url(
+        "/sites/#{site_id}/onenote/notebooks/#{notebook_id}/sections/#{onenote_section_id}/copyToNotebook"
+      )
+      |> add_param(
+        :body,
+        :body,
+        me_onenote_sections_onenote_section_copy_to_section_group_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -872,19 +1305,44 @@ defmodule MicrosoftGraph.Api.SitesActions do
   - `{:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_site_onenote_notebooks_notebook_sections_onenote_section_copy_to_section_group(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MeOnenoteSectionsOnenoteSectionCopyToSectionGroupRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_site_onenote_notebooks_notebook_sections_onenote_section_copy_to_section_group(connection, site_id, notebook_id, onenote_section_id, me_onenote_sections_onenote_section_copy_to_section_group_request, _opts \\ []) do
+  @spec sites_site_onenote_notebooks_notebook_sections_onenote_section_copy_to_section_group(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeOnenoteSectionsOnenoteSectionCopyToSectionGroupRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_site_onenote_notebooks_notebook_sections_onenote_section_copy_to_section_group(
+        connection,
+        site_id,
+        notebook_id,
+        onenote_section_id,
+        me_onenote_sections_onenote_section_copy_to_section_group_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/onenote/notebooks/#{notebook_id}/sections/#{onenote_section_id}/copyToSectionGroup")
-      |> add_param(:body, :body, me_onenote_sections_onenote_section_copy_to_section_group_request)
+      |> url(
+        "/sites/#{site_id}/onenote/notebooks/#{notebook_id}/sections/#{onenote_section_id}/copyToSectionGroup"
+      )
+      |> add_param(
+        :body,
+        :body,
+        me_onenote_sections_onenote_section_copy_to_section_group_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -909,19 +1367,46 @@ defmodule MicrosoftGraph.Api.SitesActions do
   - `{:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_site_onenote_notebooks_notebook_sections_onenote_section_pages_onenote_page_copy_to_section(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSectionRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_site_onenote_notebooks_notebook_sections_onenote_section_pages_onenote_page_copy_to_section(connection, site_id, notebook_id, onenote_section_id, onenote_page_id, me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section_request, _opts \\ []) do
+  @spec sites_site_onenote_notebooks_notebook_sections_onenote_section_pages_onenote_page_copy_to_section(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSectionRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_site_onenote_notebooks_notebook_sections_onenote_section_pages_onenote_page_copy_to_section(
+        connection,
+        site_id,
+        notebook_id,
+        onenote_section_id,
+        onenote_page_id,
+        me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/onenote/notebooks/#{notebook_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/copyToSection")
-      |> add_param(:body, :body, me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section_request)
+      |> url(
+        "/sites/#{site_id}/onenote/notebooks/#{notebook_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/copyToSection"
+      )
+      |> add_param(
+        :body,
+        :body,
+        me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -945,13 +1430,38 @@ defmodule MicrosoftGraph.Api.SitesActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_site_onenote_notebooks_notebook_sections_onenote_section_pages_onenote_page_onenote_patch_content(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.UsersUserOnenotePagesOnenotePageOnenotePatchContentRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_site_onenote_notebooks_notebook_sections_onenote_section_pages_onenote_page_onenote_patch_content(connection, site_id, notebook_id, onenote_section_id, onenote_page_id, users_user_onenote_pages_onenote_page_onenote_patch_content_request, _opts \\ []) do
+  @spec sites_site_onenote_notebooks_notebook_sections_onenote_section_pages_onenote_page_onenote_patch_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserOnenotePagesOnenotePageOnenotePatchContentRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_site_onenote_notebooks_notebook_sections_onenote_section_pages_onenote_page_onenote_patch_content(
+        connection,
+        site_id,
+        notebook_id,
+        onenote_section_id,
+        onenote_page_id,
+        users_user_onenote_pages_onenote_page_onenote_patch_content_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/onenote/notebooks/#{notebook_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/onenotePatchContent")
-      |> add_param(:body, :body, users_user_onenote_pages_onenote_page_onenote_patch_content_request)
+      |> url(
+        "/sites/#{site_id}/onenote/notebooks/#{notebook_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/onenotePatchContent"
+      )
+      |> add_param(
+        :body,
+        :body,
+        users_user_onenote_pages_onenote_page_onenote_patch_content_request
+      )
       |> Enum.into([])
 
     connection
@@ -980,19 +1490,40 @@ defmodule MicrosoftGraph.Api.SitesActions do
   - `{:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_site_onenote_pages_onenote_page_copy_to_section(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSectionRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_site_onenote_pages_onenote_page_copy_to_section(connection, site_id, onenote_page_id, me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section_request, _opts \\ []) do
+  @spec sites_site_onenote_pages_onenote_page_copy_to_section(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSectionRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_site_onenote_pages_onenote_page_copy_to_section(
+        connection,
+        site_id,
+        onenote_page_id,
+        me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/sites/#{site_id}/onenote/pages/#{onenote_page_id}/copyToSection")
-      |> add_param(:body, :body, me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section_request)
+      |> add_param(
+        :body,
+        :body,
+        me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -1014,13 +1545,32 @@ defmodule MicrosoftGraph.Api.SitesActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_site_onenote_pages_onenote_page_onenote_patch_content(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.UsersUserOnenotePagesOnenotePageOnenotePatchContentRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_site_onenote_pages_onenote_page_onenote_patch_content(connection, site_id, onenote_page_id, users_user_onenote_pages_onenote_page_onenote_patch_content_request, _opts \\ []) do
+  @spec sites_site_onenote_pages_onenote_page_onenote_patch_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserOnenotePagesOnenotePageOnenotePatchContentRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_site_onenote_pages_onenote_page_onenote_patch_content(
+        connection,
+        site_id,
+        onenote_page_id,
+        users_user_onenote_pages_onenote_page_onenote_patch_content_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/sites/#{site_id}/onenote/pages/#{onenote_page_id}/onenotePatchContent")
-      |> add_param(:body, :body, users_user_onenote_pages_onenote_page_onenote_patch_content_request)
+      |> add_param(
+        :body,
+        :body,
+        users_user_onenote_pages_onenote_page_onenote_patch_content_request
+      )
       |> Enum.into([])
 
     connection
@@ -1050,19 +1600,44 @@ defmodule MicrosoftGraph.Api.SitesActions do
   - `{:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_site_onenote_section_groups_section_group_sections_onenote_section_copy_to_notebook(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MeOnenoteSectionsOnenoteSectionCopyToSectionGroupRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_site_onenote_section_groups_section_group_sections_onenote_section_copy_to_notebook(connection, site_id, section_group_id, onenote_section_id, me_onenote_sections_onenote_section_copy_to_section_group_request, _opts \\ []) do
+  @spec sites_site_onenote_section_groups_section_group_sections_onenote_section_copy_to_notebook(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeOnenoteSectionsOnenoteSectionCopyToSectionGroupRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_site_onenote_section_groups_section_group_sections_onenote_section_copy_to_notebook(
+        connection,
+        site_id,
+        section_group_id,
+        onenote_section_id,
+        me_onenote_sections_onenote_section_copy_to_section_group_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/onenote/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/copyToNotebook")
-      |> add_param(:body, :body, me_onenote_sections_onenote_section_copy_to_section_group_request)
+      |> url(
+        "/sites/#{site_id}/onenote/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/copyToNotebook"
+      )
+      |> add_param(
+        :body,
+        :body,
+        me_onenote_sections_onenote_section_copy_to_section_group_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -1086,19 +1661,44 @@ defmodule MicrosoftGraph.Api.SitesActions do
   - `{:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_site_onenote_section_groups_section_group_sections_onenote_section_copy_to_section_group(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MeOnenoteSectionsOnenoteSectionCopyToSectionGroupRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_site_onenote_section_groups_section_group_sections_onenote_section_copy_to_section_group(connection, site_id, section_group_id, onenote_section_id, me_onenote_sections_onenote_section_copy_to_section_group_request, _opts \\ []) do
+  @spec sites_site_onenote_section_groups_section_group_sections_onenote_section_copy_to_section_group(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeOnenoteSectionsOnenoteSectionCopyToSectionGroupRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_site_onenote_section_groups_section_group_sections_onenote_section_copy_to_section_group(
+        connection,
+        site_id,
+        section_group_id,
+        onenote_section_id,
+        me_onenote_sections_onenote_section_copy_to_section_group_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/onenote/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/copyToSectionGroup")
-      |> add_param(:body, :body, me_onenote_sections_onenote_section_copy_to_section_group_request)
+      |> url(
+        "/sites/#{site_id}/onenote/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/copyToSectionGroup"
+      )
+      |> add_param(
+        :body,
+        :body,
+        me_onenote_sections_onenote_section_copy_to_section_group_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -1123,19 +1723,46 @@ defmodule MicrosoftGraph.Api.SitesActions do
   - `{:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_site_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSectionRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_site_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section(connection, site_id, section_group_id, onenote_section_id, onenote_page_id, me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section_request, _opts \\ []) do
+  @spec sites_site_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSectionRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_site_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section(
+        connection,
+        site_id,
+        section_group_id,
+        onenote_section_id,
+        onenote_page_id,
+        me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/onenote/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/copyToSection")
-      |> add_param(:body, :body, me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section_request)
+      |> url(
+        "/sites/#{site_id}/onenote/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/copyToSection"
+      )
+      |> add_param(
+        :body,
+        :body,
+        me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -1159,13 +1786,38 @@ defmodule MicrosoftGraph.Api.SitesActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_site_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_onenote_patch_content(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.UsersUserOnenotePagesOnenotePageOnenotePatchContentRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_site_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_onenote_patch_content(connection, site_id, section_group_id, onenote_section_id, onenote_page_id, users_user_onenote_pages_onenote_page_onenote_patch_content_request, _opts \\ []) do
+  @spec sites_site_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_onenote_patch_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserOnenotePagesOnenotePageOnenotePatchContentRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_site_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_onenote_patch_content(
+        connection,
+        site_id,
+        section_group_id,
+        onenote_section_id,
+        onenote_page_id,
+        users_user_onenote_pages_onenote_page_onenote_patch_content_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/onenote/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/onenotePatchContent")
-      |> add_param(:body, :body, users_user_onenote_pages_onenote_page_onenote_patch_content_request)
+      |> url(
+        "/sites/#{site_id}/onenote/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/onenotePatchContent"
+      )
+      |> add_param(
+        :body,
+        :body,
+        users_user_onenote_pages_onenote_page_onenote_patch_content_request
+      )
       |> Enum.into([])
 
     connection
@@ -1194,19 +1846,40 @@ defmodule MicrosoftGraph.Api.SitesActions do
   - `{:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_site_onenote_sections_onenote_section_copy_to_notebook(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeOnenoteSectionsOnenoteSectionCopyToSectionGroupRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_site_onenote_sections_onenote_section_copy_to_notebook(connection, site_id, onenote_section_id, me_onenote_sections_onenote_section_copy_to_section_group_request, _opts \\ []) do
+  @spec sites_site_onenote_sections_onenote_section_copy_to_notebook(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeOnenoteSectionsOnenoteSectionCopyToSectionGroupRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_site_onenote_sections_onenote_section_copy_to_notebook(
+        connection,
+        site_id,
+        onenote_section_id,
+        me_onenote_sections_onenote_section_copy_to_section_group_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/sites/#{site_id}/onenote/sections/#{onenote_section_id}/copyToNotebook")
-      |> add_param(:body, :body, me_onenote_sections_onenote_section_copy_to_section_group_request)
+      |> add_param(
+        :body,
+        :body,
+        me_onenote_sections_onenote_section_copy_to_section_group_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -1229,19 +1902,40 @@ defmodule MicrosoftGraph.Api.SitesActions do
   - `{:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_site_onenote_sections_onenote_section_copy_to_section_group(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeOnenoteSectionsOnenoteSectionCopyToSectionGroupRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_site_onenote_sections_onenote_section_copy_to_section_group(connection, site_id, onenote_section_id, me_onenote_sections_onenote_section_copy_to_section_group_request, _opts \\ []) do
+  @spec sites_site_onenote_sections_onenote_section_copy_to_section_group(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeOnenoteSectionsOnenoteSectionCopyToSectionGroupRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_site_onenote_sections_onenote_section_copy_to_section_group(
+        connection,
+        site_id,
+        onenote_section_id,
+        me_onenote_sections_onenote_section_copy_to_section_group_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/sites/#{site_id}/onenote/sections/#{onenote_section_id}/copyToSectionGroup")
-      |> add_param(:body, :body, me_onenote_sections_onenote_section_copy_to_section_group_request)
+      |> add_param(
+        :body,
+        :body,
+        me_onenote_sections_onenote_section_copy_to_section_group_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -1265,19 +1959,44 @@ defmodule MicrosoftGraph.Api.SitesActions do
   - `{:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_site_onenote_sections_onenote_section_pages_onenote_page_copy_to_section(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSectionRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_site_onenote_sections_onenote_section_pages_onenote_page_copy_to_section(connection, site_id, onenote_section_id, onenote_page_id, me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section_request, _opts \\ []) do
+  @spec sites_site_onenote_sections_onenote_section_pages_onenote_page_copy_to_section(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSectionRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_site_onenote_sections_onenote_section_pages_onenote_page_copy_to_section(
+        connection,
+        site_id,
+        onenote_section_id,
+        onenote_page_id,
+        me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/onenote/sections/#{onenote_section_id}/pages/#{onenote_page_id}/copyToSection")
-      |> add_param(:body, :body, me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section_request)
+      |> url(
+        "/sites/#{site_id}/onenote/sections/#{onenote_section_id}/pages/#{onenote_page_id}/copyToSection"
+      )
+      |> add_param(
+        :body,
+        :body,
+        me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -1300,13 +2019,36 @@ defmodule MicrosoftGraph.Api.SitesActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_site_onenote_sections_onenote_section_pages_onenote_page_onenote_patch_content(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.UsersUserOnenotePagesOnenotePageOnenotePatchContentRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_site_onenote_sections_onenote_section_pages_onenote_page_onenote_patch_content(connection, site_id, onenote_section_id, onenote_page_id, users_user_onenote_pages_onenote_page_onenote_patch_content_request, _opts \\ []) do
+  @spec sites_site_onenote_sections_onenote_section_pages_onenote_page_onenote_patch_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserOnenotePagesOnenotePageOnenotePatchContentRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_site_onenote_sections_onenote_section_pages_onenote_page_onenote_patch_content(
+        connection,
+        site_id,
+        onenote_section_id,
+        onenote_page_id,
+        users_user_onenote_pages_onenote_page_onenote_patch_content_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/sites/#{site_id}/onenote/sections/#{onenote_section_id}/pages/#{onenote_page_id}/onenotePatchContent")
-      |> add_param(:body, :body, users_user_onenote_pages_onenote_page_onenote_patch_content_request)
+      |> url(
+        "/sites/#{site_id}/onenote/sections/#{onenote_section_id}/pages/#{onenote_page_id}/onenotePatchContent"
+      )
+      |> add_param(
+        :body,
+        :body,
+        users_user_onenote_pages_onenote_page_onenote_patch_content_request
+      )
       |> Enum.into([])
 
     connection
@@ -1335,8 +2077,23 @@ defmodule MicrosoftGraph.Api.SitesActions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfPermission.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_site_permissions_permission_grant(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.SitesSitePermissionsPermissionGrantRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.CollectionOfPermission.t} | {:error, Tesla.Env.t}
-  def sites_site_permissions_permission_grant(connection, site_id, permission_id, sites_site_permissions_permission_grant_request, _opts \\ []) do
+  @spec sites_site_permissions_permission_grant(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.SitesSitePermissionsPermissionGrantRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.CollectionOfPermission.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_site_permissions_permission_grant(
+        connection,
+        site_id,
+        permission_id,
+        sites_site_permissions_permission_grant_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)

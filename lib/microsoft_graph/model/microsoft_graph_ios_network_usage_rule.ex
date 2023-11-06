@@ -15,17 +15,21 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphIosNetworkUsageRule do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :cellularDataBlockWhenRoaming => boolean() | nil,
-    :cellularDataBlocked => boolean() | nil,
-    :managedApps => [MicrosoftGraph.Model.MicrosoftGraphIosNetworkUsageRuleManagedAppsInner.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :cellularDataBlockWhenRoaming => boolean() | nil,
+          :cellularDataBlocked => boolean() | nil,
+          :managedApps =>
+            [MicrosoftGraph.Model.MicrosoftGraphIosNetworkUsageRuleManagedAppsInner.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:managedApps, :list, MicrosoftGraph.Model.MicrosoftGraphIosNetworkUsageRuleManagedAppsInner)
+    |> Deserializer.deserialize(
+      :managedApps,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphIosNetworkUsageRuleManagedAppsInner
+    )
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphFileAttachment do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -21,23 +21,22 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphFileAttachment do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :contentType => String.t | nil,
-    :isInline => boolean() | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :name => String.t | nil,
-    :size => integer() | nil,
-    :contentBytes => String.t | nil,
-    :contentId => String.t | nil,
-    :contentLocation => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :contentType => String.t() | nil,
+          :isInline => boolean() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :name => String.t() | nil,
+          :size => integer() | nil,
+          :contentBytes => String.t() | nil,
+          :contentId => String.t() | nil,
+          :contentLocation => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
   end
 end
-

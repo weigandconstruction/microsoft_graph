@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsAppHealthOsVersionPerformance do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,20 +18,25 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsAppHealthOsV
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :activeDeviceCount => integer() | nil,
-    :meanTimeToFailureInMinutes => integer() | nil,
-    :osBuildNumber => String.t | nil,
-    :osVersion => String.t | nil,
-    :osVersionAppHealthScore => MicrosoftGraph.Model.UserExperienceAnalyticsAppHealthOsVersionPerformanceOsVersionAppHealthScore.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :activeDeviceCount => integer() | nil,
+          :meanTimeToFailureInMinutes => integer() | nil,
+          :osBuildNumber => String.t() | nil,
+          :osVersion => String.t() | nil,
+          :osVersionAppHealthScore =>
+            MicrosoftGraph.Model.UserExperienceAnalyticsAppHealthOsVersionPerformanceOsVersionAppHealthScore.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:osVersionAppHealthScore, :struct, MicrosoftGraph.Model.UserExperienceAnalyticsAppHealthOsVersionPerformanceOsVersionAppHealthScore)
+    |> Deserializer.deserialize(
+      :osVersionAppHealthScore,
+      :struct,
+      MicrosoftGraph.Model.UserExperienceAnalyticsAppHealthOsVersionPerformanceOsVersionAppHealthScore
+    )
   end
 end
-

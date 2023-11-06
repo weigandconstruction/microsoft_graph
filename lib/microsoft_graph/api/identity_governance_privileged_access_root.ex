@@ -23,7 +23,10 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_delete_privileged_access(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_governance_delete_privileged_access(Tesla.Env.client(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_governance_delete_privileged_access(connection, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -60,7 +63,10 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessRoot.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_get_privileged_access(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessRoot.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_governance_get_privileged_access(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessRoot.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_governance_get_privileged_access(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -97,7 +103,10 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_delete_group(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_governance_privileged_access_delete_group(Tesla.Env.client(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_governance_privileged_access_delete_group(connection, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -135,7 +144,10 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_get_group(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_governance_privileged_access_get_group(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_governance_privileged_access_get_group(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -173,12 +185,27 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphApprovalStage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_assignment_approvals_create_stages(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphApprovalStage.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphApprovalStage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_assignment_approvals_create_stages(connection, approval_id, microsoft_graph_approval_stage, _opts \\ []) do
+  @spec identity_governance_privileged_access_group_assignment_approvals_create_stages(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphApprovalStage.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphApprovalStage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_assignment_approvals_create_stages(
+        connection,
+        approval_id,
+        microsoft_graph_approval_stage,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/privilegedAccess/group/assignmentApprovals/#{approval_id}/stages")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/assignmentApprovals/#{approval_id}/stages"
+      )
       |> add_param(:body, :body, microsoft_graph_approval_stage)
       |> Enum.into([])
 
@@ -207,8 +234,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_assignment_approvals_delete_stages(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_assignment_approvals_delete_stages(connection, approval_id, approval_stage_id, opts \\ []) do
+  @spec identity_governance_privileged_access_group_assignment_approvals_delete_stages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_assignment_approvals_delete_stages(
+        connection,
+        approval_id,
+        approval_stage_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -216,7 +256,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     request =
       %{}
       |> method(:delete)
-      |> url("/identityGovernance/privilegedAccess/group/assignmentApprovals/#{approval_id}/stages/#{approval_stage_id}")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/assignmentApprovals/#{approval_id}/stages/#{approval_stage_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -244,8 +286,17 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_assignment_approvals_get_count612b(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_assignment_approvals_get_count612b(connection, opts \\ []) do
+  @spec identity_governance_privileged_access_group_assignment_approvals_get_count612b(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_assignment_approvals_get_count612b(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -285,8 +336,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphApprovalStage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_assignment_approvals_get_stages(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphApprovalStage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_assignment_approvals_get_stages(connection, approval_id, approval_stage_id, opts \\ []) do
+  @spec identity_governance_privileged_access_group_assignment_approvals_get_stages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphApprovalStage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_assignment_approvals_get_stages(
+        connection,
+        approval_id,
+        approval_stage_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -295,7 +359,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/privilegedAccess/group/assignmentApprovals/#{approval_id}/stages/#{approval_stage_id}")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/assignmentApprovals/#{approval_id}/stages/#{approval_stage_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -331,8 +397,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphApprovalStageCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_assignment_approvals_list_stages(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphApprovalStageCollectionResponse.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_assignment_approvals_list_stages(connection, approval_id, opts \\ []) do
+  @spec identity_governance_privileged_access_group_assignment_approvals_list_stages(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphApprovalStageCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_assignment_approvals_list_stages(
+        connection,
+        approval_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -347,7 +424,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/privilegedAccess/group/assignmentApprovals/#{approval_id}/stages")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/assignmentApprovals/#{approval_id}/stages"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -376,8 +455,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_assignment_approvals_stages_get_count8fe8(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_assignment_approvals_stages_get_count8fe8(connection, approval_id, opts \\ []) do
+  @spec identity_governance_privileged_access_group_assignment_approvals_stages_get_count8fe8(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_assignment_approvals_stages_get_count8fe8(
+        connection,
+        approval_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -386,7 +476,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/privilegedAccess/group/assignmentApprovals/#{approval_id}/stages/$count")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/assignmentApprovals/#{approval_id}/stages/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -416,12 +508,29 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphApprovalStage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_assignment_approvals_update_stages(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphApprovalStage.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphApprovalStage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_assignment_approvals_update_stages(connection, approval_id, approval_stage_id, microsoft_graph_approval_stage, _opts \\ []) do
+  @spec identity_governance_privileged_access_group_assignment_approvals_update_stages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphApprovalStage.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphApprovalStage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_assignment_approvals_update_stages(
+        connection,
+        approval_id,
+        approval_stage_id,
+        microsoft_graph_approval_stage,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/privilegedAccess/group/assignmentApprovals/#{approval_id}/stages/#{approval_stage_id}")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/assignmentApprovals/#{approval_id}/stages/#{approval_stage_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_approval_stage)
       |> Enum.into([])
 
@@ -451,8 +560,20 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleInstance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_assignment_schedule_instances_get_activated_using(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleInstance.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_assignment_schedule_instances_get_activated_using(connection, privileged_access_group_assignment_schedule_instance_id, opts \\ []) do
+  @spec identity_governance_privileged_access_group_assignment_schedule_instances_get_activated_using(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleInstance.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_assignment_schedule_instances_get_activated_using(
+        connection,
+        privileged_access_group_assignment_schedule_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -461,14 +582,17 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/privilegedAccess/group/assignmentScheduleInstances/#{privileged_access_group_assignment_schedule_instance_id}/activatedUsing")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/assignmentScheduleInstances/#{privileged_access_group_assignment_schedule_instance_id}/activatedUsing"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleInstance},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleInstance},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -489,8 +613,17 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_assignment_schedule_instances_get_count8aba(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_assignment_schedule_instances_get_count8aba(connection, opts \\ []) do
+  @spec identity_governance_privileged_access_group_assignment_schedule_instances_get_count8aba(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_assignment_schedule_instances_get_count8aba(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -529,8 +662,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_assignment_schedule_instances_get_group(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_assignment_schedule_instances_get_group(connection, privileged_access_group_assignment_schedule_instance_id, opts \\ []) do
+  @spec identity_governance_privileged_access_group_assignment_schedule_instances_get_group(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_assignment_schedule_instances_get_group(
+        connection,
+        privileged_access_group_assignment_schedule_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -539,7 +683,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/privilegedAccess/group/assignmentScheduleInstances/#{privileged_access_group_assignment_schedule_instance_id}/group")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/assignmentScheduleInstances/#{privileged_access_group_assignment_schedule_instance_id}/group"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -569,8 +715,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_assignment_schedule_instances_get_principal(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_assignment_schedule_instances_get_principal(connection, privileged_access_group_assignment_schedule_instance_id, opts \\ []) do
+  @spec identity_governance_privileged_access_group_assignment_schedule_instances_get_principal(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_assignment_schedule_instances_get_principal(
+        connection,
+        privileged_access_group_assignment_schedule_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -579,7 +736,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/privilegedAccess/group/assignmentScheduleInstances/#{privileged_access_group_assignment_schedule_instance_id}/principal")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/assignmentScheduleInstances/#{privileged_access_group_assignment_schedule_instance_id}/principal"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -614,8 +773,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_assignment_schedule_instances_group_list_service_provisioning_errors(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_assignment_schedule_instances_group_list_service_provisioning_errors(connection, privileged_access_group_assignment_schedule_instance_id, opts \\ []) do
+  @spec identity_governance_privileged_access_group_assignment_schedule_instances_group_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_assignment_schedule_instances_group_list_service_provisioning_errors(
+        connection,
+        privileged_access_group_assignment_schedule_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -630,7 +800,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/privilegedAccess/group/assignmentScheduleInstances/#{privileged_access_group_assignment_schedule_instance_id}/group/serviceProvisioningErrors")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/assignmentScheduleInstances/#{privileged_access_group_assignment_schedule_instance_id}/group/serviceProvisioningErrors"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -659,8 +831,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_assignment_schedule_instances_group_service_provisioning_errors_get_count5e16(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_assignment_schedule_instances_group_service_provisioning_errors_get_count5e16(connection, privileged_access_group_assignment_schedule_instance_id, opts \\ []) do
+  @spec identity_governance_privileged_access_group_assignment_schedule_instances_group_service_provisioning_errors_get_count5e16(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_assignment_schedule_instances_group_service_provisioning_errors_get_count5e16(
+        connection,
+        privileged_access_group_assignment_schedule_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -669,7 +852,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/privilegedAccess/group/assignmentScheduleInstances/#{privileged_access_group_assignment_schedule_instance_id}/group/serviceProvisioningErrors/$count")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/assignmentScheduleInstances/#{privileged_access_group_assignment_schedule_instance_id}/group/serviceProvisioningErrors/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -699,8 +884,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilitySchedule.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_assignment_schedule_requests_get_activated_using(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilitySchedule.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_assignment_schedule_requests_get_activated_using(connection, privileged_access_group_assignment_schedule_request_id, opts \\ []) do
+  @spec identity_governance_privileged_access_group_assignment_schedule_requests_get_activated_using(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilitySchedule.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_assignment_schedule_requests_get_activated_using(
+        connection,
+        privileged_access_group_assignment_schedule_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -709,7 +905,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/privilegedAccess/group/assignmentScheduleRequests/#{privileged_access_group_assignment_schedule_request_id}/activatedUsing")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/assignmentScheduleRequests/#{privileged_access_group_assignment_schedule_request_id}/activatedUsing"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -737,8 +935,17 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_assignment_schedule_requests_get_count_cd4f(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_assignment_schedule_requests_get_count_cd4f(connection, opts \\ []) do
+  @spec identity_governance_privileged_access_group_assignment_schedule_requests_get_count_cd4f(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_assignment_schedule_requests_get_count_cd4f(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -777,8 +984,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_assignment_schedule_requests_get_group(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_assignment_schedule_requests_get_group(connection, privileged_access_group_assignment_schedule_request_id, opts \\ []) do
+  @spec identity_governance_privileged_access_group_assignment_schedule_requests_get_group(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_assignment_schedule_requests_get_group(
+        connection,
+        privileged_access_group_assignment_schedule_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -787,7 +1005,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/privilegedAccess/group/assignmentScheduleRequests/#{privileged_access_group_assignment_schedule_request_id}/group")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/assignmentScheduleRequests/#{privileged_access_group_assignment_schedule_request_id}/group"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -817,8 +1037,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_assignment_schedule_requests_get_principal(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_assignment_schedule_requests_get_principal(connection, privileged_access_group_assignment_schedule_request_id, opts \\ []) do
+  @spec identity_governance_privileged_access_group_assignment_schedule_requests_get_principal(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_assignment_schedule_requests_get_principal(
+        connection,
+        privileged_access_group_assignment_schedule_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -827,7 +1058,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/privilegedAccess/group/assignmentScheduleRequests/#{privileged_access_group_assignment_schedule_request_id}/principal")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/assignmentScheduleRequests/#{privileged_access_group_assignment_schedule_request_id}/principal"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -857,8 +1090,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilitySchedule.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_assignment_schedule_requests_get_target_schedule(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilitySchedule.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_assignment_schedule_requests_get_target_schedule(connection, privileged_access_group_assignment_schedule_request_id, opts \\ []) do
+  @spec identity_governance_privileged_access_group_assignment_schedule_requests_get_target_schedule(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilitySchedule.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_assignment_schedule_requests_get_target_schedule(
+        connection,
+        privileged_access_group_assignment_schedule_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -867,7 +1111,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/privilegedAccess/group/assignmentScheduleRequests/#{privileged_access_group_assignment_schedule_request_id}/targetSchedule")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/assignmentScheduleRequests/#{privileged_access_group_assignment_schedule_request_id}/targetSchedule"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -902,8 +1148,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_assignment_schedule_requests_group_list_service_provisioning_errors(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_assignment_schedule_requests_group_list_service_provisioning_errors(connection, privileged_access_group_assignment_schedule_request_id, opts \\ []) do
+  @spec identity_governance_privileged_access_group_assignment_schedule_requests_group_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_assignment_schedule_requests_group_list_service_provisioning_errors(
+        connection,
+        privileged_access_group_assignment_schedule_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -918,7 +1175,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/privilegedAccess/group/assignmentScheduleRequests/#{privileged_access_group_assignment_schedule_request_id}/group/serviceProvisioningErrors")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/assignmentScheduleRequests/#{privileged_access_group_assignment_schedule_request_id}/group/serviceProvisioningErrors"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -947,8 +1206,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_assignment_schedule_requests_group_service_provisioning_errors_get_count60a7(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_assignment_schedule_requests_group_service_provisioning_errors_get_count60a7(connection, privileged_access_group_assignment_schedule_request_id, opts \\ []) do
+  @spec identity_governance_privileged_access_group_assignment_schedule_requests_group_service_provisioning_errors_get_count60a7(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_assignment_schedule_requests_group_service_provisioning_errors_get_count60a7(
+        connection,
+        privileged_access_group_assignment_schedule_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -957,7 +1227,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/privilegedAccess/group/assignmentScheduleRequests/#{privileged_access_group_assignment_schedule_request_id}/group/serviceProvisioningErrors/$count")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/assignmentScheduleRequests/#{privileged_access_group_assignment_schedule_request_id}/group/serviceProvisioningErrors/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -987,8 +1259,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilitySchedule.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_assignment_schedules_get_activated_using(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilitySchedule.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_assignment_schedules_get_activated_using(connection, privileged_access_group_assignment_schedule_id, opts \\ []) do
+  @spec identity_governance_privileged_access_group_assignment_schedules_get_activated_using(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilitySchedule.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_assignment_schedules_get_activated_using(
+        connection,
+        privileged_access_group_assignment_schedule_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -997,7 +1280,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/privilegedAccess/group/assignmentSchedules/#{privileged_access_group_assignment_schedule_id}/activatedUsing")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/assignmentSchedules/#{privileged_access_group_assignment_schedule_id}/activatedUsing"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1025,8 +1310,17 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_assignment_schedules_get_count_c3b5(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_assignment_schedules_get_count_c3b5(connection, opts \\ []) do
+  @spec identity_governance_privileged_access_group_assignment_schedules_get_count_c3b5(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_assignment_schedules_get_count_c3b5(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1065,8 +1359,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_assignment_schedules_get_group(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_assignment_schedules_get_group(connection, privileged_access_group_assignment_schedule_id, opts \\ []) do
+  @spec identity_governance_privileged_access_group_assignment_schedules_get_group(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_assignment_schedules_get_group(
+        connection,
+        privileged_access_group_assignment_schedule_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1075,7 +1380,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/privilegedAccess/group/assignmentSchedules/#{privileged_access_group_assignment_schedule_id}/group")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/assignmentSchedules/#{privileged_access_group_assignment_schedule_id}/group"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1105,8 +1412,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_assignment_schedules_get_principal(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_assignment_schedules_get_principal(connection, privileged_access_group_assignment_schedule_id, opts \\ []) do
+  @spec identity_governance_privileged_access_group_assignment_schedules_get_principal(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_assignment_schedules_get_principal(
+        connection,
+        privileged_access_group_assignment_schedule_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1115,7 +1433,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/privilegedAccess/group/assignmentSchedules/#{privileged_access_group_assignment_schedule_id}/principal")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/assignmentSchedules/#{privileged_access_group_assignment_schedule_id}/principal"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1150,8 +1470,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_assignment_schedules_group_list_service_provisioning_errors(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_assignment_schedules_group_list_service_provisioning_errors(connection, privileged_access_group_assignment_schedule_id, opts \\ []) do
+  @spec identity_governance_privileged_access_group_assignment_schedules_group_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_assignment_schedules_group_list_service_provisioning_errors(
+        connection,
+        privileged_access_group_assignment_schedule_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1166,7 +1497,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/privilegedAccess/group/assignmentSchedules/#{privileged_access_group_assignment_schedule_id}/group/serviceProvisioningErrors")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/assignmentSchedules/#{privileged_access_group_assignment_schedule_id}/group/serviceProvisioningErrors"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1195,8 +1528,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_assignment_schedules_group_service_provisioning_errors_get_count_f144(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_assignment_schedules_group_service_provisioning_errors_get_count_f144(connection, privileged_access_group_assignment_schedule_id, opts \\ []) do
+  @spec identity_governance_privileged_access_group_assignment_schedules_group_service_provisioning_errors_get_count_f144(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_assignment_schedules_group_service_provisioning_errors_get_count_f144(
+        connection,
+        privileged_access_group_assignment_schedule_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1205,7 +1549,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/privilegedAccess/group/assignmentSchedules/#{privileged_access_group_assignment_schedule_id}/group/serviceProvisioningErrors/$count")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/assignmentSchedules/#{privileged_access_group_assignment_schedule_id}/group/serviceProvisioningErrors/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1232,8 +1578,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphApproval.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_create_assignment_approvals(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphApproval.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphApproval.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_create_assignment_approvals(connection, microsoft_graph_approval, _opts \\ []) do
+  @spec identity_governance_privileged_access_group_create_assignment_approvals(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphApproval.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphApproval.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_create_assignment_approvals(
+        connection,
+        microsoft_graph_approval,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1264,13 +1621,29 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentScheduleInstance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_create_assignment_schedule_instances(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentScheduleInstance.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentScheduleInstance.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_create_assignment_schedule_instances(connection, microsoft_graph_privileged_access_group_assignment_schedule_instance, _opts \\ []) do
+  @spec identity_governance_privileged_access_group_create_assignment_schedule_instances(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentScheduleInstance.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentScheduleInstance.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_create_assignment_schedule_instances(
+        connection,
+        microsoft_graph_privileged_access_group_assignment_schedule_instance,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/identityGovernance/privilegedAccess/group/assignmentScheduleInstances")
-      |> add_param(:body, :body, microsoft_graph_privileged_access_group_assignment_schedule_instance)
+      |> add_param(
+        :body,
+        :body,
+        microsoft_graph_privileged_access_group_assignment_schedule_instance
+      )
       |> Enum.into([])
 
     connection
@@ -1297,13 +1670,29 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentScheduleRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_create_assignment_schedule_requests(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentScheduleRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentScheduleRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_create_assignment_schedule_requests(connection, microsoft_graph_privileged_access_group_assignment_schedule_request, _opts \\ []) do
+  @spec identity_governance_privileged_access_group_create_assignment_schedule_requests(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentScheduleRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentScheduleRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_create_assignment_schedule_requests(
+        connection,
+        microsoft_graph_privileged_access_group_assignment_schedule_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/identityGovernance/privilegedAccess/group/assignmentScheduleRequests")
-      |> add_param(:body, :body, microsoft_graph_privileged_access_group_assignment_schedule_request)
+      |> add_param(
+        :body,
+        :body,
+        microsoft_graph_privileged_access_group_assignment_schedule_request
+      )
       |> Enum.into([])
 
     connection
@@ -1329,8 +1718,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentSchedule.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_create_assignment_schedules(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentSchedule.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentSchedule.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_create_assignment_schedules(connection, microsoft_graph_privileged_access_group_assignment_schedule, _opts \\ []) do
+  @spec identity_governance_privileged_access_group_create_assignment_schedules(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentSchedule.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentSchedule.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_create_assignment_schedules(
+        connection,
+        microsoft_graph_privileged_access_group_assignment_schedule,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1361,19 +1761,36 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleInstance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_create_eligibility_schedule_instances(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleInstance.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleInstance.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_create_eligibility_schedule_instances(connection, microsoft_graph_privileged_access_group_eligibility_schedule_instance, _opts \\ []) do
+  @spec identity_governance_privileged_access_group_create_eligibility_schedule_instances(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleInstance.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleInstance.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_create_eligibility_schedule_instances(
+        connection,
+        microsoft_graph_privileged_access_group_eligibility_schedule_instance,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/identityGovernance/privilegedAccess/group/eligibilityScheduleInstances")
-      |> add_param(:body, :body, microsoft_graph_privileged_access_group_eligibility_schedule_instance)
+      |> add_param(
+        :body,
+        :body,
+        microsoft_graph_privileged_access_group_eligibility_schedule_instance
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleInstance},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleInstance},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -1394,13 +1811,29 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_create_eligibility_schedule_requests(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_create_eligibility_schedule_requests(connection, microsoft_graph_privileged_access_group_eligibility_schedule_request, _opts \\ []) do
+  @spec identity_governance_privileged_access_group_create_eligibility_schedule_requests(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_create_eligibility_schedule_requests(
+        connection,
+        microsoft_graph_privileged_access_group_eligibility_schedule_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/identityGovernance/privilegedAccess/group/eligibilityScheduleRequests")
-      |> add_param(:body, :body, microsoft_graph_privileged_access_group_eligibility_schedule_request)
+      |> add_param(
+        :body,
+        :body,
+        microsoft_graph_privileged_access_group_eligibility_schedule_request
+      )
       |> Enum.into([])
 
     connection
@@ -1426,8 +1859,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilitySchedule.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_create_eligibility_schedules(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilitySchedule.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilitySchedule.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_create_eligibility_schedules(connection, microsoft_graph_privileged_access_group_eligibility_schedule, _opts \\ []) do
+  @spec identity_governance_privileged_access_group_create_eligibility_schedules(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilitySchedule.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilitySchedule.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_create_eligibility_schedules(
+        connection,
+        microsoft_graph_privileged_access_group_eligibility_schedule,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1459,8 +1903,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_delete_assignment_approvals(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_delete_assignment_approvals(connection, approval_id, opts \\ []) do
+  @spec identity_governance_privileged_access_group_delete_assignment_approvals(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_delete_assignment_approvals(
+        connection,
+        approval_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1496,8 +1951,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_delete_assignment_schedule_instances(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_delete_assignment_schedule_instances(connection, privileged_access_group_assignment_schedule_instance_id, opts \\ []) do
+  @spec identity_governance_privileged_access_group_delete_assignment_schedule_instances(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_delete_assignment_schedule_instances(
+        connection,
+        privileged_access_group_assignment_schedule_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1505,7 +1971,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     request =
       %{}
       |> method(:delete)
-      |> url("/identityGovernance/privilegedAccess/group/assignmentScheduleInstances/#{privileged_access_group_assignment_schedule_instance_id}")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/assignmentScheduleInstances/#{privileged_access_group_assignment_schedule_instance_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1533,8 +2001,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_delete_assignment_schedule_requests(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_delete_assignment_schedule_requests(connection, privileged_access_group_assignment_schedule_request_id, opts \\ []) do
+  @spec identity_governance_privileged_access_group_delete_assignment_schedule_requests(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_delete_assignment_schedule_requests(
+        connection,
+        privileged_access_group_assignment_schedule_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1542,7 +2021,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     request =
       %{}
       |> method(:delete)
-      |> url("/identityGovernance/privilegedAccess/group/assignmentScheduleRequests/#{privileged_access_group_assignment_schedule_request_id}")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/assignmentScheduleRequests/#{privileged_access_group_assignment_schedule_request_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1570,8 +2051,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_delete_assignment_schedules(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_delete_assignment_schedules(connection, privileged_access_group_assignment_schedule_id, opts \\ []) do
+  @spec identity_governance_privileged_access_group_delete_assignment_schedules(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_delete_assignment_schedules(
+        connection,
+        privileged_access_group_assignment_schedule_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1579,7 +2071,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     request =
       %{}
       |> method(:delete)
-      |> url("/identityGovernance/privilegedAccess/group/assignmentSchedules/#{privileged_access_group_assignment_schedule_id}")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/assignmentSchedules/#{privileged_access_group_assignment_schedule_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1607,8 +2101,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_delete_eligibility_schedule_instances(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_delete_eligibility_schedule_instances(connection, privileged_access_group_eligibility_schedule_instance_id, opts \\ []) do
+  @spec identity_governance_privileged_access_group_delete_eligibility_schedule_instances(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_delete_eligibility_schedule_instances(
+        connection,
+        privileged_access_group_eligibility_schedule_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1616,7 +2121,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     request =
       %{}
       |> method(:delete)
-      |> url("/identityGovernance/privilegedAccess/group/eligibilityScheduleInstances/#{privileged_access_group_eligibility_schedule_instance_id}")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/eligibilityScheduleInstances/#{privileged_access_group_eligibility_schedule_instance_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1644,8 +2151,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_delete_eligibility_schedule_requests(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_delete_eligibility_schedule_requests(connection, privileged_access_group_eligibility_schedule_request_id, opts \\ []) do
+  @spec identity_governance_privileged_access_group_delete_eligibility_schedule_requests(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_delete_eligibility_schedule_requests(
+        connection,
+        privileged_access_group_eligibility_schedule_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1653,7 +2171,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     request =
       %{}
       |> method(:delete)
-      |> url("/identityGovernance/privilegedAccess/group/eligibilityScheduleRequests/#{privileged_access_group_eligibility_schedule_request_id}")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/eligibilityScheduleRequests/#{privileged_access_group_eligibility_schedule_request_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1681,8 +2201,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_delete_eligibility_schedules(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_delete_eligibility_schedules(connection, privileged_access_group_eligibility_schedule_id, opts \\ []) do
+  @spec identity_governance_privileged_access_group_delete_eligibility_schedules(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_delete_eligibility_schedules(
+        connection,
+        privileged_access_group_eligibility_schedule_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1690,7 +2221,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     request =
       %{}
       |> method(:delete)
-      |> url("/identityGovernance/privilegedAccess/group/eligibilitySchedules/#{privileged_access_group_eligibility_schedule_id}")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/eligibilitySchedules/#{privileged_access_group_eligibility_schedule_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1718,8 +2251,17 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_eligibility_schedule_instances_get_count_d5bc(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_eligibility_schedule_instances_get_count_d5bc(connection, opts \\ []) do
+  @spec identity_governance_privileged_access_group_eligibility_schedule_instances_get_count_d5bc(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_eligibility_schedule_instances_get_count_d5bc(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1758,8 +2300,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_eligibility_schedule_instances_get_group(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_eligibility_schedule_instances_get_group(connection, privileged_access_group_eligibility_schedule_instance_id, opts \\ []) do
+  @spec identity_governance_privileged_access_group_eligibility_schedule_instances_get_group(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_eligibility_schedule_instances_get_group(
+        connection,
+        privileged_access_group_eligibility_schedule_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1768,7 +2321,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/privilegedAccess/group/eligibilityScheduleInstances/#{privileged_access_group_eligibility_schedule_instance_id}/group")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/eligibilityScheduleInstances/#{privileged_access_group_eligibility_schedule_instance_id}/group"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1798,8 +2353,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_eligibility_schedule_instances_get_principal(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_eligibility_schedule_instances_get_principal(connection, privileged_access_group_eligibility_schedule_instance_id, opts \\ []) do
+  @spec identity_governance_privileged_access_group_eligibility_schedule_instances_get_principal(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_eligibility_schedule_instances_get_principal(
+        connection,
+        privileged_access_group_eligibility_schedule_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1808,7 +2374,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/privilegedAccess/group/eligibilityScheduleInstances/#{privileged_access_group_eligibility_schedule_instance_id}/principal")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/eligibilityScheduleInstances/#{privileged_access_group_eligibility_schedule_instance_id}/principal"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1843,8 +2411,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_eligibility_schedule_instances_group_list_service_provisioning_errors(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_eligibility_schedule_instances_group_list_service_provisioning_errors(connection, privileged_access_group_eligibility_schedule_instance_id, opts \\ []) do
+  @spec identity_governance_privileged_access_group_eligibility_schedule_instances_group_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_eligibility_schedule_instances_group_list_service_provisioning_errors(
+        connection,
+        privileged_access_group_eligibility_schedule_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1859,7 +2438,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/privilegedAccess/group/eligibilityScheduleInstances/#{privileged_access_group_eligibility_schedule_instance_id}/group/serviceProvisioningErrors")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/eligibilityScheduleInstances/#{privileged_access_group_eligibility_schedule_instance_id}/group/serviceProvisioningErrors"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1888,8 +2469,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_eligibility_schedule_instances_group_service_provisioning_errors_get_count_ce50(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_eligibility_schedule_instances_group_service_provisioning_errors_get_count_ce50(connection, privileged_access_group_eligibility_schedule_instance_id, opts \\ []) do
+  @spec identity_governance_privileged_access_group_eligibility_schedule_instances_group_service_provisioning_errors_get_count_ce50(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_eligibility_schedule_instances_group_service_provisioning_errors_get_count_ce50(
+        connection,
+        privileged_access_group_eligibility_schedule_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1898,7 +2490,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/privilegedAccess/group/eligibilityScheduleInstances/#{privileged_access_group_eligibility_schedule_instance_id}/group/serviceProvisioningErrors/$count")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/eligibilityScheduleInstances/#{privileged_access_group_eligibility_schedule_instance_id}/group/serviceProvisioningErrors/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1926,8 +2520,17 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_eligibility_schedule_requests_get_count_e631(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_eligibility_schedule_requests_get_count_e631(connection, opts \\ []) do
+  @spec identity_governance_privileged_access_group_eligibility_schedule_requests_get_count_e631(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_eligibility_schedule_requests_get_count_e631(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1966,8 +2569,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_eligibility_schedule_requests_get_group(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_eligibility_schedule_requests_get_group(connection, privileged_access_group_eligibility_schedule_request_id, opts \\ []) do
+  @spec identity_governance_privileged_access_group_eligibility_schedule_requests_get_group(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_eligibility_schedule_requests_get_group(
+        connection,
+        privileged_access_group_eligibility_schedule_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1976,7 +2590,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/privilegedAccess/group/eligibilityScheduleRequests/#{privileged_access_group_eligibility_schedule_request_id}/group")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/eligibilityScheduleRequests/#{privileged_access_group_eligibility_schedule_request_id}/group"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2006,8 +2622,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_eligibility_schedule_requests_get_principal(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_eligibility_schedule_requests_get_principal(connection, privileged_access_group_eligibility_schedule_request_id, opts \\ []) do
+  @spec identity_governance_privileged_access_group_eligibility_schedule_requests_get_principal(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_eligibility_schedule_requests_get_principal(
+        connection,
+        privileged_access_group_eligibility_schedule_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2016,7 +2643,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/privilegedAccess/group/eligibilityScheduleRequests/#{privileged_access_group_eligibility_schedule_request_id}/principal")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/eligibilityScheduleRequests/#{privileged_access_group_eligibility_schedule_request_id}/principal"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2046,8 +2675,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilitySchedule.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_eligibility_schedule_requests_get_target_schedule(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilitySchedule.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_eligibility_schedule_requests_get_target_schedule(connection, privileged_access_group_eligibility_schedule_request_id, opts \\ []) do
+  @spec identity_governance_privileged_access_group_eligibility_schedule_requests_get_target_schedule(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilitySchedule.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_eligibility_schedule_requests_get_target_schedule(
+        connection,
+        privileged_access_group_eligibility_schedule_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2056,7 +2696,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/privilegedAccess/group/eligibilityScheduleRequests/#{privileged_access_group_eligibility_schedule_request_id}/targetSchedule")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/eligibilityScheduleRequests/#{privileged_access_group_eligibility_schedule_request_id}/targetSchedule"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2091,8 +2733,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_eligibility_schedule_requests_group_list_service_provisioning_errors(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_eligibility_schedule_requests_group_list_service_provisioning_errors(connection, privileged_access_group_eligibility_schedule_request_id, opts \\ []) do
+  @spec identity_governance_privileged_access_group_eligibility_schedule_requests_group_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_eligibility_schedule_requests_group_list_service_provisioning_errors(
+        connection,
+        privileged_access_group_eligibility_schedule_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -2107,7 +2760,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/privilegedAccess/group/eligibilityScheduleRequests/#{privileged_access_group_eligibility_schedule_request_id}/group/serviceProvisioningErrors")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/eligibilityScheduleRequests/#{privileged_access_group_eligibility_schedule_request_id}/group/serviceProvisioningErrors"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2136,8 +2791,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_eligibility_schedule_requests_group_service_provisioning_errors_get_count_c344(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_eligibility_schedule_requests_group_service_provisioning_errors_get_count_c344(connection, privileged_access_group_eligibility_schedule_request_id, opts \\ []) do
+  @spec identity_governance_privileged_access_group_eligibility_schedule_requests_group_service_provisioning_errors_get_count_c344(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_eligibility_schedule_requests_group_service_provisioning_errors_get_count_c344(
+        connection,
+        privileged_access_group_eligibility_schedule_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -2146,7 +2812,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/privilegedAccess/group/eligibilityScheduleRequests/#{privileged_access_group_eligibility_schedule_request_id}/group/serviceProvisioningErrors/$count")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/eligibilityScheduleRequests/#{privileged_access_group_eligibility_schedule_request_id}/group/serviceProvisioningErrors/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2174,8 +2842,17 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_eligibility_schedules_get_count_dc2d(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_eligibility_schedules_get_count_dc2d(connection, opts \\ []) do
+  @spec identity_governance_privileged_access_group_eligibility_schedules_get_count_dc2d(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_eligibility_schedules_get_count_dc2d(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -2214,8 +2891,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_eligibility_schedules_get_group(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_eligibility_schedules_get_group(connection, privileged_access_group_eligibility_schedule_id, opts \\ []) do
+  @spec identity_governance_privileged_access_group_eligibility_schedules_get_group(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_eligibility_schedules_get_group(
+        connection,
+        privileged_access_group_eligibility_schedule_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2224,7 +2912,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/privilegedAccess/group/eligibilitySchedules/#{privileged_access_group_eligibility_schedule_id}/group")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/eligibilitySchedules/#{privileged_access_group_eligibility_schedule_id}/group"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2254,8 +2944,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_eligibility_schedules_get_principal(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_eligibility_schedules_get_principal(connection, privileged_access_group_eligibility_schedule_id, opts \\ []) do
+  @spec identity_governance_privileged_access_group_eligibility_schedules_get_principal(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_eligibility_schedules_get_principal(
+        connection,
+        privileged_access_group_eligibility_schedule_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2264,7 +2965,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/privilegedAccess/group/eligibilitySchedules/#{privileged_access_group_eligibility_schedule_id}/principal")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/eligibilitySchedules/#{privileged_access_group_eligibility_schedule_id}/principal"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2299,8 +3002,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_eligibility_schedules_group_list_service_provisioning_errors(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_eligibility_schedules_group_list_service_provisioning_errors(connection, privileged_access_group_eligibility_schedule_id, opts \\ []) do
+  @spec identity_governance_privileged_access_group_eligibility_schedules_group_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_eligibility_schedules_group_list_service_provisioning_errors(
+        connection,
+        privileged_access_group_eligibility_schedule_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -2315,7 +3029,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/privilegedAccess/group/eligibilitySchedules/#{privileged_access_group_eligibility_schedule_id}/group/serviceProvisioningErrors")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/eligibilitySchedules/#{privileged_access_group_eligibility_schedule_id}/group/serviceProvisioningErrors"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2344,8 +3060,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_eligibility_schedules_group_service_provisioning_errors_get_count_b2c5(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_eligibility_schedules_group_service_provisioning_errors_get_count_b2c5(connection, privileged_access_group_eligibility_schedule_id, opts \\ []) do
+  @spec identity_governance_privileged_access_group_eligibility_schedules_group_service_provisioning_errors_get_count_b2c5(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_eligibility_schedules_group_service_provisioning_errors_get_count_b2c5(
+        connection,
+        privileged_access_group_eligibility_schedule_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -2354,7 +3081,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/privilegedAccess/group/eligibilitySchedules/#{privileged_access_group_eligibility_schedule_id}/group/serviceProvisioningErrors/$count")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/eligibilitySchedules/#{privileged_access_group_eligibility_schedule_id}/group/serviceProvisioningErrors/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2383,8 +3112,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphApproval.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_get_assignment_approvals(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphApproval.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_get_assignment_approvals(connection, approval_id, opts \\ []) do
+  @spec identity_governance_privileged_access_group_get_assignment_approvals(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphApproval.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_get_assignment_approvals(
+        connection,
+        approval_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2423,8 +3163,20 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentScheduleInstance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_get_assignment_schedule_instances(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentScheduleInstance.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_get_assignment_schedule_instances(connection, privileged_access_group_assignment_schedule_instance_id, opts \\ []) do
+  @spec identity_governance_privileged_access_group_get_assignment_schedule_instances(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentScheduleInstance.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_get_assignment_schedule_instances(
+        connection,
+        privileged_access_group_assignment_schedule_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2433,7 +3185,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/privilegedAccess/group/assignmentScheduleInstances/#{privileged_access_group_assignment_schedule_instance_id}")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/assignmentScheduleInstances/#{privileged_access_group_assignment_schedule_instance_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2463,8 +3217,20 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentScheduleRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_get_assignment_schedule_requests(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentScheduleRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_get_assignment_schedule_requests(connection, privileged_access_group_assignment_schedule_request_id, opts \\ []) do
+  @spec identity_governance_privileged_access_group_get_assignment_schedule_requests(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentScheduleRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_get_assignment_schedule_requests(
+        connection,
+        privileged_access_group_assignment_schedule_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2473,7 +3239,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/privilegedAccess/group/assignmentScheduleRequests/#{privileged_access_group_assignment_schedule_request_id}")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/assignmentScheduleRequests/#{privileged_access_group_assignment_schedule_request_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2503,8 +3271,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentSchedule.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_get_assignment_schedules(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentSchedule.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_get_assignment_schedules(connection, privileged_access_group_assignment_schedule_id, opts \\ []) do
+  @spec identity_governance_privileged_access_group_get_assignment_schedules(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentSchedule.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_get_assignment_schedules(
+        connection,
+        privileged_access_group_assignment_schedule_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2513,7 +3292,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/privilegedAccess/group/assignmentSchedules/#{privileged_access_group_assignment_schedule_id}")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/assignmentSchedules/#{privileged_access_group_assignment_schedule_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2543,8 +3324,20 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleInstance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_get_eligibility_schedule_instances(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleInstance.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_get_eligibility_schedule_instances(connection, privileged_access_group_eligibility_schedule_instance_id, opts \\ []) do
+  @spec identity_governance_privileged_access_group_get_eligibility_schedule_instances(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleInstance.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_get_eligibility_schedule_instances(
+        connection,
+        privileged_access_group_eligibility_schedule_instance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2553,14 +3346,17 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/privilegedAccess/group/eligibilityScheduleInstances/#{privileged_access_group_eligibility_schedule_instance_id}")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/eligibilityScheduleInstances/#{privileged_access_group_eligibility_schedule_instance_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleInstance},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleInstance},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -2583,8 +3379,20 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_get_eligibility_schedule_requests(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_get_eligibility_schedule_requests(connection, privileged_access_group_eligibility_schedule_request_id, opts \\ []) do
+  @spec identity_governance_privileged_access_group_get_eligibility_schedule_requests(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_get_eligibility_schedule_requests(
+        connection,
+        privileged_access_group_eligibility_schedule_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2593,7 +3401,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/privilegedAccess/group/eligibilityScheduleRequests/#{privileged_access_group_eligibility_schedule_request_id}")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/eligibilityScheduleRequests/#{privileged_access_group_eligibility_schedule_request_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2623,8 +3433,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilitySchedule.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_get_eligibility_schedules(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilitySchedule.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_get_eligibility_schedules(connection, privileged_access_group_eligibility_schedule_id, opts \\ []) do
+  @spec identity_governance_privileged_access_group_get_eligibility_schedules(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilitySchedule.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_get_eligibility_schedules(
+        connection,
+        privileged_access_group_eligibility_schedule_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2633,7 +3454,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/privilegedAccess/group/eligibilitySchedules/#{privileged_access_group_eligibility_schedule_id}")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/eligibilitySchedules/#{privileged_access_group_eligibility_schedule_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2667,8 +3490,17 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphApprovalCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_list_assignment_approvals(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphApprovalCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_list_assignment_approvals(connection, opts \\ []) do
+  @spec identity_governance_privileged_access_group_list_assignment_approvals(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphApprovalCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_list_assignment_approvals(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -2718,8 +3550,18 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentScheduleInstanceCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_list_assignment_schedule_instances(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentScheduleInstanceCollectionResponse.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_list_assignment_schedule_instances(connection, opts \\ []) do
+  @spec identity_governance_privileged_access_group_list_assignment_schedule_instances(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentScheduleInstanceCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_list_assignment_schedule_instances(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -2741,7 +3583,8 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentScheduleInstanceCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentScheduleInstanceCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -2769,8 +3612,18 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentScheduleRequestCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_list_assignment_schedule_requests(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentScheduleRequestCollectionResponse.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_list_assignment_schedule_requests(connection, opts \\ []) do
+  @spec identity_governance_privileged_access_group_list_assignment_schedule_requests(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentScheduleRequestCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_list_assignment_schedule_requests(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -2792,7 +3645,8 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentScheduleRequestCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentScheduleRequestCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -2820,8 +3674,18 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentScheduleCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_list_assignment_schedules(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentScheduleCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_list_assignment_schedules(connection, opts \\ []) do
+  @spec identity_governance_privileged_access_group_list_assignment_schedules(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentScheduleCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_list_assignment_schedules(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -2843,7 +3707,8 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentScheduleCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentScheduleCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -2871,8 +3736,18 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleInstanceCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_list_eligibility_schedule_instances(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleInstanceCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_list_eligibility_schedule_instances(connection, opts \\ []) do
+  @spec identity_governance_privileged_access_group_list_eligibility_schedule_instances(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleInstanceCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_list_eligibility_schedule_instances(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -2894,7 +3769,8 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleInstanceCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleInstanceCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -2922,8 +3798,18 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleRequestCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_list_eligibility_schedule_requests(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleRequestCollectionResponse.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_list_eligibility_schedule_requests(connection, opts \\ []) do
+  @spec identity_governance_privileged_access_group_list_eligibility_schedule_requests(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleRequestCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_list_eligibility_schedule_requests(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -2945,7 +3831,8 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleRequestCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleRequestCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -2973,8 +3860,18 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_list_eligibility_schedules(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleCollectionResponse.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_list_eligibility_schedules(connection, opts \\ []) do
+  @spec identity_governance_privileged_access_group_list_eligibility_schedules(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_list_eligibility_schedules(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -2996,7 +3893,8 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -3017,8 +3915,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphApproval.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_update_assignment_approvals(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphApproval.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphApproval.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_update_assignment_approvals(connection, approval_id, microsoft_graph_approval, _opts \\ []) do
+  @spec identity_governance_privileged_access_group_update_assignment_approvals(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphApproval.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphApproval.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_update_assignment_approvals(
+        connection,
+        approval_id,
+        microsoft_graph_approval,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -3050,13 +3961,33 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentScheduleInstance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_update_assignment_schedule_instances(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentScheduleInstance.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentScheduleInstance.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_update_assignment_schedule_instances(connection, privileged_access_group_assignment_schedule_instance_id, microsoft_graph_privileged_access_group_assignment_schedule_instance, _opts \\ []) do
+  @spec identity_governance_privileged_access_group_update_assignment_schedule_instances(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentScheduleInstance.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentScheduleInstance.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_update_assignment_schedule_instances(
+        connection,
+        privileged_access_group_assignment_schedule_instance_id,
+        microsoft_graph_privileged_access_group_assignment_schedule_instance,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/privilegedAccess/group/assignmentScheduleInstances/#{privileged_access_group_assignment_schedule_instance_id}")
-      |> add_param(:body, :body, microsoft_graph_privileged_access_group_assignment_schedule_instance)
+      |> url(
+        "/identityGovernance/privilegedAccess/group/assignmentScheduleInstances/#{privileged_access_group_assignment_schedule_instance_id}"
+      )
+      |> add_param(
+        :body,
+        :body,
+        microsoft_graph_privileged_access_group_assignment_schedule_instance
+      )
       |> Enum.into([])
 
     connection
@@ -3083,13 +4014,33 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentScheduleRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_update_assignment_schedule_requests(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentScheduleRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentScheduleRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_update_assignment_schedule_requests(connection, privileged_access_group_assignment_schedule_request_id, microsoft_graph_privileged_access_group_assignment_schedule_request, _opts \\ []) do
+  @spec identity_governance_privileged_access_group_update_assignment_schedule_requests(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentScheduleRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentScheduleRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_update_assignment_schedule_requests(
+        connection,
+        privileged_access_group_assignment_schedule_request_id,
+        microsoft_graph_privileged_access_group_assignment_schedule_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/privilegedAccess/group/assignmentScheduleRequests/#{privileged_access_group_assignment_schedule_request_id}")
-      |> add_param(:body, :body, microsoft_graph_privileged_access_group_assignment_schedule_request)
+      |> url(
+        "/identityGovernance/privilegedAccess/group/assignmentScheduleRequests/#{privileged_access_group_assignment_schedule_request_id}"
+      )
+      |> add_param(
+        :body,
+        :body,
+        microsoft_graph_privileged_access_group_assignment_schedule_request
+      )
       |> Enum.into([])
 
     connection
@@ -3116,12 +4067,27 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentSchedule.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_update_assignment_schedules(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentSchedule.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentSchedule.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_update_assignment_schedules(connection, privileged_access_group_assignment_schedule_id, microsoft_graph_privileged_access_group_assignment_schedule, _opts \\ []) do
+  @spec identity_governance_privileged_access_group_update_assignment_schedules(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentSchedule.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupAssignmentSchedule.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_update_assignment_schedules(
+        connection,
+        privileged_access_group_assignment_schedule_id,
+        microsoft_graph_privileged_access_group_assignment_schedule,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/privilegedAccess/group/assignmentSchedules/#{privileged_access_group_assignment_schedule_id}")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/assignmentSchedules/#{privileged_access_group_assignment_schedule_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_privileged_access_group_assignment_schedule)
       |> Enum.into([])
 
@@ -3149,19 +4115,40 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleInstance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_update_eligibility_schedule_instances(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleInstance.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleInstance.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_update_eligibility_schedule_instances(connection, privileged_access_group_eligibility_schedule_instance_id, microsoft_graph_privileged_access_group_eligibility_schedule_instance, _opts \\ []) do
+  @spec identity_governance_privileged_access_group_update_eligibility_schedule_instances(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleInstance.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleInstance.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_update_eligibility_schedule_instances(
+        connection,
+        privileged_access_group_eligibility_schedule_instance_id,
+        microsoft_graph_privileged_access_group_eligibility_schedule_instance,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/privilegedAccess/group/eligibilityScheduleInstances/#{privileged_access_group_eligibility_schedule_instance_id}")
-      |> add_param(:body, :body, microsoft_graph_privileged_access_group_eligibility_schedule_instance)
+      |> url(
+        "/identityGovernance/privilegedAccess/group/eligibilityScheduleInstances/#{privileged_access_group_eligibility_schedule_instance_id}"
+      )
+      |> add_param(
+        :body,
+        :body,
+        microsoft_graph_privileged_access_group_eligibility_schedule_instance
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleInstance},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleInstance},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -3182,13 +4169,33 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_update_eligibility_schedule_requests(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_update_eligibility_schedule_requests(connection, privileged_access_group_eligibility_schedule_request_id, microsoft_graph_privileged_access_group_eligibility_schedule_request, _opts \\ []) do
+  @spec identity_governance_privileged_access_group_update_eligibility_schedule_requests(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_update_eligibility_schedule_requests(
+        connection,
+        privileged_access_group_eligibility_schedule_request_id,
+        microsoft_graph_privileged_access_group_eligibility_schedule_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/privilegedAccess/group/eligibilityScheduleRequests/#{privileged_access_group_eligibility_schedule_request_id}")
-      |> add_param(:body, :body, microsoft_graph_privileged_access_group_eligibility_schedule_request)
+      |> url(
+        "/identityGovernance/privilegedAccess/group/eligibilityScheduleRequests/#{privileged_access_group_eligibility_schedule_request_id}"
+      )
+      |> add_param(
+        :body,
+        :body,
+        microsoft_graph_privileged_access_group_eligibility_schedule_request
+      )
       |> Enum.into([])
 
     connection
@@ -3215,12 +4222,27 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilitySchedule.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_group_update_eligibility_schedules(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilitySchedule.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilitySchedule.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_group_update_eligibility_schedules(connection, privileged_access_group_eligibility_schedule_id, microsoft_graph_privileged_access_group_eligibility_schedule, _opts \\ []) do
+  @spec identity_governance_privileged_access_group_update_eligibility_schedules(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilitySchedule.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilitySchedule.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_group_update_eligibility_schedules(
+        connection,
+        privileged_access_group_eligibility_schedule_id,
+        microsoft_graph_privileged_access_group_eligibility_schedule,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/privilegedAccess/group/eligibilitySchedules/#{privileged_access_group_eligibility_schedule_id}")
+      |> url(
+        "/identityGovernance/privilegedAccess/group/eligibilitySchedules/#{privileged_access_group_eligibility_schedule_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_privileged_access_group_eligibility_schedule)
       |> Enum.into([])
 
@@ -3247,8 +4269,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_privileged_access_update_group(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroup.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_privileged_access_update_group(connection, microsoft_graph_privileged_access_group, _opts \\ []) do
+  @spec identity_governance_privileged_access_update_group(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroup.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_privileged_access_update_group(
+        connection,
+        microsoft_graph_privileged_access_group,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -3279,8 +4312,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernancePrivilegedAccessRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessRoot.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_update_privileged_access(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessRoot.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessRoot.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_update_privileged_access(connection, microsoft_graph_privileged_access_root, _opts \\ []) do
+  @spec identity_governance_update_privileged_access(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessRoot.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessRoot.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_update_privileged_access(
+        connection,
+        microsoft_graph_privileged_access_root,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

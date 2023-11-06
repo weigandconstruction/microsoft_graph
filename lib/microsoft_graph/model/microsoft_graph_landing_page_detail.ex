@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphLandingPageDetail do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,15 +16,14 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphLandingPageDetail do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :content => String.t | nil,
-    :isDefaultLangauge => boolean() | nil,
-    :language => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :content => String.t() | nil,
+          :isDefaultLangauge => boolean() | nil,
+          :language => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

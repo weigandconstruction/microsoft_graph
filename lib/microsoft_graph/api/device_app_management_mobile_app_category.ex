@@ -24,8 +24,19 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementMobileAppCategory do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMobileAppCategory.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_create_mobile_app_categories(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphMobileAppCategory.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphMobileAppCategory.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_create_mobile_app_categories(connection, microsoft_graph_mobile_app_category, _opts \\ []) do
+  @spec device_app_management_create_mobile_app_categories(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphMobileAppCategory.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphMobileAppCategory.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_create_mobile_app_categories(
+        connection,
+        microsoft_graph_mobile_app_category,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -58,8 +69,19 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementMobileAppCategory do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_delete_mobile_app_categories(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_delete_mobile_app_categories(connection, mobile_app_category_id, opts \\ []) do
+  @spec device_app_management_delete_mobile_app_categories(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_delete_mobile_app_categories(
+        connection,
+        mobile_app_category_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -97,8 +119,15 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementMobileAppCategory do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMobileAppCategory.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_get_mobile_app_categories(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphMobileAppCategory.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_get_mobile_app_categories(connection, mobile_app_category_id, opts \\ []) do
+  @spec device_app_management_get_mobile_app_categories(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphMobileAppCategory.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_get_mobile_app_categories(
+        connection,
+        mobile_app_category_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -142,7 +171,10 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementMobileAppCategory do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMobileAppCategoryCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_list_mobile_app_categories(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphMobileAppCategoryCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec device_app_management_list_mobile_app_categories(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphMobileAppCategoryCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def device_app_management_list_mobile_app_categories(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -186,7 +218,10 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementMobileAppCategory do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_mobile_app_categories_get_count03a0(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec device_app_management_mobile_app_categories_get_count03a0(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def device_app_management_mobile_app_categories_get_count03a0(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -225,8 +260,21 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementMobileAppCategory do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMobileAppCategory.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_update_mobile_app_categories(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphMobileAppCategory.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphMobileAppCategory.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_update_mobile_app_categories(connection, mobile_app_category_id, microsoft_graph_mobile_app_category, _opts \\ []) do
+  @spec device_app_management_update_mobile_app_categories(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMobileAppCategory.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphMobileAppCategory.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_update_mobile_app_categories(
+        connection,
+        mobile_app_category_id,
+        microsoft_graph_mobile_app_category,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

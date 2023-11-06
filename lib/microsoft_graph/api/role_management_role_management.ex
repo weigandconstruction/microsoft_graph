@@ -24,7 +24,10 @@ defmodule MicrosoftGraph.Api.RoleManagementRoleManagement do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphRoleManagement.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_role_management_get_role_management(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphRoleManagement.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec role_management_role_management_get_role_management(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphRoleManagement.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def role_management_role_management_get_role_management(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -61,8 +64,19 @@ defmodule MicrosoftGraph.Api.RoleManagementRoleManagement do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphRoleManagement.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_role_management_update_role_management(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphRoleManagement.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphRoleManagement.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_role_management_update_role_management(connection, microsoft_graph_role_management, _opts \\ []) do
+  @spec role_management_role_management_update_role_management(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphRoleManagement.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphRoleManagement.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_role_management_update_role_management(
+        connection,
+        microsoft_graph_role_management,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

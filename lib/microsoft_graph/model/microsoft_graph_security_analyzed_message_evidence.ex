@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityAnalyzedMessageEvidence do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -37,45 +37,65 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityAnalyzedMessageEvidence do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :createdDateTime => DateTime.t | nil,
-    :detailedRoles => [String.t] | nil,
-    :remediationStatus => MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRemediationStatus.t | nil,
-    :remediationStatusDetails => String.t | nil,
-    :roles => [MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRole.t] | nil,
-    :tags => [String.t] | nil,
-    :verdict => MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceVerdict.t | nil,
-    :antiSpamDirection => String.t | nil,
-    :attachmentsCount => integer() | nil,
-    :deliveryAction => String.t | nil,
-    :deliveryLocation => String.t | nil,
-    :internetMessageId => String.t | nil,
-    :language => String.t | nil,
-    :networkMessageId => String.t | nil,
-    :p1Sender => MicrosoftGraph.Model.AnalyzedMessageEvidenceP1Sender.t | nil,
-    :p2Sender => MicrosoftGraph.Model.AnalyzedMessageEvidenceP2Sender.t | nil,
-    :receivedDateTime => DateTime.t | nil,
-    :recipientEmailAddress => String.t | nil,
-    :senderIp => String.t | nil,
-    :subject => String.t | nil,
-    :threatDetectionMethods => [String.t] | nil,
-    :threats => [String.t] | nil,
-    :urlCount => integer() | nil,
-    :urls => [String.t] | nil,
-    :urn => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :createdDateTime => DateTime.t() | nil,
+          :detailedRoles => [String.t()] | nil,
+          :remediationStatus =>
+            MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRemediationStatus.t() | nil,
+          :remediationStatusDetails => String.t() | nil,
+          :roles => [MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRole.t()] | nil,
+          :tags => [String.t()] | nil,
+          :verdict => MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceVerdict.t() | nil,
+          :antiSpamDirection => String.t() | nil,
+          :attachmentsCount => integer() | nil,
+          :deliveryAction => String.t() | nil,
+          :deliveryLocation => String.t() | nil,
+          :internetMessageId => String.t() | nil,
+          :language => String.t() | nil,
+          :networkMessageId => String.t() | nil,
+          :p1Sender => MicrosoftGraph.Model.AnalyzedMessageEvidenceP1Sender.t() | nil,
+          :p2Sender => MicrosoftGraph.Model.AnalyzedMessageEvidenceP2Sender.t() | nil,
+          :receivedDateTime => DateTime.t() | nil,
+          :recipientEmailAddress => String.t() | nil,
+          :senderIp => String.t() | nil,
+          :subject => String.t() | nil,
+          :threatDetectionMethods => [String.t()] | nil,
+          :threats => [String.t()] | nil,
+          :urlCount => integer() | nil,
+          :urls => [String.t()] | nil,
+          :urn => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:remediationStatus, :struct, MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRemediationStatus)
-     |> Deserializer.deserialize(:roles, :list, MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRole)
-     |> Deserializer.deserialize(:verdict, :struct, MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceVerdict)
-     |> Deserializer.deserialize(:p1Sender, :struct, MicrosoftGraph.Model.AnalyzedMessageEvidenceP1Sender)
-     |> Deserializer.deserialize(:p2Sender, :struct, MicrosoftGraph.Model.AnalyzedMessageEvidenceP2Sender)
-     |> Deserializer.deserialize(:receivedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :remediationStatus,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRemediationStatus
+    )
+    |> Deserializer.deserialize(
+      :roles,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRole
+    )
+    |> Deserializer.deserialize(
+      :verdict,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceVerdict
+    )
+    |> Deserializer.deserialize(
+      :p1Sender,
+      :struct,
+      MicrosoftGraph.Model.AnalyzedMessageEvidenceP1Sender
+    )
+    |> Deserializer.deserialize(
+      :p2Sender,
+      :struct,
+      MicrosoftGraph.Model.AnalyzedMessageEvidenceP2Sender
+    )
+    |> Deserializer.deserialize(:receivedDateTime, :datetime, nil)
   end
 end
-

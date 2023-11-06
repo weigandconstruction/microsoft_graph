@@ -13,12 +13,11 @@ defmodule MicrosoftGraph.Model.CustomCalloutExtensionClientConfiguration do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :timeoutInMilliseconds => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :timeoutInMilliseconds => integer() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

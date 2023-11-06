@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphUserInstallStateSummary do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,20 +18,23 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphUserInstallStateSummary do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :deviceStates => [MicrosoftGraph.Model.MicrosoftGraphDeviceInstallState.t] | nil,
-    :failedDeviceCount => integer() | nil,
-    :installedDeviceCount => integer() | nil,
-    :notInstalledDeviceCount => integer() | nil,
-    :userName => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :deviceStates => [MicrosoftGraph.Model.MicrosoftGraphDeviceInstallState.t()] | nil,
+          :failedDeviceCount => integer() | nil,
+          :installedDeviceCount => integer() | nil,
+          :notInstalledDeviceCount => integer() | nil,
+          :userName => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:deviceStates, :list, MicrosoftGraph.Model.MicrosoftGraphDeviceInstallState)
+    |> Deserializer.deserialize(
+      :deviceStates,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDeviceInstallState
+    )
   end
 end
-

@@ -25,8 +25,21 @@ defmodule MicrosoftGraph.Api.ApplicationsExtensionProperty do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionProperty.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_create_extension_properties(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphExtensionProperty.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionProperty.t} | {:error, Tesla.Env.t}
-  def applications_create_extension_properties(connection, application_id, microsoft_graph_extension_property, _opts \\ []) do
+  @spec applications_create_extension_properties(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphExtensionProperty.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionProperty.t()}
+          | {:error, Tesla.Env.t()}
+  def applications_create_extension_properties(
+        connection,
+        application_id,
+        microsoft_graph_extension_property,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -60,8 +73,21 @@ defmodule MicrosoftGraph.Api.ApplicationsExtensionProperty do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_delete_extension_properties(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def applications_delete_extension_properties(connection, application_id, extension_property_id, opts \\ []) do
+  @spec applications_delete_extension_properties(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def applications_delete_extension_properties(
+        connection,
+        application_id,
+        extension_property_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -98,7 +124,10 @@ defmodule MicrosoftGraph.Api.ApplicationsExtensionProperty do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_extension_properties_get_count3535(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec applications_extension_properties_get_count3535(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def applications_extension_properties_get_count3535(connection, application_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -139,8 +168,21 @@ defmodule MicrosoftGraph.Api.ApplicationsExtensionProperty do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionProperty.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_get_extension_properties(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionProperty.t} | {:error, Tesla.Env.t}
-  def applications_get_extension_properties(connection, application_id, extension_property_id, opts \\ []) do
+  @spec applications_get_extension_properties(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionProperty.t()}
+          | {:error, Tesla.Env.t()}
+  def applications_get_extension_properties(
+        connection,
+        application_id,
+        extension_property_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -185,7 +227,10 @@ defmodule MicrosoftGraph.Api.ApplicationsExtensionProperty do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionPropertyCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_list_extension_properties(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionPropertyCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec applications_list_extension_properties(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionPropertyCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def applications_list_extension_properties(connection, application_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -230,8 +275,23 @@ defmodule MicrosoftGraph.Api.ApplicationsExtensionProperty do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionProperty.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_update_extension_properties(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphExtensionProperty.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionProperty.t} | {:error, Tesla.Env.t}
-  def applications_update_extension_properties(connection, application_id, extension_property_id, microsoft_graph_extension_property, _opts \\ []) do
+  @spec applications_update_extension_properties(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphExtensionProperty.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionProperty.t()}
+          | {:error, Tesla.Env.t()}
+  def applications_update_extension_properties(
+        connection,
+        application_id,
+        extension_property_id,
+        microsoft_graph_extension_property,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphOptionalClaims do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,19 +15,33 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphOptionalClaims do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :accessToken => [MicrosoftGraph.Model.MicrosoftGraphOptionalClaimsAccessTokenInner.t] | nil,
-    :idToken => [MicrosoftGraph.Model.MicrosoftGraphOptionalClaimsAccessTokenInner.t] | nil,
-    :saml2Token => [MicrosoftGraph.Model.MicrosoftGraphOptionalClaimsAccessTokenInner.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :accessToken =>
+            [MicrosoftGraph.Model.MicrosoftGraphOptionalClaimsAccessTokenInner.t()] | nil,
+          :idToken =>
+            [MicrosoftGraph.Model.MicrosoftGraphOptionalClaimsAccessTokenInner.t()] | nil,
+          :saml2Token =>
+            [MicrosoftGraph.Model.MicrosoftGraphOptionalClaimsAccessTokenInner.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:accessToken, :list, MicrosoftGraph.Model.MicrosoftGraphOptionalClaimsAccessTokenInner)
-     |> Deserializer.deserialize(:idToken, :list, MicrosoftGraph.Model.MicrosoftGraphOptionalClaimsAccessTokenInner)
-     |> Deserializer.deserialize(:saml2Token, :list, MicrosoftGraph.Model.MicrosoftGraphOptionalClaimsAccessTokenInner)
+    |> Deserializer.deserialize(
+      :accessToken,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphOptionalClaimsAccessTokenInner
+    )
+    |> Deserializer.deserialize(
+      :idToken,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphOptionalClaimsAccessTokenInner
+    )
+    |> Deserializer.deserialize(
+      :saml2Token,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphOptionalClaimsAccessTokenInner
+    )
   end
 end
-

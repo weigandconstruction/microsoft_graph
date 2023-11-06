@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphMacOsLobAppAssignmentSettings do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,12 +13,11 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphMacOsLobAppAssignmentSettings do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :uninstallOnDeviceRemoval => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :uninstallOnDeviceRemoval => boolean() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

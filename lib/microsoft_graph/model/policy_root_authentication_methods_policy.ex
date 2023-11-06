@@ -21,26 +21,40 @@ defmodule MicrosoftGraph.Model.PolicyRootAuthenticationMethodsPolicy do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :authenticationMethodConfigurations => [MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodConfiguration.t] | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :policyMigrationState => MicrosoftGraph.Model.AuthenticationMethodsPolicyPolicyMigrationState.t | nil,
-    :policyVersion => String.t | nil,
-    :reconfirmationInDays => integer() | nil,
-    :registrationEnforcement => MicrosoftGraph.Model.AuthenticationMethodsPolicyRegistrationEnforcement.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :authenticationMethodConfigurations =>
+            [MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodConfiguration.t()] | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :policyMigrationState =>
+            MicrosoftGraph.Model.AuthenticationMethodsPolicyPolicyMigrationState.t() | nil,
+          :policyVersion => String.t() | nil,
+          :reconfirmationInDays => integer() | nil,
+          :registrationEnforcement =>
+            MicrosoftGraph.Model.AuthenticationMethodsPolicyRegistrationEnforcement.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:authenticationMethodConfigurations, :list, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodConfiguration)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:policyMigrationState, :struct, MicrosoftGraph.Model.AuthenticationMethodsPolicyPolicyMigrationState)
-     |> Deserializer.deserialize(:registrationEnforcement, :struct, MicrosoftGraph.Model.AuthenticationMethodsPolicyRegistrationEnforcement)
+    |> Deserializer.deserialize(
+      :authenticationMethodConfigurations,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodConfiguration
+    )
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :policyMigrationState,
+      :struct,
+      MicrosoftGraph.Model.AuthenticationMethodsPolicyPolicyMigrationState
+    )
+    |> Deserializer.deserialize(
+      :registrationEnforcement,
+      :struct,
+      MicrosoftGraph.Model.AuthenticationMethodsPolicyRegistrationEnforcement
+    )
   end
 end
-

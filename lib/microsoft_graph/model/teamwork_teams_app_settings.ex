@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.TeamworkTeamsAppSettings do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :allowUserRequestsForAppAccess => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :allowUserRequestsForAppAccess => boolean() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

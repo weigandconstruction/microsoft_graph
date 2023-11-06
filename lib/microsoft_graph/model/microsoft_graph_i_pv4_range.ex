@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphIPv4Range do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphIPv4Range do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :lowerAddress => String.t | nil,
-    :upperAddress => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :lowerAddress => String.t() | nil,
+          :upperAddress => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

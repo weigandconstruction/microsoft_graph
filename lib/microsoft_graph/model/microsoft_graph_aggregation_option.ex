@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAggregationOption do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,17 +15,21 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAggregationOption do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :bucketDefinition => MicrosoftGraph.Model.MicrosoftGraphBucketAggregationDefinition.t | nil,
-    :field => String.t | nil,
-    :size => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :bucketDefinition =>
+            MicrosoftGraph.Model.MicrosoftGraphBucketAggregationDefinition.t() | nil,
+          :field => String.t() | nil,
+          :size => integer() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:bucketDefinition, :struct, MicrosoftGraph.Model.MicrosoftGraphBucketAggregationDefinition)
+    |> Deserializer.deserialize(
+      :bucketDefinition,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphBucketAggregationDefinition
+    )
   end
 end
-

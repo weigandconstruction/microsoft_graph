@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphMobileThreatDefenseConnector do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -28,31 +28,35 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphMobileThreatDefenseConnector do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :allowPartnerToCollectIOSApplicationMetadata => boolean() | nil,
-    :allowPartnerToCollectIOSPersonalApplicationMetadata => boolean() | nil,
-    :androidDeviceBlockedOnMissingPartnerData => boolean() | nil,
-    :androidEnabled => boolean() | nil,
-    :androidMobileApplicationManagementEnabled => boolean() | nil,
-    :iosDeviceBlockedOnMissingPartnerData => boolean() | nil,
-    :iosEnabled => boolean() | nil,
-    :iosMobileApplicationManagementEnabled => boolean() | nil,
-    :lastHeartbeatDateTime => DateTime.t | nil,
-    :microsoftDefenderForEndpointAttachEnabled => boolean() | nil,
-    :partnerState => MicrosoftGraph.Model.MicrosoftGraphMobileThreatPartnerTenantState.t | nil,
-    :partnerUnresponsivenessThresholdInDays => integer() | nil,
-    :partnerUnsupportedOsVersionBlocked => boolean() | nil,
-    :windowsDeviceBlockedOnMissingPartnerData => boolean() | nil,
-    :windowsEnabled => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :allowPartnerToCollectIOSApplicationMetadata => boolean() | nil,
+          :allowPartnerToCollectIOSPersonalApplicationMetadata => boolean() | nil,
+          :androidDeviceBlockedOnMissingPartnerData => boolean() | nil,
+          :androidEnabled => boolean() | nil,
+          :androidMobileApplicationManagementEnabled => boolean() | nil,
+          :iosDeviceBlockedOnMissingPartnerData => boolean() | nil,
+          :iosEnabled => boolean() | nil,
+          :iosMobileApplicationManagementEnabled => boolean() | nil,
+          :lastHeartbeatDateTime => DateTime.t() | nil,
+          :microsoftDefenderForEndpointAttachEnabled => boolean() | nil,
+          :partnerState =>
+            MicrosoftGraph.Model.MicrosoftGraphMobileThreatPartnerTenantState.t() | nil,
+          :partnerUnresponsivenessThresholdInDays => integer() | nil,
+          :partnerUnsupportedOsVersionBlocked => boolean() | nil,
+          :windowsDeviceBlockedOnMissingPartnerData => boolean() | nil,
+          :windowsEnabled => boolean() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:lastHeartbeatDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:partnerState, :struct, MicrosoftGraph.Model.MicrosoftGraphMobileThreatPartnerTenantState)
+    |> Deserializer.deserialize(:lastHeartbeatDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :partnerState,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphMobileThreatPartnerTenantState
+    )
   end
 end
-

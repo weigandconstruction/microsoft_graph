@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityEventQuery do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,19 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityEventQuery do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :query => String.t | nil,
-    :queryType => MicrosoftGraph.Model.MicrosoftGraphSecurityEventQueryQueryType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :query => String.t() | nil,
+          :queryType => MicrosoftGraph.Model.MicrosoftGraphSecurityEventQueryQueryType.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:queryType, :struct, MicrosoftGraph.Model.MicrosoftGraphSecurityEventQueryQueryType)
+    |> Deserializer.deserialize(
+      :queryType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityEventQueryQueryType
+    )
   end
 end
-

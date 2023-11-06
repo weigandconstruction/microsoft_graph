@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DeviceManagementImportedWindowsAutopilotDeviceIdentitiesImportRequestImportedWindowsAutopilotDeviceIdentitiesInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -20,22 +20,25 @@ defmodule MicrosoftGraph.Model.DeviceManagementImportedWindowsAutopilotDeviceIde
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :assignedUserPrincipalName => String.t | nil,
-    :groupTag => String.t | nil,
-    :hardwareIdentifier => String.t | nil,
-    :importId => String.t | nil,
-    :productKey => String.t | nil,
-    :serialNumber => String.t | nil,
-    :state => MicrosoftGraph.Model.ImportedWindowsAutopilotDeviceIdentityState.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :assignedUserPrincipalName => String.t() | nil,
+          :groupTag => String.t() | nil,
+          :hardwareIdentifier => String.t() | nil,
+          :importId => String.t() | nil,
+          :productKey => String.t() | nil,
+          :serialNumber => String.t() | nil,
+          :state => MicrosoftGraph.Model.ImportedWindowsAutopilotDeviceIdentityState.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:state, :struct, MicrosoftGraph.Model.ImportedWindowsAutopilotDeviceIdentityState)
+    |> Deserializer.deserialize(
+      :state,
+      :struct,
+      MicrosoftGraph.Model.ImportedWindowsAutopilotDeviceIdentityState
+    )
   end
 end
-

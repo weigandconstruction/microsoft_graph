@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphDeviceCompliancePolicySettingStateSummary do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -24,27 +24,35 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphDeviceCompliancePolicySettingStateS
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :compliantDeviceCount => integer() | nil,
-    :conflictDeviceCount => integer() | nil,
-    :deviceComplianceSettingStates => [MicrosoftGraph.Model.MicrosoftGraphDeviceComplianceSettingState.t] | nil,
-    :errorDeviceCount => integer() | nil,
-    :nonCompliantDeviceCount => integer() | nil,
-    :notApplicableDeviceCount => integer() | nil,
-    :platformType => MicrosoftGraph.Model.MicrosoftGraphPolicyPlatformType.t | nil,
-    :remediatedDeviceCount => integer() | nil,
-    :setting => String.t | nil,
-    :settingName => String.t | nil,
-    :unknownDeviceCount => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :compliantDeviceCount => integer() | nil,
+          :conflictDeviceCount => integer() | nil,
+          :deviceComplianceSettingStates =>
+            [MicrosoftGraph.Model.MicrosoftGraphDeviceComplianceSettingState.t()] | nil,
+          :errorDeviceCount => integer() | nil,
+          :nonCompliantDeviceCount => integer() | nil,
+          :notApplicableDeviceCount => integer() | nil,
+          :platformType => MicrosoftGraph.Model.MicrosoftGraphPolicyPlatformType.t() | nil,
+          :remediatedDeviceCount => integer() | nil,
+          :setting => String.t() | nil,
+          :settingName => String.t() | nil,
+          :unknownDeviceCount => integer() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:deviceComplianceSettingStates, :list, MicrosoftGraph.Model.MicrosoftGraphDeviceComplianceSettingState)
-     |> Deserializer.deserialize(:platformType, :struct, MicrosoftGraph.Model.MicrosoftGraphPolicyPlatformType)
+    |> Deserializer.deserialize(
+      :deviceComplianceSettingStates,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDeviceComplianceSettingState
+    )
+    |> Deserializer.deserialize(
+      :platformType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphPolicyPlatformType
+    )
   end
 end
-

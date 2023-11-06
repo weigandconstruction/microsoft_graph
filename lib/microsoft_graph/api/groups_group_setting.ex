@@ -25,7 +25,15 @@ defmodule MicrosoftGraph.Api.GroupsGroupSetting do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphGroupSetting.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec groups_create_settings(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphGroupSetting.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphGroupSetting.t} | {:error, Tesla.Env.t}
+  @spec groups_create_settings(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphGroupSetting.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphGroupSetting.t()}
+          | {:error, Tesla.Env.t()}
   def groups_create_settings(connection, group_id, microsoft_graph_group_setting, _opts \\ []) do
     request =
       %{}
@@ -59,7 +67,10 @@ defmodule MicrosoftGraph.Api.GroupsGroupSetting do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec groups_delete_settings(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec groups_delete_settings(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def groups_delete_settings(connection, group_id, group_setting_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -99,7 +110,10 @@ defmodule MicrosoftGraph.Api.GroupsGroupSetting do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphGroupSetting.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec groups_get_settings(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphGroupSetting.t} | {:error, Tesla.Env.t}
+  @spec groups_get_settings(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphGroupSetting.t()}
+          | {:error, Tesla.Env.t()}
   def groups_get_settings(connection, group_id, group_setting_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -145,7 +159,10 @@ defmodule MicrosoftGraph.Api.GroupsGroupSetting do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphGroupSettingCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec groups_list_settings(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphGroupSettingCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec groups_list_settings(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphGroupSettingCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def groups_list_settings(connection, group_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -190,7 +207,10 @@ defmodule MicrosoftGraph.Api.GroupsGroupSetting do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec groups_settings_get_count7641(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec groups_settings_get_count7641(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def groups_settings_get_count7641(connection, group_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -230,8 +250,23 @@ defmodule MicrosoftGraph.Api.GroupsGroupSetting do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphGroupSetting.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec groups_update_settings(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphGroupSetting.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphGroupSetting.t} | {:error, Tesla.Env.t}
-  def groups_update_settings(connection, group_id, group_setting_id, microsoft_graph_group_setting, _opts \\ []) do
+  @spec groups_update_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphGroupSetting.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphGroupSetting.t()}
+          | {:error, Tesla.Env.t()}
+  def groups_update_settings(
+        connection,
+        group_id,
+        group_setting_id,
+        microsoft_graph_group_setting,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

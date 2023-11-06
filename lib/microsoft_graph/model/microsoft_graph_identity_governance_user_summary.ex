@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserSummary do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,16 +17,15 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserSummary do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :failedTasks => integer() | nil,
-    :failedUsers => integer() | nil,
-    :successfulUsers => integer() | nil,
-    :totalTasks => integer() | nil,
-    :totalUsers => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :failedTasks => integer() | nil,
+          :failedUsers => integer() | nil,
+          :successfulUsers => integer() | nil,
+          :totalTasks => integer() | nil,
+          :totalUsers => integer() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

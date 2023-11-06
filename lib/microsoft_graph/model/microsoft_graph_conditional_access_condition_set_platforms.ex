@@ -14,17 +14,26 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphConditionalAccessConditionSetPlatfo
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :excludePlatforms => [MicrosoftGraph.Model.MicrosoftGraphConditionalAccessDevicePlatform.t] | nil,
-    :includePlatforms => [MicrosoftGraph.Model.MicrosoftGraphConditionalAccessDevicePlatform.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :excludePlatforms =>
+            [MicrosoftGraph.Model.MicrosoftGraphConditionalAccessDevicePlatform.t()] | nil,
+          :includePlatforms =>
+            [MicrosoftGraph.Model.MicrosoftGraphConditionalAccessDevicePlatform.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:excludePlatforms, :list, MicrosoftGraph.Model.MicrosoftGraphConditionalAccessDevicePlatform)
-     |> Deserializer.deserialize(:includePlatforms, :list, MicrosoftGraph.Model.MicrosoftGraphConditionalAccessDevicePlatform)
+    |> Deserializer.deserialize(
+      :excludePlatforms,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphConditionalAccessDevicePlatform
+    )
+    |> Deserializer.deserialize(
+      :includePlatforms,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphConditionalAccessDevicePlatform
+    )
   end
 end
-

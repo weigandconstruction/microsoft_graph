@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAccessReviewNotificationRecipientItem do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,21 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAccessReviewNotificationRecipientIt
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :notificationRecipientScope => MicrosoftGraph.Model.MicrosoftGraphAccessReviewNotificationRecipientItemNotificationRecipientScope.t | nil,
-    :notificationTemplateType => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :notificationRecipientScope =>
+            MicrosoftGraph.Model.MicrosoftGraphAccessReviewNotificationRecipientItemNotificationRecipientScope.t()
+            | nil,
+          :notificationTemplateType => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:notificationRecipientScope, :struct, MicrosoftGraph.Model.MicrosoftGraphAccessReviewNotificationRecipientItemNotificationRecipientScope)
+    |> Deserializer.deserialize(
+      :notificationRecipientScope,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAccessReviewNotificationRecipientItemNotificationRecipientScope
+    )
   end
 end
-

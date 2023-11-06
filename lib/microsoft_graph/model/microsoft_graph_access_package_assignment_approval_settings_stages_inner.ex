@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAccessPackageAssignmentApprovalSettingsStagesInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -20,25 +20,48 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAccessPackageAssignmentApprovalSett
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :durationBeforeAutomaticDenial => String.t | nil,
-    :durationBeforeEscalation => String.t | nil,
-    :escalationApprovers => [MicrosoftGraph.Model.MicrosoftGraphUnifiedApprovalStageEscalationApproversInner.t] | nil,
-    :fallbackEscalationApprovers => [MicrosoftGraph.Model.MicrosoftGraphUnifiedApprovalStageEscalationApproversInner.t] | nil,
-    :fallbackPrimaryApprovers => [MicrosoftGraph.Model.MicrosoftGraphUnifiedApprovalStageEscalationApproversInner.t] | nil,
-    :isApproverJustificationRequired => boolean() | nil,
-    :isEscalationEnabled => boolean() | nil,
-    :primaryApprovers => [MicrosoftGraph.Model.MicrosoftGraphUnifiedApprovalStageEscalationApproversInner.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :durationBeforeAutomaticDenial => String.t() | nil,
+          :durationBeforeEscalation => String.t() | nil,
+          :escalationApprovers =>
+            [MicrosoftGraph.Model.MicrosoftGraphUnifiedApprovalStageEscalationApproversInner.t()]
+            | nil,
+          :fallbackEscalationApprovers =>
+            [MicrosoftGraph.Model.MicrosoftGraphUnifiedApprovalStageEscalationApproversInner.t()]
+            | nil,
+          :fallbackPrimaryApprovers =>
+            [MicrosoftGraph.Model.MicrosoftGraphUnifiedApprovalStageEscalationApproversInner.t()]
+            | nil,
+          :isApproverJustificationRequired => boolean() | nil,
+          :isEscalationEnabled => boolean() | nil,
+          :primaryApprovers =>
+            [MicrosoftGraph.Model.MicrosoftGraphUnifiedApprovalStageEscalationApproversInner.t()]
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:escalationApprovers, :list, MicrosoftGraph.Model.MicrosoftGraphUnifiedApprovalStageEscalationApproversInner)
-     |> Deserializer.deserialize(:fallbackEscalationApprovers, :list, MicrosoftGraph.Model.MicrosoftGraphUnifiedApprovalStageEscalationApproversInner)
-     |> Deserializer.deserialize(:fallbackPrimaryApprovers, :list, MicrosoftGraph.Model.MicrosoftGraphUnifiedApprovalStageEscalationApproversInner)
-     |> Deserializer.deserialize(:primaryApprovers, :list, MicrosoftGraph.Model.MicrosoftGraphUnifiedApprovalStageEscalationApproversInner)
+    |> Deserializer.deserialize(
+      :escalationApprovers,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphUnifiedApprovalStageEscalationApproversInner
+    )
+    |> Deserializer.deserialize(
+      :fallbackEscalationApprovers,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphUnifiedApprovalStageEscalationApproversInner
+    )
+    |> Deserializer.deserialize(
+      :fallbackPrimaryApprovers,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphUnifiedApprovalStageEscalationApproversInner
+    )
+    |> Deserializer.deserialize(
+      :primaryApprovers,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphUnifiedApprovalStageEscalationApproversInner
+    )
   end
 end
-

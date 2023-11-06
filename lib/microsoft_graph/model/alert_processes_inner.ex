@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.AlertProcessesInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -24,29 +24,36 @@ defmodule MicrosoftGraph.Model.AlertProcessesInner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :accountName => String.t | nil,
-    :commandLine => String.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :fileHash => MicrosoftGraph.Model.MicrosoftGraphFileSecurityStateFileHash.t | nil,
-    :integrityLevel => MicrosoftGraph.Model.MicrosoftGraphProcessIntegrityLevel.t | nil,
-    :isElevated => boolean() | nil,
-    :name => String.t | nil,
-    :parentProcessCreatedDateTime => DateTime.t | nil,
-    :parentProcessId => integer() | nil,
-    :parentProcessName => String.t | nil,
-    :path => String.t | nil,
-    :processId => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :accountName => String.t() | nil,
+          :commandLine => String.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :fileHash => MicrosoftGraph.Model.MicrosoftGraphFileSecurityStateFileHash.t() | nil,
+          :integrityLevel => MicrosoftGraph.Model.MicrosoftGraphProcessIntegrityLevel.t() | nil,
+          :isElevated => boolean() | nil,
+          :name => String.t() | nil,
+          :parentProcessCreatedDateTime => DateTime.t() | nil,
+          :parentProcessId => integer() | nil,
+          :parentProcessName => String.t() | nil,
+          :path => String.t() | nil,
+          :processId => integer() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:fileHash, :struct, MicrosoftGraph.Model.MicrosoftGraphFileSecurityStateFileHash)
-     |> Deserializer.deserialize(:integrityLevel, :struct, MicrosoftGraph.Model.MicrosoftGraphProcessIntegrityLevel)
-     |> Deserializer.deserialize(:parentProcessCreatedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :fileHash,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphFileSecurityStateFileHash
+    )
+    |> Deserializer.deserialize(
+      :integrityLevel,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphProcessIntegrityLevel
+    )
+    |> Deserializer.deserialize(:parentProcessCreatedDateTime, :datetime, nil)
   end
 end
-

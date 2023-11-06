@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTimeBasedAttributeTrigger do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,21 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTimeBasedAttribut
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :offsetInDays => integer() | nil,
-    :timeBasedAttribute => MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowTriggerTimeBasedAttribute.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :offsetInDays => integer() | nil,
+          :timeBasedAttribute =>
+            MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowTriggerTimeBasedAttribute.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:timeBasedAttribute, :struct, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowTriggerTimeBasedAttribute)
+    |> Deserializer.deserialize(
+      :timeBasedAttribute,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowTriggerTimeBasedAttribute
+    )
   end
 end
-

@@ -24,8 +24,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceCompliancePolicySettingStateS
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceCompliancePolicySettingStateSummary.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_create_device_compliance_policy_setting_state_summaries(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphDeviceCompliancePolicySettingStateSummary.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceCompliancePolicySettingStateSummary.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_create_device_compliance_policy_setting_state_summaries(connection, microsoft_graph_device_compliance_policy_setting_state_summary, _opts \\ []) do
+  @spec device_management_create_device_compliance_policy_setting_state_summaries(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphDeviceCompliancePolicySettingStateSummary.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceCompliancePolicySettingStateSummary.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_create_device_compliance_policy_setting_state_summaries(
+        connection,
+        microsoft_graph_device_compliance_policy_setting_state_summary,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -58,8 +69,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceCompliancePolicySettingStateS
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_delete_device_compliance_policy_setting_state_summaries(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_delete_device_compliance_policy_setting_state_summaries(connection, device_compliance_policy_setting_state_summary_id, opts \\ []) do
+  @spec device_management_delete_device_compliance_policy_setting_state_summaries(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_delete_device_compliance_policy_setting_state_summaries(
+        connection,
+        device_compliance_policy_setting_state_summary_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -67,7 +89,9 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceCompliancePolicySettingStateS
     request =
       %{}
       |> method(:delete)
-      |> url("/deviceManagement/deviceCompliancePolicySettingStateSummaries/#{device_compliance_policy_setting_state_summary_id}")
+      |> url(
+        "/deviceManagement/deviceCompliancePolicySettingStateSummaries/#{device_compliance_policy_setting_state_summary_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -96,12 +120,27 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceCompliancePolicySettingStateS
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceComplianceSettingState.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_compliance_policy_setting_state_summaries_create_device_compliance_setting_states(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphDeviceComplianceSettingState.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceComplianceSettingState.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_device_compliance_policy_setting_state_summaries_create_device_compliance_setting_states(connection, device_compliance_policy_setting_state_summary_id, microsoft_graph_device_compliance_setting_state, _opts \\ []) do
+  @spec device_management_device_compliance_policy_setting_state_summaries_create_device_compliance_setting_states(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDeviceComplianceSettingState.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceComplianceSettingState.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_compliance_policy_setting_state_summaries_create_device_compliance_setting_states(
+        connection,
+        device_compliance_policy_setting_state_summary_id,
+        microsoft_graph_device_compliance_setting_state,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceManagement/deviceCompliancePolicySettingStateSummaries/#{device_compliance_policy_setting_state_summary_id}/deviceComplianceSettingStates")
+      |> url(
+        "/deviceManagement/deviceCompliancePolicySettingStateSummaries/#{device_compliance_policy_setting_state_summary_id}/deviceComplianceSettingStates"
+      )
       |> add_param(:body, :body, microsoft_graph_device_compliance_setting_state)
       |> Enum.into([])
 
@@ -131,8 +170,21 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceCompliancePolicySettingStateS
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_compliance_policy_setting_state_summaries_delete_device_compliance_setting_states(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_device_compliance_policy_setting_state_summaries_delete_device_compliance_setting_states(connection, device_compliance_policy_setting_state_summary_id, device_compliance_setting_state_id, opts \\ []) do
+  @spec device_management_device_compliance_policy_setting_state_summaries_delete_device_compliance_setting_states(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_compliance_policy_setting_state_summaries_delete_device_compliance_setting_states(
+        connection,
+        device_compliance_policy_setting_state_summary_id,
+        device_compliance_setting_state_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -140,7 +192,9 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceCompliancePolicySettingStateS
     request =
       %{}
       |> method(:delete)
-      |> url("/deviceManagement/deviceCompliancePolicySettingStateSummaries/#{device_compliance_policy_setting_state_summary_id}/deviceComplianceSettingStates/#{device_compliance_setting_state_id}")
+      |> url(
+        "/deviceManagement/deviceCompliancePolicySettingStateSummaries/#{device_compliance_policy_setting_state_summary_id}/deviceComplianceSettingStates/#{device_compliance_setting_state_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -169,8 +223,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceCompliancePolicySettingStateS
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_compliance_policy_setting_state_summaries_device_compliance_setting_states_get_count49c2(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_device_compliance_policy_setting_state_summaries_device_compliance_setting_states_get_count49c2(connection, device_compliance_policy_setting_state_summary_id, opts \\ []) do
+  @spec device_management_device_compliance_policy_setting_state_summaries_device_compliance_setting_states_get_count49c2(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_compliance_policy_setting_state_summaries_device_compliance_setting_states_get_count49c2(
+        connection,
+        device_compliance_policy_setting_state_summary_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -179,7 +244,9 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceCompliancePolicySettingStateS
     request =
       %{}
       |> method(:get)
-      |> url("/deviceManagement/deviceCompliancePolicySettingStateSummaries/#{device_compliance_policy_setting_state_summary_id}/deviceComplianceSettingStates/$count")
+      |> url(
+        "/deviceManagement/deviceCompliancePolicySettingStateSummaries/#{device_compliance_policy_setting_state_summary_id}/deviceComplianceSettingStates/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -207,8 +274,17 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceCompliancePolicySettingStateS
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_compliance_policy_setting_state_summaries_get_count_ca06(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_device_compliance_policy_setting_state_summaries_get_count_ca06(connection, opts \\ []) do
+  @spec device_management_device_compliance_policy_setting_state_summaries_get_count_ca06(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_compliance_policy_setting_state_summaries_get_count_ca06(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -248,8 +324,21 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceCompliancePolicySettingStateS
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceComplianceSettingState.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_compliance_policy_setting_state_summaries_get_device_compliance_setting_states(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceComplianceSettingState.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_device_compliance_policy_setting_state_summaries_get_device_compliance_setting_states(connection, device_compliance_policy_setting_state_summary_id, device_compliance_setting_state_id, opts \\ []) do
+  @spec device_management_device_compliance_policy_setting_state_summaries_get_device_compliance_setting_states(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceComplianceSettingState.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_compliance_policy_setting_state_summaries_get_device_compliance_setting_states(
+        connection,
+        device_compliance_policy_setting_state_summary_id,
+        device_compliance_setting_state_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -258,7 +347,9 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceCompliancePolicySettingStateS
     request =
       %{}
       |> method(:get)
-      |> url("/deviceManagement/deviceCompliancePolicySettingStateSummaries/#{device_compliance_policy_setting_state_summary_id}/deviceComplianceSettingStates/#{device_compliance_setting_state_id}")
+      |> url(
+        "/deviceManagement/deviceCompliancePolicySettingStateSummaries/#{device_compliance_policy_setting_state_summary_id}/deviceComplianceSettingStates/#{device_compliance_setting_state_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -294,8 +385,20 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceCompliancePolicySettingStateS
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceComplianceSettingStateCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_compliance_policy_setting_state_summaries_list_device_compliance_setting_states(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceComplianceSettingStateCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_device_compliance_policy_setting_state_summaries_list_device_compliance_setting_states(connection, device_compliance_policy_setting_state_summary_id, opts \\ []) do
+  @spec device_management_device_compliance_policy_setting_state_summaries_list_device_compliance_setting_states(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphDeviceComplianceSettingStateCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_compliance_policy_setting_state_summaries_list_device_compliance_setting_states(
+        connection,
+        device_compliance_policy_setting_state_summary_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -310,7 +413,9 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceCompliancePolicySettingStateS
     request =
       %{}
       |> method(:get)
-      |> url("/deviceManagement/deviceCompliancePolicySettingStateSummaries/#{device_compliance_policy_setting_state_summary_id}/deviceComplianceSettingStates")
+      |> url(
+        "/deviceManagement/deviceCompliancePolicySettingStateSummaries/#{device_compliance_policy_setting_state_summary_id}/deviceComplianceSettingStates"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -340,12 +445,29 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceCompliancePolicySettingStateS
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceComplianceSettingState.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_compliance_policy_setting_state_summaries_update_device_compliance_setting_states(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphDeviceComplianceSettingState.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceComplianceSettingState.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_device_compliance_policy_setting_state_summaries_update_device_compliance_setting_states(connection, device_compliance_policy_setting_state_summary_id, device_compliance_setting_state_id, microsoft_graph_device_compliance_setting_state, _opts \\ []) do
+  @spec device_management_device_compliance_policy_setting_state_summaries_update_device_compliance_setting_states(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDeviceComplianceSettingState.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceComplianceSettingState.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_compliance_policy_setting_state_summaries_update_device_compliance_setting_states(
+        connection,
+        device_compliance_policy_setting_state_summary_id,
+        device_compliance_setting_state_id,
+        microsoft_graph_device_compliance_setting_state,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/deviceManagement/deviceCompliancePolicySettingStateSummaries/#{device_compliance_policy_setting_state_summary_id}/deviceComplianceSettingStates/#{device_compliance_setting_state_id}")
+      |> url(
+        "/deviceManagement/deviceCompliancePolicySettingStateSummaries/#{device_compliance_policy_setting_state_summary_id}/deviceComplianceSettingStates/#{device_compliance_setting_state_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_device_compliance_setting_state)
       |> Enum.into([])
 
@@ -375,8 +497,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceCompliancePolicySettingStateS
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceCompliancePolicySettingStateSummary.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_get_device_compliance_policy_setting_state_summaries(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceCompliancePolicySettingStateSummary.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_get_device_compliance_policy_setting_state_summaries(connection, device_compliance_policy_setting_state_summary_id, opts \\ []) do
+  @spec device_management_get_device_compliance_policy_setting_state_summaries(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceCompliancePolicySettingStateSummary.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_get_device_compliance_policy_setting_state_summaries(
+        connection,
+        device_compliance_policy_setting_state_summary_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -385,7 +518,9 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceCompliancePolicySettingStateS
     request =
       %{}
       |> method(:get)
-      |> url("/deviceManagement/deviceCompliancePolicySettingStateSummaries/#{device_compliance_policy_setting_state_summary_id}")
+      |> url(
+        "/deviceManagement/deviceCompliancePolicySettingStateSummaries/#{device_compliance_policy_setting_state_summary_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -420,8 +555,18 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceCompliancePolicySettingStateS
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceCompliancePolicySettingStateSummaryCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_list_device_compliance_policy_setting_state_summaries(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceCompliancePolicySettingStateSummaryCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_list_device_compliance_policy_setting_state_summaries(connection, opts \\ []) do
+  @spec device_management_list_device_compliance_policy_setting_state_summaries(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphDeviceCompliancePolicySettingStateSummaryCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_list_device_compliance_policy_setting_state_summaries(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -443,7 +588,8 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceCompliancePolicySettingStateS
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphDeviceCompliancePolicySettingStateSummaryCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphDeviceCompliancePolicySettingStateSummaryCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -465,12 +611,27 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceCompliancePolicySettingStateS
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceCompliancePolicySettingStateSummary.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_update_device_compliance_policy_setting_state_summaries(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphDeviceCompliancePolicySettingStateSummary.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceCompliancePolicySettingStateSummary.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_update_device_compliance_policy_setting_state_summaries(connection, device_compliance_policy_setting_state_summary_id, microsoft_graph_device_compliance_policy_setting_state_summary, _opts \\ []) do
+  @spec device_management_update_device_compliance_policy_setting_state_summaries(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDeviceCompliancePolicySettingStateSummary.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceCompliancePolicySettingStateSummary.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_update_device_compliance_policy_setting_state_summaries(
+        connection,
+        device_compliance_policy_setting_state_summary_id,
+        microsoft_graph_device_compliance_policy_setting_state_summary,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/deviceManagement/deviceCompliancePolicySettingStateSummaries/#{device_compliance_policy_setting_state_summary_id}")
+      |> url(
+        "/deviceManagement/deviceCompliancePolicySettingStateSummaries/#{device_compliance_policy_setting_state_summary_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_device_compliance_policy_setting_state_summary)
       |> Enum.into([])
 

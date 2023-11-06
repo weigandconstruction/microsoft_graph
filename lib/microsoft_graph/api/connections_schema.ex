@@ -26,7 +26,10 @@ defmodule MicrosoftGraph.Api.ConnectionsSchema do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsSchema.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec connections_get_schema(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsSchema.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec connections_get_schema(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsSchema.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def connections_get_schema(connection, external_connection_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -65,8 +68,21 @@ defmodule MicrosoftGraph.Api.ConnectionsSchema do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsSchema.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec connections_update_schema(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsSchema.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsSchema.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def connections_update_schema(connection, external_connection_id, microsoft_graph_external_connectors_schema, _opts \\ []) do
+  @spec connections_update_schema(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsSchema.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsSchema.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def connections_update_schema(
+        connection,
+        external_connection_id,
+        microsoft_graph_external_connectors_schema,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

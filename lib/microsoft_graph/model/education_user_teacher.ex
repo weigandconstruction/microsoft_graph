@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.EducationUserTeacher do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :externalId => String.t | nil,
-    :teacherNumber => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :externalId => String.t() | nil,
+          :teacherNumber => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

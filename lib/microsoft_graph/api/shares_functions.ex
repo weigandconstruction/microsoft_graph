@@ -24,8 +24,22 @@ defmodule MicrosoftGraph.Api.SharesFunctions do
   - `{:ok, MicrosoftGraph.Model.DrivesDriveListContentTypesContentTypeIsPublished2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec shares_shared_drive_item_list_content_types_content_type_is_published(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.DrivesDriveListContentTypesContentTypeIsPublished2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def shares_shared_drive_item_list_content_types_content_type_is_published(connection, shared_drive_item_id, content_type_id, _opts \\ []) do
+  @spec shares_shared_drive_item_list_content_types_content_type_is_published(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.DrivesDriveListContentTypesContentTypeIsPublished2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def shares_shared_drive_item_list_content_types_content_type_is_published(
+        connection,
+        shared_drive_item_id,
+        content_type_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
@@ -62,8 +76,19 @@ defmodule MicrosoftGraph.Api.SharesFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfContentType.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec shares_shared_drive_item_list_content_types_get_compatible_hub_content_types(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfContentType.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def shares_shared_drive_item_list_content_types_get_compatible_hub_content_types(connection, shared_drive_item_id, opts \\ []) do
+  @spec shares_shared_drive_item_list_content_types_get_compatible_hub_content_types(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfContentType.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def shares_shared_drive_item_list_content_types_get_compatible_hub_content_types(
+        connection,
+        shared_drive_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -112,8 +137,21 @@ defmodule MicrosoftGraph.Api.SharesFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfItemActivityStat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec shares_shared_drive_item_list_items_list_item_get_activities_by_interval4c35(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfItemActivityStat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def shares_shared_drive_item_list_items_list_item_get_activities_by_interval4c35(connection, shared_drive_item_id, list_item_id, opts \\ []) do
+  @spec shares_shared_drive_item_list_items_list_item_get_activities_by_interval4c35(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfItemActivityStat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def shares_shared_drive_item_list_items_list_item_get_activities_by_interval4c35(
+        connection,
+        shared_drive_item_id,
+        list_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -127,7 +165,9 @@ defmodule MicrosoftGraph.Api.SharesFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/shares/#{shared_drive_item_id}/list/items/#{list_item_id}/getActivitiesByInterval()")
+      |> url(
+        "/shares/#{shared_drive_item_id}/list/items/#{list_item_id}/getActivitiesByInterval()"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -165,8 +205,27 @@ defmodule MicrosoftGraph.Api.SharesFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfItemActivityStat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec shares_shared_drive_item_list_items_list_item_get_activities_by_interval_ad27(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfItemActivityStat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def shares_shared_drive_item_list_items_list_item_get_activities_by_interval_ad27(connection, shared_drive_item_id, list_item_id, start_date_time, end_date_time, interval, opts \\ []) do
+  @spec shares_shared_drive_item_list_items_list_item_get_activities_by_interval_ad27(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfItemActivityStat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def shares_shared_drive_item_list_items_list_item_get_activities_by_interval_ad27(
+        connection,
+        shared_drive_item_id,
+        list_item_id,
+        start_date_time,
+        end_date_time,
+        interval,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -180,7 +239,9 @@ defmodule MicrosoftGraph.Api.SharesFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/shares/#{shared_drive_item_id}/list/items/#{list_item_id}/getActivitiesByInterval(startDateTime&#x3D;&#39;#{start_date_time}&#39;,endDateTime&#x3D;&#39;#{end_date_time}&#39;,interval&#x3D;&#39;#{interval}&#39;)")
+      |> url(
+        "/shares/#{shared_drive_item_id}/list/items/#{list_item_id}/getActivitiesByInterval(startDateTime&#x3D;&#39;#{start_date_time}&#39;,endDateTime&#x3D;&#39;#{end_date_time}&#39;,interval&#x3D;&#39;#{interval}&#39;)"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 

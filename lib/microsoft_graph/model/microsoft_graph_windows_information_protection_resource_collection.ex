@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionResourc
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :displayName => String.t | nil,
-    :resources => [String.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :displayName => String.t() | nil,
+          :resources => [String.t()] | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

@@ -22,7 +22,13 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserRegistrationFeatureSummary.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_authentication_methods_users_registered_by_feature07f2(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUserRegistrationFeatureSummary.t} | {:error, Tesla.Env.t}
+  @spec reports_authentication_methods_users_registered_by_feature07f2(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUserRegistrationFeatureSummary.t()}
+          | {:error, Tesla.Env.t()}
   def reports_authentication_methods_users_registered_by_feature07f2(connection, _opts \\ []) do
     request =
       %{}
@@ -54,12 +60,27 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserRegistrationFeatureSummary.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_authentication_methods_users_registered_by_feature_b345(Tesla.Env.client, MicrosoftGraph.Model.ReportsAuthenticationMethodsUsersRegisteredByFeatureB345IncludedUserTypesParameter.t, MicrosoftGraph.Model.ReportsAuthenticationMethodsUsersRegisteredByFeatureB345IncludedUserRolesParameter.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUserRegistrationFeatureSummary.t} | {:error, Tesla.Env.t}
-  def reports_authentication_methods_users_registered_by_feature_b345(connection, included_user_types, included_user_roles, _opts \\ []) do
+  @spec reports_authentication_methods_users_registered_by_feature_b345(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.ReportsAuthenticationMethodsUsersRegisteredByFeatureB345IncludedUserTypesParameter.t(),
+          MicrosoftGraph.Model.ReportsAuthenticationMethodsUsersRegisteredByFeatureB345IncludedUserRolesParameter.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUserRegistrationFeatureSummary.t()}
+          | {:error, Tesla.Env.t()}
+  def reports_authentication_methods_users_registered_by_feature_b345(
+        connection,
+        included_user_types,
+        included_user_roles,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/reports/authenticationMethods/usersRegisteredByFeature(includedUserTypes&#x3D;&#39;#{included_user_types}&#39;,includedUserRoles&#x3D;&#39;#{included_user_roles}&#39;)")
+      |> url(
+        "/reports/authenticationMethods/usersRegisteredByFeature(includedUserTypes&#x3D;&#39;#{included_user_types}&#39;,includedUserRoles&#x3D;&#39;#{included_user_roles}&#39;)"
+      )
       |> Enum.into([])
 
     connection
@@ -84,7 +105,13 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserRegistrationMethodSummary.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_authentication_methods_users_registered_by_method_d25d(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUserRegistrationMethodSummary.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec reports_authentication_methods_users_registered_by_method_d25d(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUserRegistrationMethodSummary.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def reports_authentication_methods_users_registered_by_method_d25d(connection, _opts \\ []) do
     request =
       %{}
@@ -116,12 +143,27 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserRegistrationMethodSummary.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_authentication_methods_users_registered_by_method_fb94(Tesla.Env.client, MicrosoftGraph.Model.ReportsAuthenticationMethodsUsersRegisteredByFeatureB345IncludedUserTypesParameter.t, MicrosoftGraph.Model.ReportsAuthenticationMethodsUsersRegisteredByFeatureB345IncludedUserRolesParameter.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUserRegistrationMethodSummary.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def reports_authentication_methods_users_registered_by_method_fb94(connection, included_user_types, included_user_roles, _opts \\ []) do
+  @spec reports_authentication_methods_users_registered_by_method_fb94(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.ReportsAuthenticationMethodsUsersRegisteredByFeatureB345IncludedUserTypesParameter.t(),
+          MicrosoftGraph.Model.ReportsAuthenticationMethodsUsersRegisteredByFeatureB345IncludedUserRolesParameter.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUserRegistrationMethodSummary.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def reports_authentication_methods_users_registered_by_method_fb94(
+        connection,
+        included_user_types,
+        included_user_roles,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/reports/authenticationMethods/usersRegisteredByMethod(includedUserTypes&#x3D;&#39;#{included_user_types}&#39;,includedUserRoles&#x3D;&#39;#{included_user_roles}&#39;)")
+      |> url(
+        "/reports/authenticationMethods/usersRegisteredByMethod(includedUserTypes&#x3D;&#39;#{included_user_types}&#39;,includedUserRoles&#x3D;&#39;#{included_user_roles}&#39;)"
+      )
       |> Enum.into([])
 
     connection
@@ -147,7 +189,11 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsManagedDeviceEnrollmentFailureDetailsAa462XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_device_configuration_device_activity(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.ReportsManagedDeviceEnrollmentFailureDetailsAa462XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec reports_device_configuration_device_activity(Tesla.Env.client(), keyword()) ::
+          {:ok,
+           MicrosoftGraph.Model.ReportsManagedDeviceEnrollmentFailureDetailsAa462XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def reports_device_configuration_device_activity(connection, _opts \\ []) do
     request =
       %{}
@@ -178,7 +224,11 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsManagedDeviceEnrollmentFailureDetailsAa462XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_device_configuration_user_activity(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.ReportsManagedDeviceEnrollmentFailureDetailsAa462XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec reports_device_configuration_user_activity(Tesla.Env.client(), keyword()) ::
+          {:ok,
+           MicrosoftGraph.Model.ReportsManagedDeviceEnrollmentFailureDetailsAa462XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def reports_device_configuration_user_activity(connection, _opts \\ []) do
     request =
       %{}
@@ -209,7 +259,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_email_activity_counts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_email_activity_counts(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_email_activity_counts(connection, period, _opts \\ []) do
     request =
       %{}
@@ -240,7 +293,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_email_activity_user_counts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_email_activity_user_counts(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_email_activity_user_counts(connection, period, _opts \\ []) do
     request =
       %{}
@@ -271,7 +327,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_email_activity_user_detail4d91(Tesla.Env.client, Date.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_email_activity_user_detail4d91(Tesla.Env.client(), Date.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_email_activity_user_detail4d91(connection, date, _opts \\ []) do
     request =
       %{}
@@ -302,7 +361,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_email_activity_user_detail6549(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_email_activity_user_detail6549(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_email_activity_user_detail6549(connection, period, _opts \\ []) do
     request =
       %{}
@@ -333,7 +395,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_email_app_usage_apps_user_counts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_email_app_usage_apps_user_counts(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_email_app_usage_apps_user_counts(connection, period, _opts \\ []) do
     request =
       %{}
@@ -364,7 +429,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_email_app_usage_user_counts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_email_app_usage_user_counts(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_email_app_usage_user_counts(connection, period, _opts \\ []) do
     request =
       %{}
@@ -395,7 +463,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_email_app_usage_user_detail6aff(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_email_app_usage_user_detail6aff(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_email_app_usage_user_detail6aff(connection, period, _opts \\ []) do
     request =
       %{}
@@ -426,7 +497,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_email_app_usage_user_detail_d5d6(Tesla.Env.client, Date.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_email_app_usage_user_detail_d5d6(Tesla.Env.client(), Date.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_email_app_usage_user_detail_d5d6(connection, date, _opts \\ []) do
     request =
       %{}
@@ -457,7 +531,14 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_email_app_usage_versions_user_counts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_email_app_usage_versions_user_counts(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_email_app_usage_versions_user_counts(connection, period, _opts \\ []) do
     request =
       %{}
@@ -495,8 +576,23 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetUserArchivedPrintJobs2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_group_archived_print_jobs(Tesla.Env.client, String.t, DateTime.t, DateTime.t, keyword()) :: {:ok, MicrosoftGraph.Model.ReportsGetUserArchivedPrintJobs2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def reports_get_group_archived_print_jobs(connection, group_id, start_date_time, end_date_time, opts \\ []) do
+  @spec reports_get_group_archived_print_jobs(
+          Tesla.Env.client(),
+          String.t(),
+          DateTime.t(),
+          DateTime.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.ReportsGetUserArchivedPrintJobs2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def reports_get_group_archived_print_jobs(
+        connection,
+        group_id,
+        start_date_time,
+        end_date_time,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -508,7 +604,9 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/reports/getGroupArchivedPrintJobs(groupId&#x3D;&#39;#{group_id}&#39;,startDateTime&#x3D;#{start_date_time},endDateTime&#x3D;#{end_date_time})")
+      |> url(
+        "/reports/getGroupArchivedPrintJobs(groupId&#x3D;&#39;#{group_id}&#39;,startDateTime&#x3D;#{start_date_time},endDateTime&#x3D;#{end_date_time})"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -535,7 +633,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_m365_app_platform_user_counts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_m365_app_platform_user_counts(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_m365_app_platform_user_counts(connection, period, _opts \\ []) do
     request =
       %{}
@@ -566,7 +667,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_m365_app_user_counts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_m365_app_user_counts(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_m365_app_user_counts(connection, period, _opts \\ []) do
     request =
       %{}
@@ -597,7 +701,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_m365_app_user_detail0f08(Tesla.Env.client, Date.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_m365_app_user_detail0f08(Tesla.Env.client(), Date.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_m365_app_user_detail0f08(connection, date, _opts \\ []) do
     request =
       %{}
@@ -628,7 +735,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_m365_app_user_detail8c91(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_m365_app_user_detail8c91(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_m365_app_user_detail8c91(connection, period, _opts \\ []) do
     request =
       %{}
@@ -659,7 +769,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_mailbox_usage_detail(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_mailbox_usage_detail(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_mailbox_usage_detail(connection, period, _opts \\ []) do
     request =
       %{}
@@ -690,7 +803,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_mailbox_usage_mailbox_counts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_mailbox_usage_mailbox_counts(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_mailbox_usage_mailbox_counts(connection, period, _opts \\ []) do
     request =
       %{}
@@ -721,7 +837,14 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_mailbox_usage_quota_status_mailbox_counts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_mailbox_usage_quota_status_mailbox_counts(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_mailbox_usage_quota_status_mailbox_counts(connection, period, _opts \\ []) do
     request =
       %{}
@@ -752,7 +875,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_mailbox_usage_storage(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_mailbox_usage_storage(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_mailbox_usage_storage(connection, period, _opts \\ []) do
     request =
       %{}
@@ -782,7 +908,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_office365_activation_counts(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_office365_activation_counts(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_office365_activation_counts(connection, _opts \\ []) do
     request =
       %{}
@@ -812,7 +941,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_office365_activations_user_counts(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_office365_activations_user_counts(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_office365_activations_user_counts(connection, _opts \\ []) do
     request =
       %{}
@@ -842,7 +974,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_office365_activations_user_detail(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_office365_activations_user_detail(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_office365_activations_user_detail(connection, _opts \\ []) do
     request =
       %{}
@@ -873,7 +1008,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_office365_active_user_counts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_office365_active_user_counts(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_office365_active_user_counts(connection, period, _opts \\ []) do
     request =
       %{}
@@ -904,7 +1042,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_office365_active_user_detail3cc0(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_office365_active_user_detail3cc0(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_office365_active_user_detail3cc0(connection, period, _opts \\ []) do
     request =
       %{}
@@ -935,7 +1076,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_office365_active_user_detail_b911(Tesla.Env.client, Date.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_office365_active_user_detail_b911(Tesla.Env.client(), Date.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_office365_active_user_detail_b911(connection, date, _opts \\ []) do
     request =
       %{}
@@ -966,7 +1110,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_office365_groups_activity_counts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_office365_groups_activity_counts(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_office365_groups_activity_counts(connection, period, _opts \\ []) do
     request =
       %{}
@@ -997,7 +1144,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_office365_groups_activity_detail87d6(Tesla.Env.client, Date.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_office365_groups_activity_detail87d6(Tesla.Env.client(), Date.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_office365_groups_activity_detail87d6(connection, date, _opts \\ []) do
     request =
       %{}
@@ -1028,7 +1178,14 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_office365_groups_activity_detail_fe77(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_office365_groups_activity_detail_fe77(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_office365_groups_activity_detail_fe77(connection, period, _opts \\ []) do
     request =
       %{}
@@ -1059,7 +1216,14 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_office365_groups_activity_file_counts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_office365_groups_activity_file_counts(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_office365_groups_activity_file_counts(connection, period, _opts \\ []) do
     request =
       %{}
@@ -1090,7 +1254,14 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_office365_groups_activity_group_counts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_office365_groups_activity_group_counts(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_office365_groups_activity_group_counts(connection, period, _opts \\ []) do
     request =
       %{}
@@ -1121,7 +1292,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_office365_groups_activity_storage(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_office365_groups_activity_storage(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_office365_groups_activity_storage(connection, period, _opts \\ []) do
     request =
       %{}
@@ -1152,7 +1326,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_office365_services_user_counts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_office365_services_user_counts(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_office365_services_user_counts(connection, period, _opts \\ []) do
     request =
       %{}
@@ -1183,7 +1360,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_one_drive_activity_file_counts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_one_drive_activity_file_counts(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_one_drive_activity_file_counts(connection, period, _opts \\ []) do
     request =
       %{}
@@ -1214,7 +1394,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_one_drive_activity_user_counts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_one_drive_activity_user_counts(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_one_drive_activity_user_counts(connection, period, _opts \\ []) do
     request =
       %{}
@@ -1245,7 +1428,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_one_drive_activity_user_detail657c(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_one_drive_activity_user_detail657c(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_one_drive_activity_user_detail657c(connection, period, _opts \\ []) do
     request =
       %{}
@@ -1276,7 +1462,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_one_drive_activity_user_detail77b1(Tesla.Env.client, Date.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_one_drive_activity_user_detail77b1(Tesla.Env.client(), Date.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_one_drive_activity_user_detail77b1(connection, date, _opts \\ []) do
     request =
       %{}
@@ -1307,7 +1496,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_one_drive_usage_account_counts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_one_drive_usage_account_counts(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_one_drive_usage_account_counts(connection, period, _opts \\ []) do
     request =
       %{}
@@ -1338,7 +1530,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_one_drive_usage_account_detail20b2(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_one_drive_usage_account_detail20b2(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_one_drive_usage_account_detail20b2(connection, period, _opts \\ []) do
     request =
       %{}
@@ -1369,7 +1564,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_one_drive_usage_account_detail3b63(Tesla.Env.client, Date.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_one_drive_usage_account_detail3b63(Tesla.Env.client(), Date.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_one_drive_usage_account_detail3b63(connection, date, _opts \\ []) do
     request =
       %{}
@@ -1400,7 +1598,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_one_drive_usage_file_counts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_one_drive_usage_file_counts(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_one_drive_usage_file_counts(connection, period, _opts \\ []) do
     request =
       %{}
@@ -1431,7 +1632,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_one_drive_usage_storage(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_one_drive_usage_storage(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_one_drive_usage_storage(connection, period, _opts \\ []) do
     request =
       %{}
@@ -1469,8 +1673,23 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetUserArchivedPrintJobs2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_printer_archived_print_jobs(Tesla.Env.client, String.t, DateTime.t, DateTime.t, keyword()) :: {:ok, MicrosoftGraph.Model.ReportsGetUserArchivedPrintJobs2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def reports_get_printer_archived_print_jobs(connection, printer_id, start_date_time, end_date_time, opts \\ []) do
+  @spec reports_get_printer_archived_print_jobs(
+          Tesla.Env.client(),
+          String.t(),
+          DateTime.t(),
+          DateTime.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.ReportsGetUserArchivedPrintJobs2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def reports_get_printer_archived_print_jobs(
+        connection,
+        printer_id,
+        start_date_time,
+        end_date_time,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1482,7 +1701,9 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/reports/getPrinterArchivedPrintJobs(printerId&#x3D;&#39;#{printer_id}&#39;,startDateTime&#x3D;#{start_date_time},endDateTime&#x3D;#{end_date_time})")
+      |> url(
+        "/reports/getPrinterArchivedPrintJobs(printerId&#x3D;&#39;#{printer_id}&#39;,startDateTime&#x3D;#{start_date_time},endDateTime&#x3D;#{end_date_time})"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1509,7 +1730,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_share_point_activity_file_counts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_share_point_activity_file_counts(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_share_point_activity_file_counts(connection, period, _opts \\ []) do
     request =
       %{}
@@ -1540,7 +1764,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_share_point_activity_pages(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_share_point_activity_pages(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_share_point_activity_pages(connection, period, _opts \\ []) do
     request =
       %{}
@@ -1571,7 +1798,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_share_point_activity_user_counts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_share_point_activity_user_counts(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_share_point_activity_user_counts(connection, period, _opts \\ []) do
     request =
       %{}
@@ -1602,7 +1832,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_share_point_activity_user_detail48b2(Tesla.Env.client, Date.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_share_point_activity_user_detail48b2(Tesla.Env.client(), Date.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_share_point_activity_user_detail48b2(connection, date, _opts \\ []) do
     request =
       %{}
@@ -1633,7 +1866,14 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_share_point_activity_user_detail9e51(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_share_point_activity_user_detail9e51(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_share_point_activity_user_detail9e51(connection, period, _opts \\ []) do
     request =
       %{}
@@ -1664,7 +1904,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_share_point_site_usage_detail4fd6(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_share_point_site_usage_detail4fd6(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_share_point_site_usage_detail4fd6(connection, period, _opts \\ []) do
     request =
       %{}
@@ -1695,7 +1938,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_share_point_site_usage_detail_a4c0(Tesla.Env.client, Date.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_share_point_site_usage_detail_a4c0(Tesla.Env.client(), Date.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_share_point_site_usage_detail_a4c0(connection, date, _opts \\ []) do
     request =
       %{}
@@ -1726,7 +1972,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_share_point_site_usage_file_counts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_share_point_site_usage_file_counts(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_share_point_site_usage_file_counts(connection, period, _opts \\ []) do
     request =
       %{}
@@ -1757,7 +2006,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_share_point_site_usage_pages(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_share_point_site_usage_pages(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_share_point_site_usage_pages(connection, period, _opts \\ []) do
     request =
       %{}
@@ -1788,7 +2040,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_share_point_site_usage_site_counts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_share_point_site_usage_site_counts(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_share_point_site_usage_site_counts(connection, period, _opts \\ []) do
     request =
       %{}
@@ -1819,7 +2074,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_share_point_site_usage_storage(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_share_point_site_usage_storage(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_share_point_site_usage_storage(connection, period, _opts \\ []) do
     request =
       %{}
@@ -1850,7 +2108,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_skype_for_business_activity_counts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_skype_for_business_activity_counts(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_skype_for_business_activity_counts(connection, period, _opts \\ []) do
     request =
       %{}
@@ -1881,7 +2142,14 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_skype_for_business_activity_user_counts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_skype_for_business_activity_user_counts(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_skype_for_business_activity_user_counts(connection, period, _opts \\ []) do
     request =
       %{}
@@ -1912,7 +2180,14 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_skype_for_business_activity_user_detail74d9(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_skype_for_business_activity_user_detail74d9(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_skype_for_business_activity_user_detail74d9(connection, period, _opts \\ []) do
     request =
       %{}
@@ -1943,7 +2218,14 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_skype_for_business_activity_user_detail83d0(Tesla.Env.client, Date.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_skype_for_business_activity_user_detail83d0(
+          Tesla.Env.client(),
+          Date.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_skype_for_business_activity_user_detail83d0(connection, date, _opts \\ []) do
     request =
       %{}
@@ -1974,12 +2256,25 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_skype_for_business_device_usage_distribution_user_counts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
-  def reports_get_skype_for_business_device_usage_distribution_user_counts(connection, period, _opts \\ []) do
+  @spec reports_get_skype_for_business_device_usage_distribution_user_counts(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def reports_get_skype_for_business_device_usage_distribution_user_counts(
+        connection,
+        period,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/reports/getSkypeForBusinessDeviceUsageDistributionUserCounts(period&#x3D;&#39;#{period}&#39;)")
+      |> url(
+        "/reports/getSkypeForBusinessDeviceUsageDistributionUserCounts(period&#x3D;&#39;#{period}&#39;)"
+      )
       |> Enum.into([])
 
     connection
@@ -2005,7 +2300,14 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_skype_for_business_device_usage_user_counts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_skype_for_business_device_usage_user_counts(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_skype_for_business_device_usage_user_counts(connection, period, _opts \\ []) do
     request =
       %{}
@@ -2036,8 +2338,19 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_skype_for_business_device_usage_user_detail_ee84(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
-  def reports_get_skype_for_business_device_usage_user_detail_ee84(connection, period, _opts \\ []) do
+  @spec reports_get_skype_for_business_device_usage_user_detail_ee84(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def reports_get_skype_for_business_device_usage_user_detail_ee84(
+        connection,
+        period,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
@@ -2067,7 +2380,14 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_skype_for_business_device_usage_user_detail_fe29(Tesla.Env.client, Date.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_skype_for_business_device_usage_user_detail_fe29(
+          Tesla.Env.client(),
+          Date.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_skype_for_business_device_usage_user_detail_fe29(connection, date, _opts \\ []) do
     request =
       %{}
@@ -2098,12 +2418,21 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_skype_for_business_organizer_activity_counts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_skype_for_business_organizer_activity_counts(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_skype_for_business_organizer_activity_counts(connection, period, _opts \\ []) do
     request =
       %{}
       |> method(:get)
-      |> url("/reports/getSkypeForBusinessOrganizerActivityCounts(period&#x3D;&#39;#{period}&#39;)")
+      |> url(
+        "/reports/getSkypeForBusinessOrganizerActivityCounts(period&#x3D;&#39;#{period}&#39;)"
+      )
       |> Enum.into([])
 
     connection
@@ -2129,12 +2458,25 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_skype_for_business_organizer_activity_minute_counts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
-  def reports_get_skype_for_business_organizer_activity_minute_counts(connection, period, _opts \\ []) do
+  @spec reports_get_skype_for_business_organizer_activity_minute_counts(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def reports_get_skype_for_business_organizer_activity_minute_counts(
+        connection,
+        period,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/reports/getSkypeForBusinessOrganizerActivityMinuteCounts(period&#x3D;&#39;#{period}&#39;)")
+      |> url(
+        "/reports/getSkypeForBusinessOrganizerActivityMinuteCounts(period&#x3D;&#39;#{period}&#39;)"
+      )
       |> Enum.into([])
 
     connection
@@ -2160,12 +2502,25 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_skype_for_business_organizer_activity_user_counts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
-  def reports_get_skype_for_business_organizer_activity_user_counts(connection, period, _opts \\ []) do
+  @spec reports_get_skype_for_business_organizer_activity_user_counts(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def reports_get_skype_for_business_organizer_activity_user_counts(
+        connection,
+        period,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/reports/getSkypeForBusinessOrganizerActivityUserCounts(period&#x3D;&#39;#{period}&#39;)")
+      |> url(
+        "/reports/getSkypeForBusinessOrganizerActivityUserCounts(period&#x3D;&#39;#{period}&#39;)"
+      )
       |> Enum.into([])
 
     connection
@@ -2191,12 +2546,21 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_skype_for_business_participant_activity_counts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_skype_for_business_participant_activity_counts(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_skype_for_business_participant_activity_counts(connection, period, _opts \\ []) do
     request =
       %{}
       |> method(:get)
-      |> url("/reports/getSkypeForBusinessParticipantActivityCounts(period&#x3D;&#39;#{period}&#39;)")
+      |> url(
+        "/reports/getSkypeForBusinessParticipantActivityCounts(period&#x3D;&#39;#{period}&#39;)"
+      )
       |> Enum.into([])
 
     connection
@@ -2222,12 +2586,25 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_skype_for_business_participant_activity_minute_counts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
-  def reports_get_skype_for_business_participant_activity_minute_counts(connection, period, _opts \\ []) do
+  @spec reports_get_skype_for_business_participant_activity_minute_counts(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def reports_get_skype_for_business_participant_activity_minute_counts(
+        connection,
+        period,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/reports/getSkypeForBusinessParticipantActivityMinuteCounts(period&#x3D;&#39;#{period}&#39;)")
+      |> url(
+        "/reports/getSkypeForBusinessParticipantActivityMinuteCounts(period&#x3D;&#39;#{period}&#39;)"
+      )
       |> Enum.into([])
 
     connection
@@ -2253,12 +2630,25 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_skype_for_business_participant_activity_user_counts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
-  def reports_get_skype_for_business_participant_activity_user_counts(connection, period, _opts \\ []) do
+  @spec reports_get_skype_for_business_participant_activity_user_counts(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def reports_get_skype_for_business_participant_activity_user_counts(
+        connection,
+        period,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/reports/getSkypeForBusinessParticipantActivityUserCounts(period&#x3D;&#39;#{period}&#39;)")
+      |> url(
+        "/reports/getSkypeForBusinessParticipantActivityUserCounts(period&#x3D;&#39;#{period}&#39;)"
+      )
       |> Enum.into([])
 
     connection
@@ -2284,12 +2674,21 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_skype_for_business_peer_to_peer_activity_counts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_skype_for_business_peer_to_peer_activity_counts(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_skype_for_business_peer_to_peer_activity_counts(connection, period, _opts \\ []) do
     request =
       %{}
       |> method(:get)
-      |> url("/reports/getSkypeForBusinessPeerToPeerActivityCounts(period&#x3D;&#39;#{period}&#39;)")
+      |> url(
+        "/reports/getSkypeForBusinessPeerToPeerActivityCounts(period&#x3D;&#39;#{period}&#39;)"
+      )
       |> Enum.into([])
 
     connection
@@ -2315,12 +2714,25 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_skype_for_business_peer_to_peer_activity_minute_counts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
-  def reports_get_skype_for_business_peer_to_peer_activity_minute_counts(connection, period, _opts \\ []) do
+  @spec reports_get_skype_for_business_peer_to_peer_activity_minute_counts(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def reports_get_skype_for_business_peer_to_peer_activity_minute_counts(
+        connection,
+        period,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/reports/getSkypeForBusinessPeerToPeerActivityMinuteCounts(period&#x3D;&#39;#{period}&#39;)")
+      |> url(
+        "/reports/getSkypeForBusinessPeerToPeerActivityMinuteCounts(period&#x3D;&#39;#{period}&#39;)"
+      )
       |> Enum.into([])
 
     connection
@@ -2346,12 +2758,25 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_skype_for_business_peer_to_peer_activity_user_counts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
-  def reports_get_skype_for_business_peer_to_peer_activity_user_counts(connection, period, _opts \\ []) do
+  @spec reports_get_skype_for_business_peer_to_peer_activity_user_counts(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def reports_get_skype_for_business_peer_to_peer_activity_user_counts(
+        connection,
+        period,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/reports/getSkypeForBusinessPeerToPeerActivityUserCounts(period&#x3D;&#39;#{period}&#39;)")
+      |> url(
+        "/reports/getSkypeForBusinessPeerToPeerActivityUserCounts(period&#x3D;&#39;#{period}&#39;)"
+      )
       |> Enum.into([])
 
     connection
@@ -2377,12 +2802,21 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_teams_device_usage_distribution_user_counts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_teams_device_usage_distribution_user_counts(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_teams_device_usage_distribution_user_counts(connection, period, _opts \\ []) do
     request =
       %{}
       |> method(:get)
-      |> url("/reports/getTeamsDeviceUsageDistributionUserCounts(period&#x3D;&#39;#{period}&#39;)")
+      |> url(
+        "/reports/getTeamsDeviceUsageDistributionUserCounts(period&#x3D;&#39;#{period}&#39;)"
+      )
       |> Enum.into([])
 
     connection
@@ -2408,7 +2842,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_teams_device_usage_user_counts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_teams_device_usage_user_counts(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_teams_device_usage_user_counts(connection, period, _opts \\ []) do
     request =
       %{}
@@ -2439,7 +2876,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_teams_device_usage_user_detail62d3(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_teams_device_usage_user_detail62d3(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_teams_device_usage_user_detail62d3(connection, period, _opts \\ []) do
     request =
       %{}
@@ -2470,7 +2910,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_teams_device_usage_user_detail8630(Tesla.Env.client, Date.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_teams_device_usage_user_detail8630(Tesla.Env.client(), Date.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_teams_device_usage_user_detail8630(connection, date, _opts \\ []) do
     request =
       %{}
@@ -2501,7 +2944,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_teams_team_activity_counts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_teams_team_activity_counts(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_teams_team_activity_counts(connection, period, _opts \\ []) do
     request =
       %{}
@@ -2532,7 +2978,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_teams_team_activity_detail391d(Tesla.Env.client, Date.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_teams_team_activity_detail391d(Tesla.Env.client(), Date.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_teams_team_activity_detail391d(connection, date, _opts \\ []) do
     request =
       %{}
@@ -2563,7 +3012,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_teams_team_activity_detail_ee18(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_teams_team_activity_detail_ee18(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_teams_team_activity_detail_ee18(connection, period, _opts \\ []) do
     request =
       %{}
@@ -2594,7 +3046,14 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_teams_team_activity_distribution_counts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_teams_team_activity_distribution_counts(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_teams_team_activity_distribution_counts(connection, period, _opts \\ []) do
     request =
       %{}
@@ -2625,7 +3084,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_teams_team_counts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_teams_team_counts(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_teams_team_counts(connection, period, _opts \\ []) do
     request =
       %{}
@@ -2656,7 +3118,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_teams_user_activity_counts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_teams_user_activity_counts(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_teams_user_activity_counts(connection, period, _opts \\ []) do
     request =
       %{}
@@ -2687,7 +3152,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_teams_user_activity_user_counts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_teams_user_activity_user_counts(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_teams_user_activity_user_counts(connection, period, _opts \\ []) do
     request =
       %{}
@@ -2718,7 +3186,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_teams_user_activity_user_detail7554(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_teams_user_activity_user_detail7554(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_teams_user_activity_user_detail7554(connection, period, _opts \\ []) do
     request =
       %{}
@@ -2749,7 +3220,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_teams_user_activity_user_detail_fba7(Tesla.Env.client, Date.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_teams_user_activity_user_detail_fba7(Tesla.Env.client(), Date.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_teams_user_activity_user_detail_fba7(connection, date, _opts \\ []) do
     request =
       %{}
@@ -2787,8 +3261,23 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetUserArchivedPrintJobs2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_user_archived_print_jobs(Tesla.Env.client, String.t, DateTime.t, DateTime.t, keyword()) :: {:ok, MicrosoftGraph.Model.ReportsGetUserArchivedPrintJobs2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def reports_get_user_archived_print_jobs(connection, user_id, start_date_time, end_date_time, opts \\ []) do
+  @spec reports_get_user_archived_print_jobs(
+          Tesla.Env.client(),
+          String.t(),
+          DateTime.t(),
+          DateTime.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.ReportsGetUserArchivedPrintJobs2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def reports_get_user_archived_print_jobs(
+        connection,
+        user_id,
+        start_date_time,
+        end_date_time,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -2800,7 +3289,9 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/reports/getUserArchivedPrintJobs(userId&#x3D;&#39;#{user_id}&#39;,startDateTime&#x3D;#{start_date_time},endDateTime&#x3D;#{end_date_time})")
+      |> url(
+        "/reports/getUserArchivedPrintJobs(userId&#x3D;&#39;#{user_id}&#39;,startDateTime&#x3D;#{start_date_time},endDateTime&#x3D;#{end_date_time})"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2827,7 +3318,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_yammer_activity_counts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_yammer_activity_counts(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_yammer_activity_counts(connection, period, _opts \\ []) do
     request =
       %{}
@@ -2858,7 +3352,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_yammer_activity_user_counts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_yammer_activity_user_counts(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_yammer_activity_user_counts(connection, period, _opts \\ []) do
     request =
       %{}
@@ -2889,7 +3386,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_yammer_activity_user_detail41fe(Tesla.Env.client, Date.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_yammer_activity_user_detail41fe(Tesla.Env.client(), Date.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_yammer_activity_user_detail41fe(connection, date, _opts \\ []) do
     request =
       %{}
@@ -2920,7 +3420,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_yammer_activity_user_detail9506(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_yammer_activity_user_detail9506(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_yammer_activity_user_detail9506(connection, period, _opts \\ []) do
     request =
       %{}
@@ -2951,12 +3454,21 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_yammer_device_usage_distribution_user_counts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_yammer_device_usage_distribution_user_counts(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_yammer_device_usage_distribution_user_counts(connection, period, _opts \\ []) do
     request =
       %{}
       |> method(:get)
-      |> url("/reports/getYammerDeviceUsageDistributionUserCounts(period&#x3D;&#39;#{period}&#39;)")
+      |> url(
+        "/reports/getYammerDeviceUsageDistributionUserCounts(period&#x3D;&#39;#{period}&#39;)"
+      )
       |> Enum.into([])
 
     connection
@@ -2982,7 +3494,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_yammer_device_usage_user_counts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_yammer_device_usage_user_counts(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_yammer_device_usage_user_counts(connection, period, _opts \\ []) do
     request =
       %{}
@@ -3013,7 +3528,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_yammer_device_usage_user_detail07bb(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_yammer_device_usage_user_detail07bb(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_yammer_device_usage_user_detail07bb(connection, period, _opts \\ []) do
     request =
       %{}
@@ -3044,7 +3562,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_yammer_device_usage_user_detail_e734(Tesla.Env.client, Date.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_yammer_device_usage_user_detail_e734(Tesla.Env.client(), Date.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_yammer_device_usage_user_detail_e734(connection, date, _opts \\ []) do
     request =
       %{}
@@ -3075,7 +3596,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_yammer_groups_activity_counts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_yammer_groups_activity_counts(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_yammer_groups_activity_counts(connection, period, _opts \\ []) do
     request =
       %{}
@@ -3106,7 +3630,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_yammer_groups_activity_detail99d3(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_yammer_groups_activity_detail99d3(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_yammer_groups_activity_detail99d3(connection, period, _opts \\ []) do
     request =
       %{}
@@ -3137,7 +3664,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_yammer_groups_activity_detail9ea3(Tesla.Env.client, Date.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_yammer_groups_activity_detail9ea3(Tesla.Env.client(), Date.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_yammer_groups_activity_detail9ea3(connection, date, _opts \\ []) do
     request =
       %{}
@@ -3168,7 +3698,10 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_yammer_groups_activity_group_counts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_get_yammer_groups_activity_group_counts(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_yammer_groups_activity_group_counts(connection, period, _opts \\ []) do
     request =
       %{}
@@ -3198,7 +3731,11 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsManagedDeviceEnrollmentFailureDetailsAa462XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_managed_device_enrollment_failure_details8191(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.ReportsManagedDeviceEnrollmentFailureDetailsAa462XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec reports_managed_device_enrollment_failure_details8191(Tesla.Env.client(), keyword()) ::
+          {:ok,
+           MicrosoftGraph.Model.ReportsManagedDeviceEnrollmentFailureDetailsAa462XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def reports_managed_device_enrollment_failure_details8191(connection, _opts \\ []) do
     request =
       %{}
@@ -3232,12 +3769,32 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsManagedDeviceEnrollmentFailureDetailsAa462XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_managed_device_enrollment_failure_details_aa46(Tesla.Env.client, integer(), integer(), String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.ReportsManagedDeviceEnrollmentFailureDetailsAa462XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def reports_managed_device_enrollment_failure_details_aa46(connection, skip, top, filter, skip_token, _opts \\ []) do
+  @spec reports_managed_device_enrollment_failure_details_aa46(
+          Tesla.Env.client(),
+          integer(),
+          integer(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.ReportsManagedDeviceEnrollmentFailureDetailsAa462XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def reports_managed_device_enrollment_failure_details_aa46(
+        connection,
+        skip,
+        top,
+        filter,
+        skip_token,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/reports/managedDeviceEnrollmentFailureDetails(skip&#x3D;#{skip},top&#x3D;#{top},filter&#x3D;&#39;#{filter}&#39;,skipToken&#x3D;&#39;#{skip_token}&#39;)")
+      |> url(
+        "/reports/managedDeviceEnrollmentFailureDetails(skip&#x3D;#{skip},top&#x3D;#{top},filter&#x3D;&#39;#{filter}&#39;,skipToken&#x3D;&#39;#{skip_token}&#39;)"
+      )
       |> Enum.into([])
 
     connection
@@ -3263,7 +3820,15 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsManagedDeviceEnrollmentFailureDetailsAa462XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_managed_device_enrollment_top_failures2157(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.ReportsManagedDeviceEnrollmentFailureDetailsAa462XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec reports_managed_device_enrollment_top_failures2157(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.ReportsManagedDeviceEnrollmentFailureDetailsAa462XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def reports_managed_device_enrollment_top_failures2157(connection, period, _opts \\ []) do
     request =
       %{}
@@ -3293,7 +3858,11 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsManagedDeviceEnrollmentFailureDetailsAa462XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_managed_device_enrollment_top_failures9ce7(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.ReportsManagedDeviceEnrollmentFailureDetailsAa462XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec reports_managed_device_enrollment_top_failures9ce7(Tesla.Env.client(), keyword()) ::
+          {:ok,
+           MicrosoftGraph.Model.ReportsManagedDeviceEnrollmentFailureDetailsAa462XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def reports_managed_device_enrollment_top_failures9ce7(connection, _opts \\ []) do
     request =
       %{}
@@ -3328,7 +3897,11 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsSecurityGetAttackSimulationRepeatOffenders2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_security_get_attack_simulation_repeat_offenders(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ReportsSecurityGetAttackSimulationRepeatOffenders2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec reports_security_get_attack_simulation_repeat_offenders(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.ReportsSecurityGetAttackSimulationRepeatOffenders2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def reports_security_get_attack_simulation_repeat_offenders(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -3372,7 +3945,14 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsSecurityGetAttackSimulationSimulationUserCoverage2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_security_get_attack_simulation_simulation_user_coverage(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.ReportsSecurityGetAttackSimulationSimulationUserCoverage2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec reports_security_get_attack_simulation_simulation_user_coverage(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.ReportsSecurityGetAttackSimulationSimulationUserCoverage2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def reports_security_get_attack_simulation_simulation_user_coverage(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -3392,7 +3972,8 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.ReportsSecurityGetAttackSimulationSimulationUserCoverage2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.ReportsSecurityGetAttackSimulationSimulationUserCoverage2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -3416,7 +3997,14 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
   - `{:ok, MicrosoftGraph.Model.ReportsSecurityGetAttackSimulationTrainingUserCoverage2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_security_get_attack_simulation_training_user_coverage(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.ReportsSecurityGetAttackSimulationTrainingUserCoverage2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec reports_security_get_attack_simulation_training_user_coverage(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.ReportsSecurityGetAttackSimulationTrainingUserCoverage2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def reports_security_get_attack_simulation_training_user_coverage(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -3436,7 +4024,8 @@ defmodule MicrosoftGraph.Api.ReportsFunctions do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.ReportsSecurityGetAttackSimulationTrainingUserCoverage2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.ReportsSecurityGetAttackSimulationTrainingUserCoverage2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])

@@ -25,8 +25,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsAppRoleAssignment do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_app_role_assigned_to_get_count705c(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_app_role_assigned_to_get_count705c(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_app_role_assigned_to_get_count705c(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_app_role_assigned_to_get_count705c(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -65,8 +76,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsAppRoleAssignment do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_app_role_assignments_get_count4e95(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_app_role_assignments_get_count4e95(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_app_role_assignments_get_count4e95(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_app_role_assignments_get_count4e95(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$search" => :query,
@@ -105,8 +127,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsAppRoleAssignment do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_create_app_role_assigned_to(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignment.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignment.t} | {:error, Tesla.Env.t}
-  def service_principals_create_app_role_assigned_to(connection, service_principal_id, microsoft_graph_app_role_assignment, _opts \\ []) do
+  @spec service_principals_create_app_role_assigned_to(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignment.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignment.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_create_app_role_assigned_to(
+        connection,
+        service_principal_id,
+        microsoft_graph_app_role_assignment,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -139,8 +174,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsAppRoleAssignment do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_create_app_role_assignments(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignment.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignment.t} | {:error, Tesla.Env.t}
-  def service_principals_create_app_role_assignments(connection, service_principal_id, microsoft_graph_app_role_assignment, _opts \\ []) do
+  @spec service_principals_create_app_role_assignments(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignment.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignment.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_create_app_role_assignments(
+        connection,
+        service_principal_id,
+        microsoft_graph_app_role_assignment,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -174,8 +222,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsAppRoleAssignment do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_delete_app_role_assigned_to(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_delete_app_role_assigned_to(connection, service_principal_id, app_role_assignment_id, opts \\ []) do
+  @spec service_principals_delete_app_role_assigned_to(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_delete_app_role_assigned_to(
+        connection,
+        service_principal_id,
+        app_role_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -183,7 +244,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsAppRoleAssignment do
     request =
       %{}
       |> method(:delete)
-      |> url("/servicePrincipals/#{service_principal_id}/appRoleAssignedTo/#{app_role_assignment_id}")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/appRoleAssignedTo/#{app_role_assignment_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -213,8 +276,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsAppRoleAssignment do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_delete_app_role_assignments(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_delete_app_role_assignments(connection, service_principal_id, app_role_assignment_id, opts \\ []) do
+  @spec service_principals_delete_app_role_assignments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_delete_app_role_assignments(
+        connection,
+        service_principal_id,
+        app_role_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -222,7 +298,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsAppRoleAssignment do
     request =
       %{}
       |> method(:delete)
-      |> url("/servicePrincipals/#{service_principal_id}/appRoleAssignments/#{app_role_assignment_id}")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/appRoleAssignments/#{app_role_assignment_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -253,8 +331,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsAppRoleAssignment do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_get_app_role_assigned_to(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignment.t} | {:error, Tesla.Env.t}
-  def service_principals_get_app_role_assigned_to(connection, service_principal_id, app_role_assignment_id, opts \\ []) do
+  @spec service_principals_get_app_role_assigned_to(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignment.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_get_app_role_assigned_to(
+        connection,
+        service_principal_id,
+        app_role_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -263,7 +354,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsAppRoleAssignment do
     request =
       %{}
       |> method(:get)
-      |> url("/servicePrincipals/#{service_principal_id}/appRoleAssignedTo/#{app_role_assignment_id}")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/appRoleAssignedTo/#{app_role_assignment_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -295,8 +388,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsAppRoleAssignment do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_get_app_role_assignments(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignment.t} | {:error, Tesla.Env.t}
-  def service_principals_get_app_role_assignments(connection, service_principal_id, app_role_assignment_id, opts \\ []) do
+  @spec service_principals_get_app_role_assignments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignment.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_get_app_role_assignments(
+        connection,
+        service_principal_id,
+        app_role_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :ConsistencyLevel => :headers,
       :"$select" => :query,
@@ -306,7 +412,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsAppRoleAssignment do
     request =
       %{}
       |> method(:get)
-      |> url("/servicePrincipals/#{service_principal_id}/appRoleAssignments/#{app_role_assignment_id}")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/appRoleAssignments/#{app_role_assignment_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -342,7 +450,10 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsAppRoleAssignment do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignmentCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_list_app_role_assigned_to(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignmentCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec service_principals_list_app_role_assigned_to(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignmentCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def service_principals_list_app_role_assigned_to(connection, service_principal_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -395,7 +506,10 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsAppRoleAssignment do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignmentCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_list_app_role_assignments(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignmentCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec service_principals_list_app_role_assignments(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignmentCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def service_principals_list_app_role_assignments(connection, service_principal_id, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -441,12 +555,29 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsAppRoleAssignment do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_update_app_role_assigned_to(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignment.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignment.t} | {:error, Tesla.Env.t}
-  def service_principals_update_app_role_assigned_to(connection, service_principal_id, app_role_assignment_id, microsoft_graph_app_role_assignment, _opts \\ []) do
+  @spec service_principals_update_app_role_assigned_to(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignment.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignment.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_update_app_role_assigned_to(
+        connection,
+        service_principal_id,
+        app_role_assignment_id,
+        microsoft_graph_app_role_assignment,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/servicePrincipals/#{service_principal_id}/appRoleAssignedTo/#{app_role_assignment_id}")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/appRoleAssignedTo/#{app_role_assignment_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_app_role_assignment)
       |> Enum.into([])
 
@@ -475,12 +606,29 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsAppRoleAssignment do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_update_app_role_assignments(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignment.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignment.t} | {:error, Tesla.Env.t}
-  def service_principals_update_app_role_assignments(connection, service_principal_id, app_role_assignment_id, microsoft_graph_app_role_assignment, _opts \\ []) do
+  @spec service_principals_update_app_role_assignments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignment.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAppRoleAssignment.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_update_app_role_assignments(
+        connection,
+        service_principal_id,
+        app_role_assignment_id,
+        microsoft_graph_app_role_assignment,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/servicePrincipals/#{service_principal_id}/appRoleAssignments/#{app_role_assignment_id}")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/appRoleAssignments/#{app_role_assignment_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_app_role_assignment)
       |> Enum.into([])
 

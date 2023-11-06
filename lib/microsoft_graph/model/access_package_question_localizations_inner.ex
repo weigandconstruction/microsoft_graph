@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.AccessPackageQuestionLocalizationsInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.AccessPackageQuestionLocalizationsInner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :languageCode => String.t | nil,
-    :text => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :languageCode => String.t() | nil,
+          :text => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

@@ -25,7 +25,10 @@ defmodule MicrosoftGraph.Api.UsersInferenceClassification do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphInferenceClassification.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_get_inference_classification(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphInferenceClassification.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_get_inference_classification(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphInferenceClassification.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_get_inference_classification(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query
@@ -63,8 +66,21 @@ defmodule MicrosoftGraph.Api.UsersInferenceClassification do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphInferenceClassificationOverride.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_inference_classification_create_overrides(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphInferenceClassificationOverride.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphInferenceClassificationOverride.t} | {:error, Tesla.Env.t}
-  def users_inference_classification_create_overrides(connection, user_id, microsoft_graph_inference_classification_override, _opts \\ []) do
+  @spec users_inference_classification_create_overrides(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphInferenceClassificationOverride.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphInferenceClassificationOverride.t()}
+          | {:error, Tesla.Env.t()}
+  def users_inference_classification_create_overrides(
+        connection,
+        user_id,
+        microsoft_graph_inference_classification_override,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -98,8 +114,21 @@ defmodule MicrosoftGraph.Api.UsersInferenceClassification do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_inference_classification_delete_overrides(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_inference_classification_delete_overrides(connection, user_id, inference_classification_override_id, opts \\ []) do
+  @spec users_inference_classification_delete_overrides(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_inference_classification_delete_overrides(
+        connection,
+        user_id,
+        inference_classification_override_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -107,7 +136,9 @@ defmodule MicrosoftGraph.Api.UsersInferenceClassification do
     request =
       %{}
       |> method(:delete)
-      |> url("/users/#{user_id}/inferenceClassification/overrides/#{inference_classification_override_id}")
+      |> url(
+        "/users/#{user_id}/inferenceClassification/overrides/#{inference_classification_override_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -137,8 +168,21 @@ defmodule MicrosoftGraph.Api.UsersInferenceClassification do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphInferenceClassificationOverride.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_inference_classification_get_overrides(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphInferenceClassificationOverride.t} | {:error, Tesla.Env.t}
-  def users_inference_classification_get_overrides(connection, user_id, inference_classification_override_id, opts \\ []) do
+  @spec users_inference_classification_get_overrides(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphInferenceClassificationOverride.t()}
+          | {:error, Tesla.Env.t()}
+  def users_inference_classification_get_overrides(
+        connection,
+        user_id,
+        inference_classification_override_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query
     }
@@ -146,7 +190,9 @@ defmodule MicrosoftGraph.Api.UsersInferenceClassification do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/inferenceClassification/overrides/#{inference_classification_override_id}")
+      |> url(
+        "/users/#{user_id}/inferenceClassification/overrides/#{inference_classification_override_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -180,7 +226,11 @@ defmodule MicrosoftGraph.Api.UsersInferenceClassification do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphInferenceClassificationOverrideCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_inference_classification_list_overrides(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphInferenceClassificationOverrideCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec users_inference_classification_list_overrides(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphInferenceClassificationOverrideCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def users_inference_classification_list_overrides(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -201,7 +251,8 @@ defmodule MicrosoftGraph.Api.UsersInferenceClassification do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphInferenceClassificationOverrideCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphInferenceClassificationOverrideCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -222,7 +273,14 @@ defmodule MicrosoftGraph.Api.UsersInferenceClassification do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_inference_classification_overrides_get_count_f355(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_inference_classification_overrides_get_count_f355(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_inference_classification_overrides_get_count_f355(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$filter" => :query
@@ -261,12 +319,29 @@ defmodule MicrosoftGraph.Api.UsersInferenceClassification do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphInferenceClassificationOverride.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_inference_classification_update_overrides(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphInferenceClassificationOverride.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphInferenceClassificationOverride.t} | {:error, Tesla.Env.t}
-  def users_inference_classification_update_overrides(connection, user_id, inference_classification_override_id, microsoft_graph_inference_classification_override, _opts \\ []) do
+  @spec users_inference_classification_update_overrides(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphInferenceClassificationOverride.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphInferenceClassificationOverride.t()}
+          | {:error, Tesla.Env.t()}
+  def users_inference_classification_update_overrides(
+        connection,
+        user_id,
+        inference_classification_override_id,
+        microsoft_graph_inference_classification_override,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/users/#{user_id}/inferenceClassification/overrides/#{inference_classification_override_id}")
+      |> url(
+        "/users/#{user_id}/inferenceClassification/overrides/#{inference_classification_override_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_inference_classification_override)
       |> Enum.into([])
 
@@ -294,8 +369,21 @@ defmodule MicrosoftGraph.Api.UsersInferenceClassification do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphInferenceClassification.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_update_inference_classification(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphInferenceClassification.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphInferenceClassification.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_update_inference_classification(connection, user_id, microsoft_graph_inference_classification, _opts \\ []) do
+  @spec users_update_inference_classification(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphInferenceClassification.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphInferenceClassification.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_update_inference_classification(
+        connection,
+        user_id,
+        microsoft_graph_inference_classification,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

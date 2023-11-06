@@ -29,7 +29,10 @@ defmodule MicrosoftGraph.Api.DirectoryFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfAdministrativeUnit.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_administrative_units_delta(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfAdministrativeUnit.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec directory_administrative_units_delta(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfAdministrativeUnit.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def directory_administrative_units_delta(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -75,7 +78,14 @@ defmodule MicrosoftGraph.Api.DirectoryFunctions do
   - `{:ok, MicrosoftGraph.Model.DirectoryFederationConfigurationsAvailableProviderTypes2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_federation_configurations_available_provider_types(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.DirectoryFederationConfigurationsAvailableProviderTypes2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec directory_federation_configurations_available_provider_types(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.DirectoryFederationConfigurationsAvailableProviderTypes2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def directory_federation_configurations_available_provider_types(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -95,7 +105,8 @@ defmodule MicrosoftGraph.Api.DirectoryFunctions do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.DirectoryFederationConfigurationsAvailableProviderTypes2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.DirectoryFederationConfigurationsAvailableProviderTypes2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])

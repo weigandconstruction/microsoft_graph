@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.ReportsSecurityGetAttackSimulationSimulationUserCoverage2XxResponseAllOfValueInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,20 +17,25 @@ defmodule MicrosoftGraph.Model.ReportsSecurityGetAttackSimulationSimulationUserC
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :attackSimulationUser => MicrosoftGraph.Model.MicrosoftGraphAttackSimulationSimulationUserCoverageAttackSimulationUser.t | nil,
-    :clickCount => integer() | nil,
-    :compromisedCount => integer() | nil,
-    :latestSimulationDateTime => DateTime.t | nil,
-    :simulationCount => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :attackSimulationUser =>
+            MicrosoftGraph.Model.MicrosoftGraphAttackSimulationSimulationUserCoverageAttackSimulationUser.t()
+            | nil,
+          :clickCount => integer() | nil,
+          :compromisedCount => integer() | nil,
+          :latestSimulationDateTime => DateTime.t() | nil,
+          :simulationCount => integer() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:attackSimulationUser, :struct, MicrosoftGraph.Model.MicrosoftGraphAttackSimulationSimulationUserCoverageAttackSimulationUser)
-     |> Deserializer.deserialize(:latestSimulationDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :attackSimulationUser,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAttackSimulationSimulationUserCoverageAttackSimulationUser
+    )
+    |> Deserializer.deserialize(:latestSimulationDateTime, :datetime, nil)
   end
 end
-

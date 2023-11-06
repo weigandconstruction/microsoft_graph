@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphCallRecordsClientUserAgent do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,21 +18,28 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphCallRecordsClientUserAgent do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :applicationVersion => String.t | nil,
-    :headerValue => String.t | nil,
-    :azureADAppId => String.t | nil,
-    :communicationServiceId => String.t | nil,
-    :platform => MicrosoftGraph.Model.MicrosoftGraphCallRecordsClientPlatform.t | nil,
-    :productFamily => MicrosoftGraph.Model.MicrosoftGraphCallRecordsProductFamily.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :applicationVersion => String.t() | nil,
+          :headerValue => String.t() | nil,
+          :azureADAppId => String.t() | nil,
+          :communicationServiceId => String.t() | nil,
+          :platform => MicrosoftGraph.Model.MicrosoftGraphCallRecordsClientPlatform.t() | nil,
+          :productFamily => MicrosoftGraph.Model.MicrosoftGraphCallRecordsProductFamily.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:platform, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsClientPlatform)
-     |> Deserializer.deserialize(:productFamily, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsProductFamily)
+    |> Deserializer.deserialize(
+      :platform,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsClientPlatform
+    )
+    |> Deserializer.deserialize(
+      :productFamily,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsProductFamily
+    )
   end
 end
-

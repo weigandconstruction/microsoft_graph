@@ -25,8 +25,19 @@ defmodule MicrosoftGraph.Api.PoliciesAuthenticationStrengthPolicy do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_authentication_strength_policies_combination_configurations_get_count7b5f(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_authentication_strength_policies_combination_configurations_get_count7b5f(connection, authentication_strength_policy_id, opts \\ []) do
+  @spec policies_authentication_strength_policies_combination_configurations_get_count7b5f(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_authentication_strength_policies_combination_configurations_get_count7b5f(
+        connection,
+        authentication_strength_policy_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -35,7 +46,9 @@ defmodule MicrosoftGraph.Api.PoliciesAuthenticationStrengthPolicy do
     request =
       %{}
       |> method(:get)
-      |> url("/policies/authenticationStrengthPolicies/#{authentication_strength_policy_id}/combinationConfigurations/$count")
+      |> url(
+        "/policies/authenticationStrengthPolicies/#{authentication_strength_policy_id}/combinationConfigurations/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -64,12 +77,27 @@ defmodule MicrosoftGraph.Api.PoliciesAuthenticationStrengthPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationCombinationConfiguration.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_authentication_strength_policies_create_combination_configurations(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphAuthenticationCombinationConfiguration.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationCombinationConfiguration.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_authentication_strength_policies_create_combination_configurations(connection, authentication_strength_policy_id, microsoft_graph_authentication_combination_configuration, _opts \\ []) do
+  @spec policies_authentication_strength_policies_create_combination_configurations(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAuthenticationCombinationConfiguration.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationCombinationConfiguration.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_authentication_strength_policies_create_combination_configurations(
+        connection,
+        authentication_strength_policy_id,
+        microsoft_graph_authentication_combination_configuration,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/policies/authenticationStrengthPolicies/#{authentication_strength_policy_id}/combinationConfigurations")
+      |> url(
+        "/policies/authenticationStrengthPolicies/#{authentication_strength_policy_id}/combinationConfigurations"
+      )
       |> add_param(:body, :body, microsoft_graph_authentication_combination_configuration)
       |> Enum.into([])
 
@@ -99,8 +127,21 @@ defmodule MicrosoftGraph.Api.PoliciesAuthenticationStrengthPolicy do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_authentication_strength_policies_delete_combination_configurations(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_authentication_strength_policies_delete_combination_configurations(connection, authentication_strength_policy_id, authentication_combination_configuration_id, opts \\ []) do
+  @spec policies_authentication_strength_policies_delete_combination_configurations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_authentication_strength_policies_delete_combination_configurations(
+        connection,
+        authentication_strength_policy_id,
+        authentication_combination_configuration_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -108,7 +149,9 @@ defmodule MicrosoftGraph.Api.PoliciesAuthenticationStrengthPolicy do
     request =
       %{}
       |> method(:delete)
-      |> url("/policies/authenticationStrengthPolicies/#{authentication_strength_policy_id}/combinationConfigurations/#{authentication_combination_configuration_id}")
+      |> url(
+        "/policies/authenticationStrengthPolicies/#{authentication_strength_policy_id}/combinationConfigurations/#{authentication_combination_configuration_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -139,8 +182,21 @@ defmodule MicrosoftGraph.Api.PoliciesAuthenticationStrengthPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationCombinationConfiguration.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_authentication_strength_policies_get_combination_configurations(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationCombinationConfiguration.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_authentication_strength_policies_get_combination_configurations(connection, authentication_strength_policy_id, authentication_combination_configuration_id, opts \\ []) do
+  @spec policies_authentication_strength_policies_get_combination_configurations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationCombinationConfiguration.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_authentication_strength_policies_get_combination_configurations(
+        connection,
+        authentication_strength_policy_id,
+        authentication_combination_configuration_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -149,7 +205,9 @@ defmodule MicrosoftGraph.Api.PoliciesAuthenticationStrengthPolicy do
     request =
       %{}
       |> method(:get)
-      |> url("/policies/authenticationStrengthPolicies/#{authentication_strength_policy_id}/combinationConfigurations/#{authentication_combination_configuration_id}")
+      |> url(
+        "/policies/authenticationStrengthPolicies/#{authentication_strength_policy_id}/combinationConfigurations/#{authentication_combination_configuration_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -177,7 +235,10 @@ defmodule MicrosoftGraph.Api.PoliciesAuthenticationStrengthPolicy do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_authentication_strength_policies_get_count_db73(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec policies_authentication_strength_policies_get_count_db73(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def policies_authentication_strength_policies_get_count_db73(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -223,8 +284,20 @@ defmodule MicrosoftGraph.Api.PoliciesAuthenticationStrengthPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationCombinationConfigurationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_authentication_strength_policies_list_combination_configurations(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationCombinationConfigurationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_authentication_strength_policies_list_combination_configurations(connection, authentication_strength_policy_id, opts \\ []) do
+  @spec policies_authentication_strength_policies_list_combination_configurations(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphAuthenticationCombinationConfigurationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_authentication_strength_policies_list_combination_configurations(
+        connection,
+        authentication_strength_policy_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -239,14 +312,17 @@ defmodule MicrosoftGraph.Api.PoliciesAuthenticationStrengthPolicy do
     request =
       %{}
       |> method(:get)
-      |> url("/policies/authenticationStrengthPolicies/#{authentication_strength_policy_id}/combinationConfigurations")
+      |> url(
+        "/policies/authenticationStrengthPolicies/#{authentication_strength_policy_id}/combinationConfigurations"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphAuthenticationCombinationConfigurationCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphAuthenticationCombinationConfigurationCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -269,12 +345,29 @@ defmodule MicrosoftGraph.Api.PoliciesAuthenticationStrengthPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationCombinationConfiguration.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_authentication_strength_policies_update_combination_configurations(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphAuthenticationCombinationConfiguration.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationCombinationConfiguration.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_authentication_strength_policies_update_combination_configurations(connection, authentication_strength_policy_id, authentication_combination_configuration_id, microsoft_graph_authentication_combination_configuration, _opts \\ []) do
+  @spec policies_authentication_strength_policies_update_combination_configurations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAuthenticationCombinationConfiguration.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationCombinationConfiguration.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_authentication_strength_policies_update_combination_configurations(
+        connection,
+        authentication_strength_policy_id,
+        authentication_combination_configuration_id,
+        microsoft_graph_authentication_combination_configuration,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/policies/authenticationStrengthPolicies/#{authentication_strength_policy_id}/combinationConfigurations/#{authentication_combination_configuration_id}")
+      |> url(
+        "/policies/authenticationStrengthPolicies/#{authentication_strength_policy_id}/combinationConfigurations/#{authentication_combination_configuration_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_authentication_combination_configuration)
       |> Enum.into([])
 
@@ -302,8 +395,19 @@ defmodule MicrosoftGraph.Api.PoliciesAuthenticationStrengthPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthPolicy.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_create_authentication_strength_policies(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthPolicy.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthPolicy.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_create_authentication_strength_policies(connection, microsoft_graph_authentication_strength_policy, _opts \\ []) do
+  @spec policies_create_authentication_strength_policies(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthPolicy.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthPolicy.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_create_authentication_strength_policies(
+        connection,
+        microsoft_graph_authentication_strength_policy,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -336,8 +440,19 @@ defmodule MicrosoftGraph.Api.PoliciesAuthenticationStrengthPolicy do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_delete_authentication_strength_policies(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_delete_authentication_strength_policies(connection, authentication_strength_policy_id, opts \\ []) do
+  @spec policies_delete_authentication_strength_policies(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_delete_authentication_strength_policies(
+        connection,
+        authentication_strength_policy_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -375,8 +490,15 @@ defmodule MicrosoftGraph.Api.PoliciesAuthenticationStrengthPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthPolicy.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_get_authentication_strength_policies(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthPolicy.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_get_authentication_strength_policies(connection, authentication_strength_policy_id, opts \\ []) do
+  @spec policies_get_authentication_strength_policies(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthPolicy.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_get_authentication_strength_policies(
+        connection,
+        authentication_strength_policy_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -420,7 +542,11 @@ defmodule MicrosoftGraph.Api.PoliciesAuthenticationStrengthPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthPolicyCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_list_authentication_strength_policies(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthPolicyCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec policies_list_authentication_strength_policies(Tesla.Env.client(), keyword()) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthPolicyCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def policies_list_authentication_strength_policies(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -465,8 +591,21 @@ defmodule MicrosoftGraph.Api.PoliciesAuthenticationStrengthPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthPolicy.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_update_authentication_strength_policies(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthPolicy.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthPolicy.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_update_authentication_strength_policies(connection, authentication_strength_policy_id, microsoft_graph_authentication_strength_policy, _opts \\ []) do
+  @spec policies_update_authentication_strength_policies(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthPolicy.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthPolicy.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_update_authentication_strength_policies(
+        connection,
+        authentication_strength_policy_id,
+        microsoft_graph_authentication_strength_policy,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

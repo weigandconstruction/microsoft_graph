@@ -16,15 +16,14 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphPrintJobConfigurationMargin do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :bottom => integer() | nil,
-    :left => integer() | nil,
-    :right => integer() | nil,
-    :top => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :bottom => integer() | nil,
+          :left => integer() | nil,
+          :right => integer() | nil,
+          :top => integer() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

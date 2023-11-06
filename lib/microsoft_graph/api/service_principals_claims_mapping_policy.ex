@@ -25,8 +25,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsClaimsMappingPolicy do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_claims_mapping_policies_get_count832a(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_claims_mapping_policies_get_count832a(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_claims_mapping_policies_get_count832a(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_claims_mapping_policies_get_count832a(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -64,8 +75,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsClaimsMappingPolicy do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_create_ref_claims_mapping_policies(Tesla.Env.client, String.t, %{optional(String.t) => Map.t}, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_create_ref_claims_mapping_policies(connection, service_principal_id, request_body, _opts \\ []) do
+  @spec service_principals_create_ref_claims_mapping_policies(
+          Tesla.Env.client(),
+          String.t(),
+          %{optional(String.t()) => Map.t()},
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_create_ref_claims_mapping_policies(
+        connection,
+        service_principal_id,
+        request_body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -100,8 +124,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsClaimsMappingPolicy do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_delete_ref_claims_mapping_policies(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_delete_ref_claims_mapping_policies(connection, service_principal_id, claims_mapping_policy_id, opts \\ []) do
+  @spec service_principals_delete_ref_claims_mapping_policies(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_delete_ref_claims_mapping_policies(
+        connection,
+        service_principal_id,
+        claims_mapping_policy_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers,
       :"@id" => :query
@@ -110,7 +147,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsClaimsMappingPolicy do
     request =
       %{}
       |> method(:delete)
-      |> url("/servicePrincipals/#{service_principal_id}/claimsMappingPolicies/#{claims_mapping_policy_id}/$ref")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/claimsMappingPolicies/#{claims_mapping_policy_id}/$ref"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -146,8 +185,15 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsClaimsMappingPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphClaimsMappingPolicyCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_list_claims_mapping_policies(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphClaimsMappingPolicyCollectionResponse.t} | {:error, Tesla.Env.t}
-  def service_principals_list_claims_mapping_policies(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_list_claims_mapping_policies(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphClaimsMappingPolicyCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_list_claims_mapping_policies(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -196,8 +242,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsClaimsMappingPolicy do
   - `{:ok, MicrosoftGraph.Model.StringCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_list_ref_claims_mapping_policies(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.StringCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_list_ref_claims_mapping_policies(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_list_ref_claims_mapping_policies(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.StringCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_list_ref_claims_mapping_policies(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,

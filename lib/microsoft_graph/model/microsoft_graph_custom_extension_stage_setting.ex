@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphCustomExtensionStageSetting do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,18 +15,26 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphCustomExtensionStageSetting do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :customExtension => MicrosoftGraph.Model.CustomExtensionStageSettingCustomExtension.t | nil,
-    :stage => MicrosoftGraph.Model.MicrosoftGraphAccessPackageCustomExtensionStage.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :customExtension =>
+            MicrosoftGraph.Model.CustomExtensionStageSettingCustomExtension.t() | nil,
+          :stage => MicrosoftGraph.Model.MicrosoftGraphAccessPackageCustomExtensionStage.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:customExtension, :struct, MicrosoftGraph.Model.CustomExtensionStageSettingCustomExtension)
-     |> Deserializer.deserialize(:stage, :struct, MicrosoftGraph.Model.MicrosoftGraphAccessPackageCustomExtensionStage)
+    |> Deserializer.deserialize(
+      :customExtension,
+      :struct,
+      MicrosoftGraph.Model.CustomExtensionStageSettingCustomExtension
+    )
+    |> Deserializer.deserialize(
+      :stage,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAccessPackageCustomExtensionStage
+    )
   end
 end
-

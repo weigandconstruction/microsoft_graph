@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphVisualInfo do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,20 +17,27 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphVisualInfo do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :attribution => MicrosoftGraph.Model.MicrosoftGraphVisualInfoAttribution.t | nil,
-    :backgroundColor => String.t | nil,
-    :content => MicrosoftGraph.Model.MicrosoftGraphVisualInfoContent.t | nil,
-    :description => String.t | nil,
-    :displayText => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :attribution => MicrosoftGraph.Model.MicrosoftGraphVisualInfoAttribution.t() | nil,
+          :backgroundColor => String.t() | nil,
+          :content => MicrosoftGraph.Model.MicrosoftGraphVisualInfoContent.t() | nil,
+          :description => String.t() | nil,
+          :displayText => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:attribution, :struct, MicrosoftGraph.Model.MicrosoftGraphVisualInfoAttribution)
-     |> Deserializer.deserialize(:content, :struct, MicrosoftGraph.Model.MicrosoftGraphVisualInfoContent)
+    |> Deserializer.deserialize(
+      :attribution,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphVisualInfoAttribution
+    )
+    |> Deserializer.deserialize(
+      :content,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphVisualInfoContent
+    )
   end
 end
-

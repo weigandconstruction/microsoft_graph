@@ -15,18 +15,17 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphMobileAppInstallTimeSettings do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :deadlineDateTime => DateTime.t | nil,
-    :startDateTime => DateTime.t | nil,
-    :useLocalTime => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :deadlineDateTime => DateTime.t() | nil,
+          :startDateTime => DateTime.t() | nil,
+          :useLocalTime => boolean() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:deadlineDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:startDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:deadlineDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:startDateTime, :datetime, nil)
   end
 end
-

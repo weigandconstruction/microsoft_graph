@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphEducationFeedbackOutcome do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,22 +17,34 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphEducationFeedbackOutcome do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :lastModifiedBy => MicrosoftGraph.Model.EducationOutcomeLastModifiedBy.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :feedback => MicrosoftGraph.Model.EducationFeedbackOutcomeFeedback.t | nil,
-    :publishedFeedback => MicrosoftGraph.Model.EducationFeedbackOutcomePublishedFeedback.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :lastModifiedBy => MicrosoftGraph.Model.EducationOutcomeLastModifiedBy.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :feedback => MicrosoftGraph.Model.EducationFeedbackOutcomeFeedback.t() | nil,
+          :publishedFeedback =>
+            MicrosoftGraph.Model.EducationFeedbackOutcomePublishedFeedback.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:lastModifiedBy, :struct, MicrosoftGraph.Model.EducationOutcomeLastModifiedBy)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:feedback, :struct, MicrosoftGraph.Model.EducationFeedbackOutcomeFeedback)
-     |> Deserializer.deserialize(:publishedFeedback, :struct, MicrosoftGraph.Model.EducationFeedbackOutcomePublishedFeedback)
+    |> Deserializer.deserialize(
+      :lastModifiedBy,
+      :struct,
+      MicrosoftGraph.Model.EducationOutcomeLastModifiedBy
+    )
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :feedback,
+      :struct,
+      MicrosoftGraph.Model.EducationFeedbackOutcomeFeedback
+    )
+    |> Deserializer.deserialize(
+      :publishedFeedback,
+      :struct,
+      MicrosoftGraph.Model.EducationFeedbackOutcomePublishedFeedback
+    )
   end
 end
-

@@ -14,17 +14,30 @@ defmodule MicrosoftGraph.Model.TenantAppManagementPolicyServicePrincipalRestrict
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :keyCredentials => [MicrosoftGraph.Model.MicrosoftGraphAppManagementConfigurationKeyCredentialsInner.t] | nil,
-    :passwordCredentials => [MicrosoftGraph.Model.MicrosoftGraphAppManagementConfigurationPasswordCredentialsInner.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :keyCredentials =>
+            [MicrosoftGraph.Model.MicrosoftGraphAppManagementConfigurationKeyCredentialsInner.t()]
+            | nil,
+          :passwordCredentials =>
+            [
+              MicrosoftGraph.Model.MicrosoftGraphAppManagementConfigurationPasswordCredentialsInner.t()
+            ]
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:keyCredentials, :list, MicrosoftGraph.Model.MicrosoftGraphAppManagementConfigurationKeyCredentialsInner)
-     |> Deserializer.deserialize(:passwordCredentials, :list, MicrosoftGraph.Model.MicrosoftGraphAppManagementConfigurationPasswordCredentialsInner)
+    |> Deserializer.deserialize(
+      :keyCredentials,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAppManagementConfigurationKeyCredentialsInner
+    )
+    |> Deserializer.deserialize(
+      :passwordCredentials,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAppManagementConfigurationPasswordCredentialsInner
+    )
   end
 end
-

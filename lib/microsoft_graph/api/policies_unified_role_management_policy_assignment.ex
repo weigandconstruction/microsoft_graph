@@ -23,8 +23,19 @@ defmodule MicrosoftGraph.Api.PoliciesUnifiedRoleManagementPolicyAssignment do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleManagementPolicyAssignment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_create_role_management_policy_assignments(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleManagementPolicyAssignment.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleManagementPolicyAssignment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_create_role_management_policy_assignments(connection, microsoft_graph_unified_role_management_policy_assignment, _opts \\ []) do
+  @spec policies_create_role_management_policy_assignments(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleManagementPolicyAssignment.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleManagementPolicyAssignment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_create_role_management_policy_assignments(
+        connection,
+        microsoft_graph_unified_role_management_policy_assignment,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -56,8 +67,19 @@ defmodule MicrosoftGraph.Api.PoliciesUnifiedRoleManagementPolicyAssignment do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_delete_role_management_policy_assignments(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_delete_role_management_policy_assignments(connection, unified_role_management_policy_assignment_id, opts \\ []) do
+  @spec policies_delete_role_management_policy_assignments(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_delete_role_management_policy_assignments(
+        connection,
+        unified_role_management_policy_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -65,7 +87,9 @@ defmodule MicrosoftGraph.Api.PoliciesUnifiedRoleManagementPolicyAssignment do
     request =
       %{}
       |> method(:delete)
-      |> url("/policies/roleManagementPolicyAssignments/#{unified_role_management_policy_assignment_id}")
+      |> url(
+        "/policies/roleManagementPolicyAssignments/#{unified_role_management_policy_assignment_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -95,8 +119,15 @@ defmodule MicrosoftGraph.Api.PoliciesUnifiedRoleManagementPolicyAssignment do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleManagementPolicyAssignment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_get_role_management_policy_assignments(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleManagementPolicyAssignment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_get_role_management_policy_assignments(connection, unified_role_management_policy_assignment_id, opts \\ []) do
+  @spec policies_get_role_management_policy_assignments(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleManagementPolicyAssignment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_get_role_management_policy_assignments(
+        connection,
+        unified_role_management_policy_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -105,7 +136,9 @@ defmodule MicrosoftGraph.Api.PoliciesUnifiedRoleManagementPolicyAssignment do
     request =
       %{}
       |> method(:get)
-      |> url("/policies/roleManagementPolicyAssignments/#{unified_role_management_policy_assignment_id}")
+      |> url(
+        "/policies/roleManagementPolicyAssignments/#{unified_role_management_policy_assignment_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -140,7 +173,11 @@ defmodule MicrosoftGraph.Api.PoliciesUnifiedRoleManagementPolicyAssignment do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleManagementPolicyAssignmentCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_list_role_management_policy_assignments(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleManagementPolicyAssignmentCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec policies_list_role_management_policy_assignments(Tesla.Env.client(), keyword()) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleManagementPolicyAssignmentCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def policies_list_role_management_policy_assignments(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -163,7 +200,8 @@ defmodule MicrosoftGraph.Api.PoliciesUnifiedRoleManagementPolicyAssignment do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleManagementPolicyAssignmentCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleManagementPolicyAssignmentCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -184,7 +222,10 @@ defmodule MicrosoftGraph.Api.PoliciesUnifiedRoleManagementPolicyAssignment do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_role_management_policy_assignments_get_count8d94(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec policies_role_management_policy_assignments_get_count8d94(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def policies_role_management_policy_assignments_get_count8d94(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -224,8 +265,19 @@ defmodule MicrosoftGraph.Api.PoliciesUnifiedRoleManagementPolicyAssignment do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleManagementPolicy.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_role_management_policy_assignments_get_policy(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleManagementPolicy.t} | {:error, Tesla.Env.t}
-  def policies_role_management_policy_assignments_get_policy(connection, unified_role_management_policy_assignment_id, opts \\ []) do
+  @spec policies_role_management_policy_assignments_get_policy(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleManagementPolicy.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_role_management_policy_assignments_get_policy(
+        connection,
+        unified_role_management_policy_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -234,7 +286,9 @@ defmodule MicrosoftGraph.Api.PoliciesUnifiedRoleManagementPolicyAssignment do
     request =
       %{}
       |> method(:get)
-      |> url("/policies/roleManagementPolicyAssignments/#{unified_role_management_policy_assignment_id}/policy")
+      |> url(
+        "/policies/roleManagementPolicyAssignments/#{unified_role_management_policy_assignment_id}/policy"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -262,12 +316,27 @@ defmodule MicrosoftGraph.Api.PoliciesUnifiedRoleManagementPolicyAssignment do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleManagementPolicyAssignment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_update_role_management_policy_assignments(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleManagementPolicyAssignment.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleManagementPolicyAssignment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_update_role_management_policy_assignments(connection, unified_role_management_policy_assignment_id, microsoft_graph_unified_role_management_policy_assignment, _opts \\ []) do
+  @spec policies_update_role_management_policy_assignments(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleManagementPolicyAssignment.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleManagementPolicyAssignment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_update_role_management_policy_assignments(
+        connection,
+        unified_role_management_policy_assignment_id,
+        microsoft_graph_unified_role_management_policy_assignment,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/policies/roleManagementPolicyAssignments/#{unified_role_management_policy_assignment_id}")
+      |> url(
+        "/policies/roleManagementPolicyAssignments/#{unified_role_management_policy_assignment_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_unified_role_management_policy_assignment)
       |> Enum.into([])
 

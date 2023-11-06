@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.CallCallOptions do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :hideBotAfterEscalation => boolean() | nil,
-    :isContentSharingNotificationEnabled => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :hideBotAfterEscalation => boolean() | nil,
+          :isContentSharingNotificationEnabled => boolean() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

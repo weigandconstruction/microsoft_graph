@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.CollectionOfUnifiedRoleEligibilityScheduleInstanceAllOfValueInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -25,32 +25,49 @@ defmodule MicrosoftGraph.Model.CollectionOfUnifiedRoleEligibilityScheduleInstanc
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :appScope => MicrosoftGraph.Model.UnifiedRoleScheduleInstanceBaseAppScope.t | nil,
-    :appScopeId => String.t | nil,
-    :directoryScope => MicrosoftGraph.Model.UnifiedRoleScheduleInstanceBaseDirectoryScope.t | nil,
-    :directoryScopeId => String.t | nil,
-    :principal => MicrosoftGraph.Model.UnifiedRoleScheduleInstanceBasePrincipal.t | nil,
-    :principalId => String.t | nil,
-    :roleDefinition => MicrosoftGraph.Model.UnifiedRoleScheduleInstanceBaseRoleDefinition.t | nil,
-    :roleDefinitionId => String.t | nil,
-    :endDateTime => DateTime.t | nil,
-    :memberType => String.t | nil,
-    :roleEligibilityScheduleId => String.t | nil,
-    :startDateTime => DateTime.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :appScope => MicrosoftGraph.Model.UnifiedRoleScheduleInstanceBaseAppScope.t() | nil,
+          :appScopeId => String.t() | nil,
+          :directoryScope =>
+            MicrosoftGraph.Model.UnifiedRoleScheduleInstanceBaseDirectoryScope.t() | nil,
+          :directoryScopeId => String.t() | nil,
+          :principal => MicrosoftGraph.Model.UnifiedRoleScheduleInstanceBasePrincipal.t() | nil,
+          :principalId => String.t() | nil,
+          :roleDefinition =>
+            MicrosoftGraph.Model.UnifiedRoleScheduleInstanceBaseRoleDefinition.t() | nil,
+          :roleDefinitionId => String.t() | nil,
+          :endDateTime => DateTime.t() | nil,
+          :memberType => String.t() | nil,
+          :roleEligibilityScheduleId => String.t() | nil,
+          :startDateTime => DateTime.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:appScope, :struct, MicrosoftGraph.Model.UnifiedRoleScheduleInstanceBaseAppScope)
-     |> Deserializer.deserialize(:directoryScope, :struct, MicrosoftGraph.Model.UnifiedRoleScheduleInstanceBaseDirectoryScope)
-     |> Deserializer.deserialize(:principal, :struct, MicrosoftGraph.Model.UnifiedRoleScheduleInstanceBasePrincipal)
-     |> Deserializer.deserialize(:roleDefinition, :struct, MicrosoftGraph.Model.UnifiedRoleScheduleInstanceBaseRoleDefinition)
-     |> Deserializer.deserialize(:endDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:startDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :appScope,
+      :struct,
+      MicrosoftGraph.Model.UnifiedRoleScheduleInstanceBaseAppScope
+    )
+    |> Deserializer.deserialize(
+      :directoryScope,
+      :struct,
+      MicrosoftGraph.Model.UnifiedRoleScheduleInstanceBaseDirectoryScope
+    )
+    |> Deserializer.deserialize(
+      :principal,
+      :struct,
+      MicrosoftGraph.Model.UnifiedRoleScheduleInstanceBasePrincipal
+    )
+    |> Deserializer.deserialize(
+      :roleDefinition,
+      :struct,
+      MicrosoftGraph.Model.UnifiedRoleScheduleInstanceBaseRoleDefinition
+    )
+    |> Deserializer.deserialize(:endDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:startDateTime, :datetime, nil)
   end
 end
-

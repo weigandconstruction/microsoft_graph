@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphMediaContentRatingFrance do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,17 +14,24 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphMediaContentRatingFrance do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :movieRating => MicrosoftGraph.Model.MicrosoftGraphRatingFranceMoviesType.t | nil,
-    :tvRating => MicrosoftGraph.Model.MicrosoftGraphRatingFranceTelevisionType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :movieRating => MicrosoftGraph.Model.MicrosoftGraphRatingFranceMoviesType.t() | nil,
+          :tvRating => MicrosoftGraph.Model.MicrosoftGraphRatingFranceTelevisionType.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:movieRating, :struct, MicrosoftGraph.Model.MicrosoftGraphRatingFranceMoviesType)
-     |> Deserializer.deserialize(:tvRating, :struct, MicrosoftGraph.Model.MicrosoftGraphRatingFranceTelevisionType)
+    |> Deserializer.deserialize(
+      :movieRating,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphRatingFranceMoviesType
+    )
+    |> Deserializer.deserialize(
+      :tvRating,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphRatingFranceTelevisionType
+    )
   end
 end
-

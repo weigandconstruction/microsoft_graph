@@ -27,8 +27,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsTokenIssuancePolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTokenIssuancePolicy.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_get_token_issuance_policies(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTokenIssuancePolicy.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_get_token_issuance_policies(connection, service_principal_id, token_issuance_policy_id, opts \\ []) do
+  @spec service_principals_get_token_issuance_policies(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTokenIssuancePolicy.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_get_token_issuance_policies(
+        connection,
+        service_principal_id,
+        token_issuance_policy_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -37,7 +50,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsTokenIssuancePolicy do
     request =
       %{}
       |> method(:get)
-      |> url("/servicePrincipals/#{service_principal_id}/tokenIssuancePolicies/#{token_issuance_policy_id}")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/tokenIssuancePolicies/#{token_issuance_policy_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -73,8 +88,15 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsTokenIssuancePolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTokenIssuancePolicyCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_list_token_issuance_policies(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTokenIssuancePolicyCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_list_token_issuance_policies(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_list_token_issuance_policies(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTokenIssuancePolicyCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_list_token_issuance_policies(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -118,8 +140,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsTokenIssuancePolicy do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_token_issuance_policies_get_count578b(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_token_issuance_policies_get_count578b(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_token_issuance_policies_get_count578b(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_token_issuance_policies_get_count578b(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query

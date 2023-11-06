@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphLearningProvider do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -22,25 +22,33 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphLearningProvider do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :displayName => String.t | nil,
-    :isCourseActivitySyncEnabled => boolean() | nil,
-    :learningContents => [MicrosoftGraph.Model.MicrosoftGraphLearningContent.t] | nil,
-    :learningCourseActivities => [MicrosoftGraph.Model.MicrosoftGraphLearningCourseActivity.t] | nil,
-    :loginWebUrl => String.t | nil,
-    :longLogoWebUrlForDarkTheme => String.t | nil,
-    :longLogoWebUrlForLightTheme => String.t | nil,
-    :squareLogoWebUrlForDarkTheme => String.t | nil,
-    :squareLogoWebUrlForLightTheme => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :displayName => String.t() | nil,
+          :isCourseActivitySyncEnabled => boolean() | nil,
+          :learningContents => [MicrosoftGraph.Model.MicrosoftGraphLearningContent.t()] | nil,
+          :learningCourseActivities =>
+            [MicrosoftGraph.Model.MicrosoftGraphLearningCourseActivity.t()] | nil,
+          :loginWebUrl => String.t() | nil,
+          :longLogoWebUrlForDarkTheme => String.t() | nil,
+          :longLogoWebUrlForLightTheme => String.t() | nil,
+          :squareLogoWebUrlForDarkTheme => String.t() | nil,
+          :squareLogoWebUrlForLightTheme => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:learningContents, :list, MicrosoftGraph.Model.MicrosoftGraphLearningContent)
-     |> Deserializer.deserialize(:learningCourseActivities, :list, MicrosoftGraph.Model.MicrosoftGraphLearningCourseActivity)
+    |> Deserializer.deserialize(
+      :learningContents,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphLearningContent
+    )
+    |> Deserializer.deserialize(
+      :learningCourseActivities,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphLearningCourseActivity
+    )
   end
 end
-

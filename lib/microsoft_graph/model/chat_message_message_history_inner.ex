@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.ChatMessageMessageHistoryInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,19 +15,26 @@ defmodule MicrosoftGraph.Model.ChatMessageMessageHistoryInner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :actions => MicrosoftGraph.Model.MicrosoftGraphChatMessageActions.t | nil,
-    :modifiedDateTime => DateTime.t | nil,
-    :reaction => MicrosoftGraph.Model.MicrosoftGraphChatMessageHistoryItemReaction.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :actions => MicrosoftGraph.Model.MicrosoftGraphChatMessageActions.t() | nil,
+          :modifiedDateTime => DateTime.t() | nil,
+          :reaction => MicrosoftGraph.Model.MicrosoftGraphChatMessageHistoryItemReaction.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:actions, :struct, MicrosoftGraph.Model.MicrosoftGraphChatMessageActions)
-     |> Deserializer.deserialize(:modifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:reaction, :struct, MicrosoftGraph.Model.MicrosoftGraphChatMessageHistoryItemReaction)
+    |> Deserializer.deserialize(
+      :actions,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphChatMessageActions
+    )
+    |> Deserializer.deserialize(:modifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :reaction,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphChatMessageHistoryItemReaction
+    )
   end
 end
-

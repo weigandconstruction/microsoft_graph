@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphLocationConstraintItem do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -21,26 +21,41 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphLocationConstraintItem do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :address => MicrosoftGraph.Model.MicrosoftGraphLocationAddress.t | nil,
-    :coordinates => MicrosoftGraph.Model.MicrosoftGraphLocationCoordinates.t | nil,
-    :displayName => String.t | nil,
-    :locationEmailAddress => String.t | nil,
-    :locationType => MicrosoftGraph.Model.MicrosoftGraphLocationLocationType.t | nil,
-    :locationUri => String.t | nil,
-    :uniqueId => String.t | nil,
-    :uniqueIdType => MicrosoftGraph.Model.MicrosoftGraphLocationUniqueIdType.t | nil,
-    :resolveAvailability => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :address => MicrosoftGraph.Model.MicrosoftGraphLocationAddress.t() | nil,
+          :coordinates => MicrosoftGraph.Model.MicrosoftGraphLocationCoordinates.t() | nil,
+          :displayName => String.t() | nil,
+          :locationEmailAddress => String.t() | nil,
+          :locationType => MicrosoftGraph.Model.MicrosoftGraphLocationLocationType.t() | nil,
+          :locationUri => String.t() | nil,
+          :uniqueId => String.t() | nil,
+          :uniqueIdType => MicrosoftGraph.Model.MicrosoftGraphLocationUniqueIdType.t() | nil,
+          :resolveAvailability => boolean() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:address, :struct, MicrosoftGraph.Model.MicrosoftGraphLocationAddress)
-     |> Deserializer.deserialize(:coordinates, :struct, MicrosoftGraph.Model.MicrosoftGraphLocationCoordinates)
-     |> Deserializer.deserialize(:locationType, :struct, MicrosoftGraph.Model.MicrosoftGraphLocationLocationType)
-     |> Deserializer.deserialize(:uniqueIdType, :struct, MicrosoftGraph.Model.MicrosoftGraphLocationUniqueIdType)
+    |> Deserializer.deserialize(
+      :address,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphLocationAddress
+    )
+    |> Deserializer.deserialize(
+      :coordinates,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphLocationCoordinates
+    )
+    |> Deserializer.deserialize(
+      :locationType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphLocationLocationType
+    )
+    |> Deserializer.deserialize(
+      :uniqueIdType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphLocationUniqueIdType
+    )
   end
 end
-

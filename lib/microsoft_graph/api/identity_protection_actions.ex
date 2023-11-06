@@ -24,13 +24,28 @@ defmodule MicrosoftGraph.Api.IdentityProtectionActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_protection_risky_service_principals_confirm_compromised(Tesla.Env.client, MicrosoftGraph.Model.IdentityProtectionRiskyServicePrincipalsConfirmCompromisedRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_protection_risky_service_principals_confirm_compromised(connection, identity_protection_risky_service_principals_confirm_compromised_request, _opts \\ []) do
+  @spec identity_protection_risky_service_principals_confirm_compromised(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.IdentityProtectionRiskyServicePrincipalsConfirmCompromisedRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_protection_risky_service_principals_confirm_compromised(
+        connection,
+        identity_protection_risky_service_principals_confirm_compromised_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/identityProtection/riskyServicePrincipals/confirmCompromised")
-      |> add_param(:body, :body, identity_protection_risky_service_principals_confirm_compromised_request)
+      |> add_param(
+        :body,
+        :body,
+        identity_protection_risky_service_principals_confirm_compromised_request
+      )
       |> Enum.into([])
 
     connection
@@ -57,13 +72,28 @@ defmodule MicrosoftGraph.Api.IdentityProtectionActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_protection_risky_service_principals_dismiss(Tesla.Env.client, MicrosoftGraph.Model.IdentityProtectionRiskyServicePrincipalsConfirmCompromisedRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_protection_risky_service_principals_dismiss(connection, identity_protection_risky_service_principals_confirm_compromised_request, _opts \\ []) do
+  @spec identity_protection_risky_service_principals_dismiss(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.IdentityProtectionRiskyServicePrincipalsConfirmCompromisedRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_protection_risky_service_principals_dismiss(
+        connection,
+        identity_protection_risky_service_principals_confirm_compromised_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/identityProtection/riskyServicePrincipals/dismiss")
-      |> add_param(:body, :body, identity_protection_risky_service_principals_confirm_compromised_request)
+      |> add_param(
+        :body,
+        :body,
+        identity_protection_risky_service_principals_confirm_compromised_request
+      )
       |> Enum.into([])
 
     connection
@@ -90,8 +120,19 @@ defmodule MicrosoftGraph.Api.IdentityProtectionActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_protection_risky_users_confirm_compromised(Tesla.Env.client, MicrosoftGraph.Model.IdentityProtectionRiskyUsersConfirmCompromisedRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_protection_risky_users_confirm_compromised(connection, identity_protection_risky_users_confirm_compromised_request, _opts \\ []) do
+  @spec identity_protection_risky_users_confirm_compromised(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.IdentityProtectionRiskyUsersConfirmCompromisedRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_protection_risky_users_confirm_compromised(
+        connection,
+        identity_protection_risky_users_confirm_compromised_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -123,8 +164,19 @@ defmodule MicrosoftGraph.Api.IdentityProtectionActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_protection_risky_users_dismiss(Tesla.Env.client, MicrosoftGraph.Model.IdentityProtectionRiskyUsersConfirmCompromisedRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_protection_risky_users_dismiss(connection, identity_protection_risky_users_confirm_compromised_request, _opts \\ []) do
+  @spec identity_protection_risky_users_dismiss(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.IdentityProtectionRiskyUsersConfirmCompromisedRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_protection_risky_users_dismiss(
+        connection,
+        identity_protection_risky_users_confirm_compromised_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)

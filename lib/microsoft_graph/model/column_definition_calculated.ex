@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.ColumnDefinitionCalculated do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :format => String.t | nil,
-    :formula => String.t | nil,
-    :outputType => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :format => String.t() | nil,
+          :formula => String.t() | nil,
+          :outputType => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

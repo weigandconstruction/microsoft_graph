@@ -25,8 +25,21 @@ defmodule MicrosoftGraph.Api.ApplicationsFederatedIdentityCredential do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphFederatedIdentityCredential.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_create_federated_identity_credentials(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphFederatedIdentityCredential.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphFederatedIdentityCredential.t} | {:error, Tesla.Env.t}
-  def applications_create_federated_identity_credentials(connection, application_id, microsoft_graph_federated_identity_credential, _opts \\ []) do
+  @spec applications_create_federated_identity_credentials(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphFederatedIdentityCredential.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphFederatedIdentityCredential.t()}
+          | {:error, Tesla.Env.t()}
+  def applications_create_federated_identity_credentials(
+        connection,
+        application_id,
+        microsoft_graph_federated_identity_credential,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -60,8 +73,21 @@ defmodule MicrosoftGraph.Api.ApplicationsFederatedIdentityCredential do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_delete_federated_identity_credentials(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def applications_delete_federated_identity_credentials(connection, application_id, federated_identity_credential_id, opts \\ []) do
+  @spec applications_delete_federated_identity_credentials(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def applications_delete_federated_identity_credentials(
+        connection,
+        application_id,
+        federated_identity_credential_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -69,7 +95,9 @@ defmodule MicrosoftGraph.Api.ApplicationsFederatedIdentityCredential do
     request =
       %{}
       |> method(:delete)
-      |> url("/applications/#{application_id}/federatedIdentityCredentials/#{federated_identity_credential_id}")
+      |> url(
+        "/applications/#{application_id}/federatedIdentityCredentials/#{federated_identity_credential_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -98,8 +126,19 @@ defmodule MicrosoftGraph.Api.ApplicationsFederatedIdentityCredential do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_federated_identity_credentials_get_count_d653(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def applications_federated_identity_credentials_get_count_d653(connection, application_id, opts \\ []) do
+  @spec applications_federated_identity_credentials_get_count_d653(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def applications_federated_identity_credentials_get_count_d653(
+        connection,
+        application_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -139,8 +178,21 @@ defmodule MicrosoftGraph.Api.ApplicationsFederatedIdentityCredential do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphFederatedIdentityCredential.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_get_federated_identity_credentials(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphFederatedIdentityCredential.t} | {:error, Tesla.Env.t}
-  def applications_get_federated_identity_credentials(connection, application_id, federated_identity_credential_id, opts \\ []) do
+  @spec applications_get_federated_identity_credentials(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphFederatedIdentityCredential.t()}
+          | {:error, Tesla.Env.t()}
+  def applications_get_federated_identity_credentials(
+        connection,
+        application_id,
+        federated_identity_credential_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -149,7 +201,9 @@ defmodule MicrosoftGraph.Api.ApplicationsFederatedIdentityCredential do
     request =
       %{}
       |> method(:get)
-      |> url("/applications/#{application_id}/federatedIdentityCredentials/#{federated_identity_credential_id}")
+      |> url(
+        "/applications/#{application_id}/federatedIdentityCredentials/#{federated_identity_credential_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -185,7 +239,15 @@ defmodule MicrosoftGraph.Api.ApplicationsFederatedIdentityCredential do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphFederatedIdentityCredentialCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_list_federated_identity_credentials(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphFederatedIdentityCredentialCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec applications_list_federated_identity_credentials(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphFederatedIdentityCredentialCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def applications_list_federated_identity_credentials(connection, application_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -231,12 +293,29 @@ defmodule MicrosoftGraph.Api.ApplicationsFederatedIdentityCredential do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphFederatedIdentityCredential.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_update_federated_identity_credentials(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphFederatedIdentityCredential.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphFederatedIdentityCredential.t} | {:error, Tesla.Env.t}
-  def applications_update_federated_identity_credentials(connection, application_id, federated_identity_credential_id, microsoft_graph_federated_identity_credential, _opts \\ []) do
+  @spec applications_update_federated_identity_credentials(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphFederatedIdentityCredential.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphFederatedIdentityCredential.t()}
+          | {:error, Tesla.Env.t()}
+  def applications_update_federated_identity_credentials(
+        connection,
+        application_id,
+        federated_identity_credential_id,
+        microsoft_graph_federated_identity_credential,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/applications/#{application_id}/federatedIdentityCredentials/#{federated_identity_credential_id}")
+      |> url(
+        "/applications/#{application_id}/federatedIdentityCredentials/#{federated_identity_credential_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_federated_identity_credential)
       |> Enum.into([])
 

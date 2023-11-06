@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphScopedRoleMembership do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,18 +16,21 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphScopedRoleMembership do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :administrativeUnitId => String.t | nil,
-    :roleId => String.t | nil,
-    :roleMemberInfo => MicrosoftGraph.Model.MicrosoftGraphIdentity.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :administrativeUnitId => String.t() | nil,
+          :roleId => String.t() | nil,
+          :roleMemberInfo => MicrosoftGraph.Model.MicrosoftGraphIdentity.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:roleMemberInfo, :struct, MicrosoftGraph.Model.MicrosoftGraphIdentity)
+    |> Deserializer.deserialize(
+      :roleMemberInfo,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphIdentity
+    )
   end
 end
-

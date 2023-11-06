@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphParticipant do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -20,25 +20,40 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphParticipant do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :info => MicrosoftGraph.Model.MicrosoftGraphParticipantInfo.t | nil,
-    :isInLobby => boolean() | nil,
-    :isMuted => boolean() | nil,
-    :mediaStreams => [MicrosoftGraph.Model.ParticipantMediaStreamsInner.t] | nil,
-    :metadata => String.t | nil,
-    :recordingInfo => MicrosoftGraph.Model.ParticipantRecordingInfo.t | nil,
-    :restrictedExperience => MicrosoftGraph.Model.ParticipantRestrictedExperience.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :info => MicrosoftGraph.Model.MicrosoftGraphParticipantInfo.t() | nil,
+          :isInLobby => boolean() | nil,
+          :isMuted => boolean() | nil,
+          :mediaStreams => [MicrosoftGraph.Model.ParticipantMediaStreamsInner.t()] | nil,
+          :metadata => String.t() | nil,
+          :recordingInfo => MicrosoftGraph.Model.ParticipantRecordingInfo.t() | nil,
+          :restrictedExperience => MicrosoftGraph.Model.ParticipantRestrictedExperience.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:info, :struct, MicrosoftGraph.Model.MicrosoftGraphParticipantInfo)
-     |> Deserializer.deserialize(:mediaStreams, :list, MicrosoftGraph.Model.ParticipantMediaStreamsInner)
-     |> Deserializer.deserialize(:recordingInfo, :struct, MicrosoftGraph.Model.ParticipantRecordingInfo)
-     |> Deserializer.deserialize(:restrictedExperience, :struct, MicrosoftGraph.Model.ParticipantRestrictedExperience)
+    |> Deserializer.deserialize(
+      :info,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphParticipantInfo
+    )
+    |> Deserializer.deserialize(
+      :mediaStreams,
+      :list,
+      MicrosoftGraph.Model.ParticipantMediaStreamsInner
+    )
+    |> Deserializer.deserialize(
+      :recordingInfo,
+      :struct,
+      MicrosoftGraph.Model.ParticipantRecordingInfo
+    )
+    |> Deserializer.deserialize(
+      :restrictedExperience,
+      :struct,
+      MicrosoftGraph.Model.ParticipantRestrictedExperience
+    )
   end
 end
-

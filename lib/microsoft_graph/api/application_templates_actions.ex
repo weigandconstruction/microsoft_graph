@@ -25,8 +25,22 @@ defmodule MicrosoftGraph.Api.ApplicationTemplatesActions do
   - `{:ok, MicrosoftGraph.Model.ApplicationTemplatesApplicationTemplateInstantiate2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec application_templates_application_template_instantiate(Tesla.Env.client, String.t, MicrosoftGraph.Model.ApplicationTemplatesApplicationTemplateInstantiateRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.ApplicationTemplatesApplicationTemplateInstantiate2XxResponse.t} | {:error, Tesla.Env.t}
-  def application_templates_application_template_instantiate(connection, application_template_id, application_templates_application_template_instantiate_request, _opts \\ []) do
+  @spec application_templates_application_template_instantiate(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.ApplicationTemplatesApplicationTemplateInstantiateRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.ApplicationTemplatesApplicationTemplateInstantiate2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def application_templates_application_template_instantiate(
+        connection,
+        application_template_id,
+        application_templates_application_template_instantiate_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.CommunicationsCallsCallUpdateRecordingStatusRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,15 +13,18 @@ defmodule MicrosoftGraph.Model.CommunicationsCallsCallUpdateRecordingStatusReque
   ]
 
   @type t :: %__MODULE__{
-    :clientContext => String.t | nil,
-    :status => MicrosoftGraph.Model.MicrosoftGraphRecordingStatus.t | nil
-  }
+          :clientContext => String.t() | nil,
+          :status => MicrosoftGraph.Model.MicrosoftGraphRecordingStatus.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.MicrosoftGraphRecordingStatus)
+    |> Deserializer.deserialize(
+      :status,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphRecordingStatus
+    )
   end
 end
-

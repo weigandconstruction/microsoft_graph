@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphRoleManagement do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,17 +14,25 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphRoleManagement do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :directory => MicrosoftGraph.Model.MicrosoftGraphRoleManagementDirectory.t | nil,
-    :entitlementManagement => MicrosoftGraph.Model.MicrosoftGraphRoleManagementEntitlementManagement.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :directory => MicrosoftGraph.Model.MicrosoftGraphRoleManagementDirectory.t() | nil,
+          :entitlementManagement =>
+            MicrosoftGraph.Model.MicrosoftGraphRoleManagementEntitlementManagement.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:directory, :struct, MicrosoftGraph.Model.MicrosoftGraphRoleManagementDirectory)
-     |> Deserializer.deserialize(:entitlementManagement, :struct, MicrosoftGraph.Model.MicrosoftGraphRoleManagementEntitlementManagement)
+    |> Deserializer.deserialize(
+      :directory,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphRoleManagementDirectory
+    )
+    |> Deserializer.deserialize(
+      :entitlementManagement,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphRoleManagementEntitlementManagement
+    )
   end
 end
-

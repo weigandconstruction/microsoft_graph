@@ -21,23 +21,26 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphIosNotificationSettings do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :alertType => MicrosoftGraph.Model.MicrosoftGraphIosNotificationAlertType.t | nil,
-    :appName => String.t | nil,
-    :badgesEnabled => boolean() | nil,
-    :bundleID => String.t | nil,
-    :enabled => boolean() | nil,
-    :publisher => String.t | nil,
-    :showInNotificationCenter => boolean() | nil,
-    :showOnLockScreen => boolean() | nil,
-    :soundsEnabled => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :alertType => MicrosoftGraph.Model.MicrosoftGraphIosNotificationAlertType.t() | nil,
+          :appName => String.t() | nil,
+          :badgesEnabled => boolean() | nil,
+          :bundleID => String.t() | nil,
+          :enabled => boolean() | nil,
+          :publisher => String.t() | nil,
+          :showInNotificationCenter => boolean() | nil,
+          :showOnLockScreen => boolean() | nil,
+          :soundsEnabled => boolean() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:alertType, :struct, MicrosoftGraph.Model.MicrosoftGraphIosNotificationAlertType)
+    |> Deserializer.deserialize(
+      :alertType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphIosNotificationAlertType
+    )
   end
 end
-

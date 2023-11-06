@@ -24,8 +24,21 @@ defmodule MicrosoftGraph.Api.SitesItemAnalytics do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivityStat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_analytics_create_item_activity_stats(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphItemActivityStat.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivityStat.t} | {:error, Tesla.Env.t}
-  def sites_analytics_create_item_activity_stats(connection, site_id, microsoft_graph_item_activity_stat, _opts \\ []) do
+  @spec sites_analytics_create_item_activity_stats(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphItemActivityStat.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivityStat.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_analytics_create_item_activity_stats(
+        connection,
+        site_id,
+        microsoft_graph_item_activity_stat,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -58,8 +71,21 @@ defmodule MicrosoftGraph.Api.SitesItemAnalytics do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_analytics_delete_item_activity_stats(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_analytics_delete_item_activity_stats(connection, site_id, item_activity_stat_id, opts \\ []) do
+  @spec sites_analytics_delete_item_activity_stats(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_analytics_delete_item_activity_stats(
+        connection,
+        site_id,
+        item_activity_stat_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -97,7 +123,10 @@ defmodule MicrosoftGraph.Api.SitesItemAnalytics do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivityStat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_analytics_get_all_time(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivityStat.t} | {:error, Tesla.Env.t}
+  @spec sites_analytics_get_all_time(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivityStat.t()}
+          | {:error, Tesla.Env.t()}
   def sites_analytics_get_all_time(connection, site_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -137,8 +166,21 @@ defmodule MicrosoftGraph.Api.SitesItemAnalytics do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivityStat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_analytics_get_item_activity_stats(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivityStat.t} | {:error, Tesla.Env.t}
-  def sites_analytics_get_item_activity_stats(connection, site_id, item_activity_stat_id, opts \\ []) do
+  @spec sites_analytics_get_item_activity_stats(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivityStat.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_analytics_get_item_activity_stats(
+        connection,
+        site_id,
+        item_activity_stat_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -176,7 +218,10 @@ defmodule MicrosoftGraph.Api.SitesItemAnalytics do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivityStat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_analytics_get_last_seven_days(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivityStat.t} | {:error, Tesla.Env.t}
+  @spec sites_analytics_get_last_seven_days(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivityStat.t()}
+          | {:error, Tesla.Env.t()}
   def sites_analytics_get_last_seven_days(connection, site_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -216,8 +261,21 @@ defmodule MicrosoftGraph.Api.SitesItemAnalytics do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_analytics_item_activity_stats_activities_get_count972d(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_analytics_item_activity_stats_activities_get_count972d(connection, site_id, item_activity_stat_id, opts \\ []) do
+  @spec sites_analytics_item_activity_stats_activities_get_count972d(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_analytics_item_activity_stats_activities_get_count972d(
+        connection,
+        site_id,
+        item_activity_stat_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -226,7 +284,9 @@ defmodule MicrosoftGraph.Api.SitesItemAnalytics do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/analytics/itemActivityStats/#{item_activity_stat_id}/activities/$count")
+      |> url(
+        "/sites/#{site_id}/analytics/itemActivityStats/#{item_activity_stat_id}/activities/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -258,8 +318,23 @@ defmodule MicrosoftGraph.Api.SitesItemAnalytics do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_analytics_item_activity_stats_activities_get_drive_item(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_analytics_item_activity_stats_activities_get_drive_item(connection, site_id, item_activity_stat_id, item_activity_id, opts \\ []) do
+  @spec sites_analytics_item_activity_stats_activities_get_drive_item(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_analytics_item_activity_stats_activities_get_drive_item(
+        connection,
+        site_id,
+        item_activity_stat_id,
+        item_activity_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -268,7 +343,9 @@ defmodule MicrosoftGraph.Api.SitesItemAnalytics do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/analytics/itemActivityStats/#{item_activity_stat_id}/activities/#{item_activity_id}/driveItem")
+      |> url(
+        "/sites/#{site_id}/analytics/itemActivityStats/#{item_activity_stat_id}/activities/#{item_activity_id}/driveItem"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -298,12 +375,29 @@ defmodule MicrosoftGraph.Api.SitesItemAnalytics do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_analytics_item_activity_stats_activities_get_drive_item_content(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
-  def sites_analytics_item_activity_stats_activities_get_drive_item_content(connection, site_id, item_activity_stat_id, item_activity_id, _opts \\ []) do
+  @spec sites_analytics_item_activity_stats_activities_get_drive_item_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_analytics_item_activity_stats_activities_get_drive_item_content(
+        connection,
+        site_id,
+        item_activity_stat_id,
+        item_activity_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/analytics/itemActivityStats/#{item_activity_stat_id}/activities/#{item_activity_id}/driveItem/content")
+      |> url(
+        "/sites/#{site_id}/analytics/itemActivityStats/#{item_activity_stat_id}/activities/#{item_activity_id}/driveItem/content"
+      )
       |> Enum.into([])
 
     connection
@@ -333,12 +427,31 @@ defmodule MicrosoftGraph.Api.SitesItemAnalytics do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_analytics_item_activity_stats_activities_update_drive_item_content(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_analytics_item_activity_stats_activities_update_drive_item_content(connection, site_id, item_activity_stat_id, item_activity_id, body, _opts \\ []) do
+  @spec sites_analytics_item_activity_stats_activities_update_drive_item_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_analytics_item_activity_stats_activities_update_drive_item_content(
+        connection,
+        site_id,
+        item_activity_stat_id,
+        item_activity_id,
+        body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)
-      |> url("/sites/#{site_id}/analytics/itemActivityStats/#{item_activity_stat_id}/activities/#{item_activity_id}/driveItem/content")
+      |> url(
+        "/sites/#{site_id}/analytics/itemActivityStats/#{item_activity_stat_id}/activities/#{item_activity_id}/driveItem/content"
+      )
       |> add_param(:body, :body, body)
       |> Enum.into([])
 
@@ -367,8 +480,23 @@ defmodule MicrosoftGraph.Api.SitesItemAnalytics do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivity.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_analytics_item_activity_stats_create_activities(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphItemActivity.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivity.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_analytics_item_activity_stats_create_activities(connection, site_id, item_activity_stat_id, microsoft_graph_item_activity, _opts \\ []) do
+  @spec sites_analytics_item_activity_stats_create_activities(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphItemActivity.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivity.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_analytics_item_activity_stats_create_activities(
+        connection,
+        site_id,
+        item_activity_stat_id,
+        microsoft_graph_item_activity,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -402,8 +530,23 @@ defmodule MicrosoftGraph.Api.SitesItemAnalytics do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_analytics_item_activity_stats_delete_activities(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_analytics_item_activity_stats_delete_activities(connection, site_id, item_activity_stat_id, item_activity_id, opts \\ []) do
+  @spec sites_analytics_item_activity_stats_delete_activities(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_analytics_item_activity_stats_delete_activities(
+        connection,
+        site_id,
+        item_activity_stat_id,
+        item_activity_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -411,7 +554,9 @@ defmodule MicrosoftGraph.Api.SitesItemAnalytics do
     request =
       %{}
       |> method(:delete)
-      |> url("/sites/#{site_id}/analytics/itemActivityStats/#{item_activity_stat_id}/activities/#{item_activity_id}")
+      |> url(
+        "/sites/#{site_id}/analytics/itemActivityStats/#{item_activity_stat_id}/activities/#{item_activity_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -443,8 +588,23 @@ defmodule MicrosoftGraph.Api.SitesItemAnalytics do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivity.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_analytics_item_activity_stats_get_activities(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivity.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_analytics_item_activity_stats_get_activities(connection, site_id, item_activity_stat_id, item_activity_id, opts \\ []) do
+  @spec sites_analytics_item_activity_stats_get_activities(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivity.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_analytics_item_activity_stats_get_activities(
+        connection,
+        site_id,
+        item_activity_stat_id,
+        item_activity_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -453,7 +613,9 @@ defmodule MicrosoftGraph.Api.SitesItemAnalytics do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/analytics/itemActivityStats/#{item_activity_stat_id}/activities/#{item_activity_id}")
+      |> url(
+        "/sites/#{site_id}/analytics/itemActivityStats/#{item_activity_stat_id}/activities/#{item_activity_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -482,7 +644,14 @@ defmodule MicrosoftGraph.Api.SitesItemAnalytics do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_analytics_item_activity_stats_get_count_c4ac(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_analytics_item_activity_stats_get_count_c4ac(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_analytics_item_activity_stats_get_count_c4ac(connection, site_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -529,8 +698,21 @@ defmodule MicrosoftGraph.Api.SitesItemAnalytics do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivityCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_analytics_item_activity_stats_list_activities(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivityCollectionResponse.t} | {:error, Tesla.Env.t}
-  def sites_analytics_item_activity_stats_list_activities(connection, site_id, item_activity_stat_id, opts \\ []) do
+  @spec sites_analytics_item_activity_stats_list_activities(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivityCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_analytics_item_activity_stats_list_activities(
+        connection,
+        site_id,
+        item_activity_stat_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -575,12 +757,31 @@ defmodule MicrosoftGraph.Api.SitesItemAnalytics do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivity.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_analytics_item_activity_stats_update_activities(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphItemActivity.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivity.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_analytics_item_activity_stats_update_activities(connection, site_id, item_activity_stat_id, item_activity_id, microsoft_graph_item_activity, _opts \\ []) do
+  @spec sites_analytics_item_activity_stats_update_activities(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphItemActivity.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivity.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_analytics_item_activity_stats_update_activities(
+        connection,
+        site_id,
+        item_activity_stat_id,
+        item_activity_id,
+        microsoft_graph_item_activity,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/sites/#{site_id}/analytics/itemActivityStats/#{item_activity_stat_id}/activities/#{item_activity_id}")
+      |> url(
+        "/sites/#{site_id}/analytics/itemActivityStats/#{item_activity_stat_id}/activities/#{item_activity_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_item_activity)
       |> Enum.into([])
 
@@ -615,7 +816,10 @@ defmodule MicrosoftGraph.Api.SitesItemAnalytics do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivityStatCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_analytics_list_item_activity_stats(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivityStatCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_analytics_list_item_activity_stats(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivityStatCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_analytics_list_item_activity_stats(connection, site_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -660,8 +864,23 @@ defmodule MicrosoftGraph.Api.SitesItemAnalytics do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivityStat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_analytics_update_item_activity_stats(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphItemActivityStat.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivityStat.t} | {:error, Tesla.Env.t}
-  def sites_analytics_update_item_activity_stats(connection, site_id, item_activity_stat_id, microsoft_graph_item_activity_stat, _opts \\ []) do
+  @spec sites_analytics_update_item_activity_stats(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphItemActivityStat.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivityStat.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_analytics_update_item_activity_stats(
+        connection,
+        site_id,
+        item_activity_stat_id,
+        microsoft_graph_item_activity_stat,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -693,7 +912,10 @@ defmodule MicrosoftGraph.Api.SitesItemAnalytics do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_delete_analytics(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_delete_analytics(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_delete_analytics(connection, site_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -732,7 +954,10 @@ defmodule MicrosoftGraph.Api.SitesItemAnalytics do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphItemAnalytics.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_get_analytics(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphItemAnalytics.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_get_analytics(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphItemAnalytics.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_get_analytics(connection, site_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -770,7 +995,15 @@ defmodule MicrosoftGraph.Api.SitesItemAnalytics do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphItemAnalytics.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_update_analytics(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphItemAnalytics.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphItemAnalytics.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_update_analytics(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphItemAnalytics.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphItemAnalytics.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_update_analytics(connection, site_id, microsoft_graph_item_analytics, _opts \\ []) do
     request =
       %{}

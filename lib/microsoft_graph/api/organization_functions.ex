@@ -29,7 +29,10 @@ defmodule MicrosoftGraph.Api.OrganizationFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfDirectoryObject1.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec organization_delta(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfDirectoryObject1.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec organization_delta(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfDirectoryObject1.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def organization_delta(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,

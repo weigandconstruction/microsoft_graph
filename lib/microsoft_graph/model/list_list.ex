@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.ListList do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :contentTypesEnabled => boolean() | nil,
-    :hidden => boolean() | nil,
-    :template => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :contentTypesEnabled => boolean() | nil,
+          :hidden => boolean() | nil,
+          :template => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

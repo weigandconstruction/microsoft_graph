@@ -15,19 +15,26 @@ defmodule MicrosoftGraph.Model.EducationFeedbackOutcomePublishedFeedback do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :feedbackBy => MicrosoftGraph.Model.MicrosoftGraphEducationFeedbackFeedbackBy.t | nil,
-    :feedbackDateTime => DateTime.t | nil,
-    :text => MicrosoftGraph.Model.MicrosoftGraphEducationFeedbackText.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :feedbackBy => MicrosoftGraph.Model.MicrosoftGraphEducationFeedbackFeedbackBy.t() | nil,
+          :feedbackDateTime => DateTime.t() | nil,
+          :text => MicrosoftGraph.Model.MicrosoftGraphEducationFeedbackText.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:feedbackBy, :struct, MicrosoftGraph.Model.MicrosoftGraphEducationFeedbackFeedbackBy)
-     |> Deserializer.deserialize(:feedbackDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:text, :struct, MicrosoftGraph.Model.MicrosoftGraphEducationFeedbackText)
+    |> Deserializer.deserialize(
+      :feedbackBy,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphEducationFeedbackFeedbackBy
+    )
+    |> Deserializer.deserialize(:feedbackDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :text,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphEducationFeedbackText
+    )
   end
 end
-

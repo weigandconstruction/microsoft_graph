@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookWorksheetsWorkbookWorksheetChartsWorkbookChartSeriesWorkbookChartSeriesPointsItemAt2XxResponse do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,18 +15,17 @@ defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookWorksheetsWorkbo
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :format => MicrosoftGraph.Model.WorkbookChartPointFormat.t | nil,
-    :value => MicrosoftGraph.Model.WorkbookChartPointValue.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :format => MicrosoftGraph.Model.WorkbookChartPointFormat.t() | nil,
+          :value => MicrosoftGraph.Model.WorkbookChartPointValue.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:format, :struct, MicrosoftGraph.Model.WorkbookChartPointFormat)
-     |> Deserializer.deserialize(:value, :struct, MicrosoftGraph.Model.WorkbookChartPointValue)
+    |> Deserializer.deserialize(:format, :struct, MicrosoftGraph.Model.WorkbookChartPointFormat)
+    |> Deserializer.deserialize(:value, :struct, MicrosoftGraph.Model.WorkbookChartPointValue)
   end
 end
-

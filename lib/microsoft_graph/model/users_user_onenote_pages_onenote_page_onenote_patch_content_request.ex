@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.UsersUserOnenotePagesOnenotePageOnenotePatchContentRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,14 +12,21 @@ defmodule MicrosoftGraph.Model.UsersUserOnenotePagesOnenotePageOnenotePatchConte
   ]
 
   @type t :: %__MODULE__{
-    :commands => [MicrosoftGraph.Model.UsersUserOnenotePagesOnenotePageOnenotePatchContentRequestCommandsInner.t] | nil
-  }
+          :commands =>
+            [
+              MicrosoftGraph.Model.UsersUserOnenotePagesOnenotePageOnenotePatchContentRequestCommandsInner.t()
+            ]
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:commands, :list, MicrosoftGraph.Model.UsersUserOnenotePagesOnenotePageOnenotePatchContentRequestCommandsInner)
+    |> Deserializer.deserialize(
+      :commands,
+      :list,
+      MicrosoftGraph.Model.UsersUserOnenotePagesOnenotePageOnenotePatchContentRequestCommandsInner
+    )
   end
 end
-

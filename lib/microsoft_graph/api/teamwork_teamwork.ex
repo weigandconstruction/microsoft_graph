@@ -24,7 +24,10 @@ defmodule MicrosoftGraph.Api.TeamworkTeamwork do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamwork.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teamwork_teamwork_get_teamwork(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamwork.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teamwork_teamwork_get_teamwork(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamwork.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teamwork_teamwork_get_teamwork(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -61,7 +64,14 @@ defmodule MicrosoftGraph.Api.TeamworkTeamwork do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamwork.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teamwork_teamwork_update_teamwork(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphTeamwork.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamwork.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teamwork_teamwork_update_teamwork(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphTeamwork.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamwork.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teamwork_teamwork_update_teamwork(connection, microsoft_graph_teamwork, _opts \\ []) do
     request =
       %{}

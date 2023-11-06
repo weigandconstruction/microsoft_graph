@@ -24,7 +24,10 @@ defmodule MicrosoftGraph.Api.PoliciesPolicyRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPolicyRoot.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_policy_root_get_policy_root(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPolicyRoot.t} | {:error, Tesla.Env.t}
+  @spec policies_policy_root_get_policy_root(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPolicyRoot.t()}
+          | {:error, Tesla.Env.t()}
   def policies_policy_root_get_policy_root(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -61,8 +64,19 @@ defmodule MicrosoftGraph.Api.PoliciesPolicyRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPolicyRoot.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_policy_root_update_policy_root(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphPolicyRoot.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPolicyRoot.t} | {:error, Tesla.Env.t}
-  def policies_policy_root_update_policy_root(connection, microsoft_graph_policy_root, _opts \\ []) do
+  @spec policies_policy_root_update_policy_root(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphPolicyRoot.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPolicyRoot.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_policy_root_update_policy_root(
+        connection,
+        microsoft_graph_policy_root,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowActivateRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,14 +12,21 @@ defmodule MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsW
   ]
 
   @type t :: %__MODULE__{
-    :subjects => [MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowActivateRequestSubjectsInner.t] | nil
-  }
+          :subjects =>
+            [
+              MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowActivateRequestSubjectsInner.t()
+            ]
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:subjects, :list, MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowActivateRequestSubjectsInner)
+    |> Deserializer.deserialize(
+      :subjects,
+      :list,
+      MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowActivateRequestSubjectsInner
+    )
   end
 end
-

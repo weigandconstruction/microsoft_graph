@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphChatMessagePolicyViolation do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,22 +17,41 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphChatMessagePolicyViolation do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :dlpAction => MicrosoftGraph.Model.MicrosoftGraphChatMessagePolicyViolationDlpAction.t | nil,
-    :justificationText => String.t | nil,
-    :policyTip => MicrosoftGraph.Model.MicrosoftGraphChatMessagePolicyViolationPolicyTip.t | nil,
-    :userAction => MicrosoftGraph.Model.MicrosoftGraphChatMessagePolicyViolationUserAction.t | nil,
-    :verdictDetails => MicrosoftGraph.Model.MicrosoftGraphChatMessagePolicyViolationVerdictDetails.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :dlpAction =>
+            MicrosoftGraph.Model.MicrosoftGraphChatMessagePolicyViolationDlpAction.t() | nil,
+          :justificationText => String.t() | nil,
+          :policyTip =>
+            MicrosoftGraph.Model.MicrosoftGraphChatMessagePolicyViolationPolicyTip.t() | nil,
+          :userAction =>
+            MicrosoftGraph.Model.MicrosoftGraphChatMessagePolicyViolationUserAction.t() | nil,
+          :verdictDetails =>
+            MicrosoftGraph.Model.MicrosoftGraphChatMessagePolicyViolationVerdictDetails.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:dlpAction, :struct, MicrosoftGraph.Model.MicrosoftGraphChatMessagePolicyViolationDlpAction)
-     |> Deserializer.deserialize(:policyTip, :struct, MicrosoftGraph.Model.MicrosoftGraphChatMessagePolicyViolationPolicyTip)
-     |> Deserializer.deserialize(:userAction, :struct, MicrosoftGraph.Model.MicrosoftGraphChatMessagePolicyViolationUserAction)
-     |> Deserializer.deserialize(:verdictDetails, :struct, MicrosoftGraph.Model.MicrosoftGraphChatMessagePolicyViolationVerdictDetails)
+    |> Deserializer.deserialize(
+      :dlpAction,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphChatMessagePolicyViolationDlpAction
+    )
+    |> Deserializer.deserialize(
+      :policyTip,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphChatMessagePolicyViolationPolicyTip
+    )
+    |> Deserializer.deserialize(
+      :userAction,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphChatMessagePolicyViolationUserAction
+    )
+    |> Deserializer.deserialize(
+      :verdictDetails,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphChatMessagePolicyViolationVerdictDetails
+    )
   end
 end
-

@@ -24,34 +24,72 @@ defmodule MicrosoftGraph.Model.SynchronizationJobStatus do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :code => MicrosoftGraph.Model.MicrosoftGraphSynchronizationStatusCode.t | nil,
-    :countSuccessiveCompleteFailures => integer() | nil,
-    :escrowsPruned => boolean() | nil,
-    :lastExecution => MicrosoftGraph.Model.MicrosoftGraphSynchronizationStatusLastExecution.t | nil,
-    :lastSuccessfulExecution => MicrosoftGraph.Model.MicrosoftGraphSynchronizationStatusLastSuccessfulExecution.t | nil,
-    :lastSuccessfulExecutionWithExports => MicrosoftGraph.Model.MicrosoftGraphSynchronizationStatusLastSuccessfulExecutionWithExports.t | nil,
-    :progress => [MicrosoftGraph.Model.MicrosoftGraphSynchronizationStatusProgressInner.t] | nil,
-    :quarantine => MicrosoftGraph.Model.MicrosoftGraphSynchronizationStatusQuarantine.t | nil,
-    :steadyStateFirstAchievedTime => DateTime.t | nil,
-    :steadyStateLastAchievedTime => DateTime.t | nil,
-    :synchronizedEntryCountByType => [MicrosoftGraph.Model.MicrosoftGraphSynchronizationStatusSynchronizedEntryCountByTypeInner.t] | nil,
-    :troubleshootingUrl => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :code => MicrosoftGraph.Model.MicrosoftGraphSynchronizationStatusCode.t() | nil,
+          :countSuccessiveCompleteFailures => integer() | nil,
+          :escrowsPruned => boolean() | nil,
+          :lastExecution =>
+            MicrosoftGraph.Model.MicrosoftGraphSynchronizationStatusLastExecution.t() | nil,
+          :lastSuccessfulExecution =>
+            MicrosoftGraph.Model.MicrosoftGraphSynchronizationStatusLastSuccessfulExecution.t()
+            | nil,
+          :lastSuccessfulExecutionWithExports =>
+            MicrosoftGraph.Model.MicrosoftGraphSynchronizationStatusLastSuccessfulExecutionWithExports.t()
+            | nil,
+          :progress =>
+            [MicrosoftGraph.Model.MicrosoftGraphSynchronizationStatusProgressInner.t()] | nil,
+          :quarantine =>
+            MicrosoftGraph.Model.MicrosoftGraphSynchronizationStatusQuarantine.t() | nil,
+          :steadyStateFirstAchievedTime => DateTime.t() | nil,
+          :steadyStateLastAchievedTime => DateTime.t() | nil,
+          :synchronizedEntryCountByType =>
+            [
+              MicrosoftGraph.Model.MicrosoftGraphSynchronizationStatusSynchronizedEntryCountByTypeInner.t()
+            ]
+            | nil,
+          :troubleshootingUrl => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:code, :struct, MicrosoftGraph.Model.MicrosoftGraphSynchronizationStatusCode)
-     |> Deserializer.deserialize(:lastExecution, :struct, MicrosoftGraph.Model.MicrosoftGraphSynchronizationStatusLastExecution)
-     |> Deserializer.deserialize(:lastSuccessfulExecution, :struct, MicrosoftGraph.Model.MicrosoftGraphSynchronizationStatusLastSuccessfulExecution)
-     |> Deserializer.deserialize(:lastSuccessfulExecutionWithExports, :struct, MicrosoftGraph.Model.MicrosoftGraphSynchronizationStatusLastSuccessfulExecutionWithExports)
-     |> Deserializer.deserialize(:progress, :list, MicrosoftGraph.Model.MicrosoftGraphSynchronizationStatusProgressInner)
-     |> Deserializer.deserialize(:quarantine, :struct, MicrosoftGraph.Model.MicrosoftGraphSynchronizationStatusQuarantine)
-     |> Deserializer.deserialize(:steadyStateFirstAchievedTime, :datetime, nil)
-     |> Deserializer.deserialize(:steadyStateLastAchievedTime, :datetime, nil)
-     |> Deserializer.deserialize(:synchronizedEntryCountByType, :list, MicrosoftGraph.Model.MicrosoftGraphSynchronizationStatusSynchronizedEntryCountByTypeInner)
+    |> Deserializer.deserialize(
+      :code,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSynchronizationStatusCode
+    )
+    |> Deserializer.deserialize(
+      :lastExecution,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSynchronizationStatusLastExecution
+    )
+    |> Deserializer.deserialize(
+      :lastSuccessfulExecution,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSynchronizationStatusLastSuccessfulExecution
+    )
+    |> Deserializer.deserialize(
+      :lastSuccessfulExecutionWithExports,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSynchronizationStatusLastSuccessfulExecutionWithExports
+    )
+    |> Deserializer.deserialize(
+      :progress,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSynchronizationStatusProgressInner
+    )
+    |> Deserializer.deserialize(
+      :quarantine,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSynchronizationStatusQuarantine
+    )
+    |> Deserializer.deserialize(:steadyStateFirstAchievedTime, :datetime, nil)
+    |> Deserializer.deserialize(:steadyStateLastAchievedTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :synchronizedEntryCountByType,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSynchronizationStatusSynchronizedEntryCountByTypeInner
+    )
   end
 end
-

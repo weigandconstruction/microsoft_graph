@@ -25,7 +25,10 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_bundles_get_count_c935(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_bundles_get_count_c935(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_bundles_get_count_c935(connection, drive_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -63,7 +66,15 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_create_bundles(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_create_bundles(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDriveItem.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_create_bundles(connection, drive_id, microsoft_graph_drive_item, _opts \\ []) do
     request =
       %{}
@@ -96,7 +107,15 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_create_items(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_create_items(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDriveItem.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_create_items(connection, drive_id, microsoft_graph_drive_item, _opts \\ []) do
     request =
       %{}
@@ -131,7 +150,10 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_delete_items(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_delete_items(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_delete_items(connection, drive_id, drive_item_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -169,7 +191,10 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_following_get_count16f3(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_following_get_count16f3(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_following_get_count16f3(connection, drive_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -210,7 +235,10 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_get_bundles(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_get_bundles(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_get_bundles(connection, drive_id, drive_item_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -249,7 +277,10 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_get_bundles_content(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
+  @spec drives_get_bundles_content(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
   def drives_get_bundles_content(connection, drive_id, drive_item_id, _opts \\ []) do
     request =
       %{}
@@ -284,7 +315,10 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_get_following(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_get_following(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_get_following(connection, drive_id, drive_item_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -323,7 +357,10 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_get_following_content(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
+  @spec drives_get_following_content(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
   def drives_get_following_content(connection, drive_id, drive_item_id, _opts \\ []) do
     request =
       %{}
@@ -358,7 +395,10 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_get_items(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_get_items(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_get_items(connection, drive_id, drive_item_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -397,7 +437,10 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_get_items_content(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
+  @spec drives_get_items_content(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
   def drives_get_items_content(connection, drive_id, drive_item_id, _opts \\ []) do
     request =
       %{}
@@ -431,7 +474,10 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_get_root(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_get_root(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_get_root(connection, drive_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -469,7 +515,10 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_get_root_content(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
+  @spec drives_get_root_content(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
   def drives_get_root_content(connection, drive_id, _opts \\ []) do
     request =
       %{}
@@ -504,7 +553,10 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_get_special(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_get_special(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_get_special(connection, drive_id, drive_item_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -543,7 +595,10 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_get_special_content(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
+  @spec drives_get_special_content(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
   def drives_get_special_content(connection, drive_id, drive_item_id, _opts \\ []) do
     request =
       %{}
@@ -576,8 +631,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivityStat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_analytics_create_item_activity_stats(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphItemActivityStat.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivityStat.t} | {:error, Tesla.Env.t}
-  def drives_items_analytics_create_item_activity_stats(connection, drive_id, drive_item_id, microsoft_graph_item_activity_stat, _opts \\ []) do
+  @spec drives_items_analytics_create_item_activity_stats(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphItemActivityStat.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivityStat.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_analytics_create_item_activity_stats(
+        connection,
+        drive_id,
+        drive_item_id,
+        microsoft_graph_item_activity_stat,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -611,8 +681,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_analytics_delete_item_activity_stats(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_analytics_delete_item_activity_stats(connection, drive_id, drive_item_id, item_activity_stat_id, opts \\ []) do
+  @spec drives_items_analytics_delete_item_activity_stats(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_analytics_delete_item_activity_stats(
+        connection,
+        drive_id,
+        drive_item_id,
+        item_activity_stat_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -620,7 +705,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/analytics/itemActivityStats/#{item_activity_stat_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/analytics/itemActivityStats/#{item_activity_stat_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -651,7 +738,10 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivityStat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_analytics_get_all_time(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivityStat.t} | {:error, Tesla.Env.t}
+  @spec drives_items_analytics_get_all_time(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivityStat.t()}
+          | {:error, Tesla.Env.t()}
   def drives_items_analytics_get_all_time(connection, drive_id, drive_item_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -692,8 +782,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivityStat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_analytics_get_item_activity_stats(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivityStat.t} | {:error, Tesla.Env.t}
-  def drives_items_analytics_get_item_activity_stats(connection, drive_id, drive_item_id, item_activity_stat_id, opts \\ []) do
+  @spec drives_items_analytics_get_item_activity_stats(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivityStat.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_analytics_get_item_activity_stats(
+        connection,
+        drive_id,
+        drive_item_id,
+        item_activity_stat_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -702,7 +807,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/analytics/itemActivityStats/#{item_activity_stat_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/analytics/itemActivityStats/#{item_activity_stat_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -732,7 +839,15 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivityStat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_analytics_get_last_seven_days(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivityStat.t} | {:error, Tesla.Env.t}
+  @spec drives_items_analytics_get_last_seven_days(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivityStat.t()}
+          | {:error, Tesla.Env.t()}
   def drives_items_analytics_get_last_seven_days(connection, drive_id, drive_item_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -773,8 +888,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_analytics_item_activity_stats_activities_get_count7511(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_analytics_item_activity_stats_activities_get_count7511(connection, drive_id, drive_item_id, item_activity_stat_id, opts \\ []) do
+  @spec drives_items_analytics_item_activity_stats_activities_get_count7511(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_analytics_item_activity_stats_activities_get_count7511(
+        connection,
+        drive_id,
+        drive_item_id,
+        item_activity_stat_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -783,7 +913,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/analytics/itemActivityStats/#{item_activity_stat_id}/activities/$count")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/analytics/itemActivityStats/#{item_activity_stat_id}/activities/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -816,8 +948,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_analytics_item_activity_stats_activities_get_drive_item(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_analytics_item_activity_stats_activities_get_drive_item(connection, drive_id, drive_item_id, item_activity_stat_id, item_activity_id, opts \\ []) do
+  @spec drives_items_analytics_item_activity_stats_activities_get_drive_item(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_analytics_item_activity_stats_activities_get_drive_item(
+        connection,
+        drive_id,
+        drive_item_id,
+        item_activity_stat_id,
+        item_activity_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -826,7 +975,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/analytics/itemActivityStats/#{item_activity_stat_id}/activities/#{item_activity_id}/driveItem")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/analytics/itemActivityStats/#{item_activity_stat_id}/activities/#{item_activity_id}/driveItem"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -857,12 +1008,31 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_analytics_item_activity_stats_activities_get_drive_item_content(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
-  def drives_items_analytics_item_activity_stats_activities_get_drive_item_content(connection, drive_id, drive_item_id, item_activity_stat_id, item_activity_id, _opts \\ []) do
+  @spec drives_items_analytics_item_activity_stats_activities_get_drive_item_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_analytics_item_activity_stats_activities_get_drive_item_content(
+        connection,
+        drive_id,
+        drive_item_id,
+        item_activity_stat_id,
+        item_activity_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/analytics/itemActivityStats/#{item_activity_stat_id}/activities/#{item_activity_id}/driveItem/content")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/analytics/itemActivityStats/#{item_activity_stat_id}/activities/#{item_activity_id}/driveItem/content"
+      )
       |> Enum.into([])
 
     connection
@@ -893,12 +1063,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_analytics_item_activity_stats_activities_update_drive_item_content(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_analytics_item_activity_stats_activities_update_drive_item_content(connection, drive_id, drive_item_id, item_activity_stat_id, item_activity_id, body, _opts \\ []) do
+  @spec drives_items_analytics_item_activity_stats_activities_update_drive_item_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_analytics_item_activity_stats_activities_update_drive_item_content(
+        connection,
+        drive_id,
+        drive_item_id,
+        item_activity_stat_id,
+        item_activity_id,
+        body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/analytics/itemActivityStats/#{item_activity_stat_id}/activities/#{item_activity_id}/driveItem/content")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/analytics/itemActivityStats/#{item_activity_stat_id}/activities/#{item_activity_id}/driveItem/content"
+      )
       |> add_param(:body, :body, body)
       |> Enum.into([])
 
@@ -928,12 +1119,31 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivity.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_analytics_item_activity_stats_create_activities(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphItemActivity.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivity.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_analytics_item_activity_stats_create_activities(connection, drive_id, drive_item_id, item_activity_stat_id, microsoft_graph_item_activity, _opts \\ []) do
+  @spec drives_items_analytics_item_activity_stats_create_activities(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphItemActivity.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivity.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_analytics_item_activity_stats_create_activities(
+        connection,
+        drive_id,
+        drive_item_id,
+        item_activity_stat_id,
+        microsoft_graph_item_activity,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/analytics/itemActivityStats/#{item_activity_stat_id}/activities")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/analytics/itemActivityStats/#{item_activity_stat_id}/activities"
+      )
       |> add_param(:body, :body, microsoft_graph_item_activity)
       |> Enum.into([])
 
@@ -964,8 +1174,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_analytics_item_activity_stats_delete_activities(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_analytics_item_activity_stats_delete_activities(connection, drive_id, drive_item_id, item_activity_stat_id, item_activity_id, opts \\ []) do
+  @spec drives_items_analytics_item_activity_stats_delete_activities(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_analytics_item_activity_stats_delete_activities(
+        connection,
+        drive_id,
+        drive_item_id,
+        item_activity_stat_id,
+        item_activity_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -973,7 +1200,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/analytics/itemActivityStats/#{item_activity_stat_id}/activities/#{item_activity_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/analytics/itemActivityStats/#{item_activity_stat_id}/activities/#{item_activity_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1006,8 +1235,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivity.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_analytics_item_activity_stats_get_activities(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivity.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_analytics_item_activity_stats_get_activities(connection, drive_id, drive_item_id, item_activity_stat_id, item_activity_id, opts \\ []) do
+  @spec drives_items_analytics_item_activity_stats_get_activities(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivity.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_analytics_item_activity_stats_get_activities(
+        connection,
+        drive_id,
+        drive_item_id,
+        item_activity_stat_id,
+        item_activity_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1016,7 +1262,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/analytics/itemActivityStats/#{item_activity_stat_id}/activities/#{item_activity_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/analytics/itemActivityStats/#{item_activity_stat_id}/activities/#{item_activity_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1046,8 +1294,21 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_analytics_item_activity_stats_get_count_f4fa(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_analytics_item_activity_stats_get_count_f4fa(connection, drive_id, drive_item_id, opts \\ []) do
+  @spec drives_items_analytics_item_activity_stats_get_count_f4fa(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_analytics_item_activity_stats_get_count_f4fa(
+        connection,
+        drive_id,
+        drive_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1094,8 +1355,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivityCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_analytics_item_activity_stats_list_activities(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivityCollectionResponse.t} | {:error, Tesla.Env.t}
-  def drives_items_analytics_item_activity_stats_list_activities(connection, drive_id, drive_item_id, item_activity_stat_id, opts \\ []) do
+  @spec drives_items_analytics_item_activity_stats_list_activities(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivityCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_analytics_item_activity_stats_list_activities(
+        connection,
+        drive_id,
+        drive_item_id,
+        item_activity_stat_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1110,7 +1386,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/analytics/itemActivityStats/#{item_activity_stat_id}/activities")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/analytics/itemActivityStats/#{item_activity_stat_id}/activities"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1141,12 +1419,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivity.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_analytics_item_activity_stats_update_activities(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphItemActivity.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivity.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_analytics_item_activity_stats_update_activities(connection, drive_id, drive_item_id, item_activity_stat_id, item_activity_id, microsoft_graph_item_activity, _opts \\ []) do
+  @spec drives_items_analytics_item_activity_stats_update_activities(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphItemActivity.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivity.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_analytics_item_activity_stats_update_activities(
+        connection,
+        drive_id,
+        drive_item_id,
+        item_activity_stat_id,
+        item_activity_id,
+        microsoft_graph_item_activity,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/analytics/itemActivityStats/#{item_activity_stat_id}/activities/#{item_activity_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/analytics/itemActivityStats/#{item_activity_stat_id}/activities/#{item_activity_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_item_activity)
       |> Enum.into([])
 
@@ -1182,8 +1481,21 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivityStatCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_analytics_list_item_activity_stats(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivityStatCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_analytics_list_item_activity_stats(connection, drive_id, drive_item_id, opts \\ []) do
+  @spec drives_items_analytics_list_item_activity_stats(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivityStatCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_analytics_list_item_activity_stats(
+        connection,
+        drive_id,
+        drive_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1228,12 +1540,31 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivityStat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_analytics_update_item_activity_stats(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphItemActivityStat.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivityStat.t} | {:error, Tesla.Env.t}
-  def drives_items_analytics_update_item_activity_stats(connection, drive_id, drive_item_id, item_activity_stat_id, microsoft_graph_item_activity_stat, _opts \\ []) do
+  @spec drives_items_analytics_update_item_activity_stats(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphItemActivityStat.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphItemActivityStat.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_analytics_update_item_activity_stats(
+        connection,
+        drive_id,
+        drive_item_id,
+        item_activity_stat_id,
+        microsoft_graph_item_activity_stat,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/analytics/itemActivityStats/#{item_activity_stat_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/analytics/itemActivityStats/#{item_activity_stat_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_item_activity_stat)
       |> Enum.into([])
 
@@ -1263,7 +1594,10 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_children_get_count17b0(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_items_children_get_count17b0(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_items_children_get_count17b0(connection, drive_id, drive_item_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -1302,8 +1636,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_create_children(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_create_children(connection, drive_id, drive_item_id, microsoft_graph_drive_item, _opts \\ []) do
+  @spec drives_items_create_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDriveItem.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_create_children(
+        connection,
+        drive_id,
+        drive_item_id,
+        microsoft_graph_drive_item,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1336,8 +1685,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPermission.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_create_permissions(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphPermission.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPermission.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_create_permissions(connection, drive_id, drive_item_id, microsoft_graph_permission, _opts \\ []) do
+  @spec drives_items_create_permissions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPermission.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPermission.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_create_permissions(
+        connection,
+        drive_id,
+        drive_item_id,
+        microsoft_graph_permission,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1370,8 +1734,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSubscription.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_create_subscriptions(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphSubscription.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSubscription.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_create_subscriptions(connection, drive_id, drive_item_id, microsoft_graph_subscription, _opts \\ []) do
+  @spec drives_items_create_subscriptions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSubscription.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSubscription.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_create_subscriptions(
+        connection,
+        drive_id,
+        drive_item_id,
+        microsoft_graph_subscription,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1404,8 +1783,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphThumbnailSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_create_thumbnails(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphThumbnailSet.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphThumbnailSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_create_thumbnails(connection, drive_id, drive_item_id, microsoft_graph_thumbnail_set, _opts \\ []) do
+  @spec drives_items_create_thumbnails(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphThumbnailSet.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphThumbnailSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_create_thumbnails(
+        connection,
+        drive_id,
+        drive_item_id,
+        microsoft_graph_thumbnail_set,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1438,8 +1832,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItemVersion.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_create_versions(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphDriveItemVersion.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItemVersion.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_create_versions(connection, drive_id, drive_item_id, microsoft_graph_drive_item_version, _opts \\ []) do
+  @spec drives_items_create_versions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDriveItemVersion.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItemVersion.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_create_versions(
+        connection,
+        drive_id,
+        drive_item_id,
+        microsoft_graph_drive_item_version,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1474,8 +1883,21 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_created_by_user_get_mailbox_settings(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def drives_items_created_by_user_get_mailbox_settings(connection, drive_id, drive_item_id, opts \\ []) do
+  @spec drives_items_created_by_user_get_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_created_by_user_get_mailbox_settings(
+        connection,
+        drive_id,
+        drive_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1520,8 +1942,21 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_created_by_user_list_service_provisioning_errors(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_created_by_user_list_service_provisioning_errors(connection, drive_id, drive_item_id, opts \\ []) do
+  @spec drives_items_created_by_user_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_created_by_user_list_service_provisioning_errors(
+        connection,
+        drive_id,
+        drive_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1566,8 +2001,21 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_created_by_user_service_provisioning_errors_get_count9567(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_created_by_user_service_provisioning_errors_get_count9567(connection, drive_id, drive_item_id, opts \\ []) do
+  @spec drives_items_created_by_user_service_provisioning_errors_get_count9567(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_created_by_user_service_provisioning_errors_get_count9567(
+        connection,
+        drive_id,
+        drive_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1576,7 +2024,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/createdByUser/serviceProvisioningErrors/$count")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/createdByUser/serviceProvisioningErrors/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1605,8 +2055,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_created_by_user_update_mailbox_settings(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def drives_items_created_by_user_update_mailbox_settings(connection, drive_id, drive_item_id, microsoft_graph_mailbox_settings, _opts \\ []) do
+  @spec drives_items_created_by_user_update_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_created_by_user_update_mailbox_settings(
+        connection,
+        drive_id,
+        drive_item_id,
+        microsoft_graph_mailbox_settings,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -1639,7 +2104,10 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_delete_analytics(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_items_delete_analytics(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_items_delete_analytics(connection, drive_id, drive_item_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -1679,8 +2147,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_delete_permissions(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_delete_permissions(connection, drive_id, drive_item_id, permission_id, opts \\ []) do
+  @spec drives_items_delete_permissions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_delete_permissions(
+        connection,
+        drive_id,
+        drive_item_id,
+        permission_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1718,8 +2201,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_delete_subscriptions(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_delete_subscriptions(connection, drive_id, drive_item_id, subscription_id, opts \\ []) do
+  @spec drives_items_delete_subscriptions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_delete_subscriptions(
+        connection,
+        drive_id,
+        drive_item_id,
+        subscription_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1757,8 +2255,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_delete_thumbnails(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_delete_thumbnails(connection, drive_id, drive_item_id, thumbnail_set_id, opts \\ []) do
+  @spec drives_items_delete_thumbnails(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_delete_thumbnails(
+        connection,
+        drive_id,
+        drive_item_id,
+        thumbnail_set_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1796,8 +2309,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_delete_versions(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_delete_versions(connection, drive_id, drive_item_id, drive_item_version_id, opts \\ []) do
+  @spec drives_items_delete_versions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_delete_versions(
+        connection,
+        drive_id,
+        drive_item_id,
+        drive_item_version_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1834,7 +2362,10 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_delete_workbook(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_items_delete_workbook(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_items_delete_workbook(connection, drive_id, drive_item_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -1874,7 +2405,10 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphItemAnalytics.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_get_analytics(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphItemAnalytics.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_items_get_analytics(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphItemAnalytics.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_items_get_analytics(connection, drive_id, drive_item_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -1916,7 +2450,16 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_get_children(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_items_get_children(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_items_get_children(connection, drive_id, drive_item_id, drive_item_id1, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -1956,8 +2499,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_get_children_content(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
-  def drives_items_get_children_content(connection, drive_id, drive_item_id, drive_item_id1, _opts \\ []) do
+  @spec drives_items_get_children_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_get_children_content(
+        connection,
+        drive_id,
+        drive_item_id,
+        drive_item_id1,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
@@ -1989,7 +2547,10 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_get_count9c16(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_items_get_count9c16(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_items_get_count9c16(connection, drive_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -2030,7 +2591,10 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_get_created_by_user(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_items_get_created_by_user(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_items_get_created_by_user(connection, drive_id, drive_item_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -2071,7 +2635,15 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_get_last_modified_by_user(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_items_get_last_modified_by_user(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_items_get_last_modified_by_user(connection, drive_id, drive_item_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -2112,7 +2684,10 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphListItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_get_list_item(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphListItem.t} | {:error, Tesla.Env.t}
+  @spec drives_items_get_list_item(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphListItem.t()}
+          | {:error, Tesla.Env.t()}
   def drives_items_get_list_item(connection, drive_id, drive_item_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -2154,7 +2729,16 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPermission.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_get_permissions(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPermission.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_items_get_permissions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPermission.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_items_get_permissions(connection, drive_id, drive_item_id, permission_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -2196,8 +2780,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSubscription.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_get_subscriptions(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSubscription.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_get_subscriptions(connection, drive_id, drive_item_id, subscription_id, opts \\ []) do
+  @spec drives_items_get_subscriptions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSubscription.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_get_subscriptions(
+        connection,
+        drive_id,
+        drive_item_id,
+        subscription_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2238,8 +2837,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphThumbnailSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_get_thumbnails(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphThumbnailSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_get_thumbnails(connection, drive_id, drive_item_id, thumbnail_set_id, opts \\ []) do
+  @spec drives_items_get_thumbnails(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphThumbnailSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_get_thumbnails(
+        connection,
+        drive_id,
+        drive_item_id,
+        thumbnail_set_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2280,8 +2894,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItemVersion.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_get_versions(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItemVersion.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_get_versions(connection, drive_id, drive_item_id, drive_item_version_id, opts \\ []) do
+  @spec drives_items_get_versions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItemVersion.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_get_versions(
+        connection,
+        drive_id,
+        drive_item_id,
+        drive_item_version_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2320,12 +2949,29 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_get_versions_content(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
-  def drives_items_get_versions_content(connection, drive_id, drive_item_id, drive_item_version_id, _opts \\ []) do
+  @spec drives_items_get_versions_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_get_versions_content(
+        connection,
+        drive_id,
+        drive_item_id,
+        drive_item_version_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/versions/#{drive_item_version_id}/content")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/versions/#{drive_item_version_id}/content"
+      )
       |> Enum.into([])
 
     connection
@@ -2355,7 +3001,10 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbook.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_get_workbook(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbook.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_items_get_workbook(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbook.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_items_get_workbook(connection, drive_id, drive_item_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -2396,8 +3045,21 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_last_modified_by_user_get_mailbox_settings(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def drives_items_last_modified_by_user_get_mailbox_settings(connection, drive_id, drive_item_id, opts \\ []) do
+  @spec drives_items_last_modified_by_user_get_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_last_modified_by_user_get_mailbox_settings(
+        connection,
+        drive_id,
+        drive_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2442,8 +3104,21 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_last_modified_by_user_list_service_provisioning_errors(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_last_modified_by_user_list_service_provisioning_errors(connection, drive_id, drive_item_id, opts \\ []) do
+  @spec drives_items_last_modified_by_user_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_last_modified_by_user_list_service_provisioning_errors(
+        connection,
+        drive_id,
+        drive_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -2458,7 +3133,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/lastModifiedByUser/serviceProvisioningErrors")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/lastModifiedByUser/serviceProvisioningErrors"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2488,8 +3165,21 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_last_modified_by_user_service_provisioning_errors_get_count_b2d2(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_last_modified_by_user_service_provisioning_errors_get_count_b2d2(connection, drive_id, drive_item_id, opts \\ []) do
+  @spec drives_items_last_modified_by_user_service_provisioning_errors_get_count_b2d2(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_last_modified_by_user_service_provisioning_errors_get_count_b2d2(
+        connection,
+        drive_id,
+        drive_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -2498,7 +3188,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/lastModifiedByUser/serviceProvisioningErrors/$count")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/lastModifiedByUser/serviceProvisioningErrors/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2527,8 +3219,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_last_modified_by_user_update_mailbox_settings(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def drives_items_last_modified_by_user_update_mailbox_settings(connection, drive_id, drive_item_id, microsoft_graph_mailbox_settings, _opts \\ []) do
+  @spec drives_items_last_modified_by_user_update_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_last_modified_by_user_update_mailbox_settings(
+        connection,
+        drive_id,
+        drive_item_id,
+        microsoft_graph_mailbox_settings,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -2569,7 +3276,10 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItemCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_list_children(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItemCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_items_list_children(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItemCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_items_list_children(connection, drive_id, drive_item_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -2622,7 +3332,10 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPermissionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_list_permissions(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPermissionCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec drives_items_list_permissions(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPermissionCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def drives_items_list_permissions(connection, drive_id, drive_item_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -2675,7 +3388,10 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSubscriptionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_list_subscriptions(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSubscriptionCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_items_list_subscriptions(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSubscriptionCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_items_list_subscriptions(connection, drive_id, drive_item_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -2728,7 +3444,10 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphThumbnailSetCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_list_thumbnails(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphThumbnailSetCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec drives_items_list_thumbnails(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphThumbnailSetCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def drives_items_list_thumbnails(connection, drive_id, drive_item_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -2781,7 +3500,10 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItemVersionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_list_versions(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItemVersionCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec drives_items_list_versions(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItemVersionCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def drives_items_list_versions(connection, drive_id, drive_item_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -2827,7 +3549,15 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_permissions_get_count_d367(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_items_permissions_get_count_d367(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_items_permissions_get_count_d367(connection, drive_id, drive_item_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -2867,7 +3597,15 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_subscriptions_get_count_f848(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_items_subscriptions_get_count_f848(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_items_subscriptions_get_count_f848(connection, drive_id, drive_item_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -2907,7 +3645,15 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_thumbnails_get_count50f0(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_items_thumbnails_get_count50f0(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_items_thumbnails_get_count50f0(connection, drive_id, drive_item_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -2946,8 +3692,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphItemAnalytics.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_update_analytics(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphItemAnalytics.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphItemAnalytics.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_update_analytics(connection, drive_id, drive_item_id, microsoft_graph_item_analytics, _opts \\ []) do
+  @spec drives_items_update_analytics(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphItemAnalytics.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphItemAnalytics.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_update_analytics(
+        connection,
+        drive_id,
+        drive_item_id,
+        microsoft_graph_item_analytics,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -2982,8 +3743,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_update_children_content(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_update_children_content(connection, drive_id, drive_item_id, drive_item_id1, body, _opts \\ []) do
+  @spec drives_items_update_children_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_update_children_content(
+        connection,
+        drive_id,
+        drive_item_id,
+        drive_item_id1,
+        body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)
@@ -3018,8 +3796,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPermission.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_update_permissions(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphPermission.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPermission.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_update_permissions(connection, drive_id, drive_item_id, permission_id, microsoft_graph_permission, _opts \\ []) do
+  @spec drives_items_update_permissions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPermission.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPermission.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_update_permissions(
+        connection,
+        drive_id,
+        drive_item_id,
+        permission_id,
+        microsoft_graph_permission,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -3053,8 +3848,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSubscription.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_update_subscriptions(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphSubscription.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSubscription.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_update_subscriptions(connection, drive_id, drive_item_id, subscription_id, microsoft_graph_subscription, _opts \\ []) do
+  @spec drives_items_update_subscriptions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSubscription.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSubscription.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_update_subscriptions(
+        connection,
+        drive_id,
+        drive_item_id,
+        subscription_id,
+        microsoft_graph_subscription,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -3088,8 +3900,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphThumbnailSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_update_thumbnails(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphThumbnailSet.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphThumbnailSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_update_thumbnails(connection, drive_id, drive_item_id, thumbnail_set_id, microsoft_graph_thumbnail_set, _opts \\ []) do
+  @spec drives_items_update_thumbnails(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphThumbnailSet.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphThumbnailSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_update_thumbnails(
+        connection,
+        drive_id,
+        drive_item_id,
+        thumbnail_set_id,
+        microsoft_graph_thumbnail_set,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -3123,8 +3952,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItemVersion.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_update_versions(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphDriveItemVersion.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItemVersion.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_update_versions(connection, drive_id, drive_item_id, drive_item_version_id, microsoft_graph_drive_item_version, _opts \\ []) do
+  @spec drives_items_update_versions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDriveItemVersion.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItemVersion.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_update_versions(
+        connection,
+        drive_id,
+        drive_item_id,
+        drive_item_version_id,
+        microsoft_graph_drive_item_version,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -3159,12 +4005,31 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItemVersion.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_update_versions_content(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItemVersion.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_update_versions_content(connection, drive_id, drive_item_id, drive_item_version_id, body, _opts \\ []) do
+  @spec drives_items_update_versions_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItemVersion.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_update_versions_content(
+        connection,
+        drive_id,
+        drive_item_id,
+        drive_item_version_id,
+        body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/versions/#{drive_item_version_id}/content")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/versions/#{drive_item_version_id}/content"
+      )
       |> add_param(:body, :body, body)
       |> Enum.into([])
 
@@ -3193,8 +4058,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbook.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_update_workbook(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbook.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbook.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_update_workbook(connection, drive_id, drive_item_id, microsoft_graph_workbook, _opts \\ []) do
+  @spec drives_items_update_workbook(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbook.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbook.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_update_workbook(
+        connection,
+        drive_id,
+        drive_item_id,
+        microsoft_graph_workbook,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -3228,7 +4108,10 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_versions_get_count6d7a(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_items_versions_get_count6d7a(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_items_versions_get_count6d7a(connection, drive_id, drive_item_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -3268,12 +4151,31 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookCommentReply.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_comments_create_replies(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookCommentReply.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookCommentReply.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_comments_create_replies(connection, drive_id, drive_item_id, workbook_comment_id, microsoft_graph_workbook_comment_reply, _opts \\ []) do
+  @spec drives_items_workbook_comments_create_replies(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookCommentReply.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookCommentReply.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_comments_create_replies(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_comment_id,
+        microsoft_graph_workbook_comment_reply,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/comments/#{workbook_comment_id}/replies")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/comments/#{workbook_comment_id}/replies"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_comment_reply)
       |> Enum.into([])
 
@@ -3304,8 +4206,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_comments_delete_replies(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_comments_delete_replies(connection, drive_id, drive_item_id, workbook_comment_id, workbook_comment_reply_id, opts \\ []) do
+  @spec drives_items_workbook_comments_delete_replies(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_comments_delete_replies(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_comment_id,
+        workbook_comment_reply_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -3313,7 +4232,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/comments/#{workbook_comment_id}/replies/#{workbook_comment_reply_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/comments/#{workbook_comment_id}/replies/#{workbook_comment_reply_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3343,8 +4264,21 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_comments_get_count8437(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_comments_get_count8437(connection, drive_id, drive_item_id, opts \\ []) do
+  @spec drives_items_workbook_comments_get_count8437(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_comments_get_count8437(
+        connection,
+        drive_id,
+        drive_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -3386,8 +4320,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookCommentReply.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_comments_get_replies(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookCommentReply.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_comments_get_replies(connection, drive_id, drive_item_id, workbook_comment_id, workbook_comment_reply_id, opts \\ []) do
+  @spec drives_items_workbook_comments_get_replies(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookCommentReply.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_comments_get_replies(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_comment_id,
+        workbook_comment_reply_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3396,7 +4347,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/comments/#{workbook_comment_id}/replies/#{workbook_comment_reply_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/comments/#{workbook_comment_id}/replies/#{workbook_comment_reply_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3434,8 +4387,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookCommentReplyCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_comments_list_replies(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookCommentReplyCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_comments_list_replies(connection, drive_id, drive_item_id, workbook_comment_id, opts \\ []) do
+  @spec drives_items_workbook_comments_list_replies(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookCommentReplyCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_comments_list_replies(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_comment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -3450,7 +4418,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/comments/#{workbook_comment_id}/replies")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/comments/#{workbook_comment_id}/replies"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3481,8 +4451,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_comments_replies_get_count5e78(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_comments_replies_get_count5e78(connection, drive_id, drive_item_id, workbook_comment_id, opts \\ []) do
+  @spec drives_items_workbook_comments_replies_get_count5e78(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_comments_replies_get_count5e78(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_comment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -3491,7 +4476,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/comments/#{workbook_comment_id}/replies/$count")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/comments/#{workbook_comment_id}/replies/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3522,12 +4509,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookCommentReply.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_comments_update_replies(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookCommentReply.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookCommentReply.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_comments_update_replies(connection, drive_id, drive_item_id, workbook_comment_id, workbook_comment_reply_id, microsoft_graph_workbook_comment_reply, _opts \\ []) do
+  @spec drives_items_workbook_comments_update_replies(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookCommentReply.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookCommentReply.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_comments_update_replies(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_comment_id,
+        workbook_comment_reply_id,
+        microsoft_graph_workbook_comment_reply,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/comments/#{workbook_comment_id}/replies/#{workbook_comment_reply_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/comments/#{workbook_comment_id}/replies/#{workbook_comment_reply_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_comment_reply)
       |> Enum.into([])
 
@@ -3556,8 +4564,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookComment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_create_comments(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookComment.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookComment.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_create_comments(connection, drive_id, drive_item_id, microsoft_graph_workbook_comment, _opts \\ []) do
+  @spec drives_items_workbook_create_comments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookComment.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookComment.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_create_comments(
+        connection,
+        drive_id,
+        drive_item_id,
+        microsoft_graph_workbook_comment,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -3590,8 +4613,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookNamedItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_create_names(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookNamedItem.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookNamedItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_create_names(connection, drive_id, drive_item_id, microsoft_graph_workbook_named_item, _opts \\ []) do
+  @spec drives_items_workbook_create_names(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookNamedItem.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookNamedItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_create_names(
+        connection,
+        drive_id,
+        drive_item_id,
+        microsoft_graph_workbook_named_item,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -3624,8 +4662,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookOperation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_create_operations(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookOperation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookOperation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_create_operations(connection, drive_id, drive_item_id, microsoft_graph_workbook_operation, _opts \\ []) do
+  @spec drives_items_workbook_create_operations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookOperation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookOperation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_create_operations(
+        connection,
+        drive_id,
+        drive_item_id,
+        microsoft_graph_workbook_operation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -3658,8 +4711,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTable.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_create_tables(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookTable.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTable.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_create_tables(connection, drive_id, drive_item_id, microsoft_graph_workbook_table, _opts \\ []) do
+  @spec drives_items_workbook_create_tables(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookTable.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTable.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_create_tables(
+        connection,
+        drive_id,
+        drive_item_id,
+        microsoft_graph_workbook_table,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -3692,8 +4760,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookWorksheet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_create_worksheets(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookWorksheet.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookWorksheet.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_create_worksheets(connection, drive_id, drive_item_id, microsoft_graph_workbook_worksheet, _opts \\ []) do
+  @spec drives_items_workbook_create_worksheets(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookWorksheet.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookWorksheet.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_create_worksheets(
+        connection,
+        drive_id,
+        drive_item_id,
+        microsoft_graph_workbook_worksheet,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -3726,7 +4809,15 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_delete_application(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_items_workbook_delete_application(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_items_workbook_delete_application(connection, drive_id, drive_item_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -3765,8 +4856,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_delete_comments(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_delete_comments(connection, drive_id, drive_item_id, workbook_comment_id, opts \\ []) do
+  @spec drives_items_workbook_delete_comments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_delete_comments(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_comment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -3774,7 +4880,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/comments/#{workbook_comment_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/comments/#{workbook_comment_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3803,7 +4911,15 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_delete_functions(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_items_workbook_delete_functions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_items_workbook_delete_functions(connection, drive_id, drive_item_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -3842,8 +4958,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_delete_names(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_delete_names(connection, drive_id, drive_item_id, workbook_named_item_id, opts \\ []) do
+  @spec drives_items_workbook_delete_names(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_delete_names(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_named_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -3851,7 +4982,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/names/#{workbook_named_item_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/names/#{workbook_named_item_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3881,8 +5014,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_delete_operations(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_delete_operations(connection, drive_id, drive_item_id, workbook_operation_id, opts \\ []) do
+  @spec drives_items_workbook_delete_operations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_delete_operations(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_operation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -3890,7 +5038,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/operations/#{workbook_operation_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/operations/#{workbook_operation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3921,8 +5071,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_delete_tables(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_delete_tables(connection, drive_id, drive_item_id, workbook_table_id, opts \\ []) do
+  @spec drives_items_workbook_delete_tables(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_delete_tables(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_table_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -3961,8 +5126,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_delete_worksheets(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_delete_worksheets(connection, drive_id, drive_item_id, workbook_worksheet_id, opts \\ []) do
+  @spec drives_items_workbook_delete_worksheets(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_delete_worksheets(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -3970,7 +5150,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4001,7 +5183,15 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookApplication.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_get_application(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookApplication.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_items_workbook_get_application(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookApplication.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_items_workbook_get_application(connection, drive_id, drive_item_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -4043,8 +5233,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookComment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_get_comments(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookComment.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_get_comments(connection, drive_id, drive_item_id, workbook_comment_id, opts \\ []) do
+  @spec drives_items_workbook_get_comments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookComment.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_get_comments(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_comment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -4053,7 +5258,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/comments/#{workbook_comment_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/comments/#{workbook_comment_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4083,7 +5290,10 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookFunctions.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_get_functions(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookFunctions.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_items_workbook_get_functions(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookFunctions.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_items_workbook_get_functions(connection, drive_id, drive_item_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -4125,8 +5335,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookNamedItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_get_names(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookNamedItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_get_names(connection, drive_id, drive_item_id, workbook_named_item_id, opts \\ []) do
+  @spec drives_items_workbook_get_names(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookNamedItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_get_names(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_named_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -4135,7 +5360,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/names/#{workbook_named_item_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/names/#{workbook_named_item_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4167,8 +5394,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookOperation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_get_operations(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookOperation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_get_operations(connection, drive_id, drive_item_id, workbook_operation_id, opts \\ []) do
+  @spec drives_items_workbook_get_operations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookOperation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_get_operations(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_operation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -4177,7 +5419,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/operations/#{workbook_operation_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/operations/#{workbook_operation_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4209,8 +5453,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTable.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_get_tables(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTable.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_get_tables(connection, drive_id, drive_item_id, workbook_table_id, opts \\ []) do
+  @spec drives_items_workbook_get_tables(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTable.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_get_tables(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_table_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -4251,8 +5510,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookWorksheet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_get_worksheets(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookWorksheet.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_get_worksheets(connection, drive_id, drive_item_id, workbook_worksheet_id, opts \\ []) do
+  @spec drives_items_workbook_get_worksheets(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookWorksheet.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_get_worksheets(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -4261,7 +5535,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4298,7 +5574,10 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookCommentCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_list_comments(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookCommentCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_items_workbook_list_comments(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookCommentCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_items_workbook_list_comments(connection, drive_id, drive_item_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -4351,7 +5630,10 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookNamedItemCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_list_names(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookNamedItemCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_items_workbook_list_names(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookNamedItemCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_items_workbook_list_names(connection, drive_id, drive_item_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -4400,7 +5682,15 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookOperationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_list_operations(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookOperationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_items_workbook_list_operations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookOperationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_items_workbook_list_operations(connection, drive_id, drive_item_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -4449,7 +5739,10 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_list_tables(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_items_workbook_list_tables(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_items_workbook_list_tables(connection, drive_id, drive_item_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -4502,7 +5795,15 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookWorksheetCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_list_worksheets(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookWorksheetCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec drives_items_workbook_list_worksheets(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookWorksheetCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def drives_items_workbook_list_worksheets(connection, drive_id, drive_item_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -4548,7 +5849,15 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_names_get_count_eada(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_items_workbook_names_get_count_eada(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_items_workbook_names_get_count_eada(connection, drive_id, drive_item_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -4590,8 +5899,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookWorksheet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_names_get_worksheet(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookWorksheet.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_names_get_worksheet(connection, drive_id, drive_item_id, workbook_named_item_id, opts \\ []) do
+  @spec drives_items_workbook_names_get_worksheet(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookWorksheet.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_names_get_worksheet(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_named_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -4600,7 +5924,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/names/#{workbook_named_item_id}/worksheet")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/names/#{workbook_named_item_id}/worksheet"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4629,8 +5955,21 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_operations_get_count67f8(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_operations_get_count67f8(connection, drive_id, drive_item_id, opts \\ []) do
+  @spec drives_items_workbook_operations_get_count67f8(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_operations_get_count67f8(
+        connection,
+        drive_id,
+        drive_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query
     }
@@ -4669,8 +6008,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_tables_columns_delete_filter(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_tables_columns_delete_filter(connection, drive_id, drive_item_id, workbook_table_id, workbook_table_column_id, opts \\ []) do
+  @spec drives_items_workbook_tables_columns_delete_filter(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_tables_columns_delete_filter(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_table_id,
+        workbook_table_column_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -4678,7 +6034,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/tables/#{workbook_table_id}/columns/#{workbook_table_column_id}/filter")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/tables/#{workbook_table_id}/columns/#{workbook_table_column_id}/filter"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4711,8 +6069,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookFilter.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_tables_columns_get_filter(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookFilter.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_tables_columns_get_filter(connection, drive_id, drive_item_id, workbook_table_id, workbook_table_column_id, opts \\ []) do
+  @spec drives_items_workbook_tables_columns_get_filter(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookFilter.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_tables_columns_get_filter(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_table_id,
+        workbook_table_column_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -4721,7 +6096,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/tables/#{workbook_table_id}/columns/#{workbook_table_column_id}/filter")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/tables/#{workbook_table_id}/columns/#{workbook_table_column_id}/filter"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4752,12 +6129,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookFilter.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_tables_columns_update_filter(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookFilter.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookFilter.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_tables_columns_update_filter(connection, drive_id, drive_item_id, workbook_table_id, workbook_table_column_id, microsoft_graph_workbook_filter, _opts \\ []) do
+  @spec drives_items_workbook_tables_columns_update_filter(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookFilter.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookFilter.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_tables_columns_update_filter(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_table_id,
+        workbook_table_column_id,
+        microsoft_graph_workbook_filter,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/tables/#{workbook_table_id}/columns/#{workbook_table_column_id}/filter")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/tables/#{workbook_table_id}/columns/#{workbook_table_column_id}/filter"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_filter)
       |> Enum.into([])
 
@@ -4788,12 +6186,31 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableColumn.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_tables_create_columns(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableColumn.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableColumn.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_tables_create_columns(connection, drive_id, drive_item_id, workbook_table_id, microsoft_graph_workbook_table_column, _opts \\ []) do
+  @spec drives_items_workbook_tables_create_columns(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookTableColumn.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableColumn.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_tables_create_columns(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_table_id,
+        microsoft_graph_workbook_table_column,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/tables/#{workbook_table_id}/columns")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/tables/#{workbook_table_id}/columns"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_table_column)
       |> Enum.into([])
 
@@ -4824,12 +6241,31 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableRow.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_tables_create_rows(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableRow.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableRow.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_tables_create_rows(connection, drive_id, drive_item_id, workbook_table_id, microsoft_graph_workbook_table_row, _opts \\ []) do
+  @spec drives_items_workbook_tables_create_rows(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookTableRow.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableRow.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_tables_create_rows(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_table_id,
+        microsoft_graph_workbook_table_row,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/tables/#{workbook_table_id}/rows")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/tables/#{workbook_table_id}/rows"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_table_row)
       |> Enum.into([])
 
@@ -4861,8 +6297,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_tables_delete_columns(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_tables_delete_columns(connection, drive_id, drive_item_id, workbook_table_id, workbook_table_column_id, opts \\ []) do
+  @spec drives_items_workbook_tables_delete_columns(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_tables_delete_columns(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_table_id,
+        workbook_table_column_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -4870,7 +6323,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/tables/#{workbook_table_id}/columns/#{workbook_table_column_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/tables/#{workbook_table_id}/columns/#{workbook_table_column_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4902,8 +6357,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_tables_delete_rows(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_tables_delete_rows(connection, drive_id, drive_item_id, workbook_table_id, workbook_table_row_id, opts \\ []) do
+  @spec drives_items_workbook_tables_delete_rows(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_tables_delete_rows(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_table_id,
+        workbook_table_row_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -4911,7 +6383,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/tables/#{workbook_table_id}/rows/#{workbook_table_row_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/tables/#{workbook_table_id}/rows/#{workbook_table_row_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4941,8 +6415,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_tables_delete_sort(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_tables_delete_sort(connection, drive_id, drive_item_id, workbook_table_id, opts \\ []) do
+  @spec drives_items_workbook_tables_delete_sort(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_tables_delete_sort(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_table_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -4950,7 +6439,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/tables/#{workbook_table_id}/sort")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/tables/#{workbook_table_id}/sort"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4983,8 +6474,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableColumn.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_tables_get_columns(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableColumn.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_tables_get_columns(connection, drive_id, drive_item_id, workbook_table_id, workbook_table_column_id, opts \\ []) do
+  @spec drives_items_workbook_tables_get_columns(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableColumn.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_tables_get_columns(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_table_id,
+        workbook_table_column_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -4993,7 +6501,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/tables/#{workbook_table_id}/columns/#{workbook_table_column_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/tables/#{workbook_table_id}/columns/#{workbook_table_column_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5026,8 +6536,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableRow.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_tables_get_rows(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableRow.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_tables_get_rows(connection, drive_id, drive_item_id, workbook_table_id, workbook_table_row_id, opts \\ []) do
+  @spec drives_items_workbook_tables_get_rows(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableRow.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_tables_get_rows(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_table_id,
+        workbook_table_row_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -5036,7 +6563,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/tables/#{workbook_table_id}/rows/#{workbook_table_row_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/tables/#{workbook_table_id}/rows/#{workbook_table_row_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5068,8 +6597,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableSort.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_tables_get_sort(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableSort.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_tables_get_sort(connection, drive_id, drive_item_id, workbook_table_id, opts \\ []) do
+  @spec drives_items_workbook_tables_get_sort(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableSort.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_tables_get_sort(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_table_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -5078,7 +6622,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/tables/#{workbook_table_id}/sort")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/tables/#{workbook_table_id}/sort"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5110,8 +6656,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookWorksheet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_tables_get_worksheet(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookWorksheet.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_tables_get_worksheet(connection, drive_id, drive_item_id, workbook_table_id, opts \\ []) do
+  @spec drives_items_workbook_tables_get_worksheet(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookWorksheet.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_tables_get_worksheet(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_table_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -5120,7 +6681,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/tables/#{workbook_table_id}/worksheet")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/tables/#{workbook_table_id}/worksheet"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5158,8 +6721,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableColumnCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_tables_list_columns(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableColumnCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_tables_list_columns(connection, drive_id, drive_item_id, workbook_table_id, opts \\ []) do
+  @spec drives_items_workbook_tables_list_columns(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableColumnCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_tables_list_columns(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_table_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -5174,7 +6752,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/tables/#{workbook_table_id}/columns")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/tables/#{workbook_table_id}/columns"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5212,8 +6792,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableRowCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_tables_list_rows(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableRowCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_tables_list_rows(connection, drive_id, drive_item_id, workbook_table_id, opts \\ []) do
+  @spec drives_items_workbook_tables_list_rows(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableRowCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_tables_list_rows(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_table_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -5228,7 +6823,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/tables/#{workbook_table_id}/rows")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/tables/#{workbook_table_id}/rows"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5260,12 +6857,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableColumn.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_tables_update_columns(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableColumn.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableColumn.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_tables_update_columns(connection, drive_id, drive_item_id, workbook_table_id, workbook_table_column_id, microsoft_graph_workbook_table_column, _opts \\ []) do
+  @spec drives_items_workbook_tables_update_columns(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookTableColumn.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableColumn.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_tables_update_columns(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_table_id,
+        workbook_table_column_id,
+        microsoft_graph_workbook_table_column,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/tables/#{workbook_table_id}/columns/#{workbook_table_column_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/tables/#{workbook_table_id}/columns/#{workbook_table_column_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_table_column)
       |> Enum.into([])
 
@@ -5297,12 +6915,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableRow.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_tables_update_rows(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableRow.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableRow.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_tables_update_rows(connection, drive_id, drive_item_id, workbook_table_id, workbook_table_row_id, microsoft_graph_workbook_table_row, _opts \\ []) do
+  @spec drives_items_workbook_tables_update_rows(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookTableRow.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableRow.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_tables_update_rows(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_table_id,
+        workbook_table_row_id,
+        microsoft_graph_workbook_table_row,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/tables/#{workbook_table_id}/rows/#{workbook_table_row_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/tables/#{workbook_table_id}/rows/#{workbook_table_row_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_table_row)
       |> Enum.into([])
 
@@ -5332,12 +6971,31 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableSort.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_tables_update_sort(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableSort.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableSort.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_tables_update_sort(connection, drive_id, drive_item_id, workbook_table_id, microsoft_graph_workbook_table_sort, _opts \\ []) do
+  @spec drives_items_workbook_tables_update_sort(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookTableSort.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableSort.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_tables_update_sort(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_table_id,
+        microsoft_graph_workbook_table_sort,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/tables/#{workbook_table_id}/sort")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/tables/#{workbook_table_id}/sort"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_table_sort)
       |> Enum.into([])
 
@@ -5366,8 +7024,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookApplication.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_update_application(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookApplication.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookApplication.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_update_application(connection, drive_id, drive_item_id, microsoft_graph_workbook_application, _opts \\ []) do
+  @spec drives_items_workbook_update_application(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookApplication.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookApplication.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_update_application(
+        connection,
+        drive_id,
+        drive_item_id,
+        microsoft_graph_workbook_application,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -5401,12 +7074,31 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookComment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_update_comments(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookComment.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookComment.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_update_comments(connection, drive_id, drive_item_id, workbook_comment_id, microsoft_graph_workbook_comment, _opts \\ []) do
+  @spec drives_items_workbook_update_comments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookComment.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookComment.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_update_comments(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_comment_id,
+        microsoft_graph_workbook_comment,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/comments/#{workbook_comment_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/comments/#{workbook_comment_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_comment)
       |> Enum.into([])
 
@@ -5435,8 +7127,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookFunctions.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_update_functions(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookFunctions.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookFunctions.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_update_functions(connection, drive_id, drive_item_id, microsoft_graph_workbook_functions, _opts \\ []) do
+  @spec drives_items_workbook_update_functions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookFunctions.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookFunctions.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_update_functions(
+        connection,
+        drive_id,
+        drive_item_id,
+        microsoft_graph_workbook_functions,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -5471,12 +7178,31 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookNamedItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_update_names(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookNamedItem.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookNamedItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_update_names(connection, drive_id, drive_item_id, workbook_named_item_id, microsoft_graph_workbook_named_item, _opts \\ []) do
+  @spec drives_items_workbook_update_names(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookNamedItem.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookNamedItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_update_names(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_named_item_id,
+        microsoft_graph_workbook_named_item,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/names/#{workbook_named_item_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/names/#{workbook_named_item_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_named_item)
       |> Enum.into([])
 
@@ -5506,12 +7232,31 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookOperation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_update_operations(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookOperation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookOperation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_update_operations(connection, drive_id, drive_item_id, workbook_operation_id, microsoft_graph_workbook_operation, _opts \\ []) do
+  @spec drives_items_workbook_update_operations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookOperation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookOperation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_update_operations(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_operation_id,
+        microsoft_graph_workbook_operation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/operations/#{workbook_operation_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/operations/#{workbook_operation_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_operation)
       |> Enum.into([])
 
@@ -5542,8 +7287,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTable.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_update_tables(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookTable.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTable.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_update_tables(connection, drive_id, drive_item_id, workbook_table_id, microsoft_graph_workbook_table, _opts \\ []) do
+  @spec drives_items_workbook_update_tables(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookTable.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTable.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_update_tables(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_table_id,
+        microsoft_graph_workbook_table,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -5578,12 +7340,31 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookWorksheet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_update_worksheets(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookWorksheet.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookWorksheet.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_update_worksheets(connection, drive_id, drive_item_id, workbook_worksheet_id, microsoft_graph_workbook_worksheet, _opts \\ []) do
+  @spec drives_items_workbook_update_worksheets(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookWorksheet.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookWorksheet.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_update_worksheets(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        microsoft_graph_workbook_worksheet,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_worksheet)
       |> Enum.into([])
 
@@ -5614,8 +7395,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_category_axis_delete_format(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_category_axis_delete_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_category_axis_delete_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_category_axis_delete_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -5623,7 +7421,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/format"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5654,8 +7454,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_category_axis_delete_major_gridlines(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_category_axis_delete_major_gridlines(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_category_axis_delete_major_gridlines(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_category_axis_delete_major_gridlines(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -5663,7 +7480,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/majorGridlines")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/majorGridlines"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5694,8 +7513,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_category_axis_delete_minor_gridlines(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_category_axis_delete_minor_gridlines(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_category_axis_delete_minor_gridlines(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_category_axis_delete_minor_gridlines(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -5703,7 +7539,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/minorGridlines")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/minorGridlines"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5734,8 +7572,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_category_axis_delete_title(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_category_axis_delete_title(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_category_axis_delete_title(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_category_axis_delete_title(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -5743,7 +7598,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/title")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/title"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5774,8 +7631,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_category_axis_format_delete_font(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_category_axis_format_delete_font(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_category_axis_format_delete_font(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_category_axis_format_delete_font(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -5783,7 +7657,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/format/font")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/format/font"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5814,8 +7690,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_category_axis_format_delete_line(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_category_axis_format_delete_line(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_category_axis_format_delete_line(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_category_axis_format_delete_line(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -5823,7 +7716,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/format/line")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/format/line"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5856,8 +7751,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_category_axis_format_get_font(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_category_axis_format_get_font(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_category_axis_format_get_font(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_category_axis_format_get_font(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -5866,7 +7778,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/format/font")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/format/font"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5899,8 +7813,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_category_axis_format_get_line(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_category_axis_format_get_line(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_category_axis_format_get_line(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_category_axis_format_get_line(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -5909,7 +7840,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/format/line")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/format/line"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5941,12 +7874,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_category_axis_format_update_font(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_category_axis_format_update_font(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_font, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_category_axis_format_update_font(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_category_axis_format_update_font(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_font,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/format/font")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/format/font"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_font)
       |> Enum.into([])
 
@@ -5978,12 +7932,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_category_axis_format_update_line(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_category_axis_format_update_line(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_line_format, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_category_axis_format_update_line(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_category_axis_format_update_line(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_line_format,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/format/line")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/format/line"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_line_format)
       |> Enum.into([])
 
@@ -6016,8 +7991,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_category_axis_get_format(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_category_axis_get_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_category_axis_get_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_category_axis_get_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -6026,7 +8018,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/format"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6059,8 +8053,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlines.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_category_axis_get_major_gridlines(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlines.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_category_axis_get_major_gridlines(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_category_axis_get_major_gridlines(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlines.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_category_axis_get_major_gridlines(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -6069,7 +8080,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/majorGridlines")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/majorGridlines"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6102,8 +8115,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlines.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_category_axis_get_minor_gridlines(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlines.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_category_axis_get_minor_gridlines(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_category_axis_get_minor_gridlines(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlines.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_category_axis_get_minor_gridlines(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -6112,7 +8142,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/minorGridlines")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/minorGridlines"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6145,8 +8177,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitle.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_category_axis_get_title(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitle.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_category_axis_get_title(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_category_axis_get_title(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitle.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_category_axis_get_title(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -6155,7 +8204,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/title")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/title"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6186,8 +8237,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_category_axis_major_gridlines_delete_format(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_category_axis_major_gridlines_delete_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_category_axis_major_gridlines_delete_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_category_axis_major_gridlines_delete_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -6195,7 +8263,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/majorGridlines/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/majorGridlines/format"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6226,8 +8296,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_category_axis_major_gridlines_format_delete_line(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_category_axis_major_gridlines_format_delete_line(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_category_axis_major_gridlines_format_delete_line(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_category_axis_major_gridlines_format_delete_line(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -6235,7 +8322,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/majorGridlines/format/line")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/majorGridlines/format/line"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6268,8 +8357,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_category_axis_major_gridlines_format_get_line(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_category_axis_major_gridlines_format_get_line(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_category_axis_major_gridlines_format_get_line(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_category_axis_major_gridlines_format_get_line(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -6278,7 +8384,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/majorGridlines/format/line")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/majorGridlines/format/line"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6309,12 +8417,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_category_axis_major_gridlines_format_update_line(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_category_axis_major_gridlines_format_update_line(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_line_format, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_category_axis_major_gridlines_format_update_line(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_category_axis_major_gridlines_format_update_line(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_line_format,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/majorGridlines/format/line")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/majorGridlines/format/line"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_line_format)
       |> Enum.into([])
 
@@ -6347,8 +8476,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlinesFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_category_axis_major_gridlines_get_format(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlinesFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_category_axis_major_gridlines_get_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_category_axis_major_gridlines_get_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlinesFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_category_axis_major_gridlines_get_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -6357,7 +8503,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/majorGridlines/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/majorGridlines/format"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6388,12 +8536,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlinesFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_category_axis_major_gridlines_update_format(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlinesFormat.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlinesFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_category_axis_major_gridlines_update_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_gridlines_format, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_category_axis_major_gridlines_update_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlinesFormat.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlinesFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_category_axis_major_gridlines_update_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_gridlines_format,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/majorGridlines/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/majorGridlines/format"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_gridlines_format)
       |> Enum.into([])
 
@@ -6424,8 +8593,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_category_axis_minor_gridlines_delete_format(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_category_axis_minor_gridlines_delete_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_category_axis_minor_gridlines_delete_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_category_axis_minor_gridlines_delete_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -6433,7 +8619,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/minorGridlines/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/minorGridlines/format"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6464,8 +8652,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_category_axis_minor_gridlines_format_delete_line(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_category_axis_minor_gridlines_format_delete_line(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_category_axis_minor_gridlines_format_delete_line(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_category_axis_minor_gridlines_format_delete_line(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -6473,7 +8678,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/minorGridlines/format/line")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/minorGridlines/format/line"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6506,8 +8713,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_category_axis_minor_gridlines_format_get_line(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_category_axis_minor_gridlines_format_get_line(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_category_axis_minor_gridlines_format_get_line(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_category_axis_minor_gridlines_format_get_line(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -6516,7 +8740,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/minorGridlines/format/line")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/minorGridlines/format/line"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6547,12 +8773,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_category_axis_minor_gridlines_format_update_line(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_category_axis_minor_gridlines_format_update_line(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_line_format, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_category_axis_minor_gridlines_format_update_line(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_category_axis_minor_gridlines_format_update_line(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_line_format,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/minorGridlines/format/line")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/minorGridlines/format/line"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_line_format)
       |> Enum.into([])
 
@@ -6585,8 +8832,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlinesFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_category_axis_minor_gridlines_get_format(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlinesFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_category_axis_minor_gridlines_get_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_category_axis_minor_gridlines_get_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlinesFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_category_axis_minor_gridlines_get_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -6595,7 +8859,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/minorGridlines/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/minorGridlines/format"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6626,12 +8892,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlinesFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_category_axis_minor_gridlines_update_format(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlinesFormat.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlinesFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_category_axis_minor_gridlines_update_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_gridlines_format, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_category_axis_minor_gridlines_update_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlinesFormat.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlinesFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_category_axis_minor_gridlines_update_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_gridlines_format,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/minorGridlines/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/minorGridlines/format"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_gridlines_format)
       |> Enum.into([])
 
@@ -6662,8 +8949,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_category_axis_title_delete_format(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_category_axis_title_delete_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_category_axis_title_delete_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_category_axis_title_delete_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -6671,7 +8975,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/title/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/title/format"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6702,8 +9008,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_category_axis_title_format_delete_font(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_category_axis_title_format_delete_font(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_category_axis_title_format_delete_font(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_category_axis_title_format_delete_font(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -6711,7 +9034,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/title/format/font")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/title/format/font"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6744,8 +9069,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_category_axis_title_format_get_font(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_category_axis_title_format_get_font(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_category_axis_title_format_get_font(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_category_axis_title_format_get_font(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -6754,7 +9096,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/title/format/font")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/title/format/font"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6785,12 +9129,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_category_axis_title_format_update_font(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_category_axis_title_format_update_font(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_font, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_category_axis_title_format_update_font(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_category_axis_title_format_update_font(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_font,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/title/format/font")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/title/format/font"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_font)
       |> Enum.into([])
 
@@ -6823,8 +9188,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitleFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_category_axis_title_get_format(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitleFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_category_axis_title_get_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_category_axis_title_get_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitleFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_category_axis_title_get_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -6833,7 +9215,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/title/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/title/format"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6864,12 +9248,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitleFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_category_axis_title_update_format(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitleFormat.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitleFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_category_axis_title_update_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_axis_title_format, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_category_axis_title_update_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitleFormat.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitleFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_category_axis_title_update_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_axis_title_format,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/title/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/title/format"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_axis_title_format)
       |> Enum.into([])
 
@@ -6900,12 +9305,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_category_axis_update_format(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisFormat.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_category_axis_update_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_axis_format, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_category_axis_update_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisFormat.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_category_axis_update_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_axis_format,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/format"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_axis_format)
       |> Enum.into([])
 
@@ -6936,12 +9362,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlines.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_category_axis_update_major_gridlines(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlines.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlines.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_category_axis_update_major_gridlines(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_gridlines, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_category_axis_update_major_gridlines(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlines.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlines.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_category_axis_update_major_gridlines(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_gridlines,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/majorGridlines")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/majorGridlines"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_gridlines)
       |> Enum.into([])
 
@@ -6973,12 +9420,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlines.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_category_axis_update_minor_gridlines(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlines.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlines.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_category_axis_update_minor_gridlines(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_gridlines, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_category_axis_update_minor_gridlines(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlines.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlines.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_category_axis_update_minor_gridlines(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_gridlines,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/minorGridlines")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/minorGridlines"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_gridlines)
       |> Enum.into([])
 
@@ -7010,12 +9478,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitle.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_category_axis_update_title(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitle.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitle.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_category_axis_update_title(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_axis_title, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_category_axis_update_title(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitle.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitle.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_category_axis_update_title(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_axis_title,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/title")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis/title"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_axis_title)
       |> Enum.into([])
 
@@ -7046,8 +9535,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_delete_category_axis(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_delete_category_axis(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_delete_category_axis(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_delete_category_axis(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -7055,7 +9561,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7086,8 +9594,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_delete_series_axis(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_delete_series_axis(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_delete_series_axis(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_delete_series_axis(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -7095,7 +9620,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7126,8 +9653,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_delete_value_axis(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_delete_value_axis(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_delete_value_axis(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_delete_value_axis(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -7135,7 +9679,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7168,8 +9714,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxis.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_get_category_axis(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxis.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_get_category_axis(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_get_category_axis(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxis.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_get_category_axis(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -7178,7 +9741,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7211,8 +9776,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxis.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_get_series_axis(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxis.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_get_series_axis(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_get_series_axis(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxis.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_get_series_axis(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -7221,7 +9803,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7254,8 +9838,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxis.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_get_value_axis(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxis.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_get_value_axis(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_get_value_axis(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxis.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_get_value_axis(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -7264,7 +9865,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7295,8 +9898,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_series_axis_delete_format(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_series_axis_delete_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_series_axis_delete_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_series_axis_delete_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -7304,7 +9924,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/format"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7335,8 +9957,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_series_axis_delete_major_gridlines(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_series_axis_delete_major_gridlines(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_series_axis_delete_major_gridlines(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_series_axis_delete_major_gridlines(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -7344,7 +9983,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/majorGridlines")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/majorGridlines"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7375,8 +10016,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_series_axis_delete_minor_gridlines(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_series_axis_delete_minor_gridlines(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_series_axis_delete_minor_gridlines(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_series_axis_delete_minor_gridlines(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -7384,7 +10042,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/minorGridlines")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/minorGridlines"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7415,8 +10075,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_series_axis_delete_title(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_series_axis_delete_title(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_series_axis_delete_title(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_series_axis_delete_title(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -7424,7 +10101,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/title")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/title"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7455,8 +10134,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_series_axis_format_delete_font(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_series_axis_format_delete_font(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_series_axis_format_delete_font(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_series_axis_format_delete_font(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -7464,7 +10160,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/format/font")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/format/font"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7495,8 +10193,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_series_axis_format_delete_line(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_series_axis_format_delete_line(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_series_axis_format_delete_line(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_series_axis_format_delete_line(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -7504,7 +10219,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/format/line")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/format/line"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7537,8 +10254,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_series_axis_format_get_font(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_series_axis_format_get_font(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_series_axis_format_get_font(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_series_axis_format_get_font(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -7547,7 +10281,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/format/font")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/format/font"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7580,8 +10316,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_series_axis_format_get_line(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_series_axis_format_get_line(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_series_axis_format_get_line(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_series_axis_format_get_line(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -7590,7 +10343,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/format/line")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/format/line"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7622,12 +10377,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_series_axis_format_update_font(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_series_axis_format_update_font(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_font, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_series_axis_format_update_font(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_series_axis_format_update_font(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_font,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/format/font")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/format/font"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_font)
       |> Enum.into([])
 
@@ -7659,12 +10435,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_series_axis_format_update_line(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_series_axis_format_update_line(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_line_format, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_series_axis_format_update_line(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_series_axis_format_update_line(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_line_format,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/format/line")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/format/line"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_line_format)
       |> Enum.into([])
 
@@ -7697,8 +10494,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_series_axis_get_format(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_series_axis_get_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_series_axis_get_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_series_axis_get_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -7707,7 +10521,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/format"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7740,8 +10556,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlines.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_series_axis_get_major_gridlines(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlines.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_series_axis_get_major_gridlines(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_series_axis_get_major_gridlines(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlines.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_series_axis_get_major_gridlines(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -7750,7 +10583,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/majorGridlines")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/majorGridlines"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7783,8 +10618,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlines.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_series_axis_get_minor_gridlines(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlines.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_series_axis_get_minor_gridlines(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_series_axis_get_minor_gridlines(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlines.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_series_axis_get_minor_gridlines(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -7793,7 +10645,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/minorGridlines")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/minorGridlines"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7826,8 +10680,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitle.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_series_axis_get_title(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitle.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_series_axis_get_title(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_series_axis_get_title(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitle.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_series_axis_get_title(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -7836,7 +10707,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/title")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/title"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7867,8 +10740,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_series_axis_major_gridlines_delete_format(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_series_axis_major_gridlines_delete_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_series_axis_major_gridlines_delete_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_series_axis_major_gridlines_delete_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -7876,7 +10766,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/majorGridlines/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/majorGridlines/format"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7907,8 +10799,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_series_axis_major_gridlines_format_delete_line(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_series_axis_major_gridlines_format_delete_line(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_series_axis_major_gridlines_format_delete_line(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_series_axis_major_gridlines_format_delete_line(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -7916,7 +10825,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/majorGridlines/format/line")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/majorGridlines/format/line"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7949,8 +10860,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_series_axis_major_gridlines_format_get_line(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_series_axis_major_gridlines_format_get_line(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_series_axis_major_gridlines_format_get_line(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_series_axis_major_gridlines_format_get_line(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -7959,7 +10887,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/majorGridlines/format/line")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/majorGridlines/format/line"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7990,12 +10920,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_series_axis_major_gridlines_format_update_line(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_series_axis_major_gridlines_format_update_line(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_line_format, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_series_axis_major_gridlines_format_update_line(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_series_axis_major_gridlines_format_update_line(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_line_format,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/majorGridlines/format/line")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/majorGridlines/format/line"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_line_format)
       |> Enum.into([])
 
@@ -8028,8 +10979,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlinesFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_series_axis_major_gridlines_get_format(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlinesFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_series_axis_major_gridlines_get_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_series_axis_major_gridlines_get_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlinesFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_series_axis_major_gridlines_get_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -8038,7 +11006,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/majorGridlines/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/majorGridlines/format"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -8069,12 +11039,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlinesFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_series_axis_major_gridlines_update_format(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlinesFormat.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlinesFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_series_axis_major_gridlines_update_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_gridlines_format, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_series_axis_major_gridlines_update_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlinesFormat.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlinesFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_series_axis_major_gridlines_update_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_gridlines_format,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/majorGridlines/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/majorGridlines/format"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_gridlines_format)
       |> Enum.into([])
 
@@ -8105,8 +11096,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_series_axis_minor_gridlines_delete_format(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_series_axis_minor_gridlines_delete_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_series_axis_minor_gridlines_delete_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_series_axis_minor_gridlines_delete_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -8114,7 +11122,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/minorGridlines/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/minorGridlines/format"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -8145,8 +11155,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_series_axis_minor_gridlines_format_delete_line(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_series_axis_minor_gridlines_format_delete_line(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_series_axis_minor_gridlines_format_delete_line(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_series_axis_minor_gridlines_format_delete_line(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -8154,7 +11181,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/minorGridlines/format/line")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/minorGridlines/format/line"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -8187,8 +11216,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_series_axis_minor_gridlines_format_get_line(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_series_axis_minor_gridlines_format_get_line(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_series_axis_minor_gridlines_format_get_line(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_series_axis_minor_gridlines_format_get_line(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -8197,7 +11243,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/minorGridlines/format/line")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/minorGridlines/format/line"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -8228,12 +11276,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_series_axis_minor_gridlines_format_update_line(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_series_axis_minor_gridlines_format_update_line(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_line_format, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_series_axis_minor_gridlines_format_update_line(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_series_axis_minor_gridlines_format_update_line(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_line_format,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/minorGridlines/format/line")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/minorGridlines/format/line"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_line_format)
       |> Enum.into([])
 
@@ -8266,8 +11335,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlinesFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_series_axis_minor_gridlines_get_format(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlinesFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_series_axis_minor_gridlines_get_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_series_axis_minor_gridlines_get_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlinesFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_series_axis_minor_gridlines_get_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -8276,7 +11362,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/minorGridlines/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/minorGridlines/format"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -8307,12 +11395,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlinesFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_series_axis_minor_gridlines_update_format(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlinesFormat.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlinesFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_series_axis_minor_gridlines_update_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_gridlines_format, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_series_axis_minor_gridlines_update_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlinesFormat.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlinesFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_series_axis_minor_gridlines_update_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_gridlines_format,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/minorGridlines/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/minorGridlines/format"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_gridlines_format)
       |> Enum.into([])
 
@@ -8343,8 +11452,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_series_axis_title_delete_format(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_series_axis_title_delete_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_series_axis_title_delete_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_series_axis_title_delete_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -8352,7 +11478,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/title/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/title/format"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -8383,8 +11511,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_series_axis_title_format_delete_font(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_series_axis_title_format_delete_font(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_series_axis_title_format_delete_font(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_series_axis_title_format_delete_font(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -8392,7 +11537,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/title/format/font")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/title/format/font"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -8425,8 +11572,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_series_axis_title_format_get_font(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_series_axis_title_format_get_font(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_series_axis_title_format_get_font(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_series_axis_title_format_get_font(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -8435,7 +11599,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/title/format/font")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/title/format/font"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -8466,12 +11632,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_series_axis_title_format_update_font(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_series_axis_title_format_update_font(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_font, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_series_axis_title_format_update_font(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_series_axis_title_format_update_font(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_font,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/title/format/font")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/title/format/font"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_font)
       |> Enum.into([])
 
@@ -8504,8 +11691,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitleFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_series_axis_title_get_format(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitleFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_series_axis_title_get_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_series_axis_title_get_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitleFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_series_axis_title_get_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -8514,7 +11718,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/title/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/title/format"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -8545,12 +11751,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitleFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_series_axis_title_update_format(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitleFormat.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitleFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_series_axis_title_update_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_axis_title_format, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_series_axis_title_update_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitleFormat.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitleFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_series_axis_title_update_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_axis_title_format,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/title/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/title/format"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_axis_title_format)
       |> Enum.into([])
 
@@ -8581,12 +11808,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_series_axis_update_format(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisFormat.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_series_axis_update_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_axis_format, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_series_axis_update_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisFormat.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_series_axis_update_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_axis_format,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/format"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_axis_format)
       |> Enum.into([])
 
@@ -8617,12 +11865,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlines.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_series_axis_update_major_gridlines(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlines.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlines.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_series_axis_update_major_gridlines(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_gridlines, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_series_axis_update_major_gridlines(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlines.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlines.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_series_axis_update_major_gridlines(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_gridlines,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/majorGridlines")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/majorGridlines"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_gridlines)
       |> Enum.into([])
 
@@ -8654,12 +11923,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlines.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_series_axis_update_minor_gridlines(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlines.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlines.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_series_axis_update_minor_gridlines(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_gridlines, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_series_axis_update_minor_gridlines(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlines.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlines.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_series_axis_update_minor_gridlines(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_gridlines,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/minorGridlines")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/minorGridlines"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_gridlines)
       |> Enum.into([])
 
@@ -8691,12 +11981,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitle.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_series_axis_update_title(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitle.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitle.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_series_axis_update_title(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_axis_title, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_series_axis_update_title(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitle.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitle.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_series_axis_update_title(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_axis_title,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/title")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis/title"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_axis_title)
       |> Enum.into([])
 
@@ -8727,12 +12038,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxis.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_update_category_axis(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxis.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxis.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_update_category_axis(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_axis, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_update_category_axis(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxis.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxis.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_update_category_axis(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_axis,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/categoryAxis"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_axis)
       |> Enum.into([])
 
@@ -8763,12 +12095,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxis.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_update_series_axis(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxis.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxis.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_update_series_axis(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_axis, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_update_series_axis(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxis.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxis.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_update_series_axis(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_axis,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/seriesAxis"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_axis)
       |> Enum.into([])
 
@@ -8800,12 +12153,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxis.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_update_value_axis(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxis.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxis.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_update_value_axis(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_axis, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_update_value_axis(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxis.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxis.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_update_value_axis(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_axis,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_axis)
       |> Enum.into([])
 
@@ -8836,8 +12210,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_value_axis_delete_format(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_value_axis_delete_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_value_axis_delete_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_value_axis_delete_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -8845,7 +12236,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/format"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -8876,8 +12269,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_value_axis_delete_major_gridlines(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_value_axis_delete_major_gridlines(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_value_axis_delete_major_gridlines(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_value_axis_delete_major_gridlines(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -8885,7 +12295,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/majorGridlines")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/majorGridlines"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -8916,8 +12328,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_value_axis_delete_minor_gridlines(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_value_axis_delete_minor_gridlines(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_value_axis_delete_minor_gridlines(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_value_axis_delete_minor_gridlines(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -8925,7 +12354,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/minorGridlines")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/minorGridlines"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -8956,8 +12387,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_value_axis_delete_title(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_value_axis_delete_title(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_value_axis_delete_title(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_value_axis_delete_title(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -8965,7 +12413,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/title")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/title"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -8996,8 +12446,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_value_axis_format_delete_font(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_value_axis_format_delete_font(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_value_axis_format_delete_font(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_value_axis_format_delete_font(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -9005,7 +12472,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/format/font")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/format/font"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -9036,8 +12505,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_value_axis_format_delete_line(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_value_axis_format_delete_line(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_value_axis_format_delete_line(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_value_axis_format_delete_line(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -9045,7 +12531,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/format/line")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/format/line"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -9078,8 +12566,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_value_axis_format_get_font(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_value_axis_format_get_font(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_value_axis_format_get_font(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_value_axis_format_get_font(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -9088,7 +12593,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/format/font")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/format/font"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -9121,8 +12628,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_value_axis_format_get_line(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_value_axis_format_get_line(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_value_axis_format_get_line(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_value_axis_format_get_line(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -9131,7 +12655,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/format/line")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/format/line"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -9163,12 +12689,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_value_axis_format_update_font(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_value_axis_format_update_font(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_font, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_value_axis_format_update_font(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_value_axis_format_update_font(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_font,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/format/font")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/format/font"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_font)
       |> Enum.into([])
 
@@ -9200,12 +12747,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_value_axis_format_update_line(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_value_axis_format_update_line(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_line_format, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_value_axis_format_update_line(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_value_axis_format_update_line(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_line_format,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/format/line")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/format/line"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_line_format)
       |> Enum.into([])
 
@@ -9238,8 +12806,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_value_axis_get_format(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_value_axis_get_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_value_axis_get_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_value_axis_get_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -9248,7 +12833,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/format"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -9281,8 +12868,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlines.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_value_axis_get_major_gridlines(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlines.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_value_axis_get_major_gridlines(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_value_axis_get_major_gridlines(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlines.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_value_axis_get_major_gridlines(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -9291,7 +12895,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/majorGridlines")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/majorGridlines"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -9324,8 +12930,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlines.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_value_axis_get_minor_gridlines(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlines.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_value_axis_get_minor_gridlines(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_value_axis_get_minor_gridlines(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlines.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_value_axis_get_minor_gridlines(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -9334,7 +12957,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/minorGridlines")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/minorGridlines"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -9367,8 +12992,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitle.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_value_axis_get_title(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitle.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_value_axis_get_title(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_value_axis_get_title(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitle.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_value_axis_get_title(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -9377,7 +13019,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/title")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/title"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -9408,8 +13052,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_value_axis_major_gridlines_delete_format(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_value_axis_major_gridlines_delete_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_value_axis_major_gridlines_delete_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_value_axis_major_gridlines_delete_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -9417,7 +13078,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/majorGridlines/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/majorGridlines/format"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -9448,8 +13111,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_value_axis_major_gridlines_format_delete_line(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_value_axis_major_gridlines_format_delete_line(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_value_axis_major_gridlines_format_delete_line(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_value_axis_major_gridlines_format_delete_line(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -9457,7 +13137,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/majorGridlines/format/line")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/majorGridlines/format/line"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -9490,8 +13172,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_value_axis_major_gridlines_format_get_line(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_value_axis_major_gridlines_format_get_line(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_value_axis_major_gridlines_format_get_line(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_value_axis_major_gridlines_format_get_line(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -9500,7 +13199,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/majorGridlines/format/line")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/majorGridlines/format/line"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -9531,12 +13232,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_value_axis_major_gridlines_format_update_line(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_value_axis_major_gridlines_format_update_line(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_line_format, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_value_axis_major_gridlines_format_update_line(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_value_axis_major_gridlines_format_update_line(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_line_format,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/majorGridlines/format/line")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/majorGridlines/format/line"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_line_format)
       |> Enum.into([])
 
@@ -9569,8 +13291,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlinesFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_value_axis_major_gridlines_get_format(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlinesFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_value_axis_major_gridlines_get_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_value_axis_major_gridlines_get_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlinesFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_value_axis_major_gridlines_get_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -9579,7 +13318,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/majorGridlines/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/majorGridlines/format"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -9610,12 +13351,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlinesFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_value_axis_major_gridlines_update_format(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlinesFormat.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlinesFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_value_axis_major_gridlines_update_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_gridlines_format, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_value_axis_major_gridlines_update_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlinesFormat.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlinesFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_value_axis_major_gridlines_update_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_gridlines_format,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/majorGridlines/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/majorGridlines/format"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_gridlines_format)
       |> Enum.into([])
 
@@ -9646,8 +13408,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_value_axis_minor_gridlines_delete_format(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_value_axis_minor_gridlines_delete_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_value_axis_minor_gridlines_delete_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_value_axis_minor_gridlines_delete_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -9655,7 +13434,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/minorGridlines/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/minorGridlines/format"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -9686,8 +13467,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_value_axis_minor_gridlines_format_delete_line(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_value_axis_minor_gridlines_format_delete_line(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_value_axis_minor_gridlines_format_delete_line(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_value_axis_minor_gridlines_format_delete_line(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -9695,7 +13493,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/minorGridlines/format/line")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/minorGridlines/format/line"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -9728,8 +13528,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_value_axis_minor_gridlines_format_get_line(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_value_axis_minor_gridlines_format_get_line(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_value_axis_minor_gridlines_format_get_line(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_value_axis_minor_gridlines_format_get_line(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -9738,7 +13555,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/minorGridlines/format/line")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/minorGridlines/format/line"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -9769,12 +13588,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_value_axis_minor_gridlines_format_update_line(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_value_axis_minor_gridlines_format_update_line(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_line_format, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_value_axis_minor_gridlines_format_update_line(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_value_axis_minor_gridlines_format_update_line(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_line_format,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/minorGridlines/format/line")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/minorGridlines/format/line"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_line_format)
       |> Enum.into([])
 
@@ -9807,8 +13647,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlinesFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_value_axis_minor_gridlines_get_format(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlinesFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_value_axis_minor_gridlines_get_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_value_axis_minor_gridlines_get_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlinesFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_value_axis_minor_gridlines_get_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -9817,7 +13674,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/minorGridlines/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/minorGridlines/format"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -9848,12 +13707,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlinesFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_value_axis_minor_gridlines_update_format(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlinesFormat.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlinesFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_value_axis_minor_gridlines_update_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_gridlines_format, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_value_axis_minor_gridlines_update_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlinesFormat.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlinesFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_value_axis_minor_gridlines_update_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_gridlines_format,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/minorGridlines/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/minorGridlines/format"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_gridlines_format)
       |> Enum.into([])
 
@@ -9884,8 +13764,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_value_axis_title_delete_format(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_value_axis_title_delete_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_value_axis_title_delete_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_value_axis_title_delete_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -9893,7 +13790,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/title/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/title/format"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -9924,8 +13823,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_value_axis_title_format_delete_font(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_value_axis_title_format_delete_font(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_value_axis_title_format_delete_font(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_value_axis_title_format_delete_font(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -9933,7 +13849,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/title/format/font")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/title/format/font"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -9966,8 +13884,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_value_axis_title_format_get_font(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_value_axis_title_format_get_font(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_value_axis_title_format_get_font(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_value_axis_title_format_get_font(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -9976,7 +13911,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/title/format/font")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/title/format/font"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -10007,12 +13944,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_value_axis_title_format_update_font(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_value_axis_title_format_update_font(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_font, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_value_axis_title_format_update_font(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_value_axis_title_format_update_font(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_font,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/title/format/font")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/title/format/font"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_font)
       |> Enum.into([])
 
@@ -10045,8 +14003,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitleFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_value_axis_title_get_format(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitleFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_value_axis_title_get_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_value_axis_title_get_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitleFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_value_axis_title_get_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -10055,7 +14030,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/title/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/title/format"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -10086,12 +14063,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitleFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_value_axis_title_update_format(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitleFormat.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitleFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_value_axis_title_update_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_axis_title_format, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_value_axis_title_update_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitleFormat.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitleFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_value_axis_title_update_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_axis_title_format,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/title/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/title/format"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_axis_title_format)
       |> Enum.into([])
 
@@ -10122,12 +14120,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_value_axis_update_format(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisFormat.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_value_axis_update_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_axis_format, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_value_axis_update_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisFormat.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_value_axis_update_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_axis_format,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/format"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_axis_format)
       |> Enum.into([])
 
@@ -10158,12 +14177,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlines.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_value_axis_update_major_gridlines(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlines.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlines.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_value_axis_update_major_gridlines(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_gridlines, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_value_axis_update_major_gridlines(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlines.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlines.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_value_axis_update_major_gridlines(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_gridlines,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/majorGridlines")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/majorGridlines"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_gridlines)
       |> Enum.into([])
 
@@ -10195,12 +14235,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlines.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_value_axis_update_minor_gridlines(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlines.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlines.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_value_axis_update_minor_gridlines(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_gridlines, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_value_axis_update_minor_gridlines(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlines.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartGridlines.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_value_axis_update_minor_gridlines(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_gridlines,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/minorGridlines")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/minorGridlines"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_gridlines)
       |> Enum.into([])
 
@@ -10232,12 +14293,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitle.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_axes_value_axis_update_title(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitle.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitle.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_axes_value_axis_update_title(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_axis_title, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_axes_value_axis_update_title(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitle.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxisTitle.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_axes_value_axis_update_title(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_axis_title,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/title")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes/valueAxis/title"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_axis_title)
       |> Enum.into([])
 
@@ -10269,12 +14351,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartSeries.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_create_series(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartSeries.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartSeries.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_create_series(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_series, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_create_series(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartSeries.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartSeries.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_create_series(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_series,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_series)
       |> Enum.into([])
 
@@ -10305,8 +14408,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_data_labels_delete_format(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_data_labels_delete_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_data_labels_delete_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_data_labels_delete_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -10314,7 +14434,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/dataLabels/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/dataLabels/format"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -10345,8 +14467,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_data_labels_format_delete_fill(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_data_labels_format_delete_fill(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_data_labels_format_delete_fill(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_data_labels_format_delete_fill(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -10354,7 +14493,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/dataLabels/format/fill")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/dataLabels/format/fill"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -10385,8 +14526,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_data_labels_format_delete_font(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_data_labels_format_delete_font(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_data_labels_format_delete_font(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_data_labels_format_delete_font(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -10394,7 +14552,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/dataLabels/format/font")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/dataLabels/format/font"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -10427,8 +14587,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFill.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_data_labels_format_get_fill(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFill.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_data_labels_format_get_fill(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_data_labels_format_get_fill(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFill.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_data_labels_format_get_fill(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -10437,7 +14614,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/dataLabels/format/fill")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/dataLabels/format/fill"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -10470,8 +14649,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_data_labels_format_get_font(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_data_labels_format_get_font(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_data_labels_format_get_font(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_data_labels_format_get_font(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -10480,7 +14676,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/dataLabels/format/font")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/dataLabels/format/font"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -10511,12 +14709,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFill.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_data_labels_format_update_fill(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFill.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFill.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_data_labels_format_update_fill(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_fill, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_data_labels_format_update_fill(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFill.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFill.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_data_labels_format_update_fill(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_fill,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/dataLabels/format/fill")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/dataLabels/format/fill"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_fill)
       |> Enum.into([])
 
@@ -10547,12 +14766,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_data_labels_format_update_font(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_data_labels_format_update_font(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_font, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_data_labels_format_update_font(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_data_labels_format_update_font(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_font,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/dataLabels/format/font")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/dataLabels/format/font"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_font)
       |> Enum.into([])
 
@@ -10585,8 +14825,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartDataLabelFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_data_labels_get_format(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartDataLabelFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_data_labels_get_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_data_labels_get_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartDataLabelFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_data_labels_get_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -10595,7 +14852,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/dataLabels/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/dataLabels/format"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -10626,12 +14885,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartDataLabelFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_data_labels_update_format(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartDataLabelFormat.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartDataLabelFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_data_labels_update_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_data_label_format, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_data_labels_update_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartDataLabelFormat.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartDataLabelFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_data_labels_update_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_data_label_format,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/dataLabels/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/dataLabels/format"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_data_label_format)
       |> Enum.into([])
 
@@ -10662,8 +14942,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_delete_axes(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_delete_axes(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_delete_axes(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_delete_axes(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -10671,7 +14968,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -10702,8 +15001,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_delete_data_labels(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_delete_data_labels(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_delete_data_labels(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_delete_data_labels(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -10711,7 +15027,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/dataLabels")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/dataLabels"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -10742,8 +15060,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_delete_format(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_delete_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_delete_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_delete_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -10751,7 +15086,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/format"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -10782,8 +15119,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_delete_legend(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_delete_legend(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_delete_legend(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_delete_legend(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -10791,7 +15145,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/legend")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/legend"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -10823,8 +15179,27 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_delete_series(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_delete_series(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, workbook_chart_series_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_delete_series(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_delete_series(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        workbook_chart_series_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -10832,7 +15207,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series/#{workbook_chart_series_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series/#{workbook_chart_series_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -10863,8 +15240,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_delete_title(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_delete_title(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_delete_title(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_delete_title(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -10872,7 +15266,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/title")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/title"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -10903,8 +15299,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_format_delete_fill(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_format_delete_fill(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_format_delete_fill(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_format_delete_fill(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -10912,7 +15325,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/format/fill")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/format/fill"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -10943,8 +15358,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_format_delete_font(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_format_delete_font(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_format_delete_font(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_format_delete_font(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -10952,7 +15384,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/format/font")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/format/font"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -10985,8 +15419,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFill.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_format_get_fill(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFill.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_format_get_fill(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_format_get_fill(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFill.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_format_get_fill(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -10995,7 +15446,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/format/fill")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/format/fill"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -11028,8 +15481,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_format_get_font(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_format_get_font(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_format_get_font(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_format_get_font(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -11038,7 +15508,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/format/font")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/format/font"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -11069,12 +15541,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFill.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_format_update_fill(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFill.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFill.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_format_update_fill(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_fill, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_format_update_fill(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFill.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFill.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_format_update_fill(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_fill,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/format/fill")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/format/fill"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_fill)
       |> Enum.into([])
 
@@ -11105,12 +15598,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_format_update_font(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_format_update_font(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_font, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_format_update_font(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_format_update_font(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_font,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/format/font")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/format/font"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_font)
       |> Enum.into([])
 
@@ -11143,8 +15657,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxes.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_get_axes(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxes.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_get_axes(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_get_axes(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxes.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_get_axes(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -11153,7 +15684,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -11186,8 +15719,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartDataLabels.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_get_data_labels(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartDataLabels.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_get_data_labels(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_get_data_labels(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartDataLabels.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_get_data_labels(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -11196,7 +15746,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/dataLabels")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/dataLabels"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -11229,8 +15781,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAreaFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_get_format(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAreaFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_get_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_get_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAreaFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_get_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -11239,7 +15808,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/format"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -11272,8 +15843,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLegend.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_get_legend(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLegend.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_get_legend(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_get_legend(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLegend.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_get_legend(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -11282,7 +15870,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/legend")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/legend"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -11316,8 +15906,27 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartSeries.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_get_series(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartSeries.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_get_series(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, workbook_chart_series_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_get_series(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartSeries.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_get_series(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        workbook_chart_series_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -11326,7 +15935,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series/#{workbook_chart_series_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series/#{workbook_chart_series_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -11359,8 +15970,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartTitle.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_get_title(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartTitle.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_get_title(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_get_title(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartTitle.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_get_title(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -11369,7 +15997,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/title")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/title"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -11402,8 +16032,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookWorksheet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_get_worksheet(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookWorksheet.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_get_worksheet(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_get_worksheet(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookWorksheet.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_get_worksheet(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -11412,7 +16059,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/worksheet")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/worksheet"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -11443,8 +16092,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_legend_delete_format(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_legend_delete_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_legend_delete_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_legend_delete_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -11452,7 +16118,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/legend/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/legend/format"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -11483,8 +16151,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_legend_format_delete_fill(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_legend_format_delete_fill(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_legend_format_delete_fill(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_legend_format_delete_fill(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -11492,7 +16177,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/legend/format/fill")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/legend/format/fill"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -11523,8 +16210,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_legend_format_delete_font(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_legend_format_delete_font(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_legend_format_delete_font(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_legend_format_delete_font(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -11532,7 +16236,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/legend/format/font")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/legend/format/font"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -11565,8 +16271,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFill.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_legend_format_get_fill(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFill.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_legend_format_get_fill(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_legend_format_get_fill(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFill.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_legend_format_get_fill(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -11575,7 +16298,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/legend/format/fill")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/legend/format/fill"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -11608,8 +16333,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_legend_format_get_font(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_legend_format_get_font(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_legend_format_get_font(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_legend_format_get_font(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -11618,7 +16360,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/legend/format/font")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/legend/format/font"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -11649,12 +16393,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFill.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_legend_format_update_fill(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFill.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFill.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_legend_format_update_fill(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_fill, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_legend_format_update_fill(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFill.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFill.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_legend_format_update_fill(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_fill,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/legend/format/fill")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/legend/format/fill"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_fill)
       |> Enum.into([])
 
@@ -11685,12 +16450,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_legend_format_update_font(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_legend_format_update_font(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_font, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_legend_format_update_font(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_legend_format_update_font(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_font,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/legend/format/font")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/legend/format/font"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_font)
       |> Enum.into([])
 
@@ -11723,8 +16509,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLegendFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_legend_get_format(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLegendFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_legend_get_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_legend_get_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLegendFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_legend_get_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -11733,7 +16536,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/legend/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/legend/format"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -11764,12 +16569,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLegendFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_legend_update_format(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLegendFormat.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLegendFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_legend_update_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_legend_format, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_legend_update_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLegendFormat.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLegendFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_legend_update_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_legend_format,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/legend/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/legend/format"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_legend_format)
       |> Enum.into([])
 
@@ -11808,8 +16634,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartSeriesCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_list_series(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartSeriesCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_list_series(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_list_series(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartSeriesCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_list_series(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -11824,7 +16667,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -11857,12 +16702,35 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartPoint.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_series_create_points(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartPoint.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartPoint.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_series_create_points(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, workbook_chart_series_id, microsoft_graph_workbook_chart_point, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_series_create_points(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartPoint.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartPoint.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_series_create_points(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        workbook_chart_series_id,
+        microsoft_graph_workbook_chart_point,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series/#{workbook_chart_series_id}/points")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series/#{workbook_chart_series_id}/points"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_point)
       |> Enum.into([])
 
@@ -11894,8 +16762,27 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_series_delete_format(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_series_delete_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, workbook_chart_series_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_series_delete_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_series_delete_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        workbook_chart_series_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -11903,7 +16790,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series/#{workbook_chart_series_id}/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series/#{workbook_chart_series_id}/format"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -11936,8 +16825,29 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_series_delete_points(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_series_delete_points(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, workbook_chart_series_id, workbook_chart_point_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_series_delete_points(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_series_delete_points(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        workbook_chart_series_id,
+        workbook_chart_point_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -11945,7 +16855,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series/#{workbook_chart_series_id}/points/#{workbook_chart_point_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series/#{workbook_chart_series_id}/points/#{workbook_chart_point_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -11977,8 +16889,27 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_series_format_delete_fill(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_series_format_delete_fill(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, workbook_chart_series_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_series_format_delete_fill(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_series_format_delete_fill(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        workbook_chart_series_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -11986,7 +16917,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series/#{workbook_chart_series_id}/format/fill")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series/#{workbook_chart_series_id}/format/fill"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -12018,8 +16951,27 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_series_format_delete_line(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_series_format_delete_line(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, workbook_chart_series_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_series_format_delete_line(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_series_format_delete_line(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        workbook_chart_series_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -12027,7 +16979,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series/#{workbook_chart_series_id}/format/line")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series/#{workbook_chart_series_id}/format/line"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -12061,8 +17015,27 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFill.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_series_format_get_fill(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFill.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_series_format_get_fill(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, workbook_chart_series_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_series_format_get_fill(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFill.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_series_format_get_fill(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        workbook_chart_series_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -12071,7 +17044,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series/#{workbook_chart_series_id}/format/fill")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series/#{workbook_chart_series_id}/format/fill"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -12105,8 +17080,27 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_series_format_get_line(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_series_format_get_line(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, workbook_chart_series_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_series_format_get_line(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_series_format_get_line(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        workbook_chart_series_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -12115,7 +17109,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series/#{workbook_chart_series_id}/format/line")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series/#{workbook_chart_series_id}/format/line"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -12147,12 +17143,35 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFill.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_series_format_update_fill(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFill.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFill.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_series_format_update_fill(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, workbook_chart_series_id, microsoft_graph_workbook_chart_fill, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_series_format_update_fill(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFill.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFill.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_series_format_update_fill(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        workbook_chart_series_id,
+        microsoft_graph_workbook_chart_fill,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series/#{workbook_chart_series_id}/format/fill")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series/#{workbook_chart_series_id}/format/fill"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_fill)
       |> Enum.into([])
 
@@ -12184,12 +17203,35 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_series_format_update_line(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_series_format_update_line(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, workbook_chart_series_id, microsoft_graph_workbook_chart_line_format, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_series_format_update_line(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLineFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_series_format_update_line(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        workbook_chart_series_id,
+        microsoft_graph_workbook_chart_line_format,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series/#{workbook_chart_series_id}/format/line")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series/#{workbook_chart_series_id}/format/line"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_line_format)
       |> Enum.into([])
 
@@ -12223,8 +17265,27 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartSeriesFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_series_get_format(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartSeriesFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_series_get_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, workbook_chart_series_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_series_get_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartSeriesFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_series_get_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        workbook_chart_series_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -12233,7 +17294,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series/#{workbook_chart_series_id}/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series/#{workbook_chart_series_id}/format"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -12268,8 +17331,29 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartPoint.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_series_get_points(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartPoint.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_series_get_points(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, workbook_chart_series_id, workbook_chart_point_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_series_get_points(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartPoint.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_series_get_points(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        workbook_chart_series_id,
+        workbook_chart_point_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -12278,7 +17362,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series/#{workbook_chart_series_id}/points/#{workbook_chart_point_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series/#{workbook_chart_series_id}/points/#{workbook_chart_point_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -12318,8 +17404,27 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartPointCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_series_list_points(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartPointCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_series_list_points(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, workbook_chart_series_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_series_list_points(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartPointCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_series_list_points(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        workbook_chart_series_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -12334,7 +17439,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series/#{workbook_chart_series_id}/points")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series/#{workbook_chart_series_id}/points"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -12367,8 +17474,29 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_series_points_delete_format(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_series_points_delete_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, workbook_chart_series_id, workbook_chart_point_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_series_points_delete_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_series_points_delete_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        workbook_chart_series_id,
+        workbook_chart_point_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -12376,7 +17504,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series/#{workbook_chart_series_id}/points/#{workbook_chart_point_id}/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series/#{workbook_chart_series_id}/points/#{workbook_chart_point_id}/format"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -12409,8 +17539,29 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_series_points_format_delete_fill(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_series_points_format_delete_fill(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, workbook_chart_series_id, workbook_chart_point_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_series_points_format_delete_fill(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_series_points_format_delete_fill(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        workbook_chart_series_id,
+        workbook_chart_point_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -12418,7 +17569,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series/#{workbook_chart_series_id}/points/#{workbook_chart_point_id}/format/fill")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series/#{workbook_chart_series_id}/points/#{workbook_chart_point_id}/format/fill"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -12453,8 +17606,29 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFill.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_series_points_format_get_fill(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFill.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_series_points_format_get_fill(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, workbook_chart_series_id, workbook_chart_point_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_series_points_format_get_fill(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFill.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_series_points_format_get_fill(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        workbook_chart_series_id,
+        workbook_chart_point_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -12463,7 +17637,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series/#{workbook_chart_series_id}/points/#{workbook_chart_point_id}/format/fill")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series/#{workbook_chart_series_id}/points/#{workbook_chart_point_id}/format/fill"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -12496,12 +17672,37 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFill.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_series_points_format_update_fill(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFill.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFill.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_series_points_format_update_fill(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, workbook_chart_series_id, workbook_chart_point_id, microsoft_graph_workbook_chart_fill, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_series_points_format_update_fill(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFill.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFill.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_series_points_format_update_fill(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        workbook_chart_series_id,
+        workbook_chart_point_id,
+        microsoft_graph_workbook_chart_fill,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series/#{workbook_chart_series_id}/points/#{workbook_chart_point_id}/format/fill")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series/#{workbook_chart_series_id}/points/#{workbook_chart_point_id}/format/fill"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_fill)
       |> Enum.into([])
 
@@ -12536,8 +17737,29 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartPointFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_series_points_get_format(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartPointFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_series_points_get_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, workbook_chart_series_id, workbook_chart_point_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_series_points_get_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartPointFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_series_points_get_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        workbook_chart_series_id,
+        workbook_chart_point_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -12546,7 +17768,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series/#{workbook_chart_series_id}/points/#{workbook_chart_point_id}/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series/#{workbook_chart_series_id}/points/#{workbook_chart_point_id}/format"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -12579,12 +17803,37 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartPointFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_series_points_update_format(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartPointFormat.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartPointFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_series_points_update_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, workbook_chart_series_id, workbook_chart_point_id, microsoft_graph_workbook_chart_point_format, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_series_points_update_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartPointFormat.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartPointFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_series_points_update_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        workbook_chart_series_id,
+        workbook_chart_point_id,
+        microsoft_graph_workbook_chart_point_format,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series/#{workbook_chart_series_id}/points/#{workbook_chart_point_id}/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series/#{workbook_chart_series_id}/points/#{workbook_chart_point_id}/format"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_point_format)
       |> Enum.into([])
 
@@ -12616,12 +17865,35 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartSeriesFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_series_update_format(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartSeriesFormat.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartSeriesFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_series_update_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, workbook_chart_series_id, microsoft_graph_workbook_chart_series_format, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_series_update_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartSeriesFormat.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartSeriesFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_series_update_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        workbook_chart_series_id,
+        microsoft_graph_workbook_chart_series_format,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series/#{workbook_chart_series_id}/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series/#{workbook_chart_series_id}/format"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_series_format)
       |> Enum.into([])
 
@@ -12654,12 +17926,37 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartPoint.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_series_update_points(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartPoint.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartPoint.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_series_update_points(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, workbook_chart_series_id, workbook_chart_point_id, microsoft_graph_workbook_chart_point, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_series_update_points(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartPoint.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartPoint.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_series_update_points(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        workbook_chart_series_id,
+        workbook_chart_point_id,
+        microsoft_graph_workbook_chart_point,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series/#{workbook_chart_series_id}/points/#{workbook_chart_point_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series/#{workbook_chart_series_id}/points/#{workbook_chart_point_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_point)
       |> Enum.into([])
 
@@ -12690,8 +17987,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_title_delete_format(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_title_delete_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_title_delete_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_title_delete_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -12699,7 +18013,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/title/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/title/format"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -12730,8 +18046,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_title_format_delete_fill(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_title_format_delete_fill(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_title_format_delete_fill(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_title_format_delete_fill(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -12739,7 +18072,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/title/format/fill")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/title/format/fill"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -12770,8 +18105,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_title_format_delete_font(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_title_format_delete_font(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_title_format_delete_font(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_title_format_delete_font(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -12779,7 +18131,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/title/format/font")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/title/format/font"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -12812,8 +18166,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFill.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_title_format_get_fill(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFill.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_title_format_get_fill(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_title_format_get_fill(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFill.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_title_format_get_fill(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -12822,7 +18193,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/title/format/fill")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/title/format/fill"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -12855,8 +18228,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_title_format_get_font(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_title_format_get_font(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_title_format_get_font(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_title_format_get_font(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -12865,7 +18255,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/title/format/font")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/title/format/font"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -12896,12 +18288,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFill.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_title_format_update_fill(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFill.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFill.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_title_format_update_fill(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_fill, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_title_format_update_fill(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFill.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFill.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_title_format_update_fill(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_fill,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/title/format/fill")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/title/format/fill"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_fill)
       |> Enum.into([])
 
@@ -12932,12 +18345,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_title_format_update_font(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_title_format_update_font(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_font, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_title_format_update_font(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartFont.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_title_format_update_font(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_font,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/title/format/font")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/title/format/font"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_font)
       |> Enum.into([])
 
@@ -12970,8 +18404,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartTitleFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_title_get_format(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartTitleFormat.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_title_get_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_title_get_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartTitleFormat.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_title_get_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -12980,7 +18431,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/title/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/title/format"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -13011,12 +18464,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartTitleFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_title_update_format(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartTitleFormat.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartTitleFormat.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_title_update_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_title_format, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_title_update_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartTitleFormat.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartTitleFormat.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_title_update_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_title_format,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/title/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/title/format"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_title_format)
       |> Enum.into([])
 
@@ -13047,12 +18521,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxes.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_update_axes(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxes.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxes.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_update_axes(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_axes, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_update_axes(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxes.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxes.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_update_axes(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_axes,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/axes"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_axes)
       |> Enum.into([])
 
@@ -13084,12 +18579,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartDataLabels.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_update_data_labels(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartDataLabels.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartDataLabels.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_update_data_labels(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_data_labels, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_update_data_labels(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartDataLabels.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartDataLabels.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_update_data_labels(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_data_labels,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/dataLabels")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/dataLabels"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_data_labels)
       |> Enum.into([])
 
@@ -13120,12 +18636,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAreaFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_update_format(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAreaFormat.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAreaFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_update_format(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_area_format, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_update_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAreaFormat.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAreaFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_update_format(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_area_format,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/format")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/format"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_area_format)
       |> Enum.into([])
 
@@ -13157,12 +18694,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLegend.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_update_legend(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLegend.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLegend.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_update_legend(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_legend, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_update_legend(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLegend.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartLegend.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_update_legend(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_legend,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/legend")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/legend"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_legend)
       |> Enum.into([])
 
@@ -13195,12 +18753,35 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartSeries.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_update_series(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartSeries.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartSeries.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_update_series(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, workbook_chart_series_id, microsoft_graph_workbook_chart_series, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_update_series(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartSeries.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartSeries.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_update_series(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        workbook_chart_series_id,
+        microsoft_graph_workbook_chart_series,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series/#{workbook_chart_series_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/series/#{workbook_chart_series_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_series)
       |> Enum.into([])
 
@@ -13232,12 +18813,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartTitle.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_charts_update_title(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartTitle.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartTitle.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_charts_update_title(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart_title, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_charts_update_title(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChartTitle.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartTitle.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_charts_update_title(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart_title,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/title")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}/title"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart_title)
       |> Enum.into([])
 
@@ -13268,12 +18870,31 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChart.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_create_charts(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChart.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChart.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_create_charts(connection, drive_id, drive_item_id, workbook_worksheet_id, microsoft_graph_workbook_chart, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_create_charts(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChart.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChart.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_create_charts(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        microsoft_graph_workbook_chart,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart)
       |> Enum.into([])
 
@@ -13303,12 +18924,31 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookNamedItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_create_names(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookNamedItem.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookNamedItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_create_names(connection, drive_id, drive_item_id, workbook_worksheet_id, microsoft_graph_workbook_named_item, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_create_names(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookNamedItem.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookNamedItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_create_names(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        microsoft_graph_workbook_named_item,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/names")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/names"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_named_item)
       |> Enum.into([])
 
@@ -13338,12 +18978,31 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookPivotTable.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_create_pivot_tables(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookPivotTable.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookPivotTable.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_create_pivot_tables(connection, drive_id, drive_item_id, workbook_worksheet_id, microsoft_graph_workbook_pivot_table, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_create_pivot_tables(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookPivotTable.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookPivotTable.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_create_pivot_tables(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        microsoft_graph_workbook_pivot_table,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/pivotTables")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/pivotTables"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_pivot_table)
       |> Enum.into([])
 
@@ -13373,12 +19032,31 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTable.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_create_tables(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookTable.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTable.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_create_tables(connection, drive_id, drive_item_id, workbook_worksheet_id, microsoft_graph_workbook_table, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_create_tables(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookTable.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTable.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_create_tables(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        microsoft_graph_workbook_table,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/tables")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/tables"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_table)
       |> Enum.into([])
 
@@ -13410,8 +19088,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_delete_charts(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_delete_charts(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_delete_charts(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_delete_charts(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -13419,7 +19114,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -13450,8 +19147,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_delete_names(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_delete_names(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_named_item_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_delete_names(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_delete_names(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_named_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -13459,7 +19173,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/names/#{workbook_named_item_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/names/#{workbook_named_item_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -13490,8 +19206,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_delete_pivot_tables(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_delete_pivot_tables(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_pivot_table_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_delete_pivot_tables(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_delete_pivot_tables(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_pivot_table_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -13499,7 +19232,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/pivotTables/#{workbook_pivot_table_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/pivotTables/#{workbook_pivot_table_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -13529,8 +19264,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_delete_protection(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_delete_protection(connection, drive_id, drive_item_id, workbook_worksheet_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_delete_protection(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_delete_protection(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -13538,7 +19288,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/protection")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/protection"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -13569,8 +19321,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_delete_tables(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_delete_tables(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_table_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_delete_tables(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_delete_tables(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_table_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -13578,7 +19347,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/tables/#{workbook_table_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/tables/#{workbook_table_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -13611,8 +19382,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChart.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_get_charts(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChart.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_get_charts(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_get_charts(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChart.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_get_charts(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -13621,7 +19409,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -13651,8 +19441,21 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_get_count98c0(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_get_count98c0(connection, drive_id, drive_item_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_get_count98c0(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_get_count98c0(
+        connection,
+        drive_id,
+        drive_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -13694,8 +19497,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookNamedItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_get_names(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookNamedItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_get_names(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_named_item_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_get_names(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookNamedItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_get_names(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_named_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -13704,7 +19524,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/names/#{workbook_named_item_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/names/#{workbook_named_item_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -13737,8 +19559,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookPivotTable.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_get_pivot_tables(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookPivotTable.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_get_pivot_tables(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_pivot_table_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_get_pivot_tables(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookPivotTable.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_get_pivot_tables(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_pivot_table_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -13747,7 +19586,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/pivotTables/#{workbook_pivot_table_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/pivotTables/#{workbook_pivot_table_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -13779,8 +19620,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookWorksheetProtection.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_get_protection(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookWorksheetProtection.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_get_protection(connection, drive_id, drive_item_id, workbook_worksheet_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_get_protection(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookWorksheetProtection.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_get_protection(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -13789,7 +19645,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/protection")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/protection"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -13822,8 +19680,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTable.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_get_tables(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTable.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_get_tables(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_table_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_get_tables(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTable.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_get_tables(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_table_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -13832,7 +19707,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/tables/#{workbook_table_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/tables/#{workbook_table_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -13870,8 +19747,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_list_charts(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_list_charts(connection, drive_id, drive_item_id, workbook_worksheet_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_list_charts(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_list_charts(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -13886,7 +19778,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -13924,8 +19818,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookNamedItemCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_list_names(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookNamedItemCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_list_names(connection, drive_id, drive_item_id, workbook_worksheet_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_list_names(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookNamedItemCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_list_names(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -13940,7 +19849,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/names")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/names"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -13978,8 +19889,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookPivotTableCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_list_pivot_tables(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookPivotTableCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_list_pivot_tables(connection, drive_id, drive_item_id, workbook_worksheet_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_list_pivot_tables(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookPivotTableCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_list_pivot_tables(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -13994,7 +19920,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/pivotTables")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/pivotTables"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -14032,8 +19960,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_list_tables(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_list_tables(connection, drive_id, drive_item_id, workbook_worksheet_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_list_tables(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_list_tables(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -14048,7 +19991,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/tables")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/tables"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -14079,8 +20024,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_names_get_count_b666(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_names_get_count_b666(connection, drive_id, drive_item_id, workbook_worksheet_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_names_get_count_b666(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_names_get_count_b666(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -14089,7 +20049,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/names/$count")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/names/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -14122,8 +20084,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookWorksheet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_names_get_worksheet(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookWorksheet.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_names_get_worksheet(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_named_item_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_names_get_worksheet(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookWorksheet.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_names_get_worksheet(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_named_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -14132,7 +20111,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/names/#{workbook_named_item_id}/worksheet")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/names/#{workbook_named_item_id}/worksheet"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -14163,8 +20144,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_pivot_tables_get_count_d7ec(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_pivot_tables_get_count_d7ec(connection, drive_id, drive_item_id, workbook_worksheet_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_pivot_tables_get_count_d7ec(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_pivot_tables_get_count_d7ec(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -14173,7 +20169,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/pivotTables/$count")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/pivotTables/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -14206,8 +20204,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookWorksheet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_pivot_tables_get_worksheet(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookWorksheet.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_pivot_tables_get_worksheet(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_pivot_table_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_pivot_tables_get_worksheet(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookWorksheet.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_pivot_tables_get_worksheet(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_pivot_table_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -14216,7 +20231,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/pivotTables/#{workbook_pivot_table_id}/worksheet")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/pivotTables/#{workbook_pivot_table_id}/worksheet"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -14248,8 +20265,27 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_tables_columns_delete_filter(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_tables_columns_delete_filter(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_table_id, workbook_table_column_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_tables_columns_delete_filter(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_tables_columns_delete_filter(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_table_id,
+        workbook_table_column_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -14257,7 +20293,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/tables/#{workbook_table_id}/columns/#{workbook_table_column_id}/filter")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/tables/#{workbook_table_id}/columns/#{workbook_table_column_id}/filter"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -14291,8 +20329,27 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookFilter.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_tables_columns_get_filter(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookFilter.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_tables_columns_get_filter(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_table_id, workbook_table_column_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_tables_columns_get_filter(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookFilter.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_tables_columns_get_filter(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_table_id,
+        workbook_table_column_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -14301,7 +20358,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/tables/#{workbook_table_id}/columns/#{workbook_table_column_id}/filter")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/tables/#{workbook_table_id}/columns/#{workbook_table_column_id}/filter"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -14333,12 +20392,35 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookFilter.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_tables_columns_update_filter(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookFilter.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookFilter.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_tables_columns_update_filter(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_table_id, workbook_table_column_id, microsoft_graph_workbook_filter, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_tables_columns_update_filter(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookFilter.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookFilter.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_tables_columns_update_filter(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_table_id,
+        workbook_table_column_id,
+        microsoft_graph_workbook_filter,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/tables/#{workbook_table_id}/columns/#{workbook_table_column_id}/filter")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/tables/#{workbook_table_id}/columns/#{workbook_table_column_id}/filter"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_filter)
       |> Enum.into([])
 
@@ -14370,12 +20452,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableColumn.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_tables_create_columns(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableColumn.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableColumn.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_tables_create_columns(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_table_id, microsoft_graph_workbook_table_column, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_tables_create_columns(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookTableColumn.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableColumn.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_tables_create_columns(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_table_id,
+        microsoft_graph_workbook_table_column,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/tables/#{workbook_table_id}/columns")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/tables/#{workbook_table_id}/columns"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_table_column)
       |> Enum.into([])
 
@@ -14407,12 +20510,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableRow.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_tables_create_rows(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableRow.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableRow.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_tables_create_rows(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_table_id, microsoft_graph_workbook_table_row, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_tables_create_rows(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookTableRow.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableRow.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_tables_create_rows(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_table_id,
+        microsoft_graph_workbook_table_row,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/tables/#{workbook_table_id}/rows")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/tables/#{workbook_table_id}/rows"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_table_row)
       |> Enum.into([])
 
@@ -14445,8 +20569,27 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_tables_delete_columns(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_tables_delete_columns(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_table_id, workbook_table_column_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_tables_delete_columns(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_tables_delete_columns(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_table_id,
+        workbook_table_column_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -14454,7 +20597,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/tables/#{workbook_table_id}/columns/#{workbook_table_column_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/tables/#{workbook_table_id}/columns/#{workbook_table_column_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -14487,8 +20632,27 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_tables_delete_rows(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_tables_delete_rows(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_table_id, workbook_table_row_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_tables_delete_rows(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_tables_delete_rows(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_table_id,
+        workbook_table_row_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -14496,7 +20660,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/tables/#{workbook_table_id}/rows/#{workbook_table_row_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/tables/#{workbook_table_id}/rows/#{workbook_table_row_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -14527,8 +20693,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_tables_delete_sort(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_tables_delete_sort(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_table_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_tables_delete_sort(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_tables_delete_sort(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_table_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -14536,7 +20719,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:delete)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/tables/#{workbook_table_id}/sort")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/tables/#{workbook_table_id}/sort"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -14570,8 +20755,27 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableColumn.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_tables_get_columns(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableColumn.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_tables_get_columns(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_table_id, workbook_table_column_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_tables_get_columns(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableColumn.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_tables_get_columns(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_table_id,
+        workbook_table_column_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -14580,7 +20784,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/tables/#{workbook_table_id}/columns/#{workbook_table_column_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/tables/#{workbook_table_id}/columns/#{workbook_table_column_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -14614,8 +20820,27 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableRow.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_tables_get_rows(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableRow.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_tables_get_rows(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_table_id, workbook_table_row_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_tables_get_rows(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableRow.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_tables_get_rows(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_table_id,
+        workbook_table_row_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -14624,7 +20849,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/tables/#{workbook_table_id}/rows/#{workbook_table_row_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/tables/#{workbook_table_id}/rows/#{workbook_table_row_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -14657,8 +20884,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableSort.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_tables_get_sort(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableSort.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_tables_get_sort(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_table_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_tables_get_sort(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableSort.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_tables_get_sort(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_table_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -14667,7 +20911,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/tables/#{workbook_table_id}/sort")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/tables/#{workbook_table_id}/sort"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -14700,8 +20946,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookWorksheet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_tables_get_worksheet(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookWorksheet.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_tables_get_worksheet(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_table_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_tables_get_worksheet(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookWorksheet.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_tables_get_worksheet(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_table_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -14710,7 +20973,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/tables/#{workbook_table_id}/worksheet")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/tables/#{workbook_table_id}/worksheet"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -14749,8 +21014,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableColumnCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_tables_list_columns(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableColumnCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_tables_list_columns(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_table_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_tables_list_columns(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableColumnCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_tables_list_columns(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_table_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -14765,7 +21047,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/tables/#{workbook_table_id}/columns")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/tables/#{workbook_table_id}/columns"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -14804,8 +21088,25 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableRowCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_tables_list_rows(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableRowCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_tables_list_rows(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_table_id, opts \\ []) do
+  @spec drives_items_workbook_worksheets_tables_list_rows(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableRowCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_tables_list_rows(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_table_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -14820,7 +21121,9 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
     request =
       %{}
       |> method(:get)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/tables/#{workbook_table_id}/rows")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/tables/#{workbook_table_id}/rows"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -14853,12 +21156,35 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableColumn.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_tables_update_columns(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableColumn.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableColumn.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_tables_update_columns(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_table_id, workbook_table_column_id, microsoft_graph_workbook_table_column, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_tables_update_columns(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookTableColumn.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableColumn.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_tables_update_columns(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_table_id,
+        workbook_table_column_id,
+        microsoft_graph_workbook_table_column,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/tables/#{workbook_table_id}/columns/#{workbook_table_column_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/tables/#{workbook_table_id}/columns/#{workbook_table_column_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_table_column)
       |> Enum.into([])
 
@@ -14891,12 +21217,35 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableRow.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_tables_update_rows(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableRow.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableRow.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_tables_update_rows(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_table_id, workbook_table_row_id, microsoft_graph_workbook_table_row, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_tables_update_rows(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookTableRow.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableRow.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_tables_update_rows(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_table_id,
+        workbook_table_row_id,
+        microsoft_graph_workbook_table_row,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/tables/#{workbook_table_id}/rows/#{workbook_table_row_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/tables/#{workbook_table_id}/rows/#{workbook_table_row_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_table_row)
       |> Enum.into([])
 
@@ -14927,12 +21276,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableSort.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_tables_update_sort(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableSort.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableSort.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_tables_update_sort(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_table_id, microsoft_graph_workbook_table_sort, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_tables_update_sort(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookTableSort.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTableSort.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_tables_update_sort(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_table_id,
+        microsoft_graph_workbook_table_sort,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/tables/#{workbook_table_id}/sort")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/tables/#{workbook_table_id}/sort"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_table_sort)
       |> Enum.into([])
 
@@ -14964,12 +21334,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChart.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_update_charts(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookChart.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChart.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_update_charts(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_chart_id, microsoft_graph_workbook_chart, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_update_charts(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookChart.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookChart.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_update_charts(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_chart_id,
+        microsoft_graph_workbook_chart,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/charts/#{workbook_chart_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_chart)
       |> Enum.into([])
 
@@ -15000,12 +21391,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookNamedItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_update_names(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookNamedItem.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookNamedItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_update_names(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_named_item_id, microsoft_graph_workbook_named_item, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_update_names(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookNamedItem.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookNamedItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_update_names(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_named_item_id,
+        microsoft_graph_workbook_named_item,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/names/#{workbook_named_item_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/names/#{workbook_named_item_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_named_item)
       |> Enum.into([])
 
@@ -15036,12 +21448,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookPivotTable.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_update_pivot_tables(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookPivotTable.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookPivotTable.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_update_pivot_tables(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_pivot_table_id, microsoft_graph_workbook_pivot_table, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_update_pivot_tables(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookPivotTable.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookPivotTable.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_update_pivot_tables(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_pivot_table_id,
+        microsoft_graph_workbook_pivot_table,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/pivotTables/#{workbook_pivot_table_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/pivotTables/#{workbook_pivot_table_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_pivot_table)
       |> Enum.into([])
 
@@ -15071,12 +21504,31 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookWorksheetProtection.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_update_protection(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookWorksheetProtection.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookWorksheetProtection.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_update_protection(connection, drive_id, drive_item_id, workbook_worksheet_id, microsoft_graph_workbook_worksheet_protection, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_update_protection(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookWorksheetProtection.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookWorksheetProtection.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_update_protection(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        microsoft_graph_workbook_worksheet_protection,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/protection")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/protection"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_worksheet_protection)
       |> Enum.into([])
 
@@ -15107,12 +21559,33 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTable.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_items_workbook_worksheets_update_tables(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkbookTable.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTable.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_items_workbook_worksheets_update_tables(connection, drive_id, drive_item_id, workbook_worksheet_id, workbook_table_id, microsoft_graph_workbook_table, _opts \\ []) do
+  @spec drives_items_workbook_worksheets_update_tables(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkbookTable.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkbookTable.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_items_workbook_worksheets_update_tables(
+        connection,
+        drive_id,
+        drive_item_id,
+        workbook_worksheet_id,
+        workbook_table_id,
+        microsoft_graph_workbook_table,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/tables/#{workbook_table_id}")
+      |> url(
+        "/drives/#{drive_id}/items/#{drive_item_id}/workbook/worksheets/#{workbook_worksheet_id}/tables/#{workbook_table_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_workbook_table)
       |> Enum.into([])
 
@@ -15148,7 +21621,10 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItemCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_bundles(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItemCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_list_bundles(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItemCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_list_bundles(connection, drive_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -15200,7 +21676,10 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItemCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_following(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItemCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_list_following(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItemCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_list_following(connection, drive_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -15252,7 +21731,10 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItemCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_items(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItemCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_list_items(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItemCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_list_items(connection, drive_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -15304,7 +21786,10 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItemCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_list_special(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItemCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_list_special(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItemCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_list_special(connection, drive_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -15349,7 +21834,10 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_special_get_count6a2e(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_special_get_count6a2e(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_special_get_count6a2e(connection, drive_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -15389,7 +21877,16 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_update_bundles_content(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_update_bundles_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_update_bundles_content(connection, drive_id, drive_item_id, body, _opts \\ []) do
     request =
       %{}
@@ -15424,7 +21921,16 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_update_following_content(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_update_following_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_update_following_content(connection, drive_id, drive_item_id, body, _opts \\ []) do
     request =
       %{}
@@ -15459,8 +21965,23 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_update_items(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def drives_update_items(connection, drive_id, drive_item_id, microsoft_graph_drive_item, _opts \\ []) do
+  @spec drives_update_items(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDriveItem.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def drives_update_items(
+        connection,
+        drive_id,
+        drive_item_id,
+        microsoft_graph_drive_item,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -15494,7 +22015,16 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_update_items_content(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_update_items_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_update_items_content(connection, drive_id, drive_item_id, body, _opts \\ []) do
     request =
       %{}
@@ -15528,7 +22058,10 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_update_root_content(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_update_root_content(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_update_root_content(connection, drive_id, body, _opts \\ []) do
     request =
       %{}
@@ -15563,7 +22096,16 @@ defmodule MicrosoftGraph.Api.DrivesDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_update_special_content(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_update_special_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_update_special_content(connection, drive_id, drive_item_id, body, _opts \\ []) do
     request =
       %{}

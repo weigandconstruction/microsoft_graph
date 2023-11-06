@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphBaseEndUserNotificationEndUserNotification do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -24,33 +24,48 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphBaseEndUserNotificationEndUserNotif
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :createdBy => MicrosoftGraph.Model.EndUserNotificationCreatedBy.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :description => String.t | nil,
-    :details => [MicrosoftGraph.Model.MicrosoftGraphEndUserNotificationDetail.t] | nil,
-    :displayName => String.t | nil,
-    :lastModifiedBy => MicrosoftGraph.Model.EndUserNotificationLastModifiedBy.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :notificationType => MicrosoftGraph.Model.EndUserNotificationNotificationType.t | nil,
-    :source => MicrosoftGraph.Model.EndUserNotificationSource.t | nil,
-    :status => MicrosoftGraph.Model.EndUserNotificationStatus.t | nil,
-    :supportedLocales => [String.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :createdBy => MicrosoftGraph.Model.EndUserNotificationCreatedBy.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :details => [MicrosoftGraph.Model.MicrosoftGraphEndUserNotificationDetail.t()] | nil,
+          :displayName => String.t() | nil,
+          :lastModifiedBy => MicrosoftGraph.Model.EndUserNotificationLastModifiedBy.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :notificationType => MicrosoftGraph.Model.EndUserNotificationNotificationType.t() | nil,
+          :source => MicrosoftGraph.Model.EndUserNotificationSource.t() | nil,
+          :status => MicrosoftGraph.Model.EndUserNotificationStatus.t() | nil,
+          :supportedLocales => [String.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.EndUserNotificationCreatedBy)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:details, :list, MicrosoftGraph.Model.MicrosoftGraphEndUserNotificationDetail)
-     |> Deserializer.deserialize(:lastModifiedBy, :struct, MicrosoftGraph.Model.EndUserNotificationLastModifiedBy)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:notificationType, :struct, MicrosoftGraph.Model.EndUserNotificationNotificationType)
-     |> Deserializer.deserialize(:source, :struct, MicrosoftGraph.Model.EndUserNotificationSource)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.EndUserNotificationStatus)
+    |> Deserializer.deserialize(
+      :createdBy,
+      :struct,
+      MicrosoftGraph.Model.EndUserNotificationCreatedBy
+    )
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :details,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphEndUserNotificationDetail
+    )
+    |> Deserializer.deserialize(
+      :lastModifiedBy,
+      :struct,
+      MicrosoftGraph.Model.EndUserNotificationLastModifiedBy
+    )
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :notificationType,
+      :struct,
+      MicrosoftGraph.Model.EndUserNotificationNotificationType
+    )
+    |> Deserializer.deserialize(:source, :struct, MicrosoftGraph.Model.EndUserNotificationSource)
+    |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.EndUserNotificationStatus)
   end
 end
-

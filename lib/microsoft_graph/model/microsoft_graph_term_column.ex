@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphTermColumn do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,19 +16,26 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphTermColumn do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :allowMultipleValues => boolean() | nil,
-    :parentTerm => MicrosoftGraph.Model.MicrosoftGraphTermColumnParentTerm.t | nil,
-    :showFullyQualifiedName => boolean() | nil,
-    :termSet => MicrosoftGraph.Model.MicrosoftGraphTermColumnTermSet.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :allowMultipleValues => boolean() | nil,
+          :parentTerm => MicrosoftGraph.Model.MicrosoftGraphTermColumnParentTerm.t() | nil,
+          :showFullyQualifiedName => boolean() | nil,
+          :termSet => MicrosoftGraph.Model.MicrosoftGraphTermColumnTermSet.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:parentTerm, :struct, MicrosoftGraph.Model.MicrosoftGraphTermColumnParentTerm)
-     |> Deserializer.deserialize(:termSet, :struct, MicrosoftGraph.Model.MicrosoftGraphTermColumnTermSet)
+    |> Deserializer.deserialize(
+      :parentTerm,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphTermColumnParentTerm
+    )
+    |> Deserializer.deserialize(
+      :termSet,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphTermColumnTermSet
+    )
   end
 end
-

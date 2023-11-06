@@ -16,20 +16,23 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphDeviceActionResult do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :actionName => String.t | nil,
-    :actionState => MicrosoftGraph.Model.MicrosoftGraphActionState.t | nil,
-    :lastUpdatedDateTime => DateTime.t | nil,
-    :startDateTime => DateTime.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :actionName => String.t() | nil,
+          :actionState => MicrosoftGraph.Model.MicrosoftGraphActionState.t() | nil,
+          :lastUpdatedDateTime => DateTime.t() | nil,
+          :startDateTime => DateTime.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:actionState, :struct, MicrosoftGraph.Model.MicrosoftGraphActionState)
-     |> Deserializer.deserialize(:lastUpdatedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:startDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :actionState,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphActionState
+    )
+    |> Deserializer.deserialize(:lastUpdatedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:startDateTime, :datetime, nil)
   end
 end
-

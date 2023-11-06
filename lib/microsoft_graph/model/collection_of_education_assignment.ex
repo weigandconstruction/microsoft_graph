@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.CollectionOfEducationAssignment do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,23 @@ defmodule MicrosoftGraph.Model.CollectionOfEducationAssignment do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.deltaLink" => String.t | nil,
-    :"@odata.nextLink" => String.t | nil,
-    :value => [MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse.t] | nil
-  }
+          :"@odata.deltaLink" => String.t() | nil,
+          :"@odata.nextLink" => String.t() | nil,
+          :value =>
+            [
+              MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse.t()
+            ]
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:value, :list, MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse)
+    |> Deserializer.deserialize(
+      :value,
+      :list,
+      MicrosoftGraph.Model.EducationClassesEducationClassAssignmentsEducationAssignmentSetUpFeedbackResourcesFolder2XxResponse
+    )
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphConversationMemberRoleUpdatedEventMessageDetail do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,18 +15,27 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphConversationMemberRoleUpdatedEventM
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :conversationMemberRoles => [String.t] | nil,
-    :conversationMemberUser => MicrosoftGraph.Model.ConversationMemberRoleUpdatedEventMessageDetailConversationMemberUser.t | nil,
-    :initiator => MicrosoftGraph.Model.ChannelRenamedEventMessageDetailInitiator.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :conversationMemberRoles => [String.t()] | nil,
+          :conversationMemberUser =>
+            MicrosoftGraph.Model.ConversationMemberRoleUpdatedEventMessageDetailConversationMemberUser.t()
+            | nil,
+          :initiator => MicrosoftGraph.Model.ChannelRenamedEventMessageDetailInitiator.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:conversationMemberUser, :struct, MicrosoftGraph.Model.ConversationMemberRoleUpdatedEventMessageDetailConversationMemberUser)
-     |> Deserializer.deserialize(:initiator, :struct, MicrosoftGraph.Model.ChannelRenamedEventMessageDetailInitiator)
+    |> Deserializer.deserialize(
+      :conversationMemberUser,
+      :struct,
+      MicrosoftGraph.Model.ConversationMemberRoleUpdatedEventMessageDetailConversationMemberUser
+    )
+    |> Deserializer.deserialize(
+      :initiator,
+      :struct,
+      MicrosoftGraph.Model.ChannelRenamedEventMessageDetailInitiator
+    )
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphDeviceCompliancePolicySettingStateSourcesInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,17 +15,20 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphDeviceCompliancePolicySettingStateS
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :displayName => String.t | nil,
-    :id => String.t | nil,
-    :sourceType => MicrosoftGraph.Model.MicrosoftGraphSettingSourceType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :displayName => String.t() | nil,
+          :id => String.t() | nil,
+          :sourceType => MicrosoftGraph.Model.MicrosoftGraphSettingSourceType.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:sourceType, :struct, MicrosoftGraph.Model.MicrosoftGraphSettingSourceType)
+    |> Deserializer.deserialize(
+      :sourceType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSettingSourceType
+    )
   end
 end
-

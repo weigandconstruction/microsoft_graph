@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphPlannerAssignment do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,18 +15,21 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphPlannerAssignment do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :assignedBy => MicrosoftGraph.Model.MicrosoftGraphPlannerAssignmentAssignedBy.t | nil,
-    :assignedDateTime => DateTime.t | nil,
-    :orderHint => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :assignedBy => MicrosoftGraph.Model.MicrosoftGraphPlannerAssignmentAssignedBy.t() | nil,
+          :assignedDateTime => DateTime.t() | nil,
+          :orderHint => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:assignedBy, :struct, MicrosoftGraph.Model.MicrosoftGraphPlannerAssignmentAssignedBy)
-     |> Deserializer.deserialize(:assignedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :assignedBy,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphPlannerAssignmentAssignedBy
+    )
+    |> Deserializer.deserialize(:assignedDateTime, :datetime, nil)
   end
 end
-

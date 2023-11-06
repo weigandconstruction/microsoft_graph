@@ -24,7 +24,10 @@ defmodule MicrosoftGraph.Api.PrivacyPrivacy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrivacy.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec privacy_privacy_get_privacy(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivacy.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec privacy_privacy_get_privacy(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivacy.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def privacy_privacy_get_privacy(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -61,7 +64,14 @@ defmodule MicrosoftGraph.Api.PrivacyPrivacy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrivacy.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec privacy_privacy_update_privacy(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphPrivacy.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivacy.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec privacy_privacy_update_privacy(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphPrivacy.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPrivacy.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def privacy_privacy_update_privacy(connection, microsoft_graph_privacy, _opts \\ []) do
     request =
       %{}

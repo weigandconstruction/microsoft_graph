@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.TeamGuestSettings do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :allowCreateUpdateChannels => boolean() | nil,
-    :allowDeleteChannels => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :allowCreateUpdateChannels => boolean() | nil,
+          :allowDeleteChannels => boolean() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.SharepointSettings do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -42,47 +42,66 @@ defmodule MicrosoftGraph.Model.SharepointSettings do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :allowedDomainGuidsForSyncApp => [String.t] | nil,
-    :availableManagedPathsForSiteCreation => [String.t] | nil,
-    :deletedUserPersonalSiteRetentionPeriodInDays => integer() | nil,
-    :excludedFileExtensionsForSyncApp => [String.t] | nil,
-    :idleSessionSignOut => MicrosoftGraph.Model.SharepointSettingsIdleSessionSignOut.t | nil,
-    :imageTaggingOption => MicrosoftGraph.Model.SharepointSettingsImageTaggingOption.t | nil,
-    :isCommentingOnSitePagesEnabled => boolean() | nil,
-    :isFileActivityNotificationEnabled => boolean() | nil,
-    :isLegacyAuthProtocolsEnabled => boolean() | nil,
-    :isLoopEnabled => boolean() | nil,
-    :isMacSyncAppEnabled => boolean() | nil,
-    :isRequireAcceptingUserToMatchInvitedUserEnabled => boolean() | nil,
-    :isResharingByExternalUsersEnabled => boolean() | nil,
-    :isSharePointMobileNotificationEnabled => boolean() | nil,
-    :isSharePointNewsfeedEnabled => boolean() | nil,
-    :isSiteCreationEnabled => boolean() | nil,
-    :isSiteCreationUIEnabled => boolean() | nil,
-    :isSitePagesCreationEnabled => boolean() | nil,
-    :isSitesStorageLimitAutomatic => boolean() | nil,
-    :isSyncButtonHiddenOnPersonalSite => boolean() | nil,
-    :isUnmanagedSyncAppForTenantRestricted => boolean() | nil,
-    :personalSiteDefaultStorageLimitInMB => integer() | nil,
-    :sharingAllowedDomainList => [String.t] | nil,
-    :sharingBlockedDomainList => [String.t] | nil,
-    :sharingCapability => MicrosoftGraph.Model.SharepointSettingsSharingCapability.t | nil,
-    :sharingDomainRestrictionMode => MicrosoftGraph.Model.SharepointSettingsSharingDomainRestrictionMode.t | nil,
-    :siteCreationDefaultManagedPath => String.t | nil,
-    :siteCreationDefaultStorageLimitInMB => integer() | nil,
-    :tenantDefaultTimezone => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :allowedDomainGuidsForSyncApp => [String.t()] | nil,
+          :availableManagedPathsForSiteCreation => [String.t()] | nil,
+          :deletedUserPersonalSiteRetentionPeriodInDays => integer() | nil,
+          :excludedFileExtensionsForSyncApp => [String.t()] | nil,
+          :idleSessionSignOut =>
+            MicrosoftGraph.Model.SharepointSettingsIdleSessionSignOut.t() | nil,
+          :imageTaggingOption =>
+            MicrosoftGraph.Model.SharepointSettingsImageTaggingOption.t() | nil,
+          :isCommentingOnSitePagesEnabled => boolean() | nil,
+          :isFileActivityNotificationEnabled => boolean() | nil,
+          :isLegacyAuthProtocolsEnabled => boolean() | nil,
+          :isLoopEnabled => boolean() | nil,
+          :isMacSyncAppEnabled => boolean() | nil,
+          :isRequireAcceptingUserToMatchInvitedUserEnabled => boolean() | nil,
+          :isResharingByExternalUsersEnabled => boolean() | nil,
+          :isSharePointMobileNotificationEnabled => boolean() | nil,
+          :isSharePointNewsfeedEnabled => boolean() | nil,
+          :isSiteCreationEnabled => boolean() | nil,
+          :isSiteCreationUIEnabled => boolean() | nil,
+          :isSitePagesCreationEnabled => boolean() | nil,
+          :isSitesStorageLimitAutomatic => boolean() | nil,
+          :isSyncButtonHiddenOnPersonalSite => boolean() | nil,
+          :isUnmanagedSyncAppForTenantRestricted => boolean() | nil,
+          :personalSiteDefaultStorageLimitInMB => integer() | nil,
+          :sharingAllowedDomainList => [String.t()] | nil,
+          :sharingBlockedDomainList => [String.t()] | nil,
+          :sharingCapability =>
+            MicrosoftGraph.Model.SharepointSettingsSharingCapability.t() | nil,
+          :sharingDomainRestrictionMode =>
+            MicrosoftGraph.Model.SharepointSettingsSharingDomainRestrictionMode.t() | nil,
+          :siteCreationDefaultManagedPath => String.t() | nil,
+          :siteCreationDefaultStorageLimitInMB => integer() | nil,
+          :tenantDefaultTimezone => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:idleSessionSignOut, :struct, MicrosoftGraph.Model.SharepointSettingsIdleSessionSignOut)
-     |> Deserializer.deserialize(:imageTaggingOption, :struct, MicrosoftGraph.Model.SharepointSettingsImageTaggingOption)
-     |> Deserializer.deserialize(:sharingCapability, :struct, MicrosoftGraph.Model.SharepointSettingsSharingCapability)
-     |> Deserializer.deserialize(:sharingDomainRestrictionMode, :struct, MicrosoftGraph.Model.SharepointSettingsSharingDomainRestrictionMode)
+    |> Deserializer.deserialize(
+      :idleSessionSignOut,
+      :struct,
+      MicrosoftGraph.Model.SharepointSettingsIdleSessionSignOut
+    )
+    |> Deserializer.deserialize(
+      :imageTaggingOption,
+      :struct,
+      MicrosoftGraph.Model.SharepointSettingsImageTaggingOption
+    )
+    |> Deserializer.deserialize(
+      :sharingCapability,
+      :struct,
+      MicrosoftGraph.Model.SharepointSettingsSharingCapability
+    )
+    |> Deserializer.deserialize(
+      :sharingDomainRestrictionMode,
+      :struct,
+      MicrosoftGraph.Model.SharepointSettingsSharingDomainRestrictionMode
+    )
   end
 end
-

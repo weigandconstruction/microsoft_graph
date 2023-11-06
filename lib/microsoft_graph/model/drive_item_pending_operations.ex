@@ -13,15 +13,19 @@ defmodule MicrosoftGraph.Model.DriveItemPendingOperations do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :pendingContentUpdate => MicrosoftGraph.Model.MicrosoftGraphPendingOperationsPendingContentUpdate.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :pendingContentUpdate =>
+            MicrosoftGraph.Model.MicrosoftGraphPendingOperationsPendingContentUpdate.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:pendingContentUpdate, :struct, MicrosoftGraph.Model.MicrosoftGraphPendingOperationsPendingContentUpdate)
+    |> Deserializer.deserialize(
+      :pendingContentUpdate,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphPendingOperationsPendingContentUpdate
+    )
   end
 end
-

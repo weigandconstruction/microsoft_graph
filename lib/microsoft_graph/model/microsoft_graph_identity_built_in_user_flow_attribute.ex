@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphIdentityBuiltInUserFlowAttribute do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,20 +17,29 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphIdentityBuiltInUserFlowAttribute do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :dataType => MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttributeDataType.t | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :userFlowAttributeType => MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttributeType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :dataType =>
+            MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttributeDataType.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :userFlowAttributeType =>
+            MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttributeType.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:dataType, :struct, MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttributeDataType)
-     |> Deserializer.deserialize(:userFlowAttributeType, :struct, MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttributeType)
+    |> Deserializer.deserialize(
+      :dataType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttributeDataType
+    )
+    |> Deserializer.deserialize(
+      :userFlowAttributeType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttributeType
+    )
   end
 end
-

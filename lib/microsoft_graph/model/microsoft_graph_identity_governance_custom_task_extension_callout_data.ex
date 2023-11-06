@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceCustomTaskExtensionCalloutData do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,21 +16,37 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceCustomTaskExtensi
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :subject => MicrosoftGraph.Model.AadUserConversationMemberUser.t | nil,
-    :task => MicrosoftGraph.Model.CustomTaskExtensionCalloutDataTask.t | nil,
-    :taskProcessingresult => MicrosoftGraph.Model.CustomTaskExtensionCalloutDataTaskProcessingresult.t | nil,
-    :workflow => MicrosoftGraph.Model.CustomTaskExtensionCalloutDataWorkflow.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :subject => MicrosoftGraph.Model.AadUserConversationMemberUser.t() | nil,
+          :task => MicrosoftGraph.Model.CustomTaskExtensionCalloutDataTask.t() | nil,
+          :taskProcessingresult =>
+            MicrosoftGraph.Model.CustomTaskExtensionCalloutDataTaskProcessingresult.t() | nil,
+          :workflow => MicrosoftGraph.Model.CustomTaskExtensionCalloutDataWorkflow.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:subject, :struct, MicrosoftGraph.Model.AadUserConversationMemberUser)
-     |> Deserializer.deserialize(:task, :struct, MicrosoftGraph.Model.CustomTaskExtensionCalloutDataTask)
-     |> Deserializer.deserialize(:taskProcessingresult, :struct, MicrosoftGraph.Model.CustomTaskExtensionCalloutDataTaskProcessingresult)
-     |> Deserializer.deserialize(:workflow, :struct, MicrosoftGraph.Model.CustomTaskExtensionCalloutDataWorkflow)
+    |> Deserializer.deserialize(
+      :subject,
+      :struct,
+      MicrosoftGraph.Model.AadUserConversationMemberUser
+    )
+    |> Deserializer.deserialize(
+      :task,
+      :struct,
+      MicrosoftGraph.Model.CustomTaskExtensionCalloutDataTask
+    )
+    |> Deserializer.deserialize(
+      :taskProcessingresult,
+      :struct,
+      MicrosoftGraph.Model.CustomTaskExtensionCalloutDataTaskProcessingresult
+    )
+    |> Deserializer.deserialize(
+      :workflow,
+      :struct,
+      MicrosoftGraph.Model.CustomTaskExtensionCalloutDataWorkflow
+    )
   end
 end
-

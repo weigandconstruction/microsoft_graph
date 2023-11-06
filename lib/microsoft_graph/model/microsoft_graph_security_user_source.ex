@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityUserSource do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -20,25 +20,28 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityUserSource do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :createdBy => MicrosoftGraph.Model.DataSourceCreatedBy.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :displayName => String.t | nil,
-    :holdStatus => MicrosoftGraph.Model.DataSourceHoldStatus.t | nil,
-    :email => String.t | nil,
-    :includedSources => MicrosoftGraph.Model.UserSourceIncludedSources.t | nil,
-    :siteWebUrl => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :createdBy => MicrosoftGraph.Model.DataSourceCreatedBy.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :displayName => String.t() | nil,
+          :holdStatus => MicrosoftGraph.Model.DataSourceHoldStatus.t() | nil,
+          :email => String.t() | nil,
+          :includedSources => MicrosoftGraph.Model.UserSourceIncludedSources.t() | nil,
+          :siteWebUrl => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.DataSourceCreatedBy)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:holdStatus, :struct, MicrosoftGraph.Model.DataSourceHoldStatus)
-     |> Deserializer.deserialize(:includedSources, :struct, MicrosoftGraph.Model.UserSourceIncludedSources)
+    |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.DataSourceCreatedBy)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:holdStatus, :struct, MicrosoftGraph.Model.DataSourceHoldStatus)
+    |> Deserializer.deserialize(
+      :includedSources,
+      :struct,
+      MicrosoftGraph.Model.UserSourceIncludedSources
+    )
   end
 end
-

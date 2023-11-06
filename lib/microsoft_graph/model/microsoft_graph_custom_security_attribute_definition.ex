@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphCustomSecurityAttributeDefinition do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -22,24 +22,27 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphCustomSecurityAttributeDefinition d
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :allowedValues => [MicrosoftGraph.Model.MicrosoftGraphAllowedValue.t] | nil,
-    :attributeSet => String.t | nil,
-    :description => String.t | nil,
-    :isCollection => boolean() | nil,
-    :isSearchable => boolean() | nil,
-    :name => String.t | nil,
-    :status => String.t | nil,
-    :type => String.t | nil,
-    :usePreDefinedValuesOnly => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :allowedValues => [MicrosoftGraph.Model.MicrosoftGraphAllowedValue.t()] | nil,
+          :attributeSet => String.t() | nil,
+          :description => String.t() | nil,
+          :isCollection => boolean() | nil,
+          :isSearchable => boolean() | nil,
+          :name => String.t() | nil,
+          :status => String.t() | nil,
+          :type => String.t() | nil,
+          :usePreDefinedValuesOnly => boolean() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:allowedValues, :list, MicrosoftGraph.Model.MicrosoftGraphAllowedValue)
+    |> Deserializer.deserialize(
+      :allowedValues,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAllowedValue
+    )
   end
 end
-

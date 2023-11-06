@@ -14,16 +14,19 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAdminEdge do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :internetExplorerMode => MicrosoftGraph.Model.EdgeInternetExplorerMode.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :internetExplorerMode => MicrosoftGraph.Model.EdgeInternetExplorerMode.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:internetExplorerMode, :struct, MicrosoftGraph.Model.EdgeInternetExplorerMode)
+    |> Deserializer.deserialize(
+      :internetExplorerMode,
+      :struct,
+      MicrosoftGraph.Model.EdgeInternetExplorerMode
+    )
   end
 end
-

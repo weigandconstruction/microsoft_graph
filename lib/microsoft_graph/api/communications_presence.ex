@@ -23,7 +23,14 @@ defmodule MicrosoftGraph.Api.CommunicationsPresence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPresence.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_create_presences(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphPresence.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPresence.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec communications_create_presences(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphPresence.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPresence.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def communications_create_presences(connection, microsoft_graph_presence, _opts \\ []) do
     request =
       %{}
@@ -56,7 +63,10 @@ defmodule MicrosoftGraph.Api.CommunicationsPresence do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_delete_presences(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec communications_delete_presences(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def communications_delete_presences(connection, presence_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -95,7 +105,10 @@ defmodule MicrosoftGraph.Api.CommunicationsPresence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPresence.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_get_presences(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPresence.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec communications_get_presences(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPresence.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def communications_get_presences(connection, presence_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -140,7 +153,10 @@ defmodule MicrosoftGraph.Api.CommunicationsPresence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPresenceCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_list_presences(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPresenceCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec communications_list_presences(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPresenceCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def communications_list_presences(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -184,7 +200,10 @@ defmodule MicrosoftGraph.Api.CommunicationsPresence do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_presences_get_count_e4ed(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec communications_presences_get_count_e4ed(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def communications_presences_get_count_e4ed(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -222,8 +241,21 @@ defmodule MicrosoftGraph.Api.CommunicationsPresence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPresence.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_update_presences(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphPresence.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPresence.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def communications_update_presences(connection, presence_id, microsoft_graph_presence, _opts \\ []) do
+  @spec communications_update_presences(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPresence.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPresence.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_update_presences(
+        connection,
+        presence_id,
+        microsoft_graph_presence,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

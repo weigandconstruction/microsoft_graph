@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookNamesAdd2XxResponse do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -20,23 +20,26 @@ defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookNamesAdd2XxRespo
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :comment => String.t | nil,
-    :name => String.t | nil,
-    :scope => String.t | nil,
-    :type => String.t | nil,
-    :value => MicrosoftGraph.Model.WorkbookNamedItemValue.t | nil,
-    :visible => boolean() | nil,
-    :worksheet => MicrosoftGraph.Model.WorkbookNamedItemWorksheet.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :comment => String.t() | nil,
+          :name => String.t() | nil,
+          :scope => String.t() | nil,
+          :type => String.t() | nil,
+          :value => MicrosoftGraph.Model.WorkbookNamedItemValue.t() | nil,
+          :visible => boolean() | nil,
+          :worksheet => MicrosoftGraph.Model.WorkbookNamedItemWorksheet.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:value, :struct, MicrosoftGraph.Model.WorkbookNamedItemValue)
-     |> Deserializer.deserialize(:worksheet, :struct, MicrosoftGraph.Model.WorkbookNamedItemWorksheet)
+    |> Deserializer.deserialize(:value, :struct, MicrosoftGraph.Model.WorkbookNamedItemValue)
+    |> Deserializer.deserialize(
+      :worksheet,
+      :struct,
+      MicrosoftGraph.Model.WorkbookNamedItemWorksheet
+    )
   end
 end
-

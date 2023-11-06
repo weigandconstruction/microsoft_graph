@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphCertification do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,20 +17,19 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphCertification do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :certificationDetailsUrl => String.t | nil,
-    :certificationExpirationDateTime => DateTime.t | nil,
-    :isCertifiedByMicrosoft => boolean() | nil,
-    :isPublisherAttested => boolean() | nil,
-    :lastCertificationDateTime => DateTime.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :certificationDetailsUrl => String.t() | nil,
+          :certificationExpirationDateTime => DateTime.t() | nil,
+          :isCertifiedByMicrosoft => boolean() | nil,
+          :isPublisherAttested => boolean() | nil,
+          :lastCertificationDateTime => DateTime.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:certificationExpirationDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastCertificationDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:certificationExpirationDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastCertificationDateTime, :datetime, nil)
   end
 end
-

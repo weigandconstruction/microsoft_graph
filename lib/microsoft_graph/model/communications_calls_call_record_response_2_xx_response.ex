@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.CommunicationsCallsCallRecordResponse2XxResponse do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,21 +18,28 @@ defmodule MicrosoftGraph.Model.CommunicationsCallsCallRecordResponse2XxResponse 
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :clientContext => String.t | nil,
-    :resultInfo => MicrosoftGraph.Model.CommsOperationResultInfo.t | nil,
-    :status => MicrosoftGraph.Model.MicrosoftGraphOperationStatus.t | nil,
-    :recordingAccessToken => String.t | nil,
-    :recordingLocation => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :clientContext => String.t() | nil,
+          :resultInfo => MicrosoftGraph.Model.CommsOperationResultInfo.t() | nil,
+          :status => MicrosoftGraph.Model.MicrosoftGraphOperationStatus.t() | nil,
+          :recordingAccessToken => String.t() | nil,
+          :recordingLocation => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:resultInfo, :struct, MicrosoftGraph.Model.CommsOperationResultInfo)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.MicrosoftGraphOperationStatus)
+    |> Deserializer.deserialize(
+      :resultInfo,
+      :struct,
+      MicrosoftGraph.Model.CommsOperationResultInfo
+    )
+    |> Deserializer.deserialize(
+      :status,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphOperationStatus
+    )
   end
 end
-

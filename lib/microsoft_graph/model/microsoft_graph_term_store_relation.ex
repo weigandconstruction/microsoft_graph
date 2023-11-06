@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,22 +17,21 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :fromTerm => MicrosoftGraph.Model.RelationFromTerm.t | nil,
-    :relationship => MicrosoftGraph.Model.RelationRelationship.t | nil,
-    :set => MicrosoftGraph.Model.RelationSet.t | nil,
-    :toTerm => MicrosoftGraph.Model.RelationToTerm.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :fromTerm => MicrosoftGraph.Model.RelationFromTerm.t() | nil,
+          :relationship => MicrosoftGraph.Model.RelationRelationship.t() | nil,
+          :set => MicrosoftGraph.Model.RelationSet.t() | nil,
+          :toTerm => MicrosoftGraph.Model.RelationToTerm.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:fromTerm, :struct, MicrosoftGraph.Model.RelationFromTerm)
-     |> Deserializer.deserialize(:relationship, :struct, MicrosoftGraph.Model.RelationRelationship)
-     |> Deserializer.deserialize(:set, :struct, MicrosoftGraph.Model.RelationSet)
-     |> Deserializer.deserialize(:toTerm, :struct, MicrosoftGraph.Model.RelationToTerm)
+    |> Deserializer.deserialize(:fromTerm, :struct, MicrosoftGraph.Model.RelationFromTerm)
+    |> Deserializer.deserialize(:relationship, :struct, MicrosoftGraph.Model.RelationRelationship)
+    |> Deserializer.deserialize(:set, :struct, MicrosoftGraph.Model.RelationSet)
+    |> Deserializer.deserialize(:toTerm, :struct, MicrosoftGraph.Model.RelationToTerm)
   end
 end
-

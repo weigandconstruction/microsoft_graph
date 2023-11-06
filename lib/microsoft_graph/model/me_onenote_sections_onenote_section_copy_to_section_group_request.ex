@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MeOnenoteSectionsOnenoteSectionCopyToSectionGroupRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,15 +16,14 @@ defmodule MicrosoftGraph.Model.MeOnenoteSectionsOnenoteSectionCopyToSectionGroup
   ]
 
   @type t :: %__MODULE__{
-    :groupId => String.t | nil,
-    :id => String.t | nil,
-    :renameAs => String.t | nil,
-    :siteCollectionId => String.t | nil,
-    :siteId => String.t | nil
-  }
+          :groupId => String.t() | nil,
+          :id => String.t() | nil,
+          :renameAs => String.t() | nil,
+          :siteCollectionId => String.t() | nil,
+          :siteId => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

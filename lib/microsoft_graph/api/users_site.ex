@@ -25,7 +25,10 @@ defmodule MicrosoftGraph.Api.UsersSite do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_followed_sites_get_count40c9(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_followed_sites_get_count40c9(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_followed_sites_get_count40c9(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -65,7 +68,10 @@ defmodule MicrosoftGraph.Api.UsersSite do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSite.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_get_followed_sites(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSite.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_get_followed_sites(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSite.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_get_followed_sites(connection, user_id, site_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -111,7 +117,10 @@ defmodule MicrosoftGraph.Api.UsersSite do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSiteCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_list_followed_sites(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSiteCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_list_followed_sites(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSiteCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_list_followed_sites(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,

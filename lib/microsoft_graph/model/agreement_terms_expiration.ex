@@ -14,16 +14,15 @@ defmodule MicrosoftGraph.Model.AgreementTermsExpiration do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :frequency => String.t | nil,
-    :startDateTime => DateTime.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :frequency => String.t() | nil,
+          :startDateTime => DateTime.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:startDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:startDateTime, :datetime, nil)
   end
 end
-

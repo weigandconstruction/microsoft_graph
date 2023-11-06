@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.UsersUserManagedDevicesManagedDeviceDeleteUserFromSharedAppleDeviceRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,11 +12,10 @@ defmodule MicrosoftGraph.Model.UsersUserManagedDevicesManagedDeviceDeleteUserFro
   ]
 
   @type t :: %__MODULE__{
-    :userPrincipalName => String.t | nil
-  }
+          :userPrincipalName => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.AdminServiceAnnouncementMessagesUnfavoriteRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,11 +12,10 @@ defmodule MicrosoftGraph.Model.AdminServiceAnnouncementMessagesUnfavoriteRequest
   ]
 
   @type t :: %__MODULE__{
-    :messageIds => [String.t] | nil
-  }
+          :messageIds => [String.t()] | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

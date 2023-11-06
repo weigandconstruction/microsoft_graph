@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphPrintCertificateSigningRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphPrintCertificateSigningRequest do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :content => String.t | nil,
-    :transportKey => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :content => String.t() | nil,
+          :transportKey => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

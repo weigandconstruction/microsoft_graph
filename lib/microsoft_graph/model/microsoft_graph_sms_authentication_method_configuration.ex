@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSmsAuthenticationMethodConfiguration do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,20 +16,33 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSmsAuthenticationMethodConfiguratio
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :excludeTargets => [MicrosoftGraph.Model.AuthenticationMethodConfigurationExcludeTargetsInner.t] | nil,
-    :state => MicrosoftGraph.Model.AuthenticationMethodConfigurationState.t | nil,
-    :includeTargets => [MicrosoftGraph.Model.MicrosoftGraphSmsAuthenticationMethodTarget.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :excludeTargets =>
+            [MicrosoftGraph.Model.AuthenticationMethodConfigurationExcludeTargetsInner.t()] | nil,
+          :state => MicrosoftGraph.Model.AuthenticationMethodConfigurationState.t() | nil,
+          :includeTargets =>
+            [MicrosoftGraph.Model.MicrosoftGraphSmsAuthenticationMethodTarget.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:excludeTargets, :list, MicrosoftGraph.Model.AuthenticationMethodConfigurationExcludeTargetsInner)
-     |> Deserializer.deserialize(:state, :struct, MicrosoftGraph.Model.AuthenticationMethodConfigurationState)
-     |> Deserializer.deserialize(:includeTargets, :list, MicrosoftGraph.Model.MicrosoftGraphSmsAuthenticationMethodTarget)
+    |> Deserializer.deserialize(
+      :excludeTargets,
+      :list,
+      MicrosoftGraph.Model.AuthenticationMethodConfigurationExcludeTargetsInner
+    )
+    |> Deserializer.deserialize(
+      :state,
+      :struct,
+      MicrosoftGraph.Model.AuthenticationMethodConfigurationState
+    )
+    |> Deserializer.deserialize(
+      :includeTargets,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSmsAuthenticationMethodTarget
+    )
   end
 end
-

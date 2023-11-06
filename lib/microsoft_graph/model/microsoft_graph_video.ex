@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphVideo do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -22,24 +22,27 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphVideo do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :audioBitsPerSample => integer() | nil,
-    :audioChannels => integer() | nil,
-    :audioFormat => String.t | nil,
-    :audioSamplesPerSecond => integer() | nil,
-    :bitrate => integer() | nil,
-    :duration => integer() | nil,
-    :fourCC => String.t | nil,
-    :frameRate => MicrosoftGraph.Model.MicrosoftGraphVideoFrameRate.t | nil,
-    :height => integer() | nil,
-    :width => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :audioBitsPerSample => integer() | nil,
+          :audioChannels => integer() | nil,
+          :audioFormat => String.t() | nil,
+          :audioSamplesPerSecond => integer() | nil,
+          :bitrate => integer() | nil,
+          :duration => integer() | nil,
+          :fourCC => String.t() | nil,
+          :frameRate => MicrosoftGraph.Model.MicrosoftGraphVideoFrameRate.t() | nil,
+          :height => integer() | nil,
+          :width => integer() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:frameRate, :struct, MicrosoftGraph.Model.MicrosoftGraphVideoFrameRate)
+    |> Deserializer.deserialize(
+      :frameRate,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphVideoFrameRate
+    )
   end
 end
-

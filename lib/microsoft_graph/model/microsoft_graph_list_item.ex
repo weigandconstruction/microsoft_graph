@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphListItem do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -31,46 +31,75 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphListItem do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :createdBy => MicrosoftGraph.Model.BaseItemCreatedBy.t | nil,
-    :createdByUser => MicrosoftGraph.Model.BaseItemCreatedByUser.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :description => String.t | nil,
-    :eTag => String.t | nil,
-    :lastModifiedBy => MicrosoftGraph.Model.BaseItemLastModifiedBy.t | nil,
-    :lastModifiedByUser => MicrosoftGraph.Model.BaseItemLastModifiedByUser.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :name => String.t | nil,
-    :parentReference => MicrosoftGraph.Model.BaseItemParentReference.t | nil,
-    :webUrl => String.t | nil,
-    :analytics => MicrosoftGraph.Model.DriveItemAnalytics.t | nil,
-    :contentType => MicrosoftGraph.Model.ListItemContentType.t | nil,
-    :documentSetVersions => [MicrosoftGraph.Model.MicrosoftGraphDocumentSetVersion.t] | nil,
-    :driveItem => MicrosoftGraph.Model.ListItemDriveItem.t | nil,
-    :fields => MicrosoftGraph.Model.ListItemFields.t | nil,
-    :sharepointIds => MicrosoftGraph.Model.MicrosoftGraphItemReferenceSharepointIds.t | nil,
-    :versions => [MicrosoftGraph.Model.MicrosoftGraphListItemVersion.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :createdBy => MicrosoftGraph.Model.BaseItemCreatedBy.t() | nil,
+          :createdByUser => MicrosoftGraph.Model.BaseItemCreatedByUser.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :eTag => String.t() | nil,
+          :lastModifiedBy => MicrosoftGraph.Model.BaseItemLastModifiedBy.t() | nil,
+          :lastModifiedByUser => MicrosoftGraph.Model.BaseItemLastModifiedByUser.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :name => String.t() | nil,
+          :parentReference => MicrosoftGraph.Model.BaseItemParentReference.t() | nil,
+          :webUrl => String.t() | nil,
+          :analytics => MicrosoftGraph.Model.DriveItemAnalytics.t() | nil,
+          :contentType => MicrosoftGraph.Model.ListItemContentType.t() | nil,
+          :documentSetVersions =>
+            [MicrosoftGraph.Model.MicrosoftGraphDocumentSetVersion.t()] | nil,
+          :driveItem => MicrosoftGraph.Model.ListItemDriveItem.t() | nil,
+          :fields => MicrosoftGraph.Model.ListItemFields.t() | nil,
+          :sharepointIds =>
+            MicrosoftGraph.Model.MicrosoftGraphItemReferenceSharepointIds.t() | nil,
+          :versions => [MicrosoftGraph.Model.MicrosoftGraphListItemVersion.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.BaseItemCreatedBy)
-     |> Deserializer.deserialize(:createdByUser, :struct, MicrosoftGraph.Model.BaseItemCreatedByUser)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastModifiedBy, :struct, MicrosoftGraph.Model.BaseItemLastModifiedBy)
-     |> Deserializer.deserialize(:lastModifiedByUser, :struct, MicrosoftGraph.Model.BaseItemLastModifiedByUser)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:parentReference, :struct, MicrosoftGraph.Model.BaseItemParentReference)
-     |> Deserializer.deserialize(:analytics, :struct, MicrosoftGraph.Model.DriveItemAnalytics)
-     |> Deserializer.deserialize(:contentType, :struct, MicrosoftGraph.Model.ListItemContentType)
-     |> Deserializer.deserialize(:documentSetVersions, :list, MicrosoftGraph.Model.MicrosoftGraphDocumentSetVersion)
-     |> Deserializer.deserialize(:driveItem, :struct, MicrosoftGraph.Model.ListItemDriveItem)
-     |> Deserializer.deserialize(:fields, :struct, MicrosoftGraph.Model.ListItemFields)
-     |> Deserializer.deserialize(:sharepointIds, :struct, MicrosoftGraph.Model.MicrosoftGraphItemReferenceSharepointIds)
-     |> Deserializer.deserialize(:versions, :list, MicrosoftGraph.Model.MicrosoftGraphListItemVersion)
+    |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.BaseItemCreatedBy)
+    |> Deserializer.deserialize(
+      :createdByUser,
+      :struct,
+      MicrosoftGraph.Model.BaseItemCreatedByUser
+    )
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :lastModifiedBy,
+      :struct,
+      MicrosoftGraph.Model.BaseItemLastModifiedBy
+    )
+    |> Deserializer.deserialize(
+      :lastModifiedByUser,
+      :struct,
+      MicrosoftGraph.Model.BaseItemLastModifiedByUser
+    )
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :parentReference,
+      :struct,
+      MicrosoftGraph.Model.BaseItemParentReference
+    )
+    |> Deserializer.deserialize(:analytics, :struct, MicrosoftGraph.Model.DriveItemAnalytics)
+    |> Deserializer.deserialize(:contentType, :struct, MicrosoftGraph.Model.ListItemContentType)
+    |> Deserializer.deserialize(
+      :documentSetVersions,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDocumentSetVersion
+    )
+    |> Deserializer.deserialize(:driveItem, :struct, MicrosoftGraph.Model.ListItemDriveItem)
+    |> Deserializer.deserialize(:fields, :struct, MicrosoftGraph.Model.ListItemFields)
+    |> Deserializer.deserialize(
+      :sharepointIds,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphItemReferenceSharepointIds
+    )
+    |> Deserializer.deserialize(
+      :versions,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphListItemVersion
+    )
   end
 end
-

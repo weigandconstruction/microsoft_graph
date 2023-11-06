@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphDeviceHealthAttestationState do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -44,46 +44,45 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphDeviceHealthAttestationState do
   ]
 
   @type t :: %__MODULE__{
-    :pcrHashAlgorithm => String.t | nil,
-    :safeMode => String.t | nil,
-    :bootDebugging => String.t | nil,
-    :bootManagerSecurityVersion => String.t | nil,
-    :attestationIdentityKey => String.t | nil,
-    :virtualSecureMode => String.t | nil,
-    :resetCount => integer() | nil,
-    :bootManagerVersion => String.t | nil,
-    :"@odata.type" => String.t,
-    :deviceHealthAttestationStatus => String.t | nil,
-    :lastUpdateDateTime => String.t | nil,
-    :bootRevisionListInfo => String.t | nil,
-    :bootAppSecurityVersion => String.t | nil,
-    :tpmVersion => String.t | nil,
-    :earlyLaunchAntiMalwareDriverProtection => String.t | nil,
-    :issuedDateTime => DateTime.t | nil,
-    :codeIntegrity => String.t | nil,
-    :secureBootConfigurationPolicyFingerPrint => String.t | nil,
-    :codeIntegrityCheckVersion => String.t | nil,
-    :testSigning => String.t | nil,
-    :bitLockerStatus => String.t | nil,
-    :windowsPE => String.t | nil,
-    :healthAttestationSupportedStatus => String.t | nil,
-    :pcr0 => String.t | nil,
-    :contentNamespaceUrl => String.t | nil,
-    :contentVersion => String.t | nil,
-    :secureBoot => String.t | nil,
-    :healthStatusMismatchInfo => String.t | nil,
-    :codeIntegrityPolicy => String.t | nil,
-    :operatingSystemKernelDebugging => String.t | nil,
-    :restartCount => integer() | nil,
-    :operatingSystemRevListInfo => String.t | nil,
-    :dataExcutionPolicy => String.t | nil
-  }
+          :pcrHashAlgorithm => String.t() | nil,
+          :safeMode => String.t() | nil,
+          :bootDebugging => String.t() | nil,
+          :bootManagerSecurityVersion => String.t() | nil,
+          :attestationIdentityKey => String.t() | nil,
+          :virtualSecureMode => String.t() | nil,
+          :resetCount => integer() | nil,
+          :bootManagerVersion => String.t() | nil,
+          :"@odata.type" => String.t(),
+          :deviceHealthAttestationStatus => String.t() | nil,
+          :lastUpdateDateTime => String.t() | nil,
+          :bootRevisionListInfo => String.t() | nil,
+          :bootAppSecurityVersion => String.t() | nil,
+          :tpmVersion => String.t() | nil,
+          :earlyLaunchAntiMalwareDriverProtection => String.t() | nil,
+          :issuedDateTime => DateTime.t() | nil,
+          :codeIntegrity => String.t() | nil,
+          :secureBootConfigurationPolicyFingerPrint => String.t() | nil,
+          :codeIntegrityCheckVersion => String.t() | nil,
+          :testSigning => String.t() | nil,
+          :bitLockerStatus => String.t() | nil,
+          :windowsPE => String.t() | nil,
+          :healthAttestationSupportedStatus => String.t() | nil,
+          :pcr0 => String.t() | nil,
+          :contentNamespaceUrl => String.t() | nil,
+          :contentVersion => String.t() | nil,
+          :secureBoot => String.t() | nil,
+          :healthStatusMismatchInfo => String.t() | nil,
+          :codeIntegrityPolicy => String.t() | nil,
+          :operatingSystemKernelDebugging => String.t() | nil,
+          :restartCount => integer() | nil,
+          :operatingSystemRevListInfo => String.t() | nil,
+          :dataExcutionPolicy => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:issuedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:issuedDateTime, :datetime, nil)
   end
 end
-

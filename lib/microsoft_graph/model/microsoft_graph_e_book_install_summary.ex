@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphEBookInstallSummary do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,18 +19,17 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphEBookInstallSummary do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :failedDeviceCount => integer() | nil,
-    :failedUserCount => integer() | nil,
-    :installedDeviceCount => integer() | nil,
-    :installedUserCount => integer() | nil,
-    :notInstalledDeviceCount => integer() | nil,
-    :notInstalledUserCount => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :failedDeviceCount => integer() | nil,
+          :failedUserCount => integer() | nil,
+          :installedDeviceCount => integer() | nil,
+          :installedUserCount => integer() | nil,
+          :notInstalledDeviceCount => integer() | nil,
+          :notInstalledUserCount => integer() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

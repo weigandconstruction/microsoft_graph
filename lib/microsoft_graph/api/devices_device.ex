@@ -24,7 +24,14 @@ defmodule MicrosoftGraph.Api.DevicesDevice do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDevice.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec devices_device_create_device(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphDevice.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDevice.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec devices_device_create_device(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphDevice.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDevice.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def devices_device_create_device(connection, microsoft_graph_device, _opts \\ []) do
     request =
       %{}
@@ -58,7 +65,10 @@ defmodule MicrosoftGraph.Api.DevicesDevice do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec devices_device_delete_device(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec devices_device_delete_device(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def devices_device_delete_device(connection, device_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -96,7 +106,10 @@ defmodule MicrosoftGraph.Api.DevicesDevice do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec devices_device_delete_device_by_device_id(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec devices_device_delete_device_by_device_id(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def devices_device_delete_device_by_device_id(connection, device_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -135,7 +148,10 @@ defmodule MicrosoftGraph.Api.DevicesDevice do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDevice.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec devices_device_get_device(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDevice.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec devices_device_get_device(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDevice.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def devices_device_get_device(connection, device_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -175,7 +191,10 @@ defmodule MicrosoftGraph.Api.DevicesDevice do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDevice.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec devices_device_get_device_by_device_id(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDevice.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec devices_device_get_device_by_device_id(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDevice.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def devices_device_get_device_by_device_id(connection, device_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -221,7 +240,10 @@ defmodule MicrosoftGraph.Api.DevicesDevice do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec devices_device_list_device(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec devices_device_list_device(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def devices_device_list_device(connection, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -267,7 +289,15 @@ defmodule MicrosoftGraph.Api.DevicesDevice do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDevice.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec devices_device_update_device(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphDevice.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDevice.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec devices_device_update_device(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDevice.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDevice.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def devices_device_update_device(connection, device_id, microsoft_graph_device, _opts \\ []) do
     request =
       %{}
@@ -301,8 +331,21 @@ defmodule MicrosoftGraph.Api.DevicesDevice do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDevice.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec devices_device_update_device_by_device_id(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphDevice.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDevice.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def devices_device_update_device_by_device_id(connection, device_id, microsoft_graph_device, _opts \\ []) do
+  @spec devices_device_update_device_by_device_id(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDevice.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDevice.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def devices_device_update_device_by_device_id(
+        connection,
+        device_id,
+        microsoft_graph_device,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -335,7 +378,10 @@ defmodule MicrosoftGraph.Api.DevicesDevice do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec devices_get_count3489(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec devices_get_count3489(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def devices_get_count3489(connection, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,

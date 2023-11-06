@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphOnPremisesConditionalAccessSettings do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,16 +17,15 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphOnPremisesConditionalAccessSettings
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :enabled => boolean() | nil,
-    :excludedGroups => [String.t] | nil,
-    :includedGroups => [String.t] | nil,
-    :overrideDefaultRule => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :enabled => boolean() | nil,
+          :excludedGroups => [String.t()] | nil,
+          :includedGroups => [String.t()] | nil,
+          :overrideDefaultRule => boolean() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

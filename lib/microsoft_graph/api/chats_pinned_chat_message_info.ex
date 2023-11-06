@@ -25,8 +25,21 @@ defmodule MicrosoftGraph.Api.ChatsPinnedChatMessageInfo do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPinnedChatMessageInfo.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec chats_create_pinned_messages(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphPinnedChatMessageInfo.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPinnedChatMessageInfo.t} | {:error, Tesla.Env.t}
-  def chats_create_pinned_messages(connection, chat_id, microsoft_graph_pinned_chat_message_info, _opts \\ []) do
+  @spec chats_create_pinned_messages(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPinnedChatMessageInfo.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPinnedChatMessageInfo.t()}
+          | {:error, Tesla.Env.t()}
+  def chats_create_pinned_messages(
+        connection,
+        chat_id,
+        microsoft_graph_pinned_chat_message_info,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -60,7 +73,10 @@ defmodule MicrosoftGraph.Api.ChatsPinnedChatMessageInfo do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec chats_delete_pinned_messages(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec chats_delete_pinned_messages(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def chats_delete_pinned_messages(connection, chat_id, pinned_chat_message_info_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -100,7 +116,10 @@ defmodule MicrosoftGraph.Api.ChatsPinnedChatMessageInfo do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPinnedChatMessageInfo.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec chats_get_pinned_messages(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPinnedChatMessageInfo.t} | {:error, Tesla.Env.t}
+  @spec chats_get_pinned_messages(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPinnedChatMessageInfo.t()}
+          | {:error, Tesla.Env.t()}
   def chats_get_pinned_messages(connection, chat_id, pinned_chat_message_info_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -146,7 +165,10 @@ defmodule MicrosoftGraph.Api.ChatsPinnedChatMessageInfo do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPinnedChatMessageInfoCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec chats_list_pinned_messages(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPinnedChatMessageInfoCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec chats_list_pinned_messages(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPinnedChatMessageInfoCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def chats_list_pinned_messages(connection, chat_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -191,7 +213,10 @@ defmodule MicrosoftGraph.Api.ChatsPinnedChatMessageInfo do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec chats_pinned_messages_get_count_ad15(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec chats_pinned_messages_get_count_ad15(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def chats_pinned_messages_get_count_ad15(connection, chat_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -232,8 +257,16 @@ defmodule MicrosoftGraph.Api.ChatsPinnedChatMessageInfo do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec chats_pinned_messages_get_message(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def chats_pinned_messages_get_message(connection, chat_id, pinned_chat_message_info_id, opts \\ []) do
+  @spec chats_pinned_messages_get_message(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def chats_pinned_messages_get_message(
+        connection,
+        chat_id,
+        pinned_chat_message_info_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -271,8 +304,23 @@ defmodule MicrosoftGraph.Api.ChatsPinnedChatMessageInfo do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPinnedChatMessageInfo.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec chats_update_pinned_messages(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphPinnedChatMessageInfo.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPinnedChatMessageInfo.t} | {:error, Tesla.Env.t}
-  def chats_update_pinned_messages(connection, chat_id, pinned_chat_message_info_id, microsoft_graph_pinned_chat_message_info, _opts \\ []) do
+  @spec chats_update_pinned_messages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPinnedChatMessageInfo.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPinnedChatMessageInfo.t()}
+          | {:error, Tesla.Env.t()}
+  def chats_update_pinned_messages(
+        connection,
+        chat_id,
+        pinned_chat_message_info_id,
+        microsoft_graph_pinned_chat_message_info,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsAppHealthDeviceModelPerformance do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,22 +19,32 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsAppHealthDev
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :activeDeviceCount => integer() | nil,
-    :deviceManufacturer => String.t | nil,
-    :deviceModel => String.t | nil,
-    :healthStatus => MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsHealthState.t | nil,
-    :meanTimeToFailureInMinutes => integer() | nil,
-    :modelAppHealthScore => MicrosoftGraph.Model.UserExperienceAnalyticsAppHealthDeviceModelPerformanceModelAppHealthScore.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :activeDeviceCount => integer() | nil,
+          :deviceManufacturer => String.t() | nil,
+          :deviceModel => String.t() | nil,
+          :healthStatus =>
+            MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsHealthState.t() | nil,
+          :meanTimeToFailureInMinutes => integer() | nil,
+          :modelAppHealthScore =>
+            MicrosoftGraph.Model.UserExperienceAnalyticsAppHealthDeviceModelPerformanceModelAppHealthScore.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:healthStatus, :struct, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsHealthState)
-     |> Deserializer.deserialize(:modelAppHealthScore, :struct, MicrosoftGraph.Model.UserExperienceAnalyticsAppHealthDeviceModelPerformanceModelAppHealthScore)
+    |> Deserializer.deserialize(
+      :healthStatus,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsHealthState
+    )
+    |> Deserializer.deserialize(
+      :modelAppHealthScore,
+      :struct,
+      MicrosoftGraph.Model.UserExperienceAnalyticsAppHealthDeviceModelPerformanceModelAppHealthScore
+    )
   end
 end
-

@@ -25,13 +25,30 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_managed_app_policies_managed_app_policy_target_apps(Tesla.Env.client, String.t, MicrosoftGraph.Model.DeviceAppManagementManagedAppRegistrationsManagedAppRegistrationIntendedPoliciesManagedAppPolicyTargetAppsRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_managed_app_policies_managed_app_policy_target_apps(connection, managed_app_policy_id, device_app_management_managed_app_registrations_managed_app_registration_intended_policies_managed_app_policy_target_apps_request, _opts \\ []) do
+  @spec device_app_management_managed_app_policies_managed_app_policy_target_apps(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.DeviceAppManagementManagedAppRegistrationsManagedAppRegistrationIntendedPoliciesManagedAppPolicyTargetAppsRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_managed_app_policies_managed_app_policy_target_apps(
+        connection,
+        managed_app_policy_id,
+        device_app_management_managed_app_registrations_managed_app_registration_intended_policies_managed_app_policy_target_apps_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/deviceAppManagement/managedAppPolicies/#{managed_app_policy_id}/targetApps")
-      |> add_param(:body, :body, device_app_management_managed_app_registrations_managed_app_registration_intended_policies_managed_app_policy_target_apps_request)
+      |> add_param(
+        :body,
+        :body,
+        device_app_management_managed_app_registrations_managed_app_registration_intended_policies_managed_app_policy_target_apps_request
+      )
       |> Enum.into([])
 
     connection
@@ -60,13 +77,34 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_managed_app_registrations_managed_app_registration_applied_policies_managed_app_policy_target_apps(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.DeviceAppManagementManagedAppRegistrationsManagedAppRegistrationIntendedPoliciesManagedAppPolicyTargetAppsRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_managed_app_registrations_managed_app_registration_applied_policies_managed_app_policy_target_apps(connection, managed_app_registration_id, managed_app_policy_id, device_app_management_managed_app_registrations_managed_app_registration_intended_policies_managed_app_policy_target_apps_request, _opts \\ []) do
+  @spec device_app_management_managed_app_registrations_managed_app_registration_applied_policies_managed_app_policy_target_apps(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.DeviceAppManagementManagedAppRegistrationsManagedAppRegistrationIntendedPoliciesManagedAppPolicyTargetAppsRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_managed_app_registrations_managed_app_registration_applied_policies_managed_app_policy_target_apps(
+        connection,
+        managed_app_registration_id,
+        managed_app_policy_id,
+        device_app_management_managed_app_registrations_managed_app_registration_intended_policies_managed_app_policy_target_apps_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceAppManagement/managedAppRegistrations/#{managed_app_registration_id}/appliedPolicies/#{managed_app_policy_id}/targetApps")
-      |> add_param(:body, :body, device_app_management_managed_app_registrations_managed_app_registration_intended_policies_managed_app_policy_target_apps_request)
+      |> url(
+        "/deviceAppManagement/managedAppRegistrations/#{managed_app_registration_id}/appliedPolicies/#{managed_app_policy_id}/targetApps"
+      )
+      |> add_param(
+        :body,
+        :body,
+        device_app_management_managed_app_registrations_managed_app_registration_intended_policies_managed_app_policy_target_apps_request
+      )
       |> Enum.into([])
 
     connection
@@ -95,13 +133,34 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_managed_app_registrations_managed_app_registration_intended_policies_managed_app_policy_target_apps(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.DeviceAppManagementManagedAppRegistrationsManagedAppRegistrationIntendedPoliciesManagedAppPolicyTargetAppsRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_managed_app_registrations_managed_app_registration_intended_policies_managed_app_policy_target_apps(connection, managed_app_registration_id, managed_app_policy_id, device_app_management_managed_app_registrations_managed_app_registration_intended_policies_managed_app_policy_target_apps_request, _opts \\ []) do
+  @spec device_app_management_managed_app_registrations_managed_app_registration_intended_policies_managed_app_policy_target_apps(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.DeviceAppManagementManagedAppRegistrationsManagedAppRegistrationIntendedPoliciesManagedAppPolicyTargetAppsRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_managed_app_registrations_managed_app_registration_intended_policies_managed_app_policy_target_apps(
+        connection,
+        managed_app_registration_id,
+        managed_app_policy_id,
+        device_app_management_managed_app_registrations_managed_app_registration_intended_policies_managed_app_policy_target_apps_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceAppManagement/managedAppRegistrations/#{managed_app_registration_id}/intendedPolicies/#{managed_app_policy_id}/targetApps")
-      |> add_param(:body, :body, device_app_management_managed_app_registrations_managed_app_registration_intended_policies_managed_app_policy_target_apps_request)
+      |> url(
+        "/deviceAppManagement/managedAppRegistrations/#{managed_app_registration_id}/intendedPolicies/#{managed_app_policy_id}/targetApps"
+      )
+      |> add_param(
+        :body,
+        :body,
+        device_app_management_managed_app_registrations_managed_app_registration_intended_policies_managed_app_policy_target_apps_request
+      )
       |> Enum.into([])
 
     connection
@@ -129,13 +188,30 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_managed_e_books_managed_e_book_assign(Tesla.Env.client, String.t, MicrosoftGraph.Model.DeviceAppManagementManagedEBooksManagedEBookAssignRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_managed_e_books_managed_e_book_assign(connection, managed_e_book_id, device_app_management_managed_e_books_managed_e_book_assign_request, _opts \\ []) do
+  @spec device_app_management_managed_e_books_managed_e_book_assign(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.DeviceAppManagementManagedEBooksManagedEBookAssignRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_managed_e_books_managed_e_book_assign(
+        connection,
+        managed_e_book_id,
+        device_app_management_managed_e_books_managed_e_book_assign_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/deviceAppManagement/managedEBooks/#{managed_e_book_id}/assign")
-      |> add_param(:body, :body, device_app_management_managed_e_books_managed_e_book_assign_request)
+      |> add_param(
+        :body,
+        :body,
+        device_app_management_managed_e_books_managed_e_book_assign_request
+      )
       |> Enum.into([])
 
     connection
@@ -163,13 +239,32 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_mobile_app_configurations_managed_device_mobile_app_configuration_assign(Tesla.Env.client, String.t, MicrosoftGraph.Model.DeviceAppManagementMobileAppConfigurationsManagedDeviceMobileAppConfigurationAssignRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_mobile_app_configurations_managed_device_mobile_app_configuration_assign(connection, managed_device_mobile_app_configuration_id, device_app_management_mobile_app_configurations_managed_device_mobile_app_configuration_assign_request, _opts \\ []) do
+  @spec device_app_management_mobile_app_configurations_managed_device_mobile_app_configuration_assign(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.DeviceAppManagementMobileAppConfigurationsManagedDeviceMobileAppConfigurationAssignRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_mobile_app_configurations_managed_device_mobile_app_configuration_assign(
+        connection,
+        managed_device_mobile_app_configuration_id,
+        device_app_management_mobile_app_configurations_managed_device_mobile_app_configuration_assign_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceAppManagement/mobileAppConfigurations/#{managed_device_mobile_app_configuration_id}/assign")
-      |> add_param(:body, :body, device_app_management_mobile_app_configurations_managed_device_mobile_app_configuration_assign_request)
+      |> url(
+        "/deviceAppManagement/mobileAppConfigurations/#{managed_device_mobile_app_configuration_id}/assign"
+      )
+      |> add_param(
+        :body,
+        :body,
+        device_app_management_mobile_app_configurations_managed_device_mobile_app_configuration_assign_request
+      )
       |> Enum.into([])
 
     connection
@@ -197,8 +292,21 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_mobile_apps_mobile_app_assign(Tesla.Env.client, String.t, MicrosoftGraph.Model.DeviceAppManagementMobileAppsMobileAppAssignRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_mobile_apps_mobile_app_assign(connection, mobile_app_id, device_app_management_mobile_apps_mobile_app_assign_request, _opts \\ []) do
+  @spec device_app_management_mobile_apps_mobile_app_assign(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.DeviceAppManagementMobileAppsMobileAppAssignRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_mobile_apps_mobile_app_assign(
+        connection,
+        mobile_app_id,
+        device_app_management_mobile_apps_mobile_app_assign_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -233,13 +341,36 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.DeviceAppManagementMobileAppsMobileAppMicrosoftGraphAndroidLobAppContentVersionsMobileAppContentFilesMobileAppContentFileCommitRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit(connection, mobile_app_id, mobile_app_content_id, mobile_app_content_file_id, device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit_request, _opts \\ []) do
+  @spec device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.DeviceAppManagementMobileAppsMobileAppMicrosoftGraphAndroidLobAppContentVersionsMobileAppContentFilesMobileAppContentFileCommitRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit(
+        connection,
+        mobile_app_id,
+        mobile_app_content_id,
+        mobile_app_content_file_id,
+        device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceAppManagement/mobileApps/#{mobile_app_id}/graph.androidLobApp/contentVersions/#{mobile_app_content_id}/files/#{mobile_app_content_file_id}/commit")
-      |> add_param(:body, :body, device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit_request)
+      |> url(
+        "/deviceAppManagement/mobileApps/#{mobile_app_id}/graph.androidLobApp/contentVersions/#{mobile_app_content_id}/files/#{mobile_app_content_file_id}/commit"
+      )
+      |> add_param(
+        :body,
+        :body,
+        device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit_request
+      )
       |> Enum.into([])
 
     connection
@@ -268,12 +399,29 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_renew_upload(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_renew_upload(connection, mobile_app_id, mobile_app_content_id, mobile_app_content_file_id, _opts \\ []) do
+  @spec device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_renew_upload(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_renew_upload(
+        connection,
+        mobile_app_id,
+        mobile_app_content_id,
+        mobile_app_content_file_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceAppManagement/mobileApps/#{mobile_app_id}/graph.androidLobApp/contentVersions/#{mobile_app_content_id}/files/#{mobile_app_content_file_id}/renewUpload")
+      |> url(
+        "/deviceAppManagement/mobileApps/#{mobile_app_id}/graph.androidLobApp/contentVersions/#{mobile_app_content_id}/files/#{mobile_app_content_file_id}/renewUpload"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -304,13 +452,36 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_mobile_apps_mobile_app_microsoft_graph_ios_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.DeviceAppManagementMobileAppsMobileAppMicrosoftGraphAndroidLobAppContentVersionsMobileAppContentFilesMobileAppContentFileCommitRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_mobile_apps_mobile_app_microsoft_graph_ios_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit(connection, mobile_app_id, mobile_app_content_id, mobile_app_content_file_id, device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit_request, _opts \\ []) do
+  @spec device_app_management_mobile_apps_mobile_app_microsoft_graph_ios_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.DeviceAppManagementMobileAppsMobileAppMicrosoftGraphAndroidLobAppContentVersionsMobileAppContentFilesMobileAppContentFileCommitRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_mobile_apps_mobile_app_microsoft_graph_ios_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit(
+        connection,
+        mobile_app_id,
+        mobile_app_content_id,
+        mobile_app_content_file_id,
+        device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceAppManagement/mobileApps/#{mobile_app_id}/graph.iosLobApp/contentVersions/#{mobile_app_content_id}/files/#{mobile_app_content_file_id}/commit")
-      |> add_param(:body, :body, device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit_request)
+      |> url(
+        "/deviceAppManagement/mobileApps/#{mobile_app_id}/graph.iosLobApp/contentVersions/#{mobile_app_content_id}/files/#{mobile_app_content_file_id}/commit"
+      )
+      |> add_param(
+        :body,
+        :body,
+        device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit_request
+      )
       |> Enum.into([])
 
     connection
@@ -339,12 +510,29 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_mobile_apps_mobile_app_microsoft_graph_ios_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_renew_upload(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_mobile_apps_mobile_app_microsoft_graph_ios_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_renew_upload(connection, mobile_app_id, mobile_app_content_id, mobile_app_content_file_id, _opts \\ []) do
+  @spec device_app_management_mobile_apps_mobile_app_microsoft_graph_ios_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_renew_upload(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_mobile_apps_mobile_app_microsoft_graph_ios_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_renew_upload(
+        connection,
+        mobile_app_id,
+        mobile_app_content_id,
+        mobile_app_content_file_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceAppManagement/mobileApps/#{mobile_app_id}/graph.iosLobApp/contentVersions/#{mobile_app_content_id}/files/#{mobile_app_content_file_id}/renewUpload")
+      |> url(
+        "/deviceAppManagement/mobileApps/#{mobile_app_id}/graph.iosLobApp/contentVersions/#{mobile_app_content_id}/files/#{mobile_app_content_file_id}/renewUpload"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -375,13 +563,36 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_mobile_apps_mobile_app_microsoft_graph_mac_os_dmg_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.DeviceAppManagementMobileAppsMobileAppMicrosoftGraphAndroidLobAppContentVersionsMobileAppContentFilesMobileAppContentFileCommitRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_mobile_apps_mobile_app_microsoft_graph_mac_os_dmg_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit(connection, mobile_app_id, mobile_app_content_id, mobile_app_content_file_id, device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit_request, _opts \\ []) do
+  @spec device_app_management_mobile_apps_mobile_app_microsoft_graph_mac_os_dmg_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.DeviceAppManagementMobileAppsMobileAppMicrosoftGraphAndroidLobAppContentVersionsMobileAppContentFilesMobileAppContentFileCommitRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_mobile_apps_mobile_app_microsoft_graph_mac_os_dmg_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit(
+        connection,
+        mobile_app_id,
+        mobile_app_content_id,
+        mobile_app_content_file_id,
+        device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceAppManagement/mobileApps/#{mobile_app_id}/graph.macOSDmgApp/contentVersions/#{mobile_app_content_id}/files/#{mobile_app_content_file_id}/commit")
-      |> add_param(:body, :body, device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit_request)
+      |> url(
+        "/deviceAppManagement/mobileApps/#{mobile_app_id}/graph.macOSDmgApp/contentVersions/#{mobile_app_content_id}/files/#{mobile_app_content_file_id}/commit"
+      )
+      |> add_param(
+        :body,
+        :body,
+        device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit_request
+      )
       |> Enum.into([])
 
     connection
@@ -410,12 +621,29 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_mobile_apps_mobile_app_microsoft_graph_mac_os_dmg_app_content_versions_mobile_app_content_files_mobile_app_content_file_renew_upload(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_mobile_apps_mobile_app_microsoft_graph_mac_os_dmg_app_content_versions_mobile_app_content_files_mobile_app_content_file_renew_upload(connection, mobile_app_id, mobile_app_content_id, mobile_app_content_file_id, _opts \\ []) do
+  @spec device_app_management_mobile_apps_mobile_app_microsoft_graph_mac_os_dmg_app_content_versions_mobile_app_content_files_mobile_app_content_file_renew_upload(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_mobile_apps_mobile_app_microsoft_graph_mac_os_dmg_app_content_versions_mobile_app_content_files_mobile_app_content_file_renew_upload(
+        connection,
+        mobile_app_id,
+        mobile_app_content_id,
+        mobile_app_content_file_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceAppManagement/mobileApps/#{mobile_app_id}/graph.macOSDmgApp/contentVersions/#{mobile_app_content_id}/files/#{mobile_app_content_file_id}/renewUpload")
+      |> url(
+        "/deviceAppManagement/mobileApps/#{mobile_app_id}/graph.macOSDmgApp/contentVersions/#{mobile_app_content_id}/files/#{mobile_app_content_file_id}/renewUpload"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -446,13 +674,36 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_mobile_apps_mobile_app_microsoft_graph_mac_os_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.DeviceAppManagementMobileAppsMobileAppMicrosoftGraphAndroidLobAppContentVersionsMobileAppContentFilesMobileAppContentFileCommitRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_mobile_apps_mobile_app_microsoft_graph_mac_os_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit(connection, mobile_app_id, mobile_app_content_id, mobile_app_content_file_id, device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit_request, _opts \\ []) do
+  @spec device_app_management_mobile_apps_mobile_app_microsoft_graph_mac_os_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.DeviceAppManagementMobileAppsMobileAppMicrosoftGraphAndroidLobAppContentVersionsMobileAppContentFilesMobileAppContentFileCommitRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_mobile_apps_mobile_app_microsoft_graph_mac_os_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit(
+        connection,
+        mobile_app_id,
+        mobile_app_content_id,
+        mobile_app_content_file_id,
+        device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceAppManagement/mobileApps/#{mobile_app_id}/graph.macOSLobApp/contentVersions/#{mobile_app_content_id}/files/#{mobile_app_content_file_id}/commit")
-      |> add_param(:body, :body, device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit_request)
+      |> url(
+        "/deviceAppManagement/mobileApps/#{mobile_app_id}/graph.macOSLobApp/contentVersions/#{mobile_app_content_id}/files/#{mobile_app_content_file_id}/commit"
+      )
+      |> add_param(
+        :body,
+        :body,
+        device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit_request
+      )
       |> Enum.into([])
 
     connection
@@ -481,12 +732,29 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_mobile_apps_mobile_app_microsoft_graph_mac_os_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_renew_upload(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_mobile_apps_mobile_app_microsoft_graph_mac_os_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_renew_upload(connection, mobile_app_id, mobile_app_content_id, mobile_app_content_file_id, _opts \\ []) do
+  @spec device_app_management_mobile_apps_mobile_app_microsoft_graph_mac_os_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_renew_upload(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_mobile_apps_mobile_app_microsoft_graph_mac_os_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_renew_upload(
+        connection,
+        mobile_app_id,
+        mobile_app_content_id,
+        mobile_app_content_file_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceAppManagement/mobileApps/#{mobile_app_id}/graph.macOSLobApp/contentVersions/#{mobile_app_content_id}/files/#{mobile_app_content_file_id}/renewUpload")
+      |> url(
+        "/deviceAppManagement/mobileApps/#{mobile_app_id}/graph.macOSLobApp/contentVersions/#{mobile_app_content_id}/files/#{mobile_app_content_file_id}/renewUpload"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -517,13 +785,36 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_mobile_apps_mobile_app_microsoft_graph_managed_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.DeviceAppManagementMobileAppsMobileAppMicrosoftGraphAndroidLobAppContentVersionsMobileAppContentFilesMobileAppContentFileCommitRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_mobile_apps_mobile_app_microsoft_graph_managed_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit(connection, mobile_app_id, mobile_app_content_id, mobile_app_content_file_id, device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit_request, _opts \\ []) do
+  @spec device_app_management_mobile_apps_mobile_app_microsoft_graph_managed_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.DeviceAppManagementMobileAppsMobileAppMicrosoftGraphAndroidLobAppContentVersionsMobileAppContentFilesMobileAppContentFileCommitRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_mobile_apps_mobile_app_microsoft_graph_managed_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit(
+        connection,
+        mobile_app_id,
+        mobile_app_content_id,
+        mobile_app_content_file_id,
+        device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceAppManagement/mobileApps/#{mobile_app_id}/graph.managedAndroidLobApp/contentVersions/#{mobile_app_content_id}/files/#{mobile_app_content_file_id}/commit")
-      |> add_param(:body, :body, device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit_request)
+      |> url(
+        "/deviceAppManagement/mobileApps/#{mobile_app_id}/graph.managedAndroidLobApp/contentVersions/#{mobile_app_content_id}/files/#{mobile_app_content_file_id}/commit"
+      )
+      |> add_param(
+        :body,
+        :body,
+        device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit_request
+      )
       |> Enum.into([])
 
     connection
@@ -552,12 +843,29 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_mobile_apps_mobile_app_microsoft_graph_managed_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_renew_upload(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_mobile_apps_mobile_app_microsoft_graph_managed_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_renew_upload(connection, mobile_app_id, mobile_app_content_id, mobile_app_content_file_id, _opts \\ []) do
+  @spec device_app_management_mobile_apps_mobile_app_microsoft_graph_managed_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_renew_upload(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_mobile_apps_mobile_app_microsoft_graph_managed_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_renew_upload(
+        connection,
+        mobile_app_id,
+        mobile_app_content_id,
+        mobile_app_content_file_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceAppManagement/mobileApps/#{mobile_app_id}/graph.managedAndroidLobApp/contentVersions/#{mobile_app_content_id}/files/#{mobile_app_content_file_id}/renewUpload")
+      |> url(
+        "/deviceAppManagement/mobileApps/#{mobile_app_id}/graph.managedAndroidLobApp/contentVersions/#{mobile_app_content_id}/files/#{mobile_app_content_file_id}/renewUpload"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -588,13 +896,36 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_mobile_apps_mobile_app_microsoft_graph_managed_ios_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.DeviceAppManagementMobileAppsMobileAppMicrosoftGraphAndroidLobAppContentVersionsMobileAppContentFilesMobileAppContentFileCommitRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_mobile_apps_mobile_app_microsoft_graph_managed_ios_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit(connection, mobile_app_id, mobile_app_content_id, mobile_app_content_file_id, device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit_request, _opts \\ []) do
+  @spec device_app_management_mobile_apps_mobile_app_microsoft_graph_managed_ios_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.DeviceAppManagementMobileAppsMobileAppMicrosoftGraphAndroidLobAppContentVersionsMobileAppContentFilesMobileAppContentFileCommitRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_mobile_apps_mobile_app_microsoft_graph_managed_ios_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit(
+        connection,
+        mobile_app_id,
+        mobile_app_content_id,
+        mobile_app_content_file_id,
+        device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceAppManagement/mobileApps/#{mobile_app_id}/graph.managedIOSLobApp/contentVersions/#{mobile_app_content_id}/files/#{mobile_app_content_file_id}/commit")
-      |> add_param(:body, :body, device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit_request)
+      |> url(
+        "/deviceAppManagement/mobileApps/#{mobile_app_id}/graph.managedIOSLobApp/contentVersions/#{mobile_app_content_id}/files/#{mobile_app_content_file_id}/commit"
+      )
+      |> add_param(
+        :body,
+        :body,
+        device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit_request
+      )
       |> Enum.into([])
 
     connection
@@ -623,12 +954,29 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_mobile_apps_mobile_app_microsoft_graph_managed_ios_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_renew_upload(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_mobile_apps_mobile_app_microsoft_graph_managed_ios_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_renew_upload(connection, mobile_app_id, mobile_app_content_id, mobile_app_content_file_id, _opts \\ []) do
+  @spec device_app_management_mobile_apps_mobile_app_microsoft_graph_managed_ios_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_renew_upload(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_mobile_apps_mobile_app_microsoft_graph_managed_ios_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_renew_upload(
+        connection,
+        mobile_app_id,
+        mobile_app_content_id,
+        mobile_app_content_file_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceAppManagement/mobileApps/#{mobile_app_id}/graph.managedIOSLobApp/contentVersions/#{mobile_app_content_id}/files/#{mobile_app_content_file_id}/renewUpload")
+      |> url(
+        "/deviceAppManagement/mobileApps/#{mobile_app_id}/graph.managedIOSLobApp/contentVersions/#{mobile_app_content_id}/files/#{mobile_app_content_file_id}/renewUpload"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -659,13 +1007,36 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_mobile_apps_mobile_app_microsoft_graph_managed_mobile_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.DeviceAppManagementMobileAppsMobileAppMicrosoftGraphAndroidLobAppContentVersionsMobileAppContentFilesMobileAppContentFileCommitRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_mobile_apps_mobile_app_microsoft_graph_managed_mobile_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit(connection, mobile_app_id, mobile_app_content_id, mobile_app_content_file_id, device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit_request, _opts \\ []) do
+  @spec device_app_management_mobile_apps_mobile_app_microsoft_graph_managed_mobile_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.DeviceAppManagementMobileAppsMobileAppMicrosoftGraphAndroidLobAppContentVersionsMobileAppContentFilesMobileAppContentFileCommitRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_mobile_apps_mobile_app_microsoft_graph_managed_mobile_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit(
+        connection,
+        mobile_app_id,
+        mobile_app_content_id,
+        mobile_app_content_file_id,
+        device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceAppManagement/mobileApps/#{mobile_app_id}/graph.managedMobileLobApp/contentVersions/#{mobile_app_content_id}/files/#{mobile_app_content_file_id}/commit")
-      |> add_param(:body, :body, device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit_request)
+      |> url(
+        "/deviceAppManagement/mobileApps/#{mobile_app_id}/graph.managedMobileLobApp/contentVersions/#{mobile_app_content_id}/files/#{mobile_app_content_file_id}/commit"
+      )
+      |> add_param(
+        :body,
+        :body,
+        device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit_request
+      )
       |> Enum.into([])
 
     connection
@@ -694,12 +1065,29 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_mobile_apps_mobile_app_microsoft_graph_managed_mobile_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_renew_upload(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_mobile_apps_mobile_app_microsoft_graph_managed_mobile_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_renew_upload(connection, mobile_app_id, mobile_app_content_id, mobile_app_content_file_id, _opts \\ []) do
+  @spec device_app_management_mobile_apps_mobile_app_microsoft_graph_managed_mobile_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_renew_upload(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_mobile_apps_mobile_app_microsoft_graph_managed_mobile_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_renew_upload(
+        connection,
+        mobile_app_id,
+        mobile_app_content_id,
+        mobile_app_content_file_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceAppManagement/mobileApps/#{mobile_app_id}/graph.managedMobileLobApp/contentVersions/#{mobile_app_content_id}/files/#{mobile_app_content_file_id}/renewUpload")
+      |> url(
+        "/deviceAppManagement/mobileApps/#{mobile_app_id}/graph.managedMobileLobApp/contentVersions/#{mobile_app_content_id}/files/#{mobile_app_content_file_id}/renewUpload"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -730,13 +1118,36 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_mobile_apps_mobile_app_microsoft_graph_win32_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.DeviceAppManagementMobileAppsMobileAppMicrosoftGraphAndroidLobAppContentVersionsMobileAppContentFilesMobileAppContentFileCommitRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_mobile_apps_mobile_app_microsoft_graph_win32_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit(connection, mobile_app_id, mobile_app_content_id, mobile_app_content_file_id, device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit_request, _opts \\ []) do
+  @spec device_app_management_mobile_apps_mobile_app_microsoft_graph_win32_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.DeviceAppManagementMobileAppsMobileAppMicrosoftGraphAndroidLobAppContentVersionsMobileAppContentFilesMobileAppContentFileCommitRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_mobile_apps_mobile_app_microsoft_graph_win32_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit(
+        connection,
+        mobile_app_id,
+        mobile_app_content_id,
+        mobile_app_content_file_id,
+        device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceAppManagement/mobileApps/#{mobile_app_id}/graph.win32LobApp/contentVersions/#{mobile_app_content_id}/files/#{mobile_app_content_file_id}/commit")
-      |> add_param(:body, :body, device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit_request)
+      |> url(
+        "/deviceAppManagement/mobileApps/#{mobile_app_id}/graph.win32LobApp/contentVersions/#{mobile_app_content_id}/files/#{mobile_app_content_file_id}/commit"
+      )
+      |> add_param(
+        :body,
+        :body,
+        device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit_request
+      )
       |> Enum.into([])
 
     connection
@@ -765,12 +1176,29 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_mobile_apps_mobile_app_microsoft_graph_win32_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_renew_upload(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_mobile_apps_mobile_app_microsoft_graph_win32_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_renew_upload(connection, mobile_app_id, mobile_app_content_id, mobile_app_content_file_id, _opts \\ []) do
+  @spec device_app_management_mobile_apps_mobile_app_microsoft_graph_win32_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_renew_upload(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_mobile_apps_mobile_app_microsoft_graph_win32_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_renew_upload(
+        connection,
+        mobile_app_id,
+        mobile_app_content_id,
+        mobile_app_content_file_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceAppManagement/mobileApps/#{mobile_app_id}/graph.win32LobApp/contentVersions/#{mobile_app_content_id}/files/#{mobile_app_content_file_id}/renewUpload")
+      |> url(
+        "/deviceAppManagement/mobileApps/#{mobile_app_id}/graph.win32LobApp/contentVersions/#{mobile_app_content_id}/files/#{mobile_app_content_file_id}/renewUpload"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -801,13 +1229,36 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_mobile_apps_mobile_app_microsoft_graph_windows_app_x_content_versions_mobile_app_content_files_mobile_app_content_file_commit(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.DeviceAppManagementMobileAppsMobileAppMicrosoftGraphAndroidLobAppContentVersionsMobileAppContentFilesMobileAppContentFileCommitRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_mobile_apps_mobile_app_microsoft_graph_windows_app_x_content_versions_mobile_app_content_files_mobile_app_content_file_commit(connection, mobile_app_id, mobile_app_content_id, mobile_app_content_file_id, device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit_request, _opts \\ []) do
+  @spec device_app_management_mobile_apps_mobile_app_microsoft_graph_windows_app_x_content_versions_mobile_app_content_files_mobile_app_content_file_commit(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.DeviceAppManagementMobileAppsMobileAppMicrosoftGraphAndroidLobAppContentVersionsMobileAppContentFilesMobileAppContentFileCommitRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_mobile_apps_mobile_app_microsoft_graph_windows_app_x_content_versions_mobile_app_content_files_mobile_app_content_file_commit(
+        connection,
+        mobile_app_id,
+        mobile_app_content_id,
+        mobile_app_content_file_id,
+        device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceAppManagement/mobileApps/#{mobile_app_id}/graph.windowsAppX/contentVersions/#{mobile_app_content_id}/files/#{mobile_app_content_file_id}/commit")
-      |> add_param(:body, :body, device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit_request)
+      |> url(
+        "/deviceAppManagement/mobileApps/#{mobile_app_id}/graph.windowsAppX/contentVersions/#{mobile_app_content_id}/files/#{mobile_app_content_file_id}/commit"
+      )
+      |> add_param(
+        :body,
+        :body,
+        device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit_request
+      )
       |> Enum.into([])
 
     connection
@@ -836,12 +1287,29 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_mobile_apps_mobile_app_microsoft_graph_windows_app_x_content_versions_mobile_app_content_files_mobile_app_content_file_renew_upload(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_mobile_apps_mobile_app_microsoft_graph_windows_app_x_content_versions_mobile_app_content_files_mobile_app_content_file_renew_upload(connection, mobile_app_id, mobile_app_content_id, mobile_app_content_file_id, _opts \\ []) do
+  @spec device_app_management_mobile_apps_mobile_app_microsoft_graph_windows_app_x_content_versions_mobile_app_content_files_mobile_app_content_file_renew_upload(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_mobile_apps_mobile_app_microsoft_graph_windows_app_x_content_versions_mobile_app_content_files_mobile_app_content_file_renew_upload(
+        connection,
+        mobile_app_id,
+        mobile_app_content_id,
+        mobile_app_content_file_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceAppManagement/mobileApps/#{mobile_app_id}/graph.windowsAppX/contentVersions/#{mobile_app_content_id}/files/#{mobile_app_content_file_id}/renewUpload")
+      |> url(
+        "/deviceAppManagement/mobileApps/#{mobile_app_id}/graph.windowsAppX/contentVersions/#{mobile_app_content_id}/files/#{mobile_app_content_file_id}/renewUpload"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -872,13 +1340,36 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_mobile_apps_mobile_app_microsoft_graph_windows_mobile_msi_content_versions_mobile_app_content_files_mobile_app_content_file_commit(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.DeviceAppManagementMobileAppsMobileAppMicrosoftGraphAndroidLobAppContentVersionsMobileAppContentFilesMobileAppContentFileCommitRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_mobile_apps_mobile_app_microsoft_graph_windows_mobile_msi_content_versions_mobile_app_content_files_mobile_app_content_file_commit(connection, mobile_app_id, mobile_app_content_id, mobile_app_content_file_id, device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit_request, _opts \\ []) do
+  @spec device_app_management_mobile_apps_mobile_app_microsoft_graph_windows_mobile_msi_content_versions_mobile_app_content_files_mobile_app_content_file_commit(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.DeviceAppManagementMobileAppsMobileAppMicrosoftGraphAndroidLobAppContentVersionsMobileAppContentFilesMobileAppContentFileCommitRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_mobile_apps_mobile_app_microsoft_graph_windows_mobile_msi_content_versions_mobile_app_content_files_mobile_app_content_file_commit(
+        connection,
+        mobile_app_id,
+        mobile_app_content_id,
+        mobile_app_content_file_id,
+        device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceAppManagement/mobileApps/#{mobile_app_id}/graph.windowsMobileMSI/contentVersions/#{mobile_app_content_id}/files/#{mobile_app_content_file_id}/commit")
-      |> add_param(:body, :body, device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit_request)
+      |> url(
+        "/deviceAppManagement/mobileApps/#{mobile_app_id}/graph.windowsMobileMSI/contentVersions/#{mobile_app_content_id}/files/#{mobile_app_content_file_id}/commit"
+      )
+      |> add_param(
+        :body,
+        :body,
+        device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit_request
+      )
       |> Enum.into([])
 
     connection
@@ -907,12 +1398,29 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_mobile_apps_mobile_app_microsoft_graph_windows_mobile_msi_content_versions_mobile_app_content_files_mobile_app_content_file_renew_upload(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_mobile_apps_mobile_app_microsoft_graph_windows_mobile_msi_content_versions_mobile_app_content_files_mobile_app_content_file_renew_upload(connection, mobile_app_id, mobile_app_content_id, mobile_app_content_file_id, _opts \\ []) do
+  @spec device_app_management_mobile_apps_mobile_app_microsoft_graph_windows_mobile_msi_content_versions_mobile_app_content_files_mobile_app_content_file_renew_upload(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_mobile_apps_mobile_app_microsoft_graph_windows_mobile_msi_content_versions_mobile_app_content_files_mobile_app_content_file_renew_upload(
+        connection,
+        mobile_app_id,
+        mobile_app_content_id,
+        mobile_app_content_file_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceAppManagement/mobileApps/#{mobile_app_id}/graph.windowsMobileMSI/contentVersions/#{mobile_app_content_id}/files/#{mobile_app_content_file_id}/renewUpload")
+      |> url(
+        "/deviceAppManagement/mobileApps/#{mobile_app_id}/graph.windowsMobileMSI/contentVersions/#{mobile_app_content_id}/files/#{mobile_app_content_file_id}/renewUpload"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -943,13 +1451,36 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_mobile_apps_mobile_app_microsoft_graph_windows_universal_app_x_content_versions_mobile_app_content_files_mobile_app_content_file_commit(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.DeviceAppManagementMobileAppsMobileAppMicrosoftGraphAndroidLobAppContentVersionsMobileAppContentFilesMobileAppContentFileCommitRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_mobile_apps_mobile_app_microsoft_graph_windows_universal_app_x_content_versions_mobile_app_content_files_mobile_app_content_file_commit(connection, mobile_app_id, mobile_app_content_id, mobile_app_content_file_id, device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit_request, _opts \\ []) do
+  @spec device_app_management_mobile_apps_mobile_app_microsoft_graph_windows_universal_app_x_content_versions_mobile_app_content_files_mobile_app_content_file_commit(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.DeviceAppManagementMobileAppsMobileAppMicrosoftGraphAndroidLobAppContentVersionsMobileAppContentFilesMobileAppContentFileCommitRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_mobile_apps_mobile_app_microsoft_graph_windows_universal_app_x_content_versions_mobile_app_content_files_mobile_app_content_file_commit(
+        connection,
+        mobile_app_id,
+        mobile_app_content_id,
+        mobile_app_content_file_id,
+        device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceAppManagement/mobileApps/#{mobile_app_id}/graph.windowsUniversalAppX/contentVersions/#{mobile_app_content_id}/files/#{mobile_app_content_file_id}/commit")
-      |> add_param(:body, :body, device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit_request)
+      |> url(
+        "/deviceAppManagement/mobileApps/#{mobile_app_id}/graph.windowsUniversalAppX/contentVersions/#{mobile_app_content_id}/files/#{mobile_app_content_file_id}/commit"
+      )
+      |> add_param(
+        :body,
+        :body,
+        device_app_management_mobile_apps_mobile_app_microsoft_graph_android_lob_app_content_versions_mobile_app_content_files_mobile_app_content_file_commit_request
+      )
       |> Enum.into([])
 
     connection
@@ -978,12 +1509,29 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_mobile_apps_mobile_app_microsoft_graph_windows_universal_app_x_content_versions_mobile_app_content_files_mobile_app_content_file_renew_upload(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_mobile_apps_mobile_app_microsoft_graph_windows_universal_app_x_content_versions_mobile_app_content_files_mobile_app_content_file_renew_upload(connection, mobile_app_id, mobile_app_content_id, mobile_app_content_file_id, _opts \\ []) do
+  @spec device_app_management_mobile_apps_mobile_app_microsoft_graph_windows_universal_app_x_content_versions_mobile_app_content_files_mobile_app_content_file_renew_upload(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_mobile_apps_mobile_app_microsoft_graph_windows_universal_app_x_content_versions_mobile_app_content_files_mobile_app_content_file_renew_upload(
+        connection,
+        mobile_app_id,
+        mobile_app_content_id,
+        mobile_app_content_file_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceAppManagement/mobileApps/#{mobile_app_id}/graph.windowsUniversalAppX/contentVersions/#{mobile_app_content_id}/files/#{mobile_app_content_file_id}/renewUpload")
+      |> url(
+        "/deviceAppManagement/mobileApps/#{mobile_app_id}/graph.windowsUniversalAppX/contentVersions/#{mobile_app_content_id}/files/#{mobile_app_content_file_id}/renewUpload"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -1010,7 +1558,13 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_sync_microsoft_store_for_business_apps(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec device_app_management_sync_microsoft_store_for_business_apps(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def device_app_management_sync_microsoft_store_for_business_apps(connection, _opts \\ []) do
     request =
       %{}
@@ -1044,13 +1598,32 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_targeted_managed_app_configurations_targeted_managed_app_configuration_assign(Tesla.Env.client, String.t, MicrosoftGraph.Model.DeviceAppManagementTargetedManagedAppConfigurationsTargetedManagedAppConfigurationAssignRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_targeted_managed_app_configurations_targeted_managed_app_configuration_assign(connection, targeted_managed_app_configuration_id, device_app_management_targeted_managed_app_configurations_targeted_managed_app_configuration_assign_request, _opts \\ []) do
+  @spec device_app_management_targeted_managed_app_configurations_targeted_managed_app_configuration_assign(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.DeviceAppManagementTargetedManagedAppConfigurationsTargetedManagedAppConfigurationAssignRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_targeted_managed_app_configurations_targeted_managed_app_configuration_assign(
+        connection,
+        targeted_managed_app_configuration_id,
+        device_app_management_targeted_managed_app_configurations_targeted_managed_app_configuration_assign_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceAppManagement/targetedManagedAppConfigurations/#{targeted_managed_app_configuration_id}/assign")
-      |> add_param(:body, :body, device_app_management_targeted_managed_app_configurations_targeted_managed_app_configuration_assign_request)
+      |> url(
+        "/deviceAppManagement/targetedManagedAppConfigurations/#{targeted_managed_app_configuration_id}/assign"
+      )
+      |> add_param(
+        :body,
+        :body,
+        device_app_management_targeted_managed_app_configurations_targeted_managed_app_configuration_assign_request
+      )
       |> Enum.into([])
 
     connection
@@ -1078,13 +1651,32 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_targeted_managed_app_configurations_targeted_managed_app_configuration_target_apps(Tesla.Env.client, String.t, MicrosoftGraph.Model.DeviceAppManagementTargetedManagedAppConfigurationsTargetedManagedAppConfigurationTargetAppsRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_targeted_managed_app_configurations_targeted_managed_app_configuration_target_apps(connection, targeted_managed_app_configuration_id, device_app_management_targeted_managed_app_configurations_targeted_managed_app_configuration_target_apps_request, _opts \\ []) do
+  @spec device_app_management_targeted_managed_app_configurations_targeted_managed_app_configuration_target_apps(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.DeviceAppManagementTargetedManagedAppConfigurationsTargetedManagedAppConfigurationTargetAppsRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_targeted_managed_app_configurations_targeted_managed_app_configuration_target_apps(
+        connection,
+        targeted_managed_app_configuration_id,
+        device_app_management_targeted_managed_app_configurations_targeted_managed_app_configuration_target_apps_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceAppManagement/targetedManagedAppConfigurations/#{targeted_managed_app_configuration_id}/targetApps")
-      |> add_param(:body, :body, device_app_management_targeted_managed_app_configurations_targeted_managed_app_configuration_target_apps_request)
+      |> url(
+        "/deviceAppManagement/targetedManagedAppConfigurations/#{targeted_managed_app_configuration_id}/targetApps"
+      )
+      |> add_param(
+        :body,
+        :body,
+        device_app_management_targeted_managed_app_configurations_targeted_managed_app_configuration_target_apps_request
+      )
       |> Enum.into([])
 
     connection
@@ -1111,8 +1703,20 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementActions do
   - `{:ok, MicrosoftGraph.Model.DeviceAppManagementVppTokensVppTokenSyncLicenses2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_vpp_tokens_vpp_token_sync_licenses(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.DeviceAppManagementVppTokensVppTokenSyncLicenses2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_vpp_tokens_vpp_token_sync_licenses(connection, vpp_token_id, _opts \\ []) do
+  @spec device_app_management_vpp_tokens_vpp_token_sync_licenses(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.DeviceAppManagementVppTokensVppTokenSyncLicenses2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_vpp_tokens_vpp_token_sync_licenses(
+        connection,
+        vpp_token_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)

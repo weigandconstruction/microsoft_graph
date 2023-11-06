@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphPresenceStatusMessageExpiryDateTime
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :dateTime => String.t | nil,
-    :timeZone => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :dateTime => String.t() | nil,
+          :timeZone => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

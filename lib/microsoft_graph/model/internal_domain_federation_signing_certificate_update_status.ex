@@ -14,16 +14,15 @@ defmodule MicrosoftGraph.Model.InternalDomainFederationSigningCertificateUpdateS
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :certificateUpdateResult => String.t | nil,
-    :lastRunDateTime => DateTime.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :certificateUpdateResult => String.t() | nil,
+          :lastRunDateTime => DateTime.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:lastRunDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastRunDateTime, :datetime, nil)
   end
 end
-

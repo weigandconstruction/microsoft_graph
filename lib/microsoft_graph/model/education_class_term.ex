@@ -16,19 +16,18 @@ defmodule MicrosoftGraph.Model.EducationClassTerm do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :displayName => String.t | nil,
-    :endDate => Date.t | nil,
-    :externalId => String.t | nil,
-    :startDate => Date.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :displayName => String.t() | nil,
+          :endDate => Date.t() | nil,
+          :externalId => String.t() | nil,
+          :startDate => Date.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:endDate, :date, nil)
-     |> Deserializer.deserialize(:startDate, :date, nil)
+    |> Deserializer.deserialize(:endDate, :date, nil)
+    |> Deserializer.deserialize(:startDate, :date, nil)
   end
 end
-

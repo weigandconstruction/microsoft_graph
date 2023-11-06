@@ -24,23 +24,22 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphDeviceOperatingSystemSummary do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :androidCorporateWorkProfileCount => integer() | nil,
-    :androidCount => integer() | nil,
-    :androidDedicatedCount => integer() | nil,
-    :androidDeviceAdminCount => integer() | nil,
-    :androidFullyManagedCount => integer() | nil,
-    :androidWorkProfileCount => integer() | nil,
-    :configMgrDeviceCount => integer() | nil,
-    :iosCount => integer() | nil,
-    :macOSCount => integer() | nil,
-    :unknownCount => integer() | nil,
-    :windowsCount => integer() | nil,
-    :windowsMobileCount => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :androidCorporateWorkProfileCount => integer() | nil,
+          :androidCount => integer() | nil,
+          :androidDedicatedCount => integer() | nil,
+          :androidDeviceAdminCount => integer() | nil,
+          :androidFullyManagedCount => integer() | nil,
+          :androidWorkProfileCount => integer() | nil,
+          :configMgrDeviceCount => integer() | nil,
+          :iosCount => integer() | nil,
+          :macOSCount => integer() | nil,
+          :unknownCount => integer() | nil,
+          :windowsCount => integer() | nil,
+          :windowsMobileCount => integer() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

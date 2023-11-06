@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphBookingCustomer do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,20 +17,19 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphBookingCustomer do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :addresses => [MicrosoftGraph.Model.ContactOtherAddress.t] | nil,
-    :displayName => String.t | nil,
-    :emailAddress => String.t | nil,
-    :phones => [MicrosoftGraph.Model.OrgContactPhonesInner.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :addresses => [MicrosoftGraph.Model.ContactOtherAddress.t()] | nil,
+          :displayName => String.t() | nil,
+          :emailAddress => String.t() | nil,
+          :phones => [MicrosoftGraph.Model.OrgContactPhonesInner.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:addresses, :list, MicrosoftGraph.Model.ContactOtherAddress)
-     |> Deserializer.deserialize(:phones, :list, MicrosoftGraph.Model.OrgContactPhonesInner)
+    |> Deserializer.deserialize(:addresses, :list, MicrosoftGraph.Model.ContactOtherAddress)
+    |> Deserializer.deserialize(:phones, :list, MicrosoftGraph.Model.OrgContactPhonesInner)
   end
 end
-

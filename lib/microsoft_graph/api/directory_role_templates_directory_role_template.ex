@@ -23,8 +23,19 @@ defmodule MicrosoftGraph.Api.DirectoryRoleTemplatesDirectoryRoleTemplate do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryRoleTemplate.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_role_templates_directory_role_template_create_directory_role_template(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphDirectoryRoleTemplate.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryRoleTemplate.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_role_templates_directory_role_template_create_directory_role_template(connection, microsoft_graph_directory_role_template, _opts \\ []) do
+  @spec directory_role_templates_directory_role_template_create_directory_role_template(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphDirectoryRoleTemplate.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryRoleTemplate.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_role_templates_directory_role_template_create_directory_role_template(
+        connection,
+        microsoft_graph_directory_role_template,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -56,8 +67,19 @@ defmodule MicrosoftGraph.Api.DirectoryRoleTemplatesDirectoryRoleTemplate do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_role_templates_directory_role_template_delete_directory_role_template(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_role_templates_directory_role_template_delete_directory_role_template(connection, directory_role_template_id, opts \\ []) do
+  @spec directory_role_templates_directory_role_template_delete_directory_role_template(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_role_templates_directory_role_template_delete_directory_role_template(
+        connection,
+        directory_role_template_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -95,8 +117,19 @@ defmodule MicrosoftGraph.Api.DirectoryRoleTemplatesDirectoryRoleTemplate do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryRoleTemplate.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_role_templates_directory_role_template_get_directory_role_template(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryRoleTemplate.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_role_templates_directory_role_template_get_directory_role_template(connection, directory_role_template_id, opts \\ []) do
+  @spec directory_role_templates_directory_role_template_get_directory_role_template(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryRoleTemplate.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_role_templates_directory_role_template_get_directory_role_template(
+        connection,
+        directory_role_template_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -139,8 +172,17 @@ defmodule MicrosoftGraph.Api.DirectoryRoleTemplatesDirectoryRoleTemplate do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryRoleTemplateCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_role_templates_directory_role_template_list_directory_role_template(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryRoleTemplateCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_role_templates_directory_role_template_list_directory_role_template(connection, opts \\ []) do
+  @spec directory_role_templates_directory_role_template_list_directory_role_template(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryRoleTemplateCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_role_templates_directory_role_template_list_directory_role_template(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$skip" => :query,
       :"$search" => :query,
@@ -182,8 +224,21 @@ defmodule MicrosoftGraph.Api.DirectoryRoleTemplatesDirectoryRoleTemplate do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryRoleTemplate.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_role_templates_directory_role_template_update_directory_role_template(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphDirectoryRoleTemplate.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryRoleTemplate.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_role_templates_directory_role_template_update_directory_role_template(connection, directory_role_template_id, microsoft_graph_directory_role_template, _opts \\ []) do
+  @spec directory_role_templates_directory_role_template_update_directory_role_template(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDirectoryRoleTemplate.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryRoleTemplate.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_role_templates_directory_role_template_update_directory_role_template(
+        connection,
+        directory_role_template_id,
+        microsoft_graph_directory_role_template,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -215,7 +270,10 @@ defmodule MicrosoftGraph.Api.DirectoryRoleTemplatesDirectoryRoleTemplate do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_role_templates_get_count_ed85(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec directory_role_templates_get_count_ed85(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def directory_role_templates_get_count_ed85(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,

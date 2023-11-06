@@ -38,48 +38,93 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaCalleeNetwork do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :bandwidthLowEventRatio => MicrosoftGraph.Model.MicrosoftGraphCallRecordsNetworkInfoBandwidthLowEventRatio.t | nil,
-    :basicServiceSetIdentifier => String.t | nil,
-    :connectionType => MicrosoftGraph.Model.MicrosoftGraphCallRecordsNetworkConnectionType.t | nil,
-    :delayEventRatio => MicrosoftGraph.Model.MicrosoftGraphCallRecordsNetworkInfoDelayEventRatio.t | nil,
-    :dnsSuffix => String.t | nil,
-    :ipAddress => String.t | nil,
-    :linkSpeed => integer() | nil,
-    :macAddress => String.t | nil,
-    :networkTransportProtocol => MicrosoftGraph.Model.MicrosoftGraphCallRecordsNetworkTransportProtocol.t | nil,
-    :port => integer() | nil,
-    :receivedQualityEventRatio => MicrosoftGraph.Model.MicrosoftGraphCallRecordsNetworkInfoReceivedQualityEventRatio.t | nil,
-    :reflexiveIPAddress => String.t | nil,
-    :relayIPAddress => String.t | nil,
-    :relayPort => integer() | nil,
-    :sentQualityEventRatio => MicrosoftGraph.Model.MicrosoftGraphCallRecordsNetworkInfoSentQualityEventRatio.t | nil,
-    :subnet => String.t | nil,
-    :traceRouteHops => [MicrosoftGraph.Model.MicrosoftGraphCallRecordsTraceRouteHop.t] | nil,
-    :wifiBand => MicrosoftGraph.Model.MicrosoftGraphCallRecordsWifiBand.t | nil,
-    :wifiBatteryCharge => integer() | nil,
-    :wifiChannel => integer() | nil,
-    :wifiMicrosoftDriver => String.t | nil,
-    :wifiMicrosoftDriverVersion => String.t | nil,
-    :wifiRadioType => MicrosoftGraph.Model.MicrosoftGraphCallRecordsWifiRadioType.t | nil,
-    :wifiSignalStrength => integer() | nil,
-    :wifiVendorDriver => String.t | nil,
-    :wifiVendorDriverVersion => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :bandwidthLowEventRatio =>
+            MicrosoftGraph.Model.MicrosoftGraphCallRecordsNetworkInfoBandwidthLowEventRatio.t()
+            | nil,
+          :basicServiceSetIdentifier => String.t() | nil,
+          :connectionType =>
+            MicrosoftGraph.Model.MicrosoftGraphCallRecordsNetworkConnectionType.t() | nil,
+          :delayEventRatio =>
+            MicrosoftGraph.Model.MicrosoftGraphCallRecordsNetworkInfoDelayEventRatio.t() | nil,
+          :dnsSuffix => String.t() | nil,
+          :ipAddress => String.t() | nil,
+          :linkSpeed => integer() | nil,
+          :macAddress => String.t() | nil,
+          :networkTransportProtocol =>
+            MicrosoftGraph.Model.MicrosoftGraphCallRecordsNetworkTransportProtocol.t() | nil,
+          :port => integer() | nil,
+          :receivedQualityEventRatio =>
+            MicrosoftGraph.Model.MicrosoftGraphCallRecordsNetworkInfoReceivedQualityEventRatio.t()
+            | nil,
+          :reflexiveIPAddress => String.t() | nil,
+          :relayIPAddress => String.t() | nil,
+          :relayPort => integer() | nil,
+          :sentQualityEventRatio =>
+            MicrosoftGraph.Model.MicrosoftGraphCallRecordsNetworkInfoSentQualityEventRatio.t()
+            | nil,
+          :subnet => String.t() | nil,
+          :traceRouteHops =>
+            [MicrosoftGraph.Model.MicrosoftGraphCallRecordsTraceRouteHop.t()] | nil,
+          :wifiBand => MicrosoftGraph.Model.MicrosoftGraphCallRecordsWifiBand.t() | nil,
+          :wifiBatteryCharge => integer() | nil,
+          :wifiChannel => integer() | nil,
+          :wifiMicrosoftDriver => String.t() | nil,
+          :wifiMicrosoftDriverVersion => String.t() | nil,
+          :wifiRadioType => MicrosoftGraph.Model.MicrosoftGraphCallRecordsWifiRadioType.t() | nil,
+          :wifiSignalStrength => integer() | nil,
+          :wifiVendorDriver => String.t() | nil,
+          :wifiVendorDriverVersion => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:bandwidthLowEventRatio, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsNetworkInfoBandwidthLowEventRatio)
-     |> Deserializer.deserialize(:connectionType, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsNetworkConnectionType)
-     |> Deserializer.deserialize(:delayEventRatio, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsNetworkInfoDelayEventRatio)
-     |> Deserializer.deserialize(:networkTransportProtocol, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsNetworkTransportProtocol)
-     |> Deserializer.deserialize(:receivedQualityEventRatio, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsNetworkInfoReceivedQualityEventRatio)
-     |> Deserializer.deserialize(:sentQualityEventRatio, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsNetworkInfoSentQualityEventRatio)
-     |> Deserializer.deserialize(:traceRouteHops, :list, MicrosoftGraph.Model.MicrosoftGraphCallRecordsTraceRouteHop)
-     |> Deserializer.deserialize(:wifiBand, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsWifiBand)
-     |> Deserializer.deserialize(:wifiRadioType, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsWifiRadioType)
+    |> Deserializer.deserialize(
+      :bandwidthLowEventRatio,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsNetworkInfoBandwidthLowEventRatio
+    )
+    |> Deserializer.deserialize(
+      :connectionType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsNetworkConnectionType
+    )
+    |> Deserializer.deserialize(
+      :delayEventRatio,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsNetworkInfoDelayEventRatio
+    )
+    |> Deserializer.deserialize(
+      :networkTransportProtocol,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsNetworkTransportProtocol
+    )
+    |> Deserializer.deserialize(
+      :receivedQualityEventRatio,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsNetworkInfoReceivedQualityEventRatio
+    )
+    |> Deserializer.deserialize(
+      :sentQualityEventRatio,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsNetworkInfoSentQualityEventRatio
+    )
+    |> Deserializer.deserialize(
+      :traceRouteHops,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsTraceRouteHop
+    )
+    |> Deserializer.deserialize(
+      :wifiBand,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsWifiBand
+    )
+    |> Deserializer.deserialize(
+      :wifiRadioType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsWifiRadioType
+    )
   end
 end
-

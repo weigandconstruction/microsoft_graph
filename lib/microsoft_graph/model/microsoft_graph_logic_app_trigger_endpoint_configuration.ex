@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphLogicAppTriggerEndpointConfiguration do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,15 +16,14 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphLogicAppTriggerEndpointConfiguratio
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :logicAppWorkflowName => String.t | nil,
-    :resourceGroupName => String.t | nil,
-    :subscriptionId => String.t | nil,
-    :url => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :logicAppWorkflowName => String.t() | nil,
+          :resourceGroupName => String.t() | nil,
+          :subscriptionId => String.t() | nil,
+          :url => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

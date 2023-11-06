@@ -25,7 +25,10 @@ defmodule MicrosoftGraph.Api.ReportsReportRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphReportRoot.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_report_root_get_report_root(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphReportRoot.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec reports_report_root_get_report_root(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphReportRoot.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def reports_report_root_get_report_root(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -63,7 +66,14 @@ defmodule MicrosoftGraph.Api.ReportsReportRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphReportRoot.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_report_root_update_report_root(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphReportRoot.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphReportRoot.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec reports_report_root_update_report_root(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphReportRoot.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphReportRoot.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def reports_report_root_update_report_root(connection, microsoft_graph_report_root, _opts \\ []) do
     request =
       %{}

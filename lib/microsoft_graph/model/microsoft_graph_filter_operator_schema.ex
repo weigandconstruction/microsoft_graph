@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphFilterOperatorSchema do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,20 +16,32 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphFilterOperatorSchema do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :arity => MicrosoftGraph.Model.MicrosoftGraphScopeOperatorType.t | nil,
-    :multivaluedComparisonType => MicrosoftGraph.Model.MicrosoftGraphScopeOperatorMultiValuedComparisonType.t | nil,
-    :supportedAttributeTypes => [MicrosoftGraph.Model.MicrosoftGraphAttributeType.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :arity => MicrosoftGraph.Model.MicrosoftGraphScopeOperatorType.t() | nil,
+          :multivaluedComparisonType =>
+            MicrosoftGraph.Model.MicrosoftGraphScopeOperatorMultiValuedComparisonType.t() | nil,
+          :supportedAttributeTypes => [MicrosoftGraph.Model.MicrosoftGraphAttributeType.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:arity, :struct, MicrosoftGraph.Model.MicrosoftGraphScopeOperatorType)
-     |> Deserializer.deserialize(:multivaluedComparisonType, :struct, MicrosoftGraph.Model.MicrosoftGraphScopeOperatorMultiValuedComparisonType)
-     |> Deserializer.deserialize(:supportedAttributeTypes, :list, MicrosoftGraph.Model.MicrosoftGraphAttributeType)
+    |> Deserializer.deserialize(
+      :arity,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphScopeOperatorType
+    )
+    |> Deserializer.deserialize(
+      :multivaluedComparisonType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphScopeOperatorMultiValuedComparisonType
+    )
+    |> Deserializer.deserialize(
+      :supportedAttributeTypes,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAttributeType
+    )
   end
 end
-

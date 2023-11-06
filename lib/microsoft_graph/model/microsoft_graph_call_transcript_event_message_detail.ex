@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphCallTranscriptEventMessageDetail do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,17 +15,21 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphCallTranscriptEventMessageDetail do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :callId => String.t | nil,
-    :callTranscriptICalUid => String.t | nil,
-    :meetingOrganizer => MicrosoftGraph.Model.CallTranscriptEventMessageDetailMeetingOrganizer.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :callId => String.t() | nil,
+          :callTranscriptICalUid => String.t() | nil,
+          :meetingOrganizer =>
+            MicrosoftGraph.Model.CallTranscriptEventMessageDetailMeetingOrganizer.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:meetingOrganizer, :struct, MicrosoftGraph.Model.CallTranscriptEventMessageDetailMeetingOrganizer)
+    |> Deserializer.deserialize(
+      :meetingOrganizer,
+      :struct,
+      MicrosoftGraph.Model.CallTranscriptEventMessageDetailMeetingOrganizer
+    )
   end
 end
-

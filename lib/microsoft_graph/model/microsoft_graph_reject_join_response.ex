@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphRejectJoinResponse do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,15 +13,14 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphRejectJoinResponse do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :reason => MicrosoftGraph.Model.MicrosoftGraphRejectReason.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :reason => MicrosoftGraph.Model.MicrosoftGraphRejectReason.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:reason, :struct, MicrosoftGraph.Model.MicrosoftGraphRejectReason)
+    |> Deserializer.deserialize(:reason, :struct, MicrosoftGraph.Model.MicrosoftGraphRejectReason)
   end
 end
-

@@ -14,17 +14,25 @@ defmodule MicrosoftGraph.Model.OnenotePageLinks do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :oneNoteClientUrl => MicrosoftGraph.Model.MicrosoftGraphPageLinksOneNoteClientUrl.t | nil,
-    :oneNoteWebUrl => MicrosoftGraph.Model.MicrosoftGraphPageLinksOneNoteWebUrl.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :oneNoteClientUrl =>
+            MicrosoftGraph.Model.MicrosoftGraphPageLinksOneNoteClientUrl.t() | nil,
+          :oneNoteWebUrl => MicrosoftGraph.Model.MicrosoftGraphPageLinksOneNoteWebUrl.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:oneNoteClientUrl, :struct, MicrosoftGraph.Model.MicrosoftGraphPageLinksOneNoteClientUrl)
-     |> Deserializer.deserialize(:oneNoteWebUrl, :struct, MicrosoftGraph.Model.MicrosoftGraphPageLinksOneNoteWebUrl)
+    |> Deserializer.deserialize(
+      :oneNoteClientUrl,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphPageLinksOneNoteClientUrl
+    )
+    |> Deserializer.deserialize(
+      :oneNoteWebUrl,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphPageLinksOneNoteWebUrl
+    )
   end
 end
-

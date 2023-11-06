@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphPrintConnector do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,22 +19,21 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphPrintConnector do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :appVersion => String.t | nil,
-    :displayName => String.t | nil,
-    :fullyQualifiedDomainName => String.t | nil,
-    :location => MicrosoftGraph.Model.PrintConnectorLocation.t | nil,
-    :operatingSystem => String.t | nil,
-    :registeredDateTime => DateTime.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :appVersion => String.t() | nil,
+          :displayName => String.t() | nil,
+          :fullyQualifiedDomainName => String.t() | nil,
+          :location => MicrosoftGraph.Model.PrintConnectorLocation.t() | nil,
+          :operatingSystem => String.t() | nil,
+          :registeredDateTime => DateTime.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:location, :struct, MicrosoftGraph.Model.PrintConnectorLocation)
-     |> Deserializer.deserialize(:registeredDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:location, :struct, MicrosoftGraph.Model.PrintConnectorLocation)
+    |> Deserializer.deserialize(:registeredDateTime, :datetime, nil)
   end
 end
-

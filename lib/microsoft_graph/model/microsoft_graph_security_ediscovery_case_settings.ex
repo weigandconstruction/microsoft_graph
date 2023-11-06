@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityEdiscoveryCaseSettings do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,20 +16,28 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityEdiscoveryCaseSettings do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :ocr => MicrosoftGraph.Model.EdiscoveryCaseSettingsOcr.t | nil,
-    :redundancyDetection => MicrosoftGraph.Model.EdiscoveryCaseSettingsRedundancyDetection.t | nil,
-    :topicModeling => MicrosoftGraph.Model.EdiscoveryCaseSettingsTopicModeling.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :ocr => MicrosoftGraph.Model.EdiscoveryCaseSettingsOcr.t() | nil,
+          :redundancyDetection =>
+            MicrosoftGraph.Model.EdiscoveryCaseSettingsRedundancyDetection.t() | nil,
+          :topicModeling => MicrosoftGraph.Model.EdiscoveryCaseSettingsTopicModeling.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:ocr, :struct, MicrosoftGraph.Model.EdiscoveryCaseSettingsOcr)
-     |> Deserializer.deserialize(:redundancyDetection, :struct, MicrosoftGraph.Model.EdiscoveryCaseSettingsRedundancyDetection)
-     |> Deserializer.deserialize(:topicModeling, :struct, MicrosoftGraph.Model.EdiscoveryCaseSettingsTopicModeling)
+    |> Deserializer.deserialize(:ocr, :struct, MicrosoftGraph.Model.EdiscoveryCaseSettingsOcr)
+    |> Deserializer.deserialize(
+      :redundancyDetection,
+      :struct,
+      MicrosoftGraph.Model.EdiscoveryCaseSettingsRedundancyDetection
+    )
+    |> Deserializer.deserialize(
+      :topicModeling,
+      :struct,
+      MicrosoftGraph.Model.EdiscoveryCaseSettingsTopicModeling
+    )
   end
 end
-

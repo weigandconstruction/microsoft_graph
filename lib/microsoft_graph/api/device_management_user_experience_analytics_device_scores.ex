@@ -23,8 +23,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsDeviceScores
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceScores.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_create_user_experience_analytics_device_scores(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceScores.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceScores.t} | {:error, Tesla.Env.t}
-  def device_management_create_user_experience_analytics_device_scores(connection, microsoft_graph_user_experience_analytics_device_scores, _opts \\ []) do
+  @spec device_management_create_user_experience_analytics_device_scores(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceScores.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceScores.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_create_user_experience_analytics_device_scores(
+        connection,
+        microsoft_graph_user_experience_analytics_device_scores,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -56,8 +67,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsDeviceScores
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_delete_user_experience_analytics_device_scores(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_delete_user_experience_analytics_device_scores(connection, user_experience_analytics_device_scores_id, opts \\ []) do
+  @spec device_management_delete_user_experience_analytics_device_scores(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_delete_user_experience_analytics_device_scores(
+        connection,
+        user_experience_analytics_device_scores_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -65,7 +87,9 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsDeviceScores
     request =
       %{}
       |> method(:delete)
-      |> url("/deviceManagement/userExperienceAnalyticsDeviceScores/#{user_experience_analytics_device_scores_id}")
+      |> url(
+        "/deviceManagement/userExperienceAnalyticsDeviceScores/#{user_experience_analytics_device_scores_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -95,8 +119,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsDeviceScores
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceScores.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_get_user_experience_analytics_device_scores(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceScores.t} | {:error, Tesla.Env.t}
-  def device_management_get_user_experience_analytics_device_scores(connection, user_experience_analytics_device_scores_id, opts \\ []) do
+  @spec device_management_get_user_experience_analytics_device_scores(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceScores.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_get_user_experience_analytics_device_scores(
+        connection,
+        user_experience_analytics_device_scores_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -105,7 +140,9 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsDeviceScores
     request =
       %{}
       |> method(:get)
-      |> url("/deviceManagement/userExperienceAnalyticsDeviceScores/#{user_experience_analytics_device_scores_id}")
+      |> url(
+        "/deviceManagement/userExperienceAnalyticsDeviceScores/#{user_experience_analytics_device_scores_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -140,7 +177,14 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsDeviceScores
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceScoresCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_list_user_experience_analytics_device_scores(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceScoresCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec device_management_list_user_experience_analytics_device_scores(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceScoresCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def device_management_list_user_experience_analytics_device_scores(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -163,7 +207,8 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsDeviceScores
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceScoresCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceScoresCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -184,12 +229,27 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsDeviceScores
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceScores.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_update_user_experience_analytics_device_scores(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceScores.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceScores.t} | {:error, Tesla.Env.t}
-  def device_management_update_user_experience_analytics_device_scores(connection, user_experience_analytics_device_scores_id, microsoft_graph_user_experience_analytics_device_scores, _opts \\ []) do
+  @spec device_management_update_user_experience_analytics_device_scores(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceScores.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceScores.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_update_user_experience_analytics_device_scores(
+        connection,
+        user_experience_analytics_device_scores_id,
+        microsoft_graph_user_experience_analytics_device_scores,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/deviceManagement/userExperienceAnalyticsDeviceScores/#{user_experience_analytics_device_scores_id}")
+      |> url(
+        "/deviceManagement/userExperienceAnalyticsDeviceScores/#{user_experience_analytics_device_scores_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_user_experience_analytics_device_scores)
       |> Enum.into([])
 
@@ -217,8 +277,17 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsDeviceScores
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_user_experience_analytics_device_scores_get_count396a(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_user_experience_analytics_device_scores_get_count396a(connection, opts \\ []) do
+  @spec device_management_user_experience_analytics_device_scores_get_count396a(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_user_experience_analytics_device_scores_get_count396a(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query

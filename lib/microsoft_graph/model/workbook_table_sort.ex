@@ -16,18 +16,25 @@ defmodule MicrosoftGraph.Model.WorkbookTableSort do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :fields => [MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookTablesWorkbookTableSortApplyRequestFieldsInner.t] | nil,
-    :matchCase => boolean() | nil,
-    :method => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :fields =>
+            [
+              MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookTablesWorkbookTableSortApplyRequestFieldsInner.t()
+            ]
+            | nil,
+          :matchCase => boolean() | nil,
+          :method => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:fields, :list, MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookTablesWorkbookTableSortApplyRequestFieldsInner)
+    |> Deserializer.deserialize(
+      :fields,
+      :list,
+      MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookTablesWorkbookTableSortApplyRequestFieldsInner
+    )
   end
 end
-

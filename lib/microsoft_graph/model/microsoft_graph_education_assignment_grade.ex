@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphEducationAssignmentGrade do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,17 +14,21 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphEducationAssignmentGrade do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :gradedBy => MicrosoftGraph.Model.MicrosoftGraphEducationAssignmentGradeGradedBy.t | nil,
-    :gradedDateTime => DateTime.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :gradedBy =>
+            MicrosoftGraph.Model.MicrosoftGraphEducationAssignmentGradeGradedBy.t() | nil,
+          :gradedDateTime => DateTime.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:gradedBy, :struct, MicrosoftGraph.Model.MicrosoftGraphEducationAssignmentGradeGradedBy)
-     |> Deserializer.deserialize(:gradedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :gradedBy,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphEducationAssignmentGradeGradedBy
+    )
+    |> Deserializer.deserialize(:gradedDateTime, :datetime, nil)
   end
 end
-

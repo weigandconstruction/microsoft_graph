@@ -16,15 +16,14 @@ defmodule MicrosoftGraph.Model.TeamsTabConfiguration do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :contentUrl => String.t | nil,
-    :entityId => String.t | nil,
-    :removeUrl => String.t | nil,
-    :websiteUrl => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :contentUrl => String.t() | nil,
+          :entityId => String.t() | nil,
+          :removeUrl => String.t() | nil,
+          :websiteUrl => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

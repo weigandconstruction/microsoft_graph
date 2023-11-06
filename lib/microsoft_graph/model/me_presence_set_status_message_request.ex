@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MePresenceSetStatusMessageRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,14 +12,18 @@ defmodule MicrosoftGraph.Model.MePresenceSetStatusMessageRequest do
   ]
 
   @type t :: %__MODULE__{
-    :statusMessage => MicrosoftGraph.Model.MePresenceSetStatusMessageRequestStatusMessage.t | nil
-  }
+          :statusMessage =>
+            MicrosoftGraph.Model.MePresenceSetStatusMessageRequestStatusMessage.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:statusMessage, :struct, MicrosoftGraph.Model.MePresenceSetStatusMessageRequestStatusMessage)
+    |> Deserializer.deserialize(
+      :statusMessage,
+      :struct,
+      MicrosoftGraph.Model.MePresenceSetStatusMessageRequestStatusMessage
+    )
   end
 end
-

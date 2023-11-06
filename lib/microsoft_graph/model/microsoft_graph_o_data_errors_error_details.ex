@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphODataErrorsErrorDetails do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphODataErrorsErrorDetails do
   ]
 
   @type t :: %__MODULE__{
-    :code => String.t,
-    :message => String.t,
-    :target => String.t | nil
-  }
+          :code => String.t(),
+          :message => String.t(),
+          :target => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

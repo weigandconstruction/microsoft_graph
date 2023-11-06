@@ -23,7 +23,14 @@ defmodule MicrosoftGraph.Api.DrivesDrive do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDrive.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_drive_create_drive(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphDrive.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDrive.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_drive_create_drive(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphDrive.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDrive.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_drive_create_drive(connection, microsoft_graph_drive, _opts \\ []) do
     request =
       %{}
@@ -56,7 +63,10 @@ defmodule MicrosoftGraph.Api.DrivesDrive do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_drive_delete_drive(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_drive_delete_drive(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_drive_delete_drive(connection, drive_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -94,7 +104,10 @@ defmodule MicrosoftGraph.Api.DrivesDrive do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDrive.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_drive_get_drive(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDrive.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_drive_get_drive(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDrive.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_drive_get_drive(connection, drive_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -137,7 +150,10 @@ defmodule MicrosoftGraph.Api.DrivesDrive do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDriveCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_drive_list_drive(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_drive_list_drive(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_drive_list_drive(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -180,7 +196,15 @@ defmodule MicrosoftGraph.Api.DrivesDrive do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDrive.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec drives_drive_update_drive(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphDrive.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDrive.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec drives_drive_update_drive(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDrive.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDrive.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def drives_drive_update_drive(connection, drive_id, microsoft_graph_drive, _opts \\ []) do
     request =
       %{}

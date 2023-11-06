@@ -24,7 +24,14 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailFolder.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_create_mail_folders(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphMailFolder.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphMailFolder.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_create_mail_folders(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphMailFolder.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphMailFolder.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_create_mail_folders(connection, microsoft_graph_mail_folder, _opts \\ []) do
     request =
       %{}
@@ -58,7 +65,10 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_delete_mail_folders(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_delete_mail_folders(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_delete_mail_folders(connection, mail_folder_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -98,7 +108,10 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailFolder.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_get_mail_folders(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphMailFolder.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_get_mail_folders(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphMailFolder.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_get_mail_folders(connection, mail_folder_id, opts \\ []) do
     optional_params = %{
       :includeHiddenFolders => :query,
@@ -144,7 +157,10 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailFolderCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_list_mail_folders(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphMailFolderCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_list_mail_folders(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphMailFolderCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_list_mail_folders(connection, opts \\ []) do
     optional_params = %{
       :includeHiddenFolders => :query,
@@ -190,8 +206,23 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMessageRule.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_child_folders_create_message_rules(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphMessageRule.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphMessageRule.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_child_folders_create_message_rules(connection, mail_folder_id, mail_folder_id1, microsoft_graph_message_rule, _opts \\ []) do
+  @spec me_mail_folders_child_folders_create_message_rules(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMessageRule.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphMessageRule.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_child_folders_create_message_rules(
+        connection,
+        mail_folder_id,
+        mail_folder_id1,
+        microsoft_graph_message_rule,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -225,8 +256,23 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_child_folders_create_messages(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphMessage.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_child_folders_create_messages(connection, mail_folder_id, mail_folder_id1, microsoft_graph_message, _opts \\ []) do
+  @spec me_mail_folders_child_folders_create_messages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMessage.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_child_folders_create_messages(
+        connection,
+        mail_folder_id,
+        mail_folder_id1,
+        microsoft_graph_message,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -261,8 +307,23 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_child_folders_delete_message_rules(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_child_folders_delete_message_rules(connection, mail_folder_id, mail_folder_id1, message_rule_id, opts \\ []) do
+  @spec me_mail_folders_child_folders_delete_message_rules(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_child_folders_delete_message_rules(
+        connection,
+        mail_folder_id,
+        mail_folder_id1,
+        message_rule_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -270,7 +331,9 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
     request =
       %{}
       |> method(:delete)
-      |> url("/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messageRules/#{message_rule_id}")
+      |> url(
+        "/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messageRules/#{message_rule_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -300,8 +363,23 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_child_folders_delete_messages(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_child_folders_delete_messages(connection, mail_folder_id, mail_folder_id1, message_id, opts \\ []) do
+  @spec me_mail_folders_child_folders_delete_messages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_child_folders_delete_messages(
+        connection,
+        mail_folder_id,
+        mail_folder_id1,
+        message_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -309,7 +387,9 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
     request =
       %{}
       |> method(:delete)
-      |> url("/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}")
+      |> url(
+        "/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -337,7 +417,10 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_child_folders_get_count25bc(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_mail_folders_child_folders_get_count25bc(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_mail_folders_child_folders_get_count25bc(connection, mail_folder_id, opts \\ []) do
     optional_params = %{
       :"$filter" => :query
@@ -377,8 +460,23 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMessageRule.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_child_folders_get_message_rules(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphMessageRule.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_child_folders_get_message_rules(connection, mail_folder_id, mail_folder_id1, message_rule_id, opts \\ []) do
+  @spec me_mail_folders_child_folders_get_message_rules(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphMessageRule.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_child_folders_get_message_rules(
+        connection,
+        mail_folder_id,
+        mail_folder_id1,
+        message_rule_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query
     }
@@ -386,7 +484,9 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
     request =
       %{}
       |> method(:get)
-      |> url("/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messageRules/#{message_rule_id}")
+      |> url(
+        "/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messageRules/#{message_rule_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -418,8 +518,23 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_child_folders_get_messages(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_child_folders_get_messages(connection, mail_folder_id, mail_folder_id1, message_id, opts \\ []) do
+  @spec me_mail_folders_child_folders_get_messages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_child_folders_get_messages(
+        connection,
+        mail_folder_id,
+        mail_folder_id1,
+        message_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -428,7 +543,9 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
     request =
       %{}
       |> method(:get)
-      |> url("/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}")
+      |> url(
+        "/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -457,12 +574,29 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_child_folders_get_messages_content(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_child_folders_get_messages_content(connection, mail_folder_id, mail_folder_id1, message_id, _opts \\ []) do
+  @spec me_mail_folders_child_folders_get_messages_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_child_folders_get_messages_content(
+        connection,
+        mail_folder_id,
+        mail_folder_id1,
+        message_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}/$value")
+      |> url(
+        "/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}/$value"
+      )
       |> Enum.into([])
 
     connection
@@ -496,8 +630,21 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMessageRuleCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_child_folders_list_message_rules(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphMessageRuleCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_child_folders_list_message_rules(connection, mail_folder_id, mail_folder_id1, opts \\ []) do
+  @spec me_mail_folders_child_folders_list_message_rules(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphMessageRuleCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_child_folders_list_message_rules(
+        connection,
+        mail_folder_id,
+        mail_folder_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -547,8 +694,21 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMessageCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_child_folders_list_messages(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphMessageCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_child_folders_list_messages(connection, mail_folder_id, mail_folder_id1, opts \\ []) do
+  @spec me_mail_folders_child_folders_list_messages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphMessageCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_child_folders_list_messages(
+        connection,
+        mail_folder_id,
+        mail_folder_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -592,8 +752,21 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_child_folders_message_rules_get_count6a96(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_child_folders_message_rules_get_count6a96(connection, mail_folder_id, mail_folder_id1, opts \\ []) do
+  @spec me_mail_folders_child_folders_message_rules_get_count6a96(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_child_folders_message_rules_get_count6a96(
+        connection,
+        mail_folder_id,
+        mail_folder_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$filter" => :query
     }
@@ -601,7 +774,9 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
     request =
       %{}
       |> method(:get)
-      |> url("/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messageRules/$count")
+      |> url(
+        "/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messageRules/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -631,8 +806,23 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_child_folders_messages_attachments_get_count65b2(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_child_folders_messages_attachments_get_count65b2(connection, mail_folder_id, mail_folder_id1, message_id, opts \\ []) do
+  @spec me_mail_folders_child_folders_messages_attachments_get_count65b2(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_child_folders_messages_attachments_get_count65b2(
+        connection,
+        mail_folder_id,
+        mail_folder_id1,
+        message_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$filter" => :query
     }
@@ -640,7 +830,9 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
     request =
       %{}
       |> method(:get)
-      |> url("/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}/attachments/$count")
+      |> url(
+        "/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}/attachments/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -671,12 +863,31 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttachment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_child_folders_messages_create_attachments(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphAttachment.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_child_folders_messages_create_attachments(connection, mail_folder_id, mail_folder_id1, message_id, microsoft_graph_attachment, _opts \\ []) do
+  @spec me_mail_folders_child_folders_messages_create_attachments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAttachment.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_child_folders_messages_create_attachments(
+        connection,
+        mail_folder_id,
+        mail_folder_id1,
+        message_id,
+        microsoft_graph_attachment,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}/attachments")
+      |> url(
+        "/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}/attachments"
+      )
       |> add_param(:body, :body, microsoft_graph_attachment)
       |> Enum.into([])
 
@@ -707,12 +918,31 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_child_folders_messages_create_extensions(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphExtension.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_child_folders_messages_create_extensions(connection, mail_folder_id, mail_folder_id1, message_id, microsoft_graph_extension, _opts \\ []) do
+  @spec me_mail_folders_child_folders_messages_create_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphExtension.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_child_folders_messages_create_extensions(
+        connection,
+        mail_folder_id,
+        mail_folder_id1,
+        message_id,
+        microsoft_graph_extension,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}/extensions")
+      |> url(
+        "/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}/extensions"
+      )
       |> add_param(:body, :body, microsoft_graph_extension)
       |> Enum.into([])
 
@@ -743,8 +973,25 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_child_folders_messages_delete_attachments(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_child_folders_messages_delete_attachments(connection, mail_folder_id, mail_folder_id1, message_id, attachment_id, opts \\ []) do
+  @spec me_mail_folders_child_folders_messages_delete_attachments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_child_folders_messages_delete_attachments(
+        connection,
+        mail_folder_id,
+        mail_folder_id1,
+        message_id,
+        attachment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -752,7 +999,9 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
     request =
       %{}
       |> method(:delete)
-      |> url("/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}/attachments/#{attachment_id}")
+      |> url(
+        "/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}/attachments/#{attachment_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -784,8 +1033,25 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_child_folders_messages_delete_extensions(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_child_folders_messages_delete_extensions(connection, mail_folder_id, mail_folder_id1, message_id, extension_id, opts \\ []) do
+  @spec me_mail_folders_child_folders_messages_delete_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_child_folders_messages_delete_extensions(
+        connection,
+        mail_folder_id,
+        mail_folder_id1,
+        message_id,
+        extension_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -793,7 +1059,9 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
     request =
       %{}
       |> method(:delete)
-      |> url("/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}/extensions/#{extension_id}")
+      |> url(
+        "/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}/extensions/#{extension_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -823,8 +1091,23 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_child_folders_messages_extensions_get_count_cf94(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_child_folders_messages_extensions_get_count_cf94(connection, mail_folder_id, mail_folder_id1, message_id, opts \\ []) do
+  @spec me_mail_folders_child_folders_messages_extensions_get_count_cf94(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_child_folders_messages_extensions_get_count_cf94(
+        connection,
+        mail_folder_id,
+        mail_folder_id1,
+        message_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$filter" => :query
     }
@@ -832,7 +1115,9 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
     request =
       %{}
       |> method(:get)
-      |> url("/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}/extensions/$count")
+      |> url(
+        "/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}/extensions/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -865,8 +1150,25 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttachment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_child_folders_messages_get_attachments(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_child_folders_messages_get_attachments(connection, mail_folder_id, mail_folder_id1, message_id, attachment_id, opts \\ []) do
+  @spec me_mail_folders_child_folders_messages_get_attachments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_child_folders_messages_get_attachments(
+        connection,
+        mail_folder_id,
+        mail_folder_id1,
+        message_id,
+        attachment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -875,7 +1177,9 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
     request =
       %{}
       |> method(:get)
-      |> url("/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}/attachments/#{attachment_id}")
+      |> url(
+        "/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}/attachments/#{attachment_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -905,8 +1209,21 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_child_folders_messages_get_count56da(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_child_folders_messages_get_count56da(connection, mail_folder_id, mail_folder_id1, opts \\ []) do
+  @spec me_mail_folders_child_folders_messages_get_count56da(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_child_folders_messages_get_count56da(
+        connection,
+        mail_folder_id,
+        mail_folder_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -948,8 +1265,25 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_child_folders_messages_get_extensions(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_child_folders_messages_get_extensions(connection, mail_folder_id, mail_folder_id1, message_id, extension_id, opts \\ []) do
+  @spec me_mail_folders_child_folders_messages_get_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_child_folders_messages_get_extensions(
+        connection,
+        mail_folder_id,
+        mail_folder_id1,
+        message_id,
+        extension_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -958,7 +1292,9 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
     request =
       %{}
       |> method(:get)
-      |> url("/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}/extensions/#{extension_id}")
+      |> url(
+        "/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}/extensions/#{extension_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -993,8 +1329,23 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttachmentCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_child_folders_messages_list_attachments(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachmentCollectionResponse.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_child_folders_messages_list_attachments(connection, mail_folder_id, mail_folder_id1, message_id, opts \\ []) do
+  @spec me_mail_folders_child_folders_messages_list_attachments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachmentCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_child_folders_messages_list_attachments(
+        connection,
+        mail_folder_id,
+        mail_folder_id1,
+        message_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$filter" => :query,
       :"$count" => :query,
@@ -1006,7 +1357,9 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
     request =
       %{}
       |> method(:get)
-      |> url("/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}/attachments")
+      |> url(
+        "/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}/attachments"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1043,8 +1396,23 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_child_folders_messages_list_extensions(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionCollectionResponse.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_child_folders_messages_list_extensions(connection, mail_folder_id, mail_folder_id1, message_id, opts \\ []) do
+  @spec me_mail_folders_child_folders_messages_list_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_child_folders_messages_list_extensions(
+        connection,
+        mail_folder_id,
+        mail_folder_id1,
+        message_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1058,7 +1426,9 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
     request =
       %{}
       |> method(:get)
-      |> url("/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}/extensions")
+      |> url(
+        "/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}/extensions"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1089,12 +1459,33 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_child_folders_messages_update_extensions(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphExtension.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_child_folders_messages_update_extensions(connection, mail_folder_id, mail_folder_id1, message_id, extension_id, microsoft_graph_extension, _opts \\ []) do
+  @spec me_mail_folders_child_folders_messages_update_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphExtension.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_child_folders_messages_update_extensions(
+        connection,
+        mail_folder_id,
+        mail_folder_id1,
+        message_id,
+        extension_id,
+        microsoft_graph_extension,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}/extensions/#{extension_id}")
+      |> url(
+        "/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}/extensions/#{extension_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_extension)
       |> Enum.into([])
 
@@ -1125,12 +1516,31 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMessageRule.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_child_folders_update_message_rules(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphMessageRule.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphMessageRule.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_child_folders_update_message_rules(connection, mail_folder_id, mail_folder_id1, message_rule_id, microsoft_graph_message_rule, _opts \\ []) do
+  @spec me_mail_folders_child_folders_update_message_rules(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMessageRule.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphMessageRule.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_child_folders_update_message_rules(
+        connection,
+        mail_folder_id,
+        mail_folder_id1,
+        message_rule_id,
+        microsoft_graph_message_rule,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messageRules/#{message_rule_id}")
+      |> url(
+        "/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messageRules/#{message_rule_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_message_rule)
       |> Enum.into([])
 
@@ -1160,12 +1570,31 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_child_folders_update_messages(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphMessage.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_child_folders_update_messages(connection, mail_folder_id, mail_folder_id1, message_id, microsoft_graph_message, _opts \\ []) do
+  @spec me_mail_folders_child_folders_update_messages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMessage.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_child_folders_update_messages(
+        connection,
+        mail_folder_id,
+        mail_folder_id1,
+        message_id,
+        microsoft_graph_message,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}")
+      |> url(
+        "/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_message)
       |> Enum.into([])
 
@@ -1195,12 +1624,31 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_child_folders_update_messages_content(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_child_folders_update_messages_content(connection, mail_folder_id, mail_folder_id1, message_id, body, _opts \\ []) do
+  @spec me_mail_folders_child_folders_update_messages_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_child_folders_update_messages_content(
+        connection,
+        mail_folder_id,
+        mail_folder_id1,
+        message_id,
+        body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)
-      |> url("/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}/$value")
+      |> url(
+        "/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}/$value"
+      )
       |> add_param(:body, :body, body)
       |> Enum.into([])
 
@@ -1229,8 +1677,21 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailFolder.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_create_child_folders(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphMailFolder.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphMailFolder.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_create_child_folders(connection, mail_folder_id, microsoft_graph_mail_folder, _opts \\ []) do
+  @spec me_mail_folders_create_child_folders(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMailFolder.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphMailFolder.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_create_child_folders(
+        connection,
+        mail_folder_id,
+        microsoft_graph_mail_folder,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1263,8 +1724,21 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMessageRule.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_create_message_rules(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphMessageRule.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphMessageRule.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_create_message_rules(connection, mail_folder_id, microsoft_graph_message_rule, _opts \\ []) do
+  @spec me_mail_folders_create_message_rules(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMessageRule.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphMessageRule.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_create_message_rules(
+        connection,
+        mail_folder_id,
+        microsoft_graph_message_rule,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1297,8 +1771,21 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_create_messages(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphMessage.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_create_messages(connection, mail_folder_id, microsoft_graph_message, _opts \\ []) do
+  @spec me_mail_folders_create_messages(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMessage.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_create_messages(
+        connection,
+        mail_folder_id,
+        microsoft_graph_message,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1331,8 +1818,21 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_delete_child_folders(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_delete_child_folders(connection, mail_folder_id, mail_folder_id1, opts \\ []) do
+  @spec me_mail_folders_delete_child_folders(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_delete_child_folders(
+        connection,
+        mail_folder_id,
+        mail_folder_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1370,8 +1870,21 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_delete_message_rules(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_delete_message_rules(connection, mail_folder_id, message_rule_id, opts \\ []) do
+  @spec me_mail_folders_delete_message_rules(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_delete_message_rules(
+        connection,
+        mail_folder_id,
+        message_rule_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1408,7 +1921,10 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_delete_messages(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_mail_folders_delete_messages(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_mail_folders_delete_messages(connection, mail_folder_id, message_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -1449,7 +1965,10 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailFolder.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_get_child_folders(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphMailFolder.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_mail_folders_get_child_folders(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphMailFolder.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_mail_folders_get_child_folders(connection, mail_folder_id, mail_folder_id1, opts \\ []) do
     optional_params = %{
       :includeHiddenFolders => :query,
@@ -1487,7 +2006,10 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_get_count_c00e(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_mail_folders_get_count_c00e(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_mail_folders_get_count_c00e(connection, opts \\ []) do
     optional_params = %{
       :"$filter" => :query
@@ -1526,7 +2048,10 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMessageRule.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_get_message_rules(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphMessageRule.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_mail_folders_get_message_rules(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphMessageRule.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_mail_folders_get_message_rules(connection, mail_folder_id, message_rule_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query
@@ -1566,7 +2091,10 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_get_messages(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_mail_folders_get_messages(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_mail_folders_get_messages(connection, mail_folder_id, message_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -1604,7 +2132,15 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_get_messages_content(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
+  @spec me_mail_folders_get_messages_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
   def me_mail_folders_get_messages_content(connection, mail_folder_id, message_id, _opts \\ []) do
     request =
       %{}
@@ -1644,7 +2180,10 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailFolderCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_list_child_folders(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphMailFolderCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_mail_folders_list_child_folders(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphMailFolderCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_mail_folders_list_child_folders(connection, mail_folder_id, opts \\ []) do
     optional_params = %{
       :includeHiddenFolders => :query,
@@ -1694,7 +2233,10 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMessageRuleCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_list_message_rules(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphMessageRuleCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_mail_folders_list_message_rules(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphMessageRuleCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_mail_folders_list_message_rules(connection, mail_folder_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1744,7 +2286,10 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMessageCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_list_messages(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphMessageCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_mail_folders_list_messages(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphMessageCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_mail_folders_list_messages(connection, mail_folder_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1788,7 +2333,10 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_message_rules_get_count3d24(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_mail_folders_message_rules_get_count3d24(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_mail_folders_message_rules_get_count3d24(connection, mail_folder_id, opts \\ []) do
     optional_params = %{
       :"$filter" => :query
@@ -1826,8 +2374,21 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_messages_attachments_get_count16fa(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_messages_attachments_get_count16fa(connection, mail_folder_id, message_id, opts \\ []) do
+  @spec me_mail_folders_messages_attachments_get_count16fa(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_messages_attachments_get_count16fa(
+        connection,
+        mail_folder_id,
+        message_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$filter" => :query
     }
@@ -1865,8 +2426,23 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttachment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_messages_create_attachments(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphAttachment.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_messages_create_attachments(connection, mail_folder_id, message_id, microsoft_graph_attachment, _opts \\ []) do
+  @spec me_mail_folders_messages_create_attachments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAttachment.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_messages_create_attachments(
+        connection,
+        mail_folder_id,
+        message_id,
+        microsoft_graph_attachment,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1900,8 +2476,23 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_messages_create_extensions(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphExtension.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_messages_create_extensions(connection, mail_folder_id, message_id, microsoft_graph_extension, _opts \\ []) do
+  @spec me_mail_folders_messages_create_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphExtension.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_messages_create_extensions(
+        connection,
+        mail_folder_id,
+        message_id,
+        microsoft_graph_extension,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1935,8 +2526,23 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_messages_delete_attachments(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_messages_delete_attachments(connection, mail_folder_id, message_id, attachment_id, opts \\ []) do
+  @spec me_mail_folders_messages_delete_attachments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_messages_delete_attachments(
+        connection,
+        mail_folder_id,
+        message_id,
+        attachment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1944,7 +2550,9 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
     request =
       %{}
       |> method(:delete)
-      |> url("/me/mailFolders/#{mail_folder_id}/messages/#{message_id}/attachments/#{attachment_id}")
+      |> url(
+        "/me/mailFolders/#{mail_folder_id}/messages/#{message_id}/attachments/#{attachment_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1975,8 +2583,23 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_messages_delete_extensions(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_messages_delete_extensions(connection, mail_folder_id, message_id, extension_id, opts \\ []) do
+  @spec me_mail_folders_messages_delete_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_messages_delete_extensions(
+        connection,
+        mail_folder_id,
+        message_id,
+        extension_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1984,7 +2607,9 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
     request =
       %{}
       |> method(:delete)
-      |> url("/me/mailFolders/#{mail_folder_id}/messages/#{message_id}/extensions/#{extension_id}")
+      |> url(
+        "/me/mailFolders/#{mail_folder_id}/messages/#{message_id}/extensions/#{extension_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2013,8 +2638,21 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_messages_extensions_get_count8860(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_messages_extensions_get_count8860(connection, mail_folder_id, message_id, opts \\ []) do
+  @spec me_mail_folders_messages_extensions_get_count8860(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_messages_extensions_get_count8860(
+        connection,
+        mail_folder_id,
+        message_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$filter" => :query
     }
@@ -2054,8 +2692,23 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttachment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_messages_get_attachments(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_messages_get_attachments(connection, mail_folder_id, message_id, attachment_id, opts \\ []) do
+  @spec me_mail_folders_messages_get_attachments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_messages_get_attachments(
+        connection,
+        mail_folder_id,
+        message_id,
+        attachment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2064,7 +2717,9 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
     request =
       %{}
       |> method(:get)
-      |> url("/me/mailFolders/#{mail_folder_id}/messages/#{message_id}/attachments/#{attachment_id}")
+      |> url(
+        "/me/mailFolders/#{mail_folder_id}/messages/#{message_id}/attachments/#{attachment_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2093,7 +2748,10 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_messages_get_count363a(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_mail_folders_messages_get_count363a(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_mail_folders_messages_get_count363a(connection, mail_folder_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -2135,8 +2793,23 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_messages_get_extensions(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_messages_get_extensions(connection, mail_folder_id, message_id, extension_id, opts \\ []) do
+  @spec me_mail_folders_messages_get_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_messages_get_extensions(
+        connection,
+        mail_folder_id,
+        message_id,
+        extension_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2145,7 +2818,9 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
     request =
       %{}
       |> method(:get)
-      |> url("/me/mailFolders/#{mail_folder_id}/messages/#{message_id}/extensions/#{extension_id}")
+      |> url(
+        "/me/mailFolders/#{mail_folder_id}/messages/#{message_id}/extensions/#{extension_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2179,8 +2854,21 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttachmentCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_messages_list_attachments(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachmentCollectionResponse.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_messages_list_attachments(connection, mail_folder_id, message_id, opts \\ []) do
+  @spec me_mail_folders_messages_list_attachments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachmentCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_messages_list_attachments(
+        connection,
+        mail_folder_id,
+        message_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$filter" => :query,
       :"$count" => :query,
@@ -2228,7 +2916,15 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_messages_list_extensions(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec me_mail_folders_messages_list_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def me_mail_folders_messages_list_extensions(connection, mail_folder_id, message_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -2273,12 +2969,31 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_messages_update_extensions(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphExtension.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_messages_update_extensions(connection, mail_folder_id, message_id, extension_id, microsoft_graph_extension, _opts \\ []) do
+  @spec me_mail_folders_messages_update_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphExtension.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_messages_update_extensions(
+        connection,
+        mail_folder_id,
+        message_id,
+        extension_id,
+        microsoft_graph_extension,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/me/mailFolders/#{mail_folder_id}/messages/#{message_id}/extensions/#{extension_id}")
+      |> url(
+        "/me/mailFolders/#{mail_folder_id}/messages/#{message_id}/extensions/#{extension_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_extension)
       |> Enum.into([])
 
@@ -2307,8 +3022,23 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailFolder.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_update_child_folders(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphMailFolder.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphMailFolder.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_update_child_folders(connection, mail_folder_id, mail_folder_id1, microsoft_graph_mail_folder, _opts \\ []) do
+  @spec me_mail_folders_update_child_folders(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMailFolder.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphMailFolder.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_update_child_folders(
+        connection,
+        mail_folder_id,
+        mail_folder_id1,
+        microsoft_graph_mail_folder,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -2342,8 +3072,23 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMessageRule.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_update_message_rules(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphMessageRule.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphMessageRule.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_update_message_rules(connection, mail_folder_id, message_rule_id, microsoft_graph_message_rule, _opts \\ []) do
+  @spec me_mail_folders_update_message_rules(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMessageRule.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphMessageRule.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_update_message_rules(
+        connection,
+        mail_folder_id,
+        message_rule_id,
+        microsoft_graph_message_rule,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -2376,8 +3121,23 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_update_messages(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphMessage.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_update_messages(connection, mail_folder_id, message_id, microsoft_graph_message, _opts \\ []) do
+  @spec me_mail_folders_update_messages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMessage.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_update_messages(
+        connection,
+        mail_folder_id,
+        message_id,
+        microsoft_graph_message,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -2410,8 +3170,23 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_update_messages_content(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_update_messages_content(connection, mail_folder_id, message_id, body, _opts \\ []) do
+  @spec me_mail_folders_update_messages_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_update_messages_content(
+        connection,
+        mail_folder_id,
+        message_id,
+        body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)
@@ -2444,7 +3219,15 @@ defmodule MicrosoftGraph.Api.MeMailFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailFolder.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_update_mail_folders(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphMailFolder.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphMailFolder.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_update_mail_folders(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMailFolder.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphMailFolder.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_update_mail_folders(connection, mail_folder_id, microsoft_graph_mail_folder, _opts \\ []) do
     request =
       %{}

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphCallRecordsTraceRouteHop do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphCallRecordsTraceRouteHop do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :hopCount => integer() | nil,
-    :ipAddress => String.t | nil,
-    :roundTripTime => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :hopCount => integer() | nil,
+          :ipAddress => String.t() | nil,
+          :roundTripTime => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

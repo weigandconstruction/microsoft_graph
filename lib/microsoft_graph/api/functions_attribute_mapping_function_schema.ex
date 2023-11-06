@@ -23,8 +23,19 @@ defmodule MicrosoftGraph.Api.FunctionsAttributeMappingFunctionSchema do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttributeMappingFunctionSchema.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec functions_attribute_mapping_function_schema_create_attribute_mapping_function_schema(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphAttributeMappingFunctionSchema.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAttributeMappingFunctionSchema.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def functions_attribute_mapping_function_schema_create_attribute_mapping_function_schema(connection, microsoft_graph_attribute_mapping_function_schema, _opts \\ []) do
+  @spec functions_attribute_mapping_function_schema_create_attribute_mapping_function_schema(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphAttributeMappingFunctionSchema.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAttributeMappingFunctionSchema.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def functions_attribute_mapping_function_schema_create_attribute_mapping_function_schema(
+        connection,
+        microsoft_graph_attribute_mapping_function_schema,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -56,8 +67,19 @@ defmodule MicrosoftGraph.Api.FunctionsAttributeMappingFunctionSchema do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec functions_attribute_mapping_function_schema_delete_attribute_mapping_function_schema(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def functions_attribute_mapping_function_schema_delete_attribute_mapping_function_schema(connection, attribute_mapping_function_schema_id, opts \\ []) do
+  @spec functions_attribute_mapping_function_schema_delete_attribute_mapping_function_schema(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def functions_attribute_mapping_function_schema_delete_attribute_mapping_function_schema(
+        connection,
+        attribute_mapping_function_schema_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -94,8 +116,19 @@ defmodule MicrosoftGraph.Api.FunctionsAttributeMappingFunctionSchema do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttributeMappingFunctionSchema.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec functions_attribute_mapping_function_schema_get_attribute_mapping_function_schema(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAttributeMappingFunctionSchema.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def functions_attribute_mapping_function_schema_get_attribute_mapping_function_schema(connection, attribute_mapping_function_schema_id, opts \\ []) do
+  @spec functions_attribute_mapping_function_schema_get_attribute_mapping_function_schema(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAttributeMappingFunctionSchema.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def functions_attribute_mapping_function_schema_get_attribute_mapping_function_schema(
+        connection,
+        attribute_mapping_function_schema_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -138,8 +171,18 @@ defmodule MicrosoftGraph.Api.FunctionsAttributeMappingFunctionSchema do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttributeMappingFunctionSchemaCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec functions_attribute_mapping_function_schema_list_attribute_mapping_function_schema(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAttributeMappingFunctionSchemaCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def functions_attribute_mapping_function_schema_list_attribute_mapping_function_schema(connection, opts \\ []) do
+  @spec functions_attribute_mapping_function_schema_list_attribute_mapping_function_schema(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphAttributeMappingFunctionSchemaCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def functions_attribute_mapping_function_schema_list_attribute_mapping_function_schema(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -161,7 +204,8 @@ defmodule MicrosoftGraph.Api.FunctionsAttributeMappingFunctionSchema do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphAttributeMappingFunctionSchemaCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphAttributeMappingFunctionSchemaCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -182,8 +226,21 @@ defmodule MicrosoftGraph.Api.FunctionsAttributeMappingFunctionSchema do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttributeMappingFunctionSchema.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec functions_attribute_mapping_function_schema_update_attribute_mapping_function_schema(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphAttributeMappingFunctionSchema.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAttributeMappingFunctionSchema.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def functions_attribute_mapping_function_schema_update_attribute_mapping_function_schema(connection, attribute_mapping_function_schema_id, microsoft_graph_attribute_mapping_function_schema, _opts \\ []) do
+  @spec functions_attribute_mapping_function_schema_update_attribute_mapping_function_schema(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAttributeMappingFunctionSchema.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAttributeMappingFunctionSchema.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def functions_attribute_mapping_function_schema_update_attribute_mapping_function_schema(
+        connection,
+        attribute_mapping_function_schema_id,
+        microsoft_graph_attribute_mapping_function_schema,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -215,7 +272,10 @@ defmodule MicrosoftGraph.Api.FunctionsAttributeMappingFunctionSchema do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec functions_get_count0c74(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec functions_get_count0c74(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def functions_get_count0c74(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,

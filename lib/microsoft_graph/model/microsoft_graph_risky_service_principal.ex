@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphRiskyServicePrincipal do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -23,29 +23,45 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphRiskyServicePrincipal do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :appId => String.t | nil,
-    :displayName => String.t | nil,
-    :history => [MicrosoftGraph.Model.MicrosoftGraphRiskyServicePrincipalHistoryItem.t] | nil,
-    :isEnabled => boolean() | nil,
-    :isProcessing => boolean() | nil,
-    :riskDetail => MicrosoftGraph.Model.RiskyServicePrincipalRiskDetail.t | nil,
-    :riskLastUpdatedDateTime => DateTime.t | nil,
-    :riskLevel => MicrosoftGraph.Model.RiskyServicePrincipalRiskLevel.t | nil,
-    :riskState => MicrosoftGraph.Model.RiskyServicePrincipalRiskState.t | nil,
-    :servicePrincipalType => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :appId => String.t() | nil,
+          :displayName => String.t() | nil,
+          :history =>
+            [MicrosoftGraph.Model.MicrosoftGraphRiskyServicePrincipalHistoryItem.t()] | nil,
+          :isEnabled => boolean() | nil,
+          :isProcessing => boolean() | nil,
+          :riskDetail => MicrosoftGraph.Model.RiskyServicePrincipalRiskDetail.t() | nil,
+          :riskLastUpdatedDateTime => DateTime.t() | nil,
+          :riskLevel => MicrosoftGraph.Model.RiskyServicePrincipalRiskLevel.t() | nil,
+          :riskState => MicrosoftGraph.Model.RiskyServicePrincipalRiskState.t() | nil,
+          :servicePrincipalType => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:history, :list, MicrosoftGraph.Model.MicrosoftGraphRiskyServicePrincipalHistoryItem)
-     |> Deserializer.deserialize(:riskDetail, :struct, MicrosoftGraph.Model.RiskyServicePrincipalRiskDetail)
-     |> Deserializer.deserialize(:riskLastUpdatedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:riskLevel, :struct, MicrosoftGraph.Model.RiskyServicePrincipalRiskLevel)
-     |> Deserializer.deserialize(:riskState, :struct, MicrosoftGraph.Model.RiskyServicePrincipalRiskState)
+    |> Deserializer.deserialize(
+      :history,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphRiskyServicePrincipalHistoryItem
+    )
+    |> Deserializer.deserialize(
+      :riskDetail,
+      :struct,
+      MicrosoftGraph.Model.RiskyServicePrincipalRiskDetail
+    )
+    |> Deserializer.deserialize(:riskLastUpdatedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :riskLevel,
+      :struct,
+      MicrosoftGraph.Model.RiskyServicePrincipalRiskLevel
+    )
+    |> Deserializer.deserialize(
+      :riskState,
+      :struct,
+      MicrosoftGraph.Model.RiskyServicePrincipalRiskState
+    )
   end
 end
-

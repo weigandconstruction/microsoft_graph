@@ -19,26 +19,41 @@ defmodule MicrosoftGraph.Model.SiteOnenote do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :notebooks => [MicrosoftGraph.Model.MicrosoftGraphNotebook.t] | nil,
-    :operations => [MicrosoftGraph.Model.MicrosoftGraphOnenoteOperation.t] | nil,
-    :pages => [MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t] | nil,
-    :resources => [MicrosoftGraph.Model.MicrosoftGraphOnenoteResource.t] | nil,
-    :sectionGroups => [MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t] | nil,
-    :sections => [MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :notebooks => [MicrosoftGraph.Model.MicrosoftGraphNotebook.t()] | nil,
+          :operations => [MicrosoftGraph.Model.MicrosoftGraphOnenoteOperation.t()] | nil,
+          :pages => [MicrosoftGraph.Model.MicrosoftGraphOnenotePage.t()] | nil,
+          :resources => [MicrosoftGraph.Model.MicrosoftGraphOnenoteResource.t()] | nil,
+          :sectionGroups => [MicrosoftGraph.Model.MicrosoftGraphSectionGroup.t()] | nil,
+          :sections => [MicrosoftGraph.Model.MicrosoftGraphOnenoteSection.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:notebooks, :list, MicrosoftGraph.Model.MicrosoftGraphNotebook)
-     |> Deserializer.deserialize(:operations, :list, MicrosoftGraph.Model.MicrosoftGraphOnenoteOperation)
-     |> Deserializer.deserialize(:pages, :list, MicrosoftGraph.Model.MicrosoftGraphOnenotePage)
-     |> Deserializer.deserialize(:resources, :list, MicrosoftGraph.Model.MicrosoftGraphOnenoteResource)
-     |> Deserializer.deserialize(:sectionGroups, :list, MicrosoftGraph.Model.MicrosoftGraphSectionGroup)
-     |> Deserializer.deserialize(:sections, :list, MicrosoftGraph.Model.MicrosoftGraphOnenoteSection)
+    |> Deserializer.deserialize(:notebooks, :list, MicrosoftGraph.Model.MicrosoftGraphNotebook)
+    |> Deserializer.deserialize(
+      :operations,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphOnenoteOperation
+    )
+    |> Deserializer.deserialize(:pages, :list, MicrosoftGraph.Model.MicrosoftGraphOnenotePage)
+    |> Deserializer.deserialize(
+      :resources,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphOnenoteResource
+    )
+    |> Deserializer.deserialize(
+      :sectionGroups,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSectionGroup
+    )
+    |> Deserializer.deserialize(
+      :sections,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphOnenoteSection
+    )
   end
 end
-

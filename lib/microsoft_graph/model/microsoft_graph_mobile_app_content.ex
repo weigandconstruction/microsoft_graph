@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphMobileAppContent do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,18 +15,25 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphMobileAppContent do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :containedApps => [MicrosoftGraph.Model.MicrosoftGraphMobileContainedApp.t] | nil,
-    :files => [MicrosoftGraph.Model.MicrosoftGraphMobileAppContentFile.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :containedApps => [MicrosoftGraph.Model.MicrosoftGraphMobileContainedApp.t()] | nil,
+          :files => [MicrosoftGraph.Model.MicrosoftGraphMobileAppContentFile.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:containedApps, :list, MicrosoftGraph.Model.MicrosoftGraphMobileContainedApp)
-     |> Deserializer.deserialize(:files, :list, MicrosoftGraph.Model.MicrosoftGraphMobileAppContentFile)
+    |> Deserializer.deserialize(
+      :containedApps,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphMobileContainedApp
+    )
+    |> Deserializer.deserialize(
+      :files,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphMobileAppContentFile
+    )
   end
 end
-

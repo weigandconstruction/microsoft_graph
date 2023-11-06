@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphUserTrainingEventInfo do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,22 +17,44 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphUserTrainingEventInfo do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :displayName => String.t | nil,
-    :latestTrainingStatus => MicrosoftGraph.Model.MicrosoftGraphUserTrainingEventInfoLatestTrainingStatus.t | nil,
-    :trainingAssignedProperties => MicrosoftGraph.Model.MicrosoftGraphUserTrainingEventInfoTrainingAssignedProperties.t | nil,
-    :trainingCompletedProperties => MicrosoftGraph.Model.MicrosoftGraphUserTrainingEventInfoTrainingCompletedProperties.t | nil,
-    :trainingUpdatedProperties => MicrosoftGraph.Model.MicrosoftGraphUserTrainingEventInfoTrainingUpdatedProperties.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :displayName => String.t() | nil,
+          :latestTrainingStatus =>
+            MicrosoftGraph.Model.MicrosoftGraphUserTrainingEventInfoLatestTrainingStatus.t() | nil,
+          :trainingAssignedProperties =>
+            MicrosoftGraph.Model.MicrosoftGraphUserTrainingEventInfoTrainingAssignedProperties.t()
+            | nil,
+          :trainingCompletedProperties =>
+            MicrosoftGraph.Model.MicrosoftGraphUserTrainingEventInfoTrainingCompletedProperties.t()
+            | nil,
+          :trainingUpdatedProperties =>
+            MicrosoftGraph.Model.MicrosoftGraphUserTrainingEventInfoTrainingUpdatedProperties.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:latestTrainingStatus, :struct, MicrosoftGraph.Model.MicrosoftGraphUserTrainingEventInfoLatestTrainingStatus)
-     |> Deserializer.deserialize(:trainingAssignedProperties, :struct, MicrosoftGraph.Model.MicrosoftGraphUserTrainingEventInfoTrainingAssignedProperties)
-     |> Deserializer.deserialize(:trainingCompletedProperties, :struct, MicrosoftGraph.Model.MicrosoftGraphUserTrainingEventInfoTrainingCompletedProperties)
-     |> Deserializer.deserialize(:trainingUpdatedProperties, :struct, MicrosoftGraph.Model.MicrosoftGraphUserTrainingEventInfoTrainingUpdatedProperties)
+    |> Deserializer.deserialize(
+      :latestTrainingStatus,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphUserTrainingEventInfoLatestTrainingStatus
+    )
+    |> Deserializer.deserialize(
+      :trainingAssignedProperties,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphUserTrainingEventInfoTrainingAssignedProperties
+    )
+    |> Deserializer.deserialize(
+      :trainingCompletedProperties,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphUserTrainingEventInfoTrainingCompletedProperties
+    )
+    |> Deserializer.deserialize(
+      :trainingUpdatedProperties,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphUserTrainingEventInfoTrainingUpdatedProperties
+    )
   end
 end
-

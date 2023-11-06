@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.SynchronizationTemplateMetadataInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,19 @@ defmodule MicrosoftGraph.Model.SynchronizationTemplateMetadataInner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :key => MicrosoftGraph.Model.MicrosoftGraphSynchronizationMetadataEntryKey.t | nil,
-    :value => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :key => MicrosoftGraph.Model.MicrosoftGraphSynchronizationMetadataEntryKey.t() | nil,
+          :value => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:key, :struct, MicrosoftGraph.Model.MicrosoftGraphSynchronizationMetadataEntryKey)
+    |> Deserializer.deserialize(
+      :key,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSynchronizationMetadataEntryKey
+    )
   end
 end
-

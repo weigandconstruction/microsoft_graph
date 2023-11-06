@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphBaseItem do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -24,32 +24,47 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphBaseItem do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :createdBy => MicrosoftGraph.Model.BaseItemCreatedBy.t | nil,
-    :createdByUser => MicrosoftGraph.Model.BaseItemCreatedByUser.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :description => String.t | nil,
-    :eTag => String.t | nil,
-    :lastModifiedBy => MicrosoftGraph.Model.BaseItemLastModifiedBy.t | nil,
-    :lastModifiedByUser => MicrosoftGraph.Model.BaseItemLastModifiedByUser.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :name => String.t | nil,
-    :parentReference => MicrosoftGraph.Model.BaseItemParentReference.t | nil,
-    :webUrl => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :createdBy => MicrosoftGraph.Model.BaseItemCreatedBy.t() | nil,
+          :createdByUser => MicrosoftGraph.Model.BaseItemCreatedByUser.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :eTag => String.t() | nil,
+          :lastModifiedBy => MicrosoftGraph.Model.BaseItemLastModifiedBy.t() | nil,
+          :lastModifiedByUser => MicrosoftGraph.Model.BaseItemLastModifiedByUser.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :name => String.t() | nil,
+          :parentReference => MicrosoftGraph.Model.BaseItemParentReference.t() | nil,
+          :webUrl => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.BaseItemCreatedBy)
-     |> Deserializer.deserialize(:createdByUser, :struct, MicrosoftGraph.Model.BaseItemCreatedByUser)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastModifiedBy, :struct, MicrosoftGraph.Model.BaseItemLastModifiedBy)
-     |> Deserializer.deserialize(:lastModifiedByUser, :struct, MicrosoftGraph.Model.BaseItemLastModifiedByUser)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:parentReference, :struct, MicrosoftGraph.Model.BaseItemParentReference)
+    |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.BaseItemCreatedBy)
+    |> Deserializer.deserialize(
+      :createdByUser,
+      :struct,
+      MicrosoftGraph.Model.BaseItemCreatedByUser
+    )
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :lastModifiedBy,
+      :struct,
+      MicrosoftGraph.Model.BaseItemLastModifiedBy
+    )
+    |> Deserializer.deserialize(
+      :lastModifiedByUser,
+      :struct,
+      MicrosoftGraph.Model.BaseItemLastModifiedByUser
+    )
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :parentReference,
+      :struct,
+      MicrosoftGraph.Model.BaseItemParentReference
+    )
   end
 end
-

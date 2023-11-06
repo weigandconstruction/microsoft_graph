@@ -22,29 +22,49 @@ defmodule MicrosoftGraph.Model.ContainerEvidenceImage do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :createdDateTime => DateTime.t | nil,
-    :detailedRoles => [String.t] | nil,
-    :remediationStatus => MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRemediationStatus.t | nil,
-    :remediationStatusDetails => String.t | nil,
-    :roles => [MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRole.t] | nil,
-    :tags => [String.t] | nil,
-    :verdict => MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceVerdict.t | nil,
-    :digestImage => MicrosoftGraph.Model.ContainerImageEvidenceDigestImage.t | nil,
-    :imageId => String.t | nil,
-    :registry => MicrosoftGraph.Model.ContainerImageEvidenceRegistry.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :createdDateTime => DateTime.t() | nil,
+          :detailedRoles => [String.t()] | nil,
+          :remediationStatus =>
+            MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRemediationStatus.t() | nil,
+          :remediationStatusDetails => String.t() | nil,
+          :roles => [MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRole.t()] | nil,
+          :tags => [String.t()] | nil,
+          :verdict => MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceVerdict.t() | nil,
+          :digestImage => MicrosoftGraph.Model.ContainerImageEvidenceDigestImage.t() | nil,
+          :imageId => String.t() | nil,
+          :registry => MicrosoftGraph.Model.ContainerImageEvidenceRegistry.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:remediationStatus, :struct, MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRemediationStatus)
-     |> Deserializer.deserialize(:roles, :list, MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRole)
-     |> Deserializer.deserialize(:verdict, :struct, MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceVerdict)
-     |> Deserializer.deserialize(:digestImage, :struct, MicrosoftGraph.Model.ContainerImageEvidenceDigestImage)
-     |> Deserializer.deserialize(:registry, :struct, MicrosoftGraph.Model.ContainerImageEvidenceRegistry)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :remediationStatus,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRemediationStatus
+    )
+    |> Deserializer.deserialize(
+      :roles,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRole
+    )
+    |> Deserializer.deserialize(
+      :verdict,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceVerdict
+    )
+    |> Deserializer.deserialize(
+      :digestImage,
+      :struct,
+      MicrosoftGraph.Model.ContainerImageEvidenceDigestImage
+    )
+    |> Deserializer.deserialize(
+      :registry,
+      :struct,
+      MicrosoftGraph.Model.ContainerImageEvidenceRegistry
+    )
   end
 end
-

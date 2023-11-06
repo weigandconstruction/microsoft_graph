@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphTrainingEventsContentAssignedTrainingsInfosInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphTrainingEventsContentAssignedTraini
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :assignedUserCount => integer() | nil,
-    :completedUserCount => integer() | nil,
-    :displayName => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :assignedUserCount => integer() | nil,
+          :completedUserCount => integer() | nil,
+          :displayName => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

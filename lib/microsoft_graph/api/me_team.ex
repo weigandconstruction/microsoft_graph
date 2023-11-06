@@ -23,7 +23,14 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeam.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_create_joined_teams(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphTeam.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeam.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_create_joined_teams(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphTeam.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeam.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_create_joined_teams(connection, microsoft_graph_team, _opts \\ []) do
     request =
       %{}
@@ -56,7 +63,10 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_delete_joined_teams(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_delete_joined_teams(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_delete_joined_teams(connection, team_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -94,7 +104,10 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeam.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_get_joined_teams(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeam.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_get_joined_teams(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeam.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_get_joined_teams(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -133,7 +146,10 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_all_channels_get_count382e(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_all_channels_get_count382e(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_all_channels_get_count382e(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -173,8 +189,23 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_create_members(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_channels_create_members(connection, team_id, channel_id, microsoft_graph_conversation_member, _opts \\ []) do
+  @spec me_joined_teams_channels_create_members(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphConversationMember.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_channels_create_members(
+        connection,
+        team_id,
+        channel_id,
+        microsoft_graph_conversation_member,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -208,8 +239,23 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_create_messages(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_channels_create_messages(connection, team_id, channel_id, microsoft_graph_chat_message, _opts \\ []) do
+  @spec me_joined_teams_channels_create_messages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphChatMessage.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_channels_create_messages(
+        connection,
+        team_id,
+        channel_id,
+        microsoft_graph_chat_message,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -242,8 +288,23 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSharedWithChannelTeamInfo.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_create_shared_with_teams(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphSharedWithChannelTeamInfo.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSharedWithChannelTeamInfo.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_channels_create_shared_with_teams(connection, team_id, channel_id, microsoft_graph_shared_with_channel_team_info, _opts \\ []) do
+  @spec me_joined_teams_channels_create_shared_with_teams(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSharedWithChannelTeamInfo.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSharedWithChannelTeamInfo.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_channels_create_shared_with_teams(
+        connection,
+        team_id,
+        channel_id,
+        microsoft_graph_shared_with_channel_team_info,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -277,8 +338,23 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_create_tabs(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_channels_create_tabs(connection, team_id, channel_id, microsoft_graph_teams_tab, _opts \\ []) do
+  @spec me_joined_teams_channels_create_tabs(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_channels_create_tabs(
+        connection,
+        team_id,
+        channel_id,
+        microsoft_graph_teams_tab,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -313,8 +389,23 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_delete_members(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_channels_delete_members(connection, team_id, channel_id, conversation_member_id, opts \\ []) do
+  @spec me_joined_teams_channels_delete_members(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_channels_delete_members(
+        connection,
+        team_id,
+        channel_id,
+        conversation_member_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -322,7 +413,9 @@ defmodule MicrosoftGraph.Api.MeTeam do
     request =
       %{}
       |> method(:delete)
-      |> url("/me/joinedTeams/#{team_id}/channels/#{channel_id}/members/#{conversation_member_id}")
+      |> url(
+        "/me/joinedTeams/#{team_id}/channels/#{channel_id}/members/#{conversation_member_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -352,8 +445,23 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_delete_messages(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_channels_delete_messages(connection, team_id, channel_id, chat_message_id, opts \\ []) do
+  @spec me_joined_teams_channels_delete_messages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_channels_delete_messages(
+        connection,
+        team_id,
+        channel_id,
+        chat_message_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -392,8 +500,23 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_delete_shared_with_teams(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_channels_delete_shared_with_teams(connection, team_id, channel_id, shared_with_channel_team_info_id, opts \\ []) do
+  @spec me_joined_teams_channels_delete_shared_with_teams(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_channels_delete_shared_with_teams(
+        connection,
+        team_id,
+        channel_id,
+        shared_with_channel_team_info_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -401,7 +524,9 @@ defmodule MicrosoftGraph.Api.MeTeam do
     request =
       %{}
       |> method(:delete)
-      |> url("/me/joinedTeams/#{team_id}/channels/#{channel_id}/sharedWithTeams/#{shared_with_channel_team_info_id}")
+      |> url(
+        "/me/joinedTeams/#{team_id}/channels/#{channel_id}/sharedWithTeams/#{shared_with_channel_team_info_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -432,8 +557,23 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_delete_tabs(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_channels_delete_tabs(connection, team_id, channel_id, teams_tab_id, opts \\ []) do
+  @spec me_joined_teams_channels_delete_tabs(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_channels_delete_tabs(
+        connection,
+        team_id,
+        channel_id,
+        teams_tab_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -470,7 +610,10 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_get_count719a(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_channels_get_count719a(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_channels_get_count719a(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -511,7 +654,15 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_get_files_folder(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_channels_get_files_folder(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_channels_get_files_folder(connection, team_id, channel_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -550,8 +701,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_get_files_folder_content(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_channels_get_files_folder_content(connection, team_id, channel_id, _opts \\ []) do
+  @spec me_joined_teams_channels_get_files_folder_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_channels_get_files_folder_content(
+        connection,
+        team_id,
+        channel_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
@@ -586,8 +750,23 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_get_members(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_channels_get_members(connection, team_id, channel_id, conversation_member_id, opts \\ []) do
+  @spec me_joined_teams_channels_get_members(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_channels_get_members(
+        connection,
+        team_id,
+        channel_id,
+        conversation_member_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -596,7 +775,9 @@ defmodule MicrosoftGraph.Api.MeTeam do
     request =
       %{}
       |> method(:get)
-      |> url("/me/joinedTeams/#{team_id}/channels/#{channel_id}/members/#{conversation_member_id}")
+      |> url(
+        "/me/joinedTeams/#{team_id}/channels/#{channel_id}/members/#{conversation_member_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -628,8 +809,23 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_get_messages(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_channels_get_messages(connection, team_id, channel_id, chat_message_id, opts \\ []) do
+  @spec me_joined_teams_channels_get_messages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_channels_get_messages(
+        connection,
+        team_id,
+        channel_id,
+        chat_message_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -670,8 +866,23 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSharedWithChannelTeamInfo.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_get_shared_with_teams(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSharedWithChannelTeamInfo.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_channels_get_shared_with_teams(connection, team_id, channel_id, shared_with_channel_team_info_id, opts \\ []) do
+  @spec me_joined_teams_channels_get_shared_with_teams(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSharedWithChannelTeamInfo.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_channels_get_shared_with_teams(
+        connection,
+        team_id,
+        channel_id,
+        shared_with_channel_team_info_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -680,7 +891,9 @@ defmodule MicrosoftGraph.Api.MeTeam do
     request =
       %{}
       |> method(:get)
-      |> url("/me/joinedTeams/#{team_id}/channels/#{channel_id}/sharedWithTeams/#{shared_with_channel_team_info_id}")
+      |> url(
+        "/me/joinedTeams/#{team_id}/channels/#{channel_id}/sharedWithTeams/#{shared_with_channel_team_info_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -712,7 +925,16 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_get_tabs(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_channels_get_tabs(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_channels_get_tabs(connection, team_id, channel_id, teams_tab_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -759,7 +981,15 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMemberCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_list_members(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMemberCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_channels_list_members(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMemberCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_channels_list_members(connection, team_id, channel_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -812,7 +1042,15 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_list_messages(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_channels_list_messages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_channels_list_messages(connection, team_id, channel_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -865,7 +1103,16 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSharedWithChannelTeamInfoCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_list_shared_with_teams(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSharedWithChannelTeamInfoCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_channels_list_shared_with_teams(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphSharedWithChannelTeamInfoCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_channels_list_shared_with_teams(connection, team_id, channel_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -918,7 +1165,10 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTabCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_list_tabs(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTabCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_channels_list_tabs(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTabCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_channels_list_tabs(connection, team_id, channel_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -964,7 +1214,15 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_members_get_count_f9b9(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_channels_members_get_count_f9b9(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_channels_members_get_count_f9b9(connection, team_id, channel_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -1004,12 +1262,31 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_messages_create_hosted_contents(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_channels_messages_create_hosted_contents(connection, team_id, channel_id, chat_message_id, microsoft_graph_chat_message_hosted_content, _opts \\ []) do
+  @spec me_joined_teams_channels_messages_create_hosted_contents(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_channels_messages_create_hosted_contents(
+        connection,
+        team_id,
+        channel_id,
+        chat_message_id,
+        microsoft_graph_chat_message_hosted_content,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/hostedContents")
+      |> url(
+        "/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/hostedContents"
+      )
       |> add_param(:body, :body, microsoft_graph_chat_message_hosted_content)
       |> Enum.into([])
 
@@ -1040,12 +1317,31 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_messages_create_replies(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_channels_messages_create_replies(connection, team_id, channel_id, chat_message_id, microsoft_graph_chat_message, _opts \\ []) do
+  @spec me_joined_teams_channels_messages_create_replies(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphChatMessage.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_channels_messages_create_replies(
+        connection,
+        team_id,
+        channel_id,
+        chat_message_id,
+        microsoft_graph_chat_message,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies")
+      |> url(
+        "/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies"
+      )
       |> add_param(:body, :body, microsoft_graph_chat_message)
       |> Enum.into([])
 
@@ -1076,8 +1372,25 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_messages_delete_hosted_contents(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_channels_messages_delete_hosted_contents(connection, team_id, channel_id, chat_message_id, chat_message_hosted_content_id, opts \\ []) do
+  @spec me_joined_teams_channels_messages_delete_hosted_contents(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_channels_messages_delete_hosted_contents(
+        connection,
+        team_id,
+        channel_id,
+        chat_message_id,
+        chat_message_hosted_content_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1085,7 +1398,9 @@ defmodule MicrosoftGraph.Api.MeTeam do
     request =
       %{}
       |> method(:delete)
-      |> url("/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/hostedContents/#{chat_message_hosted_content_id}")
+      |> url(
+        "/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/hostedContents/#{chat_message_hosted_content_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1116,8 +1431,25 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_messages_delete_replies(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_channels_messages_delete_replies(connection, team_id, channel_id, chat_message_id, chat_message_id1, opts \\ []) do
+  @spec me_joined_teams_channels_messages_delete_replies(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_channels_messages_delete_replies(
+        connection,
+        team_id,
+        channel_id,
+        chat_message_id,
+        chat_message_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1125,7 +1457,9 @@ defmodule MicrosoftGraph.Api.MeTeam do
     request =
       %{}
       |> method(:delete)
-      |> url("/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}")
+      |> url(
+        "/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1155,7 +1489,15 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_messages_get_count31de(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_channels_messages_get_count31de(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_channels_messages_get_count31de(connection, team_id, channel_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -1198,8 +1540,25 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_messages_get_hosted_contents(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_channels_messages_get_hosted_contents(connection, team_id, channel_id, chat_message_id, chat_message_hosted_content_id, opts \\ []) do
+  @spec me_joined_teams_channels_messages_get_hosted_contents(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_channels_messages_get_hosted_contents(
+        connection,
+        team_id,
+        channel_id,
+        chat_message_id,
+        chat_message_hosted_content_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1208,7 +1567,9 @@ defmodule MicrosoftGraph.Api.MeTeam do
     request =
       %{}
       |> method(:get)
-      |> url("/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/hostedContents/#{chat_message_hosted_content_id}")
+      |> url(
+        "/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/hostedContents/#{chat_message_hosted_content_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1238,12 +1599,31 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_messages_get_hosted_contents_content(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_channels_messages_get_hosted_contents_content(connection, team_id, channel_id, chat_message_id, chat_message_hosted_content_id, _opts \\ []) do
+  @spec me_joined_teams_channels_messages_get_hosted_contents_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_channels_messages_get_hosted_contents_content(
+        connection,
+        team_id,
+        channel_id,
+        chat_message_id,
+        chat_message_hosted_content_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/hostedContents/#{chat_message_hosted_content_id}/$value")
+      |> url(
+        "/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/hostedContents/#{chat_message_hosted_content_id}/$value"
+      )
       |> Enum.into([])
 
     connection
@@ -1275,8 +1655,25 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_messages_get_replies(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_channels_messages_get_replies(connection, team_id, channel_id, chat_message_id, chat_message_id1, opts \\ []) do
+  @spec me_joined_teams_channels_messages_get_replies(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_channels_messages_get_replies(
+        connection,
+        team_id,
+        channel_id,
+        chat_message_id,
+        chat_message_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1285,7 +1682,9 @@ defmodule MicrosoftGraph.Api.MeTeam do
     request =
       %{}
       |> method(:get)
-      |> url("/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}")
+      |> url(
+        "/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1316,8 +1715,23 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_messages_hosted_contents_get_count0878(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_channels_messages_hosted_contents_get_count0878(connection, team_id, channel_id, chat_message_id, opts \\ []) do
+  @spec me_joined_teams_channels_messages_hosted_contents_get_count0878(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_channels_messages_hosted_contents_get_count0878(
+        connection,
+        team_id,
+        channel_id,
+        chat_message_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1326,7 +1740,9 @@ defmodule MicrosoftGraph.Api.MeTeam do
     request =
       %{}
       |> method(:get)
-      |> url("/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/hostedContents/$count")
+      |> url(
+        "/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/hostedContents/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1364,8 +1780,24 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContentCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_messages_list_hosted_contents(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContentCollectionResponse.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_channels_messages_list_hosted_contents(connection, team_id, channel_id, chat_message_id, opts \\ []) do
+  @spec me_joined_teams_channels_messages_list_hosted_contents(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContentCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_channels_messages_list_hosted_contents(
+        connection,
+        team_id,
+        channel_id,
+        chat_message_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1380,7 +1812,9 @@ defmodule MicrosoftGraph.Api.MeTeam do
     request =
       %{}
       |> method(:get)
-      |> url("/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/hostedContents")
+      |> url(
+        "/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/hostedContents"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1418,8 +1852,23 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_messages_list_replies(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_channels_messages_list_replies(connection, team_id, channel_id, chat_message_id, opts \\ []) do
+  @spec me_joined_teams_channels_messages_list_replies(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_channels_messages_list_replies(
+        connection,
+        team_id,
+        channel_id,
+        chat_message_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1434,7 +1883,9 @@ defmodule MicrosoftGraph.Api.MeTeam do
     request =
       %{}
       |> method(:get)
-      |> url("/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies")
+      |> url(
+        "/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1465,12 +1916,33 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_messages_replies_create_hosted_contents(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_channels_messages_replies_create_hosted_contents(connection, team_id, channel_id, chat_message_id, chat_message_id1, microsoft_graph_chat_message_hosted_content, _opts \\ []) do
+  @spec me_joined_teams_channels_messages_replies_create_hosted_contents(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_channels_messages_replies_create_hosted_contents(
+        connection,
+        team_id,
+        channel_id,
+        chat_message_id,
+        chat_message_id1,
+        microsoft_graph_chat_message_hosted_content,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/hostedContents")
+      |> url(
+        "/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/hostedContents"
+      )
       |> add_param(:body, :body, microsoft_graph_chat_message_hosted_content)
       |> Enum.into([])
 
@@ -1502,8 +1974,27 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_messages_replies_delete_hosted_contents(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_channels_messages_replies_delete_hosted_contents(connection, team_id, channel_id, chat_message_id, chat_message_id1, chat_message_hosted_content_id, opts \\ []) do
+  @spec me_joined_teams_channels_messages_replies_delete_hosted_contents(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_channels_messages_replies_delete_hosted_contents(
+        connection,
+        team_id,
+        channel_id,
+        chat_message_id,
+        chat_message_id1,
+        chat_message_hosted_content_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1511,7 +2002,9 @@ defmodule MicrosoftGraph.Api.MeTeam do
     request =
       %{}
       |> method(:delete)
-      |> url("/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/hostedContents/#{chat_message_hosted_content_id}")
+      |> url(
+        "/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/hostedContents/#{chat_message_hosted_content_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1542,8 +2035,23 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_messages_replies_get_count2855(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_channels_messages_replies_get_count2855(connection, team_id, channel_id, chat_message_id, opts \\ []) do
+  @spec me_joined_teams_channels_messages_replies_get_count2855(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_channels_messages_replies_get_count2855(
+        connection,
+        team_id,
+        channel_id,
+        chat_message_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1552,7 +2060,9 @@ defmodule MicrosoftGraph.Api.MeTeam do
     request =
       %{}
       |> method(:get)
-      |> url("/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/$count")
+      |> url(
+        "/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1586,8 +2096,27 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_messages_replies_get_hosted_contents(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_channels_messages_replies_get_hosted_contents(connection, team_id, channel_id, chat_message_id, chat_message_id1, chat_message_hosted_content_id, opts \\ []) do
+  @spec me_joined_teams_channels_messages_replies_get_hosted_contents(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_channels_messages_replies_get_hosted_contents(
+        connection,
+        team_id,
+        channel_id,
+        chat_message_id,
+        chat_message_id1,
+        chat_message_hosted_content_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1596,7 +2125,9 @@ defmodule MicrosoftGraph.Api.MeTeam do
     request =
       %{}
       |> method(:get)
-      |> url("/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/hostedContents/#{chat_message_hosted_content_id}")
+      |> url(
+        "/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/hostedContents/#{chat_message_hosted_content_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1627,12 +2158,33 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_messages_replies_get_hosted_contents_content(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_channels_messages_replies_get_hosted_contents_content(connection, team_id, channel_id, chat_message_id, chat_message_id1, chat_message_hosted_content_id, _opts \\ []) do
+  @spec me_joined_teams_channels_messages_replies_get_hosted_contents_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_channels_messages_replies_get_hosted_contents_content(
+        connection,
+        team_id,
+        channel_id,
+        chat_message_id,
+        chat_message_id1,
+        chat_message_hosted_content_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/hostedContents/#{chat_message_hosted_content_id}/$value")
+      |> url(
+        "/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/hostedContents/#{chat_message_hosted_content_id}/$value"
+      )
       |> Enum.into([])
 
     connection
@@ -1663,8 +2215,25 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_messages_replies_hosted_contents_get_count_ff44(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_channels_messages_replies_hosted_contents_get_count_ff44(connection, team_id, channel_id, chat_message_id, chat_message_id1, opts \\ []) do
+  @spec me_joined_teams_channels_messages_replies_hosted_contents_get_count_ff44(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_channels_messages_replies_hosted_contents_get_count_ff44(
+        connection,
+        team_id,
+        channel_id,
+        chat_message_id,
+        chat_message_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1673,7 +2242,9 @@ defmodule MicrosoftGraph.Api.MeTeam do
     request =
       %{}
       |> method(:get)
-      |> url("/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/hostedContents/$count")
+      |> url(
+        "/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/hostedContents/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1712,8 +2283,26 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContentCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_messages_replies_list_hosted_contents(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContentCollectionResponse.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_channels_messages_replies_list_hosted_contents(connection, team_id, channel_id, chat_message_id, chat_message_id1, opts \\ []) do
+  @spec me_joined_teams_channels_messages_replies_list_hosted_contents(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContentCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_channels_messages_replies_list_hosted_contents(
+        connection,
+        team_id,
+        channel_id,
+        chat_message_id,
+        chat_message_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1728,7 +2317,9 @@ defmodule MicrosoftGraph.Api.MeTeam do
     request =
       %{}
       |> method(:get)
-      |> url("/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/hostedContents")
+      |> url(
+        "/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/hostedContents"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1760,12 +2351,35 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_messages_replies_update_hosted_contents(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_channels_messages_replies_update_hosted_contents(connection, team_id, channel_id, chat_message_id, chat_message_id1, chat_message_hosted_content_id, microsoft_graph_chat_message_hosted_content, _opts \\ []) do
+  @spec me_joined_teams_channels_messages_replies_update_hosted_contents(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_channels_messages_replies_update_hosted_contents(
+        connection,
+        team_id,
+        channel_id,
+        chat_message_id,
+        chat_message_id1,
+        chat_message_hosted_content_id,
+        microsoft_graph_chat_message_hosted_content,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/hostedContents/#{chat_message_hosted_content_id}")
+      |> url(
+        "/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/hostedContents/#{chat_message_hosted_content_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_chat_message_hosted_content)
       |> Enum.into([])
 
@@ -1797,12 +2411,35 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_messages_replies_update_hosted_contents_content(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_channels_messages_replies_update_hosted_contents_content(connection, team_id, channel_id, chat_message_id, chat_message_id1, chat_message_hosted_content_id, body, _opts \\ []) do
+  @spec me_joined_teams_channels_messages_replies_update_hosted_contents_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_channels_messages_replies_update_hosted_contents_content(
+        connection,
+        team_id,
+        channel_id,
+        chat_message_id,
+        chat_message_id1,
+        chat_message_hosted_content_id,
+        body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)
-      |> url("/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/hostedContents/#{chat_message_hosted_content_id}/$value")
+      |> url(
+        "/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/hostedContents/#{chat_message_hosted_content_id}/$value"
+      )
       |> add_param(:body, :body, body)
       |> Enum.into([])
 
@@ -1833,12 +2470,33 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_messages_update_hosted_contents(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_channels_messages_update_hosted_contents(connection, team_id, channel_id, chat_message_id, chat_message_hosted_content_id, microsoft_graph_chat_message_hosted_content, _opts \\ []) do
+  @spec me_joined_teams_channels_messages_update_hosted_contents(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_channels_messages_update_hosted_contents(
+        connection,
+        team_id,
+        channel_id,
+        chat_message_id,
+        chat_message_hosted_content_id,
+        microsoft_graph_chat_message_hosted_content,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/hostedContents/#{chat_message_hosted_content_id}")
+      |> url(
+        "/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/hostedContents/#{chat_message_hosted_content_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_chat_message_hosted_content)
       |> Enum.into([])
 
@@ -1869,12 +2527,33 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_messages_update_hosted_contents_content(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_channels_messages_update_hosted_contents_content(connection, team_id, channel_id, chat_message_id, chat_message_hosted_content_id, body, _opts \\ []) do
+  @spec me_joined_teams_channels_messages_update_hosted_contents_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_channels_messages_update_hosted_contents_content(
+        connection,
+        team_id,
+        channel_id,
+        chat_message_id,
+        chat_message_hosted_content_id,
+        body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)
-      |> url("/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/hostedContents/#{chat_message_hosted_content_id}/$value")
+      |> url(
+        "/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/hostedContents/#{chat_message_hosted_content_id}/$value"
+      )
       |> add_param(:body, :body, body)
       |> Enum.into([])
 
@@ -1905,12 +2584,33 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_messages_update_replies(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_channels_messages_update_replies(connection, team_id, channel_id, chat_message_id, chat_message_id1, microsoft_graph_chat_message, _opts \\ []) do
+  @spec me_joined_teams_channels_messages_update_replies(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphChatMessage.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_channels_messages_update_replies(
+        connection,
+        team_id,
+        channel_id,
+        chat_message_id,
+        chat_message_id1,
+        microsoft_graph_chat_message,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}")
+      |> url(
+        "/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}"
+      )
       |> add_param(:body, :body, microsoft_graph_chat_message)
       |> Enum.into([])
 
@@ -1941,8 +2641,23 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_shared_with_teams_allowed_members_get_count2fcd(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_channels_shared_with_teams_allowed_members_get_count2fcd(connection, team_id, channel_id, shared_with_channel_team_info_id, opts \\ []) do
+  @spec me_joined_teams_channels_shared_with_teams_allowed_members_get_count2fcd(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_channels_shared_with_teams_allowed_members_get_count2fcd(
+        connection,
+        team_id,
+        channel_id,
+        shared_with_channel_team_info_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1951,7 +2666,9 @@ defmodule MicrosoftGraph.Api.MeTeam do
     request =
       %{}
       |> method(:get)
-      |> url("/me/joinedTeams/#{team_id}/channels/#{channel_id}/sharedWithTeams/#{shared_with_channel_team_info_id}/allowedMembers/$count")
+      |> url(
+        "/me/joinedTeams/#{team_id}/channels/#{channel_id}/sharedWithTeams/#{shared_with_channel_team_info_id}/allowedMembers/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1984,8 +2701,25 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_shared_with_teams_get_allowed_members(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_channels_shared_with_teams_get_allowed_members(connection, team_id, channel_id, shared_with_channel_team_info_id, conversation_member_id, opts \\ []) do
+  @spec me_joined_teams_channels_shared_with_teams_get_allowed_members(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_channels_shared_with_teams_get_allowed_members(
+        connection,
+        team_id,
+        channel_id,
+        shared_with_channel_team_info_id,
+        conversation_member_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1994,7 +2728,9 @@ defmodule MicrosoftGraph.Api.MeTeam do
     request =
       %{}
       |> method(:get)
-      |> url("/me/joinedTeams/#{team_id}/channels/#{channel_id}/sharedWithTeams/#{shared_with_channel_team_info_id}/allowedMembers/#{conversation_member_id}")
+      |> url(
+        "/me/joinedTeams/#{team_id}/channels/#{channel_id}/sharedWithTeams/#{shared_with_channel_team_info_id}/allowedMembers/#{conversation_member_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2024,8 +2760,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_shared_with_teams_get_count2a75(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_channels_shared_with_teams_get_count2a75(connection, team_id, channel_id, opts \\ []) do
+  @spec me_joined_teams_channels_shared_with_teams_get_count2a75(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_channels_shared_with_teams_get_count2a75(
+        connection,
+        team_id,
+        channel_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -2065,8 +2814,23 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeam.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_shared_with_teams_get_team(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeam.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_channels_shared_with_teams_get_team(connection, team_id, channel_id, shared_with_channel_team_info_id, opts \\ []) do
+  @spec me_joined_teams_channels_shared_with_teams_get_team(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeam.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_channels_shared_with_teams_get_team(
+        connection,
+        team_id,
+        channel_id,
+        shared_with_channel_team_info_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2075,7 +2839,9 @@ defmodule MicrosoftGraph.Api.MeTeam do
     request =
       %{}
       |> method(:get)
-      |> url("/me/joinedTeams/#{team_id}/channels/#{channel_id}/sharedWithTeams/#{shared_with_channel_team_info_id}/team")
+      |> url(
+        "/me/joinedTeams/#{team_id}/channels/#{channel_id}/sharedWithTeams/#{shared_with_channel_team_info_id}/team"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2113,8 +2879,23 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMemberCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_shared_with_teams_list_allowed_members(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMemberCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_channels_shared_with_teams_list_allowed_members(connection, team_id, channel_id, shared_with_channel_team_info_id, opts \\ []) do
+  @spec me_joined_teams_channels_shared_with_teams_list_allowed_members(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMemberCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_channels_shared_with_teams_list_allowed_members(
+        connection,
+        team_id,
+        channel_id,
+        shared_with_channel_team_info_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -2129,7 +2910,9 @@ defmodule MicrosoftGraph.Api.MeTeam do
     request =
       %{}
       |> method(:get)
-      |> url("/me/joinedTeams/#{team_id}/channels/#{channel_id}/sharedWithTeams/#{shared_with_channel_team_info_id}/allowedMembers")
+      |> url(
+        "/me/joinedTeams/#{team_id}/channels/#{channel_id}/sharedWithTeams/#{shared_with_channel_team_info_id}/allowedMembers"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2159,7 +2942,15 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_tabs_get_count4693(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_channels_tabs_get_count4693(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_channels_tabs_get_count4693(connection, team_id, channel_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -2201,8 +2992,23 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsApp.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_tabs_get_teams_app(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsApp.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_channels_tabs_get_teams_app(connection, team_id, channel_id, teams_tab_id, opts \\ []) do
+  @spec me_joined_teams_channels_tabs_get_teams_app(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsApp.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_channels_tabs_get_teams_app(
+        connection,
+        team_id,
+        channel_id,
+        teams_tab_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2241,8 +3047,23 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_update_files_folder_content(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_channels_update_files_folder_content(connection, team_id, channel_id, body, _opts \\ []) do
+  @spec me_joined_teams_channels_update_files_folder_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_channels_update_files_folder_content(
+        connection,
+        team_id,
+        channel_id,
+        body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)
@@ -2277,12 +3098,31 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_update_members(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_channels_update_members(connection, team_id, channel_id, conversation_member_id, microsoft_graph_conversation_member, _opts \\ []) do
+  @spec me_joined_teams_channels_update_members(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphConversationMember.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_channels_update_members(
+        connection,
+        team_id,
+        channel_id,
+        conversation_member_id,
+        microsoft_graph_conversation_member,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/me/joinedTeams/#{team_id}/channels/#{channel_id}/members/#{conversation_member_id}")
+      |> url(
+        "/me/joinedTeams/#{team_id}/channels/#{channel_id}/members/#{conversation_member_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_conversation_member)
       |> Enum.into([])
 
@@ -2313,8 +3153,25 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_update_messages(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_channels_update_messages(connection, team_id, channel_id, chat_message_id, microsoft_graph_chat_message, _opts \\ []) do
+  @spec me_joined_teams_channels_update_messages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphChatMessage.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_channels_update_messages(
+        connection,
+        team_id,
+        channel_id,
+        chat_message_id,
+        microsoft_graph_chat_message,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -2348,12 +3205,31 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSharedWithChannelTeamInfo.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_update_shared_with_teams(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphSharedWithChannelTeamInfo.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSharedWithChannelTeamInfo.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_channels_update_shared_with_teams(connection, team_id, channel_id, shared_with_channel_team_info_id, microsoft_graph_shared_with_channel_team_info, _opts \\ []) do
+  @spec me_joined_teams_channels_update_shared_with_teams(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSharedWithChannelTeamInfo.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSharedWithChannelTeamInfo.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_channels_update_shared_with_teams(
+        connection,
+        team_id,
+        channel_id,
+        shared_with_channel_team_info_id,
+        microsoft_graph_shared_with_channel_team_info,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/me/joinedTeams/#{team_id}/channels/#{channel_id}/sharedWithTeams/#{shared_with_channel_team_info_id}")
+      |> url(
+        "/me/joinedTeams/#{team_id}/channels/#{channel_id}/sharedWithTeams/#{shared_with_channel_team_info_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_shared_with_channel_team_info)
       |> Enum.into([])
 
@@ -2384,8 +3260,25 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_channels_update_tabs(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_channels_update_tabs(connection, team_id, channel_id, teams_tab_id, microsoft_graph_teams_tab, _opts \\ []) do
+  @spec me_joined_teams_channels_update_tabs(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_channels_update_tabs(
+        connection,
+        team_id,
+        channel_id,
+        teams_tab_id,
+        microsoft_graph_teams_tab,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -2418,7 +3311,15 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChannel.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_create_channels(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphChannel.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChannel.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_create_channels(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphChannel.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChannel.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_create_channels(connection, team_id, microsoft_graph_channel, _opts \\ []) do
     request =
       %{}
@@ -2452,8 +3353,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppInstallation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_create_installed_apps(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphTeamsAppInstallation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppInstallation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_create_installed_apps(connection, team_id, microsoft_graph_teams_app_installation, _opts \\ []) do
+  @spec me_joined_teams_create_installed_apps(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTeamsAppInstallation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppInstallation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_create_installed_apps(
+        connection,
+        team_id,
+        microsoft_graph_teams_app_installation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -2486,8 +3400,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_create_members(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_create_members(connection, team_id, microsoft_graph_conversation_member, _opts \\ []) do
+  @spec me_joined_teams_create_members(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphConversationMember.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_create_members(
+        connection,
+        team_id,
+        microsoft_graph_conversation_member,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -2519,8 +3446,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAsyncOperation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_create_operations(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphTeamsAsyncOperation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAsyncOperation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_create_operations(connection, team_id, microsoft_graph_teams_async_operation, _opts \\ []) do
+  @spec me_joined_teams_create_operations(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTeamsAsyncOperation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAsyncOperation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_create_operations(
+        connection,
+        team_id,
+        microsoft_graph_teams_async_operation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -2552,8 +3492,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_create_permission_grants(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_create_permission_grants(connection, team_id, microsoft_graph_resource_specific_permission_grant, _opts \\ []) do
+  @spec me_joined_teams_create_permission_grants(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_create_permission_grants(
+        connection,
+        team_id,
+        microsoft_graph_resource_specific_permission_grant,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -2586,7 +3539,15 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkTag.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_create_tags(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphTeamworkTag.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkTag.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_create_tags(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTeamworkTag.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkTag.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_create_tags(connection, team_id, microsoft_graph_teamwork_tag, _opts \\ []) do
     request =
       %{}
@@ -2621,7 +3582,10 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_delete_channels(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_delete_channels(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_delete_channels(connection, team_id, channel_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -2660,7 +3624,15 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_delete_incoming_channels(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_delete_incoming_channels(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_delete_incoming_channels(connection, team_id, channel_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -2699,8 +3671,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_delete_installed_apps(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_delete_installed_apps(connection, team_id, teams_app_installation_id, opts \\ []) do
+  @spec me_joined_teams_delete_installed_apps(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_delete_installed_apps(
+        connection,
+        team_id,
+        teams_app_installation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -2738,7 +3723,10 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_delete_members(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_delete_members(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_delete_members(connection, team_id, conversation_member_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -2776,7 +3764,10 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_delete_operations(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_delete_operations(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_delete_operations(connection, team_id, teams_async_operation_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -2814,8 +3805,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_delete_permission_grants(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_delete_permission_grants(connection, team_id, resource_specific_permission_grant_id, opts \\ []) do
+  @spec me_joined_teams_delete_permission_grants(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_delete_permission_grants(
+        connection,
+        team_id,
+        resource_specific_permission_grant_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -2823,7 +3827,9 @@ defmodule MicrosoftGraph.Api.MeTeam do
     request =
       %{}
       |> method(:delete)
-      |> url("/me/joinedTeams/#{team_id}/permissionGrants/#{resource_specific_permission_grant_id}")
+      |> url(
+        "/me/joinedTeams/#{team_id}/permissionGrants/#{resource_specific_permission_grant_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2851,7 +3857,10 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_delete_primary_channel(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_delete_primary_channel(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_delete_primary_channel(connection, team_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -2888,7 +3897,10 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_delete_schedule(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_delete_schedule(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_delete_schedule(connection, team_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -2927,7 +3939,10 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_delete_tags(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_delete_tags(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_delete_tags(connection, team_id, teamwork_tag_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -2967,7 +3982,10 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChannel.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_get_all_channels(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChannel.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_get_all_channels(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChannel.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_get_all_channels(connection, team_id, channel_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -3008,7 +4026,10 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChannel.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_get_channels(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChannel.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_get_channels(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChannel.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_get_channels(connection, team_id, channel_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -3046,7 +4067,10 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_get_count8eca(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_get_count8eca(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_get_count8eca(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -3085,7 +4109,10 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_get_group(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_get_group(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_get_group(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -3126,7 +4153,15 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChannel.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_get_incoming_channels(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChannel.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_get_incoming_channels(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChannel.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_get_incoming_channels(connection, team_id, channel_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -3167,8 +4202,16 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppInstallation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_get_installed_apps(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppInstallation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_get_installed_apps(connection, team_id, teams_app_installation_id, opts \\ []) do
+  @spec me_joined_teams_get_installed_apps(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppInstallation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_get_installed_apps(
+        connection,
+        team_id,
+        teams_app_installation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3208,7 +4251,10 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_get_members(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_get_members(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_get_members(connection, team_id, conversation_member_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -3249,7 +4295,10 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAsyncOperation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_get_operations(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAsyncOperation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_get_operations(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAsyncOperation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_get_operations(connection, team_id, teams_async_operation_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -3290,8 +4339,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_get_permission_grants(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_get_permission_grants(connection, team_id, resource_specific_permission_grant_id, opts \\ []) do
+  @spec me_joined_teams_get_permission_grants(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_get_permission_grants(
+        connection,
+        team_id,
+        resource_specific_permission_grant_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3300,7 +4362,9 @@ defmodule MicrosoftGraph.Api.MeTeam do
     request =
       %{}
       |> method(:get)
-      |> url("/me/joinedTeams/#{team_id}/permissionGrants/#{resource_specific_permission_grant_id}")
+      |> url(
+        "/me/joinedTeams/#{team_id}/permissionGrants/#{resource_specific_permission_grant_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3330,7 +4394,10 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_get_photo(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_get_photo(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_get_photo(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -3367,7 +4434,10 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_get_photo_content(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_get_photo_content(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_get_photo_content(connection, team_id, _opts \\ []) do
     request =
       %{}
@@ -3401,7 +4471,10 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChannel.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_get_primary_channel(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChannel.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_get_primary_channel(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChannel.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_get_primary_channel(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -3441,7 +4514,10 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSchedule.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_get_schedule(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSchedule.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_get_schedule(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSchedule.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_get_schedule(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -3482,7 +4558,10 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkTag.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_get_tags(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkTag.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_get_tags(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkTag.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_get_tags(connection, team_id, teamwork_tag_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -3522,7 +4601,10 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTemplate.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_get_template(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTemplate.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_get_template(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTemplate.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_get_template(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -3567,7 +4649,14 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_group_list_service_provisioning_errors(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_group_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_group_list_service_provisioning_errors(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -3612,8 +4701,19 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_group_service_provisioning_errors_get_count_dad9(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_group_service_provisioning_errors_get_count_dad9(connection, team_id, opts \\ []) do
+  @spec me_joined_teams_group_service_provisioning_errors_get_count_dad9(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_group_service_provisioning_errors_get_count_dad9(
+        connection,
+        team_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -3651,7 +4751,10 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_incoming_channels_get_count677e(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_incoming_channels_get_count677e(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_incoming_channels_get_count677e(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -3690,7 +4793,10 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_installed_apps_get_count37f0(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_installed_apps_get_count37f0(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_installed_apps_get_count37f0(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -3731,8 +4837,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsApp.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_installed_apps_get_teams_app(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsApp.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_installed_apps_get_teams_app(connection, team_id, teams_app_installation_id, opts \\ []) do
+  @spec me_joined_teams_installed_apps_get_teams_app(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsApp.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_installed_apps_get_teams_app(
+        connection,
+        team_id,
+        teams_app_installation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3772,8 +4891,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_installed_apps_get_teams_app_definition(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_installed_apps_get_teams_app_definition(connection, team_id, teams_app_installation_id, opts \\ []) do
+  @spec me_joined_teams_installed_apps_get_teams_app_definition(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_installed_apps_get_teams_app_definition(
+        connection,
+        team_id,
+        teams_app_installation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3782,7 +4914,9 @@ defmodule MicrosoftGraph.Api.MeTeam do
     request =
       %{}
       |> method(:get)
-      |> url("/me/joinedTeams/#{team_id}/installedApps/#{teams_app_installation_id}/teamsAppDefinition")
+      |> url(
+        "/me/joinedTeams/#{team_id}/installedApps/#{teams_app_installation_id}/teamsAppDefinition"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3818,7 +4952,10 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChannelCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_list_all_channels(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChannelCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_list_all_channels(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChannelCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_list_all_channels(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -3870,7 +5007,10 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChannelCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_list_channels(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChannelCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_list_channels(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChannelCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_list_channels(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -3922,7 +5062,10 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChannelCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_list_incoming_channels(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChannelCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_list_incoming_channels(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChannelCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_list_incoming_channels(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -3974,7 +5117,10 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppInstallationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_list_installed_apps(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppInstallationCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_list_installed_apps(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppInstallationCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_list_installed_apps(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -4026,7 +5172,10 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMemberCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_list_members(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMemberCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_list_members(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMemberCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_list_members(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -4078,7 +5227,10 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAsyncOperationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_list_operations(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAsyncOperationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_list_operations(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAsyncOperationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_list_operations(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -4130,7 +5282,11 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrantCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_list_permission_grants(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrantCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_list_permission_grants(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrantCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_list_permission_grants(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -4153,7 +5309,8 @@ defmodule MicrosoftGraph.Api.MeTeam do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrantCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrantCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -4182,7 +5339,10 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkTagCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_list_tags(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkTagCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_list_tags(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkTagCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_list_tags(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -4227,7 +5387,10 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_members_get_count85d7(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_members_get_count85d7(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_members_get_count85d7(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -4266,7 +5429,10 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_operations_get_count_e702(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_operations_get_count_e702(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_operations_get_count_e702(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -4305,7 +5471,14 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_permission_grants_get_count_a196(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_permission_grants_get_count_a196(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_permission_grants_get_count_a196(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -4344,8 +5517,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_create_members(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_primary_channel_create_members(connection, team_id, microsoft_graph_conversation_member, _opts \\ []) do
+  @spec me_joined_teams_primary_channel_create_members(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphConversationMember.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_primary_channel_create_members(
+        connection,
+        team_id,
+        microsoft_graph_conversation_member,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -4378,8 +5564,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_create_messages(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_primary_channel_create_messages(connection, team_id, microsoft_graph_chat_message, _opts \\ []) do
+  @spec me_joined_teams_primary_channel_create_messages(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphChatMessage.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_primary_channel_create_messages(
+        connection,
+        team_id,
+        microsoft_graph_chat_message,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -4411,8 +5610,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSharedWithChannelTeamInfo.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_create_shared_with_teams(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphSharedWithChannelTeamInfo.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSharedWithChannelTeamInfo.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_primary_channel_create_shared_with_teams(connection, team_id, microsoft_graph_shared_with_channel_team_info, _opts \\ []) do
+  @spec me_joined_teams_primary_channel_create_shared_with_teams(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSharedWithChannelTeamInfo.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSharedWithChannelTeamInfo.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_primary_channel_create_shared_with_teams(
+        connection,
+        team_id,
+        microsoft_graph_shared_with_channel_team_info,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -4445,8 +5657,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_create_tabs(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_primary_channel_create_tabs(connection, team_id, microsoft_graph_teams_tab, _opts \\ []) do
+  @spec me_joined_teams_primary_channel_create_tabs(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_primary_channel_create_tabs(
+        connection,
+        team_id,
+        microsoft_graph_teams_tab,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -4480,8 +5705,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_delete_members(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_primary_channel_delete_members(connection, team_id, conversation_member_id, opts \\ []) do
+  @spec me_joined_teams_primary_channel_delete_members(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_primary_channel_delete_members(
+        connection,
+        team_id,
+        conversation_member_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -4518,8 +5756,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_delete_messages(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_primary_channel_delete_messages(connection, team_id, chat_message_id, opts \\ []) do
+  @spec me_joined_teams_primary_channel_delete_messages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_primary_channel_delete_messages(
+        connection,
+        team_id,
+        chat_message_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -4557,8 +5808,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_delete_shared_with_teams(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_primary_channel_delete_shared_with_teams(connection, team_id, shared_with_channel_team_info_id, opts \\ []) do
+  @spec me_joined_teams_primary_channel_delete_shared_with_teams(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_primary_channel_delete_shared_with_teams(
+        connection,
+        team_id,
+        shared_with_channel_team_info_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -4566,7 +5830,9 @@ defmodule MicrosoftGraph.Api.MeTeam do
     request =
       %{}
       |> method(:delete)
-      |> url("/me/joinedTeams/#{team_id}/primaryChannel/sharedWithTeams/#{shared_with_channel_team_info_id}")
+      |> url(
+        "/me/joinedTeams/#{team_id}/primaryChannel/sharedWithTeams/#{shared_with_channel_team_info_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4596,7 +5862,15 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_delete_tabs(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_primary_channel_delete_tabs(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_primary_channel_delete_tabs(connection, team_id, teams_tab_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -4635,7 +5909,14 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_get_files_folder(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_primary_channel_get_files_folder(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_primary_channel_get_files_folder(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -4673,7 +5954,14 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_get_files_folder_content(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_primary_channel_get_files_folder_content(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_primary_channel_get_files_folder_content(connection, team_id, _opts \\ []) do
     request =
       %{}
@@ -4708,8 +5996,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_get_members(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_primary_channel_get_members(connection, team_id, conversation_member_id, opts \\ []) do
+  @spec me_joined_teams_primary_channel_get_members(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_primary_channel_get_members(
+        connection,
+        team_id,
+        conversation_member_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -4749,8 +6050,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_get_messages(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_primary_channel_get_messages(connection, team_id, chat_message_id, opts \\ []) do
+  @spec me_joined_teams_primary_channel_get_messages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_primary_channel_get_messages(
+        connection,
+        team_id,
+        chat_message_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -4790,8 +6104,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSharedWithChannelTeamInfo.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_get_shared_with_teams(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSharedWithChannelTeamInfo.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_primary_channel_get_shared_with_teams(connection, team_id, shared_with_channel_team_info_id, opts \\ []) do
+  @spec me_joined_teams_primary_channel_get_shared_with_teams(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSharedWithChannelTeamInfo.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_primary_channel_get_shared_with_teams(
+        connection,
+        team_id,
+        shared_with_channel_team_info_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -4800,7 +6127,9 @@ defmodule MicrosoftGraph.Api.MeTeam do
     request =
       %{}
       |> method(:get)
-      |> url("/me/joinedTeams/#{team_id}/primaryChannel/sharedWithTeams/#{shared_with_channel_team_info_id}")
+      |> url(
+        "/me/joinedTeams/#{team_id}/primaryChannel/sharedWithTeams/#{shared_with_channel_team_info_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4831,7 +6160,15 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_get_tabs(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_primary_channel_get_tabs(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_primary_channel_get_tabs(connection, team_id, teams_tab_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -4877,7 +6214,10 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMemberCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_list_members(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMemberCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_primary_channel_list_members(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMemberCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_primary_channel_list_members(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -4929,7 +6269,10 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_list_messages(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_primary_channel_list_messages(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_primary_channel_list_messages(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -4981,7 +6324,15 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSharedWithChannelTeamInfoCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_list_shared_with_teams(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSharedWithChannelTeamInfoCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_primary_channel_list_shared_with_teams(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphSharedWithChannelTeamInfoCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_primary_channel_list_shared_with_teams(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -5033,7 +6384,10 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTabCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_list_tabs(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTabCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_primary_channel_list_tabs(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTabCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_primary_channel_list_tabs(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -5078,7 +6432,14 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_members_get_count4efc(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_primary_channel_members_get_count4efc(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_primary_channel_members_get_count4efc(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -5117,12 +6478,29 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_messages_create_hosted_contents(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_primary_channel_messages_create_hosted_contents(connection, team_id, chat_message_id, microsoft_graph_chat_message_hosted_content, _opts \\ []) do
+  @spec me_joined_teams_primary_channel_messages_create_hosted_contents(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_primary_channel_messages_create_hosted_contents(
+        connection,
+        team_id,
+        chat_message_id,
+        microsoft_graph_chat_message_hosted_content,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/hostedContents")
+      |> url(
+        "/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/hostedContents"
+      )
       |> add_param(:body, :body, microsoft_graph_chat_message_hosted_content)
       |> Enum.into([])
 
@@ -5152,8 +6530,23 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_messages_create_replies(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_primary_channel_messages_create_replies(connection, team_id, chat_message_id, microsoft_graph_chat_message, _opts \\ []) do
+  @spec me_joined_teams_primary_channel_messages_create_replies(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphChatMessage.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_primary_channel_messages_create_replies(
+        connection,
+        team_id,
+        chat_message_id,
+        microsoft_graph_chat_message,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -5187,8 +6580,23 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_messages_delete_hosted_contents(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_primary_channel_messages_delete_hosted_contents(connection, team_id, chat_message_id, chat_message_hosted_content_id, opts \\ []) do
+  @spec me_joined_teams_primary_channel_messages_delete_hosted_contents(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_primary_channel_messages_delete_hosted_contents(
+        connection,
+        team_id,
+        chat_message_id,
+        chat_message_hosted_content_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -5196,7 +6604,9 @@ defmodule MicrosoftGraph.Api.MeTeam do
     request =
       %{}
       |> method(:delete)
-      |> url("/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/hostedContents/#{chat_message_hosted_content_id}")
+      |> url(
+        "/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/hostedContents/#{chat_message_hosted_content_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5226,8 +6636,23 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_messages_delete_replies(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_primary_channel_messages_delete_replies(connection, team_id, chat_message_id, chat_message_id1, opts \\ []) do
+  @spec me_joined_teams_primary_channel_messages_delete_replies(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_primary_channel_messages_delete_replies(
+        connection,
+        team_id,
+        chat_message_id,
+        chat_message_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -5235,7 +6660,9 @@ defmodule MicrosoftGraph.Api.MeTeam do
     request =
       %{}
       |> method(:delete)
-      |> url("/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/replies/#{chat_message_id1}")
+      |> url(
+        "/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/replies/#{chat_message_id1}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5264,7 +6691,14 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_messages_get_count_dd6f(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_primary_channel_messages_get_count_dd6f(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_primary_channel_messages_get_count_dd6f(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -5306,8 +6740,23 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_messages_get_hosted_contents(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_primary_channel_messages_get_hosted_contents(connection, team_id, chat_message_id, chat_message_hosted_content_id, opts \\ []) do
+  @spec me_joined_teams_primary_channel_messages_get_hosted_contents(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_primary_channel_messages_get_hosted_contents(
+        connection,
+        team_id,
+        chat_message_id,
+        chat_message_hosted_content_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -5316,7 +6765,9 @@ defmodule MicrosoftGraph.Api.MeTeam do
     request =
       %{}
       |> method(:get)
-      |> url("/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/hostedContents/#{chat_message_hosted_content_id}")
+      |> url(
+        "/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/hostedContents/#{chat_message_hosted_content_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5345,12 +6796,29 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_messages_get_hosted_contents_content(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_primary_channel_messages_get_hosted_contents_content(connection, team_id, chat_message_id, chat_message_hosted_content_id, _opts \\ []) do
+  @spec me_joined_teams_primary_channel_messages_get_hosted_contents_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_primary_channel_messages_get_hosted_contents_content(
+        connection,
+        team_id,
+        chat_message_id,
+        chat_message_hosted_content_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/hostedContents/#{chat_message_hosted_content_id}/$value")
+      |> url(
+        "/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/hostedContents/#{chat_message_hosted_content_id}/$value"
+      )
       |> Enum.into([])
 
     connection
@@ -5381,8 +6849,23 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_messages_get_replies(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_primary_channel_messages_get_replies(connection, team_id, chat_message_id, chat_message_id1, opts \\ []) do
+  @spec me_joined_teams_primary_channel_messages_get_replies(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_primary_channel_messages_get_replies(
+        connection,
+        team_id,
+        chat_message_id,
+        chat_message_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -5391,7 +6874,9 @@ defmodule MicrosoftGraph.Api.MeTeam do
     request =
       %{}
       |> method(:get)
-      |> url("/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/replies/#{chat_message_id1}")
+      |> url(
+        "/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/replies/#{chat_message_id1}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5421,8 +6906,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_messages_hosted_contents_get_count_ce20(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_primary_channel_messages_hosted_contents_get_count_ce20(connection, team_id, chat_message_id, opts \\ []) do
+  @spec me_joined_teams_primary_channel_messages_hosted_contents_get_count_ce20(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_primary_channel_messages_hosted_contents_get_count_ce20(
+        connection,
+        team_id,
+        chat_message_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -5431,7 +6929,9 @@ defmodule MicrosoftGraph.Api.MeTeam do
     request =
       %{}
       |> method(:get)
-      |> url("/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/hostedContents/$count")
+      |> url(
+        "/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/hostedContents/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5468,8 +6968,22 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContentCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_messages_list_hosted_contents(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContentCollectionResponse.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_primary_channel_messages_list_hosted_contents(connection, team_id, chat_message_id, opts \\ []) do
+  @spec me_joined_teams_primary_channel_messages_list_hosted_contents(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContentCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_primary_channel_messages_list_hosted_contents(
+        connection,
+        team_id,
+        chat_message_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -5484,7 +6998,9 @@ defmodule MicrosoftGraph.Api.MeTeam do
     request =
       %{}
       |> method(:get)
-      |> url("/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/hostedContents")
+      |> url(
+        "/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/hostedContents"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5521,8 +7037,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_messages_list_replies(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_primary_channel_messages_list_replies(connection, team_id, chat_message_id, opts \\ []) do
+  @spec me_joined_teams_primary_channel_messages_list_replies(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_primary_channel_messages_list_replies(
+        connection,
+        team_id,
+        chat_message_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -5567,12 +7096,31 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_messages_replies_create_hosted_contents(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_primary_channel_messages_replies_create_hosted_contents(connection, team_id, chat_message_id, chat_message_id1, microsoft_graph_chat_message_hosted_content, _opts \\ []) do
+  @spec me_joined_teams_primary_channel_messages_replies_create_hosted_contents(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_primary_channel_messages_replies_create_hosted_contents(
+        connection,
+        team_id,
+        chat_message_id,
+        chat_message_id1,
+        microsoft_graph_chat_message_hosted_content,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/replies/#{chat_message_id1}/hostedContents")
+      |> url(
+        "/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/replies/#{chat_message_id1}/hostedContents"
+      )
       |> add_param(:body, :body, microsoft_graph_chat_message_hosted_content)
       |> Enum.into([])
 
@@ -5603,8 +7151,25 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_messages_replies_delete_hosted_contents(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_primary_channel_messages_replies_delete_hosted_contents(connection, team_id, chat_message_id, chat_message_id1, chat_message_hosted_content_id, opts \\ []) do
+  @spec me_joined_teams_primary_channel_messages_replies_delete_hosted_contents(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_primary_channel_messages_replies_delete_hosted_contents(
+        connection,
+        team_id,
+        chat_message_id,
+        chat_message_id1,
+        chat_message_hosted_content_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -5612,7 +7177,9 @@ defmodule MicrosoftGraph.Api.MeTeam do
     request =
       %{}
       |> method(:delete)
-      |> url("/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/replies/#{chat_message_id1}/hostedContents/#{chat_message_hosted_content_id}")
+      |> url(
+        "/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/replies/#{chat_message_id1}/hostedContents/#{chat_message_hosted_content_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5642,8 +7209,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_messages_replies_get_count1792(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_primary_channel_messages_replies_get_count1792(connection, team_id, chat_message_id, opts \\ []) do
+  @spec me_joined_teams_primary_channel_messages_replies_get_count1792(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_primary_channel_messages_replies_get_count1792(
+        connection,
+        team_id,
+        chat_message_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -5652,7 +7232,9 @@ defmodule MicrosoftGraph.Api.MeTeam do
     request =
       %{}
       |> method(:get)
-      |> url("/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/replies/$count")
+      |> url(
+        "/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/replies/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5685,8 +7267,25 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_messages_replies_get_hosted_contents(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_primary_channel_messages_replies_get_hosted_contents(connection, team_id, chat_message_id, chat_message_id1, chat_message_hosted_content_id, opts \\ []) do
+  @spec me_joined_teams_primary_channel_messages_replies_get_hosted_contents(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_primary_channel_messages_replies_get_hosted_contents(
+        connection,
+        team_id,
+        chat_message_id,
+        chat_message_id1,
+        chat_message_hosted_content_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -5695,7 +7294,9 @@ defmodule MicrosoftGraph.Api.MeTeam do
     request =
       %{}
       |> method(:get)
-      |> url("/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/replies/#{chat_message_id1}/hostedContents/#{chat_message_hosted_content_id}")
+      |> url(
+        "/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/replies/#{chat_message_id1}/hostedContents/#{chat_message_hosted_content_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5725,12 +7326,31 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_messages_replies_get_hosted_contents_content(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_primary_channel_messages_replies_get_hosted_contents_content(connection, team_id, chat_message_id, chat_message_id1, chat_message_hosted_content_id, _opts \\ []) do
+  @spec me_joined_teams_primary_channel_messages_replies_get_hosted_contents_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_primary_channel_messages_replies_get_hosted_contents_content(
+        connection,
+        team_id,
+        chat_message_id,
+        chat_message_id1,
+        chat_message_hosted_content_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/replies/#{chat_message_id1}/hostedContents/#{chat_message_hosted_content_id}/$value")
+      |> url(
+        "/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/replies/#{chat_message_id1}/hostedContents/#{chat_message_hosted_content_id}/$value"
+      )
       |> Enum.into([])
 
     connection
@@ -5760,8 +7380,23 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_messages_replies_hosted_contents_get_count6077(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_primary_channel_messages_replies_hosted_contents_get_count6077(connection, team_id, chat_message_id, chat_message_id1, opts \\ []) do
+  @spec me_joined_teams_primary_channel_messages_replies_hosted_contents_get_count6077(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_primary_channel_messages_replies_hosted_contents_get_count6077(
+        connection,
+        team_id,
+        chat_message_id,
+        chat_message_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -5770,7 +7405,9 @@ defmodule MicrosoftGraph.Api.MeTeam do
     request =
       %{}
       |> method(:get)
-      |> url("/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/replies/#{chat_message_id1}/hostedContents/$count")
+      |> url(
+        "/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/replies/#{chat_message_id1}/hostedContents/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5808,8 +7445,24 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContentCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_messages_replies_list_hosted_contents(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContentCollectionResponse.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_primary_channel_messages_replies_list_hosted_contents(connection, team_id, chat_message_id, chat_message_id1, opts \\ []) do
+  @spec me_joined_teams_primary_channel_messages_replies_list_hosted_contents(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContentCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_primary_channel_messages_replies_list_hosted_contents(
+        connection,
+        team_id,
+        chat_message_id,
+        chat_message_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -5824,7 +7477,9 @@ defmodule MicrosoftGraph.Api.MeTeam do
     request =
       %{}
       |> method(:get)
-      |> url("/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/replies/#{chat_message_id1}/hostedContents")
+      |> url(
+        "/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/replies/#{chat_message_id1}/hostedContents"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5855,12 +7510,33 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_messages_replies_update_hosted_contents(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_primary_channel_messages_replies_update_hosted_contents(connection, team_id, chat_message_id, chat_message_id1, chat_message_hosted_content_id, microsoft_graph_chat_message_hosted_content, _opts \\ []) do
+  @spec me_joined_teams_primary_channel_messages_replies_update_hosted_contents(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_primary_channel_messages_replies_update_hosted_contents(
+        connection,
+        team_id,
+        chat_message_id,
+        chat_message_id1,
+        chat_message_hosted_content_id,
+        microsoft_graph_chat_message_hosted_content,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/replies/#{chat_message_id1}/hostedContents/#{chat_message_hosted_content_id}")
+      |> url(
+        "/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/replies/#{chat_message_id1}/hostedContents/#{chat_message_hosted_content_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_chat_message_hosted_content)
       |> Enum.into([])
 
@@ -5891,12 +7567,33 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_messages_replies_update_hosted_contents_content(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_primary_channel_messages_replies_update_hosted_contents_content(connection, team_id, chat_message_id, chat_message_id1, chat_message_hosted_content_id, body, _opts \\ []) do
+  @spec me_joined_teams_primary_channel_messages_replies_update_hosted_contents_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_primary_channel_messages_replies_update_hosted_contents_content(
+        connection,
+        team_id,
+        chat_message_id,
+        chat_message_id1,
+        chat_message_hosted_content_id,
+        body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)
-      |> url("/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/replies/#{chat_message_id1}/hostedContents/#{chat_message_hosted_content_id}/$value")
+      |> url(
+        "/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/replies/#{chat_message_id1}/hostedContents/#{chat_message_hosted_content_id}/$value"
+      )
       |> add_param(:body, :body, body)
       |> Enum.into([])
 
@@ -5926,12 +7623,31 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_messages_update_hosted_contents(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_primary_channel_messages_update_hosted_contents(connection, team_id, chat_message_id, chat_message_hosted_content_id, microsoft_graph_chat_message_hosted_content, _opts \\ []) do
+  @spec me_joined_teams_primary_channel_messages_update_hosted_contents(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_primary_channel_messages_update_hosted_contents(
+        connection,
+        team_id,
+        chat_message_id,
+        chat_message_hosted_content_id,
+        microsoft_graph_chat_message_hosted_content,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/hostedContents/#{chat_message_hosted_content_id}")
+      |> url(
+        "/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/hostedContents/#{chat_message_hosted_content_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_chat_message_hosted_content)
       |> Enum.into([])
 
@@ -5961,12 +7677,31 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_messages_update_hosted_contents_content(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_primary_channel_messages_update_hosted_contents_content(connection, team_id, chat_message_id, chat_message_hosted_content_id, body, _opts \\ []) do
+  @spec me_joined_teams_primary_channel_messages_update_hosted_contents_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_primary_channel_messages_update_hosted_contents_content(
+        connection,
+        team_id,
+        chat_message_id,
+        chat_message_hosted_content_id,
+        body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)
-      |> url("/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/hostedContents/#{chat_message_hosted_content_id}/$value")
+      |> url(
+        "/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/hostedContents/#{chat_message_hosted_content_id}/$value"
+      )
       |> add_param(:body, :body, body)
       |> Enum.into([])
 
@@ -5996,12 +7731,31 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_messages_update_replies(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_primary_channel_messages_update_replies(connection, team_id, chat_message_id, chat_message_id1, microsoft_graph_chat_message, _opts \\ []) do
+  @spec me_joined_teams_primary_channel_messages_update_replies(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphChatMessage.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_primary_channel_messages_update_replies(
+        connection,
+        team_id,
+        chat_message_id,
+        chat_message_id1,
+        microsoft_graph_chat_message,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/replies/#{chat_message_id1}")
+      |> url(
+        "/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/replies/#{chat_message_id1}"
+      )
       |> add_param(:body, :body, microsoft_graph_chat_message)
       |> Enum.into([])
 
@@ -6031,8 +7785,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_shared_with_teams_allowed_members_get_count_f6e0(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_primary_channel_shared_with_teams_allowed_members_get_count_f6e0(connection, team_id, shared_with_channel_team_info_id, opts \\ []) do
+  @spec me_joined_teams_primary_channel_shared_with_teams_allowed_members_get_count_f6e0(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_primary_channel_shared_with_teams_allowed_members_get_count_f6e0(
+        connection,
+        team_id,
+        shared_with_channel_team_info_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -6041,7 +7808,9 @@ defmodule MicrosoftGraph.Api.MeTeam do
     request =
       %{}
       |> method(:get)
-      |> url("/me/joinedTeams/#{team_id}/primaryChannel/sharedWithTeams/#{shared_with_channel_team_info_id}/allowedMembers/$count")
+      |> url(
+        "/me/joinedTeams/#{team_id}/primaryChannel/sharedWithTeams/#{shared_with_channel_team_info_id}/allowedMembers/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6073,8 +7842,23 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_shared_with_teams_get_allowed_members(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_primary_channel_shared_with_teams_get_allowed_members(connection, team_id, shared_with_channel_team_info_id, conversation_member_id, opts \\ []) do
+  @spec me_joined_teams_primary_channel_shared_with_teams_get_allowed_members(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_primary_channel_shared_with_teams_get_allowed_members(
+        connection,
+        team_id,
+        shared_with_channel_team_info_id,
+        conversation_member_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -6083,7 +7867,9 @@ defmodule MicrosoftGraph.Api.MeTeam do
     request =
       %{}
       |> method(:get)
-      |> url("/me/joinedTeams/#{team_id}/primaryChannel/sharedWithTeams/#{shared_with_channel_team_info_id}/allowedMembers/#{conversation_member_id}")
+      |> url(
+        "/me/joinedTeams/#{team_id}/primaryChannel/sharedWithTeams/#{shared_with_channel_team_info_id}/allowedMembers/#{conversation_member_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6112,8 +7898,19 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_shared_with_teams_get_count_ebb0(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_primary_channel_shared_with_teams_get_count_ebb0(connection, team_id, opts \\ []) do
+  @spec me_joined_teams_primary_channel_shared_with_teams_get_count_ebb0(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_primary_channel_shared_with_teams_get_count_ebb0(
+        connection,
+        team_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -6152,8 +7949,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeam.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_shared_with_teams_get_team(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeam.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_primary_channel_shared_with_teams_get_team(connection, team_id, shared_with_channel_team_info_id, opts \\ []) do
+  @spec me_joined_teams_primary_channel_shared_with_teams_get_team(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeam.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_primary_channel_shared_with_teams_get_team(
+        connection,
+        team_id,
+        shared_with_channel_team_info_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -6162,7 +7972,9 @@ defmodule MicrosoftGraph.Api.MeTeam do
     request =
       %{}
       |> method(:get)
-      |> url("/me/joinedTeams/#{team_id}/primaryChannel/sharedWithTeams/#{shared_with_channel_team_info_id}/team")
+      |> url(
+        "/me/joinedTeams/#{team_id}/primaryChannel/sharedWithTeams/#{shared_with_channel_team_info_id}/team"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6199,8 +8011,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMemberCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_shared_with_teams_list_allowed_members(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMemberCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_primary_channel_shared_with_teams_list_allowed_members(connection, team_id, shared_with_channel_team_info_id, opts \\ []) do
+  @spec me_joined_teams_primary_channel_shared_with_teams_list_allowed_members(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMemberCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_primary_channel_shared_with_teams_list_allowed_members(
+        connection,
+        team_id,
+        shared_with_channel_team_info_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -6215,7 +8040,9 @@ defmodule MicrosoftGraph.Api.MeTeam do
     request =
       %{}
       |> method(:get)
-      |> url("/me/joinedTeams/#{team_id}/primaryChannel/sharedWithTeams/#{shared_with_channel_team_info_id}/allowedMembers")
+      |> url(
+        "/me/joinedTeams/#{team_id}/primaryChannel/sharedWithTeams/#{shared_with_channel_team_info_id}/allowedMembers"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6244,7 +8071,14 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_tabs_get_count_f9aa(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_primary_channel_tabs_get_count_f9aa(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_primary_channel_tabs_get_count_f9aa(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -6285,8 +8119,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsApp.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_tabs_get_teams_app(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsApp.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_primary_channel_tabs_get_teams_app(connection, team_id, teams_tab_id, opts \\ []) do
+  @spec me_joined_teams_primary_channel_tabs_get_teams_app(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsApp.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_primary_channel_tabs_get_teams_app(
+        connection,
+        team_id,
+        teams_tab_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -6324,8 +8171,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_update_files_folder_content(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_primary_channel_update_files_folder_content(connection, team_id, body, _opts \\ []) do
+  @spec me_joined_teams_primary_channel_update_files_folder_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDriveItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_primary_channel_update_files_folder_content(
+        connection,
+        team_id,
+        body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)
@@ -6359,8 +8219,23 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_update_members(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_primary_channel_update_members(connection, team_id, conversation_member_id, microsoft_graph_conversation_member, _opts \\ []) do
+  @spec me_joined_teams_primary_channel_update_members(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphConversationMember.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_primary_channel_update_members(
+        connection,
+        team_id,
+        conversation_member_id,
+        microsoft_graph_conversation_member,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -6394,8 +8269,23 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_update_messages(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_primary_channel_update_messages(connection, team_id, chat_message_id, microsoft_graph_chat_message, _opts \\ []) do
+  @spec me_joined_teams_primary_channel_update_messages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphChatMessage.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChatMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_primary_channel_update_messages(
+        connection,
+        team_id,
+        chat_message_id,
+        microsoft_graph_chat_message,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -6428,12 +8318,29 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSharedWithChannelTeamInfo.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_update_shared_with_teams(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphSharedWithChannelTeamInfo.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSharedWithChannelTeamInfo.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_primary_channel_update_shared_with_teams(connection, team_id, shared_with_channel_team_info_id, microsoft_graph_shared_with_channel_team_info, _opts \\ []) do
+  @spec me_joined_teams_primary_channel_update_shared_with_teams(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSharedWithChannelTeamInfo.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSharedWithChannelTeamInfo.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_primary_channel_update_shared_with_teams(
+        connection,
+        team_id,
+        shared_with_channel_team_info_id,
+        microsoft_graph_shared_with_channel_team_info,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/me/joinedTeams/#{team_id}/primaryChannel/sharedWithTeams/#{shared_with_channel_team_info_id}")
+      |> url(
+        "/me/joinedTeams/#{team_id}/primaryChannel/sharedWithTeams/#{shared_with_channel_team_info_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_shared_with_channel_team_info)
       |> Enum.into([])
 
@@ -6463,8 +8370,23 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_primary_channel_update_tabs(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_primary_channel_update_tabs(connection, team_id, teams_tab_id, microsoft_graph_teams_tab, _opts \\ []) do
+  @spec me_joined_teams_primary_channel_update_tabs(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_primary_channel_update_tabs(
+        connection,
+        team_id,
+        teams_tab_id,
+        microsoft_graph_teams_tab,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -6497,8 +8419,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOfferShiftRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_create_offer_shift_requests(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphOfferShiftRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOfferShiftRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_schedule_create_offer_shift_requests(connection, team_id, microsoft_graph_offer_shift_request, _opts \\ []) do
+  @spec me_joined_teams_schedule_create_offer_shift_requests(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphOfferShiftRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOfferShiftRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_schedule_create_offer_shift_requests(
+        connection,
+        team_id,
+        microsoft_graph_offer_shift_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -6531,8 +8466,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOpenShiftChangeRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_create_open_shift_change_requests(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphOpenShiftChangeRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOpenShiftChangeRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_schedule_create_open_shift_change_requests(connection, team_id, microsoft_graph_open_shift_change_request, _opts \\ []) do
+  @spec me_joined_teams_schedule_create_open_shift_change_requests(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphOpenShiftChangeRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOpenShiftChangeRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_schedule_create_open_shift_change_requests(
+        connection,
+        team_id,
+        microsoft_graph_open_shift_change_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -6565,8 +8513,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOpenShift.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_create_open_shifts(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphOpenShift.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOpenShift.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_schedule_create_open_shifts(connection, team_id, microsoft_graph_open_shift, _opts \\ []) do
+  @spec me_joined_teams_schedule_create_open_shifts(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphOpenShift.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOpenShift.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_schedule_create_open_shifts(
+        connection,
+        team_id,
+        microsoft_graph_open_shift,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -6599,8 +8560,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSchedulingGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_create_scheduling_groups(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphSchedulingGroup.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSchedulingGroup.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_schedule_create_scheduling_groups(connection, team_id, microsoft_graph_scheduling_group, _opts \\ []) do
+  @spec me_joined_teams_schedule_create_scheduling_groups(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSchedulingGroup.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSchedulingGroup.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_schedule_create_scheduling_groups(
+        connection,
+        team_id,
+        microsoft_graph_scheduling_group,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -6633,8 +8607,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphShift.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_create_shifts(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphShift.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphShift.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_schedule_create_shifts(connection, team_id, microsoft_graph_shift, _opts \\ []) do
+  @spec me_joined_teams_schedule_create_shifts(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphShift.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphShift.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_schedule_create_shifts(
+        connection,
+        team_id,
+        microsoft_graph_shift,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -6667,8 +8654,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSwapShiftsChangeRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_create_swap_shifts_change_requests(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphSwapShiftsChangeRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSwapShiftsChangeRequest.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_schedule_create_swap_shifts_change_requests(connection, team_id, microsoft_graph_swap_shifts_change_request, _opts \\ []) do
+  @spec me_joined_teams_schedule_create_swap_shifts_change_requests(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSwapShiftsChangeRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSwapShiftsChangeRequest.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_schedule_create_swap_shifts_change_requests(
+        connection,
+        team_id,
+        microsoft_graph_swap_shifts_change_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -6701,8 +8701,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffReason.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_create_time_off_reasons(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphTimeOffReason.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffReason.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_schedule_create_time_off_reasons(connection, team_id, microsoft_graph_time_off_reason, _opts \\ []) do
+  @spec me_joined_teams_schedule_create_time_off_reasons(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTimeOffReason.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffReason.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_schedule_create_time_off_reasons(
+        connection,
+        team_id,
+        microsoft_graph_time_off_reason,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -6734,8 +8747,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_create_time_off_requests(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphTimeOffRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_schedule_create_time_off_requests(connection, team_id, microsoft_graph_time_off_request, _opts \\ []) do
+  @spec me_joined_teams_schedule_create_time_off_requests(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTimeOffRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_schedule_create_time_off_requests(
+        connection,
+        team_id,
+        microsoft_graph_time_off_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -6768,8 +8794,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOff.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_create_times_off(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphTimeOff.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOff.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_schedule_create_times_off(connection, team_id, microsoft_graph_time_off, _opts \\ []) do
+  @spec me_joined_teams_schedule_create_times_off(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTimeOff.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOff.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_schedule_create_times_off(
+        connection,
+        team_id,
+        microsoft_graph_time_off,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -6802,8 +8841,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_delete_offer_shift_requests(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_schedule_delete_offer_shift_requests(connection, team_id, offer_shift_request_id, opts \\ []) do
+  @spec me_joined_teams_schedule_delete_offer_shift_requests(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_schedule_delete_offer_shift_requests(
+        connection,
+        team_id,
+        offer_shift_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -6840,8 +8892,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_delete_open_shift_change_requests(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_schedule_delete_open_shift_change_requests(connection, team_id, open_shift_change_request_id, opts \\ []) do
+  @spec me_joined_teams_schedule_delete_open_shift_change_requests(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_schedule_delete_open_shift_change_requests(
+        connection,
+        team_id,
+        open_shift_change_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -6849,7 +8914,9 @@ defmodule MicrosoftGraph.Api.MeTeam do
     request =
       %{}
       |> method(:delete)
-      |> url("/me/joinedTeams/#{team_id}/schedule/openShiftChangeRequests/#{open_shift_change_request_id}")
+      |> url(
+        "/me/joinedTeams/#{team_id}/schedule/openShiftChangeRequests/#{open_shift_change_request_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6879,7 +8946,15 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_delete_open_shifts(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_schedule_delete_open_shifts(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_schedule_delete_open_shifts(connection, team_id, open_shift_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -6918,8 +8993,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_delete_scheduling_groups(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_schedule_delete_scheduling_groups(connection, team_id, scheduling_group_id, opts \\ []) do
+  @spec me_joined_teams_schedule_delete_scheduling_groups(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_schedule_delete_scheduling_groups(
+        connection,
+        team_id,
+        scheduling_group_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -6957,7 +9045,15 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_delete_shifts(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_schedule_delete_shifts(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_schedule_delete_shifts(connection, team_id, shift_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -6995,8 +9091,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_delete_swap_shifts_change_requests(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_schedule_delete_swap_shifts_change_requests(connection, team_id, swap_shifts_change_request_id, opts \\ []) do
+  @spec me_joined_teams_schedule_delete_swap_shifts_change_requests(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_schedule_delete_swap_shifts_change_requests(
+        connection,
+        team_id,
+        swap_shifts_change_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -7004,7 +9113,9 @@ defmodule MicrosoftGraph.Api.MeTeam do
     request =
       %{}
       |> method(:delete)
-      |> url("/me/joinedTeams/#{team_id}/schedule/swapShiftsChangeRequests/#{swap_shifts_change_request_id}")
+      |> url(
+        "/me/joinedTeams/#{team_id}/schedule/swapShiftsChangeRequests/#{swap_shifts_change_request_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7034,8 +9145,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_delete_time_off_reasons(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_schedule_delete_time_off_reasons(connection, team_id, time_off_reason_id, opts \\ []) do
+  @spec me_joined_teams_schedule_delete_time_off_reasons(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_schedule_delete_time_off_reasons(
+        connection,
+        team_id,
+        time_off_reason_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -7073,8 +9197,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_delete_time_off_requests(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_schedule_delete_time_off_requests(connection, team_id, time_off_request_id, opts \\ []) do
+  @spec me_joined_teams_schedule_delete_time_off_requests(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_schedule_delete_time_off_requests(
+        connection,
+        team_id,
+        time_off_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -7112,7 +9249,15 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_delete_times_off(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_schedule_delete_times_off(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_schedule_delete_times_off(connection, team_id, time_off_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -7152,8 +9297,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOfferShiftRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_get_offer_shift_requests(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOfferShiftRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_schedule_get_offer_shift_requests(connection, team_id, offer_shift_request_id, opts \\ []) do
+  @spec me_joined_teams_schedule_get_offer_shift_requests(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOfferShiftRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_schedule_get_offer_shift_requests(
+        connection,
+        team_id,
+        offer_shift_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -7193,8 +9351,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOpenShiftChangeRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_get_open_shift_change_requests(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOpenShiftChangeRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_schedule_get_open_shift_change_requests(connection, team_id, open_shift_change_request_id, opts \\ []) do
+  @spec me_joined_teams_schedule_get_open_shift_change_requests(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOpenShiftChangeRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_schedule_get_open_shift_change_requests(
+        connection,
+        team_id,
+        open_shift_change_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -7203,7 +9374,9 @@ defmodule MicrosoftGraph.Api.MeTeam do
     request =
       %{}
       |> method(:get)
-      |> url("/me/joinedTeams/#{team_id}/schedule/openShiftChangeRequests/#{open_shift_change_request_id}")
+      |> url(
+        "/me/joinedTeams/#{team_id}/schedule/openShiftChangeRequests/#{open_shift_change_request_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7234,7 +9407,15 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOpenShift.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_get_open_shifts(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOpenShift.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_schedule_get_open_shifts(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOpenShift.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_schedule_get_open_shifts(connection, team_id, open_shift_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -7274,8 +9455,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSchedulingGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_get_scheduling_groups(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSchedulingGroup.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_schedule_get_scheduling_groups(connection, team_id, scheduling_group_id, opts \\ []) do
+  @spec me_joined_teams_schedule_get_scheduling_groups(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSchedulingGroup.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_schedule_get_scheduling_groups(
+        connection,
+        team_id,
+        scheduling_group_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query
     }
@@ -7313,7 +9507,10 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphShift.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_get_shifts(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphShift.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_schedule_get_shifts(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphShift.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_schedule_get_shifts(connection, team_id, shift_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query
@@ -7353,8 +9550,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSwapShiftsChangeRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_get_swap_shifts_change_requests(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSwapShiftsChangeRequest.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_schedule_get_swap_shifts_change_requests(connection, team_id, swap_shifts_change_request_id, opts \\ []) do
+  @spec me_joined_teams_schedule_get_swap_shifts_change_requests(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSwapShiftsChangeRequest.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_schedule_get_swap_shifts_change_requests(
+        connection,
+        team_id,
+        swap_shifts_change_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -7363,7 +9573,9 @@ defmodule MicrosoftGraph.Api.MeTeam do
     request =
       %{}
       |> method(:get)
-      |> url("/me/joinedTeams/#{team_id}/schedule/swapShiftsChangeRequests/#{swap_shifts_change_request_id}")
+      |> url(
+        "/me/joinedTeams/#{team_id}/schedule/swapShiftsChangeRequests/#{swap_shifts_change_request_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7393,8 +9605,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffReason.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_get_time_off_reasons(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffReason.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_schedule_get_time_off_reasons(connection, team_id, time_off_reason_id, opts \\ []) do
+  @spec me_joined_teams_schedule_get_time_off_reasons(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffReason.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_schedule_get_time_off_reasons(
+        connection,
+        team_id,
+        time_off_reason_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query
     }
@@ -7432,8 +9657,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_get_time_off_requests(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_schedule_get_time_off_requests(connection, team_id, time_off_request_id, opts \\ []) do
+  @spec me_joined_teams_schedule_get_time_off_requests(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_schedule_get_time_off_requests(
+        connection,
+        team_id,
+        time_off_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query
     }
@@ -7471,7 +9709,15 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOff.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_get_times_off(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOff.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_schedule_get_times_off(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOff.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_schedule_get_times_off(connection, team_id, time_off_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query
@@ -7516,7 +9762,14 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOfferShiftRequestCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_list_offer_shift_requests(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphOfferShiftRequestCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_schedule_list_offer_shift_requests(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphOfferShiftRequestCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_schedule_list_offer_shift_requests(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -7568,7 +9821,14 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOpenShiftChangeRequestCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_list_open_shift_change_requests(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphOpenShiftChangeRequestCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_schedule_list_open_shift_change_requests(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphOpenShiftChangeRequestCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_schedule_list_open_shift_change_requests(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -7620,7 +9880,10 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOpenShiftCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_list_open_shifts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphOpenShiftCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_schedule_list_open_shifts(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphOpenShiftCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_schedule_list_open_shifts(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -7671,7 +9934,10 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSchedulingGroupCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_list_scheduling_groups(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSchedulingGroupCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_schedule_list_scheduling_groups(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSchedulingGroupCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_schedule_list_scheduling_groups(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -7721,7 +9987,10 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphShiftCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_list_shifts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphShiftCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_schedule_list_shifts(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphShiftCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_schedule_list_shifts(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -7772,7 +10041,14 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSwapShiftsChangeRequestCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_list_swap_shifts_change_requests(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSwapShiftsChangeRequestCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_schedule_list_swap_shifts_change_requests(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSwapShiftsChangeRequestCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_schedule_list_swap_shifts_change_requests(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -7823,7 +10099,10 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffReasonCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_list_time_off_reasons(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffReasonCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_schedule_list_time_off_reasons(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffReasonCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_schedule_list_time_off_reasons(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -7873,7 +10152,10 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffRequestCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_list_time_off_requests(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffRequestCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_schedule_list_time_off_requests(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffRequestCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_schedule_list_time_off_requests(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -7923,7 +10205,10 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_list_times_off(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_schedule_list_times_off(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_schedule_list_times_off(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -7967,7 +10252,14 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_offer_shift_requests_get_count7729(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_schedule_offer_shift_requests_get_count7729(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_schedule_offer_shift_requests_get_count7729(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -8006,8 +10298,19 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_open_shift_change_requests_get_count_f641(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_schedule_open_shift_change_requests_get_count_f641(connection, team_id, opts \\ []) do
+  @spec me_joined_teams_schedule_open_shift_change_requests_get_count_f641(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_schedule_open_shift_change_requests_get_count_f641(
+        connection,
+        team_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -8045,7 +10348,14 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_open_shifts_get_count9bbb(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_schedule_open_shifts_get_count9bbb(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_schedule_open_shifts_get_count9bbb(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -8084,7 +10394,14 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_scheduling_groups_get_count2ecb(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_schedule_scheduling_groups_get_count2ecb(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_schedule_scheduling_groups_get_count2ecb(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -8123,7 +10440,10 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_shifts_get_count_bd71(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_schedule_shifts_get_count_bd71(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_schedule_shifts_get_count_bd71(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -8162,8 +10482,19 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_swap_shifts_change_requests_get_count_deaa(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_schedule_swap_shifts_change_requests_get_count_deaa(connection, team_id, opts \\ []) do
+  @spec me_joined_teams_schedule_swap_shifts_change_requests_get_count_deaa(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_schedule_swap_shifts_change_requests_get_count_deaa(
+        connection,
+        team_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -8201,7 +10532,14 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_time_off_reasons_get_count632a(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_schedule_time_off_reasons_get_count632a(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_schedule_time_off_reasons_get_count632a(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -8240,7 +10578,14 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_time_off_requests_get_count9693(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_schedule_time_off_requests_get_count9693(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_schedule_time_off_requests_get_count9693(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -8279,7 +10624,14 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_times_off_get_count8199(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_schedule_times_off_get_count8199(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_schedule_times_off_get_count8199(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -8318,8 +10670,23 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOfferShiftRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_update_offer_shift_requests(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphOfferShiftRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOfferShiftRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_schedule_update_offer_shift_requests(connection, team_id, offer_shift_request_id, microsoft_graph_offer_shift_request, _opts \\ []) do
+  @spec me_joined_teams_schedule_update_offer_shift_requests(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphOfferShiftRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOfferShiftRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_schedule_update_offer_shift_requests(
+        connection,
+        team_id,
+        offer_shift_request_id,
+        microsoft_graph_offer_shift_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -8352,12 +10719,29 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOpenShiftChangeRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_update_open_shift_change_requests(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphOpenShiftChangeRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOpenShiftChangeRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_schedule_update_open_shift_change_requests(connection, team_id, open_shift_change_request_id, microsoft_graph_open_shift_change_request, _opts \\ []) do
+  @spec me_joined_teams_schedule_update_open_shift_change_requests(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphOpenShiftChangeRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOpenShiftChangeRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_schedule_update_open_shift_change_requests(
+        connection,
+        team_id,
+        open_shift_change_request_id,
+        microsoft_graph_open_shift_change_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/me/joinedTeams/#{team_id}/schedule/openShiftChangeRequests/#{open_shift_change_request_id}")
+      |> url(
+        "/me/joinedTeams/#{team_id}/schedule/openShiftChangeRequests/#{open_shift_change_request_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_open_shift_change_request)
       |> Enum.into([])
 
@@ -8387,8 +10771,23 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOpenShift.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_update_open_shifts(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphOpenShift.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOpenShift.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_schedule_update_open_shifts(connection, team_id, open_shift_id, microsoft_graph_open_shift, _opts \\ []) do
+  @spec me_joined_teams_schedule_update_open_shifts(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphOpenShift.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOpenShift.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_schedule_update_open_shifts(
+        connection,
+        team_id,
+        open_shift_id,
+        microsoft_graph_open_shift,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -8422,8 +10821,23 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSchedulingGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_update_scheduling_groups(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphSchedulingGroup.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSchedulingGroup.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_schedule_update_scheduling_groups(connection, team_id, scheduling_group_id, microsoft_graph_scheduling_group, _opts \\ []) do
+  @spec me_joined_teams_schedule_update_scheduling_groups(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSchedulingGroup.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSchedulingGroup.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_schedule_update_scheduling_groups(
+        connection,
+        team_id,
+        scheduling_group_id,
+        microsoft_graph_scheduling_group,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -8457,8 +10871,23 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphShift.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_update_shifts(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphShift.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphShift.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_schedule_update_shifts(connection, team_id, shift_id, microsoft_graph_shift, _opts \\ []) do
+  @spec me_joined_teams_schedule_update_shifts(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphShift.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphShift.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_schedule_update_shifts(
+        connection,
+        team_id,
+        shift_id,
+        microsoft_graph_shift,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -8491,12 +10920,29 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSwapShiftsChangeRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_update_swap_shifts_change_requests(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphSwapShiftsChangeRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSwapShiftsChangeRequest.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_schedule_update_swap_shifts_change_requests(connection, team_id, swap_shifts_change_request_id, microsoft_graph_swap_shifts_change_request, _opts \\ []) do
+  @spec me_joined_teams_schedule_update_swap_shifts_change_requests(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSwapShiftsChangeRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSwapShiftsChangeRequest.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_schedule_update_swap_shifts_change_requests(
+        connection,
+        team_id,
+        swap_shifts_change_request_id,
+        microsoft_graph_swap_shifts_change_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/me/joinedTeams/#{team_id}/schedule/swapShiftsChangeRequests/#{swap_shifts_change_request_id}")
+      |> url(
+        "/me/joinedTeams/#{team_id}/schedule/swapShiftsChangeRequests/#{swap_shifts_change_request_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_swap_shifts_change_request)
       |> Enum.into([])
 
@@ -8526,8 +10972,23 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffReason.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_update_time_off_reasons(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTimeOffReason.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffReason.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_schedule_update_time_off_reasons(connection, team_id, time_off_reason_id, microsoft_graph_time_off_reason, _opts \\ []) do
+  @spec me_joined_teams_schedule_update_time_off_reasons(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTimeOffReason.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffReason.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_schedule_update_time_off_reasons(
+        connection,
+        team_id,
+        time_off_reason_id,
+        microsoft_graph_time_off_reason,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -8560,8 +11021,23 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_update_time_off_requests(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTimeOffRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_schedule_update_time_off_requests(connection, team_id, time_off_request_id, microsoft_graph_time_off_request, _opts \\ []) do
+  @spec me_joined_teams_schedule_update_time_off_requests(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTimeOffRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_schedule_update_time_off_requests(
+        connection,
+        team_id,
+        time_off_request_id,
+        microsoft_graph_time_off_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -8595,8 +11071,23 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOff.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_schedule_update_times_off(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTimeOff.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOff.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_schedule_update_times_off(connection, team_id, time_off_id, microsoft_graph_time_off, _opts \\ []) do
+  @spec me_joined_teams_schedule_update_times_off(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTimeOff.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOff.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_schedule_update_times_off(
+        connection,
+        team_id,
+        time_off_id,
+        microsoft_graph_time_off,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -8630,8 +11121,23 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkTagMember.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_tags_create_members(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTeamworkTagMember.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkTagMember.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_tags_create_members(connection, team_id, teamwork_tag_id, microsoft_graph_teamwork_tag_member, _opts \\ []) do
+  @spec me_joined_teams_tags_create_members(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTeamworkTagMember.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkTagMember.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_tags_create_members(
+        connection,
+        team_id,
+        teamwork_tag_id,
+        microsoft_graph_teamwork_tag_member,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -8666,8 +11172,23 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_tags_delete_members(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_tags_delete_members(connection, team_id, teamwork_tag_id, teamwork_tag_member_id, opts \\ []) do
+  @spec me_joined_teams_tags_delete_members(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_tags_delete_members(
+        connection,
+        team_id,
+        teamwork_tag_id,
+        teamwork_tag_member_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -8675,7 +11196,9 @@ defmodule MicrosoftGraph.Api.MeTeam do
     request =
       %{}
       |> method(:delete)
-      |> url("/me/joinedTeams/#{team_id}/tags/#{teamwork_tag_id}/members/#{teamwork_tag_member_id}")
+      |> url(
+        "/me/joinedTeams/#{team_id}/tags/#{teamwork_tag_id}/members/#{teamwork_tag_member_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -8704,7 +11227,10 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_tags_get_count_ca3e(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_tags_get_count_ca3e(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_tags_get_count_ca3e(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -8746,8 +11272,23 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkTagMember.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_tags_get_members(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkTagMember.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_tags_get_members(connection, team_id, teamwork_tag_id, teamwork_tag_member_id, opts \\ []) do
+  @spec me_joined_teams_tags_get_members(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkTagMember.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_tags_get_members(
+        connection,
+        team_id,
+        teamwork_tag_id,
+        teamwork_tag_member_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -8756,7 +11297,9 @@ defmodule MicrosoftGraph.Api.MeTeam do
     request =
       %{}
       |> method(:get)
-      |> url("/me/joinedTeams/#{team_id}/tags/#{teamwork_tag_id}/members/#{teamwork_tag_member_id}")
+      |> url(
+        "/me/joinedTeams/#{team_id}/tags/#{teamwork_tag_id}/members/#{teamwork_tag_member_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -8793,7 +11336,10 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkTagMemberCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_tags_list_members(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkTagMemberCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_tags_list_members(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkTagMemberCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_tags_list_members(connection, team_id, teamwork_tag_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -8839,7 +11385,15 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_tags_members_get_count66e4(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_tags_members_get_count66e4(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_tags_members_get_count66e4(connection, team_id, teamwork_tag_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -8879,12 +11433,31 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkTagMember.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_tags_update_members(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTeamworkTagMember.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkTagMember.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_tags_update_members(connection, team_id, teamwork_tag_id, teamwork_tag_member_id, microsoft_graph_teamwork_tag_member, _opts \\ []) do
+  @spec me_joined_teams_tags_update_members(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTeamworkTagMember.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkTagMember.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_tags_update_members(
+        connection,
+        team_id,
+        teamwork_tag_id,
+        teamwork_tag_member_id,
+        microsoft_graph_teamwork_tag_member,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/me/joinedTeams/#{team_id}/tags/#{teamwork_tag_id}/members/#{teamwork_tag_member_id}")
+      |> url(
+        "/me/joinedTeams/#{team_id}/tags/#{teamwork_tag_id}/members/#{teamwork_tag_member_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_teamwork_tag_member)
       |> Enum.into([])
 
@@ -8914,8 +11487,23 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChannel.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_update_channels(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphChannel.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChannel.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_update_channels(connection, team_id, channel_id, microsoft_graph_channel, _opts \\ []) do
+  @spec me_joined_teams_update_channels(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphChannel.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChannel.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_update_channels(
+        connection,
+        team_id,
+        channel_id,
+        microsoft_graph_channel,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -8948,8 +11536,23 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppInstallation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_update_installed_apps(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTeamsAppInstallation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppInstallation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_update_installed_apps(connection, team_id, teams_app_installation_id, microsoft_graph_teams_app_installation, _opts \\ []) do
+  @spec me_joined_teams_update_installed_apps(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTeamsAppInstallation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAppInstallation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_update_installed_apps(
+        connection,
+        team_id,
+        teams_app_installation_id,
+        microsoft_graph_teams_app_installation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -8983,8 +11586,23 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_update_members(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_update_members(connection, team_id, conversation_member_id, microsoft_graph_conversation_member, _opts \\ []) do
+  @spec me_joined_teams_update_members(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphConversationMember.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationMember.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_update_members(
+        connection,
+        team_id,
+        conversation_member_id,
+        microsoft_graph_conversation_member,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -9017,8 +11635,23 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAsyncOperation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_update_operations(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTeamsAsyncOperation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAsyncOperation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_update_operations(connection, team_id, teams_async_operation_id, microsoft_graph_teams_async_operation, _opts \\ []) do
+  @spec me_joined_teams_update_operations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTeamsAsyncOperation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAsyncOperation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_update_operations(
+        connection,
+        team_id,
+        teams_async_operation_id,
+        microsoft_graph_teams_async_operation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -9051,12 +11684,29 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_update_permission_grants(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_update_permission_grants(connection, team_id, resource_specific_permission_grant_id, microsoft_graph_resource_specific_permission_grant, _opts \\ []) do
+  @spec me_joined_teams_update_permission_grants(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_update_permission_grants(
+        connection,
+        team_id,
+        resource_specific_permission_grant_id,
+        microsoft_graph_resource_specific_permission_grant,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/me/joinedTeams/#{team_id}/permissionGrants/#{resource_specific_permission_grant_id}")
+      |> url(
+        "/me/joinedTeams/#{team_id}/permissionGrants/#{resource_specific_permission_grant_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_resource_specific_permission_grant)
       |> Enum.into([])
 
@@ -9084,8 +11734,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_update_photo(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_update_photo(connection, team_id, microsoft_graph_profile_photo, _opts \\ []) do
+  @spec me_joined_teams_update_photo(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_update_photo(
+        connection,
+        team_id,
+        microsoft_graph_profile_photo,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -9117,7 +11780,15 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_update_photo_content(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_update_photo_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_update_photo_content(connection, team_id, body, _opts \\ []) do
     request =
       %{}
@@ -9150,8 +11821,21 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChannel.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_update_primary_channel(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphChannel.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphChannel.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_update_primary_channel(connection, team_id, microsoft_graph_channel, _opts \\ []) do
+  @spec me_joined_teams_update_primary_channel(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphChannel.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphChannel.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_update_primary_channel(
+        connection,
+        team_id,
+        microsoft_graph_channel,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -9183,7 +11867,15 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSchedule.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_update_schedule(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphSchedule.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSchedule.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_update_schedule(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSchedule.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSchedule.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_update_schedule(connection, team_id, microsoft_graph_schedule, _opts \\ []) do
     request =
       %{}
@@ -9218,8 +11910,23 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkTag.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_update_tags(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTeamworkTag.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkTag.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_update_tags(connection, team_id, teamwork_tag_id, microsoft_graph_teamwork_tag, _opts \\ []) do
+  @spec me_joined_teams_update_tags(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTeamworkTag.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamworkTag.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_update_tags(
+        connection,
+        team_id,
+        teamwork_tag_id,
+        microsoft_graph_teamwork_tag,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -9258,7 +11965,10 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_list_joined_teams(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_list_joined_teams(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_list_joined_teams(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -9302,7 +12012,15 @@ defmodule MicrosoftGraph.Api.MeTeam do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeam.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_update_joined_teams(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphTeam.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeam.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_update_joined_teams(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTeam.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeam.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_update_joined_teams(connection, team_id, microsoft_graph_team, _opts \\ []) do
     request =
       %{}

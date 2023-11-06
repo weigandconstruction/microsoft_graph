@@ -23,8 +23,19 @@ defmodule MicrosoftGraph.Api.DomainDnsRecordsDomainDnsRecord do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDomainDnsRecord.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec domain_dns_records_domain_dns_record_create_domain_dns_record(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphDomainDnsRecord.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDomainDnsRecord.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def domain_dns_records_domain_dns_record_create_domain_dns_record(connection, microsoft_graph_domain_dns_record, _opts \\ []) do
+  @spec domain_dns_records_domain_dns_record_create_domain_dns_record(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphDomainDnsRecord.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDomainDnsRecord.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def domain_dns_records_domain_dns_record_create_domain_dns_record(
+        connection,
+        microsoft_graph_domain_dns_record,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -56,8 +67,19 @@ defmodule MicrosoftGraph.Api.DomainDnsRecordsDomainDnsRecord do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec domain_dns_records_domain_dns_record_delete_domain_dns_record(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def domain_dns_records_domain_dns_record_delete_domain_dns_record(connection, domain_dns_record_id, opts \\ []) do
+  @spec domain_dns_records_domain_dns_record_delete_domain_dns_record(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def domain_dns_records_domain_dns_record_delete_domain_dns_record(
+        connection,
+        domain_dns_record_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -94,8 +116,19 @@ defmodule MicrosoftGraph.Api.DomainDnsRecordsDomainDnsRecord do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDomainDnsRecord.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec domain_dns_records_domain_dns_record_get_domain_dns_record(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDomainDnsRecord.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def domain_dns_records_domain_dns_record_get_domain_dns_record(connection, domain_dns_record_id, opts \\ []) do
+  @spec domain_dns_records_domain_dns_record_get_domain_dns_record(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDomainDnsRecord.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def domain_dns_records_domain_dns_record_get_domain_dns_record(
+        connection,
+        domain_dns_record_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -138,7 +171,10 @@ defmodule MicrosoftGraph.Api.DomainDnsRecordsDomainDnsRecord do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDomainDnsRecordCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec domain_dns_records_domain_dns_record_list_domain_dns_record(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDomainDnsRecordCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec domain_dns_records_domain_dns_record_list_domain_dns_record(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDomainDnsRecordCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def domain_dns_records_domain_dns_record_list_domain_dns_record(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -182,8 +218,21 @@ defmodule MicrosoftGraph.Api.DomainDnsRecordsDomainDnsRecord do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDomainDnsRecord.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec domain_dns_records_domain_dns_record_update_domain_dns_record(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphDomainDnsRecord.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDomainDnsRecord.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def domain_dns_records_domain_dns_record_update_domain_dns_record(connection, domain_dns_record_id, microsoft_graph_domain_dns_record, _opts \\ []) do
+  @spec domain_dns_records_domain_dns_record_update_domain_dns_record(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDomainDnsRecord.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDomainDnsRecord.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def domain_dns_records_domain_dns_record_update_domain_dns_record(
+        connection,
+        domain_dns_record_id,
+        microsoft_graph_domain_dns_record,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -215,7 +264,10 @@ defmodule MicrosoftGraph.Api.DomainDnsRecordsDomainDnsRecord do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec domain_dns_records_get_count96e3(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec domain_dns_records_get_count96e3(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def domain_dns_records_get_count96e3(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,

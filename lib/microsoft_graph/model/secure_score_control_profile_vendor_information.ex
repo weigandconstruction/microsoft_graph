@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.SecureScoreControlProfileVendorInformation do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,15 +16,14 @@ defmodule MicrosoftGraph.Model.SecureScoreControlProfileVendorInformation do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :provider => String.t | nil,
-    :providerVersion => String.t | nil,
-    :subProvider => String.t | nil,
-    :vendor => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :provider => String.t() | nil,
+          :providerVersion => String.t() | nil,
+          :subProvider => String.t() | nil,
+          :vendor => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

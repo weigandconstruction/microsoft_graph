@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphPlannerChecklistItems do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,11 +12,10 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphPlannerChecklistItems do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t
-  }
+          :"@odata.type" => String.t()
+        }
 
   def decode(value) do
     value
   end
 end
-

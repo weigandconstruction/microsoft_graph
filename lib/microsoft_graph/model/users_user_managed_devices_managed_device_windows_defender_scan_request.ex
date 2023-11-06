@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.UsersUserManagedDevicesManagedDeviceWindowsDefenderScanRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,11 +12,10 @@ defmodule MicrosoftGraph.Model.UsersUserManagedDevicesManagedDeviceWindowsDefend
   ]
 
   @type t :: %__MODULE__{
-    :quickScan => boolean() | nil
-  }
+          :quickScan => boolean() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

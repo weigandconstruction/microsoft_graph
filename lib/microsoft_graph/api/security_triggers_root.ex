@@ -23,7 +23,10 @@ defmodule MicrosoftGraph.Api.SecurityTriggersRoot do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_delete_triggers(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_delete_triggers(Tesla.Env.client(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_delete_triggers(connection, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -60,7 +63,10 @@ defmodule MicrosoftGraph.Api.SecurityTriggersRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityTriggersRoot.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_get_triggers(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityTriggersRoot.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_get_triggers(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityTriggersRoot.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_get_triggers(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -98,8 +104,19 @@ defmodule MicrosoftGraph.Api.SecurityTriggersRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityRetentionEvent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_triggers_create_retention_events(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphSecurityRetentionEvent.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityRetentionEvent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_triggers_create_retention_events(connection, microsoft_graph_security_retention_event, _opts \\ []) do
+  @spec security_triggers_create_retention_events(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphSecurityRetentionEvent.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityRetentionEvent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_triggers_create_retention_events(
+        connection,
+        microsoft_graph_security_retention_event,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -132,7 +149,10 @@ defmodule MicrosoftGraph.Api.SecurityTriggersRoot do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_triggers_delete_retention_events(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_triggers_delete_retention_events(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_triggers_delete_retention_events(connection, retention_event_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -171,7 +191,10 @@ defmodule MicrosoftGraph.Api.SecurityTriggersRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityRetentionEvent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_triggers_get_retention_events(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityRetentionEvent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_triggers_get_retention_events(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityRetentionEvent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_triggers_get_retention_events(connection, retention_event_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -216,7 +239,10 @@ defmodule MicrosoftGraph.Api.SecurityTriggersRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityRetentionEventCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_triggers_list_retention_events(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityRetentionEventCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_triggers_list_retention_events(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityRetentionEventCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_triggers_list_retention_events(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -260,7 +286,10 @@ defmodule MicrosoftGraph.Api.SecurityTriggersRoot do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_triggers_retention_events_get_count84a4(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_triggers_retention_events_get_count84a4(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_triggers_retention_events_get_count84a4(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -300,8 +329,19 @@ defmodule MicrosoftGraph.Api.SecurityTriggersRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityRetentionEventType.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_triggers_retention_events_get_retention_event_type(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityRetentionEventType.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_triggers_retention_events_get_retention_event_type(connection, retention_event_id, opts \\ []) do
+  @spec security_triggers_retention_events_get_retention_event_type(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityRetentionEventType.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_triggers_retention_events_get_retention_event_type(
+        connection,
+        retention_event_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -338,8 +378,21 @@ defmodule MicrosoftGraph.Api.SecurityTriggersRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityRetentionEvent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_triggers_update_retention_events(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphSecurityRetentionEvent.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityRetentionEvent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_triggers_update_retention_events(connection, retention_event_id, microsoft_graph_security_retention_event, _opts \\ []) do
+  @spec security_triggers_update_retention_events(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSecurityRetentionEvent.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityRetentionEvent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_triggers_update_retention_events(
+        connection,
+        retention_event_id,
+        microsoft_graph_security_retention_event,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -370,7 +423,14 @@ defmodule MicrosoftGraph.Api.SecurityTriggersRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityTriggersRoot.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_update_triggers(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphSecurityTriggersRoot.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityTriggersRoot.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_update_triggers(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphSecurityTriggersRoot.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityTriggersRoot.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_update_triggers(connection, microsoft_graph_security_triggers_root, _opts \\ []) do
     request =
       %{}

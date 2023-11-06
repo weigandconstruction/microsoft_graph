@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphPrintTaskTrigger do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,18 +15,21 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphPrintTaskTrigger do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :definition => MicrosoftGraph.Model.MicrosoftGraphPrintTaskDefinition.t | nil,
-    :event => MicrosoftGraph.Model.MicrosoftGraphPrintEvent.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :definition => MicrosoftGraph.Model.MicrosoftGraphPrintTaskDefinition.t() | nil,
+          :event => MicrosoftGraph.Model.MicrosoftGraphPrintEvent.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:definition, :struct, MicrosoftGraph.Model.MicrosoftGraphPrintTaskDefinition)
-     |> Deserializer.deserialize(:event, :struct, MicrosoftGraph.Model.MicrosoftGraphPrintEvent)
+    |> Deserializer.deserialize(
+      :definition,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphPrintTaskDefinition
+    )
+    |> Deserializer.deserialize(:event, :struct, MicrosoftGraph.Model.MicrosoftGraphPrintEvent)
   end
 end
-

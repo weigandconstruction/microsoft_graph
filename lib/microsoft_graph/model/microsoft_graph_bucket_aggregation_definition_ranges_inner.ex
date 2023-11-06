@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphBucketAggregationDefinitionRangesInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphBucketAggregationDefinitionRangesIn
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :from => String.t | nil,
-    :to => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :from => String.t() | nil,
+          :to => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

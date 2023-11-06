@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemCopyRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,15 +13,19 @@ defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemCopyRequest do
   ]
 
   @type t :: %__MODULE__{
-    :name => String.t | nil,
-    :parentReference => MicrosoftGraph.Model.DrivesDriveItemsDriveItemCopyRequestParentReference.t | nil
-  }
+          :name => String.t() | nil,
+          :parentReference =>
+            MicrosoftGraph.Model.DrivesDriveItemsDriveItemCopyRequestParentReference.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:parentReference, :struct, MicrosoftGraph.Model.DrivesDriveItemsDriveItemCopyRequestParentReference)
+    |> Deserializer.deserialize(
+      :parentReference,
+      :struct,
+      MicrosoftGraph.Model.DrivesDriveItemsDriveItemCopyRequestParentReference
+    )
   end
 end
-

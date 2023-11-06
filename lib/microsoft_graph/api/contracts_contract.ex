@@ -23,7 +23,14 @@ defmodule MicrosoftGraph.Api.ContractsContract do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContract.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec contracts_contract_create_contract(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphContract.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphContract.t} | {:error, Tesla.Env.t}
+  @spec contracts_contract_create_contract(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphContract.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphContract.t()}
+          | {:error, Tesla.Env.t()}
   def contracts_contract_create_contract(connection, microsoft_graph_contract, _opts \\ []) do
     request =
       %{}
@@ -56,7 +63,10 @@ defmodule MicrosoftGraph.Api.ContractsContract do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec contracts_contract_delete_contract(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec contracts_contract_delete_contract(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def contracts_contract_delete_contract(connection, contract_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -95,7 +105,10 @@ defmodule MicrosoftGraph.Api.ContractsContract do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContract.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec contracts_contract_get_contract(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphContract.t} | {:error, Tesla.Env.t}
+  @spec contracts_contract_get_contract(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphContract.t()}
+          | {:error, Tesla.Env.t()}
   def contracts_contract_get_contract(connection, contract_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -140,7 +153,10 @@ defmodule MicrosoftGraph.Api.ContractsContract do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContractCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec contracts_contract_list_contract(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphContractCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec contracts_contract_list_contract(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphContractCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def contracts_contract_list_contract(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -184,8 +200,21 @@ defmodule MicrosoftGraph.Api.ContractsContract do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContract.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec contracts_contract_update_contract(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphContract.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphContract.t} | {:error, Tesla.Env.t}
-  def contracts_contract_update_contract(connection, contract_id, microsoft_graph_contract, _opts \\ []) do
+  @spec contracts_contract_update_contract(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphContract.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphContract.t()}
+          | {:error, Tesla.Env.t()}
+  def contracts_contract_update_contract(
+        connection,
+        contract_id,
+        microsoft_graph_contract,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -217,7 +246,10 @@ defmodule MicrosoftGraph.Api.ContractsContract do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec contracts_get_count8092(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec contracts_get_count8092(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def contracts_get_count8092(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,

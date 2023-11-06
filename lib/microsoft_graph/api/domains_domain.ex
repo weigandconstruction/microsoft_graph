@@ -24,7 +24,14 @@ defmodule MicrosoftGraph.Api.DomainsDomain do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDomain.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec domains_domain_create_domain(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphDomain.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDomain.t} | {:error, Tesla.Env.t}
+  @spec domains_domain_create_domain(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphDomain.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDomain.t()}
+          | {:error, Tesla.Env.t()}
   def domains_domain_create_domain(connection, microsoft_graph_domain, _opts \\ []) do
     request =
       %{}
@@ -58,7 +65,10 @@ defmodule MicrosoftGraph.Api.DomainsDomain do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec domains_domain_delete_domain(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec domains_domain_delete_domain(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def domains_domain_delete_domain(connection, domain_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -97,7 +107,10 @@ defmodule MicrosoftGraph.Api.DomainsDomain do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDomain.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec domains_domain_get_domain(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDomain.t} | {:error, Tesla.Env.t}
+  @spec domains_domain_get_domain(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDomain.t()}
+          | {:error, Tesla.Env.t()}
   def domains_domain_get_domain(connection, domain_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -142,7 +155,10 @@ defmodule MicrosoftGraph.Api.DomainsDomain do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDomainCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec domains_domain_list_domain(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDomainCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec domains_domain_list_domain(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDomainCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def domains_domain_list_domain(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -187,7 +203,15 @@ defmodule MicrosoftGraph.Api.DomainsDomain do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDomain.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec domains_domain_update_domain(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphDomain.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDomain.t} | {:error, Tesla.Env.t}
+  @spec domains_domain_update_domain(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDomain.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDomain.t()}
+          | {:error, Tesla.Env.t()}
   def domains_domain_update_domain(connection, domain_id, microsoft_graph_domain, _opts \\ []) do
     request =
       %{}
@@ -220,7 +244,10 @@ defmodule MicrosoftGraph.Api.DomainsDomain do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec domains_get_count3c31(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec domains_get_count3c31(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def domains_get_count3c31(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,

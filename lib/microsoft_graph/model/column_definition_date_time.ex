@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.ColumnDefinitionDateTime do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :displayAs => String.t | nil,
-    :format => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :displayAs => String.t() | nil,
+          :format => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

@@ -19,22 +19,37 @@ defmodule MicrosoftGraph.Model.SubjectRightsRequestInsight do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :excludedItemCount => integer() | nil,
-    :insightCounts => [MicrosoftGraph.Model.MeJoinedTeamsTeamSendActivityNotificationRequestTemplateParametersInner.t] | nil,
-    :itemCount => integer() | nil,
-    :itemNeedReview => integer() | nil,
-    :productItemCounts => [MicrosoftGraph.Model.MeJoinedTeamsTeamSendActivityNotificationRequestTemplateParametersInner.t] | nil,
-    :signedOffItemCount => integer() | nil,
-    :totalItemSize => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :excludedItemCount => integer() | nil,
+          :insightCounts =>
+            [
+              MicrosoftGraph.Model.MeJoinedTeamsTeamSendActivityNotificationRequestTemplateParametersInner.t()
+            ]
+            | nil,
+          :itemCount => integer() | nil,
+          :itemNeedReview => integer() | nil,
+          :productItemCounts =>
+            [
+              MicrosoftGraph.Model.MeJoinedTeamsTeamSendActivityNotificationRequestTemplateParametersInner.t()
+            ]
+            | nil,
+          :signedOffItemCount => integer() | nil,
+          :totalItemSize => integer() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:insightCounts, :list, MicrosoftGraph.Model.MeJoinedTeamsTeamSendActivityNotificationRequestTemplateParametersInner)
-     |> Deserializer.deserialize(:productItemCounts, :list, MicrosoftGraph.Model.MeJoinedTeamsTeamSendActivityNotificationRequestTemplateParametersInner)
+    |> Deserializer.deserialize(
+      :insightCounts,
+      :list,
+      MicrosoftGraph.Model.MeJoinedTeamsTeamSendActivityNotificationRequestTemplateParametersInner
+    )
+    |> Deserializer.deserialize(
+      :productItemCounts,
+      :list,
+      MicrosoftGraph.Model.MeJoinedTeamsTeamSendActivityNotificationRequestTemplateParametersInner
+    )
   end
 end
-

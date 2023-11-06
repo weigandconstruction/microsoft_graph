@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphReportRoot do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,25 +18,53 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphReportRoot do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :authenticationMethods => MicrosoftGraph.Model.MicrosoftGraphReportRootAuthenticationMethods.t | nil,
-    :dailyPrintUsageByPrinter => [MicrosoftGraph.Model.MicrosoftGraphPrintUsageByPrinter.t] | nil,
-    :dailyPrintUsageByUser => [MicrosoftGraph.Model.MicrosoftGraphPrintUsageByUser.t] | nil,
-    :monthlyPrintUsageByPrinter => [MicrosoftGraph.Model.MicrosoftGraphPrintUsageByPrinter.t] | nil,
-    :monthlyPrintUsageByUser => [MicrosoftGraph.Model.MicrosoftGraphPrintUsageByUser.t] | nil,
-    :security => MicrosoftGraph.Model.MicrosoftGraphReportRootSecurity.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :authenticationMethods =>
+            MicrosoftGraph.Model.MicrosoftGraphReportRootAuthenticationMethods.t() | nil,
+          :dailyPrintUsageByPrinter =>
+            [MicrosoftGraph.Model.MicrosoftGraphPrintUsageByPrinter.t()] | nil,
+          :dailyPrintUsageByUser =>
+            [MicrosoftGraph.Model.MicrosoftGraphPrintUsageByUser.t()] | nil,
+          :monthlyPrintUsageByPrinter =>
+            [MicrosoftGraph.Model.MicrosoftGraphPrintUsageByPrinter.t()] | nil,
+          :monthlyPrintUsageByUser =>
+            [MicrosoftGraph.Model.MicrosoftGraphPrintUsageByUser.t()] | nil,
+          :security => MicrosoftGraph.Model.MicrosoftGraphReportRootSecurity.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:authenticationMethods, :struct, MicrosoftGraph.Model.MicrosoftGraphReportRootAuthenticationMethods)
-     |> Deserializer.deserialize(:dailyPrintUsageByPrinter, :list, MicrosoftGraph.Model.MicrosoftGraphPrintUsageByPrinter)
-     |> Deserializer.deserialize(:dailyPrintUsageByUser, :list, MicrosoftGraph.Model.MicrosoftGraphPrintUsageByUser)
-     |> Deserializer.deserialize(:monthlyPrintUsageByPrinter, :list, MicrosoftGraph.Model.MicrosoftGraphPrintUsageByPrinter)
-     |> Deserializer.deserialize(:monthlyPrintUsageByUser, :list, MicrosoftGraph.Model.MicrosoftGraphPrintUsageByUser)
-     |> Deserializer.deserialize(:security, :struct, MicrosoftGraph.Model.MicrosoftGraphReportRootSecurity)
+    |> Deserializer.deserialize(
+      :authenticationMethods,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphReportRootAuthenticationMethods
+    )
+    |> Deserializer.deserialize(
+      :dailyPrintUsageByPrinter,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphPrintUsageByPrinter
+    )
+    |> Deserializer.deserialize(
+      :dailyPrintUsageByUser,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphPrintUsageByUser
+    )
+    |> Deserializer.deserialize(
+      :monthlyPrintUsageByPrinter,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphPrintUsageByPrinter
+    )
+    |> Deserializer.deserialize(
+      :monthlyPrintUsageByUser,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphPrintUsageByUser
+    )
+    |> Deserializer.deserialize(
+      :security,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphReportRootSecurity
+    )
   end
 end
-

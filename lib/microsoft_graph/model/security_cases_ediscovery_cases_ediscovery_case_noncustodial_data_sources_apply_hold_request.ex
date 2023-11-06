@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseNoncustodialDataSourcesApplyHoldRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,11 +12,10 @@ defmodule MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseNoncust
   ]
 
   @type t :: %__MODULE__{
-    :ids => [String.t] | nil
-  }
+          :ids => [String.t()] | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

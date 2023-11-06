@@ -18,17 +18,16 @@ defmodule MicrosoftGraph.Model.OrganizationalBrandingPropertiesLoginPageTextVisi
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :hideAccountResetCredentials => boolean() | nil,
-    :hideCannotAccessYourAccount => boolean() | nil,
-    :hideForgotMyPassword => boolean() | nil,
-    :hidePrivacyAndCookies => boolean() | nil,
-    :hideResetItNow => boolean() | nil,
-    :hideTermsOfUse => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :hideAccountResetCredentials => boolean() | nil,
+          :hideCannotAccessYourAccount => boolean() | nil,
+          :hideForgotMyPassword => boolean() | nil,
+          :hidePrivacyAndCookies => boolean() | nil,
+          :hideResetItNow => boolean() | nil,
+          :hideTermsOfUse => boolean() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

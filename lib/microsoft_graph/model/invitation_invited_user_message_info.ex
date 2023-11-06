@@ -15,17 +15,24 @@ defmodule MicrosoftGraph.Model.InvitationInvitedUserMessageInfo do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :ccRecipients => [MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequestToRecipientsInner.t] | nil,
-    :customizedMessageBody => String.t | nil,
-    :messageLanguage => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :ccRecipients =>
+            [
+              MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequestToRecipientsInner.t()
+            ]
+            | nil,
+          :customizedMessageBody => String.t() | nil,
+          :messageLanguage => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:ccRecipients, :list, MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequestToRecipientsInner)
+    |> Deserializer.deserialize(
+      :ccRecipients,
+      :list,
+      MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequestToRecipientsInner
+    )
   end
 end
-

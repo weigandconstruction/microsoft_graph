@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAddRequestValuesInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,18 +16,17 @@ defmodule MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAddRequestValuesInner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :displayName => String.t | nil,
-    :roles => [String.t] | nil,
-    :visibleHistoryStartDateTime => DateTime.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :displayName => String.t() | nil,
+          :roles => [String.t()] | nil,
+          :visibleHistoryStartDateTime => DateTime.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:visibleHistoryStartDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:visibleHistoryStartDateTime, :datetime, nil)
   end
 end
-

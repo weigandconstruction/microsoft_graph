@@ -25,7 +25,14 @@ defmodule MicrosoftGraph.Api.ApplicationsAppManagementPolicy do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_app_management_policies_get_count3aad(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec applications_app_management_policies_get_count3aad(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def applications_app_management_policies_get_count3aad(connection, application_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -64,8 +71,21 @@ defmodule MicrosoftGraph.Api.ApplicationsAppManagementPolicy do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_create_ref_app_management_policies(Tesla.Env.client, String.t, %{optional(String.t) => Map.t}, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def applications_create_ref_app_management_policies(connection, application_id, request_body, _opts \\ []) do
+  @spec applications_create_ref_app_management_policies(
+          Tesla.Env.client(),
+          String.t(),
+          %{optional(String.t()) => Map.t()},
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def applications_create_ref_app_management_policies(
+        connection,
+        application_id,
+        request_body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -100,8 +120,21 @@ defmodule MicrosoftGraph.Api.ApplicationsAppManagementPolicy do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_delete_ref_app_management_policies(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def applications_delete_ref_app_management_policies(connection, application_id, app_management_policy_id, opts \\ []) do
+  @spec applications_delete_ref_app_management_policies(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def applications_delete_ref_app_management_policies(
+        connection,
+        application_id,
+        app_management_policy_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers,
       :"@id" => :query
@@ -110,7 +143,9 @@ defmodule MicrosoftGraph.Api.ApplicationsAppManagementPolicy do
     request =
       %{}
       |> method(:delete)
-      |> url("/applications/#{application_id}/appManagementPolicies/#{app_management_policy_id}/$ref")
+      |> url(
+        "/applications/#{application_id}/appManagementPolicies/#{app_management_policy_id}/$ref"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -146,7 +181,10 @@ defmodule MicrosoftGraph.Api.ApplicationsAppManagementPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAppManagementPolicyCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_list_app_management_policies(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAppManagementPolicyCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec applications_list_app_management_policies(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAppManagementPolicyCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def applications_list_app_management_policies(connection, application_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -196,7 +234,10 @@ defmodule MicrosoftGraph.Api.ApplicationsAppManagementPolicy do
   - `{:ok, MicrosoftGraph.Model.StringCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_list_ref_app_management_policies(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.StringCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec applications_list_ref_app_management_policies(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.StringCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def applications_list_ref_app_management_policies(connection, application_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,

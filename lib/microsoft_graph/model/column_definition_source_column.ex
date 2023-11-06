@@ -45,65 +45,106 @@ defmodule MicrosoftGraph.Model.ColumnDefinitionSourceColumn do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :term => MicrosoftGraph.Model.ColumnDefinitionTerm.t | nil,
-    :geolocation => MicrosoftGraph.Model.ColumnDefinitionGeolocation.t | nil,
-    :propagateChanges => boolean() | nil,
-    :number => MicrosoftGraph.Model.ColumnDefinitionNumber.t | nil,
-    :isReorderable => boolean() | nil,
-    :indexed => boolean() | nil,
-    :calculated => MicrosoftGraph.Model.ColumnDefinitionCalculated.t | nil,
-    :type => MicrosoftGraph.Model.ColumnDefinitionType.t | nil,
-    :currency => MicrosoftGraph.Model.ColumnDefinitionCurrency.t | nil,
-    :text => MicrosoftGraph.Model.ColumnDefinitionText.t | nil,
-    :readOnly => boolean() | nil,
-    :choice => MicrosoftGraph.Model.ColumnDefinitionChoice.t | nil,
-    :boolean => MicrosoftGraph.Model.ColumnDefinitionBoolean.t | nil,
-    :required => boolean() | nil,
-    :defaultValue => MicrosoftGraph.Model.ColumnDefinitionDefaultValue.t | nil,
-    :enforceUniqueValues => boolean() | nil,
-    :hidden => boolean() | nil,
-    :sourceContentType => MicrosoftGraph.Model.ColumnDefinitionSourceContentType.t | nil,
-    :lookup => MicrosoftGraph.Model.ColumnDefinitionLookup.t | nil,
-    :personOrGroup => MicrosoftGraph.Model.ColumnDefinitionPersonOrGroup.t | nil,
-    :validation => MicrosoftGraph.Model.ColumnDefinitionValidation.t | nil,
-    :contentApprovalStatus => MicrosoftGraph.Model.ColumnDefinitionContentApprovalStatus.t | nil,
-    :isDeletable => boolean() | nil,
-    :dateTime => MicrosoftGraph.Model.ColumnDefinitionDateTime.t | nil,
-    :displayName => String.t | nil,
-    :description => String.t | nil,
-    :sourceColumn => MicrosoftGraph.Model.ColumnDefinitionSourceColumn.t | nil,
-    :isSealed => boolean() | nil,
-    :hyperlinkOrPicture => MicrosoftGraph.Model.ColumnDefinitionHyperlinkOrPicture.t | nil,
-    :thumbnail => MicrosoftGraph.Model.ColumnDefinitionThumbnail.t | nil,
-    :columnGroup => String.t | nil,
-    :name => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :term => MicrosoftGraph.Model.ColumnDefinitionTerm.t() | nil,
+          :geolocation => MicrosoftGraph.Model.ColumnDefinitionGeolocation.t() | nil,
+          :propagateChanges => boolean() | nil,
+          :number => MicrosoftGraph.Model.ColumnDefinitionNumber.t() | nil,
+          :isReorderable => boolean() | nil,
+          :indexed => boolean() | nil,
+          :calculated => MicrosoftGraph.Model.ColumnDefinitionCalculated.t() | nil,
+          :type => MicrosoftGraph.Model.ColumnDefinitionType.t() | nil,
+          :currency => MicrosoftGraph.Model.ColumnDefinitionCurrency.t() | nil,
+          :text => MicrosoftGraph.Model.ColumnDefinitionText.t() | nil,
+          :readOnly => boolean() | nil,
+          :choice => MicrosoftGraph.Model.ColumnDefinitionChoice.t() | nil,
+          :boolean => MicrosoftGraph.Model.ColumnDefinitionBoolean.t() | nil,
+          :required => boolean() | nil,
+          :defaultValue => MicrosoftGraph.Model.ColumnDefinitionDefaultValue.t() | nil,
+          :enforceUniqueValues => boolean() | nil,
+          :hidden => boolean() | nil,
+          :sourceContentType => MicrosoftGraph.Model.ColumnDefinitionSourceContentType.t() | nil,
+          :lookup => MicrosoftGraph.Model.ColumnDefinitionLookup.t() | nil,
+          :personOrGroup => MicrosoftGraph.Model.ColumnDefinitionPersonOrGroup.t() | nil,
+          :validation => MicrosoftGraph.Model.ColumnDefinitionValidation.t() | nil,
+          :contentApprovalStatus =>
+            MicrosoftGraph.Model.ColumnDefinitionContentApprovalStatus.t() | nil,
+          :isDeletable => boolean() | nil,
+          :dateTime => MicrosoftGraph.Model.ColumnDefinitionDateTime.t() | nil,
+          :displayName => String.t() | nil,
+          :description => String.t() | nil,
+          :sourceColumn => MicrosoftGraph.Model.ColumnDefinitionSourceColumn.t() | nil,
+          :isSealed => boolean() | nil,
+          :hyperlinkOrPicture =>
+            MicrosoftGraph.Model.ColumnDefinitionHyperlinkOrPicture.t() | nil,
+          :thumbnail => MicrosoftGraph.Model.ColumnDefinitionThumbnail.t() | nil,
+          :columnGroup => String.t() | nil,
+          :name => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:term, :struct, MicrosoftGraph.Model.ColumnDefinitionTerm)
-     |> Deserializer.deserialize(:geolocation, :struct, MicrosoftGraph.Model.ColumnDefinitionGeolocation)
-     |> Deserializer.deserialize(:number, :struct, MicrosoftGraph.Model.ColumnDefinitionNumber)
-     |> Deserializer.deserialize(:calculated, :struct, MicrosoftGraph.Model.ColumnDefinitionCalculated)
-     |> Deserializer.deserialize(:type, :struct, MicrosoftGraph.Model.ColumnDefinitionType)
-     |> Deserializer.deserialize(:currency, :struct, MicrosoftGraph.Model.ColumnDefinitionCurrency)
-     |> Deserializer.deserialize(:text, :struct, MicrosoftGraph.Model.ColumnDefinitionText)
-     |> Deserializer.deserialize(:choice, :struct, MicrosoftGraph.Model.ColumnDefinitionChoice)
-     |> Deserializer.deserialize(:boolean, :struct, MicrosoftGraph.Model.ColumnDefinitionBoolean)
-     |> Deserializer.deserialize(:defaultValue, :struct, MicrosoftGraph.Model.ColumnDefinitionDefaultValue)
-     |> Deserializer.deserialize(:sourceContentType, :struct, MicrosoftGraph.Model.ColumnDefinitionSourceContentType)
-     |> Deserializer.deserialize(:lookup, :struct, MicrosoftGraph.Model.ColumnDefinitionLookup)
-     |> Deserializer.deserialize(:personOrGroup, :struct, MicrosoftGraph.Model.ColumnDefinitionPersonOrGroup)
-     |> Deserializer.deserialize(:validation, :struct, MicrosoftGraph.Model.ColumnDefinitionValidation)
-     |> Deserializer.deserialize(:contentApprovalStatus, :struct, MicrosoftGraph.Model.ColumnDefinitionContentApprovalStatus)
-     |> Deserializer.deserialize(:dateTime, :struct, MicrosoftGraph.Model.ColumnDefinitionDateTime)
-     |> Deserializer.deserialize(:sourceColumn, :struct, MicrosoftGraph.Model.ColumnDefinitionSourceColumn)
-     |> Deserializer.deserialize(:hyperlinkOrPicture, :struct, MicrosoftGraph.Model.ColumnDefinitionHyperlinkOrPicture)
-     |> Deserializer.deserialize(:thumbnail, :struct, MicrosoftGraph.Model.ColumnDefinitionThumbnail)
+    |> Deserializer.deserialize(:term, :struct, MicrosoftGraph.Model.ColumnDefinitionTerm)
+    |> Deserializer.deserialize(
+      :geolocation,
+      :struct,
+      MicrosoftGraph.Model.ColumnDefinitionGeolocation
+    )
+    |> Deserializer.deserialize(:number, :struct, MicrosoftGraph.Model.ColumnDefinitionNumber)
+    |> Deserializer.deserialize(
+      :calculated,
+      :struct,
+      MicrosoftGraph.Model.ColumnDefinitionCalculated
+    )
+    |> Deserializer.deserialize(:type, :struct, MicrosoftGraph.Model.ColumnDefinitionType)
+    |> Deserializer.deserialize(:currency, :struct, MicrosoftGraph.Model.ColumnDefinitionCurrency)
+    |> Deserializer.deserialize(:text, :struct, MicrosoftGraph.Model.ColumnDefinitionText)
+    |> Deserializer.deserialize(:choice, :struct, MicrosoftGraph.Model.ColumnDefinitionChoice)
+    |> Deserializer.deserialize(:boolean, :struct, MicrosoftGraph.Model.ColumnDefinitionBoolean)
+    |> Deserializer.deserialize(
+      :defaultValue,
+      :struct,
+      MicrosoftGraph.Model.ColumnDefinitionDefaultValue
+    )
+    |> Deserializer.deserialize(
+      :sourceContentType,
+      :struct,
+      MicrosoftGraph.Model.ColumnDefinitionSourceContentType
+    )
+    |> Deserializer.deserialize(:lookup, :struct, MicrosoftGraph.Model.ColumnDefinitionLookup)
+    |> Deserializer.deserialize(
+      :personOrGroup,
+      :struct,
+      MicrosoftGraph.Model.ColumnDefinitionPersonOrGroup
+    )
+    |> Deserializer.deserialize(
+      :validation,
+      :struct,
+      MicrosoftGraph.Model.ColumnDefinitionValidation
+    )
+    |> Deserializer.deserialize(
+      :contentApprovalStatus,
+      :struct,
+      MicrosoftGraph.Model.ColumnDefinitionContentApprovalStatus
+    )
+    |> Deserializer.deserialize(:dateTime, :struct, MicrosoftGraph.Model.ColumnDefinitionDateTime)
+    |> Deserializer.deserialize(
+      :sourceColumn,
+      :struct,
+      MicrosoftGraph.Model.ColumnDefinitionSourceColumn
+    )
+    |> Deserializer.deserialize(
+      :hyperlinkOrPicture,
+      :struct,
+      MicrosoftGraph.Model.ColumnDefinitionHyperlinkOrPicture
+    )
+    |> Deserializer.deserialize(
+      :thumbnail,
+      :struct,
+      MicrosoftGraph.Model.ColumnDefinitionThumbnail
+    )
   end
 end
-

@@ -13,15 +13,18 @@ defmodule MicrosoftGraph.Model.CallMediaState do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :audio => MicrosoftGraph.Model.MicrosoftGraphCallMediaStateAudio.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :audio => MicrosoftGraph.Model.MicrosoftGraphCallMediaStateAudio.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:audio, :struct, MicrosoftGraph.Model.MicrosoftGraphCallMediaStateAudio)
+    |> Deserializer.deserialize(
+      :audio,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallMediaStateAudio
+    )
   end
 end
-

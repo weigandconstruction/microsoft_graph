@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.AuditEventResourcesInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,18 +16,22 @@ defmodule MicrosoftGraph.Model.AuditEventResourcesInner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :auditResourceType => String.t | nil,
-    :displayName => String.t | nil,
-    :modifiedProperties => [MicrosoftGraph.Model.MicrosoftGraphAuditResourceModifiedPropertiesInner.t] | nil,
-    :resourceId => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :auditResourceType => String.t() | nil,
+          :displayName => String.t() | nil,
+          :modifiedProperties =>
+            [MicrosoftGraph.Model.MicrosoftGraphAuditResourceModifiedPropertiesInner.t()] | nil,
+          :resourceId => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:modifiedProperties, :list, MicrosoftGraph.Model.MicrosoftGraphAuditResourceModifiedPropertiesInner)
+    |> Deserializer.deserialize(
+      :modifiedProperties,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAuditResourceModifiedPropertiesInner
+    )
   end
 end
-

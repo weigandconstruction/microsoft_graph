@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphCalendarGroup do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,19 +17,18 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphCalendarGroup do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :calendars => [MicrosoftGraph.Model.MicrosoftGraphCalendar.t] | nil,
-    :changeKey => String.t | nil,
-    :classId => String.t | nil,
-    :name => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :calendars => [MicrosoftGraph.Model.MicrosoftGraphCalendar.t()] | nil,
+          :changeKey => String.t() | nil,
+          :classId => String.t() | nil,
+          :name => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:calendars, :list, MicrosoftGraph.Model.MicrosoftGraphCalendar)
+    |> Deserializer.deserialize(:calendars, :list, MicrosoftGraph.Model.MicrosoftGraphCalendar)
   end
 end
-

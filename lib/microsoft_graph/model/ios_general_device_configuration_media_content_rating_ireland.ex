@@ -14,17 +14,24 @@ defmodule MicrosoftGraph.Model.IosGeneralDeviceConfigurationMediaContentRatingIr
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :movieRating => MicrosoftGraph.Model.MicrosoftGraphRatingIrelandMoviesType.t | nil,
-    :tvRating => MicrosoftGraph.Model.MicrosoftGraphRatingIrelandTelevisionType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :movieRating => MicrosoftGraph.Model.MicrosoftGraphRatingIrelandMoviesType.t() | nil,
+          :tvRating => MicrosoftGraph.Model.MicrosoftGraphRatingIrelandTelevisionType.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:movieRating, :struct, MicrosoftGraph.Model.MicrosoftGraphRatingIrelandMoviesType)
-     |> Deserializer.deserialize(:tvRating, :struct, MicrosoftGraph.Model.MicrosoftGraphRatingIrelandTelevisionType)
+    |> Deserializer.deserialize(
+      :movieRating,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphRatingIrelandMoviesType
+    )
+    |> Deserializer.deserialize(
+      :tvRating,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphRatingIrelandTelevisionType
+    )
   end
 end
-

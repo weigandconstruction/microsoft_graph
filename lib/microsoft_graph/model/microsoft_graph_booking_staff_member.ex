@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphBookingStaffMember do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -21,24 +21,31 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphBookingStaffMember do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :availabilityIsAffectedByPersonalCalendar => boolean() | nil,
-    :displayName => String.t | nil,
-    :emailAddress => String.t | nil,
-    :isEmailNotificationEnabled => boolean() | nil,
-    :role => MicrosoftGraph.Model.MicrosoftGraphBookingStaffRole.t | nil,
-    :timeZone => String.t | nil,
-    :useBusinessHours => boolean() | nil,
-    :workingHours => [MicrosoftGraph.Model.BookingBusinessBusinessHoursInner.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :availabilityIsAffectedByPersonalCalendar => boolean() | nil,
+          :displayName => String.t() | nil,
+          :emailAddress => String.t() | nil,
+          :isEmailNotificationEnabled => boolean() | nil,
+          :role => MicrosoftGraph.Model.MicrosoftGraphBookingStaffRole.t() | nil,
+          :timeZone => String.t() | nil,
+          :useBusinessHours => boolean() | nil,
+          :workingHours => [MicrosoftGraph.Model.BookingBusinessBusinessHoursInner.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:role, :struct, MicrosoftGraph.Model.MicrosoftGraphBookingStaffRole)
-     |> Deserializer.deserialize(:workingHours, :list, MicrosoftGraph.Model.BookingBusinessBusinessHoursInner)
+    |> Deserializer.deserialize(
+      :role,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphBookingStaffRole
+    )
+    |> Deserializer.deserialize(
+      :workingHours,
+      :list,
+      MicrosoftGraph.Model.BookingBusinessBusinessHoursInner
+    )
   end
 end
-

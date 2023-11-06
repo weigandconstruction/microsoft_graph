@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstance do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -22,31 +22,54 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstance do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :contactedReviewers => [MicrosoftGraph.Model.MicrosoftGraphAccessReviewReviewer.t] | nil,
-    :decisions => [MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceDecisionItem.t] | nil,
-    :endDateTime => DateTime.t | nil,
-    :fallbackReviewers => [MicrosoftGraph.Model.AccessReviewScheduleDefinitionFallbackReviewersInner.t] | nil,
-    :reviewers => [MicrosoftGraph.Model.AccessReviewScheduleDefinitionFallbackReviewersInner.t] | nil,
-    :scope => MicrosoftGraph.Model.AccessReviewInstanceScope.t | nil,
-    :stages => [MicrosoftGraph.Model.MicrosoftGraphAccessReviewStage.t] | nil,
-    :startDateTime => DateTime.t | nil,
-    :status => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :contactedReviewers =>
+            [MicrosoftGraph.Model.MicrosoftGraphAccessReviewReviewer.t()] | nil,
+          :decisions =>
+            [MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceDecisionItem.t()] | nil,
+          :endDateTime => DateTime.t() | nil,
+          :fallbackReviewers =>
+            [MicrosoftGraph.Model.AccessReviewScheduleDefinitionFallbackReviewersInner.t()] | nil,
+          :reviewers =>
+            [MicrosoftGraph.Model.AccessReviewScheduleDefinitionFallbackReviewersInner.t()] | nil,
+          :scope => MicrosoftGraph.Model.AccessReviewInstanceScope.t() | nil,
+          :stages => [MicrosoftGraph.Model.MicrosoftGraphAccessReviewStage.t()] | nil,
+          :startDateTime => DateTime.t() | nil,
+          :status => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:contactedReviewers, :list, MicrosoftGraph.Model.MicrosoftGraphAccessReviewReviewer)
-     |> Deserializer.deserialize(:decisions, :list, MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceDecisionItem)
-     |> Deserializer.deserialize(:endDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:fallbackReviewers, :list, MicrosoftGraph.Model.AccessReviewScheduleDefinitionFallbackReviewersInner)
-     |> Deserializer.deserialize(:reviewers, :list, MicrosoftGraph.Model.AccessReviewScheduleDefinitionFallbackReviewersInner)
-     |> Deserializer.deserialize(:scope, :struct, MicrosoftGraph.Model.AccessReviewInstanceScope)
-     |> Deserializer.deserialize(:stages, :list, MicrosoftGraph.Model.MicrosoftGraphAccessReviewStage)
-     |> Deserializer.deserialize(:startDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :contactedReviewers,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAccessReviewReviewer
+    )
+    |> Deserializer.deserialize(
+      :decisions,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAccessReviewInstanceDecisionItem
+    )
+    |> Deserializer.deserialize(:endDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :fallbackReviewers,
+      :list,
+      MicrosoftGraph.Model.AccessReviewScheduleDefinitionFallbackReviewersInner
+    )
+    |> Deserializer.deserialize(
+      :reviewers,
+      :list,
+      MicrosoftGraph.Model.AccessReviewScheduleDefinitionFallbackReviewersInner
+    )
+    |> Deserializer.deserialize(:scope, :struct, MicrosoftGraph.Model.AccessReviewInstanceScope)
+    |> Deserializer.deserialize(
+      :stages,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAccessReviewStage
+    )
+    |> Deserializer.deserialize(:startDateTime, :datetime, nil)
   end
 end
-

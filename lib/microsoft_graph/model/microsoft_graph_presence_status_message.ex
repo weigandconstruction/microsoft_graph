@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphPresenceStatusMessage do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,19 +15,27 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphPresenceStatusMessage do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :expiryDateTime => MicrosoftGraph.Model.MicrosoftGraphPresenceStatusMessageExpiryDateTime.t | nil,
-    :message => MicrosoftGraph.Model.MicrosoftGraphPresenceStatusMessageMessage.t | nil,
-    :publishedDateTime => DateTime.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :expiryDateTime =>
+            MicrosoftGraph.Model.MicrosoftGraphPresenceStatusMessageExpiryDateTime.t() | nil,
+          :message => MicrosoftGraph.Model.MicrosoftGraphPresenceStatusMessageMessage.t() | nil,
+          :publishedDateTime => DateTime.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:expiryDateTime, :struct, MicrosoftGraph.Model.MicrosoftGraphPresenceStatusMessageExpiryDateTime)
-     |> Deserializer.deserialize(:message, :struct, MicrosoftGraph.Model.MicrosoftGraphPresenceStatusMessageMessage)
-     |> Deserializer.deserialize(:publishedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :expiryDateTime,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphPresenceStatusMessageExpiryDateTime
+    )
+    |> Deserializer.deserialize(
+      :message,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphPresenceStatusMessageMessage
+    )
+    |> Deserializer.deserialize(:publishedDateTime, :datetime, nil)
   end
 end
-

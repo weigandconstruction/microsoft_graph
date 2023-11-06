@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.ServicePrincipalsServicePrincipalRemoveKeyRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,12 +13,11 @@ defmodule MicrosoftGraph.Model.ServicePrincipalsServicePrincipalRemoveKeyRequest
   ]
 
   @type t :: %__MODULE__{
-    :keyId => String.t | nil,
-    :proof => String.t | nil
-  }
+          :keyId => String.t() | nil,
+          :proof => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

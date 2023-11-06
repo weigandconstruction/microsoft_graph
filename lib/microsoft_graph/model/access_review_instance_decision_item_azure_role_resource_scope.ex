@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.AccessReviewInstanceDecisionItemAzureRoleResource
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :displayName => String.t | nil,
-    :id => String.t | nil,
-    :type => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :displayName => String.t() | nil,
+          :id => String.t() | nil,
+          :type => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

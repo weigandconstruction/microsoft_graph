@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphODataErrorsMainError do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,19 +16,26 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphODataErrorsMainError do
   ]
 
   @type t :: %__MODULE__{
-    :code => String.t,
-    :details => [MicrosoftGraph.Model.MicrosoftGraphODataErrorsErrorDetails.t] | nil,
-    :innerError => MicrosoftGraph.Model.MicrosoftGraphODataErrorsInnerError.t | nil,
-    :message => String.t,
-    :target => String.t | nil
-  }
+          :code => String.t(),
+          :details => [MicrosoftGraph.Model.MicrosoftGraphODataErrorsErrorDetails.t()] | nil,
+          :innerError => MicrosoftGraph.Model.MicrosoftGraphODataErrorsInnerError.t() | nil,
+          :message => String.t(),
+          :target => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:details, :list, MicrosoftGraph.Model.MicrosoftGraphODataErrorsErrorDetails)
-     |> Deserializer.deserialize(:innerError, :struct, MicrosoftGraph.Model.MicrosoftGraphODataErrorsInnerError)
+    |> Deserializer.deserialize(
+      :details,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphODataErrorsErrorDetails
+    )
+    |> Deserializer.deserialize(
+      :innerError,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphODataErrorsInnerError
+    )
   end
 end
-

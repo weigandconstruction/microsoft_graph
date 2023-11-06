@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminAccessAssignment do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,24 +18,37 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminAccessAssignment do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :accessContainer => MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminAccessContainer.t | nil,
-    :accessDetails => MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminAccessDetails.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :status => MicrosoftGraph.Model.DelegatedAdminAccessAssignmentStatus.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :accessContainer =>
+            MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminAccessContainer.t() | nil,
+          :accessDetails =>
+            MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminAccessDetails.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :status => MicrosoftGraph.Model.DelegatedAdminAccessAssignmentStatus.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:accessContainer, :struct, MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminAccessContainer)
-     |> Deserializer.deserialize(:accessDetails, :struct, MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminAccessDetails)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.DelegatedAdminAccessAssignmentStatus)
+    |> Deserializer.deserialize(
+      :accessContainer,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminAccessContainer
+    )
+    |> Deserializer.deserialize(
+      :accessDetails,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminAccessDetails
+    )
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :status,
+      :struct,
+      MicrosoftGraph.Model.DelegatedAdminAccessAssignmentStatus
+    )
   end
 end
-

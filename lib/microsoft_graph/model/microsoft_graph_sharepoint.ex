@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSharepoint do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,15 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSharepoint do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :settings => MicrosoftGraph.Model.SharepointSettings.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :settings => MicrosoftGraph.Model.SharepointSettings.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:settings, :struct, MicrosoftGraph.Model.SharepointSettings)
+    |> Deserializer.deserialize(:settings, :struct, MicrosoftGraph.Model.SharepointSettings)
   end
 end
-

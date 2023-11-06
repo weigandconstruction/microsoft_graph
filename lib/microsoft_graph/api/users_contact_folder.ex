@@ -27,12 +27,33 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_contact_folders_child_folders_contacts_create_extensions(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphExtension.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_contact_folders_child_folders_contacts_create_extensions(connection, user_id, contact_folder_id, contact_folder_id1, contact_id, microsoft_graph_extension, _opts \\ []) do
+  @spec users_contact_folders_child_folders_contacts_create_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphExtension.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_contact_folders_child_folders_contacts_create_extensions(
+        connection,
+        user_id,
+        contact_folder_id,
+        contact_folder_id1,
+        contact_id,
+        microsoft_graph_extension,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/users/#{user_id}/contactFolders/#{contact_folder_id}/childFolders/#{contact_folder_id1}/contacts/#{contact_id}/extensions")
+      |> url(
+        "/users/#{user_id}/contactFolders/#{contact_folder_id}/childFolders/#{contact_folder_id1}/contacts/#{contact_id}/extensions"
+      )
       |> add_param(:body, :body, microsoft_graph_extension)
       |> Enum.into([])
 
@@ -64,8 +85,27 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_contact_folders_child_folders_contacts_delete_extensions(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_contact_folders_child_folders_contacts_delete_extensions(connection, user_id, contact_folder_id, contact_folder_id1, contact_id, extension_id, opts \\ []) do
+  @spec users_contact_folders_child_folders_contacts_delete_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_contact_folders_child_folders_contacts_delete_extensions(
+        connection,
+        user_id,
+        contact_folder_id,
+        contact_folder_id1,
+        contact_id,
+        extension_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -73,7 +113,9 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
     request =
       %{}
       |> method(:delete)
-      |> url("/users/#{user_id}/contactFolders/#{contact_folder_id}/childFolders/#{contact_folder_id1}/contacts/#{contact_id}/extensions/#{extension_id}")
+      |> url(
+        "/users/#{user_id}/contactFolders/#{contact_folder_id}/childFolders/#{contact_folder_id1}/contacts/#{contact_id}/extensions/#{extension_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -104,8 +146,25 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_contact_folders_child_folders_contacts_extensions_get_count5b30(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_contact_folders_child_folders_contacts_extensions_get_count5b30(connection, user_id, contact_folder_id, contact_folder_id1, contact_id, opts \\ []) do
+  @spec users_contact_folders_child_folders_contacts_extensions_get_count5b30(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_contact_folders_child_folders_contacts_extensions_get_count5b30(
+        connection,
+        user_id,
+        contact_folder_id,
+        contact_folder_id1,
+        contact_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$filter" => :query
     }
@@ -113,7 +172,9 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/contactFolders/#{contact_folder_id}/childFolders/#{contact_folder_id1}/contacts/#{contact_id}/extensions/$count")
+      |> url(
+        "/users/#{user_id}/contactFolders/#{contact_folder_id}/childFolders/#{contact_folder_id1}/contacts/#{contact_id}/extensions/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -143,8 +204,23 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_contact_folders_child_folders_contacts_get_count6cbe(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_contact_folders_child_folders_contacts_get_count6cbe(connection, user_id, contact_folder_id, contact_folder_id1, opts \\ []) do
+  @spec users_contact_folders_child_folders_contacts_get_count6cbe(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_contact_folders_child_folders_contacts_get_count6cbe(
+        connection,
+        user_id,
+        contact_folder_id,
+        contact_folder_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$filter" => :query
     }
@@ -152,7 +228,9 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/contactFolders/#{contact_folder_id}/childFolders/#{contact_folder_id1}/contacts/$count")
+      |> url(
+        "/users/#{user_id}/contactFolders/#{contact_folder_id}/childFolders/#{contact_folder_id1}/contacts/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -186,8 +264,27 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_contact_folders_child_folders_contacts_get_extensions(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_contact_folders_child_folders_contacts_get_extensions(connection, user_id, contact_folder_id, contact_folder_id1, contact_id, extension_id, opts \\ []) do
+  @spec users_contact_folders_child_folders_contacts_get_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_contact_folders_child_folders_contacts_get_extensions(
+        connection,
+        user_id,
+        contact_folder_id,
+        contact_folder_id1,
+        contact_id,
+        extension_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -196,7 +293,9 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/contactFolders/#{contact_folder_id}/childFolders/#{contact_folder_id1}/contacts/#{contact_id}/extensions/#{extension_id}")
+      |> url(
+        "/users/#{user_id}/contactFolders/#{contact_folder_id}/childFolders/#{contact_folder_id1}/contacts/#{contact_id}/extensions/#{extension_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -228,8 +327,25 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_contact_folders_child_folders_contacts_get_photo(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_contact_folders_child_folders_contacts_get_photo(connection, user_id, contact_folder_id, contact_folder_id1, contact_id, opts \\ []) do
+  @spec users_contact_folders_child_folders_contacts_get_photo(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_contact_folders_child_folders_contacts_get_photo(
+        connection,
+        user_id,
+        contact_folder_id,
+        contact_folder_id1,
+        contact_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query
     }
@@ -237,7 +353,9 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/contactFolders/#{contact_folder_id}/childFolders/#{contact_folder_id1}/contacts/#{contact_id}/photo")
+      |> url(
+        "/users/#{user_id}/contactFolders/#{contact_folder_id}/childFolders/#{contact_folder_id1}/contacts/#{contact_id}/photo"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -267,12 +385,31 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_contact_folders_child_folders_contacts_get_photo_content(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
-  def users_contact_folders_child_folders_contacts_get_photo_content(connection, user_id, contact_folder_id, contact_folder_id1, contact_id, _opts \\ []) do
+  @spec users_contact_folders_child_folders_contacts_get_photo_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
+  def users_contact_folders_child_folders_contacts_get_photo_content(
+        connection,
+        user_id,
+        contact_folder_id,
+        contact_folder_id1,
+        contact_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/contactFolders/#{contact_folder_id}/childFolders/#{contact_folder_id1}/contacts/#{contact_id}/photo/$value")
+      |> url(
+        "/users/#{user_id}/contactFolders/#{contact_folder_id}/childFolders/#{contact_folder_id1}/contacts/#{contact_id}/photo/$value"
+      )
       |> Enum.into([])
 
     connection
@@ -309,8 +446,25 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_contact_folders_child_folders_contacts_list_extensions(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionCollectionResponse.t} | {:error, Tesla.Env.t}
-  def users_contact_folders_child_folders_contacts_list_extensions(connection, user_id, contact_folder_id, contact_folder_id1, contact_id, opts \\ []) do
+  @spec users_contact_folders_child_folders_contacts_list_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def users_contact_folders_child_folders_contacts_list_extensions(
+        connection,
+        user_id,
+        contact_folder_id,
+        contact_folder_id1,
+        contact_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -324,7 +478,9 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/contactFolders/#{contact_folder_id}/childFolders/#{contact_folder_id1}/contacts/#{contact_id}/extensions")
+      |> url(
+        "/users/#{user_id}/contactFolders/#{contact_folder_id}/childFolders/#{contact_folder_id1}/contacts/#{contact_id}/extensions"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -356,12 +512,35 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_contact_folders_child_folders_contacts_update_extensions(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphExtension.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_contact_folders_child_folders_contacts_update_extensions(connection, user_id, contact_folder_id, contact_folder_id1, contact_id, extension_id, microsoft_graph_extension, _opts \\ []) do
+  @spec users_contact_folders_child_folders_contacts_update_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphExtension.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_contact_folders_child_folders_contacts_update_extensions(
+        connection,
+        user_id,
+        contact_folder_id,
+        contact_folder_id1,
+        contact_id,
+        extension_id,
+        microsoft_graph_extension,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/users/#{user_id}/contactFolders/#{contact_folder_id}/childFolders/#{contact_folder_id1}/contacts/#{contact_id}/extensions/#{extension_id}")
+      |> url(
+        "/users/#{user_id}/contactFolders/#{contact_folder_id}/childFolders/#{contact_folder_id1}/contacts/#{contact_id}/extensions/#{extension_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_extension)
       |> Enum.into([])
 
@@ -392,12 +571,33 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_contact_folders_child_folders_contacts_update_photo(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_contact_folders_child_folders_contacts_update_photo(connection, user_id, contact_folder_id, contact_folder_id1, contact_id, microsoft_graph_profile_photo, _opts \\ []) do
+  @spec users_contact_folders_child_folders_contacts_update_photo(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_contact_folders_child_folders_contacts_update_photo(
+        connection,
+        user_id,
+        contact_folder_id,
+        contact_folder_id1,
+        contact_id,
+        microsoft_graph_profile_photo,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/users/#{user_id}/contactFolders/#{contact_folder_id}/childFolders/#{contact_folder_id1}/contacts/#{contact_id}/photo")
+      |> url(
+        "/users/#{user_id}/contactFolders/#{contact_folder_id}/childFolders/#{contact_folder_id1}/contacts/#{contact_id}/photo"
+      )
       |> add_param(:body, :body, microsoft_graph_profile_photo)
       |> Enum.into([])
 
@@ -428,12 +628,33 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_contact_folders_child_folders_contacts_update_photo_content(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_contact_folders_child_folders_contacts_update_photo_content(connection, user_id, contact_folder_id, contact_folder_id1, contact_id, body, _opts \\ []) do
+  @spec users_contact_folders_child_folders_contacts_update_photo_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_contact_folders_child_folders_contacts_update_photo_content(
+        connection,
+        user_id,
+        contact_folder_id,
+        contact_folder_id1,
+        contact_id,
+        body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)
-      |> url("/users/#{user_id}/contactFolders/#{contact_folder_id}/childFolders/#{contact_folder_id1}/contacts/#{contact_id}/photo/$value")
+      |> url(
+        "/users/#{user_id}/contactFolders/#{contact_folder_id}/childFolders/#{contact_folder_id1}/contacts/#{contact_id}/photo/$value"
+      )
       |> add_param(:body, :body, body)
       |> Enum.into([])
 
@@ -464,12 +685,31 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContact.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_contact_folders_child_folders_create_contacts(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphContact.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphContact.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_contact_folders_child_folders_create_contacts(connection, user_id, contact_folder_id, contact_folder_id1, microsoft_graph_contact, _opts \\ []) do
+  @spec users_contact_folders_child_folders_create_contacts(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphContact.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphContact.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_contact_folders_child_folders_create_contacts(
+        connection,
+        user_id,
+        contact_folder_id,
+        contact_folder_id1,
+        microsoft_graph_contact,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/users/#{user_id}/contactFolders/#{contact_folder_id}/childFolders/#{contact_folder_id1}/contacts")
+      |> url(
+        "/users/#{user_id}/contactFolders/#{contact_folder_id}/childFolders/#{contact_folder_id1}/contacts"
+      )
       |> add_param(:body, :body, microsoft_graph_contact)
       |> Enum.into([])
 
@@ -500,8 +740,25 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_contact_folders_child_folders_delete_contacts(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_contact_folders_child_folders_delete_contacts(connection, user_id, contact_folder_id, contact_folder_id1, contact_id, opts \\ []) do
+  @spec users_contact_folders_child_folders_delete_contacts(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_contact_folders_child_folders_delete_contacts(
+        connection,
+        user_id,
+        contact_folder_id,
+        contact_folder_id1,
+        contact_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -509,7 +766,9 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
     request =
       %{}
       |> method(:delete)
-      |> url("/users/#{user_id}/contactFolders/#{contact_folder_id}/childFolders/#{contact_folder_id1}/contacts/#{contact_id}")
+      |> url(
+        "/users/#{user_id}/contactFolders/#{contact_folder_id}/childFolders/#{contact_folder_id1}/contacts/#{contact_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -542,8 +801,25 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContact.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_contact_folders_child_folders_get_contacts(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphContact.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_contact_folders_child_folders_get_contacts(connection, user_id, contact_folder_id, contact_folder_id1, contact_id, opts \\ []) do
+  @spec users_contact_folders_child_folders_get_contacts(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphContact.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_contact_folders_child_folders_get_contacts(
+        connection,
+        user_id,
+        contact_folder_id,
+        contact_folder_id1,
+        contact_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -552,7 +828,9 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/contactFolders/#{contact_folder_id}/childFolders/#{contact_folder_id1}/contacts/#{contact_id}")
+      |> url(
+        "/users/#{user_id}/contactFolders/#{contact_folder_id}/childFolders/#{contact_folder_id1}/contacts/#{contact_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -581,8 +859,21 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_contact_folders_child_folders_get_count9149(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_contact_folders_child_folders_get_count9149(connection, user_id, contact_folder_id, opts \\ []) do
+  @spec users_contact_folders_child_folders_get_count9149(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_contact_folders_child_folders_get_count9149(
+        connection,
+        user_id,
+        contact_folder_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$filter" => :query
     }
@@ -627,8 +918,23 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContactCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_contact_folders_child_folders_list_contacts(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphContactCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_contact_folders_child_folders_list_contacts(connection, user_id, contact_folder_id, contact_folder_id1, opts \\ []) do
+  @spec users_contact_folders_child_folders_list_contacts(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphContactCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_contact_folders_child_folders_list_contacts(
+        connection,
+        user_id,
+        contact_folder_id,
+        contact_folder_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -642,7 +948,9 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/contactFolders/#{contact_folder_id}/childFolders/#{contact_folder_id1}/contacts")
+      |> url(
+        "/users/#{user_id}/contactFolders/#{contact_folder_id}/childFolders/#{contact_folder_id1}/contacts"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -673,12 +981,33 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContact.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_contact_folders_child_folders_update_contacts(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphContact.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphContact.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_contact_folders_child_folders_update_contacts(connection, user_id, contact_folder_id, contact_folder_id1, contact_id, microsoft_graph_contact, _opts \\ []) do
+  @spec users_contact_folders_child_folders_update_contacts(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphContact.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphContact.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_contact_folders_child_folders_update_contacts(
+        connection,
+        user_id,
+        contact_folder_id,
+        contact_folder_id1,
+        contact_id,
+        microsoft_graph_contact,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/users/#{user_id}/contactFolders/#{contact_folder_id}/childFolders/#{contact_folder_id1}/contacts/#{contact_id}")
+      |> url(
+        "/users/#{user_id}/contactFolders/#{contact_folder_id}/childFolders/#{contact_folder_id1}/contacts/#{contact_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_contact)
       |> Enum.into([])
 
@@ -708,12 +1037,31 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_contact_folders_contacts_create_extensions(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphExtension.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_contact_folders_contacts_create_extensions(connection, user_id, contact_folder_id, contact_id, microsoft_graph_extension, _opts \\ []) do
+  @spec users_contact_folders_contacts_create_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphExtension.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_contact_folders_contacts_create_extensions(
+        connection,
+        user_id,
+        contact_folder_id,
+        contact_id,
+        microsoft_graph_extension,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/users/#{user_id}/contactFolders/#{contact_folder_id}/contacts/#{contact_id}/extensions")
+      |> url(
+        "/users/#{user_id}/contactFolders/#{contact_folder_id}/contacts/#{contact_id}/extensions"
+      )
       |> add_param(:body, :body, microsoft_graph_extension)
       |> Enum.into([])
 
@@ -744,8 +1092,25 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_contact_folders_contacts_delete_extensions(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_contact_folders_contacts_delete_extensions(connection, user_id, contact_folder_id, contact_id, extension_id, opts \\ []) do
+  @spec users_contact_folders_contacts_delete_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_contact_folders_contacts_delete_extensions(
+        connection,
+        user_id,
+        contact_folder_id,
+        contact_id,
+        extension_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -753,7 +1118,9 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
     request =
       %{}
       |> method(:delete)
-      |> url("/users/#{user_id}/contactFolders/#{contact_folder_id}/contacts/#{contact_id}/extensions/#{extension_id}")
+      |> url(
+        "/users/#{user_id}/contactFolders/#{contact_folder_id}/contacts/#{contact_id}/extensions/#{extension_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -783,8 +1150,23 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_contact_folders_contacts_extensions_get_count8e14(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_contact_folders_contacts_extensions_get_count8e14(connection, user_id, contact_folder_id, contact_id, opts \\ []) do
+  @spec users_contact_folders_contacts_extensions_get_count8e14(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_contact_folders_contacts_extensions_get_count8e14(
+        connection,
+        user_id,
+        contact_folder_id,
+        contact_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$filter" => :query
     }
@@ -792,7 +1174,9 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/contactFolders/#{contact_folder_id}/contacts/#{contact_id}/extensions/$count")
+      |> url(
+        "/users/#{user_id}/contactFolders/#{contact_folder_id}/contacts/#{contact_id}/extensions/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -821,8 +1205,21 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_contact_folders_contacts_get_count5cc4(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_contact_folders_contacts_get_count5cc4(connection, user_id, contact_folder_id, opts \\ []) do
+  @spec users_contact_folders_contacts_get_count5cc4(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_contact_folders_contacts_get_count5cc4(
+        connection,
+        user_id,
+        contact_folder_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$filter" => :query
     }
@@ -863,8 +1260,25 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_contact_folders_contacts_get_extensions(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_contact_folders_contacts_get_extensions(connection, user_id, contact_folder_id, contact_id, extension_id, opts \\ []) do
+  @spec users_contact_folders_contacts_get_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_contact_folders_contacts_get_extensions(
+        connection,
+        user_id,
+        contact_folder_id,
+        contact_id,
+        extension_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -873,7 +1287,9 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/contactFolders/#{contact_folder_id}/contacts/#{contact_id}/extensions/#{extension_id}")
+      |> url(
+        "/users/#{user_id}/contactFolders/#{contact_folder_id}/contacts/#{contact_id}/extensions/#{extension_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -904,8 +1320,23 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_contact_folders_contacts_get_photo(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_contact_folders_contacts_get_photo(connection, user_id, contact_folder_id, contact_id, opts \\ []) do
+  @spec users_contact_folders_contacts_get_photo(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_contact_folders_contacts_get_photo(
+        connection,
+        user_id,
+        contact_folder_id,
+        contact_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query
     }
@@ -942,12 +1373,29 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_contact_folders_contacts_get_photo_content(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
-  def users_contact_folders_contacts_get_photo_content(connection, user_id, contact_folder_id, contact_id, _opts \\ []) do
+  @spec users_contact_folders_contacts_get_photo_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
+  def users_contact_folders_contacts_get_photo_content(
+        connection,
+        user_id,
+        contact_folder_id,
+        contact_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/contactFolders/#{contact_folder_id}/contacts/#{contact_id}/photo/$value")
+      |> url(
+        "/users/#{user_id}/contactFolders/#{contact_folder_id}/contacts/#{contact_id}/photo/$value"
+      )
       |> Enum.into([])
 
     connection
@@ -983,8 +1431,23 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_contact_folders_contacts_list_extensions(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionCollectionResponse.t} | {:error, Tesla.Env.t}
-  def users_contact_folders_contacts_list_extensions(connection, user_id, contact_folder_id, contact_id, opts \\ []) do
+  @spec users_contact_folders_contacts_list_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def users_contact_folders_contacts_list_extensions(
+        connection,
+        user_id,
+        contact_folder_id,
+        contact_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -998,7 +1461,9 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/contactFolders/#{contact_folder_id}/contacts/#{contact_id}/extensions")
+      |> url(
+        "/users/#{user_id}/contactFolders/#{contact_folder_id}/contacts/#{contact_id}/extensions"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1029,12 +1494,33 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_contact_folders_contacts_update_extensions(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphExtension.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_contact_folders_contacts_update_extensions(connection, user_id, contact_folder_id, contact_id, extension_id, microsoft_graph_extension, _opts \\ []) do
+  @spec users_contact_folders_contacts_update_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphExtension.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_contact_folders_contacts_update_extensions(
+        connection,
+        user_id,
+        contact_folder_id,
+        contact_id,
+        extension_id,
+        microsoft_graph_extension,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/users/#{user_id}/contactFolders/#{contact_folder_id}/contacts/#{contact_id}/extensions/#{extension_id}")
+      |> url(
+        "/users/#{user_id}/contactFolders/#{contact_folder_id}/contacts/#{contact_id}/extensions/#{extension_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_extension)
       |> Enum.into([])
 
@@ -1064,8 +1550,25 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_contact_folders_contacts_update_photo(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_contact_folders_contacts_update_photo(connection, user_id, contact_folder_id, contact_id, microsoft_graph_profile_photo, _opts \\ []) do
+  @spec users_contact_folders_contacts_update_photo(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphProfilePhoto.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_contact_folders_contacts_update_photo(
+        connection,
+        user_id,
+        contact_folder_id,
+        contact_id,
+        microsoft_graph_profile_photo,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -1099,12 +1602,31 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_contact_folders_contacts_update_photo_content(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_contact_folders_contacts_update_photo_content(connection, user_id, contact_folder_id, contact_id, body, _opts \\ []) do
+  @spec users_contact_folders_contacts_update_photo_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_contact_folders_contacts_update_photo_content(
+        connection,
+        user_id,
+        contact_folder_id,
+        contact_id,
+        body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)
-      |> url("/users/#{user_id}/contactFolders/#{contact_folder_id}/contacts/#{contact_id}/photo/$value")
+      |> url(
+        "/users/#{user_id}/contactFolders/#{contact_folder_id}/contacts/#{contact_id}/photo/$value"
+      )
       |> add_param(:body, :body, body)
       |> Enum.into([])
 
@@ -1134,8 +1656,23 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContactFolder.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_contact_folders_create_child_folders(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphContactFolder.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphContactFolder.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_contact_folders_create_child_folders(connection, user_id, contact_folder_id, microsoft_graph_contact_folder, _opts \\ []) do
+  @spec users_contact_folders_create_child_folders(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphContactFolder.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphContactFolder.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_contact_folders_create_child_folders(
+        connection,
+        user_id,
+        contact_folder_id,
+        microsoft_graph_contact_folder,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1169,8 +1706,23 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContact.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_contact_folders_create_contacts(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphContact.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphContact.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_contact_folders_create_contacts(connection, user_id, contact_folder_id, microsoft_graph_contact, _opts \\ []) do
+  @spec users_contact_folders_create_contacts(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphContact.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphContact.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_contact_folders_create_contacts(
+        connection,
+        user_id,
+        contact_folder_id,
+        microsoft_graph_contact,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1204,8 +1756,23 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_contact_folders_delete_child_folders(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_contact_folders_delete_child_folders(connection, user_id, contact_folder_id, contact_folder_id1, opts \\ []) do
+  @spec users_contact_folders_delete_child_folders(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_contact_folders_delete_child_folders(
+        connection,
+        user_id,
+        contact_folder_id,
+        contact_folder_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1213,7 +1780,9 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
     request =
       %{}
       |> method(:delete)
-      |> url("/users/#{user_id}/contactFolders/#{contact_folder_id}/childFolders/#{contact_folder_id1}")
+      |> url(
+        "/users/#{user_id}/contactFolders/#{contact_folder_id}/childFolders/#{contact_folder_id1}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1243,8 +1812,23 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_contact_folders_delete_contacts(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_contact_folders_delete_contacts(connection, user_id, contact_folder_id, contact_id, opts \\ []) do
+  @spec users_contact_folders_delete_contacts(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_contact_folders_delete_contacts(
+        connection,
+        user_id,
+        contact_folder_id,
+        contact_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1284,8 +1868,23 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContactFolder.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_contact_folders_get_child_folders(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphContactFolder.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_contact_folders_get_child_folders(connection, user_id, contact_folder_id, contact_folder_id1, opts \\ []) do
+  @spec users_contact_folders_get_child_folders(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphContactFolder.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_contact_folders_get_child_folders(
+        connection,
+        user_id,
+        contact_folder_id,
+        contact_folder_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1294,7 +1893,9 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/contactFolders/#{contact_folder_id}/childFolders/#{contact_folder_id1}")
+      |> url(
+        "/users/#{user_id}/contactFolders/#{contact_folder_id}/childFolders/#{contact_folder_id1}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1326,8 +1927,23 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContact.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_contact_folders_get_contacts(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphContact.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_contact_folders_get_contacts(connection, user_id, contact_folder_id, contact_id, opts \\ []) do
+  @spec users_contact_folders_get_contacts(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphContact.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_contact_folders_get_contacts(
+        connection,
+        user_id,
+        contact_folder_id,
+        contact_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1364,7 +1980,10 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_contact_folders_get_count72bb(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_contact_folders_get_count72bb(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_contact_folders_get_count72bb(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$filter" => :query
@@ -1409,7 +2028,15 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContactFolderCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_contact_folders_list_child_folders(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphContactFolderCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_contact_folders_list_child_folders(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphContactFolderCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_contact_folders_list_child_folders(connection, user_id, contact_folder_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1460,7 +2087,10 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContactCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_contact_folders_list_contacts(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphContactCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_contact_folders_list_contacts(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphContactCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_contact_folders_list_contacts(connection, user_id, contact_folder_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1505,12 +2135,31 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContactFolder.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_contact_folders_update_child_folders(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphContactFolder.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphContactFolder.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_contact_folders_update_child_folders(connection, user_id, contact_folder_id, contact_folder_id1, microsoft_graph_contact_folder, _opts \\ []) do
+  @spec users_contact_folders_update_child_folders(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphContactFolder.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphContactFolder.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_contact_folders_update_child_folders(
+        connection,
+        user_id,
+        contact_folder_id,
+        contact_folder_id1,
+        microsoft_graph_contact_folder,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/users/#{user_id}/contactFolders/#{contact_folder_id}/childFolders/#{contact_folder_id1}")
+      |> url(
+        "/users/#{user_id}/contactFolders/#{contact_folder_id}/childFolders/#{contact_folder_id1}"
+      )
       |> add_param(:body, :body, microsoft_graph_contact_folder)
       |> Enum.into([])
 
@@ -1540,8 +2189,25 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContact.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_contact_folders_update_contacts(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphContact.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphContact.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_contact_folders_update_contacts(connection, user_id, contact_folder_id, contact_id, microsoft_graph_contact, _opts \\ []) do
+  @spec users_contact_folders_update_contacts(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphContact.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphContact.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_contact_folders_update_contacts(
+        connection,
+        user_id,
+        contact_folder_id,
+        contact_id,
+        microsoft_graph_contact,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -1574,8 +2240,21 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContactFolder.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_create_contact_folders(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphContactFolder.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphContactFolder.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_create_contact_folders(connection, user_id, microsoft_graph_contact_folder, _opts \\ []) do
+  @spec users_create_contact_folders(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphContactFolder.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphContactFolder.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_create_contact_folders(
+        connection,
+        user_id,
+        microsoft_graph_contact_folder,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1609,7 +2288,10 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_delete_contact_folders(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_delete_contact_folders(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_delete_contact_folders(connection, user_id, contact_folder_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -1649,7 +2331,10 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContactFolder.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_get_contact_folders(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphContactFolder.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_get_contact_folders(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphContactFolder.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_get_contact_folders(connection, user_id, contact_folder_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -1694,7 +2379,10 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContactFolderCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_list_contact_folders(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphContactFolderCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_list_contact_folders(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphContactFolderCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_list_contact_folders(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1739,8 +2427,23 @@ defmodule MicrosoftGraph.Api.UsersContactFolder do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContactFolder.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_update_contact_folders(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphContactFolder.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphContactFolder.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_update_contact_folders(connection, user_id, contact_folder_id, microsoft_graph_contact_folder, _opts \\ []) do
+  @spec users_update_contact_folders(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphContactFolder.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphContactFolder.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_update_contact_folders(
+        connection,
+        user_id,
+        contact_folder_id,
+        microsoft_graph_contact_folder,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

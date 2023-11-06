@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphStaffAvailabilityItem do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,21 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphStaffAvailabilityItem do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :availabilityItems => [MicrosoftGraph.Model.MicrosoftGraphStaffAvailabilityItemAvailabilityItemsInner.t] | nil,
-    :staffId => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :availabilityItems =>
+            [MicrosoftGraph.Model.MicrosoftGraphStaffAvailabilityItemAvailabilityItemsInner.t()]
+            | nil,
+          :staffId => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:availabilityItems, :list, MicrosoftGraph.Model.MicrosoftGraphStaffAvailabilityItemAvailabilityItemsInner)
+    |> Deserializer.deserialize(
+      :availabilityItems,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphStaffAvailabilityItemAvailabilityItemsInner
+    )
   end
 end
-

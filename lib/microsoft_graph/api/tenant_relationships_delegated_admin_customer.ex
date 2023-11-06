@@ -23,8 +23,19 @@ defmodule MicrosoftGraph.Api.TenantRelationshipsDelegatedAdminCustomer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminCustomer.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec tenant_relationships_create_delegated_admin_customers(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminCustomer.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminCustomer.t} | {:error, Tesla.Env.t}
-  def tenant_relationships_create_delegated_admin_customers(connection, microsoft_graph_delegated_admin_customer, _opts \\ []) do
+  @spec tenant_relationships_create_delegated_admin_customers(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminCustomer.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminCustomer.t()}
+          | {:error, Tesla.Env.t()}
+  def tenant_relationships_create_delegated_admin_customers(
+        connection,
+        microsoft_graph_delegated_admin_customer,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -56,12 +67,27 @@ defmodule MicrosoftGraph.Api.TenantRelationshipsDelegatedAdminCustomer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminServiceManagementDetail.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec tenant_relationships_delegated_admin_customers_create_service_management_details(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminServiceManagementDetail.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminServiceManagementDetail.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def tenant_relationships_delegated_admin_customers_create_service_management_details(connection, delegated_admin_customer_id, microsoft_graph_delegated_admin_service_management_detail, _opts \\ []) do
+  @spec tenant_relationships_delegated_admin_customers_create_service_management_details(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminServiceManagementDetail.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminServiceManagementDetail.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def tenant_relationships_delegated_admin_customers_create_service_management_details(
+        connection,
+        delegated_admin_customer_id,
+        microsoft_graph_delegated_admin_service_management_detail,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/tenantRelationships/delegatedAdminCustomers/#{delegated_admin_customer_id}/serviceManagementDetails")
+      |> url(
+        "/tenantRelationships/delegatedAdminCustomers/#{delegated_admin_customer_id}/serviceManagementDetails"
+      )
       |> add_param(:body, :body, microsoft_graph_delegated_admin_service_management_detail)
       |> Enum.into([])
 
@@ -90,8 +116,21 @@ defmodule MicrosoftGraph.Api.TenantRelationshipsDelegatedAdminCustomer do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec tenant_relationships_delegated_admin_customers_delete_service_management_details(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def tenant_relationships_delegated_admin_customers_delete_service_management_details(connection, delegated_admin_customer_id, delegated_admin_service_management_detail_id, opts \\ []) do
+  @spec tenant_relationships_delegated_admin_customers_delete_service_management_details(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def tenant_relationships_delegated_admin_customers_delete_service_management_details(
+        connection,
+        delegated_admin_customer_id,
+        delegated_admin_service_management_detail_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -99,7 +138,9 @@ defmodule MicrosoftGraph.Api.TenantRelationshipsDelegatedAdminCustomer do
     request =
       %{}
       |> method(:delete)
-      |> url("/tenantRelationships/delegatedAdminCustomers/#{delegated_admin_customer_id}/serviceManagementDetails/#{delegated_admin_service_management_detail_id}")
+      |> url(
+        "/tenantRelationships/delegatedAdminCustomers/#{delegated_admin_customer_id}/serviceManagementDetails/#{delegated_admin_service_management_detail_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -127,7 +168,13 @@ defmodule MicrosoftGraph.Api.TenantRelationshipsDelegatedAdminCustomer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec tenant_relationships_delegated_admin_customers_get_count_e293(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec tenant_relationships_delegated_admin_customers_get_count_e293(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def tenant_relationships_delegated_admin_customers_get_count_e293(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -168,8 +215,21 @@ defmodule MicrosoftGraph.Api.TenantRelationshipsDelegatedAdminCustomer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminServiceManagementDetail.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec tenant_relationships_delegated_admin_customers_get_service_management_details(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminServiceManagementDetail.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def tenant_relationships_delegated_admin_customers_get_service_management_details(connection, delegated_admin_customer_id, delegated_admin_service_management_detail_id, opts \\ []) do
+  @spec tenant_relationships_delegated_admin_customers_get_service_management_details(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminServiceManagementDetail.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def tenant_relationships_delegated_admin_customers_get_service_management_details(
+        connection,
+        delegated_admin_customer_id,
+        delegated_admin_service_management_detail_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -178,7 +238,9 @@ defmodule MicrosoftGraph.Api.TenantRelationshipsDelegatedAdminCustomer do
     request =
       %{}
       |> method(:get)
-      |> url("/tenantRelationships/delegatedAdminCustomers/#{delegated_admin_customer_id}/serviceManagementDetails/#{delegated_admin_service_management_detail_id}")
+      |> url(
+        "/tenantRelationships/delegatedAdminCustomers/#{delegated_admin_customer_id}/serviceManagementDetails/#{delegated_admin_service_management_detail_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -214,8 +276,20 @@ defmodule MicrosoftGraph.Api.TenantRelationshipsDelegatedAdminCustomer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminServiceManagementDetailCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec tenant_relationships_delegated_admin_customers_list_service_management_details(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminServiceManagementDetailCollectionResponse.t} | {:error, Tesla.Env.t}
-  def tenant_relationships_delegated_admin_customers_list_service_management_details(connection, delegated_admin_customer_id, opts \\ []) do
+  @spec tenant_relationships_delegated_admin_customers_list_service_management_details(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminServiceManagementDetailCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def tenant_relationships_delegated_admin_customers_list_service_management_details(
+        connection,
+        delegated_admin_customer_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -230,14 +304,17 @@ defmodule MicrosoftGraph.Api.TenantRelationshipsDelegatedAdminCustomer do
     request =
       %{}
       |> method(:get)
-      |> url("/tenantRelationships/delegatedAdminCustomers/#{delegated_admin_customer_id}/serviceManagementDetails")
+      |> url(
+        "/tenantRelationships/delegatedAdminCustomers/#{delegated_admin_customer_id}/serviceManagementDetails"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminServiceManagementDetailCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminServiceManagementDetailCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -259,8 +336,19 @@ defmodule MicrosoftGraph.Api.TenantRelationshipsDelegatedAdminCustomer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec tenant_relationships_delegated_admin_customers_service_management_details_get_count_d662(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def tenant_relationships_delegated_admin_customers_service_management_details_get_count_d662(connection, delegated_admin_customer_id, opts \\ []) do
+  @spec tenant_relationships_delegated_admin_customers_service_management_details_get_count_d662(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def tenant_relationships_delegated_admin_customers_service_management_details_get_count_d662(
+        connection,
+        delegated_admin_customer_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -269,7 +357,9 @@ defmodule MicrosoftGraph.Api.TenantRelationshipsDelegatedAdminCustomer do
     request =
       %{}
       |> method(:get)
-      |> url("/tenantRelationships/delegatedAdminCustomers/#{delegated_admin_customer_id}/serviceManagementDetails/$count")
+      |> url(
+        "/tenantRelationships/delegatedAdminCustomers/#{delegated_admin_customer_id}/serviceManagementDetails/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -298,12 +388,29 @@ defmodule MicrosoftGraph.Api.TenantRelationshipsDelegatedAdminCustomer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminServiceManagementDetail.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec tenant_relationships_delegated_admin_customers_update_service_management_details(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminServiceManagementDetail.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminServiceManagementDetail.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def tenant_relationships_delegated_admin_customers_update_service_management_details(connection, delegated_admin_customer_id, delegated_admin_service_management_detail_id, microsoft_graph_delegated_admin_service_management_detail, _opts \\ []) do
+  @spec tenant_relationships_delegated_admin_customers_update_service_management_details(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminServiceManagementDetail.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminServiceManagementDetail.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def tenant_relationships_delegated_admin_customers_update_service_management_details(
+        connection,
+        delegated_admin_customer_id,
+        delegated_admin_service_management_detail_id,
+        microsoft_graph_delegated_admin_service_management_detail,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/tenantRelationships/delegatedAdminCustomers/#{delegated_admin_customer_id}/serviceManagementDetails/#{delegated_admin_service_management_detail_id}")
+      |> url(
+        "/tenantRelationships/delegatedAdminCustomers/#{delegated_admin_customer_id}/serviceManagementDetails/#{delegated_admin_service_management_detail_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_delegated_admin_service_management_detail)
       |> Enum.into([])
 
@@ -331,8 +438,19 @@ defmodule MicrosoftGraph.Api.TenantRelationshipsDelegatedAdminCustomer do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec tenant_relationships_delete_delegated_admin_customers(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def tenant_relationships_delete_delegated_admin_customers(connection, delegated_admin_customer_id, opts \\ []) do
+  @spec tenant_relationships_delete_delegated_admin_customers(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def tenant_relationships_delete_delegated_admin_customers(
+        connection,
+        delegated_admin_customer_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -370,8 +488,19 @@ defmodule MicrosoftGraph.Api.TenantRelationshipsDelegatedAdminCustomer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminCustomer.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec tenant_relationships_get_delegated_admin_customers(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminCustomer.t} | {:error, Tesla.Env.t}
-  def tenant_relationships_get_delegated_admin_customers(connection, delegated_admin_customer_id, opts \\ []) do
+  @spec tenant_relationships_get_delegated_admin_customers(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminCustomer.t()}
+          | {:error, Tesla.Env.t()}
+  def tenant_relationships_get_delegated_admin_customers(
+        connection,
+        delegated_admin_customer_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -415,7 +544,10 @@ defmodule MicrosoftGraph.Api.TenantRelationshipsDelegatedAdminCustomer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminCustomerCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec tenant_relationships_list_delegated_admin_customers(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminCustomerCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec tenant_relationships_list_delegated_admin_customers(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminCustomerCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def tenant_relationships_list_delegated_admin_customers(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -459,8 +591,21 @@ defmodule MicrosoftGraph.Api.TenantRelationshipsDelegatedAdminCustomer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminCustomer.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec tenant_relationships_update_delegated_admin_customers(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminCustomer.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminCustomer.t} | {:error, Tesla.Env.t}
-  def tenant_relationships_update_delegated_admin_customers(connection, delegated_admin_customer_id, microsoft_graph_delegated_admin_customer, _opts \\ []) do
+  @spec tenant_relationships_update_delegated_admin_customers(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminCustomer.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminCustomer.t()}
+          | {:error, Tesla.Env.t()}
+  def tenant_relationships_update_delegated_admin_customers(
+        connection,
+        delegated_admin_customer_id,
+        microsoft_graph_delegated_admin_customer,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

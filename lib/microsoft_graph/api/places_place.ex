@@ -24,7 +24,10 @@ defmodule MicrosoftGraph.Api.PlacesPlace do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec places_get_count_f02b(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec places_get_count_f02b(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def places_get_count_f02b(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -62,7 +65,10 @@ defmodule MicrosoftGraph.Api.PlacesPlace do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec places_place_delete_place(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec places_place_delete_place(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def places_place_delete_place(connection, place_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -100,7 +106,10 @@ defmodule MicrosoftGraph.Api.PlacesPlace do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphRoom.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec places_place_get_place_as_room(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphRoom.t} | {:error, Tesla.Env.t}
+  @spec places_place_get_place_as_room(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphRoom.t()}
+          | {:error, Tesla.Env.t()}
   def places_place_get_place_as_room(connection, place_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -139,7 +148,10 @@ defmodule MicrosoftGraph.Api.PlacesPlace do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphRoomList.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec places_place_get_place_as_room_list(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphRoomList.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec places_place_get_place_as_room_list(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphRoomList.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def places_place_get_place_as_room_list(connection, place_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -183,7 +195,10 @@ defmodule MicrosoftGraph.Api.PlacesPlace do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphRoomCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec places_place_list_place_as_room(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphRoomCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec places_place_list_place_as_room(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphRoomCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def places_place_list_place_as_room(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -233,7 +248,10 @@ defmodule MicrosoftGraph.Api.PlacesPlace do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphRoomListCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec places_place_list_place_as_room_list(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphRoomListCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec places_place_list_place_as_room_list(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphRoomListCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def places_place_list_place_as_room_list(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -277,7 +295,10 @@ defmodule MicrosoftGraph.Api.PlacesPlace do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec places_place_place_get_count_as_room56fc(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec places_place_place_get_count_as_room56fc(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def places_place_place_get_count_as_room56fc(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -315,7 +336,10 @@ defmodule MicrosoftGraph.Api.PlacesPlace do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec places_place_place_get_count_as_room_list_e9fd(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec places_place_place_get_count_as_room_list_e9fd(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def places_place_place_get_count_as_room_list_e9fd(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -354,7 +378,15 @@ defmodule MicrosoftGraph.Api.PlacesPlace do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlace.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec places_place_update_place(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphPlace.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPlace.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec places_place_update_place(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPlace.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPlace.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def places_place_update_place(connection, place_id, microsoft_graph_place, _opts \\ []) do
     request =
       %{}

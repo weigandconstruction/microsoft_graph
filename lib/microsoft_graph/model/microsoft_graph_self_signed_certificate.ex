@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSelfSignedCertificate do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -21,24 +21,23 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSelfSignedCertificate do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :customKeyIdentifier => String.t | nil,
-    :displayName => String.t | nil,
-    :endDateTime => DateTime.t | nil,
-    :key => String.t | nil,
-    :keyId => String.t | nil,
-    :startDateTime => DateTime.t | nil,
-    :thumbprint => String.t | nil,
-    :type => String.t | nil,
-    :usage => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :customKeyIdentifier => String.t() | nil,
+          :displayName => String.t() | nil,
+          :endDateTime => DateTime.t() | nil,
+          :key => String.t() | nil,
+          :keyId => String.t() | nil,
+          :startDateTime => DateTime.t() | nil,
+          :thumbprint => String.t() | nil,
+          :type => String.t() | nil,
+          :usage => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:endDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:startDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:endDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:startDateTime, :datetime, nil)
   end
 end
-

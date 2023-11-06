@@ -24,8 +24,17 @@ defmodule MicrosoftGraph.Api.IdentityProtectionIdentityProtectionRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityProtectionRoot.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_protection_identity_protection_root_get_identity_protection_root(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityProtectionRoot.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_protection_identity_protection_root_get_identity_protection_root(connection, opts \\ []) do
+  @spec identity_protection_identity_protection_root_get_identity_protection_root(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityProtectionRoot.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_protection_identity_protection_root_get_identity_protection_root(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -61,8 +70,19 @@ defmodule MicrosoftGraph.Api.IdentityProtectionIdentityProtectionRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityProtectionRoot.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_protection_identity_protection_root_update_identity_protection_root(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphIdentityProtectionRoot.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityProtectionRoot.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_protection_identity_protection_root_update_identity_protection_root(connection, microsoft_graph_identity_protection_root, _opts \\ []) do
+  @spec identity_protection_identity_protection_root_update_identity_protection_root(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphIdentityProtectionRoot.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityProtectionRoot.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_protection_identity_protection_root_update_identity_protection_root(
+        connection,
+        microsoft_graph_identity_protection_root,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

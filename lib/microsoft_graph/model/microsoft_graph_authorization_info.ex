@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAuthorizationInfo do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,12 +13,11 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAuthorizationInfo do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :certificateUserIds => [String.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :certificateUserIds => [String.t()] | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

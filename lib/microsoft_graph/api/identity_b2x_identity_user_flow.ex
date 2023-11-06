@@ -24,8 +24,21 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguageConfiguration.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_create_languages(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguageConfiguration.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguageConfiguration.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_create_languages(connection, b2x_identity_user_flow_id, microsoft_graph_user_flow_language_configuration, _opts \\ []) do
+  @spec identity_b2x_user_flows_create_languages(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguageConfiguration.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguageConfiguration.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_create_languages(
+        connection,
+        b2x_identity_user_flow_id,
+        microsoft_graph_user_flow_language_configuration,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -57,8 +70,21 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_create_ref_user_flow_identity_providers(Tesla.Env.client, String.t, %{optional(String.t) => Map.t}, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_create_ref_user_flow_identity_providers(connection, b2x_identity_user_flow_id, request_body, _opts \\ []) do
+  @spec identity_b2x_user_flows_create_ref_user_flow_identity_providers(
+          Tesla.Env.client(),
+          String.t(),
+          %{optional(String.t()) => Map.t()},
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_create_ref_user_flow_identity_providers(
+        connection,
+        b2x_identity_user_flow_id,
+        request_body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -91,8 +117,21 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttributeAssignment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_create_user_attribute_assignments(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttributeAssignment.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttributeAssignment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_create_user_attribute_assignments(connection, b2x_identity_user_flow_id, microsoft_graph_identity_user_flow_attribute_assignment, _opts \\ []) do
+  @spec identity_b2x_user_flows_create_user_attribute_assignments(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttributeAssignment.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttributeAssignment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_create_user_attribute_assignments(
+        connection,
+        b2x_identity_user_flow_id,
+        microsoft_graph_identity_user_flow_attribute_assignment,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -126,8 +165,21 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_delete_identity_providers(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_delete_identity_providers(connection, b2x_identity_user_flow_id, identity_provider_id, opts \\ []) do
+  @spec identity_b2x_user_flows_delete_identity_providers(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_delete_identity_providers(
+        connection,
+        b2x_identity_user_flow_id,
+        identity_provider_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -135,7 +187,9 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
     request =
       %{}
       |> method(:delete)
-      |> url("/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/identityProviders/#{identity_provider_id}")
+      |> url(
+        "/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/identityProviders/#{identity_provider_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -164,8 +218,21 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_delete_languages(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_delete_languages(connection, b2x_identity_user_flow_id, user_flow_language_configuration_id, opts \\ []) do
+  @spec identity_b2x_user_flows_delete_languages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_delete_languages(
+        connection,
+        b2x_identity_user_flow_id,
+        user_flow_language_configuration_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -173,7 +240,9 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
     request =
       %{}
       |> method(:delete)
-      |> url("/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/languages/#{user_flow_language_configuration_id}")
+      |> url(
+        "/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/languages/#{user_flow_language_configuration_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -201,8 +270,19 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_delete_post_attribute_collection(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_delete_post_attribute_collection(connection, b2x_identity_user_flow_id, opts \\ []) do
+  @spec identity_b2x_user_flows_delete_post_attribute_collection(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_delete_post_attribute_collection(
+        connection,
+        b2x_identity_user_flow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -210,7 +290,9 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
     request =
       %{}
       |> method(:delete)
-      |> url("/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/apiConnectorConfiguration/postAttributeCollection")
+      |> url(
+        "/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/apiConnectorConfiguration/postAttributeCollection"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -238,8 +320,19 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_delete_post_federation_signup(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_delete_post_federation_signup(connection, b2x_identity_user_flow_id, opts \\ []) do
+  @spec identity_b2x_user_flows_delete_post_federation_signup(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_delete_post_federation_signup(
+        connection,
+        b2x_identity_user_flow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -247,7 +340,9 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
     request =
       %{}
       |> method(:delete)
-      |> url("/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/apiConnectorConfiguration/postFederationSignup")
+      |> url(
+        "/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/apiConnectorConfiguration/postFederationSignup"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -275,8 +370,19 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_delete_ref_post_attribute_collection(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_delete_ref_post_attribute_collection(connection, b2x_identity_user_flow_id, opts \\ []) do
+  @spec identity_b2x_user_flows_delete_ref_post_attribute_collection(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_delete_ref_post_attribute_collection(
+        connection,
+        b2x_identity_user_flow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -284,7 +390,9 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
     request =
       %{}
       |> method(:delete)
-      |> url("/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/apiConnectorConfiguration/postAttributeCollection/$ref")
+      |> url(
+        "/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/apiConnectorConfiguration/postAttributeCollection/$ref"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -312,8 +420,19 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_delete_ref_post_federation_signup(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_delete_ref_post_federation_signup(connection, b2x_identity_user_flow_id, opts \\ []) do
+  @spec identity_b2x_user_flows_delete_ref_post_federation_signup(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_delete_ref_post_federation_signup(
+        connection,
+        b2x_identity_user_flow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -321,7 +440,9 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
     request =
       %{}
       |> method(:delete)
-      |> url("/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/apiConnectorConfiguration/postFederationSignup/$ref")
+      |> url(
+        "/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/apiConnectorConfiguration/postFederationSignup/$ref"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -351,8 +472,21 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_delete_ref_user_flow_identity_providers(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_delete_ref_user_flow_identity_providers(connection, b2x_identity_user_flow_id, identity_provider_base_id, opts \\ []) do
+  @spec identity_b2x_user_flows_delete_ref_user_flow_identity_providers(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_delete_ref_user_flow_identity_providers(
+        connection,
+        b2x_identity_user_flow_id,
+        identity_provider_base_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers,
       :"@id" => :query
@@ -361,7 +495,9 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
     request =
       %{}
       |> method(:delete)
-      |> url("/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/userFlowIdentityProviders/#{identity_provider_base_id}/$ref")
+      |> url(
+        "/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/userFlowIdentityProviders/#{identity_provider_base_id}/$ref"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -391,8 +527,21 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_delete_user_attribute_assignments(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_delete_user_attribute_assignments(connection, b2x_identity_user_flow_id, identity_user_flow_attribute_assignment_id, opts \\ []) do
+  @spec identity_b2x_user_flows_delete_user_attribute_assignments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_delete_user_attribute_assignments(
+        connection,
+        b2x_identity_user_flow_id,
+        identity_user_flow_attribute_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -400,7 +549,9 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
     request =
       %{}
       |> method(:delete)
-      |> url("/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/userAttributeAssignments/#{identity_user_flow_attribute_assignment_id}")
+      |> url(
+        "/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/userAttributeAssignments/#{identity_user_flow_attribute_assignment_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -430,8 +581,19 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserFlowApiConnectorConfiguration.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_get_api_connector_configuration(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUserFlowApiConnectorConfiguration.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_get_api_connector_configuration(connection, b2x_identity_user_flow_id, opts \\ []) do
+  @spec identity_b2x_user_flows_get_api_connector_configuration(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUserFlowApiConnectorConfiguration.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_get_api_connector_configuration(
+        connection,
+        b2x_identity_user_flow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -468,7 +630,10 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_get_count_cfff(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_b2x_user_flows_get_count_cfff(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_b2x_user_flows_get_count_cfff(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -509,8 +674,21 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityProvider.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_get_identity_providers(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityProvider.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_get_identity_providers(connection, b2x_identity_user_flow_id, identity_provider_id, opts \\ []) do
+  @spec identity_b2x_user_flows_get_identity_providers(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityProvider.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_get_identity_providers(
+        connection,
+        b2x_identity_user_flow_id,
+        identity_provider_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -519,7 +697,9 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
     request =
       %{}
       |> method(:get)
-      |> url("/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/identityProviders/#{identity_provider_id}")
+      |> url(
+        "/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/identityProviders/#{identity_provider_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -550,8 +730,21 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguageConfiguration.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_get_languages(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguageConfiguration.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_get_languages(connection, b2x_identity_user_flow_id, user_flow_language_configuration_id, opts \\ []) do
+  @spec identity_b2x_user_flows_get_languages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguageConfiguration.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_get_languages(
+        connection,
+        b2x_identity_user_flow_id,
+        user_flow_language_configuration_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -560,7 +753,9 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
     request =
       %{}
       |> method(:get)
-      |> url("/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/languages/#{user_flow_language_configuration_id}")
+      |> url(
+        "/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/languages/#{user_flow_language_configuration_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -589,8 +784,19 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityApiConnector.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_get_post_attribute_collection(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityApiConnector.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_get_post_attribute_collection(connection, b2x_identity_user_flow_id, opts \\ []) do
+  @spec identity_b2x_user_flows_get_post_attribute_collection(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityApiConnector.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_get_post_attribute_collection(
+        connection,
+        b2x_identity_user_flow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -599,7 +805,9 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
     request =
       %{}
       |> method(:get)
-      |> url("/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/apiConnectorConfiguration/postAttributeCollection")
+      |> url(
+        "/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/apiConnectorConfiguration/postAttributeCollection"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -628,8 +836,19 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityApiConnector.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_get_post_federation_signup(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityApiConnector.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_get_post_federation_signup(connection, b2x_identity_user_flow_id, opts \\ []) do
+  @spec identity_b2x_user_flows_get_post_federation_signup(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityApiConnector.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_get_post_federation_signup(
+        connection,
+        b2x_identity_user_flow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -638,7 +857,9 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
     request =
       %{}
       |> method(:get)
-      |> url("/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/apiConnectorConfiguration/postFederationSignup")
+      |> url(
+        "/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/apiConnectorConfiguration/postFederationSignup"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -665,12 +886,25 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_get_ref_post_attribute_collection(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_get_ref_post_attribute_collection(connection, b2x_identity_user_flow_id, _opts \\ []) do
+  @spec identity_b2x_user_flows_get_ref_post_attribute_collection(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_get_ref_post_attribute_collection(
+        connection,
+        b2x_identity_user_flow_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/apiConnectorConfiguration/postAttributeCollection/$ref")
+      |> url(
+        "/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/apiConnectorConfiguration/postAttributeCollection/$ref"
+      )
       |> Enum.into([])
 
     connection
@@ -696,12 +930,25 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_get_ref_post_federation_signup(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_get_ref_post_federation_signup(connection, b2x_identity_user_flow_id, _opts \\ []) do
+  @spec identity_b2x_user_flows_get_ref_post_federation_signup(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_get_ref_post_federation_signup(
+        connection,
+        b2x_identity_user_flow_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/apiConnectorConfiguration/postFederationSignup/$ref")
+      |> url(
+        "/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/apiConnectorConfiguration/postFederationSignup/$ref"
+      )
       |> Enum.into([])
 
     connection
@@ -731,8 +978,21 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttributeAssignment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_get_user_attribute_assignments(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttributeAssignment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_get_user_attribute_assignments(connection, b2x_identity_user_flow_id, identity_user_flow_attribute_assignment_id, opts \\ []) do
+  @spec identity_b2x_user_flows_get_user_attribute_assignments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttributeAssignment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_get_user_attribute_assignments(
+        connection,
+        b2x_identity_user_flow_id,
+        identity_user_flow_attribute_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -741,7 +1001,9 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
     request =
       %{}
       |> method(:get)
-      |> url("/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/userAttributeAssignments/#{identity_user_flow_attribute_assignment_id}")
+      |> url(
+        "/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/userAttributeAssignments/#{identity_user_flow_attribute_assignment_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -770,8 +1032,19 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_identity_providers_get_count97b6(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_identity_providers_get_count97b6(connection, b2x_identity_user_flow_id, opts \\ []) do
+  @spec identity_b2x_user_flows_identity_providers_get_count97b6(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_identity_providers_get_count97b6(
+        connection,
+        b2x_identity_user_flow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -809,12 +1082,29 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguagePage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_languages_create_default_pages(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguagePage.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguagePage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_languages_create_default_pages(connection, b2x_identity_user_flow_id, user_flow_language_configuration_id, microsoft_graph_user_flow_language_page, _opts \\ []) do
+  @spec identity_b2x_user_flows_languages_create_default_pages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguagePage.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguagePage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_languages_create_default_pages(
+        connection,
+        b2x_identity_user_flow_id,
+        user_flow_language_configuration_id,
+        microsoft_graph_user_flow_language_page,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/languages/#{user_flow_language_configuration_id}/defaultPages")
+      |> url(
+        "/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/languages/#{user_flow_language_configuration_id}/defaultPages"
+      )
       |> add_param(:body, :body, microsoft_graph_user_flow_language_page)
       |> Enum.into([])
 
@@ -843,12 +1133,29 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguagePage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_languages_create_overrides_pages(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguagePage.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguagePage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_languages_create_overrides_pages(connection, b2x_identity_user_flow_id, user_flow_language_configuration_id, microsoft_graph_user_flow_language_page, _opts \\ []) do
+  @spec identity_b2x_user_flows_languages_create_overrides_pages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguagePage.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguagePage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_languages_create_overrides_pages(
+        connection,
+        b2x_identity_user_flow_id,
+        user_flow_language_configuration_id,
+        microsoft_graph_user_flow_language_page,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/languages/#{user_flow_language_configuration_id}/overridesPages")
+      |> url(
+        "/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/languages/#{user_flow_language_configuration_id}/overridesPages"
+      )
       |> add_param(:body, :body, microsoft_graph_user_flow_language_page)
       |> Enum.into([])
 
@@ -878,8 +1185,21 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_languages_default_pages_get_count335e(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_languages_default_pages_get_count335e(connection, b2x_identity_user_flow_id, user_flow_language_configuration_id, opts \\ []) do
+  @spec identity_b2x_user_flows_languages_default_pages_get_count335e(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_languages_default_pages_get_count335e(
+        connection,
+        b2x_identity_user_flow_id,
+        user_flow_language_configuration_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -888,7 +1208,9 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
     request =
       %{}
       |> method(:get)
-      |> url("/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/languages/#{user_flow_language_configuration_id}/defaultPages/$count")
+      |> url(
+        "/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/languages/#{user_flow_language_configuration_id}/defaultPages/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -918,8 +1240,23 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_languages_delete_default_pages(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_languages_delete_default_pages(connection, b2x_identity_user_flow_id, user_flow_language_configuration_id, user_flow_language_page_id, opts \\ []) do
+  @spec identity_b2x_user_flows_languages_delete_default_pages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_languages_delete_default_pages(
+        connection,
+        b2x_identity_user_flow_id,
+        user_flow_language_configuration_id,
+        user_flow_language_page_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -927,7 +1264,9 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
     request =
       %{}
       |> method(:delete)
-      |> url("/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/languages/#{user_flow_language_configuration_id}/defaultPages/#{user_flow_language_page_id}")
+      |> url(
+        "/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/languages/#{user_flow_language_configuration_id}/defaultPages/#{user_flow_language_page_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -957,8 +1296,23 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_languages_delete_overrides_pages(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_languages_delete_overrides_pages(connection, b2x_identity_user_flow_id, user_flow_language_configuration_id, user_flow_language_page_id, opts \\ []) do
+  @spec identity_b2x_user_flows_languages_delete_overrides_pages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_languages_delete_overrides_pages(
+        connection,
+        b2x_identity_user_flow_id,
+        user_flow_language_configuration_id,
+        user_flow_language_page_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -966,7 +1320,9 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
     request =
       %{}
       |> method(:delete)
-      |> url("/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/languages/#{user_flow_language_configuration_id}/overridesPages/#{user_flow_language_page_id}")
+      |> url(
+        "/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/languages/#{user_flow_language_configuration_id}/overridesPages/#{user_flow_language_page_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -995,8 +1351,15 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_languages_get_count16c9(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_languages_get_count16c9(connection, b2x_identity_user_flow_id, opts \\ []) do
+  @spec identity_b2x_user_flows_languages_get_count16c9(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_languages_get_count16c9(
+        connection,
+        b2x_identity_user_flow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1037,8 +1400,23 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguagePage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_languages_get_default_pages(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguagePage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_languages_get_default_pages(connection, b2x_identity_user_flow_id, user_flow_language_configuration_id, user_flow_language_page_id, opts \\ []) do
+  @spec identity_b2x_user_flows_languages_get_default_pages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguagePage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_languages_get_default_pages(
+        connection,
+        b2x_identity_user_flow_id,
+        user_flow_language_configuration_id,
+        user_flow_language_page_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1047,7 +1425,9 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
     request =
       %{}
       |> method(:get)
-      |> url("/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/languages/#{user_flow_language_configuration_id}/defaultPages/#{user_flow_language_page_id}")
+      |> url(
+        "/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/languages/#{user_flow_language_configuration_id}/defaultPages/#{user_flow_language_page_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1076,12 +1456,29 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_languages_get_default_pages_content(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_languages_get_default_pages_content(connection, b2x_identity_user_flow_id, user_flow_language_configuration_id, user_flow_language_page_id, _opts \\ []) do
+  @spec identity_b2x_user_flows_languages_get_default_pages_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_languages_get_default_pages_content(
+        connection,
+        b2x_identity_user_flow_id,
+        user_flow_language_configuration_id,
+        user_flow_language_page_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/languages/#{user_flow_language_configuration_id}/defaultPages/#{user_flow_language_page_id}/$value")
+      |> url(
+        "/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/languages/#{user_flow_language_configuration_id}/defaultPages/#{user_flow_language_page_id}/$value"
+      )
       |> Enum.into([])
 
     connection
@@ -1112,8 +1509,23 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguagePage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_languages_get_overrides_pages(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguagePage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_languages_get_overrides_pages(connection, b2x_identity_user_flow_id, user_flow_language_configuration_id, user_flow_language_page_id, opts \\ []) do
+  @spec identity_b2x_user_flows_languages_get_overrides_pages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguagePage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_languages_get_overrides_pages(
+        connection,
+        b2x_identity_user_flow_id,
+        user_flow_language_configuration_id,
+        user_flow_language_page_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1122,7 +1534,9 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
     request =
       %{}
       |> method(:get)
-      |> url("/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/languages/#{user_flow_language_configuration_id}/overridesPages/#{user_flow_language_page_id}")
+      |> url(
+        "/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/languages/#{user_flow_language_configuration_id}/overridesPages/#{user_flow_language_page_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1151,12 +1565,29 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_languages_get_overrides_pages_content(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_languages_get_overrides_pages_content(connection, b2x_identity_user_flow_id, user_flow_language_configuration_id, user_flow_language_page_id, _opts \\ []) do
+  @spec identity_b2x_user_flows_languages_get_overrides_pages_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_languages_get_overrides_pages_content(
+        connection,
+        b2x_identity_user_flow_id,
+        user_flow_language_configuration_id,
+        user_flow_language_page_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/languages/#{user_flow_language_configuration_id}/overridesPages/#{user_flow_language_page_id}/$value")
+      |> url(
+        "/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/languages/#{user_flow_language_configuration_id}/overridesPages/#{user_flow_language_page_id}/$value"
+      )
       |> Enum.into([])
 
     connection
@@ -1192,8 +1623,21 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguagePageCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_languages_list_default_pages(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguagePageCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_languages_list_default_pages(connection, b2x_identity_user_flow_id, user_flow_language_configuration_id, opts \\ []) do
+  @spec identity_b2x_user_flows_languages_list_default_pages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguagePageCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_languages_list_default_pages(
+        connection,
+        b2x_identity_user_flow_id,
+        user_flow_language_configuration_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1208,7 +1652,9 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
     request =
       %{}
       |> method(:get)
-      |> url("/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/languages/#{user_flow_language_configuration_id}/defaultPages")
+      |> url(
+        "/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/languages/#{user_flow_language_configuration_id}/defaultPages"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1245,8 +1691,21 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguagePageCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_languages_list_overrides_pages(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguagePageCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_languages_list_overrides_pages(connection, b2x_identity_user_flow_id, user_flow_language_configuration_id, opts \\ []) do
+  @spec identity_b2x_user_flows_languages_list_overrides_pages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguagePageCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_languages_list_overrides_pages(
+        connection,
+        b2x_identity_user_flow_id,
+        user_flow_language_configuration_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1261,7 +1720,9 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
     request =
       %{}
       |> method(:get)
-      |> url("/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/languages/#{user_flow_language_configuration_id}/overridesPages")
+      |> url(
+        "/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/languages/#{user_flow_language_configuration_id}/overridesPages"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1291,8 +1752,21 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_languages_overrides_pages_get_count5299(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_languages_overrides_pages_get_count5299(connection, b2x_identity_user_flow_id, user_flow_language_configuration_id, opts \\ []) do
+  @spec identity_b2x_user_flows_languages_overrides_pages_get_count5299(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_languages_overrides_pages_get_count5299(
+        connection,
+        b2x_identity_user_flow_id,
+        user_flow_language_configuration_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1301,7 +1775,9 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
     request =
       %{}
       |> method(:get)
-      |> url("/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/languages/#{user_flow_language_configuration_id}/overridesPages/$count")
+      |> url(
+        "/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/languages/#{user_flow_language_configuration_id}/overridesPages/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1331,12 +1807,31 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguagePage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_languages_update_default_pages(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguagePage.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguagePage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_languages_update_default_pages(connection, b2x_identity_user_flow_id, user_flow_language_configuration_id, user_flow_language_page_id, microsoft_graph_user_flow_language_page, _opts \\ []) do
+  @spec identity_b2x_user_flows_languages_update_default_pages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguagePage.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguagePage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_languages_update_default_pages(
+        connection,
+        b2x_identity_user_flow_id,
+        user_flow_language_configuration_id,
+        user_flow_language_page_id,
+        microsoft_graph_user_flow_language_page,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/languages/#{user_flow_language_configuration_id}/defaultPages/#{user_flow_language_page_id}")
+      |> url(
+        "/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/languages/#{user_flow_language_configuration_id}/defaultPages/#{user_flow_language_page_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_user_flow_language_page)
       |> Enum.into([])
 
@@ -1366,12 +1861,31 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_languages_update_default_pages_content(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_languages_update_default_pages_content(connection, b2x_identity_user_flow_id, user_flow_language_configuration_id, user_flow_language_page_id, body, _opts \\ []) do
+  @spec identity_b2x_user_flows_languages_update_default_pages_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_languages_update_default_pages_content(
+        connection,
+        b2x_identity_user_flow_id,
+        user_flow_language_configuration_id,
+        user_flow_language_page_id,
+        body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)
-      |> url("/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/languages/#{user_flow_language_configuration_id}/defaultPages/#{user_flow_language_page_id}/$value")
+      |> url(
+        "/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/languages/#{user_flow_language_configuration_id}/defaultPages/#{user_flow_language_page_id}/$value"
+      )
       |> add_param(:body, :body, body)
       |> Enum.into([])
 
@@ -1401,12 +1915,31 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguagePage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_languages_update_overrides_pages(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguagePage.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguagePage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_languages_update_overrides_pages(connection, b2x_identity_user_flow_id, user_flow_language_configuration_id, user_flow_language_page_id, microsoft_graph_user_flow_language_page, _opts \\ []) do
+  @spec identity_b2x_user_flows_languages_update_overrides_pages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguagePage.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguagePage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_languages_update_overrides_pages(
+        connection,
+        b2x_identity_user_flow_id,
+        user_flow_language_configuration_id,
+        user_flow_language_page_id,
+        microsoft_graph_user_flow_language_page,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/languages/#{user_flow_language_configuration_id}/overridesPages/#{user_flow_language_page_id}")
+      |> url(
+        "/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/languages/#{user_flow_language_configuration_id}/overridesPages/#{user_flow_language_page_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_user_flow_language_page)
       |> Enum.into([])
 
@@ -1436,12 +1969,31 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_languages_update_overrides_pages_content(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_languages_update_overrides_pages_content(connection, b2x_identity_user_flow_id, user_flow_language_configuration_id, user_flow_language_page_id, body, _opts \\ []) do
+  @spec identity_b2x_user_flows_languages_update_overrides_pages_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_languages_update_overrides_pages_content(
+        connection,
+        b2x_identity_user_flow_id,
+        user_flow_language_configuration_id,
+        user_flow_language_page_id,
+        body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)
-      |> url("/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/languages/#{user_flow_language_configuration_id}/overridesPages/#{user_flow_language_page_id}/$value")
+      |> url(
+        "/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/languages/#{user_flow_language_configuration_id}/overridesPages/#{user_flow_language_page_id}/$value"
+      )
       |> add_param(:body, :body, body)
       |> Enum.into([])
 
@@ -1477,8 +2029,15 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityProviderCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_list_identity_providers(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityProviderCollectionResponse.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_list_identity_providers(connection, b2x_identity_user_flow_id, opts \\ []) do
+  @spec identity_b2x_user_flows_list_identity_providers(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityProviderCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_list_identity_providers(
+        connection,
+        b2x_identity_user_flow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1529,7 +2088,11 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguageConfigurationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_list_languages(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguageConfigurationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_b2x_user_flows_list_languages(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguageConfigurationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_b2x_user_flows_list_languages(connection, b2x_identity_user_flow_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1578,8 +2141,19 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, MicrosoftGraph.Model.StringCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_list_ref_user_flow_identity_providers(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.StringCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_list_ref_user_flow_identity_providers(connection, b2x_identity_user_flow_id, opts \\ []) do
+  @spec identity_b2x_user_flows_list_ref_user_flow_identity_providers(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.StringCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_list_ref_user_flow_identity_providers(
+        connection,
+        b2x_identity_user_flow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1628,8 +2202,20 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttributeAssignmentCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_list_user_attribute_assignments(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttributeAssignmentCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_list_user_attribute_assignments(connection, b2x_identity_user_flow_id, opts \\ []) do
+  @spec identity_b2x_user_flows_list_user_attribute_assignments(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttributeAssignmentCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_list_user_attribute_assignments(
+        connection,
+        b2x_identity_user_flow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1651,7 +2237,8 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttributeAssignmentCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttributeAssignmentCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -1679,8 +2266,19 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityProviderBaseCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_list_user_flow_identity_providers(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityProviderBaseCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_list_user_flow_identity_providers(connection, b2x_identity_user_flow_id, opts \\ []) do
+  @spec identity_b2x_user_flows_list_user_flow_identity_providers(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityProviderBaseCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_list_user_flow_identity_providers(
+        connection,
+        b2x_identity_user_flow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1724,12 +2322,29 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguageConfiguration.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_update_languages(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguageConfiguration.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguageConfiguration.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_update_languages(connection, b2x_identity_user_flow_id, user_flow_language_configuration_id, microsoft_graph_user_flow_language_configuration, _opts \\ []) do
+  @spec identity_b2x_user_flows_update_languages(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguageConfiguration.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguageConfiguration.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_update_languages(
+        connection,
+        b2x_identity_user_flow_id,
+        user_flow_language_configuration_id,
+        microsoft_graph_user_flow_language_configuration,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/languages/#{user_flow_language_configuration_id}")
+      |> url(
+        "/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/languages/#{user_flow_language_configuration_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_user_flow_language_configuration)
       |> Enum.into([])
 
@@ -1757,12 +2372,27 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityApiConnector.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_update_post_attribute_collection(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphIdentityApiConnector.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityApiConnector.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_update_post_attribute_collection(connection, b2x_identity_user_flow_id, microsoft_graph_identity_api_connector, _opts \\ []) do
+  @spec identity_b2x_user_flows_update_post_attribute_collection(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphIdentityApiConnector.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityApiConnector.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_update_post_attribute_collection(
+        connection,
+        b2x_identity_user_flow_id,
+        microsoft_graph_identity_api_connector,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/apiConnectorConfiguration/postAttributeCollection")
+      |> url(
+        "/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/apiConnectorConfiguration/postAttributeCollection"
+      )
       |> add_param(:body, :body, microsoft_graph_identity_api_connector)
       |> Enum.into([])
 
@@ -1790,12 +2420,27 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityApiConnector.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_update_post_federation_signup(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphIdentityApiConnector.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityApiConnector.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_update_post_federation_signup(connection, b2x_identity_user_flow_id, microsoft_graph_identity_api_connector, _opts \\ []) do
+  @spec identity_b2x_user_flows_update_post_federation_signup(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphIdentityApiConnector.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityApiConnector.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_update_post_federation_signup(
+        connection,
+        b2x_identity_user_flow_id,
+        microsoft_graph_identity_api_connector,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/apiConnectorConfiguration/postFederationSignup")
+      |> url(
+        "/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/apiConnectorConfiguration/postFederationSignup"
+      )
       |> add_param(:body, :body, microsoft_graph_identity_api_connector)
       |> Enum.into([])
 
@@ -1823,12 +2468,27 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_update_ref_post_attribute_collection(Tesla.Env.client, String.t, MicrosoftGraph.Model.ReferenceUpdate.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_update_ref_post_attribute_collection(connection, b2x_identity_user_flow_id, reference_update, _opts \\ []) do
+  @spec identity_b2x_user_flows_update_ref_post_attribute_collection(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.ReferenceUpdate.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_update_ref_post_attribute_collection(
+        connection,
+        b2x_identity_user_flow_id,
+        reference_update,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)
-      |> url("/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/apiConnectorConfiguration/postAttributeCollection/$ref")
+      |> url(
+        "/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/apiConnectorConfiguration/postAttributeCollection/$ref"
+      )
       |> add_param(:body, :body, reference_update)
       |> Enum.into([])
 
@@ -1856,12 +2516,27 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_update_ref_post_federation_signup(Tesla.Env.client, String.t, MicrosoftGraph.Model.ReferenceUpdate.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_update_ref_post_federation_signup(connection, b2x_identity_user_flow_id, reference_update, _opts \\ []) do
+  @spec identity_b2x_user_flows_update_ref_post_federation_signup(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.ReferenceUpdate.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_update_ref_post_federation_signup(
+        connection,
+        b2x_identity_user_flow_id,
+        reference_update,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)
-      |> url("/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/apiConnectorConfiguration/postFederationSignup/$ref")
+      |> url(
+        "/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/apiConnectorConfiguration/postFederationSignup/$ref"
+      )
       |> add_param(:body, :body, reference_update)
       |> Enum.into([])
 
@@ -1891,12 +2566,29 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttributeAssignment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_update_user_attribute_assignments(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttributeAssignment.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttributeAssignment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_update_user_attribute_assignments(connection, b2x_identity_user_flow_id, identity_user_flow_attribute_assignment_id, microsoft_graph_identity_user_flow_attribute_assignment, _opts \\ []) do
+  @spec identity_b2x_user_flows_update_user_attribute_assignments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttributeAssignment.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttributeAssignment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_update_user_attribute_assignments(
+        connection,
+        b2x_identity_user_flow_id,
+        identity_user_flow_attribute_assignment_id,
+        microsoft_graph_identity_user_flow_attribute_assignment,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/userAttributeAssignments/#{identity_user_flow_attribute_assignment_id}")
+      |> url(
+        "/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/userAttributeAssignments/#{identity_user_flow_attribute_assignment_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_identity_user_flow_attribute_assignment)
       |> Enum.into([])
 
@@ -1925,8 +2617,19 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_user_attribute_assignments_get_count_b381(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_user_attribute_assignments_get_count_b381(connection, b2x_identity_user_flow_id, opts \\ []) do
+  @spec identity_b2x_user_flows_user_attribute_assignments_get_count_b381(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_user_attribute_assignments_get_count_b381(
+        connection,
+        b2x_identity_user_flow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1935,7 +2638,9 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
     request =
       %{}
       |> method(:get)
-      |> url("/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/userAttributeAssignments/$count")
+      |> url(
+        "/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/userAttributeAssignments/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1966,8 +2671,21 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttribute.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_user_attribute_assignments_get_user_attribute(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttribute.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_user_attribute_assignments_get_user_attribute(connection, b2x_identity_user_flow_id, identity_user_flow_attribute_assignment_id, opts \\ []) do
+  @spec identity_b2x_user_flows_user_attribute_assignments_get_user_attribute(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttribute.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_user_attribute_assignments_get_user_attribute(
+        connection,
+        b2x_identity_user_flow_id,
+        identity_user_flow_attribute_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1976,7 +2694,9 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
     request =
       %{}
       |> method(:get)
-      |> url("/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/userAttributeAssignments/#{identity_user_flow_attribute_assignment_id}/userAttribute")
+      |> url(
+        "/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/userAttributeAssignments/#{identity_user_flow_attribute_assignment_id}/userAttribute"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2005,8 +2725,19 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_user_flow_identity_providers_get_count0185(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_user_flow_identity_providers_get_count0185(connection, b2x_identity_user_flow_id, opts \\ []) do
+  @spec identity_b2x_user_flows_user_flow_identity_providers_get_count0185(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_user_flow_identity_providers_get_count0185(
+        connection,
+        b2x_identity_user_flow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -2015,7 +2746,9 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
     request =
       %{}
       |> method(:get)
-      |> url("/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/userFlowIdentityProviders/$count")
+      |> url(
+        "/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/userFlowIdentityProviders/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2043,8 +2776,19 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphB2xIdentityUserFlow.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_create_b2x_user_flows(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphB2xIdentityUserFlow.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphB2xIdentityUserFlow.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_create_b2x_user_flows(connection, microsoft_graph_b2x_identity_user_flow, _opts \\ []) do
+  @spec identity_create_b2x_user_flows(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphB2xIdentityUserFlow.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphB2xIdentityUserFlow.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_create_b2x_user_flows(
+        connection,
+        microsoft_graph_b2x_identity_user_flow,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -2077,7 +2821,10 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_delete_b2x_user_flows(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_delete_b2x_user_flows(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_delete_b2x_user_flows(connection, b2x_identity_user_flow_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -2116,7 +2863,10 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphB2xIdentityUserFlow.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_get_b2x_user_flows(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphB2xIdentityUserFlow.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_get_b2x_user_flows(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphB2xIdentityUserFlow.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_get_b2x_user_flows(connection, b2x_identity_user_flow_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -2161,7 +2911,10 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphB2xIdentityUserFlowCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_list_b2x_user_flows(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphB2xIdentityUserFlowCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_list_b2x_user_flows(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphB2xIdentityUserFlowCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_list_b2x_user_flows(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -2205,8 +2958,21 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphB2xIdentityUserFlow.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_update_b2x_user_flows(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphB2xIdentityUserFlow.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphB2xIdentityUserFlow.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_update_b2x_user_flows(connection, b2x_identity_user_flow_id, microsoft_graph_b2x_identity_user_flow, _opts \\ []) do
+  @spec identity_update_b2x_user_flows(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphB2xIdentityUserFlow.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphB2xIdentityUserFlow.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_update_b2x_user_flows(
+        connection,
+        b2x_identity_user_flow_id,
+        microsoft_graph_b2x_identity_user_flow,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

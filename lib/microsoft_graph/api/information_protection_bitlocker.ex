@@ -26,8 +26,19 @@ defmodule MicrosoftGraph.Api.InformationProtectionBitlocker do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBitlockerRecoveryKey.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec information_protection_bitlocker_get_recovery_keys(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphBitlockerRecoveryKey.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def information_protection_bitlocker_get_recovery_keys(connection, bitlocker_recovery_key_id, opts \\ []) do
+  @spec information_protection_bitlocker_get_recovery_keys(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphBitlockerRecoveryKey.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def information_protection_bitlocker_get_recovery_keys(
+        connection,
+        bitlocker_recovery_key_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -71,7 +82,10 @@ defmodule MicrosoftGraph.Api.InformationProtectionBitlocker do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBitlockerRecoveryKeyCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec information_protection_bitlocker_list_recovery_keys(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphBitlockerRecoveryKeyCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec information_protection_bitlocker_list_recovery_keys(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphBitlockerRecoveryKeyCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def information_protection_bitlocker_list_recovery_keys(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -115,7 +129,13 @@ defmodule MicrosoftGraph.Api.InformationProtectionBitlocker do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec information_protection_bitlocker_recovery_keys_get_count3584(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec information_protection_bitlocker_recovery_keys_get_count3584(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def information_protection_bitlocker_recovery_keys_get_count3584(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -153,7 +173,10 @@ defmodule MicrosoftGraph.Api.InformationProtectionBitlocker do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBitlocker.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec information_protection_get_bitlocker(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphBitlocker.t} | {:error, Tesla.Env.t}
+  @spec information_protection_get_bitlocker(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphBitlocker.t()}
+          | {:error, Tesla.Env.t()}
   def information_protection_get_bitlocker(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,

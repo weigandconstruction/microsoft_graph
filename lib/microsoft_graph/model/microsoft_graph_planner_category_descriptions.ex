@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphPlannerCategoryDescriptions do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -37,36 +37,35 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphPlannerCategoryDescriptions do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :category1 => String.t | nil,
-    :category10 => String.t | nil,
-    :category11 => String.t | nil,
-    :category12 => String.t | nil,
-    :category13 => String.t | nil,
-    :category14 => String.t | nil,
-    :category15 => String.t | nil,
-    :category16 => String.t | nil,
-    :category17 => String.t | nil,
-    :category18 => String.t | nil,
-    :category19 => String.t | nil,
-    :category2 => String.t | nil,
-    :category20 => String.t | nil,
-    :category21 => String.t | nil,
-    :category22 => String.t | nil,
-    :category23 => String.t | nil,
-    :category24 => String.t | nil,
-    :category25 => String.t | nil,
-    :category3 => String.t | nil,
-    :category4 => String.t | nil,
-    :category5 => String.t | nil,
-    :category6 => String.t | nil,
-    :category7 => String.t | nil,
-    :category8 => String.t | nil,
-    :category9 => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :category1 => String.t() | nil,
+          :category10 => String.t() | nil,
+          :category11 => String.t() | nil,
+          :category12 => String.t() | nil,
+          :category13 => String.t() | nil,
+          :category14 => String.t() | nil,
+          :category15 => String.t() | nil,
+          :category16 => String.t() | nil,
+          :category17 => String.t() | nil,
+          :category18 => String.t() | nil,
+          :category19 => String.t() | nil,
+          :category2 => String.t() | nil,
+          :category20 => String.t() | nil,
+          :category21 => String.t() | nil,
+          :category22 => String.t() | nil,
+          :category23 => String.t() | nil,
+          :category24 => String.t() | nil,
+          :category25 => String.t() | nil,
+          :category3 => String.t() | nil,
+          :category4 => String.t() | nil,
+          :category5 => String.t() | nil,
+          :category6 => String.t() | nil,
+          :category7 => String.t() | nil,
+          :category8 => String.t() | nil,
+          :category9 => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

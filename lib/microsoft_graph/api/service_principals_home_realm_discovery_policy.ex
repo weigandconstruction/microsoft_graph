@@ -25,8 +25,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsHomeRealmDiscoveryPolicy do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_create_ref_home_realm_discovery_policies(Tesla.Env.client, String.t, %{optional(String.t) => Map.t}, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_create_ref_home_realm_discovery_policies(connection, service_principal_id, request_body, _opts \\ []) do
+  @spec service_principals_create_ref_home_realm_discovery_policies(
+          Tesla.Env.client(),
+          String.t(),
+          %{optional(String.t()) => Map.t()},
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_create_ref_home_realm_discovery_policies(
+        connection,
+        service_principal_id,
+        request_body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -61,8 +74,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsHomeRealmDiscoveryPolicy do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_delete_ref_home_realm_discovery_policies(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_delete_ref_home_realm_discovery_policies(connection, service_principal_id, home_realm_discovery_policy_id, opts \\ []) do
+  @spec service_principals_delete_ref_home_realm_discovery_policies(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_delete_ref_home_realm_discovery_policies(
+        connection,
+        service_principal_id,
+        home_realm_discovery_policy_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers,
       :"@id" => :query
@@ -71,7 +97,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsHomeRealmDiscoveryPolicy do
     request =
       %{}
       |> method(:delete)
-      |> url("/servicePrincipals/#{service_principal_id}/homeRealmDiscoveryPolicies/#{home_realm_discovery_policy_id}/$ref")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/homeRealmDiscoveryPolicies/#{home_realm_discovery_policy_id}/$ref"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -100,8 +128,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsHomeRealmDiscoveryPolicy do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_home_realm_discovery_policies_get_count_d161(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_home_realm_discovery_policies_get_count_d161(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_home_realm_discovery_policies_get_count_d161(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_home_realm_discovery_policies_get_count_d161(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -146,8 +185,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsHomeRealmDiscoveryPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphHomeRealmDiscoveryPolicyCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_list_home_realm_discovery_policies(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphHomeRealmDiscoveryPolicyCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_list_home_realm_discovery_policies(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_list_home_realm_discovery_policies(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphHomeRealmDiscoveryPolicyCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_list_home_realm_discovery_policies(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -196,8 +246,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsHomeRealmDiscoveryPolicy do
   - `{:ok, MicrosoftGraph.Model.StringCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_list_ref_home_realm_discovery_policies(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.StringCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_list_ref_home_realm_discovery_policies(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_list_ref_home_realm_discovery_policies(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.StringCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_list_ref_home_realm_discovery_policies(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,

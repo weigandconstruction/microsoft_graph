@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphPayloadDetailCoachmarksInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,20 +18,24 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphPayloadDetailCoachmarksInner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :coachmarkLocation => MicrosoftGraph.Model.MicrosoftGraphPayloadCoachmarkCoachmarkLocation.t | nil,
-    :description => String.t | nil,
-    :indicator => String.t | nil,
-    :isValid => boolean() | nil,
-    :language => String.t | nil,
-    :order => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :coachmarkLocation =>
+            MicrosoftGraph.Model.MicrosoftGraphPayloadCoachmarkCoachmarkLocation.t() | nil,
+          :description => String.t() | nil,
+          :indicator => String.t() | nil,
+          :isValid => boolean() | nil,
+          :language => String.t() | nil,
+          :order => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:coachmarkLocation, :struct, MicrosoftGraph.Model.MicrosoftGraphPayloadCoachmarkCoachmarkLocation)
+    |> Deserializer.deserialize(
+      :coachmarkLocation,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphPayloadCoachmarkCoachmarkLocation
+    )
   end
 end
-

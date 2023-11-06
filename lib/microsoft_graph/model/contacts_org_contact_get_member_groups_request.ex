@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.ContactsOrgContactGetMemberGroupsRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,11 +12,10 @@ defmodule MicrosoftGraph.Model.ContactsOrgContactGetMemberGroupsRequest do
   ]
 
   @type t :: %__MODULE__{
-    :securityEnabledOnly => boolean() | nil
-  }
+          :securityEnabledOnly => boolean() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

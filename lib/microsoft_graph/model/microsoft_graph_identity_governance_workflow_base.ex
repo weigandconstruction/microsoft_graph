@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowBase do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -23,31 +23,57 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowBase do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :category => MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleWorkflowCategory.t | nil,
-    :createdBy => MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowBaseCreatedBy.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :executionConditions => MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowBaseExecutionConditions.t | nil,
-    :isEnabled => boolean() | nil,
-    :isSchedulingEnabled => boolean() | nil,
-    :lastModifiedBy => MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowBaseLastModifiedBy.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :tasks => [MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :category =>
+            MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleWorkflowCategory.t()
+            | nil,
+          :createdBy =>
+            MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowBaseCreatedBy.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :executionConditions =>
+            MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowBaseExecutionConditions.t()
+            | nil,
+          :isEnabled => boolean() | nil,
+          :isSchedulingEnabled => boolean() | nil,
+          :lastModifiedBy =>
+            MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowBaseLastModifiedBy.t()
+            | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :tasks => [MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:category, :struct, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleWorkflowCategory)
-     |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowBaseCreatedBy)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:executionConditions, :struct, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowBaseExecutionConditions)
-     |> Deserializer.deserialize(:lastModifiedBy, :struct, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowBaseLastModifiedBy)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:tasks, :list, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask)
+    |> Deserializer.deserialize(
+      :category,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleWorkflowCategory
+    )
+    |> Deserializer.deserialize(
+      :createdBy,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowBaseCreatedBy
+    )
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :executionConditions,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowBaseExecutionConditions
+    )
+    |> Deserializer.deserialize(
+      :lastModifiedBy,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowBaseLastModifiedBy
+    )
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :tasks,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask
+    )
   end
 end
-

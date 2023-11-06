@@ -17,20 +17,25 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphUserTrainingEventInfoTrainingUpdate
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :browser => String.t | nil,
-    :contentDateTime => DateTime.t | nil,
-    :ipAddress => String.t | nil,
-    :osPlatformDeviceDetails => String.t | nil,
-    :potentialScoreImpact => MicrosoftGraph.Model.MicrosoftGraphUserTrainingContentEventInfoPotentialScoreImpact.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :browser => String.t() | nil,
+          :contentDateTime => DateTime.t() | nil,
+          :ipAddress => String.t() | nil,
+          :osPlatformDeviceDetails => String.t() | nil,
+          :potentialScoreImpact =>
+            MicrosoftGraph.Model.MicrosoftGraphUserTrainingContentEventInfoPotentialScoreImpact.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:contentDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:potentialScoreImpact, :struct, MicrosoftGraph.Model.MicrosoftGraphUserTrainingContentEventInfoPotentialScoreImpact)
+    |> Deserializer.deserialize(:contentDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :potentialScoreImpact,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphUserTrainingContentEventInfoPotentialScoreImpact
+    )
   end
 end
-

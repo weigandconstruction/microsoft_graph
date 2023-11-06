@@ -24,7 +24,10 @@ defmodule MicrosoftGraph.Api.IdentityIdentityApiConnector do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_api_connectors_get_count7133(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_api_connectors_get_count7133(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_api_connectors_get_count7133(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -62,8 +65,19 @@ defmodule MicrosoftGraph.Api.IdentityIdentityApiConnector do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityApiConnector.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_create_api_connectors(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphIdentityApiConnector.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityApiConnector.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_create_api_connectors(connection, microsoft_graph_identity_api_connector, _opts \\ []) do
+  @spec identity_create_api_connectors(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphIdentityApiConnector.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityApiConnector.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_create_api_connectors(
+        connection,
+        microsoft_graph_identity_api_connector,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -96,7 +110,10 @@ defmodule MicrosoftGraph.Api.IdentityIdentityApiConnector do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_delete_api_connectors(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_delete_api_connectors(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_delete_api_connectors(connection, identity_api_connector_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -135,7 +152,10 @@ defmodule MicrosoftGraph.Api.IdentityIdentityApiConnector do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityApiConnector.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_get_api_connectors(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityApiConnector.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_get_api_connectors(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityApiConnector.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_get_api_connectors(connection, identity_api_connector_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -180,7 +200,10 @@ defmodule MicrosoftGraph.Api.IdentityIdentityApiConnector do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityApiConnectorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_list_api_connectors(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityApiConnectorCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec identity_list_api_connectors(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityApiConnectorCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def identity_list_api_connectors(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -225,8 +248,21 @@ defmodule MicrosoftGraph.Api.IdentityIdentityApiConnector do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityApiConnector.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_update_api_connectors(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphIdentityApiConnector.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityApiConnector.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_update_api_connectors(connection, identity_api_connector_id, microsoft_graph_identity_api_connector, _opts \\ []) do
+  @spec identity_update_api_connectors(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphIdentityApiConnector.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityApiConnector.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_update_api_connectors(
+        connection,
+        identity_api_connector_id,
+        microsoft_graph_identity_api_connector,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

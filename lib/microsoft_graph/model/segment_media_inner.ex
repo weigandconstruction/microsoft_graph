@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.SegmentMediaInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,24 +18,47 @@ defmodule MicrosoftGraph.Model.SegmentMediaInner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :calleeDevice => MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaCalleeDevice.t | nil,
-    :calleeNetwork => MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaCalleeNetwork.t | nil,
-    :callerDevice => MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaCallerDevice.t | nil,
-    :callerNetwork => MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaCallerNetwork.t | nil,
-    :label => String.t | nil,
-    :streams => [MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamsInner.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :calleeDevice =>
+            MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaCalleeDevice.t() | nil,
+          :calleeNetwork =>
+            MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaCalleeNetwork.t() | nil,
+          :callerDevice =>
+            MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaCallerDevice.t() | nil,
+          :callerNetwork =>
+            MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaCallerNetwork.t() | nil,
+          :label => String.t() | nil,
+          :streams => [MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamsInner.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:calleeDevice, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaCalleeDevice)
-     |> Deserializer.deserialize(:calleeNetwork, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaCalleeNetwork)
-     |> Deserializer.deserialize(:callerDevice, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaCallerDevice)
-     |> Deserializer.deserialize(:callerNetwork, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaCallerNetwork)
-     |> Deserializer.deserialize(:streams, :list, MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamsInner)
+    |> Deserializer.deserialize(
+      :calleeDevice,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaCalleeDevice
+    )
+    |> Deserializer.deserialize(
+      :calleeNetwork,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaCalleeNetwork
+    )
+    |> Deserializer.deserialize(
+      :callerDevice,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaCallerDevice
+    )
+    |> Deserializer.deserialize(
+      :callerNetwork,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaCallerNetwork
+    )
+    |> Deserializer.deserialize(
+      :streams,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsMediaStreamsInner
+    )
   end
 end
-

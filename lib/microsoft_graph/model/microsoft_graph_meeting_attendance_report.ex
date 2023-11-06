@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphMeetingAttendanceReport do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,21 +17,24 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphMeetingAttendanceReport do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :attendanceRecords => [MicrosoftGraph.Model.MicrosoftGraphAttendanceRecord.t] | nil,
-    :meetingEndDateTime => DateTime.t | nil,
-    :meetingStartDateTime => DateTime.t | nil,
-    :totalParticipantCount => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :attendanceRecords => [MicrosoftGraph.Model.MicrosoftGraphAttendanceRecord.t()] | nil,
+          :meetingEndDateTime => DateTime.t() | nil,
+          :meetingStartDateTime => DateTime.t() | nil,
+          :totalParticipantCount => integer() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:attendanceRecords, :list, MicrosoftGraph.Model.MicrosoftGraphAttendanceRecord)
-     |> Deserializer.deserialize(:meetingEndDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:meetingStartDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :attendanceRecords,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAttendanceRecord
+    )
+    |> Deserializer.deserialize(:meetingEndDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:meetingStartDateTime, :datetime, nil)
   end
 end
-

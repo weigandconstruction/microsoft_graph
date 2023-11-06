@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.UsersUserGetMailTipsRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,15 +13,19 @@ defmodule MicrosoftGraph.Model.UsersUserGetMailTipsRequest do
   ]
 
   @type t :: %__MODULE__{
-    :EmailAddresses => [String.t] | nil,
-    :MailTipsOptions => MicrosoftGraph.Model.UsersUserGetMailTipsRequestMailTipsOptions.t | nil
-  }
+          :EmailAddresses => [String.t()] | nil,
+          :MailTipsOptions =>
+            MicrosoftGraph.Model.UsersUserGetMailTipsRequestMailTipsOptions.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:MailTipsOptions, :struct, MicrosoftGraph.Model.UsersUserGetMailTipsRequestMailTipsOptions)
+    |> Deserializer.deserialize(
+      :MailTipsOptions,
+      :struct,
+      MicrosoftGraph.Model.UsersUserGetMailTipsRequestMailTipsOptions
+    )
   end
 end
-

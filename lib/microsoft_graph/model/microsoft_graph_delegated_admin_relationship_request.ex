@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminRelationshipRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,22 +17,30 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminRelationshipRequest d
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :action => MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminRelationshipRequestAction.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :status => MicrosoftGraph.Model.DelegatedAdminRelationshipRequestStatus.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :action =>
+            MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminRelationshipRequestAction.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :status => MicrosoftGraph.Model.DelegatedAdminRelationshipRequestStatus.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:action, :struct, MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminRelationshipRequestAction)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.DelegatedAdminRelationshipRequestStatus)
+    |> Deserializer.deserialize(
+      :action,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminRelationshipRequestAction
+    )
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :status,
+      :struct,
+      MicrosoftGraph.Model.DelegatedAdminRelationshipRequestStatus
+    )
   end
 end
-

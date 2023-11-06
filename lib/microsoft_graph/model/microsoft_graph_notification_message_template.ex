@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphNotificationMessageTemplate do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,23 +19,32 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphNotificationMessageTemplate do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :brandingOptions => MicrosoftGraph.Model.MicrosoftGraphNotificationTemplateBrandingOptions.t | nil,
-    :defaultLocale => String.t | nil,
-    :displayName => String.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :localizedNotificationMessages => [MicrosoftGraph.Model.MicrosoftGraphLocalizedNotificationMessage.t] | nil,
-    :roleScopeTagIds => [String.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :brandingOptions =>
+            MicrosoftGraph.Model.MicrosoftGraphNotificationTemplateBrandingOptions.t() | nil,
+          :defaultLocale => String.t() | nil,
+          :displayName => String.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :localizedNotificationMessages =>
+            [MicrosoftGraph.Model.MicrosoftGraphLocalizedNotificationMessage.t()] | nil,
+          :roleScopeTagIds => [String.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:brandingOptions, :struct, MicrosoftGraph.Model.MicrosoftGraphNotificationTemplateBrandingOptions)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:localizedNotificationMessages, :list, MicrosoftGraph.Model.MicrosoftGraphLocalizedNotificationMessage)
+    |> Deserializer.deserialize(
+      :brandingOptions,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphNotificationTemplateBrandingOptions
+    )
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :localizedNotificationMessages,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphLocalizedNotificationMessage
+    )
   end
 end
-

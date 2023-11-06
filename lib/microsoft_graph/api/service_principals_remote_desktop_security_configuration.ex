@@ -25,8 +25,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsRemoteDesktopSecurityConfiguration
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_delete_remote_desktop_security_configuration(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_delete_remote_desktop_security_configuration(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_delete_remote_desktop_security_configuration(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_delete_remote_desktop_security_configuration(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -64,8 +75,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsRemoteDesktopSecurityConfiguration
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphRemoteDesktopSecurityConfiguration.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_get_remote_desktop_security_configuration(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphRemoteDesktopSecurityConfiguration.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_get_remote_desktop_security_configuration(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_get_remote_desktop_security_configuration(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphRemoteDesktopSecurityConfiguration.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_get_remote_desktop_security_configuration(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -103,12 +125,27 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsRemoteDesktopSecurityConfiguration
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTargetDeviceGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_remote_desktop_security_configuration_create_target_device_groups(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphTargetDeviceGroup.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTargetDeviceGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_remote_desktop_security_configuration_create_target_device_groups(connection, service_principal_id, microsoft_graph_target_device_group, _opts \\ []) do
+  @spec service_principals_remote_desktop_security_configuration_create_target_device_groups(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTargetDeviceGroup.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTargetDeviceGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_remote_desktop_security_configuration_create_target_device_groups(
+        connection,
+        service_principal_id,
+        microsoft_graph_target_device_group,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/servicePrincipals/#{service_principal_id}/remoteDesktopSecurityConfiguration/targetDeviceGroups")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/remoteDesktopSecurityConfiguration/targetDeviceGroups"
+      )
       |> add_param(:body, :body, microsoft_graph_target_device_group)
       |> Enum.into([])
 
@@ -138,8 +175,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsRemoteDesktopSecurityConfiguration
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_remote_desktop_security_configuration_delete_target_device_groups(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_remote_desktop_security_configuration_delete_target_device_groups(connection, service_principal_id, target_device_group_id, opts \\ []) do
+  @spec service_principals_remote_desktop_security_configuration_delete_target_device_groups(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_remote_desktop_security_configuration_delete_target_device_groups(
+        connection,
+        service_principal_id,
+        target_device_group_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -147,7 +197,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsRemoteDesktopSecurityConfiguration
     request =
       %{}
       |> method(:delete)
-      |> url("/servicePrincipals/#{service_principal_id}/remoteDesktopSecurityConfiguration/targetDeviceGroups/#{target_device_group_id}")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/remoteDesktopSecurityConfiguration/targetDeviceGroups/#{target_device_group_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -178,8 +230,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsRemoteDesktopSecurityConfiguration
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTargetDeviceGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_remote_desktop_security_configuration_get_target_device_groups(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTargetDeviceGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_remote_desktop_security_configuration_get_target_device_groups(connection, service_principal_id, target_device_group_id, opts \\ []) do
+  @spec service_principals_remote_desktop_security_configuration_get_target_device_groups(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTargetDeviceGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_remote_desktop_security_configuration_get_target_device_groups(
+        connection,
+        service_principal_id,
+        target_device_group_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -188,7 +253,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsRemoteDesktopSecurityConfiguration
     request =
       %{}
       |> method(:get)
-      |> url("/servicePrincipals/#{service_principal_id}/remoteDesktopSecurityConfiguration/targetDeviceGroups/#{target_device_group_id}")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/remoteDesktopSecurityConfiguration/targetDeviceGroups/#{target_device_group_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -224,8 +291,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsRemoteDesktopSecurityConfiguration
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTargetDeviceGroupCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_remote_desktop_security_configuration_list_target_device_groups(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTargetDeviceGroupCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_remote_desktop_security_configuration_list_target_device_groups(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_remote_desktop_security_configuration_list_target_device_groups(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTargetDeviceGroupCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_remote_desktop_security_configuration_list_target_device_groups(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -240,7 +318,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsRemoteDesktopSecurityConfiguration
     request =
       %{}
       |> method(:get)
-      |> url("/servicePrincipals/#{service_principal_id}/remoteDesktopSecurityConfiguration/targetDeviceGroups")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/remoteDesktopSecurityConfiguration/targetDeviceGroups"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -269,8 +349,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsRemoteDesktopSecurityConfiguration
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_remote_desktop_security_configuration_target_device_groups_get_count51f5(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_remote_desktop_security_configuration_target_device_groups_get_count51f5(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_remote_desktop_security_configuration_target_device_groups_get_count51f5(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_remote_desktop_security_configuration_target_device_groups_get_count51f5(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -279,7 +370,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsRemoteDesktopSecurityConfiguration
     request =
       %{}
       |> method(:get)
-      |> url("/servicePrincipals/#{service_principal_id}/remoteDesktopSecurityConfiguration/targetDeviceGroups/$count")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/remoteDesktopSecurityConfiguration/targetDeviceGroups/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -309,12 +402,29 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsRemoteDesktopSecurityConfiguration
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTargetDeviceGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_remote_desktop_security_configuration_update_target_device_groups(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTargetDeviceGroup.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTargetDeviceGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_remote_desktop_security_configuration_update_target_device_groups(connection, service_principal_id, target_device_group_id, microsoft_graph_target_device_group, _opts \\ []) do
+  @spec service_principals_remote_desktop_security_configuration_update_target_device_groups(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTargetDeviceGroup.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTargetDeviceGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_remote_desktop_security_configuration_update_target_device_groups(
+        connection,
+        service_principal_id,
+        target_device_group_id,
+        microsoft_graph_target_device_group,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/servicePrincipals/#{service_principal_id}/remoteDesktopSecurityConfiguration/targetDeviceGroups/#{target_device_group_id}")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/remoteDesktopSecurityConfiguration/targetDeviceGroups/#{target_device_group_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_target_device_group)
       |> Enum.into([])
 
@@ -343,8 +453,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsRemoteDesktopSecurityConfiguration
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphRemoteDesktopSecurityConfiguration.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_update_remote_desktop_security_configuration(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphRemoteDesktopSecurityConfiguration.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphRemoteDesktopSecurityConfiguration.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_update_remote_desktop_security_configuration(connection, service_principal_id, microsoft_graph_remote_desktop_security_configuration, _opts \\ []) do
+  @spec service_principals_update_remote_desktop_security_configuration(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphRemoteDesktopSecurityConfiguration.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphRemoteDesktopSecurityConfiguration.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_update_remote_desktop_security_configuration(
+        connection,
+        service_principal_id,
+        microsoft_graph_remote_desktop_security_configuration,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

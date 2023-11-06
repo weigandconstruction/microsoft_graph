@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.CallTargetsInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,19 +17,22 @@ defmodule MicrosoftGraph.Model.CallTargetsInner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :hidden => boolean() | nil,
-    :identity => MicrosoftGraph.Model.MicrosoftGraphIdentitySet.t | nil,
-    :participantId => String.t | nil,
-    :removeFromDefaultAudioRoutingGroup => boolean() | nil,
-    :replacesCallId => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :hidden => boolean() | nil,
+          :identity => MicrosoftGraph.Model.MicrosoftGraphIdentitySet.t() | nil,
+          :participantId => String.t() | nil,
+          :removeFromDefaultAudioRoutingGroup => boolean() | nil,
+          :replacesCallId => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:identity, :struct, MicrosoftGraph.Model.MicrosoftGraphIdentitySet)
+    |> Deserializer.deserialize(
+      :identity,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphIdentitySet
+    )
   end
 end
-

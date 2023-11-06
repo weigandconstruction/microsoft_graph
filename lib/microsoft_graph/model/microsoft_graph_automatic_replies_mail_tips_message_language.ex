@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAutomaticRepliesMailTipsMessageLang
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :displayName => String.t | nil,
-    :locale => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :displayName => String.t() | nil,
+          :locale => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

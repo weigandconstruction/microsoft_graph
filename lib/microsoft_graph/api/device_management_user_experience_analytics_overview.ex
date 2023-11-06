@@ -23,7 +23,10 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsOverview do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_delete_user_experience_analytics_overview(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec device_management_delete_user_experience_analytics_overview(Tesla.Env.client(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def device_management_delete_user_experience_analytics_overview(connection, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -61,7 +64,10 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsOverview do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsOverview.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_get_user_experience_analytics_overview(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsOverview.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec device_management_get_user_experience_analytics_overview(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsOverview.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def device_management_get_user_experience_analytics_overview(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -98,8 +104,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsOverview do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsOverview.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_update_user_experience_analytics_overview(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsOverview.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsOverview.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_update_user_experience_analytics_overview(connection, microsoft_graph_user_experience_analytics_overview, _opts \\ []) do
+  @spec device_management_update_user_experience_analytics_overview(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsOverview.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsOverview.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_update_user_experience_analytics_overview(
+        connection,
+        microsoft_graph_user_experience_analytics_overview,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

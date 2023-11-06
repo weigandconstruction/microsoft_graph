@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.OrganizationPrivacyProfile do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :contactEmail => String.t | nil,
-    :statementUrl => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :contactEmail => String.t() | nil,
+          :statementUrl => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

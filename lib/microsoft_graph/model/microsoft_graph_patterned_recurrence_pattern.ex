@@ -19,24 +19,41 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphPatternedRecurrencePattern do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :dayOfMonth => integer() | nil,
-    :daysOfWeek => [MicrosoftGraph.Model.MicrosoftGraphRecurrencePatternDaysOfWeekInner.t] | nil,
-    :firstDayOfWeek => MicrosoftGraph.Model.MicrosoftGraphRecurrencePatternFirstDayOfWeek.t | nil,
-    :index => MicrosoftGraph.Model.MicrosoftGraphRecurrencePatternIndex.t | nil,
-    :interval => integer() | nil,
-    :month => integer() | nil,
-    :type => MicrosoftGraph.Model.MicrosoftGraphRecurrencePatternType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :dayOfMonth => integer() | nil,
+          :daysOfWeek =>
+            [MicrosoftGraph.Model.MicrosoftGraphRecurrencePatternDaysOfWeekInner.t()] | nil,
+          :firstDayOfWeek =>
+            MicrosoftGraph.Model.MicrosoftGraphRecurrencePatternFirstDayOfWeek.t() | nil,
+          :index => MicrosoftGraph.Model.MicrosoftGraphRecurrencePatternIndex.t() | nil,
+          :interval => integer() | nil,
+          :month => integer() | nil,
+          :type => MicrosoftGraph.Model.MicrosoftGraphRecurrencePatternType.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:daysOfWeek, :list, MicrosoftGraph.Model.MicrosoftGraphRecurrencePatternDaysOfWeekInner)
-     |> Deserializer.deserialize(:firstDayOfWeek, :struct, MicrosoftGraph.Model.MicrosoftGraphRecurrencePatternFirstDayOfWeek)
-     |> Deserializer.deserialize(:index, :struct, MicrosoftGraph.Model.MicrosoftGraphRecurrencePatternIndex)
-     |> Deserializer.deserialize(:type, :struct, MicrosoftGraph.Model.MicrosoftGraphRecurrencePatternType)
+    |> Deserializer.deserialize(
+      :daysOfWeek,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphRecurrencePatternDaysOfWeekInner
+    )
+    |> Deserializer.deserialize(
+      :firstDayOfWeek,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphRecurrencePatternFirstDayOfWeek
+    )
+    |> Deserializer.deserialize(
+      :index,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphRecurrencePatternIndex
+    )
+    |> Deserializer.deserialize(
+      :type,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphRecurrencePatternType
+    )
   end
 end
-

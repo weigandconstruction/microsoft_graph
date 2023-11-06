@@ -31,8 +31,21 @@ defmodule MicrosoftGraph.Api.ChatsFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfChatMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec chats_chat_messages_chat_message_replies_delta(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfChatMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def chats_chat_messages_chat_message_replies_delta(connection, chat_id, chat_message_id, opts \\ []) do
+  @spec chats_chat_messages_chat_message_replies_delta(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfChatMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def chats_chat_messages_chat_message_replies_delta(
+        connection,
+        chat_id,
+        chat_message_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -80,7 +93,10 @@ defmodule MicrosoftGraph.Api.ChatsFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfChatMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec chats_chat_messages_delta(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfChatMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec chats_chat_messages_delta(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfChatMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def chats_chat_messages_delta(connection, chat_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -129,7 +145,10 @@ defmodule MicrosoftGraph.Api.ChatsFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfChatMessage1.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec chats_get_all_messages(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfChatMessage1.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec chats_get_all_messages(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfChatMessage1.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def chats_get_all_messages(connection, opts \\ []) do
     optional_params = %{
       :model => :query,

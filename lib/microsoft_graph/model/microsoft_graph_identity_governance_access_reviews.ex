@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceAccessReviews do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,18 +15,27 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceAccessReviews do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :definitions => [MicrosoftGraph.Model.MicrosoftGraphAccessReviewScheduleDefinition.t] | nil,
-    :historyDefinitions => [MicrosoftGraph.Model.MicrosoftGraphAccessReviewHistoryDefinition.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :definitions =>
+            [MicrosoftGraph.Model.MicrosoftGraphAccessReviewScheduleDefinition.t()] | nil,
+          :historyDefinitions =>
+            [MicrosoftGraph.Model.MicrosoftGraphAccessReviewHistoryDefinition.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:definitions, :list, MicrosoftGraph.Model.MicrosoftGraphAccessReviewScheduleDefinition)
-     |> Deserializer.deserialize(:historyDefinitions, :list, MicrosoftGraph.Model.MicrosoftGraphAccessReviewHistoryDefinition)
+    |> Deserializer.deserialize(
+      :definitions,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAccessReviewScheduleDefinition
+    )
+    |> Deserializer.deserialize(
+      :historyDefinitions,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAccessReviewHistoryDefinition
+    )
   end
 end
-

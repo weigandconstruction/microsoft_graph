@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphWorkbookChartPointFormat do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,15 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphWorkbookChartPointFormat do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :fill => MicrosoftGraph.Model.WorkbookChartPointFormatFill.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :fill => MicrosoftGraph.Model.WorkbookChartPointFormatFill.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:fill, :struct, MicrosoftGraph.Model.WorkbookChartPointFormatFill)
+    |> Deserializer.deserialize(:fill, :struct, MicrosoftGraph.Model.WorkbookChartPointFormatFill)
   end
 end
-

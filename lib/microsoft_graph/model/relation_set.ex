@@ -21,29 +21,44 @@ defmodule MicrosoftGraph.Model.RelationSet do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :children => [MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t] | nil,
-    :createdDateTime => DateTime.t | nil,
-    :description => String.t | nil,
-    :localizedNames => [MicrosoftGraph.Model.SetLocalizedNamesInner.t] | nil,
-    :parentGroup => MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t | nil,
-    :properties => [MicrosoftGraph.Model.TermPropertiesInner.t] | nil,
-    :relations => [MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t] | nil,
-    :terms => [MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :children => [MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()] | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :localizedNames => [MicrosoftGraph.Model.SetLocalizedNamesInner.t()] | nil,
+          :parentGroup => MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup.t() | nil,
+          :properties => [MicrosoftGraph.Model.TermPropertiesInner.t()] | nil,
+          :relations => [MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation.t()] | nil,
+          :terms => [MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:children, :list, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:localizedNames, :list, MicrosoftGraph.Model.SetLocalizedNamesInner)
-     |> Deserializer.deserialize(:parentGroup, :struct, MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup)
-     |> Deserializer.deserialize(:properties, :list, MicrosoftGraph.Model.TermPropertiesInner)
-     |> Deserializer.deserialize(:relations, :list, MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation)
-     |> Deserializer.deserialize(:terms, :list, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm)
+    |> Deserializer.deserialize(
+      :children,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm
+    )
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :localizedNames,
+      :list,
+      MicrosoftGraph.Model.SetLocalizedNamesInner
+    )
+    |> Deserializer.deserialize(
+      :parentGroup,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphTermStoreGroup
+    )
+    |> Deserializer.deserialize(:properties, :list, MicrosoftGraph.Model.TermPropertiesInner)
+    |> Deserializer.deserialize(
+      :relations,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphTermStoreRelation
+    )
+    |> Deserializer.deserialize(:terms, :list, MicrosoftGraph.Model.MicrosoftGraphTermStoreTerm)
   end
 end
-

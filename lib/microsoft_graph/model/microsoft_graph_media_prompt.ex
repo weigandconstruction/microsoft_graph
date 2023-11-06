@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphMediaPrompt do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,15 +13,14 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphMediaPrompt do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :mediaInfo => MicrosoftGraph.Model.MicrosoftGraphMediaInfo.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :mediaInfo => MicrosoftGraph.Model.MicrosoftGraphMediaInfo.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:mediaInfo, :struct, MicrosoftGraph.Model.MicrosoftGraphMediaInfo)
+    |> Deserializer.deserialize(:mediaInfo, :struct, MicrosoftGraph.Model.MicrosoftGraphMediaInfo)
   end
 end
-

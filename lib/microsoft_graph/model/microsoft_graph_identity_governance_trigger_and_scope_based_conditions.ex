@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTriggerAndScopeBasedConditions do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,17 +14,24 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTriggerAndScopeBa
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :scope => MicrosoftGraph.Model.TriggerAndScopeBasedConditionsScope.t | nil,
-    :trigger => MicrosoftGraph.Model.TriggerAndScopeBasedConditionsTrigger.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :scope => MicrosoftGraph.Model.TriggerAndScopeBasedConditionsScope.t() | nil,
+          :trigger => MicrosoftGraph.Model.TriggerAndScopeBasedConditionsTrigger.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:scope, :struct, MicrosoftGraph.Model.TriggerAndScopeBasedConditionsScope)
-     |> Deserializer.deserialize(:trigger, :struct, MicrosoftGraph.Model.TriggerAndScopeBasedConditionsTrigger)
+    |> Deserializer.deserialize(
+      :scope,
+      :struct,
+      MicrosoftGraph.Model.TriggerAndScopeBasedConditionsScope
+    )
+    |> Deserializer.deserialize(
+      :trigger,
+      :struct,
+      MicrosoftGraph.Model.TriggerAndScopeBasedConditionsTrigger
+    )
   end
 end
-

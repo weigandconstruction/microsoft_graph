@@ -24,7 +24,10 @@ defmodule MicrosoftGraph.Api.SharesSharedDriveItem do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec shares_get_count778c(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec shares_get_count778c(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def shares_get_count778c(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -61,8 +64,19 @@ defmodule MicrosoftGraph.Api.SharesSharedDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSharedDriveItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec shares_shared_drive_item_create_shared_drive_item(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphSharedDriveItem.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSharedDriveItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def shares_shared_drive_item_create_shared_drive_item(connection, microsoft_graph_shared_drive_item, _opts \\ []) do
+  @spec shares_shared_drive_item_create_shared_drive_item(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphSharedDriveItem.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSharedDriveItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def shares_shared_drive_item_create_shared_drive_item(
+        connection,
+        microsoft_graph_shared_drive_item,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -94,8 +108,19 @@ defmodule MicrosoftGraph.Api.SharesSharedDriveItem do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec shares_shared_drive_item_delete_shared_drive_item(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def shares_shared_drive_item_delete_shared_drive_item(connection, shared_drive_item_id, opts \\ []) do
+  @spec shares_shared_drive_item_delete_shared_drive_item(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def shares_shared_drive_item_delete_shared_drive_item(
+        connection,
+        shared_drive_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -133,7 +158,10 @@ defmodule MicrosoftGraph.Api.SharesSharedDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSharedDriveItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec shares_shared_drive_item_get_shared_drive_item(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSharedDriveItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec shares_shared_drive_item_get_shared_drive_item(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSharedDriveItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def shares_shared_drive_item_get_shared_drive_item(connection, shared_drive_item_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -178,7 +206,10 @@ defmodule MicrosoftGraph.Api.SharesSharedDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSharedDriveItemCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec shares_shared_drive_item_list_shared_drive_item(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSharedDriveItemCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec shares_shared_drive_item_list_shared_drive_item(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSharedDriveItemCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def shares_shared_drive_item_list_shared_drive_item(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -222,8 +253,21 @@ defmodule MicrosoftGraph.Api.SharesSharedDriveItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSharedDriveItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec shares_shared_drive_item_update_shared_drive_item(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphSharedDriveItem.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSharedDriveItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def shares_shared_drive_item_update_shared_drive_item(connection, shared_drive_item_id, microsoft_graph_shared_drive_item, _opts \\ []) do
+  @spec shares_shared_drive_item_update_shared_drive_item(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSharedDriveItem.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSharedDriveItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def shares_shared_drive_item_update_shared_drive_item(
+        connection,
+        shared_drive_item_id,
+        microsoft_graph_shared_drive_item,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.PrintSharesPrinterShareJobsPrintJobAbortRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,11 +12,10 @@ defmodule MicrosoftGraph.Model.PrintSharesPrinterShareJobsPrintJobAbortRequest d
   ]
 
   @type t :: %__MODULE__{
-    :reason => String.t | nil
-  }
+          :reason => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

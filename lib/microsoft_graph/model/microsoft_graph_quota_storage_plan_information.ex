@@ -13,12 +13,11 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphQuotaStoragePlanInformation do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :upgradeAvailable => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :upgradeAvailable => boolean() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

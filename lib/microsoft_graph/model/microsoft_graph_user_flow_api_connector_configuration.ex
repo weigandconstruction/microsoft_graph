@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphUserFlowApiConnectorConfiguration do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,17 +14,28 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphUserFlowApiConnectorConfiguration d
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :postAttributeCollection => MicrosoftGraph.Model.MicrosoftGraphUserFlowApiConnectorConfigurationPostAttributeCollection.t | nil,
-    :postFederationSignup => MicrosoftGraph.Model.MicrosoftGraphUserFlowApiConnectorConfigurationPostAttributeCollection.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :postAttributeCollection =>
+            MicrosoftGraph.Model.MicrosoftGraphUserFlowApiConnectorConfigurationPostAttributeCollection.t()
+            | nil,
+          :postFederationSignup =>
+            MicrosoftGraph.Model.MicrosoftGraphUserFlowApiConnectorConfigurationPostAttributeCollection.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:postAttributeCollection, :struct, MicrosoftGraph.Model.MicrosoftGraphUserFlowApiConnectorConfigurationPostAttributeCollection)
-     |> Deserializer.deserialize(:postFederationSignup, :struct, MicrosoftGraph.Model.MicrosoftGraphUserFlowApiConnectorConfigurationPostAttributeCollection)
+    |> Deserializer.deserialize(
+      :postAttributeCollection,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphUserFlowApiConnectorConfigurationPostAttributeCollection
+    )
+    |> Deserializer.deserialize(
+      :postFederationSignup,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphUserFlowApiConnectorConfigurationPostAttributeCollection
+    )
   end
 end
-

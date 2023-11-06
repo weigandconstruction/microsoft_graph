@@ -23,7 +23,14 @@ defmodule MicrosoftGraph.Api.PrintPrinter do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrinter.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_create_printers(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphPrinter.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrinter.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec print_create_printers(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphPrinter.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPrinter.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def print_create_printers(connection, microsoft_graph_printer, _opts \\ []) do
     request =
       %{}
@@ -57,7 +64,10 @@ defmodule MicrosoftGraph.Api.PrintPrinter do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_delete_printers(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec print_delete_printers(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def print_delete_printers(connection, printer_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -96,7 +106,10 @@ defmodule MicrosoftGraph.Api.PrintPrinter do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrinter.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_get_printers(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrinter.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec print_get_printers(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPrinter.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def print_get_printers(connection, printer_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -141,7 +154,10 @@ defmodule MicrosoftGraph.Api.PrintPrinter do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrinterCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_list_printers(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrinterCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec print_list_printers(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrinterCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def print_list_printers(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -186,7 +202,10 @@ defmodule MicrosoftGraph.Api.PrintPrinter do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_printers_connectors_get_count68ae(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec print_printers_connectors_get_count68ae(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def print_printers_connectors_get_count68ae(connection, printer_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -224,7 +243,15 @@ defmodule MicrosoftGraph.Api.PrintPrinter do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrintJob.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_printers_create_jobs(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphPrintJob.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintJob.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec print_printers_create_jobs(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPrintJob.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintJob.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def print_printers_create_jobs(connection, printer_id, microsoft_graph_print_job, _opts \\ []) do
     request =
       %{}
@@ -258,8 +285,21 @@ defmodule MicrosoftGraph.Api.PrintPrinter do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTaskTrigger.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_printers_create_task_triggers(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphPrintTaskTrigger.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTaskTrigger.t} | {:error, Tesla.Env.t}
-  def print_printers_create_task_triggers(connection, printer_id, microsoft_graph_print_task_trigger, _opts \\ []) do
+  @spec print_printers_create_task_triggers(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPrintTaskTrigger.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTaskTrigger.t()}
+          | {:error, Tesla.Env.t()}
+  def print_printers_create_task_triggers(
+        connection,
+        printer_id,
+        microsoft_graph_print_task_trigger,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -292,7 +332,10 @@ defmodule MicrosoftGraph.Api.PrintPrinter do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_printers_delete_jobs(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec print_printers_delete_jobs(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def print_printers_delete_jobs(connection, printer_id, print_job_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -331,8 +374,16 @@ defmodule MicrosoftGraph.Api.PrintPrinter do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_printers_delete_task_triggers(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def print_printers_delete_task_triggers(connection, printer_id, print_task_trigger_id, opts \\ []) do
+  @spec print_printers_delete_task_triggers(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def print_printers_delete_task_triggers(
+        connection,
+        printer_id,
+        print_task_trigger_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -371,7 +422,10 @@ defmodule MicrosoftGraph.Api.PrintPrinter do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrintConnector.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_printers_get_connectors(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintConnector.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec print_printers_get_connectors(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintConnector.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def print_printers_get_connectors(connection, printer_id, print_connector_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -409,7 +463,10 @@ defmodule MicrosoftGraph.Api.PrintPrinter do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_printers_get_count_c43f(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec print_printers_get_count_c43f(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def print_printers_get_count_c43f(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -450,7 +507,10 @@ defmodule MicrosoftGraph.Api.PrintPrinter do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrintJob.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_printers_get_jobs(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintJob.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec print_printers_get_jobs(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintJob.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def print_printers_get_jobs(connection, printer_id, print_job_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -491,7 +551,10 @@ defmodule MicrosoftGraph.Api.PrintPrinter do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrinterShare.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_printers_get_shares(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrinterShare.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec print_printers_get_shares(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPrinterShare.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def print_printers_get_shares(connection, printer_id, printer_share_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -532,7 +595,10 @@ defmodule MicrosoftGraph.Api.PrintPrinter do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTaskTrigger.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_printers_get_task_triggers(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTaskTrigger.t} | {:error, Tesla.Env.t}
+  @spec print_printers_get_task_triggers(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTaskTrigger.t()}
+          | {:error, Tesla.Env.t()}
   def print_printers_get_task_triggers(connection, printer_id, print_task_trigger_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -571,8 +637,23 @@ defmodule MicrosoftGraph.Api.PrintPrinter do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrintDocument.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_printers_jobs_create_documents(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphPrintDocument.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintDocument.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def print_printers_jobs_create_documents(connection, printer_id, print_job_id, microsoft_graph_print_document, _opts \\ []) do
+  @spec print_printers_jobs_create_documents(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPrintDocument.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintDocument.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def print_printers_jobs_create_documents(
+        connection,
+        printer_id,
+        print_job_id,
+        microsoft_graph_print_document,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -605,8 +686,23 @@ defmodule MicrosoftGraph.Api.PrintPrinter do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_printers_jobs_create_tasks(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphPrintTask.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTask.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def print_printers_jobs_create_tasks(connection, printer_id, print_job_id, microsoft_graph_print_task, _opts \\ []) do
+  @spec print_printers_jobs_create_tasks(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPrintTask.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTask.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def print_printers_jobs_create_tasks(
+        connection,
+        printer_id,
+        print_job_id,
+        microsoft_graph_print_task,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -640,8 +736,23 @@ defmodule MicrosoftGraph.Api.PrintPrinter do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_printers_jobs_delete_documents(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def print_printers_jobs_delete_documents(connection, printer_id, print_job_id, print_document_id, opts \\ []) do
+  @spec print_printers_jobs_delete_documents(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def print_printers_jobs_delete_documents(
+        connection,
+        printer_id,
+        print_job_id,
+        print_document_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -679,8 +790,23 @@ defmodule MicrosoftGraph.Api.PrintPrinter do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_printers_jobs_delete_tasks(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def print_printers_jobs_delete_tasks(connection, printer_id, print_job_id, print_task_id, opts \\ []) do
+  @spec print_printers_jobs_delete_tasks(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def print_printers_jobs_delete_tasks(
+        connection,
+        printer_id,
+        print_job_id,
+        print_task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -718,8 +844,21 @@ defmodule MicrosoftGraph.Api.PrintPrinter do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_printers_jobs_documents_get_count_db03(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def print_printers_jobs_documents_get_count_db03(connection, printer_id, print_job_id, opts \\ []) do
+  @spec print_printers_jobs_documents_get_count_db03(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def print_printers_jobs_documents_get_count_db03(
+        connection,
+        printer_id,
+        print_job_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -757,7 +896,10 @@ defmodule MicrosoftGraph.Api.PrintPrinter do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_printers_jobs_get_count86c3(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec print_printers_jobs_get_count86c3(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def print_printers_jobs_get_count86c3(connection, printer_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -798,8 +940,23 @@ defmodule MicrosoftGraph.Api.PrintPrinter do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrintDocument.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_printers_jobs_get_documents(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintDocument.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def print_printers_jobs_get_documents(connection, printer_id, print_job_id, print_document_id, opts \\ []) do
+  @spec print_printers_jobs_get_documents(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintDocument.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def print_printers_jobs_get_documents(
+        connection,
+        printer_id,
+        print_job_id,
+        print_document_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -837,12 +994,29 @@ defmodule MicrosoftGraph.Api.PrintPrinter do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_printers_jobs_get_documents_content(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
-  def print_printers_jobs_get_documents_content(connection, printer_id, print_job_id, print_document_id, _opts \\ []) do
+  @spec print_printers_jobs_get_documents_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
+  def print_printers_jobs_get_documents_content(
+        connection,
+        printer_id,
+        print_job_id,
+        print_document_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/print/printers/#{printer_id}/jobs/#{print_job_id}/documents/#{print_document_id}/$value")
+      |> url(
+        "/print/printers/#{printer_id}/jobs/#{print_job_id}/documents/#{print_document_id}/$value"
+      )
       |> Enum.into([])
 
     connection
@@ -873,8 +1047,23 @@ defmodule MicrosoftGraph.Api.PrintPrinter do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_printers_jobs_get_tasks(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTask.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def print_printers_jobs_get_tasks(connection, printer_id, print_job_id, print_task_id, opts \\ []) do
+  @spec print_printers_jobs_get_tasks(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTask.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def print_printers_jobs_get_tasks(
+        connection,
+        printer_id,
+        print_job_id,
+        print_task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -919,7 +1108,10 @@ defmodule MicrosoftGraph.Api.PrintPrinter do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrintDocumentCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_printers_jobs_list_documents(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintDocumentCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec print_printers_jobs_list_documents(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintDocumentCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def print_printers_jobs_list_documents(connection, printer_id, print_job_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -972,7 +1164,10 @@ defmodule MicrosoftGraph.Api.PrintPrinter do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTaskCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_printers_jobs_list_tasks(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTaskCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec print_printers_jobs_list_tasks(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTaskCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def print_printers_jobs_list_tasks(connection, printer_id, print_job_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1018,7 +1213,15 @@ defmodule MicrosoftGraph.Api.PrintPrinter do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_printers_jobs_tasks_get_count7f2e(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec print_printers_jobs_tasks_get_count7f2e(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def print_printers_jobs_tasks_get_count7f2e(connection, printer_id, print_job_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -1060,8 +1263,23 @@ defmodule MicrosoftGraph.Api.PrintPrinter do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTaskDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_printers_jobs_tasks_get_definition(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTaskDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def print_printers_jobs_tasks_get_definition(connection, printer_id, print_job_id, print_task_id, opts \\ []) do
+  @spec print_printers_jobs_tasks_get_definition(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTaskDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def print_printers_jobs_tasks_get_definition(
+        connection,
+        printer_id,
+        print_job_id,
+        print_task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1070,7 +1288,9 @@ defmodule MicrosoftGraph.Api.PrintPrinter do
     request =
       %{}
       |> method(:get)
-      |> url("/print/printers/#{printer_id}/jobs/#{print_job_id}/tasks/#{print_task_id}/definition")
+      |> url(
+        "/print/printers/#{printer_id}/jobs/#{print_job_id}/tasks/#{print_task_id}/definition"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1102,8 +1322,23 @@ defmodule MicrosoftGraph.Api.PrintPrinter do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTaskTrigger.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_printers_jobs_tasks_get_trigger(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTaskTrigger.t} | {:error, Tesla.Env.t}
-  def print_printers_jobs_tasks_get_trigger(connection, printer_id, print_job_id, print_task_id, opts \\ []) do
+  @spec print_printers_jobs_tasks_get_trigger(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTaskTrigger.t()}
+          | {:error, Tesla.Env.t()}
+  def print_printers_jobs_tasks_get_trigger(
+        connection,
+        printer_id,
+        print_job_id,
+        print_task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1142,8 +1377,25 @@ defmodule MicrosoftGraph.Api.PrintPrinter do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrintDocument.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_printers_jobs_update_documents(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphPrintDocument.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintDocument.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def print_printers_jobs_update_documents(connection, printer_id, print_job_id, print_document_id, microsoft_graph_print_document, _opts \\ []) do
+  @spec print_printers_jobs_update_documents(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPrintDocument.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintDocument.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def print_printers_jobs_update_documents(
+        connection,
+        printer_id,
+        print_job_id,
+        print_document_id,
+        microsoft_graph_print_document,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -1177,12 +1429,31 @@ defmodule MicrosoftGraph.Api.PrintPrinter do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_printers_jobs_update_documents_content(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def print_printers_jobs_update_documents_content(connection, printer_id, print_job_id, print_document_id, body, _opts \\ []) do
+  @spec print_printers_jobs_update_documents_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def print_printers_jobs_update_documents_content(
+        connection,
+        printer_id,
+        print_job_id,
+        print_document_id,
+        body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)
-      |> url("/print/printers/#{printer_id}/jobs/#{print_job_id}/documents/#{print_document_id}/$value")
+      |> url(
+        "/print/printers/#{printer_id}/jobs/#{print_job_id}/documents/#{print_document_id}/$value"
+      )
       |> add_param(:body, :body, body)
       |> Enum.into([])
 
@@ -1212,8 +1483,25 @@ defmodule MicrosoftGraph.Api.PrintPrinter do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_printers_jobs_update_tasks(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphPrintTask.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTask.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def print_printers_jobs_update_tasks(connection, printer_id, print_job_id, print_task_id, microsoft_graph_print_task, _opts \\ []) do
+  @spec print_printers_jobs_update_tasks(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPrintTask.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTask.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def print_printers_jobs_update_tasks(
+        connection,
+        printer_id,
+        print_job_id,
+        print_task_id,
+        microsoft_graph_print_task,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -1253,7 +1541,10 @@ defmodule MicrosoftGraph.Api.PrintPrinter do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrintConnectorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_printers_list_connectors(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintConnectorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec print_printers_list_connectors(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintConnectorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def print_printers_list_connectors(connection, printer_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1305,7 +1596,10 @@ defmodule MicrosoftGraph.Api.PrintPrinter do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrintJobCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_printers_list_jobs(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintJobCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec print_printers_list_jobs(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintJobCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def print_printers_list_jobs(connection, printer_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1357,7 +1651,10 @@ defmodule MicrosoftGraph.Api.PrintPrinter do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrinterShareCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_printers_list_shares(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrinterShareCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec print_printers_list_shares(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPrinterShareCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def print_printers_list_shares(connection, printer_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1409,7 +1706,10 @@ defmodule MicrosoftGraph.Api.PrintPrinter do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTaskTriggerCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_printers_list_task_triggers(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTaskTriggerCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec print_printers_list_task_triggers(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTaskTriggerCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def print_printers_list_task_triggers(connection, printer_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1454,7 +1754,10 @@ defmodule MicrosoftGraph.Api.PrintPrinter do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_printers_shares_get_count5f30(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec print_printers_shares_get_count5f30(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def print_printers_shares_get_count5f30(connection, printer_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -1493,7 +1796,10 @@ defmodule MicrosoftGraph.Api.PrintPrinter do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_printers_task_triggers_get_count_f066(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec print_printers_task_triggers_get_count_f066(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def print_printers_task_triggers_get_count_f066(connection, printer_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -1534,8 +1840,21 @@ defmodule MicrosoftGraph.Api.PrintPrinter do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTaskDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_printers_task_triggers_get_definition(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTaskDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def print_printers_task_triggers_get_definition(connection, printer_id, print_task_trigger_id, opts \\ []) do
+  @spec print_printers_task_triggers_get_definition(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTaskDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def print_printers_task_triggers_get_definition(
+        connection,
+        printer_id,
+        print_task_trigger_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1573,8 +1892,23 @@ defmodule MicrosoftGraph.Api.PrintPrinter do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrintJob.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_printers_update_jobs(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphPrintJob.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintJob.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def print_printers_update_jobs(connection, printer_id, print_job_id, microsoft_graph_print_job, _opts \\ []) do
+  @spec print_printers_update_jobs(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPrintJob.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintJob.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def print_printers_update_jobs(
+        connection,
+        printer_id,
+        print_job_id,
+        microsoft_graph_print_job,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -1607,8 +1941,23 @@ defmodule MicrosoftGraph.Api.PrintPrinter do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTaskTrigger.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_printers_update_task_triggers(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphPrintTaskTrigger.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTaskTrigger.t} | {:error, Tesla.Env.t}
-  def print_printers_update_task_triggers(connection, printer_id, print_task_trigger_id, microsoft_graph_print_task_trigger, _opts \\ []) do
+  @spec print_printers_update_task_triggers(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPrintTaskTrigger.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintTaskTrigger.t()}
+          | {:error, Tesla.Env.t()}
+  def print_printers_update_task_triggers(
+        connection,
+        printer_id,
+        print_task_trigger_id,
+        microsoft_graph_print_task_trigger,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -1641,7 +1990,15 @@ defmodule MicrosoftGraph.Api.PrintPrinter do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrinter.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec print_update_printers(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphPrinter.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrinter.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec print_update_printers(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPrinter.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPrinter.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def print_update_printers(connection, printer_id, microsoft_graph_printer, _opts \\ []) do
     request =
       %{}

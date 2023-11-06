@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSubjectRightsRequestEnumeratedMailboxLocation do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,12 +13,11 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSubjectRightsRequestEnumeratedMailb
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :userPrincipalNames => [String.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :userPrincipalNames => [String.t()] | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

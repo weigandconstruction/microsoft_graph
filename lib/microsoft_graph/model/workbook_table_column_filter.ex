@@ -14,16 +14,15 @@ defmodule MicrosoftGraph.Model.WorkbookTableColumnFilter do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :criteria => MicrosoftGraph.Model.WorkbookFilterCriteria.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :criteria => MicrosoftGraph.Model.WorkbookFilterCriteria.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:criteria, :struct, MicrosoftGraph.Model.WorkbookFilterCriteria)
+    |> Deserializer.deserialize(:criteria, :struct, MicrosoftGraph.Model.WorkbookFilterCriteria)
   end
 end
-

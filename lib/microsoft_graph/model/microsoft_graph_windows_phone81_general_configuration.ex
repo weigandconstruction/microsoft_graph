@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphWindowsPhone81GeneralConfiguration do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -53,65 +53,108 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphWindowsPhone81GeneralConfiguration 
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :assignments => [MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationAssignment.t] | nil,
-    :createdDateTime => DateTime.t | nil,
-    :description => String.t | nil,
-    :deviceSettingStateSummaries => [MicrosoftGraph.Model.MicrosoftGraphSettingStateDeviceSummary.t] | nil,
-    :deviceStatusOverview => MicrosoftGraph.Model.DeviceConfigurationDeviceStatusOverview.t | nil,
-    :deviceStatuses => [MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceStatus.t] | nil,
-    :displayName => String.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :userStatusOverview => MicrosoftGraph.Model.DeviceConfigurationUserStatusOverview.t | nil,
-    :userStatuses => [MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserStatus.t] | nil,
-    :version => integer() | nil,
-    :applyOnlyToWindowsPhone81 => boolean() | nil,
-    :appsBlockCopyPaste => boolean() | nil,
-    :bluetoothBlocked => boolean() | nil,
-    :cameraBlocked => boolean() | nil,
-    :cellularBlockWifiTethering => boolean() | nil,
-    :compliantAppListType => MicrosoftGraph.Model.MicrosoftGraphAppListType.t | nil,
-    :compliantAppsList => [MicrosoftGraph.Model.MicrosoftGraphIosNetworkUsageRuleManagedAppsInner.t] | nil,
-    :diagnosticDataBlockSubmission => boolean() | nil,
-    :emailBlockAddingAccounts => boolean() | nil,
-    :locationServicesBlocked => boolean() | nil,
-    :microsoftAccountBlocked => boolean() | nil,
-    :nfcBlocked => boolean() | nil,
-    :passwordBlockSimple => boolean() | nil,
-    :passwordExpirationDays => integer() | nil,
-    :passwordMinimumCharacterSetCount => integer() | nil,
-    :passwordMinimumLength => integer() | nil,
-    :passwordMinutesOfInactivityBeforeScreenTimeout => integer() | nil,
-    :passwordPreviousPasswordBlockCount => integer() | nil,
-    :passwordRequired => boolean() | nil,
-    :passwordRequiredType => MicrosoftGraph.Model.MicrosoftGraphRequiredPasswordType.t | nil,
-    :passwordSignInFailureCountBeforeFactoryReset => integer() | nil,
-    :screenCaptureBlocked => boolean() | nil,
-    :storageBlockRemovableStorage => boolean() | nil,
-    :storageRequireEncryption => boolean() | nil,
-    :webBrowserBlocked => boolean() | nil,
-    :wifiBlockAutomaticConnectHotspots => boolean() | nil,
-    :wifiBlockHotspotReporting => boolean() | nil,
-    :wifiBlocked => boolean() | nil,
-    :windowsStoreBlocked => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :assignments =>
+            [MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationAssignment.t()] | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :deviceSettingStateSummaries =>
+            [MicrosoftGraph.Model.MicrosoftGraphSettingStateDeviceSummary.t()] | nil,
+          :deviceStatusOverview =>
+            MicrosoftGraph.Model.DeviceConfigurationDeviceStatusOverview.t() | nil,
+          :deviceStatuses =>
+            [MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceStatus.t()] | nil,
+          :displayName => String.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :userStatusOverview =>
+            MicrosoftGraph.Model.DeviceConfigurationUserStatusOverview.t() | nil,
+          :userStatuses =>
+            [MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserStatus.t()] | nil,
+          :version => integer() | nil,
+          :applyOnlyToWindowsPhone81 => boolean() | nil,
+          :appsBlockCopyPaste => boolean() | nil,
+          :bluetoothBlocked => boolean() | nil,
+          :cameraBlocked => boolean() | nil,
+          :cellularBlockWifiTethering => boolean() | nil,
+          :compliantAppListType => MicrosoftGraph.Model.MicrosoftGraphAppListType.t() | nil,
+          :compliantAppsList =>
+            [MicrosoftGraph.Model.MicrosoftGraphIosNetworkUsageRuleManagedAppsInner.t()] | nil,
+          :diagnosticDataBlockSubmission => boolean() | nil,
+          :emailBlockAddingAccounts => boolean() | nil,
+          :locationServicesBlocked => boolean() | nil,
+          :microsoftAccountBlocked => boolean() | nil,
+          :nfcBlocked => boolean() | nil,
+          :passwordBlockSimple => boolean() | nil,
+          :passwordExpirationDays => integer() | nil,
+          :passwordMinimumCharacterSetCount => integer() | nil,
+          :passwordMinimumLength => integer() | nil,
+          :passwordMinutesOfInactivityBeforeScreenTimeout => integer() | nil,
+          :passwordPreviousPasswordBlockCount => integer() | nil,
+          :passwordRequired => boolean() | nil,
+          :passwordRequiredType =>
+            MicrosoftGraph.Model.MicrosoftGraphRequiredPasswordType.t() | nil,
+          :passwordSignInFailureCountBeforeFactoryReset => integer() | nil,
+          :screenCaptureBlocked => boolean() | nil,
+          :storageBlockRemovableStorage => boolean() | nil,
+          :storageRequireEncryption => boolean() | nil,
+          :webBrowserBlocked => boolean() | nil,
+          :wifiBlockAutomaticConnectHotspots => boolean() | nil,
+          :wifiBlockHotspotReporting => boolean() | nil,
+          :wifiBlocked => boolean() | nil,
+          :windowsStoreBlocked => boolean() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:assignments, :list, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationAssignment)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:deviceSettingStateSummaries, :list, MicrosoftGraph.Model.MicrosoftGraphSettingStateDeviceSummary)
-     |> Deserializer.deserialize(:deviceStatusOverview, :struct, MicrosoftGraph.Model.DeviceConfigurationDeviceStatusOverview)
-     |> Deserializer.deserialize(:deviceStatuses, :list, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceStatus)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:userStatusOverview, :struct, MicrosoftGraph.Model.DeviceConfigurationUserStatusOverview)
-     |> Deserializer.deserialize(:userStatuses, :list, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserStatus)
-     |> Deserializer.deserialize(:compliantAppListType, :struct, MicrosoftGraph.Model.MicrosoftGraphAppListType)
-     |> Deserializer.deserialize(:compliantAppsList, :list, MicrosoftGraph.Model.MicrosoftGraphIosNetworkUsageRuleManagedAppsInner)
-     |> Deserializer.deserialize(:passwordRequiredType, :struct, MicrosoftGraph.Model.MicrosoftGraphRequiredPasswordType)
+    |> Deserializer.deserialize(
+      :assignments,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationAssignment
+    )
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :deviceSettingStateSummaries,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSettingStateDeviceSummary
+    )
+    |> Deserializer.deserialize(
+      :deviceStatusOverview,
+      :struct,
+      MicrosoftGraph.Model.DeviceConfigurationDeviceStatusOverview
+    )
+    |> Deserializer.deserialize(
+      :deviceStatuses,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceStatus
+    )
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :userStatusOverview,
+      :struct,
+      MicrosoftGraph.Model.DeviceConfigurationUserStatusOverview
+    )
+    |> Deserializer.deserialize(
+      :userStatuses,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserStatus
+    )
+    |> Deserializer.deserialize(
+      :compliantAppListType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAppListType
+    )
+    |> Deserializer.deserialize(
+      :compliantAppsList,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphIosNetworkUsageRuleManagedAppsInner
+    )
+    |> Deserializer.deserialize(
+      :passwordRequiredType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphRequiredPasswordType
+    )
   end
 end
-

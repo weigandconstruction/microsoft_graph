@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphRecentNotebook do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,20 +16,28 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphRecentNotebook do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :displayName => String.t | nil,
-    :lastAccessedTime => DateTime.t | nil,
-    :links => MicrosoftGraph.Model.MicrosoftGraphRecentNotebookLinks.t | nil,
-    :sourceService => MicrosoftGraph.Model.MicrosoftGraphRecentNotebookSourceService.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :displayName => String.t() | nil,
+          :lastAccessedTime => DateTime.t() | nil,
+          :links => MicrosoftGraph.Model.MicrosoftGraphRecentNotebookLinks.t() | nil,
+          :sourceService =>
+            MicrosoftGraph.Model.MicrosoftGraphRecentNotebookSourceService.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:lastAccessedTime, :datetime, nil)
-     |> Deserializer.deserialize(:links, :struct, MicrosoftGraph.Model.MicrosoftGraphRecentNotebookLinks)
-     |> Deserializer.deserialize(:sourceService, :struct, MicrosoftGraph.Model.MicrosoftGraphRecentNotebookSourceService)
+    |> Deserializer.deserialize(:lastAccessedTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :links,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphRecentNotebookLinks
+    )
+    |> Deserializer.deserialize(
+      :sourceService,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphRecentNotebookSourceService
+    )
   end
 end
-

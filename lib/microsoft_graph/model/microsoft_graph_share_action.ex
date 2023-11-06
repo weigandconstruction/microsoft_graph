@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphShareAction do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,15 +13,14 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphShareAction do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :recipients => [MicrosoftGraph.Model.CaseLastModifiedBy.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :recipients => [MicrosoftGraph.Model.CaseLastModifiedBy.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:recipients, :list, MicrosoftGraph.Model.CaseLastModifiedBy)
+    |> Deserializer.deserialize(:recipients, :list, MicrosoftGraph.Model.CaseLastModifiedBy)
   end
 end
-

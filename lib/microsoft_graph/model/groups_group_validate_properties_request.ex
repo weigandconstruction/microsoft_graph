@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.GroupsGroupValidatePropertiesRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.GroupsGroupValidatePropertiesRequest do
   ]
 
   @type t :: %__MODULE__{
-    :displayName => String.t | nil,
-    :mailNickname => String.t | nil,
-    :onBehalfOfUserId => String.t | nil
-  }
+          :displayName => String.t() | nil,
+          :mailNickname => String.t() | nil,
+          :onBehalfOfUserId => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

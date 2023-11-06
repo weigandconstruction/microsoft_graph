@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphBundle do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,15 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphBundle do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :album => MicrosoftGraph.Model.MicrosoftGraphBundleAlbum.t | nil,
-    :childCount => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :album => MicrosoftGraph.Model.MicrosoftGraphBundleAlbum.t() | nil,
+          :childCount => integer() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:album, :struct, MicrosoftGraph.Model.MicrosoftGraphBundleAlbum)
+    |> Deserializer.deserialize(:album, :struct, MicrosoftGraph.Model.MicrosoftGraphBundleAlbum)
   end
 end
-

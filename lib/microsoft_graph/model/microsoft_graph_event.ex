@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphEvent do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -59,84 +59,125 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphEvent do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :categories => [String.t] | nil,
-    :changeKey => String.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :attendees => [MicrosoftGraph.Model.EventAttendeesInner.t] | nil,
-    :allowNewTimeProposals => boolean() | nil,
-    :isCancelled => boolean() | nil,
-    :showAs => MicrosoftGraph.Model.EventShowAs.t | nil,
-    :onlineMeetingProvider => MicrosoftGraph.Model.EventOnlineMeetingProvider.t | nil,
-    :isReminderOn => boolean() | nil,
-    :end => MicrosoftGraph.Model.EventEnd.t | nil,
-    :bodyPreview => String.t | nil,
-    :seriesMasterId => String.t | nil,
-    :importance => MicrosoftGraph.Model.MessageImportance.t | nil,
-    :isOnlineMeeting => boolean() | nil,
-    :responseStatus => MicrosoftGraph.Model.EventResponseStatus.t | nil,
-    :type => MicrosoftGraph.Model.EventMessageType.t | nil,
-    :body => MicrosoftGraph.Model.EventBody.t | nil,
-    :sensitivity => MicrosoftGraph.Model.EventSensitivity.t | nil,
-    :organizer => MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequestToRecipientsInner.t | nil,
-    :extensions => [MicrosoftGraph.Model.MicrosoftGraphExtension.t] | nil,
-    :originalEndTimeZone => String.t | nil,
-    :attachments => [MicrosoftGraph.Model.MicrosoftGraphAttachment.t] | nil,
-    :locations => [MicrosoftGraph.Model.PersonPostalAddressesInner.t] | nil,
-    :isDraft => boolean() | nil,
-    :iCalUId => String.t | nil,
-    :subject => String.t | nil,
-    :location => MicrosoftGraph.Model.PersonPostalAddressesInner.t | nil,
-    :singleValueExtendedProperties => [MicrosoftGraph.Model.MicrosoftGraphSingleValueLegacyExtendedProperty.t] | nil,
-    :reminderMinutesBeforeStart => integer() | nil,
-    :originalStartTimeZone => String.t | nil,
-    :recurrence => MicrosoftGraph.Model.EventMessageRecurrence.t | nil,
-    :hideAttendees => boolean() | nil,
-    :isAllDay => boolean() | nil,
-    :multiValueExtendedProperties => [MicrosoftGraph.Model.MicrosoftGraphMultiValueLegacyExtendedProperty.t] | nil,
-    :instances => [MicrosoftGraph.Model.MicrosoftGraphEvent.t] | nil,
-    :onlineMeeting => MicrosoftGraph.Model.EventOnlineMeeting.t | nil,
-    :onlineMeetingUrl => String.t | nil,
-    :originalStart => DateTime.t | nil,
-    :transactionId => String.t | nil,
-    :responseRequested => boolean() | nil,
-    :start => MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarGetScheduleRequestEndTime.t | nil,
-    :webLink => String.t | nil,
-    :calendar => MicrosoftGraph.Model.EventCalendar.t | nil,
-    :isOrganizer => boolean() | nil,
-    :hasAttachments => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :categories => [String.t()] | nil,
+          :changeKey => String.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :attendees => [MicrosoftGraph.Model.EventAttendeesInner.t()] | nil,
+          :allowNewTimeProposals => boolean() | nil,
+          :isCancelled => boolean() | nil,
+          :showAs => MicrosoftGraph.Model.EventShowAs.t() | nil,
+          :onlineMeetingProvider => MicrosoftGraph.Model.EventOnlineMeetingProvider.t() | nil,
+          :isReminderOn => boolean() | nil,
+          :end => MicrosoftGraph.Model.EventEnd.t() | nil,
+          :bodyPreview => String.t() | nil,
+          :seriesMasterId => String.t() | nil,
+          :importance => MicrosoftGraph.Model.MessageImportance.t() | nil,
+          :isOnlineMeeting => boolean() | nil,
+          :responseStatus => MicrosoftGraph.Model.EventResponseStatus.t() | nil,
+          :type => MicrosoftGraph.Model.EventMessageType.t() | nil,
+          :body => MicrosoftGraph.Model.EventBody.t() | nil,
+          :sensitivity => MicrosoftGraph.Model.EventSensitivity.t() | nil,
+          :organizer =>
+            MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequestToRecipientsInner.t()
+            | nil,
+          :extensions => [MicrosoftGraph.Model.MicrosoftGraphExtension.t()] | nil,
+          :originalEndTimeZone => String.t() | nil,
+          :attachments => [MicrosoftGraph.Model.MicrosoftGraphAttachment.t()] | nil,
+          :locations => [MicrosoftGraph.Model.PersonPostalAddressesInner.t()] | nil,
+          :isDraft => boolean() | nil,
+          :iCalUId => String.t() | nil,
+          :subject => String.t() | nil,
+          :location => MicrosoftGraph.Model.PersonPostalAddressesInner.t() | nil,
+          :singleValueExtendedProperties =>
+            [MicrosoftGraph.Model.MicrosoftGraphSingleValueLegacyExtendedProperty.t()] | nil,
+          :reminderMinutesBeforeStart => integer() | nil,
+          :originalStartTimeZone => String.t() | nil,
+          :recurrence => MicrosoftGraph.Model.EventMessageRecurrence.t() | nil,
+          :hideAttendees => boolean() | nil,
+          :isAllDay => boolean() | nil,
+          :multiValueExtendedProperties =>
+            [MicrosoftGraph.Model.MicrosoftGraphMultiValueLegacyExtendedProperty.t()] | nil,
+          :instances => [MicrosoftGraph.Model.MicrosoftGraphEvent.t()] | nil,
+          :onlineMeeting => MicrosoftGraph.Model.EventOnlineMeeting.t() | nil,
+          :onlineMeetingUrl => String.t() | nil,
+          :originalStart => DateTime.t() | nil,
+          :transactionId => String.t() | nil,
+          :responseRequested => boolean() | nil,
+          :start =>
+            MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarGetScheduleRequestEndTime.t()
+            | nil,
+          :webLink => String.t() | nil,
+          :calendar => MicrosoftGraph.Model.EventCalendar.t() | nil,
+          :isOrganizer => boolean() | nil,
+          :hasAttachments => boolean() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:attendees, :list, MicrosoftGraph.Model.EventAttendeesInner)
-     |> Deserializer.deserialize(:showAs, :struct, MicrosoftGraph.Model.EventShowAs)
-     |> Deserializer.deserialize(:onlineMeetingProvider, :struct, MicrosoftGraph.Model.EventOnlineMeetingProvider)
-     |> Deserializer.deserialize(:end, :struct, MicrosoftGraph.Model.EventEnd)
-     |> Deserializer.deserialize(:importance, :struct, MicrosoftGraph.Model.MessageImportance)
-     |> Deserializer.deserialize(:responseStatus, :struct, MicrosoftGraph.Model.EventResponseStatus)
-     |> Deserializer.deserialize(:type, :struct, MicrosoftGraph.Model.EventMessageType)
-     |> Deserializer.deserialize(:body, :struct, MicrosoftGraph.Model.EventBody)
-     |> Deserializer.deserialize(:sensitivity, :struct, MicrosoftGraph.Model.EventSensitivity)
-     |> Deserializer.deserialize(:organizer, :struct, MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequestToRecipientsInner)
-     |> Deserializer.deserialize(:extensions, :list, MicrosoftGraph.Model.MicrosoftGraphExtension)
-     |> Deserializer.deserialize(:attachments, :list, MicrosoftGraph.Model.MicrosoftGraphAttachment)
-     |> Deserializer.deserialize(:locations, :list, MicrosoftGraph.Model.PersonPostalAddressesInner)
-     |> Deserializer.deserialize(:location, :struct, MicrosoftGraph.Model.PersonPostalAddressesInner)
-     |> Deserializer.deserialize(:singleValueExtendedProperties, :list, MicrosoftGraph.Model.MicrosoftGraphSingleValueLegacyExtendedProperty)
-     |> Deserializer.deserialize(:recurrence, :struct, MicrosoftGraph.Model.EventMessageRecurrence)
-     |> Deserializer.deserialize(:multiValueExtendedProperties, :list, MicrosoftGraph.Model.MicrosoftGraphMultiValueLegacyExtendedProperty)
-     |> Deserializer.deserialize(:instances, :list, MicrosoftGraph.Model.MicrosoftGraphEvent)
-     |> Deserializer.deserialize(:onlineMeeting, :struct, MicrosoftGraph.Model.EventOnlineMeeting)
-     |> Deserializer.deserialize(:originalStart, :datetime, nil)
-     |> Deserializer.deserialize(:start, :struct, MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarGetScheduleRequestEndTime)
-     |> Deserializer.deserialize(:calendar, :struct, MicrosoftGraph.Model.EventCalendar)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:attendees, :list, MicrosoftGraph.Model.EventAttendeesInner)
+    |> Deserializer.deserialize(:showAs, :struct, MicrosoftGraph.Model.EventShowAs)
+    |> Deserializer.deserialize(
+      :onlineMeetingProvider,
+      :struct,
+      MicrosoftGraph.Model.EventOnlineMeetingProvider
+    )
+    |> Deserializer.deserialize(:end, :struct, MicrosoftGraph.Model.EventEnd)
+    |> Deserializer.deserialize(:importance, :struct, MicrosoftGraph.Model.MessageImportance)
+    |> Deserializer.deserialize(
+      :responseStatus,
+      :struct,
+      MicrosoftGraph.Model.EventResponseStatus
+    )
+    |> Deserializer.deserialize(:type, :struct, MicrosoftGraph.Model.EventMessageType)
+    |> Deserializer.deserialize(:body, :struct, MicrosoftGraph.Model.EventBody)
+    |> Deserializer.deserialize(:sensitivity, :struct, MicrosoftGraph.Model.EventSensitivity)
+    |> Deserializer.deserialize(
+      :organizer,
+      :struct,
+      MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequestToRecipientsInner
+    )
+    |> Deserializer.deserialize(:extensions, :list, MicrosoftGraph.Model.MicrosoftGraphExtension)
+    |> Deserializer.deserialize(
+      :attachments,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAttachment
+    )
+    |> Deserializer.deserialize(
+      :locations,
+      :list,
+      MicrosoftGraph.Model.PersonPostalAddressesInner
+    )
+    |> Deserializer.deserialize(
+      :location,
+      :struct,
+      MicrosoftGraph.Model.PersonPostalAddressesInner
+    )
+    |> Deserializer.deserialize(
+      :singleValueExtendedProperties,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSingleValueLegacyExtendedProperty
+    )
+    |> Deserializer.deserialize(:recurrence, :struct, MicrosoftGraph.Model.EventMessageRecurrence)
+    |> Deserializer.deserialize(
+      :multiValueExtendedProperties,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphMultiValueLegacyExtendedProperty
+    )
+    |> Deserializer.deserialize(:instances, :list, MicrosoftGraph.Model.MicrosoftGraphEvent)
+    |> Deserializer.deserialize(:onlineMeeting, :struct, MicrosoftGraph.Model.EventOnlineMeeting)
+    |> Deserializer.deserialize(:originalStart, :datetime, nil)
+    |> Deserializer.deserialize(
+      :start,
+      :struct,
+      MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarGetScheduleRequestEndTime
+    )
+    |> Deserializer.deserialize(:calendar, :struct, MicrosoftGraph.Model.EventCalendar)
   end
 end
-

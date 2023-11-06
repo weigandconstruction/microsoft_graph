@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSearchRequestQueryAlterationOptions
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :enableModification => boolean() | nil,
-    :enableSuggestion => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :enableModification => boolean() | nil,
+          :enableSuggestion => boolean() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

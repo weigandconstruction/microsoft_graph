@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSkypeForBusinessUserConversationMember do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,20 +18,19 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSkypeForBusinessUserConversationMem
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :displayName => String.t | nil,
-    :roles => [String.t] | nil,
-    :visibleHistoryStartDateTime => DateTime.t | nil,
-    :tenantId => String.t | nil,
-    :userId => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :displayName => String.t() | nil,
+          :roles => [String.t()] | nil,
+          :visibleHistoryStartDateTime => DateTime.t() | nil,
+          :tenantId => String.t() | nil,
+          :userId => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:visibleHistoryStartDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:visibleHistoryStartDateTime, :datetime, nil)
   end
 end
-

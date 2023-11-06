@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphCommsNotifications do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,15 +13,18 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphCommsNotifications do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :value => [MicrosoftGraph.Model.MicrosoftGraphCommsNotificationsValueInner.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :value => [MicrosoftGraph.Model.MicrosoftGraphCommsNotificationsValueInner.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:value, :list, MicrosoftGraph.Model.MicrosoftGraphCommsNotificationsValueInner)
+    |> Deserializer.deserialize(
+      :value,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphCommsNotificationsValueInner
+    )
   end
 end
-

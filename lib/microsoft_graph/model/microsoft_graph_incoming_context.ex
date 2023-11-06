@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphIncomingContext do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,19 +16,26 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphIncomingContext do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :observedParticipantId => String.t | nil,
-    :onBehalfOf => MicrosoftGraph.Model.MicrosoftGraphIncomingContextOnBehalfOf.t | nil,
-    :sourceParticipantId => String.t | nil,
-    :transferor => MicrosoftGraph.Model.MicrosoftGraphIncomingContextTransferor.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :observedParticipantId => String.t() | nil,
+          :onBehalfOf => MicrosoftGraph.Model.MicrosoftGraphIncomingContextOnBehalfOf.t() | nil,
+          :sourceParticipantId => String.t() | nil,
+          :transferor => MicrosoftGraph.Model.MicrosoftGraphIncomingContextTransferor.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:onBehalfOf, :struct, MicrosoftGraph.Model.MicrosoftGraphIncomingContextOnBehalfOf)
-     |> Deserializer.deserialize(:transferor, :struct, MicrosoftGraph.Model.MicrosoftGraphIncomingContextTransferor)
+    |> Deserializer.deserialize(
+      :onBehalfOf,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphIncomingContextOnBehalfOf
+    )
+    |> Deserializer.deserialize(
+      :transferor,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphIncomingContextTransferor
+    )
   end
 end
-

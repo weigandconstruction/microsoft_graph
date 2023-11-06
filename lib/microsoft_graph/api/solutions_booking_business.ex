@@ -25,8 +25,19 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_booking_businesses_appointments_get_count205a(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def solutions_booking_businesses_appointments_get_count205a(connection, booking_business_id, opts \\ []) do
+  @spec solutions_booking_businesses_appointments_get_count205a(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def solutions_booking_businesses_appointments_get_count205a(
+        connection,
+        booking_business_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -64,8 +75,19 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_booking_businesses_calendar_view_get_count_f3a3(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def solutions_booking_businesses_calendar_view_get_count_f3a3(connection, booking_business_id, opts \\ []) do
+  @spec solutions_booking_businesses_calendar_view_get_count_f3a3(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def solutions_booking_businesses_calendar_view_get_count_f3a3(
+        connection,
+        booking_business_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -103,8 +125,21 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBookingAppointment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_booking_businesses_create_appointments(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphBookingAppointment.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingAppointment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def solutions_booking_businesses_create_appointments(connection, booking_business_id, microsoft_graph_booking_appointment, _opts \\ []) do
+  @spec solutions_booking_businesses_create_appointments(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphBookingAppointment.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingAppointment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def solutions_booking_businesses_create_appointments(
+        connection,
+        booking_business_id,
+        microsoft_graph_booking_appointment,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -136,8 +171,21 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBookingAppointment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_booking_businesses_create_calendar_view(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphBookingAppointment.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingAppointment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def solutions_booking_businesses_create_calendar_view(connection, booking_business_id, microsoft_graph_booking_appointment, _opts \\ []) do
+  @spec solutions_booking_businesses_create_calendar_view(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphBookingAppointment.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingAppointment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def solutions_booking_businesses_create_calendar_view(
+        connection,
+        booking_business_id,
+        microsoft_graph_booking_appointment,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -170,8 +218,21 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBookingCustomQuestion.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_booking_businesses_create_custom_questions(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphBookingCustomQuestion.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingCustomQuestion.t} | {:error, Tesla.Env.t}
-  def solutions_booking_businesses_create_custom_questions(connection, booking_business_id, microsoft_graph_booking_custom_question, _opts \\ []) do
+  @spec solutions_booking_businesses_create_custom_questions(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphBookingCustomQuestion.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingCustomQuestion.t()}
+          | {:error, Tesla.Env.t()}
+  def solutions_booking_businesses_create_custom_questions(
+        connection,
+        booking_business_id,
+        microsoft_graph_booking_custom_question,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -204,8 +265,21 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBookingCustomerBase.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_booking_businesses_create_customers(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphBookingCustomerBase.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingCustomerBase.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def solutions_booking_businesses_create_customers(connection, booking_business_id, microsoft_graph_booking_customer_base, _opts \\ []) do
+  @spec solutions_booking_businesses_create_customers(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphBookingCustomerBase.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingCustomerBase.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def solutions_booking_businesses_create_customers(
+        connection,
+        booking_business_id,
+        microsoft_graph_booking_customer_base,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -238,8 +312,21 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBookingService.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_booking_businesses_create_services(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphBookingService.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingService.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def solutions_booking_businesses_create_services(connection, booking_business_id, microsoft_graph_booking_service, _opts \\ []) do
+  @spec solutions_booking_businesses_create_services(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphBookingService.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingService.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def solutions_booking_businesses_create_services(
+        connection,
+        booking_business_id,
+        microsoft_graph_booking_service,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -272,8 +359,21 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBookingStaffMemberBase.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_booking_businesses_create_staff_members(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphBookingStaffMemberBase.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingStaffMemberBase.t} | {:error, Tesla.Env.t}
-  def solutions_booking_businesses_create_staff_members(connection, booking_business_id, microsoft_graph_booking_staff_member_base, _opts \\ []) do
+  @spec solutions_booking_businesses_create_staff_members(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphBookingStaffMemberBase.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingStaffMemberBase.t()}
+          | {:error, Tesla.Env.t()}
+  def solutions_booking_businesses_create_staff_members(
+        connection,
+        booking_business_id,
+        microsoft_graph_booking_staff_member_base,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -306,8 +406,19 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_booking_businesses_custom_questions_get_count385a(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def solutions_booking_businesses_custom_questions_get_count385a(connection, booking_business_id, opts \\ []) do
+  @spec solutions_booking_businesses_custom_questions_get_count385a(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def solutions_booking_businesses_custom_questions_get_count385a(
+        connection,
+        booking_business_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -345,8 +456,19 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_booking_businesses_customers_get_count1771(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def solutions_booking_businesses_customers_get_count1771(connection, booking_business_id, opts \\ []) do
+  @spec solutions_booking_businesses_customers_get_count1771(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def solutions_booking_businesses_customers_get_count1771(
+        connection,
+        booking_business_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -385,8 +507,21 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_booking_businesses_delete_appointments(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def solutions_booking_businesses_delete_appointments(connection, booking_business_id, booking_appointment_id, opts \\ []) do
+  @spec solutions_booking_businesses_delete_appointments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def solutions_booking_businesses_delete_appointments(
+        connection,
+        booking_business_id,
+        booking_appointment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -394,7 +529,9 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
     request =
       %{}
       |> method(:delete)
-      |> url("/solutions/bookingBusinesses/#{booking_business_id}/appointments/#{booking_appointment_id}")
+      |> url(
+        "/solutions/bookingBusinesses/#{booking_business_id}/appointments/#{booking_appointment_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -423,8 +560,21 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_booking_businesses_delete_calendar_view(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def solutions_booking_businesses_delete_calendar_view(connection, booking_business_id, booking_appointment_id, opts \\ []) do
+  @spec solutions_booking_businesses_delete_calendar_view(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def solutions_booking_businesses_delete_calendar_view(
+        connection,
+        booking_business_id,
+        booking_appointment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -432,7 +582,9 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
     request =
       %{}
       |> method(:delete)
-      |> url("/solutions/bookingBusinesses/#{booking_business_id}/calendarView/#{booking_appointment_id}")
+      |> url(
+        "/solutions/bookingBusinesses/#{booking_business_id}/calendarView/#{booking_appointment_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -462,8 +614,21 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_booking_businesses_delete_custom_questions(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def solutions_booking_businesses_delete_custom_questions(connection, booking_business_id, booking_custom_question_id, opts \\ []) do
+  @spec solutions_booking_businesses_delete_custom_questions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def solutions_booking_businesses_delete_custom_questions(
+        connection,
+        booking_business_id,
+        booking_custom_question_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -471,7 +636,9 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
     request =
       %{}
       |> method(:delete)
-      |> url("/solutions/bookingBusinesses/#{booking_business_id}/customQuestions/#{booking_custom_question_id}")
+      |> url(
+        "/solutions/bookingBusinesses/#{booking_business_id}/customQuestions/#{booking_custom_question_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -501,8 +668,21 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_booking_businesses_delete_customers(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def solutions_booking_businesses_delete_customers(connection, booking_business_id, booking_customer_base_id, opts \\ []) do
+  @spec solutions_booking_businesses_delete_customers(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def solutions_booking_businesses_delete_customers(
+        connection,
+        booking_business_id,
+        booking_customer_base_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -510,7 +690,9 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
     request =
       %{}
       |> method(:delete)
-      |> url("/solutions/bookingBusinesses/#{booking_business_id}/customers/#{booking_customer_base_id}")
+      |> url(
+        "/solutions/bookingBusinesses/#{booking_business_id}/customers/#{booking_customer_base_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -540,8 +722,21 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_booking_businesses_delete_services(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def solutions_booking_businesses_delete_services(connection, booking_business_id, booking_service_id, opts \\ []) do
+  @spec solutions_booking_businesses_delete_services(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def solutions_booking_businesses_delete_services(
+        connection,
+        booking_business_id,
+        booking_service_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -579,8 +774,21 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_booking_businesses_delete_staff_members(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def solutions_booking_businesses_delete_staff_members(connection, booking_business_id, booking_staff_member_base_id, opts \\ []) do
+  @spec solutions_booking_businesses_delete_staff_members(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def solutions_booking_businesses_delete_staff_members(
+        connection,
+        booking_business_id,
+        booking_staff_member_base_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -588,7 +796,9 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
     request =
       %{}
       |> method(:delete)
-      |> url("/solutions/bookingBusinesses/#{booking_business_id}/staffMembers/#{booking_staff_member_base_id}")
+      |> url(
+        "/solutions/bookingBusinesses/#{booking_business_id}/staffMembers/#{booking_staff_member_base_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -619,8 +829,21 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBookingAppointment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_booking_businesses_get_appointments(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingAppointment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def solutions_booking_businesses_get_appointments(connection, booking_business_id, booking_appointment_id, opts \\ []) do
+  @spec solutions_booking_businesses_get_appointments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingAppointment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def solutions_booking_businesses_get_appointments(
+        connection,
+        booking_business_id,
+        booking_appointment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -629,7 +852,9 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
     request =
       %{}
       |> method(:get)
-      |> url("/solutions/bookingBusinesses/#{booking_business_id}/appointments/#{booking_appointment_id}")
+      |> url(
+        "/solutions/bookingBusinesses/#{booking_business_id}/appointments/#{booking_appointment_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -662,8 +887,25 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBookingAppointment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_booking_businesses_get_calendar_view(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingAppointment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def solutions_booking_businesses_get_calendar_view(connection, booking_business_id, booking_appointment_id, start, end_, opts \\ []) do
+  @spec solutions_booking_businesses_get_calendar_view(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingAppointment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def solutions_booking_businesses_get_calendar_view(
+        connection,
+        booking_business_id,
+        booking_appointment_id,
+        start,
+        end_,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -672,7 +914,9 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
     request =
       %{}
       |> method(:get)
-      |> url("/solutions/bookingBusinesses/#{booking_business_id}/calendarView/#{booking_appointment_id}")
+      |> url(
+        "/solutions/bookingBusinesses/#{booking_business_id}/calendarView/#{booking_appointment_id}"
+      )
       |> add_param(:query, :start, start)
       |> add_param(:query, :end, end_)
       |> add_optional_params(optional_params, opts)
@@ -702,7 +946,10 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_booking_businesses_get_count_b75b(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec solutions_booking_businesses_get_count_b75b(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def solutions_booking_businesses_get_count_b75b(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -743,8 +990,21 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBookingCustomQuestion.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_booking_businesses_get_custom_questions(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingCustomQuestion.t} | {:error, Tesla.Env.t}
-  def solutions_booking_businesses_get_custom_questions(connection, booking_business_id, booking_custom_question_id, opts \\ []) do
+  @spec solutions_booking_businesses_get_custom_questions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingCustomQuestion.t()}
+          | {:error, Tesla.Env.t()}
+  def solutions_booking_businesses_get_custom_questions(
+        connection,
+        booking_business_id,
+        booking_custom_question_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -753,7 +1013,9 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
     request =
       %{}
       |> method(:get)
-      |> url("/solutions/bookingBusinesses/#{booking_business_id}/customQuestions/#{booking_custom_question_id}")
+      |> url(
+        "/solutions/bookingBusinesses/#{booking_business_id}/customQuestions/#{booking_custom_question_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -784,8 +1046,21 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBookingCustomerBase.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_booking_businesses_get_customers(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingCustomerBase.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def solutions_booking_businesses_get_customers(connection, booking_business_id, booking_customer_base_id, opts \\ []) do
+  @spec solutions_booking_businesses_get_customers(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingCustomerBase.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def solutions_booking_businesses_get_customers(
+        connection,
+        booking_business_id,
+        booking_customer_base_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -794,7 +1069,9 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
     request =
       %{}
       |> method(:get)
-      |> url("/solutions/bookingBusinesses/#{booking_business_id}/customers/#{booking_customer_base_id}")
+      |> url(
+        "/solutions/bookingBusinesses/#{booking_business_id}/customers/#{booking_customer_base_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -825,8 +1102,21 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBookingService.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_booking_businesses_get_services(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingService.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def solutions_booking_businesses_get_services(connection, booking_business_id, booking_service_id, opts \\ []) do
+  @spec solutions_booking_businesses_get_services(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingService.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def solutions_booking_businesses_get_services(
+        connection,
+        booking_business_id,
+        booking_service_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -866,8 +1156,21 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBookingStaffMemberBase.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_booking_businesses_get_staff_members(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingStaffMemberBase.t} | {:error, Tesla.Env.t}
-  def solutions_booking_businesses_get_staff_members(connection, booking_business_id, booking_staff_member_base_id, opts \\ []) do
+  @spec solutions_booking_businesses_get_staff_members(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingStaffMemberBase.t()}
+          | {:error, Tesla.Env.t()}
+  def solutions_booking_businesses_get_staff_members(
+        connection,
+        booking_business_id,
+        booking_staff_member_base_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -876,7 +1179,9 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
     request =
       %{}
       |> method(:get)
-      |> url("/solutions/bookingBusinesses/#{booking_business_id}/staffMembers/#{booking_staff_member_base_id}")
+      |> url(
+        "/solutions/bookingBusinesses/#{booking_business_id}/staffMembers/#{booking_staff_member_base_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -912,7 +1217,10 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBookingAppointmentCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_booking_businesses_list_appointments(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingAppointmentCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec solutions_booking_businesses_list_appointments(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingAppointmentCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def solutions_booking_businesses_list_appointments(connection, booking_business_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -966,8 +1274,23 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBookingAppointmentCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_booking_businesses_list_calendar_view(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingAppointmentCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def solutions_booking_businesses_list_calendar_view(connection, booking_business_id, start, end_, opts \\ []) do
+  @spec solutions_booking_businesses_list_calendar_view(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingAppointmentCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def solutions_booking_businesses_list_calendar_view(
+        connection,
+        booking_business_id,
+        start,
+        end_,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1020,8 +1343,19 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBookingCustomQuestionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_booking_businesses_list_custom_questions(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingCustomQuestionCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def solutions_booking_businesses_list_custom_questions(connection, booking_business_id, opts \\ []) do
+  @spec solutions_booking_businesses_list_custom_questions(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingCustomQuestionCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def solutions_booking_businesses_list_custom_questions(
+        connection,
+        booking_business_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1072,7 +1406,10 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBookingCustomerBaseCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_booking_businesses_list_customers(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingCustomerBaseCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec solutions_booking_businesses_list_customers(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingCustomerBaseCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def solutions_booking_businesses_list_customers(connection, booking_business_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1124,7 +1461,10 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBookingServiceCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_booking_businesses_list_services(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingServiceCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec solutions_booking_businesses_list_services(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingServiceCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def solutions_booking_businesses_list_services(connection, booking_business_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1176,7 +1516,10 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBookingStaffMemberBaseCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_booking_businesses_list_staff_members(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingStaffMemberBaseCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec solutions_booking_businesses_list_staff_members(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingStaffMemberBaseCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def solutions_booking_businesses_list_staff_members(connection, booking_business_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1221,8 +1564,19 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_booking_businesses_services_get_count35c3(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def solutions_booking_businesses_services_get_count35c3(connection, booking_business_id, opts \\ []) do
+  @spec solutions_booking_businesses_services_get_count35c3(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def solutions_booking_businesses_services_get_count35c3(
+        connection,
+        booking_business_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1260,8 +1614,19 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_booking_businesses_staff_members_get_count7947(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def solutions_booking_businesses_staff_members_get_count7947(connection, booking_business_id, opts \\ []) do
+  @spec solutions_booking_businesses_staff_members_get_count7947(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def solutions_booking_businesses_staff_members_get_count7947(
+        connection,
+        booking_business_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1300,12 +1665,29 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBookingAppointment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_booking_businesses_update_appointments(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphBookingAppointment.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingAppointment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def solutions_booking_businesses_update_appointments(connection, booking_business_id, booking_appointment_id, microsoft_graph_booking_appointment, _opts \\ []) do
+  @spec solutions_booking_businesses_update_appointments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphBookingAppointment.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingAppointment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def solutions_booking_businesses_update_appointments(
+        connection,
+        booking_business_id,
+        booking_appointment_id,
+        microsoft_graph_booking_appointment,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/solutions/bookingBusinesses/#{booking_business_id}/appointments/#{booking_appointment_id}")
+      |> url(
+        "/solutions/bookingBusinesses/#{booking_business_id}/appointments/#{booking_appointment_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_booking_appointment)
       |> Enum.into([])
 
@@ -1334,12 +1716,29 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBookingAppointment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_booking_businesses_update_calendar_view(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphBookingAppointment.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingAppointment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def solutions_booking_businesses_update_calendar_view(connection, booking_business_id, booking_appointment_id, microsoft_graph_booking_appointment, _opts \\ []) do
+  @spec solutions_booking_businesses_update_calendar_view(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphBookingAppointment.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingAppointment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def solutions_booking_businesses_update_calendar_view(
+        connection,
+        booking_business_id,
+        booking_appointment_id,
+        microsoft_graph_booking_appointment,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/solutions/bookingBusinesses/#{booking_business_id}/calendarView/#{booking_appointment_id}")
+      |> url(
+        "/solutions/bookingBusinesses/#{booking_business_id}/calendarView/#{booking_appointment_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_booking_appointment)
       |> Enum.into([])
 
@@ -1369,12 +1768,29 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBookingCustomQuestion.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_booking_businesses_update_custom_questions(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphBookingCustomQuestion.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingCustomQuestion.t} | {:error, Tesla.Env.t}
-  def solutions_booking_businesses_update_custom_questions(connection, booking_business_id, booking_custom_question_id, microsoft_graph_booking_custom_question, _opts \\ []) do
+  @spec solutions_booking_businesses_update_custom_questions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphBookingCustomQuestion.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingCustomQuestion.t()}
+          | {:error, Tesla.Env.t()}
+  def solutions_booking_businesses_update_custom_questions(
+        connection,
+        booking_business_id,
+        booking_custom_question_id,
+        microsoft_graph_booking_custom_question,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/solutions/bookingBusinesses/#{booking_business_id}/customQuestions/#{booking_custom_question_id}")
+      |> url(
+        "/solutions/bookingBusinesses/#{booking_business_id}/customQuestions/#{booking_custom_question_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_booking_custom_question)
       |> Enum.into([])
 
@@ -1404,12 +1820,29 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBookingCustomerBase.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_booking_businesses_update_customers(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphBookingCustomerBase.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingCustomerBase.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def solutions_booking_businesses_update_customers(connection, booking_business_id, booking_customer_base_id, microsoft_graph_booking_customer_base, _opts \\ []) do
+  @spec solutions_booking_businesses_update_customers(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphBookingCustomerBase.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingCustomerBase.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def solutions_booking_businesses_update_customers(
+        connection,
+        booking_business_id,
+        booking_customer_base_id,
+        microsoft_graph_booking_customer_base,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/solutions/bookingBusinesses/#{booking_business_id}/customers/#{booking_customer_base_id}")
+      |> url(
+        "/solutions/bookingBusinesses/#{booking_business_id}/customers/#{booking_customer_base_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_booking_customer_base)
       |> Enum.into([])
 
@@ -1439,8 +1872,23 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBookingService.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_booking_businesses_update_services(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphBookingService.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingService.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def solutions_booking_businesses_update_services(connection, booking_business_id, booking_service_id, microsoft_graph_booking_service, _opts \\ []) do
+  @spec solutions_booking_businesses_update_services(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphBookingService.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingService.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def solutions_booking_businesses_update_services(
+        connection,
+        booking_business_id,
+        booking_service_id,
+        microsoft_graph_booking_service,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -1474,12 +1922,29 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBookingStaffMemberBase.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_booking_businesses_update_staff_members(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphBookingStaffMemberBase.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingStaffMemberBase.t} | {:error, Tesla.Env.t}
-  def solutions_booking_businesses_update_staff_members(connection, booking_business_id, booking_staff_member_base_id, microsoft_graph_booking_staff_member_base, _opts \\ []) do
+  @spec solutions_booking_businesses_update_staff_members(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphBookingStaffMemberBase.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingStaffMemberBase.t()}
+          | {:error, Tesla.Env.t()}
+  def solutions_booking_businesses_update_staff_members(
+        connection,
+        booking_business_id,
+        booking_staff_member_base_id,
+        microsoft_graph_booking_staff_member_base,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/solutions/bookingBusinesses/#{booking_business_id}/staffMembers/#{booking_staff_member_base_id}")
+      |> url(
+        "/solutions/bookingBusinesses/#{booking_business_id}/staffMembers/#{booking_staff_member_base_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_booking_staff_member_base)
       |> Enum.into([])
 
@@ -1507,8 +1972,19 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBookingBusiness.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_create_booking_businesses(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphBookingBusiness.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingBusiness.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def solutions_create_booking_businesses(connection, microsoft_graph_booking_business, _opts \\ []) do
+  @spec solutions_create_booking_businesses(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphBookingBusiness.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingBusiness.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def solutions_create_booking_businesses(
+        connection,
+        microsoft_graph_booking_business,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1541,7 +2017,10 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_delete_booking_businesses(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec solutions_delete_booking_businesses(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def solutions_delete_booking_businesses(connection, booking_business_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -1580,7 +2059,10 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBookingBusiness.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_get_booking_businesses(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingBusiness.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec solutions_get_booking_businesses(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingBusiness.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def solutions_get_booking_businesses(connection, booking_business_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -1625,7 +2107,10 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBookingBusinessCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_list_booking_businesses(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingBusinessCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec solutions_list_booking_businesses(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingBusinessCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def solutions_list_booking_businesses(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1670,8 +2155,21 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBookingBusiness.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_update_booking_businesses(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphBookingBusiness.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingBusiness.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def solutions_update_booking_businesses(connection, booking_business_id, microsoft_graph_booking_business, _opts \\ []) do
+  @spec solutions_update_booking_businesses(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphBookingBusiness.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingBusiness.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def solutions_update_booking_businesses(
+        connection,
+        booking_business_id,
+        microsoft_graph_booking_business,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

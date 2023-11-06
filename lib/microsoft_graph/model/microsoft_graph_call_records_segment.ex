@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphCallRecordsSegment do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,26 +19,25 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphCallRecordsSegment do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :callee => MicrosoftGraph.Model.SegmentCallee.t | nil,
-    :caller => MicrosoftGraph.Model.SegmentCaller.t | nil,
-    :endDateTime => DateTime.t | nil,
-    :failureInfo => MicrosoftGraph.Model.SegmentFailureInfo.t | nil,
-    :media => [MicrosoftGraph.Model.SegmentMediaInner.t] | nil,
-    :startDateTime => DateTime.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :callee => MicrosoftGraph.Model.SegmentCallee.t() | nil,
+          :caller => MicrosoftGraph.Model.SegmentCaller.t() | nil,
+          :endDateTime => DateTime.t() | nil,
+          :failureInfo => MicrosoftGraph.Model.SegmentFailureInfo.t() | nil,
+          :media => [MicrosoftGraph.Model.SegmentMediaInner.t()] | nil,
+          :startDateTime => DateTime.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:callee, :struct, MicrosoftGraph.Model.SegmentCallee)
-     |> Deserializer.deserialize(:caller, :struct, MicrosoftGraph.Model.SegmentCaller)
-     |> Deserializer.deserialize(:endDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:failureInfo, :struct, MicrosoftGraph.Model.SegmentFailureInfo)
-     |> Deserializer.deserialize(:media, :list, MicrosoftGraph.Model.SegmentMediaInner)
-     |> Deserializer.deserialize(:startDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:callee, :struct, MicrosoftGraph.Model.SegmentCallee)
+    |> Deserializer.deserialize(:caller, :struct, MicrosoftGraph.Model.SegmentCaller)
+    |> Deserializer.deserialize(:endDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:failureInfo, :struct, MicrosoftGraph.Model.SegmentFailureInfo)
+    |> Deserializer.deserialize(:media, :list, MicrosoftGraph.Model.SegmentMediaInner)
+    |> Deserializer.deserialize(:startDateTime, :datetime, nil)
   end
 end
-

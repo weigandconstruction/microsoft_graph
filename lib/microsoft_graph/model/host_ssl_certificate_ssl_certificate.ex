@@ -23,31 +23,34 @@ defmodule MicrosoftGraph.Model.HostSslCertificateSslCertificate do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :expirationDateTime => DateTime.t | nil,
-    :fingerprint => String.t | nil,
-    :firstSeenDateTime => DateTime.t | nil,
-    :issueDateTime => DateTime.t | nil,
-    :issuer => MicrosoftGraph.Model.SslCertificateIssuer.t | nil,
-    :lastSeenDateTime => DateTime.t | nil,
-    :relatedHosts => [MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t] | nil,
-    :serialNumber => String.t | nil,
-    :sha1 => String.t | nil,
-    :subject => MicrosoftGraph.Model.SslCertificateSubject.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :expirationDateTime => DateTime.t() | nil,
+          :fingerprint => String.t() | nil,
+          :firstSeenDateTime => DateTime.t() | nil,
+          :issueDateTime => DateTime.t() | nil,
+          :issuer => MicrosoftGraph.Model.SslCertificateIssuer.t() | nil,
+          :lastSeenDateTime => DateTime.t() | nil,
+          :relatedHosts => [MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t()] | nil,
+          :serialNumber => String.t() | nil,
+          :sha1 => String.t() | nil,
+          :subject => MicrosoftGraph.Model.SslCertificateSubject.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:expirationDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:firstSeenDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:issueDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:issuer, :struct, MicrosoftGraph.Model.SslCertificateIssuer)
-     |> Deserializer.deserialize(:lastSeenDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:relatedHosts, :list, MicrosoftGraph.Model.MicrosoftGraphSecurityHost)
-     |> Deserializer.deserialize(:subject, :struct, MicrosoftGraph.Model.SslCertificateSubject)
+    |> Deserializer.deserialize(:expirationDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:firstSeenDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:issueDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:issuer, :struct, MicrosoftGraph.Model.SslCertificateIssuer)
+    |> Deserializer.deserialize(:lastSeenDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :relatedHosts,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityHost
+    )
+    |> Deserializer.deserialize(:subject, :struct, MicrosoftGraph.Model.SslCertificateSubject)
   end
 end
-

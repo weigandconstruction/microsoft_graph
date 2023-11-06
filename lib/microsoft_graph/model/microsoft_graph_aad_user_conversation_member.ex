@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAadUserConversationMember do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -20,23 +20,26 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAadUserConversationMember do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :displayName => String.t | nil,
-    :roles => [String.t] | nil,
-    :visibleHistoryStartDateTime => DateTime.t | nil,
-    :email => String.t | nil,
-    :tenantId => String.t | nil,
-    :user => MicrosoftGraph.Model.AadUserConversationMemberUser.t | nil,
-    :userId => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :displayName => String.t() | nil,
+          :roles => [String.t()] | nil,
+          :visibleHistoryStartDateTime => DateTime.t() | nil,
+          :email => String.t() | nil,
+          :tenantId => String.t() | nil,
+          :user => MicrosoftGraph.Model.AadUserConversationMemberUser.t() | nil,
+          :userId => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:visibleHistoryStartDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:user, :struct, MicrosoftGraph.Model.AadUserConversationMemberUser)
+    |> Deserializer.deserialize(:visibleHistoryStartDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :user,
+      :struct,
+      MicrosoftGraph.Model.AadUserConversationMemberUser
+    )
   end
 end
-

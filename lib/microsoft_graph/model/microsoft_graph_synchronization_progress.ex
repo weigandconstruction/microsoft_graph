@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSynchronizationProgress do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,18 +16,17 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSynchronizationProgress do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :completedUnits => integer() | nil,
-    :progressObservationDateTime => DateTime.t | nil,
-    :totalUnits => integer() | nil,
-    :units => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :completedUnits => integer() | nil,
+          :progressObservationDateTime => DateTime.t() | nil,
+          :totalUnits => integer() | nil,
+          :units => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:progressObservationDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:progressObservationDateTime, :datetime, nil)
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphPhoneAuthenticationMethod do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,19 +16,27 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphPhoneAuthenticationMethod do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :phoneNumber => String.t | nil,
-    :phoneType => MicrosoftGraph.Model.PhoneAuthenticationMethodPhoneType.t | nil,
-    :smsSignInState => MicrosoftGraph.Model.PhoneAuthenticationMethodSmsSignInState.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :phoneNumber => String.t() | nil,
+          :phoneType => MicrosoftGraph.Model.PhoneAuthenticationMethodPhoneType.t() | nil,
+          :smsSignInState =>
+            MicrosoftGraph.Model.PhoneAuthenticationMethodSmsSignInState.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:phoneType, :struct, MicrosoftGraph.Model.PhoneAuthenticationMethodPhoneType)
-     |> Deserializer.deserialize(:smsSignInState, :struct, MicrosoftGraph.Model.PhoneAuthenticationMethodSmsSignInState)
+    |> Deserializer.deserialize(
+      :phoneType,
+      :struct,
+      MicrosoftGraph.Model.PhoneAuthenticationMethodPhoneType
+    )
+    |> Deserializer.deserialize(
+      :smsSignInState,
+      :struct,
+      MicrosoftGraph.Model.PhoneAuthenticationMethodSmsSignInState
+    )
   end
 end
-

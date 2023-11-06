@@ -22,29 +22,44 @@ defmodule MicrosoftGraph.Model.WorkbookRangeFormat do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :borders => [MicrosoftGraph.Model.MicrosoftGraphWorkbookRangeBorder.t] | nil,
-    :columnWidth => MicrosoftGraph.Model.WorkbookRangeFormatColumnWidth.t | nil,
-    :fill => MicrosoftGraph.Model.WorkbookRangeFormatFill.t | nil,
-    :font => MicrosoftGraph.Model.WorkbookRangeFormatFont.t | nil,
-    :horizontalAlignment => String.t | nil,
-    :protection => MicrosoftGraph.Model.WorkbookRangeFormatProtection.t | nil,
-    :rowHeight => MicrosoftGraph.Model.WorkbookRangeFormatRowHeight.t | nil,
-    :verticalAlignment => String.t | nil,
-    :wrapText => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :borders => [MicrosoftGraph.Model.MicrosoftGraphWorkbookRangeBorder.t()] | nil,
+          :columnWidth => MicrosoftGraph.Model.WorkbookRangeFormatColumnWidth.t() | nil,
+          :fill => MicrosoftGraph.Model.WorkbookRangeFormatFill.t() | nil,
+          :font => MicrosoftGraph.Model.WorkbookRangeFormatFont.t() | nil,
+          :horizontalAlignment => String.t() | nil,
+          :protection => MicrosoftGraph.Model.WorkbookRangeFormatProtection.t() | nil,
+          :rowHeight => MicrosoftGraph.Model.WorkbookRangeFormatRowHeight.t() | nil,
+          :verticalAlignment => String.t() | nil,
+          :wrapText => boolean() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:borders, :list, MicrosoftGraph.Model.MicrosoftGraphWorkbookRangeBorder)
-     |> Deserializer.deserialize(:columnWidth, :struct, MicrosoftGraph.Model.WorkbookRangeFormatColumnWidth)
-     |> Deserializer.deserialize(:fill, :struct, MicrosoftGraph.Model.WorkbookRangeFormatFill)
-     |> Deserializer.deserialize(:font, :struct, MicrosoftGraph.Model.WorkbookRangeFormatFont)
-     |> Deserializer.deserialize(:protection, :struct, MicrosoftGraph.Model.WorkbookRangeFormatProtection)
-     |> Deserializer.deserialize(:rowHeight, :struct, MicrosoftGraph.Model.WorkbookRangeFormatRowHeight)
+    |> Deserializer.deserialize(
+      :borders,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphWorkbookRangeBorder
+    )
+    |> Deserializer.deserialize(
+      :columnWidth,
+      :struct,
+      MicrosoftGraph.Model.WorkbookRangeFormatColumnWidth
+    )
+    |> Deserializer.deserialize(:fill, :struct, MicrosoftGraph.Model.WorkbookRangeFormatFill)
+    |> Deserializer.deserialize(:font, :struct, MicrosoftGraph.Model.WorkbookRangeFormatFont)
+    |> Deserializer.deserialize(
+      :protection,
+      :struct,
+      MicrosoftGraph.Model.WorkbookRangeFormatProtection
+    )
+    |> Deserializer.deserialize(
+      :rowHeight,
+      :struct,
+      MicrosoftGraph.Model.WorkbookRangeFormatRowHeight
+    )
   end
 end
-

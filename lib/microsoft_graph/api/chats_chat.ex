@@ -24,7 +24,14 @@ defmodule MicrosoftGraph.Api.ChatsChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec chats_chat_create_chat(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphChat.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphChat.t} | {:error, Tesla.Env.t}
+  @spec chats_chat_create_chat(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphChat.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphChat.t()}
+          | {:error, Tesla.Env.t()}
   def chats_chat_create_chat(connection, microsoft_graph_chat, _opts \\ []) do
     request =
       %{}
@@ -57,7 +64,10 @@ defmodule MicrosoftGraph.Api.ChatsChat do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec chats_chat_delete_chat(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec chats_chat_delete_chat(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def chats_chat_delete_chat(connection, chat_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -96,7 +106,10 @@ defmodule MicrosoftGraph.Api.ChatsChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec chats_chat_get_chat(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphChat.t} | {:error, Tesla.Env.t}
+  @spec chats_chat_get_chat(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphChat.t()}
+          | {:error, Tesla.Env.t()}
   def chats_chat_get_chat(connection, chat_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -141,7 +154,10 @@ defmodule MicrosoftGraph.Api.ChatsChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChatCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec chats_chat_list_chat(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphChatCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec chats_chat_list_chat(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphChatCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def chats_chat_list_chat(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -186,7 +202,15 @@ defmodule MicrosoftGraph.Api.ChatsChat do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphChat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec chats_chat_update_chat(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphChat.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphChat.t} | {:error, Tesla.Env.t}
+  @spec chats_chat_update_chat(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphChat.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphChat.t()}
+          | {:error, Tesla.Env.t()}
   def chats_chat_update_chat(connection, chat_id, microsoft_graph_chat, _opts \\ []) do
     request =
       %{}
@@ -219,7 +243,10 @@ defmodule MicrosoftGraph.Api.ChatsChat do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec chats_get_count61c7(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec chats_get_count61c7(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def chats_get_count61c7(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,

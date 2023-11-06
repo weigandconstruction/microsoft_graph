@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphStandardTimeZoneOffset do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,19 +17,23 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphStandardTimeZoneOffset do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :dayOccurrence => integer() | nil,
-    :dayOfWeek => MicrosoftGraph.Model.MicrosoftGraphStandardTimeZoneOffsetDayOfWeek.t | nil,
-    :month => integer() | nil,
-    :time => String.t | nil,
-    :year => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :dayOccurrence => integer() | nil,
+          :dayOfWeek =>
+            MicrosoftGraph.Model.MicrosoftGraphStandardTimeZoneOffsetDayOfWeek.t() | nil,
+          :month => integer() | nil,
+          :time => String.t() | nil,
+          :year => integer() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:dayOfWeek, :struct, MicrosoftGraph.Model.MicrosoftGraphStandardTimeZoneOffsetDayOfWeek)
+    |> Deserializer.deserialize(
+      :dayOfWeek,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphStandardTimeZoneOffsetDayOfWeek
+    )
   end
 end
-

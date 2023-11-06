@@ -16,20 +16,31 @@ defmodule MicrosoftGraph.Model.WorkbookChartAxes do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :categoryAxis => MicrosoftGraph.Model.WorkbookChartAxesCategoryAxis.t | nil,
-    :seriesAxis => MicrosoftGraph.Model.WorkbookChartAxesSeriesAxis.t | nil,
-    :valueAxis => MicrosoftGraph.Model.WorkbookChartAxesValueAxis.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :categoryAxis => MicrosoftGraph.Model.WorkbookChartAxesCategoryAxis.t() | nil,
+          :seriesAxis => MicrosoftGraph.Model.WorkbookChartAxesSeriesAxis.t() | nil,
+          :valueAxis => MicrosoftGraph.Model.WorkbookChartAxesValueAxis.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:categoryAxis, :struct, MicrosoftGraph.Model.WorkbookChartAxesCategoryAxis)
-     |> Deserializer.deserialize(:seriesAxis, :struct, MicrosoftGraph.Model.WorkbookChartAxesSeriesAxis)
-     |> Deserializer.deserialize(:valueAxis, :struct, MicrosoftGraph.Model.WorkbookChartAxesValueAxis)
+    |> Deserializer.deserialize(
+      :categoryAxis,
+      :struct,
+      MicrosoftGraph.Model.WorkbookChartAxesCategoryAxis
+    )
+    |> Deserializer.deserialize(
+      :seriesAxis,
+      :struct,
+      MicrosoftGraph.Model.WorkbookChartAxesSeriesAxis
+    )
+    |> Deserializer.deserialize(
+      :valueAxis,
+      :struct,
+      MicrosoftGraph.Model.WorkbookChartAxesValueAxis
+    )
   end
 end
-

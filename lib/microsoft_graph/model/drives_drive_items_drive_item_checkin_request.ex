@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemCheckinRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,12 +13,11 @@ defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemCheckinRequest do
   ]
 
   @type t :: %__MODULE__{
-    :checkInAs => String.t | nil,
-    :comment => String.t | nil
-  }
+          :checkInAs => String.t() | nil,
+          :comment => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

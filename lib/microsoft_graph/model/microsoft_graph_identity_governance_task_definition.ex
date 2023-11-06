@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskDefinition do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,22 +19,31 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskDefinition do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :category => MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleTaskCategory.t | nil,
-    :continueOnError => boolean() | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :parameters => [MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceParameter.t] | nil,
-    :version => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :category =>
+            MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleTaskCategory.t() | nil,
+          :continueOnError => boolean() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :parameters =>
+            [MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceParameter.t()] | nil,
+          :version => integer() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:category, :struct, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleTaskCategory)
-     |> Deserializer.deserialize(:parameters, :list, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceParameter)
+    |> Deserializer.deserialize(
+      :category,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleTaskCategory
+    )
+    |> Deserializer.deserialize(
+      :parameters,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceParameter
+    )
   end
 end
-

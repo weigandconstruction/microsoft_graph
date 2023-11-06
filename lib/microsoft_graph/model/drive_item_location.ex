@@ -15,19 +15,30 @@ defmodule MicrosoftGraph.Model.DriveItemLocation do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :altitude => MicrosoftGraph.Model.MicrosoftGraphGeoCoordinatesAltitude.t | nil,
-    :latitude => MicrosoftGraph.Model.MicrosoftGraphGeoCoordinatesLatitude.t | nil,
-    :longitude => MicrosoftGraph.Model.MicrosoftGraphGeoCoordinatesLongitude.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :altitude => MicrosoftGraph.Model.MicrosoftGraphGeoCoordinatesAltitude.t() | nil,
+          :latitude => MicrosoftGraph.Model.MicrosoftGraphGeoCoordinatesLatitude.t() | nil,
+          :longitude => MicrosoftGraph.Model.MicrosoftGraphGeoCoordinatesLongitude.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:altitude, :struct, MicrosoftGraph.Model.MicrosoftGraphGeoCoordinatesAltitude)
-     |> Deserializer.deserialize(:latitude, :struct, MicrosoftGraph.Model.MicrosoftGraphGeoCoordinatesLatitude)
-     |> Deserializer.deserialize(:longitude, :struct, MicrosoftGraph.Model.MicrosoftGraphGeoCoordinatesLongitude)
+    |> Deserializer.deserialize(
+      :altitude,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphGeoCoordinatesAltitude
+    )
+    |> Deserializer.deserialize(
+      :latitude,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphGeoCoordinatesLatitude
+    )
+    |> Deserializer.deserialize(
+      :longitude,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphGeoCoordinatesLongitude
+    )
   end
 end
-

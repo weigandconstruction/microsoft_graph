@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphInformationProtection do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,17 +14,26 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphInformationProtection do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :bitlocker => MicrosoftGraph.Model.MicrosoftGraphInformationProtectionBitlocker.t | nil,
-    :threatAssessmentRequests => [MicrosoftGraph.Model.MicrosoftGraphThreatAssessmentRequest.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :bitlocker =>
+            MicrosoftGraph.Model.MicrosoftGraphInformationProtectionBitlocker.t() | nil,
+          :threatAssessmentRequests =>
+            [MicrosoftGraph.Model.MicrosoftGraphThreatAssessmentRequest.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:bitlocker, :struct, MicrosoftGraph.Model.MicrosoftGraphInformationProtectionBitlocker)
-     |> Deserializer.deserialize(:threatAssessmentRequests, :list, MicrosoftGraph.Model.MicrosoftGraphThreatAssessmentRequest)
+    |> Deserializer.deserialize(
+      :bitlocker,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphInformationProtectionBitlocker
+    )
+    |> Deserializer.deserialize(
+      :threatAssessmentRequests,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphThreatAssessmentRequest
+    )
   end
 end
-

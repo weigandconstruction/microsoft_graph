@@ -18,20 +18,23 @@ defmodule MicrosoftGraph.Model.WhoisBaseRecordBilling do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :address => MicrosoftGraph.Model.MicrosoftGraphSecurityWhoisContactAddress.t | nil,
-    :email => String.t | nil,
-    :fax => String.t | nil,
-    :name => String.t | nil,
-    :organization => String.t | nil,
-    :telephone => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :address => MicrosoftGraph.Model.MicrosoftGraphSecurityWhoisContactAddress.t() | nil,
+          :email => String.t() | nil,
+          :fax => String.t() | nil,
+          :name => String.t() | nil,
+          :organization => String.t() | nil,
+          :telephone => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:address, :struct, MicrosoftGraph.Model.MicrosoftGraphSecurityWhoisContactAddress)
+    |> Deserializer.deserialize(
+      :address,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityWhoisContactAddress
+    )
   end
 end
-

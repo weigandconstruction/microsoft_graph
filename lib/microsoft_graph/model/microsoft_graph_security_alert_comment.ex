@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityAlertComment do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,17 +15,16 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityAlertComment do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :comment => String.t | nil,
-    :createdByDisplayName => String.t | nil,
-    :createdDateTime => DateTime.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :comment => String.t() | nil,
+          :createdByDisplayName => String.t() | nil,
+          :createdDateTime => DateTime.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
   end
 end
-

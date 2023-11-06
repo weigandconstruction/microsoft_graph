@@ -24,8 +24,19 @@ defmodule MicrosoftGraph.Api.SubscriptionsSubscription do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSubscription.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec subscriptions_subscription_create_subscription(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphSubscription.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSubscription.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def subscriptions_subscription_create_subscription(connection, microsoft_graph_subscription, _opts \\ []) do
+  @spec subscriptions_subscription_create_subscription(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphSubscription.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSubscription.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def subscriptions_subscription_create_subscription(
+        connection,
+        microsoft_graph_subscription,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -58,7 +69,10 @@ defmodule MicrosoftGraph.Api.SubscriptionsSubscription do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec subscriptions_subscription_delete_subscription(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec subscriptions_subscription_delete_subscription(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def subscriptions_subscription_delete_subscription(connection, subscription_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -96,7 +110,10 @@ defmodule MicrosoftGraph.Api.SubscriptionsSubscription do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSubscription.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec subscriptions_subscription_get_subscription(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSubscription.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec subscriptions_subscription_get_subscription(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSubscription.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def subscriptions_subscription_get_subscription(connection, subscription_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query
@@ -134,7 +151,10 @@ defmodule MicrosoftGraph.Api.SubscriptionsSubscription do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSubscriptionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec subscriptions_subscription_list_subscription(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSubscriptionCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec subscriptions_subscription_list_subscription(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSubscriptionCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def subscriptions_subscription_list_subscription(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -173,8 +193,21 @@ defmodule MicrosoftGraph.Api.SubscriptionsSubscription do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSubscription.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec subscriptions_subscription_update_subscription(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphSubscription.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSubscription.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def subscriptions_subscription_update_subscription(connection, subscription_id, microsoft_graph_subscription, _opts \\ []) do
+  @spec subscriptions_subscription_update_subscription(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSubscription.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSubscription.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def subscriptions_subscription_update_subscription(
+        connection,
+        subscription_id,
+        microsoft_graph_subscription,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

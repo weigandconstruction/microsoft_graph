@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphPlannerChecklistItem do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,20 +17,24 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphPlannerChecklistItem do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :isChecked => boolean() | nil,
-    :lastModifiedBy => MicrosoftGraph.Model.MicrosoftGraphPlannerExternalReferenceLastModifiedBy.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :orderHint => String.t | nil,
-    :title => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :isChecked => boolean() | nil,
+          :lastModifiedBy =>
+            MicrosoftGraph.Model.MicrosoftGraphPlannerExternalReferenceLastModifiedBy.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :orderHint => String.t() | nil,
+          :title => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:lastModifiedBy, :struct, MicrosoftGraph.Model.MicrosoftGraphPlannerExternalReferenceLastModifiedBy)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :lastModifiedBy,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphPlannerExternalReferenceLastModifiedBy
+    )
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
   end
 end
-

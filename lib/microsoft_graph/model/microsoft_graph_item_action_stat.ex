@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphItemActionStat do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphItemActionStat do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :actionCount => integer() | nil,
-    :actorCount => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :actionCount => integer() | nil,
+          :actorCount => integer() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

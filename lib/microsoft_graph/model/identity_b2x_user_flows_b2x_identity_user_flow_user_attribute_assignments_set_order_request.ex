@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.IdentityB2xUserFlowsB2xIdentityUserFlowUserAttributeAssignmentsSetOrderRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,14 +12,19 @@ defmodule MicrosoftGraph.Model.IdentityB2xUserFlowsB2xIdentityUserFlowUserAttrib
   ]
 
   @type t :: %__MODULE__{
-    :newAssignmentOrder => MicrosoftGraph.Model.IdentityB2xUserFlowsB2xIdentityUserFlowUserAttributeAssignmentsGetOrder2XxResponse.t | nil
-  }
+          :newAssignmentOrder =>
+            MicrosoftGraph.Model.IdentityB2xUserFlowsB2xIdentityUserFlowUserAttributeAssignmentsGetOrder2XxResponse.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:newAssignmentOrder, :struct, MicrosoftGraph.Model.IdentityB2xUserFlowsB2xIdentityUserFlowUserAttributeAssignmentsGetOrder2XxResponse)
+    |> Deserializer.deserialize(
+      :newAssignmentOrder,
+      :struct,
+      MicrosoftGraph.Model.IdentityB2xUserFlowsB2xIdentityUserFlowUserAttributeAssignmentsGetOrder2XxResponse
+    )
   end
 end
-

@@ -29,7 +29,10 @@ defmodule MicrosoftGraph.Api.DevicesFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfDevice.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec devices_delta(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfDevice.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec devices_delta(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfDevice.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def devices_delta(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,

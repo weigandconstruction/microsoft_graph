@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.CollectionOfItemActivityStatAllOfValueInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -23,33 +23,40 @@ defmodule MicrosoftGraph.Model.CollectionOfItemActivityStatAllOfValueInner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :access => MicrosoftGraph.Model.ItemActivityStatAccess.t | nil,
-    :activities => [MicrosoftGraph.Model.MicrosoftGraphItemActivity.t] | nil,
-    :create => MicrosoftGraph.Model.ItemActivityStatCreate.t | nil,
-    :delete => MicrosoftGraph.Model.ItemActivityStatDelete.t | nil,
-    :edit => MicrosoftGraph.Model.ItemActivityStatEdit.t | nil,
-    :endDateTime => DateTime.t | nil,
-    :incompleteData => MicrosoftGraph.Model.ItemActivityStatIncompleteData.t | nil,
-    :isTrending => boolean() | nil,
-    :move => MicrosoftGraph.Model.ItemActivityStatMove.t | nil,
-    :startDateTime => DateTime.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :access => MicrosoftGraph.Model.ItemActivityStatAccess.t() | nil,
+          :activities => [MicrosoftGraph.Model.MicrosoftGraphItemActivity.t()] | nil,
+          :create => MicrosoftGraph.Model.ItemActivityStatCreate.t() | nil,
+          :delete => MicrosoftGraph.Model.ItemActivityStatDelete.t() | nil,
+          :edit => MicrosoftGraph.Model.ItemActivityStatEdit.t() | nil,
+          :endDateTime => DateTime.t() | nil,
+          :incompleteData => MicrosoftGraph.Model.ItemActivityStatIncompleteData.t() | nil,
+          :isTrending => boolean() | nil,
+          :move => MicrosoftGraph.Model.ItemActivityStatMove.t() | nil,
+          :startDateTime => DateTime.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:access, :struct, MicrosoftGraph.Model.ItemActivityStatAccess)
-     |> Deserializer.deserialize(:activities, :list, MicrosoftGraph.Model.MicrosoftGraphItemActivity)
-     |> Deserializer.deserialize(:create, :struct, MicrosoftGraph.Model.ItemActivityStatCreate)
-     |> Deserializer.deserialize(:delete, :struct, MicrosoftGraph.Model.ItemActivityStatDelete)
-     |> Deserializer.deserialize(:edit, :struct, MicrosoftGraph.Model.ItemActivityStatEdit)
-     |> Deserializer.deserialize(:endDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:incompleteData, :struct, MicrosoftGraph.Model.ItemActivityStatIncompleteData)
-     |> Deserializer.deserialize(:move, :struct, MicrosoftGraph.Model.ItemActivityStatMove)
-     |> Deserializer.deserialize(:startDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:access, :struct, MicrosoftGraph.Model.ItemActivityStatAccess)
+    |> Deserializer.deserialize(
+      :activities,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphItemActivity
+    )
+    |> Deserializer.deserialize(:create, :struct, MicrosoftGraph.Model.ItemActivityStatCreate)
+    |> Deserializer.deserialize(:delete, :struct, MicrosoftGraph.Model.ItemActivityStatDelete)
+    |> Deserializer.deserialize(:edit, :struct, MicrosoftGraph.Model.ItemActivityStatEdit)
+    |> Deserializer.deserialize(:endDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :incompleteData,
+      :struct,
+      MicrosoftGraph.Model.ItemActivityStatIncompleteData
+    )
+    |> Deserializer.deserialize(:move, :struct, MicrosoftGraph.Model.ItemActivityStatMove)
+    |> Deserializer.deserialize(:startDateTime, :datetime, nil)
   end
 end
-

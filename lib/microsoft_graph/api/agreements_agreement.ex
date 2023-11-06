@@ -23,7 +23,14 @@ defmodule MicrosoftGraph.Api.AgreementsAgreement do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAgreement.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec agreements_agreement_create_agreement(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphAgreement.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreement.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec agreements_agreement_create_agreement(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphAgreement.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreement.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def agreements_agreement_create_agreement(connection, microsoft_graph_agreement, _opts \\ []) do
     request =
       %{}
@@ -56,7 +63,10 @@ defmodule MicrosoftGraph.Api.AgreementsAgreement do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec agreements_agreement_delete_agreement(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec agreements_agreement_delete_agreement(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def agreements_agreement_delete_agreement(connection, agreement_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -93,7 +103,10 @@ defmodule MicrosoftGraph.Api.AgreementsAgreement do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAgreement.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec agreements_agreement_get_agreement(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreement.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec agreements_agreement_get_agreement(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreement.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def agreements_agreement_get_agreement(connection, agreement_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query
@@ -130,7 +143,10 @@ defmodule MicrosoftGraph.Api.AgreementsAgreement do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec agreements_agreement_list_agreement(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec agreements_agreement_list_agreement(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreementCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def agreements_agreement_list_agreement(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -168,8 +184,21 @@ defmodule MicrosoftGraph.Api.AgreementsAgreement do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAgreement.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec agreements_agreement_update_agreement(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphAgreement.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreement.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def agreements_agreement_update_agreement(connection, agreement_id, microsoft_graph_agreement, _opts \\ []) do
+  @spec agreements_agreement_update_agreement(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAgreement.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAgreement.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def agreements_agreement_update_agreement(
+        connection,
+        agreement_id,
+        microsoft_graph_agreement,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

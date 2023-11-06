@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphEducationItemBody do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,20 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphEducationItemBody do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :content => String.t | nil,
-    :contentType => MicrosoftGraph.Model.MicrosoftGraphEducationItemBodyContentType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :content => String.t() | nil,
+          :contentType =>
+            MicrosoftGraph.Model.MicrosoftGraphEducationItemBodyContentType.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:contentType, :struct, MicrosoftGraph.Model.MicrosoftGraphEducationItemBodyContentType)
+    |> Deserializer.deserialize(
+      :contentType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphEducationItemBodyContentType
+    )
   end
 end
-

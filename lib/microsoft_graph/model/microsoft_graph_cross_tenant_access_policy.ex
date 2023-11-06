@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicy do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,23 +19,32 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicy do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :deletedDateTime => DateTime.t | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :allowedCloudEndpoints => [String.t] | nil,
-    :default => MicrosoftGraph.Model.CrossTenantAccessPolicyDefault.t | nil,
-    :partners => [MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyConfigurationPartner.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :deletedDateTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :allowedCloudEndpoints => [String.t()] | nil,
+          :default => MicrosoftGraph.Model.CrossTenantAccessPolicyDefault.t() | nil,
+          :partners =>
+            [MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyConfigurationPartner.t()]
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:deletedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:default, :struct, MicrosoftGraph.Model.CrossTenantAccessPolicyDefault)
-     |> Deserializer.deserialize(:partners, :list, MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyConfigurationPartner)
+    |> Deserializer.deserialize(:deletedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :default,
+      :struct,
+      MicrosoftGraph.Model.CrossTenantAccessPolicyDefault
+    )
+    |> Deserializer.deserialize(
+      :partners,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyConfigurationPartner
+    )
   end
 end
-

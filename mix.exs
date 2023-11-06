@@ -42,10 +42,10 @@ defmodule MicrosoftGraph.Mixfile do
     ]
   end
 
-   defp package do
-      [
-        name: "microsoft_graph",
-        files: ~w(.formatter.exs config lib mix.exs README* LICENSE*),
-      ]
+  defp package do
+    [
+      name: "microsoft_graph",
+      files: ~w(.formatter.exs config lib mix.exs README* LICENSE*)
+    ]
   end
 end

@@ -16,15 +16,14 @@ defmodule MicrosoftGraph.Model.SubscribedSkuPrepaidUnits do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :enabled => integer() | nil,
-    :lockedOut => integer() | nil,
-    :suspended => integer() | nil,
-    :warning => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :enabled => integer() | nil,
+          :lockedOut => integer() | nil,
+          :suspended => integer() | nil,
+          :warning => integer() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

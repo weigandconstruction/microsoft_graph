@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphOnPremisesProvisioningError do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,18 +16,17 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphOnPremisesProvisioningError do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :category => String.t | nil,
-    :occurredDateTime => DateTime.t | nil,
-    :propertyCausingError => String.t | nil,
-    :value => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :category => String.t() | nil,
+          :occurredDateTime => DateTime.t() | nil,
+          :propertyCausingError => String.t() | nil,
+          :value => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:occurredDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:occurredDateTime, :datetime, nil)
   end
 end
-

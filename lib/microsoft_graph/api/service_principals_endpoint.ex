@@ -24,8 +24,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsEndpoint do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEndpoint.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_create_endpoints(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphEndpoint.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphEndpoint.t} | {:error, Tesla.Env.t}
-  def service_principals_create_endpoints(connection, service_principal_id, microsoft_graph_endpoint, _opts \\ []) do
+  @spec service_principals_create_endpoints(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphEndpoint.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphEndpoint.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_create_endpoints(
+        connection,
+        service_principal_id,
+        microsoft_graph_endpoint,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -58,8 +71,16 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsEndpoint do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_delete_endpoints(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_delete_endpoints(connection, service_principal_id, endpoint_id, opts \\ []) do
+  @spec service_principals_delete_endpoints(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_delete_endpoints(
+        connection,
+        service_principal_id,
+        endpoint_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -96,7 +117,10 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsEndpoint do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_endpoints_get_count_c0e0(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec service_principals_endpoints_get_count_c0e0(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def service_principals_endpoints_get_count_c0e0(connection, service_principal_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -136,7 +160,10 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsEndpoint do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEndpoint.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_get_endpoints(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphEndpoint.t} | {:error, Tesla.Env.t}
+  @spec service_principals_get_endpoints(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphEndpoint.t()}
+          | {:error, Tesla.Env.t()}
   def service_principals_get_endpoints(connection, service_principal_id, endpoint_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -181,7 +208,10 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsEndpoint do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEndpointCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_list_endpoints(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphEndpointCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec service_principals_list_endpoints(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphEndpointCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def service_principals_list_endpoints(connection, service_principal_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -226,8 +256,23 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsEndpoint do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEndpoint.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_update_endpoints(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphEndpoint.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphEndpoint.t} | {:error, Tesla.Env.t}
-  def service_principals_update_endpoints(connection, service_principal_id, endpoint_id, microsoft_graph_endpoint, _opts \\ []) do
+  @spec service_principals_update_endpoints(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphEndpoint.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphEndpoint.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_update_endpoints(
+        connection,
+        service_principal_id,
+        endpoint_id,
+        microsoft_graph_endpoint,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

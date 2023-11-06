@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphMessageSecurityState do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -21,23 +21,22 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphMessageSecurityState do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :connectingIP => String.t | nil,
-    :deliveryAction => String.t | nil,
-    :deliveryLocation => String.t | nil,
-    :directionality => String.t | nil,
-    :internetMessageId => String.t | nil,
-    :messageFingerprint => String.t | nil,
-    :messageReceivedDateTime => DateTime.t | nil,
-    :messageSubject => String.t | nil,
-    :networkMessageId => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :connectingIP => String.t() | nil,
+          :deliveryAction => String.t() | nil,
+          :deliveryLocation => String.t() | nil,
+          :directionality => String.t() | nil,
+          :internetMessageId => String.t() | nil,
+          :messageFingerprint => String.t() | nil,
+          :messageReceivedDateTime => DateTime.t() | nil,
+          :messageSubject => String.t() | nil,
+          :networkMessageId => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:messageReceivedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:messageReceivedDateTime, :datetime, nil)
   end
 end
-

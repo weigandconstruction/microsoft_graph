@@ -23,7 +23,10 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_delete_lifecycle_workflows(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_governance_delete_lifecycle_workflows(Tesla.Env.client(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_governance_delete_lifecycle_workflows(connection, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -60,7 +63,11 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleWorkflowsContainer.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_get_lifecycle_workflows(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleWorkflowsContainer.t} | {:error, Tesla.Env.t}
+  @spec identity_governance_get_lifecycle_workflows(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleWorkflowsContainer.t()}
+          | {:error, Tesla.Env.t()}
   def identity_governance_get_lifecycle_workflows(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -98,8 +105,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceCustomTaskExtension.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_create_custom_task_extensions(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceCustomTaskExtension.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceCustomTaskExtension.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_create_custom_task_extensions(connection, microsoft_graph_identity_governance_custom_task_extension, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_create_custom_task_extensions(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceCustomTaskExtension.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceCustomTaskExtension.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_create_custom_task_extensions(
+        connection,
+        microsoft_graph_identity_governance_custom_task_extension,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -131,8 +149,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflow.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_create_workflows(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflow.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflow.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_create_workflows(connection, microsoft_graph_identity_governance_workflow, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_create_workflows(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflow.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflow.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_create_workflows(
+        connection,
+        microsoft_graph_identity_governance_workflow,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -166,8 +195,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_custom_task_extensions_created_by_get_mailbox_settings(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_custom_task_extensions_created_by_get_mailbox_settings(connection, custom_task_extension_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_custom_task_extensions_created_by_get_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_custom_task_extensions_created_by_get_mailbox_settings(
+        connection,
+        custom_task_extension_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -176,7 +216,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/customTaskExtensions/#{custom_task_extension_id}/createdBy/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/customTaskExtensions/#{custom_task_extension_id}/createdBy/mailboxSettings"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -211,8 +253,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_custom_task_extensions_created_by_list_service_provisioning_errors(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_custom_task_extensions_created_by_list_service_provisioning_errors(connection, custom_task_extension_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_custom_task_extensions_created_by_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_custom_task_extensions_created_by_list_service_provisioning_errors(
+        connection,
+        custom_task_extension_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -227,7 +280,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/customTaskExtensions/#{custom_task_extension_id}/createdBy/serviceProvisioningErrors")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/customTaskExtensions/#{custom_task_extension_id}/createdBy/serviceProvisioningErrors"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -256,8 +311,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_custom_task_extensions_created_by_service_provisioning_errors_get_count74e6(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_custom_task_extensions_created_by_service_provisioning_errors_get_count74e6(connection, custom_task_extension_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_custom_task_extensions_created_by_service_provisioning_errors_get_count74e6(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_custom_task_extensions_created_by_service_provisioning_errors_get_count74e6(
+        connection,
+        custom_task_extension_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -266,7 +332,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/customTaskExtensions/#{custom_task_extension_id}/createdBy/serviceProvisioningErrors/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/customTaskExtensions/#{custom_task_extension_id}/createdBy/serviceProvisioningErrors/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -294,12 +362,27 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_custom_task_extensions_created_by_update_mailbox_settings(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_custom_task_extensions_created_by_update_mailbox_settings(connection, custom_task_extension_id, microsoft_graph_mailbox_settings, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_custom_task_extensions_created_by_update_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_custom_task_extensions_created_by_update_mailbox_settings(
+        connection,
+        custom_task_extension_id,
+        microsoft_graph_mailbox_settings,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/lifecycleWorkflows/customTaskExtensions/#{custom_task_extension_id}/createdBy/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/customTaskExtensions/#{custom_task_extension_id}/createdBy/mailboxSettings"
+      )
       |> add_param(:body, :body, microsoft_graph_mailbox_settings)
       |> Enum.into([])
 
@@ -327,8 +410,17 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_custom_task_extensions_get_count_b240(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_custom_task_extensions_get_count_b240(connection, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_custom_task_extensions_get_count_b240(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_custom_task_extensions_get_count_b240(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -367,8 +459,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_custom_task_extensions_get_created_by(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_custom_task_extensions_get_created_by(connection, custom_task_extension_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_custom_task_extensions_get_created_by(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_custom_task_extensions_get_created_by(
+        connection,
+        custom_task_extension_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -377,7 +480,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/customTaskExtensions/#{custom_task_extension_id}/createdBy")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/customTaskExtensions/#{custom_task_extension_id}/createdBy"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -407,8 +512,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_custom_task_extensions_get_last_modified_by(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_custom_task_extensions_get_last_modified_by(connection, custom_task_extension_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_custom_task_extensions_get_last_modified_by(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_custom_task_extensions_get_last_modified_by(
+        connection,
+        custom_task_extension_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -417,7 +533,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/customTaskExtensions/#{custom_task_extension_id}/lastModifiedBy")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/customTaskExtensions/#{custom_task_extension_id}/lastModifiedBy"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -447,8 +565,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_custom_task_extensions_last_modified_by_get_mailbox_settings(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_custom_task_extensions_last_modified_by_get_mailbox_settings(connection, custom_task_extension_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_custom_task_extensions_last_modified_by_get_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_custom_task_extensions_last_modified_by_get_mailbox_settings(
+        connection,
+        custom_task_extension_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -457,7 +586,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/customTaskExtensions/#{custom_task_extension_id}/lastModifiedBy/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/customTaskExtensions/#{custom_task_extension_id}/lastModifiedBy/mailboxSettings"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -492,8 +623,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_custom_task_extensions_last_modified_by_list_service_provisioning_errors(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_custom_task_extensions_last_modified_by_list_service_provisioning_errors(connection, custom_task_extension_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_custom_task_extensions_last_modified_by_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_custom_task_extensions_last_modified_by_list_service_provisioning_errors(
+        connection,
+        custom_task_extension_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -508,7 +650,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/customTaskExtensions/#{custom_task_extension_id}/lastModifiedBy/serviceProvisioningErrors")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/customTaskExtensions/#{custom_task_extension_id}/lastModifiedBy/serviceProvisioningErrors"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -537,8 +681,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_custom_task_extensions_last_modified_by_service_provisioning_errors_get_count8d38(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_custom_task_extensions_last_modified_by_service_provisioning_errors_get_count8d38(connection, custom_task_extension_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_custom_task_extensions_last_modified_by_service_provisioning_errors_get_count8d38(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_custom_task_extensions_last_modified_by_service_provisioning_errors_get_count8d38(
+        connection,
+        custom_task_extension_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -547,7 +702,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/customTaskExtensions/#{custom_task_extension_id}/lastModifiedBy/serviceProvisioningErrors/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/customTaskExtensions/#{custom_task_extension_id}/lastModifiedBy/serviceProvisioningErrors/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -575,12 +732,27 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_custom_task_extensions_last_modified_by_update_mailbox_settings(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_custom_task_extensions_last_modified_by_update_mailbox_settings(connection, custom_task_extension_id, microsoft_graph_mailbox_settings, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_custom_task_extensions_last_modified_by_update_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_custom_task_extensions_last_modified_by_update_mailbox_settings(
+        connection,
+        custom_task_extension_id,
+        microsoft_graph_mailbox_settings,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/lifecycleWorkflows/customTaskExtensions/#{custom_task_extension_id}/lastModifiedBy/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/customTaskExtensions/#{custom_task_extension_id}/lastModifiedBy/mailboxSettings"
+      )
       |> add_param(:body, :body, microsoft_graph_mailbox_settings)
       |> Enum.into([])
 
@@ -609,8 +781,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_delete_custom_task_extensions(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_delete_custom_task_extensions(connection, custom_task_extension_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_delete_custom_task_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_delete_custom_task_extensions(
+        connection,
+        custom_task_extension_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -618,7 +801,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:delete)
-      |> url("/identityGovernance/lifecycleWorkflows/customTaskExtensions/#{custom_task_extension_id}")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/customTaskExtensions/#{custom_task_extension_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -645,7 +830,13 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_delete_deleted_items(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_governance_lifecycle_workflows_delete_deleted_items(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_governance_lifecycle_workflows_delete_deleted_items(connection, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -683,8 +874,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_delete_workflows(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_delete_workflows(connection, workflow_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_delete_workflows(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_delete_workflows(
+        connection,
+        workflow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -721,8 +923,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_delete_workflows(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_delete_workflows(connection, workflow_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_delete_workflows(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_delete_workflows(
+        connection,
+        workflow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -760,8 +973,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflow.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_get_workflows(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflow.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_get_workflows(connection, workflow_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_get_workflows(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflow.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_get_workflows(
+        connection,
+        workflow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -805,7 +1029,14 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_list_workflows(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec identity_governance_lifecycle_workflows_deleted_items_list_workflows(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def identity_governance_lifecycle_workflows_deleted_items_list_workflows(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -849,8 +1080,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_create_tasks(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_create_tasks(connection, workflow_id, microsoft_graph_identity_governance_task, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_create_tasks(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_create_tasks(
+        connection,
+        workflow_id,
+        microsoft_graph_identity_governance_task,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -884,8 +1128,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_created_by_get_mailbox_settings(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_created_by_get_mailbox_settings(connection, workflow_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_created_by_get_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_created_by_get_mailbox_settings(
+        connection,
+        workflow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -894,7 +1149,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/createdBy/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/createdBy/mailboxSettings"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -929,8 +1186,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_created_by_list_service_provisioning_errors(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_created_by_list_service_provisioning_errors(connection, workflow_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_created_by_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_created_by_list_service_provisioning_errors(
+        connection,
+        workflow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -945,7 +1213,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/createdBy/serviceProvisioningErrors")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/createdBy/serviceProvisioningErrors"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -974,8 +1244,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_created_by_service_provisioning_errors_get_count1081(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_created_by_service_provisioning_errors_get_count1081(connection, workflow_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_created_by_service_provisioning_errors_get_count1081(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_created_by_service_provisioning_errors_get_count1081(
+        connection,
+        workflow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -984,7 +1265,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/createdBy/serviceProvisioningErrors/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/createdBy/serviceProvisioningErrors/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1012,12 +1295,27 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_created_by_update_mailbox_settings(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_created_by_update_mailbox_settings(connection, workflow_id, microsoft_graph_mailbox_settings, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_created_by_update_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_created_by_update_mailbox_settings(
+        connection,
+        workflow_id,
+        microsoft_graph_mailbox_settings,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/createdBy/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/createdBy/mailboxSettings"
+      )
       |> add_param(:body, :body, microsoft_graph_mailbox_settings)
       |> Enum.into([])
 
@@ -1046,8 +1344,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_delete_tasks(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_delete_tasks(connection, workflow_id, task_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_delete_tasks(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_delete_tasks(
+        connection,
+        workflow_id,
+        task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1055,7 +1366,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:delete)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/tasks/#{task_id}")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/tasks/#{task_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1084,8 +1397,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_execution_scope_get_count_e524(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_execution_scope_get_count_e524(connection, workflow_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_execution_scope_get_count_e524(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_execution_scope_get_count_e524(
+        connection,
+        workflow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1094,7 +1418,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/executionScope/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/executionScope/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1122,8 +1448,17 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_get_count4207(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_get_count4207(connection, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_get_count4207(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_get_count4207(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1162,8 +1497,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_get_created_by(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_get_created_by(connection, workflow_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_get_created_by(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_get_created_by(
+        connection,
+        workflow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1172,7 +1518,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/createdBy")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/createdBy"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1203,8 +1551,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResult.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_get_execution_scope(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResult.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_get_execution_scope(connection, workflow_id, user_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_get_execution_scope(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResult.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_get_execution_scope(
+        connection,
+        workflow_id,
+        user_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1213,7 +1574,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/executionScope/#{user_processing_result_id}")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/executionScope/#{user_processing_result_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1243,8 +1606,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_get_last_modified_by(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_get_last_modified_by(connection, workflow_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_get_last_modified_by(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_get_last_modified_by(
+        connection,
+        workflow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1253,7 +1627,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/lastModifiedBy")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/lastModifiedBy"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1284,8 +1660,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceRun.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_get_runs(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceRun.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_get_runs(connection, workflow_id, run_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_get_runs(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceRun.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_get_runs(
+        connection,
+        workflow_id,
+        run_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1294,7 +1683,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1325,8 +1716,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskReport.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_get_task_reports(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskReport.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_get_task_reports(connection, workflow_id, task_report_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_get_task_reports(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskReport.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_get_task_reports(
+        connection,
+        workflow_id,
+        task_report_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1335,7 +1739,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/taskReports/#{task_report_id}")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/taskReports/#{task_report_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1366,8 +1772,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_get_tasks(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_get_tasks(connection, workflow_id, task_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_get_tasks(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_get_tasks(
+        connection,
+        workflow_id,
+        task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1376,7 +1795,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/tasks/#{task_id}")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/tasks/#{task_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1407,8 +1828,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResult.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_get_user_processing_results(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResult.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_get_user_processing_results(connection, workflow_id, user_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_get_user_processing_results(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResult.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_get_user_processing_results(
+        connection,
+        workflow_id,
+        user_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1417,7 +1851,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1448,8 +1884,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowVersion.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_get_versions(Tesla.Env.client, String.t, integer(), keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowVersion.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_get_versions(connection, workflow_id, workflow_version_version_number, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_get_versions(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowVersion.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_get_versions(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1458,7 +1907,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1488,8 +1939,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_last_modified_by_get_mailbox_settings(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_last_modified_by_get_mailbox_settings(connection, workflow_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_last_modified_by_get_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_last_modified_by_get_mailbox_settings(
+        connection,
+        workflow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1498,7 +1960,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/lastModifiedBy/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/lastModifiedBy/mailboxSettings"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1533,8 +1997,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_last_modified_by_list_service_provisioning_errors(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_last_modified_by_list_service_provisioning_errors(connection, workflow_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_last_modified_by_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_last_modified_by_list_service_provisioning_errors(
+        connection,
+        workflow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1549,7 +2024,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/lastModifiedBy/serviceProvisioningErrors")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/lastModifiedBy/serviceProvisioningErrors"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1578,8 +2055,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_last_modified_by_service_provisioning_errors_get_count_def1(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_last_modified_by_service_provisioning_errors_get_count_def1(connection, workflow_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_last_modified_by_service_provisioning_errors_get_count_def1(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_last_modified_by_service_provisioning_errors_get_count_def1(
+        connection,
+        workflow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1588,7 +2076,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/lastModifiedBy/serviceProvisioningErrors/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/lastModifiedBy/serviceProvisioningErrors/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1616,12 +2106,27 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_last_modified_by_update_mailbox_settings(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_last_modified_by_update_mailbox_settings(connection, workflow_id, microsoft_graph_mailbox_settings, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_last_modified_by_update_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_last_modified_by_update_mailbox_settings(
+        connection,
+        workflow_id,
+        microsoft_graph_mailbox_settings,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/lastModifiedBy/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/lastModifiedBy/mailboxSettings"
+      )
       |> add_param(:body, :body, microsoft_graph_mailbox_settings)
       |> Enum.into([])
 
@@ -1657,8 +2162,20 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResultCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_list_execution_scope(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResultCollectionResponse.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_list_execution_scope(connection, workflow_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_list_execution_scope(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResultCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_list_execution_scope(
+        connection,
+        workflow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1673,14 +2190,17 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/executionScope")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/executionScope"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResultCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResultCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -1709,8 +2229,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceRunCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_list_runs(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceRunCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_list_runs(connection, workflow_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_list_runs(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceRunCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_list_runs(
+        connection,
+        workflow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1761,8 +2292,20 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskReportCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_list_task_reports(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskReportCollectionResponse.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_list_task_reports(connection, workflow_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_list_task_reports(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskReportCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_list_task_reports(
+        connection,
+        workflow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1777,7 +2320,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/taskReports")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/taskReports"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1813,8 +2358,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_list_tasks(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_list_tasks(connection, workflow_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_list_tasks(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_list_tasks(
+        connection,
+        workflow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1865,8 +2421,20 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResultCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_list_user_processing_results(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResultCollectionResponse.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_list_user_processing_results(connection, workflow_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_list_user_processing_results(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResultCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_list_user_processing_results(
+        connection,
+        workflow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1881,14 +2449,17 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/userProcessingResults")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/userProcessingResults"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResultCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResultCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -1917,8 +2488,20 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowVersionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_list_versions(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowVersionCollectionResponse.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_list_versions(connection, workflow_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_list_versions(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowVersionCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_list_versions(
+        connection,
+        workflow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1933,14 +2516,17 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowVersionCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowVersionCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -1962,8 +2548,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_get_count04a6(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_get_count04a6(connection, workflow_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_get_count04a6(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_get_count04a6(
+        connection,
+        workflow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1972,7 +2569,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2004,8 +2603,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResult.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_get_task_processing_results(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResult.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_get_task_processing_results(connection, workflow_id, run_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_get_task_processing_results(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResult.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_get_task_processing_results(
+        connection,
+        workflow_id,
+        run_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2014,7 +2628,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/taskProcessingResults/#{task_processing_result_id}")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/taskProcessingResults/#{task_processing_result_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2046,8 +2662,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResult.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_get_user_processing_results(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResult.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_get_user_processing_results(connection, workflow_id, run_id, user_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_get_user_processing_results(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResult.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_get_user_processing_results(
+        connection,
+        workflow_id,
+        run_id,
+        user_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2056,7 +2687,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2093,8 +2726,22 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_list_task_processing_results(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_list_task_processing_results(connection, workflow_id, run_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_list_task_processing_results(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_list_task_processing_results(
+        connection,
+        workflow_id,
+        run_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -2109,14 +2756,17 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/taskProcessingResults")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/taskProcessingResults"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -2146,8 +2796,22 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResultCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_list_user_processing_results(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResultCollectionResponse.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_list_user_processing_results(connection, workflow_id, run_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_list_user_processing_results(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResultCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_list_user_processing_results(
+        connection,
+        workflow_id,
+        run_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -2162,14 +2826,17 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResultCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResultCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -2192,8 +2859,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_task_processing_results_get_count301f(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_task_processing_results_get_count301f(connection, workflow_id, run_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_task_processing_results_get_count301f(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_task_processing_results_get_count301f(
+        connection,
+        workflow_id,
+        run_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -2202,7 +2882,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/taskProcessingResults/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/taskProcessingResults/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2234,8 +2916,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_task_processing_results_get_subject(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_task_processing_results_get_subject(connection, workflow_id, run_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_task_processing_results_get_subject(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_task_processing_results_get_subject(
+        connection,
+        workflow_id,
+        run_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2244,7 +2941,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/taskProcessingResults/#{task_processing_result_id}/subject")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/taskProcessingResults/#{task_processing_result_id}/subject"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2276,8 +2975,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_task_processing_results_get_task(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_task_processing_results_get_task(connection, workflow_id, run_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_task_processing_results_get_task(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_task_processing_results_get_task(
+        connection,
+        workflow_id,
+        run_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2286,7 +3000,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/taskProcessingResults/#{task_processing_result_id}/task")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/taskProcessingResults/#{task_processing_result_id}/task"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2318,8 +3034,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_task_processing_results_subject_get_mailbox_settings(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_task_processing_results_subject_get_mailbox_settings(connection, workflow_id, run_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_task_processing_results_subject_get_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_task_processing_results_subject_get_mailbox_settings(
+        connection,
+        workflow_id,
+        run_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2328,7 +3059,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2365,8 +3098,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_task_processing_results_subject_list_service_provisioning_errors(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_task_processing_results_subject_list_service_provisioning_errors(connection, workflow_id, run_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_task_processing_results_subject_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_task_processing_results_subject_list_service_provisioning_errors(
+        connection,
+        workflow_id,
+        run_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -2381,7 +3129,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2412,8 +3162,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_task_processing_results_subject_service_provisioning_errors_get_count9c1a(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_task_processing_results_subject_service_provisioning_errors_get_count9c1a(connection, workflow_id, run_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_task_processing_results_subject_service_provisioning_errors_get_count9c1a(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_task_processing_results_subject_service_provisioning_errors_get_count9c1a(
+        connection,
+        workflow_id,
+        run_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -2422,7 +3187,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2452,12 +3219,31 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_task_processing_results_subject_update_mailbox_settings(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_task_processing_results_subject_update_mailbox_settings(connection, workflow_id, run_id, task_processing_result_id, microsoft_graph_mailbox_settings, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_task_processing_results_subject_update_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_task_processing_results_subject_update_mailbox_settings(
+        connection,
+        workflow_id,
+        run_id,
+        task_processing_result_id,
+        microsoft_graph_mailbox_settings,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings"
+      )
       |> add_param(:body, :body, microsoft_graph_mailbox_settings)
       |> Enum.into([])
 
@@ -2487,8 +3273,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_get_count_ea74(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_get_count_ea74(connection, workflow_id, run_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_get_count_ea74(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_get_count_ea74(
+        connection,
+        workflow_id,
+        run_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -2497,7 +3296,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2529,8 +3330,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_get_subject(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_get_subject(connection, workflow_id, run_id, user_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_get_subject(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_get_subject(
+        connection,
+        workflow_id,
+        run_id,
+        user_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2539,7 +3355,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/subject")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/subject"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2572,8 +3390,25 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResult.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_get_task_processing_results(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResult.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_get_task_processing_results(connection, workflow_id, run_id, user_processing_result_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_get_task_processing_results(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResult.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_get_task_processing_results(
+        connection,
+        workflow_id,
+        run_id,
+        user_processing_result_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2582,7 +3417,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2620,8 +3457,24 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_list_task_processing_results(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_list_task_processing_results(connection, workflow_id, run_id, user_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_list_task_processing_results(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_list_task_processing_results(
+        connection,
+        workflow_id,
+        run_id,
+        user_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -2636,14 +3489,17 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -2668,8 +3524,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_subject_get_mailbox_settings(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_subject_get_mailbox_settings(connection, workflow_id, run_id, user_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_subject_get_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_subject_get_mailbox_settings(
+        connection,
+        workflow_id,
+        run_id,
+        user_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2678,7 +3549,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/subject/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/subject/mailboxSettings"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2715,8 +3588,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_subject_list_service_provisioning_errors(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_subject_list_service_provisioning_errors(connection, workflow_id, run_id, user_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_subject_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_subject_list_service_provisioning_errors(
+        connection,
+        workflow_id,
+        run_id,
+        user_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -2731,7 +3619,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/subject/serviceProvisioningErrors")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/subject/serviceProvisioningErrors"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2762,8 +3652,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_subject_service_provisioning_errors_get_count46e1(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_subject_service_provisioning_errors_get_count46e1(connection, workflow_id, run_id, user_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_subject_service_provisioning_errors_get_count46e1(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_subject_service_provisioning_errors_get_count46e1(
+        connection,
+        workflow_id,
+        run_id,
+        user_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -2772,7 +3677,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/subject/serviceProvisioningErrors/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/subject/serviceProvisioningErrors/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2802,12 +3709,31 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_subject_update_mailbox_settings(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_subject_update_mailbox_settings(connection, workflow_id, run_id, user_processing_result_id, microsoft_graph_mailbox_settings, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_subject_update_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_subject_update_mailbox_settings(
+        connection,
+        workflow_id,
+        run_id,
+        user_processing_result_id,
+        microsoft_graph_mailbox_settings,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/subject/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/subject/mailboxSettings"
+      )
       |> add_param(:body, :body, microsoft_graph_mailbox_settings)
       |> Enum.into([])
 
@@ -2838,8 +3764,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_task_processing_results_get_count_f799(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_task_processing_results_get_count_f799(connection, workflow_id, run_id, user_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_task_processing_results_get_count_f799(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_task_processing_results_get_count_f799(
+        connection,
+        workflow_id,
+        run_id,
+        user_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -2848,7 +3789,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2881,8 +3824,25 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_task_processing_results_get_subject(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_task_processing_results_get_subject(connection, workflow_id, run_id, user_processing_result_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_task_processing_results_get_subject(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_task_processing_results_get_subject(
+        connection,
+        workflow_id,
+        run_id,
+        user_processing_result_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2891,7 +3851,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/subject")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/subject"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2924,8 +3886,25 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_task_processing_results_get_task(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_task_processing_results_get_task(connection, workflow_id, run_id, user_processing_result_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_task_processing_results_get_task(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_task_processing_results_get_task(
+        connection,
+        workflow_id,
+        run_id,
+        user_processing_result_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2934,7 +3913,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/task")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/task"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2967,8 +3948,25 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_task_processing_results_subject_get_mailbox_settings(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_task_processing_results_subject_get_mailbox_settings(connection, workflow_id, run_id, user_processing_result_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_task_processing_results_subject_get_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_task_processing_results_subject_get_mailbox_settings(
+        connection,
+        workflow_id,
+        run_id,
+        user_processing_result_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2977,7 +3975,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3015,8 +4015,25 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_task_processing_results_subject_list_service_provisioning_errors(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_task_processing_results_subject_list_service_provisioning_errors(connection, workflow_id, run_id, user_processing_result_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_task_processing_results_subject_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_task_processing_results_subject_list_service_provisioning_errors(
+        connection,
+        workflow_id,
+        run_id,
+        user_processing_result_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -3031,7 +4048,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3063,8 +4082,25 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_task_processing_results_subject_service_provisioning_errors_get_count7f1d(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_task_processing_results_subject_service_provisioning_errors_get_count7f1d(connection, workflow_id, run_id, user_processing_result_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_task_processing_results_subject_service_provisioning_errors_get_count7f1d(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_task_processing_results_subject_service_provisioning_errors_get_count7f1d(
+        connection,
+        workflow_id,
+        run_id,
+        user_processing_result_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -3073,7 +4109,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3104,12 +4142,33 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_task_processing_results_subject_update_mailbox_settings(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_task_processing_results_subject_update_mailbox_settings(connection, workflow_id, run_id, user_processing_result_id, task_processing_result_id, microsoft_graph_mailbox_settings, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_task_processing_results_subject_update_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_runs_user_processing_results_task_processing_results_subject_update_mailbox_settings(
+        connection,
+        workflow_id,
+        run_id,
+        user_processing_result_id,
+        task_processing_result_id,
+        microsoft_graph_mailbox_settings,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings"
+      )
       |> add_param(:body, :body, microsoft_graph_mailbox_settings)
       |> Enum.into([])
 
@@ -3138,8 +4197,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_task_reports_get_count_f9a3(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_task_reports_get_count_f9a3(connection, workflow_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_task_reports_get_count_f9a3(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_task_reports_get_count_f9a3(
+        connection,
+        workflow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -3148,7 +4218,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/taskReports/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/taskReports/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3179,8 +4251,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_task_reports_get_task(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_task_reports_get_task(connection, workflow_id, task_report_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_task_reports_get_task(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_task_reports_get_task(
+        connection,
+        workflow_id,
+        task_report_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3189,7 +4274,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/taskReports/#{task_report_id}/task")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/taskReports/#{task_report_id}/task"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3220,8 +4307,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_task_reports_get_task_definition(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskDefinition.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_task_reports_get_task_definition(connection, workflow_id, task_report_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_task_reports_get_task_definition(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskDefinition.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_task_reports_get_task_definition(
+        connection,
+        workflow_id,
+        task_report_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3230,7 +4330,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/taskReports/#{task_report_id}/taskDefinition")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/taskReports/#{task_report_id}/taskDefinition"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3262,8 +4364,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResult.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_task_reports_get_task_processing_results(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResult.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_task_reports_get_task_processing_results(connection, workflow_id, task_report_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_task_reports_get_task_processing_results(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResult.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_task_reports_get_task_processing_results(
+        connection,
+        workflow_id,
+        task_report_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3272,7 +4389,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/taskReports/#{task_report_id}/taskProcessingResults/#{task_processing_result_id}")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/taskReports/#{task_report_id}/taskProcessingResults/#{task_processing_result_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3309,8 +4428,22 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_task_reports_list_task_processing_results(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_task_reports_list_task_processing_results(connection, workflow_id, task_report_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_task_reports_list_task_processing_results(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_task_reports_list_task_processing_results(
+        connection,
+        workflow_id,
+        task_report_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -3325,14 +4458,17 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/taskReports/#{task_report_id}/taskProcessingResults")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/taskReports/#{task_report_id}/taskProcessingResults"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -3355,8 +4491,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_task_reports_task_processing_results_get_count7b4b(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_task_reports_task_processing_results_get_count7b4b(connection, workflow_id, task_report_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_task_reports_task_processing_results_get_count7b4b(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_task_reports_task_processing_results_get_count7b4b(
+        connection,
+        workflow_id,
+        task_report_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -3365,7 +4514,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/taskReports/#{task_report_id}/taskProcessingResults/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/taskReports/#{task_report_id}/taskProcessingResults/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3397,8 +4548,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_task_reports_task_processing_results_get_subject(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_task_reports_task_processing_results_get_subject(connection, workflow_id, task_report_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_task_reports_task_processing_results_get_subject(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_task_reports_task_processing_results_get_subject(
+        connection,
+        workflow_id,
+        task_report_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3407,7 +4573,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/taskReports/#{task_report_id}/taskProcessingResults/#{task_processing_result_id}/subject")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/taskReports/#{task_report_id}/taskProcessingResults/#{task_processing_result_id}/subject"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3439,8 +4607,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_task_reports_task_processing_results_get_task(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_task_reports_task_processing_results_get_task(connection, workflow_id, task_report_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_task_reports_task_processing_results_get_task(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_task_reports_task_processing_results_get_task(
+        connection,
+        workflow_id,
+        task_report_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3449,7 +4632,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/taskReports/#{task_report_id}/taskProcessingResults/#{task_processing_result_id}/task")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/taskReports/#{task_report_id}/taskProcessingResults/#{task_processing_result_id}/task"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3481,8 +4666,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_task_reports_task_processing_results_subject_get_mailbox_settings(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_task_reports_task_processing_results_subject_get_mailbox_settings(connection, workflow_id, task_report_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_task_reports_task_processing_results_subject_get_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_task_reports_task_processing_results_subject_get_mailbox_settings(
+        connection,
+        workflow_id,
+        task_report_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3491,7 +4691,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/taskReports/#{task_report_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/taskReports/#{task_report_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3528,8 +4730,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_task_reports_task_processing_results_subject_list_service_provisioning_errors(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_task_reports_task_processing_results_subject_list_service_provisioning_errors(connection, workflow_id, task_report_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_task_reports_task_processing_results_subject_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_task_reports_task_processing_results_subject_list_service_provisioning_errors(
+        connection,
+        workflow_id,
+        task_report_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -3544,7 +4761,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/taskReports/#{task_report_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/taskReports/#{task_report_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3575,8 +4794,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_task_reports_task_processing_results_subject_service_provisioning_errors_get_count4e4d(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_task_reports_task_processing_results_subject_service_provisioning_errors_get_count4e4d(connection, workflow_id, task_report_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_task_reports_task_processing_results_subject_service_provisioning_errors_get_count4e4d(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_task_reports_task_processing_results_subject_service_provisioning_errors_get_count4e4d(
+        connection,
+        workflow_id,
+        task_report_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -3585,7 +4819,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/taskReports/#{task_report_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/taskReports/#{task_report_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3615,12 +4851,31 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_task_reports_task_processing_results_subject_update_mailbox_settings(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_task_reports_task_processing_results_subject_update_mailbox_settings(connection, workflow_id, task_report_id, task_processing_result_id, microsoft_graph_mailbox_settings, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_task_reports_task_processing_results_subject_update_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_task_reports_task_processing_results_subject_update_mailbox_settings(
+        connection,
+        workflow_id,
+        task_report_id,
+        task_processing_result_id,
+        microsoft_graph_mailbox_settings,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/taskReports/#{task_report_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/taskReports/#{task_report_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings"
+      )
       |> add_param(:body, :body, microsoft_graph_mailbox_settings)
       |> Enum.into([])
 
@@ -3649,8 +4904,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_tasks_get_count67b2(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_tasks_get_count67b2(connection, workflow_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_tasks_get_count67b2(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_tasks_get_count67b2(
+        connection,
+        workflow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -3659,7 +4925,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/tasks/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/tasks/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3691,8 +4959,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResult.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_tasks_get_task_processing_results(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResult.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_tasks_get_task_processing_results(connection, workflow_id, task_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_tasks_get_task_processing_results(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResult.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_tasks_get_task_processing_results(
+        connection,
+        workflow_id,
+        task_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3701,7 +4984,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3738,8 +5023,22 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_tasks_list_task_processing_results(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_tasks_list_task_processing_results(connection, workflow_id, task_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_tasks_list_task_processing_results(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_tasks_list_task_processing_results(
+        connection,
+        workflow_id,
+        task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -3754,14 +5053,17 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/tasks/#{task_id}/taskProcessingResults")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/tasks/#{task_id}/taskProcessingResults"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -3784,8 +5086,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_tasks_task_processing_results_get_count3d21(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_tasks_task_processing_results_get_count3d21(connection, workflow_id, task_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_tasks_task_processing_results_get_count3d21(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_tasks_task_processing_results_get_count3d21(
+        connection,
+        workflow_id,
+        task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -3794,7 +5109,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/tasks/#{task_id}/taskProcessingResults/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/tasks/#{task_id}/taskProcessingResults/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3826,8 +5143,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_tasks_task_processing_results_get_subject(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_tasks_task_processing_results_get_subject(connection, workflow_id, task_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_tasks_task_processing_results_get_subject(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_tasks_task_processing_results_get_subject(
+        connection,
+        workflow_id,
+        task_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3836,7 +5168,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3868,8 +5202,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_tasks_task_processing_results_get_task(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_tasks_task_processing_results_get_task(connection, workflow_id, task_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_tasks_task_processing_results_get_task(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_tasks_task_processing_results_get_task(
+        connection,
+        workflow_id,
+        task_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3878,7 +5227,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/task")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/task"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3910,8 +5261,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_tasks_task_processing_results_subject_get_mailbox_settings(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_tasks_task_processing_results_subject_get_mailbox_settings(connection, workflow_id, task_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_tasks_task_processing_results_subject_get_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_tasks_task_processing_results_subject_get_mailbox_settings(
+        connection,
+        workflow_id,
+        task_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3920,7 +5286,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3957,8 +5325,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_tasks_task_processing_results_subject_list_service_provisioning_errors(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_tasks_task_processing_results_subject_list_service_provisioning_errors(connection, workflow_id, task_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_tasks_task_processing_results_subject_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_tasks_task_processing_results_subject_list_service_provisioning_errors(
+        connection,
+        workflow_id,
+        task_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -3973,7 +5356,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4004,8 +5389,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_tasks_task_processing_results_subject_service_provisioning_errors_get_count43b9(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_tasks_task_processing_results_subject_service_provisioning_errors_get_count43b9(connection, workflow_id, task_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_tasks_task_processing_results_subject_service_provisioning_errors_get_count43b9(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_tasks_task_processing_results_subject_service_provisioning_errors_get_count43b9(
+        connection,
+        workflow_id,
+        task_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -4014,7 +5414,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4044,12 +5446,31 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_tasks_task_processing_results_subject_update_mailbox_settings(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_tasks_task_processing_results_subject_update_mailbox_settings(connection, workflow_id, task_id, task_processing_result_id, microsoft_graph_mailbox_settings, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_tasks_task_processing_results_subject_update_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_tasks_task_processing_results_subject_update_mailbox_settings(
+        connection,
+        workflow_id,
+        task_id,
+        task_processing_result_id,
+        microsoft_graph_mailbox_settings,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings"
+      )
       |> add_param(:body, :body, microsoft_graph_mailbox_settings)
       |> Enum.into([])
 
@@ -4078,12 +5499,29 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_update_tasks(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_update_tasks(connection, workflow_id, task_id, microsoft_graph_identity_governance_task, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_update_tasks(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_update_tasks(
+        connection,
+        workflow_id,
+        task_id,
+        microsoft_graph_identity_governance_task,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/tasks/#{task_id}")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/tasks/#{task_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_identity_governance_task)
       |> Enum.into([])
 
@@ -4112,8 +5550,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_get_count52b9(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_get_count52b9(connection, workflow_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_get_count52b9(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_get_count52b9(
+        connection,
+        workflow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -4122,7 +5571,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/userProcessingResults/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/userProcessingResults/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4153,8 +5604,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_get_subject(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_get_subject(connection, workflow_id, user_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_get_subject(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_get_subject(
+        connection,
+        workflow_id,
+        user_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -4163,7 +5627,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/subject")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/subject"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4195,8 +5661,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResult.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_get_task_processing_results(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResult.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_get_task_processing_results(connection, workflow_id, user_processing_result_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_get_task_processing_results(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResult.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_get_task_processing_results(
+        connection,
+        workflow_id,
+        user_processing_result_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -4205,7 +5686,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4242,8 +5725,22 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_list_task_processing_results(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_list_task_processing_results(connection, workflow_id, user_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_list_task_processing_results(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_list_task_processing_results(
+        connection,
+        workflow_id,
+        user_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -4258,14 +5755,17 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -4289,8 +5789,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_subject_get_mailbox_settings(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_subject_get_mailbox_settings(connection, workflow_id, user_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_subject_get_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_subject_get_mailbox_settings(
+        connection,
+        workflow_id,
+        user_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -4299,7 +5812,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/subject/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/subject/mailboxSettings"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4335,8 +5850,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_subject_list_service_provisioning_errors(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_subject_list_service_provisioning_errors(connection, workflow_id, user_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_subject_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_subject_list_service_provisioning_errors(
+        connection,
+        workflow_id,
+        user_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -4351,7 +5879,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/subject/serviceProvisioningErrors")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/subject/serviceProvisioningErrors"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4381,8 +5911,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_subject_service_provisioning_errors_get_count_e5c8(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_subject_service_provisioning_errors_get_count_e5c8(connection, workflow_id, user_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_subject_service_provisioning_errors_get_count_e5c8(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_subject_service_provisioning_errors_get_count_e5c8(
+        connection,
+        workflow_id,
+        user_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -4391,7 +5934,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/subject/serviceProvisioningErrors/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/subject/serviceProvisioningErrors/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4420,12 +5965,29 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_subject_update_mailbox_settings(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_subject_update_mailbox_settings(connection, workflow_id, user_processing_result_id, microsoft_graph_mailbox_settings, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_subject_update_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_subject_update_mailbox_settings(
+        connection,
+        workflow_id,
+        user_processing_result_id,
+        microsoft_graph_mailbox_settings,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/subject/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/subject/mailboxSettings"
+      )
       |> add_param(:body, :body, microsoft_graph_mailbox_settings)
       |> Enum.into([])
 
@@ -4455,8 +6017,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_task_processing_results_get_count_dca2(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_task_processing_results_get_count_dca2(connection, workflow_id, user_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_task_processing_results_get_count_dca2(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_task_processing_results_get_count_dca2(
+        connection,
+        workflow_id,
+        user_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -4465,7 +6040,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4497,8 +6074,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_task_processing_results_get_subject(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_task_processing_results_get_subject(connection, workflow_id, user_processing_result_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_task_processing_results_get_subject(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_task_processing_results_get_subject(
+        connection,
+        workflow_id,
+        user_processing_result_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -4507,7 +6099,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/subject")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/subject"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4539,8 +6133,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_task_processing_results_get_task(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_task_processing_results_get_task(connection, workflow_id, user_processing_result_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_task_processing_results_get_task(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_task_processing_results_get_task(
+        connection,
+        workflow_id,
+        user_processing_result_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -4549,7 +6158,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/task")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/task"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4581,8 +6192,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_task_processing_results_subject_get_mailbox_settings(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_task_processing_results_subject_get_mailbox_settings(connection, workflow_id, user_processing_result_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_task_processing_results_subject_get_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_task_processing_results_subject_get_mailbox_settings(
+        connection,
+        workflow_id,
+        user_processing_result_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -4591,7 +6217,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4628,8 +6256,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_task_processing_results_subject_list_service_provisioning_errors(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_task_processing_results_subject_list_service_provisioning_errors(connection, workflow_id, user_processing_result_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_task_processing_results_subject_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_task_processing_results_subject_list_service_provisioning_errors(
+        connection,
+        workflow_id,
+        user_processing_result_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -4644,7 +6287,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4675,8 +6320,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_task_processing_results_subject_service_provisioning_errors_get_count2ac7(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_task_processing_results_subject_service_provisioning_errors_get_count2ac7(connection, workflow_id, user_processing_result_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_task_processing_results_subject_service_provisioning_errors_get_count2ac7(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_task_processing_results_subject_service_provisioning_errors_get_count2ac7(
+        connection,
+        workflow_id,
+        user_processing_result_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -4685,7 +6345,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4715,12 +6377,31 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_task_processing_results_subject_update_mailbox_settings(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_task_processing_results_subject_update_mailbox_settings(connection, workflow_id, user_processing_result_id, task_processing_result_id, microsoft_graph_mailbox_settings, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_task_processing_results_subject_update_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_user_processing_results_task_processing_results_subject_update_mailbox_settings(
+        connection,
+        workflow_id,
+        user_processing_result_id,
+        task_processing_result_id,
+        microsoft_graph_mailbox_settings,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings"
+      )
       |> add_param(:body, :body, microsoft_graph_mailbox_settings)
       |> Enum.into([])
 
@@ -4749,12 +6430,29 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_create_tasks(Tesla.Env.client, String.t, integer(), MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_create_tasks(connection, workflow_id, workflow_version_version_number, microsoft_graph_identity_governance_task, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_create_tasks(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_create_tasks(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        microsoft_graph_identity_governance_task,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks"
+      )
       |> add_param(:body, :body, microsoft_graph_identity_governance_task)
       |> Enum.into([])
 
@@ -4785,8 +6483,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_created_by_get_mailbox_settings(Tesla.Env.client, String.t, integer(), keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_created_by_get_mailbox_settings(connection, workflow_id, workflow_version_version_number, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_created_by_get_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_created_by_get_mailbox_settings(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -4795,7 +6506,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/createdBy/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/createdBy/mailboxSettings"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4831,8 +6544,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_created_by_list_service_provisioning_errors(Tesla.Env.client, String.t, integer(), keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_created_by_list_service_provisioning_errors(connection, workflow_id, workflow_version_version_number, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_created_by_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_created_by_list_service_provisioning_errors(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -4847,7 +6573,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/createdBy/serviceProvisioningErrors")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/createdBy/serviceProvisioningErrors"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4877,8 +6605,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_created_by_service_provisioning_errors_get_count91a7(Tesla.Env.client, String.t, integer(), keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_created_by_service_provisioning_errors_get_count91a7(connection, workflow_id, workflow_version_version_number, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_created_by_service_provisioning_errors_get_count91a7(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_created_by_service_provisioning_errors_get_count91a7(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -4887,7 +6628,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/createdBy/serviceProvisioningErrors/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/createdBy/serviceProvisioningErrors/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4916,12 +6659,29 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_created_by_update_mailbox_settings(Tesla.Env.client, String.t, integer(), MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_created_by_update_mailbox_settings(connection, workflow_id, workflow_version_version_number, microsoft_graph_mailbox_settings, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_created_by_update_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_created_by_update_mailbox_settings(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        microsoft_graph_mailbox_settings,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/createdBy/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/createdBy/mailboxSettings"
+      )
       |> add_param(:body, :body, microsoft_graph_mailbox_settings)
       |> Enum.into([])
 
@@ -4951,8 +6711,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_delete_tasks(Tesla.Env.client, String.t, integer(), String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_delete_tasks(connection, workflow_id, workflow_version_version_number, task_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_delete_tasks(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_delete_tasks(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -4960,7 +6735,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:delete)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4989,8 +6766,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_get_count_faf1(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_get_count_faf1(connection, workflow_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_get_count_faf1(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_get_count_faf1(
+        connection,
+        workflow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -4999,7 +6787,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5030,8 +6820,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_get_created_by(Tesla.Env.client, String.t, integer(), keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_get_created_by(connection, workflow_id, workflow_version_version_number, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_get_created_by(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_get_created_by(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -5040,7 +6843,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/createdBy")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/createdBy"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5071,8 +6876,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_get_last_modified_by(Tesla.Env.client, String.t, integer(), keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_get_last_modified_by(connection, workflow_id, workflow_version_version_number, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_get_last_modified_by(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_get_last_modified_by(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -5081,7 +6899,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/lastModifiedBy")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/lastModifiedBy"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5113,8 +6933,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_get_tasks(Tesla.Env.client, String.t, integer(), String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_get_tasks(connection, workflow_id, workflow_version_version_number, task_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_get_tasks(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_get_tasks(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -5123,7 +6958,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5154,8 +6991,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_last_modified_by_get_mailbox_settings(Tesla.Env.client, String.t, integer(), keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_last_modified_by_get_mailbox_settings(connection, workflow_id, workflow_version_version_number, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_last_modified_by_get_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_last_modified_by_get_mailbox_settings(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -5164,7 +7014,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/lastModifiedBy/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/lastModifiedBy/mailboxSettings"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5200,8 +7052,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_last_modified_by_list_service_provisioning_errors(Tesla.Env.client, String.t, integer(), keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_last_modified_by_list_service_provisioning_errors(connection, workflow_id, workflow_version_version_number, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_last_modified_by_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_last_modified_by_list_service_provisioning_errors(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -5216,7 +7081,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/lastModifiedBy/serviceProvisioningErrors")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/lastModifiedBy/serviceProvisioningErrors"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5246,8 +7113,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_last_modified_by_service_provisioning_errors_get_count346a(Tesla.Env.client, String.t, integer(), keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_last_modified_by_service_provisioning_errors_get_count346a(connection, workflow_id, workflow_version_version_number, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_last_modified_by_service_provisioning_errors_get_count346a(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_last_modified_by_service_provisioning_errors_get_count346a(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -5256,7 +7136,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/lastModifiedBy/serviceProvisioningErrors/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/lastModifiedBy/serviceProvisioningErrors/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5285,12 +7167,29 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_last_modified_by_update_mailbox_settings(Tesla.Env.client, String.t, integer(), MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_last_modified_by_update_mailbox_settings(connection, workflow_id, workflow_version_version_number, microsoft_graph_mailbox_settings, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_last_modified_by_update_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_last_modified_by_update_mailbox_settings(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        microsoft_graph_mailbox_settings,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/lastModifiedBy/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/lastModifiedBy/mailboxSettings"
+      )
       |> add_param(:body, :body, microsoft_graph_mailbox_settings)
       |> Enum.into([])
 
@@ -5327,8 +7226,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_list_tasks(Tesla.Env.client, String.t, integer(), keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_list_tasks(connection, workflow_id, workflow_version_version_number, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_list_tasks(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_list_tasks(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -5343,7 +7255,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5373,8 +7287,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_tasks_get_count901d(Tesla.Env.client, String.t, integer(), keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_tasks_get_count901d(connection, workflow_id, workflow_version_version_number, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_tasks_get_count901d(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_tasks_get_count901d(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -5383,7 +7310,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5416,8 +7345,25 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResult.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_tasks_get_task_processing_results(Tesla.Env.client, String.t, integer(), String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResult.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_tasks_get_task_processing_results(connection, workflow_id, workflow_version_version_number, task_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_tasks_get_task_processing_results(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResult.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_tasks_get_task_processing_results(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        task_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -5426,7 +7372,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5464,8 +7412,24 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_tasks_list_task_processing_results(Tesla.Env.client, String.t, integer(), String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_tasks_list_task_processing_results(connection, workflow_id, workflow_version_version_number, task_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_tasks_list_task_processing_results(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_tasks_list_task_processing_results(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -5480,14 +7444,17 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}/taskProcessingResults")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}/taskProcessingResults"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -5511,8 +7478,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_tasks_task_processing_results_get_count_f65c(Tesla.Env.client, String.t, integer(), String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_tasks_task_processing_results_get_count_f65c(connection, workflow_id, workflow_version_version_number, task_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_tasks_task_processing_results_get_count_f65c(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_tasks_task_processing_results_get_count_f65c(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -5521,7 +7503,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}/taskProcessingResults/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}/taskProcessingResults/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5554,8 +7538,25 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_tasks_task_processing_results_get_subject(Tesla.Env.client, String.t, integer(), String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_tasks_task_processing_results_get_subject(connection, workflow_id, workflow_version_version_number, task_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_tasks_task_processing_results_get_subject(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_tasks_task_processing_results_get_subject(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        task_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -5564,7 +7565,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5597,8 +7600,25 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_tasks_task_processing_results_get_task(Tesla.Env.client, String.t, integer(), String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_tasks_task_processing_results_get_task(connection, workflow_id, workflow_version_version_number, task_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_tasks_task_processing_results_get_task(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_tasks_task_processing_results_get_task(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        task_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -5607,7 +7627,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/task")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/task"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5640,8 +7662,25 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_tasks_task_processing_results_subject_get_mailbox_settings(Tesla.Env.client, String.t, integer(), String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_tasks_task_processing_results_subject_get_mailbox_settings(connection, workflow_id, workflow_version_version_number, task_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_tasks_task_processing_results_subject_get_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_tasks_task_processing_results_subject_get_mailbox_settings(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        task_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -5650,7 +7689,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5688,8 +7729,25 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_tasks_task_processing_results_subject_list_service_provisioning_errors(Tesla.Env.client, String.t, integer(), String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_tasks_task_processing_results_subject_list_service_provisioning_errors(connection, workflow_id, workflow_version_version_number, task_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_tasks_task_processing_results_subject_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_tasks_task_processing_results_subject_list_service_provisioning_errors(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        task_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -5704,7 +7762,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5736,8 +7796,25 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_tasks_task_processing_results_subject_service_provisioning_errors_get_count_c887(Tesla.Env.client, String.t, integer(), String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_tasks_task_processing_results_subject_service_provisioning_errors_get_count_c887(connection, workflow_id, workflow_version_version_number, task_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_tasks_task_processing_results_subject_service_provisioning_errors_get_count_c887(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_tasks_task_processing_results_subject_service_provisioning_errors_get_count_c887(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        task_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -5746,7 +7823,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5777,12 +7856,33 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_tasks_task_processing_results_subject_update_mailbox_settings(Tesla.Env.client, String.t, integer(), String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_tasks_task_processing_results_subject_update_mailbox_settings(connection, workflow_id, workflow_version_version_number, task_id, task_processing_result_id, microsoft_graph_mailbox_settings, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_tasks_task_processing_results_subject_update_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_tasks_task_processing_results_subject_update_mailbox_settings(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        task_id,
+        task_processing_result_id,
+        microsoft_graph_mailbox_settings,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings"
+      )
       |> add_param(:body, :body, microsoft_graph_mailbox_settings)
       |> Enum.into([])
 
@@ -5812,12 +7912,31 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_update_tasks(Tesla.Env.client, String.t, integer(), String.t, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_update_tasks(connection, workflow_id, workflow_version_version_number, task_id, microsoft_graph_identity_governance_task, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_deleted_items_workflows_versions_update_tasks(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_deleted_items_workflows_versions_update_tasks(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        task_id,
+        microsoft_graph_identity_governance_task,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/deletedItems/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_identity_governance_task)
       |> Enum.into([])
 
@@ -5847,8 +7966,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceCustomTaskExtension.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_get_custom_task_extensions(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceCustomTaskExtension.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_get_custom_task_extensions(connection, custom_task_extension_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_get_custom_task_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceCustomTaskExtension.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_get_custom_task_extensions(
+        connection,
+        custom_task_extension_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -5857,7 +7987,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/customTaskExtensions/#{custom_task_extension_id}")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/customTaskExtensions/#{custom_task_extension_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5886,7 +8018,10 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeletedItemContainer.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_get_deleted_items(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeletedItemContainer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_governance_lifecycle_workflows_get_deleted_items(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDeletedItemContainer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_governance_lifecycle_workflows_get_deleted_items(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -5925,7 +8060,11 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleManagementSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_get_settings(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleManagementSettings.t} | {:error, Tesla.Env.t}
+  @spec identity_governance_lifecycle_workflows_get_settings(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleManagementSettings.t()}
+          | {:error, Tesla.Env.t()}
   def identity_governance_lifecycle_workflows_get_settings(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -5965,8 +8104,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_get_task_definitions(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskDefinition.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_get_task_definitions(connection, task_definition_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_get_task_definitions(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskDefinition.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_get_task_definitions(
+        connection,
+        task_definition_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -6005,8 +8155,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowTemplate.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_get_workflow_templates(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowTemplate.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_get_workflow_templates(connection, workflow_template_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_get_workflow_templates(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowTemplate.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_get_workflow_templates(
+        connection,
+        workflow_template_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -6045,7 +8206,14 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflow.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_get_workflows(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflow.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_governance_lifecycle_workflows_get_workflows(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflow.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_governance_lifecycle_workflows_get_workflows(connection, workflow_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -6090,7 +8258,14 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceCustomTaskExtensionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_list_custom_task_extensions(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceCustomTaskExtensionCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_governance_lifecycle_workflows_list_custom_task_extensions(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceCustomTaskExtensionCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_governance_lifecycle_workflows_list_custom_task_extensions(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -6113,7 +8288,8 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceCustomTaskExtensionCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceCustomTaskExtensionCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -6141,7 +8317,14 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskDefinitionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_list_task_definitions(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskDefinitionCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_governance_lifecycle_workflows_list_task_definitions(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskDefinitionCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_governance_lifecycle_workflows_list_task_definitions(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -6164,7 +8347,8 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskDefinitionCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskDefinitionCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -6192,7 +8376,14 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowTemplateCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_list_workflow_templates(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowTemplateCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_governance_lifecycle_workflows_list_workflow_templates(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowTemplateCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_governance_lifecycle_workflows_list_workflow_templates(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -6215,7 +8406,8 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowTemplateCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowTemplateCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -6243,7 +8435,11 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_list_workflows(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec identity_governance_lifecycle_workflows_list_workflows(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def identity_governance_lifecycle_workflows_list_workflows(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -6287,8 +8483,17 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_task_definitions_get_count36f9(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_task_definitions_get_count36f9(connection, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_task_definitions_get_count36f9(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_task_definitions_get_count36f9(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -6326,12 +8531,27 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceCustomTaskExtension.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_update_custom_task_extensions(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceCustomTaskExtension.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceCustomTaskExtension.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_update_custom_task_extensions(connection, custom_task_extension_id, microsoft_graph_identity_governance_custom_task_extension, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_update_custom_task_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceCustomTaskExtension.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceCustomTaskExtension.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_update_custom_task_extensions(
+        connection,
+        custom_task_extension_id,
+        microsoft_graph_identity_governance_custom_task_extension,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/lifecycleWorkflows/customTaskExtensions/#{custom_task_extension_id}")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/customTaskExtensions/#{custom_task_extension_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_identity_governance_custom_task_extension)
       |> Enum.into([])
 
@@ -6359,13 +8579,29 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleManagementSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_update_settings(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleManagementSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleManagementSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_update_settings(connection, microsoft_graph_identity_governance_lifecycle_management_settings, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_update_settings(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleManagementSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleManagementSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_update_settings(
+        connection,
+        microsoft_graph_identity_governance_lifecycle_management_settings,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
       |> url("/identityGovernance/lifecycleWorkflows/settings")
-      |> add_param(:body, :body, microsoft_graph_identity_governance_lifecycle_management_settings)
+      |> add_param(
+        :body,
+        :body,
+        microsoft_graph_identity_governance_lifecycle_management_settings
+      )
       |> Enum.into([])
 
     connection
@@ -6393,8 +8629,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflow.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_update_workflows(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflow.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflow.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_update_workflows(connection, workflow_id, microsoft_graph_identity_governance_workflow, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_update_workflows(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflow.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflow.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_update_workflows(
+        connection,
+        workflow_id,
+        microsoft_graph_identity_governance_workflow,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -6426,8 +8675,17 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflow_templates_get_count7b73(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflow_templates_get_count7b73(connection, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflow_templates_get_count7b73(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflow_templates_get_count7b73(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -6467,8 +8725,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflow_templates_get_tasks(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflow_templates_get_tasks(connection, workflow_template_id, task_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflow_templates_get_tasks(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflow_templates_get_tasks(
+        connection,
+        workflow_template_id,
+        task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -6477,7 +8748,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflowTemplates/#{workflow_template_id}/tasks/#{task_id}")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflowTemplates/#{workflow_template_id}/tasks/#{task_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6513,8 +8786,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflow_templates_list_tasks(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflow_templates_list_tasks(connection, workflow_template_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflow_templates_list_tasks(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflow_templates_list_tasks(
+        connection,
+        workflow_template_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -6529,7 +8813,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflowTemplates/#{workflow_template_id}/tasks")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflowTemplates/#{workflow_template_id}/tasks"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6558,8 +8844,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflow_templates_tasks_get_count_d308(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflow_templates_tasks_get_count_d308(connection, workflow_template_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflow_templates_tasks_get_count_d308(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflow_templates_tasks_get_count_d308(
+        connection,
+        workflow_template_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -6568,7 +8865,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflowTemplates/#{workflow_template_id}/tasks/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflowTemplates/#{workflow_template_id}/tasks/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6600,8 +8899,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResult.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflow_templates_tasks_get_task_processing_results(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResult.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflow_templates_tasks_get_task_processing_results(connection, workflow_template_id, task_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflow_templates_tasks_get_task_processing_results(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResult.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflow_templates_tasks_get_task_processing_results(
+        connection,
+        workflow_template_id,
+        task_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -6610,7 +8924,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflowTemplates/#{workflow_template_id}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflowTemplates/#{workflow_template_id}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6647,8 +8963,22 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflow_templates_tasks_list_task_processing_results(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflow_templates_tasks_list_task_processing_results(connection, workflow_template_id, task_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflow_templates_tasks_list_task_processing_results(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflow_templates_tasks_list_task_processing_results(
+        connection,
+        workflow_template_id,
+        task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -6663,14 +8993,17 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflowTemplates/#{workflow_template_id}/tasks/#{task_id}/taskProcessingResults")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflowTemplates/#{workflow_template_id}/tasks/#{task_id}/taskProcessingResults"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -6693,8 +9026,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflow_templates_tasks_task_processing_results_get_count7ad8(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflow_templates_tasks_task_processing_results_get_count7ad8(connection, workflow_template_id, task_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflow_templates_tasks_task_processing_results_get_count7ad8(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflow_templates_tasks_task_processing_results_get_count7ad8(
+        connection,
+        workflow_template_id,
+        task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -6703,7 +9049,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflowTemplates/#{workflow_template_id}/tasks/#{task_id}/taskProcessingResults/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflowTemplates/#{workflow_template_id}/tasks/#{task_id}/taskProcessingResults/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6735,8 +9083,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflow_templates_tasks_task_processing_results_get_subject(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflow_templates_tasks_task_processing_results_get_subject(connection, workflow_template_id, task_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflow_templates_tasks_task_processing_results_get_subject(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflow_templates_tasks_task_processing_results_get_subject(
+        connection,
+        workflow_template_id,
+        task_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -6745,7 +9108,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflowTemplates/#{workflow_template_id}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflowTemplates/#{workflow_template_id}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6777,8 +9142,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflow_templates_tasks_task_processing_results_get_task(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflow_templates_tasks_task_processing_results_get_task(connection, workflow_template_id, task_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflow_templates_tasks_task_processing_results_get_task(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflow_templates_tasks_task_processing_results_get_task(
+        connection,
+        workflow_template_id,
+        task_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -6787,7 +9167,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflowTemplates/#{workflow_template_id}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/task")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflowTemplates/#{workflow_template_id}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/task"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6819,8 +9201,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflow_templates_tasks_task_processing_results_subject_get_mailbox_settings(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflow_templates_tasks_task_processing_results_subject_get_mailbox_settings(connection, workflow_template_id, task_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflow_templates_tasks_task_processing_results_subject_get_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflow_templates_tasks_task_processing_results_subject_get_mailbox_settings(
+        connection,
+        workflow_template_id,
+        task_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -6829,7 +9226,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflowTemplates/#{workflow_template_id}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflowTemplates/#{workflow_template_id}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6866,8 +9265,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflow_templates_tasks_task_processing_results_subject_list_service_provisioning_errors(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflow_templates_tasks_task_processing_results_subject_list_service_provisioning_errors(connection, workflow_template_id, task_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflow_templates_tasks_task_processing_results_subject_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflow_templates_tasks_task_processing_results_subject_list_service_provisioning_errors(
+        connection,
+        workflow_template_id,
+        task_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -6882,7 +9296,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflowTemplates/#{workflow_template_id}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflowTemplates/#{workflow_template_id}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6913,8 +9329,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflow_templates_tasks_task_processing_results_subject_service_provisioning_errors_get_count_c373(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflow_templates_tasks_task_processing_results_subject_service_provisioning_errors_get_count_c373(connection, workflow_template_id, task_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflow_templates_tasks_task_processing_results_subject_service_provisioning_errors_get_count_c373(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflow_templates_tasks_task_processing_results_subject_service_provisioning_errors_get_count_c373(
+        connection,
+        workflow_template_id,
+        task_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -6923,7 +9354,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflowTemplates/#{workflow_template_id}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflowTemplates/#{workflow_template_id}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6953,12 +9386,31 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflow_templates_tasks_task_processing_results_subject_update_mailbox_settings(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflow_templates_tasks_task_processing_results_subject_update_mailbox_settings(connection, workflow_template_id, task_id, task_processing_result_id, microsoft_graph_mailbox_settings, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflow_templates_tasks_task_processing_results_subject_update_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflow_templates_tasks_task_processing_results_subject_update_mailbox_settings(
+        connection,
+        workflow_template_id,
+        task_id,
+        task_processing_result_id,
+        microsoft_graph_mailbox_settings,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/lifecycleWorkflows/workflowTemplates/#{workflow_template_id}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflowTemplates/#{workflow_template_id}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings"
+      )
       |> add_param(:body, :body, microsoft_graph_mailbox_settings)
       |> Enum.into([])
 
@@ -6986,8 +9438,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_create_tasks(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_create_tasks(connection, workflow_id, microsoft_graph_identity_governance_task, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_create_tasks(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_create_tasks(
+        connection,
+        workflow_id,
+        microsoft_graph_identity_governance_task,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -7021,8 +9486,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_created_by_get_mailbox_settings(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_created_by_get_mailbox_settings(connection, workflow_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_created_by_get_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_created_by_get_mailbox_settings(
+        connection,
+        workflow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -7031,7 +9507,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/createdBy/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/createdBy/mailboxSettings"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7066,8 +9544,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_created_by_list_service_provisioning_errors(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_created_by_list_service_provisioning_errors(connection, workflow_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_created_by_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_created_by_list_service_provisioning_errors(
+        connection,
+        workflow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -7082,7 +9571,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/createdBy/serviceProvisioningErrors")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/createdBy/serviceProvisioningErrors"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7111,8 +9602,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_created_by_service_provisioning_errors_get_count_e799(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_created_by_service_provisioning_errors_get_count_e799(connection, workflow_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_created_by_service_provisioning_errors_get_count_e799(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_created_by_service_provisioning_errors_get_count_e799(
+        connection,
+        workflow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -7121,7 +9623,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/createdBy/serviceProvisioningErrors/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/createdBy/serviceProvisioningErrors/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7149,12 +9653,27 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_created_by_update_mailbox_settings(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_created_by_update_mailbox_settings(connection, workflow_id, microsoft_graph_mailbox_settings, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_created_by_update_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_created_by_update_mailbox_settings(
+        connection,
+        workflow_id,
+        microsoft_graph_mailbox_settings,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/createdBy/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/createdBy/mailboxSettings"
+      )
       |> add_param(:body, :body, microsoft_graph_mailbox_settings)
       |> Enum.into([])
 
@@ -7183,8 +9702,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_delete_tasks(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_delete_tasks(connection, workflow_id, task_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_delete_tasks(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_delete_tasks(
+        connection,
+        workflow_id,
+        task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -7221,8 +9753,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_execution_scope_get_count5898(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_execution_scope_get_count5898(connection, workflow_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_execution_scope_get_count5898(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_execution_scope_get_count5898(
+        connection,
+        workflow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -7231,7 +9774,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/executionScope/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/executionScope/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7259,7 +9804,13 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_get_count02c2(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_governance_lifecycle_workflows_workflows_get_count02c2(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_governance_lifecycle_workflows_workflows_get_count02c2(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -7299,8 +9850,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_get_created_by(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_get_created_by(connection, workflow_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_get_created_by(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_get_created_by(
+        connection,
+        workflow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -7340,8 +9902,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResult.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_get_execution_scope(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResult.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_get_execution_scope(connection, workflow_id, user_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_get_execution_scope(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResult.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_get_execution_scope(
+        connection,
+        workflow_id,
+        user_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -7350,7 +9925,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/executionScope/#{user_processing_result_id}")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/executionScope/#{user_processing_result_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7380,8 +9957,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_get_last_modified_by(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_get_last_modified_by(connection, workflow_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_get_last_modified_by(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_get_last_modified_by(
+        connection,
+        workflow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -7421,8 +10009,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceRun.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_get_runs(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceRun.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_get_runs(connection, workflow_id, run_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_get_runs(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceRun.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_get_runs(
+        connection,
+        workflow_id,
+        run_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -7462,8 +10063,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskReport.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_get_task_reports(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskReport.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_get_task_reports(connection, workflow_id, task_report_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_get_task_reports(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskReport.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_get_task_reports(
+        connection,
+        workflow_id,
+        task_report_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -7472,7 +10086,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/taskReports/#{task_report_id}")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/taskReports/#{task_report_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7503,8 +10119,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_get_tasks(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_get_tasks(connection, workflow_id, task_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_get_tasks(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_get_tasks(
+        connection,
+        workflow_id,
+        task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -7544,8 +10173,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResult.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_get_user_processing_results(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResult.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_get_user_processing_results(connection, workflow_id, user_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_get_user_processing_results(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResult.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_get_user_processing_results(
+        connection,
+        workflow_id,
+        user_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -7554,7 +10196,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7585,8 +10229,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowVersion.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_get_versions(Tesla.Env.client, String.t, integer(), keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowVersion.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_get_versions(connection, workflow_id, workflow_version_version_number, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_get_versions(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowVersion.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_get_versions(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -7595,7 +10252,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7625,8 +10284,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_last_modified_by_get_mailbox_settings(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_last_modified_by_get_mailbox_settings(connection, workflow_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_last_modified_by_get_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_last_modified_by_get_mailbox_settings(
+        connection,
+        workflow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -7635,7 +10305,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/lastModifiedBy/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/lastModifiedBy/mailboxSettings"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7670,8 +10342,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_last_modified_by_list_service_provisioning_errors(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_last_modified_by_list_service_provisioning_errors(connection, workflow_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_last_modified_by_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_last_modified_by_list_service_provisioning_errors(
+        connection,
+        workflow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -7686,7 +10369,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/lastModifiedBy/serviceProvisioningErrors")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/lastModifiedBy/serviceProvisioningErrors"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7715,8 +10400,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_last_modified_by_service_provisioning_errors_get_count_f282(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_last_modified_by_service_provisioning_errors_get_count_f282(connection, workflow_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_last_modified_by_service_provisioning_errors_get_count_f282(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_last_modified_by_service_provisioning_errors_get_count_f282(
+        connection,
+        workflow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -7725,7 +10421,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/lastModifiedBy/serviceProvisioningErrors/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/lastModifiedBy/serviceProvisioningErrors/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7753,12 +10451,27 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_last_modified_by_update_mailbox_settings(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_last_modified_by_update_mailbox_settings(connection, workflow_id, microsoft_graph_mailbox_settings, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_last_modified_by_update_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_last_modified_by_update_mailbox_settings(
+        connection,
+        workflow_id,
+        microsoft_graph_mailbox_settings,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/lastModifiedBy/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/lastModifiedBy/mailboxSettings"
+      )
       |> add_param(:body, :body, microsoft_graph_mailbox_settings)
       |> Enum.into([])
 
@@ -7794,8 +10507,20 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResultCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_list_execution_scope(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResultCollectionResponse.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_list_execution_scope(connection, workflow_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_list_execution_scope(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResultCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_list_execution_scope(
+        connection,
+        workflow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -7817,7 +10542,8 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResultCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResultCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -7846,8 +10572,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceRunCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_list_runs(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceRunCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_list_runs(connection, workflow_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_list_runs(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceRunCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_list_runs(
+        connection,
+        workflow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -7898,8 +10635,20 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskReportCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_list_task_reports(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskReportCollectionResponse.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_list_task_reports(connection, workflow_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_list_task_reports(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskReportCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_list_task_reports(
+        connection,
+        workflow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -7950,8 +10699,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_list_tasks(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_list_tasks(connection, workflow_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_list_tasks(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_list_tasks(
+        connection,
+        workflow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -8002,8 +10762,20 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResultCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_list_user_processing_results(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResultCollectionResponse.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_list_user_processing_results(connection, workflow_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_list_user_processing_results(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResultCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_list_user_processing_results(
+        connection,
+        workflow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -8018,14 +10790,17 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/userProcessingResults")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/userProcessingResults"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResultCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResultCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -8054,8 +10829,20 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowVersionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_list_versions(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowVersionCollectionResponse.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_list_versions(connection, workflow_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_list_versions(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowVersionCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_list_versions(
+        connection,
+        workflow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -8077,7 +10864,8 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowVersionCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowVersionCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -8099,8 +10887,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_runs_get_count_ba86(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_runs_get_count_ba86(connection, workflow_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_runs_get_count_ba86(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_runs_get_count_ba86(
+        connection,
+        workflow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -8141,8 +10940,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResult.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_runs_get_task_processing_results(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResult.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_runs_get_task_processing_results(connection, workflow_id, run_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_runs_get_task_processing_results(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResult.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_runs_get_task_processing_results(
+        connection,
+        workflow_id,
+        run_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -8151,7 +10965,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/taskProcessingResults/#{task_processing_result_id}")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/taskProcessingResults/#{task_processing_result_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -8183,8 +10999,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResult.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_runs_get_user_processing_results(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResult.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_runs_get_user_processing_results(connection, workflow_id, run_id, user_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_runs_get_user_processing_results(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResult.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_runs_get_user_processing_results(
+        connection,
+        workflow_id,
+        run_id,
+        user_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -8193,7 +11024,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -8230,8 +11063,22 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_runs_list_task_processing_results(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_runs_list_task_processing_results(connection, workflow_id, run_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_runs_list_task_processing_results(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_runs_list_task_processing_results(
+        connection,
+        workflow_id,
+        run_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -8246,14 +11093,17 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/taskProcessingResults")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/taskProcessingResults"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -8283,8 +11133,22 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResultCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_runs_list_user_processing_results(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResultCollectionResponse.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_runs_list_user_processing_results(connection, workflow_id, run_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_runs_list_user_processing_results(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResultCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_runs_list_user_processing_results(
+        connection,
+        workflow_id,
+        run_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -8299,14 +11163,17 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResultCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceUserProcessingResultCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -8329,8 +11196,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_runs_task_processing_results_get_count_a908(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_runs_task_processing_results_get_count_a908(connection, workflow_id, run_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_runs_task_processing_results_get_count_a908(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_runs_task_processing_results_get_count_a908(
+        connection,
+        workflow_id,
+        run_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -8339,7 +11219,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/taskProcessingResults/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/taskProcessingResults/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -8371,8 +11253,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_runs_task_processing_results_get_subject(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_runs_task_processing_results_get_subject(connection, workflow_id, run_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_runs_task_processing_results_get_subject(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_runs_task_processing_results_get_subject(
+        connection,
+        workflow_id,
+        run_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -8381,7 +11278,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/taskProcessingResults/#{task_processing_result_id}/subject")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/taskProcessingResults/#{task_processing_result_id}/subject"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -8413,8 +11312,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_runs_task_processing_results_get_task(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_runs_task_processing_results_get_task(connection, workflow_id, run_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_runs_task_processing_results_get_task(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_runs_task_processing_results_get_task(
+        connection,
+        workflow_id,
+        run_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -8423,7 +11337,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/taskProcessingResults/#{task_processing_result_id}/task")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/taskProcessingResults/#{task_processing_result_id}/task"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -8455,8 +11371,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_runs_task_processing_results_subject_get_mailbox_settings(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_runs_task_processing_results_subject_get_mailbox_settings(connection, workflow_id, run_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_runs_task_processing_results_subject_get_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_runs_task_processing_results_subject_get_mailbox_settings(
+        connection,
+        workflow_id,
+        run_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -8465,7 +11396,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -8502,8 +11435,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_runs_task_processing_results_subject_list_service_provisioning_errors(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_runs_task_processing_results_subject_list_service_provisioning_errors(connection, workflow_id, run_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_runs_task_processing_results_subject_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_runs_task_processing_results_subject_list_service_provisioning_errors(
+        connection,
+        workflow_id,
+        run_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -8518,7 +11466,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -8549,8 +11499,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_runs_task_processing_results_subject_service_provisioning_errors_get_count7d33(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_runs_task_processing_results_subject_service_provisioning_errors_get_count7d33(connection, workflow_id, run_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_runs_task_processing_results_subject_service_provisioning_errors_get_count7d33(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_runs_task_processing_results_subject_service_provisioning_errors_get_count7d33(
+        connection,
+        workflow_id,
+        run_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -8559,7 +11524,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -8589,12 +11556,31 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_runs_task_processing_results_subject_update_mailbox_settings(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_runs_task_processing_results_subject_update_mailbox_settings(connection, workflow_id, run_id, task_processing_result_id, microsoft_graph_mailbox_settings, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_runs_task_processing_results_subject_update_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_runs_task_processing_results_subject_update_mailbox_settings(
+        connection,
+        workflow_id,
+        run_id,
+        task_processing_result_id,
+        microsoft_graph_mailbox_settings,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings"
+      )
       |> add_param(:body, :body, microsoft_graph_mailbox_settings)
       |> Enum.into([])
 
@@ -8624,8 +11610,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_get_count8fe3(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_get_count8fe3(connection, workflow_id, run_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_get_count8fe3(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_get_count8fe3(
+        connection,
+        workflow_id,
+        run_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -8634,7 +11633,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -8666,8 +11667,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_get_subject(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_get_subject(connection, workflow_id, run_id, user_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_get_subject(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_get_subject(
+        connection,
+        workflow_id,
+        run_id,
+        user_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -8676,7 +11692,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/subject")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/subject"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -8709,8 +11727,25 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResult.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_get_task_processing_results(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResult.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_get_task_processing_results(connection, workflow_id, run_id, user_processing_result_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_get_task_processing_results(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResult.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_get_task_processing_results(
+        connection,
+        workflow_id,
+        run_id,
+        user_processing_result_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -8719,7 +11754,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -8757,8 +11794,24 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_list_task_processing_results(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_list_task_processing_results(connection, workflow_id, run_id, user_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_list_task_processing_results(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_list_task_processing_results(
+        connection,
+        workflow_id,
+        run_id,
+        user_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -8773,14 +11826,17 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -8805,8 +11861,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_subject_get_mailbox_settings(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_subject_get_mailbox_settings(connection, workflow_id, run_id, user_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_subject_get_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_subject_get_mailbox_settings(
+        connection,
+        workflow_id,
+        run_id,
+        user_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -8815,7 +11886,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/subject/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/subject/mailboxSettings"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -8852,8 +11925,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_subject_list_service_provisioning_errors(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_subject_list_service_provisioning_errors(connection, workflow_id, run_id, user_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_subject_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_subject_list_service_provisioning_errors(
+        connection,
+        workflow_id,
+        run_id,
+        user_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -8868,7 +11956,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/subject/serviceProvisioningErrors")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/subject/serviceProvisioningErrors"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -8899,8 +11989,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_subject_service_provisioning_errors_get_count600e(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_subject_service_provisioning_errors_get_count600e(connection, workflow_id, run_id, user_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_subject_service_provisioning_errors_get_count600e(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_subject_service_provisioning_errors_get_count600e(
+        connection,
+        workflow_id,
+        run_id,
+        user_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -8909,7 +12014,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/subject/serviceProvisioningErrors/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/subject/serviceProvisioningErrors/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -8939,12 +12046,31 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_subject_update_mailbox_settings(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_subject_update_mailbox_settings(connection, workflow_id, run_id, user_processing_result_id, microsoft_graph_mailbox_settings, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_subject_update_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_subject_update_mailbox_settings(
+        connection,
+        workflow_id,
+        run_id,
+        user_processing_result_id,
+        microsoft_graph_mailbox_settings,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/subject/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/subject/mailboxSettings"
+      )
       |> add_param(:body, :body, microsoft_graph_mailbox_settings)
       |> Enum.into([])
 
@@ -8975,8 +12101,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_task_processing_results_get_count_fd0a(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_task_processing_results_get_count_fd0a(connection, workflow_id, run_id, user_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_task_processing_results_get_count_fd0a(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_task_processing_results_get_count_fd0a(
+        connection,
+        workflow_id,
+        run_id,
+        user_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -8985,7 +12126,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -9018,8 +12161,25 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_task_processing_results_get_subject(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_task_processing_results_get_subject(connection, workflow_id, run_id, user_processing_result_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_task_processing_results_get_subject(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_task_processing_results_get_subject(
+        connection,
+        workflow_id,
+        run_id,
+        user_processing_result_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -9028,7 +12188,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/subject")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/subject"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -9061,8 +12223,25 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_task_processing_results_get_task(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_task_processing_results_get_task(connection, workflow_id, run_id, user_processing_result_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_task_processing_results_get_task(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_task_processing_results_get_task(
+        connection,
+        workflow_id,
+        run_id,
+        user_processing_result_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -9071,7 +12250,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/task")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/task"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -9104,8 +12285,25 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_task_processing_results_subject_get_mailbox_settings(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_task_processing_results_subject_get_mailbox_settings(connection, workflow_id, run_id, user_processing_result_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_task_processing_results_subject_get_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_task_processing_results_subject_get_mailbox_settings(
+        connection,
+        workflow_id,
+        run_id,
+        user_processing_result_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -9114,7 +12312,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -9152,8 +12352,25 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_task_processing_results_subject_list_service_provisioning_errors(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_task_processing_results_subject_list_service_provisioning_errors(connection, workflow_id, run_id, user_processing_result_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_task_processing_results_subject_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_task_processing_results_subject_list_service_provisioning_errors(
+        connection,
+        workflow_id,
+        run_id,
+        user_processing_result_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -9168,7 +12385,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -9200,8 +12419,25 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_task_processing_results_subject_service_provisioning_errors_get_count2784(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_task_processing_results_subject_service_provisioning_errors_get_count2784(connection, workflow_id, run_id, user_processing_result_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_task_processing_results_subject_service_provisioning_errors_get_count2784(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_task_processing_results_subject_service_provisioning_errors_get_count2784(
+        connection,
+        workflow_id,
+        run_id,
+        user_processing_result_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -9210,7 +12446,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -9241,12 +12479,33 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_task_processing_results_subject_update_mailbox_settings(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_task_processing_results_subject_update_mailbox_settings(connection, workflow_id, run_id, user_processing_result_id, task_processing_result_id, microsoft_graph_mailbox_settings, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_task_processing_results_subject_update_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_runs_user_processing_results_task_processing_results_subject_update_mailbox_settings(
+        connection,
+        workflow_id,
+        run_id,
+        user_processing_result_id,
+        task_processing_result_id,
+        microsoft_graph_mailbox_settings,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/runs/#{run_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings"
+      )
       |> add_param(:body, :body, microsoft_graph_mailbox_settings)
       |> Enum.into([])
 
@@ -9275,8 +12534,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_task_reports_get_count1125(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_task_reports_get_count1125(connection, workflow_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_task_reports_get_count1125(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_task_reports_get_count1125(
+        connection,
+        workflow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -9316,8 +12586,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_task_reports_get_task(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_task_reports_get_task(connection, workflow_id, task_report_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_task_reports_get_task(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_task_reports_get_task(
+        connection,
+        workflow_id,
+        task_report_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -9326,7 +12609,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/taskReports/#{task_report_id}/task")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/taskReports/#{task_report_id}/task"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -9357,8 +12642,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_task_reports_get_task_definition(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskDefinition.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_task_reports_get_task_definition(connection, workflow_id, task_report_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_task_reports_get_task_definition(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskDefinition.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_task_reports_get_task_definition(
+        connection,
+        workflow_id,
+        task_report_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -9367,7 +12665,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/taskReports/#{task_report_id}/taskDefinition")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/taskReports/#{task_report_id}/taskDefinition"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -9399,8 +12699,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResult.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_task_reports_get_task_processing_results(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResult.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_task_reports_get_task_processing_results(connection, workflow_id, task_report_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_task_reports_get_task_processing_results(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResult.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_task_reports_get_task_processing_results(
+        connection,
+        workflow_id,
+        task_report_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -9409,7 +12724,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/taskReports/#{task_report_id}/taskProcessingResults/#{task_processing_result_id}")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/taskReports/#{task_report_id}/taskProcessingResults/#{task_processing_result_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -9446,8 +12763,22 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_task_reports_list_task_processing_results(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_task_reports_list_task_processing_results(connection, workflow_id, task_report_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_task_reports_list_task_processing_results(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_task_reports_list_task_processing_results(
+        connection,
+        workflow_id,
+        task_report_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -9462,14 +12793,17 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/taskReports/#{task_report_id}/taskProcessingResults")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/taskReports/#{task_report_id}/taskProcessingResults"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -9492,8 +12826,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_task_reports_task_processing_results_get_count8718(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_task_reports_task_processing_results_get_count8718(connection, workflow_id, task_report_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_task_reports_task_processing_results_get_count8718(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_task_reports_task_processing_results_get_count8718(
+        connection,
+        workflow_id,
+        task_report_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -9502,7 +12849,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/taskReports/#{task_report_id}/taskProcessingResults/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/taskReports/#{task_report_id}/taskProcessingResults/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -9534,8 +12883,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_task_reports_task_processing_results_get_subject(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_task_reports_task_processing_results_get_subject(connection, workflow_id, task_report_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_task_reports_task_processing_results_get_subject(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_task_reports_task_processing_results_get_subject(
+        connection,
+        workflow_id,
+        task_report_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -9544,7 +12908,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/taskReports/#{task_report_id}/taskProcessingResults/#{task_processing_result_id}/subject")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/taskReports/#{task_report_id}/taskProcessingResults/#{task_processing_result_id}/subject"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -9576,8 +12942,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_task_reports_task_processing_results_get_task(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_task_reports_task_processing_results_get_task(connection, workflow_id, task_report_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_task_reports_task_processing_results_get_task(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_task_reports_task_processing_results_get_task(
+        connection,
+        workflow_id,
+        task_report_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -9586,7 +12967,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/taskReports/#{task_report_id}/taskProcessingResults/#{task_processing_result_id}/task")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/taskReports/#{task_report_id}/taskProcessingResults/#{task_processing_result_id}/task"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -9618,8 +13001,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_task_reports_task_processing_results_subject_get_mailbox_settings(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_task_reports_task_processing_results_subject_get_mailbox_settings(connection, workflow_id, task_report_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_task_reports_task_processing_results_subject_get_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_task_reports_task_processing_results_subject_get_mailbox_settings(
+        connection,
+        workflow_id,
+        task_report_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -9628,7 +13026,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/taskReports/#{task_report_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/taskReports/#{task_report_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -9665,8 +13065,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_task_reports_task_processing_results_subject_list_service_provisioning_errors(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_task_reports_task_processing_results_subject_list_service_provisioning_errors(connection, workflow_id, task_report_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_task_reports_task_processing_results_subject_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_task_reports_task_processing_results_subject_list_service_provisioning_errors(
+        connection,
+        workflow_id,
+        task_report_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -9681,7 +13096,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/taskReports/#{task_report_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/taskReports/#{task_report_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -9712,8 +13129,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_task_reports_task_processing_results_subject_service_provisioning_errors_get_count_aefd(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_task_reports_task_processing_results_subject_service_provisioning_errors_get_count_aefd(connection, workflow_id, task_report_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_task_reports_task_processing_results_subject_service_provisioning_errors_get_count_aefd(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_task_reports_task_processing_results_subject_service_provisioning_errors_get_count_aefd(
+        connection,
+        workflow_id,
+        task_report_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -9722,7 +13154,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/taskReports/#{task_report_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/taskReports/#{task_report_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -9752,12 +13186,31 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_task_reports_task_processing_results_subject_update_mailbox_settings(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_task_reports_task_processing_results_subject_update_mailbox_settings(connection, workflow_id, task_report_id, task_processing_result_id, microsoft_graph_mailbox_settings, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_task_reports_task_processing_results_subject_update_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_task_reports_task_processing_results_subject_update_mailbox_settings(
+        connection,
+        workflow_id,
+        task_report_id,
+        task_processing_result_id,
+        microsoft_graph_mailbox_settings,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/taskReports/#{task_report_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/taskReports/#{task_report_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings"
+      )
       |> add_param(:body, :body, microsoft_graph_mailbox_settings)
       |> Enum.into([])
 
@@ -9786,8 +13239,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_tasks_get_count1c0a(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_tasks_get_count1c0a(connection, workflow_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_tasks_get_count1c0a(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_tasks_get_count1c0a(
+        connection,
+        workflow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -9828,8 +13292,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResult.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_tasks_get_task_processing_results(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResult.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_tasks_get_task_processing_results(connection, workflow_id, task_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_tasks_get_task_processing_results(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResult.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_tasks_get_task_processing_results(
+        connection,
+        workflow_id,
+        task_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -9838,7 +13317,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -9875,8 +13356,22 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_tasks_list_task_processing_results(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_tasks_list_task_processing_results(connection, workflow_id, task_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_tasks_list_task_processing_results(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_tasks_list_task_processing_results(
+        connection,
+        workflow_id,
+        task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -9891,14 +13386,17 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/tasks/#{task_id}/taskProcessingResults")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/tasks/#{task_id}/taskProcessingResults"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -9921,8 +13419,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_tasks_task_processing_results_get_count4230(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_tasks_task_processing_results_get_count4230(connection, workflow_id, task_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_tasks_task_processing_results_get_count4230(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_tasks_task_processing_results_get_count4230(
+        connection,
+        workflow_id,
+        task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -9931,7 +13442,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/tasks/#{task_id}/taskProcessingResults/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/tasks/#{task_id}/taskProcessingResults/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -9963,8 +13476,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_tasks_task_processing_results_get_subject(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_tasks_task_processing_results_get_subject(connection, workflow_id, task_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_tasks_task_processing_results_get_subject(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_tasks_task_processing_results_get_subject(
+        connection,
+        workflow_id,
+        task_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -9973,7 +13501,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -10005,8 +13535,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_tasks_task_processing_results_get_task(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_tasks_task_processing_results_get_task(connection, workflow_id, task_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_tasks_task_processing_results_get_task(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_tasks_task_processing_results_get_task(
+        connection,
+        workflow_id,
+        task_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -10015,7 +13560,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/task")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/task"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -10047,8 +13594,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_tasks_task_processing_results_subject_get_mailbox_settings(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_tasks_task_processing_results_subject_get_mailbox_settings(connection, workflow_id, task_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_tasks_task_processing_results_subject_get_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_tasks_task_processing_results_subject_get_mailbox_settings(
+        connection,
+        workflow_id,
+        task_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -10057,7 +13619,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -10094,8 +13658,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_tasks_task_processing_results_subject_list_service_provisioning_errors(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_tasks_task_processing_results_subject_list_service_provisioning_errors(connection, workflow_id, task_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_tasks_task_processing_results_subject_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_tasks_task_processing_results_subject_list_service_provisioning_errors(
+        connection,
+        workflow_id,
+        task_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -10110,7 +13689,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -10141,8 +13722,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_tasks_task_processing_results_subject_service_provisioning_errors_get_count4ca2(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_tasks_task_processing_results_subject_service_provisioning_errors_get_count4ca2(connection, workflow_id, task_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_tasks_task_processing_results_subject_service_provisioning_errors_get_count4ca2(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_tasks_task_processing_results_subject_service_provisioning_errors_get_count4ca2(
+        connection,
+        workflow_id,
+        task_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -10151,7 +13747,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -10181,12 +13779,31 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_tasks_task_processing_results_subject_update_mailbox_settings(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_tasks_task_processing_results_subject_update_mailbox_settings(connection, workflow_id, task_id, task_processing_result_id, microsoft_graph_mailbox_settings, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_tasks_task_processing_results_subject_update_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_tasks_task_processing_results_subject_update_mailbox_settings(
+        connection,
+        workflow_id,
+        task_id,
+        task_processing_result_id,
+        microsoft_graph_mailbox_settings,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings"
+      )
       |> add_param(:body, :body, microsoft_graph_mailbox_settings)
       |> Enum.into([])
 
@@ -10215,8 +13832,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_update_tasks(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_update_tasks(connection, workflow_id, task_id, microsoft_graph_identity_governance_task, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_update_tasks(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_update_tasks(
+        connection,
+        workflow_id,
+        task_id,
+        microsoft_graph_identity_governance_task,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -10249,8 +13881,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_user_processing_results_get_count_d3ed(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_user_processing_results_get_count_d3ed(connection, workflow_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_user_processing_results_get_count_d3ed(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_user_processing_results_get_count_d3ed(
+        connection,
+        workflow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -10259,7 +13902,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/userProcessingResults/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/userProcessingResults/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -10290,8 +13935,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_user_processing_results_get_subject(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_user_processing_results_get_subject(connection, workflow_id, user_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_user_processing_results_get_subject(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_user_processing_results_get_subject(
+        connection,
+        workflow_id,
+        user_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -10300,7 +13958,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/subject")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/subject"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -10332,8 +13992,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResult.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_user_processing_results_get_task_processing_results(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResult.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_user_processing_results_get_task_processing_results(connection, workflow_id, user_processing_result_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_user_processing_results_get_task_processing_results(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResult.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_user_processing_results_get_task_processing_results(
+        connection,
+        workflow_id,
+        user_processing_result_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -10342,7 +14017,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -10379,8 +14056,22 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_user_processing_results_list_task_processing_results(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_user_processing_results_list_task_processing_results(connection, workflow_id, user_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_user_processing_results_list_task_processing_results(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_user_processing_results_list_task_processing_results(
+        connection,
+        workflow_id,
+        user_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -10395,14 +14086,17 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -10426,8 +14120,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_user_processing_results_subject_get_mailbox_settings(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_user_processing_results_subject_get_mailbox_settings(connection, workflow_id, user_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_user_processing_results_subject_get_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_user_processing_results_subject_get_mailbox_settings(
+        connection,
+        workflow_id,
+        user_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -10436,7 +14143,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/subject/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/subject/mailboxSettings"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -10472,8 +14181,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_user_processing_results_subject_list_service_provisioning_errors(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_user_processing_results_subject_list_service_provisioning_errors(connection, workflow_id, user_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_user_processing_results_subject_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_user_processing_results_subject_list_service_provisioning_errors(
+        connection,
+        workflow_id,
+        user_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -10488,7 +14210,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/subject/serviceProvisioningErrors")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/subject/serviceProvisioningErrors"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -10518,8 +14242,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_user_processing_results_subject_service_provisioning_errors_get_count23a8(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_user_processing_results_subject_service_provisioning_errors_get_count23a8(connection, workflow_id, user_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_user_processing_results_subject_service_provisioning_errors_get_count23a8(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_user_processing_results_subject_service_provisioning_errors_get_count23a8(
+        connection,
+        workflow_id,
+        user_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -10528,7 +14265,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/subject/serviceProvisioningErrors/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/subject/serviceProvisioningErrors/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -10557,12 +14296,29 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_user_processing_results_subject_update_mailbox_settings(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_user_processing_results_subject_update_mailbox_settings(connection, workflow_id, user_processing_result_id, microsoft_graph_mailbox_settings, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_user_processing_results_subject_update_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_user_processing_results_subject_update_mailbox_settings(
+        connection,
+        workflow_id,
+        user_processing_result_id,
+        microsoft_graph_mailbox_settings,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/subject/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/subject/mailboxSettings"
+      )
       |> add_param(:body, :body, microsoft_graph_mailbox_settings)
       |> Enum.into([])
 
@@ -10592,8 +14348,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_user_processing_results_task_processing_results_get_count8333(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_user_processing_results_task_processing_results_get_count8333(connection, workflow_id, user_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_user_processing_results_task_processing_results_get_count8333(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_user_processing_results_task_processing_results_get_count8333(
+        connection,
+        workflow_id,
+        user_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -10602,7 +14371,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -10634,8 +14405,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_user_processing_results_task_processing_results_get_subject(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_user_processing_results_task_processing_results_get_subject(connection, workflow_id, user_processing_result_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_user_processing_results_task_processing_results_get_subject(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_user_processing_results_task_processing_results_get_subject(
+        connection,
+        workflow_id,
+        user_processing_result_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -10644,7 +14430,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/subject")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/subject"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -10676,8 +14464,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_user_processing_results_task_processing_results_get_task(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_user_processing_results_task_processing_results_get_task(connection, workflow_id, user_processing_result_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_user_processing_results_task_processing_results_get_task(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_user_processing_results_task_processing_results_get_task(
+        connection,
+        workflow_id,
+        user_processing_result_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -10686,7 +14489,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/task")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/task"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -10718,8 +14523,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_user_processing_results_task_processing_results_subject_get_mailbox_settings(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_user_processing_results_task_processing_results_subject_get_mailbox_settings(connection, workflow_id, user_processing_result_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_user_processing_results_task_processing_results_subject_get_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_user_processing_results_task_processing_results_subject_get_mailbox_settings(
+        connection,
+        workflow_id,
+        user_processing_result_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -10728,7 +14548,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -10765,8 +14587,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_user_processing_results_task_processing_results_subject_list_service_provisioning_errors(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_user_processing_results_task_processing_results_subject_list_service_provisioning_errors(connection, workflow_id, user_processing_result_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_user_processing_results_task_processing_results_subject_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_user_processing_results_task_processing_results_subject_list_service_provisioning_errors(
+        connection,
+        workflow_id,
+        user_processing_result_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -10781,7 +14618,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -10812,8 +14651,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_user_processing_results_task_processing_results_subject_service_provisioning_errors_get_count_f382(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_user_processing_results_task_processing_results_subject_service_provisioning_errors_get_count_f382(connection, workflow_id, user_processing_result_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_user_processing_results_task_processing_results_subject_service_provisioning_errors_get_count_f382(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_user_processing_results_task_processing_results_subject_service_provisioning_errors_get_count_f382(
+        connection,
+        workflow_id,
+        user_processing_result_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -10822,7 +14676,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -10852,12 +14708,31 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_user_processing_results_task_processing_results_subject_update_mailbox_settings(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_user_processing_results_task_processing_results_subject_update_mailbox_settings(connection, workflow_id, user_processing_result_id, task_processing_result_id, microsoft_graph_mailbox_settings, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_user_processing_results_task_processing_results_subject_update_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_user_processing_results_task_processing_results_subject_update_mailbox_settings(
+        connection,
+        workflow_id,
+        user_processing_result_id,
+        task_processing_result_id,
+        microsoft_graph_mailbox_settings,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/userProcessingResults/#{user_processing_result_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings"
+      )
       |> add_param(:body, :body, microsoft_graph_mailbox_settings)
       |> Enum.into([])
 
@@ -10886,12 +14761,29 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_versions_create_tasks(Tesla.Env.client, String.t, integer(), MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_versions_create_tasks(connection, workflow_id, workflow_version_version_number, microsoft_graph_identity_governance_task, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_versions_create_tasks(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_versions_create_tasks(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        microsoft_graph_identity_governance_task,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks"
+      )
       |> add_param(:body, :body, microsoft_graph_identity_governance_task)
       |> Enum.into([])
 
@@ -10922,8 +14814,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_versions_created_by_get_mailbox_settings(Tesla.Env.client, String.t, integer(), keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_versions_created_by_get_mailbox_settings(connection, workflow_id, workflow_version_version_number, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_versions_created_by_get_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_versions_created_by_get_mailbox_settings(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -10932,7 +14837,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/createdBy/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/createdBy/mailboxSettings"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -10968,8 +14875,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_versions_created_by_list_service_provisioning_errors(Tesla.Env.client, String.t, integer(), keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_versions_created_by_list_service_provisioning_errors(connection, workflow_id, workflow_version_version_number, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_versions_created_by_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_versions_created_by_list_service_provisioning_errors(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -10984,7 +14904,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/createdBy/serviceProvisioningErrors")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/createdBy/serviceProvisioningErrors"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -11014,8 +14936,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_versions_created_by_service_provisioning_errors_get_count_ba38(Tesla.Env.client, String.t, integer(), keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_versions_created_by_service_provisioning_errors_get_count_ba38(connection, workflow_id, workflow_version_version_number, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_versions_created_by_service_provisioning_errors_get_count_ba38(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_versions_created_by_service_provisioning_errors_get_count_ba38(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -11024,7 +14959,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/createdBy/serviceProvisioningErrors/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/createdBy/serviceProvisioningErrors/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -11053,12 +14990,29 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_versions_created_by_update_mailbox_settings(Tesla.Env.client, String.t, integer(), MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_versions_created_by_update_mailbox_settings(connection, workflow_id, workflow_version_version_number, microsoft_graph_mailbox_settings, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_versions_created_by_update_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_versions_created_by_update_mailbox_settings(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        microsoft_graph_mailbox_settings,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/createdBy/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/createdBy/mailboxSettings"
+      )
       |> add_param(:body, :body, microsoft_graph_mailbox_settings)
       |> Enum.into([])
 
@@ -11088,8 +15042,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_versions_delete_tasks(Tesla.Env.client, String.t, integer(), String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_versions_delete_tasks(connection, workflow_id, workflow_version_version_number, task_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_versions_delete_tasks(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_versions_delete_tasks(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -11097,7 +15066,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:delete)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -11126,8 +15097,19 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_versions_get_count0c73(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_versions_get_count0c73(connection, workflow_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_versions_get_count0c73(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_versions_get_count0c73(
+        connection,
+        workflow_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -11167,8 +15149,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_versions_get_created_by(Tesla.Env.client, String.t, integer(), keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_versions_get_created_by(connection, workflow_id, workflow_version_version_number, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_versions_get_created_by(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_versions_get_created_by(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -11177,7 +15172,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/createdBy")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/createdBy"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -11208,8 +15205,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_versions_get_last_modified_by(Tesla.Env.client, String.t, integer(), keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_versions_get_last_modified_by(connection, workflow_id, workflow_version_version_number, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_versions_get_last_modified_by(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_versions_get_last_modified_by(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -11218,7 +15228,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/lastModifiedBy")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/lastModifiedBy"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -11250,8 +15262,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_versions_get_tasks(Tesla.Env.client, String.t, integer(), String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_versions_get_tasks(connection, workflow_id, workflow_version_version_number, task_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_versions_get_tasks(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_versions_get_tasks(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -11260,7 +15287,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -11291,8 +15320,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_versions_last_modified_by_get_mailbox_settings(Tesla.Env.client, String.t, integer(), keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_versions_last_modified_by_get_mailbox_settings(connection, workflow_id, workflow_version_version_number, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_versions_last_modified_by_get_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_versions_last_modified_by_get_mailbox_settings(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -11301,7 +15343,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/lastModifiedBy/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/lastModifiedBy/mailboxSettings"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -11337,8 +15381,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_versions_last_modified_by_list_service_provisioning_errors(Tesla.Env.client, String.t, integer(), keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_versions_last_modified_by_list_service_provisioning_errors(connection, workflow_id, workflow_version_version_number, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_versions_last_modified_by_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_versions_last_modified_by_list_service_provisioning_errors(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -11353,7 +15410,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/lastModifiedBy/serviceProvisioningErrors")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/lastModifiedBy/serviceProvisioningErrors"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -11383,8 +15442,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_versions_last_modified_by_service_provisioning_errors_get_count8d93(Tesla.Env.client, String.t, integer(), keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_versions_last_modified_by_service_provisioning_errors_get_count8d93(connection, workflow_id, workflow_version_version_number, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_versions_last_modified_by_service_provisioning_errors_get_count8d93(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_versions_last_modified_by_service_provisioning_errors_get_count8d93(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -11393,7 +15465,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/lastModifiedBy/serviceProvisioningErrors/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/lastModifiedBy/serviceProvisioningErrors/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -11422,12 +15496,29 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_versions_last_modified_by_update_mailbox_settings(Tesla.Env.client, String.t, integer(), MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_versions_last_modified_by_update_mailbox_settings(connection, workflow_id, workflow_version_version_number, microsoft_graph_mailbox_settings, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_versions_last_modified_by_update_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_versions_last_modified_by_update_mailbox_settings(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        microsoft_graph_mailbox_settings,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/lastModifiedBy/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/lastModifiedBy/mailboxSettings"
+      )
       |> add_param(:body, :body, microsoft_graph_mailbox_settings)
       |> Enum.into([])
 
@@ -11464,8 +15555,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_versions_list_tasks(Tesla.Env.client, String.t, integer(), keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_versions_list_tasks(connection, workflow_id, workflow_version_version_number, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_versions_list_tasks(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_versions_list_tasks(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -11480,7 +15584,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -11510,8 +15616,21 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_versions_tasks_get_count_de98(Tesla.Env.client, String.t, integer(), keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_versions_tasks_get_count_de98(connection, workflow_id, workflow_version_version_number, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_versions_tasks_get_count_de98(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_versions_tasks_get_count_de98(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -11520,7 +15639,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -11553,8 +15674,25 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResult.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_versions_tasks_get_task_processing_results(Tesla.Env.client, String.t, integer(), String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResult.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_versions_tasks_get_task_processing_results(connection, workflow_id, workflow_version_version_number, task_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_versions_tasks_get_task_processing_results(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResult.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_versions_tasks_get_task_processing_results(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        task_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -11563,7 +15701,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -11601,8 +15741,24 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_versions_tasks_list_task_processing_results(Tesla.Env.client, String.t, integer(), String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_versions_tasks_list_task_processing_results(connection, workflow_id, workflow_version_version_number, task_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_versions_tasks_list_task_processing_results(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_versions_tasks_list_task_processing_results(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -11617,14 +15773,17 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}/taskProcessingResults")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}/taskProcessingResults"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTaskProcessingResultCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -11648,8 +15807,23 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_versions_tasks_task_processing_results_get_count6334(Tesla.Env.client, String.t, integer(), String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_versions_tasks_task_processing_results_get_count6334(connection, workflow_id, workflow_version_version_number, task_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_versions_tasks_task_processing_results_get_count6334(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_versions_tasks_task_processing_results_get_count6334(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        task_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -11658,7 +15832,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}/taskProcessingResults/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}/taskProcessingResults/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -11691,8 +15867,25 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_versions_tasks_task_processing_results_get_subject(Tesla.Env.client, String.t, integer(), String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_versions_tasks_task_processing_results_get_subject(connection, workflow_id, workflow_version_version_number, task_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_versions_tasks_task_processing_results_get_subject(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUser.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_versions_tasks_task_processing_results_get_subject(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        task_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -11701,7 +15894,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -11734,8 +15929,25 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_versions_tasks_task_processing_results_get_task(Tesla.Env.client, String.t, integer(), String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_versions_tasks_task_processing_results_get_task(connection, workflow_id, workflow_version_version_number, task_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_versions_tasks_task_processing_results_get_task(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_versions_tasks_task_processing_results_get_task(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        task_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -11744,7 +15956,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/task")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/task"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -11777,8 +15991,25 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_versions_tasks_task_processing_results_subject_get_mailbox_settings(Tesla.Env.client, String.t, integer(), String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_versions_tasks_task_processing_results_subject_get_mailbox_settings(connection, workflow_id, workflow_version_version_number, task_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_versions_tasks_task_processing_results_subject_get_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_versions_tasks_task_processing_results_subject_get_mailbox_settings(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        task_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -11787,7 +16018,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -11825,8 +16058,25 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_versions_tasks_task_processing_results_subject_list_service_provisioning_errors(Tesla.Env.client, String.t, integer(), String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_versions_tasks_task_processing_results_subject_list_service_provisioning_errors(connection, workflow_id, workflow_version_version_number, task_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_versions_tasks_task_processing_results_subject_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_versions_tasks_task_processing_results_subject_list_service_provisioning_errors(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        task_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -11841,7 +16091,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -11873,8 +16125,25 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_versions_tasks_task_processing_results_subject_service_provisioning_errors_get_count5d3d(Tesla.Env.client, String.t, integer(), String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_versions_tasks_task_processing_results_subject_service_provisioning_errors_get_count5d3d(connection, workflow_id, workflow_version_version_number, task_id, task_processing_result_id, opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_versions_tasks_task_processing_results_subject_service_provisioning_errors_get_count5d3d(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_versions_tasks_task_processing_results_subject_service_provisioning_errors_get_count5d3d(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        task_id,
+        task_processing_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -11883,7 +16152,9 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
     request =
       %{}
       |> method(:get)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors/$count")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject/serviceProvisioningErrors/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -11914,12 +16185,33 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_versions_tasks_task_processing_results_subject_update_mailbox_settings(Tesla.Env.client, String.t, integer(), String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_versions_tasks_task_processing_results_subject_update_mailbox_settings(connection, workflow_id, workflow_version_version_number, task_id, task_processing_result_id, microsoft_graph_mailbox_settings, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_versions_tasks_task_processing_results_subject_update_mailbox_settings(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphMailboxSettings.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_versions_tasks_task_processing_results_subject_update_mailbox_settings(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        task_id,
+        task_processing_result_id,
+        microsoft_graph_mailbox_settings,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}/taskProcessingResults/#{task_processing_result_id}/subject/mailboxSettings"
+      )
       |> add_param(:body, :body, microsoft_graph_mailbox_settings)
       |> Enum.into([])
 
@@ -11949,12 +16241,31 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_lifecycle_workflows_workflows_versions_update_tasks(Tesla.Env.client, String.t, integer(), String.t, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_governance_lifecycle_workflows_workflows_versions_update_tasks(connection, workflow_id, workflow_version_version_number, task_id, microsoft_graph_identity_governance_task, _opts \\ []) do
+  @spec identity_governance_lifecycle_workflows_workflows_versions_update_tasks(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_lifecycle_workflows_workflows_versions_update_tasks(
+        connection,
+        workflow_id,
+        workflow_version_version_number,
+        task_id,
+        microsoft_graph_identity_governance_task,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}")
+      |> url(
+        "/identityGovernance/lifecycleWorkflows/workflows/#{workflow_id}/versions/#{workflow_version_version_number}/tasks/#{task_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_identity_governance_task)
       |> Enum.into([])
 
@@ -11981,13 +16292,29 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceLifecycleWorkflowsContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleWorkflowsContainer.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_governance_update_lifecycle_workflows(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleWorkflowsContainer.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleWorkflowsContainer.t} | {:error, Tesla.Env.t}
-  def identity_governance_update_lifecycle_workflows(connection, microsoft_graph_identity_governance_lifecycle_workflows_container, _opts \\ []) do
+  @spec identity_governance_update_lifecycle_workflows(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleWorkflowsContainer.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleWorkflowsContainer.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_governance_update_lifecycle_workflows(
+        connection,
+        microsoft_graph_identity_governance_lifecycle_workflows_container,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
       |> url("/identityGovernance/lifecycleWorkflows")
-      |> add_param(:body, :body, microsoft_graph_identity_governance_lifecycle_workflows_container)
+      |> add_param(
+        :body,
+        :body,
+        microsoft_graph_identity_governance_lifecycle_workflows_container
+      )
       |> Enum.into([])
 
     connection

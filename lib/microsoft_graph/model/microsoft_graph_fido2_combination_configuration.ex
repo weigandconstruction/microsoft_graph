@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphFido2CombinationConfiguration do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,17 +15,21 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphFido2CombinationConfiguration do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :appliesToCombinations => [MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodModes.t] | nil,
-    :allowedAAGUIDs => [String.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :appliesToCombinations =>
+            [MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodModes.t()] | nil,
+          :allowedAAGUIDs => [String.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:appliesToCombinations, :list, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodModes)
+    |> Deserializer.deserialize(
+      :appliesToCombinations,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodModes
+    )
   end
 end
-

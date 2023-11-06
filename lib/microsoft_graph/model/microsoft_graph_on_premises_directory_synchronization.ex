@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphOnPremisesDirectorySynchronization do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,18 +15,27 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphOnPremisesDirectorySynchronization 
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :configuration => MicrosoftGraph.Model.OnPremisesDirectorySynchronizationConfiguration.t | nil,
-    :features => MicrosoftGraph.Model.MicrosoftGraphOnPremisesDirectorySynchronizationFeature.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :configuration =>
+            MicrosoftGraph.Model.OnPremisesDirectorySynchronizationConfiguration.t() | nil,
+          :features =>
+            MicrosoftGraph.Model.MicrosoftGraphOnPremisesDirectorySynchronizationFeature.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:configuration, :struct, MicrosoftGraph.Model.OnPremisesDirectorySynchronizationConfiguration)
-     |> Deserializer.deserialize(:features, :struct, MicrosoftGraph.Model.MicrosoftGraphOnPremisesDirectorySynchronizationFeature)
+    |> Deserializer.deserialize(
+      :configuration,
+      :struct,
+      MicrosoftGraph.Model.OnPremisesDirectorySynchronizationConfiguration
+    )
+    |> Deserializer.deserialize(
+      :features,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphOnPremisesDirectorySynchronizationFeature
+    )
   end
 end
-

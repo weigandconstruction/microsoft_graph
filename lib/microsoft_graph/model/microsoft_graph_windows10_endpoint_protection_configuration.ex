@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphWindows10EndpointProtectionConfiguration do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -60,79 +60,163 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphWindows10EndpointProtectionConfigur
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :assignments => [MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationAssignment.t] | nil,
-    :createdDateTime => DateTime.t | nil,
-    :description => String.t | nil,
-    :deviceSettingStateSummaries => [MicrosoftGraph.Model.MicrosoftGraphSettingStateDeviceSummary.t] | nil,
-    :deviceStatusOverview => MicrosoftGraph.Model.DeviceConfigurationDeviceStatusOverview.t | nil,
-    :deviceStatuses => [MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceStatus.t] | nil,
-    :displayName => String.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :userStatusOverview => MicrosoftGraph.Model.DeviceConfigurationUserStatusOverview.t | nil,
-    :userStatuses => [MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserStatus.t] | nil,
-    :version => integer() | nil,
-    :firewallProfilePrivate => MicrosoftGraph.Model.Windows10EndpointProtectionConfigurationFirewallProfilePrivate.t | nil,
-    :applicationGuardAllowPrintToNetworkPrinters => boolean() | nil,
-    :defenderAdditionalGuardedFolders => [String.t] | nil,
-    :smartScreenEnableInShell => boolean() | nil,
-    :firewallPreSharedKeyEncodingMethod => MicrosoftGraph.Model.MicrosoftGraphFirewallPreSharedKeyEncodingMethodType.t | nil,
-    :applicationGuardAllowPersistence => boolean() | nil,
-    :firewallBlockStatefulFTP => boolean() | nil,
-    :applicationGuardAllowPrintToXPS => boolean() | nil,
-    :defenderGuardedFoldersAllowedAppPaths => [String.t] | nil,
-    :firewallIdleTimeoutForSecurityAssociationInSeconds => integer() | nil,
-    :applicationGuardAllowPrintToPDF => boolean() | nil,
-    :firewallProfileDomain => MicrosoftGraph.Model.Windows10EndpointProtectionConfigurationFirewallProfileDomain.t | nil,
-    :applicationGuardBlockNonEnterpriseContent => boolean() | nil,
-    :smartScreenBlockOverrideForFiles => boolean() | nil,
-    :firewallIPSecExemptionsAllowICMP => boolean() | nil,
-    :defenderExploitProtectionXmlFileName => String.t | nil,
-    :applicationGuardBlockClipboardSharing => MicrosoftGraph.Model.MicrosoftGraphApplicationGuardBlockClipboardSharingType.t | nil,
-    :defenderSecurityCenterBlockExploitProtectionOverride => boolean() | nil,
-    :firewallIPSecExemptionsAllowDHCP => boolean() | nil,
-    :defenderExploitProtectionXml => String.t | nil,
-    :firewallIPSecExemptionsAllowRouterDiscovery => boolean() | nil,
-    :defenderAttackSurfaceReductionExcludedPaths => [String.t] | nil,
-    :bitLockerEncryptDevice => boolean() | nil,
-    :applicationGuardEnabled => boolean() | nil,
-    :bitLockerRemovableDrivePolicy => MicrosoftGraph.Model.Windows10EndpointProtectionConfigurationBitLockerRemovableDrivePolicy.t | nil,
-    :appLockerApplicationControl => MicrosoftGraph.Model.MicrosoftGraphAppLockerApplicationControlType.t | nil,
-    :firewallProfilePublic => MicrosoftGraph.Model.Windows10EndpointProtectionConfigurationFirewallProfilePublic.t | nil,
-    :applicationGuardForceAuditing => boolean() | nil,
-    :bitLockerDisableWarningForOtherDiskEncryption => boolean() | nil,
-    :applicationGuardBlockFileTransfer => MicrosoftGraph.Model.MicrosoftGraphApplicationGuardBlockFileTransferType.t | nil,
-    :firewallCertificateRevocationListCheckMethod => MicrosoftGraph.Model.MicrosoftGraphFirewallCertificateRevocationListCheckMethodType.t | nil,
-    :applicationGuardAllowPrintToLocalPrinters => boolean() | nil,
-    :firewallIPSecExemptionsAllowNeighborDiscovery => boolean() | nil,
-    :firewallMergeKeyingModuleSettings => boolean() | nil,
-    :bitLockerEnableStorageCardEncryptionOnMobile => boolean() | nil,
-    :firewallPacketQueueingMethod => MicrosoftGraph.Model.MicrosoftGraphFirewallPacketQueueingMethodType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :assignments =>
+            [MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationAssignment.t()] | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :deviceSettingStateSummaries =>
+            [MicrosoftGraph.Model.MicrosoftGraphSettingStateDeviceSummary.t()] | nil,
+          :deviceStatusOverview =>
+            MicrosoftGraph.Model.DeviceConfigurationDeviceStatusOverview.t() | nil,
+          :deviceStatuses =>
+            [MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceStatus.t()] | nil,
+          :displayName => String.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :userStatusOverview =>
+            MicrosoftGraph.Model.DeviceConfigurationUserStatusOverview.t() | nil,
+          :userStatuses =>
+            [MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserStatus.t()] | nil,
+          :version => integer() | nil,
+          :firewallProfilePrivate =>
+            MicrosoftGraph.Model.Windows10EndpointProtectionConfigurationFirewallProfilePrivate.t()
+            | nil,
+          :applicationGuardAllowPrintToNetworkPrinters => boolean() | nil,
+          :defenderAdditionalGuardedFolders => [String.t()] | nil,
+          :smartScreenEnableInShell => boolean() | nil,
+          :firewallPreSharedKeyEncodingMethod =>
+            MicrosoftGraph.Model.MicrosoftGraphFirewallPreSharedKeyEncodingMethodType.t() | nil,
+          :applicationGuardAllowPersistence => boolean() | nil,
+          :firewallBlockStatefulFTP => boolean() | nil,
+          :applicationGuardAllowPrintToXPS => boolean() | nil,
+          :defenderGuardedFoldersAllowedAppPaths => [String.t()] | nil,
+          :firewallIdleTimeoutForSecurityAssociationInSeconds => integer() | nil,
+          :applicationGuardAllowPrintToPDF => boolean() | nil,
+          :firewallProfileDomain =>
+            MicrosoftGraph.Model.Windows10EndpointProtectionConfigurationFirewallProfileDomain.t()
+            | nil,
+          :applicationGuardBlockNonEnterpriseContent => boolean() | nil,
+          :smartScreenBlockOverrideForFiles => boolean() | nil,
+          :firewallIPSecExemptionsAllowICMP => boolean() | nil,
+          :defenderExploitProtectionXmlFileName => String.t() | nil,
+          :applicationGuardBlockClipboardSharing =>
+            MicrosoftGraph.Model.MicrosoftGraphApplicationGuardBlockClipboardSharingType.t() | nil,
+          :defenderSecurityCenterBlockExploitProtectionOverride => boolean() | nil,
+          :firewallIPSecExemptionsAllowDHCP => boolean() | nil,
+          :defenderExploitProtectionXml => String.t() | nil,
+          :firewallIPSecExemptionsAllowRouterDiscovery => boolean() | nil,
+          :defenderAttackSurfaceReductionExcludedPaths => [String.t()] | nil,
+          :bitLockerEncryptDevice => boolean() | nil,
+          :applicationGuardEnabled => boolean() | nil,
+          :bitLockerRemovableDrivePolicy =>
+            MicrosoftGraph.Model.Windows10EndpointProtectionConfigurationBitLockerRemovableDrivePolicy.t()
+            | nil,
+          :appLockerApplicationControl =>
+            MicrosoftGraph.Model.MicrosoftGraphAppLockerApplicationControlType.t() | nil,
+          :firewallProfilePublic =>
+            MicrosoftGraph.Model.Windows10EndpointProtectionConfigurationFirewallProfilePublic.t()
+            | nil,
+          :applicationGuardForceAuditing => boolean() | nil,
+          :bitLockerDisableWarningForOtherDiskEncryption => boolean() | nil,
+          :applicationGuardBlockFileTransfer =>
+            MicrosoftGraph.Model.MicrosoftGraphApplicationGuardBlockFileTransferType.t() | nil,
+          :firewallCertificateRevocationListCheckMethod =>
+            MicrosoftGraph.Model.MicrosoftGraphFirewallCertificateRevocationListCheckMethodType.t()
+            | nil,
+          :applicationGuardAllowPrintToLocalPrinters => boolean() | nil,
+          :firewallIPSecExemptionsAllowNeighborDiscovery => boolean() | nil,
+          :firewallMergeKeyingModuleSettings => boolean() | nil,
+          :bitLockerEnableStorageCardEncryptionOnMobile => boolean() | nil,
+          :firewallPacketQueueingMethod =>
+            MicrosoftGraph.Model.MicrosoftGraphFirewallPacketQueueingMethodType.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:assignments, :list, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationAssignment)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:deviceSettingStateSummaries, :list, MicrosoftGraph.Model.MicrosoftGraphSettingStateDeviceSummary)
-     |> Deserializer.deserialize(:deviceStatusOverview, :struct, MicrosoftGraph.Model.DeviceConfigurationDeviceStatusOverview)
-     |> Deserializer.deserialize(:deviceStatuses, :list, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceStatus)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:userStatusOverview, :struct, MicrosoftGraph.Model.DeviceConfigurationUserStatusOverview)
-     |> Deserializer.deserialize(:userStatuses, :list, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserStatus)
-     |> Deserializer.deserialize(:firewallProfilePrivate, :struct, MicrosoftGraph.Model.Windows10EndpointProtectionConfigurationFirewallProfilePrivate)
-     |> Deserializer.deserialize(:firewallPreSharedKeyEncodingMethod, :struct, MicrosoftGraph.Model.MicrosoftGraphFirewallPreSharedKeyEncodingMethodType)
-     |> Deserializer.deserialize(:firewallProfileDomain, :struct, MicrosoftGraph.Model.Windows10EndpointProtectionConfigurationFirewallProfileDomain)
-     |> Deserializer.deserialize(:applicationGuardBlockClipboardSharing, :struct, MicrosoftGraph.Model.MicrosoftGraphApplicationGuardBlockClipboardSharingType)
-     |> Deserializer.deserialize(:bitLockerRemovableDrivePolicy, :struct, MicrosoftGraph.Model.Windows10EndpointProtectionConfigurationBitLockerRemovableDrivePolicy)
-     |> Deserializer.deserialize(:appLockerApplicationControl, :struct, MicrosoftGraph.Model.MicrosoftGraphAppLockerApplicationControlType)
-     |> Deserializer.deserialize(:firewallProfilePublic, :struct, MicrosoftGraph.Model.Windows10EndpointProtectionConfigurationFirewallProfilePublic)
-     |> Deserializer.deserialize(:applicationGuardBlockFileTransfer, :struct, MicrosoftGraph.Model.MicrosoftGraphApplicationGuardBlockFileTransferType)
-     |> Deserializer.deserialize(:firewallCertificateRevocationListCheckMethod, :struct, MicrosoftGraph.Model.MicrosoftGraphFirewallCertificateRevocationListCheckMethodType)
-     |> Deserializer.deserialize(:firewallPacketQueueingMethod, :struct, MicrosoftGraph.Model.MicrosoftGraphFirewallPacketQueueingMethodType)
+    |> Deserializer.deserialize(
+      :assignments,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationAssignment
+    )
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :deviceSettingStateSummaries,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSettingStateDeviceSummary
+    )
+    |> Deserializer.deserialize(
+      :deviceStatusOverview,
+      :struct,
+      MicrosoftGraph.Model.DeviceConfigurationDeviceStatusOverview
+    )
+    |> Deserializer.deserialize(
+      :deviceStatuses,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceStatus
+    )
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :userStatusOverview,
+      :struct,
+      MicrosoftGraph.Model.DeviceConfigurationUserStatusOverview
+    )
+    |> Deserializer.deserialize(
+      :userStatuses,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserStatus
+    )
+    |> Deserializer.deserialize(
+      :firewallProfilePrivate,
+      :struct,
+      MicrosoftGraph.Model.Windows10EndpointProtectionConfigurationFirewallProfilePrivate
+    )
+    |> Deserializer.deserialize(
+      :firewallPreSharedKeyEncodingMethod,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphFirewallPreSharedKeyEncodingMethodType
+    )
+    |> Deserializer.deserialize(
+      :firewallProfileDomain,
+      :struct,
+      MicrosoftGraph.Model.Windows10EndpointProtectionConfigurationFirewallProfileDomain
+    )
+    |> Deserializer.deserialize(
+      :applicationGuardBlockClipboardSharing,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphApplicationGuardBlockClipboardSharingType
+    )
+    |> Deserializer.deserialize(
+      :bitLockerRemovableDrivePolicy,
+      :struct,
+      MicrosoftGraph.Model.Windows10EndpointProtectionConfigurationBitLockerRemovableDrivePolicy
+    )
+    |> Deserializer.deserialize(
+      :appLockerApplicationControl,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAppLockerApplicationControlType
+    )
+    |> Deserializer.deserialize(
+      :firewallProfilePublic,
+      :struct,
+      MicrosoftGraph.Model.Windows10EndpointProtectionConfigurationFirewallProfilePublic
+    )
+    |> Deserializer.deserialize(
+      :applicationGuardBlockFileTransfer,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphApplicationGuardBlockFileTransferType
+    )
+    |> Deserializer.deserialize(
+      :firewallCertificateRevocationListCheckMethod,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphFirewallCertificateRevocationListCheckMethodType
+    )
+    |> Deserializer.deserialize(
+      :firewallPacketQueueingMethod,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphFirewallPacketQueueingMethodType
+    )
   end
 end
-

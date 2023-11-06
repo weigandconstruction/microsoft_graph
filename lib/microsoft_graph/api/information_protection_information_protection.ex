@@ -24,8 +24,17 @@ defmodule MicrosoftGraph.Api.InformationProtectionInformationProtection do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphInformationProtection.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec information_protection_information_protection_get_information_protection(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphInformationProtection.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def information_protection_information_protection_get_information_protection(connection, opts \\ []) do
+  @spec information_protection_information_protection_get_information_protection(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphInformationProtection.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def information_protection_information_protection_get_information_protection(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -61,8 +70,19 @@ defmodule MicrosoftGraph.Api.InformationProtectionInformationProtection do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphInformationProtection.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec information_protection_information_protection_update_information_protection(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphInformationProtection.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphInformationProtection.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def information_protection_information_protection_update_information_protection(connection, microsoft_graph_information_protection, _opts \\ []) do
+  @spec information_protection_information_protection_update_information_protection(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphInformationProtection.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphInformationProtection.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def information_protection_information_protection_update_information_protection(
+        connection,
+        microsoft_graph_information_protection,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

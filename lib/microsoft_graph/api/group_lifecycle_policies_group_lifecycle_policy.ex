@@ -24,7 +24,10 @@ defmodule MicrosoftGraph.Api.GroupLifecyclePoliciesGroupLifecyclePolicy do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec group_lifecycle_policies_get_count_ca62(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec group_lifecycle_policies_get_count_ca62(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def group_lifecycle_policies_get_count_ca62(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -62,8 +65,19 @@ defmodule MicrosoftGraph.Api.GroupLifecyclePoliciesGroupLifecyclePolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphGroupLifecyclePolicy.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec group_lifecycle_policies_group_lifecycle_policy_create_group_lifecycle_policy(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphGroupLifecyclePolicy.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphGroupLifecyclePolicy.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def group_lifecycle_policies_group_lifecycle_policy_create_group_lifecycle_policy(connection, microsoft_graph_group_lifecycle_policy, _opts \\ []) do
+  @spec group_lifecycle_policies_group_lifecycle_policy_create_group_lifecycle_policy(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphGroupLifecyclePolicy.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphGroupLifecyclePolicy.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def group_lifecycle_policies_group_lifecycle_policy_create_group_lifecycle_policy(
+        connection,
+        microsoft_graph_group_lifecycle_policy,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -96,8 +110,19 @@ defmodule MicrosoftGraph.Api.GroupLifecyclePoliciesGroupLifecyclePolicy do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec group_lifecycle_policies_group_lifecycle_policy_delete_group_lifecycle_policy(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def group_lifecycle_policies_group_lifecycle_policy_delete_group_lifecycle_policy(connection, group_lifecycle_policy_id, opts \\ []) do
+  @spec group_lifecycle_policies_group_lifecycle_policy_delete_group_lifecycle_policy(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def group_lifecycle_policies_group_lifecycle_policy_delete_group_lifecycle_policy(
+        connection,
+        group_lifecycle_policy_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -135,8 +160,19 @@ defmodule MicrosoftGraph.Api.GroupLifecyclePoliciesGroupLifecyclePolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphGroupLifecyclePolicy.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec group_lifecycle_policies_group_lifecycle_policy_get_group_lifecycle_policy(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphGroupLifecyclePolicy.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def group_lifecycle_policies_group_lifecycle_policy_get_group_lifecycle_policy(connection, group_lifecycle_policy_id, opts \\ []) do
+  @spec group_lifecycle_policies_group_lifecycle_policy_get_group_lifecycle_policy(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphGroupLifecyclePolicy.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def group_lifecycle_policies_group_lifecycle_policy_get_group_lifecycle_policy(
+        connection,
+        group_lifecycle_policy_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -180,8 +216,17 @@ defmodule MicrosoftGraph.Api.GroupLifecyclePoliciesGroupLifecyclePolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphGroupLifecyclePolicyCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec group_lifecycle_policies_group_lifecycle_policy_list_group_lifecycle_policy(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphGroupLifecyclePolicyCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def group_lifecycle_policies_group_lifecycle_policy_list_group_lifecycle_policy(connection, opts \\ []) do
+  @spec group_lifecycle_policies_group_lifecycle_policy_list_group_lifecycle_policy(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphGroupLifecyclePolicyCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def group_lifecycle_policies_group_lifecycle_policy_list_group_lifecycle_policy(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -225,8 +270,21 @@ defmodule MicrosoftGraph.Api.GroupLifecyclePoliciesGroupLifecyclePolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphGroupLifecyclePolicy.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec group_lifecycle_policies_group_lifecycle_policy_update_group_lifecycle_policy(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphGroupLifecyclePolicy.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphGroupLifecyclePolicy.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def group_lifecycle_policies_group_lifecycle_policy_update_group_lifecycle_policy(connection, group_lifecycle_policy_id, microsoft_graph_group_lifecycle_policy, _opts \\ []) do
+  @spec group_lifecycle_policies_group_lifecycle_policy_update_group_lifecycle_policy(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphGroupLifecyclePolicy.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphGroupLifecyclePolicy.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def group_lifecycle_policies_group_lifecycle_policy_update_group_lifecycle_policy(
+        connection,
+        group_lifecycle_policy_id,
+        microsoft_graph_group_lifecycle_policy,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

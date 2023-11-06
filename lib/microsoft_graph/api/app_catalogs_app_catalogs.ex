@@ -24,7 +24,10 @@ defmodule MicrosoftGraph.Api.AppCatalogsAppCatalogs do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAppCatalogs.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec app_catalogs_app_catalogs_get_app_catalogs(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAppCatalogs.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec app_catalogs_app_catalogs_get_app_catalogs(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAppCatalogs.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def app_catalogs_app_catalogs_get_app_catalogs(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -61,8 +64,19 @@ defmodule MicrosoftGraph.Api.AppCatalogsAppCatalogs do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAppCatalogs.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec app_catalogs_app_catalogs_update_app_catalogs(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphAppCatalogs.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAppCatalogs.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def app_catalogs_app_catalogs_update_app_catalogs(connection, microsoft_graph_app_catalogs, _opts \\ []) do
+  @spec app_catalogs_app_catalogs_update_app_catalogs(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphAppCatalogs.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAppCatalogs.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def app_catalogs_app_catalogs_update_app_catalogs(
+        connection,
+        microsoft_graph_app_catalogs,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

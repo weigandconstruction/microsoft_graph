@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.ApplicationsApplicationSynchronizationAcquireAccessTokenRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,14 +12,21 @@ defmodule MicrosoftGraph.Model.ApplicationsApplicationSynchronizationAcquireAcce
   ]
 
   @type t :: %__MODULE__{
-    :credentials => [MicrosoftGraph.Model.ApplicationsApplicationSynchronizationJobsSynchronizationJobValidateCredentialsRequestCredentialsInner.t] | nil
-  }
+          :credentials =>
+            [
+              MicrosoftGraph.Model.ApplicationsApplicationSynchronizationJobsSynchronizationJobValidateCredentialsRequestCredentialsInner.t()
+            ]
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:credentials, :list, MicrosoftGraph.Model.ApplicationsApplicationSynchronizationJobsSynchronizationJobValidateCredentialsRequestCredentialsInner)
+    |> Deserializer.deserialize(
+      :credentials,
+      :list,
+      MicrosoftGraph.Model.ApplicationsApplicationSynchronizationJobsSynchronizationJobValidateCredentialsRequestCredentialsInner
+    )
   end
 end
-

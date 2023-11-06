@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAuthentication do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -23,34 +23,83 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAuthentication do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :emailMethods => [MicrosoftGraph.Model.MicrosoftGraphEmailAuthenticationMethod.t] | nil,
-    :fido2Methods => [MicrosoftGraph.Model.MicrosoftGraphFido2AuthenticationMethod.t] | nil,
-    :methods => [MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethod.t] | nil,
-    :microsoftAuthenticatorMethods => [MicrosoftGraph.Model.MicrosoftGraphMicrosoftAuthenticatorAuthenticationMethod.t] | nil,
-    :operations => [MicrosoftGraph.Model.MicrosoftGraphLongRunningOperation.t] | nil,
-    :passwordMethods => [MicrosoftGraph.Model.MicrosoftGraphPasswordAuthenticationMethod.t] | nil,
-    :phoneMethods => [MicrosoftGraph.Model.MicrosoftGraphPhoneAuthenticationMethod.t] | nil,
-    :softwareOathMethods => [MicrosoftGraph.Model.MicrosoftGraphSoftwareOathAuthenticationMethod.t] | nil,
-    :temporaryAccessPassMethods => [MicrosoftGraph.Model.MicrosoftGraphTemporaryAccessPassAuthenticationMethod.t] | nil,
-    :windowsHelloForBusinessMethods => [MicrosoftGraph.Model.MicrosoftGraphWindowsHelloForBusinessAuthenticationMethod.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :emailMethods =>
+            [MicrosoftGraph.Model.MicrosoftGraphEmailAuthenticationMethod.t()] | nil,
+          :fido2Methods =>
+            [MicrosoftGraph.Model.MicrosoftGraphFido2AuthenticationMethod.t()] | nil,
+          :methods => [MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethod.t()] | nil,
+          :microsoftAuthenticatorMethods =>
+            [MicrosoftGraph.Model.MicrosoftGraphMicrosoftAuthenticatorAuthenticationMethod.t()]
+            | nil,
+          :operations => [MicrosoftGraph.Model.MicrosoftGraphLongRunningOperation.t()] | nil,
+          :passwordMethods =>
+            [MicrosoftGraph.Model.MicrosoftGraphPasswordAuthenticationMethod.t()] | nil,
+          :phoneMethods =>
+            [MicrosoftGraph.Model.MicrosoftGraphPhoneAuthenticationMethod.t()] | nil,
+          :softwareOathMethods =>
+            [MicrosoftGraph.Model.MicrosoftGraphSoftwareOathAuthenticationMethod.t()] | nil,
+          :temporaryAccessPassMethods =>
+            [MicrosoftGraph.Model.MicrosoftGraphTemporaryAccessPassAuthenticationMethod.t()] | nil,
+          :windowsHelloForBusinessMethods =>
+            [MicrosoftGraph.Model.MicrosoftGraphWindowsHelloForBusinessAuthenticationMethod.t()]
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:emailMethods, :list, MicrosoftGraph.Model.MicrosoftGraphEmailAuthenticationMethod)
-     |> Deserializer.deserialize(:fido2Methods, :list, MicrosoftGraph.Model.MicrosoftGraphFido2AuthenticationMethod)
-     |> Deserializer.deserialize(:methods, :list, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethod)
-     |> Deserializer.deserialize(:microsoftAuthenticatorMethods, :list, MicrosoftGraph.Model.MicrosoftGraphMicrosoftAuthenticatorAuthenticationMethod)
-     |> Deserializer.deserialize(:operations, :list, MicrosoftGraph.Model.MicrosoftGraphLongRunningOperation)
-     |> Deserializer.deserialize(:passwordMethods, :list, MicrosoftGraph.Model.MicrosoftGraphPasswordAuthenticationMethod)
-     |> Deserializer.deserialize(:phoneMethods, :list, MicrosoftGraph.Model.MicrosoftGraphPhoneAuthenticationMethod)
-     |> Deserializer.deserialize(:softwareOathMethods, :list, MicrosoftGraph.Model.MicrosoftGraphSoftwareOathAuthenticationMethod)
-     |> Deserializer.deserialize(:temporaryAccessPassMethods, :list, MicrosoftGraph.Model.MicrosoftGraphTemporaryAccessPassAuthenticationMethod)
-     |> Deserializer.deserialize(:windowsHelloForBusinessMethods, :list, MicrosoftGraph.Model.MicrosoftGraphWindowsHelloForBusinessAuthenticationMethod)
+    |> Deserializer.deserialize(
+      :emailMethods,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphEmailAuthenticationMethod
+    )
+    |> Deserializer.deserialize(
+      :fido2Methods,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphFido2AuthenticationMethod
+    )
+    |> Deserializer.deserialize(
+      :methods,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethod
+    )
+    |> Deserializer.deserialize(
+      :microsoftAuthenticatorMethods,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphMicrosoftAuthenticatorAuthenticationMethod
+    )
+    |> Deserializer.deserialize(
+      :operations,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphLongRunningOperation
+    )
+    |> Deserializer.deserialize(
+      :passwordMethods,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphPasswordAuthenticationMethod
+    )
+    |> Deserializer.deserialize(
+      :phoneMethods,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphPhoneAuthenticationMethod
+    )
+    |> Deserializer.deserialize(
+      :softwareOathMethods,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSoftwareOathAuthenticationMethod
+    )
+    |> Deserializer.deserialize(
+      :temporaryAccessPassMethods,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphTemporaryAccessPassAuthenticationMethod
+    )
+    |> Deserializer.deserialize(
+      :windowsHelloForBusinessMethods,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphWindowsHelloForBusinessAuthenticationMethod
+    )
   end
 end
-

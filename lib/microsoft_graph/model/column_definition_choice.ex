@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.ColumnDefinitionChoice do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :allowTextEntry => boolean() | nil,
-    :choices => [String.t] | nil,
-    :displayAs => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :allowTextEntry => boolean() | nil,
+          :choices => [String.t()] | nil,
+          :displayAs => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

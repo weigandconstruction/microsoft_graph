@@ -24,7 +24,10 @@ defmodule MicrosoftGraph.Api.Oauth2PermissionGrantsOAuth2PermissionGrant do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec oauth2_permission_grants_get_count8287(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec oauth2_permission_grants_get_count8287(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def oauth2_permission_grants_get_count8287(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -62,8 +65,19 @@ defmodule MicrosoftGraph.Api.Oauth2PermissionGrantsOAuth2PermissionGrant do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOAuth2PermissionGrant.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec oauth2_permission_grants_o_auth2_permission_grant_create_o_auth2_permission_grant(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphOAuth2PermissionGrant.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOAuth2PermissionGrant.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def oauth2_permission_grants_o_auth2_permission_grant_create_o_auth2_permission_grant(connection, microsoft_graph_o_auth2_permission_grant, _opts \\ []) do
+  @spec oauth2_permission_grants_o_auth2_permission_grant_create_o_auth2_permission_grant(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphOAuth2PermissionGrant.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOAuth2PermissionGrant.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def oauth2_permission_grants_o_auth2_permission_grant_create_o_auth2_permission_grant(
+        connection,
+        microsoft_graph_o_auth2_permission_grant,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -96,8 +110,19 @@ defmodule MicrosoftGraph.Api.Oauth2PermissionGrantsOAuth2PermissionGrant do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec oauth2_permission_grants_o_auth2_permission_grant_delete_o_auth2_permission_grant(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def oauth2_permission_grants_o_auth2_permission_grant_delete_o_auth2_permission_grant(connection, o_auth2_permission_grant_id, opts \\ []) do
+  @spec oauth2_permission_grants_o_auth2_permission_grant_delete_o_auth2_permission_grant(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def oauth2_permission_grants_o_auth2_permission_grant_delete_o_auth2_permission_grant(
+        connection,
+        o_auth2_permission_grant_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -135,8 +160,19 @@ defmodule MicrosoftGraph.Api.Oauth2PermissionGrantsOAuth2PermissionGrant do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOAuth2PermissionGrant.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec oauth2_permission_grants_o_auth2_permission_grant_get_o_auth2_permission_grant(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOAuth2PermissionGrant.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def oauth2_permission_grants_o_auth2_permission_grant_get_o_auth2_permission_grant(connection, o_auth2_permission_grant_id, opts \\ []) do
+  @spec oauth2_permission_grants_o_auth2_permission_grant_get_o_auth2_permission_grant(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOAuth2PermissionGrant.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def oauth2_permission_grants_o_auth2_permission_grant_get_o_auth2_permission_grant(
+        connection,
+        o_auth2_permission_grant_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -180,8 +216,17 @@ defmodule MicrosoftGraph.Api.Oauth2PermissionGrantsOAuth2PermissionGrant do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOAuth2PermissionGrantCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec oauth2_permission_grants_o_auth2_permission_grant_list_o_auth2_permission_grant(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOAuth2PermissionGrantCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def oauth2_permission_grants_o_auth2_permission_grant_list_o_auth2_permission_grant(connection, opts \\ []) do
+  @spec oauth2_permission_grants_o_auth2_permission_grant_list_o_auth2_permission_grant(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOAuth2PermissionGrantCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def oauth2_permission_grants_o_auth2_permission_grant_list_o_auth2_permission_grant(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -225,8 +270,21 @@ defmodule MicrosoftGraph.Api.Oauth2PermissionGrantsOAuth2PermissionGrant do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOAuth2PermissionGrant.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec oauth2_permission_grants_o_auth2_permission_grant_update_o_auth2_permission_grant(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphOAuth2PermissionGrant.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOAuth2PermissionGrant.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def oauth2_permission_grants_o_auth2_permission_grant_update_o_auth2_permission_grant(connection, o_auth2_permission_grant_id, microsoft_graph_o_auth2_permission_grant, _opts \\ []) do
+  @spec oauth2_permission_grants_o_auth2_permission_grant_update_o_auth2_permission_grant(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphOAuth2PermissionGrant.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOAuth2PermissionGrant.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def oauth2_permission_grants_o_auth2_permission_grant_update_o_auth2_permission_grant(
+        connection,
+        o_auth2_permission_grant_id,
+        microsoft_graph_o_auth2_permission_grant,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

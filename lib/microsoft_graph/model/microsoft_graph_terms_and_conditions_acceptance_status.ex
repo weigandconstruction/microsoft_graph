@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphTermsAndConditionsAcceptanceStatus do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,21 +18,25 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphTermsAndConditionsAcceptanceStatus 
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :acceptedDateTime => DateTime.t | nil,
-    :acceptedVersion => integer() | nil,
-    :termsAndConditions => MicrosoftGraph.Model.TermsAndConditionsAcceptanceStatusTermsAndConditions.t | nil,
-    :userDisplayName => String.t | nil,
-    :userPrincipalName => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :acceptedDateTime => DateTime.t() | nil,
+          :acceptedVersion => integer() | nil,
+          :termsAndConditions =>
+            MicrosoftGraph.Model.TermsAndConditionsAcceptanceStatusTermsAndConditions.t() | nil,
+          :userDisplayName => String.t() | nil,
+          :userPrincipalName => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:acceptedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:termsAndConditions, :struct, MicrosoftGraph.Model.TermsAndConditionsAcceptanceStatusTermsAndConditions)
+    |> Deserializer.deserialize(:acceptedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :termsAndConditions,
+      :struct,
+      MicrosoftGraph.Model.TermsAndConditionsAcceptanceStatusTermsAndConditions
+    )
   end
 end
-

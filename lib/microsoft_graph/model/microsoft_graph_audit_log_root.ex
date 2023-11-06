@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAuditLogRoot do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,20 +16,28 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAuditLogRoot do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :directoryAudits => [MicrosoftGraph.Model.MicrosoftGraphDirectoryAudit.t] | nil,
-    :provisioning => [MicrosoftGraph.Model.MicrosoftGraphProvisioningObjectSummary.t] | nil,
-    :signIns => [MicrosoftGraph.Model.MicrosoftGraphSignIn.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :directoryAudits => [MicrosoftGraph.Model.MicrosoftGraphDirectoryAudit.t()] | nil,
+          :provisioning =>
+            [MicrosoftGraph.Model.MicrosoftGraphProvisioningObjectSummary.t()] | nil,
+          :signIns => [MicrosoftGraph.Model.MicrosoftGraphSignIn.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:directoryAudits, :list, MicrosoftGraph.Model.MicrosoftGraphDirectoryAudit)
-     |> Deserializer.deserialize(:provisioning, :list, MicrosoftGraph.Model.MicrosoftGraphProvisioningObjectSummary)
-     |> Deserializer.deserialize(:signIns, :list, MicrosoftGraph.Model.MicrosoftGraphSignIn)
+    |> Deserializer.deserialize(
+      :directoryAudits,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDirectoryAudit
+    )
+    |> Deserializer.deserialize(
+      :provisioning,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphProvisioningObjectSummary
+    )
+    |> Deserializer.deserialize(:signIns, :list, MicrosoftGraph.Model.MicrosoftGraphSignIn)
   end
 end
-

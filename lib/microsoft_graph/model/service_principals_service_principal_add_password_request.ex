@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.ServicePrincipalsServicePrincipalAddPasswordRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,14 +12,19 @@ defmodule MicrosoftGraph.Model.ServicePrincipalsServicePrincipalAddPasswordReque
   ]
 
   @type t :: %__MODULE__{
-    :passwordCredential => MicrosoftGraph.Model.ServicePrincipalsServicePrincipalAddPasswordRequestPasswordCredential.t | nil
-  }
+          :passwordCredential =>
+            MicrosoftGraph.Model.ServicePrincipalsServicePrincipalAddPasswordRequestPasswordCredential.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:passwordCredential, :struct, MicrosoftGraph.Model.ServicePrincipalsServicePrincipalAddPasswordRequestPasswordCredential)
+    |> Deserializer.deserialize(
+      :passwordCredential,
+      :struct,
+      MicrosoftGraph.Model.ServicePrincipalsServicePrincipalAddPasswordRequestPasswordCredential
+    )
   end
 end
-

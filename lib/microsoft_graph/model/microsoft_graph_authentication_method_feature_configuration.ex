@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodFeatureConfiguration do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,19 +15,36 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodFeatureConfigur
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :excludeTarget => MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodFeatureConfigurationExcludeTarget.t | nil,
-    :includeTarget => MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodFeatureConfigurationIncludeTarget.t | nil,
-    :state => MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodFeatureConfigurationState.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :excludeTarget =>
+            MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodFeatureConfigurationExcludeTarget.t()
+            | nil,
+          :includeTarget =>
+            MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodFeatureConfigurationIncludeTarget.t()
+            | nil,
+          :state =>
+            MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodFeatureConfigurationState.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:excludeTarget, :struct, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodFeatureConfigurationExcludeTarget)
-     |> Deserializer.deserialize(:includeTarget, :struct, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodFeatureConfigurationIncludeTarget)
-     |> Deserializer.deserialize(:state, :struct, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodFeatureConfigurationState)
+    |> Deserializer.deserialize(
+      :excludeTarget,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodFeatureConfigurationExcludeTarget
+    )
+    |> Deserializer.deserialize(
+      :includeTarget,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodFeatureConfigurationIncludeTarget
+    )
+    |> Deserializer.deserialize(
+      :state,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodFeatureConfigurationState
+    )
   end
 end
-

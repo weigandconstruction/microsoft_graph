@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.AlertHistoryStatesInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,23 +19,30 @@ defmodule MicrosoftGraph.Model.AlertHistoryStatesInner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :appId => String.t | nil,
-    :assignedTo => String.t | nil,
-    :comments => [String.t] | nil,
-    :feedback => MicrosoftGraph.Model.MicrosoftGraphAlertHistoryStateFeedback.t | nil,
-    :status => MicrosoftGraph.Model.MicrosoftGraphAlertHistoryStateStatus.t | nil,
-    :updatedDateTime => DateTime.t | nil,
-    :user => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :appId => String.t() | nil,
+          :assignedTo => String.t() | nil,
+          :comments => [String.t()] | nil,
+          :feedback => MicrosoftGraph.Model.MicrosoftGraphAlertHistoryStateFeedback.t() | nil,
+          :status => MicrosoftGraph.Model.MicrosoftGraphAlertHistoryStateStatus.t() | nil,
+          :updatedDateTime => DateTime.t() | nil,
+          :user => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:feedback, :struct, MicrosoftGraph.Model.MicrosoftGraphAlertHistoryStateFeedback)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.MicrosoftGraphAlertHistoryStateStatus)
-     |> Deserializer.deserialize(:updatedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :feedback,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAlertHistoryStateFeedback
+    )
+    |> Deserializer.deserialize(
+      :status,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAlertHistoryStateStatus
+    )
+    |> Deserializer.deserialize(:updatedDateTime, :datetime, nil)
   end
 end
-

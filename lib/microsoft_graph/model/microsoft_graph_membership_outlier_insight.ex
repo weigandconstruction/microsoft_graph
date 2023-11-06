@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphMembershipOutlierInsight do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -21,28 +21,49 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphMembershipOutlierInsight do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :insightCreatedDateTime => DateTime.t | nil,
-    :container => MicrosoftGraph.Model.MembershipOutlierInsightContainer.t | nil,
-    :containerId => String.t | nil,
-    :lastModifiedBy => MicrosoftGraph.Model.MembershipOutlierInsightLastModifiedBy.t | nil,
-    :member => MicrosoftGraph.Model.MembershipOutlierInsightMember.t | nil,
-    :memberId => String.t | nil,
-    :outlierContainerType => MicrosoftGraph.Model.MicrosoftGraphOutlierContainerType.t | nil,
-    :outlierMemberType => MicrosoftGraph.Model.MicrosoftGraphOutlierMemberType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :insightCreatedDateTime => DateTime.t() | nil,
+          :container => MicrosoftGraph.Model.MembershipOutlierInsightContainer.t() | nil,
+          :containerId => String.t() | nil,
+          :lastModifiedBy =>
+            MicrosoftGraph.Model.MembershipOutlierInsightLastModifiedBy.t() | nil,
+          :member => MicrosoftGraph.Model.MembershipOutlierInsightMember.t() | nil,
+          :memberId => String.t() | nil,
+          :outlierContainerType =>
+            MicrosoftGraph.Model.MicrosoftGraphOutlierContainerType.t() | nil,
+          :outlierMemberType => MicrosoftGraph.Model.MicrosoftGraphOutlierMemberType.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:insightCreatedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:container, :struct, MicrosoftGraph.Model.MembershipOutlierInsightContainer)
-     |> Deserializer.deserialize(:lastModifiedBy, :struct, MicrosoftGraph.Model.MembershipOutlierInsightLastModifiedBy)
-     |> Deserializer.deserialize(:member, :struct, MicrosoftGraph.Model.MembershipOutlierInsightMember)
-     |> Deserializer.deserialize(:outlierContainerType, :struct, MicrosoftGraph.Model.MicrosoftGraphOutlierContainerType)
-     |> Deserializer.deserialize(:outlierMemberType, :struct, MicrosoftGraph.Model.MicrosoftGraphOutlierMemberType)
+    |> Deserializer.deserialize(:insightCreatedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :container,
+      :struct,
+      MicrosoftGraph.Model.MembershipOutlierInsightContainer
+    )
+    |> Deserializer.deserialize(
+      :lastModifiedBy,
+      :struct,
+      MicrosoftGraph.Model.MembershipOutlierInsightLastModifiedBy
+    )
+    |> Deserializer.deserialize(
+      :member,
+      :struct,
+      MicrosoftGraph.Model.MembershipOutlierInsightMember
+    )
+    |> Deserializer.deserialize(
+      :outlierContainerType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphOutlierContainerType
+    )
+    |> Deserializer.deserialize(
+      :outlierMemberType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphOutlierMemberType
+    )
   end
 end
-

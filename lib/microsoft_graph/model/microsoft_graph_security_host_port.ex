@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityHostPort do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -24,34 +24,38 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityHostPort do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :banners => [MicrosoftGraph.Model.HostPortBannersInner.t] | nil,
-    :firstSeenDateTime => DateTime.t | nil,
-    :host => MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t | nil,
-    :lastScanDateTime => DateTime.t | nil,
-    :lastSeenDateTime => DateTime.t | nil,
-    :mostRecentSslCertificate => MicrosoftGraph.Model.HostPortMostRecentSslCertificate.t | nil,
-    :port => integer() | nil,
-    :protocol => MicrosoftGraph.Model.HostPortProtocol.t | nil,
-    :services => [MicrosoftGraph.Model.HostPortServicesInner.t] | nil,
-    :status => MicrosoftGraph.Model.HostPortStatus.t | nil,
-    :timesObserved => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :banners => [MicrosoftGraph.Model.HostPortBannersInner.t()] | nil,
+          :firstSeenDateTime => DateTime.t() | nil,
+          :host => MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t() | nil,
+          :lastScanDateTime => DateTime.t() | nil,
+          :lastSeenDateTime => DateTime.t() | nil,
+          :mostRecentSslCertificate =>
+            MicrosoftGraph.Model.HostPortMostRecentSslCertificate.t() | nil,
+          :port => integer() | nil,
+          :protocol => MicrosoftGraph.Model.HostPortProtocol.t() | nil,
+          :services => [MicrosoftGraph.Model.HostPortServicesInner.t()] | nil,
+          :status => MicrosoftGraph.Model.HostPortStatus.t() | nil,
+          :timesObserved => integer() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:banners, :list, MicrosoftGraph.Model.HostPortBannersInner)
-     |> Deserializer.deserialize(:firstSeenDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:host, :struct, MicrosoftGraph.Model.MicrosoftGraphSecurityHost)
-     |> Deserializer.deserialize(:lastScanDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastSeenDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:mostRecentSslCertificate, :struct, MicrosoftGraph.Model.HostPortMostRecentSslCertificate)
-     |> Deserializer.deserialize(:protocol, :struct, MicrosoftGraph.Model.HostPortProtocol)
-     |> Deserializer.deserialize(:services, :list, MicrosoftGraph.Model.HostPortServicesInner)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.HostPortStatus)
+    |> Deserializer.deserialize(:banners, :list, MicrosoftGraph.Model.HostPortBannersInner)
+    |> Deserializer.deserialize(:firstSeenDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:host, :struct, MicrosoftGraph.Model.MicrosoftGraphSecurityHost)
+    |> Deserializer.deserialize(:lastScanDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastSeenDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :mostRecentSslCertificate,
+      :struct,
+      MicrosoftGraph.Model.HostPortMostRecentSslCertificate
+    )
+    |> Deserializer.deserialize(:protocol, :struct, MicrosoftGraph.Model.HostPortProtocol)
+    |> Deserializer.deserialize(:services, :list, MicrosoftGraph.Model.HostPortServicesInner)
+    |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.HostPortStatus)
   end
 end
-

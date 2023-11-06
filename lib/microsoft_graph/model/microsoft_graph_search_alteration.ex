@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSearchAlteration do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,17 +15,21 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSearchAlteration do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :alteredHighlightedQueryString => String.t | nil,
-    :alteredQueryString => String.t | nil,
-    :alteredQueryTokens => [MicrosoftGraph.Model.MicrosoftGraphSearchAlterationAlteredQueryTokensInner.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :alteredHighlightedQueryString => String.t() | nil,
+          :alteredQueryString => String.t() | nil,
+          :alteredQueryTokens =>
+            [MicrosoftGraph.Model.MicrosoftGraphSearchAlterationAlteredQueryTokensInner.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:alteredQueryTokens, :list, MicrosoftGraph.Model.MicrosoftGraphSearchAlterationAlteredQueryTokensInner)
+    |> Deserializer.deserialize(
+      :alteredQueryTokens,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSearchAlterationAlteredQueryTokensInner
+    )
   end
 end
-

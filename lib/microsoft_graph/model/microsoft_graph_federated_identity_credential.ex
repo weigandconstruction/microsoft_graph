@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphFederatedIdentityCredential do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,17 +18,16 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphFederatedIdentityCredential do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :audiences => [String.t] | nil,
-    :description => String.t | nil,
-    :issuer => String.t | nil,
-    :name => String.t | nil,
-    :subject => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :audiences => [String.t()] | nil,
+          :description => String.t() | nil,
+          :issuer => String.t() | nil,
+          :name => String.t() | nil,
+          :subject => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

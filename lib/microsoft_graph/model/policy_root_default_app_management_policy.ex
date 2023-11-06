@@ -19,23 +19,32 @@ defmodule MicrosoftGraph.Model.PolicyRootDefaultAppManagementPolicy do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :deletedDateTime => DateTime.t | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :applicationRestrictions => MicrosoftGraph.Model.TenantAppManagementPolicyApplicationRestrictions.t | nil,
-    :isEnabled => boolean() | nil,
-    :servicePrincipalRestrictions => MicrosoftGraph.Model.TenantAppManagementPolicyServicePrincipalRestrictions.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :deletedDateTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :applicationRestrictions =>
+            MicrosoftGraph.Model.TenantAppManagementPolicyApplicationRestrictions.t() | nil,
+          :isEnabled => boolean() | nil,
+          :servicePrincipalRestrictions =>
+            MicrosoftGraph.Model.TenantAppManagementPolicyServicePrincipalRestrictions.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:deletedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:applicationRestrictions, :struct, MicrosoftGraph.Model.TenantAppManagementPolicyApplicationRestrictions)
-     |> Deserializer.deserialize(:servicePrincipalRestrictions, :struct, MicrosoftGraph.Model.TenantAppManagementPolicyServicePrincipalRestrictions)
+    |> Deserializer.deserialize(:deletedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :applicationRestrictions,
+      :struct,
+      MicrosoftGraph.Model.TenantAppManagementPolicyApplicationRestrictions
+    )
+    |> Deserializer.deserialize(
+      :servicePrincipalRestrictions,
+      :struct,
+      MicrosoftGraph.Model.TenantAppManagementPolicyServicePrincipalRestrictions
+    )
   end
 end
-

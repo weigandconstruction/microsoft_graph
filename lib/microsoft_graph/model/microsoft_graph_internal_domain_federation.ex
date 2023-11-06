@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphInternalDomainFederation do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -26,31 +26,50 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphInternalDomainFederation do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :displayName => String.t | nil,
-    :issuerUri => String.t | nil,
-    :metadataExchangeUri => String.t | nil,
-    :passiveSignInUri => String.t | nil,
-    :preferredAuthenticationProtocol => MicrosoftGraph.Model.SamlOrWsFedProviderPreferredAuthenticationProtocol.t | nil,
-    :signingCertificate => String.t | nil,
-    :activeSignInUri => String.t | nil,
-    :federatedIdpMfaBehavior => MicrosoftGraph.Model.InternalDomainFederationFederatedIdpMfaBehavior.t | nil,
-    :isSignedAuthenticationRequestRequired => boolean() | nil,
-    :nextSigningCertificate => String.t | nil,
-    :promptLoginBehavior => MicrosoftGraph.Model.InternalDomainFederationPromptLoginBehavior.t | nil,
-    :signOutUri => String.t | nil,
-    :signingCertificateUpdateStatus => MicrosoftGraph.Model.InternalDomainFederationSigningCertificateUpdateStatus.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :displayName => String.t() | nil,
+          :issuerUri => String.t() | nil,
+          :metadataExchangeUri => String.t() | nil,
+          :passiveSignInUri => String.t() | nil,
+          :preferredAuthenticationProtocol =>
+            MicrosoftGraph.Model.SamlOrWsFedProviderPreferredAuthenticationProtocol.t() | nil,
+          :signingCertificate => String.t() | nil,
+          :activeSignInUri => String.t() | nil,
+          :federatedIdpMfaBehavior =>
+            MicrosoftGraph.Model.InternalDomainFederationFederatedIdpMfaBehavior.t() | nil,
+          :isSignedAuthenticationRequestRequired => boolean() | nil,
+          :nextSigningCertificate => String.t() | nil,
+          :promptLoginBehavior =>
+            MicrosoftGraph.Model.InternalDomainFederationPromptLoginBehavior.t() | nil,
+          :signOutUri => String.t() | nil,
+          :signingCertificateUpdateStatus =>
+            MicrosoftGraph.Model.InternalDomainFederationSigningCertificateUpdateStatus.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:preferredAuthenticationProtocol, :struct, MicrosoftGraph.Model.SamlOrWsFedProviderPreferredAuthenticationProtocol)
-     |> Deserializer.deserialize(:federatedIdpMfaBehavior, :struct, MicrosoftGraph.Model.InternalDomainFederationFederatedIdpMfaBehavior)
-     |> Deserializer.deserialize(:promptLoginBehavior, :struct, MicrosoftGraph.Model.InternalDomainFederationPromptLoginBehavior)
-     |> Deserializer.deserialize(:signingCertificateUpdateStatus, :struct, MicrosoftGraph.Model.InternalDomainFederationSigningCertificateUpdateStatus)
+    |> Deserializer.deserialize(
+      :preferredAuthenticationProtocol,
+      :struct,
+      MicrosoftGraph.Model.SamlOrWsFedProviderPreferredAuthenticationProtocol
+    )
+    |> Deserializer.deserialize(
+      :federatedIdpMfaBehavior,
+      :struct,
+      MicrosoftGraph.Model.InternalDomainFederationFederatedIdpMfaBehavior
+    )
+    |> Deserializer.deserialize(
+      :promptLoginBehavior,
+      :struct,
+      MicrosoftGraph.Model.InternalDomainFederationPromptLoginBehavior
+    )
+    |> Deserializer.deserialize(
+      :signingCertificateUpdateStatus,
+      :struct,
+      MicrosoftGraph.Model.InternalDomainFederationSigningCertificateUpdateStatus
+    )
   end
 end
-

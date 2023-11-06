@@ -24,7 +24,14 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementVppToken do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphVppToken.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_create_vpp_tokens(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphVppToken.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphVppToken.t} | {:error, Tesla.Env.t}
+  @spec device_app_management_create_vpp_tokens(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphVppToken.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphVppToken.t()}
+          | {:error, Tesla.Env.t()}
   def device_app_management_create_vpp_tokens(connection, microsoft_graph_vpp_token, _opts \\ []) do
     request =
       %{}
@@ -58,7 +65,10 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementVppToken do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_delete_vpp_tokens(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec device_app_management_delete_vpp_tokens(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def device_app_management_delete_vpp_tokens(connection, vpp_token_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -97,7 +107,10 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementVppToken do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphVppToken.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_get_vpp_tokens(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphVppToken.t} | {:error, Tesla.Env.t}
+  @spec device_app_management_get_vpp_tokens(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphVppToken.t()}
+          | {:error, Tesla.Env.t()}
   def device_app_management_get_vpp_tokens(connection, vpp_token_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -142,7 +155,10 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementVppToken do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphVppTokenCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_list_vpp_tokens(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphVppTokenCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec device_app_management_list_vpp_tokens(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphVppTokenCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def device_app_management_list_vpp_tokens(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -187,8 +203,21 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementVppToken do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphVppToken.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_update_vpp_tokens(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphVppToken.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphVppToken.t} | {:error, Tesla.Env.t}
-  def device_app_management_update_vpp_tokens(connection, vpp_token_id, microsoft_graph_vpp_token, _opts \\ []) do
+  @spec device_app_management_update_vpp_tokens(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphVppToken.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphVppToken.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_update_vpp_tokens(
+        connection,
+        vpp_token_id,
+        microsoft_graph_vpp_token,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -220,7 +249,10 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementVppToken do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_vpp_tokens_get_count_d643(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec device_app_management_vpp_tokens_get_count_d643(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def device_app_management_vpp_tokens_get_count_d643(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,

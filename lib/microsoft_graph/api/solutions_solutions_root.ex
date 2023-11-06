@@ -24,7 +24,10 @@ defmodule MicrosoftGraph.Api.SolutionsSolutionsRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSolutionsRoot.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_solutions_root_get_solutions_root(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSolutionsRoot.t} | {:error, Tesla.Env.t}
+  @spec solutions_solutions_root_get_solutions_root(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSolutionsRoot.t()}
+          | {:error, Tesla.Env.t()}
   def solutions_solutions_root_get_solutions_root(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -61,8 +64,19 @@ defmodule MicrosoftGraph.Api.SolutionsSolutionsRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSolutionsRoot.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec solutions_solutions_root_update_solutions_root(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphSolutionsRoot.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSolutionsRoot.t} | {:error, Tesla.Env.t}
-  def solutions_solutions_root_update_solutions_root(connection, microsoft_graph_solutions_root, _opts \\ []) do
+  @spec solutions_solutions_root_update_solutions_root(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphSolutionsRoot.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSolutionsRoot.t()}
+          | {:error, Tesla.Env.t()}
+  def solutions_solutions_root_update_solutions_root(
+        connection,
+        microsoft_graph_solutions_root,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

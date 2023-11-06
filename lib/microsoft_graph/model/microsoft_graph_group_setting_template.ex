@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphGroupSettingTemplate do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,20 +17,23 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphGroupSettingTemplate do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :deletedDateTime => DateTime.t | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :values => [MicrosoftGraph.Model.MicrosoftGraphSettingTemplateValue.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :deletedDateTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :values => [MicrosoftGraph.Model.MicrosoftGraphSettingTemplateValue.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:deletedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:values, :list, MicrosoftGraph.Model.MicrosoftGraphSettingTemplateValue)
+    |> Deserializer.deserialize(:deletedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :values,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSettingTemplateValue
+    )
   end
 end
-

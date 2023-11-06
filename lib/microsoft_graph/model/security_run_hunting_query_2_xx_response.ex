@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.SecurityRunHuntingQuery2XxResponse do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,17 +14,26 @@ defmodule MicrosoftGraph.Model.SecurityRunHuntingQuery2XxResponse do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :results => [MicrosoftGraph.Model.MicrosoftGraphSecurityHuntingQueryResultsResultsInner.t] | nil,
-    :schema => [MicrosoftGraph.Model.MicrosoftGraphSecurityHuntingQueryResultsSchemaInner.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :results =>
+            [MicrosoftGraph.Model.MicrosoftGraphSecurityHuntingQueryResultsResultsInner.t()] | nil,
+          :schema =>
+            [MicrosoftGraph.Model.MicrosoftGraphSecurityHuntingQueryResultsSchemaInner.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:results, :list, MicrosoftGraph.Model.MicrosoftGraphSecurityHuntingQueryResultsResultsInner)
-     |> Deserializer.deserialize(:schema, :list, MicrosoftGraph.Model.MicrosoftGraphSecurityHuntingQueryResultsSchemaInner)
+    |> Deserializer.deserialize(
+      :results,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityHuntingQueryResultsResultsInner
+    )
+    |> Deserializer.deserialize(
+      :schema,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityHuntingQueryResultsSchemaInner
+    )
   end
 end
-

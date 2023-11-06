@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAttackSimulationRoot do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -21,30 +21,51 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAttackSimulationRoot do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :endUserNotifications => [MicrosoftGraph.Model.MicrosoftGraphEndUserNotification.t] | nil,
-    :landingPages => [MicrosoftGraph.Model.MicrosoftGraphLandingPage.t] | nil,
-    :loginPages => [MicrosoftGraph.Model.MicrosoftGraphLoginPage.t] | nil,
-    :operations => [MicrosoftGraph.Model.MicrosoftGraphAttackSimulationOperation.t] | nil,
-    :payloads => [MicrosoftGraph.Model.MicrosoftGraphPayload.t] | nil,
-    :simulationAutomations => [MicrosoftGraph.Model.MicrosoftGraphSimulationAutomation.t] | nil,
-    :simulations => [MicrosoftGraph.Model.MicrosoftGraphSimulation.t] | nil,
-    :trainings => [MicrosoftGraph.Model.MicrosoftGraphTraining.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :endUserNotifications =>
+            [MicrosoftGraph.Model.MicrosoftGraphEndUserNotification.t()] | nil,
+          :landingPages => [MicrosoftGraph.Model.MicrosoftGraphLandingPage.t()] | nil,
+          :loginPages => [MicrosoftGraph.Model.MicrosoftGraphLoginPage.t()] | nil,
+          :operations => [MicrosoftGraph.Model.MicrosoftGraphAttackSimulationOperation.t()] | nil,
+          :payloads => [MicrosoftGraph.Model.MicrosoftGraphPayload.t()] | nil,
+          :simulationAutomations =>
+            [MicrosoftGraph.Model.MicrosoftGraphSimulationAutomation.t()] | nil,
+          :simulations => [MicrosoftGraph.Model.MicrosoftGraphSimulation.t()] | nil,
+          :trainings => [MicrosoftGraph.Model.MicrosoftGraphTraining.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:endUserNotifications, :list, MicrosoftGraph.Model.MicrosoftGraphEndUserNotification)
-     |> Deserializer.deserialize(:landingPages, :list, MicrosoftGraph.Model.MicrosoftGraphLandingPage)
-     |> Deserializer.deserialize(:loginPages, :list, MicrosoftGraph.Model.MicrosoftGraphLoginPage)
-     |> Deserializer.deserialize(:operations, :list, MicrosoftGraph.Model.MicrosoftGraphAttackSimulationOperation)
-     |> Deserializer.deserialize(:payloads, :list, MicrosoftGraph.Model.MicrosoftGraphPayload)
-     |> Deserializer.deserialize(:simulationAutomations, :list, MicrosoftGraph.Model.MicrosoftGraphSimulationAutomation)
-     |> Deserializer.deserialize(:simulations, :list, MicrosoftGraph.Model.MicrosoftGraphSimulation)
-     |> Deserializer.deserialize(:trainings, :list, MicrosoftGraph.Model.MicrosoftGraphTraining)
+    |> Deserializer.deserialize(
+      :endUserNotifications,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphEndUserNotification
+    )
+    |> Deserializer.deserialize(
+      :landingPages,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphLandingPage
+    )
+    |> Deserializer.deserialize(:loginPages, :list, MicrosoftGraph.Model.MicrosoftGraphLoginPage)
+    |> Deserializer.deserialize(
+      :operations,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAttackSimulationOperation
+    )
+    |> Deserializer.deserialize(:payloads, :list, MicrosoftGraph.Model.MicrosoftGraphPayload)
+    |> Deserializer.deserialize(
+      :simulationAutomations,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSimulationAutomation
+    )
+    |> Deserializer.deserialize(
+      :simulations,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSimulation
+    )
+    |> Deserializer.deserialize(:trainings, :list, MicrosoftGraph.Model.MicrosoftGraphTraining)
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyInboundTrust do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphCrossTenantAccessPolicyInboundTrust
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :isCompliantDeviceAccepted => boolean() | nil,
-    :isHybridAzureADJoinedDeviceAccepted => boolean() | nil,
-    :isMfaAccepted => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :isCompliantDeviceAccepted => boolean() | nil,
+          :isHybridAzureADJoinedDeviceAccepted => boolean() | nil,
+          :isMfaAccepted => boolean() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

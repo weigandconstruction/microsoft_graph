@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.UsersUserFindMeetingTimesRequestAttendeesInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,17 +14,20 @@ defmodule MicrosoftGraph.Model.UsersUserFindMeetingTimesRequestAttendeesInner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :emailAddress => MicrosoftGraph.Model.MicrosoftGraphRecipientEmailAddress.t | nil,
-    :type => MicrosoftGraph.Model.AttendeeBaseType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :emailAddress => MicrosoftGraph.Model.MicrosoftGraphRecipientEmailAddress.t() | nil,
+          :type => MicrosoftGraph.Model.AttendeeBaseType.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:emailAddress, :struct, MicrosoftGraph.Model.MicrosoftGraphRecipientEmailAddress)
-     |> Deserializer.deserialize(:type, :struct, MicrosoftGraph.Model.AttendeeBaseType)
+    |> Deserializer.deserialize(
+      :emailAddress,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphRecipientEmailAddress
+    )
+    |> Deserializer.deserialize(:type, :struct, MicrosoftGraph.Model.AttendeeBaseType)
   end
 end
-

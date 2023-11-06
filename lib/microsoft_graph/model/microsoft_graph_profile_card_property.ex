@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphProfileCardProperty do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,17 +15,20 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphProfileCardProperty do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :annotations => [MicrosoftGraph.Model.ProfileCardPropertyAnnotationsInner.t] | nil,
-    :directoryPropertyName => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :annotations => [MicrosoftGraph.Model.ProfileCardPropertyAnnotationsInner.t()] | nil,
+          :directoryPropertyName => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:annotations, :list, MicrosoftGraph.Model.ProfileCardPropertyAnnotationsInner)
+    |> Deserializer.deserialize(
+      :annotations,
+      :list,
+      MicrosoftGraph.Model.ProfileCardPropertyAnnotationsInner
+    )
   end
 end
-

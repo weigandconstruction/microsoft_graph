@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphCommentAction do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,18 +15,21 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphCommentAction do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :isReply => boolean() | nil,
-    :parentAuthor => MicrosoftGraph.Model.MicrosoftGraphCommentActionParentAuthor.t | nil,
-    :participants => [MicrosoftGraph.Model.CaseLastModifiedBy.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :isReply => boolean() | nil,
+          :parentAuthor => MicrosoftGraph.Model.MicrosoftGraphCommentActionParentAuthor.t() | nil,
+          :participants => [MicrosoftGraph.Model.CaseLastModifiedBy.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:parentAuthor, :struct, MicrosoftGraph.Model.MicrosoftGraphCommentActionParentAuthor)
-     |> Deserializer.deserialize(:participants, :list, MicrosoftGraph.Model.CaseLastModifiedBy)
+    |> Deserializer.deserialize(
+      :parentAuthor,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCommentActionParentAuthor
+    )
+    |> Deserializer.deserialize(:participants, :list, MicrosoftGraph.Model.CaseLastModifiedBy)
   end
 end
-

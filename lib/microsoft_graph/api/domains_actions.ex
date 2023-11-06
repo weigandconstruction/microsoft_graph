@@ -25,8 +25,21 @@ defmodule MicrosoftGraph.Api.DomainsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec domains_domain_force_delete(Tesla.Env.client, String.t, MicrosoftGraph.Model.DomainsDomainForceDeleteRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def domains_domain_force_delete(connection, domain_id, domains_domain_force_delete_request, _opts \\ []) do
+  @spec domains_domain_force_delete(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.DomainsDomainForceDeleteRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def domains_domain_force_delete(
+        connection,
+        domain_id,
+        domains_domain_force_delete_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -58,7 +71,10 @@ defmodule MicrosoftGraph.Api.DomainsActions do
   - `{:ok, MicrosoftGraph.Model.AdminServiceAnnouncementMessagesUnfavorite2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec domains_domain_promote(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.AdminServiceAnnouncementMessagesUnfavorite2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec domains_domain_promote(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.AdminServiceAnnouncementMessagesUnfavorite2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def domains_domain_promote(connection, domain_id, _opts \\ []) do
     request =
       %{}
@@ -91,7 +107,10 @@ defmodule MicrosoftGraph.Api.DomainsActions do
   - `{:ok, MicrosoftGraph.Model.DomainsDomainVerify2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec domains_domain_verify(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.DomainsDomainVerify2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec domains_domain_verify(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.DomainsDomainVerify2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def domains_domain_verify(connection, domain_id, _opts \\ []) do
     request =
       %{}

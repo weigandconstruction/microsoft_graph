@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphObjectDefinition do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,19 +16,31 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphObjectDefinition do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :attributes => [MicrosoftGraph.Model.ApplicationsApplicationSynchronizationJobsSynchronizationJobSchemaParseExpressionRequestTargetAttributeDefinition.t] | nil,
-    :metadata => [MicrosoftGraph.Model.MicrosoftGraphObjectDefinitionMetadataInner.t] | nil,
-    :name => String.t | nil,
-    :supportedApis => [String.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :attributes =>
+            [
+              MicrosoftGraph.Model.ApplicationsApplicationSynchronizationJobsSynchronizationJobSchemaParseExpressionRequestTargetAttributeDefinition.t()
+            ]
+            | nil,
+          :metadata =>
+            [MicrosoftGraph.Model.MicrosoftGraphObjectDefinitionMetadataInner.t()] | nil,
+          :name => String.t() | nil,
+          :supportedApis => [String.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:attributes, :list, MicrosoftGraph.Model.ApplicationsApplicationSynchronizationJobsSynchronizationJobSchemaParseExpressionRequestTargetAttributeDefinition)
-     |> Deserializer.deserialize(:metadata, :list, MicrosoftGraph.Model.MicrosoftGraphObjectDefinitionMetadataInner)
+    |> Deserializer.deserialize(
+      :attributes,
+      :list,
+      MicrosoftGraph.Model.ApplicationsApplicationSynchronizationJobsSynchronizationJobSchemaParseExpressionRequestTargetAttributeDefinition
+    )
+    |> Deserializer.deserialize(
+      :metadata,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphObjectDefinitionMetadataInner
+    )
   end
 end
-

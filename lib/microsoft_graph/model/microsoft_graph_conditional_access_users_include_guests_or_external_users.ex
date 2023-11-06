@@ -14,17 +14,27 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphConditionalAccessUsersIncludeGuests
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :externalTenants => MicrosoftGraph.Model.MicrosoftGraphConditionalAccessGuestsOrExternalUsersExternalTenants.t | nil,
-    :guestOrExternalUserTypes => MicrosoftGraph.Model.MicrosoftGraphConditionalAccessGuestOrExternalUserTypes.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :externalTenants =>
+            MicrosoftGraph.Model.MicrosoftGraphConditionalAccessGuestsOrExternalUsersExternalTenants.t()
+            | nil,
+          :guestOrExternalUserTypes =>
+            MicrosoftGraph.Model.MicrosoftGraphConditionalAccessGuestOrExternalUserTypes.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:externalTenants, :struct, MicrosoftGraph.Model.MicrosoftGraphConditionalAccessGuestsOrExternalUsersExternalTenants)
-     |> Deserializer.deserialize(:guestOrExternalUserTypes, :struct, MicrosoftGraph.Model.MicrosoftGraphConditionalAccessGuestOrExternalUserTypes)
+    |> Deserializer.deserialize(
+      :externalTenants,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphConditionalAccessGuestsOrExternalUsersExternalTenants
+    )
+    |> Deserializer.deserialize(
+      :guestOrExternalUserTypes,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphConditionalAccessGuestOrExternalUserTypes
+    )
   end
 end
-

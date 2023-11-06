@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphIosLobAppAssignmentSettings do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphIosLobAppAssignmentSettings do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :isRemovable => boolean() | nil,
-    :uninstallOnDeviceRemoval => boolean() | nil,
-    :vpnConfigurationId => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :isRemovable => boolean() | nil,
+          :uninstallOnDeviceRemoval => boolean() | nil,
+          :vpnConfigurationId => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

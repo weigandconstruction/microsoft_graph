@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphGroupLifecyclePolicy do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,15 +16,14 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphGroupLifecyclePolicy do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :alternateNotificationEmails => String.t | nil,
-    :groupLifetimeInDays => integer() | nil,
-    :managedGroupTypes => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :alternateNotificationEmails => String.t() | nil,
+          :groupLifetimeInDays => integer() | nil,
+          :managedGroupTypes => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

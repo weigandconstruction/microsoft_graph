@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.ShiftItemActivitiesInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,22 +18,25 @@ defmodule MicrosoftGraph.Model.ShiftItemActivitiesInner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :code => String.t | nil,
-    :displayName => String.t | nil,
-    :endDateTime => DateTime.t | nil,
-    :isPaid => boolean() | nil,
-    :startDateTime => DateTime.t | nil,
-    :theme => MicrosoftGraph.Model.MicrosoftGraphScheduleEntityTheme.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :code => String.t() | nil,
+          :displayName => String.t() | nil,
+          :endDateTime => DateTime.t() | nil,
+          :isPaid => boolean() | nil,
+          :startDateTime => DateTime.t() | nil,
+          :theme => MicrosoftGraph.Model.MicrosoftGraphScheduleEntityTheme.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:endDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:startDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:theme, :struct, MicrosoftGraph.Model.MicrosoftGraphScheduleEntityTheme)
+    |> Deserializer.deserialize(:endDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:startDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :theme,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphScheduleEntityTheme
+    )
   end
 end
-

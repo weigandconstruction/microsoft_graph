@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphControlScore do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,18 +16,21 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphControlScore do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :controlCategory => String.t | nil,
-    :controlName => String.t | nil,
-    :description => String.t | nil,
-    :score => MicrosoftGraph.Model.MicrosoftGraphControlScoreScore.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :controlCategory => String.t() | nil,
+          :controlName => String.t() | nil,
+          :description => String.t() | nil,
+          :score => MicrosoftGraph.Model.MicrosoftGraphControlScoreScore.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:score, :struct, MicrosoftGraph.Model.MicrosoftGraphControlScoreScore)
+    |> Deserializer.deserialize(
+      :score,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphControlScoreScore
+    )
   end
 end
-

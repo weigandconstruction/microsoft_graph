@@ -24,7 +24,10 @@ defmodule MicrosoftGraph.Api.ExternalExternal do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternal.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec external_external_get_external(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternal.t} | {:error, Tesla.Env.t}
+  @spec external_external_get_external(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternal.t()}
+          | {:error, Tesla.Env.t()}
   def external_external_get_external(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -61,8 +64,19 @@ defmodule MicrosoftGraph.Api.ExternalExternal do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternal.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec external_external_update_external(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternal.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternal.t} | {:error, Tesla.Env.t}
-  def external_external_update_external(connection, microsoft_graph_external_connectors_external, _opts \\ []) do
+  @spec external_external_update_external(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternal.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternal.t()}
+          | {:error, Tesla.Env.t()}
+  def external_external_update_external(
+        connection,
+        microsoft_graph_external_connectors_external,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

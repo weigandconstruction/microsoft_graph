@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityEdiscoveryEstimateOperation do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -27,35 +27,42 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityEdiscoveryEstimateOperation
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :action => MicrosoftGraph.Model.CaseOperationAction.t | nil,
-    :completedDateTime => DateTime.t | nil,
-    :createdBy => MicrosoftGraph.Model.CaseOperationCreatedBy.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :percentProgress => integer() | nil,
-    :resultInfo => MicrosoftGraph.Model.CaseOperationResultInfo.t | nil,
-    :status => MicrosoftGraph.Model.CaseOperationStatus.t | nil,
-    :indexedItemCount => integer() | nil,
-    :indexedItemsSize => integer() | nil,
-    :mailboxCount => integer() | nil,
-    :search => MicrosoftGraph.Model.EdiscoveryEstimateOperationSearch.t | nil,
-    :siteCount => integer() | nil,
-    :unindexedItemCount => integer() | nil,
-    :unindexedItemsSize => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :action => MicrosoftGraph.Model.CaseOperationAction.t() | nil,
+          :completedDateTime => DateTime.t() | nil,
+          :createdBy => MicrosoftGraph.Model.CaseOperationCreatedBy.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :percentProgress => integer() | nil,
+          :resultInfo => MicrosoftGraph.Model.CaseOperationResultInfo.t() | nil,
+          :status => MicrosoftGraph.Model.CaseOperationStatus.t() | nil,
+          :indexedItemCount => integer() | nil,
+          :indexedItemsSize => integer() | nil,
+          :mailboxCount => integer() | nil,
+          :search => MicrosoftGraph.Model.EdiscoveryEstimateOperationSearch.t() | nil,
+          :siteCount => integer() | nil,
+          :unindexedItemCount => integer() | nil,
+          :unindexedItemsSize => integer() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:action, :struct, MicrosoftGraph.Model.CaseOperationAction)
-     |> Deserializer.deserialize(:completedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.CaseOperationCreatedBy)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:resultInfo, :struct, MicrosoftGraph.Model.CaseOperationResultInfo)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.CaseOperationStatus)
-     |> Deserializer.deserialize(:search, :struct, MicrosoftGraph.Model.EdiscoveryEstimateOperationSearch)
+    |> Deserializer.deserialize(:action, :struct, MicrosoftGraph.Model.CaseOperationAction)
+    |> Deserializer.deserialize(:completedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.CaseOperationCreatedBy)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :resultInfo,
+      :struct,
+      MicrosoftGraph.Model.CaseOperationResultInfo
+    )
+    |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.CaseOperationStatus)
+    |> Deserializer.deserialize(
+      :search,
+      :struct,
+      MicrosoftGraph.Model.EdiscoveryEstimateOperationSearch
+    )
   end
 end
-

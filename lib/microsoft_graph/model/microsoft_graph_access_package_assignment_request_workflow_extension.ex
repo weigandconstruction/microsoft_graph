@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAccessPackageAssignmentRequestWorkflowExtension do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -23,30 +23,50 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAccessPackageAssignmentRequestWorkf
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :authenticationConfiguration => MicrosoftGraph.Model.CustomCalloutExtensionAuthenticationConfiguration.t | nil,
-    :clientConfiguration => MicrosoftGraph.Model.CustomCalloutExtensionClientConfiguration.t | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :endpointConfiguration => MicrosoftGraph.Model.CustomCalloutExtensionEndpointConfiguration.t | nil,
-    :callbackConfiguration => MicrosoftGraph.Model.AccessPackageAssignmentWorkflowExtensionCallbackConfiguration.t | nil,
-    :createdBy => String.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :lastModifiedBy => String.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :authenticationConfiguration =>
+            MicrosoftGraph.Model.CustomCalloutExtensionAuthenticationConfiguration.t() | nil,
+          :clientConfiguration =>
+            MicrosoftGraph.Model.CustomCalloutExtensionClientConfiguration.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :endpointConfiguration =>
+            MicrosoftGraph.Model.CustomCalloutExtensionEndpointConfiguration.t() | nil,
+          :callbackConfiguration =>
+            MicrosoftGraph.Model.AccessPackageAssignmentWorkflowExtensionCallbackConfiguration.t()
+            | nil,
+          :createdBy => String.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :lastModifiedBy => String.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:authenticationConfiguration, :struct, MicrosoftGraph.Model.CustomCalloutExtensionAuthenticationConfiguration)
-     |> Deserializer.deserialize(:clientConfiguration, :struct, MicrosoftGraph.Model.CustomCalloutExtensionClientConfiguration)
-     |> Deserializer.deserialize(:endpointConfiguration, :struct, MicrosoftGraph.Model.CustomCalloutExtensionEndpointConfiguration)
-     |> Deserializer.deserialize(:callbackConfiguration, :struct, MicrosoftGraph.Model.AccessPackageAssignmentWorkflowExtensionCallbackConfiguration)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :authenticationConfiguration,
+      :struct,
+      MicrosoftGraph.Model.CustomCalloutExtensionAuthenticationConfiguration
+    )
+    |> Deserializer.deserialize(
+      :clientConfiguration,
+      :struct,
+      MicrosoftGraph.Model.CustomCalloutExtensionClientConfiguration
+    )
+    |> Deserializer.deserialize(
+      :endpointConfiguration,
+      :struct,
+      MicrosoftGraph.Model.CustomCalloutExtensionEndpointConfiguration
+    )
+    |> Deserializer.deserialize(
+      :callbackConfiguration,
+      :struct,
+      MicrosoftGraph.Model.AccessPackageAssignmentWorkflowExtensionCallbackConfiguration
+    )
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
   end
 end
-

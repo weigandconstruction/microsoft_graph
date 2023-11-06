@@ -12,11 +12,10 @@ defmodule MicrosoftGraph.Model.IdentityApiConnectorAuthenticationConfiguration d
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t
-  }
+          :"@odata.type" => String.t()
+        }
 
   def decode(value) do
     value
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphRegistryKeyState do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -22,26 +22,37 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphRegistryKeyState do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :hive => MicrosoftGraph.Model.MicrosoftGraphRegistryKeyStateHive.t | nil,
-    :key => String.t | nil,
-    :oldKey => String.t | nil,
-    :oldValueData => String.t | nil,
-    :oldValueName => String.t | nil,
-    :operation => MicrosoftGraph.Model.MicrosoftGraphRegistryKeyStateOperation.t | nil,
-    :processId => integer() | nil,
-    :valueData => String.t | nil,
-    :valueName => String.t | nil,
-    :valueType => MicrosoftGraph.Model.MicrosoftGraphRegistryKeyStateValueType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :hive => MicrosoftGraph.Model.MicrosoftGraphRegistryKeyStateHive.t() | nil,
+          :key => String.t() | nil,
+          :oldKey => String.t() | nil,
+          :oldValueData => String.t() | nil,
+          :oldValueName => String.t() | nil,
+          :operation => MicrosoftGraph.Model.MicrosoftGraphRegistryKeyStateOperation.t() | nil,
+          :processId => integer() | nil,
+          :valueData => String.t() | nil,
+          :valueName => String.t() | nil,
+          :valueType => MicrosoftGraph.Model.MicrosoftGraphRegistryKeyStateValueType.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:hive, :struct, MicrosoftGraph.Model.MicrosoftGraphRegistryKeyStateHive)
-     |> Deserializer.deserialize(:operation, :struct, MicrosoftGraph.Model.MicrosoftGraphRegistryKeyStateOperation)
-     |> Deserializer.deserialize(:valueType, :struct, MicrosoftGraph.Model.MicrosoftGraphRegistryKeyStateValueType)
+    |> Deserializer.deserialize(
+      :hive,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphRegistryKeyStateHive
+    )
+    |> Deserializer.deserialize(
+      :operation,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphRegistryKeyStateOperation
+    )
+    |> Deserializer.deserialize(
+      :valueType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphRegistryKeyStateValueType
+    )
   end
 end
-

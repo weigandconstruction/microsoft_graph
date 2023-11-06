@@ -29,8 +29,22 @@ defmodule MicrosoftGraph.Api.CommunicationsFunctions do
   - `{:ok, MicrosoftGraph.Model.CommunicationsCallRecordsGetDirectRoutingCalls2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_call_records_get_direct_routing_calls(Tesla.Env.client, DateTime.t, DateTime.t, keyword()) :: {:ok, MicrosoftGraph.Model.CommunicationsCallRecordsGetDirectRoutingCalls2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def communications_call_records_get_direct_routing_calls(connection, from_date_time, to_date_time, opts \\ []) do
+  @spec communications_call_records_get_direct_routing_calls(
+          Tesla.Env.client(),
+          DateTime.t(),
+          DateTime.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.CommunicationsCallRecordsGetDirectRoutingCalls2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_call_records_get_direct_routing_calls(
+        connection,
+        from_date_time,
+        to_date_time,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -42,7 +56,9 @@ defmodule MicrosoftGraph.Api.CommunicationsFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/communications/callRecords/microsoft.graph.callRecords.getDirectRoutingCalls(fromDateTime&#x3D;#{from_date_time},toDateTime&#x3D;#{to_date_time})")
+      |> url(
+        "/communications/callRecords/microsoft.graph.callRecords.getDirectRoutingCalls(fromDateTime&#x3D;#{from_date_time},toDateTime&#x3D;#{to_date_time})"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -75,8 +91,21 @@ defmodule MicrosoftGraph.Api.CommunicationsFunctions do
   - `{:ok, MicrosoftGraph.Model.CommunicationsCallRecordsGetPstnCalls2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_call_records_get_pstn_calls(Tesla.Env.client, DateTime.t, DateTime.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.CommunicationsCallRecordsGetPstnCalls2XxResponse.t} | {:error, Tesla.Env.t}
-  def communications_call_records_get_pstn_calls(connection, from_date_time, to_date_time, opts \\ []) do
+  @spec communications_call_records_get_pstn_calls(
+          Tesla.Env.client(),
+          DateTime.t(),
+          DateTime.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.CommunicationsCallRecordsGetPstnCalls2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_call_records_get_pstn_calls(
+        connection,
+        from_date_time,
+        to_date_time,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -88,7 +117,9 @@ defmodule MicrosoftGraph.Api.CommunicationsFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/communications/callRecords/microsoft.graph.callRecords.getPstnCalls(fromDateTime&#x3D;#{from_date_time},toDateTime&#x3D;#{to_date_time})")
+      |> url(
+        "/communications/callRecords/microsoft.graph.callRecords.getPstnCalls(fromDateTime&#x3D;#{from_date_time},toDateTime&#x3D;#{to_date_time})"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -115,18 +146,33 @@ defmodule MicrosoftGraph.Api.CommunicationsFunctions do
   - `{:ok, MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookWorksheetsWorkbookWorksheetChartsWorkbookChartImage8f132XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_online_meetings_online_meeting_get_virtual_appointment_join_web_url(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookWorksheetsWorkbookWorksheetChartsWorkbookChartImage8f132XxResponse.t} | {:error, Tesla.Env.t}
-  def communications_online_meetings_online_meeting_get_virtual_appointment_join_web_url(connection, online_meeting_id, _opts \\ []) do
+  @spec communications_online_meetings_online_meeting_get_virtual_appointment_join_web_url(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookWorksheetsWorkbookWorksheetChartsWorkbookChartImage8f132XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_online_meetings_online_meeting_get_virtual_appointment_join_web_url(
+        connection,
+        online_meeting_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/communications/onlineMeetings/#{online_meeting_id}/getVirtualAppointmentJoinWebUrl()")
+      |> url(
+        "/communications/onlineMeetings/#{online_meeting_id}/getVirtualAppointmentJoinWebUrl()"
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookWorksheetsWorkbookWorksheetChartsWorkbookChartImage8f132XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookWorksheetsWorkbookWorksheetChartsWorkbookChartImage8f132XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])

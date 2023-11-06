@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.ContractsContractCheckMemberGroupsRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,11 +12,10 @@ defmodule MicrosoftGraph.Model.ContractsContractCheckMemberGroupsRequest do
   ]
 
   @type t :: %__MODULE__{
-    :groupIds => [String.t] | nil
-  }
+          :groupIds => [String.t()] | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

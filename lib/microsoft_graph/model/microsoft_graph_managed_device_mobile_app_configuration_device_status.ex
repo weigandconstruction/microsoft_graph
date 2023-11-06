@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -20,24 +20,27 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphManagedDeviceMobileAppConfiguration
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :complianceGracePeriodExpirationDateTime => DateTime.t | nil,
-    :deviceDisplayName => String.t | nil,
-    :deviceModel => String.t | nil,
-    :lastReportedDateTime => DateTime.t | nil,
-    :status => MicrosoftGraph.Model.MicrosoftGraphComplianceStatus.t | nil,
-    :userName => String.t | nil,
-    :userPrincipalName => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :complianceGracePeriodExpirationDateTime => DateTime.t() | nil,
+          :deviceDisplayName => String.t() | nil,
+          :deviceModel => String.t() | nil,
+          :lastReportedDateTime => DateTime.t() | nil,
+          :status => MicrosoftGraph.Model.MicrosoftGraphComplianceStatus.t() | nil,
+          :userName => String.t() | nil,
+          :userPrincipalName => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:complianceGracePeriodExpirationDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastReportedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.MicrosoftGraphComplianceStatus)
+    |> Deserializer.deserialize(:complianceGracePeriodExpirationDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastReportedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :status,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphComplianceStatus
+    )
   end
 end
-

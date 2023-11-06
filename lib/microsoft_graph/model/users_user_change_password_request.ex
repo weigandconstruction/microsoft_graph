@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.UsersUserChangePasswordRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,12 +13,11 @@ defmodule MicrosoftGraph.Model.UsersUserChangePasswordRequest do
   ]
 
   @type t :: %__MODULE__{
-    :currentPassword => String.t | nil,
-    :newPassword => String.t | nil
-  }
+          :currentPassword => String.t() | nil,
+          :newPassword => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

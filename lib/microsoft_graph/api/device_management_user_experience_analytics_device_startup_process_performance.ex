@@ -23,19 +23,36 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsDeviceStartu
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceStartupProcessPerformance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_create_user_experience_analytics_device_startup_process_performance(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceStartupProcessPerformance.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceStartupProcessPerformance.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_create_user_experience_analytics_device_startup_process_performance(connection, microsoft_graph_user_experience_analytics_device_startup_process_performance, _opts \\ []) do
+  @spec device_management_create_user_experience_analytics_device_startup_process_performance(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceStartupProcessPerformance.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceStartupProcessPerformance.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_create_user_experience_analytics_device_startup_process_performance(
+        connection,
+        microsoft_graph_user_experience_analytics_device_startup_process_performance,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/deviceManagement/userExperienceAnalyticsDeviceStartupProcessPerformance")
-      |> add_param(:body, :body, microsoft_graph_user_experience_analytics_device_startup_process_performance)
+      |> add_param(
+        :body,
+        :body,
+        microsoft_graph_user_experience_analytics_device_startup_process_performance
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceStartupProcessPerformance},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceStartupProcessPerformance},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -56,8 +73,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsDeviceStartu
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_delete_user_experience_analytics_device_startup_process_performance(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_delete_user_experience_analytics_device_startup_process_performance(connection, user_experience_analytics_device_startup_process_performance_id, opts \\ []) do
+  @spec device_management_delete_user_experience_analytics_device_startup_process_performance(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_delete_user_experience_analytics_device_startup_process_performance(
+        connection,
+        user_experience_analytics_device_startup_process_performance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -65,7 +93,9 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsDeviceStartu
     request =
       %{}
       |> method(:delete)
-      |> url("/deviceManagement/userExperienceAnalyticsDeviceStartupProcessPerformance/#{user_experience_analytics_device_startup_process_performance_id}")
+      |> url(
+        "/deviceManagement/userExperienceAnalyticsDeviceStartupProcessPerformance/#{user_experience_analytics_device_startup_process_performance_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -95,8 +125,20 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsDeviceStartu
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceStartupProcessPerformance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_get_user_experience_analytics_device_startup_process_performance(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceStartupProcessPerformance.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_get_user_experience_analytics_device_startup_process_performance(connection, user_experience_analytics_device_startup_process_performance_id, opts \\ []) do
+  @spec device_management_get_user_experience_analytics_device_startup_process_performance(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceStartupProcessPerformance.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_get_user_experience_analytics_device_startup_process_performance(
+        connection,
+        user_experience_analytics_device_startup_process_performance_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -105,14 +147,17 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsDeviceStartu
     request =
       %{}
       |> method(:get)
-      |> url("/deviceManagement/userExperienceAnalyticsDeviceStartupProcessPerformance/#{user_experience_analytics_device_startup_process_performance_id}")
+      |> url(
+        "/deviceManagement/userExperienceAnalyticsDeviceStartupProcessPerformance/#{user_experience_analytics_device_startup_process_performance_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceStartupProcessPerformance},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceStartupProcessPerformance},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -140,8 +185,18 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsDeviceStartu
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceStartupProcessPerformanceCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_list_user_experience_analytics_device_startup_process_performance(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceStartupProcessPerformanceCollectionResponse.t} | {:error, Tesla.Env.t}
-  def device_management_list_user_experience_analytics_device_startup_process_performance(connection, opts \\ []) do
+  @spec device_management_list_user_experience_analytics_device_startup_process_performance(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceStartupProcessPerformanceCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_list_user_experience_analytics_device_startup_process_performance(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -163,7 +218,8 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsDeviceStartu
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceStartupProcessPerformanceCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceStartupProcessPerformanceCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -184,19 +240,40 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsDeviceStartu
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceStartupProcessPerformance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_update_user_experience_analytics_device_startup_process_performance(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceStartupProcessPerformance.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceStartupProcessPerformance.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_update_user_experience_analytics_device_startup_process_performance(connection, user_experience_analytics_device_startup_process_performance_id, microsoft_graph_user_experience_analytics_device_startup_process_performance, _opts \\ []) do
+  @spec device_management_update_user_experience_analytics_device_startup_process_performance(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceStartupProcessPerformance.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceStartupProcessPerformance.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_update_user_experience_analytics_device_startup_process_performance(
+        connection,
+        user_experience_analytics_device_startup_process_performance_id,
+        microsoft_graph_user_experience_analytics_device_startup_process_performance,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/deviceManagement/userExperienceAnalyticsDeviceStartupProcessPerformance/#{user_experience_analytics_device_startup_process_performance_id}")
-      |> add_param(:body, :body, microsoft_graph_user_experience_analytics_device_startup_process_performance)
+      |> url(
+        "/deviceManagement/userExperienceAnalyticsDeviceStartupProcessPerformance/#{user_experience_analytics_device_startup_process_performance_id}"
+      )
+      |> add_param(
+        :body,
+        :body,
+        microsoft_graph_user_experience_analytics_device_startup_process_performance
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceStartupProcessPerformance},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsDeviceStartupProcessPerformance},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -217,8 +294,17 @@ defmodule MicrosoftGraph.Api.DeviceManagementUserExperienceAnalyticsDeviceStartu
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_user_experience_analytics_device_startup_process_performance_get_count2dec(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_user_experience_analytics_device_startup_process_performance_get_count2dec(connection, opts \\ []) do
+  @spec device_management_user_experience_analytics_device_startup_process_performance_get_count2dec(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_user_experience_analytics_device_startup_process_performance_get_count2dec(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query

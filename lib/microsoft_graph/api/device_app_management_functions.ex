@@ -27,8 +27,18 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementFunctions do
   - `{:ok, MicrosoftGraph.Model.DirectoryFederationConfigurationsAvailableProviderTypes2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_managed_app_registrations_get_user_ids_with_flagged_app_registration(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.DirectoryFederationConfigurationsAvailableProviderTypes2XxResponse.t} | {:error, Tesla.Env.t}
-  def device_app_management_managed_app_registrations_get_user_ids_with_flagged_app_registration(connection, opts \\ []) do
+  @spec device_app_management_managed_app_registrations_get_user_ids_with_flagged_app_registration(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.DirectoryFederationConfigurationsAvailableProviderTypes2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_managed_app_registrations_get_user_ids_with_flagged_app_registration(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -40,14 +50,17 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/deviceAppManagement/managedAppRegistrations/getUserIdsWithFlaggedAppRegistration()")
+      |> url(
+        "/deviceAppManagement/managedAppRegistrations/getUserIdsWithFlaggedAppRegistration()"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.DirectoryFederationConfigurationsAvailableProviderTypes2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.DirectoryFederationConfigurationsAvailableProviderTypes2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])

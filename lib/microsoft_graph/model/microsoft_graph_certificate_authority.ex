@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphCertificateAuthority do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,17 +18,16 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphCertificateAuthority do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :certificate => String.t | nil,
-    :certificateRevocationListUrl => String.t | nil,
-    :deltaCertificateRevocationListUrl => String.t | nil,
-    :isRootAuthority => boolean() | nil,
-    :issuer => String.t | nil,
-    :issuerSki => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :certificate => String.t() | nil,
+          :certificateRevocationListUrl => String.t() | nil,
+          :deltaCertificateRevocationListUrl => String.t() | nil,
+          :isRootAuthority => boolean() | nil,
+          :issuer => String.t() | nil,
+          :issuerSki => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

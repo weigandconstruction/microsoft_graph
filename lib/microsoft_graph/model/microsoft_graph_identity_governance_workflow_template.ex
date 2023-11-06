@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowTemplate do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,22 +18,36 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceWorkflowTemplate 
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :category => MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleWorkflowCategory.t | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :executionConditions => MicrosoftGraph.Model.WorkflowTemplateExecutionConditions.t | nil,
-    :tasks => [MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :category =>
+            MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleWorkflowCategory.t()
+            | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :executionConditions =>
+            MicrosoftGraph.Model.WorkflowTemplateExecutionConditions.t() | nil,
+          :tasks => [MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:category, :struct, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleWorkflowCategory)
-     |> Deserializer.deserialize(:executionConditions, :struct, MicrosoftGraph.Model.WorkflowTemplateExecutionConditions)
-     |> Deserializer.deserialize(:tasks, :list, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask)
+    |> Deserializer.deserialize(
+      :category,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceLifecycleWorkflowCategory
+    )
+    |> Deserializer.deserialize(
+      :executionConditions,
+      :struct,
+      MicrosoftGraph.Model.WorkflowTemplateExecutionConditions
+    )
+    |> Deserializer.deserialize(
+      :tasks,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceTask
+    )
   end
 end
-

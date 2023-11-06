@@ -17,16 +17,15 @@ defmodule MicrosoftGraph.Model.ThumbnailSetMedium do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :content => String.t | nil,
-    :height => integer() | nil,
-    :sourceItemId => String.t | nil,
-    :url => String.t | nil,
-    :width => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :content => String.t() | nil,
+          :height => integer() | nil,
+          :sourceItemId => String.t() | nil,
+          :url => String.t() | nil,
+          :width => integer() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

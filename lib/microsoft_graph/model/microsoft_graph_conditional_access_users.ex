@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphConditionalAccessUsers do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -20,23 +20,34 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphConditionalAccessUsers do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :excludeGroups => [String.t] | nil,
-    :excludeGuestsOrExternalUsers => MicrosoftGraph.Model.MicrosoftGraphConditionalAccessUsersExcludeGuestsOrExternalUsers.t | nil,
-    :excludeRoles => [String.t] | nil,
-    :excludeUsers => [String.t] | nil,
-    :includeGroups => [String.t] | nil,
-    :includeGuestsOrExternalUsers => MicrosoftGraph.Model.MicrosoftGraphConditionalAccessUsersIncludeGuestsOrExternalUsers.t | nil,
-    :includeRoles => [String.t] | nil,
-    :includeUsers => [String.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :excludeGroups => [String.t()] | nil,
+          :excludeGuestsOrExternalUsers =>
+            MicrosoftGraph.Model.MicrosoftGraphConditionalAccessUsersExcludeGuestsOrExternalUsers.t()
+            | nil,
+          :excludeRoles => [String.t()] | nil,
+          :excludeUsers => [String.t()] | nil,
+          :includeGroups => [String.t()] | nil,
+          :includeGuestsOrExternalUsers =>
+            MicrosoftGraph.Model.MicrosoftGraphConditionalAccessUsersIncludeGuestsOrExternalUsers.t()
+            | nil,
+          :includeRoles => [String.t()] | nil,
+          :includeUsers => [String.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:excludeGuestsOrExternalUsers, :struct, MicrosoftGraph.Model.MicrosoftGraphConditionalAccessUsersExcludeGuestsOrExternalUsers)
-     |> Deserializer.deserialize(:includeGuestsOrExternalUsers, :struct, MicrosoftGraph.Model.MicrosoftGraphConditionalAccessUsersIncludeGuestsOrExternalUsers)
+    |> Deserializer.deserialize(
+      :excludeGuestsOrExternalUsers,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphConditionalAccessUsersExcludeGuestsOrExternalUsers
+    )
+    |> Deserializer.deserialize(
+      :includeGuestsOrExternalUsers,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphConditionalAccessUsersIncludeGuestsOrExternalUsers
+    )
   end
 end
-

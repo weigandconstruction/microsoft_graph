@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphWin32LobAppPowerShellScriptRule do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -21,26 +21,44 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphWin32LobAppPowerShellScriptRule do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :ruleType => MicrosoftGraph.Model.MicrosoftGraphWin32LobAppRuleType.t | nil,
-    :comparisonValue => String.t | nil,
-    :displayName => String.t | nil,
-    :enforceSignatureCheck => boolean() | nil,
-    :operationType => MicrosoftGraph.Model.MicrosoftGraphWin32LobAppPowerShellScriptRuleOperationType.t | nil,
-    :operator => MicrosoftGraph.Model.MicrosoftGraphWin32LobAppRuleOperator.t | nil,
-    :runAs32Bit => boolean() | nil,
-    :runAsAccount => MicrosoftGraph.Model.Win32LobAppPowerShellScriptRuleRunAsAccount.t | nil,
-    :scriptContent => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :ruleType => MicrosoftGraph.Model.MicrosoftGraphWin32LobAppRuleType.t() | nil,
+          :comparisonValue => String.t() | nil,
+          :displayName => String.t() | nil,
+          :enforceSignatureCheck => boolean() | nil,
+          :operationType =>
+            MicrosoftGraph.Model.MicrosoftGraphWin32LobAppPowerShellScriptRuleOperationType.t()
+            | nil,
+          :operator => MicrosoftGraph.Model.MicrosoftGraphWin32LobAppRuleOperator.t() | nil,
+          :runAs32Bit => boolean() | nil,
+          :runAsAccount =>
+            MicrosoftGraph.Model.Win32LobAppPowerShellScriptRuleRunAsAccount.t() | nil,
+          :scriptContent => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:ruleType, :struct, MicrosoftGraph.Model.MicrosoftGraphWin32LobAppRuleType)
-     |> Deserializer.deserialize(:operationType, :struct, MicrosoftGraph.Model.MicrosoftGraphWin32LobAppPowerShellScriptRuleOperationType)
-     |> Deserializer.deserialize(:operator, :struct, MicrosoftGraph.Model.MicrosoftGraphWin32LobAppRuleOperator)
-     |> Deserializer.deserialize(:runAsAccount, :struct, MicrosoftGraph.Model.Win32LobAppPowerShellScriptRuleRunAsAccount)
+    |> Deserializer.deserialize(
+      :ruleType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphWin32LobAppRuleType
+    )
+    |> Deserializer.deserialize(
+      :operationType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphWin32LobAppPowerShellScriptRuleOperationType
+    )
+    |> Deserializer.deserialize(
+      :operator,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphWin32LobAppRuleOperator
+    )
+    |> Deserializer.deserialize(
+      :runAsAccount,
+      :struct,
+      MicrosoftGraph.Model.Win32LobAppPowerShellScriptRuleRunAsAccount
+    )
   end
 end
-

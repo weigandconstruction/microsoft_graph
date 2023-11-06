@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAddRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,14 +12,18 @@ defmodule MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAddRequest do
   ]
 
   @type t :: %__MODULE__{
-    :values => [MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAddRequestValuesInner.t] | nil
-  }
+          :values =>
+            [MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAddRequestValuesInner.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:values, :list, MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAddRequestValuesInner)
+    |> Deserializer.deserialize(
+      :values,
+      :list,
+      MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAddRequestValuesInner
+    )
   end
 end
-

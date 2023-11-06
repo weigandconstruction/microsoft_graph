@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.TeamsTeamCloneRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,20 +17,27 @@ defmodule MicrosoftGraph.Model.TeamsTeamCloneRequest do
   ]
 
   @type t :: %__MODULE__{
-    :classification => String.t | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :mailNickname => String.t | nil,
-    :partsToClone => MicrosoftGraph.Model.MicrosoftGraphClonableTeamParts.t | nil,
-    :visibility => MicrosoftGraph.Model.MicrosoftGraphTeamVisibilityType.t | nil
-  }
+          :classification => String.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :mailNickname => String.t() | nil,
+          :partsToClone => MicrosoftGraph.Model.MicrosoftGraphClonableTeamParts.t() | nil,
+          :visibility => MicrosoftGraph.Model.MicrosoftGraphTeamVisibilityType.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:partsToClone, :struct, MicrosoftGraph.Model.MicrosoftGraphClonableTeamParts)
-     |> Deserializer.deserialize(:visibility, :struct, MicrosoftGraph.Model.MicrosoftGraphTeamVisibilityType)
+    |> Deserializer.deserialize(
+      :partsToClone,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphClonableTeamParts
+    )
+    |> Deserializer.deserialize(
+      :visibility,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphTeamVisibilityType
+    )
   end
 end
-

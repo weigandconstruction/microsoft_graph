@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphClientCertificateAuthentication do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,15 +13,19 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphClientCertificateAuthentication do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :certificateList => [MicrosoftGraph.Model.ClientCertificateAuthenticationCertificateListInner.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :certificateList =>
+            [MicrosoftGraph.Model.ClientCertificateAuthenticationCertificateListInner.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:certificateList, :list, MicrosoftGraph.Model.ClientCertificateAuthenticationCertificateListInner)
+    |> Deserializer.deserialize(
+      :certificateList,
+      :list,
+      MicrosoftGraph.Model.ClientCertificateAuthenticationCertificateListInner
+    )
   end
 end
-

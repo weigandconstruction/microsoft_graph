@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphBaseItemVersion do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,20 +16,27 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphBaseItemVersion do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :lastModifiedBy => MicrosoftGraph.Model.BaseItemVersionLastModifiedBy.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :publication => MicrosoftGraph.Model.BaseItemVersionPublication.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :lastModifiedBy => MicrosoftGraph.Model.BaseItemVersionLastModifiedBy.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :publication => MicrosoftGraph.Model.BaseItemVersionPublication.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:lastModifiedBy, :struct, MicrosoftGraph.Model.BaseItemVersionLastModifiedBy)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:publication, :struct, MicrosoftGraph.Model.BaseItemVersionPublication)
+    |> Deserializer.deserialize(
+      :lastModifiedBy,
+      :struct,
+      MicrosoftGraph.Model.BaseItemVersionLastModifiedBy
+    )
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :publication,
+      :struct,
+      MicrosoftGraph.Model.BaseItemVersionPublication
+    )
   end
 end
-

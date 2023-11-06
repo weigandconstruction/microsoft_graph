@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfile do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -23,31 +23,56 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfile do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :aliases => [String.t] | nil,
-    :countriesOrRegionsOfOrigin => [MicrosoftGraph.Model.IntelligenceProfileCountriesOrRegionsOfOriginInner.t] | nil,
-    :description => MicrosoftGraph.Model.MicrosoftGraphSecurityFormattedContent.t | nil,
-    :firstActiveDateTime => DateTime.t | nil,
-    :indicators => [MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfileIndicator.t] | nil,
-    :kind => MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfileKind.t | nil,
-    :summary => MicrosoftGraph.Model.MicrosoftGraphSecurityFormattedContent.t | nil,
-    :targets => [String.t] | nil,
-    :title => String.t | nil,
-    :tradecraft => MicrosoftGraph.Model.IntelligenceProfileTradecraft.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :aliases => [String.t()] | nil,
+          :countriesOrRegionsOfOrigin =>
+            [MicrosoftGraph.Model.IntelligenceProfileCountriesOrRegionsOfOriginInner.t()] | nil,
+          :description => MicrosoftGraph.Model.MicrosoftGraphSecurityFormattedContent.t() | nil,
+          :firstActiveDateTime => DateTime.t() | nil,
+          :indicators =>
+            [MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfileIndicator.t()] | nil,
+          :kind => MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfileKind.t() | nil,
+          :summary => MicrosoftGraph.Model.MicrosoftGraphSecurityFormattedContent.t() | nil,
+          :targets => [String.t()] | nil,
+          :title => String.t() | nil,
+          :tradecraft => MicrosoftGraph.Model.IntelligenceProfileTradecraft.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:countriesOrRegionsOfOrigin, :list, MicrosoftGraph.Model.IntelligenceProfileCountriesOrRegionsOfOriginInner)
-     |> Deserializer.deserialize(:description, :struct, MicrosoftGraph.Model.MicrosoftGraphSecurityFormattedContent)
-     |> Deserializer.deserialize(:firstActiveDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:indicators, :list, MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfileIndicator)
-     |> Deserializer.deserialize(:kind, :struct, MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfileKind)
-     |> Deserializer.deserialize(:summary, :struct, MicrosoftGraph.Model.MicrosoftGraphSecurityFormattedContent)
-     |> Deserializer.deserialize(:tradecraft, :struct, MicrosoftGraph.Model.IntelligenceProfileTradecraft)
+    |> Deserializer.deserialize(
+      :countriesOrRegionsOfOrigin,
+      :list,
+      MicrosoftGraph.Model.IntelligenceProfileCountriesOrRegionsOfOriginInner
+    )
+    |> Deserializer.deserialize(
+      :description,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityFormattedContent
+    )
+    |> Deserializer.deserialize(:firstActiveDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :indicators,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfileIndicator
+    )
+    |> Deserializer.deserialize(
+      :kind,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfileKind
+    )
+    |> Deserializer.deserialize(
+      :summary,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityFormattedContent
+    )
+    |> Deserializer.deserialize(
+      :tradecraft,
+      :struct,
+      MicrosoftGraph.Model.IntelligenceProfileTradecraft
+    )
   end
 end
-

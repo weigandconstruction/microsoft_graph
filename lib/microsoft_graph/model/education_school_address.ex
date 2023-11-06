@@ -17,16 +17,15 @@ defmodule MicrosoftGraph.Model.EducationSchoolAddress do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :city => String.t | nil,
-    :countryOrRegion => String.t | nil,
-    :postalCode => String.t | nil,
-    :state => String.t | nil,
-    :street => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :city => String.t() | nil,
+          :countryOrRegion => String.t() | nil,
+          :postalCode => String.t() | nil,
+          :state => String.t() | nil,
+          :street => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

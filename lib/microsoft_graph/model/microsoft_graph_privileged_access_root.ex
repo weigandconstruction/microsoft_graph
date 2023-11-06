@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessRoot do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,15 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessRoot do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :group => MicrosoftGraph.Model.PrivilegedAccessRootGroup.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :group => MicrosoftGraph.Model.PrivilegedAccessRootGroup.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:group, :struct, MicrosoftGraph.Model.PrivilegedAccessRootGroup)
+    |> Deserializer.deserialize(:group, :struct, MicrosoftGraph.Model.PrivilegedAccessRootGroup)
   end
 end
-

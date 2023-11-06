@@ -23,7 +23,14 @@ defmodule MicrosoftGraph.Api.AuditLogsSignIn do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSignIn.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec audit_logs_create_sign_ins(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphSignIn.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSignIn.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec audit_logs_create_sign_ins(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphSignIn.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSignIn.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def audit_logs_create_sign_ins(connection, microsoft_graph_sign_in, _opts \\ []) do
     request =
       %{}
@@ -56,7 +63,10 @@ defmodule MicrosoftGraph.Api.AuditLogsSignIn do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec audit_logs_delete_sign_ins(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec audit_logs_delete_sign_ins(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def audit_logs_delete_sign_ins(connection, sign_in_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -95,7 +105,10 @@ defmodule MicrosoftGraph.Api.AuditLogsSignIn do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSignIn.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec audit_logs_get_sign_ins(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSignIn.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec audit_logs_get_sign_ins(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSignIn.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def audit_logs_get_sign_ins(connection, sign_in_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -140,7 +153,10 @@ defmodule MicrosoftGraph.Api.AuditLogsSignIn do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSignInCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec audit_logs_list_sign_ins(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSignInCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec audit_logs_list_sign_ins(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSignInCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def audit_logs_list_sign_ins(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -184,7 +200,10 @@ defmodule MicrosoftGraph.Api.AuditLogsSignIn do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec audit_logs_sign_ins_get_count9ee4(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec audit_logs_sign_ins_get_count9ee4(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def audit_logs_sign_ins_get_count9ee4(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -222,7 +241,15 @@ defmodule MicrosoftGraph.Api.AuditLogsSignIn do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSignIn.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec audit_logs_update_sign_ins(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphSignIn.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSignIn.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec audit_logs_update_sign_ins(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSignIn.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSignIn.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def audit_logs_update_sign_ins(connection, sign_in_id, microsoft_graph_sign_in, _opts \\ []) do
     request =
       %{}

@@ -24,7 +24,10 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_delete_synchronization(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec service_principals_delete_synchronization(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def service_principals_delete_synchronization(connection, service_principal_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -63,7 +66,10 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSynchronization.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_get_synchronization(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSynchronization.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec service_principals_get_synchronization(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSynchronization.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def service_principals_get_synchronization(connection, service_principal_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -102,8 +108,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSynchronizationJob.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_synchronization_create_jobs(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphSynchronizationJob.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSynchronizationJob.t} | {:error, Tesla.Env.t}
-  def service_principals_synchronization_create_jobs(connection, service_principal_id, microsoft_graph_synchronization_job, _opts \\ []) do
+  @spec service_principals_synchronization_create_jobs(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSynchronizationJob.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSynchronizationJob.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_synchronization_create_jobs(
+        connection,
+        service_principal_id,
+        microsoft_graph_synchronization_job,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -135,8 +154,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSynchronizationTemplate.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_synchronization_create_templates(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphSynchronizationTemplate.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSynchronizationTemplate.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_synchronization_create_templates(connection, service_principal_id, microsoft_graph_synchronization_template, _opts \\ []) do
+  @spec service_principals_synchronization_create_templates(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSynchronizationTemplate.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSynchronizationTemplate.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_synchronization_create_templates(
+        connection,
+        service_principal_id,
+        microsoft_graph_synchronization_template,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -170,8 +202,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_synchronization_delete_jobs(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_synchronization_delete_jobs(connection, service_principal_id, synchronization_job_id, opts \\ []) do
+  @spec service_principals_synchronization_delete_jobs(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_synchronization_delete_jobs(
+        connection,
+        service_principal_id,
+        synchronization_job_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -179,7 +224,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
     request =
       %{}
       |> method(:delete)
-      |> url("/servicePrincipals/#{service_principal_id}/synchronization/jobs/#{synchronization_job_id}")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/synchronization/jobs/#{synchronization_job_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -208,8 +255,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_synchronization_delete_templates(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_synchronization_delete_templates(connection, service_principal_id, synchronization_template_id, opts \\ []) do
+  @spec service_principals_synchronization_delete_templates(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_synchronization_delete_templates(
+        connection,
+        service_principal_id,
+        synchronization_template_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -217,7 +277,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
     request =
       %{}
       |> method(:delete)
-      |> url("/servicePrincipals/#{service_principal_id}/synchronization/templates/#{synchronization_template_id}")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/synchronization/templates/#{synchronization_template_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -248,8 +310,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSynchronizationJob.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_synchronization_get_jobs(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSynchronizationJob.t} | {:error, Tesla.Env.t}
-  def service_principals_synchronization_get_jobs(connection, service_principal_id, synchronization_job_id, opts \\ []) do
+  @spec service_principals_synchronization_get_jobs(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSynchronizationJob.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_synchronization_get_jobs(
+        connection,
+        service_principal_id,
+        synchronization_job_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -258,7 +333,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
     request =
       %{}
       |> method(:get)
-      |> url("/servicePrincipals/#{service_principal_id}/synchronization/jobs/#{synchronization_job_id}")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/synchronization/jobs/#{synchronization_job_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -289,8 +366,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSynchronizationTemplate.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_synchronization_get_templates(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSynchronizationTemplate.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_synchronization_get_templates(connection, service_principal_id, synchronization_template_id, opts \\ []) do
+  @spec service_principals_synchronization_get_templates(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSynchronizationTemplate.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_synchronization_get_templates(
+        connection,
+        service_principal_id,
+        synchronization_template_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -299,7 +389,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
     request =
       %{}
       |> method(:get)
-      |> url("/servicePrincipals/#{service_principal_id}/synchronization/templates/#{synchronization_template_id}")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/synchronization/templates/#{synchronization_template_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -328,8 +420,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_synchronization_jobs_delete_schema(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_synchronization_jobs_delete_schema(connection, service_principal_id, synchronization_job_id, opts \\ []) do
+  @spec service_principals_synchronization_jobs_delete_schema(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_synchronization_jobs_delete_schema(
+        connection,
+        service_principal_id,
+        synchronization_job_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -337,7 +442,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
     request =
       %{}
       |> method(:delete)
-      |> url("/servicePrincipals/#{service_principal_id}/synchronization/jobs/#{synchronization_job_id}/schema")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/synchronization/jobs/#{synchronization_job_id}/schema"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -366,8 +473,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_synchronization_jobs_get_count5eba(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_synchronization_jobs_get_count5eba(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_synchronization_jobs_get_count5eba(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_synchronization_jobs_get_count5eba(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -407,8 +525,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSynchronizationSchema.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_synchronization_jobs_get_schema(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSynchronizationSchema.t} | {:error, Tesla.Env.t}
-  def service_principals_synchronization_jobs_get_schema(connection, service_principal_id, synchronization_job_id, opts \\ []) do
+  @spec service_principals_synchronization_jobs_get_schema(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSynchronizationSchema.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_synchronization_jobs_get_schema(
+        connection,
+        service_principal_id,
+        synchronization_job_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -417,7 +548,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
     request =
       %{}
       |> method(:get)
-      |> url("/servicePrincipals/#{service_principal_id}/synchronization/jobs/#{synchronization_job_id}/schema")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/synchronization/jobs/#{synchronization_job_id}/schema"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -446,12 +579,29 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_synchronization_jobs_schema_create_directories(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphDirectoryDefinition.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_synchronization_jobs_schema_create_directories(connection, service_principal_id, synchronization_job_id, microsoft_graph_directory_definition, _opts \\ []) do
+  @spec service_principals_synchronization_jobs_schema_create_directories(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDirectoryDefinition.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_synchronization_jobs_schema_create_directories(
+        connection,
+        service_principal_id,
+        synchronization_job_id,
+        microsoft_graph_directory_definition,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/servicePrincipals/#{service_principal_id}/synchronization/jobs/#{synchronization_job_id}/schema/directories")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/synchronization/jobs/#{synchronization_job_id}/schema/directories"
+      )
       |> add_param(:body, :body, microsoft_graph_directory_definition)
       |> Enum.into([])
 
@@ -481,8 +631,23 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_synchronization_jobs_schema_delete_directories(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_synchronization_jobs_schema_delete_directories(connection, service_principal_id, synchronization_job_id, directory_definition_id, opts \\ []) do
+  @spec service_principals_synchronization_jobs_schema_delete_directories(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_synchronization_jobs_schema_delete_directories(
+        connection,
+        service_principal_id,
+        synchronization_job_id,
+        directory_definition_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -490,7 +655,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
     request =
       %{}
       |> method(:delete)
-      |> url("/servicePrincipals/#{service_principal_id}/synchronization/jobs/#{synchronization_job_id}/schema/directories/#{directory_definition_id}")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/synchronization/jobs/#{synchronization_job_id}/schema/directories/#{directory_definition_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -520,8 +687,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_synchronization_jobs_schema_directories_get_count_af56(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_synchronization_jobs_schema_directories_get_count_af56(connection, service_principal_id, synchronization_job_id, opts \\ []) do
+  @spec service_principals_synchronization_jobs_schema_directories_get_count_af56(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_synchronization_jobs_schema_directories_get_count_af56(
+        connection,
+        service_principal_id,
+        synchronization_job_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -530,7 +710,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
     request =
       %{}
       |> method(:get)
-      |> url("/servicePrincipals/#{service_principal_id}/synchronization/jobs/#{synchronization_job_id}/schema/directories/$count")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/synchronization/jobs/#{synchronization_job_id}/schema/directories/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -562,8 +744,23 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_synchronization_jobs_schema_get_directories(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_synchronization_jobs_schema_get_directories(connection, service_principal_id, synchronization_job_id, directory_definition_id, opts \\ []) do
+  @spec service_principals_synchronization_jobs_schema_get_directories(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_synchronization_jobs_schema_get_directories(
+        connection,
+        service_principal_id,
+        synchronization_job_id,
+        directory_definition_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -572,7 +769,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
     request =
       %{}
       |> method(:get)
-      |> url("/servicePrincipals/#{service_principal_id}/synchronization/jobs/#{synchronization_job_id}/schema/directories/#{directory_definition_id}")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/synchronization/jobs/#{synchronization_job_id}/schema/directories/#{directory_definition_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -609,8 +808,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryDefinitionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_synchronization_jobs_schema_list_directories(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryDefinitionCollectionResponse.t} | {:error, Tesla.Env.t}
-  def service_principals_synchronization_jobs_schema_list_directories(connection, service_principal_id, synchronization_job_id, opts \\ []) do
+  @spec service_principals_synchronization_jobs_schema_list_directories(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryDefinitionCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_synchronization_jobs_schema_list_directories(
+        connection,
+        service_principal_id,
+        synchronization_job_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -625,7 +837,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
     request =
       %{}
       |> method(:get)
-      |> url("/servicePrincipals/#{service_principal_id}/synchronization/jobs/#{synchronization_job_id}/schema/directories")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/synchronization/jobs/#{synchronization_job_id}/schema/directories"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -655,12 +869,31 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_synchronization_jobs_schema_update_directories(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphDirectoryDefinition.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_synchronization_jobs_schema_update_directories(connection, service_principal_id, synchronization_job_id, directory_definition_id, microsoft_graph_directory_definition, _opts \\ []) do
+  @spec service_principals_synchronization_jobs_schema_update_directories(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDirectoryDefinition.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_synchronization_jobs_schema_update_directories(
+        connection,
+        service_principal_id,
+        synchronization_job_id,
+        directory_definition_id,
+        microsoft_graph_directory_definition,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/servicePrincipals/#{service_principal_id}/synchronization/jobs/#{synchronization_job_id}/schema/directories/#{directory_definition_id}")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/synchronization/jobs/#{synchronization_job_id}/schema/directories/#{directory_definition_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_directory_definition)
       |> Enum.into([])
 
@@ -690,12 +923,29 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSynchronizationSchema.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_synchronization_jobs_update_schema(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphSynchronizationSchema.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSynchronizationSchema.t} | {:error, Tesla.Env.t}
-  def service_principals_synchronization_jobs_update_schema(connection, service_principal_id, synchronization_job_id, microsoft_graph_synchronization_schema, _opts \\ []) do
+  @spec service_principals_synchronization_jobs_update_schema(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSynchronizationSchema.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSynchronizationSchema.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_synchronization_jobs_update_schema(
+        connection,
+        service_principal_id,
+        synchronization_job_id,
+        microsoft_graph_synchronization_schema,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/servicePrincipals/#{service_principal_id}/synchronization/jobs/#{synchronization_job_id}/schema")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/synchronization/jobs/#{synchronization_job_id}/schema"
+      )
       |> add_param(:body, :body, microsoft_graph_synchronization_schema)
       |> Enum.into([])
 
@@ -731,7 +981,10 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSynchronizationJobCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_synchronization_list_jobs(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSynchronizationJobCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec service_principals_synchronization_list_jobs(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSynchronizationJobCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def service_principals_synchronization_list_jobs(connection, service_principal_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -783,8 +1036,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSynchronizationTemplateCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_synchronization_list_templates(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSynchronizationTemplateCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_synchronization_list_templates(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_synchronization_list_templates(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSynchronizationTemplateCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_synchronization_list_templates(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -828,8 +1092,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_synchronization_secrets_get_count65c9(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_synchronization_secrets_get_count65c9(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_synchronization_secrets_get_count65c9(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_synchronization_secrets_get_count65c9(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -867,8 +1142,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_synchronization_templates_delete_schema(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_synchronization_templates_delete_schema(connection, service_principal_id, synchronization_template_id, opts \\ []) do
+  @spec service_principals_synchronization_templates_delete_schema(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_synchronization_templates_delete_schema(
+        connection,
+        service_principal_id,
+        synchronization_template_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -876,7 +1164,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
     request =
       %{}
       |> method(:delete)
-      |> url("/servicePrincipals/#{service_principal_id}/synchronization/templates/#{synchronization_template_id}/schema")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/synchronization/templates/#{synchronization_template_id}/schema"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -905,8 +1195,19 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_synchronization_templates_get_count1c9d(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_synchronization_templates_get_count1c9d(connection, service_principal_id, opts \\ []) do
+  @spec service_principals_synchronization_templates_get_count1c9d(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_synchronization_templates_get_count1c9d(
+        connection,
+        service_principal_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -946,8 +1247,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSynchronizationSchema.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_synchronization_templates_get_schema(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSynchronizationSchema.t} | {:error, Tesla.Env.t}
-  def service_principals_synchronization_templates_get_schema(connection, service_principal_id, synchronization_template_id, opts \\ []) do
+  @spec service_principals_synchronization_templates_get_schema(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSynchronizationSchema.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_synchronization_templates_get_schema(
+        connection,
+        service_principal_id,
+        synchronization_template_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -956,7 +1270,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
     request =
       %{}
       |> method(:get)
-      |> url("/servicePrincipals/#{service_principal_id}/synchronization/templates/#{synchronization_template_id}/schema")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/synchronization/templates/#{synchronization_template_id}/schema"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -985,12 +1301,29 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_synchronization_templates_schema_create_directories(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphDirectoryDefinition.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_synchronization_templates_schema_create_directories(connection, service_principal_id, synchronization_template_id, microsoft_graph_directory_definition, _opts \\ []) do
+  @spec service_principals_synchronization_templates_schema_create_directories(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDirectoryDefinition.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_synchronization_templates_schema_create_directories(
+        connection,
+        service_principal_id,
+        synchronization_template_id,
+        microsoft_graph_directory_definition,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/servicePrincipals/#{service_principal_id}/synchronization/templates/#{synchronization_template_id}/schema/directories")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/synchronization/templates/#{synchronization_template_id}/schema/directories"
+      )
       |> add_param(:body, :body, microsoft_graph_directory_definition)
       |> Enum.into([])
 
@@ -1020,8 +1353,23 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_synchronization_templates_schema_delete_directories(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_synchronization_templates_schema_delete_directories(connection, service_principal_id, synchronization_template_id, directory_definition_id, opts \\ []) do
+  @spec service_principals_synchronization_templates_schema_delete_directories(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_synchronization_templates_schema_delete_directories(
+        connection,
+        service_principal_id,
+        synchronization_template_id,
+        directory_definition_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1029,7 +1377,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
     request =
       %{}
       |> method(:delete)
-      |> url("/servicePrincipals/#{service_principal_id}/synchronization/templates/#{synchronization_template_id}/schema/directories/#{directory_definition_id}")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/synchronization/templates/#{synchronization_template_id}/schema/directories/#{directory_definition_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1059,8 +1409,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_synchronization_templates_schema_directories_get_count_f937(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_synchronization_templates_schema_directories_get_count_f937(connection, service_principal_id, synchronization_template_id, opts \\ []) do
+  @spec service_principals_synchronization_templates_schema_directories_get_count_f937(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_synchronization_templates_schema_directories_get_count_f937(
+        connection,
+        service_principal_id,
+        synchronization_template_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1069,7 +1432,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
     request =
       %{}
       |> method(:get)
-      |> url("/servicePrincipals/#{service_principal_id}/synchronization/templates/#{synchronization_template_id}/schema/directories/$count")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/synchronization/templates/#{synchronization_template_id}/schema/directories/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1101,8 +1466,23 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_synchronization_templates_schema_get_directories(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_synchronization_templates_schema_get_directories(connection, service_principal_id, synchronization_template_id, directory_definition_id, opts \\ []) do
+  @spec service_principals_synchronization_templates_schema_get_directories(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_synchronization_templates_schema_get_directories(
+        connection,
+        service_principal_id,
+        synchronization_template_id,
+        directory_definition_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1111,7 +1491,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
     request =
       %{}
       |> method(:get)
-      |> url("/servicePrincipals/#{service_principal_id}/synchronization/templates/#{synchronization_template_id}/schema/directories/#{directory_definition_id}")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/synchronization/templates/#{synchronization_template_id}/schema/directories/#{directory_definition_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1148,8 +1530,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryDefinitionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_synchronization_templates_schema_list_directories(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryDefinitionCollectionResponse.t} | {:error, Tesla.Env.t}
-  def service_principals_synchronization_templates_schema_list_directories(connection, service_principal_id, synchronization_template_id, opts \\ []) do
+  @spec service_principals_synchronization_templates_schema_list_directories(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryDefinitionCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_synchronization_templates_schema_list_directories(
+        connection,
+        service_principal_id,
+        synchronization_template_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1164,7 +1559,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
     request =
       %{}
       |> method(:get)
-      |> url("/servicePrincipals/#{service_principal_id}/synchronization/templates/#{synchronization_template_id}/schema/directories")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/synchronization/templates/#{synchronization_template_id}/schema/directories"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1194,12 +1591,31 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_synchronization_templates_schema_update_directories(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphDirectoryDefinition.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_synchronization_templates_schema_update_directories(connection, service_principal_id, synchronization_template_id, directory_definition_id, microsoft_graph_directory_definition, _opts \\ []) do
+  @spec service_principals_synchronization_templates_schema_update_directories(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDirectoryDefinition.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_synchronization_templates_schema_update_directories(
+        connection,
+        service_principal_id,
+        synchronization_template_id,
+        directory_definition_id,
+        microsoft_graph_directory_definition,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/servicePrincipals/#{service_principal_id}/synchronization/templates/#{synchronization_template_id}/schema/directories/#{directory_definition_id}")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/synchronization/templates/#{synchronization_template_id}/schema/directories/#{directory_definition_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_directory_definition)
       |> Enum.into([])
 
@@ -1228,12 +1644,29 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSynchronizationSchema.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_synchronization_templates_update_schema(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphSynchronizationSchema.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSynchronizationSchema.t} | {:error, Tesla.Env.t}
-  def service_principals_synchronization_templates_update_schema(connection, service_principal_id, synchronization_template_id, microsoft_graph_synchronization_schema, _opts \\ []) do
+  @spec service_principals_synchronization_templates_update_schema(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSynchronizationSchema.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSynchronizationSchema.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_synchronization_templates_update_schema(
+        connection,
+        service_principal_id,
+        synchronization_template_id,
+        microsoft_graph_synchronization_schema,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/servicePrincipals/#{service_principal_id}/synchronization/templates/#{synchronization_template_id}/schema")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/synchronization/templates/#{synchronization_template_id}/schema"
+      )
       |> add_param(:body, :body, microsoft_graph_synchronization_schema)
       |> Enum.into([])
 
@@ -1262,12 +1695,29 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSynchronizationJob.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_synchronization_update_jobs(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphSynchronizationJob.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSynchronizationJob.t} | {:error, Tesla.Env.t}
-  def service_principals_synchronization_update_jobs(connection, service_principal_id, synchronization_job_id, microsoft_graph_synchronization_job, _opts \\ []) do
+  @spec service_principals_synchronization_update_jobs(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSynchronizationJob.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSynchronizationJob.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_synchronization_update_jobs(
+        connection,
+        service_principal_id,
+        synchronization_job_id,
+        microsoft_graph_synchronization_job,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/servicePrincipals/#{service_principal_id}/synchronization/jobs/#{synchronization_job_id}")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/synchronization/jobs/#{synchronization_job_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_synchronization_job)
       |> Enum.into([])
 
@@ -1295,8 +1745,22 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
   - `{:ok, [%MicrosoftGraphSynchronizationSecretKeyStringValuePair{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_synchronization_update_secrets(Tesla.Env.client, String.t, list(MicrosoftGraph.Model.MicrosoftGraphSynchronizationSecretKeyStringValuePair.t), keyword()) :: {:ok, list(MicrosoftGraph.Model.MicrosoftGraphSynchronizationSecretKeyStringValuePair.t)} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_synchronization_update_secrets(connection, service_principal_id, microsoft_graph_synchronization_secret_key_string_value_pair, _opts \\ []) do
+  @spec service_principals_synchronization_update_secrets(
+          Tesla.Env.client(),
+          String.t(),
+          list(MicrosoftGraph.Model.MicrosoftGraphSynchronizationSecretKeyStringValuePair.t()),
+          keyword()
+        ) ::
+          {:ok,
+           list(MicrosoftGraph.Model.MicrosoftGraphSynchronizationSecretKeyStringValuePair.t())}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_synchronization_update_secrets(
+        connection,
+        service_principal_id,
+        microsoft_graph_synchronization_secret_key_string_value_pair,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)
@@ -1330,12 +1794,29 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSynchronizationTemplate.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_synchronization_update_templates(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphSynchronizationTemplate.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSynchronizationTemplate.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_synchronization_update_templates(connection, service_principal_id, synchronization_template_id, microsoft_graph_synchronization_template, _opts \\ []) do
+  @spec service_principals_synchronization_update_templates(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSynchronizationTemplate.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSynchronizationTemplate.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_synchronization_update_templates(
+        connection,
+        service_principal_id,
+        synchronization_template_id,
+        microsoft_graph_synchronization_template,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/servicePrincipals/#{service_principal_id}/synchronization/templates/#{synchronization_template_id}")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/synchronization/templates/#{synchronization_template_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_synchronization_template)
       |> Enum.into([])
 
@@ -1363,8 +1844,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsSynchronization do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSynchronization.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_update_synchronization(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphSynchronization.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSynchronization.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_update_synchronization(connection, service_principal_id, microsoft_graph_synchronization, _opts \\ []) do
+  @spec service_principals_update_synchronization(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSynchronization.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSynchronization.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_update_synchronization(
+        connection,
+        service_principal_id,
+        microsoft_graph_synchronization,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)

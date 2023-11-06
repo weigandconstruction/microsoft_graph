@@ -24,8 +24,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementResourceOperation do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphResourceOperation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_create_resource_operations(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphResourceOperation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphResourceOperation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_create_resource_operations(connection, microsoft_graph_resource_operation, _opts \\ []) do
+  @spec device_management_create_resource_operations(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphResourceOperation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphResourceOperation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_create_resource_operations(
+        connection,
+        microsoft_graph_resource_operation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -58,7 +69,10 @@ defmodule MicrosoftGraph.Api.DeviceManagementResourceOperation do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_delete_resource_operations(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec device_management_delete_resource_operations(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def device_management_delete_resource_operations(connection, resource_operation_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -97,7 +111,10 @@ defmodule MicrosoftGraph.Api.DeviceManagementResourceOperation do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphResourceOperation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_get_resource_operations(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphResourceOperation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec device_management_get_resource_operations(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphResourceOperation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def device_management_get_resource_operations(connection, resource_operation_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -142,7 +159,10 @@ defmodule MicrosoftGraph.Api.DeviceManagementResourceOperation do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphResourceOperationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_list_resource_operations(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphResourceOperationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec device_management_list_resource_operations(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphResourceOperationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def device_management_list_resource_operations(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -186,7 +206,10 @@ defmodule MicrosoftGraph.Api.DeviceManagementResourceOperation do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_resource_operations_get_count_db11(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec device_management_resource_operations_get_count_db11(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def device_management_resource_operations_get_count_db11(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -225,8 +248,21 @@ defmodule MicrosoftGraph.Api.DeviceManagementResourceOperation do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphResourceOperation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_update_resource_operations(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphResourceOperation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphResourceOperation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_update_resource_operations(connection, resource_operation_id, microsoft_graph_resource_operation, _opts \\ []) do
+  @spec device_management_update_resource_operations(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphResourceOperation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphResourceOperation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_update_resource_operations(
+        connection,
+        resource_operation_id,
+        microsoft_graph_resource_operation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

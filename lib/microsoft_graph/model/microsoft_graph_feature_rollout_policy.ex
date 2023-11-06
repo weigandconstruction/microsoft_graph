@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphFeatureRolloutPolicy do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,22 +19,29 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphFeatureRolloutPolicy do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :appliesTo => [MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t] | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :feature => MicrosoftGraph.Model.MicrosoftGraphStagedFeatureName.t | nil,
-    :isAppliedToOrganization => boolean() | nil,
-    :isEnabled => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :appliesTo => [MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()] | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :feature => MicrosoftGraph.Model.MicrosoftGraphStagedFeatureName.t() | nil,
+          :isAppliedToOrganization => boolean() | nil,
+          :isEnabled => boolean() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:appliesTo, :list, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject)
-     |> Deserializer.deserialize(:feature, :struct, MicrosoftGraph.Model.MicrosoftGraphStagedFeatureName)
+    |> Deserializer.deserialize(
+      :appliesTo,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDirectoryObject
+    )
+    |> Deserializer.deserialize(
+      :feature,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphStagedFeatureName
+    )
   end
 end
-

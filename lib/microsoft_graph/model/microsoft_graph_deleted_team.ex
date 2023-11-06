@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphDeletedTeam do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,15 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphDeletedTeam do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :channels => [MicrosoftGraph.Model.MicrosoftGraphChannel.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :channels => [MicrosoftGraph.Model.MicrosoftGraphChannel.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:channels, :list, MicrosoftGraph.Model.MicrosoftGraphChannel)
+    |> Deserializer.deserialize(:channels, :list, MicrosoftGraph.Model.MicrosoftGraphChannel)
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.ContactsValidatePropertiesRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.ContactsValidatePropertiesRequest do
   ]
 
   @type t :: %__MODULE__{
-    :displayName => String.t | nil,
-    :entityType => String.t | nil,
-    :mailNickname => String.t | nil,
-    :onBehalfOfUserId => String.t | nil
-  }
+          :displayName => String.t() | nil,
+          :entityType => String.t() | nil,
+          :mailNickname => String.t() | nil,
+          :onBehalfOfUserId => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

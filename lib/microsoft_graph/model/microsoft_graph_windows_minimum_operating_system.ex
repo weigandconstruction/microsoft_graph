@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphWindowsMinimumOperatingSystem do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :v10_0 => boolean() | nil,
-    :v8_0 => boolean() | nil,
-    :v8_1 => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :v10_0 => boolean() | nil,
+          :v8_0 => boolean() | nil,
+          :v8_1 => boolean() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

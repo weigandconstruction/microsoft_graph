@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.UserPresence do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,18 +16,21 @@ defmodule MicrosoftGraph.Model.UserPresence do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :activity => String.t | nil,
-    :availability => String.t | nil,
-    :statusMessage => MicrosoftGraph.Model.PresenceStatusMessage.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :activity => String.t() | nil,
+          :availability => String.t() | nil,
+          :statusMessage => MicrosoftGraph.Model.PresenceStatusMessage.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:statusMessage, :struct, MicrosoftGraph.Model.PresenceStatusMessage)
+    |> Deserializer.deserialize(
+      :statusMessage,
+      :struct,
+      MicrosoftGraph.Model.PresenceStatusMessage
+    )
   end
 end
-

@@ -24,8 +24,19 @@ defmodule MicrosoftGraph.Api.EmployeeExperienceLearningProvider do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphLearningProvider.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec employee_experience_create_learning_providers(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphLearningProvider.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphLearningProvider.t} | {:error, Tesla.Env.t}
-  def employee_experience_create_learning_providers(connection, microsoft_graph_learning_provider, _opts \\ []) do
+  @spec employee_experience_create_learning_providers(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphLearningProvider.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphLearningProvider.t()}
+          | {:error, Tesla.Env.t()}
+  def employee_experience_create_learning_providers(
+        connection,
+        microsoft_graph_learning_provider,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -58,7 +69,10 @@ defmodule MicrosoftGraph.Api.EmployeeExperienceLearningProvider do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec employee_experience_delete_learning_providers(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec employee_experience_delete_learning_providers(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def employee_experience_delete_learning_providers(connection, learning_provider_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -97,7 +111,10 @@ defmodule MicrosoftGraph.Api.EmployeeExperienceLearningProvider do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphLearningProvider.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec employee_experience_get_learning_providers(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphLearningProvider.t} | {:error, Tesla.Env.t}
+  @spec employee_experience_get_learning_providers(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphLearningProvider.t()}
+          | {:error, Tesla.Env.t()}
   def employee_experience_get_learning_providers(connection, learning_provider_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -135,8 +152,21 @@ defmodule MicrosoftGraph.Api.EmployeeExperienceLearningProvider do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphLearningContent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec employee_experience_learning_providers_create_learning_contents(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphLearningContent.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphLearningContent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def employee_experience_learning_providers_create_learning_contents(connection, learning_provider_id, microsoft_graph_learning_content, _opts \\ []) do
+  @spec employee_experience_learning_providers_create_learning_contents(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphLearningContent.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphLearningContent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def employee_experience_learning_providers_create_learning_contents(
+        connection,
+        learning_provider_id,
+        microsoft_graph_learning_content,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -169,12 +199,27 @@ defmodule MicrosoftGraph.Api.EmployeeExperienceLearningProvider do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphLearningCourseActivity.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec employee_experience_learning_providers_create_learning_course_activities(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphLearningCourseActivity.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphLearningCourseActivity.t} | {:error, Tesla.Env.t}
-  def employee_experience_learning_providers_create_learning_course_activities(connection, learning_provider_id, microsoft_graph_learning_course_activity, _opts \\ []) do
+  @spec employee_experience_learning_providers_create_learning_course_activities(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphLearningCourseActivity.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphLearningCourseActivity.t()}
+          | {:error, Tesla.Env.t()}
+  def employee_experience_learning_providers_create_learning_course_activities(
+        connection,
+        learning_provider_id,
+        microsoft_graph_learning_course_activity,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/employeeExperience/learningProviders/#{learning_provider_id}/learningCourseActivities")
+      |> url(
+        "/employeeExperience/learningProviders/#{learning_provider_id}/learningCourseActivities"
+      )
       |> add_param(:body, :body, microsoft_graph_learning_course_activity)
       |> Enum.into([])
 
@@ -204,8 +249,21 @@ defmodule MicrosoftGraph.Api.EmployeeExperienceLearningProvider do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec employee_experience_learning_providers_delete_learning_contents(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def employee_experience_learning_providers_delete_learning_contents(connection, learning_provider_id, learning_content_id, opts \\ []) do
+  @spec employee_experience_learning_providers_delete_learning_contents(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def employee_experience_learning_providers_delete_learning_contents(
+        connection,
+        learning_provider_id,
+        learning_content_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -213,7 +271,9 @@ defmodule MicrosoftGraph.Api.EmployeeExperienceLearningProvider do
     request =
       %{}
       |> method(:delete)
-      |> url("/employeeExperience/learningProviders/#{learning_provider_id}/learningContents/#{learning_content_id}")
+      |> url(
+        "/employeeExperience/learningProviders/#{learning_provider_id}/learningContents/#{learning_content_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -243,8 +303,21 @@ defmodule MicrosoftGraph.Api.EmployeeExperienceLearningProvider do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec employee_experience_learning_providers_delete_learning_course_activities(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def employee_experience_learning_providers_delete_learning_course_activities(connection, learning_provider_id, learning_course_activity_id, opts \\ []) do
+  @spec employee_experience_learning_providers_delete_learning_course_activities(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def employee_experience_learning_providers_delete_learning_course_activities(
+        connection,
+        learning_provider_id,
+        learning_course_activity_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -252,7 +325,9 @@ defmodule MicrosoftGraph.Api.EmployeeExperienceLearningProvider do
     request =
       %{}
       |> method(:delete)
-      |> url("/employeeExperience/learningProviders/#{learning_provider_id}/learningCourseActivities/#{learning_course_activity_id}")
+      |> url(
+        "/employeeExperience/learningProviders/#{learning_provider_id}/learningCourseActivities/#{learning_course_activity_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -280,7 +355,10 @@ defmodule MicrosoftGraph.Api.EmployeeExperienceLearningProvider do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec employee_experience_learning_providers_get_count4d87(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec employee_experience_learning_providers_get_count4d87(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def employee_experience_learning_providers_get_count4d87(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -321,8 +399,21 @@ defmodule MicrosoftGraph.Api.EmployeeExperienceLearningProvider do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphLearningContent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec employee_experience_learning_providers_get_learning_contents(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphLearningContent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def employee_experience_learning_providers_get_learning_contents(connection, learning_provider_id, learning_content_id, opts \\ []) do
+  @spec employee_experience_learning_providers_get_learning_contents(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphLearningContent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def employee_experience_learning_providers_get_learning_contents(
+        connection,
+        learning_provider_id,
+        learning_content_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -331,7 +422,9 @@ defmodule MicrosoftGraph.Api.EmployeeExperienceLearningProvider do
     request =
       %{}
       |> method(:get)
-      |> url("/employeeExperience/learningProviders/#{learning_provider_id}/learningContents/#{learning_content_id}")
+      |> url(
+        "/employeeExperience/learningProviders/#{learning_provider_id}/learningContents/#{learning_content_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -361,8 +454,21 @@ defmodule MicrosoftGraph.Api.EmployeeExperienceLearningProvider do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphLearningCourseActivity.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec employee_experience_learning_providers_get_learning_course_activities(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphLearningCourseActivity.t} | {:error, Tesla.Env.t}
-  def employee_experience_learning_providers_get_learning_course_activities(connection, learning_provider_id, learning_course_activity_id, opts \\ []) do
+  @spec employee_experience_learning_providers_get_learning_course_activities(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphLearningCourseActivity.t()}
+          | {:error, Tesla.Env.t()}
+  def employee_experience_learning_providers_get_learning_course_activities(
+        connection,
+        learning_provider_id,
+        learning_course_activity_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -371,7 +477,9 @@ defmodule MicrosoftGraph.Api.EmployeeExperienceLearningProvider do
     request =
       %{}
       |> method(:get)
-      |> url("/employeeExperience/learningProviders/#{learning_provider_id}/learningCourseActivities/#{learning_course_activity_id}")
+      |> url(
+        "/employeeExperience/learningProviders/#{learning_provider_id}/learningCourseActivities/#{learning_course_activity_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -400,8 +508,19 @@ defmodule MicrosoftGraph.Api.EmployeeExperienceLearningProvider do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec employee_experience_learning_providers_learning_contents_get_count2b22(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def employee_experience_learning_providers_learning_contents_get_count2b22(connection, learning_provider_id, opts \\ []) do
+  @spec employee_experience_learning_providers_learning_contents_get_count2b22(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def employee_experience_learning_providers_learning_contents_get_count2b22(
+        connection,
+        learning_provider_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -410,7 +529,9 @@ defmodule MicrosoftGraph.Api.EmployeeExperienceLearningProvider do
     request =
       %{}
       |> method(:get)
-      |> url("/employeeExperience/learningProviders/#{learning_provider_id}/learningContents/$count")
+      |> url(
+        "/employeeExperience/learningProviders/#{learning_provider_id}/learningContents/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -439,8 +560,19 @@ defmodule MicrosoftGraph.Api.EmployeeExperienceLearningProvider do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec employee_experience_learning_providers_learning_course_activities_get_count_abe5(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def employee_experience_learning_providers_learning_course_activities_get_count_abe5(connection, learning_provider_id, opts \\ []) do
+  @spec employee_experience_learning_providers_learning_course_activities_get_count_abe5(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def employee_experience_learning_providers_learning_course_activities_get_count_abe5(
+        connection,
+        learning_provider_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -449,7 +581,9 @@ defmodule MicrosoftGraph.Api.EmployeeExperienceLearningProvider do
     request =
       %{}
       |> method(:get)
-      |> url("/employeeExperience/learningProviders/#{learning_provider_id}/learningCourseActivities/$count")
+      |> url(
+        "/employeeExperience/learningProviders/#{learning_provider_id}/learningCourseActivities/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -485,8 +619,19 @@ defmodule MicrosoftGraph.Api.EmployeeExperienceLearningProvider do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphLearningContentCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec employee_experience_learning_providers_list_learning_contents(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphLearningContentCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def employee_experience_learning_providers_list_learning_contents(connection, learning_provider_id, opts \\ []) do
+  @spec employee_experience_learning_providers_list_learning_contents(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphLearningContentCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def employee_experience_learning_providers_list_learning_contents(
+        connection,
+        learning_provider_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -536,8 +681,19 @@ defmodule MicrosoftGraph.Api.EmployeeExperienceLearningProvider do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphLearningCourseActivityCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec employee_experience_learning_providers_list_learning_course_activities(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphLearningCourseActivityCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def employee_experience_learning_providers_list_learning_course_activities(connection, learning_provider_id, opts \\ []) do
+  @spec employee_experience_learning_providers_list_learning_course_activities(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphLearningCourseActivityCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def employee_experience_learning_providers_list_learning_course_activities(
+        connection,
+        learning_provider_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -552,7 +708,9 @@ defmodule MicrosoftGraph.Api.EmployeeExperienceLearningProvider do
     request =
       %{}
       |> method(:get)
-      |> url("/employeeExperience/learningProviders/#{learning_provider_id}/learningCourseActivities")
+      |> url(
+        "/employeeExperience/learningProviders/#{learning_provider_id}/learningCourseActivities"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -581,12 +739,29 @@ defmodule MicrosoftGraph.Api.EmployeeExperienceLearningProvider do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphLearningContent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec employee_experience_learning_providers_update_learning_contents(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphLearningContent.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphLearningContent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def employee_experience_learning_providers_update_learning_contents(connection, learning_provider_id, learning_content_id, microsoft_graph_learning_content, _opts \\ []) do
+  @spec employee_experience_learning_providers_update_learning_contents(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphLearningContent.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphLearningContent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def employee_experience_learning_providers_update_learning_contents(
+        connection,
+        learning_provider_id,
+        learning_content_id,
+        microsoft_graph_learning_content,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/employeeExperience/learningProviders/#{learning_provider_id}/learningContents/#{learning_content_id}")
+      |> url(
+        "/employeeExperience/learningProviders/#{learning_provider_id}/learningContents/#{learning_content_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_learning_content)
       |> Enum.into([])
 
@@ -616,12 +791,29 @@ defmodule MicrosoftGraph.Api.EmployeeExperienceLearningProvider do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphLearningCourseActivity.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec employee_experience_learning_providers_update_learning_course_activities(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphLearningCourseActivity.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphLearningCourseActivity.t} | {:error, Tesla.Env.t}
-  def employee_experience_learning_providers_update_learning_course_activities(connection, learning_provider_id, learning_course_activity_id, microsoft_graph_learning_course_activity, _opts \\ []) do
+  @spec employee_experience_learning_providers_update_learning_course_activities(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphLearningCourseActivity.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphLearningCourseActivity.t()}
+          | {:error, Tesla.Env.t()}
+  def employee_experience_learning_providers_update_learning_course_activities(
+        connection,
+        learning_provider_id,
+        learning_course_activity_id,
+        microsoft_graph_learning_course_activity,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/employeeExperience/learningProviders/#{learning_provider_id}/learningCourseActivities/#{learning_course_activity_id}")
+      |> url(
+        "/employeeExperience/learningProviders/#{learning_provider_id}/learningCourseActivities/#{learning_course_activity_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_learning_course_activity)
       |> Enum.into([])
 
@@ -656,7 +848,10 @@ defmodule MicrosoftGraph.Api.EmployeeExperienceLearningProvider do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphLearningProviderCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec employee_experience_list_learning_providers(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphLearningProviderCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec employee_experience_list_learning_providers(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphLearningProviderCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def employee_experience_list_learning_providers(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -701,8 +896,21 @@ defmodule MicrosoftGraph.Api.EmployeeExperienceLearningProvider do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphLearningProvider.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec employee_experience_update_learning_providers(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphLearningProvider.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphLearningProvider.t} | {:error, Tesla.Env.t}
-  def employee_experience_update_learning_providers(connection, learning_provider_id, microsoft_graph_learning_provider, _opts \\ []) do
+  @spec employee_experience_update_learning_providers(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphLearningProvider.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphLearningProvider.t()}
+          | {:error, Tesla.Env.t()}
+  def employee_experience_update_learning_providers(
+        connection,
+        learning_provider_id,
+        microsoft_graph_learning_provider,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

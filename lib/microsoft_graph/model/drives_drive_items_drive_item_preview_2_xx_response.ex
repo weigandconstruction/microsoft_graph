@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemPreview2XxResponse do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemPreview2XxResponse do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :getUrl => String.t | nil,
-    :postParameters => String.t | nil,
-    :postUrl => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :getUrl => String.t() | nil,
+          :postParameters => String.t() | nil,
+          :postUrl => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

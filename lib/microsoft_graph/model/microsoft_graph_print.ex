@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphPrint do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,27 +19,42 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphPrint do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :connectors => [MicrosoftGraph.Model.MicrosoftGraphPrintConnector.t] | nil,
-    :operations => [MicrosoftGraph.Model.MicrosoftGraphPrintOperation.t] | nil,
-    :printers => [MicrosoftGraph.Model.MicrosoftGraphPrinter.t] | nil,
-    :services => [MicrosoftGraph.Model.MicrosoftGraphPrintService.t] | nil,
-    :settings => MicrosoftGraph.Model.MicrosoftGraphPrintSettings.t | nil,
-    :shares => [MicrosoftGraph.Model.MicrosoftGraphPrinterShare.t] | nil,
-    :taskDefinitions => [MicrosoftGraph.Model.MicrosoftGraphPrintTaskDefinition.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :connectors => [MicrosoftGraph.Model.MicrosoftGraphPrintConnector.t()] | nil,
+          :operations => [MicrosoftGraph.Model.MicrosoftGraphPrintOperation.t()] | nil,
+          :printers => [MicrosoftGraph.Model.MicrosoftGraphPrinter.t()] | nil,
+          :services => [MicrosoftGraph.Model.MicrosoftGraphPrintService.t()] | nil,
+          :settings => MicrosoftGraph.Model.MicrosoftGraphPrintSettings.t() | nil,
+          :shares => [MicrosoftGraph.Model.MicrosoftGraphPrinterShare.t()] | nil,
+          :taskDefinitions => [MicrosoftGraph.Model.MicrosoftGraphPrintTaskDefinition.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:connectors, :list, MicrosoftGraph.Model.MicrosoftGraphPrintConnector)
-     |> Deserializer.deserialize(:operations, :list, MicrosoftGraph.Model.MicrosoftGraphPrintOperation)
-     |> Deserializer.deserialize(:printers, :list, MicrosoftGraph.Model.MicrosoftGraphPrinter)
-     |> Deserializer.deserialize(:services, :list, MicrosoftGraph.Model.MicrosoftGraphPrintService)
-     |> Deserializer.deserialize(:settings, :struct, MicrosoftGraph.Model.MicrosoftGraphPrintSettings)
-     |> Deserializer.deserialize(:shares, :list, MicrosoftGraph.Model.MicrosoftGraphPrinterShare)
-     |> Deserializer.deserialize(:taskDefinitions, :list, MicrosoftGraph.Model.MicrosoftGraphPrintTaskDefinition)
+    |> Deserializer.deserialize(
+      :connectors,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphPrintConnector
+    )
+    |> Deserializer.deserialize(
+      :operations,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphPrintOperation
+    )
+    |> Deserializer.deserialize(:printers, :list, MicrosoftGraph.Model.MicrosoftGraphPrinter)
+    |> Deserializer.deserialize(:services, :list, MicrosoftGraph.Model.MicrosoftGraphPrintService)
+    |> Deserializer.deserialize(
+      :settings,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphPrintSettings
+    )
+    |> Deserializer.deserialize(:shares, :list, MicrosoftGraph.Model.MicrosoftGraphPrinterShare)
+    |> Deserializer.deserialize(
+      :taskDefinitions,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphPrintTaskDefinition
+    )
   end
 end
-

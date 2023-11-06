@@ -25,8 +25,23 @@ defmodule MicrosoftGraph.Api.UsersUserActivity do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphActivityHistoryItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_activities_create_history_items(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphActivityHistoryItem.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphActivityHistoryItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_activities_create_history_items(connection, user_id, user_activity_id, microsoft_graph_activity_history_item, _opts \\ []) do
+  @spec users_activities_create_history_items(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphActivityHistoryItem.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphActivityHistoryItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_activities_create_history_items(
+        connection,
+        user_id,
+        user_activity_id,
+        microsoft_graph_activity_history_item,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -60,8 +75,23 @@ defmodule MicrosoftGraph.Api.UsersUserActivity do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_activities_delete_history_items(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_activities_delete_history_items(connection, user_id, user_activity_id, activity_history_item_id, opts \\ []) do
+  @spec users_activities_delete_history_items(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_activities_delete_history_items(
+        connection,
+        user_id,
+        user_activity_id,
+        activity_history_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -69,7 +99,9 @@ defmodule MicrosoftGraph.Api.UsersUserActivity do
     request =
       %{}
       |> method(:delete)
-      |> url("/users/#{user_id}/activities/#{user_activity_id}/historyItems/#{activity_history_item_id}")
+      |> url(
+        "/users/#{user_id}/activities/#{user_activity_id}/historyItems/#{activity_history_item_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -98,7 +130,10 @@ defmodule MicrosoftGraph.Api.UsersUserActivity do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_activities_get_count39cc(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_activities_get_count39cc(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_activities_get_count39cc(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -140,8 +175,23 @@ defmodule MicrosoftGraph.Api.UsersUserActivity do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphActivityHistoryItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_activities_get_history_items(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphActivityHistoryItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_activities_get_history_items(connection, user_id, user_activity_id, activity_history_item_id, opts \\ []) do
+  @spec users_activities_get_history_items(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphActivityHistoryItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_activities_get_history_items(
+        connection,
+        user_id,
+        user_activity_id,
+        activity_history_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -150,7 +200,9 @@ defmodule MicrosoftGraph.Api.UsersUserActivity do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/activities/#{user_activity_id}/historyItems/#{activity_history_item_id}")
+      |> url(
+        "/users/#{user_id}/activities/#{user_activity_id}/historyItems/#{activity_history_item_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -182,8 +234,23 @@ defmodule MicrosoftGraph.Api.UsersUserActivity do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserActivity.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_activities_history_items_get_activity(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUserActivity.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_activities_history_items_get_activity(connection, user_id, user_activity_id, activity_history_item_id, opts \\ []) do
+  @spec users_activities_history_items_get_activity(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUserActivity.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_activities_history_items_get_activity(
+        connection,
+        user_id,
+        user_activity_id,
+        activity_history_item_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -192,7 +259,9 @@ defmodule MicrosoftGraph.Api.UsersUserActivity do
     request =
       %{}
       |> method(:get)
-      |> url("/users/#{user_id}/activities/#{user_activity_id}/historyItems/#{activity_history_item_id}/activity")
+      |> url(
+        "/users/#{user_id}/activities/#{user_activity_id}/historyItems/#{activity_history_item_id}/activity"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -222,8 +291,21 @@ defmodule MicrosoftGraph.Api.UsersUserActivity do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_activities_history_items_get_count625e(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_activities_history_items_get_count625e(connection, user_id, user_activity_id, opts \\ []) do
+  @spec users_activities_history_items_get_count625e(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_activities_history_items_get_count625e(
+        connection,
+        user_id,
+        user_activity_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -269,7 +351,10 @@ defmodule MicrosoftGraph.Api.UsersUserActivity do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphActivityHistoryItemCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_activities_list_history_items(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphActivityHistoryItemCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec users_activities_list_history_items(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphActivityHistoryItemCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def users_activities_list_history_items(connection, user_id, user_activity_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -316,12 +401,31 @@ defmodule MicrosoftGraph.Api.UsersUserActivity do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphActivityHistoryItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_activities_update_history_items(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphActivityHistoryItem.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphActivityHistoryItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_activities_update_history_items(connection, user_id, user_activity_id, activity_history_item_id, microsoft_graph_activity_history_item, _opts \\ []) do
+  @spec users_activities_update_history_items(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphActivityHistoryItem.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphActivityHistoryItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_activities_update_history_items(
+        connection,
+        user_id,
+        user_activity_id,
+        activity_history_item_id,
+        microsoft_graph_activity_history_item,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/users/#{user_id}/activities/#{user_activity_id}/historyItems/#{activity_history_item_id}")
+      |> url(
+        "/users/#{user_id}/activities/#{user_activity_id}/historyItems/#{activity_history_item_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_activity_history_item)
       |> Enum.into([])
 
@@ -349,7 +453,15 @@ defmodule MicrosoftGraph.Api.UsersUserActivity do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserActivity.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_create_activities(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphUserActivity.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUserActivity.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_create_activities(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUserActivity.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUserActivity.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_create_activities(connection, user_id, microsoft_graph_user_activity, _opts \\ []) do
     request =
       %{}
@@ -384,7 +496,10 @@ defmodule MicrosoftGraph.Api.UsersUserActivity do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_delete_activities(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_delete_activities(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_delete_activities(connection, user_id, user_activity_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -424,7 +539,10 @@ defmodule MicrosoftGraph.Api.UsersUserActivity do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserActivity.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_get_activities(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUserActivity.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_get_activities(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUserActivity.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_get_activities(connection, user_id, user_activity_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -470,7 +588,10 @@ defmodule MicrosoftGraph.Api.UsersUserActivity do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserActivityCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_list_activities(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUserActivityCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec users_list_activities(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUserActivityCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def users_list_activities(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -515,8 +636,23 @@ defmodule MicrosoftGraph.Api.UsersUserActivity do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserActivity.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_update_activities(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphUserActivity.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphUserActivity.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_update_activities(connection, user_id, user_activity_id, microsoft_graph_user_activity, _opts \\ []) do
+  @spec users_update_activities(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUserActivity.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphUserActivity.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_update_activities(
+        connection,
+        user_id,
+        user_activity_id,
+        microsoft_graph_user_activity,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphEmailPayloadDetail do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,21 +19,25 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphEmailPayloadDetail do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :coachmarks => [MicrosoftGraph.Model.MicrosoftGraphPayloadDetailCoachmarksInner.t] | nil,
-    :content => String.t | nil,
-    :phishingUrl => String.t | nil,
-    :fromEmail => String.t | nil,
-    :fromName => String.t | nil,
-    :isExternalSender => boolean() | nil,
-    :subject => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :coachmarks =>
+            [MicrosoftGraph.Model.MicrosoftGraphPayloadDetailCoachmarksInner.t()] | nil,
+          :content => String.t() | nil,
+          :phishingUrl => String.t() | nil,
+          :fromEmail => String.t() | nil,
+          :fromName => String.t() | nil,
+          :isExternalSender => boolean() | nil,
+          :subject => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:coachmarks, :list, MicrosoftGraph.Model.MicrosoftGraphPayloadDetailCoachmarksInner)
+    |> Deserializer.deserialize(
+      :coachmarks,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphPayloadDetailCoachmarksInner
+    )
   end
 end
-

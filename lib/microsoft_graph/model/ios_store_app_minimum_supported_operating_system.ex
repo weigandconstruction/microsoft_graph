@@ -20,19 +20,18 @@ defmodule MicrosoftGraph.Model.IosStoreAppMinimumSupportedOperatingSystem do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :v10_0 => boolean() | nil,
-    :v11_0 => boolean() | nil,
-    :v12_0 => boolean() | nil,
-    :v13_0 => boolean() | nil,
-    :v14_0 => boolean() | nil,
-    :v15_0 => boolean() | nil,
-    :v8_0 => boolean() | nil,
-    :v9_0 => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :v10_0 => boolean() | nil,
+          :v11_0 => boolean() | nil,
+          :v12_0 => boolean() | nil,
+          :v13_0 => boolean() | nil,
+          :v14_0 => boolean() | nil,
+          :v15_0 => boolean() | nil,
+          :v8_0 => boolean() | nil,
+          :v9_0 => boolean() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

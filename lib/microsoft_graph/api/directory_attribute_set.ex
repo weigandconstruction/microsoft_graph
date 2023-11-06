@@ -24,7 +24,10 @@ defmodule MicrosoftGraph.Api.DirectoryAttributeSet do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_attribute_sets_get_count147b(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec directory_attribute_sets_get_count147b(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def directory_attribute_sets_get_count147b(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -62,7 +65,14 @@ defmodule MicrosoftGraph.Api.DirectoryAttributeSet do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttributeSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_create_attribute_sets(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphAttributeSet.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAttributeSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec directory_create_attribute_sets(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphAttributeSet.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAttributeSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def directory_create_attribute_sets(connection, microsoft_graph_attribute_set, _opts \\ []) do
     request =
       %{}
@@ -95,7 +105,10 @@ defmodule MicrosoftGraph.Api.DirectoryAttributeSet do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_delete_attribute_sets(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec directory_delete_attribute_sets(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def directory_delete_attribute_sets(connection, attribute_set_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -134,7 +147,10 @@ defmodule MicrosoftGraph.Api.DirectoryAttributeSet do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttributeSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_get_attribute_sets(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAttributeSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec directory_get_attribute_sets(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAttributeSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def directory_get_attribute_sets(connection, attribute_set_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -179,7 +195,10 @@ defmodule MicrosoftGraph.Api.DirectoryAttributeSet do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttributeSetCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_list_attribute_sets(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAttributeSetCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec directory_list_attribute_sets(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAttributeSetCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def directory_list_attribute_sets(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -224,8 +243,21 @@ defmodule MicrosoftGraph.Api.DirectoryAttributeSet do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttributeSet.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_update_attribute_sets(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphAttributeSet.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAttributeSet.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_update_attribute_sets(connection, attribute_set_id, microsoft_graph_attribute_set, _opts \\ []) do
+  @spec directory_update_attribute_sets(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAttributeSet.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAttributeSet.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_update_attribute_sets(
+        connection,
+        attribute_set_id,
+        microsoft_graph_attribute_set,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

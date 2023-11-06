@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.ContentTypeOrder do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :default => boolean() | nil,
-    :position => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :default => boolean() | nil,
+          :position => integer() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

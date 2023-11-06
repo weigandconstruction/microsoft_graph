@@ -24,7 +24,10 @@ defmodule MicrosoftGraph.Api.UsersUserSettings do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_delete_settings(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_delete_settings(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_delete_settings(connection, user_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -63,7 +66,10 @@ defmodule MicrosoftGraph.Api.UsersUserSettings do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_get_settings(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUserSettings.t} | {:error, Tesla.Env.t}
+  @spec users_get_settings(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUserSettings.t()}
+          | {:error, Tesla.Env.t()}
   def users_get_settings(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -101,7 +107,10 @@ defmodule MicrosoftGraph.Api.UsersUserSettings do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_settings_delete_shift_preferences(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_settings_delete_shift_preferences(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_settings_delete_shift_preferences(connection, user_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -140,7 +149,10 @@ defmodule MicrosoftGraph.Api.UsersUserSettings do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphShiftPreferences.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_settings_get_shift_preferences(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphShiftPreferences.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_settings_get_shift_preferences(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphShiftPreferences.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_settings_get_shift_preferences(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -179,8 +191,21 @@ defmodule MicrosoftGraph.Api.UsersUserSettings do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphShiftPreferences.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_settings_update_shift_preferences(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphShiftPreferences.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphShiftPreferences.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def users_settings_update_shift_preferences(connection, user_id, microsoft_graph_shift_preferences, _opts \\ []) do
+  @spec users_settings_update_shift_preferences(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphShiftPreferences.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphShiftPreferences.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def users_settings_update_shift_preferences(
+        connection,
+        user_id,
+        microsoft_graph_shift_preferences,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -213,7 +238,15 @@ defmodule MicrosoftGraph.Api.UsersUserSettings do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphUserSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_update_settings(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphUserSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphUserSettings.t} | {:error, Tesla.Env.t}
+  @spec users_update_settings(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphUserSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphUserSettings.t()}
+          | {:error, Tesla.Env.t()}
   def users_update_settings(connection, user_id, microsoft_graph_user_settings, _opts \\ []) do
     request =
       %{}

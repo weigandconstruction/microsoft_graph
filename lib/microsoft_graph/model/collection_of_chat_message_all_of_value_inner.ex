@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.CollectionOfChatMessageAllOfValueInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -37,55 +37,87 @@ defmodule MicrosoftGraph.Model.CollectionOfChatMessageAllOfValueInner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :attachments => [MicrosoftGraph.Model.ChatMessageAttachmentsInner.t] | nil,
-    :body => MicrosoftGraph.Model.MicrosoftGraphItemBody.t | nil,
-    :channelIdentity => MicrosoftGraph.Model.ChatMessageChannelIdentity.t | nil,
-    :chatId => String.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :deletedDateTime => DateTime.t | nil,
-    :etag => String.t | nil,
-    :eventDetail => MicrosoftGraph.Model.ChatMessageEventDetail.t | nil,
-    :from => MicrosoftGraph.Model.ChatMessageFrom.t | nil,
-    :hostedContents => [MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t] | nil,
-    :importance => MicrosoftGraph.Model.MicrosoftGraphChatMessageImportance.t | nil,
-    :lastEditedDateTime => DateTime.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :locale => String.t | nil,
-    :mentions => [MicrosoftGraph.Model.ChatMessageMentionsInner.t] | nil,
-    :messageHistory => [MicrosoftGraph.Model.ChatMessageMessageHistoryInner.t] | nil,
-    :messageType => MicrosoftGraph.Model.MicrosoftGraphChatMessageType.t | nil,
-    :policyViolation => MicrosoftGraph.Model.ChatMessagePolicyViolation.t | nil,
-    :reactions => [MicrosoftGraph.Model.ChatMessageReactionsInner.t] | nil,
-    :replies => [MicrosoftGraph.Model.MicrosoftGraphChatMessage.t] | nil,
-    :replyToId => String.t | nil,
-    :subject => String.t | nil,
-    :summary => String.t | nil,
-    :webUrl => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :attachments => [MicrosoftGraph.Model.ChatMessageAttachmentsInner.t()] | nil,
+          :body => MicrosoftGraph.Model.MicrosoftGraphItemBody.t() | nil,
+          :channelIdentity => MicrosoftGraph.Model.ChatMessageChannelIdentity.t() | nil,
+          :chatId => String.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :deletedDateTime => DateTime.t() | nil,
+          :etag => String.t() | nil,
+          :eventDetail => MicrosoftGraph.Model.ChatMessageEventDetail.t() | nil,
+          :from => MicrosoftGraph.Model.ChatMessageFrom.t() | nil,
+          :hostedContents =>
+            [MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent.t()] | nil,
+          :importance => MicrosoftGraph.Model.MicrosoftGraphChatMessageImportance.t() | nil,
+          :lastEditedDateTime => DateTime.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :locale => String.t() | nil,
+          :mentions => [MicrosoftGraph.Model.ChatMessageMentionsInner.t()] | nil,
+          :messageHistory => [MicrosoftGraph.Model.ChatMessageMessageHistoryInner.t()] | nil,
+          :messageType => MicrosoftGraph.Model.MicrosoftGraphChatMessageType.t() | nil,
+          :policyViolation => MicrosoftGraph.Model.ChatMessagePolicyViolation.t() | nil,
+          :reactions => [MicrosoftGraph.Model.ChatMessageReactionsInner.t()] | nil,
+          :replies => [MicrosoftGraph.Model.MicrosoftGraphChatMessage.t()] | nil,
+          :replyToId => String.t() | nil,
+          :subject => String.t() | nil,
+          :summary => String.t() | nil,
+          :webUrl => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:attachments, :list, MicrosoftGraph.Model.ChatMessageAttachmentsInner)
-     |> Deserializer.deserialize(:body, :struct, MicrosoftGraph.Model.MicrosoftGraphItemBody)
-     |> Deserializer.deserialize(:channelIdentity, :struct, MicrosoftGraph.Model.ChatMessageChannelIdentity)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:deletedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:eventDetail, :struct, MicrosoftGraph.Model.ChatMessageEventDetail)
-     |> Deserializer.deserialize(:from, :struct, MicrosoftGraph.Model.ChatMessageFrom)
-     |> Deserializer.deserialize(:hostedContents, :list, MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent)
-     |> Deserializer.deserialize(:importance, :struct, MicrosoftGraph.Model.MicrosoftGraphChatMessageImportance)
-     |> Deserializer.deserialize(:lastEditedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:mentions, :list, MicrosoftGraph.Model.ChatMessageMentionsInner)
-     |> Deserializer.deserialize(:messageHistory, :list, MicrosoftGraph.Model.ChatMessageMessageHistoryInner)
-     |> Deserializer.deserialize(:messageType, :struct, MicrosoftGraph.Model.MicrosoftGraphChatMessageType)
-     |> Deserializer.deserialize(:policyViolation, :struct, MicrosoftGraph.Model.ChatMessagePolicyViolation)
-     |> Deserializer.deserialize(:reactions, :list, MicrosoftGraph.Model.ChatMessageReactionsInner)
-     |> Deserializer.deserialize(:replies, :list, MicrosoftGraph.Model.MicrosoftGraphChatMessage)
+    |> Deserializer.deserialize(
+      :attachments,
+      :list,
+      MicrosoftGraph.Model.ChatMessageAttachmentsInner
+    )
+    |> Deserializer.deserialize(:body, :struct, MicrosoftGraph.Model.MicrosoftGraphItemBody)
+    |> Deserializer.deserialize(
+      :channelIdentity,
+      :struct,
+      MicrosoftGraph.Model.ChatMessageChannelIdentity
+    )
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:deletedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :eventDetail,
+      :struct,
+      MicrosoftGraph.Model.ChatMessageEventDetail
+    )
+    |> Deserializer.deserialize(:from, :struct, MicrosoftGraph.Model.ChatMessageFrom)
+    |> Deserializer.deserialize(
+      :hostedContents,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphChatMessageHostedContent
+    )
+    |> Deserializer.deserialize(
+      :importance,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphChatMessageImportance
+    )
+    |> Deserializer.deserialize(:lastEditedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:mentions, :list, MicrosoftGraph.Model.ChatMessageMentionsInner)
+    |> Deserializer.deserialize(
+      :messageHistory,
+      :list,
+      MicrosoftGraph.Model.ChatMessageMessageHistoryInner
+    )
+    |> Deserializer.deserialize(
+      :messageType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphChatMessageType
+    )
+    |> Deserializer.deserialize(
+      :policyViolation,
+      :struct,
+      MicrosoftGraph.Model.ChatMessagePolicyViolation
+    )
+    |> Deserializer.deserialize(:reactions, :list, MicrosoftGraph.Model.ChatMessageReactionsInner)
+    |> Deserializer.deserialize(:replies, :list, MicrosoftGraph.Model.MicrosoftGraphChatMessage)
   end
 end
-

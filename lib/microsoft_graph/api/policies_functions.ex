@@ -23,18 +23,33 @@ defmodule MicrosoftGraph.Api.PoliciesFunctions do
   - `{:ok, MicrosoftGraph.Model.PoliciesAuthenticationStrengthPoliciesAuthenticationStrengthPolicyUsage2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_authentication_strength_policies_authentication_strength_policy_usage(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.PoliciesAuthenticationStrengthPoliciesAuthenticationStrengthPolicyUsage2XxResponse.t} | {:error, Tesla.Env.t}
-  def policies_authentication_strength_policies_authentication_strength_policy_usage(connection, authentication_strength_policy_id, _opts \\ []) do
+  @spec policies_authentication_strength_policies_authentication_strength_policy_usage(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.PoliciesAuthenticationStrengthPoliciesAuthenticationStrengthPolicyUsage2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_authentication_strength_policies_authentication_strength_policy_usage(
+        connection,
+        authentication_strength_policy_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/policies/authenticationStrengthPolicies/#{authentication_strength_policy_id}/usage()")
+      |> url(
+        "/policies/authenticationStrengthPolicies/#{authentication_strength_policy_id}/usage()"
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.PoliciesAuthenticationStrengthPoliciesAuthenticationStrengthPolicyUsage2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.PoliciesAuthenticationStrengthPoliciesAuthenticationStrengthPolicyUsage2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])

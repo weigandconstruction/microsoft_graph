@@ -23,8 +23,20 @@ defmodule MicrosoftGraph.Api.PrivacyFunctions do
   - `{:ok, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec privacy_subject_rights_requests_subject_rights_request_get_final_attachment(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def privacy_subject_rights_requests_subject_rights_request_get_final_attachment(connection, subject_rights_request_id, _opts \\ []) do
+  @spec privacy_subject_rights_requests_subject_rights_request_get_final_attachment(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def privacy_subject_rights_requests_subject_rights_request_get_final_attachment(
+        connection,
+        subject_rights_request_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
@@ -34,7 +46,8 @@ defmodule MicrosoftGraph.Api.PrivacyFunctions do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -54,8 +67,20 @@ defmodule MicrosoftGraph.Api.PrivacyFunctions do
   - `{:ok, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec privacy_subject_rights_requests_subject_rights_request_get_final_report(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def privacy_subject_rights_requests_subject_rights_request_get_final_report(connection, subject_rights_request_id, _opts \\ []) do
+  @spec privacy_subject_rights_requests_subject_rights_request_get_final_report(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def privacy_subject_rights_requests_subject_rights_request_get_final_report(
+        connection,
+        subject_rights_request_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
@@ -65,7 +90,8 @@ defmodule MicrosoftGraph.Api.PrivacyFunctions do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])

@@ -25,8 +25,21 @@ defmodule MicrosoftGraph.Api.DomainsInternalDomainFederation do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphInternalDomainFederation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec domains_create_federation_configuration(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphInternalDomainFederation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphInternalDomainFederation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def domains_create_federation_configuration(connection, domain_id, microsoft_graph_internal_domain_federation, _opts \\ []) do
+  @spec domains_create_federation_configuration(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphInternalDomainFederation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphInternalDomainFederation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def domains_create_federation_configuration(
+        connection,
+        domain_id,
+        microsoft_graph_internal_domain_federation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -60,8 +73,21 @@ defmodule MicrosoftGraph.Api.DomainsInternalDomainFederation do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec domains_delete_federation_configuration(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def domains_delete_federation_configuration(connection, domain_id, internal_domain_federation_id, opts \\ []) do
+  @spec domains_delete_federation_configuration(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def domains_delete_federation_configuration(
+        connection,
+        domain_id,
+        internal_domain_federation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -98,7 +124,10 @@ defmodule MicrosoftGraph.Api.DomainsInternalDomainFederation do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec domains_federation_configuration_get_count9087(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec domains_federation_configuration_get_count9087(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def domains_federation_configuration_get_count9087(connection, domain_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -139,8 +168,21 @@ defmodule MicrosoftGraph.Api.DomainsInternalDomainFederation do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphInternalDomainFederation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec domains_get_federation_configuration(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphInternalDomainFederation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def domains_get_federation_configuration(connection, domain_id, internal_domain_federation_id, opts \\ []) do
+  @spec domains_get_federation_configuration(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphInternalDomainFederation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def domains_get_federation_configuration(
+        connection,
+        domain_id,
+        internal_domain_federation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -185,7 +227,10 @@ defmodule MicrosoftGraph.Api.DomainsInternalDomainFederation do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphInternalDomainFederationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec domains_list_federation_configuration(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphInternalDomainFederationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec domains_list_federation_configuration(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphInternalDomainFederationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def domains_list_federation_configuration(connection, domain_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -231,8 +276,23 @@ defmodule MicrosoftGraph.Api.DomainsInternalDomainFederation do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphInternalDomainFederation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec domains_update_federation_configuration(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphInternalDomainFederation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphInternalDomainFederation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def domains_update_federation_configuration(connection, domain_id, internal_domain_federation_id, microsoft_graph_internal_domain_federation, _opts \\ []) do
+  @spec domains_update_federation_configuration(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphInternalDomainFederation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphInternalDomainFederation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def domains_update_federation_configuration(
+        connection,
+        domain_id,
+        internal_domain_federation_id,
+        microsoft_graph_internal_domain_federation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

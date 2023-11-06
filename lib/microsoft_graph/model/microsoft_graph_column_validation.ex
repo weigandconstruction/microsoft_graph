@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphColumnValidation do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,17 +15,21 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphColumnValidation do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :defaultLanguage => String.t | nil,
-    :descriptions => [MicrosoftGraph.Model.MicrosoftGraphColumnValidationDescriptionsInner.t] | nil,
-    :formula => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :defaultLanguage => String.t() | nil,
+          :descriptions =>
+            [MicrosoftGraph.Model.MicrosoftGraphColumnValidationDescriptionsInner.t()] | nil,
+          :formula => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:descriptions, :list, MicrosoftGraph.Model.MicrosoftGraphColumnValidationDescriptionsInner)
+    |> Deserializer.deserialize(
+      :descriptions,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphColumnValidationDescriptionsInner
+    )
   end
 end
-

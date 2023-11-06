@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceParameter do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,17 +15,20 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceParameter do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :name => String.t | nil,
-    :valueType => MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceValueType.t | nil,
-    :values => [String.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :name => String.t() | nil,
+          :valueType => MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceValueType.t() | nil,
+          :values => [String.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:valueType, :struct, MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceValueType)
+    |> Deserializer.deserialize(
+      :valueType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceValueType
+    )
   end
 end
-

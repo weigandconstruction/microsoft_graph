@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionAppLearningSummary do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,18 +16,21 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionAppLear
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :applicationName => String.t | nil,
-    :applicationType => MicrosoftGraph.Model.MicrosoftGraphApplicationType.t | nil,
-    :deviceCount => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :applicationName => String.t() | nil,
+          :applicationType => MicrosoftGraph.Model.MicrosoftGraphApplicationType.t() | nil,
+          :deviceCount => integer() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:applicationType, :struct, MicrosoftGraph.Model.MicrosoftGraphApplicationType)
+    |> Deserializer.deserialize(
+      :applicationType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphApplicationType
+    )
   end
 end
-

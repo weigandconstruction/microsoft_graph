@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MeCalendarViewEventInstancesEventAcceptRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,12 +13,11 @@ defmodule MicrosoftGraph.Model.MeCalendarViewEventInstancesEventAcceptRequest do
   ]
 
   @type t :: %__MODULE__{
-    :Comment => String.t | nil,
-    :SendResponse => boolean() | nil
-  }
+          :Comment => String.t() | nil,
+          :SendResponse => boolean() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

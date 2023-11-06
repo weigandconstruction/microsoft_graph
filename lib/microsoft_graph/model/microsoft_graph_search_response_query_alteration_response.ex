@@ -15,18 +15,27 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSearchResponseQueryAlterationRespon
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :originalQueryString => String.t | nil,
-    :queryAlteration => MicrosoftGraph.Model.MicrosoftGraphAlterationResponseQueryAlteration.t | nil,
-    :queryAlterationType => MicrosoftGraph.Model.MicrosoftGraphAlterationResponseQueryAlterationType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :originalQueryString => String.t() | nil,
+          :queryAlteration =>
+            MicrosoftGraph.Model.MicrosoftGraphAlterationResponseQueryAlteration.t() | nil,
+          :queryAlterationType =>
+            MicrosoftGraph.Model.MicrosoftGraphAlterationResponseQueryAlterationType.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:queryAlteration, :struct, MicrosoftGraph.Model.MicrosoftGraphAlterationResponseQueryAlteration)
-     |> Deserializer.deserialize(:queryAlterationType, :struct, MicrosoftGraph.Model.MicrosoftGraphAlterationResponseQueryAlterationType)
+    |> Deserializer.deserialize(
+      :queryAlteration,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAlterationResponseQueryAlteration
+    )
+    |> Deserializer.deserialize(
+      :queryAlterationType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAlterationResponseQueryAlterationType
+    )
   end
 end
-

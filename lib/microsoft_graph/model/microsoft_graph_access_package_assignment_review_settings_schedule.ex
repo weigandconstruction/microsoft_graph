@@ -15,19 +15,28 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAccessPackageAssignmentReviewSettin
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :expiration => MicrosoftGraph.Model.MicrosoftGraphEntitlementManagementScheduleExpiration.t | nil,
-    :recurrence => MicrosoftGraph.Model.MicrosoftGraphEntitlementManagementScheduleRecurrence.t | nil,
-    :startDateTime => DateTime.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :expiration =>
+            MicrosoftGraph.Model.MicrosoftGraphEntitlementManagementScheduleExpiration.t() | nil,
+          :recurrence =>
+            MicrosoftGraph.Model.MicrosoftGraphEntitlementManagementScheduleRecurrence.t() | nil,
+          :startDateTime => DateTime.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:expiration, :struct, MicrosoftGraph.Model.MicrosoftGraphEntitlementManagementScheduleExpiration)
-     |> Deserializer.deserialize(:recurrence, :struct, MicrosoftGraph.Model.MicrosoftGraphEntitlementManagementScheduleRecurrence)
-     |> Deserializer.deserialize(:startDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :expiration,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphEntitlementManagementScheduleExpiration
+    )
+    |> Deserializer.deserialize(
+      :recurrence,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphEntitlementManagementScheduleRecurrence
+    )
+    |> Deserializer.deserialize(:startDateTime, :datetime, nil)
   end
 end
-

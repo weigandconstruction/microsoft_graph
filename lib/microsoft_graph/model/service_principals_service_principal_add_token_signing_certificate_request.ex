@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.ServicePrincipalsServicePrincipalAddTokenSigningCertificateRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,15 +13,14 @@ defmodule MicrosoftGraph.Model.ServicePrincipalsServicePrincipalAddTokenSigningC
   ]
 
   @type t :: %__MODULE__{
-    :displayName => String.t | nil,
-    :endDateTime => DateTime.t | nil
-  }
+          :displayName => String.t() | nil,
+          :endDateTime => DateTime.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:endDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:endDateTime, :datetime, nil)
   end
 end
-

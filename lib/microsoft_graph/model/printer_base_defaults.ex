@@ -29,37 +29,66 @@ defmodule MicrosoftGraph.Model.PrinterBaseDefaults do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :colorMode => MicrosoftGraph.Model.MicrosoftGraphPrinterDefaultsColorMode.t | nil,
-    :contentType => String.t | nil,
-    :copiesPerJob => integer() | nil,
-    :dpi => integer() | nil,
-    :duplexMode => MicrosoftGraph.Model.MicrosoftGraphPrinterDefaultsDuplexMode.t | nil,
-    :finishings => [MicrosoftGraph.Model.MicrosoftGraphPrintJobConfigurationFinishingsInner.t] | nil,
-    :fitPdfToPage => boolean() | nil,
-    :inputBin => String.t | nil,
-    :mediaColor => String.t | nil,
-    :mediaSize => String.t | nil,
-    :mediaType => String.t | nil,
-    :multipageLayout => MicrosoftGraph.Model.MicrosoftGraphPrinterDefaultsMultipageLayout.t | nil,
-    :orientation => MicrosoftGraph.Model.MicrosoftGraphPrinterDefaultsOrientation.t | nil,
-    :outputBin => String.t | nil,
-    :pagesPerSheet => integer() | nil,
-    :quality => MicrosoftGraph.Model.MicrosoftGraphPrinterDefaultsQuality.t | nil,
-    :scaling => MicrosoftGraph.Model.MicrosoftGraphPrinterDefaultsScaling.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :colorMode => MicrosoftGraph.Model.MicrosoftGraphPrinterDefaultsColorMode.t() | nil,
+          :contentType => String.t() | nil,
+          :copiesPerJob => integer() | nil,
+          :dpi => integer() | nil,
+          :duplexMode => MicrosoftGraph.Model.MicrosoftGraphPrinterDefaultsDuplexMode.t() | nil,
+          :finishings =>
+            [MicrosoftGraph.Model.MicrosoftGraphPrintJobConfigurationFinishingsInner.t()] | nil,
+          :fitPdfToPage => boolean() | nil,
+          :inputBin => String.t() | nil,
+          :mediaColor => String.t() | nil,
+          :mediaSize => String.t() | nil,
+          :mediaType => String.t() | nil,
+          :multipageLayout =>
+            MicrosoftGraph.Model.MicrosoftGraphPrinterDefaultsMultipageLayout.t() | nil,
+          :orientation => MicrosoftGraph.Model.MicrosoftGraphPrinterDefaultsOrientation.t() | nil,
+          :outputBin => String.t() | nil,
+          :pagesPerSheet => integer() | nil,
+          :quality => MicrosoftGraph.Model.MicrosoftGraphPrinterDefaultsQuality.t() | nil,
+          :scaling => MicrosoftGraph.Model.MicrosoftGraphPrinterDefaultsScaling.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:colorMode, :struct, MicrosoftGraph.Model.MicrosoftGraphPrinterDefaultsColorMode)
-     |> Deserializer.deserialize(:duplexMode, :struct, MicrosoftGraph.Model.MicrosoftGraphPrinterDefaultsDuplexMode)
-     |> Deserializer.deserialize(:finishings, :list, MicrosoftGraph.Model.MicrosoftGraphPrintJobConfigurationFinishingsInner)
-     |> Deserializer.deserialize(:multipageLayout, :struct, MicrosoftGraph.Model.MicrosoftGraphPrinterDefaultsMultipageLayout)
-     |> Deserializer.deserialize(:orientation, :struct, MicrosoftGraph.Model.MicrosoftGraphPrinterDefaultsOrientation)
-     |> Deserializer.deserialize(:quality, :struct, MicrosoftGraph.Model.MicrosoftGraphPrinterDefaultsQuality)
-     |> Deserializer.deserialize(:scaling, :struct, MicrosoftGraph.Model.MicrosoftGraphPrinterDefaultsScaling)
+    |> Deserializer.deserialize(
+      :colorMode,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphPrinterDefaultsColorMode
+    )
+    |> Deserializer.deserialize(
+      :duplexMode,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphPrinterDefaultsDuplexMode
+    )
+    |> Deserializer.deserialize(
+      :finishings,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphPrintJobConfigurationFinishingsInner
+    )
+    |> Deserializer.deserialize(
+      :multipageLayout,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphPrinterDefaultsMultipageLayout
+    )
+    |> Deserializer.deserialize(
+      :orientation,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphPrinterDefaultsOrientation
+    )
+    |> Deserializer.deserialize(
+      :quality,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphPrinterDefaultsQuality
+    )
+    |> Deserializer.deserialize(
+      :scaling,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphPrinterDefaultsScaling
+    )
   end
 end
-

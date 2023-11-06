@@ -24,7 +24,10 @@ defmodule MicrosoftGraph.Api.SubscriptionsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec subscriptions_subscription_reauthorize(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec subscriptions_subscription_reauthorize(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def subscriptions_subscription_reauthorize(connection, subscription_id, _opts \\ []) do
     request =
       %{}

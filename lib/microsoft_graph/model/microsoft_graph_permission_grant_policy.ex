@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphPermissionGrantPolicy do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,22 +18,29 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphPermissionGrantPolicy do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :deletedDateTime => DateTime.t | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :excludes => [MicrosoftGraph.Model.MicrosoftGraphPermissionGrantConditionSet.t] | nil,
-    :includes => [MicrosoftGraph.Model.MicrosoftGraphPermissionGrantConditionSet.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :deletedDateTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :excludes => [MicrosoftGraph.Model.MicrosoftGraphPermissionGrantConditionSet.t()] | nil,
+          :includes => [MicrosoftGraph.Model.MicrosoftGraphPermissionGrantConditionSet.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:deletedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:excludes, :list, MicrosoftGraph.Model.MicrosoftGraphPermissionGrantConditionSet)
-     |> Deserializer.deserialize(:includes, :list, MicrosoftGraph.Model.MicrosoftGraphPermissionGrantConditionSet)
+    |> Deserializer.deserialize(:deletedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :excludes,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphPermissionGrantConditionSet
+    )
+    |> Deserializer.deserialize(
+      :includes,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphPermissionGrantConditionSet
+    )
   end
 end
-

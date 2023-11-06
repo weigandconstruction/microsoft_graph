@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityFileEvidence do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -22,29 +22,49 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityFileEvidence do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :createdDateTime => DateTime.t | nil,
-    :detailedRoles => [String.t] | nil,
-    :remediationStatus => MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRemediationStatus.t | nil,
-    :remediationStatusDetails => String.t | nil,
-    :roles => [MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRole.t] | nil,
-    :tags => [String.t] | nil,
-    :verdict => MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceVerdict.t | nil,
-    :detectionStatus => MicrosoftGraph.Model.FileEvidenceDetectionStatus.t | nil,
-    :fileDetails => MicrosoftGraph.Model.FileEvidenceFileDetails.t | nil,
-    :mdeDeviceId => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :createdDateTime => DateTime.t() | nil,
+          :detailedRoles => [String.t()] | nil,
+          :remediationStatus =>
+            MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRemediationStatus.t() | nil,
+          :remediationStatusDetails => String.t() | nil,
+          :roles => [MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRole.t()] | nil,
+          :tags => [String.t()] | nil,
+          :verdict => MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceVerdict.t() | nil,
+          :detectionStatus => MicrosoftGraph.Model.FileEvidenceDetectionStatus.t() | nil,
+          :fileDetails => MicrosoftGraph.Model.FileEvidenceFileDetails.t() | nil,
+          :mdeDeviceId => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:remediationStatus, :struct, MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRemediationStatus)
-     |> Deserializer.deserialize(:roles, :list, MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRole)
-     |> Deserializer.deserialize(:verdict, :struct, MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceVerdict)
-     |> Deserializer.deserialize(:detectionStatus, :struct, MicrosoftGraph.Model.FileEvidenceDetectionStatus)
-     |> Deserializer.deserialize(:fileDetails, :struct, MicrosoftGraph.Model.FileEvidenceFileDetails)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :remediationStatus,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRemediationStatus
+    )
+    |> Deserializer.deserialize(
+      :roles,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRole
+    )
+    |> Deserializer.deserialize(
+      :verdict,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceVerdict
+    )
+    |> Deserializer.deserialize(
+      :detectionStatus,
+      :struct,
+      MicrosoftGraph.Model.FileEvidenceDetectionStatus
+    )
+    |> Deserializer.deserialize(
+      :fileDetails,
+      :struct,
+      MicrosoftGraph.Model.FileEvidenceFileDetails
+    )
   end
 end
-

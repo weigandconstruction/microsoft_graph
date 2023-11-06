@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DeviceManagementReportsGetHistoricalReportRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,18 +19,17 @@ defmodule MicrosoftGraph.Model.DeviceManagementReportsGetHistoricalReportRequest
   ]
 
   @type t :: %__MODULE__{
-    :filter => String.t | nil,
-    :groupBy => [String.t] | nil,
-    :name => String.t | nil,
-    :orderBy => [String.t] | nil,
-    :search => String.t | nil,
-    :select => [String.t] | nil,
-    :skip => integer() | nil,
-    :top => integer() | nil
-  }
+          :filter => String.t() | nil,
+          :groupBy => [String.t()] | nil,
+          :name => String.t() | nil,
+          :orderBy => [String.t()] | nil,
+          :search => String.t() | nil,
+          :select => [String.t()] | nil,
+          :skip => integer() | nil,
+          :top => integer() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

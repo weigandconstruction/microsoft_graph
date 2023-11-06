@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphWindowsDeviceAdAccount do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphWindowsDeviceAdAccount do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :password => String.t | nil,
-    :domainName => String.t | nil,
-    :userName => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :password => String.t() | nil,
+          :domainName => String.t() | nil,
+          :userName => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

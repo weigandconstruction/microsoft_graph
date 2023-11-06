@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphWorkbookRangeBorder do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,16 +17,15 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphWorkbookRangeBorder do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :color => String.t | nil,
-    :sideIndex => String.t | nil,
-    :style => String.t | nil,
-    :weight => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :color => String.t() | nil,
+          :sideIndex => String.t() | nil,
+          :style => String.t() | nil,
+          :weight => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

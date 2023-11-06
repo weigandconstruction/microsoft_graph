@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentSchedule do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -29,38 +29,64 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentSchedule do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :appScope => MicrosoftGraph.Model.UnifiedRoleScheduleBaseAppScope.t | nil,
-    :appScopeId => String.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :createdUsing => String.t | nil,
-    :directoryScope => MicrosoftGraph.Model.UnifiedRoleScheduleBaseDirectoryScope.t | nil,
-    :directoryScopeId => String.t | nil,
-    :modifiedDateTime => DateTime.t | nil,
-    :principal => MicrosoftGraph.Model.UnifiedRoleScheduleBasePrincipal.t | nil,
-    :principalId => String.t | nil,
-    :roleDefinition => MicrosoftGraph.Model.UnifiedRoleScheduleInstanceBaseRoleDefinition.t | nil,
-    :roleDefinitionId => String.t | nil,
-    :status => String.t | nil,
-    :activatedUsing => MicrosoftGraph.Model.UnifiedRoleAssignmentScheduleActivatedUsing.t | nil,
-    :assignmentType => String.t | nil,
-    :memberType => String.t | nil,
-    :scheduleInfo => MicrosoftGraph.Model.UnifiedRoleAssignmentScheduleScheduleInfo.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :appScope => MicrosoftGraph.Model.UnifiedRoleScheduleBaseAppScope.t() | nil,
+          :appScopeId => String.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :createdUsing => String.t() | nil,
+          :directoryScope => MicrosoftGraph.Model.UnifiedRoleScheduleBaseDirectoryScope.t() | nil,
+          :directoryScopeId => String.t() | nil,
+          :modifiedDateTime => DateTime.t() | nil,
+          :principal => MicrosoftGraph.Model.UnifiedRoleScheduleBasePrincipal.t() | nil,
+          :principalId => String.t() | nil,
+          :roleDefinition =>
+            MicrosoftGraph.Model.UnifiedRoleScheduleInstanceBaseRoleDefinition.t() | nil,
+          :roleDefinitionId => String.t() | nil,
+          :status => String.t() | nil,
+          :activatedUsing =>
+            MicrosoftGraph.Model.UnifiedRoleAssignmentScheduleActivatedUsing.t() | nil,
+          :assignmentType => String.t() | nil,
+          :memberType => String.t() | nil,
+          :scheduleInfo =>
+            MicrosoftGraph.Model.UnifiedRoleAssignmentScheduleScheduleInfo.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:appScope, :struct, MicrosoftGraph.Model.UnifiedRoleScheduleBaseAppScope)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:directoryScope, :struct, MicrosoftGraph.Model.UnifiedRoleScheduleBaseDirectoryScope)
-     |> Deserializer.deserialize(:modifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:principal, :struct, MicrosoftGraph.Model.UnifiedRoleScheduleBasePrincipal)
-     |> Deserializer.deserialize(:roleDefinition, :struct, MicrosoftGraph.Model.UnifiedRoleScheduleInstanceBaseRoleDefinition)
-     |> Deserializer.deserialize(:activatedUsing, :struct, MicrosoftGraph.Model.UnifiedRoleAssignmentScheduleActivatedUsing)
-     |> Deserializer.deserialize(:scheduleInfo, :struct, MicrosoftGraph.Model.UnifiedRoleAssignmentScheduleScheduleInfo)
+    |> Deserializer.deserialize(
+      :appScope,
+      :struct,
+      MicrosoftGraph.Model.UnifiedRoleScheduleBaseAppScope
+    )
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :directoryScope,
+      :struct,
+      MicrosoftGraph.Model.UnifiedRoleScheduleBaseDirectoryScope
+    )
+    |> Deserializer.deserialize(:modifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :principal,
+      :struct,
+      MicrosoftGraph.Model.UnifiedRoleScheduleBasePrincipal
+    )
+    |> Deserializer.deserialize(
+      :roleDefinition,
+      :struct,
+      MicrosoftGraph.Model.UnifiedRoleScheduleInstanceBaseRoleDefinition
+    )
+    |> Deserializer.deserialize(
+      :activatedUsing,
+      :struct,
+      MicrosoftGraph.Model.UnifiedRoleAssignmentScheduleActivatedUsing
+    )
+    |> Deserializer.deserialize(
+      :scheduleInfo,
+      :struct,
+      MicrosoftGraph.Model.UnifiedRoleAssignmentScheduleScheduleInfo
+    )
   end
 end
-

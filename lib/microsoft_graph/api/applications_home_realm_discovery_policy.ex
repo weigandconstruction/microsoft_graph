@@ -26,8 +26,21 @@ defmodule MicrosoftGraph.Api.ApplicationsHomeRealmDiscoveryPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphHomeRealmDiscoveryPolicy.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_get_home_realm_discovery_policies(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphHomeRealmDiscoveryPolicy.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def applications_get_home_realm_discovery_policies(connection, application_id, home_realm_discovery_policy_id, opts \\ []) do
+  @spec applications_get_home_realm_discovery_policies(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphHomeRealmDiscoveryPolicy.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def applications_get_home_realm_discovery_policies(
+        connection,
+        application_id,
+        home_realm_discovery_policy_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -36,7 +49,9 @@ defmodule MicrosoftGraph.Api.ApplicationsHomeRealmDiscoveryPolicy do
     request =
       %{}
       |> method(:get)
-      |> url("/applications/#{application_id}/homeRealmDiscoveryPolicies/#{home_realm_discovery_policy_id}")
+      |> url(
+        "/applications/#{application_id}/homeRealmDiscoveryPolicies/#{home_realm_discovery_policy_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -65,8 +80,19 @@ defmodule MicrosoftGraph.Api.ApplicationsHomeRealmDiscoveryPolicy do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_home_realm_discovery_policies_get_count1662(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def applications_home_realm_discovery_policies_get_count1662(connection, application_id, opts \\ []) do
+  @spec applications_home_realm_discovery_policies_get_count1662(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def applications_home_realm_discovery_policies_get_count1662(
+        connection,
+        application_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -110,7 +136,10 @@ defmodule MicrosoftGraph.Api.ApplicationsHomeRealmDiscoveryPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphHomeRealmDiscoveryPolicyCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec applications_list_home_realm_discovery_policies(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphHomeRealmDiscoveryPolicyCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec applications_list_home_realm_discovery_policies(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphHomeRealmDiscoveryPolicyCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def applications_list_home_realm_discovery_policies(connection, application_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,

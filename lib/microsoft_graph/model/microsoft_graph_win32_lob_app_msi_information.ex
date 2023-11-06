@@ -19,21 +19,24 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphWin32LobAppMsiInformation do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :packageType => MicrosoftGraph.Model.MicrosoftGraphWin32LobAppMsiPackageType.t | nil,
-    :productCode => String.t | nil,
-    :productName => String.t | nil,
-    :productVersion => String.t | nil,
-    :publisher => String.t | nil,
-    :requiresReboot => boolean() | nil,
-    :upgradeCode => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :packageType => MicrosoftGraph.Model.MicrosoftGraphWin32LobAppMsiPackageType.t() | nil,
+          :productCode => String.t() | nil,
+          :productName => String.t() | nil,
+          :productVersion => String.t() | nil,
+          :publisher => String.t() | nil,
+          :requiresReboot => boolean() | nil,
+          :upgradeCode => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:packageType, :struct, MicrosoftGraph.Model.MicrosoftGraphWin32LobAppMsiPackageType)
+    |> Deserializer.deserialize(
+      :packageType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphWin32LobAppMsiPackageType
+    )
   end
 end
-

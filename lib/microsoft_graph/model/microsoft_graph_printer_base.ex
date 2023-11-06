@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphPrinterBase do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -22,28 +22,35 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphPrinterBase do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :capabilities => MicrosoftGraph.Model.PrinterBaseCapabilities.t | nil,
-    :defaults => MicrosoftGraph.Model.PrinterBaseDefaults.t | nil,
-    :displayName => String.t | nil,
-    :isAcceptingJobs => boolean() | nil,
-    :jobs => [MicrosoftGraph.Model.MicrosoftGraphPrintJob.t] | nil,
-    :location => MicrosoftGraph.Model.PrinterBaseLocation.t | nil,
-    :manufacturer => String.t | nil,
-    :model => String.t | nil,
-    :status => MicrosoftGraph.Model.MicrosoftGraphPrinterStatus.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :capabilities => MicrosoftGraph.Model.PrinterBaseCapabilities.t() | nil,
+          :defaults => MicrosoftGraph.Model.PrinterBaseDefaults.t() | nil,
+          :displayName => String.t() | nil,
+          :isAcceptingJobs => boolean() | nil,
+          :jobs => [MicrosoftGraph.Model.MicrosoftGraphPrintJob.t()] | nil,
+          :location => MicrosoftGraph.Model.PrinterBaseLocation.t() | nil,
+          :manufacturer => String.t() | nil,
+          :model => String.t() | nil,
+          :status => MicrosoftGraph.Model.MicrosoftGraphPrinterStatus.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:capabilities, :struct, MicrosoftGraph.Model.PrinterBaseCapabilities)
-     |> Deserializer.deserialize(:defaults, :struct, MicrosoftGraph.Model.PrinterBaseDefaults)
-     |> Deserializer.deserialize(:jobs, :list, MicrosoftGraph.Model.MicrosoftGraphPrintJob)
-     |> Deserializer.deserialize(:location, :struct, MicrosoftGraph.Model.PrinterBaseLocation)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.MicrosoftGraphPrinterStatus)
+    |> Deserializer.deserialize(
+      :capabilities,
+      :struct,
+      MicrosoftGraph.Model.PrinterBaseCapabilities
+    )
+    |> Deserializer.deserialize(:defaults, :struct, MicrosoftGraph.Model.PrinterBaseDefaults)
+    |> Deserializer.deserialize(:jobs, :list, MicrosoftGraph.Model.MicrosoftGraphPrintJob)
+    |> Deserializer.deserialize(:location, :struct, MicrosoftGraph.Model.PrinterBaseLocation)
+    |> Deserializer.deserialize(
+      :status,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphPrinterStatus
+    )
   end
 end
-

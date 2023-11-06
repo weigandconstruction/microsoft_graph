@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.CallCallRoutesInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,19 +15,26 @@ defmodule MicrosoftGraph.Model.CallCallRoutesInner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :final => MicrosoftGraph.Model.MicrosoftGraphIdentitySet.t | nil,
-    :original => MicrosoftGraph.Model.MicrosoftGraphIdentitySet.t | nil,
-    :routingType => MicrosoftGraph.Model.MicrosoftGraphRoutingType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :final => MicrosoftGraph.Model.MicrosoftGraphIdentitySet.t() | nil,
+          :original => MicrosoftGraph.Model.MicrosoftGraphIdentitySet.t() | nil,
+          :routingType => MicrosoftGraph.Model.MicrosoftGraphRoutingType.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:final, :struct, MicrosoftGraph.Model.MicrosoftGraphIdentitySet)
-     |> Deserializer.deserialize(:original, :struct, MicrosoftGraph.Model.MicrosoftGraphIdentitySet)
-     |> Deserializer.deserialize(:routingType, :struct, MicrosoftGraph.Model.MicrosoftGraphRoutingType)
+    |> Deserializer.deserialize(:final, :struct, MicrosoftGraph.Model.MicrosoftGraphIdentitySet)
+    |> Deserializer.deserialize(
+      :original,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphIdentitySet
+    )
+    |> Deserializer.deserialize(
+      :routingType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphRoutingType
+    )
   end
 end
-

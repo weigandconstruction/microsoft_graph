@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthPolicy do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -21,28 +21,47 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthPolicy do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :allowedCombinations => [MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodModes.t] | nil,
-    :combinationConfigurations => [MicrosoftGraph.Model.MicrosoftGraphAuthenticationCombinationConfiguration.t] | nil,
-    :createdDateTime => DateTime.t | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :modifiedDateTime => DateTime.t | nil,
-    :policyType => MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthPolicyType.t | nil,
-    :requirementsSatisfied => MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthRequirements.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :allowedCombinations =>
+            [MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodModes.t()] | nil,
+          :combinationConfigurations =>
+            [MicrosoftGraph.Model.MicrosoftGraphAuthenticationCombinationConfiguration.t()] | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :modifiedDateTime => DateTime.t() | nil,
+          :policyType =>
+            MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthPolicyType.t() | nil,
+          :requirementsSatisfied =>
+            MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthRequirements.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:allowedCombinations, :list, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodModes)
-     |> Deserializer.deserialize(:combinationConfigurations, :list, MicrosoftGraph.Model.MicrosoftGraphAuthenticationCombinationConfiguration)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:modifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:policyType, :struct, MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthPolicyType)
-     |> Deserializer.deserialize(:requirementsSatisfied, :struct, MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthRequirements)
+    |> Deserializer.deserialize(
+      :allowedCombinations,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodModes
+    )
+    |> Deserializer.deserialize(
+      :combinationConfigurations,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAuthenticationCombinationConfiguration
+    )
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:modifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :policyType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthPolicyType
+    )
+    |> Deserializer.deserialize(
+      :requirementsSatisfied,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAuthenticationStrengthRequirements
+    )
   end
 end
-

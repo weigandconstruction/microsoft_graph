@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.AdminEdgeInternetExplorerModeSiteListsBrowserSiteListPublishRequestSharedCookiesInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -25,33 +25,49 @@ defmodule MicrosoftGraph.Model.AdminEdgeInternetExplorerModeSiteListsBrowserSite
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :comment => String.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :deletedDateTime => DateTime.t | nil,
-    :displayName => String.t | nil,
-    :history => [MicrosoftGraph.Model.MicrosoftGraphBrowserSharedCookieHistory.t] | nil,
-    :hostOnly => boolean() | nil,
-    :hostOrDomain => String.t | nil,
-    :lastModifiedBy => MicrosoftGraph.Model.BrowserSharedCookieLastModifiedBy.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :path => String.t | nil,
-    :sourceEnvironment => MicrosoftGraph.Model.MicrosoftGraphBrowserSharedCookieSourceEnvironment.t | nil,
-    :status => MicrosoftGraph.Model.MicrosoftGraphBrowserSharedCookieStatus.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :comment => String.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :deletedDateTime => DateTime.t() | nil,
+          :displayName => String.t() | nil,
+          :history => [MicrosoftGraph.Model.MicrosoftGraphBrowserSharedCookieHistory.t()] | nil,
+          :hostOnly => boolean() | nil,
+          :hostOrDomain => String.t() | nil,
+          :lastModifiedBy => MicrosoftGraph.Model.BrowserSharedCookieLastModifiedBy.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :path => String.t() | nil,
+          :sourceEnvironment =>
+            MicrosoftGraph.Model.MicrosoftGraphBrowserSharedCookieSourceEnvironment.t() | nil,
+          :status => MicrosoftGraph.Model.MicrosoftGraphBrowserSharedCookieStatus.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:deletedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:history, :list, MicrosoftGraph.Model.MicrosoftGraphBrowserSharedCookieHistory)
-     |> Deserializer.deserialize(:lastModifiedBy, :struct, MicrosoftGraph.Model.BrowserSharedCookieLastModifiedBy)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:sourceEnvironment, :struct, MicrosoftGraph.Model.MicrosoftGraphBrowserSharedCookieSourceEnvironment)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.MicrosoftGraphBrowserSharedCookieStatus)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:deletedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :history,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphBrowserSharedCookieHistory
+    )
+    |> Deserializer.deserialize(
+      :lastModifiedBy,
+      :struct,
+      MicrosoftGraph.Model.BrowserSharedCookieLastModifiedBy
+    )
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :sourceEnvironment,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphBrowserSharedCookieSourceEnvironment
+    )
+    |> Deserializer.deserialize(
+      :status,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphBrowserSharedCookieStatus
+    )
   end
 end
-

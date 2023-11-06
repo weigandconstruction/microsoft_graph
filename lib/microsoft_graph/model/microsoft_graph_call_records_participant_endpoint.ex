@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphCallRecordsParticipantEndpoint do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,23 +19,34 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphCallRecordsParticipantEndpoint do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :userAgent => MicrosoftGraph.Model.MicrosoftGraphCallRecordsEndpointUserAgent.t | nil,
-    :cpuCoresCount => integer() | nil,
-    :cpuName => String.t | nil,
-    :cpuProcessorSpeedInMhz => integer() | nil,
-    :feedback => MicrosoftGraph.Model.ParticipantEndpointFeedback.t | nil,
-    :identity => MicrosoftGraph.Model.ParticipantEndpointIdentity.t | nil,
-    :name => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :userAgent => MicrosoftGraph.Model.MicrosoftGraphCallRecordsEndpointUserAgent.t() | nil,
+          :cpuCoresCount => integer() | nil,
+          :cpuName => String.t() | nil,
+          :cpuProcessorSpeedInMhz => integer() | nil,
+          :feedback => MicrosoftGraph.Model.ParticipantEndpointFeedback.t() | nil,
+          :identity => MicrosoftGraph.Model.ParticipantEndpointIdentity.t() | nil,
+          :name => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:userAgent, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsEndpointUserAgent)
-     |> Deserializer.deserialize(:feedback, :struct, MicrosoftGraph.Model.ParticipantEndpointFeedback)
-     |> Deserializer.deserialize(:identity, :struct, MicrosoftGraph.Model.ParticipantEndpointIdentity)
+    |> Deserializer.deserialize(
+      :userAgent,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsEndpointUserAgent
+    )
+    |> Deserializer.deserialize(
+      :feedback,
+      :struct,
+      MicrosoftGraph.Model.ParticipantEndpointFeedback
+    )
+    |> Deserializer.deserialize(
+      :identity,
+      :struct,
+      MicrosoftGraph.Model.ParticipantEndpointIdentity
+    )
   end
 end
-

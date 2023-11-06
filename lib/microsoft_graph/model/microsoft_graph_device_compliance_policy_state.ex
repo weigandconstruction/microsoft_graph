@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphDeviceCompliancePolicyState do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,23 +19,35 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphDeviceCompliancePolicyState do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :displayName => String.t | nil,
-    :platformType => MicrosoftGraph.Model.MicrosoftGraphPolicyPlatformType.t | nil,
-    :settingCount => integer() | nil,
-    :settingStates => [MicrosoftGraph.Model.DeviceCompliancePolicyStateSettingStatesInner.t] | nil,
-    :state => MicrosoftGraph.Model.MicrosoftGraphComplianceStatus.t | nil,
-    :version => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :displayName => String.t() | nil,
+          :platformType => MicrosoftGraph.Model.MicrosoftGraphPolicyPlatformType.t() | nil,
+          :settingCount => integer() | nil,
+          :settingStates =>
+            [MicrosoftGraph.Model.DeviceCompliancePolicyStateSettingStatesInner.t()] | nil,
+          :state => MicrosoftGraph.Model.MicrosoftGraphComplianceStatus.t() | nil,
+          :version => integer() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:platformType, :struct, MicrosoftGraph.Model.MicrosoftGraphPolicyPlatformType)
-     |> Deserializer.deserialize(:settingStates, :list, MicrosoftGraph.Model.DeviceCompliancePolicyStateSettingStatesInner)
-     |> Deserializer.deserialize(:state, :struct, MicrosoftGraph.Model.MicrosoftGraphComplianceStatus)
+    |> Deserializer.deserialize(
+      :platformType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphPolicyPlatformType
+    )
+    |> Deserializer.deserialize(
+      :settingStates,
+      :list,
+      MicrosoftGraph.Model.DeviceCompliancePolicyStateSettingStatesInner
+    )
+    |> Deserializer.deserialize(
+      :state,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphComplianceStatus
+    )
   end
 end
-

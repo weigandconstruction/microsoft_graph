@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphEnterpriseCodeSigningCertificate do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -21,25 +21,28 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphEnterpriseCodeSigningCertificate do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :content => String.t | nil,
-    :expirationDateTime => DateTime.t | nil,
-    :issuer => String.t | nil,
-    :issuerName => String.t | nil,
-    :status => MicrosoftGraph.Model.MicrosoftGraphCertificateStatus.t | nil,
-    :subject => String.t | nil,
-    :subjectName => String.t | nil,
-    :uploadDateTime => DateTime.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :content => String.t() | nil,
+          :expirationDateTime => DateTime.t() | nil,
+          :issuer => String.t() | nil,
+          :issuerName => String.t() | nil,
+          :status => MicrosoftGraph.Model.MicrosoftGraphCertificateStatus.t() | nil,
+          :subject => String.t() | nil,
+          :subjectName => String.t() | nil,
+          :uploadDateTime => DateTime.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:expirationDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.MicrosoftGraphCertificateStatus)
-     |> Deserializer.deserialize(:uploadDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:expirationDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :status,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCertificateStatus
+    )
+    |> Deserializer.deserialize(:uploadDateTime, :datetime, nil)
   end
 end
-

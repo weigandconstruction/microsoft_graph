@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,15 +13,22 @@ defmodule MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCal
   ]
 
   @type t :: %__MODULE__{
-    :Comment => String.t | nil,
-    :ToRecipients => [MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequestToRecipientsInner.t] | nil
-  }
+          :Comment => String.t() | nil,
+          :ToRecipients =>
+            [
+              MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequestToRecipientsInner.t()
+            ]
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:ToRecipients, :list, MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequestToRecipientsInner)
+    |> Deserializer.deserialize(
+      :ToRecipients,
+      :list,
+      MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequestToRecipientsInner
+    )
   end
 end
-

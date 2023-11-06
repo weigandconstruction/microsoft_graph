@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphEnrollmentTroubleshootingEvent do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -23,27 +23,35 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphEnrollmentTroubleshootingEvent do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :correlationId => String.t | nil,
-    :eventDateTime => DateTime.t | nil,
-    :deviceId => String.t | nil,
-    :enrollmentType => MicrosoftGraph.Model.MicrosoftGraphDeviceEnrollmentType.t | nil,
-    :failureCategory => MicrosoftGraph.Model.MicrosoftGraphDeviceEnrollmentFailureReason.t | nil,
-    :failureReason => String.t | nil,
-    :managedDeviceIdentifier => String.t | nil,
-    :operatingSystem => String.t | nil,
-    :osVersion => String.t | nil,
-    :userId => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :correlationId => String.t() | nil,
+          :eventDateTime => DateTime.t() | nil,
+          :deviceId => String.t() | nil,
+          :enrollmentType => MicrosoftGraph.Model.MicrosoftGraphDeviceEnrollmentType.t() | nil,
+          :failureCategory =>
+            MicrosoftGraph.Model.MicrosoftGraphDeviceEnrollmentFailureReason.t() | nil,
+          :failureReason => String.t() | nil,
+          :managedDeviceIdentifier => String.t() | nil,
+          :operatingSystem => String.t() | nil,
+          :osVersion => String.t() | nil,
+          :userId => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:eventDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:enrollmentType, :struct, MicrosoftGraph.Model.MicrosoftGraphDeviceEnrollmentType)
-     |> Deserializer.deserialize(:failureCategory, :struct, MicrosoftGraph.Model.MicrosoftGraphDeviceEnrollmentFailureReason)
+    |> Deserializer.deserialize(:eventDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :enrollmentType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphDeviceEnrollmentType
+    )
+    |> Deserializer.deserialize(
+      :failureCategory,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphDeviceEnrollmentFailureReason
+    )
   end
 end
-

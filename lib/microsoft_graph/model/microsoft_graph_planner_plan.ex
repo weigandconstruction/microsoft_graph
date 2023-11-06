@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphPlannerPlan do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -21,28 +21,27 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphPlannerPlan do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :buckets => [MicrosoftGraph.Model.MicrosoftGraphPlannerBucket.t] | nil,
-    :container => MicrosoftGraph.Model.PlannerPlanContainer.t | nil,
-    :createdBy => MicrosoftGraph.Model.PlannerPlanCreatedBy.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :details => MicrosoftGraph.Model.PlannerPlanDetails.t | nil,
-    :owner => String.t | nil,
-    :tasks => [MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t] | nil,
-    :title => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :buckets => [MicrosoftGraph.Model.MicrosoftGraphPlannerBucket.t()] | nil,
+          :container => MicrosoftGraph.Model.PlannerPlanContainer.t() | nil,
+          :createdBy => MicrosoftGraph.Model.PlannerPlanCreatedBy.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :details => MicrosoftGraph.Model.PlannerPlanDetails.t() | nil,
+          :owner => String.t() | nil,
+          :tasks => [MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t()] | nil,
+          :title => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:buckets, :list, MicrosoftGraph.Model.MicrosoftGraphPlannerBucket)
-     |> Deserializer.deserialize(:container, :struct, MicrosoftGraph.Model.PlannerPlanContainer)
-     |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.PlannerPlanCreatedBy)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:details, :struct, MicrosoftGraph.Model.PlannerPlanDetails)
-     |> Deserializer.deserialize(:tasks, :list, MicrosoftGraph.Model.MicrosoftGraphPlannerTask)
+    |> Deserializer.deserialize(:buckets, :list, MicrosoftGraph.Model.MicrosoftGraphPlannerBucket)
+    |> Deserializer.deserialize(:container, :struct, MicrosoftGraph.Model.PlannerPlanContainer)
+    |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.PlannerPlanCreatedBy)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:details, :struct, MicrosoftGraph.Model.PlannerPlanDetails)
+    |> Deserializer.deserialize(:tasks, :list, MicrosoftGraph.Model.MicrosoftGraphPlannerTask)
   end
 end
-

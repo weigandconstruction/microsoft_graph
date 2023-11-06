@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAlternativeSecurityId do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAlternativeSecurityId do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :identityProvider => String.t | nil,
-    :key => String.t | nil,
-    :type => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :identityProvider => String.t() | nil,
+          :key => String.t() | nil,
+          :type => integer() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsCloudManagem
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :coManagedDeviceCount => integer() | nil,
-    :intuneDeviceCount => integer() | nil,
-    :tenantAttachDeviceCount => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :coManagedDeviceCount => integer() | nil,
+          :intuneDeviceCount => integer() | nil,
+          :tenantAttachDeviceCount => integer() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

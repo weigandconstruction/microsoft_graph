@@ -19,25 +19,42 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphBrowserSiteHistory do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :allowRedirect => boolean() | nil,
-    :comment => String.t | nil,
-    :compatibilityMode => MicrosoftGraph.Model.MicrosoftGraphBrowserSiteHistoryCompatibilityMode.t | nil,
-    :lastModifiedBy => MicrosoftGraph.Model.BrowserSiteLastModifiedBy.t | nil,
-    :mergeType => MicrosoftGraph.Model.MicrosoftGraphBrowserSiteHistoryMergeType.t | nil,
-    :publishedDateTime => DateTime.t | nil,
-    :targetEnvironment => MicrosoftGraph.Model.MicrosoftGraphBrowserSiteHistoryTargetEnvironment.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :allowRedirect => boolean() | nil,
+          :comment => String.t() | nil,
+          :compatibilityMode =>
+            MicrosoftGraph.Model.MicrosoftGraphBrowserSiteHistoryCompatibilityMode.t() | nil,
+          :lastModifiedBy => MicrosoftGraph.Model.BrowserSiteLastModifiedBy.t() | nil,
+          :mergeType => MicrosoftGraph.Model.MicrosoftGraphBrowserSiteHistoryMergeType.t() | nil,
+          :publishedDateTime => DateTime.t() | nil,
+          :targetEnvironment =>
+            MicrosoftGraph.Model.MicrosoftGraphBrowserSiteHistoryTargetEnvironment.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:compatibilityMode, :struct, MicrosoftGraph.Model.MicrosoftGraphBrowserSiteHistoryCompatibilityMode)
-     |> Deserializer.deserialize(:lastModifiedBy, :struct, MicrosoftGraph.Model.BrowserSiteLastModifiedBy)
-     |> Deserializer.deserialize(:mergeType, :struct, MicrosoftGraph.Model.MicrosoftGraphBrowserSiteHistoryMergeType)
-     |> Deserializer.deserialize(:publishedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:targetEnvironment, :struct, MicrosoftGraph.Model.MicrosoftGraphBrowserSiteHistoryTargetEnvironment)
+    |> Deserializer.deserialize(
+      :compatibilityMode,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphBrowserSiteHistoryCompatibilityMode
+    )
+    |> Deserializer.deserialize(
+      :lastModifiedBy,
+      :struct,
+      MicrosoftGraph.Model.BrowserSiteLastModifiedBy
+    )
+    |> Deserializer.deserialize(
+      :mergeType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphBrowserSiteHistoryMergeType
+    )
+    |> Deserializer.deserialize(:publishedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :targetEnvironment,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphBrowserSiteHistoryTargetEnvironment
+    )
   end
 end
-

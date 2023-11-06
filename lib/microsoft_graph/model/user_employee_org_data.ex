@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.UserEmployeeOrgData do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :costCenter => String.t | nil,
-    :division => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :costCenter => String.t() | nil,
+          :division => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookWorksheetsWorkbookWorksheetProtectionProtectRequestOptions do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -23,22 +23,21 @@ defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookWorksheetsWorkbo
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :allowAutoFilter => boolean() | nil,
-    :allowDeleteColumns => boolean() | nil,
-    :allowDeleteRows => boolean() | nil,
-    :allowFormatCells => boolean() | nil,
-    :allowFormatColumns => boolean() | nil,
-    :allowFormatRows => boolean() | nil,
-    :allowInsertColumns => boolean() | nil,
-    :allowInsertHyperlinks => boolean() | nil,
-    :allowInsertRows => boolean() | nil,
-    :allowPivotTables => boolean() | nil,
-    :allowSort => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :allowAutoFilter => boolean() | nil,
+          :allowDeleteColumns => boolean() | nil,
+          :allowDeleteRows => boolean() | nil,
+          :allowFormatCells => boolean() | nil,
+          :allowFormatColumns => boolean() | nil,
+          :allowFormatRows => boolean() | nil,
+          :allowInsertColumns => boolean() | nil,
+          :allowInsertHyperlinks => boolean() | nil,
+          :allowInsertRows => boolean() | nil,
+          :allowPivotTables => boolean() | nil,
+          :allowSort => boolean() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

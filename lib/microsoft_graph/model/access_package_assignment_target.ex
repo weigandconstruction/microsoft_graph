@@ -20,23 +20,31 @@ defmodule MicrosoftGraph.Model.AccessPackageAssignmentTarget do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :connectedOrganization => MicrosoftGraph.Model.AccessPackageSubjectConnectedOrganization.t | nil,
-    :displayName => String.t | nil,
-    :email => String.t | nil,
-    :objectId => String.t | nil,
-    :onPremisesSecurityIdentifier => String.t | nil,
-    :principalName => String.t | nil,
-    :subjectType => MicrosoftGraph.Model.AccessPackageSubjectSubjectType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :connectedOrganization =>
+            MicrosoftGraph.Model.AccessPackageSubjectConnectedOrganization.t() | nil,
+          :displayName => String.t() | nil,
+          :email => String.t() | nil,
+          :objectId => String.t() | nil,
+          :onPremisesSecurityIdentifier => String.t() | nil,
+          :principalName => String.t() | nil,
+          :subjectType => MicrosoftGraph.Model.AccessPackageSubjectSubjectType.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:connectedOrganization, :struct, MicrosoftGraph.Model.AccessPackageSubjectConnectedOrganization)
-     |> Deserializer.deserialize(:subjectType, :struct, MicrosoftGraph.Model.AccessPackageSubjectSubjectType)
+    |> Deserializer.deserialize(
+      :connectedOrganization,
+      :struct,
+      MicrosoftGraph.Model.AccessPackageSubjectConnectedOrganization
+    )
+    |> Deserializer.deserialize(
+      :subjectType,
+      :struct,
+      MicrosoftGraph.Model.AccessPackageSubjectSubjectType
+    )
   end
 end
-

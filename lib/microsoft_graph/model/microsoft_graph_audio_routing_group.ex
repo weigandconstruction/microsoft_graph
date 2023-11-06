@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAudioRoutingGroup do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,18 +16,21 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAudioRoutingGroup do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :receivers => [String.t] | nil,
-    :routingMode => MicrosoftGraph.Model.MicrosoftGraphRoutingMode.t | nil,
-    :sources => [String.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :receivers => [String.t()] | nil,
+          :routingMode => MicrosoftGraph.Model.MicrosoftGraphRoutingMode.t() | nil,
+          :sources => [String.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:routingMode, :struct, MicrosoftGraph.Model.MicrosoftGraphRoutingMode)
+    |> Deserializer.deserialize(
+      :routingMode,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphRoutingMode
+    )
   end
 end
-

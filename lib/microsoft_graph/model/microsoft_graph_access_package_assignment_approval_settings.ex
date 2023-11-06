@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAccessPackageAssignmentApprovalSettings do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,17 +15,24 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAccessPackageAssignmentApprovalSett
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :isApprovalRequiredForAdd => boolean() | nil,
-    :isApprovalRequiredForUpdate => boolean() | nil,
-    :stages => [MicrosoftGraph.Model.MicrosoftGraphAccessPackageAssignmentApprovalSettingsStagesInner.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :isApprovalRequiredForAdd => boolean() | nil,
+          :isApprovalRequiredForUpdate => boolean() | nil,
+          :stages =>
+            [
+              MicrosoftGraph.Model.MicrosoftGraphAccessPackageAssignmentApprovalSettingsStagesInner.t()
+            ]
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:stages, :list, MicrosoftGraph.Model.MicrosoftGraphAccessPackageAssignmentApprovalSettingsStagesInner)
+    |> Deserializer.deserialize(
+      :stages,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAccessPackageAssignmentApprovalSettingsStagesInner
+    )
   end
 end
-

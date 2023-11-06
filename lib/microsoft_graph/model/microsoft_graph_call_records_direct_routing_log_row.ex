@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphCallRecordsDirectRoutingLogRow do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -33,38 +33,37 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphCallRecordsDirectRoutingLogRow do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :callEndSubReason => integer() | nil,
-    :callType => String.t | nil,
-    :calleeNumber => String.t | nil,
-    :callerNumber => String.t | nil,
-    :correlationId => String.t | nil,
-    :duration => integer() | nil,
-    :endDateTime => DateTime.t | nil,
-    :failureDateTime => DateTime.t | nil,
-    :finalSipCode => integer() | nil,
-    :finalSipCodePhrase => String.t | nil,
-    :id => String.t | nil,
-    :inviteDateTime => DateTime.t | nil,
-    :mediaBypassEnabled => boolean() | nil,
-    :mediaPathLocation => String.t | nil,
-    :signalingLocation => String.t | nil,
-    :startDateTime => DateTime.t | nil,
-    :successfulCall => boolean() | nil,
-    :trunkFullyQualifiedDomainName => String.t | nil,
-    :userDisplayName => String.t | nil,
-    :userId => String.t | nil,
-    :userPrincipalName => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :callEndSubReason => integer() | nil,
+          :callType => String.t() | nil,
+          :calleeNumber => String.t() | nil,
+          :callerNumber => String.t() | nil,
+          :correlationId => String.t() | nil,
+          :duration => integer() | nil,
+          :endDateTime => DateTime.t() | nil,
+          :failureDateTime => DateTime.t() | nil,
+          :finalSipCode => integer() | nil,
+          :finalSipCodePhrase => String.t() | nil,
+          :id => String.t() | nil,
+          :inviteDateTime => DateTime.t() | nil,
+          :mediaBypassEnabled => boolean() | nil,
+          :mediaPathLocation => String.t() | nil,
+          :signalingLocation => String.t() | nil,
+          :startDateTime => DateTime.t() | nil,
+          :successfulCall => boolean() | nil,
+          :trunkFullyQualifiedDomainName => String.t() | nil,
+          :userDisplayName => String.t() | nil,
+          :userId => String.t() | nil,
+          :userPrincipalName => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:endDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:failureDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:inviteDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:startDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:endDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:failureDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:inviteDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:startDateTime, :datetime, nil)
   end
 end
-

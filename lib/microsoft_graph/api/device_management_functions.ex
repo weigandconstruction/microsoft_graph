@@ -23,18 +23,31 @@ defmodule MicrosoftGraph.Api.DeviceManagementFunctions do
   - `{:ok, MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookWorksheetsWorkbookWorksheetChartsWorkbookChartImage8f132XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_apple_push_notification_certificate_download_apple_push_notification_certificate_signing_request(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookWorksheetsWorkbookWorksheetChartsWorkbookChartImage8f132XxResponse.t} | {:error, Tesla.Env.t}
-  def device_management_apple_push_notification_certificate_download_apple_push_notification_certificate_signing_request(connection, _opts \\ []) do
+  @spec device_management_apple_push_notification_certificate_download_apple_push_notification_certificate_signing_request(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookWorksheetsWorkbookWorksheetChartsWorkbookChartImage8f132XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_apple_push_notification_certificate_download_apple_push_notification_certificate_signing_request(
+        connection,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/deviceManagement/applePushNotificationCertificate/downloadApplePushNotificationCertificateSigningRequest()")
+      |> url(
+        "/deviceManagement/applePushNotificationCertificate/downloadApplePushNotificationCertificateSigningRequest()"
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookWorksheetsWorkbookWorksheetChartsWorkbookChartImage8f132XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookWorksheetsWorkbookWorksheetChartsWorkbookChartImage8f132XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -59,7 +72,15 @@ defmodule MicrosoftGraph.Api.DeviceManagementFunctions do
   - `{:ok, MicrosoftGraph.Model.DirectoryFederationConfigurationsAvailableProviderTypes2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_audit_events_get_audit_activity_types(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.DirectoryFederationConfigurationsAvailableProviderTypes2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec device_management_audit_events_get_audit_activity_types(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.DirectoryFederationConfigurationsAvailableProviderTypes2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def device_management_audit_events_get_audit_activity_types(connection, category, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -72,14 +93,17 @@ defmodule MicrosoftGraph.Api.DeviceManagementFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/deviceManagement/auditEvents/getAuditActivityTypes(category&#x3D;&#39;#{category}&#39;)")
+      |> url(
+        "/deviceManagement/auditEvents/getAuditActivityTypes(category&#x3D;&#39;#{category}&#39;)"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.DirectoryFederationConfigurationsAvailableProviderTypes2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.DirectoryFederationConfigurationsAvailableProviderTypes2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -103,7 +127,11 @@ defmodule MicrosoftGraph.Api.DeviceManagementFunctions do
   - `{:ok, MicrosoftGraph.Model.DirectoryFederationConfigurationsAvailableProviderTypes2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_audit_events_get_audit_categories(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.DirectoryFederationConfigurationsAvailableProviderTypes2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec device_management_audit_events_get_audit_categories(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.DirectoryFederationConfigurationsAvailableProviderTypes2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def device_management_audit_events_get_audit_categories(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -123,7 +151,8 @@ defmodule MicrosoftGraph.Api.DeviceManagementFunctions do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.DirectoryFederationConfigurationsAvailableProviderTypes2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.DirectoryFederationConfigurationsAvailableProviderTypes2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -144,18 +173,35 @@ defmodule MicrosoftGraph.Api.DeviceManagementFunctions do
   - `{:ok, MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookWorksheetsWorkbookWorksheetChartsWorkbookChartImage8f132XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_configurations_device_configuration_get_oma_setting_plain_text_value(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookWorksheetsWorkbookWorksheetChartsWorkbookChartImage8f132XxResponse.t} | {:error, Tesla.Env.t}
-  def device_management_device_configurations_device_configuration_get_oma_setting_plain_text_value(connection, device_configuration_id, secret_reference_value_id, _opts \\ []) do
+  @spec device_management_device_configurations_device_configuration_get_oma_setting_plain_text_value(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookWorksheetsWorkbookWorksheetChartsWorkbookChartImage8f132XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_configurations_device_configuration_get_oma_setting_plain_text_value(
+        connection,
+        device_configuration_id,
+        secret_reference_value_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/deviceManagement/deviceConfigurations/#{device_configuration_id}/getOmaSettingPlainTextValue(secretReferenceValueId&#x3D;&#39;#{secret_reference_value_id}&#39;)")
+      |> url(
+        "/deviceManagement/deviceConfigurations/#{device_configuration_id}/getOmaSettingPlainTextValue(secretReferenceValueId&#x3D;&#39;#{secret_reference_value_id}&#39;)"
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookWorksheetsWorkbookWorksheetChartsWorkbookChartImage8f132XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookWorksheetsWorkbookWorksheetChartsWorkbookChartImage8f132XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -181,7 +227,10 @@ defmodule MicrosoftGraph.Api.DeviceManagementFunctions do
   - `{:ok, MicrosoftGraph.Model.DeviceManagementGetEffectivePermissions2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_get_effective_permissions(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.DeviceManagementGetEffectivePermissions2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec device_management_get_effective_permissions(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.DeviceManagementGetEffectivePermissions2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def device_management_get_effective_permissions(connection, scope, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -228,8 +277,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfUserExperienceAnalyticsDevicePerformance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_user_experience_analytics_device_performance_summarize_device_performance_devices(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsSummarizedBy.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfUserExperienceAnalyticsDevicePerformance.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_user_experience_analytics_device_performance_summarize_device_performance_devices(connection, summarize_by, opts \\ []) do
+  @spec device_management_user_experience_analytics_device_performance_summarize_device_performance_devices(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsSummarizedBy.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfUserExperienceAnalyticsDevicePerformance.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_user_experience_analytics_device_performance_summarize_device_performance_devices(
+        connection,
+        summarize_by,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -243,7 +303,9 @@ defmodule MicrosoftGraph.Api.DeviceManagementFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/deviceManagement/userExperienceAnalyticsDevicePerformance/summarizeDevicePerformanceDevices(summarizeBy&#x3D;&#39;#{summarize_by}&#39;)")
+      |> url(
+        "/deviceManagement/userExperienceAnalyticsDevicePerformance/summarizeDevicePerformanceDevices(summarizeBy&#x3D;&#39;#{summarize_by}&#39;)"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -269,8 +331,18 @@ defmodule MicrosoftGraph.Api.DeviceManagementFunctions do
   - `{:ok, MicrosoftGraph.Model.DeviceManagementUserExperienceAnalyticsSummarizeWorkFromAnywhereDevices2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_user_experience_analytics_summarize_work_from_anywhere_devices(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.DeviceManagementUserExperienceAnalyticsSummarizeWorkFromAnywhereDevices2XxResponse.t} | {:error, Tesla.Env.t}
-  def device_management_user_experience_analytics_summarize_work_from_anywhere_devices(connection, _opts \\ []) do
+  @spec device_management_user_experience_analytics_summarize_work_from_anywhere_devices(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.DeviceManagementUserExperienceAnalyticsSummarizeWorkFromAnywhereDevices2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_user_experience_analytics_summarize_work_from_anywhere_devices(
+        connection,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
@@ -280,7 +352,8 @@ defmodule MicrosoftGraph.Api.DeviceManagementFunctions do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.DeviceManagementUserExperienceAnalyticsSummarizeWorkFromAnywhereDevices2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.DeviceManagementUserExperienceAnalyticsSummarizeWorkFromAnywhereDevices2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -300,12 +373,26 @@ defmodule MicrosoftGraph.Api.DeviceManagementFunctions do
   - `{:ok, MicrosoftGraph.Model.DrivesDriveListContentTypesContentTypeIsPublished2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_verify_windows_enrollment_auto_discovery(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.DrivesDriveListContentTypesContentTypeIsPublished2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_verify_windows_enrollment_auto_discovery(connection, domain_name, _opts \\ []) do
+  @spec device_management_verify_windows_enrollment_auto_discovery(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.DrivesDriveListContentTypesContentTypeIsPublished2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_verify_windows_enrollment_auto_discovery(
+        connection,
+        domain_name,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/deviceManagement/verifyWindowsEnrollmentAutoDiscovery(domainName&#x3D;&#39;#{domain_name}&#39;)")
+      |> url(
+        "/deviceManagement/verifyWindowsEnrollmentAutoDiscovery(domainName&#x3D;&#39;#{domain_name}&#39;)"
+      )
       |> Enum.into([])
 
     connection

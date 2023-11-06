@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphConvertIdResult do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,17 +15,21 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphConvertIdResult do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :errorDetails => MicrosoftGraph.Model.MicrosoftGraphConvertIdResultErrorDetails.t | nil,
-    :sourceId => String.t | nil,
-    :targetId => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :errorDetails =>
+            MicrosoftGraph.Model.MicrosoftGraphConvertIdResultErrorDetails.t() | nil,
+          :sourceId => String.t() | nil,
+          :targetId => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:errorDetails, :struct, MicrosoftGraph.Model.MicrosoftGraphConvertIdResultErrorDetails)
+    |> Deserializer.deserialize(
+      :errorDetails,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphConvertIdResultErrorDetails
+    )
   end
 end
-

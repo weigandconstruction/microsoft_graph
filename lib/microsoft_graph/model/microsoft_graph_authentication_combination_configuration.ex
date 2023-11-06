@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAuthenticationCombinationConfiguration do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,20 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAuthenticationCombinationConfigurat
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :appliesToCombinations => [MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodModes.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :appliesToCombinations =>
+            [MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodModes.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:appliesToCombinations, :list, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodModes)
+    |> Deserializer.deserialize(
+      :appliesToCombinations,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodModes
+    )
   end
 end
-

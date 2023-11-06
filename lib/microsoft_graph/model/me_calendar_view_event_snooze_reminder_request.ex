@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MeCalendarViewEventSnoozeReminderRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,14 +12,17 @@ defmodule MicrosoftGraph.Model.MeCalendarViewEventSnoozeReminderRequest do
   ]
 
   @type t :: %__MODULE__{
-    :NewReminderTime => MicrosoftGraph.Model.MicrosoftGraphDateTimeTimeZone.t | nil
-  }
+          :NewReminderTime => MicrosoftGraph.Model.MicrosoftGraphDateTimeTimeZone.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:NewReminderTime, :struct, MicrosoftGraph.Model.MicrosoftGraphDateTimeTimeZone)
+    |> Deserializer.deserialize(
+      :NewReminderTime,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphDateTimeTimeZone
+    )
   end
 end
-

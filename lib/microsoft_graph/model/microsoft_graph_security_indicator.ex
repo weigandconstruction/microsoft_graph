@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityIndicator do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,18 +15,25 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityIndicator do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :artifact => MicrosoftGraph.Model.MicrosoftGraphSecurityArtifact.t | nil,
-    :source => MicrosoftGraph.Model.MicrosoftGraphSecurityIndicatorSource.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :artifact => MicrosoftGraph.Model.MicrosoftGraphSecurityArtifact.t() | nil,
+          :source => MicrosoftGraph.Model.MicrosoftGraphSecurityIndicatorSource.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:artifact, :struct, MicrosoftGraph.Model.MicrosoftGraphSecurityArtifact)
-     |> Deserializer.deserialize(:source, :struct, MicrosoftGraph.Model.MicrosoftGraphSecurityIndicatorSource)
+    |> Deserializer.deserialize(
+      :artifact,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityArtifact
+    )
+    |> Deserializer.deserialize(
+      :source,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityIndicatorSource
+    )
   end
 end
-

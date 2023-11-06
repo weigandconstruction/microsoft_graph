@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphEducationPointsOutcome do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,22 +17,33 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphEducationPointsOutcome do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :lastModifiedBy => MicrosoftGraph.Model.EducationOutcomeLastModifiedBy.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :points => MicrosoftGraph.Model.EducationPointsOutcomePoints.t | nil,
-    :publishedPoints => MicrosoftGraph.Model.EducationPointsOutcomePublishedPoints.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :lastModifiedBy => MicrosoftGraph.Model.EducationOutcomeLastModifiedBy.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :points => MicrosoftGraph.Model.EducationPointsOutcomePoints.t() | nil,
+          :publishedPoints => MicrosoftGraph.Model.EducationPointsOutcomePublishedPoints.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:lastModifiedBy, :struct, MicrosoftGraph.Model.EducationOutcomeLastModifiedBy)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:points, :struct, MicrosoftGraph.Model.EducationPointsOutcomePoints)
-     |> Deserializer.deserialize(:publishedPoints, :struct, MicrosoftGraph.Model.EducationPointsOutcomePublishedPoints)
+    |> Deserializer.deserialize(
+      :lastModifiedBy,
+      :struct,
+      MicrosoftGraph.Model.EducationOutcomeLastModifiedBy
+    )
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :points,
+      :struct,
+      MicrosoftGraph.Model.EducationPointsOutcomePoints
+    )
+    |> Deserializer.deserialize(
+      :publishedPoints,
+      :struct,
+      MicrosoftGraph.Model.EducationPointsOutcomePublishedPoints
+    )
   end
 end
-

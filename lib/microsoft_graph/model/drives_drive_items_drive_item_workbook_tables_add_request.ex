@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookTablesAddRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,12 +13,11 @@ defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookTablesAddRequest
   ]
 
   @type t :: %__MODULE__{
-    :address => String.t | nil,
-    :hasHeaders => boolean() | nil
-  }
+          :address => String.t() | nil,
+          :hasHeaders => boolean() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

@@ -14,16 +14,15 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphWindowsInformationProtectionIpRange
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :displayName => String.t | nil,
-    :ranges => [MicrosoftGraph.Model.MicrosoftGraphIpRange.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :displayName => String.t() | nil,
+          :ranges => [MicrosoftGraph.Model.MicrosoftGraphIpRange.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:ranges, :list, MicrosoftGraph.Model.MicrosoftGraphIpRange)
+    |> Deserializer.deserialize(:ranges, :list, MicrosoftGraph.Model.MicrosoftGraphIpRange)
   end
 end
-

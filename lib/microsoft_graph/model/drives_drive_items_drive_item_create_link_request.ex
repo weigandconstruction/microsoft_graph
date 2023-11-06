@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemCreateLinkRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,19 +17,18 @@ defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemCreateLinkRequest do
   ]
 
   @type t :: %__MODULE__{
-    :expirationDateTime => DateTime.t | nil,
-    :message => String.t | nil,
-    :password => String.t | nil,
-    :retainInheritedPermissions => boolean() | nil,
-    :scope => String.t | nil,
-    :type => String.t | nil
-  }
+          :expirationDateTime => DateTime.t() | nil,
+          :message => String.t() | nil,
+          :password => String.t() | nil,
+          :retainInheritedPermissions => boolean() | nil,
+          :scope => String.t() | nil,
+          :type => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:expirationDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:expirationDateTime, :datetime, nil)
   end
 end
-

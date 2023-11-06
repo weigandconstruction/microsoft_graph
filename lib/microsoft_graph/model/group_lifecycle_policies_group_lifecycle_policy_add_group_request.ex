@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.GroupLifecyclePoliciesGroupLifecyclePolicyAddGroupRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,11 +12,10 @@ defmodule MicrosoftGraph.Model.GroupLifecyclePoliciesGroupLifecyclePolicyAddGrou
   ]
 
   @type t :: %__MODULE__{
-    :groupId => String.t | nil
-  }
+          :groupId => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

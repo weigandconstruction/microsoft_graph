@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphScoredEmailAddress do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,19 +16,28 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphScoredEmailAddress do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :address => String.t | nil,
-    :itemId => String.t | nil,
-    :relevanceScore => MicrosoftGraph.Model.MicrosoftGraphScoredEmailAddressRelevanceScore.t | nil,
-    :selectionLikelihood => MicrosoftGraph.Model.MicrosoftGraphScoredEmailAddressSelectionLikelihood.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :address => String.t() | nil,
+          :itemId => String.t() | nil,
+          :relevanceScore =>
+            MicrosoftGraph.Model.MicrosoftGraphScoredEmailAddressRelevanceScore.t() | nil,
+          :selectionLikelihood =>
+            MicrosoftGraph.Model.MicrosoftGraphScoredEmailAddressSelectionLikelihood.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:relevanceScore, :struct, MicrosoftGraph.Model.MicrosoftGraphScoredEmailAddressRelevanceScore)
-     |> Deserializer.deserialize(:selectionLikelihood, :struct, MicrosoftGraph.Model.MicrosoftGraphScoredEmailAddressSelectionLikelihood)
+    |> Deserializer.deserialize(
+      :relevanceScore,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphScoredEmailAddressRelevanceScore
+    )
+    |> Deserializer.deserialize(
+      :selectionLikelihood,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphScoredEmailAddressSelectionLikelihood
+    )
   end
 end
-

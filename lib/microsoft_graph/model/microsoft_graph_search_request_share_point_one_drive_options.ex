@@ -13,15 +13,19 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSearchRequestSharePointOneDriveOpti
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :includeContent => MicrosoftGraph.Model.MicrosoftGraphSharePointOneDriveOptionsIncludeContent.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :includeContent =>
+            MicrosoftGraph.Model.MicrosoftGraphSharePointOneDriveOptionsIncludeContent.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:includeContent, :struct, MicrosoftGraph.Model.MicrosoftGraphSharePointOneDriveOptionsIncludeContent)
+    |> Deserializer.deserialize(
+      :includeContent,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSharePointOneDriveOptionsIncludeContent
+    )
   end
 end
-

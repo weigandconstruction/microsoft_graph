@@ -23,8 +23,19 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedAppStatus do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphManagedAppStatus.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_create_managed_app_statuses(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphManagedAppStatus.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphManagedAppStatus.t} | {:error, Tesla.Env.t}
-  def device_app_management_create_managed_app_statuses(connection, microsoft_graph_managed_app_status, _opts \\ []) do
+  @spec device_app_management_create_managed_app_statuses(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphManagedAppStatus.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphManagedAppStatus.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_create_managed_app_statuses(
+        connection,
+        microsoft_graph_managed_app_status,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -56,8 +67,19 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedAppStatus do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_delete_managed_app_statuses(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_app_management_delete_managed_app_statuses(connection, managed_app_status_id, opts \\ []) do
+  @spec device_app_management_delete_managed_app_statuses(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_delete_managed_app_statuses(
+        connection,
+        managed_app_status_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -95,8 +117,15 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedAppStatus do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphManagedAppStatus.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_get_managed_app_statuses(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphManagedAppStatus.t} | {:error, Tesla.Env.t}
-  def device_app_management_get_managed_app_statuses(connection, managed_app_status_id, opts \\ []) do
+  @spec device_app_management_get_managed_app_statuses(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphManagedAppStatus.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_get_managed_app_statuses(
+        connection,
+        managed_app_status_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -140,7 +169,10 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedAppStatus do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphManagedAppStatusCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_list_managed_app_statuses(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphManagedAppStatusCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec device_app_management_list_managed_app_statuses(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphManagedAppStatusCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def device_app_management_list_managed_app_statuses(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -184,7 +216,10 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedAppStatus do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_managed_app_statuses_get_count1655(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec device_app_management_managed_app_statuses_get_count1655(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def device_app_management_managed_app_statuses_get_count1655(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -222,8 +257,21 @@ defmodule MicrosoftGraph.Api.DeviceAppManagementManagedAppStatus do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphManagedAppStatus.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_app_management_update_managed_app_statuses(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphManagedAppStatus.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphManagedAppStatus.t} | {:error, Tesla.Env.t}
-  def device_app_management_update_managed_app_statuses(connection, managed_app_status_id, microsoft_graph_managed_app_status, _opts \\ []) do
+  @spec device_app_management_update_managed_app_statuses(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphManagedAppStatus.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphManagedAppStatus.t()}
+          | {:error, Tesla.Env.t()}
+  def device_app_management_update_managed_app_statuses(
+        connection,
+        managed_app_status_id,
+        microsoft_graph_managed_app_status,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

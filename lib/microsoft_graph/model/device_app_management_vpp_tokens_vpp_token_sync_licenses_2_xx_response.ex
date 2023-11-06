@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DeviceAppManagementVppTokensVppTokenSyncLicenses2XxResponse do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -24,31 +24,38 @@ defmodule MicrosoftGraph.Model.DeviceAppManagementVppTokensVppTokenSyncLicenses2
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :appleId => String.t | nil,
-    :automaticallyUpdateApps => boolean() | nil,
-    :countryOrRegion => String.t | nil,
-    :expirationDateTime => DateTime.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :lastSyncDateTime => DateTime.t | nil,
-    :lastSyncStatus => MicrosoftGraph.Model.MicrosoftGraphVppTokenSyncStatus.t | nil,
-    :organizationName => String.t | nil,
-    :state => MicrosoftGraph.Model.MicrosoftGraphVppTokenState.t | nil,
-    :token => String.t | nil,
-    :vppTokenAccountType => MicrosoftGraph.Model.MicrosoftGraphVppTokenAccountType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :appleId => String.t() | nil,
+          :automaticallyUpdateApps => boolean() | nil,
+          :countryOrRegion => String.t() | nil,
+          :expirationDateTime => DateTime.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :lastSyncDateTime => DateTime.t() | nil,
+          :lastSyncStatus => MicrosoftGraph.Model.MicrosoftGraphVppTokenSyncStatus.t() | nil,
+          :organizationName => String.t() | nil,
+          :state => MicrosoftGraph.Model.MicrosoftGraphVppTokenState.t() | nil,
+          :token => String.t() | nil,
+          :vppTokenAccountType => MicrosoftGraph.Model.MicrosoftGraphVppTokenAccountType.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:expirationDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastSyncDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastSyncStatus, :struct, MicrosoftGraph.Model.MicrosoftGraphVppTokenSyncStatus)
-     |> Deserializer.deserialize(:state, :struct, MicrosoftGraph.Model.MicrosoftGraphVppTokenState)
-     |> Deserializer.deserialize(:vppTokenAccountType, :struct, MicrosoftGraph.Model.MicrosoftGraphVppTokenAccountType)
+    |> Deserializer.deserialize(:expirationDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastSyncDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :lastSyncStatus,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphVppTokenSyncStatus
+    )
+    |> Deserializer.deserialize(:state, :struct, MicrosoftGraph.Model.MicrosoftGraphVppTokenState)
+    |> Deserializer.deserialize(
+      :vppTokenAccountType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphVppTokenAccountType
+    )
   end
 end
-

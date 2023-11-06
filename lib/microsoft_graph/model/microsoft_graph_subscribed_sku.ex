@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSubscribedSku do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -23,26 +23,33 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSubscribedSku do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :accountId => String.t | nil,
-    :accountName => String.t | nil,
-    :appliesTo => String.t | nil,
-    :capabilityStatus => String.t | nil,
-    :consumedUnits => integer() | nil,
-    :prepaidUnits => MicrosoftGraph.Model.SubscribedSkuPrepaidUnits.t | nil,
-    :servicePlans => [MicrosoftGraph.Model.MicrosoftGraphServicePlanInfo.t] | nil,
-    :skuId => String.t | nil,
-    :skuPartNumber => String.t | nil,
-    :subscriptionIds => [String.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :accountId => String.t() | nil,
+          :accountName => String.t() | nil,
+          :appliesTo => String.t() | nil,
+          :capabilityStatus => String.t() | nil,
+          :consumedUnits => integer() | nil,
+          :prepaidUnits => MicrosoftGraph.Model.SubscribedSkuPrepaidUnits.t() | nil,
+          :servicePlans => [MicrosoftGraph.Model.MicrosoftGraphServicePlanInfo.t()] | nil,
+          :skuId => String.t() | nil,
+          :skuPartNumber => String.t() | nil,
+          :subscriptionIds => [String.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:prepaidUnits, :struct, MicrosoftGraph.Model.SubscribedSkuPrepaidUnits)
-     |> Deserializer.deserialize(:servicePlans, :list, MicrosoftGraph.Model.MicrosoftGraphServicePlanInfo)
+    |> Deserializer.deserialize(
+      :prepaidUnits,
+      :struct,
+      MicrosoftGraph.Model.SubscribedSkuPrepaidUnits
+    )
+    |> Deserializer.deserialize(
+      :servicePlans,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphServicePlanInfo
+    )
   end
 end
-

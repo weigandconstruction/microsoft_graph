@@ -24,33 +24,45 @@ defmodule MicrosoftGraph.Model.SharedDriveItemPermission do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :expirationDateTime => DateTime.t | nil,
-    :grantedTo => MicrosoftGraph.Model.CaseLastModifiedBy.t | nil,
-    :grantedToIdentities => [MicrosoftGraph.Model.CaseLastModifiedBy.t] | nil,
-    :grantedToIdentitiesV2 => [MicrosoftGraph.Model.PermissionGrantedToIdentitiesV2Inner.t] | nil,
-    :grantedToV2 => MicrosoftGraph.Model.PermissionGrantedToV2.t | nil,
-    :hasPassword => boolean() | nil,
-    :inheritedFrom => MicrosoftGraph.Model.PermissionInheritedFrom.t | nil,
-    :invitation => MicrosoftGraph.Model.PermissionInvitation.t | nil,
-    :link => MicrosoftGraph.Model.PermissionLink.t | nil,
-    :roles => [String.t] | nil,
-    :shareId => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :expirationDateTime => DateTime.t() | nil,
+          :grantedTo => MicrosoftGraph.Model.CaseLastModifiedBy.t() | nil,
+          :grantedToIdentities => [MicrosoftGraph.Model.CaseLastModifiedBy.t()] | nil,
+          :grantedToIdentitiesV2 =>
+            [MicrosoftGraph.Model.PermissionGrantedToIdentitiesV2Inner.t()] | nil,
+          :grantedToV2 => MicrosoftGraph.Model.PermissionGrantedToV2.t() | nil,
+          :hasPassword => boolean() | nil,
+          :inheritedFrom => MicrosoftGraph.Model.PermissionInheritedFrom.t() | nil,
+          :invitation => MicrosoftGraph.Model.PermissionInvitation.t() | nil,
+          :link => MicrosoftGraph.Model.PermissionLink.t() | nil,
+          :roles => [String.t()] | nil,
+          :shareId => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:expirationDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:grantedTo, :struct, MicrosoftGraph.Model.CaseLastModifiedBy)
-     |> Deserializer.deserialize(:grantedToIdentities, :list, MicrosoftGraph.Model.CaseLastModifiedBy)
-     |> Deserializer.deserialize(:grantedToIdentitiesV2, :list, MicrosoftGraph.Model.PermissionGrantedToIdentitiesV2Inner)
-     |> Deserializer.deserialize(:grantedToV2, :struct, MicrosoftGraph.Model.PermissionGrantedToV2)
-     |> Deserializer.deserialize(:inheritedFrom, :struct, MicrosoftGraph.Model.PermissionInheritedFrom)
-     |> Deserializer.deserialize(:invitation, :struct, MicrosoftGraph.Model.PermissionInvitation)
-     |> Deserializer.deserialize(:link, :struct, MicrosoftGraph.Model.PermissionLink)
+    |> Deserializer.deserialize(:expirationDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:grantedTo, :struct, MicrosoftGraph.Model.CaseLastModifiedBy)
+    |> Deserializer.deserialize(
+      :grantedToIdentities,
+      :list,
+      MicrosoftGraph.Model.CaseLastModifiedBy
+    )
+    |> Deserializer.deserialize(
+      :grantedToIdentitiesV2,
+      :list,
+      MicrosoftGraph.Model.PermissionGrantedToIdentitiesV2Inner
+    )
+    |> Deserializer.deserialize(:grantedToV2, :struct, MicrosoftGraph.Model.PermissionGrantedToV2)
+    |> Deserializer.deserialize(
+      :inheritedFrom,
+      :struct,
+      MicrosoftGraph.Model.PermissionInheritedFrom
+    )
+    |> Deserializer.deserialize(:invitation, :struct, MicrosoftGraph.Model.PermissionInvitation)
+    |> Deserializer.deserialize(:link, :struct, MicrosoftGraph.Model.PermissionLink)
   end
 end
-

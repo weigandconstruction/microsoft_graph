@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSearchResponseHitsContainersInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,19 +16,27 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSearchResponseHitsContainersInner d
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :aggregations => [MicrosoftGraph.Model.MicrosoftGraphSearchHitsContainerAggregationsInner.t] | nil,
-    :hits => [MicrosoftGraph.Model.MicrosoftGraphSearchHitsContainerHitsInner.t] | nil,
-    :moreResultsAvailable => boolean() | nil,
-    :total => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :aggregations =>
+            [MicrosoftGraph.Model.MicrosoftGraphSearchHitsContainerAggregationsInner.t()] | nil,
+          :hits => [MicrosoftGraph.Model.MicrosoftGraphSearchHitsContainerHitsInner.t()] | nil,
+          :moreResultsAvailable => boolean() | nil,
+          :total => integer() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:aggregations, :list, MicrosoftGraph.Model.MicrosoftGraphSearchHitsContainerAggregationsInner)
-     |> Deserializer.deserialize(:hits, :list, MicrosoftGraph.Model.MicrosoftGraphSearchHitsContainerHitsInner)
+    |> Deserializer.deserialize(
+      :aggregations,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSearchHitsContainerAggregationsInner
+    )
+    |> Deserializer.deserialize(
+      :hits,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSearchHitsContainerHitsInner
+    )
   end
 end
-

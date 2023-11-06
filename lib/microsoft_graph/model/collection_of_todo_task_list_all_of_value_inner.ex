@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.CollectionOfTodoTaskListAllOfValueInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,23 +19,26 @@ defmodule MicrosoftGraph.Model.CollectionOfTodoTaskListAllOfValueInner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :displayName => String.t | nil,
-    :extensions => [MicrosoftGraph.Model.MicrosoftGraphExtension.t] | nil,
-    :isOwner => boolean() | nil,
-    :isShared => boolean() | nil,
-    :tasks => [MicrosoftGraph.Model.MicrosoftGraphTodoTask.t] | nil,
-    :wellknownListName => MicrosoftGraph.Model.MicrosoftGraphWellknownListName.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :displayName => String.t() | nil,
+          :extensions => [MicrosoftGraph.Model.MicrosoftGraphExtension.t()] | nil,
+          :isOwner => boolean() | nil,
+          :isShared => boolean() | nil,
+          :tasks => [MicrosoftGraph.Model.MicrosoftGraphTodoTask.t()] | nil,
+          :wellknownListName => MicrosoftGraph.Model.MicrosoftGraphWellknownListName.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:extensions, :list, MicrosoftGraph.Model.MicrosoftGraphExtension)
-     |> Deserializer.deserialize(:tasks, :list, MicrosoftGraph.Model.MicrosoftGraphTodoTask)
-     |> Deserializer.deserialize(:wellknownListName, :struct, MicrosoftGraph.Model.MicrosoftGraphWellknownListName)
+    |> Deserializer.deserialize(:extensions, :list, MicrosoftGraph.Model.MicrosoftGraphExtension)
+    |> Deserializer.deserialize(:tasks, :list, MicrosoftGraph.Model.MicrosoftGraphTodoTask)
+    |> Deserializer.deserialize(
+      :wellknownListName,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphWellknownListName
+    )
   end
 end
-

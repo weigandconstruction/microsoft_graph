@@ -23,8 +23,19 @@ defmodule MicrosoftGraph.Api.DirectoryObjectsDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_objects_directory_object_create_directory_object(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_objects_directory_object_create_directory_object(connection, microsoft_graph_directory_object, _opts \\ []) do
+  @spec directory_objects_directory_object_create_directory_object(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_objects_directory_object_create_directory_object(
+        connection,
+        microsoft_graph_directory_object,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -57,8 +68,19 @@ defmodule MicrosoftGraph.Api.DirectoryObjectsDirectoryObject do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_objects_directory_object_delete_directory_object(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_objects_directory_object_delete_directory_object(connection, directory_object_id, opts \\ []) do
+  @spec directory_objects_directory_object_delete_directory_object(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_objects_directory_object_delete_directory_object(
+        connection,
+        directory_object_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -96,8 +118,19 @@ defmodule MicrosoftGraph.Api.DirectoryObjectsDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_objects_directory_object_get_directory_object(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_objects_directory_object_get_directory_object(connection, directory_object_id, opts \\ []) do
+  @spec directory_objects_directory_object_get_directory_object(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_objects_directory_object_get_directory_object(
+        connection,
+        directory_object_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -141,7 +174,10 @@ defmodule MicrosoftGraph.Api.DirectoryObjectsDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_objects_directory_object_list_directory_object(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec directory_objects_directory_object_list_directory_object(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def directory_objects_directory_object_list_directory_object(connection, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,
@@ -186,8 +222,21 @@ defmodule MicrosoftGraph.Api.DirectoryObjectsDirectoryObject do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_objects_directory_object_update_directory_object(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_objects_directory_object_update_directory_object(connection, directory_object_id, microsoft_graph_directory_object, _opts \\ []) do
+  @spec directory_objects_directory_object_update_directory_object(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_objects_directory_object_update_directory_object(
+        connection,
+        directory_object_id,
+        microsoft_graph_directory_object,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -220,7 +269,10 @@ defmodule MicrosoftGraph.Api.DirectoryObjectsDirectoryObject do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_objects_get_count3210(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec directory_objects_get_count3210(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def directory_objects_get_count3210(connection, opts \\ []) do
     optional_params = %{
       :ConsistencyLevel => :headers,

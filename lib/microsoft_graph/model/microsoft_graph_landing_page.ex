@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphLandingPage do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -24,32 +24,39 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphLandingPage do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :createdBy => MicrosoftGraph.Model.LandingPageCreatedBy.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :description => String.t | nil,
-    :details => [MicrosoftGraph.Model.MicrosoftGraphLandingPageDetail.t] | nil,
-    :displayName => String.t | nil,
-    :lastModifiedBy => MicrosoftGraph.Model.LandingPageLastModifiedBy.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :locale => String.t | nil,
-    :source => MicrosoftGraph.Model.EndUserNotificationSource.t | nil,
-    :status => MicrosoftGraph.Model.LandingPageStatus.t | nil,
-    :supportedLocales => [String.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :createdBy => MicrosoftGraph.Model.LandingPageCreatedBy.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :details => [MicrosoftGraph.Model.MicrosoftGraphLandingPageDetail.t()] | nil,
+          :displayName => String.t() | nil,
+          :lastModifiedBy => MicrosoftGraph.Model.LandingPageLastModifiedBy.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :locale => String.t() | nil,
+          :source => MicrosoftGraph.Model.EndUserNotificationSource.t() | nil,
+          :status => MicrosoftGraph.Model.LandingPageStatus.t() | nil,
+          :supportedLocales => [String.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.LandingPageCreatedBy)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:details, :list, MicrosoftGraph.Model.MicrosoftGraphLandingPageDetail)
-     |> Deserializer.deserialize(:lastModifiedBy, :struct, MicrosoftGraph.Model.LandingPageLastModifiedBy)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:source, :struct, MicrosoftGraph.Model.EndUserNotificationSource)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.LandingPageStatus)
+    |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.LandingPageCreatedBy)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :details,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphLandingPageDetail
+    )
+    |> Deserializer.deserialize(
+      :lastModifiedBy,
+      :struct,
+      MicrosoftGraph.Model.LandingPageLastModifiedBy
+    )
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:source, :struct, MicrosoftGraph.Model.EndUserNotificationSource)
+    |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.LandingPageStatus)
   end
 end
-

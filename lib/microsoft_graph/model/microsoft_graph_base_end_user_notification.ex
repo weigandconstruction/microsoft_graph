@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphBaseEndUserNotification do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,21 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphBaseEndUserNotification do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :defaultLanguage => String.t | nil,
-    :endUserNotification => MicrosoftGraph.Model.MicrosoftGraphBaseEndUserNotificationEndUserNotification.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :defaultLanguage => String.t() | nil,
+          :endUserNotification =>
+            MicrosoftGraph.Model.MicrosoftGraphBaseEndUserNotificationEndUserNotification.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:endUserNotification, :struct, MicrosoftGraph.Model.MicrosoftGraphBaseEndUserNotificationEndUserNotification)
+    |> Deserializer.deserialize(
+      :endUserNotification,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphBaseEndUserNotificationEndUserNotification
+    )
   end
 end
-

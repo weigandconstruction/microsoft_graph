@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphPrinterShareViewpoint do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,15 +13,14 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphPrinterShareViewpoint do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :lastUsedDateTime => DateTime.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :lastUsedDateTime => DateTime.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:lastUsedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastUsedDateTime, :datetime, nil)
   end
 end
-

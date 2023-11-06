@@ -24,7 +24,10 @@ defmodule MicrosoftGraph.Api.SharesPermission do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec shares_delete_permission(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec shares_delete_permission(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def shares_delete_permission(connection, shared_drive_item_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -63,7 +66,10 @@ defmodule MicrosoftGraph.Api.SharesPermission do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPermission.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec shares_get_permission(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPermission.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec shares_get_permission(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPermission.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def shares_get_permission(connection, shared_drive_item_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -101,8 +107,21 @@ defmodule MicrosoftGraph.Api.SharesPermission do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPermission.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec shares_update_permission(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphPermission.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPermission.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def shares_update_permission(connection, shared_drive_item_id, microsoft_graph_permission, _opts \\ []) do
+  @spec shares_update_permission(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPermission.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPermission.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def shares_update_permission(
+        connection,
+        shared_drive_item_id,
+        microsoft_graph_permission,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

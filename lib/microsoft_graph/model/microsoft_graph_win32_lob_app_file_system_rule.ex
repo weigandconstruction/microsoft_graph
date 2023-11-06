@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphWin32LobAppFileSystemRule do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,23 +19,35 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphWin32LobAppFileSystemRule do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :ruleType => MicrosoftGraph.Model.MicrosoftGraphWin32LobAppRuleType.t | nil,
-    :check32BitOn64System => boolean() | nil,
-    :comparisonValue => String.t | nil,
-    :fileOrFolderName => String.t | nil,
-    :operationType => MicrosoftGraph.Model.MicrosoftGraphWin32LobAppFileSystemOperationType.t | nil,
-    :operator => MicrosoftGraph.Model.MicrosoftGraphWin32LobAppRuleOperator.t | nil,
-    :path => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :ruleType => MicrosoftGraph.Model.MicrosoftGraphWin32LobAppRuleType.t() | nil,
+          :check32BitOn64System => boolean() | nil,
+          :comparisonValue => String.t() | nil,
+          :fileOrFolderName => String.t() | nil,
+          :operationType =>
+            MicrosoftGraph.Model.MicrosoftGraphWin32LobAppFileSystemOperationType.t() | nil,
+          :operator => MicrosoftGraph.Model.MicrosoftGraphWin32LobAppRuleOperator.t() | nil,
+          :path => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:ruleType, :struct, MicrosoftGraph.Model.MicrosoftGraphWin32LobAppRuleType)
-     |> Deserializer.deserialize(:operationType, :struct, MicrosoftGraph.Model.MicrosoftGraphWin32LobAppFileSystemOperationType)
-     |> Deserializer.deserialize(:operator, :struct, MicrosoftGraph.Model.MicrosoftGraphWin32LobAppRuleOperator)
+    |> Deserializer.deserialize(
+      :ruleType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphWin32LobAppRuleType
+    )
+    |> Deserializer.deserialize(
+      :operationType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphWin32LobAppFileSystemOperationType
+    )
+    |> Deserializer.deserialize(
+      :operator,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphWin32LobAppRuleOperator
+    )
   end
 end
-

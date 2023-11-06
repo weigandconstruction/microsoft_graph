@@ -32,43 +32,72 @@ defmodule MicrosoftGraph.Model.TeamSchedule do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :enabled => boolean() | nil,
-    :offerShiftRequests => [MicrosoftGraph.Model.MicrosoftGraphOfferShiftRequest.t] | nil,
-    :offerShiftRequestsEnabled => boolean() | nil,
-    :openShiftChangeRequests => [MicrosoftGraph.Model.MicrosoftGraphOpenShiftChangeRequest.t] | nil,
-    :openShifts => [MicrosoftGraph.Model.MicrosoftGraphOpenShift.t] | nil,
-    :openShiftsEnabled => boolean() | nil,
-    :provisionStatus => MicrosoftGraph.Model.ScheduleProvisionStatus.t | nil,
-    :provisionStatusCode => String.t | nil,
-    :schedulingGroups => [MicrosoftGraph.Model.MicrosoftGraphSchedulingGroup.t] | nil,
-    :shifts => [MicrosoftGraph.Model.MicrosoftGraphShift.t] | nil,
-    :swapShiftsChangeRequests => [MicrosoftGraph.Model.MicrosoftGraphSwapShiftsChangeRequest.t] | nil,
-    :swapShiftsRequestsEnabled => boolean() | nil,
-    :timeClockEnabled => boolean() | nil,
-    :timeOffReasons => [MicrosoftGraph.Model.MicrosoftGraphTimeOffReason.t] | nil,
-    :timeOffRequests => [MicrosoftGraph.Model.MicrosoftGraphTimeOffRequest.t] | nil,
-    :timeOffRequestsEnabled => boolean() | nil,
-    :timeZone => String.t | nil,
-    :timesOff => [MicrosoftGraph.Model.MicrosoftGraphTimeOff.t] | nil,
-    :workforceIntegrationIds => [String.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :enabled => boolean() | nil,
+          :offerShiftRequests => [MicrosoftGraph.Model.MicrosoftGraphOfferShiftRequest.t()] | nil,
+          :offerShiftRequestsEnabled => boolean() | nil,
+          :openShiftChangeRequests =>
+            [MicrosoftGraph.Model.MicrosoftGraphOpenShiftChangeRequest.t()] | nil,
+          :openShifts => [MicrosoftGraph.Model.MicrosoftGraphOpenShift.t()] | nil,
+          :openShiftsEnabled => boolean() | nil,
+          :provisionStatus => MicrosoftGraph.Model.ScheduleProvisionStatus.t() | nil,
+          :provisionStatusCode => String.t() | nil,
+          :schedulingGroups => [MicrosoftGraph.Model.MicrosoftGraphSchedulingGroup.t()] | nil,
+          :shifts => [MicrosoftGraph.Model.MicrosoftGraphShift.t()] | nil,
+          :swapShiftsChangeRequests =>
+            [MicrosoftGraph.Model.MicrosoftGraphSwapShiftsChangeRequest.t()] | nil,
+          :swapShiftsRequestsEnabled => boolean() | nil,
+          :timeClockEnabled => boolean() | nil,
+          :timeOffReasons => [MicrosoftGraph.Model.MicrosoftGraphTimeOffReason.t()] | nil,
+          :timeOffRequests => [MicrosoftGraph.Model.MicrosoftGraphTimeOffRequest.t()] | nil,
+          :timeOffRequestsEnabled => boolean() | nil,
+          :timeZone => String.t() | nil,
+          :timesOff => [MicrosoftGraph.Model.MicrosoftGraphTimeOff.t()] | nil,
+          :workforceIntegrationIds => [String.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:offerShiftRequests, :list, MicrosoftGraph.Model.MicrosoftGraphOfferShiftRequest)
-     |> Deserializer.deserialize(:openShiftChangeRequests, :list, MicrosoftGraph.Model.MicrosoftGraphOpenShiftChangeRequest)
-     |> Deserializer.deserialize(:openShifts, :list, MicrosoftGraph.Model.MicrosoftGraphOpenShift)
-     |> Deserializer.deserialize(:provisionStatus, :struct, MicrosoftGraph.Model.ScheduleProvisionStatus)
-     |> Deserializer.deserialize(:schedulingGroups, :list, MicrosoftGraph.Model.MicrosoftGraphSchedulingGroup)
-     |> Deserializer.deserialize(:shifts, :list, MicrosoftGraph.Model.MicrosoftGraphShift)
-     |> Deserializer.deserialize(:swapShiftsChangeRequests, :list, MicrosoftGraph.Model.MicrosoftGraphSwapShiftsChangeRequest)
-     |> Deserializer.deserialize(:timeOffReasons, :list, MicrosoftGraph.Model.MicrosoftGraphTimeOffReason)
-     |> Deserializer.deserialize(:timeOffRequests, :list, MicrosoftGraph.Model.MicrosoftGraphTimeOffRequest)
-     |> Deserializer.deserialize(:timesOff, :list, MicrosoftGraph.Model.MicrosoftGraphTimeOff)
+    |> Deserializer.deserialize(
+      :offerShiftRequests,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphOfferShiftRequest
+    )
+    |> Deserializer.deserialize(
+      :openShiftChangeRequests,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphOpenShiftChangeRequest
+    )
+    |> Deserializer.deserialize(:openShifts, :list, MicrosoftGraph.Model.MicrosoftGraphOpenShift)
+    |> Deserializer.deserialize(
+      :provisionStatus,
+      :struct,
+      MicrosoftGraph.Model.ScheduleProvisionStatus
+    )
+    |> Deserializer.deserialize(
+      :schedulingGroups,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSchedulingGroup
+    )
+    |> Deserializer.deserialize(:shifts, :list, MicrosoftGraph.Model.MicrosoftGraphShift)
+    |> Deserializer.deserialize(
+      :swapShiftsChangeRequests,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSwapShiftsChangeRequest
+    )
+    |> Deserializer.deserialize(
+      :timeOffReasons,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphTimeOffReason
+    )
+    |> Deserializer.deserialize(
+      :timeOffRequests,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphTimeOffRequest
+    )
+    |> Deserializer.deserialize(:timesOff, :list, MicrosoftGraph.Model.MicrosoftGraphTimeOff)
   end
 end
-

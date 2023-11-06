@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAttackSimulationTrainingUserCoverage do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,17 +14,30 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAttackSimulationTrainingUserCoverag
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :attackSimulationUser => MicrosoftGraph.Model.MicrosoftGraphAttackSimulationSimulationUserCoverageAttackSimulationUser.t | nil,
-    :userTrainings => [MicrosoftGraph.Model.MicrosoftGraphAttackSimulationTrainingUserCoverageUserTrainingsInner.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :attackSimulationUser =>
+            MicrosoftGraph.Model.MicrosoftGraphAttackSimulationSimulationUserCoverageAttackSimulationUser.t()
+            | nil,
+          :userTrainings =>
+            [
+              MicrosoftGraph.Model.MicrosoftGraphAttackSimulationTrainingUserCoverageUserTrainingsInner.t()
+            ]
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:attackSimulationUser, :struct, MicrosoftGraph.Model.MicrosoftGraphAttackSimulationSimulationUserCoverageAttackSimulationUser)
-     |> Deserializer.deserialize(:userTrainings, :list, MicrosoftGraph.Model.MicrosoftGraphAttackSimulationTrainingUserCoverageUserTrainingsInner)
+    |> Deserializer.deserialize(
+      :attackSimulationUser,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAttackSimulationSimulationUserCoverageAttackSimulationUser
+    )
+    |> Deserializer.deserialize(
+      :userTrainings,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAttackSimulationTrainingUserCoverageUserTrainingsInner
+    )
   end
 end
-

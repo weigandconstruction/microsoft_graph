@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphChat do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -28,41 +28,65 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphChat do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :chatType => MicrosoftGraph.Model.MicrosoftGraphChatType.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :installedApps => [MicrosoftGraph.Model.MicrosoftGraphTeamsAppInstallation.t] | nil,
-    :lastMessagePreview => MicrosoftGraph.Model.ChatLastMessagePreview.t | nil,
-    :lastUpdatedDateTime => DateTime.t | nil,
-    :members => [MicrosoftGraph.Model.MicrosoftGraphConversationMember.t] | nil,
-    :messages => [MicrosoftGraph.Model.MicrosoftGraphChatMessage.t] | nil,
-    :onlineMeetingInfo => MicrosoftGraph.Model.ChatOnlineMeetingInfo.t | nil,
-    :permissionGrants => [MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant.t] | nil,
-    :pinnedMessages => [MicrosoftGraph.Model.MicrosoftGraphPinnedChatMessageInfo.t] | nil,
-    :tabs => [MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t] | nil,
-    :tenantId => String.t | nil,
-    :topic => String.t | nil,
-    :viewpoint => MicrosoftGraph.Model.ChatViewpoint.t | nil,
-    :webUrl => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :chatType => MicrosoftGraph.Model.MicrosoftGraphChatType.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :installedApps => [MicrosoftGraph.Model.MicrosoftGraphTeamsAppInstallation.t()] | nil,
+          :lastMessagePreview => MicrosoftGraph.Model.ChatLastMessagePreview.t() | nil,
+          :lastUpdatedDateTime => DateTime.t() | nil,
+          :members => [MicrosoftGraph.Model.MicrosoftGraphConversationMember.t()] | nil,
+          :messages => [MicrosoftGraph.Model.MicrosoftGraphChatMessage.t()] | nil,
+          :onlineMeetingInfo => MicrosoftGraph.Model.ChatOnlineMeetingInfo.t() | nil,
+          :permissionGrants =>
+            [MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant.t()] | nil,
+          :pinnedMessages => [MicrosoftGraph.Model.MicrosoftGraphPinnedChatMessageInfo.t()] | nil,
+          :tabs => [MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t()] | nil,
+          :tenantId => String.t() | nil,
+          :topic => String.t() | nil,
+          :viewpoint => MicrosoftGraph.Model.ChatViewpoint.t() | nil,
+          :webUrl => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:chatType, :struct, MicrosoftGraph.Model.MicrosoftGraphChatType)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:installedApps, :list, MicrosoftGraph.Model.MicrosoftGraphTeamsAppInstallation)
-     |> Deserializer.deserialize(:lastMessagePreview, :struct, MicrosoftGraph.Model.ChatLastMessagePreview)
-     |> Deserializer.deserialize(:lastUpdatedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:members, :list, MicrosoftGraph.Model.MicrosoftGraphConversationMember)
-     |> Deserializer.deserialize(:messages, :list, MicrosoftGraph.Model.MicrosoftGraphChatMessage)
-     |> Deserializer.deserialize(:onlineMeetingInfo, :struct, MicrosoftGraph.Model.ChatOnlineMeetingInfo)
-     |> Deserializer.deserialize(:permissionGrants, :list, MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant)
-     |> Deserializer.deserialize(:pinnedMessages, :list, MicrosoftGraph.Model.MicrosoftGraphPinnedChatMessageInfo)
-     |> Deserializer.deserialize(:tabs, :list, MicrosoftGraph.Model.MicrosoftGraphTeamsTab)
-     |> Deserializer.deserialize(:viewpoint, :struct, MicrosoftGraph.Model.ChatViewpoint)
+    |> Deserializer.deserialize(:chatType, :struct, MicrosoftGraph.Model.MicrosoftGraphChatType)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :installedApps,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphTeamsAppInstallation
+    )
+    |> Deserializer.deserialize(
+      :lastMessagePreview,
+      :struct,
+      MicrosoftGraph.Model.ChatLastMessagePreview
+    )
+    |> Deserializer.deserialize(:lastUpdatedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :members,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphConversationMember
+    )
+    |> Deserializer.deserialize(:messages, :list, MicrosoftGraph.Model.MicrosoftGraphChatMessage)
+    |> Deserializer.deserialize(
+      :onlineMeetingInfo,
+      :struct,
+      MicrosoftGraph.Model.ChatOnlineMeetingInfo
+    )
+    |> Deserializer.deserialize(
+      :permissionGrants,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant
+    )
+    |> Deserializer.deserialize(
+      :pinnedMessages,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphPinnedChatMessageInfo
+    )
+    |> Deserializer.deserialize(:tabs, :list, MicrosoftGraph.Model.MicrosoftGraphTeamsTab)
+    |> Deserializer.deserialize(:viewpoint, :struct, MicrosoftGraph.Model.ChatViewpoint)
   end
 end
-

@@ -30,8 +30,19 @@ defmodule MicrosoftGraph.Api.SecurityFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfEdiscoveryReviewTag.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_cases_ediscovery_cases_ediscovery_case_tags_as_hierarchy(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfEdiscoveryReviewTag.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_cases_ediscovery_cases_ediscovery_case_tags_as_hierarchy(connection, ediscovery_case_id, opts \\ []) do
+  @spec security_cases_ediscovery_cases_ediscovery_case_tags_as_hierarchy(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfEdiscoveryReviewTag.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_cases_ediscovery_cases_ediscovery_case_tags_as_hierarchy(
+        connection,
+        ediscovery_case_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -45,7 +56,9 @@ defmodule MicrosoftGraph.Api.SecurityFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/security/cases/ediscoveryCases/#{ediscovery_case_id}/tags/microsoft.graph.security.asHierarchy()")
+      |> url(
+        "/security/cases/ediscoveryCases/#{ediscovery_case_id}/tags/microsoft.graph.security.asHierarchy()"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -72,8 +85,20 @@ defmodule MicrosoftGraph.Api.SecurityFunctions do
   - `{:ok, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_subject_rights_requests_subject_rights_request_get_final_attachment(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_subject_rights_requests_subject_rights_request_get_final_attachment(connection, subject_rights_request_id, _opts \\ []) do
+  @spec security_subject_rights_requests_subject_rights_request_get_final_attachment(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_subject_rights_requests_subject_rights_request_get_final_attachment(
+        connection,
+        subject_rights_request_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
@@ -83,7 +108,8 @@ defmodule MicrosoftGraph.Api.SecurityFunctions do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -103,8 +129,20 @@ defmodule MicrosoftGraph.Api.SecurityFunctions do
   - `{:ok, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_subject_rights_requests_subject_rights_request_get_final_report(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_subject_rights_requests_subject_rights_request_get_final_report(connection, subject_rights_request_id, _opts \\ []) do
+  @spec security_subject_rights_requests_subject_rights_request_get_final_report(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_subject_rights_requests_subject_rights_request_get_final_report(
+        connection,
+        subject_rights_request_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
@@ -114,7 +152,8 @@ defmodule MicrosoftGraph.Api.SecurityFunctions do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])

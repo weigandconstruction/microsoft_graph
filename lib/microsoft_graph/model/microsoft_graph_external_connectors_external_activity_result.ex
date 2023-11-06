@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalActivityResult do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,22 +17,30 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalActivityR
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :performedBy => MicrosoftGraph.Model.ExternalActivityPerformedBy.t | nil,
-    :startDateTime => DateTime.t | nil,
-    :type => MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalActivityType.t | nil,
-    :error => MicrosoftGraph.Model.ExternalActivityResultError.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :performedBy => MicrosoftGraph.Model.ExternalActivityPerformedBy.t() | nil,
+          :startDateTime => DateTime.t() | nil,
+          :type =>
+            MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalActivityType.t() | nil,
+          :error => MicrosoftGraph.Model.ExternalActivityResultError.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:performedBy, :struct, MicrosoftGraph.Model.ExternalActivityPerformedBy)
-     |> Deserializer.deserialize(:startDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:type, :struct, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalActivityType)
-     |> Deserializer.deserialize(:error, :struct, MicrosoftGraph.Model.ExternalActivityResultError)
+    |> Deserializer.deserialize(
+      :performedBy,
+      :struct,
+      MicrosoftGraph.Model.ExternalActivityPerformedBy
+    )
+    |> Deserializer.deserialize(:startDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :type,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalActivityType
+    )
+    |> Deserializer.deserialize(:error, :struct, MicrosoftGraph.Model.ExternalActivityResultError)
   end
 end
-

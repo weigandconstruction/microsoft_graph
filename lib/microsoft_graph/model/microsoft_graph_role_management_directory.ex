@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphRoleManagementDirectory do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -22,32 +22,76 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphRoleManagementDirectory do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :resourceNamespaces => [MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceNamespace.t] | nil,
-    :roleAssignmentScheduleInstances => [MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleInstance.t] | nil,
-    :roleAssignmentScheduleRequests => [MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleRequest.t] | nil,
-    :roleAssignmentSchedules => [MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentSchedule.t] | nil,
-    :roleAssignments => [MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignment.t] | nil,
-    :roleDefinitions => [MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t] | nil,
-    :roleEligibilityScheduleInstances => [MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleInstance.t] | nil,
-    :roleEligibilityScheduleRequests => [MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleRequest.t] | nil,
-    :roleEligibilitySchedules => [MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilitySchedule.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :resourceNamespaces =>
+            [MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceNamespace.t()] | nil,
+          :roleAssignmentScheduleInstances =>
+            [MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleInstance.t()] | nil,
+          :roleAssignmentScheduleRequests =>
+            [MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleRequest.t()] | nil,
+          :roleAssignmentSchedules =>
+            [MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentSchedule.t()] | nil,
+          :roleAssignments =>
+            [MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignment.t()] | nil,
+          :roleDefinitions =>
+            [MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition.t()] | nil,
+          :roleEligibilityScheduleInstances =>
+            [MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleInstance.t()] | nil,
+          :roleEligibilityScheduleRequests =>
+            [MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleRequest.t()] | nil,
+          :roleEligibilitySchedules =>
+            [MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilitySchedule.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:resourceNamespaces, :list, MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceNamespace)
-     |> Deserializer.deserialize(:roleAssignmentScheduleInstances, :list, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleInstance)
-     |> Deserializer.deserialize(:roleAssignmentScheduleRequests, :list, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleRequest)
-     |> Deserializer.deserialize(:roleAssignmentSchedules, :list, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentSchedule)
-     |> Deserializer.deserialize(:roleAssignments, :list, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignment)
-     |> Deserializer.deserialize(:roleDefinitions, :list, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition)
-     |> Deserializer.deserialize(:roleEligibilityScheduleInstances, :list, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleInstance)
-     |> Deserializer.deserialize(:roleEligibilityScheduleRequests, :list, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleRequest)
-     |> Deserializer.deserialize(:roleEligibilitySchedules, :list, MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilitySchedule)
+    |> Deserializer.deserialize(
+      :resourceNamespaces,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphUnifiedRbacResourceNamespace
+    )
+    |> Deserializer.deserialize(
+      :roleAssignmentScheduleInstances,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleInstance
+    )
+    |> Deserializer.deserialize(
+      :roleAssignmentScheduleRequests,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentScheduleRequest
+    )
+    |> Deserializer.deserialize(
+      :roleAssignmentSchedules,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignmentSchedule
+    )
+    |> Deserializer.deserialize(
+      :roleAssignments,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleAssignment
+    )
+    |> Deserializer.deserialize(
+      :roleDefinitions,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleDefinition
+    )
+    |> Deserializer.deserialize(
+      :roleEligibilityScheduleInstances,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleInstance
+    )
+    |> Deserializer.deserialize(
+      :roleEligibilityScheduleRequests,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilityScheduleRequest
+    )
+    |> Deserializer.deserialize(
+      :roleEligibilitySchedules,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphUnifiedRoleEligibilitySchedule
+    )
   end
 end
-

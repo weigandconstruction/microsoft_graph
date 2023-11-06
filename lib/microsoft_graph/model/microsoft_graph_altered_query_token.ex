@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAlteredQueryToken do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAlteredQueryToken do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :length => integer() | nil,
-    :offset => integer() | nil,
-    :suggestion => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :length => integer() | nil,
+          :offset => integer() | nil,
+          :suggestion => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

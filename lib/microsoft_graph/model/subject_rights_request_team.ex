@@ -41,63 +41,87 @@ defmodule MicrosoftGraph.Model.SubjectRightsRequestTeam do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :allChannels => [MicrosoftGraph.Model.MicrosoftGraphChannel.t] | nil,
-    :channels => [MicrosoftGraph.Model.MicrosoftGraphChannel.t] | nil,
-    :classification => String.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :funSettings => MicrosoftGraph.Model.TeamFunSettings.t | nil,
-    :group => MicrosoftGraph.Model.TeamGroup.t | nil,
-    :guestSettings => MicrosoftGraph.Model.TeamGuestSettings.t | nil,
-    :incomingChannels => [MicrosoftGraph.Model.MicrosoftGraphChannel.t] | nil,
-    :installedApps => [MicrosoftGraph.Model.MicrosoftGraphTeamsAppInstallation.t] | nil,
-    :internalId => String.t | nil,
-    :isArchived => boolean() | nil,
-    :memberSettings => MicrosoftGraph.Model.TeamMemberSettings.t | nil,
-    :members => [MicrosoftGraph.Model.MicrosoftGraphConversationMember.t] | nil,
-    :messagingSettings => MicrosoftGraph.Model.TeamMessagingSettings.t | nil,
-    :operations => [MicrosoftGraph.Model.MicrosoftGraphTeamsAsyncOperation.t] | nil,
-    :permissionGrants => [MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant.t] | nil,
-    :photo => MicrosoftGraph.Model.TeamPhoto.t | nil,
-    :primaryChannel => MicrosoftGraph.Model.TeamPrimaryChannel.t | nil,
-    :schedule => MicrosoftGraph.Model.TeamSchedule.t | nil,
-    :specialization => MicrosoftGraph.Model.TeamSpecialization.t | nil,
-    :summary => MicrosoftGraph.Model.TeamSummary.t | nil,
-    :tags => [MicrosoftGraph.Model.MicrosoftGraphTeamworkTag.t] | nil,
-    :template => MicrosoftGraph.Model.TeamTemplate.t | nil,
-    :tenantId => String.t | nil,
-    :visibility => MicrosoftGraph.Model.TeamVisibility.t | nil,
-    :webUrl => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :allChannels => [MicrosoftGraph.Model.MicrosoftGraphChannel.t()] | nil,
+          :channels => [MicrosoftGraph.Model.MicrosoftGraphChannel.t()] | nil,
+          :classification => String.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :funSettings => MicrosoftGraph.Model.TeamFunSettings.t() | nil,
+          :group => MicrosoftGraph.Model.TeamGroup.t() | nil,
+          :guestSettings => MicrosoftGraph.Model.TeamGuestSettings.t() | nil,
+          :incomingChannels => [MicrosoftGraph.Model.MicrosoftGraphChannel.t()] | nil,
+          :installedApps => [MicrosoftGraph.Model.MicrosoftGraphTeamsAppInstallation.t()] | nil,
+          :internalId => String.t() | nil,
+          :isArchived => boolean() | nil,
+          :memberSettings => MicrosoftGraph.Model.TeamMemberSettings.t() | nil,
+          :members => [MicrosoftGraph.Model.MicrosoftGraphConversationMember.t()] | nil,
+          :messagingSettings => MicrosoftGraph.Model.TeamMessagingSettings.t() | nil,
+          :operations => [MicrosoftGraph.Model.MicrosoftGraphTeamsAsyncOperation.t()] | nil,
+          :permissionGrants =>
+            [MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant.t()] | nil,
+          :photo => MicrosoftGraph.Model.TeamPhoto.t() | nil,
+          :primaryChannel => MicrosoftGraph.Model.TeamPrimaryChannel.t() | nil,
+          :schedule => MicrosoftGraph.Model.TeamSchedule.t() | nil,
+          :specialization => MicrosoftGraph.Model.TeamSpecialization.t() | nil,
+          :summary => MicrosoftGraph.Model.TeamSummary.t() | nil,
+          :tags => [MicrosoftGraph.Model.MicrosoftGraphTeamworkTag.t()] | nil,
+          :template => MicrosoftGraph.Model.TeamTemplate.t() | nil,
+          :tenantId => String.t() | nil,
+          :visibility => MicrosoftGraph.Model.TeamVisibility.t() | nil,
+          :webUrl => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:allChannels, :list, MicrosoftGraph.Model.MicrosoftGraphChannel)
-     |> Deserializer.deserialize(:channels, :list, MicrosoftGraph.Model.MicrosoftGraphChannel)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:funSettings, :struct, MicrosoftGraph.Model.TeamFunSettings)
-     |> Deserializer.deserialize(:group, :struct, MicrosoftGraph.Model.TeamGroup)
-     |> Deserializer.deserialize(:guestSettings, :struct, MicrosoftGraph.Model.TeamGuestSettings)
-     |> Deserializer.deserialize(:incomingChannels, :list, MicrosoftGraph.Model.MicrosoftGraphChannel)
-     |> Deserializer.deserialize(:installedApps, :list, MicrosoftGraph.Model.MicrosoftGraphTeamsAppInstallation)
-     |> Deserializer.deserialize(:memberSettings, :struct, MicrosoftGraph.Model.TeamMemberSettings)
-     |> Deserializer.deserialize(:members, :list, MicrosoftGraph.Model.MicrosoftGraphConversationMember)
-     |> Deserializer.deserialize(:messagingSettings, :struct, MicrosoftGraph.Model.TeamMessagingSettings)
-     |> Deserializer.deserialize(:operations, :list, MicrosoftGraph.Model.MicrosoftGraphTeamsAsyncOperation)
-     |> Deserializer.deserialize(:permissionGrants, :list, MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant)
-     |> Deserializer.deserialize(:photo, :struct, MicrosoftGraph.Model.TeamPhoto)
-     |> Deserializer.deserialize(:primaryChannel, :struct, MicrosoftGraph.Model.TeamPrimaryChannel)
-     |> Deserializer.deserialize(:schedule, :struct, MicrosoftGraph.Model.TeamSchedule)
-     |> Deserializer.deserialize(:specialization, :struct, MicrosoftGraph.Model.TeamSpecialization)
-     |> Deserializer.deserialize(:summary, :struct, MicrosoftGraph.Model.TeamSummary)
-     |> Deserializer.deserialize(:tags, :list, MicrosoftGraph.Model.MicrosoftGraphTeamworkTag)
-     |> Deserializer.deserialize(:template, :struct, MicrosoftGraph.Model.TeamTemplate)
-     |> Deserializer.deserialize(:visibility, :struct, MicrosoftGraph.Model.TeamVisibility)
+    |> Deserializer.deserialize(:allChannels, :list, MicrosoftGraph.Model.MicrosoftGraphChannel)
+    |> Deserializer.deserialize(:channels, :list, MicrosoftGraph.Model.MicrosoftGraphChannel)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:funSettings, :struct, MicrosoftGraph.Model.TeamFunSettings)
+    |> Deserializer.deserialize(:group, :struct, MicrosoftGraph.Model.TeamGroup)
+    |> Deserializer.deserialize(:guestSettings, :struct, MicrosoftGraph.Model.TeamGuestSettings)
+    |> Deserializer.deserialize(
+      :incomingChannels,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphChannel
+    )
+    |> Deserializer.deserialize(
+      :installedApps,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphTeamsAppInstallation
+    )
+    |> Deserializer.deserialize(:memberSettings, :struct, MicrosoftGraph.Model.TeamMemberSettings)
+    |> Deserializer.deserialize(
+      :members,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphConversationMember
+    )
+    |> Deserializer.deserialize(
+      :messagingSettings,
+      :struct,
+      MicrosoftGraph.Model.TeamMessagingSettings
+    )
+    |> Deserializer.deserialize(
+      :operations,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphTeamsAsyncOperation
+    )
+    |> Deserializer.deserialize(
+      :permissionGrants,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphResourceSpecificPermissionGrant
+    )
+    |> Deserializer.deserialize(:photo, :struct, MicrosoftGraph.Model.TeamPhoto)
+    |> Deserializer.deserialize(:primaryChannel, :struct, MicrosoftGraph.Model.TeamPrimaryChannel)
+    |> Deserializer.deserialize(:schedule, :struct, MicrosoftGraph.Model.TeamSchedule)
+    |> Deserializer.deserialize(:specialization, :struct, MicrosoftGraph.Model.TeamSpecialization)
+    |> Deserializer.deserialize(:summary, :struct, MicrosoftGraph.Model.TeamSummary)
+    |> Deserializer.deserialize(:tags, :list, MicrosoftGraph.Model.MicrosoftGraphTeamworkTag)
+    |> Deserializer.deserialize(:template, :struct, MicrosoftGraph.Model.TeamTemplate)
+    |> Deserializer.deserialize(:visibility, :struct, MicrosoftGraph.Model.TeamVisibility)
   end
 end
-

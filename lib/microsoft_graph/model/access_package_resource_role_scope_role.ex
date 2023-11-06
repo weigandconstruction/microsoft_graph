@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.AccessPackageResourceRoleScopeRole do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,20 +18,23 @@ defmodule MicrosoftGraph.Model.AccessPackageResourceRoleScopeRole do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :originId => String.t | nil,
-    :originSystem => String.t | nil,
-    :resource => MicrosoftGraph.Model.AccessPackageResourceRoleResource.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :originId => String.t() | nil,
+          :originSystem => String.t() | nil,
+          :resource => MicrosoftGraph.Model.AccessPackageResourceRoleResource.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:resource, :struct, MicrosoftGraph.Model.AccessPackageResourceRoleResource)
+    |> Deserializer.deserialize(
+      :resource,
+      :struct,
+      MicrosoftGraph.Model.AccessPackageResourceRoleResource
+    )
   end
 end
-

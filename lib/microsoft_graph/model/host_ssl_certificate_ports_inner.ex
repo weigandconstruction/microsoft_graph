@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.HostSslCertificatePortsInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,18 +15,17 @@ defmodule MicrosoftGraph.Model.HostSslCertificatePortsInner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :firstSeenDateTime => DateTime.t | nil,
-    :lastSeenDateTime => DateTime.t | nil,
-    :port => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :firstSeenDateTime => DateTime.t() | nil,
+          :lastSeenDateTime => DateTime.t() | nil,
+          :port => integer() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:firstSeenDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastSeenDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:firstSeenDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastSeenDateTime, :datetime, nil)
   end
 end
-

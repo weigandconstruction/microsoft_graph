@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.IdentityConditionalAccessAuthenticationStrengthPoliciesAuthenticationStrengthPolicyUpdateAllowedCombinationsRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,14 +12,21 @@ defmodule MicrosoftGraph.Model.IdentityConditionalAccessAuthenticationStrengthPo
   ]
 
   @type t :: %__MODULE__{
-    :allowedCombinations => [MicrosoftGraph.Model.IdentityConditionalAccessAuthenticationStrengthPoliciesAuthenticationStrengthPolicyUpdateAllowedCombinationsRequestAllowedCombinationsInner.t] | nil
-  }
+          :allowedCombinations =>
+            [
+              MicrosoftGraph.Model.IdentityConditionalAccessAuthenticationStrengthPoliciesAuthenticationStrengthPolicyUpdateAllowedCombinationsRequestAllowedCombinationsInner.t()
+            ]
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:allowedCombinations, :list, MicrosoftGraph.Model.IdentityConditionalAccessAuthenticationStrengthPoliciesAuthenticationStrengthPolicyUpdateAllowedCombinationsRequestAllowedCombinationsInner)
+    |> Deserializer.deserialize(
+      :allowedCombinations,
+      :list,
+      MicrosoftGraph.Model.IdentityConditionalAccessAuthenticationStrengthPoliciesAuthenticationStrengthPolicyUpdateAllowedCombinationsRequestAllowedCombinationsInner
+    )
   end
 end
-

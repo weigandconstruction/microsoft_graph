@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphBookingBusiness do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -31,41 +31,73 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphBookingBusiness do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :address => MicrosoftGraph.Model.BookingBusinessAddress.t | nil,
-    :appointments => [MicrosoftGraph.Model.MicrosoftGraphBookingAppointment.t] | nil,
-    :businessHours => [MicrosoftGraph.Model.BookingBusinessBusinessHoursInner.t] | nil,
-    :businessType => String.t | nil,
-    :calendarView => [MicrosoftGraph.Model.MicrosoftGraphBookingAppointment.t] | nil,
-    :customQuestions => [MicrosoftGraph.Model.MicrosoftGraphBookingCustomQuestion.t] | nil,
-    :customers => [MicrosoftGraph.Model.MicrosoftGraphBookingCustomerBase.t] | nil,
-    :defaultCurrencyIso => String.t | nil,
-    :displayName => String.t | nil,
-    :email => String.t | nil,
-    :isPublished => boolean() | nil,
-    :languageTag => String.t | nil,
-    :phone => String.t | nil,
-    :publicUrl => String.t | nil,
-    :schedulingPolicy => MicrosoftGraph.Model.BookingBusinessSchedulingPolicy.t | nil,
-    :services => [MicrosoftGraph.Model.MicrosoftGraphBookingService.t] | nil,
-    :staffMembers => [MicrosoftGraph.Model.MicrosoftGraphBookingStaffMemberBase.t] | nil,
-    :webSiteUrl => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :address => MicrosoftGraph.Model.BookingBusinessAddress.t() | nil,
+          :appointments => [MicrosoftGraph.Model.MicrosoftGraphBookingAppointment.t()] | nil,
+          :businessHours => [MicrosoftGraph.Model.BookingBusinessBusinessHoursInner.t()] | nil,
+          :businessType => String.t() | nil,
+          :calendarView => [MicrosoftGraph.Model.MicrosoftGraphBookingAppointment.t()] | nil,
+          :customQuestions =>
+            [MicrosoftGraph.Model.MicrosoftGraphBookingCustomQuestion.t()] | nil,
+          :customers => [MicrosoftGraph.Model.MicrosoftGraphBookingCustomerBase.t()] | nil,
+          :defaultCurrencyIso => String.t() | nil,
+          :displayName => String.t() | nil,
+          :email => String.t() | nil,
+          :isPublished => boolean() | nil,
+          :languageTag => String.t() | nil,
+          :phone => String.t() | nil,
+          :publicUrl => String.t() | nil,
+          :schedulingPolicy => MicrosoftGraph.Model.BookingBusinessSchedulingPolicy.t() | nil,
+          :services => [MicrosoftGraph.Model.MicrosoftGraphBookingService.t()] | nil,
+          :staffMembers => [MicrosoftGraph.Model.MicrosoftGraphBookingStaffMemberBase.t()] | nil,
+          :webSiteUrl => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:address, :struct, MicrosoftGraph.Model.BookingBusinessAddress)
-     |> Deserializer.deserialize(:appointments, :list, MicrosoftGraph.Model.MicrosoftGraphBookingAppointment)
-     |> Deserializer.deserialize(:businessHours, :list, MicrosoftGraph.Model.BookingBusinessBusinessHoursInner)
-     |> Deserializer.deserialize(:calendarView, :list, MicrosoftGraph.Model.MicrosoftGraphBookingAppointment)
-     |> Deserializer.deserialize(:customQuestions, :list, MicrosoftGraph.Model.MicrosoftGraphBookingCustomQuestion)
-     |> Deserializer.deserialize(:customers, :list, MicrosoftGraph.Model.MicrosoftGraphBookingCustomerBase)
-     |> Deserializer.deserialize(:schedulingPolicy, :struct, MicrosoftGraph.Model.BookingBusinessSchedulingPolicy)
-     |> Deserializer.deserialize(:services, :list, MicrosoftGraph.Model.MicrosoftGraphBookingService)
-     |> Deserializer.deserialize(:staffMembers, :list, MicrosoftGraph.Model.MicrosoftGraphBookingStaffMemberBase)
+    |> Deserializer.deserialize(:address, :struct, MicrosoftGraph.Model.BookingBusinessAddress)
+    |> Deserializer.deserialize(
+      :appointments,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphBookingAppointment
+    )
+    |> Deserializer.deserialize(
+      :businessHours,
+      :list,
+      MicrosoftGraph.Model.BookingBusinessBusinessHoursInner
+    )
+    |> Deserializer.deserialize(
+      :calendarView,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphBookingAppointment
+    )
+    |> Deserializer.deserialize(
+      :customQuestions,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphBookingCustomQuestion
+    )
+    |> Deserializer.deserialize(
+      :customers,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphBookingCustomerBase
+    )
+    |> Deserializer.deserialize(
+      :schedulingPolicy,
+      :struct,
+      MicrosoftGraph.Model.BookingBusinessSchedulingPolicy
+    )
+    |> Deserializer.deserialize(
+      :services,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphBookingService
+    )
+    |> Deserializer.deserialize(
+      :staffMembers,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphBookingStaffMemberBase
+    )
   end
 end
-

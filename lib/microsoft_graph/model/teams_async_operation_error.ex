@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.TeamsAsyncOperationError do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :code => String.t | nil,
-    :message => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :code => String.t() | nil,
+          :message => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

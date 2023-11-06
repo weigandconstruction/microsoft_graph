@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphRelatedContact do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,19 +17,22 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphRelatedContact do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :accessConsent => boolean() | nil,
-    :displayName => String.t | nil,
-    :emailAddress => String.t | nil,
-    :mobilePhone => String.t | nil,
-    :relationship => MicrosoftGraph.Model.MicrosoftGraphContactRelationship.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :accessConsent => boolean() | nil,
+          :displayName => String.t() | nil,
+          :emailAddress => String.t() | nil,
+          :mobilePhone => String.t() | nil,
+          :relationship => MicrosoftGraph.Model.MicrosoftGraphContactRelationship.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:relationship, :struct, MicrosoftGraph.Model.MicrosoftGraphContactRelationship)
+    |> Deserializer.deserialize(
+      :relationship,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphContactRelationship
+    )
   end
 end
-

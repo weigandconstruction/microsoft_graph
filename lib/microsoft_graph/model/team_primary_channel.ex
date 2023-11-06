@@ -27,36 +27,48 @@ defmodule MicrosoftGraph.Model.TeamPrimaryChannel do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :email => String.t | nil,
-    :filesFolder => MicrosoftGraph.Model.ChannelFilesFolder.t | nil,
-    :isFavoriteByDefault => boolean() | nil,
-    :members => [MicrosoftGraph.Model.MicrosoftGraphConversationMember.t] | nil,
-    :membershipType => MicrosoftGraph.Model.ChannelMembershipType.t | nil,
-    :messages => [MicrosoftGraph.Model.MicrosoftGraphChatMessage.t] | nil,
-    :sharedWithTeams => [MicrosoftGraph.Model.MicrosoftGraphSharedWithChannelTeamInfo.t] | nil,
-    :summary => MicrosoftGraph.Model.ChannelSummary.t | nil,
-    :tabs => [MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t] | nil,
-    :tenantId => String.t | nil,
-    :webUrl => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :email => String.t() | nil,
+          :filesFolder => MicrosoftGraph.Model.ChannelFilesFolder.t() | nil,
+          :isFavoriteByDefault => boolean() | nil,
+          :members => [MicrosoftGraph.Model.MicrosoftGraphConversationMember.t()] | nil,
+          :membershipType => MicrosoftGraph.Model.ChannelMembershipType.t() | nil,
+          :messages => [MicrosoftGraph.Model.MicrosoftGraphChatMessage.t()] | nil,
+          :sharedWithTeams =>
+            [MicrosoftGraph.Model.MicrosoftGraphSharedWithChannelTeamInfo.t()] | nil,
+          :summary => MicrosoftGraph.Model.ChannelSummary.t() | nil,
+          :tabs => [MicrosoftGraph.Model.MicrosoftGraphTeamsTab.t()] | nil,
+          :tenantId => String.t() | nil,
+          :webUrl => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:filesFolder, :struct, MicrosoftGraph.Model.ChannelFilesFolder)
-     |> Deserializer.deserialize(:members, :list, MicrosoftGraph.Model.MicrosoftGraphConversationMember)
-     |> Deserializer.deserialize(:membershipType, :struct, MicrosoftGraph.Model.ChannelMembershipType)
-     |> Deserializer.deserialize(:messages, :list, MicrosoftGraph.Model.MicrosoftGraphChatMessage)
-     |> Deserializer.deserialize(:sharedWithTeams, :list, MicrosoftGraph.Model.MicrosoftGraphSharedWithChannelTeamInfo)
-     |> Deserializer.deserialize(:summary, :struct, MicrosoftGraph.Model.ChannelSummary)
-     |> Deserializer.deserialize(:tabs, :list, MicrosoftGraph.Model.MicrosoftGraphTeamsTab)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:filesFolder, :struct, MicrosoftGraph.Model.ChannelFilesFolder)
+    |> Deserializer.deserialize(
+      :members,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphConversationMember
+    )
+    |> Deserializer.deserialize(
+      :membershipType,
+      :struct,
+      MicrosoftGraph.Model.ChannelMembershipType
+    )
+    |> Deserializer.deserialize(:messages, :list, MicrosoftGraph.Model.MicrosoftGraphChatMessage)
+    |> Deserializer.deserialize(
+      :sharedWithTeams,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSharedWithChannelTeamInfo
+    )
+    |> Deserializer.deserialize(:summary, :struct, MicrosoftGraph.Model.ChannelSummary)
+    |> Deserializer.deserialize(:tabs, :list, MicrosoftGraph.Model.MicrosoftGraphTeamsTab)
   end
 end
-

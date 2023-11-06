@@ -13,12 +13,11 @@ defmodule MicrosoftGraph.Model.DriveItemDeleted do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :state => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :state => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

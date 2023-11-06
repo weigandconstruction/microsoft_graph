@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphMicrosoftCustomTrainingSetting do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,21 +16,38 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphMicrosoftCustomTrainingSetting do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :settingType => MicrosoftGraph.Model.MicrosoftGraphTrainingSettingSettingType.t | nil,
-    :completionDateTime => DateTime.t | nil,
-    :trainingAssignmentMappings => [MicrosoftGraph.Model.MicrosoftCustomTrainingSettingTrainingAssignmentMappingsInner.t] | nil,
-    :trainingCompletionDuration => MicrosoftGraph.Model.MicrosoftCustomTrainingSettingTrainingCompletionDuration.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :settingType => MicrosoftGraph.Model.MicrosoftGraphTrainingSettingSettingType.t() | nil,
+          :completionDateTime => DateTime.t() | nil,
+          :trainingAssignmentMappings =>
+            [
+              MicrosoftGraph.Model.MicrosoftCustomTrainingSettingTrainingAssignmentMappingsInner.t()
+            ]
+            | nil,
+          :trainingCompletionDuration =>
+            MicrosoftGraph.Model.MicrosoftCustomTrainingSettingTrainingCompletionDuration.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:settingType, :struct, MicrosoftGraph.Model.MicrosoftGraphTrainingSettingSettingType)
-     |> Deserializer.deserialize(:completionDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:trainingAssignmentMappings, :list, MicrosoftGraph.Model.MicrosoftCustomTrainingSettingTrainingAssignmentMappingsInner)
-     |> Deserializer.deserialize(:trainingCompletionDuration, :struct, MicrosoftGraph.Model.MicrosoftCustomTrainingSettingTrainingCompletionDuration)
+    |> Deserializer.deserialize(
+      :settingType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphTrainingSettingSettingType
+    )
+    |> Deserializer.deserialize(:completionDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :trainingAssignmentMappings,
+      :list,
+      MicrosoftGraph.Model.MicrosoftCustomTrainingSettingTrainingAssignmentMappingsInner
+    )
+    |> Deserializer.deserialize(
+      :trainingCompletionDuration,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftCustomTrainingSettingTrainingCompletionDuration
+    )
   end
 end
-

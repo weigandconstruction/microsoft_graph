@@ -13,15 +13,20 @@ defmodule MicrosoftGraph.Model.TeamsAppDefinitionAuthorization do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :requiredPermissionSet => MicrosoftGraph.Model.MicrosoftGraphTeamsAppAuthorizationRequiredPermissionSet.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :requiredPermissionSet =>
+            MicrosoftGraph.Model.MicrosoftGraphTeamsAppAuthorizationRequiredPermissionSet.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:requiredPermissionSet, :struct, MicrosoftGraph.Model.MicrosoftGraphTeamsAppAuthorizationRequiredPermissionSet)
+    |> Deserializer.deserialize(
+      :requiredPermissionSet,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphTeamsAppAuthorizationRequiredPermissionSet
+    )
   end
 end
-

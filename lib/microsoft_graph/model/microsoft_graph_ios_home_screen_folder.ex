@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphIosHomeScreenFolder do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,19 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphIosHomeScreenFolder do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :displayName => String.t | nil,
-    :pages => [MicrosoftGraph.Model.MicrosoftGraphIosHomeScreenFolderPage.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :displayName => String.t() | nil,
+          :pages => [MicrosoftGraph.Model.MicrosoftGraphIosHomeScreenFolderPage.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:pages, :list, MicrosoftGraph.Model.MicrosoftGraphIosHomeScreenFolderPage)
+    |> Deserializer.deserialize(
+      :pages,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphIosHomeScreenFolderPage
+    )
   end
 end
-

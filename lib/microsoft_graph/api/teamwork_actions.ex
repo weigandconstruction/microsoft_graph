@@ -25,8 +25,21 @@ defmodule MicrosoftGraph.Api.TeamworkActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teamwork_deleted_teams_deleted_team_channels_channel_complete_migration(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teamwork_deleted_teams_deleted_team_channels_channel_complete_migration(connection, deleted_team_id, channel_id, _opts \\ []) do
+  @spec teamwork_deleted_teams_deleted_team_channels_channel_complete_migration(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teamwork_deleted_teams_deleted_team_channels_channel_complete_migration(
+        connection,
+        deleted_team_id,
+        channel_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -60,8 +73,23 @@ defmodule MicrosoftGraph.Api.TeamworkActions do
   - `{:ok, MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAdd2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teamwork_deleted_teams_deleted_team_channels_channel_members_add(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAddRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAdd2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teamwork_deleted_teams_deleted_team_channels_channel_members_add(connection, deleted_team_id, channel_id, me_joined_teams_team_members_add_request, _opts \\ []) do
+  @spec teamwork_deleted_teams_deleted_team_channels_channel_members_add(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAddRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAdd2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teamwork_deleted_teams_deleted_team_channels_channel_members_add(
+        connection,
+        deleted_team_id,
+        channel_id,
+        me_joined_teams_team_members_add_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -96,13 +124,38 @@ defmodule MicrosoftGraph.Api.TeamworkActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teamwork_deleted_teams_deleted_team_channels_channel_messages_chat_message_replies_chat_message_set_reaction(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teamwork_deleted_teams_deleted_team_channels_channel_messages_chat_message_replies_chat_message_set_reaction(connection, deleted_team_id, channel_id, chat_message_id, chat_message_id1, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request, _opts \\ []) do
+  @spec teamwork_deleted_teams_deleted_team_channels_channel_messages_chat_message_replies_chat_message_set_reaction(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teamwork_deleted_teams_deleted_team_channels_channel_messages_chat_message_replies_chat_message_set_reaction(
+        connection,
+        deleted_team_id,
+        channel_id,
+        chat_message_id,
+        chat_message_id1,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/teamwork/deletedTeams/#{deleted_team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/setReaction")
-      |> add_param(:body, :body, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request)
+      |> url(
+        "/teamwork/deletedTeams/#{deleted_team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/setReaction"
+      )
+      |> add_param(
+        :body,
+        :body,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request
+      )
       |> Enum.into([])
 
     connection
@@ -132,12 +185,31 @@ defmodule MicrosoftGraph.Api.TeamworkActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teamwork_deleted_teams_deleted_team_channels_channel_messages_chat_message_replies_chat_message_soft_delete(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teamwork_deleted_teams_deleted_team_channels_channel_messages_chat_message_replies_chat_message_soft_delete(connection, deleted_team_id, channel_id, chat_message_id, chat_message_id1, _opts \\ []) do
+  @spec teamwork_deleted_teams_deleted_team_channels_channel_messages_chat_message_replies_chat_message_soft_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teamwork_deleted_teams_deleted_team_channels_channel_messages_chat_message_replies_chat_message_soft_delete(
+        connection,
+        deleted_team_id,
+        channel_id,
+        chat_message_id,
+        chat_message_id1,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/teamwork/deletedTeams/#{deleted_team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/softDelete")
+      |> url(
+        "/teamwork/deletedTeams/#{deleted_team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/softDelete"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -168,12 +240,31 @@ defmodule MicrosoftGraph.Api.TeamworkActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teamwork_deleted_teams_deleted_team_channels_channel_messages_chat_message_replies_chat_message_undo_soft_delete(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teamwork_deleted_teams_deleted_team_channels_channel_messages_chat_message_replies_chat_message_undo_soft_delete(connection, deleted_team_id, channel_id, chat_message_id, chat_message_id1, _opts \\ []) do
+  @spec teamwork_deleted_teams_deleted_team_channels_channel_messages_chat_message_replies_chat_message_undo_soft_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teamwork_deleted_teams_deleted_team_channels_channel_messages_chat_message_replies_chat_message_undo_soft_delete(
+        connection,
+        deleted_team_id,
+        channel_id,
+        chat_message_id,
+        chat_message_id1,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/teamwork/deletedTeams/#{deleted_team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/undoSoftDelete")
+      |> url(
+        "/teamwork/deletedTeams/#{deleted_team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/undoSoftDelete"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -204,13 +295,38 @@ defmodule MicrosoftGraph.Api.TeamworkActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teamwork_deleted_teams_deleted_team_channels_channel_messages_chat_message_replies_chat_message_unset_reaction(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teamwork_deleted_teams_deleted_team_channels_channel_messages_chat_message_replies_chat_message_unset_reaction(connection, deleted_team_id, channel_id, chat_message_id, chat_message_id1, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request, _opts \\ []) do
+  @spec teamwork_deleted_teams_deleted_team_channels_channel_messages_chat_message_replies_chat_message_unset_reaction(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teamwork_deleted_teams_deleted_team_channels_channel_messages_chat_message_replies_chat_message_unset_reaction(
+        connection,
+        deleted_team_id,
+        channel_id,
+        chat_message_id,
+        chat_message_id1,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/teamwork/deletedTeams/#{deleted_team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/unsetReaction")
-      |> add_param(:body, :body, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request)
+      |> url(
+        "/teamwork/deletedTeams/#{deleted_team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/unsetReaction"
+      )
+      |> add_param(
+        :body,
+        :body,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request
+      )
       |> Enum.into([])
 
     connection
@@ -239,13 +355,36 @@ defmodule MicrosoftGraph.Api.TeamworkActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teamwork_deleted_teams_deleted_team_channels_channel_messages_chat_message_set_reaction(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teamwork_deleted_teams_deleted_team_channels_channel_messages_chat_message_set_reaction(connection, deleted_team_id, channel_id, chat_message_id, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request, _opts \\ []) do
+  @spec teamwork_deleted_teams_deleted_team_channels_channel_messages_chat_message_set_reaction(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teamwork_deleted_teams_deleted_team_channels_channel_messages_chat_message_set_reaction(
+        connection,
+        deleted_team_id,
+        channel_id,
+        chat_message_id,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/teamwork/deletedTeams/#{deleted_team_id}/channels/#{channel_id}/messages/#{chat_message_id}/setReaction")
-      |> add_param(:body, :body, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request)
+      |> url(
+        "/teamwork/deletedTeams/#{deleted_team_id}/channels/#{channel_id}/messages/#{chat_message_id}/setReaction"
+      )
+      |> add_param(
+        :body,
+        :body,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request
+      )
       |> Enum.into([])
 
     connection
@@ -274,12 +413,29 @@ defmodule MicrosoftGraph.Api.TeamworkActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teamwork_deleted_teams_deleted_team_channels_channel_messages_chat_message_soft_delete(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teamwork_deleted_teams_deleted_team_channels_channel_messages_chat_message_soft_delete(connection, deleted_team_id, channel_id, chat_message_id, _opts \\ []) do
+  @spec teamwork_deleted_teams_deleted_team_channels_channel_messages_chat_message_soft_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teamwork_deleted_teams_deleted_team_channels_channel_messages_chat_message_soft_delete(
+        connection,
+        deleted_team_id,
+        channel_id,
+        chat_message_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/teamwork/deletedTeams/#{deleted_team_id}/channels/#{channel_id}/messages/#{chat_message_id}/softDelete")
+      |> url(
+        "/teamwork/deletedTeams/#{deleted_team_id}/channels/#{channel_id}/messages/#{chat_message_id}/softDelete"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -309,12 +465,29 @@ defmodule MicrosoftGraph.Api.TeamworkActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teamwork_deleted_teams_deleted_team_channels_channel_messages_chat_message_undo_soft_delete(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teamwork_deleted_teams_deleted_team_channels_channel_messages_chat_message_undo_soft_delete(connection, deleted_team_id, channel_id, chat_message_id, _opts \\ []) do
+  @spec teamwork_deleted_teams_deleted_team_channels_channel_messages_chat_message_undo_soft_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teamwork_deleted_teams_deleted_team_channels_channel_messages_chat_message_undo_soft_delete(
+        connection,
+        deleted_team_id,
+        channel_id,
+        chat_message_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/teamwork/deletedTeams/#{deleted_team_id}/channels/#{channel_id}/messages/#{chat_message_id}/undoSoftDelete")
+      |> url(
+        "/teamwork/deletedTeams/#{deleted_team_id}/channels/#{channel_id}/messages/#{chat_message_id}/undoSoftDelete"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -344,13 +517,36 @@ defmodule MicrosoftGraph.Api.TeamworkActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teamwork_deleted_teams_deleted_team_channels_channel_messages_chat_message_unset_reaction(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teamwork_deleted_teams_deleted_team_channels_channel_messages_chat_message_unset_reaction(connection, deleted_team_id, channel_id, chat_message_id, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request, _opts \\ []) do
+  @spec teamwork_deleted_teams_deleted_team_channels_channel_messages_chat_message_unset_reaction(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teamwork_deleted_teams_deleted_team_channels_channel_messages_chat_message_unset_reaction(
+        connection,
+        deleted_team_id,
+        channel_id,
+        chat_message_id,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/teamwork/deletedTeams/#{deleted_team_id}/channels/#{channel_id}/messages/#{chat_message_id}/unsetReaction")
-      |> add_param(:body, :body, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request)
+      |> url(
+        "/teamwork/deletedTeams/#{deleted_team_id}/channels/#{channel_id}/messages/#{chat_message_id}/unsetReaction"
+      )
+      |> add_param(
+        :body,
+        :body,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request
+      )
       |> Enum.into([])
 
     connection
@@ -378,8 +574,21 @@ defmodule MicrosoftGraph.Api.TeamworkActions do
   - `{:ok, MicrosoftGraph.Model.TeamsTeamChannelsChannelProvisionEmail2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teamwork_deleted_teams_deleted_team_channels_channel_provision_email(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.TeamsTeamChannelsChannelProvisionEmail2XxResponse.t} | {:error, Tesla.Env.t}
-  def teamwork_deleted_teams_deleted_team_channels_channel_provision_email(connection, deleted_team_id, channel_id, _opts \\ []) do
+  @spec teamwork_deleted_teams_deleted_team_channels_channel_provision_email(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.TeamsTeamChannelsChannelProvisionEmail2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def teamwork_deleted_teams_deleted_team_channels_channel_provision_email(
+        connection,
+        deleted_team_id,
+        channel_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -412,8 +621,21 @@ defmodule MicrosoftGraph.Api.TeamworkActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teamwork_deleted_teams_deleted_team_channels_channel_remove_email(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teamwork_deleted_teams_deleted_team_channels_channel_remove_email(connection, deleted_team_id, channel_id, _opts \\ []) do
+  @spec teamwork_deleted_teams_deleted_team_channels_channel_remove_email(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teamwork_deleted_teams_deleted_team_channels_channel_remove_email(
+        connection,
+        deleted_team_id,
+        channel_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -445,8 +667,19 @@ defmodule MicrosoftGraph.Api.TeamworkActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teamwork_send_activity_notification_to_recipients(Tesla.Env.client, MicrosoftGraph.Model.TeamworkSendActivityNotificationToRecipientsRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teamwork_send_activity_notification_to_recipients(connection, teamwork_send_activity_notification_to_recipients_request, _opts \\ []) do
+  @spec teamwork_send_activity_notification_to_recipients(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.TeamworkSendActivityNotificationToRecipientsRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teamwork_send_activity_notification_to_recipients(
+        connection,
+        teamwork_send_activity_notification_to_recipients_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)

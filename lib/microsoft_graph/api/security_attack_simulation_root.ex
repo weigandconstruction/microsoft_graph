@@ -23,8 +23,19 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEndUserNotification.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_create_end_user_notifications(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphEndUserNotification.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEndUserNotification.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_attack_simulation_create_end_user_notifications(connection, microsoft_graph_end_user_notification, _opts \\ []) do
+  @spec security_attack_simulation_create_end_user_notifications(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphEndUserNotification.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEndUserNotification.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_attack_simulation_create_end_user_notifications(
+        connection,
+        microsoft_graph_end_user_notification,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -55,8 +66,19 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphLandingPage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_create_landing_pages(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphLandingPage.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphLandingPage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_attack_simulation_create_landing_pages(connection, microsoft_graph_landing_page, _opts \\ []) do
+  @spec security_attack_simulation_create_landing_pages(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphLandingPage.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphLandingPage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_attack_simulation_create_landing_pages(
+        connection,
+        microsoft_graph_landing_page,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -87,8 +109,19 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphLoginPage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_create_login_pages(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphLoginPage.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphLoginPage.t} | {:error, Tesla.Env.t}
-  def security_attack_simulation_create_login_pages(connection, microsoft_graph_login_page, _opts \\ []) do
+  @spec security_attack_simulation_create_login_pages(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphLoginPage.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphLoginPage.t()}
+          | {:error, Tesla.Env.t()}
+  def security_attack_simulation_create_login_pages(
+        connection,
+        microsoft_graph_login_page,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -119,8 +152,19 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttackSimulationOperation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_create_operations(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphAttackSimulationOperation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAttackSimulationOperation.t} | {:error, Tesla.Env.t}
-  def security_attack_simulation_create_operations(connection, microsoft_graph_attack_simulation_operation, _opts \\ []) do
+  @spec security_attack_simulation_create_operations(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphAttackSimulationOperation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAttackSimulationOperation.t()}
+          | {:error, Tesla.Env.t()}
+  def security_attack_simulation_create_operations(
+        connection,
+        microsoft_graph_attack_simulation_operation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -151,7 +195,14 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPayload.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_create_payloads(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphPayload.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPayload.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_attack_simulation_create_payloads(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphPayload.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPayload.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_attack_simulation_create_payloads(connection, microsoft_graph_payload, _opts \\ []) do
     request =
       %{}
@@ -183,8 +234,19 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSimulationAutomation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_create_simulation_automations(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphSimulationAutomation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSimulationAutomation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_attack_simulation_create_simulation_automations(connection, microsoft_graph_simulation_automation, _opts \\ []) do
+  @spec security_attack_simulation_create_simulation_automations(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphSimulationAutomation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSimulationAutomation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_attack_simulation_create_simulation_automations(
+        connection,
+        microsoft_graph_simulation_automation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -216,8 +278,19 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSimulation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_create_simulations(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphSimulation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSimulation.t} | {:error, Tesla.Env.t}
-  def security_attack_simulation_create_simulations(connection, microsoft_graph_simulation, _opts \\ []) do
+  @spec security_attack_simulation_create_simulations(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphSimulation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSimulation.t()}
+          | {:error, Tesla.Env.t()}
+  def security_attack_simulation_create_simulations(
+        connection,
+        microsoft_graph_simulation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -248,8 +321,19 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTraining.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_create_trainings(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphTraining.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTraining.t} | {:error, Tesla.Env.t}
-  def security_attack_simulation_create_trainings(connection, microsoft_graph_training, _opts \\ []) do
+  @spec security_attack_simulation_create_trainings(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphTraining.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTraining.t()}
+          | {:error, Tesla.Env.t()}
+  def security_attack_simulation_create_trainings(
+        connection,
+        microsoft_graph_training,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -281,8 +365,19 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_delete_end_user_notifications(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_attack_simulation_delete_end_user_notifications(connection, end_user_notification_id, opts \\ []) do
+  @spec security_attack_simulation_delete_end_user_notifications(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_attack_simulation_delete_end_user_notifications(
+        connection,
+        end_user_notification_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -318,7 +413,10 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_delete_landing_pages(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_attack_simulation_delete_landing_pages(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_attack_simulation_delete_landing_pages(connection, landing_page_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -355,7 +453,10 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_delete_login_pages(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_attack_simulation_delete_login_pages(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_attack_simulation_delete_login_pages(connection, login_page_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -392,8 +493,15 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_delete_operations(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_attack_simulation_delete_operations(connection, attack_simulation_operation_id, opts \\ []) do
+  @spec security_attack_simulation_delete_operations(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_attack_simulation_delete_operations(
+        connection,
+        attack_simulation_operation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -429,7 +537,10 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_delete_payloads(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_attack_simulation_delete_payloads(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_attack_simulation_delete_payloads(connection, payload_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -466,8 +577,19 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_delete_simulation_automations(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_attack_simulation_delete_simulation_automations(connection, simulation_automation_id, opts \\ []) do
+  @spec security_attack_simulation_delete_simulation_automations(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_attack_simulation_delete_simulation_automations(
+        connection,
+        simulation_automation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -504,7 +626,10 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_delete_simulations(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_attack_simulation_delete_simulations(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_attack_simulation_delete_simulations(connection, simulation_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -541,7 +666,10 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_delete_trainings(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_attack_simulation_delete_trainings(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_attack_simulation_delete_trainings(connection, training_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -578,12 +706,27 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEndUserNotificationDetail.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_end_user_notifications_create_details(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphEndUserNotificationDetail.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphEndUserNotificationDetail.t} | {:error, Tesla.Env.t}
-  def security_attack_simulation_end_user_notifications_create_details(connection, end_user_notification_id, microsoft_graph_end_user_notification_detail, _opts \\ []) do
+  @spec security_attack_simulation_end_user_notifications_create_details(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphEndUserNotificationDetail.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphEndUserNotificationDetail.t()}
+          | {:error, Tesla.Env.t()}
+  def security_attack_simulation_end_user_notifications_create_details(
+        connection,
+        end_user_notification_id,
+        microsoft_graph_end_user_notification_detail,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/security/attackSimulation/endUserNotifications/#{end_user_notification_id}/details")
+      |> url(
+        "/security/attackSimulation/endUserNotifications/#{end_user_notification_id}/details"
+      )
       |> add_param(:body, :body, microsoft_graph_end_user_notification_detail)
       |> Enum.into([])
 
@@ -612,8 +755,21 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_end_user_notifications_delete_details(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_attack_simulation_end_user_notifications_delete_details(connection, end_user_notification_id, end_user_notification_detail_id, opts \\ []) do
+  @spec security_attack_simulation_end_user_notifications_delete_details(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_attack_simulation_end_user_notifications_delete_details(
+        connection,
+        end_user_notification_id,
+        end_user_notification_detail_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -621,7 +777,9 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
     request =
       %{}
       |> method(:delete)
-      |> url("/security/attackSimulation/endUserNotifications/#{end_user_notification_id}/details/#{end_user_notification_detail_id}")
+      |> url(
+        "/security/attackSimulation/endUserNotifications/#{end_user_notification_id}/details/#{end_user_notification_detail_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -650,8 +808,19 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_end_user_notifications_details_get_count5759(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_attack_simulation_end_user_notifications_details_get_count5759(connection, end_user_notification_id, opts \\ []) do
+  @spec security_attack_simulation_end_user_notifications_details_get_count5759(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_attack_simulation_end_user_notifications_details_get_count5759(
+        connection,
+        end_user_notification_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -660,7 +829,9 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/security/attackSimulation/endUserNotifications/#{end_user_notification_id}/details/$count")
+      |> url(
+        "/security/attackSimulation/endUserNotifications/#{end_user_notification_id}/details/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -688,7 +859,13 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_end_user_notifications_get_count421b(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_attack_simulation_end_user_notifications_get_count421b(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_attack_simulation_end_user_notifications_get_count421b(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -728,8 +905,21 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEndUserNotificationDetail.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_end_user_notifications_get_details(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphEndUserNotificationDetail.t} | {:error, Tesla.Env.t}
-  def security_attack_simulation_end_user_notifications_get_details(connection, end_user_notification_id, end_user_notification_detail_id, opts \\ []) do
+  @spec security_attack_simulation_end_user_notifications_get_details(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphEndUserNotificationDetail.t()}
+          | {:error, Tesla.Env.t()}
+  def security_attack_simulation_end_user_notifications_get_details(
+        connection,
+        end_user_notification_id,
+        end_user_notification_detail_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -738,7 +928,9 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/security/attackSimulation/endUserNotifications/#{end_user_notification_id}/details/#{end_user_notification_detail_id}")
+      |> url(
+        "/security/attackSimulation/endUserNotifications/#{end_user_notification_id}/details/#{end_user_notification_detail_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -773,8 +965,20 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEndUserNotificationDetailCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_end_user_notifications_list_details(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEndUserNotificationDetailCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_attack_simulation_end_user_notifications_list_details(connection, end_user_notification_id, opts \\ []) do
+  @spec security_attack_simulation_end_user_notifications_list_details(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphEndUserNotificationDetailCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_attack_simulation_end_user_notifications_list_details(
+        connection,
+        end_user_notification_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -789,7 +993,9 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/security/attackSimulation/endUserNotifications/#{end_user_notification_id}/details")
+      |> url(
+        "/security/attackSimulation/endUserNotifications/#{end_user_notification_id}/details"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -818,12 +1024,29 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEndUserNotificationDetail.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_end_user_notifications_update_details(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphEndUserNotificationDetail.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphEndUserNotificationDetail.t} | {:error, Tesla.Env.t}
-  def security_attack_simulation_end_user_notifications_update_details(connection, end_user_notification_id, end_user_notification_detail_id, microsoft_graph_end_user_notification_detail, _opts \\ []) do
+  @spec security_attack_simulation_end_user_notifications_update_details(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphEndUserNotificationDetail.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphEndUserNotificationDetail.t()}
+          | {:error, Tesla.Env.t()}
+  def security_attack_simulation_end_user_notifications_update_details(
+        connection,
+        end_user_notification_id,
+        end_user_notification_detail_id,
+        microsoft_graph_end_user_notification_detail,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/security/attackSimulation/endUserNotifications/#{end_user_notification_id}/details/#{end_user_notification_detail_id}")
+      |> url(
+        "/security/attackSimulation/endUserNotifications/#{end_user_notification_id}/details/#{end_user_notification_detail_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_end_user_notification_detail)
       |> Enum.into([])
 
@@ -853,8 +1076,19 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEndUserNotification.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_get_end_user_notifications(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEndUserNotification.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_attack_simulation_get_end_user_notifications(connection, end_user_notification_id, opts \\ []) do
+  @spec security_attack_simulation_get_end_user_notifications(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEndUserNotification.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_attack_simulation_get_end_user_notifications(
+        connection,
+        end_user_notification_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -893,7 +1127,10 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphLandingPage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_get_landing_pages(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphLandingPage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_attack_simulation_get_landing_pages(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphLandingPage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_attack_simulation_get_landing_pages(connection, landing_page_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -933,7 +1170,10 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphLoginPage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_get_login_pages(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphLoginPage.t} | {:error, Tesla.Env.t}
+  @spec security_attack_simulation_get_login_pages(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphLoginPage.t()}
+          | {:error, Tesla.Env.t()}
   def security_attack_simulation_get_login_pages(connection, login_page_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -973,8 +1213,15 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttackSimulationOperation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_get_operations(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAttackSimulationOperation.t} | {:error, Tesla.Env.t}
-  def security_attack_simulation_get_operations(connection, attack_simulation_operation_id, opts \\ []) do
+  @spec security_attack_simulation_get_operations(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAttackSimulationOperation.t()}
+          | {:error, Tesla.Env.t()}
+  def security_attack_simulation_get_operations(
+        connection,
+        attack_simulation_operation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1013,7 +1260,10 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPayload.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_get_payloads(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPayload.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_attack_simulation_get_payloads(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPayload.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_attack_simulation_get_payloads(connection, payload_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -1053,8 +1303,19 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSimulationAutomation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_get_simulation_automations(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSimulationAutomation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_attack_simulation_get_simulation_automations(connection, simulation_automation_id, opts \\ []) do
+  @spec security_attack_simulation_get_simulation_automations(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSimulationAutomation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_attack_simulation_get_simulation_automations(
+        connection,
+        simulation_automation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1093,7 +1354,10 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSimulation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_get_simulations(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSimulation.t} | {:error, Tesla.Env.t}
+  @spec security_attack_simulation_get_simulations(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSimulation.t()}
+          | {:error, Tesla.Env.t()}
   def security_attack_simulation_get_simulations(connection, simulation_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -1133,7 +1397,10 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTraining.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_get_trainings(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTraining.t} | {:error, Tesla.Env.t}
+  @spec security_attack_simulation_get_trainings(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTraining.t()}
+          | {:error, Tesla.Env.t()}
   def security_attack_simulation_get_trainings(connection, training_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -1171,8 +1438,21 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphLandingPageDetail.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_landing_pages_create_details(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphLandingPageDetail.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphLandingPageDetail.t} | {:error, Tesla.Env.t}
-  def security_attack_simulation_landing_pages_create_details(connection, landing_page_id, microsoft_graph_landing_page_detail, _opts \\ []) do
+  @spec security_attack_simulation_landing_pages_create_details(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphLandingPageDetail.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphLandingPageDetail.t()}
+          | {:error, Tesla.Env.t()}
+  def security_attack_simulation_landing_pages_create_details(
+        connection,
+        landing_page_id,
+        microsoft_graph_landing_page_detail,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1205,8 +1485,21 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_landing_pages_delete_details(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_attack_simulation_landing_pages_delete_details(connection, landing_page_id, landing_page_detail_id, opts \\ []) do
+  @spec security_attack_simulation_landing_pages_delete_details(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_attack_simulation_landing_pages_delete_details(
+        connection,
+        landing_page_id,
+        landing_page_detail_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1214,7 +1507,9 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
     request =
       %{}
       |> method(:delete)
-      |> url("/security/attackSimulation/landingPages/#{landing_page_id}/details/#{landing_page_detail_id}")
+      |> url(
+        "/security/attackSimulation/landingPages/#{landing_page_id}/details/#{landing_page_detail_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1243,8 +1538,19 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_landing_pages_details_get_count8be7(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_attack_simulation_landing_pages_details_get_count8be7(connection, landing_page_id, opts \\ []) do
+  @spec security_attack_simulation_landing_pages_details_get_count8be7(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_attack_simulation_landing_pages_details_get_count8be7(
+        connection,
+        landing_page_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1281,7 +1587,10 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_landing_pages_get_count7f61(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_attack_simulation_landing_pages_get_count7f61(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_attack_simulation_landing_pages_get_count7f61(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -1322,8 +1631,21 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphLandingPageDetail.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_landing_pages_get_details(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphLandingPageDetail.t} | {:error, Tesla.Env.t}
-  def security_attack_simulation_landing_pages_get_details(connection, landing_page_id, landing_page_detail_id, opts \\ []) do
+  @spec security_attack_simulation_landing_pages_get_details(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphLandingPageDetail.t()}
+          | {:error, Tesla.Env.t()}
+  def security_attack_simulation_landing_pages_get_details(
+        connection,
+        landing_page_id,
+        landing_page_detail_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1332,7 +1654,9 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/security/attackSimulation/landingPages/#{landing_page_id}/details/#{landing_page_detail_id}")
+      |> url(
+        "/security/attackSimulation/landingPages/#{landing_page_id}/details/#{landing_page_detail_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1368,8 +1692,19 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphLandingPageDetailCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_landing_pages_list_details(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphLandingPageDetailCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_attack_simulation_landing_pages_list_details(connection, landing_page_id, opts \\ []) do
+  @spec security_attack_simulation_landing_pages_list_details(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphLandingPageDetailCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_attack_simulation_landing_pages_list_details(
+        connection,
+        landing_page_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1413,12 +1748,29 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphLandingPageDetail.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_landing_pages_update_details(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphLandingPageDetail.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphLandingPageDetail.t} | {:error, Tesla.Env.t}
-  def security_attack_simulation_landing_pages_update_details(connection, landing_page_id, landing_page_detail_id, microsoft_graph_landing_page_detail, _opts \\ []) do
+  @spec security_attack_simulation_landing_pages_update_details(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphLandingPageDetail.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphLandingPageDetail.t()}
+          | {:error, Tesla.Env.t()}
+  def security_attack_simulation_landing_pages_update_details(
+        connection,
+        landing_page_id,
+        landing_page_detail_id,
+        microsoft_graph_landing_page_detail,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/security/attackSimulation/landingPages/#{landing_page_id}/details/#{landing_page_detail_id}")
+      |> url(
+        "/security/attackSimulation/landingPages/#{landing_page_id}/details/#{landing_page_detail_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_landing_page_detail)
       |> Enum.into([])
 
@@ -1453,7 +1805,10 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEndUserNotificationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_list_end_user_notifications(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEndUserNotificationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_attack_simulation_list_end_user_notifications(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEndUserNotificationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_attack_simulation_list_end_user_notifications(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1504,7 +1859,10 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphLandingPageCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_list_landing_pages(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphLandingPageCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_attack_simulation_list_landing_pages(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphLandingPageCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_attack_simulation_list_landing_pages(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1555,7 +1913,10 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphLoginPageCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_list_login_pages(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphLoginPageCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_attack_simulation_list_login_pages(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphLoginPageCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_attack_simulation_list_login_pages(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1606,7 +1967,11 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttackSimulationOperationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_list_operations(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAttackSimulationOperationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_attack_simulation_list_operations(Tesla.Env.client(), keyword()) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphAttackSimulationOperationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_attack_simulation_list_operations(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1657,7 +2022,10 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPayloadCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_list_payloads(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPayloadCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_attack_simulation_list_payloads(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPayloadCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_attack_simulation_list_payloads(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1708,7 +2076,10 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSimulationAutomationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_list_simulation_automations(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSimulationAutomationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_attack_simulation_list_simulation_automations(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSimulationAutomationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_attack_simulation_list_simulation_automations(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1759,7 +2130,10 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSimulationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_list_simulations(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSimulationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_attack_simulation_list_simulations(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSimulationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_attack_simulation_list_simulations(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1810,7 +2184,10 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTrainingCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_list_trainings(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTrainingCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_attack_simulation_list_trainings(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTrainingCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_attack_simulation_list_trainings(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1854,7 +2231,10 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_login_pages_get_count_a7ea(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_attack_simulation_login_pages_get_count_a7ea(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_attack_simulation_login_pages_get_count_a7ea(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -1892,7 +2272,10 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_operations_get_count_e5f7(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_attack_simulation_operations_get_count_e5f7(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_attack_simulation_operations_get_count_e5f7(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -1930,7 +2313,10 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_payloads_get_count_f3a2(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_attack_simulation_payloads_get_count_f3a2(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_attack_simulation_payloads_get_count_f3a2(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -1968,8 +2354,21 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSimulationAutomationRun.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_simulation_automations_create_runs(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphSimulationAutomationRun.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSimulationAutomationRun.t} | {:error, Tesla.Env.t}
-  def security_attack_simulation_simulation_automations_create_runs(connection, simulation_automation_id, microsoft_graph_simulation_automation_run, _opts \\ []) do
+  @spec security_attack_simulation_simulation_automations_create_runs(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSimulationAutomationRun.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSimulationAutomationRun.t()}
+          | {:error, Tesla.Env.t()}
+  def security_attack_simulation_simulation_automations_create_runs(
+        connection,
+        simulation_automation_id,
+        microsoft_graph_simulation_automation_run,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -2002,8 +2401,21 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_simulation_automations_delete_runs(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_attack_simulation_simulation_automations_delete_runs(connection, simulation_automation_id, simulation_automation_run_id, opts \\ []) do
+  @spec security_attack_simulation_simulation_automations_delete_runs(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_attack_simulation_simulation_automations_delete_runs(
+        connection,
+        simulation_automation_id,
+        simulation_automation_run_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -2011,7 +2423,9 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
     request =
       %{}
       |> method(:delete)
-      |> url("/security/attackSimulation/simulationAutomations/#{simulation_automation_id}/runs/#{simulation_automation_run_id}")
+      |> url(
+        "/security/attackSimulation/simulationAutomations/#{simulation_automation_id}/runs/#{simulation_automation_run_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2039,7 +2453,13 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_simulation_automations_get_count6071(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_attack_simulation_simulation_automations_get_count6071(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_attack_simulation_simulation_automations_get_count6071(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -2080,8 +2500,21 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSimulationAutomationRun.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_simulation_automations_get_runs(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSimulationAutomationRun.t} | {:error, Tesla.Env.t}
-  def security_attack_simulation_simulation_automations_get_runs(connection, simulation_automation_id, simulation_automation_run_id, opts \\ []) do
+  @spec security_attack_simulation_simulation_automations_get_runs(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSimulationAutomationRun.t()}
+          | {:error, Tesla.Env.t()}
+  def security_attack_simulation_simulation_automations_get_runs(
+        connection,
+        simulation_automation_id,
+        simulation_automation_run_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2090,7 +2523,9 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/security/attackSimulation/simulationAutomations/#{simulation_automation_id}/runs/#{simulation_automation_run_id}")
+      |> url(
+        "/security/attackSimulation/simulationAutomations/#{simulation_automation_id}/runs/#{simulation_automation_run_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2126,8 +2561,20 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSimulationAutomationRunCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_simulation_automations_list_runs(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSimulationAutomationRunCollectionResponse.t} | {:error, Tesla.Env.t}
-  def security_attack_simulation_simulation_automations_list_runs(connection, simulation_automation_id, opts \\ []) do
+  @spec security_attack_simulation_simulation_automations_list_runs(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphSimulationAutomationRunCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def security_attack_simulation_simulation_automations_list_runs(
+        connection,
+        simulation_automation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -2171,8 +2618,19 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_simulation_automations_runs_get_count9ec4(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_attack_simulation_simulation_automations_runs_get_count9ec4(connection, simulation_automation_id, opts \\ []) do
+  @spec security_attack_simulation_simulation_automations_runs_get_count9ec4(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_attack_simulation_simulation_automations_runs_get_count9ec4(
+        connection,
+        simulation_automation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -2181,7 +2639,9 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/security/attackSimulation/simulationAutomations/#{simulation_automation_id}/runs/$count")
+      |> url(
+        "/security/attackSimulation/simulationAutomations/#{simulation_automation_id}/runs/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2210,12 +2670,29 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSimulationAutomationRun.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_simulation_automations_update_runs(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphSimulationAutomationRun.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSimulationAutomationRun.t} | {:error, Tesla.Env.t}
-  def security_attack_simulation_simulation_automations_update_runs(connection, simulation_automation_id, simulation_automation_run_id, microsoft_graph_simulation_automation_run, _opts \\ []) do
+  @spec security_attack_simulation_simulation_automations_update_runs(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSimulationAutomationRun.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSimulationAutomationRun.t()}
+          | {:error, Tesla.Env.t()}
+  def security_attack_simulation_simulation_automations_update_runs(
+        connection,
+        simulation_automation_id,
+        simulation_automation_run_id,
+        microsoft_graph_simulation_automation_run,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/security/attackSimulation/simulationAutomations/#{simulation_automation_id}/runs/#{simulation_automation_run_id}")
+      |> url(
+        "/security/attackSimulation/simulationAutomations/#{simulation_automation_id}/runs/#{simulation_automation_run_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_simulation_automation_run)
       |> Enum.into([])
 
@@ -2243,7 +2720,10 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_simulations_get_count285e(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_attack_simulation_simulations_get_count285e(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_attack_simulation_simulations_get_count285e(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -2283,8 +2763,19 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphLandingPage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_simulations_get_landing_page(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphLandingPage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_attack_simulation_simulations_get_landing_page(connection, simulation_id, opts \\ []) do
+  @spec security_attack_simulation_simulations_get_landing_page(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphLandingPage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_attack_simulation_simulations_get_landing_page(
+        connection,
+        simulation_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2323,7 +2814,14 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphLoginPage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_simulations_get_login_page(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphLoginPage.t} | {:error, Tesla.Env.t}
+  @spec security_attack_simulation_simulations_get_login_page(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphLoginPage.t()}
+          | {:error, Tesla.Env.t()}
   def security_attack_simulation_simulations_get_login_page(connection, simulation_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -2363,7 +2861,14 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPayload.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_simulations_get_payload(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPayload.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_attack_simulation_simulations_get_payload(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPayload.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_attack_simulation_simulations_get_payload(connection, simulation_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -2401,8 +2906,21 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTrainingLanguageDetail.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_trainings_create_language_details(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphTrainingLanguageDetail.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTrainingLanguageDetail.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_attack_simulation_trainings_create_language_details(connection, training_id, microsoft_graph_training_language_detail, _opts \\ []) do
+  @spec security_attack_simulation_trainings_create_language_details(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTrainingLanguageDetail.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTrainingLanguageDetail.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_attack_simulation_trainings_create_language_details(
+        connection,
+        training_id,
+        microsoft_graph_training_language_detail,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -2435,8 +2953,21 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_trainings_delete_language_details(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_attack_simulation_trainings_delete_language_details(connection, training_id, training_language_detail_id, opts \\ []) do
+  @spec security_attack_simulation_trainings_delete_language_details(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_attack_simulation_trainings_delete_language_details(
+        connection,
+        training_id,
+        training_language_detail_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -2444,7 +2975,9 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
     request =
       %{}
       |> method(:delete)
-      |> url("/security/attackSimulation/trainings/#{training_id}/languageDetails/#{training_language_detail_id}")
+      |> url(
+        "/security/attackSimulation/trainings/#{training_id}/languageDetails/#{training_language_detail_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2472,7 +3005,10 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_trainings_get_count_b606(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_attack_simulation_trainings_get_count_b606(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_attack_simulation_trainings_get_count_b606(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -2513,8 +3049,21 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTrainingLanguageDetail.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_trainings_get_language_details(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTrainingLanguageDetail.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_attack_simulation_trainings_get_language_details(connection, training_id, training_language_detail_id, opts \\ []) do
+  @spec security_attack_simulation_trainings_get_language_details(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTrainingLanguageDetail.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_attack_simulation_trainings_get_language_details(
+        connection,
+        training_id,
+        training_language_detail_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2523,7 +3072,9 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
     request =
       %{}
       |> method(:get)
-      |> url("/security/attackSimulation/trainings/#{training_id}/languageDetails/#{training_language_detail_id}")
+      |> url(
+        "/security/attackSimulation/trainings/#{training_id}/languageDetails/#{training_language_detail_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2552,8 +3103,19 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_trainings_language_details_get_count_b009(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_attack_simulation_trainings_language_details_get_count_b009(connection, training_id, opts \\ []) do
+  @spec security_attack_simulation_trainings_language_details_get_count_b009(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_attack_simulation_trainings_language_details_get_count_b009(
+        connection,
+        training_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -2598,8 +3160,19 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTrainingLanguageDetailCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_trainings_list_language_details(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTrainingLanguageDetailCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_attack_simulation_trainings_list_language_details(connection, training_id, opts \\ []) do
+  @spec security_attack_simulation_trainings_list_language_details(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTrainingLanguageDetailCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_attack_simulation_trainings_list_language_details(
+        connection,
+        training_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -2643,12 +3216,29 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTrainingLanguageDetail.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_trainings_update_language_details(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTrainingLanguageDetail.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTrainingLanguageDetail.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_attack_simulation_trainings_update_language_details(connection, training_id, training_language_detail_id, microsoft_graph_training_language_detail, _opts \\ []) do
+  @spec security_attack_simulation_trainings_update_language_details(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTrainingLanguageDetail.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTrainingLanguageDetail.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_attack_simulation_trainings_update_language_details(
+        connection,
+        training_id,
+        training_language_detail_id,
+        microsoft_graph_training_language_detail,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/security/attackSimulation/trainings/#{training_id}/languageDetails/#{training_language_detail_id}")
+      |> url(
+        "/security/attackSimulation/trainings/#{training_id}/languageDetails/#{training_language_detail_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_training_language_detail)
       |> Enum.into([])
 
@@ -2676,8 +3266,21 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEndUserNotification.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_update_end_user_notifications(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphEndUserNotification.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEndUserNotification.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_attack_simulation_update_end_user_notifications(connection, end_user_notification_id, microsoft_graph_end_user_notification, _opts \\ []) do
+  @spec security_attack_simulation_update_end_user_notifications(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphEndUserNotification.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEndUserNotification.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_attack_simulation_update_end_user_notifications(
+        connection,
+        end_user_notification_id,
+        microsoft_graph_end_user_notification,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -2709,8 +3312,21 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphLandingPage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_update_landing_pages(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphLandingPage.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphLandingPage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_attack_simulation_update_landing_pages(connection, landing_page_id, microsoft_graph_landing_page, _opts \\ []) do
+  @spec security_attack_simulation_update_landing_pages(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphLandingPage.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphLandingPage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_attack_simulation_update_landing_pages(
+        connection,
+        landing_page_id,
+        microsoft_graph_landing_page,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -2742,8 +3358,21 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphLoginPage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_update_login_pages(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphLoginPage.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphLoginPage.t} | {:error, Tesla.Env.t}
-  def security_attack_simulation_update_login_pages(connection, login_page_id, microsoft_graph_login_page, _opts \\ []) do
+  @spec security_attack_simulation_update_login_pages(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphLoginPage.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphLoginPage.t()}
+          | {:error, Tesla.Env.t()}
+  def security_attack_simulation_update_login_pages(
+        connection,
+        login_page_id,
+        microsoft_graph_login_page,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -2775,8 +3404,21 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttackSimulationOperation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_update_operations(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphAttackSimulationOperation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAttackSimulationOperation.t} | {:error, Tesla.Env.t}
-  def security_attack_simulation_update_operations(connection, attack_simulation_operation_id, microsoft_graph_attack_simulation_operation, _opts \\ []) do
+  @spec security_attack_simulation_update_operations(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAttackSimulationOperation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAttackSimulationOperation.t()}
+          | {:error, Tesla.Env.t()}
+  def security_attack_simulation_update_operations(
+        connection,
+        attack_simulation_operation_id,
+        microsoft_graph_attack_simulation_operation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -2808,8 +3450,21 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPayload.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_update_payloads(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphPayload.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPayload.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_attack_simulation_update_payloads(connection, payload_id, microsoft_graph_payload, _opts \\ []) do
+  @spec security_attack_simulation_update_payloads(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPayload.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPayload.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_attack_simulation_update_payloads(
+        connection,
+        payload_id,
+        microsoft_graph_payload,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -2841,8 +3496,21 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSimulationAutomation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_update_simulation_automations(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphSimulationAutomation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSimulationAutomation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_attack_simulation_update_simulation_automations(connection, simulation_automation_id, microsoft_graph_simulation_automation, _opts \\ []) do
+  @spec security_attack_simulation_update_simulation_automations(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSimulationAutomation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSimulationAutomation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_attack_simulation_update_simulation_automations(
+        connection,
+        simulation_automation_id,
+        microsoft_graph_simulation_automation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -2875,8 +3543,21 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSimulation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_update_simulations(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphSimulation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSimulation.t} | {:error, Tesla.Env.t}
-  def security_attack_simulation_update_simulations(connection, simulation_id, microsoft_graph_simulation, _opts \\ []) do
+  @spec security_attack_simulation_update_simulations(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSimulation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSimulation.t()}
+          | {:error, Tesla.Env.t()}
+  def security_attack_simulation_update_simulations(
+        connection,
+        simulation_id,
+        microsoft_graph_simulation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -2908,8 +3589,21 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTraining.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_attack_simulation_update_trainings(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphTraining.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTraining.t} | {:error, Tesla.Env.t}
-  def security_attack_simulation_update_trainings(connection, training_id, microsoft_graph_training, _opts \\ []) do
+  @spec security_attack_simulation_update_trainings(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTraining.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTraining.t()}
+          | {:error, Tesla.Env.t()}
+  def security_attack_simulation_update_trainings(
+        connection,
+        training_id,
+        microsoft_graph_training,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -2940,7 +3634,10 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_delete_attack_simulation(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_delete_attack_simulation(Tesla.Env.client(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_delete_attack_simulation(connection, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -2977,7 +3674,10 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttackSimulationRoot.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_get_attack_simulation(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAttackSimulationRoot.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_get_attack_simulation(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAttackSimulationRoot.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_get_attack_simulation(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -3014,8 +3714,19 @@ defmodule MicrosoftGraph.Api.SecurityAttackSimulationRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttackSimulationRoot.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_update_attack_simulation(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphAttackSimulationRoot.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAttackSimulationRoot.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_update_attack_simulation(connection, microsoft_graph_attack_simulation_root, _opts \\ []) do
+  @spec security_update_attack_simulation(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphAttackSimulationRoot.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAttackSimulationRoot.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_update_attack_simulation(
+        connection,
+        microsoft_graph_attack_simulation_root,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

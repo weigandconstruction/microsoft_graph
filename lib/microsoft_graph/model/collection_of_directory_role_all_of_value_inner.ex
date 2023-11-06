@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.CollectionOfDirectoryRoleAllOfValueInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,23 +19,30 @@ defmodule MicrosoftGraph.Model.CollectionOfDirectoryRoleAllOfValueInner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :deletedDateTime => DateTime.t | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :members => [MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t] | nil,
-    :roleTemplateId => String.t | nil,
-    :scopedMembers => [MicrosoftGraph.Model.MicrosoftGraphScopedRoleMembership.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :deletedDateTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :members => [MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()] | nil,
+          :roleTemplateId => String.t() | nil,
+          :scopedMembers => [MicrosoftGraph.Model.MicrosoftGraphScopedRoleMembership.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:deletedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:members, :list, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject)
-     |> Deserializer.deserialize(:scopedMembers, :list, MicrosoftGraph.Model.MicrosoftGraphScopedRoleMembership)
+    |> Deserializer.deserialize(:deletedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :members,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDirectoryObject
+    )
+    |> Deserializer.deserialize(
+      :scopedMembers,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphScopedRoleMembership
+    )
   end
 end
-

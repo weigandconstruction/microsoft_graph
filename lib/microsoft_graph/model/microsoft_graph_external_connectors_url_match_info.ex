@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsUrlMatchInfo do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsUrlMatchInfo do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :baseUrls => [String.t] | nil,
-    :urlPattern => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :baseUrls => [String.t()] | nil,
+          :urlPattern => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

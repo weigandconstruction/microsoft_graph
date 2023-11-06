@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityKubernetesServiceEvidence do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -27,39 +27,82 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityKubernetesServiceEvidence d
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :createdDateTime => DateTime.t | nil,
-    :detailedRoles => [String.t] | nil,
-    :remediationStatus => MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRemediationStatus.t | nil,
-    :remediationStatusDetails => String.t | nil,
-    :roles => [MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRole.t] | nil,
-    :tags => [String.t] | nil,
-    :verdict => MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceVerdict.t | nil,
-    :clusterIP => MicrosoftGraph.Model.KubernetesServiceEvidenceClusterIp.t | nil,
-    :externalIPs => [MicrosoftGraph.Model.KubernetesServiceEvidenceExternalIpsInner.t] | nil,
-    :labels => MicrosoftGraph.Model.KubernetesServiceEvidenceLabels.t | nil,
-    :name => String.t | nil,
-    :namespace => MicrosoftGraph.Model.KubernetesServiceEvidenceNamespace.t | nil,
-    :selector => MicrosoftGraph.Model.KubernetesServiceEvidenceSelector.t | nil,
-    :servicePorts => [MicrosoftGraph.Model.KubernetesServiceEvidenceServicePortsInner.t] | nil,
-    :serviceType => MicrosoftGraph.Model.MicrosoftGraphSecurityKubernetesServiceType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :createdDateTime => DateTime.t() | nil,
+          :detailedRoles => [String.t()] | nil,
+          :remediationStatus =>
+            MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRemediationStatus.t() | nil,
+          :remediationStatusDetails => String.t() | nil,
+          :roles => [MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRole.t()] | nil,
+          :tags => [String.t()] | nil,
+          :verdict => MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceVerdict.t() | nil,
+          :clusterIP => MicrosoftGraph.Model.KubernetesServiceEvidenceClusterIp.t() | nil,
+          :externalIPs =>
+            [MicrosoftGraph.Model.KubernetesServiceEvidenceExternalIpsInner.t()] | nil,
+          :labels => MicrosoftGraph.Model.KubernetesServiceEvidenceLabels.t() | nil,
+          :name => String.t() | nil,
+          :namespace => MicrosoftGraph.Model.KubernetesServiceEvidenceNamespace.t() | nil,
+          :selector => MicrosoftGraph.Model.KubernetesServiceEvidenceSelector.t() | nil,
+          :servicePorts =>
+            [MicrosoftGraph.Model.KubernetesServiceEvidenceServicePortsInner.t()] | nil,
+          :serviceType =>
+            MicrosoftGraph.Model.MicrosoftGraphSecurityKubernetesServiceType.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:remediationStatus, :struct, MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRemediationStatus)
-     |> Deserializer.deserialize(:roles, :list, MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRole)
-     |> Deserializer.deserialize(:verdict, :struct, MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceVerdict)
-     |> Deserializer.deserialize(:clusterIP, :struct, MicrosoftGraph.Model.KubernetesServiceEvidenceClusterIp)
-     |> Deserializer.deserialize(:externalIPs, :list, MicrosoftGraph.Model.KubernetesServiceEvidenceExternalIpsInner)
-     |> Deserializer.deserialize(:labels, :struct, MicrosoftGraph.Model.KubernetesServiceEvidenceLabels)
-     |> Deserializer.deserialize(:namespace, :struct, MicrosoftGraph.Model.KubernetesServiceEvidenceNamespace)
-     |> Deserializer.deserialize(:selector, :struct, MicrosoftGraph.Model.KubernetesServiceEvidenceSelector)
-     |> Deserializer.deserialize(:servicePorts, :list, MicrosoftGraph.Model.KubernetesServiceEvidenceServicePortsInner)
-     |> Deserializer.deserialize(:serviceType, :struct, MicrosoftGraph.Model.MicrosoftGraphSecurityKubernetesServiceType)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :remediationStatus,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRemediationStatus
+    )
+    |> Deserializer.deserialize(
+      :roles,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRole
+    )
+    |> Deserializer.deserialize(
+      :verdict,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceVerdict
+    )
+    |> Deserializer.deserialize(
+      :clusterIP,
+      :struct,
+      MicrosoftGraph.Model.KubernetesServiceEvidenceClusterIp
+    )
+    |> Deserializer.deserialize(
+      :externalIPs,
+      :list,
+      MicrosoftGraph.Model.KubernetesServiceEvidenceExternalIpsInner
+    )
+    |> Deserializer.deserialize(
+      :labels,
+      :struct,
+      MicrosoftGraph.Model.KubernetesServiceEvidenceLabels
+    )
+    |> Deserializer.deserialize(
+      :namespace,
+      :struct,
+      MicrosoftGraph.Model.KubernetesServiceEvidenceNamespace
+    )
+    |> Deserializer.deserialize(
+      :selector,
+      :struct,
+      MicrosoftGraph.Model.KubernetesServiceEvidenceSelector
+    )
+    |> Deserializer.deserialize(
+      :servicePorts,
+      :list,
+      MicrosoftGraph.Model.KubernetesServiceEvidenceServicePortsInner
+    )
+    |> Deserializer.deserialize(
+      :serviceType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityKubernetesServiceType
+    )
   end
 end
-

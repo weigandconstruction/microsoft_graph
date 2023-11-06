@@ -24,8 +24,19 @@ defmodule MicrosoftGraph.Api.DirectoryCustomSecurityAttributeDefinition do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCustomSecurityAttributeDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_create_custom_security_attribute_definitions(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphCustomSecurityAttributeDefinition.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphCustomSecurityAttributeDefinition.t} | {:error, Tesla.Env.t}
-  def directory_create_custom_security_attribute_definitions(connection, microsoft_graph_custom_security_attribute_definition, _opts \\ []) do
+  @spec directory_create_custom_security_attribute_definitions(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphCustomSecurityAttributeDefinition.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphCustomSecurityAttributeDefinition.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_create_custom_security_attribute_definitions(
+        connection,
+        microsoft_graph_custom_security_attribute_definition,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -58,8 +69,19 @@ defmodule MicrosoftGraph.Api.DirectoryCustomSecurityAttributeDefinition do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_custom_security_attribute_definitions_allowed_values_get_count_c982(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_custom_security_attribute_definitions_allowed_values_get_count_c982(connection, custom_security_attribute_definition_id, opts \\ []) do
+  @spec directory_custom_security_attribute_definitions_allowed_values_get_count_c982(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_custom_security_attribute_definitions_allowed_values_get_count_c982(
+        connection,
+        custom_security_attribute_definition_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -68,7 +90,9 @@ defmodule MicrosoftGraph.Api.DirectoryCustomSecurityAttributeDefinition do
     request =
       %{}
       |> method(:get)
-      |> url("/directory/customSecurityAttributeDefinitions/#{custom_security_attribute_definition_id}/allowedValues/$count")
+      |> url(
+        "/directory/customSecurityAttributeDefinitions/#{custom_security_attribute_definition_id}/allowedValues/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -97,12 +121,27 @@ defmodule MicrosoftGraph.Api.DirectoryCustomSecurityAttributeDefinition do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAllowedValue.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_custom_security_attribute_definitions_create_allowed_values(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphAllowedValue.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAllowedValue.t} | {:error, Tesla.Env.t}
-  def directory_custom_security_attribute_definitions_create_allowed_values(connection, custom_security_attribute_definition_id, microsoft_graph_allowed_value, _opts \\ []) do
+  @spec directory_custom_security_attribute_definitions_create_allowed_values(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAllowedValue.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAllowedValue.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_custom_security_attribute_definitions_create_allowed_values(
+        connection,
+        custom_security_attribute_definition_id,
+        microsoft_graph_allowed_value,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/directory/customSecurityAttributeDefinitions/#{custom_security_attribute_definition_id}/allowedValues")
+      |> url(
+        "/directory/customSecurityAttributeDefinitions/#{custom_security_attribute_definition_id}/allowedValues"
+      )
       |> add_param(:body, :body, microsoft_graph_allowed_value)
       |> Enum.into([])
 
@@ -131,8 +170,21 @@ defmodule MicrosoftGraph.Api.DirectoryCustomSecurityAttributeDefinition do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_custom_security_attribute_definitions_delete_allowed_values(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_custom_security_attribute_definitions_delete_allowed_values(connection, custom_security_attribute_definition_id, allowed_value_id, opts \\ []) do
+  @spec directory_custom_security_attribute_definitions_delete_allowed_values(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_custom_security_attribute_definitions_delete_allowed_values(
+        connection,
+        custom_security_attribute_definition_id,
+        allowed_value_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -140,7 +192,9 @@ defmodule MicrosoftGraph.Api.DirectoryCustomSecurityAttributeDefinition do
     request =
       %{}
       |> method(:delete)
-      |> url("/directory/customSecurityAttributeDefinitions/#{custom_security_attribute_definition_id}/allowedValues/#{allowed_value_id}")
+      |> url(
+        "/directory/customSecurityAttributeDefinitions/#{custom_security_attribute_definition_id}/allowedValues/#{allowed_value_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -171,8 +225,21 @@ defmodule MicrosoftGraph.Api.DirectoryCustomSecurityAttributeDefinition do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAllowedValue.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_custom_security_attribute_definitions_get_allowed_values(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAllowedValue.t} | {:error, Tesla.Env.t}
-  def directory_custom_security_attribute_definitions_get_allowed_values(connection, custom_security_attribute_definition_id, allowed_value_id, opts \\ []) do
+  @spec directory_custom_security_attribute_definitions_get_allowed_values(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAllowedValue.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_custom_security_attribute_definitions_get_allowed_values(
+        connection,
+        custom_security_attribute_definition_id,
+        allowed_value_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -181,7 +248,9 @@ defmodule MicrosoftGraph.Api.DirectoryCustomSecurityAttributeDefinition do
     request =
       %{}
       |> method(:get)
-      |> url("/directory/customSecurityAttributeDefinitions/#{custom_security_attribute_definition_id}/allowedValues/#{allowed_value_id}")
+      |> url(
+        "/directory/customSecurityAttributeDefinitions/#{custom_security_attribute_definition_id}/allowedValues/#{allowed_value_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -209,7 +278,13 @@ defmodule MicrosoftGraph.Api.DirectoryCustomSecurityAttributeDefinition do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_custom_security_attribute_definitions_get_count_ae4b(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec directory_custom_security_attribute_definitions_get_count_ae4b(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def directory_custom_security_attribute_definitions_get_count_ae4b(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -255,8 +330,19 @@ defmodule MicrosoftGraph.Api.DirectoryCustomSecurityAttributeDefinition do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAllowedValueCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_custom_security_attribute_definitions_list_allowed_values(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAllowedValueCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_custom_security_attribute_definitions_list_allowed_values(connection, custom_security_attribute_definition_id, opts \\ []) do
+  @spec directory_custom_security_attribute_definitions_list_allowed_values(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAllowedValueCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_custom_security_attribute_definitions_list_allowed_values(
+        connection,
+        custom_security_attribute_definition_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -271,7 +357,9 @@ defmodule MicrosoftGraph.Api.DirectoryCustomSecurityAttributeDefinition do
     request =
       %{}
       |> method(:get)
-      |> url("/directory/customSecurityAttributeDefinitions/#{custom_security_attribute_definition_id}/allowedValues")
+      |> url(
+        "/directory/customSecurityAttributeDefinitions/#{custom_security_attribute_definition_id}/allowedValues"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -301,12 +389,29 @@ defmodule MicrosoftGraph.Api.DirectoryCustomSecurityAttributeDefinition do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAllowedValue.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_custom_security_attribute_definitions_update_allowed_values(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphAllowedValue.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAllowedValue.t} | {:error, Tesla.Env.t}
-  def directory_custom_security_attribute_definitions_update_allowed_values(connection, custom_security_attribute_definition_id, allowed_value_id, microsoft_graph_allowed_value, _opts \\ []) do
+  @spec directory_custom_security_attribute_definitions_update_allowed_values(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAllowedValue.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAllowedValue.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_custom_security_attribute_definitions_update_allowed_values(
+        connection,
+        custom_security_attribute_definition_id,
+        allowed_value_id,
+        microsoft_graph_allowed_value,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/directory/customSecurityAttributeDefinitions/#{custom_security_attribute_definition_id}/allowedValues/#{allowed_value_id}")
+      |> url(
+        "/directory/customSecurityAttributeDefinitions/#{custom_security_attribute_definition_id}/allowedValues/#{allowed_value_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_allowed_value)
       |> Enum.into([])
 
@@ -334,8 +439,19 @@ defmodule MicrosoftGraph.Api.DirectoryCustomSecurityAttributeDefinition do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_delete_custom_security_attribute_definitions(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def directory_delete_custom_security_attribute_definitions(connection, custom_security_attribute_definition_id, opts \\ []) do
+  @spec directory_delete_custom_security_attribute_definitions(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_delete_custom_security_attribute_definitions(
+        connection,
+        custom_security_attribute_definition_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -343,7 +459,9 @@ defmodule MicrosoftGraph.Api.DirectoryCustomSecurityAttributeDefinition do
     request =
       %{}
       |> method(:delete)
-      |> url("/directory/customSecurityAttributeDefinitions/#{custom_security_attribute_definition_id}")
+      |> url(
+        "/directory/customSecurityAttributeDefinitions/#{custom_security_attribute_definition_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -373,8 +491,19 @@ defmodule MicrosoftGraph.Api.DirectoryCustomSecurityAttributeDefinition do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCustomSecurityAttributeDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_get_custom_security_attribute_definitions(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphCustomSecurityAttributeDefinition.t} | {:error, Tesla.Env.t}
-  def directory_get_custom_security_attribute_definitions(connection, custom_security_attribute_definition_id, opts \\ []) do
+  @spec directory_get_custom_security_attribute_definitions(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphCustomSecurityAttributeDefinition.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_get_custom_security_attribute_definitions(
+        connection,
+        custom_security_attribute_definition_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -383,7 +512,9 @@ defmodule MicrosoftGraph.Api.DirectoryCustomSecurityAttributeDefinition do
     request =
       %{}
       |> method(:get)
-      |> url("/directory/customSecurityAttributeDefinitions/#{custom_security_attribute_definition_id}")
+      |> url(
+        "/directory/customSecurityAttributeDefinitions/#{custom_security_attribute_definition_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -418,7 +549,11 @@ defmodule MicrosoftGraph.Api.DirectoryCustomSecurityAttributeDefinition do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCustomSecurityAttributeDefinitionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_list_custom_security_attribute_definitions(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphCustomSecurityAttributeDefinitionCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec directory_list_custom_security_attribute_definitions(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphCustomSecurityAttributeDefinitionCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def directory_list_custom_security_attribute_definitions(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -441,7 +576,8 @@ defmodule MicrosoftGraph.Api.DirectoryCustomSecurityAttributeDefinition do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphCustomSecurityAttributeDefinitionCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphCustomSecurityAttributeDefinitionCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -463,12 +599,27 @@ defmodule MicrosoftGraph.Api.DirectoryCustomSecurityAttributeDefinition do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCustomSecurityAttributeDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec directory_update_custom_security_attribute_definitions(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphCustomSecurityAttributeDefinition.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphCustomSecurityAttributeDefinition.t} | {:error, Tesla.Env.t}
-  def directory_update_custom_security_attribute_definitions(connection, custom_security_attribute_definition_id, microsoft_graph_custom_security_attribute_definition, _opts \\ []) do
+  @spec directory_update_custom_security_attribute_definitions(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphCustomSecurityAttributeDefinition.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphCustomSecurityAttributeDefinition.t()}
+          | {:error, Tesla.Env.t()}
+  def directory_update_custom_security_attribute_definitions(
+        connection,
+        custom_security_attribute_definition_id,
+        microsoft_graph_custom_security_attribute_definition,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/directory/customSecurityAttributeDefinitions/#{custom_security_attribute_definition_id}")
+      |> url(
+        "/directory/customSecurityAttributeDefinitions/#{custom_security_attribute_definition_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_custom_security_attribute_definition)
       |> Enum.into([])
 

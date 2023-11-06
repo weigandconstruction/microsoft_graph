@@ -13,15 +13,14 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphPendingOperationsPendingContentUpda
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :queuedDateTime => DateTime.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :queuedDateTime => DateTime.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:queuedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:queuedDateTime, :datetime, nil)
   end
 end
-

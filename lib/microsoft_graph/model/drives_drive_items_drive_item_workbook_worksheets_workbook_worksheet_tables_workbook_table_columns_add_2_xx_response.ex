@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookWorksheetsWorkbookWorksheetTablesWorkbookTableColumnsAdd2XxResponse do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,20 +17,19 @@ defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookWorksheetsWorkbo
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :filter => MicrosoftGraph.Model.WorkbookTableColumnFilter.t | nil,
-    :index => integer() | nil,
-    :name => String.t | nil,
-    :values => MicrosoftGraph.Model.WorkbookTableColumnValues.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :filter => MicrosoftGraph.Model.WorkbookTableColumnFilter.t() | nil,
+          :index => integer() | nil,
+          :name => String.t() | nil,
+          :values => MicrosoftGraph.Model.WorkbookTableColumnValues.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:filter, :struct, MicrosoftGraph.Model.WorkbookTableColumnFilter)
-     |> Deserializer.deserialize(:values, :struct, MicrosoftGraph.Model.WorkbookTableColumnValues)
+    |> Deserializer.deserialize(:filter, :struct, MicrosoftGraph.Model.WorkbookTableColumnFilter)
+    |> Deserializer.deserialize(:values, :struct, MicrosoftGraph.Model.WorkbookTableColumnValues)
   end
 end
-

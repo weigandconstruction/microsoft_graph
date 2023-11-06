@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSignIn do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -36,48 +36,69 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSignIn do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :appDisplayName => String.t | nil,
-    :appId => String.t | nil,
-    :appliedConditionalAccessPolicies => [MicrosoftGraph.Model.SignInAppliedConditionalAccessPoliciesInner.t] | nil,
-    :clientAppUsed => String.t | nil,
-    :conditionalAccessStatus => MicrosoftGraph.Model.SignInConditionalAccessStatus.t | nil,
-    :correlationId => String.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :deviceDetail => MicrosoftGraph.Model.SignInDeviceDetail.t | nil,
-    :ipAddress => String.t | nil,
-    :isInteractive => boolean() | nil,
-    :location => MicrosoftGraph.Model.SignInLocation.t | nil,
-    :resourceDisplayName => String.t | nil,
-    :resourceId => String.t | nil,
-    :riskDetail => MicrosoftGraph.Model.SignInRiskDetail.t | nil,
-    :riskEventTypes => [MicrosoftGraph.Model.SignInRiskEventTypesInner.t] | nil,
-    :riskEventTypes_v2 => [String.t] | nil,
-    :riskLevelAggregated => MicrosoftGraph.Model.SignInRiskLevelAggregated.t | nil,
-    :riskLevelDuringSignIn => MicrosoftGraph.Model.SignInRiskLevelDuringSignIn.t | nil,
-    :riskState => MicrosoftGraph.Model.SignInRiskState.t | nil,
-    :status => MicrosoftGraph.Model.SignInStatus.t | nil,
-    :userDisplayName => String.t | nil,
-    :userId => String.t | nil,
-    :userPrincipalName => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :appDisplayName => String.t() | nil,
+          :appId => String.t() | nil,
+          :appliedConditionalAccessPolicies =>
+            [MicrosoftGraph.Model.SignInAppliedConditionalAccessPoliciesInner.t()] | nil,
+          :clientAppUsed => String.t() | nil,
+          :conditionalAccessStatus =>
+            MicrosoftGraph.Model.SignInConditionalAccessStatus.t() | nil,
+          :correlationId => String.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :deviceDetail => MicrosoftGraph.Model.SignInDeviceDetail.t() | nil,
+          :ipAddress => String.t() | nil,
+          :isInteractive => boolean() | nil,
+          :location => MicrosoftGraph.Model.SignInLocation.t() | nil,
+          :resourceDisplayName => String.t() | nil,
+          :resourceId => String.t() | nil,
+          :riskDetail => MicrosoftGraph.Model.SignInRiskDetail.t() | nil,
+          :riskEventTypes => [MicrosoftGraph.Model.SignInRiskEventTypesInner.t()] | nil,
+          :riskEventTypes_v2 => [String.t()] | nil,
+          :riskLevelAggregated => MicrosoftGraph.Model.SignInRiskLevelAggregated.t() | nil,
+          :riskLevelDuringSignIn => MicrosoftGraph.Model.SignInRiskLevelDuringSignIn.t() | nil,
+          :riskState => MicrosoftGraph.Model.SignInRiskState.t() | nil,
+          :status => MicrosoftGraph.Model.SignInStatus.t() | nil,
+          :userDisplayName => String.t() | nil,
+          :userId => String.t() | nil,
+          :userPrincipalName => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:appliedConditionalAccessPolicies, :list, MicrosoftGraph.Model.SignInAppliedConditionalAccessPoliciesInner)
-     |> Deserializer.deserialize(:conditionalAccessStatus, :struct, MicrosoftGraph.Model.SignInConditionalAccessStatus)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:deviceDetail, :struct, MicrosoftGraph.Model.SignInDeviceDetail)
-     |> Deserializer.deserialize(:location, :struct, MicrosoftGraph.Model.SignInLocation)
-     |> Deserializer.deserialize(:riskDetail, :struct, MicrosoftGraph.Model.SignInRiskDetail)
-     |> Deserializer.deserialize(:riskEventTypes, :list, MicrosoftGraph.Model.SignInRiskEventTypesInner)
-     |> Deserializer.deserialize(:riskLevelAggregated, :struct, MicrosoftGraph.Model.SignInRiskLevelAggregated)
-     |> Deserializer.deserialize(:riskLevelDuringSignIn, :struct, MicrosoftGraph.Model.SignInRiskLevelDuringSignIn)
-     |> Deserializer.deserialize(:riskState, :struct, MicrosoftGraph.Model.SignInRiskState)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.SignInStatus)
+    |> Deserializer.deserialize(
+      :appliedConditionalAccessPolicies,
+      :list,
+      MicrosoftGraph.Model.SignInAppliedConditionalAccessPoliciesInner
+    )
+    |> Deserializer.deserialize(
+      :conditionalAccessStatus,
+      :struct,
+      MicrosoftGraph.Model.SignInConditionalAccessStatus
+    )
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:deviceDetail, :struct, MicrosoftGraph.Model.SignInDeviceDetail)
+    |> Deserializer.deserialize(:location, :struct, MicrosoftGraph.Model.SignInLocation)
+    |> Deserializer.deserialize(:riskDetail, :struct, MicrosoftGraph.Model.SignInRiskDetail)
+    |> Deserializer.deserialize(
+      :riskEventTypes,
+      :list,
+      MicrosoftGraph.Model.SignInRiskEventTypesInner
+    )
+    |> Deserializer.deserialize(
+      :riskLevelAggregated,
+      :struct,
+      MicrosoftGraph.Model.SignInRiskLevelAggregated
+    )
+    |> Deserializer.deserialize(
+      :riskLevelDuringSignIn,
+      :struct,
+      MicrosoftGraph.Model.SignInRiskLevelDuringSignIn
+    )
+    |> Deserializer.deserialize(:riskState, :struct, MicrosoftGraph.Model.SignInRiskState)
+    |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.SignInStatus)
   end
 end
-

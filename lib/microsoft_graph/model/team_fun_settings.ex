@@ -16,18 +16,22 @@ defmodule MicrosoftGraph.Model.TeamFunSettings do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :allowCustomMemes => boolean() | nil,
-    :allowGiphy => boolean() | nil,
-    :allowStickersAndMemes => boolean() | nil,
-    :giphyContentRating => MicrosoftGraph.Model.MicrosoftGraphTeamFunSettingsGiphyContentRating.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :allowCustomMemes => boolean() | nil,
+          :allowGiphy => boolean() | nil,
+          :allowStickersAndMemes => boolean() | nil,
+          :giphyContentRating =>
+            MicrosoftGraph.Model.MicrosoftGraphTeamFunSettingsGiphyContentRating.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:giphyContentRating, :struct, MicrosoftGraph.Model.MicrosoftGraphTeamFunSettingsGiphyContentRating)
+    |> Deserializer.deserialize(
+      :giphyContentRating,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphTeamFunSettingsGiphyContentRating
+    )
   end
 end
-

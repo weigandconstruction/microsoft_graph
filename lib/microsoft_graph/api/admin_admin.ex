@@ -24,7 +24,10 @@ defmodule MicrosoftGraph.Api.AdminAdmin do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAdmin.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_admin_get_admin(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAdmin.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec admin_admin_get_admin(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAdmin.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def admin_admin_get_admin(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -61,7 +64,14 @@ defmodule MicrosoftGraph.Api.AdminAdmin do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAdmin.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_admin_update_admin(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphAdmin.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAdmin.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec admin_admin_update_admin(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphAdmin.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAdmin.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def admin_admin_update_admin(connection, microsoft_graph_admin, _opts \\ []) do
     request =
       %{}

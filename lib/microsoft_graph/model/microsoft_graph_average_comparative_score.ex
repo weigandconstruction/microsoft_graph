@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAverageComparativeScore do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,20 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAverageComparativeScore do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :averageScore => MicrosoftGraph.Model.MicrosoftGraphAverageComparativeScoreAverageScore.t | nil,
-    :basis => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :averageScore =>
+            MicrosoftGraph.Model.MicrosoftGraphAverageComparativeScoreAverageScore.t() | nil,
+          :basis => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:averageScore, :struct, MicrosoftGraph.Model.MicrosoftGraphAverageComparativeScoreAverageScore)
+    |> Deserializer.deserialize(
+      :averageScore,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAverageComparativeScoreAverageScore
+    )
   end
 end
-

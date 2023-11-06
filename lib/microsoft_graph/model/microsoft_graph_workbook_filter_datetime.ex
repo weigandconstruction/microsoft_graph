@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphWorkbookFilterDatetime do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphWorkbookFilterDatetime do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :date => String.t | nil,
-    :specificity => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :date => String.t() | nil,
+          :specificity => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphShift do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -20,26 +20,29 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphShift do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :lastModifiedBy => MicrosoftGraph.Model.ChangeTrackedEntityLastModifiedBy.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :draftShift => MicrosoftGraph.Model.ShiftDraftShift.t | nil,
-    :schedulingGroupId => String.t | nil,
-    :sharedShift => MicrosoftGraph.Model.ShiftSharedShift.t | nil,
-    :userId => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :lastModifiedBy => MicrosoftGraph.Model.ChangeTrackedEntityLastModifiedBy.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :draftShift => MicrosoftGraph.Model.ShiftDraftShift.t() | nil,
+          :schedulingGroupId => String.t() | nil,
+          :sharedShift => MicrosoftGraph.Model.ShiftSharedShift.t() | nil,
+          :userId => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastModifiedBy, :struct, MicrosoftGraph.Model.ChangeTrackedEntityLastModifiedBy)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:draftShift, :struct, MicrosoftGraph.Model.ShiftDraftShift)
-     |> Deserializer.deserialize(:sharedShift, :struct, MicrosoftGraph.Model.ShiftSharedShift)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :lastModifiedBy,
+      :struct,
+      MicrosoftGraph.Model.ChangeTrackedEntityLastModifiedBy
+    )
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:draftShift, :struct, MicrosoftGraph.Model.ShiftDraftShift)
+    |> Deserializer.deserialize(:sharedShift, :struct, MicrosoftGraph.Model.ShiftSharedShift)
   end
 end
-

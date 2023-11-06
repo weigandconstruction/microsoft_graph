@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphPlannerExternalReference do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,20 +17,24 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphPlannerExternalReference do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :alias => String.t | nil,
-    :lastModifiedBy => MicrosoftGraph.Model.MicrosoftGraphPlannerExternalReferenceLastModifiedBy.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :previewPriority => String.t | nil,
-    :type => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :alias => String.t() | nil,
+          :lastModifiedBy =>
+            MicrosoftGraph.Model.MicrosoftGraphPlannerExternalReferenceLastModifiedBy.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :previewPriority => String.t() | nil,
+          :type => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:lastModifiedBy, :struct, MicrosoftGraph.Model.MicrosoftGraphPlannerExternalReferenceLastModifiedBy)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :lastModifiedBy,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphPlannerExternalReferenceLastModifiedBy
+    )
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
   end
 end
-

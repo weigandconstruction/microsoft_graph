@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAlertDetection do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAlertDetection do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :detectionType => String.t | nil,
-    :method => String.t | nil,
-    :name => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :detectionType => String.t() | nil,
+          :method => String.t() | nil,
+          :name => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

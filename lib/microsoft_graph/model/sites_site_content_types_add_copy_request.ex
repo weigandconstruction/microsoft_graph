@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.SitesSiteContentTypesAddCopyRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,11 +12,10 @@ defmodule MicrosoftGraph.Model.SitesSiteContentTypesAddCopyRequest do
   ]
 
   @type t :: %__MODULE__{
-    :contentType => String.t | nil
-  }
+          :contentType => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsBaseline do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -23,32 +23,68 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsBaseline do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :appHealthMetrics => MicrosoftGraph.Model.UserExperienceAnalyticsBaselineAppHealthMetrics.t | nil,
-    :batteryHealthMetrics => MicrosoftGraph.Model.UserExperienceAnalyticsBaselineBatteryHealthMetrics.t | nil,
-    :bestPracticesMetrics => MicrosoftGraph.Model.UserExperienceAnalyticsBaselineBestPracticesMetrics.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :deviceBootPerformanceMetrics => MicrosoftGraph.Model.UserExperienceAnalyticsBaselineDeviceBootPerformanceMetrics.t | nil,
-    :displayName => String.t | nil,
-    :isBuiltIn => boolean() | nil,
-    :rebootAnalyticsMetrics => MicrosoftGraph.Model.UserExperienceAnalyticsBaselineRebootAnalyticsMetrics.t | nil,
-    :resourcePerformanceMetrics => MicrosoftGraph.Model.UserExperienceAnalyticsBaselineResourcePerformanceMetrics.t | nil,
-    :workFromAnywhereMetrics => MicrosoftGraph.Model.UserExperienceAnalyticsBaselineWorkFromAnywhereMetrics.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :appHealthMetrics =>
+            MicrosoftGraph.Model.UserExperienceAnalyticsBaselineAppHealthMetrics.t() | nil,
+          :batteryHealthMetrics =>
+            MicrosoftGraph.Model.UserExperienceAnalyticsBaselineBatteryHealthMetrics.t() | nil,
+          :bestPracticesMetrics =>
+            MicrosoftGraph.Model.UserExperienceAnalyticsBaselineBestPracticesMetrics.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :deviceBootPerformanceMetrics =>
+            MicrosoftGraph.Model.UserExperienceAnalyticsBaselineDeviceBootPerformanceMetrics.t()
+            | nil,
+          :displayName => String.t() | nil,
+          :isBuiltIn => boolean() | nil,
+          :rebootAnalyticsMetrics =>
+            MicrosoftGraph.Model.UserExperienceAnalyticsBaselineRebootAnalyticsMetrics.t() | nil,
+          :resourcePerformanceMetrics =>
+            MicrosoftGraph.Model.UserExperienceAnalyticsBaselineResourcePerformanceMetrics.t()
+            | nil,
+          :workFromAnywhereMetrics =>
+            MicrosoftGraph.Model.UserExperienceAnalyticsBaselineWorkFromAnywhereMetrics.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:appHealthMetrics, :struct, MicrosoftGraph.Model.UserExperienceAnalyticsBaselineAppHealthMetrics)
-     |> Deserializer.deserialize(:batteryHealthMetrics, :struct, MicrosoftGraph.Model.UserExperienceAnalyticsBaselineBatteryHealthMetrics)
-     |> Deserializer.deserialize(:bestPracticesMetrics, :struct, MicrosoftGraph.Model.UserExperienceAnalyticsBaselineBestPracticesMetrics)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:deviceBootPerformanceMetrics, :struct, MicrosoftGraph.Model.UserExperienceAnalyticsBaselineDeviceBootPerformanceMetrics)
-     |> Deserializer.deserialize(:rebootAnalyticsMetrics, :struct, MicrosoftGraph.Model.UserExperienceAnalyticsBaselineRebootAnalyticsMetrics)
-     |> Deserializer.deserialize(:resourcePerformanceMetrics, :struct, MicrosoftGraph.Model.UserExperienceAnalyticsBaselineResourcePerformanceMetrics)
-     |> Deserializer.deserialize(:workFromAnywhereMetrics, :struct, MicrosoftGraph.Model.UserExperienceAnalyticsBaselineWorkFromAnywhereMetrics)
+    |> Deserializer.deserialize(
+      :appHealthMetrics,
+      :struct,
+      MicrosoftGraph.Model.UserExperienceAnalyticsBaselineAppHealthMetrics
+    )
+    |> Deserializer.deserialize(
+      :batteryHealthMetrics,
+      :struct,
+      MicrosoftGraph.Model.UserExperienceAnalyticsBaselineBatteryHealthMetrics
+    )
+    |> Deserializer.deserialize(
+      :bestPracticesMetrics,
+      :struct,
+      MicrosoftGraph.Model.UserExperienceAnalyticsBaselineBestPracticesMetrics
+    )
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :deviceBootPerformanceMetrics,
+      :struct,
+      MicrosoftGraph.Model.UserExperienceAnalyticsBaselineDeviceBootPerformanceMetrics
+    )
+    |> Deserializer.deserialize(
+      :rebootAnalyticsMetrics,
+      :struct,
+      MicrosoftGraph.Model.UserExperienceAnalyticsBaselineRebootAnalyticsMetrics
+    )
+    |> Deserializer.deserialize(
+      :resourcePerformanceMetrics,
+      :struct,
+      MicrosoftGraph.Model.UserExperienceAnalyticsBaselineResourcePerformanceMetrics
+    )
+    |> Deserializer.deserialize(
+      :workFromAnywhereMetrics,
+      :struct,
+      MicrosoftGraph.Model.UserExperienceAnalyticsBaselineWorkFromAnywhereMetrics
+    )
   end
 end
-

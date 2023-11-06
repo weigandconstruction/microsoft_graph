@@ -24,26 +24,29 @@ defmodule MicrosoftGraph.Model.Windows10EndpointProtectionConfigurationFirewallP
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :authorizedApplicationRulesFromGroupPolicyMerged => boolean() | nil,
-    :connectionSecurityRulesFromGroupPolicyMerged => boolean() | nil,
-    :firewallEnabled => MicrosoftGraph.Model.MicrosoftGraphStateManagementSetting.t | nil,
-    :globalPortRulesFromGroupPolicyMerged => boolean() | nil,
-    :inboundConnectionsBlocked => boolean() | nil,
-    :inboundNotificationsBlocked => boolean() | nil,
-    :incomingTrafficBlocked => boolean() | nil,
-    :outboundConnectionsBlocked => boolean() | nil,
-    :policyRulesFromGroupPolicyMerged => boolean() | nil,
-    :securedPacketExemptionAllowed => boolean() | nil,
-    :stealthModeBlocked => boolean() | nil,
-    :unicastResponsesToMulticastBroadcastsBlocked => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :authorizedApplicationRulesFromGroupPolicyMerged => boolean() | nil,
+          :connectionSecurityRulesFromGroupPolicyMerged => boolean() | nil,
+          :firewallEnabled => MicrosoftGraph.Model.MicrosoftGraphStateManagementSetting.t() | nil,
+          :globalPortRulesFromGroupPolicyMerged => boolean() | nil,
+          :inboundConnectionsBlocked => boolean() | nil,
+          :inboundNotificationsBlocked => boolean() | nil,
+          :incomingTrafficBlocked => boolean() | nil,
+          :outboundConnectionsBlocked => boolean() | nil,
+          :policyRulesFromGroupPolicyMerged => boolean() | nil,
+          :securedPacketExemptionAllowed => boolean() | nil,
+          :stealthModeBlocked => boolean() | nil,
+          :unicastResponsesToMulticastBroadcastsBlocked => boolean() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:firewallEnabled, :struct, MicrosoftGraph.Model.MicrosoftGraphStateManagementSetting)
+    |> Deserializer.deserialize(
+      :firewallEnabled,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphStateManagementSetting
+    )
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAuditActivityInitiator do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,17 +14,24 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAuditActivityInitiator do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :app => MicrosoftGraph.Model.MicrosoftGraphAuditActivityInitiatorApp.t | nil,
-    :user => MicrosoftGraph.Model.MicrosoftGraphAuditActivityInitiatorUser.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :app => MicrosoftGraph.Model.MicrosoftGraphAuditActivityInitiatorApp.t() | nil,
+          :user => MicrosoftGraph.Model.MicrosoftGraphAuditActivityInitiatorUser.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:app, :struct, MicrosoftGraph.Model.MicrosoftGraphAuditActivityInitiatorApp)
-     |> Deserializer.deserialize(:user, :struct, MicrosoftGraph.Model.MicrosoftGraphAuditActivityInitiatorUser)
+    |> Deserializer.deserialize(
+      :app,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAuditActivityInitiatorApp
+    )
+    |> Deserializer.deserialize(
+      :user,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAuditActivityInitiatorUser
+    )
   end
 end
-

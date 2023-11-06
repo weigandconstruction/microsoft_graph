@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.UsersUserOnenoteNotebooksGetNotebookFromWebUrl2XxResponse do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -27,34 +27,49 @@ defmodule MicrosoftGraph.Model.UsersUserOnenoteNotebooksGetNotebookFromWebUrl2Xx
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :createdBy => String.t | nil,
-    :createdByIdentity => MicrosoftGraph.Model.CaseLastModifiedBy.t | nil,
-    :createdTime => DateTime.t | nil,
-    :id => String.t | nil,
-    :isDefault => boolean() | nil,
-    :isShared => boolean() | nil,
-    :lastModifiedBy => String.t | nil,
-    :lastModifiedByIdentity => MicrosoftGraph.Model.CaseLastModifiedBy.t | nil,
-    :lastModifiedTime => DateTime.t | nil,
-    :links => MicrosoftGraph.Model.MicrosoftGraphCopyNotebookModelLinks.t | nil,
-    :name => String.t | nil,
-    :sectionGroupsUrl => String.t | nil,
-    :sectionsUrl => String.t | nil,
-    :self => String.t | nil,
-    :userRole => MicrosoftGraph.Model.MicrosoftGraphCopyNotebookModelUserRole.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :createdBy => String.t() | nil,
+          :createdByIdentity => MicrosoftGraph.Model.CaseLastModifiedBy.t() | nil,
+          :createdTime => DateTime.t() | nil,
+          :id => String.t() | nil,
+          :isDefault => boolean() | nil,
+          :isShared => boolean() | nil,
+          :lastModifiedBy => String.t() | nil,
+          :lastModifiedByIdentity => MicrosoftGraph.Model.CaseLastModifiedBy.t() | nil,
+          :lastModifiedTime => DateTime.t() | nil,
+          :links => MicrosoftGraph.Model.MicrosoftGraphCopyNotebookModelLinks.t() | nil,
+          :name => String.t() | nil,
+          :sectionGroupsUrl => String.t() | nil,
+          :sectionsUrl => String.t() | nil,
+          :self => String.t() | nil,
+          :userRole => MicrosoftGraph.Model.MicrosoftGraphCopyNotebookModelUserRole.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdByIdentity, :struct, MicrosoftGraph.Model.CaseLastModifiedBy)
-     |> Deserializer.deserialize(:createdTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastModifiedByIdentity, :struct, MicrosoftGraph.Model.CaseLastModifiedBy)
-     |> Deserializer.deserialize(:lastModifiedTime, :datetime, nil)
-     |> Deserializer.deserialize(:links, :struct, MicrosoftGraph.Model.MicrosoftGraphCopyNotebookModelLinks)
-     |> Deserializer.deserialize(:userRole, :struct, MicrosoftGraph.Model.MicrosoftGraphCopyNotebookModelUserRole)
+    |> Deserializer.deserialize(
+      :createdByIdentity,
+      :struct,
+      MicrosoftGraph.Model.CaseLastModifiedBy
+    )
+    |> Deserializer.deserialize(:createdTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :lastModifiedByIdentity,
+      :struct,
+      MicrosoftGraph.Model.CaseLastModifiedBy
+    )
+    |> Deserializer.deserialize(:lastModifiedTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :links,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCopyNotebookModelLinks
+    )
+    |> Deserializer.deserialize(
+      :userRole,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCopyNotebookModelUserRole
+    )
   end
 end
-

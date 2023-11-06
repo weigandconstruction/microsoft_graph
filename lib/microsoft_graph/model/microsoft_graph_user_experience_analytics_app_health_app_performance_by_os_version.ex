@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByOsVersion do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -22,21 +22,20 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsAppHealthApp
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :activeDeviceCount => integer() | nil,
-    :appCrashCount => integer() | nil,
-    :appDisplayName => String.t | nil,
-    :appName => String.t | nil,
-    :appPublisher => String.t | nil,
-    :appUsageDuration => integer() | nil,
-    :meanTimeToFailureInMinutes => integer() | nil,
-    :osBuildNumber => String.t | nil,
-    :osVersion => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :activeDeviceCount => integer() | nil,
+          :appCrashCount => integer() | nil,
+          :appDisplayName => String.t() | nil,
+          :appName => String.t() | nil,
+          :appPublisher => String.t() | nil,
+          :appUsageDuration => integer() | nil,
+          :meanTimeToFailureInMinutes => integer() | nil,
+          :osBuildNumber => String.t() | nil,
+          :osVersion => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

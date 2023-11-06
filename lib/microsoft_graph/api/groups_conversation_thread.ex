@@ -25,8 +25,21 @@ defmodule MicrosoftGraph.Api.GroupsConversationThread do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphConversationThread.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec groups_create_threads(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphConversationThread.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationThread.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def groups_create_threads(connection, group_id, microsoft_graph_conversation_thread, _opts \\ []) do
+  @spec groups_create_threads(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphConversationThread.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationThread.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def groups_create_threads(
+        connection,
+        group_id,
+        microsoft_graph_conversation_thread,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -60,7 +73,10 @@ defmodule MicrosoftGraph.Api.GroupsConversationThread do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec groups_delete_threads(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec groups_delete_threads(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def groups_delete_threads(connection, group_id, conversation_thread_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -99,7 +115,10 @@ defmodule MicrosoftGraph.Api.GroupsConversationThread do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphConversationThread.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec groups_get_threads(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationThread.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec groups_get_threads(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationThread.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def groups_get_threads(connection, group_id, conversation_thread_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query
@@ -142,7 +161,10 @@ defmodule MicrosoftGraph.Api.GroupsConversationThread do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphConversationThreadCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec groups_list_threads(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationThreadCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec groups_list_threads(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationThreadCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def groups_list_threads(connection, group_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -184,7 +206,10 @@ defmodule MicrosoftGraph.Api.GroupsConversationThread do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec groups_threads_get_count22d8(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec groups_threads_get_count22d8(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def groups_threads_get_count22d8(connection, group_id, opts \\ []) do
     optional_params = %{
       :"$filter" => :query
@@ -224,7 +249,16 @@ defmodule MicrosoftGraph.Api.GroupsConversationThread do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPost.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec groups_threads_get_posts(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPost.t} | {:error, Tesla.Env.t}
+  @spec groups_threads_get_posts(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPost.t()}
+          | {:error, Tesla.Env.t()}
   def groups_threads_get_posts(connection, group_id, conversation_thread_id, post_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -270,7 +304,10 @@ defmodule MicrosoftGraph.Api.GroupsConversationThread do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPostCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec groups_threads_list_posts(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPostCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec groups_threads_list_posts(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPostCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def groups_threads_list_posts(connection, group_id, conversation_thread_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -315,8 +352,23 @@ defmodule MicrosoftGraph.Api.GroupsConversationThread do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec groups_threads_posts_attachments_get_count_b54e(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def groups_threads_posts_attachments_get_count_b54e(connection, group_id, conversation_thread_id, post_id, opts \\ []) do
+  @spec groups_threads_posts_attachments_get_count_b54e(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def groups_threads_posts_attachments_get_count_b54e(
+        connection,
+        group_id,
+        conversation_thread_id,
+        post_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$filter" => :query
     }
@@ -324,7 +376,9 @@ defmodule MicrosoftGraph.Api.GroupsConversationThread do
     request =
       %{}
       |> method(:get)
-      |> url("/groups/#{group_id}/threads/#{conversation_thread_id}/posts/#{post_id}/attachments/$count")
+      |> url(
+        "/groups/#{group_id}/threads/#{conversation_thread_id}/posts/#{post_id}/attachments/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -354,8 +408,25 @@ defmodule MicrosoftGraph.Api.GroupsConversationThread do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttachment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec groups_threads_posts_create_attachments(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphAttachment.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def groups_threads_posts_create_attachments(connection, group_id, conversation_thread_id, post_id, microsoft_graph_attachment, _opts \\ []) do
+  @spec groups_threads_posts_create_attachments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAttachment.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def groups_threads_posts_create_attachments(
+        connection,
+        group_id,
+        conversation_thread_id,
+        post_id,
+        microsoft_graph_attachment,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -389,8 +460,25 @@ defmodule MicrosoftGraph.Api.GroupsConversationThread do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec groups_threads_posts_create_extensions(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphExtension.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def groups_threads_posts_create_extensions(connection, group_id, conversation_thread_id, post_id, microsoft_graph_extension, _opts \\ []) do
+  @spec groups_threads_posts_create_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphExtension.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def groups_threads_posts_create_extensions(
+        connection,
+        group_id,
+        conversation_thread_id,
+        post_id,
+        microsoft_graph_extension,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -425,8 +513,25 @@ defmodule MicrosoftGraph.Api.GroupsConversationThread do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec groups_threads_posts_delete_attachments(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def groups_threads_posts_delete_attachments(connection, group_id, conversation_thread_id, post_id, attachment_id, opts \\ []) do
+  @spec groups_threads_posts_delete_attachments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def groups_threads_posts_delete_attachments(
+        connection,
+        group_id,
+        conversation_thread_id,
+        post_id,
+        attachment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -434,7 +539,9 @@ defmodule MicrosoftGraph.Api.GroupsConversationThread do
     request =
       %{}
       |> method(:delete)
-      |> url("/groups/#{group_id}/threads/#{conversation_thread_id}/posts/#{post_id}/attachments/#{attachment_id}")
+      |> url(
+        "/groups/#{group_id}/threads/#{conversation_thread_id}/posts/#{post_id}/attachments/#{attachment_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -465,8 +572,25 @@ defmodule MicrosoftGraph.Api.GroupsConversationThread do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec groups_threads_posts_delete_extensions(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def groups_threads_posts_delete_extensions(connection, group_id, conversation_thread_id, post_id, extension_id, opts \\ []) do
+  @spec groups_threads_posts_delete_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def groups_threads_posts_delete_extensions(
+        connection,
+        group_id,
+        conversation_thread_id,
+        post_id,
+        extension_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -474,7 +598,9 @@ defmodule MicrosoftGraph.Api.GroupsConversationThread do
     request =
       %{}
       |> method(:delete)
-      |> url("/groups/#{group_id}/threads/#{conversation_thread_id}/posts/#{post_id}/extensions/#{extension_id}")
+      |> url(
+        "/groups/#{group_id}/threads/#{conversation_thread_id}/posts/#{post_id}/extensions/#{extension_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -504,8 +630,23 @@ defmodule MicrosoftGraph.Api.GroupsConversationThread do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec groups_threads_posts_extensions_get_count5e10(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def groups_threads_posts_extensions_get_count5e10(connection, group_id, conversation_thread_id, post_id, opts \\ []) do
+  @spec groups_threads_posts_extensions_get_count5e10(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def groups_threads_posts_extensions_get_count5e10(
+        connection,
+        group_id,
+        conversation_thread_id,
+        post_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$filter" => :query
     }
@@ -513,7 +654,9 @@ defmodule MicrosoftGraph.Api.GroupsConversationThread do
     request =
       %{}
       |> method(:get)
-      |> url("/groups/#{group_id}/threads/#{conversation_thread_id}/posts/#{post_id}/extensions/$count")
+      |> url(
+        "/groups/#{group_id}/threads/#{conversation_thread_id}/posts/#{post_id}/extensions/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -546,8 +689,25 @@ defmodule MicrosoftGraph.Api.GroupsConversationThread do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttachment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec groups_threads_posts_get_attachments(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def groups_threads_posts_get_attachments(connection, group_id, conversation_thread_id, post_id, attachment_id, opts \\ []) do
+  @spec groups_threads_posts_get_attachments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def groups_threads_posts_get_attachments(
+        connection,
+        group_id,
+        conversation_thread_id,
+        post_id,
+        attachment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -556,7 +716,9 @@ defmodule MicrosoftGraph.Api.GroupsConversationThread do
     request =
       %{}
       |> method(:get)
-      |> url("/groups/#{group_id}/threads/#{conversation_thread_id}/posts/#{post_id}/attachments/#{attachment_id}")
+      |> url(
+        "/groups/#{group_id}/threads/#{conversation_thread_id}/posts/#{post_id}/attachments/#{attachment_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -585,8 +747,16 @@ defmodule MicrosoftGraph.Api.GroupsConversationThread do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec groups_threads_posts_get_count_fcff(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def groups_threads_posts_get_count_fcff(connection, group_id, conversation_thread_id, opts \\ []) do
+  @spec groups_threads_posts_get_count_fcff(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def groups_threads_posts_get_count_fcff(
+        connection,
+        group_id,
+        conversation_thread_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$filter" => :query
     }
@@ -627,8 +797,25 @@ defmodule MicrosoftGraph.Api.GroupsConversationThread do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec groups_threads_posts_get_extensions(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def groups_threads_posts_get_extensions(connection, group_id, conversation_thread_id, post_id, extension_id, opts \\ []) do
+  @spec groups_threads_posts_get_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def groups_threads_posts_get_extensions(
+        connection,
+        group_id,
+        conversation_thread_id,
+        post_id,
+        extension_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -637,7 +824,9 @@ defmodule MicrosoftGraph.Api.GroupsConversationThread do
     request =
       %{}
       |> method(:get)
-      |> url("/groups/#{group_id}/threads/#{conversation_thread_id}/posts/#{post_id}/extensions/#{extension_id}")
+      |> url(
+        "/groups/#{group_id}/threads/#{conversation_thread_id}/posts/#{post_id}/extensions/#{extension_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -669,8 +858,23 @@ defmodule MicrosoftGraph.Api.GroupsConversationThread do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPost.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec groups_threads_posts_get_in_reply_to(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPost.t} | {:error, Tesla.Env.t}
-  def groups_threads_posts_get_in_reply_to(connection, group_id, conversation_thread_id, post_id, opts \\ []) do
+  @spec groups_threads_posts_get_in_reply_to(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPost.t()}
+          | {:error, Tesla.Env.t()}
+  def groups_threads_posts_get_in_reply_to(
+        connection,
+        group_id,
+        conversation_thread_id,
+        post_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -709,8 +913,23 @@ defmodule MicrosoftGraph.Api.GroupsConversationThread do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec groups_threads_posts_in_reply_to_attachments_get_count5b74(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def groups_threads_posts_in_reply_to_attachments_get_count5b74(connection, group_id, conversation_thread_id, post_id, opts \\ []) do
+  @spec groups_threads_posts_in_reply_to_attachments_get_count5b74(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def groups_threads_posts_in_reply_to_attachments_get_count5b74(
+        connection,
+        group_id,
+        conversation_thread_id,
+        post_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$filter" => :query
     }
@@ -718,7 +937,9 @@ defmodule MicrosoftGraph.Api.GroupsConversationThread do
     request =
       %{}
       |> method(:get)
-      |> url("/groups/#{group_id}/threads/#{conversation_thread_id}/posts/#{post_id}/inReplyTo/attachments/$count")
+      |> url(
+        "/groups/#{group_id}/threads/#{conversation_thread_id}/posts/#{post_id}/inReplyTo/attachments/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -748,12 +969,31 @@ defmodule MicrosoftGraph.Api.GroupsConversationThread do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttachment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec groups_threads_posts_in_reply_to_create_attachments(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphAttachment.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def groups_threads_posts_in_reply_to_create_attachments(connection, group_id, conversation_thread_id, post_id, microsoft_graph_attachment, _opts \\ []) do
+  @spec groups_threads_posts_in_reply_to_create_attachments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAttachment.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def groups_threads_posts_in_reply_to_create_attachments(
+        connection,
+        group_id,
+        conversation_thread_id,
+        post_id,
+        microsoft_graph_attachment,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/groups/#{group_id}/threads/#{conversation_thread_id}/posts/#{post_id}/inReplyTo/attachments")
+      |> url(
+        "/groups/#{group_id}/threads/#{conversation_thread_id}/posts/#{post_id}/inReplyTo/attachments"
+      )
       |> add_param(:body, :body, microsoft_graph_attachment)
       |> Enum.into([])
 
@@ -783,12 +1023,31 @@ defmodule MicrosoftGraph.Api.GroupsConversationThread do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec groups_threads_posts_in_reply_to_create_extensions(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphExtension.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def groups_threads_posts_in_reply_to_create_extensions(connection, group_id, conversation_thread_id, post_id, microsoft_graph_extension, _opts \\ []) do
+  @spec groups_threads_posts_in_reply_to_create_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphExtension.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def groups_threads_posts_in_reply_to_create_extensions(
+        connection,
+        group_id,
+        conversation_thread_id,
+        post_id,
+        microsoft_graph_extension,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/groups/#{group_id}/threads/#{conversation_thread_id}/posts/#{post_id}/inReplyTo/extensions")
+      |> url(
+        "/groups/#{group_id}/threads/#{conversation_thread_id}/posts/#{post_id}/inReplyTo/extensions"
+      )
       |> add_param(:body, :body, microsoft_graph_extension)
       |> Enum.into([])
 
@@ -819,8 +1078,25 @@ defmodule MicrosoftGraph.Api.GroupsConversationThread do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec groups_threads_posts_in_reply_to_delete_attachments(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def groups_threads_posts_in_reply_to_delete_attachments(connection, group_id, conversation_thread_id, post_id, attachment_id, opts \\ []) do
+  @spec groups_threads_posts_in_reply_to_delete_attachments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def groups_threads_posts_in_reply_to_delete_attachments(
+        connection,
+        group_id,
+        conversation_thread_id,
+        post_id,
+        attachment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -828,7 +1104,9 @@ defmodule MicrosoftGraph.Api.GroupsConversationThread do
     request =
       %{}
       |> method(:delete)
-      |> url("/groups/#{group_id}/threads/#{conversation_thread_id}/posts/#{post_id}/inReplyTo/attachments/#{attachment_id}")
+      |> url(
+        "/groups/#{group_id}/threads/#{conversation_thread_id}/posts/#{post_id}/inReplyTo/attachments/#{attachment_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -859,8 +1137,25 @@ defmodule MicrosoftGraph.Api.GroupsConversationThread do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec groups_threads_posts_in_reply_to_delete_extensions(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def groups_threads_posts_in_reply_to_delete_extensions(connection, group_id, conversation_thread_id, post_id, extension_id, opts \\ []) do
+  @spec groups_threads_posts_in_reply_to_delete_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def groups_threads_posts_in_reply_to_delete_extensions(
+        connection,
+        group_id,
+        conversation_thread_id,
+        post_id,
+        extension_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -868,7 +1163,9 @@ defmodule MicrosoftGraph.Api.GroupsConversationThread do
     request =
       %{}
       |> method(:delete)
-      |> url("/groups/#{group_id}/threads/#{conversation_thread_id}/posts/#{post_id}/inReplyTo/extensions/#{extension_id}")
+      |> url(
+        "/groups/#{group_id}/threads/#{conversation_thread_id}/posts/#{post_id}/inReplyTo/extensions/#{extension_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -898,8 +1195,23 @@ defmodule MicrosoftGraph.Api.GroupsConversationThread do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec groups_threads_posts_in_reply_to_extensions_get_count364f(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def groups_threads_posts_in_reply_to_extensions_get_count364f(connection, group_id, conversation_thread_id, post_id, opts \\ []) do
+  @spec groups_threads_posts_in_reply_to_extensions_get_count364f(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def groups_threads_posts_in_reply_to_extensions_get_count364f(
+        connection,
+        group_id,
+        conversation_thread_id,
+        post_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$filter" => :query
     }
@@ -907,7 +1219,9 @@ defmodule MicrosoftGraph.Api.GroupsConversationThread do
     request =
       %{}
       |> method(:get)
-      |> url("/groups/#{group_id}/threads/#{conversation_thread_id}/posts/#{post_id}/inReplyTo/extensions/$count")
+      |> url(
+        "/groups/#{group_id}/threads/#{conversation_thread_id}/posts/#{post_id}/inReplyTo/extensions/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -940,8 +1254,25 @@ defmodule MicrosoftGraph.Api.GroupsConversationThread do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttachment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec groups_threads_posts_in_reply_to_get_attachments(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def groups_threads_posts_in_reply_to_get_attachments(connection, group_id, conversation_thread_id, post_id, attachment_id, opts \\ []) do
+  @spec groups_threads_posts_in_reply_to_get_attachments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def groups_threads_posts_in_reply_to_get_attachments(
+        connection,
+        group_id,
+        conversation_thread_id,
+        post_id,
+        attachment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -950,7 +1281,9 @@ defmodule MicrosoftGraph.Api.GroupsConversationThread do
     request =
       %{}
       |> method(:get)
-      |> url("/groups/#{group_id}/threads/#{conversation_thread_id}/posts/#{post_id}/inReplyTo/attachments/#{attachment_id}")
+      |> url(
+        "/groups/#{group_id}/threads/#{conversation_thread_id}/posts/#{post_id}/inReplyTo/attachments/#{attachment_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -983,8 +1316,25 @@ defmodule MicrosoftGraph.Api.GroupsConversationThread do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec groups_threads_posts_in_reply_to_get_extensions(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def groups_threads_posts_in_reply_to_get_extensions(connection, group_id, conversation_thread_id, post_id, extension_id, opts \\ []) do
+  @spec groups_threads_posts_in_reply_to_get_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def groups_threads_posts_in_reply_to_get_extensions(
+        connection,
+        group_id,
+        conversation_thread_id,
+        post_id,
+        extension_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -993,7 +1343,9 @@ defmodule MicrosoftGraph.Api.GroupsConversationThread do
     request =
       %{}
       |> method(:get)
-      |> url("/groups/#{group_id}/threads/#{conversation_thread_id}/posts/#{post_id}/inReplyTo/extensions/#{extension_id}")
+      |> url(
+        "/groups/#{group_id}/threads/#{conversation_thread_id}/posts/#{post_id}/inReplyTo/extensions/#{extension_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1030,8 +1382,23 @@ defmodule MicrosoftGraph.Api.GroupsConversationThread do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttachmentCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec groups_threads_posts_in_reply_to_list_attachments(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachmentCollectionResponse.t} | {:error, Tesla.Env.t}
-  def groups_threads_posts_in_reply_to_list_attachments(connection, group_id, conversation_thread_id, post_id, opts \\ []) do
+  @spec groups_threads_posts_in_reply_to_list_attachments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachmentCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def groups_threads_posts_in_reply_to_list_attachments(
+        connection,
+        group_id,
+        conversation_thread_id,
+        post_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1045,7 +1412,9 @@ defmodule MicrosoftGraph.Api.GroupsConversationThread do
     request =
       %{}
       |> method(:get)
-      |> url("/groups/#{group_id}/threads/#{conversation_thread_id}/posts/#{post_id}/inReplyTo/attachments")
+      |> url(
+        "/groups/#{group_id}/threads/#{conversation_thread_id}/posts/#{post_id}/inReplyTo/attachments"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1082,8 +1451,23 @@ defmodule MicrosoftGraph.Api.GroupsConversationThread do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec groups_threads_posts_in_reply_to_list_extensions(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionCollectionResponse.t} | {:error, Tesla.Env.t}
-  def groups_threads_posts_in_reply_to_list_extensions(connection, group_id, conversation_thread_id, post_id, opts \\ []) do
+  @spec groups_threads_posts_in_reply_to_list_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def groups_threads_posts_in_reply_to_list_extensions(
+        connection,
+        group_id,
+        conversation_thread_id,
+        post_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1097,7 +1481,9 @@ defmodule MicrosoftGraph.Api.GroupsConversationThread do
     request =
       %{}
       |> method(:get)
-      |> url("/groups/#{group_id}/threads/#{conversation_thread_id}/posts/#{post_id}/inReplyTo/extensions")
+      |> url(
+        "/groups/#{group_id}/threads/#{conversation_thread_id}/posts/#{post_id}/inReplyTo/extensions"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1129,12 +1515,33 @@ defmodule MicrosoftGraph.Api.GroupsConversationThread do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec groups_threads_posts_in_reply_to_update_extensions(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphExtension.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def groups_threads_posts_in_reply_to_update_extensions(connection, group_id, conversation_thread_id, post_id, extension_id, microsoft_graph_extension, _opts \\ []) do
+  @spec groups_threads_posts_in_reply_to_update_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphExtension.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def groups_threads_posts_in_reply_to_update_extensions(
+        connection,
+        group_id,
+        conversation_thread_id,
+        post_id,
+        extension_id,
+        microsoft_graph_extension,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/groups/#{group_id}/threads/#{conversation_thread_id}/posts/#{post_id}/inReplyTo/extensions/#{extension_id}")
+      |> url(
+        "/groups/#{group_id}/threads/#{conversation_thread_id}/posts/#{post_id}/inReplyTo/extensions/#{extension_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_extension)
       |> Enum.into([])
 
@@ -1171,8 +1578,23 @@ defmodule MicrosoftGraph.Api.GroupsConversationThread do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAttachmentCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec groups_threads_posts_list_attachments(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachmentCollectionResponse.t} | {:error, Tesla.Env.t}
-  def groups_threads_posts_list_attachments(connection, group_id, conversation_thread_id, post_id, opts \\ []) do
+  @spec groups_threads_posts_list_attachments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAttachmentCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def groups_threads_posts_list_attachments(
+        connection,
+        group_id,
+        conversation_thread_id,
+        post_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1223,8 +1645,23 @@ defmodule MicrosoftGraph.Api.GroupsConversationThread do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec groups_threads_posts_list_extensions(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionCollectionResponse.t} | {:error, Tesla.Env.t}
-  def groups_threads_posts_list_extensions(connection, group_id, conversation_thread_id, post_id, opts \\ []) do
+  @spec groups_threads_posts_list_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphExtensionCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def groups_threads_posts_list_extensions(
+        connection,
+        group_id,
+        conversation_thread_id,
+        post_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1270,12 +1707,33 @@ defmodule MicrosoftGraph.Api.GroupsConversationThread do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec groups_threads_posts_update_extensions(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphExtension.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def groups_threads_posts_update_extensions(connection, group_id, conversation_thread_id, post_id, extension_id, microsoft_graph_extension, _opts \\ []) do
+  @spec groups_threads_posts_update_extensions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphExtension.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphExtension.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def groups_threads_posts_update_extensions(
+        connection,
+        group_id,
+        conversation_thread_id,
+        post_id,
+        extension_id,
+        microsoft_graph_extension,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/groups/#{group_id}/threads/#{conversation_thread_id}/posts/#{post_id}/extensions/#{extension_id}")
+      |> url(
+        "/groups/#{group_id}/threads/#{conversation_thread_id}/posts/#{post_id}/extensions/#{extension_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_extension)
       |> Enum.into([])
 
@@ -1305,8 +1763,23 @@ defmodule MicrosoftGraph.Api.GroupsConversationThread do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphConversationThread.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec groups_update_threads(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphConversationThread.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationThread.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def groups_update_threads(connection, group_id, conversation_thread_id, microsoft_graph_conversation_thread, _opts \\ []) do
+  @spec groups_update_threads(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphConversationThread.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphConversationThread.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def groups_update_threads(
+        connection,
+        group_id,
+        conversation_thread_id,
+        microsoft_graph_conversation_thread,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

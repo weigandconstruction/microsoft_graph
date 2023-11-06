@@ -25,8 +25,21 @@ defmodule MicrosoftGraph.Api.ChatsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec chats_chat_hide_for_user(Tesla.Env.client, String.t, MicrosoftGraph.Model.ChatsChatUnhideForUserRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def chats_chat_hide_for_user(connection, chat_id, chats_chat_unhide_for_user_request, _opts \\ []) do
+  @spec chats_chat_hide_for_user(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.ChatsChatUnhideForUserRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def chats_chat_hide_for_user(
+        connection,
+        chat_id,
+        chats_chat_unhide_for_user_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -60,13 +73,32 @@ defmodule MicrosoftGraph.Api.ChatsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec chats_chat_installed_apps_teams_app_installation_upgrade(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.UsersUserChatsChatInstalledAppsTeamsAppInstallationUpgradeRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def chats_chat_installed_apps_teams_app_installation_upgrade(connection, chat_id, teams_app_installation_id, users_user_chats_chat_installed_apps_teams_app_installation_upgrade_request, _opts \\ []) do
+  @spec chats_chat_installed_apps_teams_app_installation_upgrade(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserChatsChatInstalledAppsTeamsAppInstallationUpgradeRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def chats_chat_installed_apps_teams_app_installation_upgrade(
+        connection,
+        chat_id,
+        teams_app_installation_id,
+        users_user_chats_chat_installed_apps_teams_app_installation_upgrade_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/chats/#{chat_id}/installedApps/#{teams_app_installation_id}/upgrade")
-      |> add_param(:body, :body, users_user_chats_chat_installed_apps_teams_app_installation_upgrade_request)
+      |> add_param(
+        :body,
+        :body,
+        users_user_chats_chat_installed_apps_teams_app_installation_upgrade_request
+      )
       |> Enum.into([])
 
     connection
@@ -94,8 +126,21 @@ defmodule MicrosoftGraph.Api.ChatsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec chats_chat_mark_chat_read_for_user(Tesla.Env.client, String.t, MicrosoftGraph.Model.ChatsChatUnhideForUserRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def chats_chat_mark_chat_read_for_user(connection, chat_id, chats_chat_unhide_for_user_request, _opts \\ []) do
+  @spec chats_chat_mark_chat_read_for_user(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.ChatsChatUnhideForUserRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def chats_chat_mark_chat_read_for_user(
+        connection,
+        chat_id,
+        chats_chat_unhide_for_user_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -128,8 +173,21 @@ defmodule MicrosoftGraph.Api.ChatsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec chats_chat_mark_chat_unread_for_user(Tesla.Env.client, String.t, MicrosoftGraph.Model.UsersUserChatsChatMarkChatUnreadForUserRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def chats_chat_mark_chat_unread_for_user(connection, chat_id, users_user_chats_chat_mark_chat_unread_for_user_request, _opts \\ []) do
+  @spec chats_chat_mark_chat_unread_for_user(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserChatsChatMarkChatUnreadForUserRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def chats_chat_mark_chat_unread_for_user(
+        connection,
+        chat_id,
+        users_user_chats_chat_mark_chat_unread_for_user_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -162,8 +220,21 @@ defmodule MicrosoftGraph.Api.ChatsActions do
   - `{:ok, MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAdd2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec chats_chat_members_add(Tesla.Env.client, String.t, MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAddRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAdd2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def chats_chat_members_add(connection, chat_id, me_joined_teams_team_members_add_request, _opts \\ []) do
+  @spec chats_chat_members_add(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAddRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAdd2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def chats_chat_members_add(
+        connection,
+        chat_id,
+        me_joined_teams_team_members_add_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -197,13 +268,36 @@ defmodule MicrosoftGraph.Api.ChatsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec chats_chat_messages_chat_message_replies_chat_message_set_reaction(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def chats_chat_messages_chat_message_replies_chat_message_set_reaction(connection, chat_id, chat_message_id, chat_message_id1, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request, _opts \\ []) do
+  @spec chats_chat_messages_chat_message_replies_chat_message_set_reaction(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def chats_chat_messages_chat_message_replies_chat_message_set_reaction(
+        connection,
+        chat_id,
+        chat_message_id,
+        chat_message_id1,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/chats/#{chat_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/setReaction")
-      |> add_param(:body, :body, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request)
+      |> url(
+        "/chats/#{chat_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/setReaction"
+      )
+      |> add_param(
+        :body,
+        :body,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request
+      )
       |> Enum.into([])
 
     connection
@@ -232,12 +326,29 @@ defmodule MicrosoftGraph.Api.ChatsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec chats_chat_messages_chat_message_replies_chat_message_soft_delete(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def chats_chat_messages_chat_message_replies_chat_message_soft_delete(connection, chat_id, chat_message_id, chat_message_id1, _opts \\ []) do
+  @spec chats_chat_messages_chat_message_replies_chat_message_soft_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def chats_chat_messages_chat_message_replies_chat_message_soft_delete(
+        connection,
+        chat_id,
+        chat_message_id,
+        chat_message_id1,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/chats/#{chat_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/softDelete")
+      |> url(
+        "/chats/#{chat_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/softDelete"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -267,12 +378,29 @@ defmodule MicrosoftGraph.Api.ChatsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec chats_chat_messages_chat_message_replies_chat_message_undo_soft_delete(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def chats_chat_messages_chat_message_replies_chat_message_undo_soft_delete(connection, chat_id, chat_message_id, chat_message_id1, _opts \\ []) do
+  @spec chats_chat_messages_chat_message_replies_chat_message_undo_soft_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def chats_chat_messages_chat_message_replies_chat_message_undo_soft_delete(
+        connection,
+        chat_id,
+        chat_message_id,
+        chat_message_id1,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/chats/#{chat_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/undoSoftDelete")
+      |> url(
+        "/chats/#{chat_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/undoSoftDelete"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -302,13 +430,36 @@ defmodule MicrosoftGraph.Api.ChatsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec chats_chat_messages_chat_message_replies_chat_message_unset_reaction(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def chats_chat_messages_chat_message_replies_chat_message_unset_reaction(connection, chat_id, chat_message_id, chat_message_id1, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request, _opts \\ []) do
+  @spec chats_chat_messages_chat_message_replies_chat_message_unset_reaction(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def chats_chat_messages_chat_message_replies_chat_message_unset_reaction(
+        connection,
+        chat_id,
+        chat_message_id,
+        chat_message_id1,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/chats/#{chat_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/unsetReaction")
-      |> add_param(:body, :body, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request)
+      |> url(
+        "/chats/#{chat_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/unsetReaction"
+      )
+      |> add_param(
+        :body,
+        :body,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request
+      )
       |> Enum.into([])
 
     connection
@@ -336,13 +487,32 @@ defmodule MicrosoftGraph.Api.ChatsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec chats_chat_messages_chat_message_set_reaction(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def chats_chat_messages_chat_message_set_reaction(connection, chat_id, chat_message_id, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request, _opts \\ []) do
+  @spec chats_chat_messages_chat_message_set_reaction(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def chats_chat_messages_chat_message_set_reaction(
+        connection,
+        chat_id,
+        chat_message_id,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/chats/#{chat_id}/messages/#{chat_message_id}/setReaction")
-      |> add_param(:body, :body, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request)
+      |> add_param(
+        :body,
+        :body,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request
+      )
       |> Enum.into([])
 
     connection
@@ -370,8 +540,21 @@ defmodule MicrosoftGraph.Api.ChatsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec chats_chat_messages_chat_message_soft_delete(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def chats_chat_messages_chat_message_soft_delete(connection, chat_id, chat_message_id, _opts \\ []) do
+  @spec chats_chat_messages_chat_message_soft_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def chats_chat_messages_chat_message_soft_delete(
+        connection,
+        chat_id,
+        chat_message_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -404,8 +587,21 @@ defmodule MicrosoftGraph.Api.ChatsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec chats_chat_messages_chat_message_undo_soft_delete(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def chats_chat_messages_chat_message_undo_soft_delete(connection, chat_id, chat_message_id, _opts \\ []) do
+  @spec chats_chat_messages_chat_message_undo_soft_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def chats_chat_messages_chat_message_undo_soft_delete(
+        connection,
+        chat_id,
+        chat_message_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -438,13 +634,32 @@ defmodule MicrosoftGraph.Api.ChatsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec chats_chat_messages_chat_message_unset_reaction(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def chats_chat_messages_chat_message_unset_reaction(connection, chat_id, chat_message_id, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request, _opts \\ []) do
+  @spec chats_chat_messages_chat_message_unset_reaction(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def chats_chat_messages_chat_message_unset_reaction(
+        connection,
+        chat_id,
+        chat_message_id,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/chats/#{chat_id}/messages/#{chat_message_id}/unsetReaction")
-      |> add_param(:body, :body, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request)
+      |> add_param(
+        :body,
+        :body,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request
+      )
       |> Enum.into([])
 
     connection
@@ -472,8 +687,21 @@ defmodule MicrosoftGraph.Api.ChatsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec chats_chat_send_activity_notification(Tesla.Env.client, String.t, MicrosoftGraph.Model.MeJoinedTeamsTeamSendActivityNotificationRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def chats_chat_send_activity_notification(connection, chat_id, me_joined_teams_team_send_activity_notification_request, _opts \\ []) do
+  @spec chats_chat_send_activity_notification(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MeJoinedTeamsTeamSendActivityNotificationRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def chats_chat_send_activity_notification(
+        connection,
+        chat_id,
+        me_joined_teams_team_send_activity_notification_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -506,8 +734,21 @@ defmodule MicrosoftGraph.Api.ChatsActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec chats_chat_unhide_for_user(Tesla.Env.client, String.t, MicrosoftGraph.Model.ChatsChatUnhideForUserRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def chats_chat_unhide_for_user(connection, chat_id, chats_chat_unhide_for_user_request, _opts \\ []) do
+  @spec chats_chat_unhide_for_user(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.ChatsChatUnhideForUserRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def chats_chat_unhide_for_user(
+        connection,
+        chat_id,
+        chats_chat_unhide_for_user_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)

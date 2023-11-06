@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.GroupsGroupSitesSiteContentTypesContentTypeCopyToDefaultContentLocationRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,15 +13,18 @@ defmodule MicrosoftGraph.Model.GroupsGroupSitesSiteContentTypesContentTypeCopyTo
   ]
 
   @type t :: %__MODULE__{
-    :destinationFileName => String.t | nil,
-    :sourceFile => MicrosoftGraph.Model.MicrosoftGraphItemReference.t | nil
-  }
+          :destinationFileName => String.t() | nil,
+          :sourceFile => MicrosoftGraph.Model.MicrosoftGraphItemReference.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:sourceFile, :struct, MicrosoftGraph.Model.MicrosoftGraphItemReference)
+    |> Deserializer.deserialize(
+      :sourceFile,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphItemReference
+    )
   end
 end
-

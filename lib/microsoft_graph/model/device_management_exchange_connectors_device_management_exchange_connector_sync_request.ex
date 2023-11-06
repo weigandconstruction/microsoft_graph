@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DeviceManagementExchangeConnectorsDeviceManagementExchangeConnectorSyncRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,14 +12,18 @@ defmodule MicrosoftGraph.Model.DeviceManagementExchangeConnectorsDeviceManagemen
   ]
 
   @type t :: %__MODULE__{
-    :syncType => MicrosoftGraph.Model.MicrosoftGraphDeviceManagementExchangeConnectorSyncType.t | nil
-  }
+          :syncType =>
+            MicrosoftGraph.Model.MicrosoftGraphDeviceManagementExchangeConnectorSyncType.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:syncType, :struct, MicrosoftGraph.Model.MicrosoftGraphDeviceManagementExchangeConnectorSyncType)
+    |> Deserializer.deserialize(
+      :syncType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphDeviceManagementExchangeConnectorSyncType
+    )
   end
 end
-

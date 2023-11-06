@@ -30,7 +30,10 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfUserActivity.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_activities_recent(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.CollectionOfUserActivity.t} | {:error, Tesla.Env.t}
+  @spec me_activities_recent(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.CollectionOfUserActivity.t()}
+          | {:error, Tesla.Env.t()}
   def me_activities_recent(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -77,7 +80,11 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.UsersUserCalendarsCalendarAllowedCalendarSharingRoles2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_allowed_calendar_sharing_roles(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserCalendarsCalendarAllowedCalendarSharingRoles2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_calendar_allowed_calendar_sharing_roles(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok,
+           MicrosoftGraph.Model.UsersUserCalendarsCalendarAllowedCalendarSharingRoles2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_calendar_allowed_calendar_sharing_roles(connection, user, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -97,7 +104,8 @@ defmodule MicrosoftGraph.Api.MeFunctions do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.UsersUserCalendarsCalendarAllowedCalendarSharingRoles2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.UsersUserCalendarsCalendarAllowedCalendarSharingRoles2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -126,7 +134,10 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfEvent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_calendar_view_delta(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfEvent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_calendar_calendar_view_delta(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfEvent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_calendar_calendar_view_delta(connection, start_date_time, end_date_time, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -180,8 +191,23 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfEvent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_calendar_view_event_instances_delta(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfEvent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_calendar_view_event_instances_delta(connection, event_id, start_date_time, end_date_time, opts \\ []) do
+  @spec me_calendar_calendar_view_event_instances_delta(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfEvent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_calendar_view_event_instances_delta(
+        connection,
+        event_id,
+        start_date_time,
+        end_date_time,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -233,7 +259,10 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfEvent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_events_delta(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfEvent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_calendar_events_delta(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfEvent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_calendar_events_delta(connection, start_date_time, end_date_time, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -287,8 +316,23 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfEvent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_events_event_instances_delta(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfEvent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_events_event_instances_delta(connection, event_id, start_date_time, end_date_time, opts \\ []) do
+  @spec me_calendar_events_event_instances_delta(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfEvent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_events_event_instances_delta(
+        connection,
+        event_id,
+        start_date_time,
+        end_date_time,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -338,8 +382,24 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.UsersUserCalendarsCalendarAllowedCalendarSharingRoles2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendar_group_calendars_calendar_allowed_calendar_sharing_roles(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserCalendarsCalendarAllowedCalendarSharingRoles2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendar_group_calendars_calendar_allowed_calendar_sharing_roles(connection, calendar_group_id, calendar_id, user, opts \\ []) do
+  @spec me_calendar_groups_calendar_group_calendars_calendar_allowed_calendar_sharing_roles(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.UsersUserCalendarsCalendarAllowedCalendarSharingRoles2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendar_group_calendars_calendar_allowed_calendar_sharing_roles(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        user,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -351,14 +411,17 @@ defmodule MicrosoftGraph.Api.MeFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/allowedCalendarSharingRoles(User&#x3D;&#39;#{user}&#39;)")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/allowedCalendarSharingRoles(User&#x3D;&#39;#{user}&#39;)"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.UsersUserCalendarsCalendarAllowedCalendarSharingRoles2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.UsersUserCalendarsCalendarAllowedCalendarSharingRoles2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -389,8 +452,25 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfEvent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendar_group_calendars_calendar_calendar_view_delta(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfEvent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendar_group_calendars_calendar_calendar_view_delta(connection, calendar_group_id, calendar_id, start_date_time, end_date_time, opts \\ []) do
+  @spec me_calendar_groups_calendar_group_calendars_calendar_calendar_view_delta(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfEvent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendar_group_calendars_calendar_calendar_view_delta(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        start_date_time,
+        end_date_time,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -404,7 +484,9 @@ defmodule MicrosoftGraph.Api.MeFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/delta()")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/delta()"
+      )
       |> add_param(:query, :startDateTime, start_date_time)
       |> add_param(:query, :endDateTime, end_date_time)
       |> add_optional_params(optional_params, opts)
@@ -445,8 +527,27 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfEvent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_delta(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfEvent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_delta(connection, calendar_group_id, calendar_id, event_id, start_date_time, end_date_time, opts \\ []) do
+  @spec me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_delta(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfEvent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_delta(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        start_date_time,
+        end_date_time,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -460,7 +561,9 @@ defmodule MicrosoftGraph.Api.MeFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/instances/delta()")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/instances/delta()"
+      )
       |> add_param(:query, :startDateTime, start_date_time)
       |> add_param(:query, :endDateTime, end_date_time)
       |> add_optional_params(optional_params, opts)
@@ -500,8 +603,25 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfEvent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendar_group_calendars_calendar_events_delta(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfEvent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendar_group_calendars_calendar_events_delta(connection, calendar_group_id, calendar_id, start_date_time, end_date_time, opts \\ []) do
+  @spec me_calendar_groups_calendar_group_calendars_calendar_events_delta(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfEvent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendar_group_calendars_calendar_events_delta(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        start_date_time,
+        end_date_time,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -556,8 +676,27 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfEvent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendar_group_calendars_calendar_events_event_instances_delta(Tesla.Env.client, String.t, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfEvent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendar_group_calendars_calendar_events_event_instances_delta(connection, calendar_group_id, calendar_id, event_id, start_date_time, end_date_time, opts \\ []) do
+  @spec me_calendar_groups_calendar_group_calendars_calendar_events_event_instances_delta(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfEvent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendar_group_calendars_calendar_events_event_instances_delta(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        start_date_time,
+        end_date_time,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -571,7 +710,9 @@ defmodule MicrosoftGraph.Api.MeFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/instances/delta()")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/instances/delta()"
+      )
       |> add_param(:query, :startDateTime, start_date_time)
       |> add_param(:query, :endDateTime, end_date_time)
       |> add_optional_params(optional_params, opts)
@@ -609,7 +750,10 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfEvent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_view_delta(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfEvent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_calendar_view_delta(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfEvent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_calendar_view_delta(connection, start_date_time, end_date_time, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -663,8 +807,23 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfEvent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_view_event_instances_delta(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfEvent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_view_event_instances_delta(connection, event_id, start_date_time, end_date_time, opts \\ []) do
+  @spec me_calendar_view_event_instances_delta(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfEvent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_view_event_instances_delta(
+        connection,
+        event_id,
+        start_date_time,
+        end_date_time,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -713,8 +872,22 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.UsersUserCalendarsCalendarAllowedCalendarSharingRoles2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendars_calendar_allowed_calendar_sharing_roles(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserCalendarsCalendarAllowedCalendarSharingRoles2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendars_calendar_allowed_calendar_sharing_roles(connection, calendar_id, user, opts \\ []) do
+  @spec me_calendars_calendar_allowed_calendar_sharing_roles(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.UsersUserCalendarsCalendarAllowedCalendarSharingRoles2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendars_calendar_allowed_calendar_sharing_roles(
+        connection,
+        calendar_id,
+        user,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -726,14 +899,17 @@ defmodule MicrosoftGraph.Api.MeFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/me/calendars/#{calendar_id}/allowedCalendarSharingRoles(User&#x3D;&#39;#{user}&#39;)")
+      |> url(
+        "/me/calendars/#{calendar_id}/allowedCalendarSharingRoles(User&#x3D;&#39;#{user}&#39;)"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.UsersUserCalendarsCalendarAllowedCalendarSharingRoles2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.UsersUserCalendarsCalendarAllowedCalendarSharingRoles2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -763,8 +939,23 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfEvent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendars_calendar_calendar_view_delta(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfEvent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendars_calendar_calendar_view_delta(connection, calendar_id, start_date_time, end_date_time, opts \\ []) do
+  @spec me_calendars_calendar_calendar_view_delta(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfEvent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendars_calendar_calendar_view_delta(
+        connection,
+        calendar_id,
+        start_date_time,
+        end_date_time,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -818,8 +1009,25 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfEvent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendars_calendar_calendar_view_event_instances_delta(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfEvent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendars_calendar_calendar_view_event_instances_delta(connection, calendar_id, event_id, start_date_time, end_date_time, opts \\ []) do
+  @spec me_calendars_calendar_calendar_view_event_instances_delta(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfEvent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendars_calendar_calendar_view_event_instances_delta(
+        connection,
+        calendar_id,
+        event_id,
+        start_date_time,
+        end_date_time,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -872,8 +1080,23 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfEvent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendars_calendar_events_delta(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfEvent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendars_calendar_events_delta(connection, calendar_id, start_date_time, end_date_time, opts \\ []) do
+  @spec me_calendars_calendar_events_delta(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfEvent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendars_calendar_events_delta(
+        connection,
+        calendar_id,
+        start_date_time,
+        end_date_time,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -927,8 +1150,25 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfEvent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendars_calendar_events_event_instances_delta(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfEvent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendars_calendar_events_event_instances_delta(connection, calendar_id, event_id, start_date_time, end_date_time, opts \\ []) do
+  @spec me_calendars_calendar_events_event_instances_delta(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfEvent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendars_calendar_events_event_instances_delta(
+        connection,
+        calendar_id,
+        event_id,
+        start_date_time,
+        end_date_time,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -979,8 +1219,21 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfChatMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_chats_chat_messages_chat_message_replies_delta(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfChatMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_chats_chat_messages_chat_message_replies_delta(connection, chat_id, chat_message_id, opts \\ []) do
+  @spec me_chats_chat_messages_chat_message_replies_delta(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfChatMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_chats_chat_messages_chat_message_replies_delta(
+        connection,
+        chat_id,
+        chat_message_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1028,7 +1281,10 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfChatMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_chats_chat_messages_delta(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfChatMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_chats_chat_messages_delta(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfChatMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_chats_chat_messages_delta(connection, chat_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1077,7 +1333,10 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfChatMessage1.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_chats_get_all_messages(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfChatMessage1.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_chats_get_all_messages(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfChatMessage1.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_chats_get_all_messages(connection, opts \\ []) do
     optional_params = %{
       :model => :query,
@@ -1129,8 +1388,21 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfContact.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_contact_folders_contact_folder_child_folders_contact_folder_contacts_delta(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfContact.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_contact_folders_contact_folder_child_folders_contact_folder_contacts_delta(connection, contact_folder_id, contact_folder_id1, opts \\ []) do
+  @spec me_contact_folders_contact_folder_child_folders_contact_folder_contacts_delta(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfContact.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_contact_folders_contact_folder_child_folders_contact_folder_contacts_delta(
+        connection,
+        contact_folder_id,
+        contact_folder_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1144,7 +1416,9 @@ defmodule MicrosoftGraph.Api.MeFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/me/contactFolders/#{contact_folder_id}/childFolders/#{contact_folder_id1}/contacts/delta()")
+      |> url(
+        "/me/contactFolders/#{contact_folder_id}/childFolders/#{contact_folder_id1}/contacts/delta()"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1179,8 +1453,19 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfContactFolder.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_contact_folders_contact_folder_child_folders_delta(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfContactFolder.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_contact_folders_contact_folder_child_folders_delta(connection, contact_folder_id, opts \\ []) do
+  @spec me_contact_folders_contact_folder_child_folders_delta(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfContactFolder.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_contact_folders_contact_folder_child_folders_delta(
+        connection,
+        contact_folder_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1229,7 +1514,14 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfContact.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_contact_folders_contact_folder_contacts_delta(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfContact.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_contact_folders_contact_folder_contacts_delta(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfContact.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_contact_folders_contact_folder_contacts_delta(connection, contact_folder_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1278,7 +1570,10 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfContactFolder.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_contact_folders_delta(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfContactFolder.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_contact_folders_delta(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfContactFolder.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_contact_folders_delta(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1327,7 +1622,10 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfContact.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_contacts_delta(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfContact.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_contacts_delta(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfContact.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_contacts_delta(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1378,7 +1676,10 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfEvent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_events_delta(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfEvent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_events_delta(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfEvent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_events_delta(connection, start_date_time, end_date_time, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1432,8 +1733,23 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfEvent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_events_event_instances_delta(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfEvent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_events_event_instances_delta(connection, event_id, start_date_time, end_date_time, opts \\ []) do
+  @spec me_events_event_instances_delta(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfEvent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_events_event_instances_delta(
+        connection,
+        event_id,
+        start_date_time,
+        end_date_time,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1475,7 +1791,10 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.UsersUserExportDeviceAndAppManagementData1a022XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_export_device_and_app_management_data1a02(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserExportDeviceAndAppManagementData1a022XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_export_device_and_app_management_data1a02(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.UsersUserExportDeviceAndAppManagementData1a022XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_export_device_and_app_management_data1a02(connection, _opts \\ []) do
     request =
       %{}
@@ -1507,7 +1826,15 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.UsersUserExportDeviceAndAppManagementData1a022XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_export_device_and_app_management_data_fd7c(Tesla.Env.client, integer(), integer(), keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserExportDeviceAndAppManagementData1a022XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_export_device_and_app_management_data_fd7c(
+          Tesla.Env.client(),
+          integer(),
+          integer(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.UsersUserExportDeviceAndAppManagementData1a022XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_export_device_and_app_management_data_fd7c(connection, skip, top, _opts \\ []) do
     request =
       %{}
@@ -1543,7 +1870,10 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.UsersUserGetManagedAppDiagnosticStatuses2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_get_managed_app_diagnostic_statuses(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserGetManagedAppDiagnosticStatuses2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_get_managed_app_diagnostic_statuses(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.UsersUserGetManagedAppDiagnosticStatuses2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_get_managed_app_diagnostic_statuses(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1590,7 +1920,10 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfManagedAppPolicy.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_get_managed_app_policies(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.CollectionOfManagedAppPolicy.t} | {:error, Tesla.Env.t}
+  @spec me_get_managed_app_policies(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.CollectionOfManagedAppPolicy.t()}
+          | {:error, Tesla.Env.t()}
   def me_get_managed_app_policies(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1637,7 +1970,11 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.DirectoryFederationConfigurationsAvailableProviderTypes2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_get_managed_devices_with_app_failures(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.DirectoryFederationConfigurationsAvailableProviderTypes2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec me_get_managed_devices_with_app_failures(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.DirectoryFederationConfigurationsAvailableProviderTypes2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def me_get_managed_devices_with_app_failures(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1657,7 +1994,8 @@ defmodule MicrosoftGraph.Api.MeFunctions do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.DirectoryFederationConfigurationsAvailableProviderTypes2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.DirectoryFederationConfigurationsAvailableProviderTypes2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -1684,7 +2022,10 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfChatMessage1.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_get_all_messages(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfChatMessage1.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_get_all_messages(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfChatMessage1.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_get_all_messages(connection, opts \\ []) do
     optional_params = %{
       :model => :query,
@@ -1731,8 +2072,22 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.DrivesDriveListContentTypesContentTypeIsPublished2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_team_channels_channel_does_user_have_access(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.DrivesDriveListContentTypesContentTypeIsPublished2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_team_channels_channel_does_user_have_access(connection, team_id, channel_id, opts \\ []) do
+  @spec me_joined_teams_team_channels_channel_does_user_have_access(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.DrivesDriveListContentTypesContentTypeIsPublished2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_team_channels_channel_does_user_have_access(
+        connection,
+        team_id,
+        channel_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :userId => :query,
       :tenantId => :query,
@@ -1742,7 +2097,9 @@ defmodule MicrosoftGraph.Api.MeFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/me/joinedTeams/#{team_id}/channels/#{channel_id}/doesUserHaveAccess(userId&#x3D;&#39;@userId&#39;,tenantId&#x3D;&#39;@tenantId&#39;,userPrincipalName&#x3D;&#39;@userPrincipalName&#39;)")
+      |> url(
+        "/me/joinedTeams/#{team_id}/channels/#{channel_id}/doesUserHaveAccess(userId&#x3D;&#39;@userId&#39;,tenantId&#x3D;&#39;@tenantId&#39;,userPrincipalName&#x3D;&#39;@userPrincipalName&#39;)"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1778,8 +2135,23 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfChatMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_team_channels_channel_messages_chat_message_replies_delta(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfChatMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_team_channels_channel_messages_chat_message_replies_delta(connection, team_id, channel_id, chat_message_id, opts \\ []) do
+  @spec me_joined_teams_team_channels_channel_messages_chat_message_replies_delta(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfChatMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_team_channels_channel_messages_chat_message_replies_delta(
+        connection,
+        team_id,
+        channel_id,
+        chat_message_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1793,7 +2165,9 @@ defmodule MicrosoftGraph.Api.MeFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/delta()")
+      |> url(
+        "/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/delta()"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1828,8 +2202,21 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfChatMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_team_channels_channel_messages_delta(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfChatMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_team_channels_channel_messages_delta(connection, team_id, channel_id, opts \\ []) do
+  @spec me_joined_teams_team_channels_channel_messages_delta(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfChatMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_team_channels_channel_messages_delta(
+        connection,
+        team_id,
+        channel_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1878,7 +2265,10 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfChatMessage1.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_team_channels_get_all_messages(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfChatMessage1.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_team_channels_get_all_messages(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfChatMessage1.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_team_channels_get_all_messages(connection, team_id, opts \\ []) do
     optional_params = %{
       :model => :query,
@@ -1924,7 +2314,15 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.DrivesDriveListContentTypesContentTypeIsPublished2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_team_primary_channel_does_user_have_access(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.DrivesDriveListContentTypesContentTypeIsPublished2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_team_primary_channel_does_user_have_access(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.DrivesDriveListContentTypesContentTypeIsPublished2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_team_primary_channel_does_user_have_access(connection, team_id, opts \\ []) do
     optional_params = %{
       :userId => :query,
@@ -1935,7 +2333,9 @@ defmodule MicrosoftGraph.Api.MeFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/me/joinedTeams/#{team_id}/primaryChannel/doesUserHaveAccess(userId&#x3D;&#39;@userId&#39;,tenantId&#x3D;&#39;@tenantId&#39;,userPrincipalName&#x3D;&#39;@userPrincipalName&#39;)")
+      |> url(
+        "/me/joinedTeams/#{team_id}/primaryChannel/doesUserHaveAccess(userId&#x3D;&#39;@userId&#39;,tenantId&#x3D;&#39;@tenantId&#39;,userPrincipalName&#x3D;&#39;@userPrincipalName&#39;)"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1970,8 +2370,21 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfChatMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_team_primary_channel_messages_chat_message_replies_delta(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfChatMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_team_primary_channel_messages_chat_message_replies_delta(connection, team_id, chat_message_id, opts \\ []) do
+  @spec me_joined_teams_team_primary_channel_messages_chat_message_replies_delta(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfChatMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_team_primary_channel_messages_chat_message_replies_delta(
+        connection,
+        team_id,
+        chat_message_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1985,7 +2398,9 @@ defmodule MicrosoftGraph.Api.MeFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/replies/delta()")
+      |> url(
+        "/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/replies/delta()"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2019,7 +2434,14 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfChatMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_team_primary_channel_messages_delta(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfChatMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_team_primary_channel_messages_delta(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfChatMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_team_primary_channel_messages_delta(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -2068,7 +2490,10 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfMailFolder.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_delta(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfMailFolder.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_mail_folders_delta(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfMailFolder.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_mail_folders_delta(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -2118,7 +2543,10 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfMailFolder.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_mail_folder_child_folders_delta(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfMailFolder.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_mail_folders_mail_folder_child_folders_delta(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfMailFolder.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_mail_folders_mail_folder_child_folders_delta(connection, mail_folder_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -2169,8 +2597,21 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_mail_folder_child_folders_mail_folder_messages_delta(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_mail_folder_child_folders_mail_folder_messages_delta(connection, mail_folder_id, mail_folder_id1, opts \\ []) do
+  @spec me_mail_folders_mail_folder_child_folders_mail_folder_messages_delta(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_mail_folder_child_folders_mail_folder_messages_delta(
+        connection,
+        mail_folder_id,
+        mail_folder_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -2219,7 +2660,10 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_mail_folder_messages_delta(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_mail_folders_mail_folder_messages_delta(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_mail_folders_mail_folder_messages_delta(connection, mail_folder_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -2268,7 +2712,10 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_messages_delta(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_messages_delta(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_messages_delta(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -2315,8 +2762,15 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.UsersUserOnenoteNotebooksGetRecentNotebooks2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_get_recent_notebooks(Tesla.Env.client, boolean(), keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserOnenoteNotebooksGetRecentNotebooks2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_get_recent_notebooks(connection, include_personal_notebooks, opts \\ []) do
+  @spec me_onenote_notebooks_get_recent_notebooks(Tesla.Env.client(), boolean(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.UsersUserOnenoteNotebooksGetRecentNotebooks2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_get_recent_notebooks(
+        connection,
+        include_personal_notebooks,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -2328,7 +2782,9 @@ defmodule MicrosoftGraph.Api.MeFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/me/onenote/notebooks/getRecentNotebooks(includePersonalNotebooks&#x3D;#{include_personal_notebooks})")
+      |> url(
+        "/me/onenote/notebooks/getRecentNotebooks(includePersonalNotebooks&#x3D;#{include_personal_notebooks})"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2358,12 +2814,31 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.SitesSiteOnenotePagesOnenotePagePreview2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_notebook_section_groups_section_group_sections_onenote_section_pages_onenote_page_preview(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.SitesSiteOnenotePagesOnenotePagePreview2XxResponse.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_notebook_section_groups_section_group_sections_onenote_section_pages_onenote_page_preview(connection, notebook_id, section_group_id, onenote_section_id, onenote_page_id, _opts \\ []) do
+  @spec me_onenote_notebooks_notebook_section_groups_section_group_sections_onenote_section_pages_onenote_page_preview(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.SitesSiteOnenotePagesOnenotePagePreview2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_notebook_section_groups_section_group_sections_onenote_section_pages_onenote_page_preview(
+        connection,
+        notebook_id,
+        section_group_id,
+        onenote_section_id,
+        onenote_page_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/preview()")
+      |> url(
+        "/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/preview()"
+      )
       |> Enum.into([])
 
     connection
@@ -2391,12 +2866,29 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.SitesSiteOnenotePagesOnenotePagePreview2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_notebook_sections_onenote_section_pages_onenote_page_preview(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.SitesSiteOnenotePagesOnenotePagePreview2XxResponse.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_notebook_sections_onenote_section_pages_onenote_page_preview(connection, notebook_id, onenote_section_id, onenote_page_id, _opts \\ []) do
+  @spec me_onenote_notebooks_notebook_sections_onenote_section_pages_onenote_page_preview(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.SitesSiteOnenotePagesOnenotePagePreview2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_notebook_sections_onenote_section_pages_onenote_page_preview(
+        connection,
+        notebook_id,
+        onenote_section_id,
+        onenote_page_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/me/onenote/notebooks/#{notebook_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/preview()")
+      |> url(
+        "/me/onenote/notebooks/#{notebook_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/preview()"
+      )
       |> Enum.into([])
 
     connection
@@ -2422,7 +2914,10 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.SitesSiteOnenotePagesOnenotePagePreview2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_pages_onenote_page_preview(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.SitesSiteOnenotePagesOnenotePagePreview2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec me_onenote_pages_onenote_page_preview(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.SitesSiteOnenotePagesOnenotePagePreview2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def me_onenote_pages_onenote_page_preview(connection, onenote_page_id, _opts \\ []) do
     request =
       %{}
@@ -2455,12 +2950,29 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.SitesSiteOnenotePagesOnenotePagePreview2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_preview(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.SitesSiteOnenotePagesOnenotePagePreview2XxResponse.t} | {:error, Tesla.Env.t}
-  def me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_preview(connection, section_group_id, onenote_section_id, onenote_page_id, _opts \\ []) do
+  @spec me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_preview(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.SitesSiteOnenotePagesOnenotePagePreview2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_preview(
+        connection,
+        section_group_id,
+        onenote_section_id,
+        onenote_page_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/me/onenote/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/preview()")
+      |> url(
+        "/me/onenote/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/preview()"
+      )
       |> Enum.into([])
 
     connection
@@ -2487,8 +2999,21 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.SitesSiteOnenotePagesOnenotePagePreview2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_sections_onenote_section_pages_onenote_page_preview(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.SitesSiteOnenotePagesOnenotePagePreview2XxResponse.t} | {:error, Tesla.Env.t}
-  def me_onenote_sections_onenote_section_pages_onenote_page_preview(connection, onenote_section_id, onenote_page_id, _opts \\ []) do
+  @spec me_onenote_sections_onenote_section_pages_onenote_page_preview(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.SitesSiteOnenotePagesOnenotePagePreview2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_sections_onenote_section_pages_onenote_page_preview(
+        connection,
+        onenote_section_id,
+        onenote_page_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
@@ -2518,8 +3043,20 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookWorksheetsWorkbookWorksheetChartsWorkbookChartImage8f132XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_online_meetings_online_meeting_get_virtual_appointment_join_web_url(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookWorksheetsWorkbookWorksheetChartsWorkbookChartImage8f132XxResponse.t} | {:error, Tesla.Env.t}
-  def me_online_meetings_online_meeting_get_virtual_appointment_join_web_url(connection, online_meeting_id, _opts \\ []) do
+  @spec me_online_meetings_online_meeting_get_virtual_appointment_join_web_url(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookWorksheetsWorkbookWorksheetChartsWorkbookChartImage8f132XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def me_online_meetings_online_meeting_get_virtual_appointment_join_web_url(
+        connection,
+        online_meeting_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
@@ -2529,7 +3066,8 @@ defmodule MicrosoftGraph.Api.MeFunctions do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookWorksheetsWorkbookWorksheetChartsWorkbookChartImage8f132XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookWorksheetsWorkbookWorksheetChartsWorkbookChartImage8f132XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -2554,7 +3092,10 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.MeOutlookSupportedLanguages2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_outlook_supported_languages(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MeOutlookSupportedLanguages2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec me_outlook_supported_languages(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MeOutlookSupportedLanguages2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def me_outlook_supported_languages(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -2599,7 +3140,14 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.MeOutlookSupportedTimeZones0d202XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_outlook_supported_time_zones0d20(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphTimeZoneStandard.t, keyword()) :: {:ok, MicrosoftGraph.Model.MeOutlookSupportedTimeZones0d202XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_outlook_supported_time_zones0d20(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphTimeZoneStandard.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MeOutlookSupportedTimeZones0d202XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_outlook_supported_time_zones0d20(connection, time_zone_standard, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -2612,7 +3160,9 @@ defmodule MicrosoftGraph.Api.MeFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/me/outlook/supportedTimeZones(TimeZoneStandard&#x3D;&#39;#{time_zone_standard}&#39;)")
+      |> url(
+        "/me/outlook/supportedTimeZones(TimeZoneStandard&#x3D;&#39;#{time_zone_standard}&#39;)"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2643,7 +3193,10 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.MeOutlookSupportedTimeZones0d202XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_outlook_supported_time_zones5c4f(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MeOutlookSupportedTimeZones0d202XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_outlook_supported_time_zones5c4f(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MeOutlookSupportedTimeZones0d202XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_outlook_supported_time_zones5c4f(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -2689,7 +3242,10 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.MeReminderView2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_reminder_view(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MeReminderView2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec me_reminder_view(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MeReminderView2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def me_reminder_view(connection, start_date_time, end_date_time, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -2702,7 +3258,9 @@ defmodule MicrosoftGraph.Api.MeFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/me/reminderView(StartDateTime&#x3D;&#39;#{start_date_time}&#39;,EndDateTime&#x3D;&#39;#{end_date_time}&#39;)")
+      |> url(
+        "/me/reminderView(StartDateTime&#x3D;&#39;#{start_date_time}&#39;,EndDateTime&#x3D;&#39;#{end_date_time}&#39;)"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2735,7 +3293,10 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfTodoTaskList.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_todo_lists_delta(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfTodoTaskList.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_todo_lists_delta(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfTodoTaskList.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_todo_lists_delta(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -2784,7 +3345,10 @@ defmodule MicrosoftGraph.Api.MeFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfTodoTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_todo_lists_todo_task_list_tasks_delta(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfTodoTask.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_todo_lists_todo_task_list_tasks_delta(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfTodoTask.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_todo_lists_todo_task_list_tasks_delta(connection, todo_task_list_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,

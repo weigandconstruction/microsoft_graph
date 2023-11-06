@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphImportedWindowsAutopilotDeviceIdentityUpload do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,20 +16,30 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphImportedWindowsAutopilotDeviceIdent
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :createdDateTimeUtc => DateTime.t | nil,
-    :deviceIdentities => [MicrosoftGraph.Model.MicrosoftGraphImportedWindowsAutopilotDeviceIdentity.t] | nil,
-    :status => MicrosoftGraph.Model.MicrosoftGraphImportedWindowsAutopilotDeviceIdentityUploadStatus.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :createdDateTimeUtc => DateTime.t() | nil,
+          :deviceIdentities =>
+            [MicrosoftGraph.Model.MicrosoftGraphImportedWindowsAutopilotDeviceIdentity.t()] | nil,
+          :status =>
+            MicrosoftGraph.Model.MicrosoftGraphImportedWindowsAutopilotDeviceIdentityUploadStatus.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdDateTimeUtc, :datetime, nil)
-     |> Deserializer.deserialize(:deviceIdentities, :list, MicrosoftGraph.Model.MicrosoftGraphImportedWindowsAutopilotDeviceIdentity)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.MicrosoftGraphImportedWindowsAutopilotDeviceIdentityUploadStatus)
+    |> Deserializer.deserialize(:createdDateTimeUtc, :datetime, nil)
+    |> Deserializer.deserialize(
+      :deviceIdentities,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphImportedWindowsAutopilotDeviceIdentity
+    )
+    |> Deserializer.deserialize(
+      :status,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphImportedWindowsAutopilotDeviceIdentityUploadStatus
+    )
   end
 end
-

@@ -14,16 +14,19 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodFeatureConfigur
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :targetType => MicrosoftGraph.Model.MicrosoftGraphFeatureTargetTargetType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :targetType => MicrosoftGraph.Model.MicrosoftGraphFeatureTargetTargetType.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:targetType, :struct, MicrosoftGraph.Model.MicrosoftGraphFeatureTargetTargetType)
+    |> Deserializer.deserialize(
+      :targetType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphFeatureTargetTargetType
+    )
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.ReportsGetUserArchivedPrintJobs2XxResponseAllOfValueInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -22,28 +22,35 @@ defmodule MicrosoftGraph.Model.ReportsGetUserArchivedPrintJobs2XxResponseAllOfVa
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :acquiredByPrinter => boolean() | nil,
-    :acquiredDateTime => DateTime.t | nil,
-    :completionDateTime => DateTime.t | nil,
-    :copiesPrinted => integer() | nil,
-    :createdBy => MicrosoftGraph.Model.MicrosoftGraphArchivedPrintJobCreatedBy.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :id => String.t | nil,
-    :printerId => String.t | nil,
-    :printerName => String.t | nil,
-    :processingState => MicrosoftGraph.Model.MicrosoftGraphPrintJobProcessingState.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :acquiredByPrinter => boolean() | nil,
+          :acquiredDateTime => DateTime.t() | nil,
+          :completionDateTime => DateTime.t() | nil,
+          :copiesPrinted => integer() | nil,
+          :createdBy => MicrosoftGraph.Model.MicrosoftGraphArchivedPrintJobCreatedBy.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :id => String.t() | nil,
+          :printerId => String.t() | nil,
+          :printerName => String.t() | nil,
+          :processingState => MicrosoftGraph.Model.MicrosoftGraphPrintJobProcessingState.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:acquiredDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:completionDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.MicrosoftGraphArchivedPrintJobCreatedBy)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:processingState, :struct, MicrosoftGraph.Model.MicrosoftGraphPrintJobProcessingState)
+    |> Deserializer.deserialize(:acquiredDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:completionDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :createdBy,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphArchivedPrintJobCreatedBy
+    )
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :processingState,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphPrintJobProcessingState
+    )
   end
 end
-

@@ -24,8 +24,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementRemoteAssistancePartner do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphRemoteAssistancePartner.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_create_remote_assistance_partners(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphRemoteAssistancePartner.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphRemoteAssistancePartner.t} | {:error, Tesla.Env.t}
-  def device_management_create_remote_assistance_partners(connection, microsoft_graph_remote_assistance_partner, _opts \\ []) do
+  @spec device_management_create_remote_assistance_partners(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphRemoteAssistancePartner.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphRemoteAssistancePartner.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_create_remote_assistance_partners(
+        connection,
+        microsoft_graph_remote_assistance_partner,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -58,8 +69,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementRemoteAssistancePartner do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_delete_remote_assistance_partners(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_delete_remote_assistance_partners(connection, remote_assistance_partner_id, opts \\ []) do
+  @spec device_management_delete_remote_assistance_partners(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_delete_remote_assistance_partners(
+        connection,
+        remote_assistance_partner_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -97,8 +119,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementRemoteAssistancePartner do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphRemoteAssistancePartner.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_get_remote_assistance_partners(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphRemoteAssistancePartner.t} | {:error, Tesla.Env.t}
-  def device_management_get_remote_assistance_partners(connection, remote_assistance_partner_id, opts \\ []) do
+  @spec device_management_get_remote_assistance_partners(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphRemoteAssistancePartner.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_get_remote_assistance_partners(
+        connection,
+        remote_assistance_partner_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -142,7 +175,10 @@ defmodule MicrosoftGraph.Api.DeviceManagementRemoteAssistancePartner do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphRemoteAssistancePartnerCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_list_remote_assistance_partners(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphRemoteAssistancePartnerCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec device_management_list_remote_assistance_partners(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphRemoteAssistancePartnerCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def device_management_list_remote_assistance_partners(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -186,7 +222,10 @@ defmodule MicrosoftGraph.Api.DeviceManagementRemoteAssistancePartner do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_remote_assistance_partners_get_count427d(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec device_management_remote_assistance_partners_get_count427d(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def device_management_remote_assistance_partners_get_count427d(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -225,8 +264,21 @@ defmodule MicrosoftGraph.Api.DeviceManagementRemoteAssistancePartner do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphRemoteAssistancePartner.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_update_remote_assistance_partners(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphRemoteAssistancePartner.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphRemoteAssistancePartner.t} | {:error, Tesla.Env.t}
-  def device_management_update_remote_assistance_partners(connection, remote_assistance_partner_id, microsoft_graph_remote_assistance_partner, _opts \\ []) do
+  @spec device_management_update_remote_assistance_partners(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphRemoteAssistancePartner.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphRemoteAssistancePartner.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_update_remote_assistance_partners(
+        connection,
+        remote_assistance_partner_id,
+        microsoft_graph_remote_assistance_partner,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

@@ -24,8 +24,21 @@ defmodule MicrosoftGraph.Api.TeamsTeamsAsyncOperation do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAsyncOperation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_create_operations(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphTeamsAsyncOperation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAsyncOperation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_create_operations(connection, team_id, microsoft_graph_teams_async_operation, _opts \\ []) do
+  @spec teams_create_operations(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTeamsAsyncOperation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAsyncOperation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_create_operations(
+        connection,
+        team_id,
+        microsoft_graph_teams_async_operation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -58,7 +71,10 @@ defmodule MicrosoftGraph.Api.TeamsTeamsAsyncOperation do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_delete_operations(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_delete_operations(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_delete_operations(connection, team_id, teams_async_operation_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -98,7 +114,10 @@ defmodule MicrosoftGraph.Api.TeamsTeamsAsyncOperation do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAsyncOperation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_get_operations(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAsyncOperation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_get_operations(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAsyncOperation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_get_operations(connection, team_id, teams_async_operation_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -144,7 +163,10 @@ defmodule MicrosoftGraph.Api.TeamsTeamsAsyncOperation do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAsyncOperationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_list_operations(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAsyncOperationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_list_operations(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAsyncOperationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_list_operations(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -189,7 +211,10 @@ defmodule MicrosoftGraph.Api.TeamsTeamsAsyncOperation do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_operations_get_count66af(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_operations_get_count66af(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_operations_get_count66af(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -228,8 +253,23 @@ defmodule MicrosoftGraph.Api.TeamsTeamsAsyncOperation do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAsyncOperation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_update_operations(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTeamsAsyncOperation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAsyncOperation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_update_operations(connection, team_id, teams_async_operation_id, microsoft_graph_teams_async_operation, _opts \\ []) do
+  @spec teams_update_operations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTeamsAsyncOperation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsAsyncOperation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_update_operations(
+        connection,
+        team_id,
+        teams_async_operation_id,
+        microsoft_graph_teams_async_operation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

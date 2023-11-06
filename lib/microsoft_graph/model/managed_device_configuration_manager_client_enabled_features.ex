@@ -18,17 +18,16 @@ defmodule MicrosoftGraph.Model.ManagedDeviceConfigurationManagerClientEnabledFea
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :compliancePolicy => boolean() | nil,
-    :deviceConfiguration => boolean() | nil,
-    :inventory => boolean() | nil,
-    :modernApps => boolean() | nil,
-    :resourceAccess => boolean() | nil,
-    :windowsUpdateForBusiness => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :compliancePolicy => boolean() | nil,
+          :deviceConfiguration => boolean() | nil,
+          :inventory => boolean() | nil,
+          :modernApps => boolean() | nil,
+          :resourceAccess => boolean() | nil,
+          :windowsUpdateForBusiness => boolean() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

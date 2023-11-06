@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphActivityHistoryItem do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -22,30 +22,33 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphActivityHistoryItem do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :activeDurationSeconds => integer() | nil,
-    :activity => MicrosoftGraph.Model.MicrosoftGraphUserActivity.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :expirationDateTime => DateTime.t | nil,
-    :lastActiveDateTime => DateTime.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :startedDateTime => DateTime.t | nil,
-    :status => MicrosoftGraph.Model.UserActivityStatus.t | nil,
-    :userTimezone => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :activeDurationSeconds => integer() | nil,
+          :activity => MicrosoftGraph.Model.MicrosoftGraphUserActivity.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :expirationDateTime => DateTime.t() | nil,
+          :lastActiveDateTime => DateTime.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :startedDateTime => DateTime.t() | nil,
+          :status => MicrosoftGraph.Model.UserActivityStatus.t() | nil,
+          :userTimezone => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:activity, :struct, MicrosoftGraph.Model.MicrosoftGraphUserActivity)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:expirationDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastActiveDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:startedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.UserActivityStatus)
+    |> Deserializer.deserialize(
+      :activity,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphUserActivity
+    )
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:expirationDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastActiveDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:startedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.UserActivityStatus)
   end
 end
-

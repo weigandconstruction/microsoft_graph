@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxis do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -21,30 +21,45 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphWorkbookChartAxis do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :format => MicrosoftGraph.Model.WorkbookChartAxisFormat.t | nil,
-    :majorGridlines => MicrosoftGraph.Model.WorkbookChartAxisMajorGridlines.t | nil,
-    :majorUnit => MicrosoftGraph.Model.WorkbookChartAxisMajorUnit.t | nil,
-    :maximum => MicrosoftGraph.Model.WorkbookChartAxisMaximum.t | nil,
-    :minimum => MicrosoftGraph.Model.WorkbookChartAxisMinimum.t | nil,
-    :minorGridlines => MicrosoftGraph.Model.WorkbookChartAxisMinorGridlines.t | nil,
-    :minorUnit => MicrosoftGraph.Model.WorkbookChartAxisMinorUnit.t | nil,
-    :title => MicrosoftGraph.Model.WorkbookChartAxisTitle.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :format => MicrosoftGraph.Model.WorkbookChartAxisFormat.t() | nil,
+          :majorGridlines => MicrosoftGraph.Model.WorkbookChartAxisMajorGridlines.t() | nil,
+          :majorUnit => MicrosoftGraph.Model.WorkbookChartAxisMajorUnit.t() | nil,
+          :maximum => MicrosoftGraph.Model.WorkbookChartAxisMaximum.t() | nil,
+          :minimum => MicrosoftGraph.Model.WorkbookChartAxisMinimum.t() | nil,
+          :minorGridlines => MicrosoftGraph.Model.WorkbookChartAxisMinorGridlines.t() | nil,
+          :minorUnit => MicrosoftGraph.Model.WorkbookChartAxisMinorUnit.t() | nil,
+          :title => MicrosoftGraph.Model.WorkbookChartAxisTitle.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:format, :struct, MicrosoftGraph.Model.WorkbookChartAxisFormat)
-     |> Deserializer.deserialize(:majorGridlines, :struct, MicrosoftGraph.Model.WorkbookChartAxisMajorGridlines)
-     |> Deserializer.deserialize(:majorUnit, :struct, MicrosoftGraph.Model.WorkbookChartAxisMajorUnit)
-     |> Deserializer.deserialize(:maximum, :struct, MicrosoftGraph.Model.WorkbookChartAxisMaximum)
-     |> Deserializer.deserialize(:minimum, :struct, MicrosoftGraph.Model.WorkbookChartAxisMinimum)
-     |> Deserializer.deserialize(:minorGridlines, :struct, MicrosoftGraph.Model.WorkbookChartAxisMinorGridlines)
-     |> Deserializer.deserialize(:minorUnit, :struct, MicrosoftGraph.Model.WorkbookChartAxisMinorUnit)
-     |> Deserializer.deserialize(:title, :struct, MicrosoftGraph.Model.WorkbookChartAxisTitle)
+    |> Deserializer.deserialize(:format, :struct, MicrosoftGraph.Model.WorkbookChartAxisFormat)
+    |> Deserializer.deserialize(
+      :majorGridlines,
+      :struct,
+      MicrosoftGraph.Model.WorkbookChartAxisMajorGridlines
+    )
+    |> Deserializer.deserialize(
+      :majorUnit,
+      :struct,
+      MicrosoftGraph.Model.WorkbookChartAxisMajorUnit
+    )
+    |> Deserializer.deserialize(:maximum, :struct, MicrosoftGraph.Model.WorkbookChartAxisMaximum)
+    |> Deserializer.deserialize(:minimum, :struct, MicrosoftGraph.Model.WorkbookChartAxisMinimum)
+    |> Deserializer.deserialize(
+      :minorGridlines,
+      :struct,
+      MicrosoftGraph.Model.WorkbookChartAxisMinorGridlines
+    )
+    |> Deserializer.deserialize(
+      :minorUnit,
+      :struct,
+      MicrosoftGraph.Model.WorkbookChartAxisMinorUnit
+    )
+    |> Deserializer.deserialize(:title, :struct, MicrosoftGraph.Model.WorkbookChartAxisTitle)
   end
 end
-

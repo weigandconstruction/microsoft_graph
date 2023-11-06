@@ -26,7 +26,10 @@ defmodule MicrosoftGraph.Api.SharesSite do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSite.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec shares_get_site(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSite.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec shares_get_site(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSite.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def shares_get_site(connection, shared_drive_item_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,

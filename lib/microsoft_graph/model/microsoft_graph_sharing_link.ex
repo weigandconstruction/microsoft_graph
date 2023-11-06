@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSharingLink do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,20 +18,23 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSharingLink do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :application => MicrosoftGraph.Model.MicrosoftGraphSharingLinkApplication.t | nil,
-    :preventsDownload => boolean() | nil,
-    :scope => String.t | nil,
-    :type => String.t | nil,
-    :webHtml => String.t | nil,
-    :webUrl => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :application => MicrosoftGraph.Model.MicrosoftGraphSharingLinkApplication.t() | nil,
+          :preventsDownload => boolean() | nil,
+          :scope => String.t() | nil,
+          :type => String.t() | nil,
+          :webHtml => String.t() | nil,
+          :webUrl => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:application, :struct, MicrosoftGraph.Model.MicrosoftGraphSharingLinkApplication)
+    |> Deserializer.deserialize(
+      :application,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSharingLinkApplication
+    )
   end
 end
-

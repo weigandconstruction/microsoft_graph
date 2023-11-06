@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphBookingQuestionAnswer do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,21 +19,25 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphBookingQuestionAnswer do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :answer => String.t | nil,
-    :answerInputType => MicrosoftGraph.Model.MicrosoftGraphBookingQuestionAnswerAnswerInputType.t | nil,
-    :answerOptions => [String.t] | nil,
-    :isRequired => boolean() | nil,
-    :question => String.t | nil,
-    :questionId => String.t | nil,
-    :selectedOptions => [String.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :answer => String.t() | nil,
+          :answerInputType =>
+            MicrosoftGraph.Model.MicrosoftGraphBookingQuestionAnswerAnswerInputType.t() | nil,
+          :answerOptions => [String.t()] | nil,
+          :isRequired => boolean() | nil,
+          :question => String.t() | nil,
+          :questionId => String.t() | nil,
+          :selectedOptions => [String.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:answerInputType, :struct, MicrosoftGraph.Model.MicrosoftGraphBookingQuestionAnswerAnswerInputType)
+    |> Deserializer.deserialize(
+      :answerInputType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphBookingQuestionAnswerAnswerInputType
+    )
   end
 end
-

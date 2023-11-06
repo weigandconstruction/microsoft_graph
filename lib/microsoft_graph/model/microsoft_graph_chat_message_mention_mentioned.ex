@@ -16,21 +16,37 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphChatMessageMentionMentioned do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :application => MicrosoftGraph.Model.MicrosoftGraphIdentitySetApplication.t | nil,
-    :device => MicrosoftGraph.Model.MicrosoftGraphIdentitySetDevice.t | nil,
-    :user => MicrosoftGraph.Model.MicrosoftGraphIdentitySetUser.t | nil,
-    :conversation => MicrosoftGraph.Model.ChatMessageMentionedIdentitySetConversation.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :application => MicrosoftGraph.Model.MicrosoftGraphIdentitySetApplication.t() | nil,
+          :device => MicrosoftGraph.Model.MicrosoftGraphIdentitySetDevice.t() | nil,
+          :user => MicrosoftGraph.Model.MicrosoftGraphIdentitySetUser.t() | nil,
+          :conversation =>
+            MicrosoftGraph.Model.ChatMessageMentionedIdentitySetConversation.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:application, :struct, MicrosoftGraph.Model.MicrosoftGraphIdentitySetApplication)
-     |> Deserializer.deserialize(:device, :struct, MicrosoftGraph.Model.MicrosoftGraphIdentitySetDevice)
-     |> Deserializer.deserialize(:user, :struct, MicrosoftGraph.Model.MicrosoftGraphIdentitySetUser)
-     |> Deserializer.deserialize(:conversation, :struct, MicrosoftGraph.Model.ChatMessageMentionedIdentitySetConversation)
+    |> Deserializer.deserialize(
+      :application,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphIdentitySetApplication
+    )
+    |> Deserializer.deserialize(
+      :device,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphIdentitySetDevice
+    )
+    |> Deserializer.deserialize(
+      :user,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphIdentitySetUser
+    )
+    |> Deserializer.deserialize(
+      :conversation,
+      :struct,
+      MicrosoftGraph.Model.ChatMessageMentionedIdentitySetConversation
+    )
   end
 end
-

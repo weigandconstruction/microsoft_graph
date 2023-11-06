@@ -21,25 +21,28 @@ defmodule MicrosoftGraph.Model.AccessPackageResourceEnvironment do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :isDefaultEnvironment => boolean() | nil,
-    :modifiedDateTime => DateTime.t | nil,
-    :originId => String.t | nil,
-    :originSystem => String.t | nil,
-    :resources => [MicrosoftGraph.Model.MicrosoftGraphAccessPackageResource.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :isDefaultEnvironment => boolean() | nil,
+          :modifiedDateTime => DateTime.t() | nil,
+          :originId => String.t() | nil,
+          :originSystem => String.t() | nil,
+          :resources => [MicrosoftGraph.Model.MicrosoftGraphAccessPackageResource.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:modifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:resources, :list, MicrosoftGraph.Model.MicrosoftGraphAccessPackageResource)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:modifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :resources,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAccessPackageResource
+    )
   end
 end
-

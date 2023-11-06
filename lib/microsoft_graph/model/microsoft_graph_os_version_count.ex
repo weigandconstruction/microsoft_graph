@@ -15,17 +15,16 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphOsVersionCount do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :deviceCount => integer() | nil,
-    :lastUpdateDateTime => DateTime.t | nil,
-    :osVersion => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :deviceCount => integer() | nil,
+          :lastUpdateDateTime => DateTime.t() | nil,
+          :osVersion => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:lastUpdateDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastUpdateDateTime, :datetime, nil)
   end
 end
-

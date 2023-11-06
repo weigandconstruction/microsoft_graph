@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceAppConsent do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,19 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceAppConsent do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :appConsentRequests => [MicrosoftGraph.Model.MicrosoftGraphAppConsentRequest.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :appConsentRequests => [MicrosoftGraph.Model.MicrosoftGraphAppConsentRequest.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:appConsentRequests, :list, MicrosoftGraph.Model.MicrosoftGraphAppConsentRequest)
+    |> Deserializer.deserialize(
+      :appConsentRequests,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAppConsentRequest
+    )
   end
 end
-

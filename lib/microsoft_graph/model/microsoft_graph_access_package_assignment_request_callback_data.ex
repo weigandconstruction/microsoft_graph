@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAccessPackageAssignmentRequestCallbackData do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,18 +16,22 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAccessPackageAssignmentRequestCallb
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :customExtensionStageInstanceDetail => String.t | nil,
-    :customExtensionStageInstanceId => String.t | nil,
-    :stage => MicrosoftGraph.Model.AccessPackageAssignmentRequestCallbackDataStage.t | nil,
-    :state => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :customExtensionStageInstanceDetail => String.t() | nil,
+          :customExtensionStageInstanceId => String.t() | nil,
+          :stage =>
+            MicrosoftGraph.Model.AccessPackageAssignmentRequestCallbackDataStage.t() | nil,
+          :state => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:stage, :struct, MicrosoftGraph.Model.AccessPackageAssignmentRequestCallbackDataStage)
+    |> Deserializer.deserialize(
+      :stage,
+      :struct,
+      MicrosoftGraph.Model.AccessPackageAssignmentRequestCallbackDataStage
+    )
   end
 end
-

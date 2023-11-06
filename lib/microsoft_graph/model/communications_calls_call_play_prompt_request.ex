@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.CommunicationsCallsCallPlayPromptRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,15 +13,14 @@ defmodule MicrosoftGraph.Model.CommunicationsCallsCallPlayPromptRequest do
   ]
 
   @type t :: %__MODULE__{
-    :clientContext => String.t | nil,
-    :prompts => [MicrosoftGraph.Model.MicrosoftGraphPrompt.t] | nil
-  }
+          :clientContext => String.t() | nil,
+          :prompts => [MicrosoftGraph.Model.MicrosoftGraphPrompt.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:prompts, :list, MicrosoftGraph.Model.MicrosoftGraphPrompt)
+    |> Deserializer.deserialize(:prompts, :list, MicrosoftGraph.Model.MicrosoftGraphPrompt)
   end
 end
-

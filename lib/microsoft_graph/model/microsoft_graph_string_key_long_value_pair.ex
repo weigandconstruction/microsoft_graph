@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphStringKeyLongValuePair do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphStringKeyLongValuePair do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :key => String.t | nil,
-    :value => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :key => String.t() | nil,
+          :value => integer() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

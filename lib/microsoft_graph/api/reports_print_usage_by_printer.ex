@@ -23,8 +23,19 @@ defmodule MicrosoftGraph.Api.ReportsPrintUsageByPrinter do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrintUsageByPrinter.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_create_daily_print_usage_by_printer(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphPrintUsageByPrinter.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintUsageByPrinter.t} | {:error, Tesla.Env.t}
-  def reports_create_daily_print_usage_by_printer(connection, microsoft_graph_print_usage_by_printer, _opts \\ []) do
+  @spec reports_create_daily_print_usage_by_printer(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphPrintUsageByPrinter.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintUsageByPrinter.t()}
+          | {:error, Tesla.Env.t()}
+  def reports_create_daily_print_usage_by_printer(
+        connection,
+        microsoft_graph_print_usage_by_printer,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -55,8 +66,19 @@ defmodule MicrosoftGraph.Api.ReportsPrintUsageByPrinter do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrintUsageByPrinter.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_create_monthly_print_usage_by_printer(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphPrintUsageByPrinter.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintUsageByPrinter.t} | {:error, Tesla.Env.t}
-  def reports_create_monthly_print_usage_by_printer(connection, microsoft_graph_print_usage_by_printer, _opts \\ []) do
+  @spec reports_create_monthly_print_usage_by_printer(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphPrintUsageByPrinter.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintUsageByPrinter.t()}
+          | {:error, Tesla.Env.t()}
+  def reports_create_monthly_print_usage_by_printer(
+        connection,
+        microsoft_graph_print_usage_by_printer,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -88,7 +110,10 @@ defmodule MicrosoftGraph.Api.ReportsPrintUsageByPrinter do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_daily_print_usage_by_printer_get_count73e4(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec reports_daily_print_usage_by_printer_get_count73e4(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def reports_daily_print_usage_by_printer_get_count73e4(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -126,8 +151,15 @@ defmodule MicrosoftGraph.Api.ReportsPrintUsageByPrinter do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_delete_daily_print_usage_by_printer(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def reports_delete_daily_print_usage_by_printer(connection, print_usage_by_printer_id, opts \\ []) do
+  @spec reports_delete_daily_print_usage_by_printer(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def reports_delete_daily_print_usage_by_printer(
+        connection,
+        print_usage_by_printer_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -163,8 +195,15 @@ defmodule MicrosoftGraph.Api.ReportsPrintUsageByPrinter do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_delete_monthly_print_usage_by_printer(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def reports_delete_monthly_print_usage_by_printer(connection, print_usage_by_printer_id, opts \\ []) do
+  @spec reports_delete_monthly_print_usage_by_printer(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def reports_delete_monthly_print_usage_by_printer(
+        connection,
+        print_usage_by_printer_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -202,7 +241,10 @@ defmodule MicrosoftGraph.Api.ReportsPrintUsageByPrinter do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrintUsageByPrinter.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_daily_print_usage_by_printer(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintUsageByPrinter.t} | {:error, Tesla.Env.t}
+  @spec reports_get_daily_print_usage_by_printer(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintUsageByPrinter.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_daily_print_usage_by_printer(connection, print_usage_by_printer_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -242,8 +284,15 @@ defmodule MicrosoftGraph.Api.ReportsPrintUsageByPrinter do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrintUsageByPrinter.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_monthly_print_usage_by_printer(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintUsageByPrinter.t} | {:error, Tesla.Env.t}
-  def reports_get_monthly_print_usage_by_printer(connection, print_usage_by_printer_id, opts \\ []) do
+  @spec reports_get_monthly_print_usage_by_printer(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintUsageByPrinter.t()}
+          | {:error, Tesla.Env.t()}
+  def reports_get_monthly_print_usage_by_printer(
+        connection,
+        print_usage_by_printer_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -287,7 +336,10 @@ defmodule MicrosoftGraph.Api.ReportsPrintUsageByPrinter do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrintUsageByPrinterCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_list_daily_print_usage_by_printer(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintUsageByPrinterCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec reports_list_daily_print_usage_by_printer(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintUsageByPrinterCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def reports_list_daily_print_usage_by_printer(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -338,7 +390,10 @@ defmodule MicrosoftGraph.Api.ReportsPrintUsageByPrinter do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrintUsageByPrinterCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_list_monthly_print_usage_by_printer(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintUsageByPrinterCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec reports_list_monthly_print_usage_by_printer(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintUsageByPrinterCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def reports_list_monthly_print_usage_by_printer(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -382,7 +437,10 @@ defmodule MicrosoftGraph.Api.ReportsPrintUsageByPrinter do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_monthly_print_usage_by_printer_get_count18cc(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec reports_monthly_print_usage_by_printer_get_count18cc(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def reports_monthly_print_usage_by_printer_get_count18cc(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -420,8 +478,21 @@ defmodule MicrosoftGraph.Api.ReportsPrintUsageByPrinter do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrintUsageByPrinter.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_update_daily_print_usage_by_printer(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphPrintUsageByPrinter.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintUsageByPrinter.t} | {:error, Tesla.Env.t}
-  def reports_update_daily_print_usage_by_printer(connection, print_usage_by_printer_id, microsoft_graph_print_usage_by_printer, _opts \\ []) do
+  @spec reports_update_daily_print_usage_by_printer(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPrintUsageByPrinter.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintUsageByPrinter.t()}
+          | {:error, Tesla.Env.t()}
+  def reports_update_daily_print_usage_by_printer(
+        connection,
+        print_usage_by_printer_id,
+        microsoft_graph_print_usage_by_printer,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -453,8 +524,21 @@ defmodule MicrosoftGraph.Api.ReportsPrintUsageByPrinter do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPrintUsageByPrinter.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_update_monthly_print_usage_by_printer(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphPrintUsageByPrinter.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintUsageByPrinter.t} | {:error, Tesla.Env.t}
-  def reports_update_monthly_print_usage_by_printer(connection, print_usage_by_printer_id, microsoft_graph_print_usage_by_printer, _opts \\ []) do
+  @spec reports_update_monthly_print_usage_by_printer(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPrintUsageByPrinter.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPrintUsageByPrinter.t()}
+          | {:error, Tesla.Env.t()}
+  def reports_update_monthly_print_usage_by_printer(
+        connection,
+        print_usage_by_printer_id,
+        microsoft_graph_print_usage_by_printer,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DirectoryAuditTargetResourcesInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,21 +18,29 @@ defmodule MicrosoftGraph.Model.DirectoryAuditTargetResourcesInner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :displayName => String.t | nil,
-    :groupType => MicrosoftGraph.Model.MicrosoftGraphTargetResourceGroupType.t | nil,
-    :id => String.t | nil,
-    :modifiedProperties => [MicrosoftGraph.Model.ProvisioningObjectSummaryModifiedPropertiesInner.t] | nil,
-    :type => String.t | nil,
-    :userPrincipalName => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :displayName => String.t() | nil,
+          :groupType => MicrosoftGraph.Model.MicrosoftGraphTargetResourceGroupType.t() | nil,
+          :id => String.t() | nil,
+          :modifiedProperties =>
+            [MicrosoftGraph.Model.ProvisioningObjectSummaryModifiedPropertiesInner.t()] | nil,
+          :type => String.t() | nil,
+          :userPrincipalName => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:groupType, :struct, MicrosoftGraph.Model.MicrosoftGraphTargetResourceGroupType)
-     |> Deserializer.deserialize(:modifiedProperties, :list, MicrosoftGraph.Model.ProvisioningObjectSummaryModifiedPropertiesInner)
+    |> Deserializer.deserialize(
+      :groupType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphTargetResourceGroupType
+    )
+    |> Deserializer.deserialize(
+      :modifiedProperties,
+      :list,
+      MicrosoftGraph.Model.ProvisioningObjectSummaryModifiedPropertiesInner
+    )
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphMicrosoftAuthenticatorAuthenticationMethodConfiguration do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,23 +18,45 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphMicrosoftAuthenticatorAuthenticatio
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :excludeTargets => [MicrosoftGraph.Model.AuthenticationMethodConfigurationExcludeTargetsInner.t] | nil,
-    :state => MicrosoftGraph.Model.AuthenticationMethodConfigurationState.t | nil,
-    :featureSettings => MicrosoftGraph.Model.MicrosoftAuthenticatorAuthenticationMethodConfigurationFeatureSettings.t | nil,
-    :includeTargets => [MicrosoftGraph.Model.MicrosoftGraphMicrosoftAuthenticatorAuthenticationMethodTarget.t] | nil,
-    :isSoftwareOathEnabled => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :excludeTargets =>
+            [MicrosoftGraph.Model.AuthenticationMethodConfigurationExcludeTargetsInner.t()] | nil,
+          :state => MicrosoftGraph.Model.AuthenticationMethodConfigurationState.t() | nil,
+          :featureSettings =>
+            MicrosoftGraph.Model.MicrosoftAuthenticatorAuthenticationMethodConfigurationFeatureSettings.t()
+            | nil,
+          :includeTargets =>
+            [
+              MicrosoftGraph.Model.MicrosoftGraphMicrosoftAuthenticatorAuthenticationMethodTarget.t()
+            ]
+            | nil,
+          :isSoftwareOathEnabled => boolean() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:excludeTargets, :list, MicrosoftGraph.Model.AuthenticationMethodConfigurationExcludeTargetsInner)
-     |> Deserializer.deserialize(:state, :struct, MicrosoftGraph.Model.AuthenticationMethodConfigurationState)
-     |> Deserializer.deserialize(:featureSettings, :struct, MicrosoftGraph.Model.MicrosoftAuthenticatorAuthenticationMethodConfigurationFeatureSettings)
-     |> Deserializer.deserialize(:includeTargets, :list, MicrosoftGraph.Model.MicrosoftGraphMicrosoftAuthenticatorAuthenticationMethodTarget)
+    |> Deserializer.deserialize(
+      :excludeTargets,
+      :list,
+      MicrosoftGraph.Model.AuthenticationMethodConfigurationExcludeTargetsInner
+    )
+    |> Deserializer.deserialize(
+      :state,
+      :struct,
+      MicrosoftGraph.Model.AuthenticationMethodConfigurationState
+    )
+    |> Deserializer.deserialize(
+      :featureSettings,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftAuthenticatorAuthenticationMethodConfigurationFeatureSettings
+    )
+    |> Deserializer.deserialize(
+      :includeTargets,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphMicrosoftAuthenticatorAuthenticationMethodTarget
+    )
   end
 end
-

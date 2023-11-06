@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphWin32LobAppAssignmentSettings do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,21 +16,39 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphWin32LobAppAssignmentSettings do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :deliveryOptimizationPriority => MicrosoftGraph.Model.MicrosoftGraphWin32LobAppDeliveryOptimizationPriority.t | nil,
-    :installTimeSettings => MicrosoftGraph.Model.Win32LobAppAssignmentSettingsInstallTimeSettings.t | nil,
-    :notifications => MicrosoftGraph.Model.MicrosoftGraphWin32LobAppNotification.t | nil,
-    :restartSettings => MicrosoftGraph.Model.Win32LobAppAssignmentSettingsRestartSettings.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :deliveryOptimizationPriority =>
+            MicrosoftGraph.Model.MicrosoftGraphWin32LobAppDeliveryOptimizationPriority.t() | nil,
+          :installTimeSettings =>
+            MicrosoftGraph.Model.Win32LobAppAssignmentSettingsInstallTimeSettings.t() | nil,
+          :notifications => MicrosoftGraph.Model.MicrosoftGraphWin32LobAppNotification.t() | nil,
+          :restartSettings =>
+            MicrosoftGraph.Model.Win32LobAppAssignmentSettingsRestartSettings.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:deliveryOptimizationPriority, :struct, MicrosoftGraph.Model.MicrosoftGraphWin32LobAppDeliveryOptimizationPriority)
-     |> Deserializer.deserialize(:installTimeSettings, :struct, MicrosoftGraph.Model.Win32LobAppAssignmentSettingsInstallTimeSettings)
-     |> Deserializer.deserialize(:notifications, :struct, MicrosoftGraph.Model.MicrosoftGraphWin32LobAppNotification)
-     |> Deserializer.deserialize(:restartSettings, :struct, MicrosoftGraph.Model.Win32LobAppAssignmentSettingsRestartSettings)
+    |> Deserializer.deserialize(
+      :deliveryOptimizationPriority,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphWin32LobAppDeliveryOptimizationPriority
+    )
+    |> Deserializer.deserialize(
+      :installTimeSettings,
+      :struct,
+      MicrosoftGraph.Model.Win32LobAppAssignmentSettingsInstallTimeSettings
+    )
+    |> Deserializer.deserialize(
+      :notifications,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphWin32LobAppNotification
+    )
+    |> Deserializer.deserialize(
+      :restartSettings,
+      :struct,
+      MicrosoftGraph.Model.Win32LobAppAssignmentSettingsRestartSettings
+    )
   end
 end
-

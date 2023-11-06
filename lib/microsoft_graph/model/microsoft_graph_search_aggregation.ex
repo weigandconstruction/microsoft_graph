@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSearchAggregation do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,20 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSearchAggregation do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :buckets => [MicrosoftGraph.Model.MicrosoftGraphSearchAggregationBucketsInner.t] | nil,
-    :field => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :buckets =>
+            [MicrosoftGraph.Model.MicrosoftGraphSearchAggregationBucketsInner.t()] | nil,
+          :field => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:buckets, :list, MicrosoftGraph.Model.MicrosoftGraphSearchAggregationBucketsInner)
+    |> Deserializer.deserialize(
+      :buckets,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSearchAggregationBucketsInner
+    )
   end
 end
-

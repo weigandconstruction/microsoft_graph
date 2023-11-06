@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceCustomTaskExtensionCallbackConfiguration do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,19 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphIdentityGovernanceCustomTaskExtensi
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :timeoutDuration => String.t | nil,
-    :authorizedApps => [MicrosoftGraph.Model.MicrosoftGraphApplication.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :timeoutDuration => String.t() | nil,
+          :authorizedApps => [MicrosoftGraph.Model.MicrosoftGraphApplication.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:authorizedApps, :list, MicrosoftGraph.Model.MicrosoftGraphApplication)
+    |> Deserializer.deserialize(
+      :authorizedApps,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphApplication
+    )
   end
 end
-

@@ -24,31 +24,51 @@ defmodule MicrosoftGraph.Model.KubernetesNamespaceEvidenceCluster do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :createdDateTime => DateTime.t | nil,
-    :detailedRoles => [String.t] | nil,
-    :remediationStatus => MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRemediationStatus.t | nil,
-    :remediationStatusDetails => String.t | nil,
-    :roles => [MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRole.t] | nil,
-    :tags => [String.t] | nil,
-    :verdict => MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceVerdict.t | nil,
-    :cloudResource => MicrosoftGraph.Model.KubernetesClusterEvidenceCloudResource.t | nil,
-    :distribution => String.t | nil,
-    :name => String.t | nil,
-    :platform => MicrosoftGraph.Model.KubernetesClusterEvidencePlatform.t | nil,
-    :version => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :createdDateTime => DateTime.t() | nil,
+          :detailedRoles => [String.t()] | nil,
+          :remediationStatus =>
+            MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRemediationStatus.t() | nil,
+          :remediationStatusDetails => String.t() | nil,
+          :roles => [MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRole.t()] | nil,
+          :tags => [String.t()] | nil,
+          :verdict => MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceVerdict.t() | nil,
+          :cloudResource => MicrosoftGraph.Model.KubernetesClusterEvidenceCloudResource.t() | nil,
+          :distribution => String.t() | nil,
+          :name => String.t() | nil,
+          :platform => MicrosoftGraph.Model.KubernetesClusterEvidencePlatform.t() | nil,
+          :version => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:remediationStatus, :struct, MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRemediationStatus)
-     |> Deserializer.deserialize(:roles, :list, MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRole)
-     |> Deserializer.deserialize(:verdict, :struct, MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceVerdict)
-     |> Deserializer.deserialize(:cloudResource, :struct, MicrosoftGraph.Model.KubernetesClusterEvidenceCloudResource)
-     |> Deserializer.deserialize(:platform, :struct, MicrosoftGraph.Model.KubernetesClusterEvidencePlatform)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :remediationStatus,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRemediationStatus
+    )
+    |> Deserializer.deserialize(
+      :roles,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceRole
+    )
+    |> Deserializer.deserialize(
+      :verdict,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityEvidenceVerdict
+    )
+    |> Deserializer.deserialize(
+      :cloudResource,
+      :struct,
+      MicrosoftGraph.Model.KubernetesClusterEvidenceCloudResource
+    )
+    |> Deserializer.deserialize(
+      :platform,
+      :struct,
+      MicrosoftGraph.Model.KubernetesClusterEvidencePlatform
+    )
   end
 end
-

@@ -14,17 +14,20 @@ defmodule MicrosoftGraph.Model.AttendeeStatus do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :response => MicrosoftGraph.Model.MicrosoftGraphResponseStatusResponse.t | nil,
-    :time => DateTime.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :response => MicrosoftGraph.Model.MicrosoftGraphResponseStatusResponse.t() | nil,
+          :time => DateTime.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:response, :struct, MicrosoftGraph.Model.MicrosoftGraphResponseStatusResponse)
-     |> Deserializer.deserialize(:time, :datetime, nil)
+    |> Deserializer.deserialize(
+      :response,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphResponseStatusResponse
+    )
+    |> Deserializer.deserialize(:time, :datetime, nil)
   end
 end
-

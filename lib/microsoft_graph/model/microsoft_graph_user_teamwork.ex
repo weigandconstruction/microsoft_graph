@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphUserTeamwork do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,18 +15,26 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphUserTeamwork do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :associatedTeams => [MicrosoftGraph.Model.MicrosoftGraphAssociatedTeamInfo.t] | nil,
-    :installedApps => [MicrosoftGraph.Model.MicrosoftGraphUserScopeTeamsAppInstallation.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :associatedTeams => [MicrosoftGraph.Model.MicrosoftGraphAssociatedTeamInfo.t()] | nil,
+          :installedApps =>
+            [MicrosoftGraph.Model.MicrosoftGraphUserScopeTeamsAppInstallation.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:associatedTeams, :list, MicrosoftGraph.Model.MicrosoftGraphAssociatedTeamInfo)
-     |> Deserializer.deserialize(:installedApps, :list, MicrosoftGraph.Model.MicrosoftGraphUserScopeTeamsAppInstallation)
+    |> Deserializer.deserialize(
+      :associatedTeams,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAssociatedTeamInfo
+    )
+    |> Deserializer.deserialize(
+      :installedApps,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphUserScopeTeamsAppInstallation
+    )
   end
 end
-

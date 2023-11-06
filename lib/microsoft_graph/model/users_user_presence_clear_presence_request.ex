@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.UsersUserPresenceClearPresenceRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,11 +12,10 @@ defmodule MicrosoftGraph.Model.UsersUserPresenceClearPresenceRequest do
   ]
 
   @type t :: %__MODULE__{
-    :sessionId => String.t | nil
-  }
+          :sessionId => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

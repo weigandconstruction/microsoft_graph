@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphPlannerPlanDetails do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,18 +15,26 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphPlannerPlanDetails do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :categoryDescriptions => MicrosoftGraph.Model.PlannerPlanDetailsCategoryDescriptions.t | nil,
-    :sharedWith => MicrosoftGraph.Model.PlannerPlanDetailsSharedWith.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :categoryDescriptions =>
+            MicrosoftGraph.Model.PlannerPlanDetailsCategoryDescriptions.t() | nil,
+          :sharedWith => MicrosoftGraph.Model.PlannerPlanDetailsSharedWith.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:categoryDescriptions, :struct, MicrosoftGraph.Model.PlannerPlanDetailsCategoryDescriptions)
-     |> Deserializer.deserialize(:sharedWith, :struct, MicrosoftGraph.Model.PlannerPlanDetailsSharedWith)
+    |> Deserializer.deserialize(
+      :categoryDescriptions,
+      :struct,
+      MicrosoftGraph.Model.PlannerPlanDetailsCategoryDescriptions
+    )
+    |> Deserializer.deserialize(
+      :sharedWith,
+      :struct,
+      MicrosoftGraph.Model.PlannerPlanDetailsSharedWith
+    )
   end
 end
-

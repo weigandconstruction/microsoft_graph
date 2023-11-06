@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminAccessDetails do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,15 +13,18 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminAccessDetails do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :unifiedRoles => [MicrosoftGraph.Model.MicrosoftGraphUnifiedRole.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :unifiedRoles => [MicrosoftGraph.Model.MicrosoftGraphUnifiedRole.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:unifiedRoles, :list, MicrosoftGraph.Model.MicrosoftGraphUnifiedRole)
+    |> Deserializer.deserialize(
+      :unifiedRoles,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphUnifiedRole
+    )
   end
 end
-

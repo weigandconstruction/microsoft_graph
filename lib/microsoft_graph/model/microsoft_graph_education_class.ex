@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphEducationClass do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -33,46 +33,74 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphEducationClass do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :assignmentCategories => [MicrosoftGraph.Model.MicrosoftGraphEducationCategory.t] | nil,
-    :assignmentDefaults => MicrosoftGraph.Model.EducationClassAssignmentDefaults.t | nil,
-    :assignmentSettings => MicrosoftGraph.Model.EducationClassAssignmentSettings.t | nil,
-    :assignments => [MicrosoftGraph.Model.MicrosoftGraphEducationAssignment.t] | nil,
-    :classCode => String.t | nil,
-    :course => MicrosoftGraph.Model.EducationClassCourse.t | nil,
-    :createdBy => MicrosoftGraph.Model.EducationClassCreatedBy.t | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :externalId => String.t | nil,
-    :externalName => String.t | nil,
-    :externalSource => MicrosoftGraph.Model.EducationClassExternalSource.t | nil,
-    :externalSourceDetail => String.t | nil,
-    :grade => String.t | nil,
-    :group => MicrosoftGraph.Model.EducationClassGroup.t | nil,
-    :mailNickname => String.t | nil,
-    :members => [MicrosoftGraph.Model.MicrosoftGraphEducationUser.t] | nil,
-    :schools => [MicrosoftGraph.Model.MicrosoftGraphEducationSchool.t] | nil,
-    :teachers => [MicrosoftGraph.Model.MicrosoftGraphEducationUser.t] | nil,
-    :term => MicrosoftGraph.Model.EducationClassTerm.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :assignmentCategories =>
+            [MicrosoftGraph.Model.MicrosoftGraphEducationCategory.t()] | nil,
+          :assignmentDefaults => MicrosoftGraph.Model.EducationClassAssignmentDefaults.t() | nil,
+          :assignmentSettings => MicrosoftGraph.Model.EducationClassAssignmentSettings.t() | nil,
+          :assignments => [MicrosoftGraph.Model.MicrosoftGraphEducationAssignment.t()] | nil,
+          :classCode => String.t() | nil,
+          :course => MicrosoftGraph.Model.EducationClassCourse.t() | nil,
+          :createdBy => MicrosoftGraph.Model.EducationClassCreatedBy.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :externalId => String.t() | nil,
+          :externalName => String.t() | nil,
+          :externalSource => MicrosoftGraph.Model.EducationClassExternalSource.t() | nil,
+          :externalSourceDetail => String.t() | nil,
+          :grade => String.t() | nil,
+          :group => MicrosoftGraph.Model.EducationClassGroup.t() | nil,
+          :mailNickname => String.t() | nil,
+          :members => [MicrosoftGraph.Model.MicrosoftGraphEducationUser.t()] | nil,
+          :schools => [MicrosoftGraph.Model.MicrosoftGraphEducationSchool.t()] | nil,
+          :teachers => [MicrosoftGraph.Model.MicrosoftGraphEducationUser.t()] | nil,
+          :term => MicrosoftGraph.Model.EducationClassTerm.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:assignmentCategories, :list, MicrosoftGraph.Model.MicrosoftGraphEducationCategory)
-     |> Deserializer.deserialize(:assignmentDefaults, :struct, MicrosoftGraph.Model.EducationClassAssignmentDefaults)
-     |> Deserializer.deserialize(:assignmentSettings, :struct, MicrosoftGraph.Model.EducationClassAssignmentSettings)
-     |> Deserializer.deserialize(:assignments, :list, MicrosoftGraph.Model.MicrosoftGraphEducationAssignment)
-     |> Deserializer.deserialize(:course, :struct, MicrosoftGraph.Model.EducationClassCourse)
-     |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.EducationClassCreatedBy)
-     |> Deserializer.deserialize(:externalSource, :struct, MicrosoftGraph.Model.EducationClassExternalSource)
-     |> Deserializer.deserialize(:group, :struct, MicrosoftGraph.Model.EducationClassGroup)
-     |> Deserializer.deserialize(:members, :list, MicrosoftGraph.Model.MicrosoftGraphEducationUser)
-     |> Deserializer.deserialize(:schools, :list, MicrosoftGraph.Model.MicrosoftGraphEducationSchool)
-     |> Deserializer.deserialize(:teachers, :list, MicrosoftGraph.Model.MicrosoftGraphEducationUser)
-     |> Deserializer.deserialize(:term, :struct, MicrosoftGraph.Model.EducationClassTerm)
+    |> Deserializer.deserialize(
+      :assignmentCategories,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphEducationCategory
+    )
+    |> Deserializer.deserialize(
+      :assignmentDefaults,
+      :struct,
+      MicrosoftGraph.Model.EducationClassAssignmentDefaults
+    )
+    |> Deserializer.deserialize(
+      :assignmentSettings,
+      :struct,
+      MicrosoftGraph.Model.EducationClassAssignmentSettings
+    )
+    |> Deserializer.deserialize(
+      :assignments,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphEducationAssignment
+    )
+    |> Deserializer.deserialize(:course, :struct, MicrosoftGraph.Model.EducationClassCourse)
+    |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.EducationClassCreatedBy)
+    |> Deserializer.deserialize(
+      :externalSource,
+      :struct,
+      MicrosoftGraph.Model.EducationClassExternalSource
+    )
+    |> Deserializer.deserialize(:group, :struct, MicrosoftGraph.Model.EducationClassGroup)
+    |> Deserializer.deserialize(:members, :list, MicrosoftGraph.Model.MicrosoftGraphEducationUser)
+    |> Deserializer.deserialize(
+      :schools,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphEducationSchool
+    )
+    |> Deserializer.deserialize(
+      :teachers,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphEducationUser
+    )
+    |> Deserializer.deserialize(:term, :struct, MicrosoftGraph.Model.EducationClassTerm)
   end
 end
-

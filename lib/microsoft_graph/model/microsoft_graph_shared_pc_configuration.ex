@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSharedPcConfiguration do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -36,47 +36,86 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSharedPcConfiguration do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :assignments => [MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationAssignment.t] | nil,
-    :createdDateTime => DateTime.t | nil,
-    :description => String.t | nil,
-    :deviceSettingStateSummaries => [MicrosoftGraph.Model.MicrosoftGraphSettingStateDeviceSummary.t] | nil,
-    :deviceStatusOverview => MicrosoftGraph.Model.DeviceConfigurationDeviceStatusOverview.t | nil,
-    :deviceStatuses => [MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceStatus.t] | nil,
-    :displayName => String.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :userStatusOverview => MicrosoftGraph.Model.DeviceConfigurationUserStatusOverview.t | nil,
-    :userStatuses => [MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserStatus.t] | nil,
-    :version => integer() | nil,
-    :accountManagerPolicy => MicrosoftGraph.Model.SharedPcConfigurationAccountManagerPolicy.t | nil,
-    :allowLocalStorage => boolean() | nil,
-    :allowedAccounts => MicrosoftGraph.Model.MicrosoftGraphSharedPcAllowedAccountType.t | nil,
-    :disableAccountManager => boolean() | nil,
-    :disableEduPolicies => boolean() | nil,
-    :disablePowerPolicies => boolean() | nil,
-    :disableSignInOnResume => boolean() | nil,
-    :enabled => boolean() | nil,
-    :idleTimeBeforeSleepInSeconds => integer() | nil,
-    :kioskAppDisplayName => String.t | nil,
-    :kioskAppUserModelId => String.t | nil,
-    :maintenanceStartTime => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :assignments =>
+            [MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationAssignment.t()] | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :deviceSettingStateSummaries =>
+            [MicrosoftGraph.Model.MicrosoftGraphSettingStateDeviceSummary.t()] | nil,
+          :deviceStatusOverview =>
+            MicrosoftGraph.Model.DeviceConfigurationDeviceStatusOverview.t() | nil,
+          :deviceStatuses =>
+            [MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceStatus.t()] | nil,
+          :displayName => String.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :userStatusOverview =>
+            MicrosoftGraph.Model.DeviceConfigurationUserStatusOverview.t() | nil,
+          :userStatuses =>
+            [MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserStatus.t()] | nil,
+          :version => integer() | nil,
+          :accountManagerPolicy =>
+            MicrosoftGraph.Model.SharedPcConfigurationAccountManagerPolicy.t() | nil,
+          :allowLocalStorage => boolean() | nil,
+          :allowedAccounts =>
+            MicrosoftGraph.Model.MicrosoftGraphSharedPcAllowedAccountType.t() | nil,
+          :disableAccountManager => boolean() | nil,
+          :disableEduPolicies => boolean() | nil,
+          :disablePowerPolicies => boolean() | nil,
+          :disableSignInOnResume => boolean() | nil,
+          :enabled => boolean() | nil,
+          :idleTimeBeforeSleepInSeconds => integer() | nil,
+          :kioskAppDisplayName => String.t() | nil,
+          :kioskAppUserModelId => String.t() | nil,
+          :maintenanceStartTime => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:assignments, :list, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationAssignment)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:deviceSettingStateSummaries, :list, MicrosoftGraph.Model.MicrosoftGraphSettingStateDeviceSummary)
-     |> Deserializer.deserialize(:deviceStatusOverview, :struct, MicrosoftGraph.Model.DeviceConfigurationDeviceStatusOverview)
-     |> Deserializer.deserialize(:deviceStatuses, :list, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceStatus)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:userStatusOverview, :struct, MicrosoftGraph.Model.DeviceConfigurationUserStatusOverview)
-     |> Deserializer.deserialize(:userStatuses, :list, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserStatus)
-     |> Deserializer.deserialize(:accountManagerPolicy, :struct, MicrosoftGraph.Model.SharedPcConfigurationAccountManagerPolicy)
-     |> Deserializer.deserialize(:allowedAccounts, :struct, MicrosoftGraph.Model.MicrosoftGraphSharedPcAllowedAccountType)
+    |> Deserializer.deserialize(
+      :assignments,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationAssignment
+    )
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :deviceSettingStateSummaries,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSettingStateDeviceSummary
+    )
+    |> Deserializer.deserialize(
+      :deviceStatusOverview,
+      :struct,
+      MicrosoftGraph.Model.DeviceConfigurationDeviceStatusOverview
+    )
+    |> Deserializer.deserialize(
+      :deviceStatuses,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceStatus
+    )
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :userStatusOverview,
+      :struct,
+      MicrosoftGraph.Model.DeviceConfigurationUserStatusOverview
+    )
+    |> Deserializer.deserialize(
+      :userStatuses,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserStatus
+    )
+    |> Deserializer.deserialize(
+      :accountManagerPolicy,
+      :struct,
+      MicrosoftGraph.Model.SharedPcConfigurationAccountManagerPolicy
+    )
+    |> Deserializer.deserialize(
+      :allowedAccounts,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSharedPcAllowedAccountType
+    )
   end
 end
-

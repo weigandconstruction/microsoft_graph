@@ -24,7 +24,10 @@ defmodule MicrosoftGraph.Api.ScopedRoleMembershipsScopedRoleMembership do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec scoped_role_memberships_get_count_dcc4(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec scoped_role_memberships_get_count_dcc4(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def scoped_role_memberships_get_count_dcc4(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -61,8 +64,19 @@ defmodule MicrosoftGraph.Api.ScopedRoleMembershipsScopedRoleMembership do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphScopedRoleMembership.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec scoped_role_memberships_scoped_role_membership_create_scoped_role_membership(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphScopedRoleMembership.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphScopedRoleMembership.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def scoped_role_memberships_scoped_role_membership_create_scoped_role_membership(connection, microsoft_graph_scoped_role_membership, _opts \\ []) do
+  @spec scoped_role_memberships_scoped_role_membership_create_scoped_role_membership(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphScopedRoleMembership.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphScopedRoleMembership.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def scoped_role_memberships_scoped_role_membership_create_scoped_role_membership(
+        connection,
+        microsoft_graph_scoped_role_membership,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -94,8 +108,19 @@ defmodule MicrosoftGraph.Api.ScopedRoleMembershipsScopedRoleMembership do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec scoped_role_memberships_scoped_role_membership_delete_scoped_role_membership(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def scoped_role_memberships_scoped_role_membership_delete_scoped_role_membership(connection, scoped_role_membership_id, opts \\ []) do
+  @spec scoped_role_memberships_scoped_role_membership_delete_scoped_role_membership(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def scoped_role_memberships_scoped_role_membership_delete_scoped_role_membership(
+        connection,
+        scoped_role_membership_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -132,8 +157,19 @@ defmodule MicrosoftGraph.Api.ScopedRoleMembershipsScopedRoleMembership do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphScopedRoleMembership.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec scoped_role_memberships_scoped_role_membership_get_scoped_role_membership(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphScopedRoleMembership.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def scoped_role_memberships_scoped_role_membership_get_scoped_role_membership(connection, scoped_role_membership_id, opts \\ []) do
+  @spec scoped_role_memberships_scoped_role_membership_get_scoped_role_membership(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphScopedRoleMembership.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def scoped_role_memberships_scoped_role_membership_get_scoped_role_membership(
+        connection,
+        scoped_role_membership_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -176,8 +212,17 @@ defmodule MicrosoftGraph.Api.ScopedRoleMembershipsScopedRoleMembership do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphScopedRoleMembershipCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec scoped_role_memberships_scoped_role_membership_list_scoped_role_membership(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphScopedRoleMembershipCollectionResponse.t} | {:error, Tesla.Env.t}
-  def scoped_role_memberships_scoped_role_membership_list_scoped_role_membership(connection, opts \\ []) do
+  @spec scoped_role_memberships_scoped_role_membership_list_scoped_role_membership(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphScopedRoleMembershipCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def scoped_role_memberships_scoped_role_membership_list_scoped_role_membership(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -220,8 +265,21 @@ defmodule MicrosoftGraph.Api.ScopedRoleMembershipsScopedRoleMembership do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphScopedRoleMembership.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec scoped_role_memberships_scoped_role_membership_update_scoped_role_membership(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphScopedRoleMembership.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphScopedRoleMembership.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def scoped_role_memberships_scoped_role_membership_update_scoped_role_membership(connection, scoped_role_membership_id, microsoft_graph_scoped_role_membership, _opts \\ []) do
+  @spec scoped_role_memberships_scoped_role_membership_update_scoped_role_membership(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphScopedRoleMembership.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphScopedRoleMembership.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def scoped_role_memberships_scoped_role_membership_update_scoped_role_membership(
+        connection,
+        scoped_role_membership_id,
+        microsoft_graph_scoped_role_membership,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

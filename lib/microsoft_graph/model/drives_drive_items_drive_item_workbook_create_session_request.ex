@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookCreateSessionRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,11 +12,10 @@ defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookCreateSessionReq
   ]
 
   @type t :: %__MODULE__{
-    :persistChanges => boolean() | nil
-  }
+          :persistChanges => boolean() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

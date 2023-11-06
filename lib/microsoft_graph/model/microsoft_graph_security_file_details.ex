@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityFileDetails do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -20,19 +20,18 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityFileDetails do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :fileName => String.t | nil,
-    :filePath => String.t | nil,
-    :filePublisher => String.t | nil,
-    :fileSize => integer() | nil,
-    :issuer => String.t | nil,
-    :sha1 => String.t | nil,
-    :sha256 => String.t | nil,
-    :signer => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :fileName => String.t() | nil,
+          :filePath => String.t() | nil,
+          :filePublisher => String.t() | nil,
+          :fileSize => integer() | nil,
+          :issuer => String.t() | nil,
+          :sha1 => String.t() | nil,
+          :sha256 => String.t() | nil,
+          :signer => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

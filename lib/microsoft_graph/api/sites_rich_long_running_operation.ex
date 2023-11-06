@@ -24,8 +24,21 @@ defmodule MicrosoftGraph.Api.SitesRichLongRunningOperation do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_create_operations(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_create_operations(connection, site_id, microsoft_graph_rich_long_running_operation, _opts \\ []) do
+  @spec sites_create_operations(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_create_operations(
+        connection,
+        site_id,
+        microsoft_graph_rich_long_running_operation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -58,7 +71,10 @@ defmodule MicrosoftGraph.Api.SitesRichLongRunningOperation do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_delete_operations(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_delete_operations(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_delete_operations(connection, site_id, rich_long_running_operation_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -98,7 +114,10 @@ defmodule MicrosoftGraph.Api.SitesRichLongRunningOperation do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_get_operations(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_get_operations(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_get_operations(connection, site_id, rich_long_running_operation_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -144,7 +163,11 @@ defmodule MicrosoftGraph.Api.SitesRichLongRunningOperation do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_list_operations(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperationCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec sites_list_operations(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperationCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def sites_list_operations(connection, site_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -189,7 +212,10 @@ defmodule MicrosoftGraph.Api.SitesRichLongRunningOperation do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_operations_get_count71b0(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_operations_get_count71b0(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_operations_get_count71b0(connection, site_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -228,8 +254,23 @@ defmodule MicrosoftGraph.Api.SitesRichLongRunningOperation do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_update_operations(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_update_operations(connection, site_id, rich_long_running_operation_id, microsoft_graph_rich_long_running_operation, _opts \\ []) do
+  @spec sites_update_operations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphRichLongRunningOperation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_update_operations(
+        connection,
+        site_id,
+        rich_long_running_operation_id,
+        microsoft_graph_rich_long_running_operation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

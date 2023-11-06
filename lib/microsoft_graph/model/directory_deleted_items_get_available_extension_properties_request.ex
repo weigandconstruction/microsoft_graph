@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DirectoryDeletedItemsGetAvailableExtensionPropertiesRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,11 +12,10 @@ defmodule MicrosoftGraph.Model.DirectoryDeletedItemsGetAvailableExtensionPropert
   ]
 
   @type t :: %__MODULE__{
-    :isSyncedFromOnPremises => boolean() | nil
-  }
+          :isSyncedFromOnPremises => boolean() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

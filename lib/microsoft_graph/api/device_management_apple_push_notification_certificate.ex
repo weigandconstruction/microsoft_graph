@@ -23,7 +23,13 @@ defmodule MicrosoftGraph.Api.DeviceManagementApplePushNotificationCertificate do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_delete_apple_push_notification_certificate(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec device_management_delete_apple_push_notification_certificate(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def device_management_delete_apple_push_notification_certificate(connection, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -61,7 +67,10 @@ defmodule MicrosoftGraph.Api.DeviceManagementApplePushNotificationCertificate do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphApplePushNotificationCertificate.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_get_apple_push_notification_certificate(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphApplePushNotificationCertificate.t} | {:error, Tesla.Env.t}
+  @spec device_management_get_apple_push_notification_certificate(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphApplePushNotificationCertificate.t()}
+          | {:error, Tesla.Env.t()}
   def device_management_get_apple_push_notification_certificate(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -99,8 +108,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementApplePushNotificationCertificate do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphApplePushNotificationCertificate.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_update_apple_push_notification_certificate(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphApplePushNotificationCertificate.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphApplePushNotificationCertificate.t} | {:error, Tesla.Env.t}
-  def device_management_update_apple_push_notification_certificate(connection, microsoft_graph_apple_push_notification_certificate, _opts \\ []) do
+  @spec device_management_update_apple_push_notification_certificate(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphApplePushNotificationCertificate.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphApplePushNotificationCertificate.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_update_apple_push_notification_certificate(
+        connection,
+        microsoft_graph_apple_push_notification_certificate,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

@@ -16,15 +16,14 @@ defmodule MicrosoftGraph.Model.ChannelSummary do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :guestsCount => integer() | nil,
-    :hasMembersFromOtherTenants => boolean() | nil,
-    :membersCount => integer() | nil,
-    :ownersCount => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :guestsCount => integer() | nil,
+          :hasMembersFromOtherTenants => boolean() | nil,
+          :membersCount => integer() | nil,
+          :ownersCount => integer() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

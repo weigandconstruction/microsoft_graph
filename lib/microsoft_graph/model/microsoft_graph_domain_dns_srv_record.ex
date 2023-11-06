@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphDomainDnsSrvRecord do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -24,23 +24,22 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphDomainDnsSrvRecord do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :isOptional => boolean() | nil,
-    :label => String.t | nil,
-    :recordType => String.t | nil,
-    :supportedService => String.t | nil,
-    :ttl => integer() | nil,
-    :nameTarget => String.t | nil,
-    :port => integer() | nil,
-    :priority => integer() | nil,
-    :protocol => String.t | nil,
-    :service => String.t | nil,
-    :weight => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :isOptional => boolean() | nil,
+          :label => String.t() | nil,
+          :recordType => String.t() | nil,
+          :supportedService => String.t() | nil,
+          :ttl => integer() | nil,
+          :nameTarget => String.t() | nil,
+          :port => integer() | nil,
+          :priority => integer() | nil,
+          :protocol => String.t() | nil,
+          :service => String.t() | nil,
+          :weight => integer() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

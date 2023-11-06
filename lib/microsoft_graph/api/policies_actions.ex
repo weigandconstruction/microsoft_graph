@@ -25,19 +25,40 @@ defmodule MicrosoftGraph.Api.PoliciesActions do
   - `{:ok, MicrosoftGraph.Model.IdentityConditionalAccessAuthenticationStrengthPoliciesAuthenticationStrengthPolicyUpdateAllowedCombinations2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_authentication_strength_policies_authentication_strength_policy_update_allowed_combinations(Tesla.Env.client, String.t, MicrosoftGraph.Model.IdentityConditionalAccessAuthenticationStrengthPoliciesAuthenticationStrengthPolicyUpdateAllowedCombinationsRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.IdentityConditionalAccessAuthenticationStrengthPoliciesAuthenticationStrengthPolicyUpdateAllowedCombinations2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_authentication_strength_policies_authentication_strength_policy_update_allowed_combinations(connection, authentication_strength_policy_id, identity_conditional_access_authentication_strength_policies_authentication_strength_policy_update_allowed_combinations_request, _opts \\ []) do
+  @spec policies_authentication_strength_policies_authentication_strength_policy_update_allowed_combinations(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.IdentityConditionalAccessAuthenticationStrengthPoliciesAuthenticationStrengthPolicyUpdateAllowedCombinationsRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.IdentityConditionalAccessAuthenticationStrengthPoliciesAuthenticationStrengthPolicyUpdateAllowedCombinations2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_authentication_strength_policies_authentication_strength_policy_update_allowed_combinations(
+        connection,
+        authentication_strength_policy_id,
+        identity_conditional_access_authentication_strength_policies_authentication_strength_policy_update_allowed_combinations_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/policies/authenticationStrengthPolicies/#{authentication_strength_policy_id}/updateAllowedCombinations")
-      |> add_param(:body, :body, identity_conditional_access_authentication_strength_policies_authentication_strength_policy_update_allowed_combinations_request)
+      |> url(
+        "/policies/authenticationStrengthPolicies/#{authentication_strength_policy_id}/updateAllowedCombinations"
+      )
+      |> add_param(
+        :body,
+        :body,
+        identity_conditional_access_authentication_strength_policies_authentication_strength_policy_update_allowed_combinations_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.IdentityConditionalAccessAuthenticationStrengthPoliciesAuthenticationStrengthPolicyUpdateAllowedCombinations2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.IdentityConditionalAccessAuthenticationStrengthPoliciesAuthenticationStrengthPolicyUpdateAllowedCombinations2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -57,7 +78,13 @@ defmodule MicrosoftGraph.Api.PoliciesActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_cross_tenant_access_policy_default_reset_to_system_default(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec policies_cross_tenant_access_policy_default_reset_to_system_default(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def policies_cross_tenant_access_policy_default_reset_to_system_default(connection, _opts \\ []) do
     request =
       %{}

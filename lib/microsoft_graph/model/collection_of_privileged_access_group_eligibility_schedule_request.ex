@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.CollectionOfPrivilegedAccessGroupEligibilityScheduleRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,23 @@ defmodule MicrosoftGraph.Model.CollectionOfPrivilegedAccessGroupEligibilitySched
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.count" => integer() | nil,
-    :"@odata.nextLink" => String.t | nil,
-    :value => [MicrosoftGraph.Model.CollectionOfPrivilegedAccessGroupEligibilityScheduleRequestAllOfValueInner.t] | nil
-  }
+          :"@odata.count" => integer() | nil,
+          :"@odata.nextLink" => String.t() | nil,
+          :value =>
+            [
+              MicrosoftGraph.Model.CollectionOfPrivilegedAccessGroupEligibilityScheduleRequestAllOfValueInner.t()
+            ]
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:value, :list, MicrosoftGraph.Model.CollectionOfPrivilegedAccessGroupEligibilityScheduleRequestAllOfValueInner)
+    |> Deserializer.deserialize(
+      :value,
+      :list,
+      MicrosoftGraph.Model.CollectionOfPrivilegedAccessGroupEligibilityScheduleRequestAllOfValueInner
+    )
   end
 end
-

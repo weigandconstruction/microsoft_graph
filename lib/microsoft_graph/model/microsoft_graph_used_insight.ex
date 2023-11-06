@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphUsedInsight do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,22 +17,30 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphUsedInsight do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :lastUsed => MicrosoftGraph.Model.UsedInsightLastUsed.t | nil,
-    :resource => MicrosoftGraph.Model.UsedInsightResource.t | nil,
-    :resourceReference => MicrosoftGraph.Model.UsedInsightResourceReference.t | nil,
-    :resourceVisualization => MicrosoftGraph.Model.UsedInsightResourceVisualization.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :lastUsed => MicrosoftGraph.Model.UsedInsightLastUsed.t() | nil,
+          :resource => MicrosoftGraph.Model.UsedInsightResource.t() | nil,
+          :resourceReference => MicrosoftGraph.Model.UsedInsightResourceReference.t() | nil,
+          :resourceVisualization =>
+            MicrosoftGraph.Model.UsedInsightResourceVisualization.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:lastUsed, :struct, MicrosoftGraph.Model.UsedInsightLastUsed)
-     |> Deserializer.deserialize(:resource, :struct, MicrosoftGraph.Model.UsedInsightResource)
-     |> Deserializer.deserialize(:resourceReference, :struct, MicrosoftGraph.Model.UsedInsightResourceReference)
-     |> Deserializer.deserialize(:resourceVisualization, :struct, MicrosoftGraph.Model.UsedInsightResourceVisualization)
+    |> Deserializer.deserialize(:lastUsed, :struct, MicrosoftGraph.Model.UsedInsightLastUsed)
+    |> Deserializer.deserialize(:resource, :struct, MicrosoftGraph.Model.UsedInsightResource)
+    |> Deserializer.deserialize(
+      :resourceReference,
+      :struct,
+      MicrosoftGraph.Model.UsedInsightResourceReference
+    )
+    |> Deserializer.deserialize(
+      :resourceVisualization,
+      :struct,
+      MicrosoftGraph.Model.UsedInsightResourceVisualization
+    )
   end
 end
-

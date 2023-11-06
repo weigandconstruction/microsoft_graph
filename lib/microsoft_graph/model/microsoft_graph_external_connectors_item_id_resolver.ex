@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsItemIdResolver do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,17 +15,20 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsItemIdResolver do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :priority => integer() | nil,
-    :itemId => String.t | nil,
-    :urlMatchInfo => MicrosoftGraph.Model.ItemIdResolverUrlMatchInfo.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :priority => integer() | nil,
+          :itemId => String.t() | nil,
+          :urlMatchInfo => MicrosoftGraph.Model.ItemIdResolverUrlMatchInfo.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:urlMatchInfo, :struct, MicrosoftGraph.Model.ItemIdResolverUrlMatchInfo)
+    |> Deserializer.deserialize(
+      :urlMatchInfo,
+      :struct,
+      MicrosoftGraph.Model.ItemIdResolverUrlMatchInfo
+    )
   end
 end
-

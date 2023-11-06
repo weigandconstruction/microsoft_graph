@@ -26,8 +26,21 @@ defmodule MicrosoftGraph.Api.SitesContentType do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_content_types_base_types_get_count6b07(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_content_types_base_types_get_count6b07(connection, site_id, content_type_id, opts \\ []) do
+  @spec sites_content_types_base_types_get_count6b07(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_content_types_base_types_get_count6b07(
+        connection,
+        site_id,
+        content_type_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -66,8 +79,21 @@ defmodule MicrosoftGraph.Api.SitesContentType do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_content_types_column_links_get_count7bc1(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_content_types_column_links_get_count7bc1(connection, site_id, content_type_id, opts \\ []) do
+  @spec sites_content_types_column_links_get_count7bc1(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_content_types_column_links_get_count7bc1(
+        connection,
+        site_id,
+        content_type_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -106,8 +132,21 @@ defmodule MicrosoftGraph.Api.SitesContentType do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_content_types_column_positions_get_count_dea9(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_content_types_column_positions_get_count_dea9(connection, site_id, content_type_id, opts \\ []) do
+  @spec sites_content_types_column_positions_get_count_dea9(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_content_types_column_positions_get_count_dea9(
+        connection,
+        site_id,
+        content_type_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -146,7 +185,15 @@ defmodule MicrosoftGraph.Api.SitesContentType do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_content_types_columns_get_count896b(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_content_types_columns_get_count896b(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_content_types_columns_get_count896b(connection, site_id, content_type_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -188,8 +235,23 @@ defmodule MicrosoftGraph.Api.SitesContentType do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_content_types_columns_get_source_column(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_content_types_columns_get_source_column(connection, site_id, content_type_id, column_definition_id, opts \\ []) do
+  @spec sites_content_types_columns_get_source_column(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_content_types_columns_get_source_column(
+        connection,
+        site_id,
+        content_type_id,
+        column_definition_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -198,7 +260,9 @@ defmodule MicrosoftGraph.Api.SitesContentType do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/contentTypes/#{content_type_id}/columns/#{column_definition_id}/sourceColumn")
+      |> url(
+        "/sites/#{site_id}/contentTypes/#{content_type_id}/columns/#{column_definition_id}/sourceColumn"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -227,8 +291,23 @@ defmodule MicrosoftGraph.Api.SitesContentType do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnLink.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_content_types_create_column_links(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphColumnLink.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnLink.t} | {:error, Tesla.Env.t}
-  def sites_content_types_create_column_links(connection, site_id, content_type_id, microsoft_graph_column_link, _opts \\ []) do
+  @spec sites_content_types_create_column_links(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphColumnLink.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnLink.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_content_types_create_column_links(
+        connection,
+        site_id,
+        content_type_id,
+        microsoft_graph_column_link,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -262,8 +341,23 @@ defmodule MicrosoftGraph.Api.SitesContentType do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_content_types_create_columns(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_content_types_create_columns(connection, site_id, content_type_id, microsoft_graph_column_definition, _opts \\ []) do
+  @spec sites_content_types_create_columns(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_content_types_create_columns(
+        connection,
+        site_id,
+        content_type_id,
+        microsoft_graph_column_definition,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -297,8 +391,23 @@ defmodule MicrosoftGraph.Api.SitesContentType do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_content_types_delete_column_links(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_content_types_delete_column_links(connection, site_id, content_type_id, column_link_id, opts \\ []) do
+  @spec sites_content_types_delete_column_links(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_content_types_delete_column_links(
+        connection,
+        site_id,
+        content_type_id,
+        column_link_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -337,8 +446,23 @@ defmodule MicrosoftGraph.Api.SitesContentType do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_content_types_delete_columns(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_content_types_delete_columns(connection, site_id, content_type_id, column_definition_id, opts \\ []) do
+  @spec sites_content_types_delete_columns(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_content_types_delete_columns(
+        connection,
+        site_id,
+        content_type_id,
+        column_definition_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -377,7 +501,10 @@ defmodule MicrosoftGraph.Api.SitesContentType do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContentType.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_content_types_get_base(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphContentType.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_content_types_get_base(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphContentType.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_content_types_get_base(connection, site_id, content_type_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -419,8 +546,23 @@ defmodule MicrosoftGraph.Api.SitesContentType do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContentType.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_content_types_get_base_types(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphContentType.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_content_types_get_base_types(connection, site_id, content_type_id, content_type_id1, opts \\ []) do
+  @spec sites_content_types_get_base_types(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphContentType.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_content_types_get_base_types(
+        connection,
+        site_id,
+        content_type_id,
+        content_type_id1,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -461,8 +603,23 @@ defmodule MicrosoftGraph.Api.SitesContentType do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnLink.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_content_types_get_column_links(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnLink.t} | {:error, Tesla.Env.t}
-  def sites_content_types_get_column_links(connection, site_id, content_type_id, column_link_id, opts \\ []) do
+  @spec sites_content_types_get_column_links(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnLink.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_content_types_get_column_links(
+        connection,
+        site_id,
+        content_type_id,
+        column_link_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -503,8 +660,23 @@ defmodule MicrosoftGraph.Api.SitesContentType do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_content_types_get_column_positions(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_content_types_get_column_positions(connection, site_id, content_type_id, column_definition_id, opts \\ []) do
+  @spec sites_content_types_get_column_positions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_content_types_get_column_positions(
+        connection,
+        site_id,
+        content_type_id,
+        column_definition_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -513,7 +685,9 @@ defmodule MicrosoftGraph.Api.SitesContentType do
     request =
       %{}
       |> method(:get)
-      |> url("/sites/#{site_id}/contentTypes/#{content_type_id}/columnPositions/#{column_definition_id}")
+      |> url(
+        "/sites/#{site_id}/contentTypes/#{content_type_id}/columnPositions/#{column_definition_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -545,8 +719,23 @@ defmodule MicrosoftGraph.Api.SitesContentType do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_content_types_get_columns(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_content_types_get_columns(connection, site_id, content_type_id, column_definition_id, opts \\ []) do
+  @spec sites_content_types_get_columns(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_content_types_get_columns(
+        connection,
+        site_id,
+        content_type_id,
+        column_definition_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -584,7 +773,10 @@ defmodule MicrosoftGraph.Api.SitesContentType do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_content_types_get_count50aa(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_content_types_get_count50aa(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_content_types_get_count50aa(connection, site_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -631,7 +823,10 @@ defmodule MicrosoftGraph.Api.SitesContentType do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContentTypeCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_content_types_list_base_types(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphContentTypeCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_content_types_list_base_types(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphContentTypeCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_content_types_list_base_types(connection, site_id, content_type_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -684,7 +879,15 @@ defmodule MicrosoftGraph.Api.SitesContentType do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnLinkCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_content_types_list_column_links(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnLinkCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_content_types_list_column_links(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnLinkCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_content_types_list_column_links(connection, site_id, content_type_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -737,7 +940,15 @@ defmodule MicrosoftGraph.Api.SitesContentType do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinitionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_content_types_list_column_positions(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinitionCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec sites_content_types_list_column_positions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinitionCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def sites_content_types_list_column_positions(connection, site_id, content_type_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -790,7 +1001,10 @@ defmodule MicrosoftGraph.Api.SitesContentType do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinitionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_content_types_list_columns(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinitionCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec sites_content_types_list_columns(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinitionCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def sites_content_types_list_columns(connection, site_id, content_type_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -836,8 +1050,25 @@ defmodule MicrosoftGraph.Api.SitesContentType do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnLink.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_content_types_update_column_links(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphColumnLink.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnLink.t} | {:error, Tesla.Env.t}
-  def sites_content_types_update_column_links(connection, site_id, content_type_id, column_link_id, microsoft_graph_column_link, _opts \\ []) do
+  @spec sites_content_types_update_column_links(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphColumnLink.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnLink.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_content_types_update_column_links(
+        connection,
+        site_id,
+        content_type_id,
+        column_link_id,
+        microsoft_graph_column_link,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -872,8 +1103,25 @@ defmodule MicrosoftGraph.Api.SitesContentType do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_content_types_update_columns(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_content_types_update_columns(connection, site_id, content_type_id, column_definition_id, microsoft_graph_column_definition, _opts \\ []) do
+  @spec sites_content_types_update_columns(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphColumnDefinition.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_content_types_update_columns(
+        connection,
+        site_id,
+        content_type_id,
+        column_definition_id,
+        microsoft_graph_column_definition,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -906,7 +1154,15 @@ defmodule MicrosoftGraph.Api.SitesContentType do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContentType.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_create_content_types(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphContentType.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphContentType.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_create_content_types(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphContentType.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphContentType.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_create_content_types(connection, site_id, microsoft_graph_content_type, _opts \\ []) do
     request =
       %{}
@@ -941,7 +1197,10 @@ defmodule MicrosoftGraph.Api.SitesContentType do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_delete_content_types(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_delete_content_types(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_delete_content_types(connection, site_id, content_type_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -981,7 +1240,10 @@ defmodule MicrosoftGraph.Api.SitesContentType do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContentType.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_get_content_types(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphContentType.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_get_content_types(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphContentType.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_get_content_types(connection, site_id, content_type_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -1027,7 +1289,10 @@ defmodule MicrosoftGraph.Api.SitesContentType do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContentTypeCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_list_content_types(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphContentTypeCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_list_content_types(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphContentTypeCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_list_content_types(connection, site_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1073,8 +1338,23 @@ defmodule MicrosoftGraph.Api.SitesContentType do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContentType.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_update_content_types(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphContentType.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphContentType.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def sites_update_content_types(connection, site_id, content_type_id, microsoft_graph_content_type, _opts \\ []) do
+  @spec sites_update_content_types(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphContentType.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphContentType.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def sites_update_content_types(
+        connection,
+        site_id,
+        content_type_id,
+        microsoft_graph_content_type,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

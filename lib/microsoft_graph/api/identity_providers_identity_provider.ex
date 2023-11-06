@@ -24,7 +24,10 @@ defmodule MicrosoftGraph.Api.IdentityProvidersIdentityProvider do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_providers_get_count_a7d6(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_providers_get_count_a7d6(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_providers_get_count_a7d6(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -62,8 +65,19 @@ defmodule MicrosoftGraph.Api.IdentityProvidersIdentityProvider do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityProvider.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_providers_identity_provider_create_identity_provider(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphIdentityProvider.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityProvider.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_providers_identity_provider_create_identity_provider(connection, microsoft_graph_identity_provider, _opts \\ []) do
+  @spec identity_providers_identity_provider_create_identity_provider(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphIdentityProvider.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityProvider.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_providers_identity_provider_create_identity_provider(
+        connection,
+        microsoft_graph_identity_provider,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -96,8 +110,19 @@ defmodule MicrosoftGraph.Api.IdentityProvidersIdentityProvider do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_providers_identity_provider_delete_identity_provider(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_providers_identity_provider_delete_identity_provider(connection, identity_provider_id, opts \\ []) do
+  @spec identity_providers_identity_provider_delete_identity_provider(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_providers_identity_provider_delete_identity_provider(
+        connection,
+        identity_provider_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -135,8 +160,19 @@ defmodule MicrosoftGraph.Api.IdentityProvidersIdentityProvider do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityProvider.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_providers_identity_provider_get_identity_provider(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityProvider.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_providers_identity_provider_get_identity_provider(connection, identity_provider_id, opts \\ []) do
+  @spec identity_providers_identity_provider_get_identity_provider(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityProvider.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_providers_identity_provider_get_identity_provider(
+        connection,
+        identity_provider_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -180,7 +216,10 @@ defmodule MicrosoftGraph.Api.IdentityProvidersIdentityProvider do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityProviderCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_providers_identity_provider_list_identity_provider(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityProviderCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec identity_providers_identity_provider_list_identity_provider(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityProviderCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def identity_providers_identity_provider_list_identity_provider(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -225,8 +264,21 @@ defmodule MicrosoftGraph.Api.IdentityProvidersIdentityProvider do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityProvider.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_providers_identity_provider_update_identity_provider(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphIdentityProvider.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityProvider.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_providers_identity_provider_update_identity_provider(connection, identity_provider_id, microsoft_graph_identity_provider, _opts \\ []) do
+  @spec identity_providers_identity_provider_update_identity_provider(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphIdentityProvider.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityProvider.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_providers_identity_provider_update_identity_provider(
+        connection,
+        identity_provider_id,
+        microsoft_graph_identity_provider,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxResponse do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,11 +12,10 @@ defmodule MicrosoftGraph.Model.ReportsGetOffice365GroupsActivityFileCounts2XxRes
   ]
 
   @type t :: %__MODULE__{
-    :value => String.t | nil
-  }
+          :value => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

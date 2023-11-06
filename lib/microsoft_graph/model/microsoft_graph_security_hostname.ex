@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityHostname do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -30,46 +30,91 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityHostname do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :childHostPairs => [MicrosoftGraph.Model.MicrosoftGraphSecurityHostPair.t] | nil,
-    :components => [MicrosoftGraph.Model.MicrosoftGraphSecurityHostComponent.t] | nil,
-    :cookies => [MicrosoftGraph.Model.MicrosoftGraphSecurityHostCookie.t] | nil,
-    :firstSeenDateTime => DateTime.t | nil,
-    :hostPairs => [MicrosoftGraph.Model.MicrosoftGraphSecurityHostPair.t] | nil,
-    :lastSeenDateTime => DateTime.t | nil,
-    :parentHostPairs => [MicrosoftGraph.Model.MicrosoftGraphSecurityHostPair.t] | nil,
-    :passiveDns => [MicrosoftGraph.Model.MicrosoftGraphSecurityPassiveDnsRecord.t] | nil,
-    :passiveDnsReverse => [MicrosoftGraph.Model.MicrosoftGraphSecurityPassiveDnsRecord.t] | nil,
-    :ports => [MicrosoftGraph.Model.MicrosoftGraphSecurityHostPort.t] | nil,
-    :reputation => MicrosoftGraph.Model.HostReputation.t | nil,
-    :sslCertificates => [MicrosoftGraph.Model.MicrosoftGraphSecurityHostSslCertificate.t] | nil,
-    :subdomains => [MicrosoftGraph.Model.MicrosoftGraphSecuritySubdomain.t] | nil,
-    :trackers => [MicrosoftGraph.Model.MicrosoftGraphSecurityHostTracker.t] | nil,
-    :whois => MicrosoftGraph.Model.HostWhois.t | nil,
-    :registrant => String.t | nil,
-    :registrar => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :childHostPairs => [MicrosoftGraph.Model.MicrosoftGraphSecurityHostPair.t()] | nil,
+          :components => [MicrosoftGraph.Model.MicrosoftGraphSecurityHostComponent.t()] | nil,
+          :cookies => [MicrosoftGraph.Model.MicrosoftGraphSecurityHostCookie.t()] | nil,
+          :firstSeenDateTime => DateTime.t() | nil,
+          :hostPairs => [MicrosoftGraph.Model.MicrosoftGraphSecurityHostPair.t()] | nil,
+          :lastSeenDateTime => DateTime.t() | nil,
+          :parentHostPairs => [MicrosoftGraph.Model.MicrosoftGraphSecurityHostPair.t()] | nil,
+          :passiveDns => [MicrosoftGraph.Model.MicrosoftGraphSecurityPassiveDnsRecord.t()] | nil,
+          :passiveDnsReverse =>
+            [MicrosoftGraph.Model.MicrosoftGraphSecurityPassiveDnsRecord.t()] | nil,
+          :ports => [MicrosoftGraph.Model.MicrosoftGraphSecurityHostPort.t()] | nil,
+          :reputation => MicrosoftGraph.Model.HostReputation.t() | nil,
+          :sslCertificates =>
+            [MicrosoftGraph.Model.MicrosoftGraphSecurityHostSslCertificate.t()] | nil,
+          :subdomains => [MicrosoftGraph.Model.MicrosoftGraphSecuritySubdomain.t()] | nil,
+          :trackers => [MicrosoftGraph.Model.MicrosoftGraphSecurityHostTracker.t()] | nil,
+          :whois => MicrosoftGraph.Model.HostWhois.t() | nil,
+          :registrant => String.t() | nil,
+          :registrar => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:childHostPairs, :list, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPair)
-     |> Deserializer.deserialize(:components, :list, MicrosoftGraph.Model.MicrosoftGraphSecurityHostComponent)
-     |> Deserializer.deserialize(:cookies, :list, MicrosoftGraph.Model.MicrosoftGraphSecurityHostCookie)
-     |> Deserializer.deserialize(:firstSeenDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:hostPairs, :list, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPair)
-     |> Deserializer.deserialize(:lastSeenDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:parentHostPairs, :list, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPair)
-     |> Deserializer.deserialize(:passiveDns, :list, MicrosoftGraph.Model.MicrosoftGraphSecurityPassiveDnsRecord)
-     |> Deserializer.deserialize(:passiveDnsReverse, :list, MicrosoftGraph.Model.MicrosoftGraphSecurityPassiveDnsRecord)
-     |> Deserializer.deserialize(:ports, :list, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPort)
-     |> Deserializer.deserialize(:reputation, :struct, MicrosoftGraph.Model.HostReputation)
-     |> Deserializer.deserialize(:sslCertificates, :list, MicrosoftGraph.Model.MicrosoftGraphSecurityHostSslCertificate)
-     |> Deserializer.deserialize(:subdomains, :list, MicrosoftGraph.Model.MicrosoftGraphSecuritySubdomain)
-     |> Deserializer.deserialize(:trackers, :list, MicrosoftGraph.Model.MicrosoftGraphSecurityHostTracker)
-     |> Deserializer.deserialize(:whois, :struct, MicrosoftGraph.Model.HostWhois)
+    |> Deserializer.deserialize(
+      :childHostPairs,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityHostPair
+    )
+    |> Deserializer.deserialize(
+      :components,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityHostComponent
+    )
+    |> Deserializer.deserialize(
+      :cookies,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityHostCookie
+    )
+    |> Deserializer.deserialize(:firstSeenDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :hostPairs,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityHostPair
+    )
+    |> Deserializer.deserialize(:lastSeenDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :parentHostPairs,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityHostPair
+    )
+    |> Deserializer.deserialize(
+      :passiveDns,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityPassiveDnsRecord
+    )
+    |> Deserializer.deserialize(
+      :passiveDnsReverse,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityPassiveDnsRecord
+    )
+    |> Deserializer.deserialize(
+      :ports,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityHostPort
+    )
+    |> Deserializer.deserialize(:reputation, :struct, MicrosoftGraph.Model.HostReputation)
+    |> Deserializer.deserialize(
+      :sslCertificates,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityHostSslCertificate
+    )
+    |> Deserializer.deserialize(
+      :subdomains,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSecuritySubdomain
+    )
+    |> Deserializer.deserialize(
+      :trackers,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityHostTracker
+    )
+    |> Deserializer.deserialize(:whois, :struct, MicrosoftGraph.Model.HostWhois)
   end
 end
-

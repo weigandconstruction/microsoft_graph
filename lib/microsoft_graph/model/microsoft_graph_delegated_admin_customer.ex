@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminCustomer do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,18 +16,22 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminCustomer do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :displayName => String.t | nil,
-    :serviceManagementDetails => [MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminServiceManagementDetail.t] | nil,
-    :tenantId => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :displayName => String.t() | nil,
+          :serviceManagementDetails =>
+            [MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminServiceManagementDetail.t()] | nil,
+          :tenantId => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:serviceManagementDetails, :list, MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminServiceManagementDetail)
+    |> Deserializer.deserialize(
+      :serviceManagementDetails,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDelegatedAdminServiceManagementDetail
+    )
   end
 end
-

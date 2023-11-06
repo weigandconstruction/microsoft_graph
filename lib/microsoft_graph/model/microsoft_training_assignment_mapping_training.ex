@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftTrainingAssignmentMappingTraining do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -27,36 +27,48 @@ defmodule MicrosoftGraph.Model.MicrosoftTrainingAssignmentMappingTraining do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :availabilityStatus => MicrosoftGraph.Model.TrainingAvailabilityStatus.t | nil,
-    :createdBy => MicrosoftGraph.Model.TrainingCreatedBy.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :durationInMinutes => integer() | nil,
-    :hasEvaluation => boolean() | nil,
-    :languageDetails => [MicrosoftGraph.Model.MicrosoftGraphTrainingLanguageDetail.t] | nil,
-    :lastModifiedBy => MicrosoftGraph.Model.TrainingLastModifiedBy.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :source => MicrosoftGraph.Model.TrainingSource.t | nil,
-    :supportedLocales => [String.t] | nil,
-    :tags => [String.t] | nil,
-    :type => MicrosoftGraph.Model.TrainingType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :availabilityStatus => MicrosoftGraph.Model.TrainingAvailabilityStatus.t() | nil,
+          :createdBy => MicrosoftGraph.Model.TrainingCreatedBy.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :durationInMinutes => integer() | nil,
+          :hasEvaluation => boolean() | nil,
+          :languageDetails =>
+            [MicrosoftGraph.Model.MicrosoftGraphTrainingLanguageDetail.t()] | nil,
+          :lastModifiedBy => MicrosoftGraph.Model.TrainingLastModifiedBy.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :source => MicrosoftGraph.Model.TrainingSource.t() | nil,
+          :supportedLocales => [String.t()] | nil,
+          :tags => [String.t()] | nil,
+          :type => MicrosoftGraph.Model.TrainingType.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:availabilityStatus, :struct, MicrosoftGraph.Model.TrainingAvailabilityStatus)
-     |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.TrainingCreatedBy)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:languageDetails, :list, MicrosoftGraph.Model.MicrosoftGraphTrainingLanguageDetail)
-     |> Deserializer.deserialize(:lastModifiedBy, :struct, MicrosoftGraph.Model.TrainingLastModifiedBy)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:source, :struct, MicrosoftGraph.Model.TrainingSource)
-     |> Deserializer.deserialize(:type, :struct, MicrosoftGraph.Model.TrainingType)
+    |> Deserializer.deserialize(
+      :availabilityStatus,
+      :struct,
+      MicrosoftGraph.Model.TrainingAvailabilityStatus
+    )
+    |> Deserializer.deserialize(:createdBy, :struct, MicrosoftGraph.Model.TrainingCreatedBy)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :languageDetails,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphTrainingLanguageDetail
+    )
+    |> Deserializer.deserialize(
+      :lastModifiedBy,
+      :struct,
+      MicrosoftGraph.Model.TrainingLastModifiedBy
+    )
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:source, :struct, MicrosoftGraph.Model.TrainingSource)
+    |> Deserializer.deserialize(:type, :struct, MicrosoftGraph.Model.TrainingType)
   end
 end
-

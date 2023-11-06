@@ -17,19 +17,18 @@ defmodule MicrosoftGraph.Model.WorkbookChartTitle do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :format => MicrosoftGraph.Model.WorkbookChartTitleFormat.t | nil,
-    :overlay => boolean() | nil,
-    :text => String.t | nil,
-    :visible => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :format => MicrosoftGraph.Model.WorkbookChartTitleFormat.t() | nil,
+          :overlay => boolean() | nil,
+          :text => String.t() | nil,
+          :visible => boolean() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:format, :struct, MicrosoftGraph.Model.WorkbookChartTitleFormat)
+    |> Deserializer.deserialize(:format, :struct, MicrosoftGraph.Model.WorkbookChartTitleFormat)
   end
 end
-

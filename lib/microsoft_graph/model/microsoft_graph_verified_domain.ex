@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphVerifiedDomain do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,16 +17,15 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphVerifiedDomain do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :capabilities => String.t | nil,
-    :isDefault => boolean() | nil,
-    :isInitial => boolean() | nil,
-    :name => String.t | nil,
-    :type => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :capabilities => String.t() | nil,
+          :isDefault => boolean() | nil,
+          :isInitial => boolean() | nil,
+          :name => String.t() | nil,
+          :type => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

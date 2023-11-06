@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphPendingContentUpdate do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,15 +13,14 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphPendingContentUpdate do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :queuedDateTime => DateTime.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :queuedDateTime => DateTime.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:queuedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:queuedDateTime, :datetime, nil)
   end
 end
-

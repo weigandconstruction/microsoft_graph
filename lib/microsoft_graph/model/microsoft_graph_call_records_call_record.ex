@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphCallRecordsCallRecord do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -23,32 +23,43 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphCallRecordsCallRecord do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :endDateTime => DateTime.t | nil,
-    :joinWebUrl => String.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :modalities => [MicrosoftGraph.Model.MicrosoftGraphCallRecordsModality.t] | nil,
-    :organizer => MicrosoftGraph.Model.CallRecordOrganizer.t | nil,
-    :participants => [MicrosoftGraph.Model.CaseLastModifiedBy.t] | nil,
-    :sessions => [MicrosoftGraph.Model.MicrosoftGraphCallRecordsSession.t] | nil,
-    :startDateTime => DateTime.t | nil,
-    :type => MicrosoftGraph.Model.MicrosoftGraphCallRecordsCallType.t | nil,
-    :version => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :endDateTime => DateTime.t() | nil,
+          :joinWebUrl => String.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :modalities => [MicrosoftGraph.Model.MicrosoftGraphCallRecordsModality.t()] | nil,
+          :organizer => MicrosoftGraph.Model.CallRecordOrganizer.t() | nil,
+          :participants => [MicrosoftGraph.Model.CaseLastModifiedBy.t()] | nil,
+          :sessions => [MicrosoftGraph.Model.MicrosoftGraphCallRecordsSession.t()] | nil,
+          :startDateTime => DateTime.t() | nil,
+          :type => MicrosoftGraph.Model.MicrosoftGraphCallRecordsCallType.t() | nil,
+          :version => integer() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:endDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:modalities, :list, MicrosoftGraph.Model.MicrosoftGraphCallRecordsModality)
-     |> Deserializer.deserialize(:organizer, :struct, MicrosoftGraph.Model.CallRecordOrganizer)
-     |> Deserializer.deserialize(:participants, :list, MicrosoftGraph.Model.CaseLastModifiedBy)
-     |> Deserializer.deserialize(:sessions, :list, MicrosoftGraph.Model.MicrosoftGraphCallRecordsSession)
-     |> Deserializer.deserialize(:startDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:type, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsCallType)
+    |> Deserializer.deserialize(:endDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :modalities,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsModality
+    )
+    |> Deserializer.deserialize(:organizer, :struct, MicrosoftGraph.Model.CallRecordOrganizer)
+    |> Deserializer.deserialize(:participants, :list, MicrosoftGraph.Model.CaseLastModifiedBy)
+    |> Deserializer.deserialize(
+      :sessions,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsSession
+    )
+    |> Deserializer.deserialize(:startDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :type,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsCallType
+    )
   end
 end
-

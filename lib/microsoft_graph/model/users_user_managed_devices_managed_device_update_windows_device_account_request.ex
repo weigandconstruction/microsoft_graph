@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.UsersUserManagedDevicesManagedDeviceUpdateWindowsDeviceAccountRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,14 +12,19 @@ defmodule MicrosoftGraph.Model.UsersUserManagedDevicesManagedDeviceUpdateWindows
   ]
 
   @type t :: %__MODULE__{
-    :updateWindowsDeviceAccountActionParameter => MicrosoftGraph.Model.UsersUserManagedDevicesManagedDeviceUpdateWindowsDeviceAccountRequestUpdateWindowsDeviceAccountActionParameter.t | nil
-  }
+          :updateWindowsDeviceAccountActionParameter =>
+            MicrosoftGraph.Model.UsersUserManagedDevicesManagedDeviceUpdateWindowsDeviceAccountRequestUpdateWindowsDeviceAccountActionParameter.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:updateWindowsDeviceAccountActionParameter, :struct, MicrosoftGraph.Model.UsersUserManagedDevicesManagedDeviceUpdateWindowsDeviceAccountRequestUpdateWindowsDeviceAccountActionParameter)
+    |> Deserializer.deserialize(
+      :updateWindowsDeviceAccountActionParameter,
+      :struct,
+      MicrosoftGraph.Model.UsersUserManagedDevicesManagedDeviceUpdateWindowsDeviceAccountRequestUpdateWindowsDeviceAccountActionParameter
+    )
   end
 end
-

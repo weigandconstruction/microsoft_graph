@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,17 +15,16 @@ defmodule MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCrea
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :expirationDateTime => DateTime.t | nil,
-    :nextExpectedRanges => [String.t] | nil,
-    :uploadUrl => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :expirationDateTime => DateTime.t() | nil,
+          :nextExpectedRanges => [String.t()] | nil,
+          :uploadUrl => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:expirationDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:expirationDateTime, :datetime, nil)
   end
 end
-

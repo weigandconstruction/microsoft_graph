@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphIosMobileAppConfiguration do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -26,35 +26,68 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphIosMobileAppConfiguration do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :assignments => [MicrosoftGraph.Model.MicrosoftGraphManagedDeviceMobileAppConfigurationAssignment.t] | nil,
-    :createdDateTime => DateTime.t | nil,
-    :description => String.t | nil,
-    :deviceStatusSummary => MicrosoftGraph.Model.ManagedDeviceMobileAppConfigurationDeviceStatusSummary.t | nil,
-    :deviceStatuses => [MicrosoftGraph.Model.MicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus.t] | nil,
-    :displayName => String.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :targetedMobileApps => [String.t] | nil,
-    :userStatusSummary => MicrosoftGraph.Model.ManagedDeviceMobileAppConfigurationUserStatusSummary.t | nil,
-    :userStatuses => [MicrosoftGraph.Model.MicrosoftGraphManagedDeviceMobileAppConfigurationUserStatus.t] | nil,
-    :version => integer() | nil,
-    :encodedSettingXml => String.t | nil,
-    :settings => [MicrosoftGraph.Model.IosMobileAppConfigurationSettingsInner.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :assignments =>
+            [MicrosoftGraph.Model.MicrosoftGraphManagedDeviceMobileAppConfigurationAssignment.t()]
+            | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :deviceStatusSummary =>
+            MicrosoftGraph.Model.ManagedDeviceMobileAppConfigurationDeviceStatusSummary.t() | nil,
+          :deviceStatuses =>
+            [
+              MicrosoftGraph.Model.MicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus.t()
+            ]
+            | nil,
+          :displayName => String.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :targetedMobileApps => [String.t()] | nil,
+          :userStatusSummary =>
+            MicrosoftGraph.Model.ManagedDeviceMobileAppConfigurationUserStatusSummary.t() | nil,
+          :userStatuses =>
+            [MicrosoftGraph.Model.MicrosoftGraphManagedDeviceMobileAppConfigurationUserStatus.t()]
+            | nil,
+          :version => integer() | nil,
+          :encodedSettingXml => String.t() | nil,
+          :settings => [MicrosoftGraph.Model.IosMobileAppConfigurationSettingsInner.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:assignments, :list, MicrosoftGraph.Model.MicrosoftGraphManagedDeviceMobileAppConfigurationAssignment)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:deviceStatusSummary, :struct, MicrosoftGraph.Model.ManagedDeviceMobileAppConfigurationDeviceStatusSummary)
-     |> Deserializer.deserialize(:deviceStatuses, :list, MicrosoftGraph.Model.MicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:userStatusSummary, :struct, MicrosoftGraph.Model.ManagedDeviceMobileAppConfigurationUserStatusSummary)
-     |> Deserializer.deserialize(:userStatuses, :list, MicrosoftGraph.Model.MicrosoftGraphManagedDeviceMobileAppConfigurationUserStatus)
-     |> Deserializer.deserialize(:settings, :list, MicrosoftGraph.Model.IosMobileAppConfigurationSettingsInner)
+    |> Deserializer.deserialize(
+      :assignments,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphManagedDeviceMobileAppConfigurationAssignment
+    )
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :deviceStatusSummary,
+      :struct,
+      MicrosoftGraph.Model.ManagedDeviceMobileAppConfigurationDeviceStatusSummary
+    )
+    |> Deserializer.deserialize(
+      :deviceStatuses,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus
+    )
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :userStatusSummary,
+      :struct,
+      MicrosoftGraph.Model.ManagedDeviceMobileAppConfigurationUserStatusSummary
+    )
+    |> Deserializer.deserialize(
+      :userStatuses,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphManagedDeviceMobileAppConfigurationUserStatus
+    )
+    |> Deserializer.deserialize(
+      :settings,
+      :list,
+      MicrosoftGraph.Model.IosMobileAppConfigurationSettingsInner
+    )
   end
 end
-

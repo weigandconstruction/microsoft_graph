@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MeMailFoldersMailFolderChildFoldersMailFolderMessagesMessageMoveRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,11 +12,10 @@ defmodule MicrosoftGraph.Model.MeMailFoldersMailFolderChildFoldersMailFolderMess
   ]
 
   @type t :: %__MODULE__{
-    :DestinationId => String.t | nil
-  }
+          :DestinationId => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

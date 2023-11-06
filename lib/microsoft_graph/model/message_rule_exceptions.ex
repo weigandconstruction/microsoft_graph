@@ -42,49 +42,84 @@ defmodule MicrosoftGraph.Model.MessageRuleExceptions do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :bodyContains => [String.t] | nil,
-    :bodyOrSubjectContains => [String.t] | nil,
-    :categories => [String.t] | nil,
-    :fromAddresses => [MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequestToRecipientsInner.t] | nil,
-    :hasAttachments => boolean() | nil,
-    :headerContains => [String.t] | nil,
-    :importance => MicrosoftGraph.Model.MicrosoftGraphMessageRulePredicatesImportance.t | nil,
-    :isApprovalRequest => boolean() | nil,
-    :isAutomaticForward => boolean() | nil,
-    :isAutomaticReply => boolean() | nil,
-    :isEncrypted => boolean() | nil,
-    :isMeetingRequest => boolean() | nil,
-    :isMeetingResponse => boolean() | nil,
-    :isNonDeliveryReport => boolean() | nil,
-    :isPermissionControlled => boolean() | nil,
-    :isReadReceipt => boolean() | nil,
-    :isSigned => boolean() | nil,
-    :isVoicemail => boolean() | nil,
-    :messageActionFlag => MicrosoftGraph.Model.MicrosoftGraphMessageRulePredicatesMessageActionFlag.t | nil,
-    :notSentToMe => boolean() | nil,
-    :recipientContains => [String.t] | nil,
-    :senderContains => [String.t] | nil,
-    :sensitivity => MicrosoftGraph.Model.MicrosoftGraphMessageRulePredicatesSensitivity.t | nil,
-    :sentCcMe => boolean() | nil,
-    :sentOnlyToMe => boolean() | nil,
-    :sentToAddresses => [MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequestToRecipientsInner.t] | nil,
-    :sentToMe => boolean() | nil,
-    :sentToOrCcMe => boolean() | nil,
-    :subjectContains => [String.t] | nil,
-    :withinSizeRange => MicrosoftGraph.Model.MicrosoftGraphMessageRulePredicatesWithinSizeRange.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :bodyContains => [String.t()] | nil,
+          :bodyOrSubjectContains => [String.t()] | nil,
+          :categories => [String.t()] | nil,
+          :fromAddresses =>
+            [
+              MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequestToRecipientsInner.t()
+            ]
+            | nil,
+          :hasAttachments => boolean() | nil,
+          :headerContains => [String.t()] | nil,
+          :importance =>
+            MicrosoftGraph.Model.MicrosoftGraphMessageRulePredicatesImportance.t() | nil,
+          :isApprovalRequest => boolean() | nil,
+          :isAutomaticForward => boolean() | nil,
+          :isAutomaticReply => boolean() | nil,
+          :isEncrypted => boolean() | nil,
+          :isMeetingRequest => boolean() | nil,
+          :isMeetingResponse => boolean() | nil,
+          :isNonDeliveryReport => boolean() | nil,
+          :isPermissionControlled => boolean() | nil,
+          :isReadReceipt => boolean() | nil,
+          :isSigned => boolean() | nil,
+          :isVoicemail => boolean() | nil,
+          :messageActionFlag =>
+            MicrosoftGraph.Model.MicrosoftGraphMessageRulePredicatesMessageActionFlag.t() | nil,
+          :notSentToMe => boolean() | nil,
+          :recipientContains => [String.t()] | nil,
+          :senderContains => [String.t()] | nil,
+          :sensitivity =>
+            MicrosoftGraph.Model.MicrosoftGraphMessageRulePredicatesSensitivity.t() | nil,
+          :sentCcMe => boolean() | nil,
+          :sentOnlyToMe => boolean() | nil,
+          :sentToAddresses =>
+            [
+              MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequestToRecipientsInner.t()
+            ]
+            | nil,
+          :sentToMe => boolean() | nil,
+          :sentToOrCcMe => boolean() | nil,
+          :subjectContains => [String.t()] | nil,
+          :withinSizeRange =>
+            MicrosoftGraph.Model.MicrosoftGraphMessageRulePredicatesWithinSizeRange.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:fromAddresses, :list, MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequestToRecipientsInner)
-     |> Deserializer.deserialize(:importance, :struct, MicrosoftGraph.Model.MicrosoftGraphMessageRulePredicatesImportance)
-     |> Deserializer.deserialize(:messageActionFlag, :struct, MicrosoftGraph.Model.MicrosoftGraphMessageRulePredicatesMessageActionFlag)
-     |> Deserializer.deserialize(:sensitivity, :struct, MicrosoftGraph.Model.MicrosoftGraphMessageRulePredicatesSensitivity)
-     |> Deserializer.deserialize(:sentToAddresses, :list, MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequestToRecipientsInner)
-     |> Deserializer.deserialize(:withinSizeRange, :struct, MicrosoftGraph.Model.MicrosoftGraphMessageRulePredicatesWithinSizeRange)
+    |> Deserializer.deserialize(
+      :fromAddresses,
+      :list,
+      MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequestToRecipientsInner
+    )
+    |> Deserializer.deserialize(
+      :importance,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphMessageRulePredicatesImportance
+    )
+    |> Deserializer.deserialize(
+      :messageActionFlag,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphMessageRulePredicatesMessageActionFlag
+    )
+    |> Deserializer.deserialize(
+      :sensitivity,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphMessageRulePredicatesSensitivity
+    )
+    |> Deserializer.deserialize(
+      :sentToAddresses,
+      :list,
+      MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequestToRecipientsInner
+    )
+    |> Deserializer.deserialize(
+      :withinSizeRange,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphMessageRulePredicatesWithinSizeRange
+    )
   end
 end
-

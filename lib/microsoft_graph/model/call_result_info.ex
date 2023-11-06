@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.CallResultInfo do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :code => integer() | nil,
-    :message => String.t | nil,
-    :subcode => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :code => integer() | nil,
+          :message => String.t() | nil,
+          :subcode => integer() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

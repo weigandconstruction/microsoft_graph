@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.UsersUserOnenoteNotebooksGetNotebookFromWebUrlRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,11 +12,10 @@ defmodule MicrosoftGraph.Model.UsersUserOnenoteNotebooksGetNotebookFromWebUrlReq
   ]
 
   @type t :: %__MODULE__{
-    :webUrl => String.t | nil
-  }
+          :webUrl => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

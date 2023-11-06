@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphCustomExtensionCalloutInstance do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,19 +17,23 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphCustomExtensionCalloutInstance do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :customExtensionId => String.t | nil,
-    :detail => String.t | nil,
-    :externalCorrelationId => String.t | nil,
-    :id => String.t | nil,
-    :status => MicrosoftGraph.Model.MicrosoftGraphCustomExtensionCalloutInstanceStatus.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :customExtensionId => String.t() | nil,
+          :detail => String.t() | nil,
+          :externalCorrelationId => String.t() | nil,
+          :id => String.t() | nil,
+          :status =>
+            MicrosoftGraph.Model.MicrosoftGraphCustomExtensionCalloutInstanceStatus.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.MicrosoftGraphCustomExtensionCalloutInstanceStatus)
+    |> Deserializer.deserialize(
+      :status,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCustomExtensionCalloutInstanceStatus
+    )
   end
 end
-

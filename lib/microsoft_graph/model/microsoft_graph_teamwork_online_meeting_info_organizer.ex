@@ -15,17 +15,20 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphTeamworkOnlineMeetingInfoOrganizer 
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :displayName => String.t | nil,
-    :id => String.t | nil,
-    :userIdentityType => MicrosoftGraph.Model.TeamworkUserIdentityUserIdentityType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :displayName => String.t() | nil,
+          :id => String.t() | nil,
+          :userIdentityType => MicrosoftGraph.Model.TeamworkUserIdentityUserIdentityType.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:userIdentityType, :struct, MicrosoftGraph.Model.TeamworkUserIdentityUserIdentityType)
+    |> Deserializer.deserialize(
+      :userIdentityType,
+      :struct,
+      MicrosoftGraph.Model.TeamworkUserIdentityUserIdentityType
+    )
   end
 end
-

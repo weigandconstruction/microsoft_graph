@@ -24,8 +24,19 @@ defmodule MicrosoftGraph.Api.TeamworkWorkforceIntegration do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkforceIntegration.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teamwork_create_workforce_integrations(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphWorkforceIntegration.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkforceIntegration.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teamwork_create_workforce_integrations(connection, microsoft_graph_workforce_integration, _opts \\ []) do
+  @spec teamwork_create_workforce_integrations(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkforceIntegration.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkforceIntegration.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teamwork_create_workforce_integrations(
+        connection,
+        microsoft_graph_workforce_integration,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -58,7 +69,10 @@ defmodule MicrosoftGraph.Api.TeamworkWorkforceIntegration do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teamwork_delete_workforce_integrations(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teamwork_delete_workforce_integrations(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teamwork_delete_workforce_integrations(connection, workforce_integration_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -97,7 +111,10 @@ defmodule MicrosoftGraph.Api.TeamworkWorkforceIntegration do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkforceIntegration.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teamwork_get_workforce_integrations(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkforceIntegration.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teamwork_get_workforce_integrations(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkforceIntegration.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teamwork_get_workforce_integrations(connection, workforce_integration_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -142,7 +159,10 @@ defmodule MicrosoftGraph.Api.TeamworkWorkforceIntegration do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkforceIntegrationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teamwork_list_workforce_integrations(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkforceIntegrationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teamwork_list_workforce_integrations(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkforceIntegrationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teamwork_list_workforce_integrations(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -187,8 +207,21 @@ defmodule MicrosoftGraph.Api.TeamworkWorkforceIntegration do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphWorkforceIntegration.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teamwork_update_workforce_integrations(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphWorkforceIntegration.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkforceIntegration.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teamwork_update_workforce_integrations(connection, workforce_integration_id, microsoft_graph_workforce_integration, _opts \\ []) do
+  @spec teamwork_update_workforce_integrations(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphWorkforceIntegration.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphWorkforceIntegration.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teamwork_update_workforce_integrations(
+        connection,
+        workforce_integration_id,
+        microsoft_graph_workforce_integration,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -220,7 +253,10 @@ defmodule MicrosoftGraph.Api.TeamworkWorkforceIntegration do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teamwork_workforce_integrations_get_count5b5b(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teamwork_workforce_integrations_get_count5b5b(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teamwork_workforce_integrations_get_count5b5b(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,

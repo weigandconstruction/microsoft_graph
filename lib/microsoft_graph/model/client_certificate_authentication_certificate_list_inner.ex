@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.ClientCertificateAuthenticationCertificateListInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,15 +16,14 @@ defmodule MicrosoftGraph.Model.ClientCertificateAuthenticationCertificateListInn
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :isActive => boolean() | nil,
-    :notAfter => integer() | nil,
-    :notBefore => integer() | nil,
-    :thumbprint => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :isActive => boolean() | nil,
+          :notAfter => integer() | nil,
+          :notBefore => integer() | nil,
+          :thumbprint => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

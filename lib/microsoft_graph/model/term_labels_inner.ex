@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.TermLabelsInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.TermLabelsInner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :isDefault => boolean() | nil,
-    :languageTag => String.t | nil,
-    :name => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :isDefault => boolean() | nil,
+          :languageTag => String.t() | nil,
+          :name => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

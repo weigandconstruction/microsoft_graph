@@ -14,16 +14,20 @@ defmodule MicrosoftGraph.Model.ExternalItemContent do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :type => MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalItemContentType.t | nil,
-    :value => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :type =>
+            MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalItemContentType.t() | nil,
+          :value => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:type, :struct, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalItemContentType)
+    |> Deserializer.deserialize(
+      :type,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsExternalItemContentType
+    )
   end
 end
-

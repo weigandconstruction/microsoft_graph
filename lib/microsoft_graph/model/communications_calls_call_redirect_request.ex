@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.CommunicationsCallsCallRedirectRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,19 @@ defmodule MicrosoftGraph.Model.CommunicationsCallsCallRedirectRequest do
   ]
 
   @type t :: %__MODULE__{
-    :callbackUri => String.t | nil,
-    :targets => [MicrosoftGraph.Model.MicrosoftGraphInvitationParticipantInfo.t] | nil,
-    :timeout => integer() | nil
-  }
+          :callbackUri => String.t() | nil,
+          :targets => [MicrosoftGraph.Model.MicrosoftGraphInvitationParticipantInfo.t()] | nil,
+          :timeout => integer() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:targets, :list, MicrosoftGraph.Model.MicrosoftGraphInvitationParticipantInfo)
+    |> Deserializer.deserialize(
+      :targets,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphInvitationParticipantInfo
+    )
   end
 end
-

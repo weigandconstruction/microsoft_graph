@@ -24,7 +24,10 @@ defmodule MicrosoftGraph.Api.UsersPresence do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_delete_presence(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_delete_presence(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_delete_presence(connection, user_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -63,7 +66,10 @@ defmodule MicrosoftGraph.Api.UsersPresence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPresence.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_get_presence(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPresence.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_get_presence(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPresence.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_get_presence(connection, user_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -101,7 +107,15 @@ defmodule MicrosoftGraph.Api.UsersPresence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPresence.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec users_update_presence(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphPresence.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPresence.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec users_update_presence(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPresence.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPresence.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def users_update_presence(connection, user_id, microsoft_graph_presence, _opts \\ []) do
     request =
       %{}

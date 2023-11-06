@@ -30,8 +30,19 @@ defmodule MicrosoftGraph.Api.RoleManagementFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfUnifiedRoleAssignmentScheduleInstance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_assignment_schedule_instances_filter_by_current_user(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphRoleAssignmentScheduleInstanceFilterByCurrentUserOptions.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfUnifiedRoleAssignmentScheduleInstance.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_assignment_schedule_instances_filter_by_current_user(connection, on, opts \\ []) do
+  @spec role_management_directory_role_assignment_schedule_instances_filter_by_current_user(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphRoleAssignmentScheduleInstanceFilterByCurrentUserOptions.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfUnifiedRoleAssignmentScheduleInstance.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_assignment_schedule_instances_filter_by_current_user(
+        connection,
+        on,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -45,7 +56,9 @@ defmodule MicrosoftGraph.Api.RoleManagementFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/roleAssignmentScheduleInstances/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)")
+      |> url(
+        "/roleManagement/directory/roleAssignmentScheduleInstances/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -79,8 +92,19 @@ defmodule MicrosoftGraph.Api.RoleManagementFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfUnifiedRoleAssignmentScheduleRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_assignment_schedule_requests_filter_by_current_user(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphRoleAssignmentScheduleRequestFilterByCurrentUserOptions.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfUnifiedRoleAssignmentScheduleRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_assignment_schedule_requests_filter_by_current_user(connection, on, opts \\ []) do
+  @spec role_management_directory_role_assignment_schedule_requests_filter_by_current_user(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphRoleAssignmentScheduleRequestFilterByCurrentUserOptions.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfUnifiedRoleAssignmentScheduleRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_assignment_schedule_requests_filter_by_current_user(
+        connection,
+        on,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -94,7 +118,9 @@ defmodule MicrosoftGraph.Api.RoleManagementFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/roleAssignmentScheduleRequests/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)")
+      |> url(
+        "/roleManagement/directory/roleAssignmentScheduleRequests/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -128,8 +154,19 @@ defmodule MicrosoftGraph.Api.RoleManagementFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfUnifiedRoleAssignmentSchedule.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_assignment_schedules_filter_by_current_user(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphRoleAssignmentScheduleFilterByCurrentUserOptions.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfUnifiedRoleAssignmentSchedule.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_assignment_schedules_filter_by_current_user(connection, on, opts \\ []) do
+  @spec role_management_directory_role_assignment_schedules_filter_by_current_user(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphRoleAssignmentScheduleFilterByCurrentUserOptions.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfUnifiedRoleAssignmentSchedule.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_assignment_schedules_filter_by_current_user(
+        connection,
+        on,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -143,7 +180,9 @@ defmodule MicrosoftGraph.Api.RoleManagementFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/roleAssignmentSchedules/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)")
+      |> url(
+        "/roleManagement/directory/roleAssignmentSchedules/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -177,8 +216,19 @@ defmodule MicrosoftGraph.Api.RoleManagementFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfUnifiedRoleEligibilityScheduleInstance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_eligibility_schedule_instances_filter_by_current_user(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphRoleEligibilityScheduleInstanceFilterByCurrentUserOptions.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfUnifiedRoleEligibilityScheduleInstance.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_eligibility_schedule_instances_filter_by_current_user(connection, on, opts \\ []) do
+  @spec role_management_directory_role_eligibility_schedule_instances_filter_by_current_user(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphRoleEligibilityScheduleInstanceFilterByCurrentUserOptions.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfUnifiedRoleEligibilityScheduleInstance.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_eligibility_schedule_instances_filter_by_current_user(
+        connection,
+        on,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -192,7 +242,9 @@ defmodule MicrosoftGraph.Api.RoleManagementFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/roleEligibilityScheduleInstances/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)")
+      |> url(
+        "/roleManagement/directory/roleEligibilityScheduleInstances/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -226,8 +278,19 @@ defmodule MicrosoftGraph.Api.RoleManagementFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfUnifiedRoleEligibilityScheduleRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_eligibility_schedule_requests_filter_by_current_user(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphRoleEligibilityScheduleRequestFilterByCurrentUserOptions.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfUnifiedRoleEligibilityScheduleRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_eligibility_schedule_requests_filter_by_current_user(connection, on, opts \\ []) do
+  @spec role_management_directory_role_eligibility_schedule_requests_filter_by_current_user(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphRoleEligibilityScheduleRequestFilterByCurrentUserOptions.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfUnifiedRoleEligibilityScheduleRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_eligibility_schedule_requests_filter_by_current_user(
+        connection,
+        on,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -241,7 +304,9 @@ defmodule MicrosoftGraph.Api.RoleManagementFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/roleEligibilityScheduleRequests/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)")
+      |> url(
+        "/roleManagement/directory/roleEligibilityScheduleRequests/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -275,8 +340,19 @@ defmodule MicrosoftGraph.Api.RoleManagementFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfUnifiedRoleEligibilitySchedule.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_directory_role_eligibility_schedules_filter_by_current_user(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphRoleEligibilityScheduleFilterByCurrentUserOptions.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfUnifiedRoleEligibilitySchedule.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_directory_role_eligibility_schedules_filter_by_current_user(connection, on, opts \\ []) do
+  @spec role_management_directory_role_eligibility_schedules_filter_by_current_user(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphRoleEligibilityScheduleFilterByCurrentUserOptions.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfUnifiedRoleEligibilitySchedule.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_directory_role_eligibility_schedules_filter_by_current_user(
+        connection,
+        on,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -290,7 +366,9 @@ defmodule MicrosoftGraph.Api.RoleManagementFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/directory/roleEligibilitySchedules/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)")
+      |> url(
+        "/roleManagement/directory/roleEligibilitySchedules/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -324,8 +402,19 @@ defmodule MicrosoftGraph.Api.RoleManagementFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfUnifiedRoleAssignmentScheduleInstance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_assignment_schedule_instances_filter_by_current_user(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphRoleAssignmentScheduleInstanceFilterByCurrentUserOptions.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfUnifiedRoleAssignmentScheduleInstance.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_assignment_schedule_instances_filter_by_current_user(connection, on, opts \\ []) do
+  @spec role_management_entitlement_management_role_assignment_schedule_instances_filter_by_current_user(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphRoleAssignmentScheduleInstanceFilterByCurrentUserOptions.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfUnifiedRoleAssignmentScheduleInstance.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_assignment_schedule_instances_filter_by_current_user(
+        connection,
+        on,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -339,7 +428,9 @@ defmodule MicrosoftGraph.Api.RoleManagementFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleAssignmentScheduleInstances/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)")
+      |> url(
+        "/roleManagement/entitlementManagement/roleAssignmentScheduleInstances/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -373,8 +464,19 @@ defmodule MicrosoftGraph.Api.RoleManagementFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfUnifiedRoleAssignmentScheduleRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_assignment_schedule_requests_filter_by_current_user(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphRoleAssignmentScheduleRequestFilterByCurrentUserOptions.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfUnifiedRoleAssignmentScheduleRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_assignment_schedule_requests_filter_by_current_user(connection, on, opts \\ []) do
+  @spec role_management_entitlement_management_role_assignment_schedule_requests_filter_by_current_user(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphRoleAssignmentScheduleRequestFilterByCurrentUserOptions.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfUnifiedRoleAssignmentScheduleRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_assignment_schedule_requests_filter_by_current_user(
+        connection,
+        on,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -388,7 +490,9 @@ defmodule MicrosoftGraph.Api.RoleManagementFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleAssignmentScheduleRequests/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)")
+      |> url(
+        "/roleManagement/entitlementManagement/roleAssignmentScheduleRequests/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -422,8 +526,19 @@ defmodule MicrosoftGraph.Api.RoleManagementFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfUnifiedRoleAssignmentSchedule.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_assignment_schedules_filter_by_current_user(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphRoleAssignmentScheduleFilterByCurrentUserOptions.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfUnifiedRoleAssignmentSchedule.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_assignment_schedules_filter_by_current_user(connection, on, opts \\ []) do
+  @spec role_management_entitlement_management_role_assignment_schedules_filter_by_current_user(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphRoleAssignmentScheduleFilterByCurrentUserOptions.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfUnifiedRoleAssignmentSchedule.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_assignment_schedules_filter_by_current_user(
+        connection,
+        on,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -437,7 +552,9 @@ defmodule MicrosoftGraph.Api.RoleManagementFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleAssignmentSchedules/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)")
+      |> url(
+        "/roleManagement/entitlementManagement/roleAssignmentSchedules/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -471,8 +588,19 @@ defmodule MicrosoftGraph.Api.RoleManagementFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfUnifiedRoleEligibilityScheduleInstance.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_eligibility_schedule_instances_filter_by_current_user(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphRoleEligibilityScheduleInstanceFilterByCurrentUserOptions.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfUnifiedRoleEligibilityScheduleInstance.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_eligibility_schedule_instances_filter_by_current_user(connection, on, opts \\ []) do
+  @spec role_management_entitlement_management_role_eligibility_schedule_instances_filter_by_current_user(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphRoleEligibilityScheduleInstanceFilterByCurrentUserOptions.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfUnifiedRoleEligibilityScheduleInstance.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_eligibility_schedule_instances_filter_by_current_user(
+        connection,
+        on,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -486,7 +614,9 @@ defmodule MicrosoftGraph.Api.RoleManagementFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleEligibilityScheduleInstances/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)")
+      |> url(
+        "/roleManagement/entitlementManagement/roleEligibilityScheduleInstances/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -520,8 +650,19 @@ defmodule MicrosoftGraph.Api.RoleManagementFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfUnifiedRoleEligibilityScheduleRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_eligibility_schedule_requests_filter_by_current_user(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphRoleEligibilityScheduleRequestFilterByCurrentUserOptions.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfUnifiedRoleEligibilityScheduleRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_eligibility_schedule_requests_filter_by_current_user(connection, on, opts \\ []) do
+  @spec role_management_entitlement_management_role_eligibility_schedule_requests_filter_by_current_user(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphRoleEligibilityScheduleRequestFilterByCurrentUserOptions.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfUnifiedRoleEligibilityScheduleRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_eligibility_schedule_requests_filter_by_current_user(
+        connection,
+        on,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -535,7 +676,9 @@ defmodule MicrosoftGraph.Api.RoleManagementFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleEligibilityScheduleRequests/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)")
+      |> url(
+        "/roleManagement/entitlementManagement/roleEligibilityScheduleRequests/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -569,8 +712,19 @@ defmodule MicrosoftGraph.Api.RoleManagementFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfUnifiedRoleEligibilitySchedule.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec role_management_entitlement_management_role_eligibility_schedules_filter_by_current_user(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphRoleEligibilityScheduleFilterByCurrentUserOptions.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfUnifiedRoleEligibilitySchedule.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def role_management_entitlement_management_role_eligibility_schedules_filter_by_current_user(connection, on, opts \\ []) do
+  @spec role_management_entitlement_management_role_eligibility_schedules_filter_by_current_user(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphRoleEligibilityScheduleFilterByCurrentUserOptions.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfUnifiedRoleEligibilitySchedule.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def role_management_entitlement_management_role_eligibility_schedules_filter_by_current_user(
+        connection,
+        on,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -584,7 +738,9 @@ defmodule MicrosoftGraph.Api.RoleManagementFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/roleManagement/entitlementManagement/roleEligibilitySchedules/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)")
+      |> url(
+        "/roleManagement/entitlementManagement/roleEligibilitySchedules/filterByCurrentUser(on&#x3D;&#39;#{on}&#39;)"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 

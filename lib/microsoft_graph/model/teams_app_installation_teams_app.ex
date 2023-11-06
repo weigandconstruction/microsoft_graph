@@ -17,20 +17,27 @@ defmodule MicrosoftGraph.Model.TeamsAppInstallationTeamsApp do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :appDefinitions => [MicrosoftGraph.Model.MicrosoftGraphTeamsAppDefinition.t] | nil,
-    :displayName => String.t | nil,
-    :distributionMethod => MicrosoftGraph.Model.TeamsAppDistributionMethod.t | nil,
-    :externalId => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :appDefinitions => [MicrosoftGraph.Model.MicrosoftGraphTeamsAppDefinition.t()] | nil,
+          :displayName => String.t() | nil,
+          :distributionMethod => MicrosoftGraph.Model.TeamsAppDistributionMethod.t() | nil,
+          :externalId => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:appDefinitions, :list, MicrosoftGraph.Model.MicrosoftGraphTeamsAppDefinition)
-     |> Deserializer.deserialize(:distributionMethod, :struct, MicrosoftGraph.Model.TeamsAppDistributionMethod)
+    |> Deserializer.deserialize(
+      :appDefinitions,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphTeamsAppDefinition
+    )
+    |> Deserializer.deserialize(
+      :distributionMethod,
+      :struct,
+      MicrosoftGraph.Model.TeamsAppDistributionMethod
+    )
   end
 end
-

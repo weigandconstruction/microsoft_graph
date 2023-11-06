@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttributeAssignment do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,23 +19,38 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttributeAssignment
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :displayName => String.t | nil,
-    :isOptional => boolean() | nil,
-    :requiresVerification => boolean() | nil,
-    :userAttribute => MicrosoftGraph.Model.IdentityUserFlowAttributeAssignmentUserAttribute.t | nil,
-    :userAttributeValues => [MicrosoftGraph.Model.IdentityUserFlowAttributeAssignmentUserAttributeValuesInner.t] | nil,
-    :userInputType => MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttributeInputType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :displayName => String.t() | nil,
+          :isOptional => boolean() | nil,
+          :requiresVerification => boolean() | nil,
+          :userAttribute =>
+            MicrosoftGraph.Model.IdentityUserFlowAttributeAssignmentUserAttribute.t() | nil,
+          :userAttributeValues =>
+            [MicrosoftGraph.Model.IdentityUserFlowAttributeAssignmentUserAttributeValuesInner.t()]
+            | nil,
+          :userInputType =>
+            MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttributeInputType.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:userAttribute, :struct, MicrosoftGraph.Model.IdentityUserFlowAttributeAssignmentUserAttribute)
-     |> Deserializer.deserialize(:userAttributeValues, :list, MicrosoftGraph.Model.IdentityUserFlowAttributeAssignmentUserAttributeValuesInner)
-     |> Deserializer.deserialize(:userInputType, :struct, MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttributeInputType)
+    |> Deserializer.deserialize(
+      :userAttribute,
+      :struct,
+      MicrosoftGraph.Model.IdentityUserFlowAttributeAssignmentUserAttribute
+    )
+    |> Deserializer.deserialize(
+      :userAttributeValues,
+      :list,
+      MicrosoftGraph.Model.IdentityUserFlowAttributeAssignmentUserAttributeValuesInner
+    )
+    |> Deserializer.deserialize(
+      :userInputType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttributeInputType
+    )
   end
 end
-

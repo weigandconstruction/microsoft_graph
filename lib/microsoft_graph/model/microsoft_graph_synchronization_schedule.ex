@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSynchronizationSchedule do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,18 +15,21 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSynchronizationSchedule do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :expiration => DateTime.t | nil,
-    :interval => String.t | nil,
-    :state => MicrosoftGraph.Model.MicrosoftGraphSynchronizationScheduleState.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :expiration => DateTime.t() | nil,
+          :interval => String.t() | nil,
+          :state => MicrosoftGraph.Model.MicrosoftGraphSynchronizationScheduleState.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:expiration, :datetime, nil)
-     |> Deserializer.deserialize(:state, :struct, MicrosoftGraph.Model.MicrosoftGraphSynchronizationScheduleState)
+    |> Deserializer.deserialize(:expiration, :datetime, nil)
+    |> Deserializer.deserialize(
+      :state,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSynchronizationScheduleState
+    )
   end
 end
-

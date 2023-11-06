@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphRegistrationEnforcement do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,15 +13,20 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphRegistrationEnforcement do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :authenticationMethodsRegistrationCampaign => MicrosoftGraph.Model.MicrosoftGraphRegistrationEnforcementAuthenticationMethodsRegistrationCampaign.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :authenticationMethodsRegistrationCampaign =>
+            MicrosoftGraph.Model.MicrosoftGraphRegistrationEnforcementAuthenticationMethodsRegistrationCampaign.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:authenticationMethodsRegistrationCampaign, :struct, MicrosoftGraph.Model.MicrosoftGraphRegistrationEnforcementAuthenticationMethodsRegistrationCampaign)
+    |> Deserializer.deserialize(
+      :authenticationMethodsRegistrationCampaign,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphRegistrationEnforcementAuthenticationMethodsRegistrationCampaign
+    )
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphTodo do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,15 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphTodo do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :lists => [MicrosoftGraph.Model.MicrosoftGraphTodoTaskList.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :lists => [MicrosoftGraph.Model.MicrosoftGraphTodoTaskList.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:lists, :list, MicrosoftGraph.Model.MicrosoftGraphTodoTaskList)
+    |> Deserializer.deserialize(:lists, :list, MicrosoftGraph.Model.MicrosoftGraphTodoTaskList)
   end
 end
-

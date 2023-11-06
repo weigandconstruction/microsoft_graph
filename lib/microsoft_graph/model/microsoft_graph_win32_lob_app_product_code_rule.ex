@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphWin32LobAppProductCodeRule do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,19 +16,27 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphWin32LobAppProductCodeRule do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :ruleType => MicrosoftGraph.Model.MicrosoftGraphWin32LobAppRuleType.t | nil,
-    :productCode => String.t | nil,
-    :productVersion => String.t | nil,
-    :productVersionOperator => MicrosoftGraph.Model.MicrosoftGraphWin32LobAppRuleOperator.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :ruleType => MicrosoftGraph.Model.MicrosoftGraphWin32LobAppRuleType.t() | nil,
+          :productCode => String.t() | nil,
+          :productVersion => String.t() | nil,
+          :productVersionOperator =>
+            MicrosoftGraph.Model.MicrosoftGraphWin32LobAppRuleOperator.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:ruleType, :struct, MicrosoftGraph.Model.MicrosoftGraphWin32LobAppRuleType)
-     |> Deserializer.deserialize(:productVersionOperator, :struct, MicrosoftGraph.Model.MicrosoftGraphWin32LobAppRuleOperator)
+    |> Deserializer.deserialize(
+      :ruleType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphWin32LobAppRuleType
+    )
+    |> Deserializer.deserialize(
+      :productVersionOperator,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphWin32LobAppRuleOperator
+    )
   end
 end
-

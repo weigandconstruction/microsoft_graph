@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphWindowsUpdateScheduledInstall do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,19 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphWindowsUpdateScheduledInstall do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :scheduledInstallDay => MicrosoftGraph.Model.MicrosoftGraphWeeklySchedule.t | nil,
-    :scheduledInstallTime => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :scheduledInstallDay => MicrosoftGraph.Model.MicrosoftGraphWeeklySchedule.t() | nil,
+          :scheduledInstallTime => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:scheduledInstallDay, :struct, MicrosoftGraph.Model.MicrosoftGraphWeeklySchedule)
+    |> Deserializer.deserialize(
+      :scheduledInstallDay,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphWeeklySchedule
+    )
   end
 end
-

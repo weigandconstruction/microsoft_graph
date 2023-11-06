@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphRequiredResourceAccess do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,19 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphRequiredResourceAccess do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :resourceAccess => [MicrosoftGraph.Model.MicrosoftGraphResourceAccess.t] | nil,
-    :resourceAppId => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :resourceAccess => [MicrosoftGraph.Model.MicrosoftGraphResourceAccess.t()] | nil,
+          :resourceAppId => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:resourceAccess, :list, MicrosoftGraph.Model.MicrosoftGraphResourceAccess)
+    |> Deserializer.deserialize(
+      :resourceAccess,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphResourceAccess
+    )
   end
 end
-

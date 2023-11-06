@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphIosDeviceFeaturesConfiguration do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -29,41 +29,87 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphIosDeviceFeaturesConfiguration do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :assignments => [MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationAssignment.t] | nil,
-    :createdDateTime => DateTime.t | nil,
-    :description => String.t | nil,
-    :deviceSettingStateSummaries => [MicrosoftGraph.Model.MicrosoftGraphSettingStateDeviceSummary.t] | nil,
-    :deviceStatusOverview => MicrosoftGraph.Model.DeviceConfigurationDeviceStatusOverview.t | nil,
-    :deviceStatuses => [MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceStatus.t] | nil,
-    :displayName => String.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :userStatusOverview => MicrosoftGraph.Model.DeviceConfigurationUserStatusOverview.t | nil,
-    :userStatuses => [MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserStatus.t] | nil,
-    :version => integer() | nil,
-    :assetTagTemplate => String.t | nil,
-    :homeScreenDockIcons => [MicrosoftGraph.Model.IosDeviceFeaturesConfigurationHomeScreenDockIconsInner.t] | nil,
-    :homeScreenPages => [MicrosoftGraph.Model.IosDeviceFeaturesConfigurationHomeScreenPagesInner.t] | nil,
-    :lockScreenFootnote => String.t | nil,
-    :notificationSettings => [MicrosoftGraph.Model.IosDeviceFeaturesConfigurationNotificationSettingsInner.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :assignments =>
+            [MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationAssignment.t()] | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :deviceSettingStateSummaries =>
+            [MicrosoftGraph.Model.MicrosoftGraphSettingStateDeviceSummary.t()] | nil,
+          :deviceStatusOverview =>
+            MicrosoftGraph.Model.DeviceConfigurationDeviceStatusOverview.t() | nil,
+          :deviceStatuses =>
+            [MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceStatus.t()] | nil,
+          :displayName => String.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :userStatusOverview =>
+            MicrosoftGraph.Model.DeviceConfigurationUserStatusOverview.t() | nil,
+          :userStatuses =>
+            [MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserStatus.t()] | nil,
+          :version => integer() | nil,
+          :assetTagTemplate => String.t() | nil,
+          :homeScreenDockIcons =>
+            [MicrosoftGraph.Model.IosDeviceFeaturesConfigurationHomeScreenDockIconsInner.t()]
+            | nil,
+          :homeScreenPages =>
+            [MicrosoftGraph.Model.IosDeviceFeaturesConfigurationHomeScreenPagesInner.t()] | nil,
+          :lockScreenFootnote => String.t() | nil,
+          :notificationSettings =>
+            [MicrosoftGraph.Model.IosDeviceFeaturesConfigurationNotificationSettingsInner.t()]
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:assignments, :list, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationAssignment)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:deviceSettingStateSummaries, :list, MicrosoftGraph.Model.MicrosoftGraphSettingStateDeviceSummary)
-     |> Deserializer.deserialize(:deviceStatusOverview, :struct, MicrosoftGraph.Model.DeviceConfigurationDeviceStatusOverview)
-     |> Deserializer.deserialize(:deviceStatuses, :list, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceStatus)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:userStatusOverview, :struct, MicrosoftGraph.Model.DeviceConfigurationUserStatusOverview)
-     |> Deserializer.deserialize(:userStatuses, :list, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserStatus)
-     |> Deserializer.deserialize(:homeScreenDockIcons, :list, MicrosoftGraph.Model.IosDeviceFeaturesConfigurationHomeScreenDockIconsInner)
-     |> Deserializer.deserialize(:homeScreenPages, :list, MicrosoftGraph.Model.IosDeviceFeaturesConfigurationHomeScreenPagesInner)
-     |> Deserializer.deserialize(:notificationSettings, :list, MicrosoftGraph.Model.IosDeviceFeaturesConfigurationNotificationSettingsInner)
+    |> Deserializer.deserialize(
+      :assignments,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationAssignment
+    )
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :deviceSettingStateSummaries,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSettingStateDeviceSummary
+    )
+    |> Deserializer.deserialize(
+      :deviceStatusOverview,
+      :struct,
+      MicrosoftGraph.Model.DeviceConfigurationDeviceStatusOverview
+    )
+    |> Deserializer.deserialize(
+      :deviceStatuses,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceStatus
+    )
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :userStatusOverview,
+      :struct,
+      MicrosoftGraph.Model.DeviceConfigurationUserStatusOverview
+    )
+    |> Deserializer.deserialize(
+      :userStatuses,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserStatus
+    )
+    |> Deserializer.deserialize(
+      :homeScreenDockIcons,
+      :list,
+      MicrosoftGraph.Model.IosDeviceFeaturesConfigurationHomeScreenDockIconsInner
+    )
+    |> Deserializer.deserialize(
+      :homeScreenPages,
+      :list,
+      MicrosoftGraph.Model.IosDeviceFeaturesConfigurationHomeScreenPagesInner
+    )
+    |> Deserializer.deserialize(
+      :notificationSettings,
+      :list,
+      MicrosoftGraph.Model.IosDeviceFeaturesConfigurationNotificationSettingsInner
+    )
   end
 end
-

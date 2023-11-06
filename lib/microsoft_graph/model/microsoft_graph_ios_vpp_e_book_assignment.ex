@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphIosVppEBookAssignment do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,18 +15,25 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphIosVppEBookAssignment do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :installIntent => MicrosoftGraph.Model.MicrosoftGraphInstallIntent.t | nil,
-    :target => MicrosoftGraph.Model.ManagedEBookAssignmentTarget.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :installIntent => MicrosoftGraph.Model.MicrosoftGraphInstallIntent.t() | nil,
+          :target => MicrosoftGraph.Model.ManagedEBookAssignmentTarget.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:installIntent, :struct, MicrosoftGraph.Model.MicrosoftGraphInstallIntent)
-     |> Deserializer.deserialize(:target, :struct, MicrosoftGraph.Model.ManagedEBookAssignmentTarget)
+    |> Deserializer.deserialize(
+      :installIntent,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphInstallIntent
+    )
+    |> Deserializer.deserialize(
+      :target,
+      :struct,
+      MicrosoftGraph.Model.ManagedEBookAssignmentTarget
+    )
   end
 end
-

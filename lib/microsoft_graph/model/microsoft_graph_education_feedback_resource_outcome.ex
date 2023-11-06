@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphEducationFeedbackResourceOutcome do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,22 +17,35 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphEducationFeedbackResourceOutcome do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :lastModifiedBy => MicrosoftGraph.Model.EducationOutcomeLastModifiedBy.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :feedbackResource => MicrosoftGraph.Model.EducationFeedbackResourceOutcomeFeedbackResource.t | nil,
-    :resourceStatus => MicrosoftGraph.Model.EducationFeedbackResourceOutcomeResourceStatus.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :lastModifiedBy => MicrosoftGraph.Model.EducationOutcomeLastModifiedBy.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :feedbackResource =>
+            MicrosoftGraph.Model.EducationFeedbackResourceOutcomeFeedbackResource.t() | nil,
+          :resourceStatus =>
+            MicrosoftGraph.Model.EducationFeedbackResourceOutcomeResourceStatus.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:lastModifiedBy, :struct, MicrosoftGraph.Model.EducationOutcomeLastModifiedBy)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:feedbackResource, :struct, MicrosoftGraph.Model.EducationFeedbackResourceOutcomeFeedbackResource)
-     |> Deserializer.deserialize(:resourceStatus, :struct, MicrosoftGraph.Model.EducationFeedbackResourceOutcomeResourceStatus)
+    |> Deserializer.deserialize(
+      :lastModifiedBy,
+      :struct,
+      MicrosoftGraph.Model.EducationOutcomeLastModifiedBy
+    )
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :feedbackResource,
+      :struct,
+      MicrosoftGraph.Model.EducationFeedbackResourceOutcomeFeedbackResource
+    )
+    |> Deserializer.deserialize(
+      :resourceStatus,
+      :struct,
+      MicrosoftGraph.Model.EducationFeedbackResourceOutcomeResourceStatus
+    )
   end
 end
-

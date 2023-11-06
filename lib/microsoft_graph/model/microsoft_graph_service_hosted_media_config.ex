@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphServiceHostedMediaConfig do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,15 +13,19 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphServiceHostedMediaConfig do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :preFetchMedia => [MicrosoftGraph.Model.ServiceHostedMediaConfigPreFetchMediaInner.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :preFetchMedia =>
+            [MicrosoftGraph.Model.ServiceHostedMediaConfigPreFetchMediaInner.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:preFetchMedia, :list, MicrosoftGraph.Model.ServiceHostedMediaConfigPreFetchMediaInner)
+    |> Deserializer.deserialize(
+      :preFetchMedia,
+      :list,
+      MicrosoftGraph.Model.ServiceHostedMediaConfigPreFetchMediaInner
+    )
   end
 end
-

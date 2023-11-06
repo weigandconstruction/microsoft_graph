@@ -7,16 +7,11 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphDeviceGeoLocationHorizontalAccuracy
   """
 
   @derive Jason.Encoder
-  defstruct [
-    
-  ]
+  defstruct []
 
-  @type t :: %__MODULE__{
-    
-  }
+  @type t :: %__MODULE__{}
 
   def decode(value) do
     value
   end
 end
-

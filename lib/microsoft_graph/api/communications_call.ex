@@ -25,7 +25,14 @@ defmodule MicrosoftGraph.Api.CommunicationsCall do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_calls_audio_routing_groups_get_count157e(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec communications_calls_audio_routing_groups_get_count157e(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def communications_calls_audio_routing_groups_get_count157e(connection, call_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -64,8 +71,19 @@ defmodule MicrosoftGraph.Api.CommunicationsCall do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_calls_content_sharing_sessions_get_count_a2b2(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def communications_calls_content_sharing_sessions_get_count_a2b2(connection, call_id, opts \\ []) do
+  @spec communications_calls_content_sharing_sessions_get_count_a2b2(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_calls_content_sharing_sessions_get_count_a2b2(
+        connection,
+        call_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -103,8 +121,21 @@ defmodule MicrosoftGraph.Api.CommunicationsCall do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAudioRoutingGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_calls_create_audio_routing_groups(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphAudioRoutingGroup.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAudioRoutingGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def communications_calls_create_audio_routing_groups(connection, call_id, microsoft_graph_audio_routing_group, _opts \\ []) do
+  @spec communications_calls_create_audio_routing_groups(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAudioRoutingGroup.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAudioRoutingGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_calls_create_audio_routing_groups(
+        connection,
+        call_id,
+        microsoft_graph_audio_routing_group,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -136,8 +167,21 @@ defmodule MicrosoftGraph.Api.CommunicationsCall do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContentSharingSession.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_calls_create_content_sharing_sessions(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphContentSharingSession.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphContentSharingSession.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def communications_calls_create_content_sharing_sessions(connection, call_id, microsoft_graph_content_sharing_session, _opts \\ []) do
+  @spec communications_calls_create_content_sharing_sessions(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphContentSharingSession.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphContentSharingSession.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_calls_create_content_sharing_sessions(
+        connection,
+        call_id,
+        microsoft_graph_content_sharing_session,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -169,8 +213,21 @@ defmodule MicrosoftGraph.Api.CommunicationsCall do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCommsOperation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_calls_create_operations(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphCommsOperation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphCommsOperation.t} | {:error, Tesla.Env.t}
-  def communications_calls_create_operations(connection, call_id, microsoft_graph_comms_operation, _opts \\ []) do
+  @spec communications_calls_create_operations(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphCommsOperation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphCommsOperation.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_calls_create_operations(
+        connection,
+        call_id,
+        microsoft_graph_comms_operation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -202,8 +259,21 @@ defmodule MicrosoftGraph.Api.CommunicationsCall do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphParticipant.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_calls_create_participants(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphParticipant.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphParticipant.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def communications_calls_create_participants(connection, call_id, microsoft_graph_participant, _opts \\ []) do
+  @spec communications_calls_create_participants(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphParticipant.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphParticipant.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_calls_create_participants(
+        connection,
+        call_id,
+        microsoft_graph_participant,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -237,8 +307,21 @@ defmodule MicrosoftGraph.Api.CommunicationsCall do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_calls_delete_audio_routing_groups(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def communications_calls_delete_audio_routing_groups(connection, call_id, audio_routing_group_id, opts \\ []) do
+  @spec communications_calls_delete_audio_routing_groups(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_calls_delete_audio_routing_groups(
+        connection,
+        call_id,
+        audio_routing_group_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -275,8 +358,21 @@ defmodule MicrosoftGraph.Api.CommunicationsCall do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_calls_delete_content_sharing_sessions(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def communications_calls_delete_content_sharing_sessions(connection, call_id, content_sharing_session_id, opts \\ []) do
+  @spec communications_calls_delete_content_sharing_sessions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_calls_delete_content_sharing_sessions(
+        connection,
+        call_id,
+        content_sharing_session_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -284,7 +380,9 @@ defmodule MicrosoftGraph.Api.CommunicationsCall do
     request =
       %{}
       |> method(:delete)
-      |> url("/communications/calls/#{call_id}/contentSharingSessions/#{content_sharing_session_id}")
+      |> url(
+        "/communications/calls/#{call_id}/contentSharingSessions/#{content_sharing_session_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -313,7 +411,15 @@ defmodule MicrosoftGraph.Api.CommunicationsCall do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_calls_delete_operations(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec communications_calls_delete_operations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def communications_calls_delete_operations(connection, call_id, comms_operation_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -352,7 +458,15 @@ defmodule MicrosoftGraph.Api.CommunicationsCall do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_calls_delete_participants(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec communications_calls_delete_participants(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def communications_calls_delete_participants(connection, call_id, participant_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -392,8 +506,21 @@ defmodule MicrosoftGraph.Api.CommunicationsCall do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAudioRoutingGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_calls_get_audio_routing_groups(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAudioRoutingGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def communications_calls_get_audio_routing_groups(connection, call_id, audio_routing_group_id, opts \\ []) do
+  @spec communications_calls_get_audio_routing_groups(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAudioRoutingGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_calls_get_audio_routing_groups(
+        connection,
+        call_id,
+        audio_routing_group_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -433,8 +560,21 @@ defmodule MicrosoftGraph.Api.CommunicationsCall do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContentSharingSession.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_calls_get_content_sharing_sessions(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphContentSharingSession.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def communications_calls_get_content_sharing_sessions(connection, call_id, content_sharing_session_id, opts \\ []) do
+  @spec communications_calls_get_content_sharing_sessions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphContentSharingSession.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_calls_get_content_sharing_sessions(
+        connection,
+        call_id,
+        content_sharing_session_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -443,7 +583,9 @@ defmodule MicrosoftGraph.Api.CommunicationsCall do
     request =
       %{}
       |> method(:get)
-      |> url("/communications/calls/#{call_id}/contentSharingSessions/#{content_sharing_session_id}")
+      |> url(
+        "/communications/calls/#{call_id}/contentSharingSessions/#{content_sharing_session_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -471,7 +613,10 @@ defmodule MicrosoftGraph.Api.CommunicationsCall do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_calls_get_count5d04(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec communications_calls_get_count5d04(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def communications_calls_get_count5d04(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -512,7 +657,10 @@ defmodule MicrosoftGraph.Api.CommunicationsCall do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCommsOperation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_calls_get_operations(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphCommsOperation.t} | {:error, Tesla.Env.t}
+  @spec communications_calls_get_operations(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphCommsOperation.t()}
+          | {:error, Tesla.Env.t()}
   def communications_calls_get_operations(connection, call_id, comms_operation_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -553,7 +701,15 @@ defmodule MicrosoftGraph.Api.CommunicationsCall do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphParticipant.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_calls_get_participants(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphParticipant.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec communications_calls_get_participants(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphParticipant.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def communications_calls_get_participants(connection, call_id, participant_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -599,7 +755,10 @@ defmodule MicrosoftGraph.Api.CommunicationsCall do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAudioRoutingGroupCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_calls_list_audio_routing_groups(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAudioRoutingGroupCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec communications_calls_list_audio_routing_groups(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAudioRoutingGroupCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def communications_calls_list_audio_routing_groups(connection, call_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -651,7 +810,14 @@ defmodule MicrosoftGraph.Api.CommunicationsCall do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContentSharingSessionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_calls_list_content_sharing_sessions(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphContentSharingSessionCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec communications_calls_list_content_sharing_sessions(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphContentSharingSessionCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def communications_calls_list_content_sharing_sessions(connection, call_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -703,7 +869,10 @@ defmodule MicrosoftGraph.Api.CommunicationsCall do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCommsOperationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_calls_list_operations(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphCommsOperationCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec communications_calls_list_operations(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphCommsOperationCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def communications_calls_list_operations(connection, call_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -755,7 +924,10 @@ defmodule MicrosoftGraph.Api.CommunicationsCall do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphParticipantCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_calls_list_participants(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphParticipantCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec communications_calls_list_participants(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphParticipantCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def communications_calls_list_participants(connection, call_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -800,7 +972,10 @@ defmodule MicrosoftGraph.Api.CommunicationsCall do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_calls_operations_get_count3444(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec communications_calls_operations_get_count3444(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def communications_calls_operations_get_count3444(connection, call_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -839,7 +1014,10 @@ defmodule MicrosoftGraph.Api.CommunicationsCall do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_calls_participants_get_count4efe(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec communications_calls_participants_get_count4efe(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def communications_calls_participants_get_count4efe(connection, call_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -879,8 +1057,23 @@ defmodule MicrosoftGraph.Api.CommunicationsCall do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAudioRoutingGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_calls_update_audio_routing_groups(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphAudioRoutingGroup.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAudioRoutingGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def communications_calls_update_audio_routing_groups(connection, call_id, audio_routing_group_id, microsoft_graph_audio_routing_group, _opts \\ []) do
+  @spec communications_calls_update_audio_routing_groups(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAudioRoutingGroup.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAudioRoutingGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_calls_update_audio_routing_groups(
+        connection,
+        call_id,
+        audio_routing_group_id,
+        microsoft_graph_audio_routing_group,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -913,12 +1106,29 @@ defmodule MicrosoftGraph.Api.CommunicationsCall do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphContentSharingSession.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_calls_update_content_sharing_sessions(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphContentSharingSession.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphContentSharingSession.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def communications_calls_update_content_sharing_sessions(connection, call_id, content_sharing_session_id, microsoft_graph_content_sharing_session, _opts \\ []) do
+  @spec communications_calls_update_content_sharing_sessions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphContentSharingSession.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphContentSharingSession.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_calls_update_content_sharing_sessions(
+        connection,
+        call_id,
+        content_sharing_session_id,
+        microsoft_graph_content_sharing_session,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/communications/calls/#{call_id}/contentSharingSessions/#{content_sharing_session_id}")
+      |> url(
+        "/communications/calls/#{call_id}/contentSharingSessions/#{content_sharing_session_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_content_sharing_session)
       |> Enum.into([])
 
@@ -947,8 +1157,23 @@ defmodule MicrosoftGraph.Api.CommunicationsCall do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCommsOperation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_calls_update_operations(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphCommsOperation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphCommsOperation.t} | {:error, Tesla.Env.t}
-  def communications_calls_update_operations(connection, call_id, comms_operation_id, microsoft_graph_comms_operation, _opts \\ []) do
+  @spec communications_calls_update_operations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphCommsOperation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphCommsOperation.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_calls_update_operations(
+        connection,
+        call_id,
+        comms_operation_id,
+        microsoft_graph_comms_operation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -981,8 +1206,23 @@ defmodule MicrosoftGraph.Api.CommunicationsCall do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphParticipant.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_calls_update_participants(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphParticipant.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphParticipant.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def communications_calls_update_participants(connection, call_id, participant_id, microsoft_graph_participant, _opts \\ []) do
+  @spec communications_calls_update_participants(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphParticipant.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphParticipant.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_calls_update_participants(
+        connection,
+        call_id,
+        participant_id,
+        microsoft_graph_participant,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -1014,7 +1254,14 @@ defmodule MicrosoftGraph.Api.CommunicationsCall do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCall.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_create_calls(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphCall.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphCall.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec communications_create_calls(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphCall.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphCall.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def communications_create_calls(connection, microsoft_graph_call, _opts \\ []) do
     request =
       %{}
@@ -1048,7 +1295,10 @@ defmodule MicrosoftGraph.Api.CommunicationsCall do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_delete_calls(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec communications_delete_calls(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def communications_delete_calls(connection, call_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -1087,7 +1337,10 @@ defmodule MicrosoftGraph.Api.CommunicationsCall do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCall.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_get_calls(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphCall.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec communications_get_calls(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphCall.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def communications_get_calls(connection, call_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -1132,7 +1385,10 @@ defmodule MicrosoftGraph.Api.CommunicationsCall do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCallCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_list_calls(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphCallCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec communications_list_calls(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphCallCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def communications_list_calls(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1176,7 +1432,15 @@ defmodule MicrosoftGraph.Api.CommunicationsCall do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCall.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_update_calls(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphCall.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphCall.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec communications_update_calls(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphCall.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphCall.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def communications_update_calls(connection, call_id, microsoft_graph_call, _opts \\ []) do
     request =
       %{}

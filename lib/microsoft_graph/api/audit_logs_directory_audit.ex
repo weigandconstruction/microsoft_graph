@@ -23,7 +23,14 @@ defmodule MicrosoftGraph.Api.AuditLogsDirectoryAudit do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryAudit.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec audit_logs_create_directory_audits(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphDirectoryAudit.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryAudit.t} | {:error, Tesla.Env.t}
+  @spec audit_logs_create_directory_audits(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphDirectoryAudit.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryAudit.t()}
+          | {:error, Tesla.Env.t()}
   def audit_logs_create_directory_audits(connection, microsoft_graph_directory_audit, _opts \\ []) do
     request =
       %{}
@@ -56,7 +63,10 @@ defmodule MicrosoftGraph.Api.AuditLogsDirectoryAudit do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec audit_logs_delete_directory_audits(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec audit_logs_delete_directory_audits(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def audit_logs_delete_directory_audits(connection, directory_audit_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -93,7 +103,10 @@ defmodule MicrosoftGraph.Api.AuditLogsDirectoryAudit do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec audit_logs_directory_audits_get_count_fedb(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec audit_logs_directory_audits_get_count_fedb(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def audit_logs_directory_audits_get_count_fedb(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -133,7 +146,10 @@ defmodule MicrosoftGraph.Api.AuditLogsDirectoryAudit do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryAudit.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec audit_logs_get_directory_audits(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryAudit.t} | {:error, Tesla.Env.t}
+  @spec audit_logs_get_directory_audits(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryAudit.t()}
+          | {:error, Tesla.Env.t()}
   def audit_logs_get_directory_audits(connection, directory_audit_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -178,7 +194,10 @@ defmodule MicrosoftGraph.Api.AuditLogsDirectoryAudit do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryAuditCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec audit_logs_list_directory_audits(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryAuditCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec audit_logs_list_directory_audits(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryAuditCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def audit_logs_list_directory_audits(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -222,8 +241,21 @@ defmodule MicrosoftGraph.Api.AuditLogsDirectoryAudit do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryAudit.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec audit_logs_update_directory_audits(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphDirectoryAudit.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryAudit.t} | {:error, Tesla.Env.t}
-  def audit_logs_update_directory_audits(connection, directory_audit_id, microsoft_graph_directory_audit, _opts \\ []) do
+  @spec audit_logs_update_directory_audits(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDirectoryAudit.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryAudit.t()}
+          | {:error, Tesla.Env.t()}
+  def audit_logs_update_directory_audits(
+        connection,
+        directory_audit_id,
+        microsoft_graph_directory_audit,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

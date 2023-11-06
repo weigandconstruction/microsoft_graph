@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssue do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -27,36 +27,60 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssue do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :details => [MicrosoftGraph.Model.MeJoinedTeamsTeamSendActivityNotificationRequestTemplateParametersInner.t] | nil,
-    :endDateTime => DateTime.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :startDateTime => DateTime.t | nil,
-    :title => String.t | nil,
-    :classification => MicrosoftGraph.Model.MicrosoftGraphServiceHealthClassificationType.t | nil,
-    :feature => String.t | nil,
-    :featureGroup => String.t | nil,
-    :impactDescription => String.t | nil,
-    :isResolved => boolean() | nil,
-    :origin => MicrosoftGraph.Model.MicrosoftGraphServiceHealthOrigin.t | nil,
-    :posts => [MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssuePost.t] | nil,
-    :service => String.t | nil,
-    :status => MicrosoftGraph.Model.MicrosoftGraphServiceHealthStatus.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :details =>
+            [
+              MicrosoftGraph.Model.MeJoinedTeamsTeamSendActivityNotificationRequestTemplateParametersInner.t()
+            ]
+            | nil,
+          :endDateTime => DateTime.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :startDateTime => DateTime.t() | nil,
+          :title => String.t() | nil,
+          :classification =>
+            MicrosoftGraph.Model.MicrosoftGraphServiceHealthClassificationType.t() | nil,
+          :feature => String.t() | nil,
+          :featureGroup => String.t() | nil,
+          :impactDescription => String.t() | nil,
+          :isResolved => boolean() | nil,
+          :origin => MicrosoftGraph.Model.MicrosoftGraphServiceHealthOrigin.t() | nil,
+          :posts => [MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssuePost.t()] | nil,
+          :service => String.t() | nil,
+          :status => MicrosoftGraph.Model.MicrosoftGraphServiceHealthStatus.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:details, :list, MicrosoftGraph.Model.MeJoinedTeamsTeamSendActivityNotificationRequestTemplateParametersInner)
-     |> Deserializer.deserialize(:endDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:startDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:classification, :struct, MicrosoftGraph.Model.MicrosoftGraphServiceHealthClassificationType)
-     |> Deserializer.deserialize(:origin, :struct, MicrosoftGraph.Model.MicrosoftGraphServiceHealthOrigin)
-     |> Deserializer.deserialize(:posts, :list, MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssuePost)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.MicrosoftGraphServiceHealthStatus)
+    |> Deserializer.deserialize(
+      :details,
+      :list,
+      MicrosoftGraph.Model.MeJoinedTeamsTeamSendActivityNotificationRequestTemplateParametersInner
+    )
+    |> Deserializer.deserialize(:endDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:startDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :classification,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphServiceHealthClassificationType
+    )
+    |> Deserializer.deserialize(
+      :origin,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphServiceHealthOrigin
+    )
+    |> Deserializer.deserialize(
+      :posts,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphServiceHealthIssuePost
+    )
+    |> Deserializer.deserialize(
+      :status,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphServiceHealthStatus
+    )
   end
 end
-

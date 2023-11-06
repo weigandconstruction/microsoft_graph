@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsSearchSettingsSearchResultTemplatesInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,19 +16,24 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsSearchSettingsSea
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :layout => MicrosoftGraph.Model.MicrosoftGraphJson.t | nil,
-    :priority => integer() | nil,
-    :rules => [MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsDisplayTemplateRulesInner.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :layout => MicrosoftGraph.Model.MicrosoftGraphJson.t() | nil,
+          :priority => integer() | nil,
+          :rules =>
+            [MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsDisplayTemplateRulesInner.t()]
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:layout, :struct, MicrosoftGraph.Model.MicrosoftGraphJson)
-     |> Deserializer.deserialize(:rules, :list, MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsDisplayTemplateRulesInner)
+    |> Deserializer.deserialize(:layout, :struct, MicrosoftGraph.Model.MicrosoftGraphJson)
+    |> Deserializer.deserialize(
+      :rules,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphExternalConnectorsDisplayTemplateRulesInner
+    )
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphBitlocker do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,19 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphBitlocker do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :recoveryKeys => [MicrosoftGraph.Model.MicrosoftGraphBitlockerRecoveryKey.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :recoveryKeys => [MicrosoftGraph.Model.MicrosoftGraphBitlockerRecoveryKey.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:recoveryKeys, :list, MicrosoftGraph.Model.MicrosoftGraphBitlockerRecoveryKey)
+    |> Deserializer.deserialize(
+      :recoveryKeys,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphBitlockerRecoveryKey
+    )
   end
 end
-

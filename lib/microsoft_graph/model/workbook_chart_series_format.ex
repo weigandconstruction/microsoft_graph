@@ -15,18 +15,25 @@ defmodule MicrosoftGraph.Model.WorkbookChartSeriesFormat do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :fill => MicrosoftGraph.Model.WorkbookChartSeriesFormatFill.t | nil,
-    :line => MicrosoftGraph.Model.WorkbookChartSeriesFormatLine.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :fill => MicrosoftGraph.Model.WorkbookChartSeriesFormatFill.t() | nil,
+          :line => MicrosoftGraph.Model.WorkbookChartSeriesFormatLine.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:fill, :struct, MicrosoftGraph.Model.WorkbookChartSeriesFormatFill)
-     |> Deserializer.deserialize(:line, :struct, MicrosoftGraph.Model.WorkbookChartSeriesFormatLine)
+    |> Deserializer.deserialize(
+      :fill,
+      :struct,
+      MicrosoftGraph.Model.WorkbookChartSeriesFormatFill
+    )
+    |> Deserializer.deserialize(
+      :line,
+      :struct,
+      MicrosoftGraph.Model.WorkbookChartSeriesFormatLine
+    )
   end
 end
-

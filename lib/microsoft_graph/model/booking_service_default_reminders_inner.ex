@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.BookingServiceDefaultRemindersInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,17 +15,20 @@ defmodule MicrosoftGraph.Model.BookingServiceDefaultRemindersInner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :message => String.t | nil,
-    :offset => String.t | nil,
-    :recipients => MicrosoftGraph.Model.MicrosoftGraphBookingReminderRecipients.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :message => String.t() | nil,
+          :offset => String.t() | nil,
+          :recipients => MicrosoftGraph.Model.MicrosoftGraphBookingReminderRecipients.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:recipients, :struct, MicrosoftGraph.Model.MicrosoftGraphBookingReminderRecipients)
+    |> Deserializer.deserialize(
+      :recipients,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphBookingReminderRecipients
+    )
   end
 end
-

@@ -24,7 +24,10 @@ defmodule MicrosoftGraph.Api.TeamsTemplatesTeamsTemplate do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_templates_get_count3b4a(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_templates_get_count3b4a(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_templates_get_count3b4a(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -61,8 +64,19 @@ defmodule MicrosoftGraph.Api.TeamsTemplatesTeamsTemplate do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTemplate.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_templates_teams_template_create_teams_template(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphTeamsTemplate.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTemplate.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_templates_teams_template_create_teams_template(connection, microsoft_graph_teams_template, _opts \\ []) do
+  @spec teams_templates_teams_template_create_teams_template(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphTeamsTemplate.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTemplate.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_templates_teams_template_create_teams_template(
+        connection,
+        microsoft_graph_teams_template,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -94,8 +108,19 @@ defmodule MicrosoftGraph.Api.TeamsTemplatesTeamsTemplate do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_templates_teams_template_delete_teams_template(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_templates_teams_template_delete_teams_template(connection, teams_template_id, opts \\ []) do
+  @spec teams_templates_teams_template_delete_teams_template(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_templates_teams_template_delete_teams_template(
+        connection,
+        teams_template_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -132,7 +157,14 @@ defmodule MicrosoftGraph.Api.TeamsTemplatesTeamsTemplate do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTemplate.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_templates_teams_template_get_teams_template(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTemplate.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_templates_teams_template_get_teams_template(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTemplate.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_templates_teams_template_get_teams_template(connection, teams_template_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -176,7 +208,10 @@ defmodule MicrosoftGraph.Api.TeamsTemplatesTeamsTemplate do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTemplateCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_templates_teams_template_list_teams_template(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTemplateCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec teams_templates_teams_template_list_teams_template(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTemplateCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def teams_templates_teams_template_list_teams_template(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -220,8 +255,21 @@ defmodule MicrosoftGraph.Api.TeamsTemplatesTeamsTemplate do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTemplate.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_templates_teams_template_update_teams_template(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphTeamsTemplate.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTemplate.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_templates_teams_template_update_teams_template(connection, teams_template_id, microsoft_graph_teams_template, _opts \\ []) do
+  @spec teams_templates_teams_template_update_teams_template(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTeamsTemplate.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTeamsTemplate.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_templates_teams_template_update_teams_template(
+        connection,
+        teams_template_id,
+        microsoft_graph_teams_template,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

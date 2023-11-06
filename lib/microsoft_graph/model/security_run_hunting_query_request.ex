@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.SecurityRunHuntingQueryRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,11 +12,10 @@ defmodule MicrosoftGraph.Model.SecurityRunHuntingQueryRequest do
   ]
 
   @type t :: %__MODULE__{
-    :query => String.t | nil
-  }
+          :query => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

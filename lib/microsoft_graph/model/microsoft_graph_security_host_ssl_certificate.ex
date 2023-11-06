@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityHostSslCertificate do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,24 +18,27 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityHostSslCertificate do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :firstSeenDateTime => DateTime.t | nil,
-    :host => MicrosoftGraph.Model.HostSslCertificateHost.t | nil,
-    :lastSeenDateTime => DateTime.t | nil,
-    :ports => [MicrosoftGraph.Model.HostSslCertificatePortsInner.t] | nil,
-    :sslCertificate => MicrosoftGraph.Model.HostSslCertificateSslCertificate.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :firstSeenDateTime => DateTime.t() | nil,
+          :host => MicrosoftGraph.Model.HostSslCertificateHost.t() | nil,
+          :lastSeenDateTime => DateTime.t() | nil,
+          :ports => [MicrosoftGraph.Model.HostSslCertificatePortsInner.t()] | nil,
+          :sslCertificate => MicrosoftGraph.Model.HostSslCertificateSslCertificate.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:firstSeenDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:host, :struct, MicrosoftGraph.Model.HostSslCertificateHost)
-     |> Deserializer.deserialize(:lastSeenDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:ports, :list, MicrosoftGraph.Model.HostSslCertificatePortsInner)
-     |> Deserializer.deserialize(:sslCertificate, :struct, MicrosoftGraph.Model.HostSslCertificateSslCertificate)
+    |> Deserializer.deserialize(:firstSeenDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:host, :struct, MicrosoftGraph.Model.HostSslCertificateHost)
+    |> Deserializer.deserialize(:lastSeenDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:ports, :list, MicrosoftGraph.Model.HostSslCertificatePortsInner)
+    |> Deserializer.deserialize(
+      :sslCertificate,
+      :struct,
+      MicrosoftGraph.Model.HostSslCertificateSslCertificate
+    )
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphPermissionGrantConditionSet do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -21,23 +21,27 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphPermissionGrantConditionSet do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :clientApplicationIds => [String.t] | nil,
-    :clientApplicationPublisherIds => [String.t] | nil,
-    :clientApplicationTenantIds => [String.t] | nil,
-    :clientApplicationsFromVerifiedPublisherOnly => boolean() | nil,
-    :permissionClassification => String.t | nil,
-    :permissionType => MicrosoftGraph.Model.PermissionGrantConditionSetPermissionType.t | nil,
-    :permissions => [String.t] | nil,
-    :resourceApplication => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :clientApplicationIds => [String.t()] | nil,
+          :clientApplicationPublisherIds => [String.t()] | nil,
+          :clientApplicationTenantIds => [String.t()] | nil,
+          :clientApplicationsFromVerifiedPublisherOnly => boolean() | nil,
+          :permissionClassification => String.t() | nil,
+          :permissionType =>
+            MicrosoftGraph.Model.PermissionGrantConditionSetPermissionType.t() | nil,
+          :permissions => [String.t()] | nil,
+          :resourceApplication => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:permissionType, :struct, MicrosoftGraph.Model.PermissionGrantConditionSetPermissionType)
+    |> Deserializer.deserialize(
+      :permissionType,
+      :struct,
+      MicrosoftGraph.Model.PermissionGrantConditionSetPermissionType
+    )
   end
 end
-

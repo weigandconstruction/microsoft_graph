@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSearchRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -27,36 +27,70 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSearchRequest do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :aggregationFilters => [String.t] | nil,
-    :aggregations => [MicrosoftGraph.Model.MicrosoftGraphSearchRequestAggregationsInner.t] | nil,
-    :collapseProperties => [MicrosoftGraph.Model.MicrosoftGraphSearchRequestCollapsePropertiesInner.t] | nil,
-    :contentSources => [String.t] | nil,
-    :enableTopResults => boolean() | nil,
-    :entityTypes => [MicrosoftGraph.Model.MicrosoftGraphSearchRequestEntityTypesInner.t] | nil,
-    :fields => [String.t] | nil,
-    :from => integer() | nil,
-    :query => MicrosoftGraph.Model.MicrosoftGraphSearchQuery.t | nil,
-    :queryAlterationOptions => MicrosoftGraph.Model.MicrosoftGraphSearchRequestQueryAlterationOptions.t | nil,
-    :region => String.t | nil,
-    :resultTemplateOptions => MicrosoftGraph.Model.MicrosoftGraphSearchRequestResultTemplateOptions.t | nil,
-    :sharePointOneDriveOptions => MicrosoftGraph.Model.MicrosoftGraphSearchRequestSharePointOneDriveOptions.t | nil,
-    :size => integer() | nil,
-    :sortProperties => [MicrosoftGraph.Model.MicrosoftGraphSearchRequestSortPropertiesInner.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :aggregationFilters => [String.t()] | nil,
+          :aggregations =>
+            [MicrosoftGraph.Model.MicrosoftGraphSearchRequestAggregationsInner.t()] | nil,
+          :collapseProperties =>
+            [MicrosoftGraph.Model.MicrosoftGraphSearchRequestCollapsePropertiesInner.t()] | nil,
+          :contentSources => [String.t()] | nil,
+          :enableTopResults => boolean() | nil,
+          :entityTypes =>
+            [MicrosoftGraph.Model.MicrosoftGraphSearchRequestEntityTypesInner.t()] | nil,
+          :fields => [String.t()] | nil,
+          :from => integer() | nil,
+          :query => MicrosoftGraph.Model.MicrosoftGraphSearchQuery.t() | nil,
+          :queryAlterationOptions =>
+            MicrosoftGraph.Model.MicrosoftGraphSearchRequestQueryAlterationOptions.t() | nil,
+          :region => String.t() | nil,
+          :resultTemplateOptions =>
+            MicrosoftGraph.Model.MicrosoftGraphSearchRequestResultTemplateOptions.t() | nil,
+          :sharePointOneDriveOptions =>
+            MicrosoftGraph.Model.MicrosoftGraphSearchRequestSharePointOneDriveOptions.t() | nil,
+          :size => integer() | nil,
+          :sortProperties =>
+            [MicrosoftGraph.Model.MicrosoftGraphSearchRequestSortPropertiesInner.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:aggregations, :list, MicrosoftGraph.Model.MicrosoftGraphSearchRequestAggregationsInner)
-     |> Deserializer.deserialize(:collapseProperties, :list, MicrosoftGraph.Model.MicrosoftGraphSearchRequestCollapsePropertiesInner)
-     |> Deserializer.deserialize(:entityTypes, :list, MicrosoftGraph.Model.MicrosoftGraphSearchRequestEntityTypesInner)
-     |> Deserializer.deserialize(:query, :struct, MicrosoftGraph.Model.MicrosoftGraphSearchQuery)
-     |> Deserializer.deserialize(:queryAlterationOptions, :struct, MicrosoftGraph.Model.MicrosoftGraphSearchRequestQueryAlterationOptions)
-     |> Deserializer.deserialize(:resultTemplateOptions, :struct, MicrosoftGraph.Model.MicrosoftGraphSearchRequestResultTemplateOptions)
-     |> Deserializer.deserialize(:sharePointOneDriveOptions, :struct, MicrosoftGraph.Model.MicrosoftGraphSearchRequestSharePointOneDriveOptions)
-     |> Deserializer.deserialize(:sortProperties, :list, MicrosoftGraph.Model.MicrosoftGraphSearchRequestSortPropertiesInner)
+    |> Deserializer.deserialize(
+      :aggregations,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSearchRequestAggregationsInner
+    )
+    |> Deserializer.deserialize(
+      :collapseProperties,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSearchRequestCollapsePropertiesInner
+    )
+    |> Deserializer.deserialize(
+      :entityTypes,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSearchRequestEntityTypesInner
+    )
+    |> Deserializer.deserialize(:query, :struct, MicrosoftGraph.Model.MicrosoftGraphSearchQuery)
+    |> Deserializer.deserialize(
+      :queryAlterationOptions,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSearchRequestQueryAlterationOptions
+    )
+    |> Deserializer.deserialize(
+      :resultTemplateOptions,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSearchRequestResultTemplateOptions
+    )
+    |> Deserializer.deserialize(
+      :sharePointOneDriveOptions,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSearchRequestSharePointOneDriveOptions
+    )
+    |> Deserializer.deserialize(
+      :sortProperties,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSearchRequestSortPropertiesInner
+    )
   end
 end
-

@@ -14,17 +14,26 @@ defmodule MicrosoftGraph.Model.OnlineMeetingParticipants do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :attendees => [MicrosoftGraph.Model.MicrosoftGraphMeetingParticipantsAttendeesInner.t] | nil,
-    :organizer => MicrosoftGraph.Model.MicrosoftGraphMeetingParticipantsAttendeesInner.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :attendees =>
+            [MicrosoftGraph.Model.MicrosoftGraphMeetingParticipantsAttendeesInner.t()] | nil,
+          :organizer =>
+            MicrosoftGraph.Model.MicrosoftGraphMeetingParticipantsAttendeesInner.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:attendees, :list, MicrosoftGraph.Model.MicrosoftGraphMeetingParticipantsAttendeesInner)
-     |> Deserializer.deserialize(:organizer, :struct, MicrosoftGraph.Model.MicrosoftGraphMeetingParticipantsAttendeesInner)
+    |> Deserializer.deserialize(
+      :attendees,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphMeetingParticipantsAttendeesInner
+    )
+    |> Deserializer.deserialize(
+      :organizer,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphMeetingParticipantsAttendeesInner
+    )
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphPermissionScope do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -21,20 +21,19 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphPermissionScope do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :adminConsentDescription => String.t | nil,
-    :adminConsentDisplayName => String.t | nil,
-    :id => String.t | nil,
-    :isEnabled => boolean() | nil,
-    :origin => String.t | nil,
-    :type => String.t | nil,
-    :userConsentDescription => String.t | nil,
-    :userConsentDisplayName => String.t | nil,
-    :value => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :adminConsentDescription => String.t() | nil,
+          :adminConsentDisplayName => String.t() | nil,
+          :id => String.t() | nil,
+          :isEnabled => boolean() | nil,
+          :origin => String.t() | nil,
+          :type => String.t() | nil,
+          :userConsentDescription => String.t() | nil,
+          :userConsentDisplayName => String.t() | nil,
+          :value => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

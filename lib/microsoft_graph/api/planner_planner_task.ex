@@ -24,7 +24,14 @@ defmodule MicrosoftGraph.Api.PlannerPlannerTask do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec planner_create_tasks(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t} | {:error, Tesla.Env.t}
+  @spec planner_create_tasks(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t()}
+          | {:error, Tesla.Env.t()}
   def planner_create_tasks(connection, microsoft_graph_planner_task, _opts \\ []) do
     request =
       %{}
@@ -58,7 +65,10 @@ defmodule MicrosoftGraph.Api.PlannerPlannerTask do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec planner_delete_tasks(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec planner_delete_tasks(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def planner_delete_tasks(connection, planner_task_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -97,7 +107,10 @@ defmodule MicrosoftGraph.Api.PlannerPlannerTask do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec planner_get_tasks(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t} | {:error, Tesla.Env.t}
+  @spec planner_get_tasks(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t()}
+          | {:error, Tesla.Env.t()}
   def planner_get_tasks(connection, planner_task_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -142,7 +155,10 @@ defmodule MicrosoftGraph.Api.PlannerPlannerTask do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTaskCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec planner_list_tasks(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTaskCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec planner_list_tasks(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTaskCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def planner_list_tasks(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -186,7 +202,14 @@ defmodule MicrosoftGraph.Api.PlannerPlannerTask do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec planner_tasks_delete_assigned_to_task_board_format(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec planner_tasks_delete_assigned_to_task_board_format(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def planner_tasks_delete_assigned_to_task_board_format(connection, planner_task_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -223,7 +246,10 @@ defmodule MicrosoftGraph.Api.PlannerPlannerTask do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec planner_tasks_delete_bucket_task_board_format(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec planner_tasks_delete_bucket_task_board_format(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def planner_tasks_delete_bucket_task_board_format(connection, planner_task_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -260,7 +286,10 @@ defmodule MicrosoftGraph.Api.PlannerPlannerTask do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec planner_tasks_delete_details(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec planner_tasks_delete_details(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def planner_tasks_delete_details(connection, planner_task_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -297,7 +326,10 @@ defmodule MicrosoftGraph.Api.PlannerPlannerTask do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec planner_tasks_delete_progress_task_board_format(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec planner_tasks_delete_progress_task_board_format(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def planner_tasks_delete_progress_task_board_format(connection, planner_task_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -336,7 +368,10 @@ defmodule MicrosoftGraph.Api.PlannerPlannerTask do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerAssignedToTaskBoardTaskFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec planner_tasks_get_assigned_to_task_board_format(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerAssignedToTaskBoardTaskFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec planner_tasks_get_assigned_to_task_board_format(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerAssignedToTaskBoardTaskFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def planner_tasks_get_assigned_to_task_board_format(connection, planner_task_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -376,7 +411,10 @@ defmodule MicrosoftGraph.Api.PlannerPlannerTask do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerBucketTaskBoardTaskFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec planner_tasks_get_bucket_task_board_format(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerBucketTaskBoardTaskFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec planner_tasks_get_bucket_task_board_format(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerBucketTaskBoardTaskFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def planner_tasks_get_bucket_task_board_format(connection, planner_task_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -414,7 +452,10 @@ defmodule MicrosoftGraph.Api.PlannerPlannerTask do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec planner_tasks_get_count_bfd2(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec planner_tasks_get_count_bfd2(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def planner_tasks_get_count_bfd2(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -454,7 +495,10 @@ defmodule MicrosoftGraph.Api.PlannerPlannerTask do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTaskDetails.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec planner_tasks_get_details(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTaskDetails.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec planner_tasks_get_details(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTaskDetails.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def planner_tasks_get_details(connection, planner_task_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -494,7 +538,10 @@ defmodule MicrosoftGraph.Api.PlannerPlannerTask do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerProgressTaskBoardTaskFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec planner_tasks_get_progress_task_board_format(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerProgressTaskBoardTaskFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec planner_tasks_get_progress_task_board_format(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerProgressTaskBoardTaskFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def planner_tasks_get_progress_task_board_format(connection, planner_task_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -533,8 +580,23 @@ defmodule MicrosoftGraph.Api.PlannerPlannerTask do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerAssignedToTaskBoardTaskFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec planner_tasks_update_assigned_to_task_board_format(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphPlannerAssignedToTaskBoardTaskFormat.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerAssignedToTaskBoardTaskFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def planner_tasks_update_assigned_to_task_board_format(connection, planner_task_id, if_match, microsoft_graph_planner_assigned_to_task_board_task_format, _opts \\ []) do
+  @spec planner_tasks_update_assigned_to_task_board_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPlannerAssignedToTaskBoardTaskFormat.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerAssignedToTaskBoardTaskFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def planner_tasks_update_assigned_to_task_board_format(
+        connection,
+        planner_task_id,
+        if_match,
+        microsoft_graph_planner_assigned_to_task_board_task_format,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -568,8 +630,23 @@ defmodule MicrosoftGraph.Api.PlannerPlannerTask do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerBucketTaskBoardTaskFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec planner_tasks_update_bucket_task_board_format(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphPlannerBucketTaskBoardTaskFormat.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerBucketTaskBoardTaskFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def planner_tasks_update_bucket_task_board_format(connection, planner_task_id, if_match, microsoft_graph_planner_bucket_task_board_task_format, _opts \\ []) do
+  @spec planner_tasks_update_bucket_task_board_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPlannerBucketTaskBoardTaskFormat.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerBucketTaskBoardTaskFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def planner_tasks_update_bucket_task_board_format(
+        connection,
+        planner_task_id,
+        if_match,
+        microsoft_graph_planner_bucket_task_board_task_format,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -603,8 +680,23 @@ defmodule MicrosoftGraph.Api.PlannerPlannerTask do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTaskDetails.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec planner_tasks_update_details(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphPlannerTaskDetails.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTaskDetails.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def planner_tasks_update_details(connection, planner_task_id, if_match, microsoft_graph_planner_task_details, _opts \\ []) do
+  @spec planner_tasks_update_details(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPlannerTaskDetails.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTaskDetails.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def planner_tasks_update_details(
+        connection,
+        planner_task_id,
+        if_match,
+        microsoft_graph_planner_task_details,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -638,8 +730,23 @@ defmodule MicrosoftGraph.Api.PlannerPlannerTask do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerProgressTaskBoardTaskFormat.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec planner_tasks_update_progress_task_board_format(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphPlannerProgressTaskBoardTaskFormat.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerProgressTaskBoardTaskFormat.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def planner_tasks_update_progress_task_board_format(connection, planner_task_id, if_match, microsoft_graph_planner_progress_task_board_task_format, _opts \\ []) do
+  @spec planner_tasks_update_progress_task_board_format(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPlannerProgressTaskBoardTaskFormat.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerProgressTaskBoardTaskFormat.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def planner_tasks_update_progress_task_board_format(
+        connection,
+        planner_task_id,
+        if_match,
+        microsoft_graph_planner_progress_task_board_task_format,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -673,8 +780,23 @@ defmodule MicrosoftGraph.Api.PlannerPlannerTask do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec planner_update_tasks(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t} | {:error, Tesla.Env.t}
-  def planner_update_tasks(connection, planner_task_id, if_match, microsoft_graph_planner_task, _opts \\ []) do
+  @spec planner_update_tasks(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphPlannerTask.t()}
+          | {:error, Tesla.Env.t()}
+  def planner_update_tasks(
+        connection,
+        planner_task_id,
+        if_match,
+        microsoft_graph_planner_task,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

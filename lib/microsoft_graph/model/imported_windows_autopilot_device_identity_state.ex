@@ -16,18 +16,23 @@ defmodule MicrosoftGraph.Model.ImportedWindowsAutopilotDeviceIdentityState do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :deviceErrorCode => integer() | nil,
-    :deviceErrorName => String.t | nil,
-    :deviceImportStatus => MicrosoftGraph.Model.MicrosoftGraphImportedWindowsAutopilotDeviceIdentityImportStatus.t | nil,
-    :deviceRegistrationId => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :deviceErrorCode => integer() | nil,
+          :deviceErrorName => String.t() | nil,
+          :deviceImportStatus =>
+            MicrosoftGraph.Model.MicrosoftGraphImportedWindowsAutopilotDeviceIdentityImportStatus.t()
+            | nil,
+          :deviceRegistrationId => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:deviceImportStatus, :struct, MicrosoftGraph.Model.MicrosoftGraphImportedWindowsAutopilotDeviceIdentityImportStatus)
+    |> Deserializer.deserialize(
+      :deviceImportStatus,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphImportedWindowsAutopilotDeviceIdentityImportStatus
+    )
   end
 end
-

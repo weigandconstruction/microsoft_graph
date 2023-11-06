@@ -24,23 +24,22 @@ defmodule MicrosoftGraph.Model.MacOsDmgAppMinimumSupportedOperatingSystem do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :v10_10 => boolean() | nil,
-    :v10_11 => boolean() | nil,
-    :v10_12 => boolean() | nil,
-    :v10_13 => boolean() | nil,
-    :v10_14 => boolean() | nil,
-    :v10_15 => boolean() | nil,
-    :v10_7 => boolean() | nil,
-    :v10_8 => boolean() | nil,
-    :v10_9 => boolean() | nil,
-    :v11_0 => boolean() | nil,
-    :v12_0 => boolean() | nil,
-    :v13_0 => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :v10_10 => boolean() | nil,
+          :v10_11 => boolean() | nil,
+          :v10_12 => boolean() | nil,
+          :v10_13 => boolean() | nil,
+          :v10_14 => boolean() | nil,
+          :v10_15 => boolean() | nil,
+          :v10_7 => boolean() | nil,
+          :v10_8 => boolean() | nil,
+          :v10_9 => boolean() | nil,
+          :v11_0 => boolean() | nil,
+          :v12_0 => boolean() | nil,
+          :v13_0 => boolean() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

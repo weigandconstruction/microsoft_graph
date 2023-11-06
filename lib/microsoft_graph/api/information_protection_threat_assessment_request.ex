@@ -24,8 +24,19 @@ defmodule MicrosoftGraph.Api.InformationProtectionThreatAssessmentRequest do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphThreatAssessmentRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec information_protection_create_threat_assessment_requests(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphThreatAssessmentRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphThreatAssessmentRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def information_protection_create_threat_assessment_requests(connection, microsoft_graph_threat_assessment_request, _opts \\ []) do
+  @spec information_protection_create_threat_assessment_requests(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphThreatAssessmentRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphThreatAssessmentRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def information_protection_create_threat_assessment_requests(
+        connection,
+        microsoft_graph_threat_assessment_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -57,8 +68,19 @@ defmodule MicrosoftGraph.Api.InformationProtectionThreatAssessmentRequest do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec information_protection_delete_threat_assessment_requests(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def information_protection_delete_threat_assessment_requests(connection, threat_assessment_request_id, opts \\ []) do
+  @spec information_protection_delete_threat_assessment_requests(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def information_protection_delete_threat_assessment_requests(
+        connection,
+        threat_assessment_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -96,8 +118,19 @@ defmodule MicrosoftGraph.Api.InformationProtectionThreatAssessmentRequest do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphThreatAssessmentRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec information_protection_get_threat_assessment_requests(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphThreatAssessmentRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def information_protection_get_threat_assessment_requests(connection, threat_assessment_request_id, opts \\ []) do
+  @spec information_protection_get_threat_assessment_requests(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphThreatAssessmentRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def information_protection_get_threat_assessment_requests(
+        connection,
+        threat_assessment_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -141,7 +174,11 @@ defmodule MicrosoftGraph.Api.InformationProtectionThreatAssessmentRequest do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphThreatAssessmentRequestCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec information_protection_list_threat_assessment_requests(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphThreatAssessmentRequestCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec information_protection_list_threat_assessment_requests(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphThreatAssessmentRequestCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def information_protection_list_threat_assessment_requests(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -185,12 +222,27 @@ defmodule MicrosoftGraph.Api.InformationProtectionThreatAssessmentRequest do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphThreatAssessmentResult.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec information_protection_threat_assessment_requests_create_results(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphThreatAssessmentResult.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphThreatAssessmentResult.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def information_protection_threat_assessment_requests_create_results(connection, threat_assessment_request_id, microsoft_graph_threat_assessment_result, _opts \\ []) do
+  @spec information_protection_threat_assessment_requests_create_results(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphThreatAssessmentResult.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphThreatAssessmentResult.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def information_protection_threat_assessment_requests_create_results(
+        connection,
+        threat_assessment_request_id,
+        microsoft_graph_threat_assessment_result,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/informationProtection/threatAssessmentRequests/#{threat_assessment_request_id}/results")
+      |> url(
+        "/informationProtection/threatAssessmentRequests/#{threat_assessment_request_id}/results"
+      )
       |> add_param(:body, :body, microsoft_graph_threat_assessment_result)
       |> Enum.into([])
 
@@ -219,8 +271,21 @@ defmodule MicrosoftGraph.Api.InformationProtectionThreatAssessmentRequest do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec information_protection_threat_assessment_requests_delete_results(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def information_protection_threat_assessment_requests_delete_results(connection, threat_assessment_request_id, threat_assessment_result_id, opts \\ []) do
+  @spec information_protection_threat_assessment_requests_delete_results(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def information_protection_threat_assessment_requests_delete_results(
+        connection,
+        threat_assessment_request_id,
+        threat_assessment_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -228,7 +293,9 @@ defmodule MicrosoftGraph.Api.InformationProtectionThreatAssessmentRequest do
     request =
       %{}
       |> method(:delete)
-      |> url("/informationProtection/threatAssessmentRequests/#{threat_assessment_request_id}/results/#{threat_assessment_result_id}")
+      |> url(
+        "/informationProtection/threatAssessmentRequests/#{threat_assessment_request_id}/results/#{threat_assessment_result_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -256,7 +323,13 @@ defmodule MicrosoftGraph.Api.InformationProtectionThreatAssessmentRequest do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec information_protection_threat_assessment_requests_get_count693a(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec information_protection_threat_assessment_requests_get_count693a(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def information_protection_threat_assessment_requests_get_count693a(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -297,8 +370,21 @@ defmodule MicrosoftGraph.Api.InformationProtectionThreatAssessmentRequest do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphThreatAssessmentResult.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec information_protection_threat_assessment_requests_get_results(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphThreatAssessmentResult.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def information_protection_threat_assessment_requests_get_results(connection, threat_assessment_request_id, threat_assessment_result_id, opts \\ []) do
+  @spec information_protection_threat_assessment_requests_get_results(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphThreatAssessmentResult.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def information_protection_threat_assessment_requests_get_results(
+        connection,
+        threat_assessment_request_id,
+        threat_assessment_result_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -307,7 +393,9 @@ defmodule MicrosoftGraph.Api.InformationProtectionThreatAssessmentRequest do
     request =
       %{}
       |> method(:get)
-      |> url("/informationProtection/threatAssessmentRequests/#{threat_assessment_request_id}/results/#{threat_assessment_result_id}")
+      |> url(
+        "/informationProtection/threatAssessmentRequests/#{threat_assessment_request_id}/results/#{threat_assessment_result_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -343,8 +431,19 @@ defmodule MicrosoftGraph.Api.InformationProtectionThreatAssessmentRequest do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphThreatAssessmentResultCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec information_protection_threat_assessment_requests_list_results(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphThreatAssessmentResultCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def information_protection_threat_assessment_requests_list_results(connection, threat_assessment_request_id, opts \\ []) do
+  @spec information_protection_threat_assessment_requests_list_results(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphThreatAssessmentResultCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def information_protection_threat_assessment_requests_list_results(
+        connection,
+        threat_assessment_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -359,7 +458,9 @@ defmodule MicrosoftGraph.Api.InformationProtectionThreatAssessmentRequest do
     request =
       %{}
       |> method(:get)
-      |> url("/informationProtection/threatAssessmentRequests/#{threat_assessment_request_id}/results")
+      |> url(
+        "/informationProtection/threatAssessmentRequests/#{threat_assessment_request_id}/results"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -388,8 +489,19 @@ defmodule MicrosoftGraph.Api.InformationProtectionThreatAssessmentRequest do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec information_protection_threat_assessment_requests_results_get_count6c75(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def information_protection_threat_assessment_requests_results_get_count6c75(connection, threat_assessment_request_id, opts \\ []) do
+  @spec information_protection_threat_assessment_requests_results_get_count6c75(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def information_protection_threat_assessment_requests_results_get_count6c75(
+        connection,
+        threat_assessment_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -398,7 +510,9 @@ defmodule MicrosoftGraph.Api.InformationProtectionThreatAssessmentRequest do
     request =
       %{}
       |> method(:get)
-      |> url("/informationProtection/threatAssessmentRequests/#{threat_assessment_request_id}/results/$count")
+      |> url(
+        "/informationProtection/threatAssessmentRequests/#{threat_assessment_request_id}/results/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -427,12 +541,29 @@ defmodule MicrosoftGraph.Api.InformationProtectionThreatAssessmentRequest do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphThreatAssessmentResult.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec information_protection_threat_assessment_requests_update_results(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphThreatAssessmentResult.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphThreatAssessmentResult.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def information_protection_threat_assessment_requests_update_results(connection, threat_assessment_request_id, threat_assessment_result_id, microsoft_graph_threat_assessment_result, _opts \\ []) do
+  @spec information_protection_threat_assessment_requests_update_results(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphThreatAssessmentResult.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphThreatAssessmentResult.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def information_protection_threat_assessment_requests_update_results(
+        connection,
+        threat_assessment_request_id,
+        threat_assessment_result_id,
+        microsoft_graph_threat_assessment_result,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/informationProtection/threatAssessmentRequests/#{threat_assessment_request_id}/results/#{threat_assessment_result_id}")
+      |> url(
+        "/informationProtection/threatAssessmentRequests/#{threat_assessment_request_id}/results/#{threat_assessment_result_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_threat_assessment_result)
       |> Enum.into([])
 
@@ -460,8 +591,21 @@ defmodule MicrosoftGraph.Api.InformationProtectionThreatAssessmentRequest do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphThreatAssessmentRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec information_protection_update_threat_assessment_requests(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphThreatAssessmentRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphThreatAssessmentRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def information_protection_update_threat_assessment_requests(connection, threat_assessment_request_id, microsoft_graph_threat_assessment_request, _opts \\ []) do
+  @spec information_protection_update_threat_assessment_requests(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphThreatAssessmentRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphThreatAssessmentRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def information_protection_update_threat_assessment_requests(
+        connection,
+        threat_assessment_request_id,
+        microsoft_graph_threat_assessment_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

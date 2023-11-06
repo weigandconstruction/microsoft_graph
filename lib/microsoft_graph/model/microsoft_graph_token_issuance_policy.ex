@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphTokenIssuancePolicy do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,22 +19,25 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphTokenIssuancePolicy do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :deletedDateTime => DateTime.t | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :appliesTo => [MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t] | nil,
-    :definition => [String.t] | nil,
-    :isOrganizationDefault => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :deletedDateTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :appliesTo => [MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()] | nil,
+          :definition => [String.t()] | nil,
+          :isOrganizationDefault => boolean() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:deletedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:appliesTo, :list, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject)
+    |> Deserializer.deserialize(:deletedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :appliesTo,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDirectoryObject
+    )
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphTermsAndConditions do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -23,28 +23,37 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphTermsAndConditions do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :acceptanceStatement => String.t | nil,
-    :acceptanceStatuses => [MicrosoftGraph.Model.MicrosoftGraphTermsAndConditionsAcceptanceStatus.t] | nil,
-    :assignments => [MicrosoftGraph.Model.MicrosoftGraphTermsAndConditionsAssignment.t] | nil,
-    :bodyText => String.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :title => String.t | nil,
-    :version => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :acceptanceStatement => String.t() | nil,
+          :acceptanceStatuses =>
+            [MicrosoftGraph.Model.MicrosoftGraphTermsAndConditionsAcceptanceStatus.t()] | nil,
+          :assignments =>
+            [MicrosoftGraph.Model.MicrosoftGraphTermsAndConditionsAssignment.t()] | nil,
+          :bodyText => String.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :title => String.t() | nil,
+          :version => integer() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:acceptanceStatuses, :list, MicrosoftGraph.Model.MicrosoftGraphTermsAndConditionsAcceptanceStatus)
-     |> Deserializer.deserialize(:assignments, :list, MicrosoftGraph.Model.MicrosoftGraphTermsAndConditionsAssignment)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :acceptanceStatuses,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphTermsAndConditionsAcceptanceStatus
+    )
+    |> Deserializer.deserialize(
+      :assignments,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphTermsAndConditionsAssignment
+    )
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
   end
 end
-

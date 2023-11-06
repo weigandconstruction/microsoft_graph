@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAttributeMappingFunctionSchema do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,20 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAttributeMappingFunctionSchema do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :parameters => [MicrosoftGraph.Model.AttributeMappingFunctionSchemaParametersInner.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :parameters =>
+            [MicrosoftGraph.Model.AttributeMappingFunctionSchemaParametersInner.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:parameters, :list, MicrosoftGraph.Model.AttributeMappingFunctionSchemaParametersInner)
+    |> Deserializer.deserialize(
+      :parameters,
+      :list,
+      MicrosoftGraph.Model.AttributeMappingFunctionSchemaParametersInner
+    )
   end
 end
-

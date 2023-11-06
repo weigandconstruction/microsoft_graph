@@ -23,7 +23,10 @@ defmodule MicrosoftGraph.Api.ReportsSecurityReportsRoot do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_delete_security(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec reports_delete_security(Tesla.Env.client(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def reports_delete_security(connection, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -61,7 +64,10 @@ defmodule MicrosoftGraph.Api.ReportsSecurityReportsRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityReportsRoot.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_get_security(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityReportsRoot.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec reports_get_security(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityReportsRoot.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def reports_get_security(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -98,7 +104,14 @@ defmodule MicrosoftGraph.Api.ReportsSecurityReportsRoot do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityReportsRoot.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec reports_update_security(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphSecurityReportsRoot.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityReportsRoot.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec reports_update_security(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphSecurityReportsRoot.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityReportsRoot.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def reports_update_security(connection, microsoft_graph_security_reports_root, _opts \\ []) do
     request =
       %{}

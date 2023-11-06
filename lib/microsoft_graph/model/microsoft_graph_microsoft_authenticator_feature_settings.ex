@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphMicrosoftAuthenticatorFeatureSettings do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,17 +14,28 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphMicrosoftAuthenticatorFeatureSettin
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :displayAppInformationRequiredState => MicrosoftGraph.Model.MicrosoftGraphMicrosoftAuthenticatorFeatureSettingsDisplayAppInformationRequiredState.t | nil,
-    :displayLocationInformationRequiredState => MicrosoftGraph.Model.MicrosoftGraphMicrosoftAuthenticatorFeatureSettingsDisplayLocationInformationRequiredState.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :displayAppInformationRequiredState =>
+            MicrosoftGraph.Model.MicrosoftGraphMicrosoftAuthenticatorFeatureSettingsDisplayAppInformationRequiredState.t()
+            | nil,
+          :displayLocationInformationRequiredState =>
+            MicrosoftGraph.Model.MicrosoftGraphMicrosoftAuthenticatorFeatureSettingsDisplayLocationInformationRequiredState.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:displayAppInformationRequiredState, :struct, MicrosoftGraph.Model.MicrosoftGraphMicrosoftAuthenticatorFeatureSettingsDisplayAppInformationRequiredState)
-     |> Deserializer.deserialize(:displayLocationInformationRequiredState, :struct, MicrosoftGraph.Model.MicrosoftGraphMicrosoftAuthenticatorFeatureSettingsDisplayLocationInformationRequiredState)
+    |> Deserializer.deserialize(
+      :displayAppInformationRequiredState,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphMicrosoftAuthenticatorFeatureSettingsDisplayAppInformationRequiredState
+    )
+    |> Deserializer.deserialize(
+      :displayLocationInformationRequiredState,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphMicrosoftAuthenticatorFeatureSettingsDisplayLocationInformationRequiredState
+    )
   end
 end
-

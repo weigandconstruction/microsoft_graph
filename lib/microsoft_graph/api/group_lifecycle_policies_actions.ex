@@ -25,13 +25,31 @@ defmodule MicrosoftGraph.Api.GroupLifecyclePoliciesActions do
   - `{:ok, MicrosoftGraph.Model.DrivesDriveListContentTypesContentTypeIsPublished2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec group_lifecycle_policies_group_lifecycle_policy_add_group(Tesla.Env.client, String.t, MicrosoftGraph.Model.GroupLifecyclePoliciesGroupLifecyclePolicyAddGroupRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.DrivesDriveListContentTypesContentTypeIsPublished2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def group_lifecycle_policies_group_lifecycle_policy_add_group(connection, group_lifecycle_policy_id, group_lifecycle_policies_group_lifecycle_policy_add_group_request, _opts \\ []) do
+  @spec group_lifecycle_policies_group_lifecycle_policy_add_group(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.GroupLifecyclePoliciesGroupLifecyclePolicyAddGroupRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.DrivesDriveListContentTypesContentTypeIsPublished2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def group_lifecycle_policies_group_lifecycle_policy_add_group(
+        connection,
+        group_lifecycle_policy_id,
+        group_lifecycle_policies_group_lifecycle_policy_add_group_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/groupLifecyclePolicies/#{group_lifecycle_policy_id}/addGroup")
-      |> add_param(:body, :body, group_lifecycle_policies_group_lifecycle_policy_add_group_request)
+      |> add_param(
+        :body,
+        :body,
+        group_lifecycle_policies_group_lifecycle_policy_add_group_request
+      )
       |> Enum.into([])
 
     connection
@@ -59,13 +77,31 @@ defmodule MicrosoftGraph.Api.GroupLifecyclePoliciesActions do
   - `{:ok, MicrosoftGraph.Model.DrivesDriveListContentTypesContentTypeIsPublished2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec group_lifecycle_policies_group_lifecycle_policy_remove_group(Tesla.Env.client, String.t, MicrosoftGraph.Model.GroupLifecyclePoliciesGroupLifecyclePolicyAddGroupRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.DrivesDriveListContentTypesContentTypeIsPublished2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def group_lifecycle_policies_group_lifecycle_policy_remove_group(connection, group_lifecycle_policy_id, group_lifecycle_policies_group_lifecycle_policy_add_group_request, _opts \\ []) do
+  @spec group_lifecycle_policies_group_lifecycle_policy_remove_group(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.GroupLifecyclePoliciesGroupLifecyclePolicyAddGroupRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.DrivesDriveListContentTypesContentTypeIsPublished2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def group_lifecycle_policies_group_lifecycle_policy_remove_group(
+        connection,
+        group_lifecycle_policy_id,
+        group_lifecycle_policies_group_lifecycle_policy_add_group_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/groupLifecyclePolicies/#{group_lifecycle_policy_id}/removeGroup")
-      |> add_param(:body, :body, group_lifecycle_policies_group_lifecycle_policy_add_group_request)
+      |> add_param(
+        :body,
+        :body,
+        group_lifecycle_policies_group_lifecycle_policy_add_group_request
+      )
       |> Enum.into([])
 
     connection

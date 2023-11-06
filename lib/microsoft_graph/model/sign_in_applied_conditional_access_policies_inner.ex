@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.SignInAppliedConditionalAccessPoliciesInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,19 +17,23 @@ defmodule MicrosoftGraph.Model.SignInAppliedConditionalAccessPoliciesInner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :displayName => String.t | nil,
-    :enforcedGrantControls => [String.t] | nil,
-    :enforcedSessionControls => [String.t] | nil,
-    :id => String.t | nil,
-    :result => MicrosoftGraph.Model.MicrosoftGraphAppliedConditionalAccessPolicyResult.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :displayName => String.t() | nil,
+          :enforcedGrantControls => [String.t()] | nil,
+          :enforcedSessionControls => [String.t()] | nil,
+          :id => String.t() | nil,
+          :result =>
+            MicrosoftGraph.Model.MicrosoftGraphAppliedConditionalAccessPolicyResult.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:result, :struct, MicrosoftGraph.Model.MicrosoftGraphAppliedConditionalAccessPolicyResult)
+    |> Deserializer.deserialize(
+      :result,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAppliedConditionalAccessPolicyResult
+    )
   end
 end
-

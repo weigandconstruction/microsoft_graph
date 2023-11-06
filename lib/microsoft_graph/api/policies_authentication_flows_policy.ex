@@ -23,7 +23,10 @@ defmodule MicrosoftGraph.Api.PoliciesAuthenticationFlowsPolicy do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_delete_authentication_flows_policy(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec policies_delete_authentication_flows_policy(Tesla.Env.client(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def policies_delete_authentication_flows_policy(connection, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -61,7 +64,10 @@ defmodule MicrosoftGraph.Api.PoliciesAuthenticationFlowsPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationFlowsPolicy.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_get_authentication_flows_policy(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationFlowsPolicy.t} | {:error, Tesla.Env.t}
+  @spec policies_get_authentication_flows_policy(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationFlowsPolicy.t()}
+          | {:error, Tesla.Env.t()}
   def policies_get_authentication_flows_policy(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -99,8 +105,19 @@ defmodule MicrosoftGraph.Api.PoliciesAuthenticationFlowsPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationFlowsPolicy.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_update_authentication_flows_policy(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphAuthenticationFlowsPolicy.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationFlowsPolicy.t} | {:error, Tesla.Env.t}
-  def policies_update_authentication_flows_policy(connection, microsoft_graph_authentication_flows_policy, _opts \\ []) do
+  @spec policies_update_authentication_flows_policy(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphAuthenticationFlowsPolicy.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthenticationFlowsPolicy.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_update_authentication_flows_policy(
+        connection,
+        microsoft_graph_authentication_flows_policy,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

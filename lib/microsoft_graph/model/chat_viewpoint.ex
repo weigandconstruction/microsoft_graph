@@ -14,16 +14,15 @@ defmodule MicrosoftGraph.Model.ChatViewpoint do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :isHidden => boolean() | nil,
-    :lastMessageReadDateTime => DateTime.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :isHidden => boolean() | nil,
+          :lastMessageReadDateTime => DateTime.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:lastMessageReadDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastMessageReadDateTime, :datetime, nil)
   end
 end
-

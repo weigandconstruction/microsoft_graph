@@ -15,17 +15,21 @@ defmodule MicrosoftGraph.Model.Fido2AuthenticationMethodConfigurationKeyRestrict
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :aaGuids => [String.t] | nil,
-    :enforcementType => MicrosoftGraph.Model.MicrosoftGraphFido2KeyRestrictionsEnforcementType.t | nil,
-    :isEnforced => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :aaGuids => [String.t()] | nil,
+          :enforcementType =>
+            MicrosoftGraph.Model.MicrosoftGraphFido2KeyRestrictionsEnforcementType.t() | nil,
+          :isEnforced => boolean() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:enforcementType, :struct, MicrosoftGraph.Model.MicrosoftGraphFido2KeyRestrictionsEnforcementType)
+    |> Deserializer.deserialize(
+      :enforcementType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphFido2KeyRestrictionsEnforcementType
+    )
   end
 end
-

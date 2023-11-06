@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DeviceManagementMobileAppTroubleshootingEventsMobileAppTroubleshootingEventAppLogCollectionRequestsAppLogCollectionRequestCreateDownloadUrl2XxResponse do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,17 +15,21 @@ defmodule MicrosoftGraph.Model.DeviceManagementMobileAppTroubleshootingEventsMob
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :appLogDecryptionAlgorithm => MicrosoftGraph.Model.MicrosoftGraphAppLogDecryptionAlgorithm.t | nil,
-    :decryptionKey => String.t | nil,
-    :downloadUrl => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :appLogDecryptionAlgorithm =>
+            MicrosoftGraph.Model.MicrosoftGraphAppLogDecryptionAlgorithm.t() | nil,
+          :decryptionKey => String.t() | nil,
+          :downloadUrl => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:appLogDecryptionAlgorithm, :struct, MicrosoftGraph.Model.MicrosoftGraphAppLogDecryptionAlgorithm)
+    |> Deserializer.deserialize(
+      :appLogDecryptionAlgorithm,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAppLogDecryptionAlgorithm
+    )
   end
 end
-

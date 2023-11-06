@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.IdentityGovernanceEntitlementManagementAssignmentRequestsAccessPackageAssignmentRequestResumeRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,21 @@ defmodule MicrosoftGraph.Model.IdentityGovernanceEntitlementManagementAssignment
   ]
 
   @type t :: %__MODULE__{
-    :data => MicrosoftGraph.Model.IdentityGovernanceEntitlementManagementAssignmentRequestsAccessPackageAssignmentRequestResumeRequestData.t | nil,
-    :source => String.t | nil,
-    :type => String.t | nil
-  }
+          :data =>
+            MicrosoftGraph.Model.IdentityGovernanceEntitlementManagementAssignmentRequestsAccessPackageAssignmentRequestResumeRequestData.t()
+            | nil,
+          :source => String.t() | nil,
+          :type => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:data, :struct, MicrosoftGraph.Model.IdentityGovernanceEntitlementManagementAssignmentRequestsAccessPackageAssignmentRequestResumeRequestData)
+    |> Deserializer.deserialize(
+      :data,
+      :struct,
+      MicrosoftGraph.Model.IdentityGovernanceEntitlementManagementAssignmentRequestsAccessPackageAssignmentRequestResumeRequestData
+    )
   end
 end
-

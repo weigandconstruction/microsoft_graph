@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.UsersUserExportDeviceAndAppManagementData1a022XxResponse do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,12 +13,11 @@ defmodule MicrosoftGraph.Model.UsersUserExportDeviceAndAppManagementData1a022XxR
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :content => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :content => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

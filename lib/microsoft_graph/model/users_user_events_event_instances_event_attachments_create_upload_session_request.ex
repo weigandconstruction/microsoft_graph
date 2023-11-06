@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSessionRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,14 +12,17 @@ defmodule MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCrea
   ]
 
   @type t :: %__MODULE__{
-    :AttachmentItem => MicrosoftGraph.Model.MicrosoftGraphAttachmentItem.t | nil
-  }
+          :AttachmentItem => MicrosoftGraph.Model.MicrosoftGraphAttachmentItem.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:AttachmentItem, :struct, MicrosoftGraph.Model.MicrosoftGraphAttachmentItem)
+    |> Deserializer.deserialize(
+      :AttachmentItem,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAttachmentItem
+    )
   end
 end
-

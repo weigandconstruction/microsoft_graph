@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookWorksheetsWorkbookWorksheetChartsItem2XxResponse do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -25,37 +25,44 @@ defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookWorksheetsWorkbo
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :axes => MicrosoftGraph.Model.WorkbookChartAxes.t | nil,
-    :dataLabels => MicrosoftGraph.Model.WorkbookChartDataLabels.t | nil,
-    :format => MicrosoftGraph.Model.WorkbookChartFormat.t | nil,
-    :height => MicrosoftGraph.Model.WorkbookChartHeight.t | nil,
-    :left => MicrosoftGraph.Model.WorkbookChartLeft.t | nil,
-    :legend => MicrosoftGraph.Model.WorkbookChartLegend.t | nil,
-    :name => String.t | nil,
-    :series => [MicrosoftGraph.Model.MicrosoftGraphWorkbookChartSeries.t] | nil,
-    :title => MicrosoftGraph.Model.WorkbookChartTitle.t | nil,
-    :top => MicrosoftGraph.Model.WorkbookChartTop.t | nil,
-    :width => MicrosoftGraph.Model.WorkbookChartWidth.t | nil,
-    :worksheet => MicrosoftGraph.Model.WorkbookChartWorksheet.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :axes => MicrosoftGraph.Model.WorkbookChartAxes.t() | nil,
+          :dataLabels => MicrosoftGraph.Model.WorkbookChartDataLabels.t() | nil,
+          :format => MicrosoftGraph.Model.WorkbookChartFormat.t() | nil,
+          :height => MicrosoftGraph.Model.WorkbookChartHeight.t() | nil,
+          :left => MicrosoftGraph.Model.WorkbookChartLeft.t() | nil,
+          :legend => MicrosoftGraph.Model.WorkbookChartLegend.t() | nil,
+          :name => String.t() | nil,
+          :series => [MicrosoftGraph.Model.MicrosoftGraphWorkbookChartSeries.t()] | nil,
+          :title => MicrosoftGraph.Model.WorkbookChartTitle.t() | nil,
+          :top => MicrosoftGraph.Model.WorkbookChartTop.t() | nil,
+          :width => MicrosoftGraph.Model.WorkbookChartWidth.t() | nil,
+          :worksheet => MicrosoftGraph.Model.WorkbookChartWorksheet.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:axes, :struct, MicrosoftGraph.Model.WorkbookChartAxes)
-     |> Deserializer.deserialize(:dataLabels, :struct, MicrosoftGraph.Model.WorkbookChartDataLabels)
-     |> Deserializer.deserialize(:format, :struct, MicrosoftGraph.Model.WorkbookChartFormat)
-     |> Deserializer.deserialize(:height, :struct, MicrosoftGraph.Model.WorkbookChartHeight)
-     |> Deserializer.deserialize(:left, :struct, MicrosoftGraph.Model.WorkbookChartLeft)
-     |> Deserializer.deserialize(:legend, :struct, MicrosoftGraph.Model.WorkbookChartLegend)
-     |> Deserializer.deserialize(:series, :list, MicrosoftGraph.Model.MicrosoftGraphWorkbookChartSeries)
-     |> Deserializer.deserialize(:title, :struct, MicrosoftGraph.Model.WorkbookChartTitle)
-     |> Deserializer.deserialize(:top, :struct, MicrosoftGraph.Model.WorkbookChartTop)
-     |> Deserializer.deserialize(:width, :struct, MicrosoftGraph.Model.WorkbookChartWidth)
-     |> Deserializer.deserialize(:worksheet, :struct, MicrosoftGraph.Model.WorkbookChartWorksheet)
+    |> Deserializer.deserialize(:axes, :struct, MicrosoftGraph.Model.WorkbookChartAxes)
+    |> Deserializer.deserialize(
+      :dataLabels,
+      :struct,
+      MicrosoftGraph.Model.WorkbookChartDataLabels
+    )
+    |> Deserializer.deserialize(:format, :struct, MicrosoftGraph.Model.WorkbookChartFormat)
+    |> Deserializer.deserialize(:height, :struct, MicrosoftGraph.Model.WorkbookChartHeight)
+    |> Deserializer.deserialize(:left, :struct, MicrosoftGraph.Model.WorkbookChartLeft)
+    |> Deserializer.deserialize(:legend, :struct, MicrosoftGraph.Model.WorkbookChartLegend)
+    |> Deserializer.deserialize(
+      :series,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphWorkbookChartSeries
+    )
+    |> Deserializer.deserialize(:title, :struct, MicrosoftGraph.Model.WorkbookChartTitle)
+    |> Deserializer.deserialize(:top, :struct, MicrosoftGraph.Model.WorkbookChartTop)
+    |> Deserializer.deserialize(:width, :struct, MicrosoftGraph.Model.WorkbookChartWidth)
+    |> Deserializer.deserialize(:worksheet, :struct, MicrosoftGraph.Model.WorkbookChartWorksheet)
   end
 end
-

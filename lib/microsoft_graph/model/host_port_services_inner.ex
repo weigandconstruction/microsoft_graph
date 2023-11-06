@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.HostPortServicesInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,20 +16,24 @@ defmodule MicrosoftGraph.Model.HostPortServicesInner do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :component => MicrosoftGraph.Model.MicrosoftGraphSecurityHostPortComponentComponent.t | nil,
-    :firstSeenDateTime => DateTime.t | nil,
-    :isRecent => boolean() | nil,
-    :lastSeenDateTime => DateTime.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :component =>
+            MicrosoftGraph.Model.MicrosoftGraphSecurityHostPortComponentComponent.t() | nil,
+          :firstSeenDateTime => DateTime.t() | nil,
+          :isRecent => boolean() | nil,
+          :lastSeenDateTime => DateTime.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:component, :struct, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPortComponentComponent)
-     |> Deserializer.deserialize(:firstSeenDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastSeenDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :component,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityHostPortComponentComponent
+    )
+    |> Deserializer.deserialize(:firstSeenDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastSeenDateTime, :datetime, nil)
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphLearningContent do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -31,34 +31,33 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphLearningContent do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :additionalTags => [String.t] | nil,
-    :contentWebUrl => String.t | nil,
-    :contributors => [String.t] | nil,
-    :createdDateTime => DateTime.t | nil,
-    :description => String.t | nil,
-    :duration => String.t | nil,
-    :externalId => String.t | nil,
-    :format => String.t | nil,
-    :isActive => boolean() | nil,
-    :isPremium => boolean() | nil,
-    :isSearchable => boolean() | nil,
-    :languageTag => String.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :numberOfPages => integer() | nil,
-    :skillTags => [String.t] | nil,
-    :sourceName => String.t | nil,
-    :thumbnailWebUrl => String.t | nil,
-    :title => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :additionalTags => [String.t()] | nil,
+          :contentWebUrl => String.t() | nil,
+          :contributors => [String.t()] | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :duration => String.t() | nil,
+          :externalId => String.t() | nil,
+          :format => String.t() | nil,
+          :isActive => boolean() | nil,
+          :isPremium => boolean() | nil,
+          :isSearchable => boolean() | nil,
+          :languageTag => String.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :numberOfPages => integer() | nil,
+          :skillTags => [String.t()] | nil,
+          :sourceName => String.t() | nil,
+          :thumbnailWebUrl => String.t() | nil,
+          :title => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
   end
 end
-

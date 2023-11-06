@@ -15,19 +15,33 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphObjectMappingScope do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :categoryFilterGroups => [MicrosoftGraph.Model.MicrosoftGraphFilterCategoryFilterGroupsInner.t] | nil,
-    :groups => [MicrosoftGraph.Model.MicrosoftGraphFilterCategoryFilterGroupsInner.t] | nil,
-    :inputFilterGroups => [MicrosoftGraph.Model.MicrosoftGraphFilterCategoryFilterGroupsInner.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :categoryFilterGroups =>
+            [MicrosoftGraph.Model.MicrosoftGraphFilterCategoryFilterGroupsInner.t()] | nil,
+          :groups =>
+            [MicrosoftGraph.Model.MicrosoftGraphFilterCategoryFilterGroupsInner.t()] | nil,
+          :inputFilterGroups =>
+            [MicrosoftGraph.Model.MicrosoftGraphFilterCategoryFilterGroupsInner.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:categoryFilterGroups, :list, MicrosoftGraph.Model.MicrosoftGraphFilterCategoryFilterGroupsInner)
-     |> Deserializer.deserialize(:groups, :list, MicrosoftGraph.Model.MicrosoftGraphFilterCategoryFilterGroupsInner)
-     |> Deserializer.deserialize(:inputFilterGroups, :list, MicrosoftGraph.Model.MicrosoftGraphFilterCategoryFilterGroupsInner)
+    |> Deserializer.deserialize(
+      :categoryFilterGroups,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphFilterCategoryFilterGroupsInner
+    )
+    |> Deserializer.deserialize(
+      :groups,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphFilterCategoryFilterGroupsInner
+    )
+    |> Deserializer.deserialize(
+      :inputFilterGroups,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphFilterCategoryFilterGroupsInner
+    )
   end
 end
-

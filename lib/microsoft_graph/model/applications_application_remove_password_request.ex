@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.ApplicationsApplicationRemovePasswordRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,11 +12,10 @@ defmodule MicrosoftGraph.Model.ApplicationsApplicationRemovePasswordRequest do
   ]
 
   @type t :: %__MODULE__{
-    :keyId => String.t | nil
-  }
+          :keyId => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

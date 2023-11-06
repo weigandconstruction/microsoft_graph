@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphUserSecurityState do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -26,31 +26,43 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphUserSecurityState do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :aadUserId => String.t | nil,
-    :accountName => String.t | nil,
-    :domainName => String.t | nil,
-    :emailRole => MicrosoftGraph.Model.MicrosoftGraphUserSecurityStateEmailRole.t | nil,
-    :isVpn => boolean() | nil,
-    :logonDateTime => DateTime.t | nil,
-    :logonId => String.t | nil,
-    :logonIp => String.t | nil,
-    :logonLocation => String.t | nil,
-    :logonType => MicrosoftGraph.Model.MicrosoftGraphUserSecurityStateLogonType.t | nil,
-    :onPremisesSecurityIdentifier => String.t | nil,
-    :riskScore => String.t | nil,
-    :userAccountType => MicrosoftGraph.Model.MicrosoftGraphUserSecurityStateUserAccountType.t | nil,
-    :userPrincipalName => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :aadUserId => String.t() | nil,
+          :accountName => String.t() | nil,
+          :domainName => String.t() | nil,
+          :emailRole => MicrosoftGraph.Model.MicrosoftGraphUserSecurityStateEmailRole.t() | nil,
+          :isVpn => boolean() | nil,
+          :logonDateTime => DateTime.t() | nil,
+          :logonId => String.t() | nil,
+          :logonIp => String.t() | nil,
+          :logonLocation => String.t() | nil,
+          :logonType => MicrosoftGraph.Model.MicrosoftGraphUserSecurityStateLogonType.t() | nil,
+          :onPremisesSecurityIdentifier => String.t() | nil,
+          :riskScore => String.t() | nil,
+          :userAccountType =>
+            MicrosoftGraph.Model.MicrosoftGraphUserSecurityStateUserAccountType.t() | nil,
+          :userPrincipalName => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:emailRole, :struct, MicrosoftGraph.Model.MicrosoftGraphUserSecurityStateEmailRole)
-     |> Deserializer.deserialize(:logonDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:logonType, :struct, MicrosoftGraph.Model.MicrosoftGraphUserSecurityStateLogonType)
-     |> Deserializer.deserialize(:userAccountType, :struct, MicrosoftGraph.Model.MicrosoftGraphUserSecurityStateUserAccountType)
+    |> Deserializer.deserialize(
+      :emailRole,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphUserSecurityStateEmailRole
+    )
+    |> Deserializer.deserialize(:logonDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :logonType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphUserSecurityStateLogonType
+    )
+    |> Deserializer.deserialize(
+      :userAccountType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphUserSecurityStateUserAccountType
+    )
   end
 end
-

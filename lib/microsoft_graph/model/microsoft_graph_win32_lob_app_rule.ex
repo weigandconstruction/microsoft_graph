@@ -13,15 +13,18 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphWin32LobAppRule do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :ruleType => MicrosoftGraph.Model.MicrosoftGraphWin32LobAppRuleType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :ruleType => MicrosoftGraph.Model.MicrosoftGraphWin32LobAppRuleType.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:ruleType, :struct, MicrosoftGraph.Model.MicrosoftGraphWin32LobAppRuleType)
+    |> Deserializer.deserialize(
+      :ruleType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphWin32LobAppRuleType
+    )
   end
 end
-

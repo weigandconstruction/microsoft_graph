@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.GroupsGroupThreadsConversationThreadReplyRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,14 +12,13 @@ defmodule MicrosoftGraph.Model.GroupsGroupThreadsConversationThreadReplyRequest 
   ]
 
   @type t :: %__MODULE__{
-    :Post => MicrosoftGraph.Model.MicrosoftGraphPost.t | nil
-  }
+          :Post => MicrosoftGraph.Model.MicrosoftGraphPost.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:Post, :struct, MicrosoftGraph.Model.MicrosoftGraphPost)
+    |> Deserializer.deserialize(:Post, :struct, MicrosoftGraph.Model.MicrosoftGraphPost)
   end
 end
-

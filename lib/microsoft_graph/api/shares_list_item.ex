@@ -26,7 +26,10 @@ defmodule MicrosoftGraph.Api.SharesListItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphListItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec shares_get_list_item(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphListItem.t} | {:error, Tesla.Env.t}
+  @spec shares_get_list_item(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphListItem.t()}
+          | {:error, Tesla.Env.t()}
   def shares_get_list_item(connection, shared_drive_item_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,

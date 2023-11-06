@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilityScheduleInstance do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -22,29 +22,50 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphPrivilegedAccessGroupEligibilitySch
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :endDateTime => DateTime.t | nil,
-    :startDateTime => DateTime.t | nil,
-    :accessId => MicrosoftGraph.Model.PrivilegedAccessGroupEligibilityScheduleInstanceAccessId.t | nil,
-    :eligibilityScheduleId => String.t | nil,
-    :group => MicrosoftGraph.Model.PrivilegedAccessGroupEligibilityScheduleGroup.t | nil,
-    :groupId => String.t | nil,
-    :memberType => MicrosoftGraph.Model.PrivilegedAccessGroupEligibilityScheduleInstanceMemberType.t | nil,
-    :principal => MicrosoftGraph.Model.PrivilegedAccessGroupEligibilityScheduleInstancePrincipal.t | nil,
-    :principalId => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :endDateTime => DateTime.t() | nil,
+          :startDateTime => DateTime.t() | nil,
+          :accessId =>
+            MicrosoftGraph.Model.PrivilegedAccessGroupEligibilityScheduleInstanceAccessId.t()
+            | nil,
+          :eligibilityScheduleId => String.t() | nil,
+          :group => MicrosoftGraph.Model.PrivilegedAccessGroupEligibilityScheduleGroup.t() | nil,
+          :groupId => String.t() | nil,
+          :memberType =>
+            MicrosoftGraph.Model.PrivilegedAccessGroupEligibilityScheduleInstanceMemberType.t()
+            | nil,
+          :principal =>
+            MicrosoftGraph.Model.PrivilegedAccessGroupEligibilityScheduleInstancePrincipal.t()
+            | nil,
+          :principalId => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:endDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:startDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:accessId, :struct, MicrosoftGraph.Model.PrivilegedAccessGroupEligibilityScheduleInstanceAccessId)
-     |> Deserializer.deserialize(:group, :struct, MicrosoftGraph.Model.PrivilegedAccessGroupEligibilityScheduleGroup)
-     |> Deserializer.deserialize(:memberType, :struct, MicrosoftGraph.Model.PrivilegedAccessGroupEligibilityScheduleInstanceMemberType)
-     |> Deserializer.deserialize(:principal, :struct, MicrosoftGraph.Model.PrivilegedAccessGroupEligibilityScheduleInstancePrincipal)
+    |> Deserializer.deserialize(:endDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:startDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :accessId,
+      :struct,
+      MicrosoftGraph.Model.PrivilegedAccessGroupEligibilityScheduleInstanceAccessId
+    )
+    |> Deserializer.deserialize(
+      :group,
+      :struct,
+      MicrosoftGraph.Model.PrivilegedAccessGroupEligibilityScheduleGroup
+    )
+    |> Deserializer.deserialize(
+      :memberType,
+      :struct,
+      MicrosoftGraph.Model.PrivilegedAccessGroupEligibilityScheduleInstanceMemberType
+    )
+    |> Deserializer.deserialize(
+      :principal,
+      :struct,
+      MicrosoftGraph.Model.PrivilegedAccessGroupEligibilityScheduleInstancePrincipal
+    )
   end
 end
-

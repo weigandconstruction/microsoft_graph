@@ -24,7 +24,10 @@ defmodule MicrosoftGraph.Api.SitesSite do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_get_count6254(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_get_count6254(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_get_count6254(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -65,7 +68,10 @@ defmodule MicrosoftGraph.Api.SitesSite do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSite.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_get_sites(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSite.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_get_sites(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSite.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_get_sites(connection, site_id, site_id1, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -111,7 +117,10 @@ defmodule MicrosoftGraph.Api.SitesSite do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSiteCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_list_sites(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSiteCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_list_sites(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSiteCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_list_sites(connection, site_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -157,7 +166,10 @@ defmodule MicrosoftGraph.Api.SitesSite do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSite.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_site_get_site(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSite.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_site_get_site(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSite.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_site_get_site(connection, site_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -202,7 +214,10 @@ defmodule MicrosoftGraph.Api.SitesSite do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSiteCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_site_list_site(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSiteCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_site_list_site(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSiteCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_site_list_site(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -246,7 +261,15 @@ defmodule MicrosoftGraph.Api.SitesSite do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSite.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_site_update_site(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphSite.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSite.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_site_update_site(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSite.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSite.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_site_update_site(connection, site_id, microsoft_graph_site, _opts \\ []) do
     request =
       %{}
@@ -280,7 +303,10 @@ defmodule MicrosoftGraph.Api.SitesSite do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_sites_get_count_f499(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_sites_get_count_f499(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_sites_get_count_f499(connection, site_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,

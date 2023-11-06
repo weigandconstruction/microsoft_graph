@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsAppHealthDevicePerformance do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -24,28 +24,38 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsAppHealthDev
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :appCrashCount => integer() | nil,
-    :appHangCount => integer() | nil,
-    :crashedAppCount => integer() | nil,
-    :deviceAppHealthScore => MicrosoftGraph.Model.UserExperienceAnalyticsAppHealthDevicePerformanceDeviceAppHealthScore.t | nil,
-    :deviceDisplayName => String.t | nil,
-    :deviceId => String.t | nil,
-    :deviceManufacturer => String.t | nil,
-    :deviceModel => String.t | nil,
-    :healthStatus => MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsHealthState.t | nil,
-    :meanTimeToFailureInMinutes => integer() | nil,
-    :processedDateTime => DateTime.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :appCrashCount => integer() | nil,
+          :appHangCount => integer() | nil,
+          :crashedAppCount => integer() | nil,
+          :deviceAppHealthScore =>
+            MicrosoftGraph.Model.UserExperienceAnalyticsAppHealthDevicePerformanceDeviceAppHealthScore.t()
+            | nil,
+          :deviceDisplayName => String.t() | nil,
+          :deviceId => String.t() | nil,
+          :deviceManufacturer => String.t() | nil,
+          :deviceModel => String.t() | nil,
+          :healthStatus =>
+            MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsHealthState.t() | nil,
+          :meanTimeToFailureInMinutes => integer() | nil,
+          :processedDateTime => DateTime.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:deviceAppHealthScore, :struct, MicrosoftGraph.Model.UserExperienceAnalyticsAppHealthDevicePerformanceDeviceAppHealthScore)
-     |> Deserializer.deserialize(:healthStatus, :struct, MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsHealthState)
-     |> Deserializer.deserialize(:processedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :deviceAppHealthScore,
+      :struct,
+      MicrosoftGraph.Model.UserExperienceAnalyticsAppHealthDevicePerformanceDeviceAppHealthScore
+    )
+    |> Deserializer.deserialize(
+      :healthStatus,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsHealthState
+    )
+    |> Deserializer.deserialize(:processedDateTime, :datetime, nil)
   end
 end
-

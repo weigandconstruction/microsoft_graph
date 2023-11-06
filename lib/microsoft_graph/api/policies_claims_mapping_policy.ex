@@ -25,8 +25,19 @@ defmodule MicrosoftGraph.Api.PoliciesClaimsMappingPolicy do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_claims_mapping_policies_applies_to_get_count46aa(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_claims_mapping_policies_applies_to_get_count46aa(connection, claims_mapping_policy_id, opts \\ []) do
+  @spec policies_claims_mapping_policies_applies_to_get_count46aa(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_claims_mapping_policies_applies_to_get_count46aa(
+        connection,
+        claims_mapping_policy_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -65,8 +76,21 @@ defmodule MicrosoftGraph.Api.PoliciesClaimsMappingPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_claims_mapping_policies_get_applies_to(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_claims_mapping_policies_get_applies_to(connection, claims_mapping_policy_id, directory_object_id, opts \\ []) do
+  @spec policies_claims_mapping_policies_get_applies_to(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_claims_mapping_policies_get_applies_to(
+        connection,
+        claims_mapping_policy_id,
+        directory_object_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -75,7 +99,9 @@ defmodule MicrosoftGraph.Api.PoliciesClaimsMappingPolicy do
     request =
       %{}
       |> method(:get)
-      |> url("/policies/claimsMappingPolicies/#{claims_mapping_policy_id}/appliesTo/#{directory_object_id}")
+      |> url(
+        "/policies/claimsMappingPolicies/#{claims_mapping_policy_id}/appliesTo/#{directory_object_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -103,7 +129,10 @@ defmodule MicrosoftGraph.Api.PoliciesClaimsMappingPolicy do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_claims_mapping_policies_get_count0f66(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec policies_claims_mapping_policies_get_count0f66(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def policies_claims_mapping_policies_get_count0f66(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -148,8 +177,19 @@ defmodule MicrosoftGraph.Api.PoliciesClaimsMappingPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_claims_mapping_policies_list_applies_to(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t} | {:error, Tesla.Env.t}
-  def policies_claims_mapping_policies_list_applies_to(connection, claims_mapping_policy_id, opts \\ []) do
+  @spec policies_claims_mapping_policies_list_applies_to(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDirectoryObjectCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_claims_mapping_policies_list_applies_to(
+        connection,
+        claims_mapping_policy_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -192,8 +232,19 @@ defmodule MicrosoftGraph.Api.PoliciesClaimsMappingPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphClaimsMappingPolicy.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_create_claims_mapping_policies(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphClaimsMappingPolicy.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphClaimsMappingPolicy.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_create_claims_mapping_policies(connection, microsoft_graph_claims_mapping_policy, _opts \\ []) do
+  @spec policies_create_claims_mapping_policies(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphClaimsMappingPolicy.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphClaimsMappingPolicy.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_create_claims_mapping_policies(
+        connection,
+        microsoft_graph_claims_mapping_policy,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -226,7 +277,10 @@ defmodule MicrosoftGraph.Api.PoliciesClaimsMappingPolicy do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_delete_claims_mapping_policies(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec policies_delete_claims_mapping_policies(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def policies_delete_claims_mapping_policies(connection, claims_mapping_policy_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -265,7 +319,10 @@ defmodule MicrosoftGraph.Api.PoliciesClaimsMappingPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphClaimsMappingPolicy.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_get_claims_mapping_policies(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphClaimsMappingPolicy.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec policies_get_claims_mapping_policies(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphClaimsMappingPolicy.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def policies_get_claims_mapping_policies(connection, claims_mapping_policy_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -310,7 +367,10 @@ defmodule MicrosoftGraph.Api.PoliciesClaimsMappingPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphClaimsMappingPolicyCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_list_claims_mapping_policies(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphClaimsMappingPolicyCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec policies_list_claims_mapping_policies(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphClaimsMappingPolicyCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def policies_list_claims_mapping_policies(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -355,8 +415,21 @@ defmodule MicrosoftGraph.Api.PoliciesClaimsMappingPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphClaimsMappingPolicy.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_update_claims_mapping_policies(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphClaimsMappingPolicy.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphClaimsMappingPolicy.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_update_claims_mapping_policies(connection, claims_mapping_policy_id, microsoft_graph_claims_mapping_policy, _opts \\ []) do
+  @spec policies_update_claims_mapping_policies(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphClaimsMappingPolicy.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphClaimsMappingPolicy.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_update_claims_mapping_policies(
+        connection,
+        claims_mapping_policy_id,
+        microsoft_graph_claims_mapping_policy,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphUserScopeTeamsAppInstallation do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,22 +17,39 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphUserScopeTeamsAppInstallation do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :consentedPermissionSet => MicrosoftGraph.Model.TeamsAppInstallationConsentedPermissionSet.t | nil,
-    :teamsApp => MicrosoftGraph.Model.TeamsAppInstallationTeamsApp.t | nil,
-    :teamsAppDefinition => MicrosoftGraph.Model.TeamsAppInstallationTeamsAppDefinition.t | nil,
-    :chat => MicrosoftGraph.Model.UserScopeTeamsAppInstallationChat.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :consentedPermissionSet =>
+            MicrosoftGraph.Model.TeamsAppInstallationConsentedPermissionSet.t() | nil,
+          :teamsApp => MicrosoftGraph.Model.TeamsAppInstallationTeamsApp.t() | nil,
+          :teamsAppDefinition =>
+            MicrosoftGraph.Model.TeamsAppInstallationTeamsAppDefinition.t() | nil,
+          :chat => MicrosoftGraph.Model.UserScopeTeamsAppInstallationChat.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:consentedPermissionSet, :struct, MicrosoftGraph.Model.TeamsAppInstallationConsentedPermissionSet)
-     |> Deserializer.deserialize(:teamsApp, :struct, MicrosoftGraph.Model.TeamsAppInstallationTeamsApp)
-     |> Deserializer.deserialize(:teamsAppDefinition, :struct, MicrosoftGraph.Model.TeamsAppInstallationTeamsAppDefinition)
-     |> Deserializer.deserialize(:chat, :struct, MicrosoftGraph.Model.UserScopeTeamsAppInstallationChat)
+    |> Deserializer.deserialize(
+      :consentedPermissionSet,
+      :struct,
+      MicrosoftGraph.Model.TeamsAppInstallationConsentedPermissionSet
+    )
+    |> Deserializer.deserialize(
+      :teamsApp,
+      :struct,
+      MicrosoftGraph.Model.TeamsAppInstallationTeamsApp
+    )
+    |> Deserializer.deserialize(
+      :teamsAppDefinition,
+      :struct,
+      MicrosoftGraph.Model.TeamsAppInstallationTeamsAppDefinition
+    )
+    |> Deserializer.deserialize(
+      :chat,
+      :struct,
+      MicrosoftGraph.Model.UserScopeTeamsAppInstallationChat
+    )
   end
 end
-

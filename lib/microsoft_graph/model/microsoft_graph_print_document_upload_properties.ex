@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphPrintDocumentUploadProperties do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphPrintDocumentUploadProperties do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :contentType => String.t | nil,
-    :documentName => String.t | nil,
-    :size => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :contentType => String.t() | nil,
+          :documentName => String.t() | nil,
+          :size => integer() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

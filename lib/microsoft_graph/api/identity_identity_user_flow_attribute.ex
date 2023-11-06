@@ -24,8 +24,19 @@ defmodule MicrosoftGraph.Api.IdentityIdentityUserFlowAttribute do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttribute.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_create_user_flow_attributes(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttribute.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttribute.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_create_user_flow_attributes(connection, microsoft_graph_identity_user_flow_attribute, _opts \\ []) do
+  @spec identity_create_user_flow_attributes(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttribute.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttribute.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_create_user_flow_attributes(
+        connection,
+        microsoft_graph_identity_user_flow_attribute,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -58,8 +69,15 @@ defmodule MicrosoftGraph.Api.IdentityIdentityUserFlowAttribute do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_delete_user_flow_attributes(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_delete_user_flow_attributes(connection, identity_user_flow_attribute_id, opts \\ []) do
+  @spec identity_delete_user_flow_attributes(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_delete_user_flow_attributes(
+        connection,
+        identity_user_flow_attribute_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -97,7 +115,10 @@ defmodule MicrosoftGraph.Api.IdentityIdentityUserFlowAttribute do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttribute.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_get_user_flow_attributes(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttribute.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_get_user_flow_attributes(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttribute.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_get_user_flow_attributes(connection, identity_user_flow_attribute_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -142,7 +163,11 @@ defmodule MicrosoftGraph.Api.IdentityIdentityUserFlowAttribute do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttributeCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_list_user_flow_attributes(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttributeCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_list_user_flow_attributes(Tesla.Env.client(), keyword()) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttributeCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_list_user_flow_attributes(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -187,8 +212,21 @@ defmodule MicrosoftGraph.Api.IdentityIdentityUserFlowAttribute do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttribute.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_update_user_flow_attributes(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttribute.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttribute.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def identity_update_user_flow_attributes(connection, identity_user_flow_attribute_id, microsoft_graph_identity_user_flow_attribute, _opts \\ []) do
+  @spec identity_update_user_flow_attributes(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttribute.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttribute.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_update_user_flow_attributes(
+        connection,
+        identity_user_flow_attribute_id,
+        microsoft_graph_identity_user_flow_attribute,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -220,7 +258,10 @@ defmodule MicrosoftGraph.Api.IdentityIdentityUserFlowAttribute do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_user_flow_attributes_get_count9651(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec identity_user_flow_attributes_get_count9651(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def identity_user_flow_attributes_get_count9651(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,

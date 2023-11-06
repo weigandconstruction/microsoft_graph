@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphOrgContact do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -33,44 +33,65 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphOrgContact do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :deletedDateTime => DateTime.t | nil,
-    :addresses => [MicrosoftGraph.Model.OrgContactAddressesInner.t] | nil,
-    :companyName => String.t | nil,
-    :department => String.t | nil,
-    :directReports => [MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t] | nil,
-    :displayName => String.t | nil,
-    :givenName => String.t | nil,
-    :jobTitle => String.t | nil,
-    :mail => String.t | nil,
-    :mailNickname => String.t | nil,
-    :manager => MicrosoftGraph.Model.OrgContactManager.t | nil,
-    :memberOf => [MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t] | nil,
-    :onPremisesLastSyncDateTime => DateTime.t | nil,
-    :onPremisesProvisioningErrors => [MicrosoftGraph.Model.OrgContactOnPremisesProvisioningErrorsInner.t] | nil,
-    :onPremisesSyncEnabled => boolean() | nil,
-    :phones => [MicrosoftGraph.Model.OrgContactPhonesInner.t] | nil,
-    :proxyAddresses => [String.t] | nil,
-    :serviceProvisioningErrors => [MicrosoftGraph.Model.OrgContactServiceProvisioningErrorsInner.t] | nil,
-    :surname => String.t | nil,
-    :transitiveMemberOf => [MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :deletedDateTime => DateTime.t() | nil,
+          :addresses => [MicrosoftGraph.Model.OrgContactAddressesInner.t()] | nil,
+          :companyName => String.t() | nil,
+          :department => String.t() | nil,
+          :directReports => [MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()] | nil,
+          :displayName => String.t() | nil,
+          :givenName => String.t() | nil,
+          :jobTitle => String.t() | nil,
+          :mail => String.t() | nil,
+          :mailNickname => String.t() | nil,
+          :manager => MicrosoftGraph.Model.OrgContactManager.t() | nil,
+          :memberOf => [MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()] | nil,
+          :onPremisesLastSyncDateTime => DateTime.t() | nil,
+          :onPremisesProvisioningErrors =>
+            [MicrosoftGraph.Model.OrgContactOnPremisesProvisioningErrorsInner.t()] | nil,
+          :onPremisesSyncEnabled => boolean() | nil,
+          :phones => [MicrosoftGraph.Model.OrgContactPhonesInner.t()] | nil,
+          :proxyAddresses => [String.t()] | nil,
+          :serviceProvisioningErrors =>
+            [MicrosoftGraph.Model.OrgContactServiceProvisioningErrorsInner.t()] | nil,
+          :surname => String.t() | nil,
+          :transitiveMemberOf => [MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:deletedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:addresses, :list, MicrosoftGraph.Model.OrgContactAddressesInner)
-     |> Deserializer.deserialize(:directReports, :list, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject)
-     |> Deserializer.deserialize(:manager, :struct, MicrosoftGraph.Model.OrgContactManager)
-     |> Deserializer.deserialize(:memberOf, :list, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject)
-     |> Deserializer.deserialize(:onPremisesLastSyncDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:onPremisesProvisioningErrors, :list, MicrosoftGraph.Model.OrgContactOnPremisesProvisioningErrorsInner)
-     |> Deserializer.deserialize(:phones, :list, MicrosoftGraph.Model.OrgContactPhonesInner)
-     |> Deserializer.deserialize(:serviceProvisioningErrors, :list, MicrosoftGraph.Model.OrgContactServiceProvisioningErrorsInner)
-     |> Deserializer.deserialize(:transitiveMemberOf, :list, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject)
+    |> Deserializer.deserialize(:deletedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:addresses, :list, MicrosoftGraph.Model.OrgContactAddressesInner)
+    |> Deserializer.deserialize(
+      :directReports,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDirectoryObject
+    )
+    |> Deserializer.deserialize(:manager, :struct, MicrosoftGraph.Model.OrgContactManager)
+    |> Deserializer.deserialize(
+      :memberOf,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDirectoryObject
+    )
+    |> Deserializer.deserialize(:onPremisesLastSyncDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :onPremisesProvisioningErrors,
+      :list,
+      MicrosoftGraph.Model.OrgContactOnPremisesProvisioningErrorsInner
+    )
+    |> Deserializer.deserialize(:phones, :list, MicrosoftGraph.Model.OrgContactPhonesInner)
+    |> Deserializer.deserialize(
+      :serviceProvisioningErrors,
+      :list,
+      MicrosoftGraph.Model.OrgContactServiceProvisioningErrorsInner
+    )
+    |> Deserializer.deserialize(
+      :transitiveMemberOf,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDirectoryObject
+    )
   end
 end
-

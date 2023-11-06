@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAdmin do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,21 +16,29 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAdmin do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :edge => MicrosoftGraph.Model.MicrosoftGraphAdminEdge.t | nil,
-    :people => MicrosoftGraph.Model.MicrosoftGraphAdminPeople.t | nil,
-    :serviceAnnouncement => MicrosoftGraph.Model.MicrosoftGraphAdminServiceAnnouncement.t | nil,
-    :sharepoint => MicrosoftGraph.Model.MicrosoftGraphAdminSharepoint.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :edge => MicrosoftGraph.Model.MicrosoftGraphAdminEdge.t() | nil,
+          :people => MicrosoftGraph.Model.MicrosoftGraphAdminPeople.t() | nil,
+          :serviceAnnouncement =>
+            MicrosoftGraph.Model.MicrosoftGraphAdminServiceAnnouncement.t() | nil,
+          :sharepoint => MicrosoftGraph.Model.MicrosoftGraphAdminSharepoint.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:edge, :struct, MicrosoftGraph.Model.MicrosoftGraphAdminEdge)
-     |> Deserializer.deserialize(:people, :struct, MicrosoftGraph.Model.MicrosoftGraphAdminPeople)
-     |> Deserializer.deserialize(:serviceAnnouncement, :struct, MicrosoftGraph.Model.MicrosoftGraphAdminServiceAnnouncement)
-     |> Deserializer.deserialize(:sharepoint, :struct, MicrosoftGraph.Model.MicrosoftGraphAdminSharepoint)
+    |> Deserializer.deserialize(:edge, :struct, MicrosoftGraph.Model.MicrosoftGraphAdminEdge)
+    |> Deserializer.deserialize(:people, :struct, MicrosoftGraph.Model.MicrosoftGraphAdminPeople)
+    |> Deserializer.deserialize(
+      :serviceAnnouncement,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAdminServiceAnnouncement
+    )
+    |> Deserializer.deserialize(
+      :sharepoint,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAdminSharepoint
+    )
   end
 end
-

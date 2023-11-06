@@ -25,13 +25,34 @@ defmodule MicrosoftGraph.Api.ConnectionsActions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfExternalActivityResult.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec connections_external_connection_items_external_item_add_activities(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.ExternalConnectionsExternalConnectionItemsExternalItemAddActivitiesRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfExternalActivityResult.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def connections_external_connection_items_external_item_add_activities(connection, external_connection_id, external_item_id, external_connections_external_connection_items_external_item_add_activities_request, _opts \\ []) do
+  @spec connections_external_connection_items_external_item_add_activities(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.ExternalConnectionsExternalConnectionItemsExternalItemAddActivitiesRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfExternalActivityResult.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def connections_external_connection_items_external_item_add_activities(
+        connection,
+        external_connection_id,
+        external_item_id,
+        external_connections_external_connection_items_external_item_add_activities_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/connections/#{external_connection_id}/items/#{external_item_id}/microsoft.graph.externalConnectors.addActivities")
-      |> add_param(:body, :body, external_connections_external_connection_items_external_item_add_activities_request)
+      |> url(
+        "/connections/#{external_connection_id}/items/#{external_item_id}/microsoft.graph.externalConnectors.addActivities"
+      )
+      |> add_param(
+        :body,
+        :body,
+        external_connections_external_connection_items_external_item_add_activities_request
+      )
       |> Enum.into([])
 
     connection

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.IdentityB2xUserFlowsB2xIdentityUserFlowApiConnectorConfigurationPostFederationSignupUploadClientCertificateRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,12 +13,11 @@ defmodule MicrosoftGraph.Model.IdentityB2xUserFlowsB2xIdentityUserFlowApiConnect
   ]
 
   @type t :: %__MODULE__{
-    :password => String.t | nil,
-    :pkcs12Value => String.t | nil
-  }
+          :password => String.t() | nil,
+          :pkcs12Value => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphCallRecordsPstnCallLogRow do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -35,39 +35,44 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphCallRecordsPstnCallLogRow do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :callDurationSource => MicrosoftGraph.Model.MicrosoftGraphCallRecordsPstnCallLogRowCallDurationSource.t | nil,
-    :callId => String.t | nil,
-    :callType => String.t | nil,
-    :calleeNumber => String.t | nil,
-    :callerNumber => String.t | nil,
-    :charge => float() | nil,
-    :conferenceId => String.t | nil,
-    :connectionCharge => float() | nil,
-    :currency => String.t | nil,
-    :destinationContext => String.t | nil,
-    :destinationName => String.t | nil,
-    :duration => integer() | nil,
-    :endDateTime => DateTime.t | nil,
-    :id => String.t | nil,
-    :inventoryType => String.t | nil,
-    :licenseCapability => String.t | nil,
-    :operator => String.t | nil,
-    :startDateTime => DateTime.t | nil,
-    :tenantCountryCode => String.t | nil,
-    :usageCountryCode => String.t | nil,
-    :userDisplayName => String.t | nil,
-    :userId => String.t | nil,
-    :userPrincipalName => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :callDurationSource =>
+            MicrosoftGraph.Model.MicrosoftGraphCallRecordsPstnCallLogRowCallDurationSource.t()
+            | nil,
+          :callId => String.t() | nil,
+          :callType => String.t() | nil,
+          :calleeNumber => String.t() | nil,
+          :callerNumber => String.t() | nil,
+          :charge => float() | nil,
+          :conferenceId => String.t() | nil,
+          :connectionCharge => float() | nil,
+          :currency => String.t() | nil,
+          :destinationContext => String.t() | nil,
+          :destinationName => String.t() | nil,
+          :duration => integer() | nil,
+          :endDateTime => DateTime.t() | nil,
+          :id => String.t() | nil,
+          :inventoryType => String.t() | nil,
+          :licenseCapability => String.t() | nil,
+          :operator => String.t() | nil,
+          :startDateTime => DateTime.t() | nil,
+          :tenantCountryCode => String.t() | nil,
+          :usageCountryCode => String.t() | nil,
+          :userDisplayName => String.t() | nil,
+          :userId => String.t() | nil,
+          :userPrincipalName => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:callDurationSource, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsPstnCallLogRowCallDurationSource)
-     |> Deserializer.deserialize(:endDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:startDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :callDurationSource,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsPstnCallLogRowCallDurationSource
+    )
+    |> Deserializer.deserialize(:endDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:startDateTime, :datetime, nil)
   end
 end
-

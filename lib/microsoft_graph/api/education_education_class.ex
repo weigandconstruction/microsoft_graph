@@ -25,8 +25,19 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_assignment_categories_get_count8570(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_assignment_categories_get_count8570(connection, education_class_id, opts \\ []) do
+  @spec education_classes_assignment_categories_get_count8570(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_assignment_categories_get_count8570(
+        connection,
+        education_class_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -65,8 +76,21 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_assignments_categories_get_count639a(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_assignments_categories_get_count639a(connection, education_class_id, education_assignment_id, opts \\ []) do
+  @spec education_classes_assignments_categories_get_count639a(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_assignments_categories_get_count639a(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -75,7 +99,9 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
     request =
       %{}
       |> method(:get)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/categories/$count")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/categories/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -105,12 +131,29 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEducationCategory.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_assignments_create_categories(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphEducationCategory.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationCategory.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_assignments_create_categories(connection, education_class_id, education_assignment_id, microsoft_graph_education_category, _opts \\ []) do
+  @spec education_classes_assignments_create_categories(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphEducationCategory.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationCategory.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_assignments_create_categories(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        microsoft_graph_education_category,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/categories")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/categories"
+      )
       |> add_param(:body, :body, microsoft_graph_education_category)
       |> Enum.into([])
 
@@ -140,12 +183,29 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_assignments_create_ref_categories(Tesla.Env.client, String.t, String.t, %{optional(String.t) => Map.t}, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_assignments_create_ref_categories(connection, education_class_id, education_assignment_id, request_body, _opts \\ []) do
+  @spec education_classes_assignments_create_ref_categories(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          %{optional(String.t()) => Map.t()},
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_assignments_create_ref_categories(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        request_body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/categories/$ref")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/categories/$ref"
+      )
       |> add_param(:body, :body, request_body)
       |> Enum.into([])
 
@@ -175,12 +235,29 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEducationAssignmentResource.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_assignments_create_resources(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphEducationAssignmentResource.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationAssignmentResource.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_assignments_create_resources(connection, education_class_id, education_assignment_id, microsoft_graph_education_assignment_resource, _opts \\ []) do
+  @spec education_classes_assignments_create_resources(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphEducationAssignmentResource.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationAssignmentResource.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_assignments_create_resources(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        microsoft_graph_education_assignment_resource,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/resources")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/resources"
+      )
       |> add_param(:body, :body, microsoft_graph_education_assignment_resource)
       |> Enum.into([])
 
@@ -209,12 +286,29 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEducationSubmission.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_assignments_create_submissions(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphEducationSubmission.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationSubmission.t} | {:error, Tesla.Env.t}
-  def education_classes_assignments_create_submissions(connection, education_class_id, education_assignment_id, microsoft_graph_education_submission, _opts \\ []) do
+  @spec education_classes_assignments_create_submissions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphEducationSubmission.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationSubmission.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_assignments_create_submissions(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        microsoft_graph_education_submission,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions"
+      )
       |> add_param(:body, :body, microsoft_graph_education_submission)
       |> Enum.into([])
 
@@ -246,8 +340,23 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_assignments_delete_ref_categories(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_assignments_delete_ref_categories(connection, education_class_id, education_assignment_id, education_category_id, opts \\ []) do
+  @spec education_classes_assignments_delete_ref_categories(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_assignments_delete_ref_categories(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        education_category_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers,
       :"@id" => :query
@@ -256,7 +365,9 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
     request =
       %{}
       |> method(:delete)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/categories/#{education_category_id}/$ref")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/categories/#{education_category_id}/$ref"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -286,8 +397,21 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_assignments_delete_ref_rubric(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_assignments_delete_ref_rubric(connection, education_class_id, education_assignment_id, opts \\ []) do
+  @spec education_classes_assignments_delete_ref_rubric(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_assignments_delete_ref_rubric(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -295,7 +419,9 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
     request =
       %{}
       |> method(:delete)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/rubric/$ref")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/rubric/$ref"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -326,8 +452,23 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_assignments_delete_resources(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_assignments_delete_resources(connection, education_class_id, education_assignment_id, education_assignment_resource_id, opts \\ []) do
+  @spec education_classes_assignments_delete_resources(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_assignments_delete_resources(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        education_assignment_resource_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -335,7 +476,9 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
     request =
       %{}
       |> method(:delete)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/resources/#{education_assignment_resource_id}")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/resources/#{education_assignment_resource_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -365,8 +508,21 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_assignments_delete_rubric(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_assignments_delete_rubric(connection, education_class_id, education_assignment_id, opts \\ []) do
+  @spec education_classes_assignments_delete_rubric(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_assignments_delete_rubric(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -374,7 +530,9 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
     request =
       %{}
       |> method(:delete)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/rubric")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/rubric"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -404,8 +562,23 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_assignments_delete_submissions(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_assignments_delete_submissions(connection, education_class_id, education_assignment_id, education_submission_id, opts \\ []) do
+  @spec education_classes_assignments_delete_submissions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_assignments_delete_submissions(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        education_submission_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -413,7 +586,9 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
     request =
       %{}
       |> method(:delete)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -442,7 +617,10 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_assignments_get_count_a470(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec education_classes_assignments_get_count_a470(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def education_classes_assignments_get_count_a470(connection, education_class_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -481,12 +659,27 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_assignments_get_ref_rubric(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
-  def education_classes_assignments_get_ref_rubric(connection, education_class_id, education_assignment_id, _opts \\ []) do
+  @spec education_classes_assignments_get_ref_rubric(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_assignments_get_ref_rubric(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/rubric/$ref")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/rubric/$ref"
+      )
       |> Enum.into([])
 
     connection
@@ -517,8 +710,23 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEducationAssignmentResource.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_assignments_get_resources(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationAssignmentResource.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_assignments_get_resources(connection, education_class_id, education_assignment_id, education_assignment_resource_id, opts \\ []) do
+  @spec education_classes_assignments_get_resources(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationAssignmentResource.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_assignments_get_resources(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        education_assignment_resource_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -527,7 +735,9 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
     request =
       %{}
       |> method(:get)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/resources/#{education_assignment_resource_id}")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/resources/#{education_assignment_resource_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -558,8 +768,21 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEducationRubric.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_assignments_get_rubric(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationRubric.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_assignments_get_rubric(connection, education_class_id, education_assignment_id, opts \\ []) do
+  @spec education_classes_assignments_get_rubric(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationRubric.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_assignments_get_rubric(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -568,7 +791,9 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
     request =
       %{}
       |> method(:get)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/rubric")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/rubric"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -600,8 +825,23 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEducationSubmission.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_assignments_get_submissions(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationSubmission.t} | {:error, Tesla.Env.t}
-  def education_classes_assignments_get_submissions(connection, education_class_id, education_assignment_id, education_submission_id, opts \\ []) do
+  @spec education_classes_assignments_get_submissions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationSubmission.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_assignments_get_submissions(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        education_submission_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -610,7 +850,9 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
     request =
       %{}
       |> method(:get)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -647,8 +889,21 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEducationCategoryCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_assignments_list_categories(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationCategoryCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_assignments_list_categories(connection, education_class_id, education_assignment_id, opts \\ []) do
+  @spec education_classes_assignments_list_categories(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationCategoryCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_assignments_list_categories(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -663,7 +918,9 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
     request =
       %{}
       |> method(:get)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/categories")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/categories"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -698,8 +955,21 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.StringCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_assignments_list_ref_categories(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.StringCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_assignments_list_ref_categories(connection, education_class_id, education_assignment_id, opts \\ []) do
+  @spec education_classes_assignments_list_ref_categories(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.StringCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_assignments_list_ref_categories(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -712,7 +982,9 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
     request =
       %{}
       |> method(:get)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/categories/$ref")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/categories/$ref"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -749,8 +1021,22 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEducationAssignmentResourceCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_assignments_list_resources(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationAssignmentResourceCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_assignments_list_resources(connection, education_class_id, education_assignment_id, opts \\ []) do
+  @spec education_classes_assignments_list_resources(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphEducationAssignmentResourceCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_assignments_list_resources(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -765,7 +1051,9 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
     request =
       %{}
       |> method(:get)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/resources")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/resources"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -802,8 +1090,21 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEducationSubmissionCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_assignments_list_submissions(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationSubmissionCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_assignments_list_submissions(connection, education_class_id, education_assignment_id, opts \\ []) do
+  @spec education_classes_assignments_list_submissions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationSubmissionCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_assignments_list_submissions(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -818,7 +1119,9 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
     request =
       %{}
       |> method(:get)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -848,8 +1151,21 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_assignments_resources_get_count_f57b(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_assignments_resources_get_count_f57b(connection, education_class_id, education_assignment_id, opts \\ []) do
+  @spec education_classes_assignments_resources_get_count_f57b(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_assignments_resources_get_count_f57b(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -858,7 +1174,9 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
     request =
       %{}
       |> method(:get)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/resources/$count")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/resources/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -889,12 +1207,31 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEducationOutcome.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_assignments_submissions_create_outcomes(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphEducationOutcome.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationOutcome.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_assignments_submissions_create_outcomes(connection, education_class_id, education_assignment_id, education_submission_id, microsoft_graph_education_outcome, _opts \\ []) do
+  @spec education_classes_assignments_submissions_create_outcomes(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphEducationOutcome.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationOutcome.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_assignments_submissions_create_outcomes(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        education_submission_id,
+        microsoft_graph_education_outcome,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/outcomes")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/outcomes"
+      )
       |> add_param(:body, :body, microsoft_graph_education_outcome)
       |> Enum.into([])
 
@@ -925,12 +1262,31 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEducationSubmissionResource.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_assignments_submissions_create_resources(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphEducationSubmissionResource.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationSubmissionResource.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_assignments_submissions_create_resources(connection, education_class_id, education_assignment_id, education_submission_id, microsoft_graph_education_submission_resource, _opts \\ []) do
+  @spec education_classes_assignments_submissions_create_resources(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphEducationSubmissionResource.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationSubmissionResource.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_assignments_submissions_create_resources(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        education_submission_id,
+        microsoft_graph_education_submission_resource,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/resources")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/resources"
+      )
       |> add_param(:body, :body, microsoft_graph_education_submission_resource)
       |> Enum.into([])
 
@@ -960,12 +1316,31 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEducationSubmissionResource.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_assignments_submissions_create_submitted_resources(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphEducationSubmissionResource.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationSubmissionResource.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_assignments_submissions_create_submitted_resources(connection, education_class_id, education_assignment_id, education_submission_id, microsoft_graph_education_submission_resource, _opts \\ []) do
+  @spec education_classes_assignments_submissions_create_submitted_resources(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphEducationSubmissionResource.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationSubmissionResource.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_assignments_submissions_create_submitted_resources(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        education_submission_id,
+        microsoft_graph_education_submission_resource,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/submittedResources")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/submittedResources"
+      )
       |> add_param(:body, :body, microsoft_graph_education_submission_resource)
       |> Enum.into([])
 
@@ -997,8 +1372,25 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_assignments_submissions_delete_outcomes(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_assignments_submissions_delete_outcomes(connection, education_class_id, education_assignment_id, education_submission_id, education_outcome_id, opts \\ []) do
+  @spec education_classes_assignments_submissions_delete_outcomes(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_assignments_submissions_delete_outcomes(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        education_submission_id,
+        education_outcome_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1006,7 +1398,9 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
     request =
       %{}
       |> method(:delete)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/outcomes/#{education_outcome_id}")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/outcomes/#{education_outcome_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1038,8 +1432,25 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_assignments_submissions_delete_resources(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_assignments_submissions_delete_resources(connection, education_class_id, education_assignment_id, education_submission_id, education_submission_resource_id, opts \\ []) do
+  @spec education_classes_assignments_submissions_delete_resources(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_assignments_submissions_delete_resources(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        education_submission_id,
+        education_submission_resource_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1047,7 +1458,9 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
     request =
       %{}
       |> method(:delete)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/resources/#{education_submission_resource_id}")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/resources/#{education_submission_resource_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1078,8 +1491,25 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_assignments_submissions_delete_submitted_resources(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_assignments_submissions_delete_submitted_resources(connection, education_class_id, education_assignment_id, education_submission_id, education_submission_resource_id, opts \\ []) do
+  @spec education_classes_assignments_submissions_delete_submitted_resources(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_assignments_submissions_delete_submitted_resources(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        education_submission_id,
+        education_submission_resource_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1087,7 +1517,9 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
     request =
       %{}
       |> method(:delete)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/submittedResources/#{education_submission_resource_id}")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/submittedResources/#{education_submission_resource_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1117,8 +1549,21 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_assignments_submissions_get_count231f(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_assignments_submissions_get_count231f(connection, education_class_id, education_assignment_id, opts \\ []) do
+  @spec education_classes_assignments_submissions_get_count231f(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_assignments_submissions_get_count231f(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1127,7 +1572,9 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
     request =
       %{}
       |> method(:get)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/$count")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1159,8 +1606,25 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEducationOutcome.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_assignments_submissions_get_outcomes(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationOutcome.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_assignments_submissions_get_outcomes(connection, education_class_id, education_assignment_id, education_submission_id, education_outcome_id, opts \\ []) do
+  @spec education_classes_assignments_submissions_get_outcomes(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationOutcome.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_assignments_submissions_get_outcomes(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        education_submission_id,
+        education_outcome_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1169,7 +1633,9 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
     request =
       %{}
       |> method(:get)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/outcomes/#{education_outcome_id}")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/outcomes/#{education_outcome_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1202,8 +1668,25 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEducationSubmissionResource.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_assignments_submissions_get_resources(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationSubmissionResource.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_assignments_submissions_get_resources(connection, education_class_id, education_assignment_id, education_submission_id, education_submission_resource_id, opts \\ []) do
+  @spec education_classes_assignments_submissions_get_resources(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationSubmissionResource.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_assignments_submissions_get_resources(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        education_submission_id,
+        education_submission_resource_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1212,7 +1695,9 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
     request =
       %{}
       |> method(:get)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/resources/#{education_submission_resource_id}")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/resources/#{education_submission_resource_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1245,8 +1730,25 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEducationSubmissionResource.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_assignments_submissions_get_submitted_resources(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationSubmissionResource.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_assignments_submissions_get_submitted_resources(connection, education_class_id, education_assignment_id, education_submission_id, education_submission_resource_id, opts \\ []) do
+  @spec education_classes_assignments_submissions_get_submitted_resources(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationSubmissionResource.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_assignments_submissions_get_submitted_resources(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        education_submission_id,
+        education_submission_resource_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1255,7 +1757,9 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
     request =
       %{}
       |> method(:get)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/submittedResources/#{education_submission_resource_id}")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/submittedResources/#{education_submission_resource_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1293,8 +1797,23 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEducationOutcomeCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_assignments_submissions_list_outcomes(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationOutcomeCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_assignments_submissions_list_outcomes(connection, education_class_id, education_assignment_id, education_submission_id, opts \\ []) do
+  @spec education_classes_assignments_submissions_list_outcomes(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationOutcomeCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_assignments_submissions_list_outcomes(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        education_submission_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1309,7 +1828,9 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
     request =
       %{}
       |> method(:get)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/outcomes")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/outcomes"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1347,8 +1868,24 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEducationSubmissionResourceCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_assignments_submissions_list_resources(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationSubmissionResourceCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_assignments_submissions_list_resources(connection, education_class_id, education_assignment_id, education_submission_id, opts \\ []) do
+  @spec education_classes_assignments_submissions_list_resources(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphEducationSubmissionResourceCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_assignments_submissions_list_resources(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        education_submission_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1363,7 +1900,9 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
     request =
       %{}
       |> method(:get)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/resources")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/resources"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1401,8 +1940,24 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEducationSubmissionResourceCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_assignments_submissions_list_submitted_resources(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationSubmissionResourceCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_assignments_submissions_list_submitted_resources(connection, education_class_id, education_assignment_id, education_submission_id, opts \\ []) do
+  @spec education_classes_assignments_submissions_list_submitted_resources(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphEducationSubmissionResourceCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_assignments_submissions_list_submitted_resources(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        education_submission_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1417,7 +1972,9 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
     request =
       %{}
       |> method(:get)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/submittedResources")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/submittedResources"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1448,8 +2005,23 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_assignments_submissions_outcomes_get_count2ffd(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_assignments_submissions_outcomes_get_count2ffd(connection, education_class_id, education_assignment_id, education_submission_id, opts \\ []) do
+  @spec education_classes_assignments_submissions_outcomes_get_count2ffd(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_assignments_submissions_outcomes_get_count2ffd(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        education_submission_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1458,7 +2030,9 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
     request =
       %{}
       |> method(:get)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/outcomes/$count")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/outcomes/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1489,8 +2063,23 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_assignments_submissions_resources_get_count3e92(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_assignments_submissions_resources_get_count3e92(connection, education_class_id, education_assignment_id, education_submission_id, opts \\ []) do
+  @spec education_classes_assignments_submissions_resources_get_count3e92(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_assignments_submissions_resources_get_count3e92(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        education_submission_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1499,7 +2088,9 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
     request =
       %{}
       |> method(:get)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/resources/$count")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/resources/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1530,8 +2121,23 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_assignments_submissions_submitted_resources_get_count_ecf9(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_assignments_submissions_submitted_resources_get_count_ecf9(connection, education_class_id, education_assignment_id, education_submission_id, opts \\ []) do
+  @spec education_classes_assignments_submissions_submitted_resources_get_count_ecf9(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_assignments_submissions_submitted_resources_get_count_ecf9(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        education_submission_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1540,7 +2146,9 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
     request =
       %{}
       |> method(:get)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/submittedResources/$count")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/submittedResources/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1572,12 +2180,33 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEducationOutcome.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_assignments_submissions_update_outcomes(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphEducationOutcome.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationOutcome.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_assignments_submissions_update_outcomes(connection, education_class_id, education_assignment_id, education_submission_id, education_outcome_id, microsoft_graph_education_outcome, _opts \\ []) do
+  @spec education_classes_assignments_submissions_update_outcomes(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphEducationOutcome.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationOutcome.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_assignments_submissions_update_outcomes(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        education_submission_id,
+        education_outcome_id,
+        microsoft_graph_education_outcome,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/outcomes/#{education_outcome_id}")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/outcomes/#{education_outcome_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_education_outcome)
       |> Enum.into([])
 
@@ -1608,12 +2237,33 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEducationSubmissionResource.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_assignments_submissions_update_resources(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphEducationSubmissionResource.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationSubmissionResource.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_assignments_submissions_update_resources(connection, education_class_id, education_assignment_id, education_submission_id, education_submission_resource_id, microsoft_graph_education_submission_resource, _opts \\ []) do
+  @spec education_classes_assignments_submissions_update_resources(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphEducationSubmissionResource.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationSubmissionResource.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_assignments_submissions_update_resources(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        education_submission_id,
+        education_submission_resource_id,
+        microsoft_graph_education_submission_resource,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/resources/#{education_submission_resource_id}")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/resources/#{education_submission_resource_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_education_submission_resource)
       |> Enum.into([])
 
@@ -1644,12 +2294,33 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEducationSubmissionResource.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_assignments_submissions_update_submitted_resources(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphEducationSubmissionResource.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationSubmissionResource.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_assignments_submissions_update_submitted_resources(connection, education_class_id, education_assignment_id, education_submission_id, education_submission_resource_id, microsoft_graph_education_submission_resource, _opts \\ []) do
+  @spec education_classes_assignments_submissions_update_submitted_resources(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphEducationSubmissionResource.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationSubmissionResource.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_assignments_submissions_update_submitted_resources(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        education_submission_id,
+        education_submission_resource_id,
+        microsoft_graph_education_submission_resource,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/submittedResources/#{education_submission_resource_id}")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}/submittedResources/#{education_submission_resource_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_education_submission_resource)
       |> Enum.into([])
 
@@ -1679,12 +2350,29 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_assignments_update_ref_rubric(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.ReferenceUpdate.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_assignments_update_ref_rubric(connection, education_class_id, education_assignment_id, reference_update, _opts \\ []) do
+  @spec education_classes_assignments_update_ref_rubric(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.ReferenceUpdate.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_assignments_update_ref_rubric(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        reference_update,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/rubric/$ref")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/rubric/$ref"
+      )
       |> add_param(:body, :body, reference_update)
       |> Enum.into([])
 
@@ -1714,12 +2402,31 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEducationAssignmentResource.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_assignments_update_resources(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphEducationAssignmentResource.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationAssignmentResource.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_assignments_update_resources(connection, education_class_id, education_assignment_id, education_assignment_resource_id, microsoft_graph_education_assignment_resource, _opts \\ []) do
+  @spec education_classes_assignments_update_resources(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphEducationAssignmentResource.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationAssignmentResource.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_assignments_update_resources(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        education_assignment_resource_id,
+        microsoft_graph_education_assignment_resource,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/resources/#{education_assignment_resource_id}")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/resources/#{education_assignment_resource_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_education_assignment_resource)
       |> Enum.into([])
 
@@ -1749,12 +2456,29 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEducationRubric.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_assignments_update_rubric(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphEducationRubric.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationRubric.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_assignments_update_rubric(connection, education_class_id, education_assignment_id, microsoft_graph_education_rubric, _opts \\ []) do
+  @spec education_classes_assignments_update_rubric(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphEducationRubric.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationRubric.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_assignments_update_rubric(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        microsoft_graph_education_rubric,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/rubric")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/rubric"
+      )
       |> add_param(:body, :body, microsoft_graph_education_rubric)
       |> Enum.into([])
 
@@ -1784,12 +2508,31 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEducationSubmission.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_assignments_update_submissions(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphEducationSubmission.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationSubmission.t} | {:error, Tesla.Env.t}
-  def education_classes_assignments_update_submissions(connection, education_class_id, education_assignment_id, education_submission_id, microsoft_graph_education_submission, _opts \\ []) do
+  @spec education_classes_assignments_update_submissions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphEducationSubmission.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationSubmission.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_assignments_update_submissions(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        education_submission_id,
+        microsoft_graph_education_submission,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}")
+      |> url(
+        "/education/classes/#{education_class_id}/assignments/#{education_assignment_id}/submissions/#{education_submission_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_education_submission)
       |> Enum.into([])
 
@@ -1818,8 +2561,21 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEducationCategory.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_create_assignment_categories(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphEducationCategory.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationCategory.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_create_assignment_categories(connection, education_class_id, microsoft_graph_education_category, _opts \\ []) do
+  @spec education_classes_create_assignment_categories(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphEducationCategory.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationCategory.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_create_assignment_categories(
+        connection,
+        education_class_id,
+        microsoft_graph_education_category,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1852,8 +2608,21 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEducationAssignment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_create_assignments(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphEducationAssignment.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationAssignment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_create_assignments(connection, education_class_id, microsoft_graph_education_assignment, _opts \\ []) do
+  @spec education_classes_create_assignments(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphEducationAssignment.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationAssignment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_create_assignments(
+        connection,
+        education_class_id,
+        microsoft_graph_education_assignment,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1886,8 +2655,21 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_create_ref_members(Tesla.Env.client, String.t, %{optional(String.t) => Map.t}, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_create_ref_members(connection, education_class_id, request_body, _opts \\ []) do
+  @spec education_classes_create_ref_members(
+          Tesla.Env.client(),
+          String.t(),
+          %{optional(String.t()) => Map.t()},
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_create_ref_members(
+        connection,
+        education_class_id,
+        request_body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1920,8 +2702,21 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_create_ref_teachers(Tesla.Env.client, String.t, %{optional(String.t) => Map.t}, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_create_ref_teachers(connection, education_class_id, request_body, _opts \\ []) do
+  @spec education_classes_create_ref_teachers(
+          Tesla.Env.client(),
+          String.t(),
+          %{optional(String.t()) => Map.t()},
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_create_ref_teachers(
+        connection,
+        education_class_id,
+        request_body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1955,8 +2750,21 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_delete_assignment_categories(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_delete_assignment_categories(connection, education_class_id, education_category_id, opts \\ []) do
+  @spec education_classes_delete_assignment_categories(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_delete_assignment_categories(
+        connection,
+        education_class_id,
+        education_category_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1964,7 +2772,9 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
     request =
       %{}
       |> method(:delete)
-      |> url("/education/classes/#{education_class_id}/assignmentCategories/#{education_category_id}")
+      |> url(
+        "/education/classes/#{education_class_id}/assignmentCategories/#{education_category_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1992,7 +2802,10 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_delete_assignment_defaults(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec education_classes_delete_assignment_defaults(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def education_classes_delete_assignment_defaults(connection, education_class_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -2029,7 +2842,10 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_delete_assignment_settings(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec education_classes_delete_assignment_settings(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def education_classes_delete_assignment_settings(connection, education_class_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -2068,8 +2884,21 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_delete_assignments(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_delete_assignments(connection, education_class_id, education_assignment_id, opts \\ []) do
+  @spec education_classes_delete_assignments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_delete_assignments(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -2108,8 +2937,21 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_delete_ref_members(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_delete_ref_members(connection, education_class_id, education_user_id, opts \\ []) do
+  @spec education_classes_delete_ref_members(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_delete_ref_members(
+        connection,
+        education_class_id,
+        education_user_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers,
       :"@id" => :query
@@ -2149,8 +2991,21 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_delete_ref_teachers(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_delete_ref_teachers(connection, education_class_id, education_user_id, opts \\ []) do
+  @spec education_classes_delete_ref_teachers(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_delete_ref_teachers(
+        connection,
+        education_class_id,
+        education_user_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers,
       :"@id" => :query
@@ -2190,8 +3045,21 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEducationCategory.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_get_assignment_categories(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationCategory.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_get_assignment_categories(connection, education_class_id, education_category_id, opts \\ []) do
+  @spec education_classes_get_assignment_categories(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationCategory.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_get_assignment_categories(
+        connection,
+        education_class_id,
+        education_category_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2200,7 +3068,9 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
     request =
       %{}
       |> method(:get)
-      |> url("/education/classes/#{education_class_id}/assignmentCategories/#{education_category_id}")
+      |> url(
+        "/education/classes/#{education_class_id}/assignmentCategories/#{education_category_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2230,7 +3100,10 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEducationAssignmentDefaults.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_get_assignment_defaults(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationAssignmentDefaults.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec education_classes_get_assignment_defaults(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationAssignmentDefaults.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def education_classes_get_assignment_defaults(connection, education_class_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -2270,7 +3143,10 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEducationAssignmentSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_get_assignment_settings(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationAssignmentSettings.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec education_classes_get_assignment_settings(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationAssignmentSettings.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def education_classes_get_assignment_settings(connection, education_class_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -2311,8 +3187,16 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEducationAssignment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_get_assignments(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationAssignment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_get_assignments(connection, education_class_id, education_assignment_id, opts \\ []) do
+  @spec education_classes_get_assignments(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationAssignment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_get_assignments(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2349,7 +3233,10 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_get_count_fe5a(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec education_classes_get_count_fe5a(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def education_classes_get_count_fe5a(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -2389,7 +3276,10 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_get_group(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphGroup.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec education_classes_get_group(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphGroup.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def education_classes_get_group(connection, education_class_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -2430,8 +3320,16 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEducationSchool.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_get_schools(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationSchool.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_get_schools(connection, education_class_id, education_school_id, opts \\ []) do
+  @spec education_classes_get_schools(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationSchool.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_get_schools(
+        connection,
+        education_class_id,
+        education_school_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2475,8 +3373,19 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_group_list_service_provisioning_errors(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_group_list_service_provisioning_errors(connection, education_class_id, opts \\ []) do
+  @spec education_classes_group_list_service_provisioning_errors(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphServiceProvisioningErrorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_group_list_service_provisioning_errors(
+        connection,
+        education_class_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -2520,8 +3429,19 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_group_service_provisioning_errors_get_count5a91(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_group_service_provisioning_errors_get_count5a91(connection, education_class_id, opts \\ []) do
+  @spec education_classes_group_service_provisioning_errors_get_count5a91(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_group_service_provisioning_errors_get_count5a91(
+        connection,
+        education_class_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -2566,7 +3486,10 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEducationCategoryCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_list_assignment_categories(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationCategoryCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec education_classes_list_assignment_categories(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationCategoryCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def education_classes_list_assignment_categories(connection, education_class_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -2618,7 +3541,10 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEducationAssignmentCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_list_assignments(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationAssignmentCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec education_classes_list_assignments(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationAssignmentCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def education_classes_list_assignments(connection, education_class_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -2670,7 +3596,10 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEducationUserCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_list_members(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationUserCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec education_classes_list_members(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationUserCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def education_classes_list_members(connection, education_class_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -2720,7 +3649,10 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.StringCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_list_ref_members(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.StringCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec education_classes_list_ref_members(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.StringCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def education_classes_list_ref_members(connection, education_class_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -2768,7 +3700,10 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.StringCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_list_ref_teachers(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.StringCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec education_classes_list_ref_teachers(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.StringCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def education_classes_list_ref_teachers(connection, education_class_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -2818,7 +3753,10 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEducationSchoolCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_list_schools(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationSchoolCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec education_classes_list_schools(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationSchoolCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def education_classes_list_schools(connection, education_class_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -2870,7 +3808,10 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEducationUserCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_list_teachers(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationUserCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec education_classes_list_teachers(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationUserCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def education_classes_list_teachers(connection, education_class_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -2915,7 +3856,10 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_members_get_count4459(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec education_classes_members_get_count4459(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def education_classes_members_get_count4459(connection, education_class_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -2954,7 +3898,10 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_schools_get_count_fef1(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec education_classes_schools_get_count_fef1(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def education_classes_schools_get_count_fef1(connection, education_class_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -2993,7 +3940,10 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_teachers_get_count4305(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec education_classes_teachers_get_count4305(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def education_classes_teachers_get_count4305(connection, education_class_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -3032,12 +3982,29 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEducationCategory.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_update_assignment_categories(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphEducationCategory.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationCategory.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_update_assignment_categories(connection, education_class_id, education_category_id, microsoft_graph_education_category, _opts \\ []) do
+  @spec education_classes_update_assignment_categories(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphEducationCategory.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationCategory.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_update_assignment_categories(
+        connection,
+        education_class_id,
+        education_category_id,
+        microsoft_graph_education_category,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/education/classes/#{education_class_id}/assignmentCategories/#{education_category_id}")
+      |> url(
+        "/education/classes/#{education_class_id}/assignmentCategories/#{education_category_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_education_category)
       |> Enum.into([])
 
@@ -3066,8 +4033,21 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEducationAssignmentDefaults.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_update_assignment_defaults(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphEducationAssignmentDefaults.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationAssignmentDefaults.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_update_assignment_defaults(connection, education_class_id, microsoft_graph_education_assignment_defaults, _opts \\ []) do
+  @spec education_classes_update_assignment_defaults(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphEducationAssignmentDefaults.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationAssignmentDefaults.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_update_assignment_defaults(
+        connection,
+        education_class_id,
+        microsoft_graph_education_assignment_defaults,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -3100,8 +4080,21 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEducationAssignmentSettings.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_update_assignment_settings(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphEducationAssignmentSettings.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationAssignmentSettings.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_update_assignment_settings(connection, education_class_id, microsoft_graph_education_assignment_settings, _opts \\ []) do
+  @spec education_classes_update_assignment_settings(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphEducationAssignmentSettings.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationAssignmentSettings.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_update_assignment_settings(
+        connection,
+        education_class_id,
+        microsoft_graph_education_assignment_settings,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -3135,8 +4128,23 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEducationAssignment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_classes_update_assignments(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphEducationAssignment.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationAssignment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_classes_update_assignments(connection, education_class_id, education_assignment_id, microsoft_graph_education_assignment, _opts \\ []) do
+  @spec education_classes_update_assignments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphEducationAssignment.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationAssignment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_classes_update_assignments(
+        connection,
+        education_class_id,
+        education_assignment_id,
+        microsoft_graph_education_assignment,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -3168,7 +4176,14 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEducationClass.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_create_classes(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphEducationClass.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationClass.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec education_create_classes(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphEducationClass.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationClass.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def education_create_classes(connection, microsoft_graph_education_class, _opts \\ []) do
     request =
       %{}
@@ -3202,7 +4217,10 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_delete_classes(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec education_delete_classes(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def education_delete_classes(connection, education_class_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -3241,7 +4259,10 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEducationClass.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_get_classes(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationClass.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec education_get_classes(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationClass.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def education_get_classes(connection, education_class_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -3286,7 +4307,10 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEducationClassCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_list_classes(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationClassCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec education_list_classes(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationClassCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def education_list_classes(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -3331,8 +4355,21 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphEducationClass.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec education_update_classes(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphEducationClass.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationClass.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def education_update_classes(connection, education_class_id, microsoft_graph_education_class, _opts \\ []) do
+  @spec education_update_classes(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphEducationClass.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphEducationClass.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def education_update_classes(
+        connection,
+        education_class_id,
+        microsoft_graph_education_class,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

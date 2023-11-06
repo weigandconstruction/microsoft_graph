@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.ContactsGetByIdsRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,12 +13,11 @@ defmodule MicrosoftGraph.Model.ContactsGetByIdsRequest do
   ]
 
   @type t :: %__MODULE__{
-    :ids => [String.t] | nil,
-    :types => [String.t] | nil
-  }
+          :ids => [String.t()] | nil,
+          :types => [String.t()] | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

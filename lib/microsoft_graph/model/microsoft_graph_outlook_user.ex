@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphOutlookUser do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,19 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphOutlookUser do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :masterCategories => [MicrosoftGraph.Model.MicrosoftGraphOutlookCategory.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :masterCategories => [MicrosoftGraph.Model.MicrosoftGraphOutlookCategory.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:masterCategories, :list, MicrosoftGraph.Model.MicrosoftGraphOutlookCategory)
+    |> Deserializer.deserialize(
+      :masterCategories,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphOutlookCategory
+    )
   end
 end
-

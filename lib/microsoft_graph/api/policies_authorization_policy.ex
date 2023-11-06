@@ -23,7 +23,10 @@ defmodule MicrosoftGraph.Api.PoliciesAuthorizationPolicy do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_delete_authorization_policy(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec policies_delete_authorization_policy(Tesla.Env.client(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def policies_delete_authorization_policy(connection, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -61,7 +64,10 @@ defmodule MicrosoftGraph.Api.PoliciesAuthorizationPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAuthorizationPolicy.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_get_authorization_policy(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthorizationPolicy.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec policies_get_authorization_policy(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthorizationPolicy.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def policies_get_authorization_policy(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -99,8 +105,19 @@ defmodule MicrosoftGraph.Api.PoliciesAuthorizationPolicy do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAuthorizationPolicy.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec policies_update_authorization_policy(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphAuthorizationPolicy.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthorizationPolicy.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def policies_update_authorization_policy(connection, microsoft_graph_authorization_policy, _opts \\ []) do
+  @spec policies_update_authorization_policy(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphAuthorizationPolicy.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAuthorizationPolicy.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def policies_update_authorization_policy(
+        connection,
+        microsoft_graph_authorization_policy,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

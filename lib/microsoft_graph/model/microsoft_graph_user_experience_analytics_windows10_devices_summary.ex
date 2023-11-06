@@ -13,12 +13,11 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsWindows10Dev
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :unsupportedOSversionDeviceCount => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :unsupportedOSversionDeviceCount => integer() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

@@ -15,17 +15,16 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphRemoteItemFile do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :hashes => MicrosoftGraph.Model.MicrosoftGraphFileHashes.t | nil,
-    :mimeType => String.t | nil,
-    :processingMetadata => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :hashes => MicrosoftGraph.Model.MicrosoftGraphFileHashes.t() | nil,
+          :mimeType => String.t() | nil,
+          :processingMetadata => boolean() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:hashes, :struct, MicrosoftGraph.Model.MicrosoftGraphFileHashes)
+    |> Deserializer.deserialize(:hashes, :struct, MicrosoftGraph.Model.MicrosoftGraphFileHashes)
   end
 end
-

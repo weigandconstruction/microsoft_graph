@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphBrowserSiteList do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -23,31 +23,46 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphBrowserSiteList do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :lastModifiedBy => MicrosoftGraph.Model.BrowserSiteListLastModifiedBy.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :publishedBy => MicrosoftGraph.Model.BrowserSiteListPublishedBy.t | nil,
-    :publishedDateTime => DateTime.t | nil,
-    :revision => String.t | nil,
-    :sharedCookies => [MicrosoftGraph.Model.MicrosoftGraphBrowserSharedCookie.t] | nil,
-    :sites => [MicrosoftGraph.Model.MicrosoftGraphBrowserSite.t] | nil,
-    :status => MicrosoftGraph.Model.MicrosoftGraphBrowserSiteListStatus.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :lastModifiedBy => MicrosoftGraph.Model.BrowserSiteListLastModifiedBy.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :publishedBy => MicrosoftGraph.Model.BrowserSiteListPublishedBy.t() | nil,
+          :publishedDateTime => DateTime.t() | nil,
+          :revision => String.t() | nil,
+          :sharedCookies => [MicrosoftGraph.Model.MicrosoftGraphBrowserSharedCookie.t()] | nil,
+          :sites => [MicrosoftGraph.Model.MicrosoftGraphBrowserSite.t()] | nil,
+          :status => MicrosoftGraph.Model.MicrosoftGraphBrowserSiteListStatus.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:lastModifiedBy, :struct, MicrosoftGraph.Model.BrowserSiteListLastModifiedBy)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:publishedBy, :struct, MicrosoftGraph.Model.BrowserSiteListPublishedBy)
-     |> Deserializer.deserialize(:publishedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:sharedCookies, :list, MicrosoftGraph.Model.MicrosoftGraphBrowserSharedCookie)
-     |> Deserializer.deserialize(:sites, :list, MicrosoftGraph.Model.MicrosoftGraphBrowserSite)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.MicrosoftGraphBrowserSiteListStatus)
+    |> Deserializer.deserialize(
+      :lastModifiedBy,
+      :struct,
+      MicrosoftGraph.Model.BrowserSiteListLastModifiedBy
+    )
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :publishedBy,
+      :struct,
+      MicrosoftGraph.Model.BrowserSiteListPublishedBy
+    )
+    |> Deserializer.deserialize(:publishedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :sharedCookies,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphBrowserSharedCookie
+    )
+    |> Deserializer.deserialize(:sites, :list, MicrosoftGraph.Model.MicrosoftGraphBrowserSite)
+    |> Deserializer.deserialize(
+      :status,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphBrowserSiteListStatus
+    )
   end
 end
-

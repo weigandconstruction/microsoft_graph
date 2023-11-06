@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DeviceManagementGetEffectivePermissions2XxResponseAllOfValueInner do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,15 +13,19 @@ defmodule MicrosoftGraph.Model.DeviceManagementGetEffectivePermissions2XxRespons
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :resourceActions => [MicrosoftGraph.Model.MicrosoftGraphRolePermissionResourceActionsInner.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :resourceActions =>
+            [MicrosoftGraph.Model.MicrosoftGraphRolePermissionResourceActionsInner.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:resourceActions, :list, MicrosoftGraph.Model.MicrosoftGraphRolePermissionResourceActionsInner)
+    |> Deserializer.deserialize(
+      :resourceActions,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphRolePermissionResourceActionsInner
+    )
   end
 end
-

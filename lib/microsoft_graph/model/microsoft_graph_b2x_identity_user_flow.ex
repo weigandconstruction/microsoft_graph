@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphB2xIdentityUserFlow do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -20,28 +20,60 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphB2xIdentityUserFlow do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :userFlowType => MicrosoftGraph.Model.MicrosoftGraphUserFlowType.t | nil,
-    :userFlowTypeVersion => MicrosoftGraph.Model.IdentityUserFlowUserFlowTypeVersion.t | nil,
-    :apiConnectorConfiguration => MicrosoftGraph.Model.B2xIdentityUserFlowApiConnectorConfiguration.t | nil,
-    :identityProviders => [MicrosoftGraph.Model.MicrosoftGraphIdentityProvider.t] | nil,
-    :languages => [MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguageConfiguration.t] | nil,
-    :userAttributeAssignments => [MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttributeAssignment.t] | nil,
-    :userFlowIdentityProviders => [MicrosoftGraph.Model.MicrosoftGraphIdentityProviderBase.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :userFlowType => MicrosoftGraph.Model.MicrosoftGraphUserFlowType.t() | nil,
+          :userFlowTypeVersion =>
+            MicrosoftGraph.Model.IdentityUserFlowUserFlowTypeVersion.t() | nil,
+          :apiConnectorConfiguration =>
+            MicrosoftGraph.Model.B2xIdentityUserFlowApiConnectorConfiguration.t() | nil,
+          :identityProviders => [MicrosoftGraph.Model.MicrosoftGraphIdentityProvider.t()] | nil,
+          :languages =>
+            [MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguageConfiguration.t()] | nil,
+          :userAttributeAssignments =>
+            [MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttributeAssignment.t()] | nil,
+          :userFlowIdentityProviders =>
+            [MicrosoftGraph.Model.MicrosoftGraphIdentityProviderBase.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:userFlowType, :struct, MicrosoftGraph.Model.MicrosoftGraphUserFlowType)
-     |> Deserializer.deserialize(:userFlowTypeVersion, :struct, MicrosoftGraph.Model.IdentityUserFlowUserFlowTypeVersion)
-     |> Deserializer.deserialize(:apiConnectorConfiguration, :struct, MicrosoftGraph.Model.B2xIdentityUserFlowApiConnectorConfiguration)
-     |> Deserializer.deserialize(:identityProviders, :list, MicrosoftGraph.Model.MicrosoftGraphIdentityProvider)
-     |> Deserializer.deserialize(:languages, :list, MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguageConfiguration)
-     |> Deserializer.deserialize(:userAttributeAssignments, :list, MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttributeAssignment)
-     |> Deserializer.deserialize(:userFlowIdentityProviders, :list, MicrosoftGraph.Model.MicrosoftGraphIdentityProviderBase)
+    |> Deserializer.deserialize(
+      :userFlowType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphUserFlowType
+    )
+    |> Deserializer.deserialize(
+      :userFlowTypeVersion,
+      :struct,
+      MicrosoftGraph.Model.IdentityUserFlowUserFlowTypeVersion
+    )
+    |> Deserializer.deserialize(
+      :apiConnectorConfiguration,
+      :struct,
+      MicrosoftGraph.Model.B2xIdentityUserFlowApiConnectorConfiguration
+    )
+    |> Deserializer.deserialize(
+      :identityProviders,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphIdentityProvider
+    )
+    |> Deserializer.deserialize(
+      :languages,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphUserFlowLanguageConfiguration
+    )
+    |> Deserializer.deserialize(
+      :userAttributeAssignments,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphIdentityUserFlowAttributeAssignment
+    )
+    |> Deserializer.deserialize(
+      :userFlowIdentityProviders,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphIdentityProviderBase
+    )
   end
 end
-

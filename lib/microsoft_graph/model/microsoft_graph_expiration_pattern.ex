@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphExpirationPattern do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,18 +15,21 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphExpirationPattern do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :duration => String.t | nil,
-    :endDateTime => DateTime.t | nil,
-    :type => MicrosoftGraph.Model.MicrosoftGraphExpirationPatternType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :duration => String.t() | nil,
+          :endDateTime => DateTime.t() | nil,
+          :type => MicrosoftGraph.Model.MicrosoftGraphExpirationPatternType.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:endDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:type, :struct, MicrosoftGraph.Model.MicrosoftGraphExpirationPatternType)
+    |> Deserializer.deserialize(:endDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :type,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphExpirationPatternType
+    )
   end
 end
-

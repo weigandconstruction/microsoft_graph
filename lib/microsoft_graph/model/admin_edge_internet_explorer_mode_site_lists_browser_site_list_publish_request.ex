@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.AdminEdgeInternetExplorerModeSiteListsBrowserSiteListPublishRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,17 +14,32 @@ defmodule MicrosoftGraph.Model.AdminEdgeInternetExplorerModeSiteListsBrowserSite
   ]
 
   @type t :: %__MODULE__{
-    :revision => String.t | nil,
-    :sharedCookies => [MicrosoftGraph.Model.AdminEdgeInternetExplorerModeSiteListsBrowserSiteListPublishRequestSharedCookiesInner.t] | nil,
-    :sites => [MicrosoftGraph.Model.AdminEdgeInternetExplorerModeSiteListsBrowserSiteListPublishRequestSitesInner.t] | nil
-  }
+          :revision => String.t() | nil,
+          :sharedCookies =>
+            [
+              MicrosoftGraph.Model.AdminEdgeInternetExplorerModeSiteListsBrowserSiteListPublishRequestSharedCookiesInner.t()
+            ]
+            | nil,
+          :sites =>
+            [
+              MicrosoftGraph.Model.AdminEdgeInternetExplorerModeSiteListsBrowserSiteListPublishRequestSitesInner.t()
+            ]
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:sharedCookies, :list, MicrosoftGraph.Model.AdminEdgeInternetExplorerModeSiteListsBrowserSiteListPublishRequestSharedCookiesInner)
-     |> Deserializer.deserialize(:sites, :list, MicrosoftGraph.Model.AdminEdgeInternetExplorerModeSiteListsBrowserSiteListPublishRequestSitesInner)
+    |> Deserializer.deserialize(
+      :sharedCookies,
+      :list,
+      MicrosoftGraph.Model.AdminEdgeInternetExplorerModeSiteListsBrowserSiteListPublishRequestSharedCookiesInner
+    )
+    |> Deserializer.deserialize(
+      :sites,
+      :list,
+      MicrosoftGraph.Model.AdminEdgeInternetExplorerModeSiteListsBrowserSiteListPublishRequestSitesInner
+    )
   end
 end
-

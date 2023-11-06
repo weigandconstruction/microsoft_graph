@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAppManagementPolicy do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,23 +19,30 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAppManagementPolicy do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :deletedDateTime => DateTime.t | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :appliesTo => [MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t] | nil,
-    :isEnabled => boolean() | nil,
-    :restrictions => MicrosoftGraph.Model.AppManagementPolicyRestrictions.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :deletedDateTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :appliesTo => [MicrosoftGraph.Model.MicrosoftGraphDirectoryObject.t()] | nil,
+          :isEnabled => boolean() | nil,
+          :restrictions => MicrosoftGraph.Model.AppManagementPolicyRestrictions.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:deletedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:appliesTo, :list, MicrosoftGraph.Model.MicrosoftGraphDirectoryObject)
-     |> Deserializer.deserialize(:restrictions, :struct, MicrosoftGraph.Model.AppManagementPolicyRestrictions)
+    |> Deserializer.deserialize(:deletedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :appliesTo,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDirectoryObject
+    )
+    |> Deserializer.deserialize(
+      :restrictions,
+      :struct,
+      MicrosoftGraph.Model.AppManagementPolicyRestrictions
+    )
   end
 end
-

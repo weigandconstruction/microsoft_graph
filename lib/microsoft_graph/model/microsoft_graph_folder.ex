@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphFolder do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,15 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphFolder do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :childCount => integer() | nil,
-    :view => MicrosoftGraph.Model.MicrosoftGraphFolderView.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :childCount => integer() | nil,
+          :view => MicrosoftGraph.Model.MicrosoftGraphFolderView.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:view, :struct, MicrosoftGraph.Model.MicrosoftGraphFolderView)
+    |> Deserializer.deserialize(:view, :struct, MicrosoftGraph.Model.MicrosoftGraphFolderView)
   end
 end
-

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.ChatsChatUnhideForUserRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,14 +12,17 @@ defmodule MicrosoftGraph.Model.ChatsChatUnhideForUserRequest do
   ]
 
   @type t :: %__MODULE__{
-    :user => MicrosoftGraph.Model.ChatsChatUnhideForUserRequestUser.t | nil
-  }
+          :user => MicrosoftGraph.Model.ChatsChatUnhideForUserRequestUser.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:user, :struct, MicrosoftGraph.Model.ChatsChatUnhideForUserRequestUser)
+    |> Deserializer.deserialize(
+      :user,
+      :struct,
+      MicrosoftGraph.Model.ChatsChatUnhideForUserRequestUser
+    )
   end
 end
-

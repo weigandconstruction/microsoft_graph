@@ -15,19 +15,35 @@ defmodule MicrosoftGraph.Model.SimulationEndUserNotificationSetting do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :notificationPreference => MicrosoftGraph.Model.MicrosoftGraphEndUserNotificationSettingNotificationPreference.t | nil,
-    :positiveReinforcement => MicrosoftGraph.Model.MicrosoftGraphEndUserNotificationSettingPositiveReinforcement.t | nil,
-    :settingType => MicrosoftGraph.Model.MicrosoftGraphEndUserNotificationSettingSettingType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :notificationPreference =>
+            MicrosoftGraph.Model.MicrosoftGraphEndUserNotificationSettingNotificationPreference.t()
+            | nil,
+          :positiveReinforcement =>
+            MicrosoftGraph.Model.MicrosoftGraphEndUserNotificationSettingPositiveReinforcement.t()
+            | nil,
+          :settingType =>
+            MicrosoftGraph.Model.MicrosoftGraphEndUserNotificationSettingSettingType.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:notificationPreference, :struct, MicrosoftGraph.Model.MicrosoftGraphEndUserNotificationSettingNotificationPreference)
-     |> Deserializer.deserialize(:positiveReinforcement, :struct, MicrosoftGraph.Model.MicrosoftGraphEndUserNotificationSettingPositiveReinforcement)
-     |> Deserializer.deserialize(:settingType, :struct, MicrosoftGraph.Model.MicrosoftGraphEndUserNotificationSettingSettingType)
+    |> Deserializer.deserialize(
+      :notificationPreference,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphEndUserNotificationSettingNotificationPreference
+    )
+    |> Deserializer.deserialize(
+      :positiveReinforcement,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphEndUserNotificationSettingPositiveReinforcement
+    )
+    |> Deserializer.deserialize(
+      :settingType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphEndUserNotificationSettingSettingType
+    )
   end
 end
-

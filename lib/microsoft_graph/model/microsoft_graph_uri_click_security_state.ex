@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphUriClickSecurityState do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,20 +18,19 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphUriClickSecurityState do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :clickAction => String.t | nil,
-    :clickDateTime => DateTime.t | nil,
-    :id => String.t | nil,
-    :sourceId => String.t | nil,
-    :uriDomain => String.t | nil,
-    :verdict => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :clickAction => String.t() | nil,
+          :clickDateTime => DateTime.t() | nil,
+          :id => String.t() | nil,
+          :sourceId => String.t() | nil,
+          :uriDomain => String.t() | nil,
+          :verdict => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:clickDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:clickDateTime, :datetime, nil)
   end
 end
-

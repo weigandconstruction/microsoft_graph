@@ -23,7 +23,10 @@ defmodule MicrosoftGraph.Api.MePresence do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_delete_presence(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_delete_presence(Tesla.Env.client(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_delete_presence(connection, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -61,7 +64,10 @@ defmodule MicrosoftGraph.Api.MePresence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPresence.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_get_presence(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPresence.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_get_presence(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPresence.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_get_presence(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -98,7 +104,14 @@ defmodule MicrosoftGraph.Api.MePresence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphPresence.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_update_presence(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphPresence.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphPresence.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_update_presence(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphPresence.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphPresence.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_update_presence(connection, microsoft_graph_presence, _opts \\ []) do
     request =
       %{}

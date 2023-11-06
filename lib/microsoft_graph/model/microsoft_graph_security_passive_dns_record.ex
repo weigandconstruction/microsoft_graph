@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityPassiveDnsRecord do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,25 +19,32 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityPassiveDnsRecord do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :artifact => MicrosoftGraph.Model.MicrosoftGraphSecurityArtifact.t | nil,
-    :collectedDateTime => DateTime.t | nil,
-    :firstSeenDateTime => DateTime.t | nil,
-    :lastSeenDateTime => DateTime.t | nil,
-    :parentHost => MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t | nil,
-    :recordType => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :artifact => MicrosoftGraph.Model.MicrosoftGraphSecurityArtifact.t() | nil,
+          :collectedDateTime => DateTime.t() | nil,
+          :firstSeenDateTime => DateTime.t() | nil,
+          :lastSeenDateTime => DateTime.t() | nil,
+          :parentHost => MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t() | nil,
+          :recordType => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:artifact, :struct, MicrosoftGraph.Model.MicrosoftGraphSecurityArtifact)
-     |> Deserializer.deserialize(:collectedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:firstSeenDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastSeenDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:parentHost, :struct, MicrosoftGraph.Model.MicrosoftGraphSecurityHost)
+    |> Deserializer.deserialize(
+      :artifact,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityArtifact
+    )
+    |> Deserializer.deserialize(:collectedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:firstSeenDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastSeenDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :parentHost,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityHost
+    )
   end
 end
-

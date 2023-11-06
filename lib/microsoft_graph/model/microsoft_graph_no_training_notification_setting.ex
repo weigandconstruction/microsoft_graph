@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphNoTrainingNotificationSetting do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,21 +16,42 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphNoTrainingNotificationSetting do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :notificationPreference => MicrosoftGraph.Model.MicrosoftGraphEndUserNotificationSettingNotificationPreference.t | nil,
-    :positiveReinforcement => MicrosoftGraph.Model.MicrosoftGraphEndUserNotificationSettingPositiveReinforcement.t | nil,
-    :settingType => MicrosoftGraph.Model.MicrosoftGraphEndUserNotificationSettingSettingType.t | nil,
-    :simulationNotification => MicrosoftGraph.Model.NoTrainingNotificationSettingSimulationNotification.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :notificationPreference =>
+            MicrosoftGraph.Model.MicrosoftGraphEndUserNotificationSettingNotificationPreference.t()
+            | nil,
+          :positiveReinforcement =>
+            MicrosoftGraph.Model.MicrosoftGraphEndUserNotificationSettingPositiveReinforcement.t()
+            | nil,
+          :settingType =>
+            MicrosoftGraph.Model.MicrosoftGraphEndUserNotificationSettingSettingType.t() | nil,
+          :simulationNotification =>
+            MicrosoftGraph.Model.NoTrainingNotificationSettingSimulationNotification.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:notificationPreference, :struct, MicrosoftGraph.Model.MicrosoftGraphEndUserNotificationSettingNotificationPreference)
-     |> Deserializer.deserialize(:positiveReinforcement, :struct, MicrosoftGraph.Model.MicrosoftGraphEndUserNotificationSettingPositiveReinforcement)
-     |> Deserializer.deserialize(:settingType, :struct, MicrosoftGraph.Model.MicrosoftGraphEndUserNotificationSettingSettingType)
-     |> Deserializer.deserialize(:simulationNotification, :struct, MicrosoftGraph.Model.NoTrainingNotificationSettingSimulationNotification)
+    |> Deserializer.deserialize(
+      :notificationPreference,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphEndUserNotificationSettingNotificationPreference
+    )
+    |> Deserializer.deserialize(
+      :positiveReinforcement,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphEndUserNotificationSettingPositiveReinforcement
+    )
+    |> Deserializer.deserialize(
+      :settingType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphEndUserNotificationSettingSettingType
+    )
+    |> Deserializer.deserialize(
+      :simulationNotification,
+      :struct,
+      MicrosoftGraph.Model.NoTrainingNotificationSettingSimulationNotification
+    )
   end
 end
-

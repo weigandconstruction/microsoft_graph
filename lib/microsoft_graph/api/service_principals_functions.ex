@@ -29,7 +29,10 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfServicePrincipal.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_delta(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfServicePrincipal.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec service_principals_delta(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfServicePrincipal.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def service_principals_delta(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -79,8 +82,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfFilterOperatorSchema.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_service_principal_synchronization_jobs_synchronization_job_schema_filter_operators(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.CollectionOfFilterOperatorSchema.t} | {:error, Tesla.Env.t}
-  def service_principals_service_principal_synchronization_jobs_synchronization_job_schema_filter_operators(connection, service_principal_id, synchronization_job_id, opts \\ []) do
+  @spec service_principals_service_principal_synchronization_jobs_synchronization_job_schema_filter_operators(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.CollectionOfFilterOperatorSchema.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_service_principal_synchronization_jobs_synchronization_job_schema_filter_operators(
+        connection,
+        service_principal_id,
+        synchronization_job_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -94,7 +110,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/servicePrincipals/#{service_principal_id}/synchronization/jobs/#{synchronization_job_id}/schema/filterOperators()")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/synchronization/jobs/#{synchronization_job_id}/schema/filterOperators()"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -129,8 +147,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfAttributeMappingFunctionSchema.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_service_principal_synchronization_jobs_synchronization_job_schema_functions(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfAttributeMappingFunctionSchema.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_service_principal_synchronization_jobs_synchronization_job_schema_functions(connection, service_principal_id, synchronization_job_id, opts \\ []) do
+  @spec service_principals_service_principal_synchronization_jobs_synchronization_job_schema_functions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfAttributeMappingFunctionSchema.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_service_principal_synchronization_jobs_synchronization_job_schema_functions(
+        connection,
+        service_principal_id,
+        synchronization_job_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -144,7 +175,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/servicePrincipals/#{service_principal_id}/synchronization/jobs/#{synchronization_job_id}/schema/functions()")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/synchronization/jobs/#{synchronization_job_id}/schema/functions()"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -179,8 +212,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfFilterOperatorSchema.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_service_principal_synchronization_templates_synchronization_template_schema_filter_operators(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.CollectionOfFilterOperatorSchema.t} | {:error, Tesla.Env.t}
-  def service_principals_service_principal_synchronization_templates_synchronization_template_schema_filter_operators(connection, service_principal_id, synchronization_template_id, opts \\ []) do
+  @spec service_principals_service_principal_synchronization_templates_synchronization_template_schema_filter_operators(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.CollectionOfFilterOperatorSchema.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_service_principal_synchronization_templates_synchronization_template_schema_filter_operators(
+        connection,
+        service_principal_id,
+        synchronization_template_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -194,7 +240,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/servicePrincipals/#{service_principal_id}/synchronization/templates/#{synchronization_template_id}/schema/filterOperators()")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/synchronization/templates/#{synchronization_template_id}/schema/filterOperators()"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -229,8 +277,21 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfAttributeMappingFunctionSchema.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec service_principals_service_principal_synchronization_templates_synchronization_template_schema_functions(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfAttributeMappingFunctionSchema.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def service_principals_service_principal_synchronization_templates_synchronization_template_schema_functions(connection, service_principal_id, synchronization_template_id, opts \\ []) do
+  @spec service_principals_service_principal_synchronization_templates_synchronization_template_schema_functions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfAttributeMappingFunctionSchema.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def service_principals_service_principal_synchronization_templates_synchronization_template_schema_functions(
+        connection,
+        service_principal_id,
+        synchronization_template_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -244,7 +305,9 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/servicePrincipals/#{service_principal_id}/synchronization/templates/#{synchronization_template_id}/schema/functions()")
+      |> url(
+        "/servicePrincipals/#{service_principal_id}/synchronization/templates/#{synchronization_template_id}/schema/functions()"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 

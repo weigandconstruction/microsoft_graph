@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityHostReputation do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,19 +16,23 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityHostReputation do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :classification => MicrosoftGraph.Model.MicrosoftGraphSecurityHostReputationClassification.t | nil,
-    :rules => [MicrosoftGraph.Model.HostReputationRulesInner.t] | nil,
-    :score => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :classification =>
+            MicrosoftGraph.Model.MicrosoftGraphSecurityHostReputationClassification.t() | nil,
+          :rules => [MicrosoftGraph.Model.HostReputationRulesInner.t()] | nil,
+          :score => integer() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:classification, :struct, MicrosoftGraph.Model.MicrosoftGraphSecurityHostReputationClassification)
-     |> Deserializer.deserialize(:rules, :list, MicrosoftGraph.Model.HostReputationRulesInner)
+    |> Deserializer.deserialize(
+      :classification,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityHostReputationClassification
+    )
+    |> Deserializer.deserialize(:rules, :list, MicrosoftGraph.Model.HostReputationRulesInner)
   end
 end
-

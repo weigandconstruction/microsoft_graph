@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphObjectIdentity do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphObjectIdentity do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :issuer => String.t | nil,
-    :issuerAssignedId => String.t | nil,
-    :signInType => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :issuer => String.t() | nil,
+          :issuerAssignedId => String.t() | nil,
+          :signInType => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

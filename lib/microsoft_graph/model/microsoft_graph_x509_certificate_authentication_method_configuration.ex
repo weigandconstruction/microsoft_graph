@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphX509CertificateAuthenticationMethodConfiguration do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,24 +18,51 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphX509CertificateAuthenticationMethod
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :excludeTargets => [MicrosoftGraph.Model.AuthenticationMethodConfigurationExcludeTargetsInner.t] | nil,
-    :state => MicrosoftGraph.Model.AuthenticationMethodConfigurationState.t | nil,
-    :authenticationModeConfiguration => MicrosoftGraph.Model.X509CertificateAuthenticationMethodConfigurationAuthenticationModeConfiguration.t | nil,
-    :certificateUserBindings => [MicrosoftGraph.Model.X509CertificateAuthenticationMethodConfigurationCertificateUserBindingsInner.t] | nil,
-    :includeTargets => [MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodTarget.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :excludeTargets =>
+            [MicrosoftGraph.Model.AuthenticationMethodConfigurationExcludeTargetsInner.t()] | nil,
+          :state => MicrosoftGraph.Model.AuthenticationMethodConfigurationState.t() | nil,
+          :authenticationModeConfiguration =>
+            MicrosoftGraph.Model.X509CertificateAuthenticationMethodConfigurationAuthenticationModeConfiguration.t()
+            | nil,
+          :certificateUserBindings =>
+            [
+              MicrosoftGraph.Model.X509CertificateAuthenticationMethodConfigurationCertificateUserBindingsInner.t()
+            ]
+            | nil,
+          :includeTargets =>
+            [MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodTarget.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:excludeTargets, :list, MicrosoftGraph.Model.AuthenticationMethodConfigurationExcludeTargetsInner)
-     |> Deserializer.deserialize(:state, :struct, MicrosoftGraph.Model.AuthenticationMethodConfigurationState)
-     |> Deserializer.deserialize(:authenticationModeConfiguration, :struct, MicrosoftGraph.Model.X509CertificateAuthenticationMethodConfigurationAuthenticationModeConfiguration)
-     |> Deserializer.deserialize(:certificateUserBindings, :list, MicrosoftGraph.Model.X509CertificateAuthenticationMethodConfigurationCertificateUserBindingsInner)
-     |> Deserializer.deserialize(:includeTargets, :list, MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodTarget)
+    |> Deserializer.deserialize(
+      :excludeTargets,
+      :list,
+      MicrosoftGraph.Model.AuthenticationMethodConfigurationExcludeTargetsInner
+    )
+    |> Deserializer.deserialize(
+      :state,
+      :struct,
+      MicrosoftGraph.Model.AuthenticationMethodConfigurationState
+    )
+    |> Deserializer.deserialize(
+      :authenticationModeConfiguration,
+      :struct,
+      MicrosoftGraph.Model.X509CertificateAuthenticationMethodConfigurationAuthenticationModeConfiguration
+    )
+    |> Deserializer.deserialize(
+      :certificateUserBindings,
+      :list,
+      MicrosoftGraph.Model.X509CertificateAuthenticationMethodConfigurationCertificateUserBindingsInner
+    )
+    |> Deserializer.deserialize(
+      :includeTargets,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAuthenticationMethodTarget
+    )
   end
 end
-

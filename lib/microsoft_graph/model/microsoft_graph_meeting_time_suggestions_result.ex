@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphMeetingTimeSuggestionsResult do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,23 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphMeetingTimeSuggestionsResult do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :emptySuggestionsReason => String.t | nil,
-    :meetingTimeSuggestions => [MicrosoftGraph.Model.MicrosoftGraphMeetingTimeSuggestionsResultMeetingTimeSuggestionsInner.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :emptySuggestionsReason => String.t() | nil,
+          :meetingTimeSuggestions =>
+            [
+              MicrosoftGraph.Model.MicrosoftGraphMeetingTimeSuggestionsResultMeetingTimeSuggestionsInner.t()
+            ]
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:meetingTimeSuggestions, :list, MicrosoftGraph.Model.MicrosoftGraphMeetingTimeSuggestionsResultMeetingTimeSuggestionsInner)
+    |> Deserializer.deserialize(
+      :meetingTimeSuggestions,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphMeetingTimeSuggestionsResultMeetingTimeSuggestionsInner
+    )
   end
 end
-

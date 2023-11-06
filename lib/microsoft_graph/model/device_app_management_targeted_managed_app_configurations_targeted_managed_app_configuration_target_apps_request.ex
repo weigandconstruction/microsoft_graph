@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DeviceAppManagementTargetedManagedAppConfigurationsTargetedManagedAppConfigurationTargetAppsRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,16 +13,29 @@ defmodule MicrosoftGraph.Model.DeviceAppManagementTargetedManagedAppConfiguratio
   ]
 
   @type t :: %__MODULE__{
-    :appGroupType => MicrosoftGraph.Model.DeviceAppManagementTargetedManagedAppConfigurationsTargetedManagedAppConfigurationTargetAppsRequestAppGroupType.t | nil,
-    :apps => [MicrosoftGraph.Model.DeviceAppManagementManagedAppRegistrationsManagedAppRegistrationIntendedPoliciesManagedAppPolicyTargetAppsRequestAppsInner.t] | nil
-  }
+          :appGroupType =>
+            MicrosoftGraph.Model.DeviceAppManagementTargetedManagedAppConfigurationsTargetedManagedAppConfigurationTargetAppsRequestAppGroupType.t()
+            | nil,
+          :apps =>
+            [
+              MicrosoftGraph.Model.DeviceAppManagementManagedAppRegistrationsManagedAppRegistrationIntendedPoliciesManagedAppPolicyTargetAppsRequestAppsInner.t()
+            ]
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:appGroupType, :struct, MicrosoftGraph.Model.DeviceAppManagementTargetedManagedAppConfigurationsTargetedManagedAppConfigurationTargetAppsRequestAppGroupType)
-     |> Deserializer.deserialize(:apps, :list, MicrosoftGraph.Model.DeviceAppManagementManagedAppRegistrationsManagedAppRegistrationIntendedPoliciesManagedAppPolicyTargetAppsRequestAppsInner)
+    |> Deserializer.deserialize(
+      :appGroupType,
+      :struct,
+      MicrosoftGraph.Model.DeviceAppManagementTargetedManagedAppConfigurationsTargetedManagedAppConfigurationTargetAppsRequestAppGroupType
+    )
+    |> Deserializer.deserialize(
+      :apps,
+      :list,
+      MicrosoftGraph.Model.DeviceAppManagementManagedAppRegistrationsManagedAppRegistrationIntendedPoliciesManagedAppPolicyTargetAppsRequestAppsInner
+    )
   end
 end
-

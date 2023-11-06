@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphLookupColumn do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,16 +17,15 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphLookupColumn do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :allowMultipleValues => boolean() | nil,
-    :allowUnlimitedLength => boolean() | nil,
-    :columnName => String.t | nil,
-    :listId => String.t | nil,
-    :primaryLookupColumnId => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :allowMultipleValues => boolean() | nil,
+          :allowUnlimitedLength => boolean() | nil,
+          :columnName => String.t() | nil,
+          :listId => String.t() | nil,
+          :primaryLookupColumnId => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

@@ -23,7 +23,10 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_delete_threat_intelligence(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_delete_threat_intelligence(Tesla.Env.client(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_delete_threat_intelligence(connection, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -60,7 +63,10 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityThreatIntelligence.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_get_threat_intelligence(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityThreatIntelligence.t} | {:error, Tesla.Env.t}
+  @spec security_get_threat_intelligence(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityThreatIntelligence.t()}
+          | {:error, Tesla.Env.t()}
   def security_get_threat_intelligence(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -100,8 +106,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityArtifact.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_article_indicators_get_artifact(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityArtifact.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_article_indicators_get_artifact(connection, article_indicator_id, opts \\ []) do
+  @spec security_threat_intelligence_article_indicators_get_artifact(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityArtifact.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_article_indicators_get_artifact(
+        connection,
+        article_indicator_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -138,7 +155,13 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_article_indicators_get_count_c9c7(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_article_indicators_get_count_c9c7(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_article_indicators_get_count_c9c7(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -176,7 +199,10 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_articles_get_count3702(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_articles_get_count3702(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_articles_get_count3702(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -217,8 +243,21 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityArticleIndicator.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_articles_get_indicators(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityArticleIndicator.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_articles_get_indicators(connection, article_id, article_indicator_id, opts \\ []) do
+  @spec security_threat_intelligence_articles_get_indicators(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityArticleIndicator.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_articles_get_indicators(
+        connection,
+        article_id,
+        article_indicator_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -227,7 +266,9 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
     request =
       %{}
       |> method(:get)
-      |> url("/security/threatIntelligence/articles/#{article_id}/indicators/#{article_indicator_id}")
+      |> url(
+        "/security/threatIntelligence/articles/#{article_id}/indicators/#{article_indicator_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -256,8 +297,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_articles_indicators_get_count1d6c(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_articles_indicators_get_count1d6c(connection, article_id, opts \\ []) do
+  @spec security_threat_intelligence_articles_indicators_get_count1d6c(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_articles_indicators_get_count1d6c(
+        connection,
+        article_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -302,7 +354,14 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityArticleIndicatorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_articles_list_indicators(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityArticleIndicatorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_articles_list_indicators(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityArticleIndicatorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_articles_list_indicators(connection, article_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -345,8 +404,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityArticleIndicator.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_create_article_indicators(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphSecurityArticleIndicator.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityArticleIndicator.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_create_article_indicators(connection, microsoft_graph_security_article_indicator, _opts \\ []) do
+  @spec security_threat_intelligence_create_article_indicators(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphSecurityArticleIndicator.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityArticleIndicator.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_create_article_indicators(
+        connection,
+        microsoft_graph_security_article_indicator,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -377,8 +447,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityArticle.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_create_articles(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphSecurityArticle.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityArticle.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_create_articles(connection, microsoft_graph_security_article, _opts \\ []) do
+  @spec security_threat_intelligence_create_articles(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphSecurityArticle.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityArticle.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_create_articles(
+        connection,
+        microsoft_graph_security_article,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -409,8 +490,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostComponent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_create_host_components(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphSecurityHostComponent.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostComponent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_create_host_components(connection, microsoft_graph_security_host_component, _opts \\ []) do
+  @spec security_threat_intelligence_create_host_components(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphSecurityHostComponent.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostComponent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_create_host_components(
+        connection,
+        microsoft_graph_security_host_component,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -441,8 +533,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostCookie.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_create_host_cookies(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphSecurityHostCookie.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostCookie.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_create_host_cookies(connection, microsoft_graph_security_host_cookie, _opts \\ []) do
+  @spec security_threat_intelligence_create_host_cookies(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphSecurityHostCookie.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostCookie.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_create_host_cookies(
+        connection,
+        microsoft_graph_security_host_cookie,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -473,8 +576,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPair.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_create_host_pairs(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPair.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPair.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_create_host_pairs(connection, microsoft_graph_security_host_pair, _opts \\ []) do
+  @spec security_threat_intelligence_create_host_pairs(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphSecurityHostPair.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPair.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_create_host_pairs(
+        connection,
+        microsoft_graph_security_host_pair,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -505,8 +619,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPort.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_create_host_ports(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPort.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPort.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_create_host_ports(connection, microsoft_graph_security_host_port, _opts \\ []) do
+  @spec security_threat_intelligence_create_host_ports(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphSecurityHostPort.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPort.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_create_host_ports(
+        connection,
+        microsoft_graph_security_host_port,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -537,8 +662,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostSslCertificate.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_create_host_ssl_certificates(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphSecurityHostSslCertificate.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostSslCertificate.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_create_host_ssl_certificates(connection, microsoft_graph_security_host_ssl_certificate, _opts \\ []) do
+  @spec security_threat_intelligence_create_host_ssl_certificates(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphSecurityHostSslCertificate.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostSslCertificate.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_create_host_ssl_certificates(
+        connection,
+        microsoft_graph_security_host_ssl_certificate,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -569,8 +705,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostTracker.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_create_host_trackers(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphSecurityHostTracker.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostTracker.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_create_host_trackers(connection, microsoft_graph_security_host_tracker, _opts \\ []) do
+  @spec security_threat_intelligence_create_host_trackers(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphSecurityHostTracker.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostTracker.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_create_host_trackers(
+        connection,
+        microsoft_graph_security_host_tracker,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -601,8 +748,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_create_hosts(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_create_hosts(connection, microsoft_graph_security_host, _opts \\ []) do
+  @spec security_threat_intelligence_create_hosts(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_create_hosts(
+        connection,
+        microsoft_graph_security_host,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -633,8 +791,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfile.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_create_intel_profiles(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfile.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfile.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_create_intel_profiles(connection, microsoft_graph_security_intelligence_profile, _opts \\ []) do
+  @spec security_threat_intelligence_create_intel_profiles(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfile.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfile.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_create_intel_profiles(
+        connection,
+        microsoft_graph_security_intelligence_profile,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -665,8 +834,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfileIndicator.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_create_intelligence_profile_indicators(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfileIndicator.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfileIndicator.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_create_intelligence_profile_indicators(connection, microsoft_graph_security_intelligence_profile_indicator, _opts \\ []) do
+  @spec security_threat_intelligence_create_intelligence_profile_indicators(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfileIndicator.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfileIndicator.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_create_intelligence_profile_indicators(
+        connection,
+        microsoft_graph_security_intelligence_profile_indicator,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -697,8 +877,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityPassiveDnsRecord.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_create_passive_dns_records(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphSecurityPassiveDnsRecord.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityPassiveDnsRecord.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_create_passive_dns_records(connection, microsoft_graph_security_passive_dns_record, _opts \\ []) do
+  @spec security_threat_intelligence_create_passive_dns_records(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphSecurityPassiveDnsRecord.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityPassiveDnsRecord.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_create_passive_dns_records(
+        connection,
+        microsoft_graph_security_passive_dns_record,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -729,8 +920,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecuritySslCertificate.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_create_ssl_certificates(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphSecuritySslCertificate.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecuritySslCertificate.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_create_ssl_certificates(connection, microsoft_graph_security_ssl_certificate, _opts \\ []) do
+  @spec security_threat_intelligence_create_ssl_certificates(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphSecuritySslCertificate.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecuritySslCertificate.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_create_ssl_certificates(
+        connection,
+        microsoft_graph_security_ssl_certificate,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -761,8 +963,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecuritySubdomain.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_create_subdomains(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphSecuritySubdomain.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecuritySubdomain.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_create_subdomains(connection, microsoft_graph_security_subdomain, _opts \\ []) do
+  @spec security_threat_intelligence_create_subdomains(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphSecuritySubdomain.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecuritySubdomain.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_create_subdomains(
+        connection,
+        microsoft_graph_security_subdomain,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -793,8 +1006,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityVulnerability.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_create_vulnerabilities(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphSecurityVulnerability.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityVulnerability.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_create_vulnerabilities(connection, microsoft_graph_security_vulnerability, _opts \\ []) do
+  @spec security_threat_intelligence_create_vulnerabilities(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphSecurityVulnerability.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityVulnerability.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_create_vulnerabilities(
+        connection,
+        microsoft_graph_security_vulnerability,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -825,8 +1049,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityWhoisHistoryRecord.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_create_whois_history_records(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphSecurityWhoisHistoryRecord.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityWhoisHistoryRecord.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_create_whois_history_records(connection, microsoft_graph_security_whois_history_record, _opts \\ []) do
+  @spec security_threat_intelligence_create_whois_history_records(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphSecurityWhoisHistoryRecord.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityWhoisHistoryRecord.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_create_whois_history_records(
+        connection,
+        microsoft_graph_security_whois_history_record,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -857,8 +1092,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityWhoisRecord.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_create_whois_records(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphSecurityWhoisRecord.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityWhoisRecord.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_create_whois_records(connection, microsoft_graph_security_whois_record, _opts \\ []) do
+  @spec security_threat_intelligence_create_whois_records(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphSecurityWhoisRecord.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityWhoisRecord.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_create_whois_records(
+        connection,
+        microsoft_graph_security_whois_record,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -890,8 +1136,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_delete_article_indicators(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_delete_article_indicators(connection, article_indicator_id, opts \\ []) do
+  @spec security_threat_intelligence_delete_article_indicators(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_delete_article_indicators(
+        connection,
+        article_indicator_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -927,7 +1184,10 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_delete_articles(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_delete_articles(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_delete_articles(connection, article_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -964,8 +1224,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_delete_host_components(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_delete_host_components(connection, host_component_id, opts \\ []) do
+  @spec security_threat_intelligence_delete_host_components(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_delete_host_components(
+        connection,
+        host_component_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1001,7 +1272,14 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_delete_host_cookies(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_delete_host_cookies(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_delete_host_cookies(connection, host_cookie_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -1038,7 +1316,10 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_delete_host_pairs(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_delete_host_pairs(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_delete_host_pairs(connection, host_pair_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -1075,7 +1356,10 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_delete_host_ports(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_delete_host_ports(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_delete_host_ports(connection, host_port_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -1112,8 +1396,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_delete_host_ssl_certificates(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_delete_host_ssl_certificates(connection, host_ssl_certificate_id, opts \\ []) do
+  @spec security_threat_intelligence_delete_host_ssl_certificates(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_delete_host_ssl_certificates(
+        connection,
+        host_ssl_certificate_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1149,7 +1444,14 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_delete_host_trackers(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_delete_host_trackers(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_delete_host_trackers(connection, host_tracker_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -1186,7 +1488,10 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_delete_hosts(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_delete_hosts(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_delete_hosts(connection, host_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -1223,8 +1528,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_delete_intel_profiles(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_delete_intel_profiles(connection, intelligence_profile_id, opts \\ []) do
+  @spec security_threat_intelligence_delete_intel_profiles(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_delete_intel_profiles(
+        connection,
+        intelligence_profile_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1260,8 +1576,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_delete_intelligence_profile_indicators(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_delete_intelligence_profile_indicators(connection, intelligence_profile_indicator_id, opts \\ []) do
+  @spec security_threat_intelligence_delete_intelligence_profile_indicators(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_delete_intelligence_profile_indicators(
+        connection,
+        intelligence_profile_indicator_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1269,7 +1596,9 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
     request =
       %{}
       |> method(:delete)
-      |> url("/security/threatIntelligence/intelligenceProfileIndicators/#{intelligence_profile_indicator_id}")
+      |> url(
+        "/security/threatIntelligence/intelligenceProfileIndicators/#{intelligence_profile_indicator_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1297,8 +1626,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_delete_passive_dns_records(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_delete_passive_dns_records(connection, passive_dns_record_id, opts \\ []) do
+  @spec security_threat_intelligence_delete_passive_dns_records(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_delete_passive_dns_records(
+        connection,
+        passive_dns_record_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1334,8 +1674,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_delete_ssl_certificates(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_delete_ssl_certificates(connection, ssl_certificate_id, opts \\ []) do
+  @spec security_threat_intelligence_delete_ssl_certificates(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_delete_ssl_certificates(
+        connection,
+        ssl_certificate_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1371,7 +1722,10 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_delete_subdomains(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_delete_subdomains(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_delete_subdomains(connection, subdomain_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -1408,8 +1762,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_delete_vulnerabilities(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_delete_vulnerabilities(connection, vulnerability_id, opts \\ []) do
+  @spec security_threat_intelligence_delete_vulnerabilities(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_delete_vulnerabilities(
+        connection,
+        vulnerability_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1445,8 +1810,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_delete_whois_history_records(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_delete_whois_history_records(connection, whois_history_record_id, opts \\ []) do
+  @spec security_threat_intelligence_delete_whois_history_records(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_delete_whois_history_records(
+        connection,
+        whois_history_record_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -1482,7 +1858,14 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_delete_whois_records(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_delete_whois_records(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_delete_whois_records(connection, whois_record_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -1521,8 +1904,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityArticleIndicator.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_get_article_indicators(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityArticleIndicator.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_get_article_indicators(connection, article_indicator_id, opts \\ []) do
+  @spec security_threat_intelligence_get_article_indicators(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityArticleIndicator.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_get_article_indicators(
+        connection,
+        article_indicator_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1561,7 +1955,10 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityArticle.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_get_articles(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityArticle.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_get_articles(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityArticle.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_get_articles(connection, article_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -1601,7 +1998,14 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostComponent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_get_host_components(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostComponent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_get_host_components(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostComponent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_get_host_components(connection, host_component_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -1641,7 +2045,10 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostCookie.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_get_host_cookies(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostCookie.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_get_host_cookies(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostCookie.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_get_host_cookies(connection, host_cookie_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -1681,7 +2088,10 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPair.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_get_host_pairs(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPair.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_get_host_pairs(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPair.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_get_host_pairs(connection, host_pair_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -1721,7 +2131,10 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPort.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_get_host_ports(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPort.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_get_host_ports(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPort.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_get_host_ports(connection, host_port_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -1761,8 +2174,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostSslCertificate.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_get_host_ssl_certificates(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostSslCertificate.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_get_host_ssl_certificates(connection, host_ssl_certificate_id, opts \\ []) do
+  @spec security_threat_intelligence_get_host_ssl_certificates(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostSslCertificate.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_get_host_ssl_certificates(
+        connection,
+        host_ssl_certificate_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1801,7 +2225,10 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostTracker.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_get_host_trackers(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostTracker.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_get_host_trackers(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostTracker.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_get_host_trackers(connection, host_tracker_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -1841,7 +2268,10 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_get_hosts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_get_hosts(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_get_hosts(connection, host_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -1881,8 +2311,15 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfile.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_get_intel_profiles(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfile.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_get_intel_profiles(connection, intelligence_profile_id, opts \\ []) do
+  @spec security_threat_intelligence_get_intel_profiles(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfile.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_get_intel_profiles(
+        connection,
+        intelligence_profile_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1921,8 +2358,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfileIndicator.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_get_intelligence_profile_indicators(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfileIndicator.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_get_intelligence_profile_indicators(connection, intelligence_profile_indicator_id, opts \\ []) do
+  @spec security_threat_intelligence_get_intelligence_profile_indicators(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfileIndicator.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_get_intelligence_profile_indicators(
+        connection,
+        intelligence_profile_indicator_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -1931,7 +2379,9 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
     request =
       %{}
       |> method(:get)
-      |> url("/security/threatIntelligence/intelligenceProfileIndicators/#{intelligence_profile_indicator_id}")
+      |> url(
+        "/security/threatIntelligence/intelligenceProfileIndicators/#{intelligence_profile_indicator_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1961,8 +2411,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityPassiveDnsRecord.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_get_passive_dns_records(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityPassiveDnsRecord.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_get_passive_dns_records(connection, passive_dns_record_id, opts \\ []) do
+  @spec security_threat_intelligence_get_passive_dns_records(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityPassiveDnsRecord.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_get_passive_dns_records(
+        connection,
+        passive_dns_record_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2001,8 +2462,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecuritySslCertificate.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_get_ssl_certificates(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecuritySslCertificate.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_get_ssl_certificates(connection, ssl_certificate_id, opts \\ []) do
+  @spec security_threat_intelligence_get_ssl_certificates(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecuritySslCertificate.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_get_ssl_certificates(
+        connection,
+        ssl_certificate_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2041,7 +2513,10 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecuritySubdomain.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_get_subdomains(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecuritySubdomain.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_get_subdomains(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecuritySubdomain.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_get_subdomains(connection, subdomain_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -2081,7 +2556,14 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityVulnerability.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_get_vulnerabilities(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityVulnerability.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_get_vulnerabilities(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityVulnerability.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_get_vulnerabilities(connection, vulnerability_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -2121,8 +2603,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityWhoisHistoryRecord.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_get_whois_history_records(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityWhoisHistoryRecord.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_get_whois_history_records(connection, whois_history_record_id, opts \\ []) do
+  @spec security_threat_intelligence_get_whois_history_records(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityWhoisHistoryRecord.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_get_whois_history_records(
+        connection,
+        whois_history_record_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2161,7 +2654,10 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityWhoisRecord.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_get_whois_records(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityWhoisRecord.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_get_whois_records(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityWhoisRecord.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_get_whois_records(connection, whois_record_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -2199,7 +2695,10 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_host_components_get_count3ca4(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_host_components_get_count3ca4(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_host_components_get_count3ca4(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -2239,8 +2738,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_host_components_get_host(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_host_components_get_host(connection, host_component_id, opts \\ []) do
+  @spec security_threat_intelligence_host_components_get_host(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_host_components_get_host(
+        connection,
+        host_component_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2277,7 +2787,10 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_host_cookies_get_count_ca74(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_host_cookies_get_count_ca74(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_host_cookies_get_count_ca74(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -2317,7 +2830,14 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_host_cookies_get_host(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_host_cookies_get_host(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_host_cookies_get_host(connection, host_cookie_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -2357,7 +2877,14 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_host_pairs_get_child_host(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_host_pairs_get_child_host(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_host_pairs_get_child_host(connection, host_pair_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -2395,7 +2922,10 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_host_pairs_get_count6e30(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_host_pairs_get_count6e30(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_host_pairs_get_count6e30(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -2435,8 +2965,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_host_pairs_get_parent_host(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_host_pairs_get_parent_host(connection, host_pair_id, opts \\ []) do
+  @spec security_threat_intelligence_host_pairs_get_parent_host(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_host_pairs_get_parent_host(
+        connection,
+        host_pair_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2473,7 +3014,10 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_host_ports_get_count5189(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_host_ports_get_count5189(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_host_ports_get_count5189(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -2513,7 +3057,14 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_host_ports_get_host(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_host_ports_get_host(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_host_ports_get_host(connection, host_port_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -2553,8 +3104,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecuritySslCertificate.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_host_ports_get_most_recent_ssl_certificate(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecuritySslCertificate.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_host_ports_get_most_recent_ssl_certificate(connection, host_port_id, opts \\ []) do
+  @spec security_threat_intelligence_host_ports_get_most_recent_ssl_certificate(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecuritySslCertificate.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_host_ports_get_most_recent_ssl_certificate(
+        connection,
+        host_port_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2591,7 +3153,13 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_host_ssl_certificates_get_count_a40b(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_host_ssl_certificates_get_count_a40b(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_host_ssl_certificates_get_count_a40b(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -2631,8 +3199,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_host_ssl_certificates_get_host(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_host_ssl_certificates_get_host(connection, host_ssl_certificate_id, opts \\ []) do
+  @spec security_threat_intelligence_host_ssl_certificates_get_host(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_host_ssl_certificates_get_host(
+        connection,
+        host_ssl_certificate_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2671,8 +3250,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecuritySslCertificate.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_host_ssl_certificates_get_ssl_certificate(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecuritySslCertificate.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_host_ssl_certificates_get_ssl_certificate(connection, host_ssl_certificate_id, opts \\ []) do
+  @spec security_threat_intelligence_host_ssl_certificates_get_ssl_certificate(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecuritySslCertificate.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_host_ssl_certificates_get_ssl_certificate(
+        connection,
+        host_ssl_certificate_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2681,7 +3271,9 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
     request =
       %{}
       |> method(:get)
-      |> url("/security/threatIntelligence/hostSslCertificates/#{host_ssl_certificate_id}/sslCertificate")
+      |> url(
+        "/security/threatIntelligence/hostSslCertificates/#{host_ssl_certificate_id}/sslCertificate"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -2709,7 +3301,10 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_host_trackers_get_count1b5a(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_host_trackers_get_count1b5a(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_host_trackers_get_count1b5a(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -2749,7 +3344,14 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_host_trackers_get_host(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_host_trackers_get_host(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_host_trackers_get_host(connection, host_tracker_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -2788,8 +3390,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_hosts_child_host_pairs_get_count_d960(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_hosts_child_host_pairs_get_count_d960(connection, host_id, opts \\ []) do
+  @spec security_threat_intelligence_hosts_child_host_pairs_get_count_d960(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_hosts_child_host_pairs_get_count_d960(
+        connection,
+        host_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -2827,7 +3440,14 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_hosts_components_get_count3f6d(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_hosts_components_get_count3f6d(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_hosts_components_get_count3f6d(connection, host_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -2866,7 +3486,14 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_hosts_cookies_get_count_d607(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_hosts_cookies_get_count_d607(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_hosts_cookies_get_count_d607(connection, host_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -2904,7 +3531,14 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_hosts_delete_reputation(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_hosts_delete_reputation(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_hosts_delete_reputation(connection, host_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -2944,8 +3578,21 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPair.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_hosts_get_child_host_pairs(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPair.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_hosts_get_child_host_pairs(connection, host_id, host_pair_id, opts \\ []) do
+  @spec security_threat_intelligence_hosts_get_child_host_pairs(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPair.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_hosts_get_child_host_pairs(
+        connection,
+        host_id,
+        host_pair_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -2985,8 +3632,21 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostComponent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_hosts_get_components(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostComponent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_hosts_get_components(connection, host_id, host_component_id, opts \\ []) do
+  @spec security_threat_intelligence_hosts_get_components(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostComponent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_hosts_get_components(
+        connection,
+        host_id,
+        host_component_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3026,8 +3686,21 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostCookie.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_hosts_get_cookies(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostCookie.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_hosts_get_cookies(connection, host_id, host_cookie_id, opts \\ []) do
+  @spec security_threat_intelligence_hosts_get_cookies(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostCookie.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_hosts_get_cookies(
+        connection,
+        host_id,
+        host_cookie_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3064,7 +3737,10 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_hosts_get_count5d36(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_hosts_get_count5d36(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_hosts_get_count5d36(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -3105,8 +3781,21 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPair.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_hosts_get_host_pairs(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPair.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_hosts_get_host_pairs(connection, host_id, host_pair_id, opts \\ []) do
+  @spec security_threat_intelligence_hosts_get_host_pairs(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPair.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_hosts_get_host_pairs(
+        connection,
+        host_id,
+        host_pair_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3146,8 +3835,21 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPair.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_hosts_get_parent_host_pairs(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPair.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_hosts_get_parent_host_pairs(connection, host_id, host_pair_id, opts \\ []) do
+  @spec security_threat_intelligence_hosts_get_parent_host_pairs(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPair.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_hosts_get_parent_host_pairs(
+        connection,
+        host_id,
+        host_pair_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3187,8 +3889,21 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityPassiveDnsRecord.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_hosts_get_passive_dns(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityPassiveDnsRecord.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_hosts_get_passive_dns(connection, host_id, passive_dns_record_id, opts \\ []) do
+  @spec security_threat_intelligence_hosts_get_passive_dns(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityPassiveDnsRecord.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_hosts_get_passive_dns(
+        connection,
+        host_id,
+        passive_dns_record_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3228,8 +3943,21 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityPassiveDnsRecord.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_hosts_get_passive_dns_reverse(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityPassiveDnsRecord.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_hosts_get_passive_dns_reverse(connection, host_id, passive_dns_record_id, opts \\ []) do
+  @spec security_threat_intelligence_hosts_get_passive_dns_reverse(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityPassiveDnsRecord.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_hosts_get_passive_dns_reverse(
+        connection,
+        host_id,
+        passive_dns_record_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3238,7 +3966,9 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
     request =
       %{}
       |> method(:get)
-      |> url("/security/threatIntelligence/hosts/#{host_id}/passiveDnsReverse/#{passive_dns_record_id}")
+      |> url(
+        "/security/threatIntelligence/hosts/#{host_id}/passiveDnsReverse/#{passive_dns_record_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3269,7 +3999,15 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPort.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_hosts_get_ports(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPort.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_hosts_get_ports(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPort.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_hosts_get_ports(connection, host_id, host_port_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -3309,7 +4047,14 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostReputation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_hosts_get_reputation(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostReputation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_hosts_get_reputation(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostReputation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_hosts_get_reputation(connection, host_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -3350,8 +4095,21 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostSslCertificate.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_hosts_get_ssl_certificates(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostSslCertificate.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_hosts_get_ssl_certificates(connection, host_id, host_ssl_certificate_id, opts \\ []) do
+  @spec security_threat_intelligence_hosts_get_ssl_certificates(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostSslCertificate.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_hosts_get_ssl_certificates(
+        connection,
+        host_id,
+        host_ssl_certificate_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3360,7 +4118,9 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
     request =
       %{}
       |> method(:get)
-      |> url("/security/threatIntelligence/hosts/#{host_id}/sslCertificates/#{host_ssl_certificate_id}")
+      |> url(
+        "/security/threatIntelligence/hosts/#{host_id}/sslCertificates/#{host_ssl_certificate_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -3391,8 +4151,21 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecuritySubdomain.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_hosts_get_subdomains(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecuritySubdomain.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_hosts_get_subdomains(connection, host_id, subdomain_id, opts \\ []) do
+  @spec security_threat_intelligence_hosts_get_subdomains(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecuritySubdomain.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_hosts_get_subdomains(
+        connection,
+        host_id,
+        subdomain_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3432,8 +4205,21 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostTracker.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_hosts_get_trackers(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostTracker.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_hosts_get_trackers(connection, host_id, host_tracker_id, opts \\ []) do
+  @spec security_threat_intelligence_hosts_get_trackers(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostTracker.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_hosts_get_trackers(
+        connection,
+        host_id,
+        host_tracker_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -3472,7 +4258,10 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityWhoisRecord.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_hosts_get_whois(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityWhoisRecord.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_hosts_get_whois(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityWhoisRecord.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_hosts_get_whois(connection, host_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -3511,8 +4300,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_hosts_host_pairs_get_count_e637(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_hosts_host_pairs_get_count_e637(connection, host_id, opts \\ []) do
+  @spec security_threat_intelligence_hosts_host_pairs_get_count_e637(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_hosts_host_pairs_get_count_e637(
+        connection,
+        host_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -3557,7 +4357,14 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPairCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_hosts_list_child_host_pairs(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPairCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_hosts_list_child_host_pairs(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPairCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_hosts_list_child_host_pairs(connection, host_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -3609,7 +4416,14 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostComponentCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_hosts_list_components(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostComponentCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_hosts_list_components(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostComponentCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_hosts_list_components(connection, host_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -3661,7 +4475,10 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostCookieCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_hosts_list_cookies(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostCookieCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_hosts_list_cookies(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostCookieCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_hosts_list_cookies(connection, host_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -3713,7 +4530,14 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPairCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_hosts_list_host_pairs(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPairCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_hosts_list_host_pairs(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPairCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_hosts_list_host_pairs(connection, host_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -3765,7 +4589,14 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPairCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_hosts_list_parent_host_pairs(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPairCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_hosts_list_parent_host_pairs(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPairCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_hosts_list_parent_host_pairs(connection, host_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -3817,7 +4648,15 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityPassiveDnsRecordCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_hosts_list_passive_dns(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityPassiveDnsRecordCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_hosts_list_passive_dns(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphSecurityPassiveDnsRecordCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_hosts_list_passive_dns(connection, host_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -3869,7 +4708,15 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityPassiveDnsRecordCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_hosts_list_passive_dns_reverse(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityPassiveDnsRecordCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_hosts_list_passive_dns_reverse(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphSecurityPassiveDnsRecordCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_hosts_list_passive_dns_reverse(connection, host_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -3921,7 +4768,10 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPortCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_hosts_list_ports(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPortCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_hosts_list_ports(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPortCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_hosts_list_ports(connection, host_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -3973,7 +4823,15 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostSslCertificateCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_hosts_list_ssl_certificates(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostSslCertificateCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_hosts_list_ssl_certificates(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphSecurityHostSslCertificateCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_hosts_list_ssl_certificates(connection, host_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -4025,7 +4883,14 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecuritySubdomainCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_hosts_list_subdomains(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecuritySubdomainCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_hosts_list_subdomains(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecuritySubdomainCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_hosts_list_subdomains(connection, host_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -4077,7 +4942,14 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostTrackerCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_hosts_list_trackers(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostTrackerCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_hosts_list_trackers(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostTrackerCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_hosts_list_trackers(connection, host_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -4122,8 +4994,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_hosts_parent_host_pairs_get_count51b4(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_hosts_parent_host_pairs_get_count51b4(connection, host_id, opts \\ []) do
+  @spec security_threat_intelligence_hosts_parent_host_pairs_get_count51b4(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_hosts_parent_host_pairs_get_count51b4(
+        connection,
+        host_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -4161,8 +5044,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_hosts_passive_dns_get_count7c2c(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_hosts_passive_dns_get_count7c2c(connection, host_id, opts \\ []) do
+  @spec security_threat_intelligence_hosts_passive_dns_get_count7c2c(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_hosts_passive_dns_get_count7c2c(
+        connection,
+        host_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -4200,8 +5094,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_hosts_passive_dns_reverse_get_count0421(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_hosts_passive_dns_reverse_get_count0421(connection, host_id, opts \\ []) do
+  @spec security_threat_intelligence_hosts_passive_dns_reverse_get_count0421(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_hosts_passive_dns_reverse_get_count0421(
+        connection,
+        host_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -4239,7 +5144,14 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_hosts_ports_get_count_af86(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_hosts_ports_get_count_af86(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_hosts_ports_get_count_af86(connection, host_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -4278,8 +5190,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_hosts_ssl_certificates_get_count_eba7(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_hosts_ssl_certificates_get_count_eba7(connection, host_id, opts \\ []) do
+  @spec security_threat_intelligence_hosts_ssl_certificates_get_count_eba7(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_hosts_ssl_certificates_get_count_eba7(
+        connection,
+        host_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -4317,7 +5240,14 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_hosts_subdomains_get_count67a8(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_hosts_subdomains_get_count67a8(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_hosts_subdomains_get_count67a8(connection, host_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -4356,7 +5286,14 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_hosts_trackers_get_count_b20f(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_hosts_trackers_get_count_b20f(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_hosts_trackers_get_count_b20f(connection, host_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -4394,8 +5331,21 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostReputation.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_hosts_update_reputation(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphSecurityHostReputation.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostReputation.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_hosts_update_reputation(connection, host_id, microsoft_graph_security_host_reputation, _opts \\ []) do
+  @spec security_threat_intelligence_hosts_update_reputation(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSecurityHostReputation.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostReputation.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_hosts_update_reputation(
+        connection,
+        host_id,
+        microsoft_graph_security_host_reputation,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -4427,7 +5377,10 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_intel_profiles_get_count4b06(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_intel_profiles_get_count4b06(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_intel_profiles_get_count4b06(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -4468,8 +5421,21 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfileIndicator.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_intel_profiles_get_indicators(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfileIndicator.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_intel_profiles_get_indicators(connection, intelligence_profile_id, intelligence_profile_indicator_id, opts \\ []) do
+  @spec security_threat_intelligence_intel_profiles_get_indicators(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfileIndicator.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_intel_profiles_get_indicators(
+        connection,
+        intelligence_profile_id,
+        intelligence_profile_indicator_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -4478,7 +5444,9 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
     request =
       %{}
       |> method(:get)
-      |> url("/security/threatIntelligence/intelProfiles/#{intelligence_profile_id}/indicators/#{intelligence_profile_indicator_id}")
+      |> url(
+        "/security/threatIntelligence/intelProfiles/#{intelligence_profile_id}/indicators/#{intelligence_profile_indicator_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4507,8 +5475,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_intel_profiles_indicators_get_count_a1bc(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_intel_profiles_indicators_get_count_a1bc(connection, intelligence_profile_id, opts \\ []) do
+  @spec security_threat_intelligence_intel_profiles_indicators_get_count_a1bc(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_intel_profiles_indicators_get_count_a1bc(
+        connection,
+        intelligence_profile_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -4517,7 +5496,9 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
     request =
       %{}
       |> method(:get)
-      |> url("/security/threatIntelligence/intelProfiles/#{intelligence_profile_id}/indicators/$count")
+      |> url(
+        "/security/threatIntelligence/intelProfiles/#{intelligence_profile_id}/indicators/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4553,8 +5534,20 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfileIndicatorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_intel_profiles_list_indicators(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfileIndicatorCollectionResponse.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_intel_profiles_list_indicators(connection, intelligence_profile_id, opts \\ []) do
+  @spec security_threat_intelligence_intel_profiles_list_indicators(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfileIndicatorCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_intel_profiles_list_indicators(
+        connection,
+        intelligence_profile_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -4576,7 +5569,8 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfileIndicatorCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfileIndicatorCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -4599,8 +5593,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityArtifact.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_intelligence_profile_indicators_get_artifact(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityArtifact.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_intelligence_profile_indicators_get_artifact(connection, intelligence_profile_indicator_id, opts \\ []) do
+  @spec security_threat_intelligence_intelligence_profile_indicators_get_artifact(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityArtifact.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_intelligence_profile_indicators_get_artifact(
+        connection,
+        intelligence_profile_indicator_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -4609,7 +5614,9 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
     request =
       %{}
       |> method(:get)
-      |> url("/security/threatIntelligence/intelligenceProfileIndicators/#{intelligence_profile_indicator_id}/artifact")
+      |> url(
+        "/security/threatIntelligence/intelligenceProfileIndicators/#{intelligence_profile_indicator_id}/artifact"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -4637,8 +5644,17 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_intelligence_profile_indicators_get_count9a16(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_intelligence_profile_indicators_get_count9a16(connection, opts \\ []) do
+  @spec security_threat_intelligence_intelligence_profile_indicators_get_count9a16(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_intelligence_profile_indicators_get_count9a16(
+        connection,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -4682,7 +5698,10 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityArticleIndicatorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_list_article_indicators(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityArticleIndicatorCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_list_article_indicators(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityArticleIndicatorCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_list_article_indicators(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -4733,7 +5752,10 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityArticleCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_list_articles(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityArticleCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_list_articles(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityArticleCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_list_articles(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -4784,7 +5806,10 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostComponentCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_list_host_components(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostComponentCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_list_host_components(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostComponentCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_list_host_components(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -4835,7 +5860,10 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostCookieCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_list_host_cookies(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostCookieCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_list_host_cookies(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostCookieCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_list_host_cookies(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -4886,7 +5914,10 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPairCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_list_host_pairs(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPairCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_list_host_pairs(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPairCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_list_host_pairs(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -4937,7 +5968,10 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPortCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_list_host_ports(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPortCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_list_host_ports(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPortCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_list_host_ports(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -4988,7 +6022,11 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostSslCertificateCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_list_host_ssl_certificates(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostSslCertificateCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_list_host_ssl_certificates(Tesla.Env.client(), keyword()) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphSecurityHostSslCertificateCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_list_host_ssl_certificates(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -5039,7 +6077,10 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostTrackerCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_list_host_trackers(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostTrackerCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_list_host_trackers(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostTrackerCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_list_host_trackers(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -5090,7 +6131,10 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_list_hosts(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_list_hosts(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_list_hosts(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -5141,7 +6185,11 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfileCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_list_intel_profiles(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfileCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_list_intel_profiles(Tesla.Env.client(), keyword()) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfileCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_list_intel_profiles(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -5192,7 +6240,14 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfileIndicatorCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_list_intelligence_profile_indicators(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfileIndicatorCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_list_intelligence_profile_indicators(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfileIndicatorCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_list_intelligence_profile_indicators(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -5215,7 +6270,8 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfileIndicatorCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfileIndicatorCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -5243,7 +6299,11 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityPassiveDnsRecordCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_list_passive_dns_records(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityPassiveDnsRecordCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_list_passive_dns_records(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphSecurityPassiveDnsRecordCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_list_passive_dns_records(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -5294,7 +6354,10 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecuritySslCertificateCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_list_ssl_certificates(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecuritySslCertificateCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_list_ssl_certificates(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecuritySslCertificateCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_list_ssl_certificates(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -5345,7 +6408,10 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecuritySubdomainCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_list_subdomains(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecuritySubdomainCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_list_subdomains(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecuritySubdomainCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_list_subdomains(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -5396,7 +6462,10 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityVulnerabilityCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_list_vulnerabilities(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityVulnerabilityCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_list_vulnerabilities(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityVulnerabilityCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_list_vulnerabilities(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -5447,7 +6516,11 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityWhoisHistoryRecordCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_list_whois_history_records(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityWhoisHistoryRecordCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_list_whois_history_records(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphSecurityWhoisHistoryRecordCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_list_whois_history_records(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -5498,7 +6571,10 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityWhoisRecordCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_list_whois_records(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityWhoisRecordCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_list_whois_records(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityWhoisRecordCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_list_whois_records(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -5544,8 +6620,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityArtifact.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_passive_dns_records_get_artifact(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityArtifact.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_passive_dns_records_get_artifact(connection, passive_dns_record_id, opts \\ []) do
+  @spec security_threat_intelligence_passive_dns_records_get_artifact(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityArtifact.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_passive_dns_records_get_artifact(
+        connection,
+        passive_dns_record_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -5582,7 +6669,13 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_passive_dns_records_get_count_a5be(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_passive_dns_records_get_count_a5be(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_passive_dns_records_get_count_a5be(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -5622,8 +6715,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_passive_dns_records_get_parent_host(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_passive_dns_records_get_parent_host(connection, passive_dns_record_id, opts \\ []) do
+  @spec security_threat_intelligence_passive_dns_records_get_parent_host(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_passive_dns_records_get_parent_host(
+        connection,
+        passive_dns_record_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -5660,7 +6764,13 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_ssl_certificates_get_count_cfbd(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_ssl_certificates_get_count_cfbd(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_ssl_certificates_get_count_cfbd(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -5701,8 +6811,21 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_ssl_certificates_get_related_hosts(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_ssl_certificates_get_related_hosts(connection, ssl_certificate_id, host_id, opts \\ []) do
+  @spec security_threat_intelligence_ssl_certificates_get_related_hosts(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_ssl_certificates_get_related_hosts(
+        connection,
+        ssl_certificate_id,
+        host_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -5711,7 +6834,9 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
     request =
       %{}
       |> method(:get)
-      |> url("/security/threatIntelligence/sslCertificates/#{ssl_certificate_id}/relatedHosts/#{host_id}")
+      |> url(
+        "/security/threatIntelligence/sslCertificates/#{ssl_certificate_id}/relatedHosts/#{host_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5747,8 +6872,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_ssl_certificates_list_related_hosts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_ssl_certificates_list_related_hosts(connection, ssl_certificate_id, opts \\ []) do
+  @spec security_threat_intelligence_ssl_certificates_list_related_hosts(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_ssl_certificates_list_related_hosts(
+        connection,
+        ssl_certificate_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -5792,8 +6928,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_ssl_certificates_related_hosts_get_count0b8e(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_ssl_certificates_related_hosts_get_count0b8e(connection, ssl_certificate_id, opts \\ []) do
+  @spec security_threat_intelligence_ssl_certificates_related_hosts_get_count0b8e(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_ssl_certificates_related_hosts_get_count0b8e(
+        connection,
+        ssl_certificate_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -5802,7 +6949,9 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
     request =
       %{}
       |> method(:get)
-      |> url("/security/threatIntelligence/sslCertificates/#{ssl_certificate_id}/relatedHosts/$count")
+      |> url(
+        "/security/threatIntelligence/sslCertificates/#{ssl_certificate_id}/relatedHosts/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -5830,7 +6979,10 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_subdomains_get_count34a3(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_subdomains_get_count34a3(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_subdomains_get_count34a3(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -5870,7 +7022,14 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_subdomains_get_host(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_subdomains_get_host(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_subdomains_get_host(connection, subdomain_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -5908,8 +7067,21 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityArticleIndicator.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_update_article_indicators(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphSecurityArticleIndicator.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityArticleIndicator.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_update_article_indicators(connection, article_indicator_id, microsoft_graph_security_article_indicator, _opts \\ []) do
+  @spec security_threat_intelligence_update_article_indicators(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSecurityArticleIndicator.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityArticleIndicator.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_update_article_indicators(
+        connection,
+        article_indicator_id,
+        microsoft_graph_security_article_indicator,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -5941,8 +7113,21 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityArticle.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_update_articles(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphSecurityArticle.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityArticle.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_update_articles(connection, article_id, microsoft_graph_security_article, _opts \\ []) do
+  @spec security_threat_intelligence_update_articles(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSecurityArticle.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityArticle.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_update_articles(
+        connection,
+        article_id,
+        microsoft_graph_security_article,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -5974,8 +7159,21 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostComponent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_update_host_components(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphSecurityHostComponent.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostComponent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_update_host_components(connection, host_component_id, microsoft_graph_security_host_component, _opts \\ []) do
+  @spec security_threat_intelligence_update_host_components(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSecurityHostComponent.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostComponent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_update_host_components(
+        connection,
+        host_component_id,
+        microsoft_graph_security_host_component,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -6007,8 +7205,21 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostCookie.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_update_host_cookies(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphSecurityHostCookie.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostCookie.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_update_host_cookies(connection, host_cookie_id, microsoft_graph_security_host_cookie, _opts \\ []) do
+  @spec security_threat_intelligence_update_host_cookies(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSecurityHostCookie.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostCookie.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_update_host_cookies(
+        connection,
+        host_cookie_id,
+        microsoft_graph_security_host_cookie,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -6040,8 +7251,21 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPair.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_update_host_pairs(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPair.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPair.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_update_host_pairs(connection, host_pair_id, microsoft_graph_security_host_pair, _opts \\ []) do
+  @spec security_threat_intelligence_update_host_pairs(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSecurityHostPair.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPair.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_update_host_pairs(
+        connection,
+        host_pair_id,
+        microsoft_graph_security_host_pair,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -6073,8 +7297,21 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPort.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_update_host_ports(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPort.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPort.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_update_host_ports(connection, host_port_id, microsoft_graph_security_host_port, _opts \\ []) do
+  @spec security_threat_intelligence_update_host_ports(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSecurityHostPort.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostPort.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_update_host_ports(
+        connection,
+        host_port_id,
+        microsoft_graph_security_host_port,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -6106,8 +7343,21 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostSslCertificate.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_update_host_ssl_certificates(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphSecurityHostSslCertificate.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostSslCertificate.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_update_host_ssl_certificates(connection, host_ssl_certificate_id, microsoft_graph_security_host_ssl_certificate, _opts \\ []) do
+  @spec security_threat_intelligence_update_host_ssl_certificates(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSecurityHostSslCertificate.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostSslCertificate.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_update_host_ssl_certificates(
+        connection,
+        host_ssl_certificate_id,
+        microsoft_graph_security_host_ssl_certificate,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -6139,8 +7389,21 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostTracker.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_update_host_trackers(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphSecurityHostTracker.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostTracker.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_update_host_trackers(connection, host_tracker_id, microsoft_graph_security_host_tracker, _opts \\ []) do
+  @spec security_threat_intelligence_update_host_trackers(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSecurityHostTracker.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHostTracker.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_update_host_trackers(
+        connection,
+        host_tracker_id,
+        microsoft_graph_security_host_tracker,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -6172,8 +7435,21 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_update_hosts(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_update_hosts(connection, host_id, microsoft_graph_security_host, _opts \\ []) do
+  @spec security_threat_intelligence_update_hosts(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_update_hosts(
+        connection,
+        host_id,
+        microsoft_graph_security_host,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -6205,8 +7481,21 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfile.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_update_intel_profiles(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfile.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfile.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_update_intel_profiles(connection, intelligence_profile_id, microsoft_graph_security_intelligence_profile, _opts \\ []) do
+  @spec security_threat_intelligence_update_intel_profiles(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfile.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfile.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_update_intel_profiles(
+        connection,
+        intelligence_profile_id,
+        microsoft_graph_security_intelligence_profile,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -6238,12 +7527,27 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfileIndicator.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_update_intelligence_profile_indicators(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfileIndicator.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfileIndicator.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_update_intelligence_profile_indicators(connection, intelligence_profile_indicator_id, microsoft_graph_security_intelligence_profile_indicator, _opts \\ []) do
+  @spec security_threat_intelligence_update_intelligence_profile_indicators(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfileIndicator.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityIntelligenceProfileIndicator.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_update_intelligence_profile_indicators(
+        connection,
+        intelligence_profile_indicator_id,
+        microsoft_graph_security_intelligence_profile_indicator,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/security/threatIntelligence/intelligenceProfileIndicators/#{intelligence_profile_indicator_id}")
+      |> url(
+        "/security/threatIntelligence/intelligenceProfileIndicators/#{intelligence_profile_indicator_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_security_intelligence_profile_indicator)
       |> Enum.into([])
 
@@ -6271,8 +7575,21 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityPassiveDnsRecord.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_update_passive_dns_records(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphSecurityPassiveDnsRecord.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityPassiveDnsRecord.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_update_passive_dns_records(connection, passive_dns_record_id, microsoft_graph_security_passive_dns_record, _opts \\ []) do
+  @spec security_threat_intelligence_update_passive_dns_records(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSecurityPassiveDnsRecord.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityPassiveDnsRecord.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_update_passive_dns_records(
+        connection,
+        passive_dns_record_id,
+        microsoft_graph_security_passive_dns_record,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -6304,8 +7621,21 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecuritySslCertificate.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_update_ssl_certificates(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphSecuritySslCertificate.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecuritySslCertificate.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_update_ssl_certificates(connection, ssl_certificate_id, microsoft_graph_security_ssl_certificate, _opts \\ []) do
+  @spec security_threat_intelligence_update_ssl_certificates(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSecuritySslCertificate.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecuritySslCertificate.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_update_ssl_certificates(
+        connection,
+        ssl_certificate_id,
+        microsoft_graph_security_ssl_certificate,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -6337,8 +7667,21 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecuritySubdomain.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_update_subdomains(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphSecuritySubdomain.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecuritySubdomain.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_update_subdomains(connection, subdomain_id, microsoft_graph_security_subdomain, _opts \\ []) do
+  @spec security_threat_intelligence_update_subdomains(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSecuritySubdomain.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecuritySubdomain.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_update_subdomains(
+        connection,
+        subdomain_id,
+        microsoft_graph_security_subdomain,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -6370,8 +7713,21 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityVulnerability.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_update_vulnerabilities(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphSecurityVulnerability.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityVulnerability.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_update_vulnerabilities(connection, vulnerability_id, microsoft_graph_security_vulnerability, _opts \\ []) do
+  @spec security_threat_intelligence_update_vulnerabilities(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSecurityVulnerability.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityVulnerability.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_update_vulnerabilities(
+        connection,
+        vulnerability_id,
+        microsoft_graph_security_vulnerability,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -6403,8 +7759,21 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityWhoisHistoryRecord.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_update_whois_history_records(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphSecurityWhoisHistoryRecord.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityWhoisHistoryRecord.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_update_whois_history_records(connection, whois_history_record_id, microsoft_graph_security_whois_history_record, _opts \\ []) do
+  @spec security_threat_intelligence_update_whois_history_records(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSecurityWhoisHistoryRecord.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityWhoisHistoryRecord.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_update_whois_history_records(
+        connection,
+        whois_history_record_id,
+        microsoft_graph_security_whois_history_record,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -6436,8 +7805,21 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityWhoisRecord.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_update_whois_records(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphSecurityWhoisRecord.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityWhoisRecord.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_update_whois_records(connection, whois_record_id, microsoft_graph_security_whois_record, _opts \\ []) do
+  @spec security_threat_intelligence_update_whois_records(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSecurityWhoisRecord.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityWhoisRecord.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_update_whois_records(
+        connection,
+        whois_record_id,
+        microsoft_graph_security_whois_record,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -6470,8 +7852,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_vulnerabilities_articles_get_count3551(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_vulnerabilities_articles_get_count3551(connection, vulnerability_id, opts \\ []) do
+  @spec security_threat_intelligence_vulnerabilities_articles_get_count3551(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_vulnerabilities_articles_get_count3551(
+        connection,
+        vulnerability_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -6509,8 +7902,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_vulnerabilities_components_get_count_d51b(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_vulnerabilities_components_get_count_d51b(connection, vulnerability_id, opts \\ []) do
+  @spec security_threat_intelligence_vulnerabilities_components_get_count_d51b(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_vulnerabilities_components_get_count_d51b(
+        connection,
+        vulnerability_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -6547,8 +7951,21 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityVulnerabilityComponent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_vulnerabilities_create_components(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphSecurityVulnerabilityComponent.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityVulnerabilityComponent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_vulnerabilities_create_components(connection, vulnerability_id, microsoft_graph_security_vulnerability_component, _opts \\ []) do
+  @spec security_threat_intelligence_vulnerabilities_create_components(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSecurityVulnerabilityComponent.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityVulnerabilityComponent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_vulnerabilities_create_components(
+        connection,
+        vulnerability_id,
+        microsoft_graph_security_vulnerability_component,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -6581,8 +7998,21 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_vulnerabilities_delete_components(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_vulnerabilities_delete_components(connection, vulnerability_id, vulnerability_component_id, opts \\ []) do
+  @spec security_threat_intelligence_vulnerabilities_delete_components(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_vulnerabilities_delete_components(
+        connection,
+        vulnerability_id,
+        vulnerability_component_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -6590,7 +8020,9 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
     request =
       %{}
       |> method(:delete)
-      |> url("/security/threatIntelligence/vulnerabilities/#{vulnerability_id}/components/#{vulnerability_component_id}")
+      |> url(
+        "/security/threatIntelligence/vulnerabilities/#{vulnerability_id}/components/#{vulnerability_component_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6621,8 +8053,21 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityArticle.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_vulnerabilities_get_articles(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityArticle.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_vulnerabilities_get_articles(connection, vulnerability_id, article_id, opts \\ []) do
+  @spec security_threat_intelligence_vulnerabilities_get_articles(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityArticle.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_vulnerabilities_get_articles(
+        connection,
+        vulnerability_id,
+        article_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -6631,7 +8076,9 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
     request =
       %{}
       |> method(:get)
-      |> url("/security/threatIntelligence/vulnerabilities/#{vulnerability_id}/articles/#{article_id}")
+      |> url(
+        "/security/threatIntelligence/vulnerabilities/#{vulnerability_id}/articles/#{article_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6662,8 +8109,21 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityVulnerabilityComponent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_vulnerabilities_get_components(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityVulnerabilityComponent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_vulnerabilities_get_components(connection, vulnerability_id, vulnerability_component_id, opts \\ []) do
+  @spec security_threat_intelligence_vulnerabilities_get_components(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityVulnerabilityComponent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_vulnerabilities_get_components(
+        connection,
+        vulnerability_id,
+        vulnerability_component_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -6672,7 +8132,9 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
     request =
       %{}
       |> method(:get)
-      |> url("/security/threatIntelligence/vulnerabilities/#{vulnerability_id}/components/#{vulnerability_component_id}")
+      |> url(
+        "/security/threatIntelligence/vulnerabilities/#{vulnerability_id}/components/#{vulnerability_component_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -6700,7 +8162,10 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_vulnerabilities_get_count_d2da(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_vulnerabilities_get_count_d2da(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_vulnerabilities_get_count_d2da(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -6746,8 +8211,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityArticleCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_vulnerabilities_list_articles(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityArticleCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_vulnerabilities_list_articles(connection, vulnerability_id, opts \\ []) do
+  @spec security_threat_intelligence_vulnerabilities_list_articles(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityArticleCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_vulnerabilities_list_articles(
+        connection,
+        vulnerability_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -6798,8 +8274,20 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityVulnerabilityComponentCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_vulnerabilities_list_components(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityVulnerabilityComponentCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_vulnerabilities_list_components(connection, vulnerability_id, opts \\ []) do
+  @spec security_threat_intelligence_vulnerabilities_list_components(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphSecurityVulnerabilityComponentCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_vulnerabilities_list_components(
+        connection,
+        vulnerability_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -6821,7 +8309,8 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphSecurityVulnerabilityComponentCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphSecurityVulnerabilityComponentCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -6843,12 +8332,29 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityVulnerabilityComponent.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_vulnerabilities_update_components(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphSecurityVulnerabilityComponent.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityVulnerabilityComponent.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_vulnerabilities_update_components(connection, vulnerability_id, vulnerability_component_id, microsoft_graph_security_vulnerability_component, _opts \\ []) do
+  @spec security_threat_intelligence_vulnerabilities_update_components(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSecurityVulnerabilityComponent.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityVulnerabilityComponent.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_vulnerabilities_update_components(
+        connection,
+        vulnerability_id,
+        vulnerability_component_id,
+        microsoft_graph_security_vulnerability_component,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/security/threatIntelligence/vulnerabilities/#{vulnerability_id}/components/#{vulnerability_component_id}")
+      |> url(
+        "/security/threatIntelligence/vulnerabilities/#{vulnerability_id}/components/#{vulnerability_component_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_security_vulnerability_component)
       |> Enum.into([])
 
@@ -6876,7 +8382,13 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_whois_history_records_get_count175e(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_whois_history_records_get_count175e(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_whois_history_records_get_count175e(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -6916,8 +8428,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_whois_history_records_get_host(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_whois_history_records_get_host(connection, whois_history_record_id, opts \\ []) do
+  @spec security_threat_intelligence_whois_history_records_get_host(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_whois_history_records_get_host(
+        connection,
+        whois_history_record_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -6954,7 +8477,10 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_whois_records_get_count21a1(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_whois_records_get_count21a1(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_whois_records_get_count21a1(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -6995,8 +8521,21 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityWhoisHistoryRecord.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_whois_records_get_history(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityWhoisHistoryRecord.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_whois_records_get_history(connection, whois_record_id, whois_history_record_id, opts \\ []) do
+  @spec security_threat_intelligence_whois_records_get_history(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityWhoisHistoryRecord.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_whois_records_get_history(
+        connection,
+        whois_record_id,
+        whois_history_record_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -7005,7 +8544,9 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
     request =
       %{}
       |> method(:get)
-      |> url("/security/threatIntelligence/whoisRecords/#{whois_record_id}/history/#{whois_history_record_id}")
+      |> url(
+        "/security/threatIntelligence/whoisRecords/#{whois_record_id}/history/#{whois_history_record_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -7035,7 +8576,14 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_whois_records_get_host(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_threat_intelligence_whois_records_get_host(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityHost.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_threat_intelligence_whois_records_get_host(connection, whois_record_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -7074,8 +8622,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_whois_records_history_get_count86f0(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_whois_records_history_get_count86f0(connection, whois_record_id, opts \\ []) do
+  @spec security_threat_intelligence_whois_records_history_get_count86f0(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_whois_records_history_get_count86f0(
+        connection,
+        whois_record_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -7120,8 +8679,20 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityWhoisHistoryRecordCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_threat_intelligence_whois_records_list_history(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityWhoisHistoryRecordCollectionResponse.t} | {:error, Tesla.Env.t}
-  def security_threat_intelligence_whois_records_list_history(connection, whois_record_id, opts \\ []) do
+  @spec security_threat_intelligence_whois_records_list_history(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphSecurityWhoisHistoryRecordCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def security_threat_intelligence_whois_records_list_history(
+        connection,
+        whois_record_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -7163,8 +8734,19 @@ defmodule MicrosoftGraph.Api.SecurityThreatIntelligence do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityThreatIntelligence.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_update_threat_intelligence(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphSecurityThreatIntelligence.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityThreatIntelligence.t} | {:error, Tesla.Env.t}
-  def security_update_threat_intelligence(connection, microsoft_graph_security_threat_intelligence, _opts \\ []) do
+  @spec security_update_threat_intelligence(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphSecurityThreatIntelligence.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityThreatIntelligence.t()}
+          | {:error, Tesla.Env.t()}
+  def security_update_threat_intelligence(
+        connection,
+        microsoft_graph_security_threat_intelligence,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

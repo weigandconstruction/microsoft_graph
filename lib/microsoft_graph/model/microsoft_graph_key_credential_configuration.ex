@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphKeyCredentialConfiguration do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,18 +15,22 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphKeyCredentialConfiguration do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :maxLifetime => String.t | nil,
-    :restrictForAppsCreatedAfterDateTime => DateTime.t | nil,
-    :restrictionType => MicrosoftGraph.Model.MicrosoftGraphKeyCredentialConfigurationRestrictionType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :maxLifetime => String.t() | nil,
+          :restrictForAppsCreatedAfterDateTime => DateTime.t() | nil,
+          :restrictionType =>
+            MicrosoftGraph.Model.MicrosoftGraphKeyCredentialConfigurationRestrictionType.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:restrictForAppsCreatedAfterDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:restrictionType, :struct, MicrosoftGraph.Model.MicrosoftGraphKeyCredentialConfigurationRestrictionType)
+    |> Deserializer.deserialize(:restrictForAppsCreatedAfterDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :restrictionType,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphKeyCredentialConfigurationRestrictionType
+    )
   end
 end
-

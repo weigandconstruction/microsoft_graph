@@ -24,7 +24,13 @@ defmodule MicrosoftGraph.Api.CommunicationsCloudCommunications do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCloudCommunications.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_cloud_communications_get_cloud_communications(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphCloudCommunications.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec communications_cloud_communications_get_cloud_communications(
+          Tesla.Env.client(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphCloudCommunications.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def communications_cloud_communications_get_cloud_communications(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -61,8 +67,19 @@ defmodule MicrosoftGraph.Api.CommunicationsCloudCommunications do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphCloudCommunications.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec communications_cloud_communications_update_cloud_communications(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphCloudCommunications.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphCloudCommunications.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def communications_cloud_communications_update_cloud_communications(connection, microsoft_graph_cloud_communications, _opts \\ []) do
+  @spec communications_cloud_communications_update_cloud_communications(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphCloudCommunications.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphCloudCommunications.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def communications_cloud_communications_update_cloud_communications(
+        connection,
+        microsoft_graph_cloud_communications,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

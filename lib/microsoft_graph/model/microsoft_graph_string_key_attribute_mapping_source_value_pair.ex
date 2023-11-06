@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphStringKeyAttributeMappingSourceValuePair do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,21 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphStringKeyAttributeMappingSourceValu
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :key => String.t | nil,
-    :value => MicrosoftGraph.Model.MicrosoftGraphStringKeyAttributeMappingSourceValuePairValue.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :key => String.t() | nil,
+          :value =>
+            MicrosoftGraph.Model.MicrosoftGraphStringKeyAttributeMappingSourceValuePairValue.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:value, :struct, MicrosoftGraph.Model.MicrosoftGraphStringKeyAttributeMappingSourceValuePairValue)
+    |> Deserializer.deserialize(
+      :value,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphStringKeyAttributeMappingSourceValuePairValue
+    )
   end
 end
-

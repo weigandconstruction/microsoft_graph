@@ -24,7 +24,10 @@ defmodule MicrosoftGraph.Api.SecurityAlert do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_alerts_get_count82d4(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_alerts_get_count82d4(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_alerts_get_count82d4(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -63,7 +66,10 @@ defmodule MicrosoftGraph.Api.SecurityAlert do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_alerts_v2_comments_get_count2f70(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_alerts_v2_comments_get_count2f70(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_alerts_v2_comments_get_count2f70(connection, alert_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -101,7 +107,10 @@ defmodule MicrosoftGraph.Api.SecurityAlert do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_alerts_v2_get_count9522(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_alerts_v2_get_count9522(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_alerts_v2_get_count9522(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -140,8 +149,21 @@ defmodule MicrosoftGraph.Api.SecurityAlert do
   - `{:ok, [%MicrosoftGraphSecurityAlertComment{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_alerts_v2_set_comments(Tesla.Env.client, String.t, list(MicrosoftGraph.Model.MicrosoftGraphSecurityAlertComment.t), keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, list(MicrosoftGraph.Model.MicrosoftGraphSecurityAlertComment.t)} | {:error, Tesla.Env.t}
-  def security_alerts_v2_set_comments(connection, alert_id, microsoft_graph_security_alert_comment, opts \\ []) do
+  @spec security_alerts_v2_set_comments(
+          Tesla.Env.client(),
+          String.t(),
+          list(MicrosoftGraph.Model.MicrosoftGraphSecurityAlertComment.t()),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, list(MicrosoftGraph.Model.MicrosoftGraphSecurityAlertComment.t())}
+          | {:error, Tesla.Env.t()}
+  def security_alerts_v2_set_comments(
+        connection,
+        alert_id,
+        microsoft_graph_security_alert_comment,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -177,7 +199,14 @@ defmodule MicrosoftGraph.Api.SecurityAlert do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAlert.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_create_alerts(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphAlert.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAlert.t} | {:error, Tesla.Env.t}
+  @spec security_create_alerts(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphAlert.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAlert.t()}
+          | {:error, Tesla.Env.t()}
   def security_create_alerts(connection, microsoft_graph_alert, _opts \\ []) do
     request =
       %{}
@@ -209,7 +238,14 @@ defmodule MicrosoftGraph.Api.SecurityAlert do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityAlert.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_create_alerts_v2(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphSecurityAlert.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityAlert.t} | {:error, Tesla.Env.t}
+  @spec security_create_alerts_v2(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphSecurityAlert.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityAlert.t()}
+          | {:error, Tesla.Env.t()}
   def security_create_alerts_v2(connection, microsoft_graph_security_alert, _opts \\ []) do
     request =
       %{}
@@ -242,7 +278,10 @@ defmodule MicrosoftGraph.Api.SecurityAlert do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_delete_alerts_v2(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_delete_alerts_v2(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_delete_alerts_v2(connection, alert_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -281,7 +320,10 @@ defmodule MicrosoftGraph.Api.SecurityAlert do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAlert.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_get_alerts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAlert.t} | {:error, Tesla.Env.t}
+  @spec security_get_alerts(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAlert.t()}
+          | {:error, Tesla.Env.t()}
   def security_get_alerts(connection, alert_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -321,7 +363,10 @@ defmodule MicrosoftGraph.Api.SecurityAlert do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityAlert.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_get_alerts_v2(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityAlert.t} | {:error, Tesla.Env.t}
+  @spec security_get_alerts_v2(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityAlert.t()}
+          | {:error, Tesla.Env.t()}
   def security_get_alerts_v2(connection, alert_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -366,7 +411,10 @@ defmodule MicrosoftGraph.Api.SecurityAlert do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAlertCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_list_alerts(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphAlertCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_list_alerts(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphAlertCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_list_alerts(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -417,7 +465,10 @@ defmodule MicrosoftGraph.Api.SecurityAlert do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityAlertCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_list_alerts_v2(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityAlertCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec security_list_alerts_v2(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityAlertCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def security_list_alerts_v2(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -462,7 +513,15 @@ defmodule MicrosoftGraph.Api.SecurityAlert do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphAlert.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_update_alerts(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphAlert.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphAlert.t} | {:error, Tesla.Env.t}
+  @spec security_update_alerts(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphAlert.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphAlert.t()}
+          | {:error, Tesla.Env.t()}
   def security_update_alerts(connection, alert_id, microsoft_graph_alert, _opts \\ []) do
     request =
       %{}
@@ -496,7 +555,15 @@ defmodule MicrosoftGraph.Api.SecurityAlert do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityAlert.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec security_update_alerts_v2(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphSecurityAlert.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityAlert.t} | {:error, Tesla.Env.t}
+  @spec security_update_alerts_v2(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSecurityAlert.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSecurityAlert.t()}
+          | {:error, Tesla.Env.t()}
   def security_update_alerts_v2(connection, alert_id, microsoft_graph_security_alert, _opts \\ []) do
     request =
       %{}

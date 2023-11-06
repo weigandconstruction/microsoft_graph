@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphWindowsAutopilotDeviceIdentity do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -29,32 +29,35 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphWindowsAutopilotDeviceIdentity do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :addressableUserName => String.t | nil,
-    :azureActiveDirectoryDeviceId => String.t | nil,
-    :displayName => String.t | nil,
-    :enrollmentState => MicrosoftGraph.Model.MicrosoftGraphEnrollmentState.t | nil,
-    :groupTag => String.t | nil,
-    :lastContactedDateTime => DateTime.t | nil,
-    :managedDeviceId => String.t | nil,
-    :manufacturer => String.t | nil,
-    :model => String.t | nil,
-    :productKey => String.t | nil,
-    :purchaseOrderIdentifier => String.t | nil,
-    :resourceName => String.t | nil,
-    :serialNumber => String.t | nil,
-    :skuNumber => String.t | nil,
-    :systemFamily => String.t | nil,
-    :userPrincipalName => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :addressableUserName => String.t() | nil,
+          :azureActiveDirectoryDeviceId => String.t() | nil,
+          :displayName => String.t() | nil,
+          :enrollmentState => MicrosoftGraph.Model.MicrosoftGraphEnrollmentState.t() | nil,
+          :groupTag => String.t() | nil,
+          :lastContactedDateTime => DateTime.t() | nil,
+          :managedDeviceId => String.t() | nil,
+          :manufacturer => String.t() | nil,
+          :model => String.t() | nil,
+          :productKey => String.t() | nil,
+          :purchaseOrderIdentifier => String.t() | nil,
+          :resourceName => String.t() | nil,
+          :serialNumber => String.t() | nil,
+          :skuNumber => String.t() | nil,
+          :systemFamily => String.t() | nil,
+          :userPrincipalName => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:enrollmentState, :struct, MicrosoftGraph.Model.MicrosoftGraphEnrollmentState)
-     |> Deserializer.deserialize(:lastContactedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :enrollmentState,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphEnrollmentState
+    )
+    |> Deserializer.deserialize(:lastContactedDateTime, :datetime, nil)
   end
 end
-

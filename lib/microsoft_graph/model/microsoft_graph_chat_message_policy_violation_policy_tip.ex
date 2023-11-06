@@ -15,14 +15,13 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphChatMessagePolicyViolationPolicyTip
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :complianceUrl => String.t | nil,
-    :generalText => String.t | nil,
-    :matchedConditionDescriptions => [String.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :complianceUrl => String.t() | nil,
+          :generalText => String.t() | nil,
+          :matchedConditionDescriptions => [String.t()] | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

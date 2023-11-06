@@ -25,8 +25,21 @@ defmodule MicrosoftGraph.Api.OrganizationOrganizationalBranding do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOrganizationalBrandingLocalization.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec organization_branding_create_localizations(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphOrganizationalBrandingLocalization.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOrganizationalBrandingLocalization.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def organization_branding_create_localizations(connection, organization_id, microsoft_graph_organizational_branding_localization, _opts \\ []) do
+  @spec organization_branding_create_localizations(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphOrganizationalBrandingLocalization.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOrganizationalBrandingLocalization.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def organization_branding_create_localizations(
+        connection,
+        organization_id,
+        microsoft_graph_organizational_branding_localization,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -60,8 +73,21 @@ defmodule MicrosoftGraph.Api.OrganizationOrganizationalBranding do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec organization_branding_delete_localizations(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def organization_branding_delete_localizations(connection, organization_id, organizational_branding_localization_id, opts \\ []) do
+  @spec organization_branding_delete_localizations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def organization_branding_delete_localizations(
+        connection,
+        organization_id,
+        organizational_branding_localization_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -69,7 +95,9 @@ defmodule MicrosoftGraph.Api.OrganizationOrganizationalBranding do
     request =
       %{}
       |> method(:delete)
-      |> url("/organization/#{organization_id}/branding/localizations/#{organizational_branding_localization_id}")
+      |> url(
+        "/organization/#{organization_id}/branding/localizations/#{organizational_branding_localization_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -100,8 +128,21 @@ defmodule MicrosoftGraph.Api.OrganizationOrganizationalBranding do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOrganizationalBrandingLocalization.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec organization_branding_get_localizations(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOrganizationalBrandingLocalization.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def organization_branding_get_localizations(connection, organization_id, organizational_branding_localization_id, opts \\ []) do
+  @spec organization_branding_get_localizations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOrganizationalBrandingLocalization.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def organization_branding_get_localizations(
+        connection,
+        organization_id,
+        organizational_branding_localization_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -110,7 +151,9 @@ defmodule MicrosoftGraph.Api.OrganizationOrganizationalBranding do
     request =
       %{}
       |> method(:get)
-      |> url("/organization/#{organization_id}/branding/localizations/#{organizational_branding_localization_id}")
+      |> url(
+        "/organization/#{organization_id}/branding/localizations/#{organizational_branding_localization_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -139,12 +182,27 @@ defmodule MicrosoftGraph.Api.OrganizationOrganizationalBranding do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec organization_branding_get_localizations_background_image(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
-  def organization_branding_get_localizations_background_image(connection, organization_id, organizational_branding_localization_id, _opts \\ []) do
+  @spec organization_branding_get_localizations_background_image(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
+  def organization_branding_get_localizations_background_image(
+        connection,
+        organization_id,
+        organizational_branding_localization_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/organization/#{organization_id}/branding/localizations/#{organizational_branding_localization_id}/backgroundImage")
+      |> url(
+        "/organization/#{organization_id}/branding/localizations/#{organizational_branding_localization_id}/backgroundImage"
+      )
       |> Enum.into([])
 
     connection
@@ -172,12 +230,27 @@ defmodule MicrosoftGraph.Api.OrganizationOrganizationalBranding do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec organization_branding_get_localizations_banner_logo(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
-  def organization_branding_get_localizations_banner_logo(connection, organization_id, organizational_branding_localization_id, _opts \\ []) do
+  @spec organization_branding_get_localizations_banner_logo(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
+  def organization_branding_get_localizations_banner_logo(
+        connection,
+        organization_id,
+        organizational_branding_localization_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/organization/#{organization_id}/branding/localizations/#{organizational_branding_localization_id}/bannerLogo")
+      |> url(
+        "/organization/#{organization_id}/branding/localizations/#{organizational_branding_localization_id}/bannerLogo"
+      )
       |> Enum.into([])
 
     connection
@@ -205,12 +278,27 @@ defmodule MicrosoftGraph.Api.OrganizationOrganizationalBranding do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec organization_branding_get_localizations_custom_css(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
-  def organization_branding_get_localizations_custom_css(connection, organization_id, organizational_branding_localization_id, _opts \\ []) do
+  @spec organization_branding_get_localizations_custom_css(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
+  def organization_branding_get_localizations_custom_css(
+        connection,
+        organization_id,
+        organizational_branding_localization_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/organization/#{organization_id}/branding/localizations/#{organizational_branding_localization_id}/customCSS")
+      |> url(
+        "/organization/#{organization_id}/branding/localizations/#{organizational_branding_localization_id}/customCSS"
+      )
       |> Enum.into([])
 
     connection
@@ -238,12 +326,27 @@ defmodule MicrosoftGraph.Api.OrganizationOrganizationalBranding do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec organization_branding_get_localizations_favicon(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
-  def organization_branding_get_localizations_favicon(connection, organization_id, organizational_branding_localization_id, _opts \\ []) do
+  @spec organization_branding_get_localizations_favicon(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
+  def organization_branding_get_localizations_favicon(
+        connection,
+        organization_id,
+        organizational_branding_localization_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/organization/#{organization_id}/branding/localizations/#{organizational_branding_localization_id}/favicon")
+      |> url(
+        "/organization/#{organization_id}/branding/localizations/#{organizational_branding_localization_id}/favicon"
+      )
       |> Enum.into([])
 
     connection
@@ -271,12 +374,27 @@ defmodule MicrosoftGraph.Api.OrganizationOrganizationalBranding do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec organization_branding_get_localizations_header_logo(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
-  def organization_branding_get_localizations_header_logo(connection, organization_id, organizational_branding_localization_id, _opts \\ []) do
+  @spec organization_branding_get_localizations_header_logo(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
+  def organization_branding_get_localizations_header_logo(
+        connection,
+        organization_id,
+        organizational_branding_localization_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/organization/#{organization_id}/branding/localizations/#{organizational_branding_localization_id}/headerLogo")
+      |> url(
+        "/organization/#{organization_id}/branding/localizations/#{organizational_branding_localization_id}/headerLogo"
+      )
       |> Enum.into([])
 
     connection
@@ -304,12 +422,27 @@ defmodule MicrosoftGraph.Api.OrganizationOrganizationalBranding do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec organization_branding_get_localizations_square_logo(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
-  def organization_branding_get_localizations_square_logo(connection, organization_id, organizational_branding_localization_id, _opts \\ []) do
+  @spec organization_branding_get_localizations_square_logo(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
+  def organization_branding_get_localizations_square_logo(
+        connection,
+        organization_id,
+        organizational_branding_localization_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/organization/#{organization_id}/branding/localizations/#{organizational_branding_localization_id}/squareLogo")
+      |> url(
+        "/organization/#{organization_id}/branding/localizations/#{organizational_branding_localization_id}/squareLogo"
+      )
       |> Enum.into([])
 
     connection
@@ -337,12 +470,27 @@ defmodule MicrosoftGraph.Api.OrganizationOrganizationalBranding do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec organization_branding_get_localizations_square_logo_dark(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
-  def organization_branding_get_localizations_square_logo_dark(connection, organization_id, organizational_branding_localization_id, _opts \\ []) do
+  @spec organization_branding_get_localizations_square_logo_dark(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
+  def organization_branding_get_localizations_square_logo_dark(
+        connection,
+        organization_id,
+        organizational_branding_localization_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/organization/#{organization_id}/branding/localizations/#{organizational_branding_localization_id}/squareLogoDark")
+      |> url(
+        "/organization/#{organization_id}/branding/localizations/#{organizational_branding_localization_id}/squareLogoDark"
+      )
       |> Enum.into([])
 
     connection
@@ -377,7 +525,11 @@ defmodule MicrosoftGraph.Api.OrganizationOrganizationalBranding do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOrganizationalBrandingLocalizationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec organization_branding_list_localizations(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOrganizationalBrandingLocalizationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec organization_branding_list_localizations(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphOrganizationalBrandingLocalizationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def organization_branding_list_localizations(connection, organization_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -400,7 +552,8 @@ defmodule MicrosoftGraph.Api.OrganizationOrganizationalBranding do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphOrganizationalBrandingLocalizationCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphOrganizationalBrandingLocalizationCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -422,7 +575,14 @@ defmodule MicrosoftGraph.Api.OrganizationOrganizationalBranding do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec organization_branding_localizations_get_count_e39f(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec organization_branding_localizations_get_count_e39f(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def organization_branding_localizations_get_count_e39f(connection, organization_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -462,12 +622,29 @@ defmodule MicrosoftGraph.Api.OrganizationOrganizationalBranding do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOrganizationalBrandingLocalization.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec organization_branding_update_localizations(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphOrganizationalBrandingLocalization.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOrganizationalBrandingLocalization.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def organization_branding_update_localizations(connection, organization_id, organizational_branding_localization_id, microsoft_graph_organizational_branding_localization, _opts \\ []) do
+  @spec organization_branding_update_localizations(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphOrganizationalBrandingLocalization.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOrganizationalBrandingLocalization.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def organization_branding_update_localizations(
+        connection,
+        organization_id,
+        organizational_branding_localization_id,
+        microsoft_graph_organizational_branding_localization,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/organization/#{organization_id}/branding/localizations/#{organizational_branding_localization_id}")
+      |> url(
+        "/organization/#{organization_id}/branding/localizations/#{organizational_branding_localization_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_organizational_branding_localization)
       |> Enum.into([])
 
@@ -497,12 +674,29 @@ defmodule MicrosoftGraph.Api.OrganizationOrganizationalBranding do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec organization_branding_update_localizations_background_image(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def organization_branding_update_localizations_background_image(connection, organization_id, organizational_branding_localization_id, body, _opts \\ []) do
+  @spec organization_branding_update_localizations_background_image(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def organization_branding_update_localizations_background_image(
+        connection,
+        organization_id,
+        organizational_branding_localization_id,
+        body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)
-      |> url("/organization/#{organization_id}/branding/localizations/#{organizational_branding_localization_id}/backgroundImage")
+      |> url(
+        "/organization/#{organization_id}/branding/localizations/#{organizational_branding_localization_id}/backgroundImage"
+      )
       |> add_param(:body, :body, body)
       |> Enum.into([])
 
@@ -532,12 +726,29 @@ defmodule MicrosoftGraph.Api.OrganizationOrganizationalBranding do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec organization_branding_update_localizations_banner_logo(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def organization_branding_update_localizations_banner_logo(connection, organization_id, organizational_branding_localization_id, body, _opts \\ []) do
+  @spec organization_branding_update_localizations_banner_logo(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def organization_branding_update_localizations_banner_logo(
+        connection,
+        organization_id,
+        organizational_branding_localization_id,
+        body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)
-      |> url("/organization/#{organization_id}/branding/localizations/#{organizational_branding_localization_id}/bannerLogo")
+      |> url(
+        "/organization/#{organization_id}/branding/localizations/#{organizational_branding_localization_id}/bannerLogo"
+      )
       |> add_param(:body, :body, body)
       |> Enum.into([])
 
@@ -567,12 +778,29 @@ defmodule MicrosoftGraph.Api.OrganizationOrganizationalBranding do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec organization_branding_update_localizations_custom_css(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def organization_branding_update_localizations_custom_css(connection, organization_id, organizational_branding_localization_id, body, _opts \\ []) do
+  @spec organization_branding_update_localizations_custom_css(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def organization_branding_update_localizations_custom_css(
+        connection,
+        organization_id,
+        organizational_branding_localization_id,
+        body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)
-      |> url("/organization/#{organization_id}/branding/localizations/#{organizational_branding_localization_id}/customCSS")
+      |> url(
+        "/organization/#{organization_id}/branding/localizations/#{organizational_branding_localization_id}/customCSS"
+      )
       |> add_param(:body, :body, body)
       |> Enum.into([])
 
@@ -602,12 +830,29 @@ defmodule MicrosoftGraph.Api.OrganizationOrganizationalBranding do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec organization_branding_update_localizations_favicon(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def organization_branding_update_localizations_favicon(connection, organization_id, organizational_branding_localization_id, body, _opts \\ []) do
+  @spec organization_branding_update_localizations_favicon(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def organization_branding_update_localizations_favicon(
+        connection,
+        organization_id,
+        organizational_branding_localization_id,
+        body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)
-      |> url("/organization/#{organization_id}/branding/localizations/#{organizational_branding_localization_id}/favicon")
+      |> url(
+        "/organization/#{organization_id}/branding/localizations/#{organizational_branding_localization_id}/favicon"
+      )
       |> add_param(:body, :body, body)
       |> Enum.into([])
 
@@ -637,12 +882,29 @@ defmodule MicrosoftGraph.Api.OrganizationOrganizationalBranding do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec organization_branding_update_localizations_header_logo(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def organization_branding_update_localizations_header_logo(connection, organization_id, organizational_branding_localization_id, body, _opts \\ []) do
+  @spec organization_branding_update_localizations_header_logo(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def organization_branding_update_localizations_header_logo(
+        connection,
+        organization_id,
+        organizational_branding_localization_id,
+        body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)
-      |> url("/organization/#{organization_id}/branding/localizations/#{organizational_branding_localization_id}/headerLogo")
+      |> url(
+        "/organization/#{organization_id}/branding/localizations/#{organizational_branding_localization_id}/headerLogo"
+      )
       |> add_param(:body, :body, body)
       |> Enum.into([])
 
@@ -672,12 +934,29 @@ defmodule MicrosoftGraph.Api.OrganizationOrganizationalBranding do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec organization_branding_update_localizations_square_logo(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def organization_branding_update_localizations_square_logo(connection, organization_id, organizational_branding_localization_id, body, _opts \\ []) do
+  @spec organization_branding_update_localizations_square_logo(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def organization_branding_update_localizations_square_logo(
+        connection,
+        organization_id,
+        organizational_branding_localization_id,
+        body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)
-      |> url("/organization/#{organization_id}/branding/localizations/#{organizational_branding_localization_id}/squareLogo")
+      |> url(
+        "/organization/#{organization_id}/branding/localizations/#{organizational_branding_localization_id}/squareLogo"
+      )
       |> add_param(:body, :body, body)
       |> Enum.into([])
 
@@ -707,12 +986,29 @@ defmodule MicrosoftGraph.Api.OrganizationOrganizationalBranding do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec organization_branding_update_localizations_square_logo_dark(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def organization_branding_update_localizations_square_logo_dark(connection, organization_id, organizational_branding_localization_id, body, _opts \\ []) do
+  @spec organization_branding_update_localizations_square_logo_dark(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def organization_branding_update_localizations_square_logo_dark(
+        connection,
+        organization_id,
+        organizational_branding_localization_id,
+        body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)
-      |> url("/organization/#{organization_id}/branding/localizations/#{organizational_branding_localization_id}/squareLogoDark")
+      |> url(
+        "/organization/#{organization_id}/branding/localizations/#{organizational_branding_localization_id}/squareLogoDark"
+      )
       |> add_param(:body, :body, body)
       |> Enum.into([])
 
@@ -741,7 +1037,10 @@ defmodule MicrosoftGraph.Api.OrganizationOrganizationalBranding do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec organization_delete_branding(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec organization_delete_branding(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def organization_delete_branding(connection, organization_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -780,7 +1079,10 @@ defmodule MicrosoftGraph.Api.OrganizationOrganizationalBranding do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOrganizationalBranding.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec organization_get_branding(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOrganizationalBranding.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec organization_get_branding(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOrganizationalBranding.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def organization_get_branding(connection, organization_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -818,7 +1120,10 @@ defmodule MicrosoftGraph.Api.OrganizationOrganizationalBranding do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec organization_get_branding_background_image(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
+  @spec organization_get_branding_background_image(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
   def organization_get_branding_background_image(connection, organization_id, _opts \\ []) do
     request =
       %{}
@@ -850,7 +1155,10 @@ defmodule MicrosoftGraph.Api.OrganizationOrganizationalBranding do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec organization_get_branding_banner_logo(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
+  @spec organization_get_branding_banner_logo(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
   def organization_get_branding_banner_logo(connection, organization_id, _opts \\ []) do
     request =
       %{}
@@ -882,7 +1190,10 @@ defmodule MicrosoftGraph.Api.OrganizationOrganizationalBranding do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec organization_get_branding_custom_css(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
+  @spec organization_get_branding_custom_css(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
   def organization_get_branding_custom_css(connection, organization_id, _opts \\ []) do
     request =
       %{}
@@ -914,7 +1225,10 @@ defmodule MicrosoftGraph.Api.OrganizationOrganizationalBranding do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec organization_get_branding_favicon(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
+  @spec organization_get_branding_favicon(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
   def organization_get_branding_favicon(connection, organization_id, _opts \\ []) do
     request =
       %{}
@@ -946,7 +1260,10 @@ defmodule MicrosoftGraph.Api.OrganizationOrganizationalBranding do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec organization_get_branding_header_logo(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
+  @spec organization_get_branding_header_logo(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
   def organization_get_branding_header_logo(connection, organization_id, _opts \\ []) do
     request =
       %{}
@@ -978,7 +1295,10 @@ defmodule MicrosoftGraph.Api.OrganizationOrganizationalBranding do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec organization_get_branding_square_logo(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
+  @spec organization_get_branding_square_logo(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
   def organization_get_branding_square_logo(connection, organization_id, _opts \\ []) do
     request =
       %{}
@@ -1010,7 +1330,10 @@ defmodule MicrosoftGraph.Api.OrganizationOrganizationalBranding do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec organization_get_branding_square_logo_dark(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, String.t} | {:error, Tesla.Env.t}
+  @spec organization_get_branding_square_logo_dark(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, String.t()}
+          | {:error, Tesla.Env.t()}
   def organization_get_branding_square_logo_dark(connection, organization_id, _opts \\ []) do
     request =
       %{}
@@ -1043,8 +1366,21 @@ defmodule MicrosoftGraph.Api.OrganizationOrganizationalBranding do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOrganizationalBranding.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec organization_update_branding(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphOrganizationalBranding.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOrganizationalBranding.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def organization_update_branding(connection, organization_id, microsoft_graph_organizational_branding, _opts \\ []) do
+  @spec organization_update_branding(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphOrganizationalBranding.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOrganizationalBranding.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def organization_update_branding(
+        connection,
+        organization_id,
+        microsoft_graph_organizational_branding,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -1077,8 +1413,21 @@ defmodule MicrosoftGraph.Api.OrganizationOrganizationalBranding do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec organization_update_branding_background_image(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def organization_update_branding_background_image(connection, organization_id, body, _opts \\ []) do
+  @spec organization_update_branding_background_image(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def organization_update_branding_background_image(
+        connection,
+        organization_id,
+        body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)
@@ -1111,7 +1460,15 @@ defmodule MicrosoftGraph.Api.OrganizationOrganizationalBranding do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec organization_update_branding_banner_logo(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec organization_update_branding_banner_logo(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def organization_update_branding_banner_logo(connection, organization_id, body, _opts \\ []) do
     request =
       %{}
@@ -1145,7 +1502,15 @@ defmodule MicrosoftGraph.Api.OrganizationOrganizationalBranding do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec organization_update_branding_custom_css(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec organization_update_branding_custom_css(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def organization_update_branding_custom_css(connection, organization_id, body, _opts \\ []) do
     request =
       %{}
@@ -1179,7 +1544,15 @@ defmodule MicrosoftGraph.Api.OrganizationOrganizationalBranding do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec organization_update_branding_favicon(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec organization_update_branding_favicon(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def organization_update_branding_favicon(connection, organization_id, body, _opts \\ []) do
     request =
       %{}
@@ -1213,7 +1586,15 @@ defmodule MicrosoftGraph.Api.OrganizationOrganizationalBranding do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec organization_update_branding_header_logo(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec organization_update_branding_header_logo(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def organization_update_branding_header_logo(connection, organization_id, body, _opts \\ []) do
     request =
       %{}
@@ -1247,7 +1628,15 @@ defmodule MicrosoftGraph.Api.OrganizationOrganizationalBranding do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec organization_update_branding_square_logo(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec organization_update_branding_square_logo(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def organization_update_branding_square_logo(connection, organization_id, body, _opts \\ []) do
     request =
       %{}
@@ -1281,8 +1670,21 @@ defmodule MicrosoftGraph.Api.OrganizationOrganizationalBranding do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec organization_update_branding_square_logo_dark(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def organization_update_branding_square_logo_dark(connection, organization_id, body, _opts \\ []) do
+  @spec organization_update_branding_square_logo_dark(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def organization_update_branding_square_logo_dark(
+        connection,
+        organization_id,
+        body,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:put)

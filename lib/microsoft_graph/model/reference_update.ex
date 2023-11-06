@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.ReferenceUpdate do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,12 +13,11 @@ defmodule MicrosoftGraph.Model.ReferenceUpdate do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.id" => String.t | nil,
-    :"@odata.type" => String.t | nil
-  }
+          :"@odata.id" => String.t() | nil,
+          :"@odata.type" => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

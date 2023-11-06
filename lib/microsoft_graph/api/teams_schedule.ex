@@ -24,7 +24,10 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_delete_schedule(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_delete_schedule(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_delete_schedule(connection, team_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -63,7 +66,10 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSchedule.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_get_schedule(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSchedule.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_get_schedule(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSchedule.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_get_schedule(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -102,8 +108,21 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOfferShiftRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_create_offer_shift_requests(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphOfferShiftRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOfferShiftRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_schedule_create_offer_shift_requests(connection, team_id, microsoft_graph_offer_shift_request, _opts \\ []) do
+  @spec teams_schedule_create_offer_shift_requests(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphOfferShiftRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOfferShiftRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_schedule_create_offer_shift_requests(
+        connection,
+        team_id,
+        microsoft_graph_offer_shift_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -136,8 +155,21 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOpenShiftChangeRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_create_open_shift_change_requests(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphOpenShiftChangeRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOpenShiftChangeRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_schedule_create_open_shift_change_requests(connection, team_id, microsoft_graph_open_shift_change_request, _opts \\ []) do
+  @spec teams_schedule_create_open_shift_change_requests(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphOpenShiftChangeRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOpenShiftChangeRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_schedule_create_open_shift_change_requests(
+        connection,
+        team_id,
+        microsoft_graph_open_shift_change_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -170,8 +202,21 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOpenShift.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_create_open_shifts(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphOpenShift.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOpenShift.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_schedule_create_open_shifts(connection, team_id, microsoft_graph_open_shift, _opts \\ []) do
+  @spec teams_schedule_create_open_shifts(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphOpenShift.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOpenShift.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_schedule_create_open_shifts(
+        connection,
+        team_id,
+        microsoft_graph_open_shift,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -204,8 +249,21 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSchedulingGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_create_scheduling_groups(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphSchedulingGroup.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSchedulingGroup.t} | {:error, Tesla.Env.t}
-  def teams_schedule_create_scheduling_groups(connection, team_id, microsoft_graph_scheduling_group, _opts \\ []) do
+  @spec teams_schedule_create_scheduling_groups(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSchedulingGroup.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSchedulingGroup.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_schedule_create_scheduling_groups(
+        connection,
+        team_id,
+        microsoft_graph_scheduling_group,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -238,7 +296,15 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphShift.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_create_shifts(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphShift.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphShift.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_schedule_create_shifts(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphShift.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphShift.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_schedule_create_shifts(connection, team_id, microsoft_graph_shift, _opts \\ []) do
     request =
       %{}
@@ -272,8 +338,21 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSwapShiftsChangeRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_create_swap_shifts_change_requests(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphSwapShiftsChangeRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSwapShiftsChangeRequest.t} | {:error, Tesla.Env.t}
-  def teams_schedule_create_swap_shifts_change_requests(connection, team_id, microsoft_graph_swap_shifts_change_request, _opts \\ []) do
+  @spec teams_schedule_create_swap_shifts_change_requests(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSwapShiftsChangeRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSwapShiftsChangeRequest.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_schedule_create_swap_shifts_change_requests(
+        connection,
+        team_id,
+        microsoft_graph_swap_shifts_change_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -306,8 +385,21 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffReason.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_create_time_off_reasons(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphTimeOffReason.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffReason.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_schedule_create_time_off_reasons(connection, team_id, microsoft_graph_time_off_reason, _opts \\ []) do
+  @spec teams_schedule_create_time_off_reasons(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTimeOffReason.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffReason.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_schedule_create_time_off_reasons(
+        connection,
+        team_id,
+        microsoft_graph_time_off_reason,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -339,8 +431,21 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_create_time_off_requests(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphTimeOffRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_schedule_create_time_off_requests(connection, team_id, microsoft_graph_time_off_request, _opts \\ []) do
+  @spec teams_schedule_create_time_off_requests(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTimeOffRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_schedule_create_time_off_requests(
+        connection,
+        team_id,
+        microsoft_graph_time_off_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -373,7 +478,15 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOff.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_create_times_off(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphTimeOff.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOff.t} | {:error, Tesla.Env.t}
+  @spec teams_schedule_create_times_off(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTimeOff.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOff.t()}
+          | {:error, Tesla.Env.t()}
   def teams_schedule_create_times_off(connection, team_id, microsoft_graph_time_off, _opts \\ []) do
     request =
       %{}
@@ -407,8 +520,21 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_delete_offer_shift_requests(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_schedule_delete_offer_shift_requests(connection, team_id, offer_shift_request_id, opts \\ []) do
+  @spec teams_schedule_delete_offer_shift_requests(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_schedule_delete_offer_shift_requests(
+        connection,
+        team_id,
+        offer_shift_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -445,8 +571,21 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_delete_open_shift_change_requests(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_schedule_delete_open_shift_change_requests(connection, team_id, open_shift_change_request_id, opts \\ []) do
+  @spec teams_schedule_delete_open_shift_change_requests(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_schedule_delete_open_shift_change_requests(
+        connection,
+        team_id,
+        open_shift_change_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -484,7 +623,10 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_delete_open_shifts(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_schedule_delete_open_shifts(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_schedule_delete_open_shifts(connection, team_id, open_shift_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -523,8 +665,21 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_delete_scheduling_groups(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_schedule_delete_scheduling_groups(connection, team_id, scheduling_group_id, opts \\ []) do
+  @spec teams_schedule_delete_scheduling_groups(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_schedule_delete_scheduling_groups(
+        connection,
+        team_id,
+        scheduling_group_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -562,7 +717,10 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_delete_shifts(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_schedule_delete_shifts(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_schedule_delete_shifts(connection, team_id, shift_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -600,8 +758,21 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_delete_swap_shifts_change_requests(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_schedule_delete_swap_shifts_change_requests(connection, team_id, swap_shifts_change_request_id, opts \\ []) do
+  @spec teams_schedule_delete_swap_shifts_change_requests(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_schedule_delete_swap_shifts_change_requests(
+        connection,
+        team_id,
+        swap_shifts_change_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -609,7 +780,9 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
     request =
       %{}
       |> method(:delete)
-      |> url("/teams/#{team_id}/schedule/swapShiftsChangeRequests/#{swap_shifts_change_request_id}")
+      |> url(
+        "/teams/#{team_id}/schedule/swapShiftsChangeRequests/#{swap_shifts_change_request_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -639,7 +812,15 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_delete_time_off_reasons(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_schedule_delete_time_off_reasons(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_schedule_delete_time_off_reasons(connection, team_id, time_off_reason_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -678,8 +859,21 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_delete_time_off_requests(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_schedule_delete_time_off_requests(connection, team_id, time_off_request_id, opts \\ []) do
+  @spec teams_schedule_delete_time_off_requests(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_schedule_delete_time_off_requests(
+        connection,
+        team_id,
+        time_off_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -717,7 +911,10 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_delete_times_off(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_schedule_delete_times_off(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_schedule_delete_times_off(connection, team_id, time_off_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -757,8 +954,21 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOfferShiftRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_get_offer_shift_requests(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOfferShiftRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_schedule_get_offer_shift_requests(connection, team_id, offer_shift_request_id, opts \\ []) do
+  @spec teams_schedule_get_offer_shift_requests(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOfferShiftRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_schedule_get_offer_shift_requests(
+        connection,
+        team_id,
+        offer_shift_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -798,8 +1008,21 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOpenShiftChangeRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_get_open_shift_change_requests(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOpenShiftChangeRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_schedule_get_open_shift_change_requests(connection, team_id, open_shift_change_request_id, opts \\ []) do
+  @spec teams_schedule_get_open_shift_change_requests(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOpenShiftChangeRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_schedule_get_open_shift_change_requests(
+        connection,
+        team_id,
+        open_shift_change_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -839,7 +1062,10 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOpenShift.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_get_open_shifts(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOpenShift.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_schedule_get_open_shifts(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOpenShift.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_schedule_get_open_shifts(connection, team_id, open_shift_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -879,7 +1105,15 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSchedulingGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_get_scheduling_groups(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSchedulingGroup.t} | {:error, Tesla.Env.t}
+  @spec teams_schedule_get_scheduling_groups(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSchedulingGroup.t()}
+          | {:error, Tesla.Env.t()}
   def teams_schedule_get_scheduling_groups(connection, team_id, scheduling_group_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query
@@ -918,7 +1152,10 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphShift.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_get_shifts(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphShift.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_schedule_get_shifts(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphShift.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_schedule_get_shifts(connection, team_id, shift_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query
@@ -958,8 +1195,21 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSwapShiftsChangeRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_get_swap_shifts_change_requests(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSwapShiftsChangeRequest.t} | {:error, Tesla.Env.t}
-  def teams_schedule_get_swap_shifts_change_requests(connection, team_id, swap_shifts_change_request_id, opts \\ []) do
+  @spec teams_schedule_get_swap_shifts_change_requests(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSwapShiftsChangeRequest.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_schedule_get_swap_shifts_change_requests(
+        connection,
+        team_id,
+        swap_shifts_change_request_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -968,7 +1218,9 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
     request =
       %{}
       |> method(:get)
-      |> url("/teams/#{team_id}/schedule/swapShiftsChangeRequests/#{swap_shifts_change_request_id}")
+      |> url(
+        "/teams/#{team_id}/schedule/swapShiftsChangeRequests/#{swap_shifts_change_request_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -998,7 +1250,10 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffReason.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_get_time_off_reasons(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffReason.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_schedule_get_time_off_reasons(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffReason.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_schedule_get_time_off_reasons(connection, team_id, time_off_reason_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query
@@ -1037,7 +1292,15 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_get_time_off_requests(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_schedule_get_time_off_requests(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_schedule_get_time_off_requests(connection, team_id, time_off_request_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query
@@ -1076,7 +1339,10 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOff.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_get_times_off(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOff.t} | {:error, Tesla.Env.t}
+  @spec teams_schedule_get_times_off(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOff.t()}
+          | {:error, Tesla.Env.t()}
   def teams_schedule_get_times_off(connection, team_id, time_off_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query
@@ -1121,7 +1387,10 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOfferShiftRequestCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_list_offer_shift_requests(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphOfferShiftRequestCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec teams_schedule_list_offer_shift_requests(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphOfferShiftRequestCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def teams_schedule_list_offer_shift_requests(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1173,7 +1442,10 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOpenShiftChangeRequestCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_list_open_shift_change_requests(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphOpenShiftChangeRequestCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec teams_schedule_list_open_shift_change_requests(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphOpenShiftChangeRequestCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def teams_schedule_list_open_shift_change_requests(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1225,7 +1497,10 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOpenShiftCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_list_open_shifts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphOpenShiftCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec teams_schedule_list_open_shifts(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphOpenShiftCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def teams_schedule_list_open_shifts(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1276,7 +1551,10 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSchedulingGroupCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_list_scheduling_groups(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSchedulingGroupCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_schedule_list_scheduling_groups(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSchedulingGroupCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_schedule_list_scheduling_groups(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1326,7 +1604,10 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphShiftCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_list_shifts(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphShiftCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_schedule_list_shifts(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphShiftCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_schedule_list_shifts(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1377,7 +1658,10 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSwapShiftsChangeRequestCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_list_swap_shifts_change_requests(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSwapShiftsChangeRequestCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_schedule_list_swap_shifts_change_requests(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSwapShiftsChangeRequestCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_schedule_list_swap_shifts_change_requests(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1428,7 +1712,10 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffReasonCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_list_time_off_reasons(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffReasonCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_schedule_list_time_off_reasons(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffReasonCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_schedule_list_time_off_reasons(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1478,7 +1765,10 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffRequestCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_list_time_off_requests(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffRequestCollectionResponse.t} | {:error, Tesla.Env.t}
+  @spec teams_schedule_list_time_off_requests(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffRequestCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
   def teams_schedule_list_time_off_requests(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1528,7 +1818,10 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_list_times_off(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_schedule_list_times_off(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_schedule_list_times_off(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1572,7 +1865,14 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_offer_shift_requests_get_count9c52(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_schedule_offer_shift_requests_get_count9c52(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_schedule_offer_shift_requests_get_count9c52(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -1611,7 +1911,14 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_open_shift_change_requests_get_count179b(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_schedule_open_shift_change_requests_get_count179b(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_schedule_open_shift_change_requests_get_count179b(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -1650,7 +1957,10 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_open_shifts_get_count_bdbd(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_schedule_open_shifts_get_count_bdbd(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_schedule_open_shifts_get_count_bdbd(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -1689,7 +1999,10 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_scheduling_groups_get_count256b(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_schedule_scheduling_groups_get_count256b(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_schedule_scheduling_groups_get_count256b(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -1728,7 +2041,10 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_shifts_get_count97aa(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_schedule_shifts_get_count97aa(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_schedule_shifts_get_count97aa(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -1767,7 +2083,14 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_swap_shifts_change_requests_get_count9390(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_schedule_swap_shifts_change_requests_get_count9390(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_schedule_swap_shifts_change_requests_get_count9390(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -1806,7 +2129,10 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_time_off_reasons_get_count4024(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_schedule_time_off_reasons_get_count4024(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_schedule_time_off_reasons_get_count4024(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -1845,7 +2171,10 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_time_off_requests_get_count9411(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_schedule_time_off_requests_get_count9411(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_schedule_time_off_requests_get_count9411(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -1884,7 +2213,10 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_times_off_get_count16b4(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_schedule_times_off_get_count16b4(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_schedule_times_off_get_count16b4(connection, team_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -1923,8 +2255,23 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOfferShiftRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_update_offer_shift_requests(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphOfferShiftRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOfferShiftRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_schedule_update_offer_shift_requests(connection, team_id, offer_shift_request_id, microsoft_graph_offer_shift_request, _opts \\ []) do
+  @spec teams_schedule_update_offer_shift_requests(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphOfferShiftRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOfferShiftRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_schedule_update_offer_shift_requests(
+        connection,
+        team_id,
+        offer_shift_request_id,
+        microsoft_graph_offer_shift_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -1957,8 +2304,23 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOpenShiftChangeRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_update_open_shift_change_requests(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphOpenShiftChangeRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOpenShiftChangeRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_schedule_update_open_shift_change_requests(connection, team_id, open_shift_change_request_id, microsoft_graph_open_shift_change_request, _opts \\ []) do
+  @spec teams_schedule_update_open_shift_change_requests(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphOpenShiftChangeRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOpenShiftChangeRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_schedule_update_open_shift_change_requests(
+        connection,
+        team_id,
+        open_shift_change_request_id,
+        microsoft_graph_open_shift_change_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -1992,8 +2354,23 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphOpenShift.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_update_open_shifts(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphOpenShift.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphOpenShift.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_schedule_update_open_shifts(connection, team_id, open_shift_id, microsoft_graph_open_shift, _opts \\ []) do
+  @spec teams_schedule_update_open_shifts(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphOpenShift.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphOpenShift.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_schedule_update_open_shifts(
+        connection,
+        team_id,
+        open_shift_id,
+        microsoft_graph_open_shift,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -2027,8 +2404,23 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSchedulingGroup.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_update_scheduling_groups(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphSchedulingGroup.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSchedulingGroup.t} | {:error, Tesla.Env.t}
-  def teams_schedule_update_scheduling_groups(connection, team_id, scheduling_group_id, microsoft_graph_scheduling_group, _opts \\ []) do
+  @spec teams_schedule_update_scheduling_groups(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSchedulingGroup.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSchedulingGroup.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_schedule_update_scheduling_groups(
+        connection,
+        team_id,
+        scheduling_group_id,
+        microsoft_graph_scheduling_group,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -2062,8 +2454,23 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphShift.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_update_shifts(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphShift.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphShift.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_schedule_update_shifts(connection, team_id, shift_id, microsoft_graph_shift, _opts \\ []) do
+  @spec teams_schedule_update_shifts(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphShift.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphShift.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_schedule_update_shifts(
+        connection,
+        team_id,
+        shift_id,
+        microsoft_graph_shift,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -2096,12 +2503,29 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSwapShiftsChangeRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_update_swap_shifts_change_requests(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphSwapShiftsChangeRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSwapShiftsChangeRequest.t} | {:error, Tesla.Env.t}
-  def teams_schedule_update_swap_shifts_change_requests(connection, team_id, swap_shifts_change_request_id, microsoft_graph_swap_shifts_change_request, _opts \\ []) do
+  @spec teams_schedule_update_swap_shifts_change_requests(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSwapShiftsChangeRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSwapShiftsChangeRequest.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_schedule_update_swap_shifts_change_requests(
+        connection,
+        team_id,
+        swap_shifts_change_request_id,
+        microsoft_graph_swap_shifts_change_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/teams/#{team_id}/schedule/swapShiftsChangeRequests/#{swap_shifts_change_request_id}")
+      |> url(
+        "/teams/#{team_id}/schedule/swapShiftsChangeRequests/#{swap_shifts_change_request_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_swap_shifts_change_request)
       |> Enum.into([])
 
@@ -2131,8 +2555,23 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffReason.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_update_time_off_reasons(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTimeOffReason.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffReason.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_schedule_update_time_off_reasons(connection, team_id, time_off_reason_id, microsoft_graph_time_off_reason, _opts \\ []) do
+  @spec teams_schedule_update_time_off_reasons(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTimeOffReason.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffReason.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_schedule_update_time_off_reasons(
+        connection,
+        team_id,
+        time_off_reason_id,
+        microsoft_graph_time_off_reason,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -2165,8 +2604,23 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffRequest.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_update_time_off_requests(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTimeOffRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffRequest.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teams_schedule_update_time_off_requests(connection, team_id, time_off_request_id, microsoft_graph_time_off_request, _opts \\ []) do
+  @spec teams_schedule_update_time_off_requests(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTimeOffRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOffRequest.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_schedule_update_time_off_requests(
+        connection,
+        team_id,
+        time_off_request_id,
+        microsoft_graph_time_off_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -2200,8 +2654,23 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOff.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_schedule_update_times_off(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphTimeOff.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOff.t} | {:error, Tesla.Env.t}
-  def teams_schedule_update_times_off(connection, team_id, time_off_id, microsoft_graph_time_off, _opts \\ []) do
+  @spec teams_schedule_update_times_off(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphTimeOff.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphTimeOff.t()}
+          | {:error, Tesla.Env.t()}
+  def teams_schedule_update_times_off(
+        connection,
+        team_id,
+        time_off_id,
+        microsoft_graph_time_off,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
@@ -2233,7 +2702,15 @@ defmodule MicrosoftGraph.Api.TeamsSchedule do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSchedule.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teams_update_schedule(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphSchedule.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphSchedule.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teams_update_schedule(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSchedule.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphSchedule.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teams_update_schedule(connection, team_id, microsoft_graph_schedule, _opts \\ []) do
     request =
       %{}

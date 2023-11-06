@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphMicrosoftAuthenticatorAuthenticationMethod do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -18,21 +18,25 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphMicrosoftAuthenticatorAuthenticatio
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :device => MicrosoftGraph.Model.MicrosoftAuthenticatorAuthenticationMethodDevice.t | nil,
-    :deviceTag => String.t | nil,
-    :displayName => String.t | nil,
-    :phoneAppVersion => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :device =>
+            MicrosoftGraph.Model.MicrosoftAuthenticatorAuthenticationMethodDevice.t() | nil,
+          :deviceTag => String.t() | nil,
+          :displayName => String.t() | nil,
+          :phoneAppVersion => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:device, :struct, MicrosoftGraph.Model.MicrosoftAuthenticatorAuthenticationMethodDevice)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :device,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftAuthenticatorAuthenticationMethodDevice
+    )
   end
 end
-

@@ -25,13 +25,30 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfDeviceCompliancePolicyAssignment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_compliance_policies_device_compliance_policy_assign(Tesla.Env.client, String.t, MicrosoftGraph.Model.DeviceManagementDeviceCompliancePoliciesDeviceCompliancePolicyAssignRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfDeviceCompliancePolicyAssignment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_device_compliance_policies_device_compliance_policy_assign(connection, device_compliance_policy_id, device_management_device_compliance_policies_device_compliance_policy_assign_request, _opts \\ []) do
+  @spec device_management_device_compliance_policies_device_compliance_policy_assign(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.DeviceManagementDeviceCompliancePoliciesDeviceCompliancePolicyAssignRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfDeviceCompliancePolicyAssignment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_compliance_policies_device_compliance_policy_assign(
+        connection,
+        device_compliance_policy_id,
+        device_management_device_compliance_policies_device_compliance_policy_assign_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/deviceManagement/deviceCompliancePolicies/#{device_compliance_policy_id}/assign")
-      |> add_param(:body, :body, device_management_device_compliance_policies_device_compliance_policy_assign_request)
+      |> add_param(
+        :body,
+        :body,
+        device_management_device_compliance_policies_device_compliance_policy_assign_request
+      )
       |> Enum.into([])
 
     connection
@@ -59,13 +76,32 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_compliance_policies_device_compliance_policy_schedule_actions_for_rules(Tesla.Env.client, String.t, MicrosoftGraph.Model.DeviceManagementDeviceCompliancePoliciesDeviceCompliancePolicyScheduleActionsForRulesRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_device_compliance_policies_device_compliance_policy_schedule_actions_for_rules(connection, device_compliance_policy_id, device_management_device_compliance_policies_device_compliance_policy_schedule_actions_for_rules_request, _opts \\ []) do
+  @spec device_management_device_compliance_policies_device_compliance_policy_schedule_actions_for_rules(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.DeviceManagementDeviceCompliancePoliciesDeviceCompliancePolicyScheduleActionsForRulesRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_compliance_policies_device_compliance_policy_schedule_actions_for_rules(
+        connection,
+        device_compliance_policy_id,
+        device_management_device_compliance_policies_device_compliance_policy_schedule_actions_for_rules_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceManagement/deviceCompliancePolicies/#{device_compliance_policy_id}/scheduleActionsForRules")
-      |> add_param(:body, :body, device_management_device_compliance_policies_device_compliance_policy_schedule_actions_for_rules_request)
+      |> url(
+        "/deviceManagement/deviceCompliancePolicies/#{device_compliance_policy_id}/scheduleActionsForRules"
+      )
+      |> add_param(
+        :body,
+        :body,
+        device_management_device_compliance_policies_device_compliance_policy_schedule_actions_for_rules_request
+      )
       |> Enum.into([])
 
     connection
@@ -93,13 +129,30 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfDeviceConfigurationAssignment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_configurations_device_configuration_assign(Tesla.Env.client, String.t, MicrosoftGraph.Model.DeviceManagementDeviceConfigurationsDeviceConfigurationAssignRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfDeviceConfigurationAssignment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_device_configurations_device_configuration_assign(connection, device_configuration_id, device_management_device_configurations_device_configuration_assign_request, _opts \\ []) do
+  @spec device_management_device_configurations_device_configuration_assign(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.DeviceManagementDeviceConfigurationsDeviceConfigurationAssignRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfDeviceConfigurationAssignment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_configurations_device_configuration_assign(
+        connection,
+        device_configuration_id,
+        device_management_device_configurations_device_configuration_assign_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/deviceManagement/deviceConfigurations/#{device_configuration_id}/assign")
-      |> add_param(:body, :body, device_management_device_configurations_device_configuration_assign_request)
+      |> add_param(
+        :body,
+        :body,
+        device_management_device_configurations_device_configuration_assign_request
+      )
       |> Enum.into([])
 
     connection
@@ -127,13 +180,32 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_enrollment_configurations_device_enrollment_configuration_assign(Tesla.Env.client, String.t, MicrosoftGraph.Model.DeviceManagementDeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationAssignRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_device_enrollment_configurations_device_enrollment_configuration_assign(connection, device_enrollment_configuration_id, device_management_device_enrollment_configurations_device_enrollment_configuration_assign_request, _opts \\ []) do
+  @spec device_management_device_enrollment_configurations_device_enrollment_configuration_assign(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.DeviceManagementDeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationAssignRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_enrollment_configurations_device_enrollment_configuration_assign(
+        connection,
+        device_enrollment_configuration_id,
+        device_management_device_enrollment_configurations_device_enrollment_configuration_assign_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceManagement/deviceEnrollmentConfigurations/#{device_enrollment_configuration_id}/assign")
-      |> add_param(:body, :body, device_management_device_enrollment_configurations_device_enrollment_configuration_assign_request)
+      |> url(
+        "/deviceManagement/deviceEnrollmentConfigurations/#{device_enrollment_configuration_id}/assign"
+      )
+      |> add_param(
+        :body,
+        :body,
+        device_management_device_enrollment_configurations_device_enrollment_configuration_assign_request
+      )
       |> Enum.into([])
 
     connection
@@ -161,13 +233,32 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_enrollment_configurations_device_enrollment_configuration_set_priority(Tesla.Env.client, String.t, MicrosoftGraph.Model.DeviceManagementDeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationSetPriorityRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_device_enrollment_configurations_device_enrollment_configuration_set_priority(connection, device_enrollment_configuration_id, device_management_device_enrollment_configurations_device_enrollment_configuration_set_priority_request, _opts \\ []) do
+  @spec device_management_device_enrollment_configurations_device_enrollment_configuration_set_priority(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.DeviceManagementDeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationSetPriorityRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_enrollment_configurations_device_enrollment_configuration_set_priority(
+        connection,
+        device_enrollment_configuration_id,
+        device_management_device_enrollment_configurations_device_enrollment_configuration_set_priority_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceManagement/deviceEnrollmentConfigurations/#{device_enrollment_configuration_id}/setPriority")
-      |> add_param(:body, :body, device_management_device_enrollment_configurations_device_enrollment_configuration_set_priority_request)
+      |> url(
+        "/deviceManagement/deviceEnrollmentConfigurations/#{device_enrollment_configuration_id}/setPriority"
+      )
+      |> add_param(
+        :body,
+        :body,
+        device_management_device_enrollment_configurations_device_enrollment_configuration_set_priority_request
+      )
       |> Enum.into([])
 
     connection
@@ -194,12 +285,25 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_management_partners_device_management_partner_terminate(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_device_management_partners_device_management_partner_terminate(connection, device_management_partner_id, _opts \\ []) do
+  @spec device_management_device_management_partners_device_management_partner_terminate(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_management_partners_device_management_partner_terminate(
+        connection,
+        device_management_partner_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceManagement/deviceManagementPartners/#{device_management_partner_id}/terminate")
+      |> url(
+        "/deviceManagement/deviceManagementPartners/#{device_management_partner_id}/terminate"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -228,13 +332,32 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_exchange_connectors_device_management_exchange_connector_sync(Tesla.Env.client, String.t, MicrosoftGraph.Model.DeviceManagementExchangeConnectorsDeviceManagementExchangeConnectorSyncRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_exchange_connectors_device_management_exchange_connector_sync(connection, device_management_exchange_connector_id, device_management_exchange_connectors_device_management_exchange_connector_sync_request, _opts \\ []) do
+  @spec device_management_exchange_connectors_device_management_exchange_connector_sync(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.DeviceManagementExchangeConnectorsDeviceManagementExchangeConnectorSyncRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_exchange_connectors_device_management_exchange_connector_sync(
+        connection,
+        device_management_exchange_connector_id,
+        device_management_exchange_connectors_device_management_exchange_connector_sync_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceManagement/exchangeConnectors/#{device_management_exchange_connector_id}/sync")
-      |> add_param(:body, :body, device_management_exchange_connectors_device_management_exchange_connector_sync_request)
+      |> url(
+        "/deviceManagement/exchangeConnectors/#{device_management_exchange_connector_id}/sync"
+      )
+      |> add_param(
+        :body,
+        :body,
+        device_management_exchange_connectors_device_management_exchange_connector_sync_request
+      )
       |> Enum.into([])
 
     connection
@@ -261,13 +384,28 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfImportedWindowsAutopilotDeviceIdentity.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_imported_windows_autopilot_device_identities_import(Tesla.Env.client, MicrosoftGraph.Model.DeviceManagementImportedWindowsAutopilotDeviceIdentitiesImportRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfImportedWindowsAutopilotDeviceIdentity.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_imported_windows_autopilot_device_identities_import(connection, device_management_imported_windows_autopilot_device_identities_import_request, _opts \\ []) do
+  @spec device_management_imported_windows_autopilot_device_identities_import(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.DeviceManagementImportedWindowsAutopilotDeviceIdentitiesImportRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfImportedWindowsAutopilotDeviceIdentity.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_imported_windows_autopilot_device_identities_import(
+        connection,
+        device_management_imported_windows_autopilot_device_identities_import_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/deviceManagement/importedWindowsAutopilotDeviceIdentities/import")
-      |> add_param(:body, :body, device_management_imported_windows_autopilot_device_identities_import_request)
+      |> add_param(
+        :body,
+        :body,
+        device_management_imported_windows_autopilot_device_identities_import_request
+      )
       |> Enum.into([])
 
     connection
@@ -294,8 +432,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_managed_devices_managed_device_bypass_activation_lock(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_managed_devices_managed_device_bypass_activation_lock(connection, managed_device_id, _opts \\ []) do
+  @spec device_management_managed_devices_managed_device_bypass_activation_lock(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_managed_devices_managed_device_bypass_activation_lock(
+        connection,
+        managed_device_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -328,13 +477,30 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_managed_devices_managed_device_clean_windows_device(Tesla.Env.client, String.t, MicrosoftGraph.Model.DeviceManagementManagedDevicesManagedDeviceCleanWindowsDeviceRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_managed_devices_managed_device_clean_windows_device(connection, managed_device_id, device_management_managed_devices_managed_device_clean_windows_device_request, _opts \\ []) do
+  @spec device_management_managed_devices_managed_device_clean_windows_device(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.DeviceManagementManagedDevicesManagedDeviceCleanWindowsDeviceRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_managed_devices_managed_device_clean_windows_device(
+        connection,
+        managed_device_id,
+        device_management_managed_devices_managed_device_clean_windows_device_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/deviceManagement/managedDevices/#{managed_device_id}/cleanWindowsDevice")
-      |> add_param(:body, :body, device_management_managed_devices_managed_device_clean_windows_device_request)
+      |> add_param(
+        :body,
+        :body,
+        device_management_managed_devices_managed_device_clean_windows_device_request
+      )
       |> Enum.into([])
 
     connection
@@ -362,13 +528,32 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_managed_devices_managed_device_delete_user_from_shared_apple_device(Tesla.Env.client, String.t, MicrosoftGraph.Model.UsersUserManagedDevicesManagedDeviceDeleteUserFromSharedAppleDeviceRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_managed_devices_managed_device_delete_user_from_shared_apple_device(connection, managed_device_id, users_user_managed_devices_managed_device_delete_user_from_shared_apple_device_request, _opts \\ []) do
+  @spec device_management_managed_devices_managed_device_delete_user_from_shared_apple_device(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserManagedDevicesManagedDeviceDeleteUserFromSharedAppleDeviceRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_managed_devices_managed_device_delete_user_from_shared_apple_device(
+        connection,
+        managed_device_id,
+        users_user_managed_devices_managed_device_delete_user_from_shared_apple_device_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceManagement/managedDevices/#{managed_device_id}/deleteUserFromSharedAppleDevice")
-      |> add_param(:body, :body, users_user_managed_devices_managed_device_delete_user_from_shared_apple_device_request)
+      |> url(
+        "/deviceManagement/managedDevices/#{managed_device_id}/deleteUserFromSharedAppleDevice"
+      )
+      |> add_param(
+        :body,
+        :body,
+        users_user_managed_devices_managed_device_delete_user_from_shared_apple_device_request
+      )
       |> Enum.into([])
 
     connection
@@ -395,8 +580,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_managed_devices_managed_device_disable_lost_mode(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_managed_devices_managed_device_disable_lost_mode(connection, managed_device_id, _opts \\ []) do
+  @spec device_management_managed_devices_managed_device_disable_lost_mode(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_managed_devices_managed_device_disable_lost_mode(
+        connection,
+        managed_device_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -428,8 +624,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_managed_devices_managed_device_locate_device(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_managed_devices_managed_device_locate_device(connection, managed_device_id, _opts \\ []) do
+  @spec device_management_managed_devices_managed_device_locate_device(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_managed_devices_managed_device_locate_device(
+        connection,
+        managed_device_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -461,19 +668,36 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookWorksheetsWorkbookWorksheetChartsWorkbookChartImage8f132XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_managed_devices_managed_device_log_collection_requests_device_log_collection_response_create_download_url(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookWorksheetsWorkbookWorksheetChartsWorkbookChartImage8f132XxResponse.t} | {:error, Tesla.Env.t}
-  def device_management_managed_devices_managed_device_log_collection_requests_device_log_collection_response_create_download_url(connection, managed_device_id, device_log_collection_response_id, _opts \\ []) do
+  @spec device_management_managed_devices_managed_device_log_collection_requests_device_log_collection_response_create_download_url(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookWorksheetsWorkbookWorksheetChartsWorkbookChartImage8f132XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_managed_devices_managed_device_log_collection_requests_device_log_collection_response_create_download_url(
+        connection,
+        managed_device_id,
+        device_log_collection_response_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceManagement/managedDevices/#{managed_device_id}/logCollectionRequests/#{device_log_collection_response_id}/createDownloadUrl")
+      |> url(
+        "/deviceManagement/managedDevices/#{managed_device_id}/logCollectionRequests/#{device_log_collection_response_id}/createDownloadUrl"
+      )
       |> ensure_body()
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookWorksheetsWorkbookWorksheetChartsWorkbookChartImage8f132XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookWorksheetsWorkbookWorksheetChartsWorkbookChartImage8f132XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -494,12 +718,25 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_managed_devices_managed_device_logout_shared_apple_device_active_user(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_managed_devices_managed_device_logout_shared_apple_device_active_user(connection, managed_device_id, _opts \\ []) do
+  @spec device_management_managed_devices_managed_device_logout_shared_apple_device_active_user(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_managed_devices_managed_device_logout_shared_apple_device_active_user(
+        connection,
+        managed_device_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceManagement/managedDevices/#{managed_device_id}/logoutSharedAppleDeviceActiveUser")
+      |> url(
+        "/deviceManagement/managedDevices/#{managed_device_id}/logoutSharedAppleDeviceActiveUser"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -527,8 +764,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_managed_devices_managed_device_reboot_now(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_managed_devices_managed_device_reboot_now(connection, managed_device_id, _opts \\ []) do
+  @spec device_management_managed_devices_managed_device_reboot_now(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_managed_devices_managed_device_reboot_now(
+        connection,
+        managed_device_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -560,8 +808,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_managed_devices_managed_device_recover_passcode(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_managed_devices_managed_device_recover_passcode(connection, managed_device_id, _opts \\ []) do
+  @spec device_management_managed_devices_managed_device_recover_passcode(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_managed_devices_managed_device_recover_passcode(
+        connection,
+        managed_device_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -593,8 +852,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_managed_devices_managed_device_remote_lock(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_managed_devices_managed_device_remote_lock(connection, managed_device_id, _opts \\ []) do
+  @spec device_management_managed_devices_managed_device_remote_lock(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_managed_devices_managed_device_remote_lock(
+        connection,
+        managed_device_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -626,8 +896,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_managed_devices_managed_device_request_remote_assistance(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_managed_devices_managed_device_request_remote_assistance(connection, managed_device_id, _opts \\ []) do
+  @spec device_management_managed_devices_managed_device_request_remote_assistance(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_managed_devices_managed_device_request_remote_assistance(
+        connection,
+        managed_device_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -659,8 +940,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_managed_devices_managed_device_reset_passcode(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_managed_devices_managed_device_reset_passcode(connection, managed_device_id, _opts \\ []) do
+  @spec device_management_managed_devices_managed_device_reset_passcode(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_managed_devices_managed_device_reset_passcode(
+        connection,
+        managed_device_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -692,8 +984,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_managed_devices_managed_device_retire(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_managed_devices_managed_device_retire(connection, managed_device_id, _opts \\ []) do
+  @spec device_management_managed_devices_managed_device_retire(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_managed_devices_managed_device_retire(
+        connection,
+        managed_device_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -725,8 +1028,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_managed_devices_managed_device_shut_down(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_managed_devices_managed_device_shut_down(connection, managed_device_id, _opts \\ []) do
+  @spec device_management_managed_devices_managed_device_shut_down(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_managed_devices_managed_device_shut_down(
+        connection,
+        managed_device_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -758,8 +1072,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_managed_devices_managed_device_sync_device(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_managed_devices_managed_device_sync_device(connection, managed_device_id, _opts \\ []) do
+  @spec device_management_managed_devices_managed_device_sync_device(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_managed_devices_managed_device_sync_device(
+        connection,
+        managed_device_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -792,13 +1117,30 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_managed_devices_managed_device_update_windows_device_account(Tesla.Env.client, String.t, MicrosoftGraph.Model.UsersUserManagedDevicesManagedDeviceUpdateWindowsDeviceAccountRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_managed_devices_managed_device_update_windows_device_account(connection, managed_device_id, users_user_managed_devices_managed_device_update_windows_device_account_request, _opts \\ []) do
+  @spec device_management_managed_devices_managed_device_update_windows_device_account(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserManagedDevicesManagedDeviceUpdateWindowsDeviceAccountRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_managed_devices_managed_device_update_windows_device_account(
+        connection,
+        managed_device_id,
+        users_user_managed_devices_managed_device_update_windows_device_account_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/deviceManagement/managedDevices/#{managed_device_id}/updateWindowsDeviceAccount")
-      |> add_param(:body, :body, users_user_managed_devices_managed_device_update_windows_device_account_request)
+      |> add_param(
+        :body,
+        :body,
+        users_user_managed_devices_managed_device_update_windows_device_account_request
+      )
       |> Enum.into([])
 
     connection
@@ -826,13 +1168,30 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_managed_devices_managed_device_windows_defender_scan(Tesla.Env.client, String.t, MicrosoftGraph.Model.UsersUserManagedDevicesManagedDeviceWindowsDefenderScanRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_managed_devices_managed_device_windows_defender_scan(connection, managed_device_id, users_user_managed_devices_managed_device_windows_defender_scan_request, _opts \\ []) do
+  @spec device_management_managed_devices_managed_device_windows_defender_scan(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserManagedDevicesManagedDeviceWindowsDefenderScanRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_managed_devices_managed_device_windows_defender_scan(
+        connection,
+        managed_device_id,
+        users_user_managed_devices_managed_device_windows_defender_scan_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/deviceManagement/managedDevices/#{managed_device_id}/windowsDefenderScan")
-      |> add_param(:body, :body, users_user_managed_devices_managed_device_windows_defender_scan_request)
+      |> add_param(
+        :body,
+        :body,
+        users_user_managed_devices_managed_device_windows_defender_scan_request
+      )
       |> Enum.into([])
 
     connection
@@ -859,12 +1218,25 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_managed_devices_managed_device_windows_defender_update_signatures(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_managed_devices_managed_device_windows_defender_update_signatures(connection, managed_device_id, _opts \\ []) do
+  @spec device_management_managed_devices_managed_device_windows_defender_update_signatures(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_managed_devices_managed_device_windows_defender_update_signatures(
+        connection,
+        managed_device_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceManagement/managedDevices/#{managed_device_id}/windowsDefenderUpdateSignatures")
+      |> url(
+        "/deviceManagement/managedDevices/#{managed_device_id}/windowsDefenderUpdateSignatures"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -893,8 +1265,21 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_managed_devices_managed_device_wipe(Tesla.Env.client, String.t, MicrosoftGraph.Model.UsersUserManagedDevicesManagedDeviceWipeRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_managed_devices_managed_device_wipe(connection, managed_device_id, users_user_managed_devices_managed_device_wipe_request, _opts \\ []) do
+  @spec device_management_managed_devices_managed_device_wipe(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserManagedDevicesManagedDeviceWipeRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_managed_devices_managed_device_wipe(
+        connection,
+        managed_device_id,
+        users_user_managed_devices_managed_device_wipe_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -927,19 +1312,36 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, MicrosoftGraph.Model.DeviceManagementMobileAppTroubleshootingEventsMobileAppTroubleshootingEventAppLogCollectionRequestsAppLogCollectionRequestCreateDownloadUrl2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_mobile_app_troubleshooting_events_mobile_app_troubleshooting_event_app_log_collection_requests_app_log_collection_request_create_download_url(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.DeviceManagementMobileAppTroubleshootingEventsMobileAppTroubleshootingEventAppLogCollectionRequestsAppLogCollectionRequestCreateDownloadUrl2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_mobile_app_troubleshooting_events_mobile_app_troubleshooting_event_app_log_collection_requests_app_log_collection_request_create_download_url(connection, mobile_app_troubleshooting_event_id, app_log_collection_request_id, _opts \\ []) do
+  @spec device_management_mobile_app_troubleshooting_events_mobile_app_troubleshooting_event_app_log_collection_requests_app_log_collection_request_create_download_url(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.DeviceManagementMobileAppTroubleshootingEventsMobileAppTroubleshootingEventAppLogCollectionRequestsAppLogCollectionRequestCreateDownloadUrl2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_mobile_app_troubleshooting_events_mobile_app_troubleshooting_event_app_log_collection_requests_app_log_collection_request_create_download_url(
+        connection,
+        mobile_app_troubleshooting_event_id,
+        app_log_collection_request_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceManagement/mobileAppTroubleshootingEvents/#{mobile_app_troubleshooting_event_id}/appLogCollectionRequests/#{app_log_collection_request_id}/createDownloadUrl")
+      |> url(
+        "/deviceManagement/mobileAppTroubleshootingEvents/#{mobile_app_troubleshooting_event_id}/appLogCollectionRequests/#{app_log_collection_request_id}/createDownloadUrl"
+      )
       |> ensure_body()
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.DeviceManagementMobileAppTroubleshootingEventsMobileAppTroubleshootingEventAppLogCollectionRequestsAppLogCollectionRequestCreateDownloadUrl2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.DeviceManagementMobileAppTroubleshootingEventsMobileAppTroubleshootingEventAppLogCollectionRequestsAppLogCollectionRequestCreateDownloadUrl2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -960,12 +1362,25 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_notification_message_templates_notification_message_template_send_test_message(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_notification_message_templates_notification_message_template_send_test_message(connection, notification_message_template_id, _opts \\ []) do
+  @spec device_management_notification_message_templates_notification_message_template_send_test_message(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_notification_message_templates_notification_message_template_send_test_message(
+        connection,
+        notification_message_template_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceManagement/notificationMessageTemplates/#{notification_message_template_id}/sendTestMessage")
+      |> url(
+        "/deviceManagement/notificationMessageTemplates/#{notification_message_template_id}/sendTestMessage"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -993,12 +1408,25 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_remote_assistance_partners_remote_assistance_partner_begin_onboarding(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_remote_assistance_partners_remote_assistance_partner_begin_onboarding(connection, remote_assistance_partner_id, _opts \\ []) do
+  @spec device_management_remote_assistance_partners_remote_assistance_partner_begin_onboarding(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_remote_assistance_partners_remote_assistance_partner_begin_onboarding(
+        connection,
+        remote_assistance_partner_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceManagement/remoteAssistancePartners/#{remote_assistance_partner_id}/beginOnboarding")
+      |> url(
+        "/deviceManagement/remoteAssistancePartners/#{remote_assistance_partner_id}/beginOnboarding"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -1026,12 +1454,25 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_remote_assistance_partners_remote_assistance_partner_disconnect(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_remote_assistance_partners_remote_assistance_partner_disconnect(connection, remote_assistance_partner_id, _opts \\ []) do
+  @spec device_management_remote_assistance_partners_remote_assistance_partner_disconnect(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_remote_assistance_partners_remote_assistance_partner_disconnect(
+        connection,
+        remote_assistance_partner_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceManagement/remoteAssistancePartners/#{remote_assistance_partner_id}/disconnect")
+      |> url(
+        "/deviceManagement/remoteAssistancePartners/#{remote_assistance_partner_id}/disconnect"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -1059,8 +1500,20 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_reports_get_cached_report(Tesla.Env.client, MicrosoftGraph.Model.DeviceManagementReportsGetCachedReportRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_reports_get_cached_report(connection, device_management_reports_get_cached_report_request, _opts \\ []) do
+  @spec device_management_reports_get_cached_report(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.DeviceManagementReportsGetCachedReportRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_reports_get_cached_report(
+        connection,
+        device_management_reports_get_cached_report_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1071,7 +1524,8 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -1092,19 +1546,36 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_reports_get_compliance_policy_non_compliance_report(Tesla.Env.client, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReportRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_reports_get_compliance_policy_non_compliance_report(connection, device_management_reports_get_devices_without_compliance_policy_report_request, _opts \\ []) do
+  @spec device_management_reports_get_compliance_policy_non_compliance_report(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReportRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_reports_get_compliance_policy_non_compliance_report(
+        connection,
+        device_management_reports_get_devices_without_compliance_policy_report_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/deviceManagement/reports/getCompliancePolicyNonComplianceReport")
-      |> add_param(:body, :body, device_management_reports_get_devices_without_compliance_policy_report_request)
+      |> add_param(
+        :body,
+        :body,
+        device_management_reports_get_devices_without_compliance_policy_report_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -1125,19 +1596,36 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_reports_get_compliance_policy_non_compliance_summary_report(Tesla.Env.client, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReportRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_reports_get_compliance_policy_non_compliance_summary_report(connection, device_management_reports_get_devices_without_compliance_policy_report_request, _opts \\ []) do
+  @spec device_management_reports_get_compliance_policy_non_compliance_summary_report(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReportRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_reports_get_compliance_policy_non_compliance_summary_report(
+        connection,
+        device_management_reports_get_devices_without_compliance_policy_report_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/deviceManagement/reports/getCompliancePolicyNonComplianceSummaryReport")
-      |> add_param(:body, :body, device_management_reports_get_devices_without_compliance_policy_report_request)
+      |> add_param(
+        :body,
+        :body,
+        device_management_reports_get_devices_without_compliance_policy_report_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -1158,19 +1646,36 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_reports_get_compliance_setting_non_compliance_report(Tesla.Env.client, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReportRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_reports_get_compliance_setting_non_compliance_report(connection, device_management_reports_get_devices_without_compliance_policy_report_request, _opts \\ []) do
+  @spec device_management_reports_get_compliance_setting_non_compliance_report(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReportRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_reports_get_compliance_setting_non_compliance_report(
+        connection,
+        device_management_reports_get_devices_without_compliance_policy_report_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/deviceManagement/reports/getComplianceSettingNonComplianceReport")
-      |> add_param(:body, :body, device_management_reports_get_devices_without_compliance_policy_report_request)
+      |> add_param(
+        :body,
+        :body,
+        device_management_reports_get_devices_without_compliance_policy_report_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -1191,19 +1696,36 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_reports_get_configuration_policy_non_compliance_report(Tesla.Env.client, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReportRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_reports_get_configuration_policy_non_compliance_report(connection, device_management_reports_get_devices_without_compliance_policy_report_request, _opts \\ []) do
+  @spec device_management_reports_get_configuration_policy_non_compliance_report(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReportRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_reports_get_configuration_policy_non_compliance_report(
+        connection,
+        device_management_reports_get_devices_without_compliance_policy_report_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/deviceManagement/reports/getConfigurationPolicyNonComplianceReport")
-      |> add_param(:body, :body, device_management_reports_get_devices_without_compliance_policy_report_request)
+      |> add_param(
+        :body,
+        :body,
+        device_management_reports_get_devices_without_compliance_policy_report_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -1224,19 +1746,36 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_reports_get_configuration_policy_non_compliance_summary_report(Tesla.Env.client, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReportRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_reports_get_configuration_policy_non_compliance_summary_report(connection, device_management_reports_get_devices_without_compliance_policy_report_request, _opts \\ []) do
+  @spec device_management_reports_get_configuration_policy_non_compliance_summary_report(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReportRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_reports_get_configuration_policy_non_compliance_summary_report(
+        connection,
+        device_management_reports_get_devices_without_compliance_policy_report_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/deviceManagement/reports/getConfigurationPolicyNonComplianceSummaryReport")
-      |> add_param(:body, :body, device_management_reports_get_devices_without_compliance_policy_report_request)
+      |> add_param(
+        :body,
+        :body,
+        device_management_reports_get_devices_without_compliance_policy_report_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -1257,19 +1796,36 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_reports_get_configuration_setting_non_compliance_report(Tesla.Env.client, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReportRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_reports_get_configuration_setting_non_compliance_report(connection, device_management_reports_get_devices_without_compliance_policy_report_request, _opts \\ []) do
+  @spec device_management_reports_get_configuration_setting_non_compliance_report(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReportRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_reports_get_configuration_setting_non_compliance_report(
+        connection,
+        device_management_reports_get_devices_without_compliance_policy_report_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/deviceManagement/reports/getConfigurationSettingNonComplianceReport")
-      |> add_param(:body, :body, device_management_reports_get_devices_without_compliance_policy_report_request)
+      |> add_param(
+        :body,
+        :body,
+        device_management_reports_get_devices_without_compliance_policy_report_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -1290,19 +1846,36 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_reports_get_device_management_intent_per_setting_contributing_profiles(Tesla.Env.client, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReportRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_reports_get_device_management_intent_per_setting_contributing_profiles(connection, device_management_reports_get_devices_without_compliance_policy_report_request, _opts \\ []) do
+  @spec device_management_reports_get_device_management_intent_per_setting_contributing_profiles(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReportRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_reports_get_device_management_intent_per_setting_contributing_profiles(
+        connection,
+        device_management_reports_get_devices_without_compliance_policy_report_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/deviceManagement/reports/getDeviceManagementIntentPerSettingContributingProfiles")
-      |> add_param(:body, :body, device_management_reports_get_devices_without_compliance_policy_report_request)
+      |> add_param(
+        :body,
+        :body,
+        device_management_reports_get_devices_without_compliance_policy_report_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -1323,19 +1896,36 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_reports_get_device_management_intent_settings_report(Tesla.Env.client, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReportRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_reports_get_device_management_intent_settings_report(connection, device_management_reports_get_devices_without_compliance_policy_report_request, _opts \\ []) do
+  @spec device_management_reports_get_device_management_intent_settings_report(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReportRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_reports_get_device_management_intent_settings_report(
+        connection,
+        device_management_reports_get_devices_without_compliance_policy_report_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/deviceManagement/reports/getDeviceManagementIntentSettingsReport")
-      |> add_param(:body, :body, device_management_reports_get_devices_without_compliance_policy_report_request)
+      |> add_param(
+        :body,
+        :body,
+        device_management_reports_get_devices_without_compliance_policy_report_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -1356,19 +1946,36 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_reports_get_device_non_compliance_report(Tesla.Env.client, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReportRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_reports_get_device_non_compliance_report(connection, device_management_reports_get_devices_without_compliance_policy_report_request, _opts \\ []) do
+  @spec device_management_reports_get_device_non_compliance_report(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReportRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_reports_get_device_non_compliance_report(
+        connection,
+        device_management_reports_get_devices_without_compliance_policy_report_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/deviceManagement/reports/getDeviceNonComplianceReport")
-      |> add_param(:body, :body, device_management_reports_get_devices_without_compliance_policy_report_request)
+      |> add_param(
+        :body,
+        :body,
+        device_management_reports_get_devices_without_compliance_policy_report_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -1389,19 +1996,36 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_reports_get_devices_without_compliance_policy_report(Tesla.Env.client, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReportRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_reports_get_devices_without_compliance_policy_report(connection, device_management_reports_get_devices_without_compliance_policy_report_request, _opts \\ []) do
+  @spec device_management_reports_get_devices_without_compliance_policy_report(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReportRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_reports_get_devices_without_compliance_policy_report(
+        connection,
+        device_management_reports_get_devices_without_compliance_policy_report_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/deviceManagement/reports/getDevicesWithoutCompliancePolicyReport")
-      |> add_param(:body, :body, device_management_reports_get_devices_without_compliance_policy_report_request)
+      |> add_param(
+        :body,
+        :body,
+        device_management_reports_get_devices_without_compliance_policy_report_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -1422,8 +2046,20 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_reports_get_historical_report(Tesla.Env.client, MicrosoftGraph.Model.DeviceManagementReportsGetHistoricalReportRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_reports_get_historical_report(connection, device_management_reports_get_historical_report_request, _opts \\ []) do
+  @spec device_management_reports_get_historical_report(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.DeviceManagementReportsGetHistoricalReportRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_reports_get_historical_report(
+        connection,
+        device_management_reports_get_historical_report_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1434,7 +2070,8 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -1455,19 +2092,36 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_reports_get_noncompliant_devices_and_settings_report(Tesla.Env.client, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReportRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_reports_get_noncompliant_devices_and_settings_report(connection, device_management_reports_get_devices_without_compliance_policy_report_request, _opts \\ []) do
+  @spec device_management_reports_get_noncompliant_devices_and_settings_report(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReportRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_reports_get_noncompliant_devices_and_settings_report(
+        connection,
+        device_management_reports_get_devices_without_compliance_policy_report_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/deviceManagement/reports/getNoncompliantDevicesAndSettingsReport")
-      |> add_param(:body, :body, device_management_reports_get_devices_without_compliance_policy_report_request)
+      |> add_param(
+        :body,
+        :body,
+        device_management_reports_get_devices_without_compliance_policy_report_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -1488,19 +2142,36 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_reports_get_policy_non_compliance_metadata(Tesla.Env.client, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReportRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_reports_get_policy_non_compliance_metadata(connection, device_management_reports_get_devices_without_compliance_policy_report_request, _opts \\ []) do
+  @spec device_management_reports_get_policy_non_compliance_metadata(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReportRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_reports_get_policy_non_compliance_metadata(
+        connection,
+        device_management_reports_get_devices_without_compliance_policy_report_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/deviceManagement/reports/getPolicyNonComplianceMetadata")
-      |> add_param(:body, :body, device_management_reports_get_devices_without_compliance_policy_report_request)
+      |> add_param(
+        :body,
+        :body,
+        device_management_reports_get_devices_without_compliance_policy_report_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -1521,19 +2192,36 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_reports_get_policy_non_compliance_report(Tesla.Env.client, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReportRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_reports_get_policy_non_compliance_report(connection, device_management_reports_get_devices_without_compliance_policy_report_request, _opts \\ []) do
+  @spec device_management_reports_get_policy_non_compliance_report(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReportRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_reports_get_policy_non_compliance_report(
+        connection,
+        device_management_reports_get_devices_without_compliance_policy_report_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/deviceManagement/reports/getPolicyNonComplianceReport")
-      |> add_param(:body, :body, device_management_reports_get_devices_without_compliance_policy_report_request)
+      |> add_param(
+        :body,
+        :body,
+        device_management_reports_get_devices_without_compliance_policy_report_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -1554,19 +2242,36 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_reports_get_policy_non_compliance_summary_report(Tesla.Env.client, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReportRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_reports_get_policy_non_compliance_summary_report(connection, device_management_reports_get_devices_without_compliance_policy_report_request, _opts \\ []) do
+  @spec device_management_reports_get_policy_non_compliance_summary_report(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReportRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_reports_get_policy_non_compliance_summary_report(
+        connection,
+        device_management_reports_get_devices_without_compliance_policy_report_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/deviceManagement/reports/getPolicyNonComplianceSummaryReport")
-      |> add_param(:body, :body, device_management_reports_get_devices_without_compliance_policy_report_request)
+      |> add_param(
+        :body,
+        :body,
+        device_management_reports_get_devices_without_compliance_policy_report_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -1587,19 +2292,36 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_reports_get_report_filters(Tesla.Env.client, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReportRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_reports_get_report_filters(connection, device_management_reports_get_devices_without_compliance_policy_report_request, _opts \\ []) do
+  @spec device_management_reports_get_report_filters(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReportRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_reports_get_report_filters(
+        connection,
+        device_management_reports_get_devices_without_compliance_policy_report_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/deviceManagement/reports/getReportFilters")
-      |> add_param(:body, :body, device_management_reports_get_devices_without_compliance_policy_report_request)
+      |> add_param(
+        :body,
+        :body,
+        device_management_reports_get_devices_without_compliance_policy_report_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -1620,19 +2342,36 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_reports_get_setting_non_compliance_report(Tesla.Env.client, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReportRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_reports_get_setting_non_compliance_report(connection, device_management_reports_get_devices_without_compliance_policy_report_request, _opts \\ []) do
+  @spec device_management_reports_get_setting_non_compliance_report(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReportRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_reports_get_setting_non_compliance_report(
+        connection,
+        device_management_reports_get_devices_without_compliance_policy_report_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/deviceManagement/reports/getSettingNonComplianceReport")
-      |> add_param(:body, :body, device_management_reports_get_devices_without_compliance_policy_report_request)
+      |> add_param(
+        :body,
+        :body,
+        device_management_reports_get_devices_without_compliance_policy_report_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -1654,13 +2393,32 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_windows_autopilot_device_identities_windows_autopilot_device_identity_assign_user_to_device(Tesla.Env.client, String.t, MicrosoftGraph.Model.DeviceManagementWindowsAutopilotDeviceIdentitiesWindowsAutopilotDeviceIdentityAssignUserToDeviceRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_windows_autopilot_device_identities_windows_autopilot_device_identity_assign_user_to_device(connection, windows_autopilot_device_identity_id, device_management_windows_autopilot_device_identities_windows_autopilot_device_identity_assign_user_to_device_request, _opts \\ []) do
+  @spec device_management_windows_autopilot_device_identities_windows_autopilot_device_identity_assign_user_to_device(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.DeviceManagementWindowsAutopilotDeviceIdentitiesWindowsAutopilotDeviceIdentityAssignUserToDeviceRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_windows_autopilot_device_identities_windows_autopilot_device_identity_assign_user_to_device(
+        connection,
+        windows_autopilot_device_identity_id,
+        device_management_windows_autopilot_device_identities_windows_autopilot_device_identity_assign_user_to_device_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceManagement/windowsAutopilotDeviceIdentities/#{windows_autopilot_device_identity_id}/assignUserToDevice")
-      |> add_param(:body, :body, device_management_windows_autopilot_device_identities_windows_autopilot_device_identity_assign_user_to_device_request)
+      |> url(
+        "/deviceManagement/windowsAutopilotDeviceIdentities/#{windows_autopilot_device_identity_id}/assignUserToDevice"
+      )
+      |> add_param(
+        :body,
+        :body,
+        device_management_windows_autopilot_device_identities_windows_autopilot_device_identity_assign_user_to_device_request
+      )
       |> Enum.into([])
 
     connection
@@ -1687,12 +2445,25 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_windows_autopilot_device_identities_windows_autopilot_device_identity_unassign_user_from_device(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_windows_autopilot_device_identities_windows_autopilot_device_identity_unassign_user_from_device(connection, windows_autopilot_device_identity_id, _opts \\ []) do
+  @spec device_management_windows_autopilot_device_identities_windows_autopilot_device_identity_unassign_user_from_device(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_windows_autopilot_device_identities_windows_autopilot_device_identity_unassign_user_from_device(
+        connection,
+        windows_autopilot_device_identity_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceManagement/windowsAutopilotDeviceIdentities/#{windows_autopilot_device_identity_id}/unassignUserFromDevice")
+      |> url(
+        "/deviceManagement/windowsAutopilotDeviceIdentities/#{windows_autopilot_device_identity_id}/unassignUserFromDevice"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -1721,13 +2492,32 @@ defmodule MicrosoftGraph.Api.DeviceManagementActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_windows_autopilot_device_identities_windows_autopilot_device_identity_update_device_properties(Tesla.Env.client, String.t, MicrosoftGraph.Model.DeviceManagementWindowsAutopilotDeviceIdentitiesWindowsAutopilotDeviceIdentityUpdateDevicePropertiesRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_windows_autopilot_device_identities_windows_autopilot_device_identity_update_device_properties(connection, windows_autopilot_device_identity_id, device_management_windows_autopilot_device_identities_windows_autopilot_device_identity_update_device_properties_request, _opts \\ []) do
+  @spec device_management_windows_autopilot_device_identities_windows_autopilot_device_identity_update_device_properties(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.DeviceManagementWindowsAutopilotDeviceIdentitiesWindowsAutopilotDeviceIdentityUpdateDevicePropertiesRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_windows_autopilot_device_identities_windows_autopilot_device_identity_update_device_properties(
+        connection,
+        windows_autopilot_device_identity_id,
+        device_management_windows_autopilot_device_identities_windows_autopilot_device_identity_update_device_properties_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceManagement/windowsAutopilotDeviceIdentities/#{windows_autopilot_device_identity_id}/updateDeviceProperties")
-      |> add_param(:body, :body, device_management_windows_autopilot_device_identities_windows_autopilot_device_identity_update_device_properties_request)
+      |> url(
+        "/deviceManagement/windowsAutopilotDeviceIdentities/#{windows_autopilot_device_identity_id}/updateDeviceProperties"
+      )
+      |> add_param(
+        :body,
+        :body,
+        device_management_windows_autopilot_device_identities_windows_autopilot_device_identity_update_device_properties_request
+      )
       |> Enum.into([])
 
     connection

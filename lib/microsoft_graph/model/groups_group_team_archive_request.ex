@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.GroupsGroupTeamArchiveRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -12,11 +12,10 @@ defmodule MicrosoftGraph.Model.GroupsGroupTeamArchiveRequest do
   ]
 
   @type t :: %__MODULE__{
-    :shouldSetSpoSiteReadOnlyForMembers => boolean() | nil
-  }
+          :shouldSetSpoSiteReadOnlyForMembers => boolean() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

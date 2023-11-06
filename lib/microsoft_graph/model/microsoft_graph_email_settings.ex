@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphEmailSettings do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphEmailSettings do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :senderDomain => String.t | nil,
-    :useCompanyBranding => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :senderDomain => String.t() | nil,
+          :useCompanyBranding => boolean() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

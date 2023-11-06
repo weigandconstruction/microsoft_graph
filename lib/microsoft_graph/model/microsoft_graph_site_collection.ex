@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSiteCollection do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,17 +15,20 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSiteCollection do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :dataLocationCode => String.t | nil,
-    :hostname => String.t | nil,
-    :root => MicrosoftGraph.Model.MicrosoftGraphSiteCollectionRoot.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :dataLocationCode => String.t() | nil,
+          :hostname => String.t() | nil,
+          :root => MicrosoftGraph.Model.MicrosoftGraphSiteCollectionRoot.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:root, :struct, MicrosoftGraph.Model.MicrosoftGraphSiteCollectionRoot)
+    |> Deserializer.deserialize(
+      :root,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSiteCollectionRoot
+    )
   end
 end
-

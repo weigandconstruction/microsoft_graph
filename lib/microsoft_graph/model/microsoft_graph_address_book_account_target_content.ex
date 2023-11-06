@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAddressBookAccountTargetContent do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,16 +14,19 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAddressBookAccountTargetContent do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :type => MicrosoftGraph.Model.MicrosoftGraphAccountTargetContentType.t | nil,
-    :accountTargetEmails => [String.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :type => MicrosoftGraph.Model.MicrosoftGraphAccountTargetContentType.t() | nil,
+          :accountTargetEmails => [String.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:type, :struct, MicrosoftGraph.Model.MicrosoftGraphAccountTargetContentType)
+    |> Deserializer.deserialize(
+      :type,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphAccountTargetContentType
+    )
   end
 end
-

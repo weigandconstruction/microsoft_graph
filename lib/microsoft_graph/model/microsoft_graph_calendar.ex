@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphCalendar do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -31,41 +31,65 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphCalendar do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :allowedOnlineMeetingProviders => [MicrosoftGraph.Model.EventOnlineMeetingProvider.t] | nil,
-    :calendarPermissions => [MicrosoftGraph.Model.MicrosoftGraphCalendarPermission.t] | nil,
-    :calendarView => [MicrosoftGraph.Model.MicrosoftGraphEvent.t] | nil,
-    :canEdit => boolean() | nil,
-    :canShare => boolean() | nil,
-    :canViewPrivateItems => boolean() | nil,
-    :changeKey => String.t | nil,
-    :color => MicrosoftGraph.Model.CalendarColor.t | nil,
-    :defaultOnlineMeetingProvider => MicrosoftGraph.Model.CalendarDefaultOnlineMeetingProvider.t | nil,
-    :events => [MicrosoftGraph.Model.MicrosoftGraphEvent.t] | nil,
-    :hexColor => String.t | nil,
-    :isDefaultCalendar => boolean() | nil,
-    :isRemovable => boolean() | nil,
-    :isTallyingResponses => boolean() | nil,
-    :multiValueExtendedProperties => [MicrosoftGraph.Model.MicrosoftGraphMultiValueLegacyExtendedProperty.t] | nil,
-    :name => String.t | nil,
-    :owner => MicrosoftGraph.Model.CalendarOwner.t | nil,
-    :singleValueExtendedProperties => [MicrosoftGraph.Model.MicrosoftGraphSingleValueLegacyExtendedProperty.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :allowedOnlineMeetingProviders =>
+            [MicrosoftGraph.Model.EventOnlineMeetingProvider.t()] | nil,
+          :calendarPermissions =>
+            [MicrosoftGraph.Model.MicrosoftGraphCalendarPermission.t()] | nil,
+          :calendarView => [MicrosoftGraph.Model.MicrosoftGraphEvent.t()] | nil,
+          :canEdit => boolean() | nil,
+          :canShare => boolean() | nil,
+          :canViewPrivateItems => boolean() | nil,
+          :changeKey => String.t() | nil,
+          :color => MicrosoftGraph.Model.CalendarColor.t() | nil,
+          :defaultOnlineMeetingProvider =>
+            MicrosoftGraph.Model.CalendarDefaultOnlineMeetingProvider.t() | nil,
+          :events => [MicrosoftGraph.Model.MicrosoftGraphEvent.t()] | nil,
+          :hexColor => String.t() | nil,
+          :isDefaultCalendar => boolean() | nil,
+          :isRemovable => boolean() | nil,
+          :isTallyingResponses => boolean() | nil,
+          :multiValueExtendedProperties =>
+            [MicrosoftGraph.Model.MicrosoftGraphMultiValueLegacyExtendedProperty.t()] | nil,
+          :name => String.t() | nil,
+          :owner => MicrosoftGraph.Model.CalendarOwner.t() | nil,
+          :singleValueExtendedProperties =>
+            [MicrosoftGraph.Model.MicrosoftGraphSingleValueLegacyExtendedProperty.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:allowedOnlineMeetingProviders, :list, MicrosoftGraph.Model.EventOnlineMeetingProvider)
-     |> Deserializer.deserialize(:calendarPermissions, :list, MicrosoftGraph.Model.MicrosoftGraphCalendarPermission)
-     |> Deserializer.deserialize(:calendarView, :list, MicrosoftGraph.Model.MicrosoftGraphEvent)
-     |> Deserializer.deserialize(:color, :struct, MicrosoftGraph.Model.CalendarColor)
-     |> Deserializer.deserialize(:defaultOnlineMeetingProvider, :struct, MicrosoftGraph.Model.CalendarDefaultOnlineMeetingProvider)
-     |> Deserializer.deserialize(:events, :list, MicrosoftGraph.Model.MicrosoftGraphEvent)
-     |> Deserializer.deserialize(:multiValueExtendedProperties, :list, MicrosoftGraph.Model.MicrosoftGraphMultiValueLegacyExtendedProperty)
-     |> Deserializer.deserialize(:owner, :struct, MicrosoftGraph.Model.CalendarOwner)
-     |> Deserializer.deserialize(:singleValueExtendedProperties, :list, MicrosoftGraph.Model.MicrosoftGraphSingleValueLegacyExtendedProperty)
+    |> Deserializer.deserialize(
+      :allowedOnlineMeetingProviders,
+      :list,
+      MicrosoftGraph.Model.EventOnlineMeetingProvider
+    )
+    |> Deserializer.deserialize(
+      :calendarPermissions,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphCalendarPermission
+    )
+    |> Deserializer.deserialize(:calendarView, :list, MicrosoftGraph.Model.MicrosoftGraphEvent)
+    |> Deserializer.deserialize(:color, :struct, MicrosoftGraph.Model.CalendarColor)
+    |> Deserializer.deserialize(
+      :defaultOnlineMeetingProvider,
+      :struct,
+      MicrosoftGraph.Model.CalendarDefaultOnlineMeetingProvider
+    )
+    |> Deserializer.deserialize(:events, :list, MicrosoftGraph.Model.MicrosoftGraphEvent)
+    |> Deserializer.deserialize(
+      :multiValueExtendedProperties,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphMultiValueLegacyExtendedProperty
+    )
+    |> Deserializer.deserialize(:owner, :struct, MicrosoftGraph.Model.CalendarOwner)
+    |> Deserializer.deserialize(
+      :singleValueExtendedProperties,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSingleValueLegacyExtendedProperty
+    )
   end
 end
-

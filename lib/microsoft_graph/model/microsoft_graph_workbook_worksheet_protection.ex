@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphWorkbookWorksheetProtection do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,17 +15,20 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphWorkbookWorksheetProtection do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :options => MicrosoftGraph.Model.WorkbookWorksheetProtectionOptions.t | nil,
-    :protected => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :options => MicrosoftGraph.Model.WorkbookWorksheetProtectionOptions.t() | nil,
+          :protected => boolean() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:options, :struct, MicrosoftGraph.Model.WorkbookWorksheetProtectionOptions)
+    |> Deserializer.deserialize(
+      :options,
+      :struct,
+      MicrosoftGraph.Model.WorkbookWorksheetProtectionOptions
+    )
   end
 end
-

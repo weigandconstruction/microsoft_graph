@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.SolutionsBookingBusinessesBookingBusinessGetStaffAvailabilityRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,17 +14,24 @@ defmodule MicrosoftGraph.Model.SolutionsBookingBusinessesBookingBusinessGetStaff
   ]
 
   @type t :: %__MODULE__{
-    :endDateTime => MicrosoftGraph.Model.MicrosoftGraphDateTimeTimeZone.t | nil,
-    :staffIds => [String.t] | nil,
-    :startDateTime => MicrosoftGraph.Model.MicrosoftGraphDateTimeTimeZone.t | nil
-  }
+          :endDateTime => MicrosoftGraph.Model.MicrosoftGraphDateTimeTimeZone.t() | nil,
+          :staffIds => [String.t()] | nil,
+          :startDateTime => MicrosoftGraph.Model.MicrosoftGraphDateTimeTimeZone.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:endDateTime, :struct, MicrosoftGraph.Model.MicrosoftGraphDateTimeTimeZone)
-     |> Deserializer.deserialize(:startDateTime, :struct, MicrosoftGraph.Model.MicrosoftGraphDateTimeTimeZone)
+    |> Deserializer.deserialize(
+      :endDateTime,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphDateTimeTimeZone
+    )
+    |> Deserializer.deserialize(
+      :startDateTime,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphDateTimeTimeZone
+    )
   end
 end
-

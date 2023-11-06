@@ -24,8 +24,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfiguration.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_create_device_configurations(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphDeviceConfiguration.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfiguration.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_create_device_configurations(connection, microsoft_graph_device_configuration, _opts \\ []) do
+  @spec device_management_create_device_configurations(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphDeviceConfiguration.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfiguration.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_create_device_configurations(
+        connection,
+        microsoft_graph_device_configuration,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -58,8 +69,15 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_delete_device_configurations(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_delete_device_configurations(connection, device_configuration_id, opts \\ []) do
+  @spec device_management_delete_device_configurations(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_delete_device_configurations(
+        connection,
+        device_configuration_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -96,8 +114,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_configurations_assignments_get_count170b(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_device_configurations_assignments_get_count170b(connection, device_configuration_id, opts \\ []) do
+  @spec device_management_device_configurations_assignments_get_count170b(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_configurations_assignments_get_count170b(
+        connection,
+        device_configuration_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -106,7 +135,9 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
     request =
       %{}
       |> method(:get)
-      |> url("/deviceManagement/deviceConfigurations/#{device_configuration_id}/assignments/$count")
+      |> url(
+        "/deviceManagement/deviceConfigurations/#{device_configuration_id}/assignments/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -135,8 +166,21 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationAssignment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_configurations_create_assignments(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationAssignment.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationAssignment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_device_configurations_create_assignments(connection, device_configuration_id, microsoft_graph_device_configuration_assignment, _opts \\ []) do
+  @spec device_management_device_configurations_create_assignments(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationAssignment.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationAssignment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_configurations_create_assignments(
+        connection,
+        device_configuration_id,
+        microsoft_graph_device_configuration_assignment,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -169,12 +213,27 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSettingStateDeviceSummary.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_configurations_create_device_setting_state_summaries(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphSettingStateDeviceSummary.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSettingStateDeviceSummary.t} | {:error, Tesla.Env.t}
-  def device_management_device_configurations_create_device_setting_state_summaries(connection, device_configuration_id, microsoft_graph_setting_state_device_summary, _opts \\ []) do
+  @spec device_management_device_configurations_create_device_setting_state_summaries(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSettingStateDeviceSummary.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSettingStateDeviceSummary.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_configurations_create_device_setting_state_summaries(
+        connection,
+        device_configuration_id,
+        microsoft_graph_setting_state_device_summary,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/deviceManagement/deviceConfigurations/#{device_configuration_id}/deviceSettingStateSummaries")
+      |> url(
+        "/deviceManagement/deviceConfigurations/#{device_configuration_id}/deviceSettingStateSummaries"
+      )
       |> add_param(:body, :body, microsoft_graph_setting_state_device_summary)
       |> Enum.into([])
 
@@ -203,8 +262,21 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceStatus.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_configurations_create_device_statuses(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceStatus.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceStatus.t} | {:error, Tesla.Env.t}
-  def device_management_device_configurations_create_device_statuses(connection, device_configuration_id, microsoft_graph_device_configuration_device_status, _opts \\ []) do
+  @spec device_management_device_configurations_create_device_statuses(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceStatus.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceStatus.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_configurations_create_device_statuses(
+        connection,
+        device_configuration_id,
+        microsoft_graph_device_configuration_device_status,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -237,8 +309,21 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserStatus.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_configurations_create_user_statuses(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserStatus.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserStatus.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_device_configurations_create_user_statuses(connection, device_configuration_id, microsoft_graph_device_configuration_user_status, _opts \\ []) do
+  @spec device_management_device_configurations_create_user_statuses(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserStatus.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserStatus.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_configurations_create_user_statuses(
+        connection,
+        device_configuration_id,
+        microsoft_graph_device_configuration_user_status,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -272,8 +357,21 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_configurations_delete_assignments(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_device_configurations_delete_assignments(connection, device_configuration_id, device_configuration_assignment_id, opts \\ []) do
+  @spec device_management_device_configurations_delete_assignments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_configurations_delete_assignments(
+        connection,
+        device_configuration_id,
+        device_configuration_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -281,7 +379,9 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
     request =
       %{}
       |> method(:delete)
-      |> url("/deviceManagement/deviceConfigurations/#{device_configuration_id}/assignments/#{device_configuration_assignment_id}")
+      |> url(
+        "/deviceManagement/deviceConfigurations/#{device_configuration_id}/assignments/#{device_configuration_assignment_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -311,8 +411,21 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_configurations_delete_device_setting_state_summaries(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_device_configurations_delete_device_setting_state_summaries(connection, device_configuration_id, setting_state_device_summary_id, opts \\ []) do
+  @spec device_management_device_configurations_delete_device_setting_state_summaries(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_configurations_delete_device_setting_state_summaries(
+        connection,
+        device_configuration_id,
+        setting_state_device_summary_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -320,7 +433,9 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
     request =
       %{}
       |> method(:delete)
-      |> url("/deviceManagement/deviceConfigurations/#{device_configuration_id}/deviceSettingStateSummaries/#{setting_state_device_summary_id}")
+      |> url(
+        "/deviceManagement/deviceConfigurations/#{device_configuration_id}/deviceSettingStateSummaries/#{setting_state_device_summary_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -348,8 +463,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_configurations_delete_device_status_overview(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_device_configurations_delete_device_status_overview(connection, device_configuration_id, opts \\ []) do
+  @spec device_management_device_configurations_delete_device_status_overview(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_configurations_delete_device_status_overview(
+        connection,
+        device_configuration_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -357,7 +483,9 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
     request =
       %{}
       |> method(:delete)
-      |> url("/deviceManagement/deviceConfigurations/#{device_configuration_id}/deviceStatusOverview")
+      |> url(
+        "/deviceManagement/deviceConfigurations/#{device_configuration_id}/deviceStatusOverview"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -387,8 +515,21 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_configurations_delete_device_statuses(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_device_configurations_delete_device_statuses(connection, device_configuration_id, device_configuration_device_status_id, opts \\ []) do
+  @spec device_management_device_configurations_delete_device_statuses(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_configurations_delete_device_statuses(
+        connection,
+        device_configuration_id,
+        device_configuration_device_status_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -396,7 +537,9 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
     request =
       %{}
       |> method(:delete)
-      |> url("/deviceManagement/deviceConfigurations/#{device_configuration_id}/deviceStatuses/#{device_configuration_device_status_id}")
+      |> url(
+        "/deviceManagement/deviceConfigurations/#{device_configuration_id}/deviceStatuses/#{device_configuration_device_status_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -424,8 +567,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_configurations_delete_user_status_overview(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_device_configurations_delete_user_status_overview(connection, device_configuration_id, opts \\ []) do
+  @spec device_management_device_configurations_delete_user_status_overview(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_configurations_delete_user_status_overview(
+        connection,
+        device_configuration_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -433,7 +587,9 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
     request =
       %{}
       |> method(:delete)
-      |> url("/deviceManagement/deviceConfigurations/#{device_configuration_id}/userStatusOverview")
+      |> url(
+        "/deviceManagement/deviceConfigurations/#{device_configuration_id}/userStatusOverview"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -463,8 +619,21 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_configurations_delete_user_statuses(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_device_configurations_delete_user_statuses(connection, device_configuration_id, device_configuration_user_status_id, opts \\ []) do
+  @spec device_management_device_configurations_delete_user_statuses(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_configurations_delete_user_statuses(
+        connection,
+        device_configuration_id,
+        device_configuration_user_status_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"If-Match" => :headers
     }
@@ -472,7 +641,9 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
     request =
       %{}
       |> method(:delete)
-      |> url("/deviceManagement/deviceConfigurations/#{device_configuration_id}/userStatuses/#{device_configuration_user_status_id}")
+      |> url(
+        "/deviceManagement/deviceConfigurations/#{device_configuration_id}/userStatuses/#{device_configuration_user_status_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -501,8 +672,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_configurations_device_setting_state_summaries_get_count921c(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_device_configurations_device_setting_state_summaries_get_count921c(connection, device_configuration_id, opts \\ []) do
+  @spec device_management_device_configurations_device_setting_state_summaries_get_count921c(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_configurations_device_setting_state_summaries_get_count921c(
+        connection,
+        device_configuration_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -511,7 +693,9 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
     request =
       %{}
       |> method(:get)
-      |> url("/deviceManagement/deviceConfigurations/#{device_configuration_id}/deviceSettingStateSummaries/$count")
+      |> url(
+        "/deviceManagement/deviceConfigurations/#{device_configuration_id}/deviceSettingStateSummaries/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -540,8 +724,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_configurations_device_statuses_get_count_ce20(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_device_configurations_device_statuses_get_count_ce20(connection, device_configuration_id, opts \\ []) do
+  @spec device_management_device_configurations_device_statuses_get_count_ce20(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_configurations_device_statuses_get_count_ce20(
+        connection,
+        device_configuration_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -550,7 +745,9 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
     request =
       %{}
       |> method(:get)
-      |> url("/deviceManagement/deviceConfigurations/#{device_configuration_id}/deviceStatuses/$count")
+      |> url(
+        "/deviceManagement/deviceConfigurations/#{device_configuration_id}/deviceStatuses/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -581,8 +778,21 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationAssignment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_configurations_get_assignments(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationAssignment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_device_configurations_get_assignments(connection, device_configuration_id, device_configuration_assignment_id, opts \\ []) do
+  @spec device_management_device_configurations_get_assignments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationAssignment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_configurations_get_assignments(
+        connection,
+        device_configuration_id,
+        device_configuration_assignment_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -591,7 +801,9 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
     request =
       %{}
       |> method(:get)
-      |> url("/deviceManagement/deviceConfigurations/#{device_configuration_id}/assignments/#{device_configuration_assignment_id}")
+      |> url(
+        "/deviceManagement/deviceConfigurations/#{device_configuration_id}/assignments/#{device_configuration_assignment_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -619,7 +831,10 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_configurations_get_count2013(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec device_management_device_configurations_get_count2013(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def device_management_device_configurations_get_count2013(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -660,8 +875,21 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSettingStateDeviceSummary.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_configurations_get_device_setting_state_summaries(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSettingStateDeviceSummary.t} | {:error, Tesla.Env.t}
-  def device_management_device_configurations_get_device_setting_state_summaries(connection, device_configuration_id, setting_state_device_summary_id, opts \\ []) do
+  @spec device_management_device_configurations_get_device_setting_state_summaries(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSettingStateDeviceSummary.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_configurations_get_device_setting_state_summaries(
+        connection,
+        device_configuration_id,
+        setting_state_device_summary_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -670,7 +898,9 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
     request =
       %{}
       |> method(:get)
-      |> url("/deviceManagement/deviceConfigurations/#{device_configuration_id}/deviceSettingStateSummaries/#{setting_state_device_summary_id}")
+      |> url(
+        "/deviceManagement/deviceConfigurations/#{device_configuration_id}/deviceSettingStateSummaries/#{setting_state_device_summary_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -700,8 +930,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceOverview.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_configurations_get_device_status_overview(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceOverview.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_device_configurations_get_device_status_overview(connection, device_configuration_id, opts \\ []) do
+  @spec device_management_device_configurations_get_device_status_overview(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceOverview.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_configurations_get_device_status_overview(
+        connection,
+        device_configuration_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -710,7 +951,9 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
     request =
       %{}
       |> method(:get)
-      |> url("/deviceManagement/deviceConfigurations/#{device_configuration_id}/deviceStatusOverview")
+      |> url(
+        "/deviceManagement/deviceConfigurations/#{device_configuration_id}/deviceStatusOverview"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -741,8 +984,21 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceStatus.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_configurations_get_device_statuses(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceStatus.t} | {:error, Tesla.Env.t}
-  def device_management_device_configurations_get_device_statuses(connection, device_configuration_id, device_configuration_device_status_id, opts \\ []) do
+  @spec device_management_device_configurations_get_device_statuses(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceStatus.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_configurations_get_device_statuses(
+        connection,
+        device_configuration_id,
+        device_configuration_device_status_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -751,7 +1007,9 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
     request =
       %{}
       |> method(:get)
-      |> url("/deviceManagement/deviceConfigurations/#{device_configuration_id}/deviceStatuses/#{device_configuration_device_status_id}")
+      |> url(
+        "/deviceManagement/deviceConfigurations/#{device_configuration_id}/deviceStatuses/#{device_configuration_device_status_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -781,8 +1039,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserOverview.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_configurations_get_user_status_overview(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserOverview.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_device_configurations_get_user_status_overview(connection, device_configuration_id, opts \\ []) do
+  @spec device_management_device_configurations_get_user_status_overview(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserOverview.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_configurations_get_user_status_overview(
+        connection,
+        device_configuration_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -791,7 +1060,9 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
     request =
       %{}
       |> method(:get)
-      |> url("/deviceManagement/deviceConfigurations/#{device_configuration_id}/userStatusOverview")
+      |> url(
+        "/deviceManagement/deviceConfigurations/#{device_configuration_id}/userStatusOverview"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -822,8 +1093,21 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserStatus.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_configurations_get_user_statuses(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserStatus.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_device_configurations_get_user_statuses(connection, device_configuration_id, device_configuration_user_status_id, opts \\ []) do
+  @spec device_management_device_configurations_get_user_statuses(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserStatus.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_configurations_get_user_statuses(
+        connection,
+        device_configuration_id,
+        device_configuration_user_status_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -832,7 +1116,9 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
     request =
       %{}
       |> method(:get)
-      |> url("/deviceManagement/deviceConfigurations/#{device_configuration_id}/userStatuses/#{device_configuration_user_status_id}")
+      |> url(
+        "/deviceManagement/deviceConfigurations/#{device_configuration_id}/userStatuses/#{device_configuration_user_status_id}"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -868,8 +1154,20 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationAssignmentCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_configurations_list_assignments(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationAssignmentCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_device_configurations_list_assignments(connection, device_configuration_id, opts \\ []) do
+  @spec device_management_device_configurations_list_assignments(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationAssignmentCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_configurations_list_assignments(
+        connection,
+        device_configuration_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -920,8 +1218,20 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSettingStateDeviceSummaryCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_configurations_list_device_setting_state_summaries(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSettingStateDeviceSummaryCollectionResponse.t} | {:error, Tesla.Env.t}
-  def device_management_device_configurations_list_device_setting_state_summaries(connection, device_configuration_id, opts \\ []) do
+  @spec device_management_device_configurations_list_device_setting_state_summaries(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.MicrosoftGraphSettingStateDeviceSummaryCollectionResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_configurations_list_device_setting_state_summaries(
+        connection,
+        device_configuration_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -936,7 +1246,9 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
     request =
       %{}
       |> method(:get)
-      |> url("/deviceManagement/deviceConfigurations/#{device_configuration_id}/deviceSettingStateSummaries")
+      |> url(
+        "/deviceManagement/deviceConfigurations/#{device_configuration_id}/deviceSettingStateSummaries"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -972,8 +1284,20 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceStatusCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_configurations_list_device_statuses(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceStatusCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_device_configurations_list_device_statuses(connection, device_configuration_id, opts \\ []) do
+  @spec device_management_device_configurations_list_device_statuses(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceStatusCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_configurations_list_device_statuses(
+        connection,
+        device_configuration_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -995,7 +1319,8 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceStatusCollectionResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceStatusCollectionResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -1024,8 +1349,20 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserStatusCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_configurations_list_user_statuses(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserStatusCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_device_configurations_list_user_statuses(connection, device_configuration_id, opts \\ []) do
+  @spec device_management_device_configurations_list_user_statuses(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserStatusCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_configurations_list_user_statuses(
+        connection,
+        device_configuration_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -1070,12 +1407,29 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationAssignment.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_configurations_update_assignments(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationAssignment.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationAssignment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_device_configurations_update_assignments(connection, device_configuration_id, device_configuration_assignment_id, microsoft_graph_device_configuration_assignment, _opts \\ []) do
+  @spec device_management_device_configurations_update_assignments(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationAssignment.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationAssignment.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_configurations_update_assignments(
+        connection,
+        device_configuration_id,
+        device_configuration_assignment_id,
+        microsoft_graph_device_configuration_assignment,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/deviceManagement/deviceConfigurations/#{device_configuration_id}/assignments/#{device_configuration_assignment_id}")
+      |> url(
+        "/deviceManagement/deviceConfigurations/#{device_configuration_id}/assignments/#{device_configuration_assignment_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_device_configuration_assignment)
       |> Enum.into([])
 
@@ -1105,12 +1459,29 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphSettingStateDeviceSummary.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_configurations_update_device_setting_state_summaries(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphSettingStateDeviceSummary.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphSettingStateDeviceSummary.t} | {:error, Tesla.Env.t}
-  def device_management_device_configurations_update_device_setting_state_summaries(connection, device_configuration_id, setting_state_device_summary_id, microsoft_graph_setting_state_device_summary, _opts \\ []) do
+  @spec device_management_device_configurations_update_device_setting_state_summaries(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphSettingStateDeviceSummary.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphSettingStateDeviceSummary.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_configurations_update_device_setting_state_summaries(
+        connection,
+        device_configuration_id,
+        setting_state_device_summary_id,
+        microsoft_graph_setting_state_device_summary,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/deviceManagement/deviceConfigurations/#{device_configuration_id}/deviceSettingStateSummaries/#{setting_state_device_summary_id}")
+      |> url(
+        "/deviceManagement/deviceConfigurations/#{device_configuration_id}/deviceSettingStateSummaries/#{setting_state_device_summary_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_setting_state_device_summary)
       |> Enum.into([])
 
@@ -1139,12 +1510,27 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceOverview.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_configurations_update_device_status_overview(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceOverview.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceOverview.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_device_configurations_update_device_status_overview(connection, device_configuration_id, microsoft_graph_device_configuration_device_overview, _opts \\ []) do
+  @spec device_management_device_configurations_update_device_status_overview(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceOverview.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceOverview.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_configurations_update_device_status_overview(
+        connection,
+        device_configuration_id,
+        microsoft_graph_device_configuration_device_overview,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/deviceManagement/deviceConfigurations/#{device_configuration_id}/deviceStatusOverview")
+      |> url(
+        "/deviceManagement/deviceConfigurations/#{device_configuration_id}/deviceStatusOverview"
+      )
       |> add_param(:body, :body, microsoft_graph_device_configuration_device_overview)
       |> Enum.into([])
 
@@ -1174,12 +1560,29 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceStatus.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_configurations_update_device_statuses(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceStatus.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceStatus.t} | {:error, Tesla.Env.t}
-  def device_management_device_configurations_update_device_statuses(connection, device_configuration_id, device_configuration_device_status_id, microsoft_graph_device_configuration_device_status, _opts \\ []) do
+  @spec device_management_device_configurations_update_device_statuses(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceStatus.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationDeviceStatus.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_configurations_update_device_statuses(
+        connection,
+        device_configuration_id,
+        device_configuration_device_status_id,
+        microsoft_graph_device_configuration_device_status,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/deviceManagement/deviceConfigurations/#{device_configuration_id}/deviceStatuses/#{device_configuration_device_status_id}")
+      |> url(
+        "/deviceManagement/deviceConfigurations/#{device_configuration_id}/deviceStatuses/#{device_configuration_device_status_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_device_configuration_device_status)
       |> Enum.into([])
 
@@ -1208,12 +1611,27 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserOverview.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_configurations_update_user_status_overview(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserOverview.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserOverview.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_device_configurations_update_user_status_overview(connection, device_configuration_id, microsoft_graph_device_configuration_user_overview, _opts \\ []) do
+  @spec device_management_device_configurations_update_user_status_overview(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserOverview.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserOverview.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_configurations_update_user_status_overview(
+        connection,
+        device_configuration_id,
+        microsoft_graph_device_configuration_user_overview,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/deviceManagement/deviceConfigurations/#{device_configuration_id}/userStatusOverview")
+      |> url(
+        "/deviceManagement/deviceConfigurations/#{device_configuration_id}/userStatusOverview"
+      )
       |> add_param(:body, :body, microsoft_graph_device_configuration_user_overview)
       |> Enum.into([])
 
@@ -1243,12 +1661,29 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserStatus.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_configurations_update_user_statuses(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserStatus.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserStatus.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_device_configurations_update_user_statuses(connection, device_configuration_id, device_configuration_user_status_id, microsoft_graph_device_configuration_user_status, _opts \\ []) do
+  @spec device_management_device_configurations_update_user_statuses(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserStatus.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationUserStatus.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_configurations_update_user_statuses(
+        connection,
+        device_configuration_id,
+        device_configuration_user_status_id,
+        microsoft_graph_device_configuration_user_status,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)
-      |> url("/deviceManagement/deviceConfigurations/#{device_configuration_id}/userStatuses/#{device_configuration_user_status_id}")
+      |> url(
+        "/deviceManagement/deviceConfigurations/#{device_configuration_id}/userStatuses/#{device_configuration_user_status_id}"
+      )
       |> add_param(:body, :body, microsoft_graph_device_configuration_user_status)
       |> Enum.into([])
 
@@ -1277,8 +1712,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_configurations_user_statuses_get_count_a3f6(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_device_configurations_user_statuses_get_count_a3f6(connection, device_configuration_id, opts \\ []) do
+  @spec device_management_device_configurations_user_statuses_get_count_a3f6(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_device_configurations_user_statuses_get_count_a3f6(
+        connection,
+        device_configuration_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$search" => :query,
       :"$filter" => :query
@@ -1287,7 +1733,9 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
     request =
       %{}
       |> method(:get)
-      |> url("/deviceManagement/deviceConfigurations/#{device_configuration_id}/userStatuses/$count")
+      |> url(
+        "/deviceManagement/deviceConfigurations/#{device_configuration_id}/userStatuses/$count"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -1317,7 +1765,10 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfiguration.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_get_device_configurations(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfiguration.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec device_management_get_device_configurations(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfiguration.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def device_management_get_device_configurations(connection, device_configuration_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -1362,7 +1813,10 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_list_device_configurations(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec device_management_list_device_configurations(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfigurationCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def device_management_list_device_configurations(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -1407,8 +1861,21 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceConfiguration do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfiguration.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_update_device_configurations(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphDeviceConfiguration.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfiguration.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_update_device_configurations(connection, device_configuration_id, microsoft_graph_device_configuration, _opts \\ []) do
+  @spec device_management_update_device_configurations(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDeviceConfiguration.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceConfiguration.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_update_device_configurations(
+        connection,
+        device_configuration_id,
+        microsoft_graph_device_configuration,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

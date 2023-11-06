@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphOrganization do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -41,54 +41,83 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphOrganization do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :deletedDateTime => DateTime.t | nil,
-    :assignedPlans => [MicrosoftGraph.Model.MicrosoftGraphAssignedPlan.t] | nil,
-    :branding => MicrosoftGraph.Model.OrganizationBranding.t | nil,
-    :businessPhones => [String.t] | nil,
-    :certificateBasedAuthConfiguration => [MicrosoftGraph.Model.MicrosoftGraphCertificateBasedAuthConfiguration.t] | nil,
-    :city => String.t | nil,
-    :country => String.t | nil,
-    :countryLetterCode => String.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :defaultUsageLocation => String.t | nil,
-    :displayName => String.t | nil,
-    :extensions => [MicrosoftGraph.Model.MicrosoftGraphExtension.t] | nil,
-    :marketingNotificationEmails => [String.t] | nil,
-    :mobileDeviceManagementAuthority => MicrosoftGraph.Model.MicrosoftGraphMdmAuthority.t | nil,
-    :onPremisesLastSyncDateTime => DateTime.t | nil,
-    :onPremisesSyncEnabled => boolean() | nil,
-    :partnerTenantType => MicrosoftGraph.Model.OrganizationPartnerTenantType.t | nil,
-    :postalCode => String.t | nil,
-    :preferredLanguage => String.t | nil,
-    :privacyProfile => MicrosoftGraph.Model.OrganizationPrivacyProfile.t | nil,
-    :provisionedPlans => [MicrosoftGraph.Model.MicrosoftGraphProvisionedPlan.t] | nil,
-    :securityComplianceNotificationMails => [String.t] | nil,
-    :securityComplianceNotificationPhones => [String.t] | nil,
-    :state => String.t | nil,
-    :street => String.t | nil,
-    :technicalNotificationMails => [String.t] | nil,
-    :tenantType => String.t | nil,
-    :verifiedDomains => [MicrosoftGraph.Model.MicrosoftGraphVerifiedDomain.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :deletedDateTime => DateTime.t() | nil,
+          :assignedPlans => [MicrosoftGraph.Model.MicrosoftGraphAssignedPlan.t()] | nil,
+          :branding => MicrosoftGraph.Model.OrganizationBranding.t() | nil,
+          :businessPhones => [String.t()] | nil,
+          :certificateBasedAuthConfiguration =>
+            [MicrosoftGraph.Model.MicrosoftGraphCertificateBasedAuthConfiguration.t()] | nil,
+          :city => String.t() | nil,
+          :country => String.t() | nil,
+          :countryLetterCode => String.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :defaultUsageLocation => String.t() | nil,
+          :displayName => String.t() | nil,
+          :extensions => [MicrosoftGraph.Model.MicrosoftGraphExtension.t()] | nil,
+          :marketingNotificationEmails => [String.t()] | nil,
+          :mobileDeviceManagementAuthority =>
+            MicrosoftGraph.Model.MicrosoftGraphMdmAuthority.t() | nil,
+          :onPremisesLastSyncDateTime => DateTime.t() | nil,
+          :onPremisesSyncEnabled => boolean() | nil,
+          :partnerTenantType => MicrosoftGraph.Model.OrganizationPartnerTenantType.t() | nil,
+          :postalCode => String.t() | nil,
+          :preferredLanguage => String.t() | nil,
+          :privacyProfile => MicrosoftGraph.Model.OrganizationPrivacyProfile.t() | nil,
+          :provisionedPlans => [MicrosoftGraph.Model.MicrosoftGraphProvisionedPlan.t()] | nil,
+          :securityComplianceNotificationMails => [String.t()] | nil,
+          :securityComplianceNotificationPhones => [String.t()] | nil,
+          :state => String.t() | nil,
+          :street => String.t() | nil,
+          :technicalNotificationMails => [String.t()] | nil,
+          :tenantType => String.t() | nil,
+          :verifiedDomains => [MicrosoftGraph.Model.MicrosoftGraphVerifiedDomain.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:deletedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:assignedPlans, :list, MicrosoftGraph.Model.MicrosoftGraphAssignedPlan)
-     |> Deserializer.deserialize(:branding, :struct, MicrosoftGraph.Model.OrganizationBranding)
-     |> Deserializer.deserialize(:certificateBasedAuthConfiguration, :list, MicrosoftGraph.Model.MicrosoftGraphCertificateBasedAuthConfiguration)
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:extensions, :list, MicrosoftGraph.Model.MicrosoftGraphExtension)
-     |> Deserializer.deserialize(:mobileDeviceManagementAuthority, :struct, MicrosoftGraph.Model.MicrosoftGraphMdmAuthority)
-     |> Deserializer.deserialize(:onPremisesLastSyncDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:partnerTenantType, :struct, MicrosoftGraph.Model.OrganizationPartnerTenantType)
-     |> Deserializer.deserialize(:privacyProfile, :struct, MicrosoftGraph.Model.OrganizationPrivacyProfile)
-     |> Deserializer.deserialize(:provisionedPlans, :list, MicrosoftGraph.Model.MicrosoftGraphProvisionedPlan)
-     |> Deserializer.deserialize(:verifiedDomains, :list, MicrosoftGraph.Model.MicrosoftGraphVerifiedDomain)
+    |> Deserializer.deserialize(:deletedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :assignedPlans,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphAssignedPlan
+    )
+    |> Deserializer.deserialize(:branding, :struct, MicrosoftGraph.Model.OrganizationBranding)
+    |> Deserializer.deserialize(
+      :certificateBasedAuthConfiguration,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphCertificateBasedAuthConfiguration
+    )
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:extensions, :list, MicrosoftGraph.Model.MicrosoftGraphExtension)
+    |> Deserializer.deserialize(
+      :mobileDeviceManagementAuthority,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphMdmAuthority
+    )
+    |> Deserializer.deserialize(:onPremisesLastSyncDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :partnerTenantType,
+      :struct,
+      MicrosoftGraph.Model.OrganizationPartnerTenantType
+    )
+    |> Deserializer.deserialize(
+      :privacyProfile,
+      :struct,
+      MicrosoftGraph.Model.OrganizationPrivacyProfile
+    )
+    |> Deserializer.deserialize(
+      :provisionedPlans,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphProvisionedPlan
+    )
+    |> Deserializer.deserialize(
+      :verifiedDomains,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphVerifiedDomain
+    )
   end
 end
-

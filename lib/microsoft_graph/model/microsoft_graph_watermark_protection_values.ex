@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphWatermarkProtectionValues do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,13 +14,12 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphWatermarkProtectionValues do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :isEnabledForContentSharing => boolean() | nil,
-    :isEnabledForVideo => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :isEnabledForContentSharing => boolean() | nil,
+          :isEnabledForVideo => boolean() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

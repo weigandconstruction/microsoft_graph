@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.CommunicationsCallsCallRejectRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -13,15 +13,18 @@ defmodule MicrosoftGraph.Model.CommunicationsCallsCallRejectRequest do
   ]
 
   @type t :: %__MODULE__{
-    :callbackUri => String.t | nil,
-    :reason => MicrosoftGraph.Model.CommunicationsCallsCallRejectRequestReason.t | nil
-  }
+          :callbackUri => String.t() | nil,
+          :reason => MicrosoftGraph.Model.CommunicationsCallsCallRejectRequestReason.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:reason, :struct, MicrosoftGraph.Model.CommunicationsCallsCallRejectRequestReason)
+    |> Deserializer.deserialize(
+      :reason,
+      :struct,
+      MicrosoftGraph.Model.CommunicationsCallsCallRejectRequestReason
+    )
   end
 end
-

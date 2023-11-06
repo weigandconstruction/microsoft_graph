@@ -14,16 +14,19 @@ defmodule MicrosoftGraph.Model.SessionFailureInfo do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :reason => String.t | nil,
-    :stage => MicrosoftGraph.Model.MicrosoftGraphCallRecordsFailureStage.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :reason => String.t() | nil,
+          :stage => MicrosoftGraph.Model.MicrosoftGraphCallRecordsFailureStage.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:stage, :struct, MicrosoftGraph.Model.MicrosoftGraphCallRecordsFailureStage)
+    |> Deserializer.deserialize(
+      :stage,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphCallRecordsFailureStage
+    )
   end
 end
-

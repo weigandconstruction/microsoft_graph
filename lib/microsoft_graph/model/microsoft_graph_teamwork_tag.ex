@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphTeamworkTag do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -19,22 +19,25 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphTeamworkTag do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :memberCount => integer() | nil,
-    :members => [MicrosoftGraph.Model.MicrosoftGraphTeamworkTagMember.t] | nil,
-    :tagType => MicrosoftGraph.Model.TeamworkTagTagType.t | nil,
-    :teamId => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :memberCount => integer() | nil,
+          :members => [MicrosoftGraph.Model.MicrosoftGraphTeamworkTagMember.t()] | nil,
+          :tagType => MicrosoftGraph.Model.TeamworkTagTagType.t() | nil,
+          :teamId => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:members, :list, MicrosoftGraph.Model.MicrosoftGraphTeamworkTagMember)
-     |> Deserializer.deserialize(:tagType, :struct, MicrosoftGraph.Model.TeamworkTagTagType)
+    |> Deserializer.deserialize(
+      :members,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphTeamworkTagMember
+    )
+    |> Deserializer.deserialize(:tagType, :struct, MicrosoftGraph.Model.TeamworkTagTagType)
   end
 end
-

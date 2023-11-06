@@ -28,27 +28,26 @@ defmodule MicrosoftGraph.Model.DeviceManagementSoftwareUpdateStatusSummary do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :compliantDeviceCount => integer() | nil,
-    :compliantUserCount => integer() | nil,
-    :conflictDeviceCount => integer() | nil,
-    :conflictUserCount => integer() | nil,
-    :displayName => String.t | nil,
-    :errorDeviceCount => integer() | nil,
-    :errorUserCount => integer() | nil,
-    :nonCompliantDeviceCount => integer() | nil,
-    :nonCompliantUserCount => integer() | nil,
-    :notApplicableDeviceCount => integer() | nil,
-    :notApplicableUserCount => integer() | nil,
-    :remediatedDeviceCount => integer() | nil,
-    :remediatedUserCount => integer() | nil,
-    :unknownDeviceCount => integer() | nil,
-    :unknownUserCount => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :compliantDeviceCount => integer() | nil,
+          :compliantUserCount => integer() | nil,
+          :conflictDeviceCount => integer() | nil,
+          :conflictUserCount => integer() | nil,
+          :displayName => String.t() | nil,
+          :errorDeviceCount => integer() | nil,
+          :errorUserCount => integer() | nil,
+          :nonCompliantDeviceCount => integer() | nil,
+          :nonCompliantUserCount => integer() | nil,
+          :notApplicableDeviceCount => integer() | nil,
+          :notApplicableUserCount => integer() | nil,
+          :remediatedDeviceCount => integer() | nil,
+          :remediatedUserCount => integer() | nil,
+          :unknownDeviceCount => integer() | nil,
+          :unknownUserCount => integer() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

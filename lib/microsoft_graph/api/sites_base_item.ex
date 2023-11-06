@@ -27,7 +27,10 @@ defmodule MicrosoftGraph.Api.SitesBaseItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBaseItem.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_get_items(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphBaseItem.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_get_items(Tesla.Env.client(), String.t(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphBaseItem.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_get_items(connection, site_id, base_item_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -66,7 +69,10 @@ defmodule MicrosoftGraph.Api.SitesBaseItem do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_items_get_count1b67(Tesla.Env.client, String.t, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_items_get_count1b67(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_items_get_count1b67(connection, site_id, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -112,7 +118,10 @@ defmodule MicrosoftGraph.Api.SitesBaseItem do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphBaseItemCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec sites_list_items(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphBaseItemCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec sites_list_items(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphBaseItemCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def sites_list_items(connection, site_id, opts \\ []) do
     optional_params = %{
       :"$top" => :query,

@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityEdiscoveryCase do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -29,43 +29,70 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityEdiscoveryCase do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :createdDateTime => DateTime.t | nil,
-    :description => String.t | nil,
-    :displayName => String.t | nil,
-    :lastModifiedBy => MicrosoftGraph.Model.CaseLastModifiedBy.t | nil,
-    :lastModifiedDateTime => DateTime.t | nil,
-    :status => MicrosoftGraph.Model.CaseStatus.t | nil,
-    :closedBy => MicrosoftGraph.Model.EdiscoveryCaseClosedBy.t | nil,
-    :closedDateTime => DateTime.t | nil,
-    :custodians => [MicrosoftGraph.Model.MicrosoftGraphSecurityEdiscoveryCustodian.t] | nil,
-    :externalId => String.t | nil,
-    :noncustodialDataSources => [MicrosoftGraph.Model.MicrosoftGraphSecurityEdiscoveryNoncustodialDataSource.t] | nil,
-    :operations => [MicrosoftGraph.Model.MicrosoftGraphSecurityCaseOperation.t] | nil,
-    :reviewSets => [MicrosoftGraph.Model.MicrosoftGraphSecurityEdiscoveryReviewSet.t] | nil,
-    :searches => [MicrosoftGraph.Model.MicrosoftGraphSecurityEdiscoverySearch.t] | nil,
-    :settings => MicrosoftGraph.Model.EdiscoveryCaseSettings.t | nil,
-    :tags => [MicrosoftGraph.Model.MicrosoftGraphSecurityEdiscoveryReviewTag.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :createdDateTime => DateTime.t() | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil,
+          :lastModifiedBy => MicrosoftGraph.Model.CaseLastModifiedBy.t() | nil,
+          :lastModifiedDateTime => DateTime.t() | nil,
+          :status => MicrosoftGraph.Model.CaseStatus.t() | nil,
+          :closedBy => MicrosoftGraph.Model.EdiscoveryCaseClosedBy.t() | nil,
+          :closedDateTime => DateTime.t() | nil,
+          :custodians =>
+            [MicrosoftGraph.Model.MicrosoftGraphSecurityEdiscoveryCustodian.t()] | nil,
+          :externalId => String.t() | nil,
+          :noncustodialDataSources =>
+            [MicrosoftGraph.Model.MicrosoftGraphSecurityEdiscoveryNoncustodialDataSource.t()]
+            | nil,
+          :operations => [MicrosoftGraph.Model.MicrosoftGraphSecurityCaseOperation.t()] | nil,
+          :reviewSets =>
+            [MicrosoftGraph.Model.MicrosoftGraphSecurityEdiscoveryReviewSet.t()] | nil,
+          :searches => [MicrosoftGraph.Model.MicrosoftGraphSecurityEdiscoverySearch.t()] | nil,
+          :settings => MicrosoftGraph.Model.EdiscoveryCaseSettings.t() | nil,
+          :tags => [MicrosoftGraph.Model.MicrosoftGraphSecurityEdiscoveryReviewTag.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:lastModifiedBy, :struct, MicrosoftGraph.Model.CaseLastModifiedBy)
-     |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.CaseStatus)
-     |> Deserializer.deserialize(:closedBy, :struct, MicrosoftGraph.Model.EdiscoveryCaseClosedBy)
-     |> Deserializer.deserialize(:closedDateTime, :datetime, nil)
-     |> Deserializer.deserialize(:custodians, :list, MicrosoftGraph.Model.MicrosoftGraphSecurityEdiscoveryCustodian)
-     |> Deserializer.deserialize(:noncustodialDataSources, :list, MicrosoftGraph.Model.MicrosoftGraphSecurityEdiscoveryNoncustodialDataSource)
-     |> Deserializer.deserialize(:operations, :list, MicrosoftGraph.Model.MicrosoftGraphSecurityCaseOperation)
-     |> Deserializer.deserialize(:reviewSets, :list, MicrosoftGraph.Model.MicrosoftGraphSecurityEdiscoveryReviewSet)
-     |> Deserializer.deserialize(:searches, :list, MicrosoftGraph.Model.MicrosoftGraphSecurityEdiscoverySearch)
-     |> Deserializer.deserialize(:settings, :struct, MicrosoftGraph.Model.EdiscoveryCaseSettings)
-     |> Deserializer.deserialize(:tags, :list, MicrosoftGraph.Model.MicrosoftGraphSecurityEdiscoveryReviewTag)
+    |> Deserializer.deserialize(:createdDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:lastModifiedBy, :struct, MicrosoftGraph.Model.CaseLastModifiedBy)
+    |> Deserializer.deserialize(:lastModifiedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.CaseStatus)
+    |> Deserializer.deserialize(:closedBy, :struct, MicrosoftGraph.Model.EdiscoveryCaseClosedBy)
+    |> Deserializer.deserialize(:closedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(
+      :custodians,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityEdiscoveryCustodian
+    )
+    |> Deserializer.deserialize(
+      :noncustodialDataSources,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityEdiscoveryNoncustodialDataSource
+    )
+    |> Deserializer.deserialize(
+      :operations,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityCaseOperation
+    )
+    |> Deserializer.deserialize(
+      :reviewSets,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityEdiscoveryReviewSet
+    )
+    |> Deserializer.deserialize(
+      :searches,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityEdiscoverySearch
+    )
+    |> Deserializer.deserialize(:settings, :struct, MicrosoftGraph.Model.EdiscoveryCaseSettings)
+    |> Deserializer.deserialize(
+      :tags,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityEdiscoveryReviewTag
+    )
   end
 end
-

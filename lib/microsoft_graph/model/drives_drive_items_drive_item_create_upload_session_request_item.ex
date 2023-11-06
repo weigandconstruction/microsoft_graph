@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemCreateUploadSessionRequestItem do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,18 +16,21 @@ defmodule MicrosoftGraph.Model.DrivesDriveItemsDriveItemCreateUploadSessionReque
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :description => String.t | nil,
-    :fileSize => integer() | nil,
-    :fileSystemInfo => MicrosoftGraph.Model.DriveItemFileSystemInfo.t | nil,
-    :name => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :description => String.t() | nil,
+          :fileSize => integer() | nil,
+          :fileSystemInfo => MicrosoftGraph.Model.DriveItemFileSystemInfo.t() | nil,
+          :name => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:fileSystemInfo, :struct, MicrosoftGraph.Model.DriveItemFileSystemInfo)
+    |> Deserializer.deserialize(
+      :fileSystemInfo,
+      :struct,
+      MicrosoftGraph.Model.DriveItemFileSystemInfo
+    )
   end
 end
-

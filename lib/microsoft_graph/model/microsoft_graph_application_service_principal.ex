@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphApplicationServicePrincipal do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,17 +14,27 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphApplicationServicePrincipal do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :application => MicrosoftGraph.Model.MicrosoftGraphApplicationServicePrincipalApplication.t | nil,
-    :servicePrincipal => MicrosoftGraph.Model.MicrosoftGraphApplicationServicePrincipalServicePrincipal.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :application =>
+            MicrosoftGraph.Model.MicrosoftGraphApplicationServicePrincipalApplication.t() | nil,
+          :servicePrincipal =>
+            MicrosoftGraph.Model.MicrosoftGraphApplicationServicePrincipalServicePrincipal.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:application, :struct, MicrosoftGraph.Model.MicrosoftGraphApplicationServicePrincipalApplication)
-     |> Deserializer.deserialize(:servicePrincipal, :struct, MicrosoftGraph.Model.MicrosoftGraphApplicationServicePrincipalServicePrincipal)
+    |> Deserializer.deserialize(
+      :application,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphApplicationServicePrincipalApplication
+    )
+    |> Deserializer.deserialize(
+      :servicePrincipal,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphApplicationServicePrincipalServicePrincipal
+    )
   end
 end
-

@@ -24,18 +24,35 @@ defmodule MicrosoftGraph.Api.AdminFunctions do
   - `{:ok, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_service_announcement_health_overviews_service_health_issues_service_health_issue_incident_report(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def admin_service_announcement_health_overviews_service_health_issues_service_health_issue_incident_report(connection, service_health_id, service_health_issue_id, _opts \\ []) do
+  @spec admin_service_announcement_health_overviews_service_health_issues_service_health_issue_incident_report(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_service_announcement_health_overviews_service_health_issues_service_health_issue_incident_report(
+        connection,
+        service_health_id,
+        service_health_issue_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/admin/serviceAnnouncement/healthOverviews/#{service_health_id}/issues/#{service_health_issue_id}/incidentReport()")
+      |> url(
+        "/admin/serviceAnnouncement/healthOverviews/#{service_health_id}/issues/#{service_health_issue_id}/incidentReport()"
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -55,8 +72,20 @@ defmodule MicrosoftGraph.Api.AdminFunctions do
   - `{:ok, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec admin_service_announcement_issues_service_health_issue_incident_report(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def admin_service_announcement_issues_service_health_issue_incident_report(connection, service_health_issue_id, _opts \\ []) do
+  @spec admin_service_announcement_issues_service_health_issue_incident_report(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def admin_service_announcement_issues_service_health_issue_incident_report(
+        connection,
+        service_health_issue_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
@@ -66,7 +95,8 @@ defmodule MicrosoftGraph.Api.AdminFunctions do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])

@@ -23,18 +23,33 @@ defmodule MicrosoftGraph.Api.IdentityFunctions do
   - `{:ok, MicrosoftGraph.Model.IdentityB2xUserFlowsB2xIdentityUserFlowUserAttributeAssignmentsGetOrder2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_b2x_user_flows_b2x_identity_user_flow_user_attribute_assignments_get_order(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.IdentityB2xUserFlowsB2xIdentityUserFlowUserAttributeAssignmentsGetOrder2XxResponse.t} | {:error, Tesla.Env.t}
-  def identity_b2x_user_flows_b2x_identity_user_flow_user_attribute_assignments_get_order(connection, b2x_identity_user_flow_id, _opts \\ []) do
+  @spec identity_b2x_user_flows_b2x_identity_user_flow_user_attribute_assignments_get_order(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.IdentityB2xUserFlowsB2xIdentityUserFlowUserAttributeAssignmentsGetOrder2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_b2x_user_flows_b2x_identity_user_flow_user_attribute_assignments_get_order(
+        connection,
+        b2x_identity_user_flow_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/userAttributeAssignments/getOrder()")
+      |> url(
+        "/identity/b2xUserFlows/#{b2x_identity_user_flow_id}/userAttributeAssignments/getOrder()"
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.IdentityB2xUserFlowsB2xIdentityUserFlowUserAttributeAssignmentsGetOrder2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.IdentityB2xUserFlowsB2xIdentityUserFlowUserAttributeAssignmentsGetOrder2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -54,18 +69,33 @@ defmodule MicrosoftGraph.Api.IdentityFunctions do
   - `{:ok, MicrosoftGraph.Model.PoliciesAuthenticationStrengthPoliciesAuthenticationStrengthPolicyUsage2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_conditional_access_authentication_strength_policies_authentication_strength_policy_usage(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.PoliciesAuthenticationStrengthPoliciesAuthenticationStrengthPolicyUsage2XxResponse.t} | {:error, Tesla.Env.t}
-  def identity_conditional_access_authentication_strength_policies_authentication_strength_policy_usage(connection, authentication_strength_policy_id, _opts \\ []) do
+  @spec identity_conditional_access_authentication_strength_policies_authentication_strength_policy_usage(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.PoliciesAuthenticationStrengthPoliciesAuthenticationStrengthPolicyUsage2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_conditional_access_authentication_strength_policies_authentication_strength_policy_usage(
+        connection,
+        authentication_strength_policy_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:get)
-      |> url("/identity/conditionalAccess/authenticationStrength/policies/#{authentication_strength_policy_id}/usage()")
+      |> url(
+        "/identity/conditionalAccess/authenticationStrength/policies/#{authentication_strength_policy_id}/usage()"
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.PoliciesAuthenticationStrengthPoliciesAuthenticationStrengthPolicyUsage2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.PoliciesAuthenticationStrengthPoliciesAuthenticationStrengthPolicyUsage2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -89,7 +119,11 @@ defmodule MicrosoftGraph.Api.IdentityFunctions do
   - `{:ok, MicrosoftGraph.Model.DirectoryFederationConfigurationsAvailableProviderTypes2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_identity_providers_available_provider_types(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.DirectoryFederationConfigurationsAvailableProviderTypes2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec identity_identity_providers_available_provider_types(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.DirectoryFederationConfigurationsAvailableProviderTypes2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def identity_identity_providers_available_provider_types(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -109,7 +143,8 @@ defmodule MicrosoftGraph.Api.IdentityFunctions do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.DirectoryFederationConfigurationsAvailableProviderTypes2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.DirectoryFederationConfigurationsAvailableProviderTypes2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])

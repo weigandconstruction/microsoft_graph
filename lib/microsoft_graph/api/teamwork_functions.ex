@@ -27,8 +27,22 @@ defmodule MicrosoftGraph.Api.TeamworkFunctions do
   - `{:ok, MicrosoftGraph.Model.DrivesDriveListContentTypesContentTypeIsPublished2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teamwork_deleted_teams_deleted_team_channels_channel_does_user_have_access(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.DrivesDriveListContentTypesContentTypeIsPublished2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teamwork_deleted_teams_deleted_team_channels_channel_does_user_have_access(connection, deleted_team_id, channel_id, opts \\ []) do
+  @spec teamwork_deleted_teams_deleted_team_channels_channel_does_user_have_access(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.DrivesDriveListContentTypesContentTypeIsPublished2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teamwork_deleted_teams_deleted_team_channels_channel_does_user_have_access(
+        connection,
+        deleted_team_id,
+        channel_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :userId => :query,
       :tenantId => :query,
@@ -38,7 +52,9 @@ defmodule MicrosoftGraph.Api.TeamworkFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/teamwork/deletedTeams/#{deleted_team_id}/channels/#{channel_id}/doesUserHaveAccess(userId&#x3D;&#39;@userId&#39;,tenantId&#x3D;&#39;@tenantId&#39;,userPrincipalName&#x3D;&#39;@userPrincipalName&#39;)")
+      |> url(
+        "/teamwork/deletedTeams/#{deleted_team_id}/channels/#{channel_id}/doesUserHaveAccess(userId&#x3D;&#39;@userId&#39;,tenantId&#x3D;&#39;@tenantId&#39;,userPrincipalName&#x3D;&#39;@userPrincipalName&#39;)"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -74,8 +90,23 @@ defmodule MicrosoftGraph.Api.TeamworkFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfChatMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teamwork_deleted_teams_deleted_team_channels_channel_messages_chat_message_replies_delta(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfChatMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teamwork_deleted_teams_deleted_team_channels_channel_messages_chat_message_replies_delta(connection, deleted_team_id, channel_id, chat_message_id, opts \\ []) do
+  @spec teamwork_deleted_teams_deleted_team_channels_channel_messages_chat_message_replies_delta(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfChatMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teamwork_deleted_teams_deleted_team_channels_channel_messages_chat_message_replies_delta(
+        connection,
+        deleted_team_id,
+        channel_id,
+        chat_message_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -89,7 +120,9 @@ defmodule MicrosoftGraph.Api.TeamworkFunctions do
     request =
       %{}
       |> method(:get)
-      |> url("/teamwork/deletedTeams/#{deleted_team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/delta()")
+      |> url(
+        "/teamwork/deletedTeams/#{deleted_team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/delta()"
+      )
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -124,8 +157,21 @@ defmodule MicrosoftGraph.Api.TeamworkFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfChatMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teamwork_deleted_teams_deleted_team_channels_channel_messages_delta(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfChatMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teamwork_deleted_teams_deleted_team_channels_channel_messages_delta(connection, deleted_team_id, channel_id, opts \\ []) do
+  @spec teamwork_deleted_teams_deleted_team_channels_channel_messages_delta(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfChatMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teamwork_deleted_teams_deleted_team_channels_channel_messages_delta(
+        connection,
+        deleted_team_id,
+        channel_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -174,8 +220,19 @@ defmodule MicrosoftGraph.Api.TeamworkFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfChatMessage1.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teamwork_deleted_teams_deleted_team_channels_get_all_messages(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfChatMessage1.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def teamwork_deleted_teams_deleted_team_channels_get_all_messages(connection, deleted_team_id, opts \\ []) do
+  @spec teamwork_deleted_teams_deleted_team_channels_get_all_messages(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfChatMessage1.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def teamwork_deleted_teams_deleted_team_channels_get_all_messages(
+        connection,
+        deleted_team_id,
+        opts \\ []
+      ) do
     optional_params = %{
       :model => :query,
       :"$top" => :query,
@@ -224,7 +281,10 @@ defmodule MicrosoftGraph.Api.TeamworkFunctions do
   - `{:ok, MicrosoftGraph.Model.CollectionOfChatMessage1.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec teamwork_deleted_teams_get_all_messages(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.CollectionOfChatMessage1.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec teamwork_deleted_teams_get_all_messages(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.CollectionOfChatMessage1.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def teamwork_deleted_teams_get_all_messages(connection, opts \\ []) do
     optional_params = %{
       :model => :query,

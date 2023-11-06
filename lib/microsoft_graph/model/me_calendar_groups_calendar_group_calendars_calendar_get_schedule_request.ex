@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarGetScheduleRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,18 +15,29 @@ defmodule MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarGet
   ]
 
   @type t :: %__MODULE__{
-    :AvailabilityViewInterval => integer() | nil,
-    :EndTime => MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarGetScheduleRequestEndTime.t | nil,
-    :Schedules => [String.t] | nil,
-    :StartTime => MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarGetScheduleRequestEndTime.t | nil
-  }
+          :AvailabilityViewInterval => integer() | nil,
+          :EndTime =>
+            MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarGetScheduleRequestEndTime.t()
+            | nil,
+          :Schedules => [String.t()] | nil,
+          :StartTime =>
+            MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarGetScheduleRequestEndTime.t()
+            | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:EndTime, :struct, MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarGetScheduleRequestEndTime)
-     |> Deserializer.deserialize(:StartTime, :struct, MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarGetScheduleRequestEndTime)
+    |> Deserializer.deserialize(
+      :EndTime,
+      :struct,
+      MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarGetScheduleRequestEndTime
+    )
+    |> Deserializer.deserialize(
+      :StartTime,
+      :struct,
+      MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarGetScheduleRequestEndTime
+    )
   end
 end
-

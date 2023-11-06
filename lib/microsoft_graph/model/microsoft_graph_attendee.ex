@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAttendee do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,21 +16,28 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAttendee do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :emailAddress => MicrosoftGraph.Model.MicrosoftGraphRecipientEmailAddress.t | nil,
-    :type => MicrosoftGraph.Model.AttendeeBaseType.t | nil,
-    :proposedNewTime => MicrosoftGraph.Model.AttendeeProposedNewTime.t | nil,
-    :status => MicrosoftGraph.Model.AttendeeStatus.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :emailAddress => MicrosoftGraph.Model.MicrosoftGraphRecipientEmailAddress.t() | nil,
+          :type => MicrosoftGraph.Model.AttendeeBaseType.t() | nil,
+          :proposedNewTime => MicrosoftGraph.Model.AttendeeProposedNewTime.t() | nil,
+          :status => MicrosoftGraph.Model.AttendeeStatus.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:emailAddress, :struct, MicrosoftGraph.Model.MicrosoftGraphRecipientEmailAddress)
-     |> Deserializer.deserialize(:type, :struct, MicrosoftGraph.Model.AttendeeBaseType)
-     |> Deserializer.deserialize(:proposedNewTime, :struct, MicrosoftGraph.Model.AttendeeProposedNewTime)
-     |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.AttendeeStatus)
+    |> Deserializer.deserialize(
+      :emailAddress,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphRecipientEmailAddress
+    )
+    |> Deserializer.deserialize(:type, :struct, MicrosoftGraph.Model.AttendeeBaseType)
+    |> Deserializer.deserialize(
+      :proposedNewTime,
+      :struct,
+      MicrosoftGraph.Model.AttendeeProposedNewTime
+    )
+    |> Deserializer.deserialize(:status, :struct, MicrosoftGraph.Model.AttendeeStatus)
   end
 end
-

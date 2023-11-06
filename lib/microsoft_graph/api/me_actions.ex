@@ -24,7 +24,15 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowActivateRequestSubjectsInner.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_assign_license(Tesla.Env.client, MicrosoftGraph.Model.UsersUserAssignLicenseRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowActivateRequestSubjectsInner.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_assign_license(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.UsersUserAssignLicenseRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowActivateRequestSubjectsInner.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_assign_license(connection, users_user_assign_license_request, _opts \\ []) do
     request =
       %{}
@@ -36,7 +44,8 @@ defmodule MicrosoftGraph.Api.MeActions do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowActivateRequestSubjectsInner},
+      {"2XX",
+       MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowActivateRequestSubjectsInner},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -58,19 +67,38 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.MeAuthenticationMethodsAuthenticationMethodResetPassword2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_authentication_methods_authentication_method_reset_password(Tesla.Env.client, String.t, MicrosoftGraph.Model.MeAuthenticationMethodsAuthenticationMethodResetPasswordRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MeAuthenticationMethodsAuthenticationMethodResetPassword2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_authentication_methods_authentication_method_reset_password(connection, authentication_method_id, me_authentication_methods_authentication_method_reset_password_request, _opts \\ []) do
+  @spec me_authentication_methods_authentication_method_reset_password(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MeAuthenticationMethodsAuthenticationMethodResetPasswordRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MeAuthenticationMethodsAuthenticationMethodResetPassword2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_authentication_methods_authentication_method_reset_password(
+        connection,
+        authentication_method_id,
+        me_authentication_methods_authentication_method_reset_password_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/authentication/methods/#{authentication_method_id}/resetPassword")
-      |> add_param(:body, :body, me_authentication_methods_authentication_method_reset_password_request)
+      |> add_param(
+        :body,
+        :body,
+        me_authentication_methods_authentication_method_reset_password_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MeAuthenticationMethodsAuthenticationMethodResetPassword2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MeAuthenticationMethodsAuthenticationMethodResetPassword2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -91,8 +119,19 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_authentication_phone_methods_phone_authentication_method_disable_sms_sign_in(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_authentication_phone_methods_phone_authentication_method_disable_sms_sign_in(connection, phone_authentication_method_id, _opts \\ []) do
+  @spec me_authentication_phone_methods_phone_authentication_method_disable_sms_sign_in(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_authentication_phone_methods_phone_authentication_method_disable_sms_sign_in(
+        connection,
+        phone_authentication_method_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -124,8 +163,19 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_authentication_phone_methods_phone_authentication_method_enable_sms_sign_in(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_authentication_phone_methods_phone_authentication_method_enable_sms_sign_in(connection, phone_authentication_method_id, _opts \\ []) do
+  @spec me_authentication_phone_methods_phone_authentication_method_enable_sms_sign_in(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_authentication_phone_methods_phone_authentication_method_enable_sms_sign_in(
+        connection,
+        phone_authentication_method_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -158,8 +208,21 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_calendar_view_event_accept(Tesla.Env.client, String.t, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventAcceptRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_calendar_view_event_accept(connection, event_id, me_calendar_view_event_instances_event_accept_request, _opts \\ []) do
+  @spec me_calendar_calendar_view_event_accept(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventInstancesEventAcceptRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_calendar_view_event_accept(
+        connection,
+        event_id,
+        me_calendar_view_event_instances_event_accept_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -192,19 +255,38 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_calendar_view_event_attachments_create_upload_session(Tesla.Env.client, String.t, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSessionRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_calendar_view_event_attachments_create_upload_session(connection, event_id, users_user_events_event_instances_event_attachments_create_upload_session_request, _opts \\ []) do
+  @spec me_calendar_calendar_view_event_attachments_create_upload_session(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSessionRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_calendar_view_event_attachments_create_upload_session(
+        connection,
+        event_id,
+        users_user_events_event_instances_event_attachments_create_upload_session_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/calendar/calendarView/#{event_id}/attachments/createUploadSession")
-      |> add_param(:body, :body, users_user_events_event_instances_event_attachments_create_upload_session_request)
+      |> add_param(
+        :body,
+        :body,
+        users_user_events_event_instances_event_attachments_create_upload_session_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -226,13 +308,30 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_calendar_view_event_cancel(Tesla.Env.client, String.t, MicrosoftGraph.Model.MeCalendarsCalendarCalendarViewEventInstancesEventCancelRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_calendar_view_event_cancel(connection, event_id, me_calendars_calendar_calendar_view_event_instances_event_cancel_request, _opts \\ []) do
+  @spec me_calendar_calendar_view_event_cancel(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarsCalendarCalendarViewEventInstancesEventCancelRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_calendar_view_event_cancel(
+        connection,
+        event_id,
+        me_calendars_calendar_calendar_view_event_instances_event_cancel_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/calendar/calendarView/#{event_id}/cancel")
-      |> add_param(:body, :body, me_calendars_calendar_calendar_view_event_instances_event_cancel_request)
+      |> add_param(
+        :body,
+        :body,
+        me_calendars_calendar_calendar_view_event_instances_event_cancel_request
+      )
       |> Enum.into([])
 
     connection
@@ -260,13 +359,30 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_calendar_view_event_decline(Tesla.Env.client, String.t, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_calendar_view_event_decline(connection, event_id, me_calendar_view_event_instances_event_tentatively_accept_request, _opts \\ []) do
+  @spec me_calendar_calendar_view_event_decline(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_calendar_view_event_decline(
+        connection,
+        event_id,
+        me_calendar_view_event_instances_event_tentatively_accept_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/calendar/calendarView/#{event_id}/decline")
-      |> add_param(:body, :body, me_calendar_view_event_instances_event_tentatively_accept_request)
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_view_event_instances_event_tentatively_accept_request
+      )
       |> Enum.into([])
 
     connection
@@ -293,7 +409,14 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_calendar_view_event_dismiss_reminder(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_calendar_calendar_view_event_dismiss_reminder(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_calendar_calendar_view_event_dismiss_reminder(connection, event_id, _opts \\ []) do
     request =
       %{}
@@ -327,13 +450,30 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_calendar_view_event_forward(Tesla.Env.client, String.t, MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_calendar_view_event_forward(connection, event_id, me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request, _opts \\ []) do
+  @spec me_calendar_calendar_view_event_forward(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_calendar_view_event_forward(
+        connection,
+        event_id,
+        me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/calendar/calendarView/#{event_id}/forward")
-      |> add_param(:body, :body, me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request)
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request
+      )
       |> Enum.into([])
 
     connection
@@ -362,8 +502,23 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_calendar_view_event_instances_event_accept(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventAcceptRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_calendar_view_event_instances_event_accept(connection, event_id, event_id1, me_calendar_view_event_instances_event_accept_request, _opts \\ []) do
+  @spec me_calendar_calendar_view_event_instances_event_accept(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventInstancesEventAcceptRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_calendar_view_event_instances_event_accept(
+        connection,
+        event_id,
+        event_id1,
+        me_calendar_view_event_instances_event_accept_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -397,19 +552,42 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_calendar_view_event_instances_event_attachments_create_upload_session(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSessionRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_calendar_view_event_instances_event_attachments_create_upload_session(connection, event_id, event_id1, users_user_events_event_instances_event_attachments_create_upload_session_request, _opts \\ []) do
+  @spec me_calendar_calendar_view_event_instances_event_attachments_create_upload_session(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSessionRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_calendar_view_event_instances_event_attachments_create_upload_session(
+        connection,
+        event_id,
+        event_id1,
+        users_user_events_event_instances_event_attachments_create_upload_session_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/calendar/calendarView/#{event_id}/instances/#{event_id1}/attachments/createUploadSession")
-      |> add_param(:body, :body, users_user_events_event_instances_event_attachments_create_upload_session_request)
+      |> url(
+        "/me/calendar/calendarView/#{event_id}/instances/#{event_id1}/attachments/createUploadSession"
+      )
+      |> add_param(
+        :body,
+        :body,
+        users_user_events_event_instances_event_attachments_create_upload_session_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -432,13 +610,32 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_calendar_view_event_instances_event_cancel(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeCalendarsCalendarCalendarViewEventInstancesEventCancelRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_calendar_view_event_instances_event_cancel(connection, event_id, event_id1, me_calendars_calendar_calendar_view_event_instances_event_cancel_request, _opts \\ []) do
+  @spec me_calendar_calendar_view_event_instances_event_cancel(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarsCalendarCalendarViewEventInstancesEventCancelRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_calendar_view_event_instances_event_cancel(
+        connection,
+        event_id,
+        event_id1,
+        me_calendars_calendar_calendar_view_event_instances_event_cancel_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/calendar/calendarView/#{event_id}/instances/#{event_id1}/cancel")
-      |> add_param(:body, :body, me_calendars_calendar_calendar_view_event_instances_event_cancel_request)
+      |> add_param(
+        :body,
+        :body,
+        me_calendars_calendar_calendar_view_event_instances_event_cancel_request
+      )
       |> Enum.into([])
 
     connection
@@ -467,13 +664,32 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_calendar_view_event_instances_event_decline(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_calendar_view_event_instances_event_decline(connection, event_id, event_id1, me_calendar_view_event_instances_event_tentatively_accept_request, _opts \\ []) do
+  @spec me_calendar_calendar_view_event_instances_event_decline(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_calendar_view_event_instances_event_decline(
+        connection,
+        event_id,
+        event_id1,
+        me_calendar_view_event_instances_event_tentatively_accept_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/calendar/calendarView/#{event_id}/instances/#{event_id1}/decline")
-      |> add_param(:body, :body, me_calendar_view_event_instances_event_tentatively_accept_request)
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_view_event_instances_event_tentatively_accept_request
+      )
       |> Enum.into([])
 
     connection
@@ -501,8 +717,21 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_calendar_view_event_instances_event_dismiss_reminder(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_calendar_view_event_instances_event_dismiss_reminder(connection, event_id, event_id1, _opts \\ []) do
+  @spec me_calendar_calendar_view_event_instances_event_dismiss_reminder(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_calendar_view_event_instances_event_dismiss_reminder(
+        connection,
+        event_id,
+        event_id1,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -536,13 +765,32 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_calendar_view_event_instances_event_forward(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_calendar_view_event_instances_event_forward(connection, event_id, event_id1, me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request, _opts \\ []) do
+  @spec me_calendar_calendar_view_event_instances_event_forward(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_calendar_view_event_instances_event_forward(
+        connection,
+        event_id,
+        event_id1,
+        me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/calendar/calendarView/#{event_id}/instances/#{event_id1}/forward")
-      |> add_param(:body, :body, me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request)
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request
+      )
       |> Enum.into([])
 
     connection
@@ -571,8 +819,23 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_calendar_view_event_instances_event_snooze_reminder(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeCalendarViewEventSnoozeReminderRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_calendar_view_event_instances_event_snooze_reminder(connection, event_id, event_id1, me_calendar_view_event_snooze_reminder_request, _opts \\ []) do
+  @spec me_calendar_calendar_view_event_instances_event_snooze_reminder(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventSnoozeReminderRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_calendar_view_event_instances_event_snooze_reminder(
+        connection,
+        event_id,
+        event_id1,
+        me_calendar_view_event_snooze_reminder_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -606,13 +869,32 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_calendar_view_event_instances_event_tentatively_accept(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_calendar_view_event_instances_event_tentatively_accept(connection, event_id, event_id1, me_calendar_view_event_instances_event_tentatively_accept_request, _opts \\ []) do
+  @spec me_calendar_calendar_view_event_instances_event_tentatively_accept(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_calendar_view_event_instances_event_tentatively_accept(
+        connection,
+        event_id,
+        event_id1,
+        me_calendar_view_event_instances_event_tentatively_accept_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/calendar/calendarView/#{event_id}/instances/#{event_id1}/tentativelyAccept")
-      |> add_param(:body, :body, me_calendar_view_event_instances_event_tentatively_accept_request)
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_view_event_instances_event_tentatively_accept_request
+      )
       |> Enum.into([])
 
     connection
@@ -640,8 +922,21 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_calendar_view_event_snooze_reminder(Tesla.Env.client, String.t, MicrosoftGraph.Model.MeCalendarViewEventSnoozeReminderRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_calendar_view_event_snooze_reminder(connection, event_id, me_calendar_view_event_snooze_reminder_request, _opts \\ []) do
+  @spec me_calendar_calendar_view_event_snooze_reminder(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventSnoozeReminderRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_calendar_view_event_snooze_reminder(
+        connection,
+        event_id,
+        me_calendar_view_event_snooze_reminder_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -674,13 +969,30 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_calendar_view_event_tentatively_accept(Tesla.Env.client, String.t, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_calendar_view_event_tentatively_accept(connection, event_id, me_calendar_view_event_instances_event_tentatively_accept_request, _opts \\ []) do
+  @spec me_calendar_calendar_view_event_tentatively_accept(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_calendar_view_event_tentatively_accept(
+        connection,
+        event_id,
+        me_calendar_view_event_instances_event_tentatively_accept_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/calendar/calendarView/#{event_id}/tentativelyAccept")
-      |> add_param(:body, :body, me_calendar_view_event_instances_event_tentatively_accept_request)
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_view_event_instances_event_tentatively_accept_request
+      )
       |> Enum.into([])
 
     connection
@@ -708,8 +1020,21 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_events_event_accept(Tesla.Env.client, String.t, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventAcceptRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_events_event_accept(connection, event_id, me_calendar_view_event_instances_event_accept_request, _opts \\ []) do
+  @spec me_calendar_events_event_accept(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventInstancesEventAcceptRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_events_event_accept(
+        connection,
+        event_id,
+        me_calendar_view_event_instances_event_accept_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -742,19 +1067,38 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_events_event_attachments_create_upload_session(Tesla.Env.client, String.t, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSessionRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_events_event_attachments_create_upload_session(connection, event_id, users_user_events_event_instances_event_attachments_create_upload_session_request, _opts \\ []) do
+  @spec me_calendar_events_event_attachments_create_upload_session(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSessionRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_events_event_attachments_create_upload_session(
+        connection,
+        event_id,
+        users_user_events_event_instances_event_attachments_create_upload_session_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/calendar/events/#{event_id}/attachments/createUploadSession")
-      |> add_param(:body, :body, users_user_events_event_instances_event_attachments_create_upload_session_request)
+      |> add_param(
+        :body,
+        :body,
+        users_user_events_event_instances_event_attachments_create_upload_session_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -776,13 +1120,30 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_events_event_cancel(Tesla.Env.client, String.t, MicrosoftGraph.Model.MeCalendarsCalendarCalendarViewEventInstancesEventCancelRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_events_event_cancel(connection, event_id, me_calendars_calendar_calendar_view_event_instances_event_cancel_request, _opts \\ []) do
+  @spec me_calendar_events_event_cancel(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarsCalendarCalendarViewEventInstancesEventCancelRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_events_event_cancel(
+        connection,
+        event_id,
+        me_calendars_calendar_calendar_view_event_instances_event_cancel_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/calendar/events/#{event_id}/cancel")
-      |> add_param(:body, :body, me_calendars_calendar_calendar_view_event_instances_event_cancel_request)
+      |> add_param(
+        :body,
+        :body,
+        me_calendars_calendar_calendar_view_event_instances_event_cancel_request
+      )
       |> Enum.into([])
 
     connection
@@ -810,13 +1171,30 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_events_event_decline(Tesla.Env.client, String.t, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_events_event_decline(connection, event_id, me_calendar_view_event_instances_event_tentatively_accept_request, _opts \\ []) do
+  @spec me_calendar_events_event_decline(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_events_event_decline(
+        connection,
+        event_id,
+        me_calendar_view_event_instances_event_tentatively_accept_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/calendar/events/#{event_id}/decline")
-      |> add_param(:body, :body, me_calendar_view_event_instances_event_tentatively_accept_request)
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_view_event_instances_event_tentatively_accept_request
+      )
       |> Enum.into([])
 
     connection
@@ -843,7 +1221,10 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_events_event_dismiss_reminder(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_calendar_events_event_dismiss_reminder(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_calendar_events_event_dismiss_reminder(connection, event_id, _opts \\ []) do
     request =
       %{}
@@ -877,13 +1258,30 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_events_event_forward(Tesla.Env.client, String.t, MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_events_event_forward(connection, event_id, me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request, _opts \\ []) do
+  @spec me_calendar_events_event_forward(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_events_event_forward(
+        connection,
+        event_id,
+        me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/calendar/events/#{event_id}/forward")
-      |> add_param(:body, :body, me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request)
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request
+      )
       |> Enum.into([])
 
     connection
@@ -912,8 +1310,23 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_events_event_instances_event_accept(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventAcceptRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_events_event_instances_event_accept(connection, event_id, event_id1, me_calendar_view_event_instances_event_accept_request, _opts \\ []) do
+  @spec me_calendar_events_event_instances_event_accept(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventInstancesEventAcceptRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_events_event_instances_event_accept(
+        connection,
+        event_id,
+        event_id1,
+        me_calendar_view_event_instances_event_accept_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -947,19 +1360,42 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_events_event_instances_event_attachments_create_upload_session(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSessionRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_events_event_instances_event_attachments_create_upload_session(connection, event_id, event_id1, users_user_events_event_instances_event_attachments_create_upload_session_request, _opts \\ []) do
+  @spec me_calendar_events_event_instances_event_attachments_create_upload_session(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSessionRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_events_event_instances_event_attachments_create_upload_session(
+        connection,
+        event_id,
+        event_id1,
+        users_user_events_event_instances_event_attachments_create_upload_session_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/calendar/events/#{event_id}/instances/#{event_id1}/attachments/createUploadSession")
-      |> add_param(:body, :body, users_user_events_event_instances_event_attachments_create_upload_session_request)
+      |> url(
+        "/me/calendar/events/#{event_id}/instances/#{event_id1}/attachments/createUploadSession"
+      )
+      |> add_param(
+        :body,
+        :body,
+        users_user_events_event_instances_event_attachments_create_upload_session_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -982,13 +1418,32 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_events_event_instances_event_cancel(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeCalendarsCalendarCalendarViewEventInstancesEventCancelRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_events_event_instances_event_cancel(connection, event_id, event_id1, me_calendars_calendar_calendar_view_event_instances_event_cancel_request, _opts \\ []) do
+  @spec me_calendar_events_event_instances_event_cancel(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarsCalendarCalendarViewEventInstancesEventCancelRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_events_event_instances_event_cancel(
+        connection,
+        event_id,
+        event_id1,
+        me_calendars_calendar_calendar_view_event_instances_event_cancel_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/calendar/events/#{event_id}/instances/#{event_id1}/cancel")
-      |> add_param(:body, :body, me_calendars_calendar_calendar_view_event_instances_event_cancel_request)
+      |> add_param(
+        :body,
+        :body,
+        me_calendars_calendar_calendar_view_event_instances_event_cancel_request
+      )
       |> Enum.into([])
 
     connection
@@ -1017,13 +1472,32 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_events_event_instances_event_decline(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_events_event_instances_event_decline(connection, event_id, event_id1, me_calendar_view_event_instances_event_tentatively_accept_request, _opts \\ []) do
+  @spec me_calendar_events_event_instances_event_decline(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_events_event_instances_event_decline(
+        connection,
+        event_id,
+        event_id1,
+        me_calendar_view_event_instances_event_tentatively_accept_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/calendar/events/#{event_id}/instances/#{event_id1}/decline")
-      |> add_param(:body, :body, me_calendar_view_event_instances_event_tentatively_accept_request)
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_view_event_instances_event_tentatively_accept_request
+      )
       |> Enum.into([])
 
     connection
@@ -1051,8 +1525,21 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_events_event_instances_event_dismiss_reminder(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_events_event_instances_event_dismiss_reminder(connection, event_id, event_id1, _opts \\ []) do
+  @spec me_calendar_events_event_instances_event_dismiss_reminder(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_events_event_instances_event_dismiss_reminder(
+        connection,
+        event_id,
+        event_id1,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1086,13 +1573,32 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_events_event_instances_event_forward(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_events_event_instances_event_forward(connection, event_id, event_id1, me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request, _opts \\ []) do
+  @spec me_calendar_events_event_instances_event_forward(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_events_event_instances_event_forward(
+        connection,
+        event_id,
+        event_id1,
+        me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/calendar/events/#{event_id}/instances/#{event_id1}/forward")
-      |> add_param(:body, :body, me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request)
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request
+      )
       |> Enum.into([])
 
     connection
@@ -1121,8 +1627,23 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_events_event_instances_event_snooze_reminder(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeCalendarViewEventSnoozeReminderRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_events_event_instances_event_snooze_reminder(connection, event_id, event_id1, me_calendar_view_event_snooze_reminder_request, _opts \\ []) do
+  @spec me_calendar_events_event_instances_event_snooze_reminder(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventSnoozeReminderRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_events_event_instances_event_snooze_reminder(
+        connection,
+        event_id,
+        event_id1,
+        me_calendar_view_event_snooze_reminder_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1156,13 +1677,32 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_events_event_instances_event_tentatively_accept(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_events_event_instances_event_tentatively_accept(connection, event_id, event_id1, me_calendar_view_event_instances_event_tentatively_accept_request, _opts \\ []) do
+  @spec me_calendar_events_event_instances_event_tentatively_accept(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_events_event_instances_event_tentatively_accept(
+        connection,
+        event_id,
+        event_id1,
+        me_calendar_view_event_instances_event_tentatively_accept_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/calendar/events/#{event_id}/instances/#{event_id1}/tentativelyAccept")
-      |> add_param(:body, :body, me_calendar_view_event_instances_event_tentatively_accept_request)
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_view_event_instances_event_tentatively_accept_request
+      )
       |> Enum.into([])
 
     connection
@@ -1190,8 +1730,21 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_events_event_snooze_reminder(Tesla.Env.client, String.t, MicrosoftGraph.Model.MeCalendarViewEventSnoozeReminderRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_events_event_snooze_reminder(connection, event_id, me_calendar_view_event_snooze_reminder_request, _opts \\ []) do
+  @spec me_calendar_events_event_snooze_reminder(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventSnoozeReminderRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_events_event_snooze_reminder(
+        connection,
+        event_id,
+        me_calendar_view_event_snooze_reminder_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -1224,13 +1777,30 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_events_event_tentatively_accept(Tesla.Env.client, String.t, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_events_event_tentatively_accept(connection, event_id, me_calendar_view_event_instances_event_tentatively_accept_request, _opts \\ []) do
+  @spec me_calendar_events_event_tentatively_accept(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_events_event_tentatively_accept(
+        connection,
+        event_id,
+        me_calendar_view_event_instances_event_tentatively_accept_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/calendar/events/#{event_id}/tentativelyAccept")
-      |> add_param(:body, :body, me_calendar_view_event_instances_event_tentatively_accept_request)
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_view_event_instances_event_tentatively_accept_request
+      )
       |> Enum.into([])
 
     connection
@@ -1257,19 +1827,36 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarGetSchedule2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_get_schedule(Tesla.Env.client, MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarGetScheduleRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarGetSchedule2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_get_schedule(connection, me_calendar_groups_calendar_group_calendars_calendar_get_schedule_request, _opts \\ []) do
+  @spec me_calendar_get_schedule(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarGetScheduleRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarGetSchedule2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_get_schedule(
+        connection,
+        me_calendar_groups_calendar_group_calendars_calendar_get_schedule_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/calendar/getSchedule")
-      |> add_param(:body, :body, me_calendar_groups_calendar_group_calendars_calendar_get_schedule_request)
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_groups_calendar_group_calendars_calendar_get_schedule_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarGetSchedule2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarGetSchedule2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -1293,12 +1880,31 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_accept(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventAcceptRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_accept(connection, calendar_group_id, calendar_id, event_id, me_calendar_view_event_instances_event_accept_request, _opts \\ []) do
+  @spec me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_accept(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventInstancesEventAcceptRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_accept(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        me_calendar_view_event_instances_event_accept_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/accept")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/accept"
+      )
       |> add_param(:body, :body, me_calendar_view_event_instances_event_accept_request)
       |> Enum.into([])
 
@@ -1329,19 +1935,44 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_attachments_create_upload_session(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSessionRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_attachments_create_upload_session(connection, calendar_group_id, calendar_id, event_id, users_user_events_event_instances_event_attachments_create_upload_session_request, _opts \\ []) do
+  @spec me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_attachments_create_upload_session(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSessionRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_attachments_create_upload_session(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        users_user_events_event_instances_event_attachments_create_upload_session_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/attachments/createUploadSession")
-      |> add_param(:body, :body, users_user_events_event_instances_event_attachments_create_upload_session_request)
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/attachments/createUploadSession"
+      )
+      |> add_param(
+        :body,
+        :body,
+        users_user_events_event_instances_event_attachments_create_upload_session_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -1365,13 +1996,36 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_cancel(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MeCalendarsCalendarCalendarViewEventInstancesEventCancelRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_cancel(connection, calendar_group_id, calendar_id, event_id, me_calendars_calendar_calendar_view_event_instances_event_cancel_request, _opts \\ []) do
+  @spec me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_cancel(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarsCalendarCalendarViewEventInstancesEventCancelRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_cancel(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        me_calendars_calendar_calendar_view_event_instances_event_cancel_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/cancel")
-      |> add_param(:body, :body, me_calendars_calendar_calendar_view_event_instances_event_cancel_request)
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/cancel"
+      )
+      |> add_param(
+        :body,
+        :body,
+        me_calendars_calendar_calendar_view_event_instances_event_cancel_request
+      )
       |> Enum.into([])
 
     connection
@@ -1401,13 +2055,36 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_decline(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_decline(connection, calendar_group_id, calendar_id, event_id, me_calendar_view_event_instances_event_tentatively_accept_request, _opts \\ []) do
+  @spec me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_decline(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_decline(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        me_calendar_view_event_instances_event_tentatively_accept_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/decline")
-      |> add_param(:body, :body, me_calendar_view_event_instances_event_tentatively_accept_request)
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/decline"
+      )
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_view_event_instances_event_tentatively_accept_request
+      )
       |> Enum.into([])
 
     connection
@@ -1436,12 +2113,29 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_dismiss_reminder(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_dismiss_reminder(connection, calendar_group_id, calendar_id, event_id, _opts \\ []) do
+  @spec me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_dismiss_reminder(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_dismiss_reminder(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/dismissReminder")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/dismissReminder"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -1472,13 +2166,36 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_forward(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_forward(connection, calendar_group_id, calendar_id, event_id, me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request, _opts \\ []) do
+  @spec me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_forward(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_forward(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/forward")
-      |> add_param(:body, :body, me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request)
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/forward"
+      )
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request
+      )
       |> Enum.into([])
 
     connection
@@ -1509,594 +2226,33 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_accept(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventAcceptRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_accept(connection, calendar_group_id, calendar_id, event_id, event_id1, me_calendar_view_event_instances_event_accept_request, _opts \\ []) do
+  @spec me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_accept(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventInstancesEventAcceptRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_accept(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        event_id1,
+        me_calendar_view_event_instances_event_accept_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/accept")
-      |> add_param(:body, :body, me_calendar_view_event_instances_event_accept_request)
-      |> Enum.into([])
-
-    connection
-    |> Connection.request(request)
-    |> evaluate_response([
-      {204, false},
-      {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
-      {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
-    ])
-  end
-
-  @doc """
-  Invoke action createUploadSession
-  Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to the specified Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that's smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example. This API is available in the following national cloud deployments.
-
-  ### Parameters
-
-  - `connection` (MicrosoftGraph.Connection): Connection to server
-  - `calendar_group_id` (String.t): The unique identifier of calendarGroup
-  - `calendar_id` (String.t): The unique identifier of calendar
-  - `event_id` (String.t): The unique identifier of event
-  - `event_id1` (String.t): The unique identifier of event
-  - `users_user_events_event_instances_event_attachments_create_upload_session_request` (UsersUserEventsEventInstancesEventAttachmentsCreateUploadSessionRequest): Action parameters
-  - `opts` (keyword): Optional parameters
-
-  ### Returns
-
-  - `{:ok, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t}` on success
-  - `{:error, Tesla.Env.t}` on failure
-  """
-  @spec me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_attachments_create_upload_session(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSessionRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_attachments_create_upload_session(connection, calendar_group_id, calendar_id, event_id, event_id1, users_user_events_event_instances_event_attachments_create_upload_session_request, _opts \\ []) do
-    request =
-      %{}
-      |> method(:post)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/attachments/createUploadSession")
-      |> add_param(:body, :body, users_user_events_event_instances_event_attachments_create_upload_session_request)
-      |> Enum.into([])
-
-    connection
-    |> Connection.request(request)
-    |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse},
-      {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
-      {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
-    ])
-  end
-
-  @doc """
-  Invoke action cancel
-  This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting  by providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following error message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that Cancel is available to only the organizer, and lets the organizer send a custom message to the attendees about the cancellation. This API is available in the following national cloud deployments.
-
-  ### Parameters
-
-  - `connection` (MicrosoftGraph.Connection): Connection to server
-  - `calendar_group_id` (String.t): The unique identifier of calendarGroup
-  - `calendar_id` (String.t): The unique identifier of calendar
-  - `event_id` (String.t): The unique identifier of event
-  - `event_id1` (String.t): The unique identifier of event
-  - `me_calendars_calendar_calendar_view_event_instances_event_cancel_request` (MeCalendarsCalendarCalendarViewEventInstancesEventCancelRequest): Action parameters
-  - `opts` (keyword): Optional parameters
-
-  ### Returns
-
-  - `{:ok, nil}` on success
-  - `{:error, Tesla.Env.t}` on failure
-  """
-  @spec me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_cancel(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MeCalendarsCalendarCalendarViewEventInstancesEventCancelRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_cancel(connection, calendar_group_id, calendar_id, event_id, event_id1, me_calendars_calendar_calendar_view_event_instances_event_cancel_request, _opts \\ []) do
-    request =
-      %{}
-      |> method(:post)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/cancel")
-      |> add_param(:body, :body, me_calendars_calendar_calendar_view_event_instances_event_cancel_request)
-      |> Enum.into([])
-
-    connection
-    |> Connection.request(request)
-    |> evaluate_response([
-      {204, false},
-      {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
-      {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
-    ])
-  end
-
-  @doc """
-  Invoke action decline
-  Decline invitation to the specified event in a user calendar. If the event allows proposals for new times, on declining the event, an invitee can choose to suggest an alternative time by including the proposedNewTime parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times. This API is available in the following national cloud deployments.
-
-  ### Parameters
-
-  - `connection` (MicrosoftGraph.Connection): Connection to server
-  - `calendar_group_id` (String.t): The unique identifier of calendarGroup
-  - `calendar_id` (String.t): The unique identifier of calendar
-  - `event_id` (String.t): The unique identifier of event
-  - `event_id1` (String.t): The unique identifier of event
-  - `me_calendar_view_event_instances_event_tentatively_accept_request` (MeCalendarViewEventInstancesEventTentativelyAcceptRequest): Action parameters
-  - `opts` (keyword): Optional parameters
-
-  ### Returns
-
-  - `{:ok, nil}` on success
-  - `{:error, Tesla.Env.t}` on failure
-  """
-  @spec me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_decline(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_decline(connection, calendar_group_id, calendar_id, event_id, event_id1, me_calendar_view_event_instances_event_tentatively_accept_request, _opts \\ []) do
-    request =
-      %{}
-      |> method(:post)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/decline")
-      |> add_param(:body, :body, me_calendar_view_event_instances_event_tentatively_accept_request)
-      |> Enum.into([])
-
-    connection
-    |> Connection.request(request)
-    |> evaluate_response([
-      {204, false},
-      {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
-      {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
-    ])
-  end
-
-  @doc """
-  Invoke action dismissReminder
-  Dismiss a reminder that has been triggered for an event in a user calendar. This API is available in the following national cloud deployments.
-
-  ### Parameters
-
-  - `connection` (MicrosoftGraph.Connection): Connection to server
-  - `calendar_group_id` (String.t): The unique identifier of calendarGroup
-  - `calendar_id` (String.t): The unique identifier of calendar
-  - `event_id` (String.t): The unique identifier of event
-  - `event_id1` (String.t): The unique identifier of event
-  - `opts` (keyword): Optional parameters
-
-  ### Returns
-
-  - `{:ok, nil}` on success
-  - `{:error, Tesla.Env.t}` on failure
-  """
-  @spec me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_dismiss_reminder(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_dismiss_reminder(connection, calendar_group_id, calendar_id, event_id, event_id1, _opts \\ []) do
-    request =
-      %{}
-      |> method(:post)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/dismissReminder")
-      |> ensure_body()
-      |> Enum.into([])
-
-    connection
-    |> Connection.request(request)
-    |> evaluate_response([
-      {204, false},
-      {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
-      {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
-    ])
-  end
-
-  @doc """
-  Invoke action forward
-  This action allows the organizer or attendee of a meeting event to forward the  meeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action  also sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's  copy of the meeting event. This convenience is not available when forwarding from an Outlook.com account. This API is available in the following national cloud deployments.
-
-  ### Parameters
-
-  - `connection` (MicrosoftGraph.Connection): Connection to server
-  - `calendar_group_id` (String.t): The unique identifier of calendarGroup
-  - `calendar_id` (String.t): The unique identifier of calendar
-  - `event_id` (String.t): The unique identifier of event
-  - `event_id1` (String.t): The unique identifier of event
-  - `me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request` (MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequest): Action parameters
-  - `opts` (keyword): Optional parameters
-
-  ### Returns
-
-  - `{:ok, nil}` on success
-  - `{:error, Tesla.Env.t}` on failure
-  """
-  @spec me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward(connection, calendar_group_id, calendar_id, event_id, event_id1, me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request, _opts \\ []) do
-    request =
-      %{}
-      |> method(:post)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/forward")
-      |> add_param(:body, :body, me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request)
-      |> Enum.into([])
-
-    connection
-    |> Connection.request(request)
-    |> evaluate_response([
-      {204, false},
-      {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
-      {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
-    ])
-  end
-
-  @doc """
-  Invoke action snoozeReminder
-  Postpone a reminder for an event in a user calendar until a new time. This API is available in the following national cloud deployments.
-
-  ### Parameters
-
-  - `connection` (MicrosoftGraph.Connection): Connection to server
-  - `calendar_group_id` (String.t): The unique identifier of calendarGroup
-  - `calendar_id` (String.t): The unique identifier of calendar
-  - `event_id` (String.t): The unique identifier of event
-  - `event_id1` (String.t): The unique identifier of event
-  - `me_calendar_view_event_snooze_reminder_request` (MeCalendarViewEventSnoozeReminderRequest): Action parameters
-  - `opts` (keyword): Optional parameters
-
-  ### Returns
-
-  - `{:ok, nil}` on success
-  - `{:error, Tesla.Env.t}` on failure
-  """
-  @spec me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_snooze_reminder(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MeCalendarViewEventSnoozeReminderRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_snooze_reminder(connection, calendar_group_id, calendar_id, event_id, event_id1, me_calendar_view_event_snooze_reminder_request, _opts \\ []) do
-    request =
-      %{}
-      |> method(:post)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/snoozeReminder")
-      |> add_param(:body, :body, me_calendar_view_event_snooze_reminder_request)
-      |> Enum.into([])
-
-    connection
-    |> Connection.request(request)
-    |> evaluate_response([
-      {204, false},
-      {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
-      {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
-    ])
-  end
-
-  @doc """
-  Invoke action tentativelyAccept
-  Tentatively accept the specified event in a user calendar. If the event allows proposals for new times, on responding tentative to the event, an invitee can choose to suggest an alternative time by including the proposedNewTime parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times. This API is available in the following national cloud deployments.
-
-  ### Parameters
-
-  - `connection` (MicrosoftGraph.Connection): Connection to server
-  - `calendar_group_id` (String.t): The unique identifier of calendarGroup
-  - `calendar_id` (String.t): The unique identifier of calendar
-  - `event_id` (String.t): The unique identifier of event
-  - `event_id1` (String.t): The unique identifier of event
-  - `me_calendar_view_event_instances_event_tentatively_accept_request` (MeCalendarViewEventInstancesEventTentativelyAcceptRequest): Action parameters
-  - `opts` (keyword): Optional parameters
-
-  ### Returns
-
-  - `{:ok, nil}` on success
-  - `{:error, Tesla.Env.t}` on failure
-  """
-  @spec me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_tentatively_accept(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_tentatively_accept(connection, calendar_group_id, calendar_id, event_id, event_id1, me_calendar_view_event_instances_event_tentatively_accept_request, _opts \\ []) do
-    request =
-      %{}
-      |> method(:post)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/tentativelyAccept")
-      |> add_param(:body, :body, me_calendar_view_event_instances_event_tentatively_accept_request)
-      |> Enum.into([])
-
-    connection
-    |> Connection.request(request)
-    |> evaluate_response([
-      {204, false},
-      {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
-      {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
-    ])
-  end
-
-  @doc """
-  Invoke action snoozeReminder
-  Postpone a reminder for an event in a user calendar until a new time. This API is available in the following national cloud deployments.
-
-  ### Parameters
-
-  - `connection` (MicrosoftGraph.Connection): Connection to server
-  - `calendar_group_id` (String.t): The unique identifier of calendarGroup
-  - `calendar_id` (String.t): The unique identifier of calendar
-  - `event_id` (String.t): The unique identifier of event
-  - `me_calendar_view_event_snooze_reminder_request` (MeCalendarViewEventSnoozeReminderRequest): Action parameters
-  - `opts` (keyword): Optional parameters
-
-  ### Returns
-
-  - `{:ok, nil}` on success
-  - `{:error, Tesla.Env.t}` on failure
-  """
-  @spec me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_snooze_reminder(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MeCalendarViewEventSnoozeReminderRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_snooze_reminder(connection, calendar_group_id, calendar_id, event_id, me_calendar_view_event_snooze_reminder_request, _opts \\ []) do
-    request =
-      %{}
-      |> method(:post)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/snoozeReminder")
-      |> add_param(:body, :body, me_calendar_view_event_snooze_reminder_request)
-      |> Enum.into([])
-
-    connection
-    |> Connection.request(request)
-    |> evaluate_response([
-      {204, false},
-      {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
-      {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
-    ])
-  end
-
-  @doc """
-  Invoke action tentativelyAccept
-  Tentatively accept the specified event in a user calendar. If the event allows proposals for new times, on responding tentative to the event, an invitee can choose to suggest an alternative time by including the proposedNewTime parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times. This API is available in the following national cloud deployments.
-
-  ### Parameters
-
-  - `connection` (MicrosoftGraph.Connection): Connection to server
-  - `calendar_group_id` (String.t): The unique identifier of calendarGroup
-  - `calendar_id` (String.t): The unique identifier of calendar
-  - `event_id` (String.t): The unique identifier of event
-  - `me_calendar_view_event_instances_event_tentatively_accept_request` (MeCalendarViewEventInstancesEventTentativelyAcceptRequest): Action parameters
-  - `opts` (keyword): Optional parameters
-
-  ### Returns
-
-  - `{:ok, nil}` on success
-  - `{:error, Tesla.Env.t}` on failure
-  """
-  @spec me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_tentatively_accept(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_tentatively_accept(connection, calendar_group_id, calendar_id, event_id, me_calendar_view_event_instances_event_tentatively_accept_request, _opts \\ []) do
-    request =
-      %{}
-      |> method(:post)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/tentativelyAccept")
-      |> add_param(:body, :body, me_calendar_view_event_instances_event_tentatively_accept_request)
-      |> Enum.into([])
-
-    connection
-    |> Connection.request(request)
-    |> evaluate_response([
-      {204, false},
-      {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
-      {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
-    ])
-  end
-
-  @doc """
-  Invoke action accept
-  Accept the specified event in a user calendar. This API is available in the following national cloud deployments.
-
-  ### Parameters
-
-  - `connection` (MicrosoftGraph.Connection): Connection to server
-  - `calendar_group_id` (String.t): The unique identifier of calendarGroup
-  - `calendar_id` (String.t): The unique identifier of calendar
-  - `event_id` (String.t): The unique identifier of event
-  - `me_calendar_view_event_instances_event_accept_request` (MeCalendarViewEventInstancesEventAcceptRequest): Action parameters
-  - `opts` (keyword): Optional parameters
-
-  ### Returns
-
-  - `{:ok, nil}` on success
-  - `{:error, Tesla.Env.t}` on failure
-  """
-  @spec me_calendar_groups_calendar_group_calendars_calendar_events_event_accept(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventAcceptRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendar_group_calendars_calendar_events_event_accept(connection, calendar_group_id, calendar_id, event_id, me_calendar_view_event_instances_event_accept_request, _opts \\ []) do
-    request =
-      %{}
-      |> method(:post)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/accept")
-      |> add_param(:body, :body, me_calendar_view_event_instances_event_accept_request)
-      |> Enum.into([])
-
-    connection
-    |> Connection.request(request)
-    |> evaluate_response([
-      {204, false},
-      {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
-      {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
-    ])
-  end
-
-  @doc """
-  Invoke action createUploadSession
-  Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to the specified Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that's smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example. This API is available in the following national cloud deployments.
-
-  ### Parameters
-
-  - `connection` (MicrosoftGraph.Connection): Connection to server
-  - `calendar_group_id` (String.t): The unique identifier of calendarGroup
-  - `calendar_id` (String.t): The unique identifier of calendar
-  - `event_id` (String.t): The unique identifier of event
-  - `users_user_events_event_instances_event_attachments_create_upload_session_request` (UsersUserEventsEventInstancesEventAttachmentsCreateUploadSessionRequest): Action parameters
-  - `opts` (keyword): Optional parameters
-
-  ### Returns
-
-  - `{:ok, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t}` on success
-  - `{:error, Tesla.Env.t}` on failure
-  """
-  @spec me_calendar_groups_calendar_group_calendars_calendar_events_event_attachments_create_upload_session(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSessionRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendar_group_calendars_calendar_events_event_attachments_create_upload_session(connection, calendar_group_id, calendar_id, event_id, users_user_events_event_instances_event_attachments_create_upload_session_request, _opts \\ []) do
-    request =
-      %{}
-      |> method(:post)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/attachments/createUploadSession")
-      |> add_param(:body, :body, users_user_events_event_instances_event_attachments_create_upload_session_request)
-      |> Enum.into([])
-
-    connection
-    |> Connection.request(request)
-    |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse},
-      {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
-      {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
-    ])
-  end
-
-  @doc """
-  Invoke action cancel
-  This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting  by providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following error message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that Cancel is available to only the organizer, and lets the organizer send a custom message to the attendees about the cancellation. This API is available in the following national cloud deployments.
-
-  ### Parameters
-
-  - `connection` (MicrosoftGraph.Connection): Connection to server
-  - `calendar_group_id` (String.t): The unique identifier of calendarGroup
-  - `calendar_id` (String.t): The unique identifier of calendar
-  - `event_id` (String.t): The unique identifier of event
-  - `me_calendars_calendar_calendar_view_event_instances_event_cancel_request` (MeCalendarsCalendarCalendarViewEventInstancesEventCancelRequest): Action parameters
-  - `opts` (keyword): Optional parameters
-
-  ### Returns
-
-  - `{:ok, nil}` on success
-  - `{:error, Tesla.Env.t}` on failure
-  """
-  @spec me_calendar_groups_calendar_group_calendars_calendar_events_event_cancel(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MeCalendarsCalendarCalendarViewEventInstancesEventCancelRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendar_group_calendars_calendar_events_event_cancel(connection, calendar_group_id, calendar_id, event_id, me_calendars_calendar_calendar_view_event_instances_event_cancel_request, _opts \\ []) do
-    request =
-      %{}
-      |> method(:post)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/cancel")
-      |> add_param(:body, :body, me_calendars_calendar_calendar_view_event_instances_event_cancel_request)
-      |> Enum.into([])
-
-    connection
-    |> Connection.request(request)
-    |> evaluate_response([
-      {204, false},
-      {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
-      {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
-    ])
-  end
-
-  @doc """
-  Invoke action decline
-  Decline invitation to the specified event in a user calendar. If the event allows proposals for new times, on declining the event, an invitee can choose to suggest an alternative time by including the proposedNewTime parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times. This API is available in the following national cloud deployments.
-
-  ### Parameters
-
-  - `connection` (MicrosoftGraph.Connection): Connection to server
-  - `calendar_group_id` (String.t): The unique identifier of calendarGroup
-  - `calendar_id` (String.t): The unique identifier of calendar
-  - `event_id` (String.t): The unique identifier of event
-  - `me_calendar_view_event_instances_event_tentatively_accept_request` (MeCalendarViewEventInstancesEventTentativelyAcceptRequest): Action parameters
-  - `opts` (keyword): Optional parameters
-
-  ### Returns
-
-  - `{:ok, nil}` on success
-  - `{:error, Tesla.Env.t}` on failure
-  """
-  @spec me_calendar_groups_calendar_group_calendars_calendar_events_event_decline(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendar_group_calendars_calendar_events_event_decline(connection, calendar_group_id, calendar_id, event_id, me_calendar_view_event_instances_event_tentatively_accept_request, _opts \\ []) do
-    request =
-      %{}
-      |> method(:post)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/decline")
-      |> add_param(:body, :body, me_calendar_view_event_instances_event_tentatively_accept_request)
-      |> Enum.into([])
-
-    connection
-    |> Connection.request(request)
-    |> evaluate_response([
-      {204, false},
-      {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
-      {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
-    ])
-  end
-
-  @doc """
-  Invoke action dismissReminder
-  Dismiss a reminder that has been triggered for an event in a user calendar. This API is available in the following national cloud deployments.
-
-  ### Parameters
-
-  - `connection` (MicrosoftGraph.Connection): Connection to server
-  - `calendar_group_id` (String.t): The unique identifier of calendarGroup
-  - `calendar_id` (String.t): The unique identifier of calendar
-  - `event_id` (String.t): The unique identifier of event
-  - `opts` (keyword): Optional parameters
-
-  ### Returns
-
-  - `{:ok, nil}` on success
-  - `{:error, Tesla.Env.t}` on failure
-  """
-  @spec me_calendar_groups_calendar_group_calendars_calendar_events_event_dismiss_reminder(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendar_group_calendars_calendar_events_event_dismiss_reminder(connection, calendar_group_id, calendar_id, event_id, _opts \\ []) do
-    request =
-      %{}
-      |> method(:post)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/dismissReminder")
-      |> ensure_body()
-      |> Enum.into([])
-
-    connection
-    |> Connection.request(request)
-    |> evaluate_response([
-      {204, false},
-      {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
-      {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
-    ])
-  end
-
-  @doc """
-  Invoke action forward
-  This action allows the organizer or attendee of a meeting event to forward the  meeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action  also sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's  copy of the meeting event. This convenience is not available when forwarding from an Outlook.com account. This API is available in the following national cloud deployments.
-
-  ### Parameters
-
-  - `connection` (MicrosoftGraph.Connection): Connection to server
-  - `calendar_group_id` (String.t): The unique identifier of calendarGroup
-  - `calendar_id` (String.t): The unique identifier of calendar
-  - `event_id` (String.t): The unique identifier of event
-  - `me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request` (MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequest): Action parameters
-  - `opts` (keyword): Optional parameters
-
-  ### Returns
-
-  - `{:ok, nil}` on success
-  - `{:error, Tesla.Env.t}` on failure
-  """
-  @spec me_calendar_groups_calendar_group_calendars_calendar_events_event_forward(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendar_group_calendars_calendar_events_event_forward(connection, calendar_group_id, calendar_id, event_id, me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request, _opts \\ []) do
-    request =
-      %{}
-      |> method(:post)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/forward")
-      |> add_param(:body, :body, me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request)
-      |> Enum.into([])
-
-    connection
-    |> Connection.request(request)
-    |> evaluate_response([
-      {204, false},
-      {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
-      {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
-    ])
-  end
-
-  @doc """
-  Invoke action accept
-  Accept the specified event in a user calendar. This API is available in the following national cloud deployments.
-
-  ### Parameters
-
-  - `connection` (MicrosoftGraph.Connection): Connection to server
-  - `calendar_group_id` (String.t): The unique identifier of calendarGroup
-  - `calendar_id` (String.t): The unique identifier of calendar
-  - `event_id` (String.t): The unique identifier of event
-  - `event_id1` (String.t): The unique identifier of event
-  - `me_calendar_view_event_instances_event_accept_request` (MeCalendarViewEventInstancesEventAcceptRequest): Action parameters
-  - `opts` (keyword): Optional parameters
-
-  ### Returns
-
-  - `{:ok, nil}` on success
-  - `{:error, Tesla.Env.t}` on failure
-  """
-  @spec me_calendar_groups_calendar_group_calendars_calendar_events_event_instances_event_accept(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventAcceptRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendar_group_calendars_calendar_events_event_instances_event_accept(connection, calendar_group_id, calendar_id, event_id, event_id1, me_calendar_view_event_instances_event_accept_request, _opts \\ []) do
-    request =
-      %{}
-      |> method(:post)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/accept")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/accept"
+      )
       |> add_param(:body, :body, me_calendar_view_event_instances_event_accept_request)
       |> Enum.into([])
 
@@ -2128,19 +2284,46 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendar_group_calendars_calendar_events_event_instances_event_attachments_create_upload_session(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSessionRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendar_group_calendars_calendar_events_event_instances_event_attachments_create_upload_session(connection, calendar_group_id, calendar_id, event_id, event_id1, users_user_events_event_instances_event_attachments_create_upload_session_request, _opts \\ []) do
+  @spec me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_attachments_create_upload_session(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSessionRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_attachments_create_upload_session(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        event_id1,
+        users_user_events_event_instances_event_attachments_create_upload_session_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/attachments/createUploadSession")
-      |> add_param(:body, :body, users_user_events_event_instances_event_attachments_create_upload_session_request)
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/attachments/createUploadSession"
+      )
+      |> add_param(
+        :body,
+        :body,
+        users_user_events_event_instances_event_attachments_create_upload_session_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -2165,13 +2348,38 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendar_group_calendars_calendar_events_event_instances_event_cancel(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MeCalendarsCalendarCalendarViewEventInstancesEventCancelRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendar_group_calendars_calendar_events_event_instances_event_cancel(connection, calendar_group_id, calendar_id, event_id, event_id1, me_calendars_calendar_calendar_view_event_instances_event_cancel_request, _opts \\ []) do
+  @spec me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_cancel(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarsCalendarCalendarViewEventInstancesEventCancelRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_cancel(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        event_id1,
+        me_calendars_calendar_calendar_view_event_instances_event_cancel_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/cancel")
-      |> add_param(:body, :body, me_calendars_calendar_calendar_view_event_instances_event_cancel_request)
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/cancel"
+      )
+      |> add_param(
+        :body,
+        :body,
+        me_calendars_calendar_calendar_view_event_instances_event_cancel_request
+      )
       |> Enum.into([])
 
     connection
@@ -2202,13 +2410,38 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendar_group_calendars_calendar_events_event_instances_event_decline(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendar_group_calendars_calendar_events_event_instances_event_decline(connection, calendar_group_id, calendar_id, event_id, event_id1, me_calendar_view_event_instances_event_tentatively_accept_request, _opts \\ []) do
+  @spec me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_decline(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_decline(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        event_id1,
+        me_calendar_view_event_instances_event_tentatively_accept_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/decline")
-      |> add_param(:body, :body, me_calendar_view_event_instances_event_tentatively_accept_request)
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/decline"
+      )
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_view_event_instances_event_tentatively_accept_request
+      )
       |> Enum.into([])
 
     connection
@@ -2238,12 +2471,31 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendar_group_calendars_calendar_events_event_instances_event_dismiss_reminder(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendar_group_calendars_calendar_events_event_instances_event_dismiss_reminder(connection, calendar_group_id, calendar_id, event_id, event_id1, _opts \\ []) do
+  @spec me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_dismiss_reminder(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_dismiss_reminder(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        event_id1,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/dismissReminder")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/dismissReminder"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -2275,13 +2527,38 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendar_group_calendars_calendar_events_event_instances_event_forward(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendar_group_calendars_calendar_events_event_instances_event_forward(connection, calendar_group_id, calendar_id, event_id, event_id1, me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request, _opts \\ []) do
+  @spec me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        event_id1,
+        me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/forward")
-      |> add_param(:body, :body, me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request)
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/forward"
+      )
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request
+      )
       |> Enum.into([])
 
     connection
@@ -2312,12 +2589,33 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendar_group_calendars_calendar_events_event_instances_event_snooze_reminder(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MeCalendarViewEventSnoozeReminderRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendar_group_calendars_calendar_events_event_instances_event_snooze_reminder(connection, calendar_group_id, calendar_id, event_id, event_id1, me_calendar_view_event_snooze_reminder_request, _opts \\ []) do
+  @spec me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_snooze_reminder(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventSnoozeReminderRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_snooze_reminder(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        event_id1,
+        me_calendar_view_event_snooze_reminder_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/snoozeReminder")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/snoozeReminder"
+      )
       |> add_param(:body, :body, me_calendar_view_event_snooze_reminder_request)
       |> Enum.into([])
 
@@ -2349,13 +2647,38 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendar_group_calendars_calendar_events_event_instances_event_tentatively_accept(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendar_group_calendars_calendar_events_event_instances_event_tentatively_accept(connection, calendar_group_id, calendar_id, event_id, event_id1, me_calendar_view_event_instances_event_tentatively_accept_request, _opts \\ []) do
+  @spec me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_tentatively_accept(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_tentatively_accept(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        event_id1,
+        me_calendar_view_event_instances_event_tentatively_accept_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/tentativelyAccept")
-      |> add_param(:body, :body, me_calendar_view_event_instances_event_tentatively_accept_request)
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/tentativelyAccept"
+      )
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_view_event_instances_event_tentatively_accept_request
+      )
       |> Enum.into([])
 
     connection
@@ -2385,12 +2708,31 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendar_group_calendars_calendar_events_event_snooze_reminder(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MeCalendarViewEventSnoozeReminderRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendar_group_calendars_calendar_events_event_snooze_reminder(connection, calendar_group_id, calendar_id, event_id, me_calendar_view_event_snooze_reminder_request, _opts \\ []) do
+  @spec me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_snooze_reminder(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventSnoozeReminderRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_snooze_reminder(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        me_calendar_view_event_snooze_reminder_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/snoozeReminder")
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/snoozeReminder"
+      )
       |> add_param(:body, :body, me_calendar_view_event_snooze_reminder_request)
       |> Enum.into([])
 
@@ -2421,13 +2763,978 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendar_group_calendars_calendar_events_event_tentatively_accept(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendar_group_calendars_calendar_events_event_tentatively_accept(connection, calendar_group_id, calendar_id, event_id, me_calendar_view_event_instances_event_tentatively_accept_request, _opts \\ []) do
+  @spec me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_tentatively_accept(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_tentatively_accept(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        me_calendar_view_event_instances_event_tentatively_accept_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/tentativelyAccept")
-      |> add_param(:body, :body, me_calendar_view_event_instances_event_tentatively_accept_request)
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/calendarView/#{event_id}/tentativelyAccept"
+      )
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_view_event_instances_event_tentatively_accept_request
+      )
+      |> Enum.into([])
+
+    connection
+    |> Connection.request(request)
+    |> evaluate_response([
+      {204, false},
+      {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
+      {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
+    ])
+  end
+
+  @doc """
+  Invoke action accept
+  Accept the specified event in a user calendar. This API is available in the following national cloud deployments.
+
+  ### Parameters
+
+  - `connection` (MicrosoftGraph.Connection): Connection to server
+  - `calendar_group_id` (String.t): The unique identifier of calendarGroup
+  - `calendar_id` (String.t): The unique identifier of calendar
+  - `event_id` (String.t): The unique identifier of event
+  - `me_calendar_view_event_instances_event_accept_request` (MeCalendarViewEventInstancesEventAcceptRequest): Action parameters
+  - `opts` (keyword): Optional parameters
+
+  ### Returns
+
+  - `{:ok, nil}` on success
+  - `{:error, Tesla.Env.t}` on failure
+  """
+  @spec me_calendar_groups_calendar_group_calendars_calendar_events_event_accept(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventInstancesEventAcceptRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendar_group_calendars_calendar_events_event_accept(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        me_calendar_view_event_instances_event_accept_request,
+        _opts \\ []
+      ) do
+    request =
+      %{}
+      |> method(:post)
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/accept"
+      )
+      |> add_param(:body, :body, me_calendar_view_event_instances_event_accept_request)
+      |> Enum.into([])
+
+    connection
+    |> Connection.request(request)
+    |> evaluate_response([
+      {204, false},
+      {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
+      {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
+    ])
+  end
+
+  @doc """
+  Invoke action createUploadSession
+  Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to the specified Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that's smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example. This API is available in the following national cloud deployments.
+
+  ### Parameters
+
+  - `connection` (MicrosoftGraph.Connection): Connection to server
+  - `calendar_group_id` (String.t): The unique identifier of calendarGroup
+  - `calendar_id` (String.t): The unique identifier of calendar
+  - `event_id` (String.t): The unique identifier of event
+  - `users_user_events_event_instances_event_attachments_create_upload_session_request` (UsersUserEventsEventInstancesEventAttachmentsCreateUploadSessionRequest): Action parameters
+  - `opts` (keyword): Optional parameters
+
+  ### Returns
+
+  - `{:ok, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t}` on success
+  - `{:error, Tesla.Env.t}` on failure
+  """
+  @spec me_calendar_groups_calendar_group_calendars_calendar_events_event_attachments_create_upload_session(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSessionRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendar_group_calendars_calendar_events_event_attachments_create_upload_session(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        users_user_events_event_instances_event_attachments_create_upload_session_request,
+        _opts \\ []
+      ) do
+    request =
+      %{}
+      |> method(:post)
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/attachments/createUploadSession"
+      )
+      |> add_param(
+        :body,
+        :body,
+        users_user_events_event_instances_event_attachments_create_upload_session_request
+      )
+      |> Enum.into([])
+
+    connection
+    |> Connection.request(request)
+    |> evaluate_response([
+      {"2XX",
+       MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse},
+      {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
+      {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
+    ])
+  end
+
+  @doc """
+  Invoke action cancel
+  This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting  by providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following error message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that Cancel is available to only the organizer, and lets the organizer send a custom message to the attendees about the cancellation. This API is available in the following national cloud deployments.
+
+  ### Parameters
+
+  - `connection` (MicrosoftGraph.Connection): Connection to server
+  - `calendar_group_id` (String.t): The unique identifier of calendarGroup
+  - `calendar_id` (String.t): The unique identifier of calendar
+  - `event_id` (String.t): The unique identifier of event
+  - `me_calendars_calendar_calendar_view_event_instances_event_cancel_request` (MeCalendarsCalendarCalendarViewEventInstancesEventCancelRequest): Action parameters
+  - `opts` (keyword): Optional parameters
+
+  ### Returns
+
+  - `{:ok, nil}` on success
+  - `{:error, Tesla.Env.t}` on failure
+  """
+  @spec me_calendar_groups_calendar_group_calendars_calendar_events_event_cancel(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarsCalendarCalendarViewEventInstancesEventCancelRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendar_group_calendars_calendar_events_event_cancel(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        me_calendars_calendar_calendar_view_event_instances_event_cancel_request,
+        _opts \\ []
+      ) do
+    request =
+      %{}
+      |> method(:post)
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/cancel"
+      )
+      |> add_param(
+        :body,
+        :body,
+        me_calendars_calendar_calendar_view_event_instances_event_cancel_request
+      )
+      |> Enum.into([])
+
+    connection
+    |> Connection.request(request)
+    |> evaluate_response([
+      {204, false},
+      {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
+      {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
+    ])
+  end
+
+  @doc """
+  Invoke action decline
+  Decline invitation to the specified event in a user calendar. If the event allows proposals for new times, on declining the event, an invitee can choose to suggest an alternative time by including the proposedNewTime parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times. This API is available in the following national cloud deployments.
+
+  ### Parameters
+
+  - `connection` (MicrosoftGraph.Connection): Connection to server
+  - `calendar_group_id` (String.t): The unique identifier of calendarGroup
+  - `calendar_id` (String.t): The unique identifier of calendar
+  - `event_id` (String.t): The unique identifier of event
+  - `me_calendar_view_event_instances_event_tentatively_accept_request` (MeCalendarViewEventInstancesEventTentativelyAcceptRequest): Action parameters
+  - `opts` (keyword): Optional parameters
+
+  ### Returns
+
+  - `{:ok, nil}` on success
+  - `{:error, Tesla.Env.t}` on failure
+  """
+  @spec me_calendar_groups_calendar_group_calendars_calendar_events_event_decline(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendar_group_calendars_calendar_events_event_decline(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        me_calendar_view_event_instances_event_tentatively_accept_request,
+        _opts \\ []
+      ) do
+    request =
+      %{}
+      |> method(:post)
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/decline"
+      )
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_view_event_instances_event_tentatively_accept_request
+      )
+      |> Enum.into([])
+
+    connection
+    |> Connection.request(request)
+    |> evaluate_response([
+      {204, false},
+      {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
+      {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
+    ])
+  end
+
+  @doc """
+  Invoke action dismissReminder
+  Dismiss a reminder that has been triggered for an event in a user calendar. This API is available in the following national cloud deployments.
+
+  ### Parameters
+
+  - `connection` (MicrosoftGraph.Connection): Connection to server
+  - `calendar_group_id` (String.t): The unique identifier of calendarGroup
+  - `calendar_id` (String.t): The unique identifier of calendar
+  - `event_id` (String.t): The unique identifier of event
+  - `opts` (keyword): Optional parameters
+
+  ### Returns
+
+  - `{:ok, nil}` on success
+  - `{:error, Tesla.Env.t}` on failure
+  """
+  @spec me_calendar_groups_calendar_group_calendars_calendar_events_event_dismiss_reminder(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendar_group_calendars_calendar_events_event_dismiss_reminder(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        _opts \\ []
+      ) do
+    request =
+      %{}
+      |> method(:post)
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/dismissReminder"
+      )
+      |> ensure_body()
+      |> Enum.into([])
+
+    connection
+    |> Connection.request(request)
+    |> evaluate_response([
+      {204, false},
+      {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
+      {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
+    ])
+  end
+
+  @doc """
+  Invoke action forward
+  This action allows the organizer or attendee of a meeting event to forward the  meeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action  also sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's  copy of the meeting event. This convenience is not available when forwarding from an Outlook.com account. This API is available in the following national cloud deployments.
+
+  ### Parameters
+
+  - `connection` (MicrosoftGraph.Connection): Connection to server
+  - `calendar_group_id` (String.t): The unique identifier of calendarGroup
+  - `calendar_id` (String.t): The unique identifier of calendar
+  - `event_id` (String.t): The unique identifier of event
+  - `me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request` (MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequest): Action parameters
+  - `opts` (keyword): Optional parameters
+
+  ### Returns
+
+  - `{:ok, nil}` on success
+  - `{:error, Tesla.Env.t}` on failure
+  """
+  @spec me_calendar_groups_calendar_group_calendars_calendar_events_event_forward(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendar_group_calendars_calendar_events_event_forward(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request,
+        _opts \\ []
+      ) do
+    request =
+      %{}
+      |> method(:post)
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/forward"
+      )
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request
+      )
+      |> Enum.into([])
+
+    connection
+    |> Connection.request(request)
+    |> evaluate_response([
+      {204, false},
+      {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
+      {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
+    ])
+  end
+
+  @doc """
+  Invoke action accept
+  Accept the specified event in a user calendar. This API is available in the following national cloud deployments.
+
+  ### Parameters
+
+  - `connection` (MicrosoftGraph.Connection): Connection to server
+  - `calendar_group_id` (String.t): The unique identifier of calendarGroup
+  - `calendar_id` (String.t): The unique identifier of calendar
+  - `event_id` (String.t): The unique identifier of event
+  - `event_id1` (String.t): The unique identifier of event
+  - `me_calendar_view_event_instances_event_accept_request` (MeCalendarViewEventInstancesEventAcceptRequest): Action parameters
+  - `opts` (keyword): Optional parameters
+
+  ### Returns
+
+  - `{:ok, nil}` on success
+  - `{:error, Tesla.Env.t}` on failure
+  """
+  @spec me_calendar_groups_calendar_group_calendars_calendar_events_event_instances_event_accept(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventInstancesEventAcceptRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendar_group_calendars_calendar_events_event_instances_event_accept(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        event_id1,
+        me_calendar_view_event_instances_event_accept_request,
+        _opts \\ []
+      ) do
+    request =
+      %{}
+      |> method(:post)
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/accept"
+      )
+      |> add_param(:body, :body, me_calendar_view_event_instances_event_accept_request)
+      |> Enum.into([])
+
+    connection
+    |> Connection.request(request)
+    |> evaluate_response([
+      {204, false},
+      {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
+      {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
+    ])
+  end
+
+  @doc """
+  Invoke action createUploadSession
+  Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to the specified Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that's smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example. This API is available in the following national cloud deployments.
+
+  ### Parameters
+
+  - `connection` (MicrosoftGraph.Connection): Connection to server
+  - `calendar_group_id` (String.t): The unique identifier of calendarGroup
+  - `calendar_id` (String.t): The unique identifier of calendar
+  - `event_id` (String.t): The unique identifier of event
+  - `event_id1` (String.t): The unique identifier of event
+  - `users_user_events_event_instances_event_attachments_create_upload_session_request` (UsersUserEventsEventInstancesEventAttachmentsCreateUploadSessionRequest): Action parameters
+  - `opts` (keyword): Optional parameters
+
+  ### Returns
+
+  - `{:ok, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t}` on success
+  - `{:error, Tesla.Env.t}` on failure
+  """
+  @spec me_calendar_groups_calendar_group_calendars_calendar_events_event_instances_event_attachments_create_upload_session(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSessionRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendar_group_calendars_calendar_events_event_instances_event_attachments_create_upload_session(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        event_id1,
+        users_user_events_event_instances_event_attachments_create_upload_session_request,
+        _opts \\ []
+      ) do
+    request =
+      %{}
+      |> method(:post)
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/attachments/createUploadSession"
+      )
+      |> add_param(
+        :body,
+        :body,
+        users_user_events_event_instances_event_attachments_create_upload_session_request
+      )
+      |> Enum.into([])
+
+    connection
+    |> Connection.request(request)
+    |> evaluate_response([
+      {"2XX",
+       MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse},
+      {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
+      {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
+    ])
+  end
+
+  @doc """
+  Invoke action cancel
+  This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting  by providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following error message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that Cancel is available to only the organizer, and lets the organizer send a custom message to the attendees about the cancellation. This API is available in the following national cloud deployments.
+
+  ### Parameters
+
+  - `connection` (MicrosoftGraph.Connection): Connection to server
+  - `calendar_group_id` (String.t): The unique identifier of calendarGroup
+  - `calendar_id` (String.t): The unique identifier of calendar
+  - `event_id` (String.t): The unique identifier of event
+  - `event_id1` (String.t): The unique identifier of event
+  - `me_calendars_calendar_calendar_view_event_instances_event_cancel_request` (MeCalendarsCalendarCalendarViewEventInstancesEventCancelRequest): Action parameters
+  - `opts` (keyword): Optional parameters
+
+  ### Returns
+
+  - `{:ok, nil}` on success
+  - `{:error, Tesla.Env.t}` on failure
+  """
+  @spec me_calendar_groups_calendar_group_calendars_calendar_events_event_instances_event_cancel(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarsCalendarCalendarViewEventInstancesEventCancelRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendar_group_calendars_calendar_events_event_instances_event_cancel(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        event_id1,
+        me_calendars_calendar_calendar_view_event_instances_event_cancel_request,
+        _opts \\ []
+      ) do
+    request =
+      %{}
+      |> method(:post)
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/cancel"
+      )
+      |> add_param(
+        :body,
+        :body,
+        me_calendars_calendar_calendar_view_event_instances_event_cancel_request
+      )
+      |> Enum.into([])
+
+    connection
+    |> Connection.request(request)
+    |> evaluate_response([
+      {204, false},
+      {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
+      {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
+    ])
+  end
+
+  @doc """
+  Invoke action decline
+  Decline invitation to the specified event in a user calendar. If the event allows proposals for new times, on declining the event, an invitee can choose to suggest an alternative time by including the proposedNewTime parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times. This API is available in the following national cloud deployments.
+
+  ### Parameters
+
+  - `connection` (MicrosoftGraph.Connection): Connection to server
+  - `calendar_group_id` (String.t): The unique identifier of calendarGroup
+  - `calendar_id` (String.t): The unique identifier of calendar
+  - `event_id` (String.t): The unique identifier of event
+  - `event_id1` (String.t): The unique identifier of event
+  - `me_calendar_view_event_instances_event_tentatively_accept_request` (MeCalendarViewEventInstancesEventTentativelyAcceptRequest): Action parameters
+  - `opts` (keyword): Optional parameters
+
+  ### Returns
+
+  - `{:ok, nil}` on success
+  - `{:error, Tesla.Env.t}` on failure
+  """
+  @spec me_calendar_groups_calendar_group_calendars_calendar_events_event_instances_event_decline(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendar_group_calendars_calendar_events_event_instances_event_decline(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        event_id1,
+        me_calendar_view_event_instances_event_tentatively_accept_request,
+        _opts \\ []
+      ) do
+    request =
+      %{}
+      |> method(:post)
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/decline"
+      )
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_view_event_instances_event_tentatively_accept_request
+      )
+      |> Enum.into([])
+
+    connection
+    |> Connection.request(request)
+    |> evaluate_response([
+      {204, false},
+      {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
+      {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
+    ])
+  end
+
+  @doc """
+  Invoke action dismissReminder
+  Dismiss a reminder that has been triggered for an event in a user calendar. This API is available in the following national cloud deployments.
+
+  ### Parameters
+
+  - `connection` (MicrosoftGraph.Connection): Connection to server
+  - `calendar_group_id` (String.t): The unique identifier of calendarGroup
+  - `calendar_id` (String.t): The unique identifier of calendar
+  - `event_id` (String.t): The unique identifier of event
+  - `event_id1` (String.t): The unique identifier of event
+  - `opts` (keyword): Optional parameters
+
+  ### Returns
+
+  - `{:ok, nil}` on success
+  - `{:error, Tesla.Env.t}` on failure
+  """
+  @spec me_calendar_groups_calendar_group_calendars_calendar_events_event_instances_event_dismiss_reminder(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendar_group_calendars_calendar_events_event_instances_event_dismiss_reminder(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        event_id1,
+        _opts \\ []
+      ) do
+    request =
+      %{}
+      |> method(:post)
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/dismissReminder"
+      )
+      |> ensure_body()
+      |> Enum.into([])
+
+    connection
+    |> Connection.request(request)
+    |> evaluate_response([
+      {204, false},
+      {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
+      {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
+    ])
+  end
+
+  @doc """
+  Invoke action forward
+  This action allows the organizer or attendee of a meeting event to forward the  meeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action  also sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's  copy of the meeting event. This convenience is not available when forwarding from an Outlook.com account. This API is available in the following national cloud deployments.
+
+  ### Parameters
+
+  - `connection` (MicrosoftGraph.Connection): Connection to server
+  - `calendar_group_id` (String.t): The unique identifier of calendarGroup
+  - `calendar_id` (String.t): The unique identifier of calendar
+  - `event_id` (String.t): The unique identifier of event
+  - `event_id1` (String.t): The unique identifier of event
+  - `me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request` (MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequest): Action parameters
+  - `opts` (keyword): Optional parameters
+
+  ### Returns
+
+  - `{:ok, nil}` on success
+  - `{:error, Tesla.Env.t}` on failure
+  """
+  @spec me_calendar_groups_calendar_group_calendars_calendar_events_event_instances_event_forward(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendar_group_calendars_calendar_events_event_instances_event_forward(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        event_id1,
+        me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request,
+        _opts \\ []
+      ) do
+    request =
+      %{}
+      |> method(:post)
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/forward"
+      )
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request
+      )
+      |> Enum.into([])
+
+    connection
+    |> Connection.request(request)
+    |> evaluate_response([
+      {204, false},
+      {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
+      {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
+    ])
+  end
+
+  @doc """
+  Invoke action snoozeReminder
+  Postpone a reminder for an event in a user calendar until a new time. This API is available in the following national cloud deployments.
+
+  ### Parameters
+
+  - `connection` (MicrosoftGraph.Connection): Connection to server
+  - `calendar_group_id` (String.t): The unique identifier of calendarGroup
+  - `calendar_id` (String.t): The unique identifier of calendar
+  - `event_id` (String.t): The unique identifier of event
+  - `event_id1` (String.t): The unique identifier of event
+  - `me_calendar_view_event_snooze_reminder_request` (MeCalendarViewEventSnoozeReminderRequest): Action parameters
+  - `opts` (keyword): Optional parameters
+
+  ### Returns
+
+  - `{:ok, nil}` on success
+  - `{:error, Tesla.Env.t}` on failure
+  """
+  @spec me_calendar_groups_calendar_group_calendars_calendar_events_event_instances_event_snooze_reminder(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventSnoozeReminderRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendar_group_calendars_calendar_events_event_instances_event_snooze_reminder(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        event_id1,
+        me_calendar_view_event_snooze_reminder_request,
+        _opts \\ []
+      ) do
+    request =
+      %{}
+      |> method(:post)
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/snoozeReminder"
+      )
+      |> add_param(:body, :body, me_calendar_view_event_snooze_reminder_request)
+      |> Enum.into([])
+
+    connection
+    |> Connection.request(request)
+    |> evaluate_response([
+      {204, false},
+      {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
+      {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
+    ])
+  end
+
+  @doc """
+  Invoke action tentativelyAccept
+  Tentatively accept the specified event in a user calendar. If the event allows proposals for new times, on responding tentative to the event, an invitee can choose to suggest an alternative time by including the proposedNewTime parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times. This API is available in the following national cloud deployments.
+
+  ### Parameters
+
+  - `connection` (MicrosoftGraph.Connection): Connection to server
+  - `calendar_group_id` (String.t): The unique identifier of calendarGroup
+  - `calendar_id` (String.t): The unique identifier of calendar
+  - `event_id` (String.t): The unique identifier of event
+  - `event_id1` (String.t): The unique identifier of event
+  - `me_calendar_view_event_instances_event_tentatively_accept_request` (MeCalendarViewEventInstancesEventTentativelyAcceptRequest): Action parameters
+  - `opts` (keyword): Optional parameters
+
+  ### Returns
+
+  - `{:ok, nil}` on success
+  - `{:error, Tesla.Env.t}` on failure
+  """
+  @spec me_calendar_groups_calendar_group_calendars_calendar_events_event_instances_event_tentatively_accept(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendar_group_calendars_calendar_events_event_instances_event_tentatively_accept(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        event_id1,
+        me_calendar_view_event_instances_event_tentatively_accept_request,
+        _opts \\ []
+      ) do
+    request =
+      %{}
+      |> method(:post)
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/tentativelyAccept"
+      )
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_view_event_instances_event_tentatively_accept_request
+      )
+      |> Enum.into([])
+
+    connection
+    |> Connection.request(request)
+    |> evaluate_response([
+      {204, false},
+      {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
+      {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
+    ])
+  end
+
+  @doc """
+  Invoke action snoozeReminder
+  Postpone a reminder for an event in a user calendar until a new time. This API is available in the following national cloud deployments.
+
+  ### Parameters
+
+  - `connection` (MicrosoftGraph.Connection): Connection to server
+  - `calendar_group_id` (String.t): The unique identifier of calendarGroup
+  - `calendar_id` (String.t): The unique identifier of calendar
+  - `event_id` (String.t): The unique identifier of event
+  - `me_calendar_view_event_snooze_reminder_request` (MeCalendarViewEventSnoozeReminderRequest): Action parameters
+  - `opts` (keyword): Optional parameters
+
+  ### Returns
+
+  - `{:ok, nil}` on success
+  - `{:error, Tesla.Env.t}` on failure
+  """
+  @spec me_calendar_groups_calendar_group_calendars_calendar_events_event_snooze_reminder(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventSnoozeReminderRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendar_group_calendars_calendar_events_event_snooze_reminder(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        me_calendar_view_event_snooze_reminder_request,
+        _opts \\ []
+      ) do
+    request =
+      %{}
+      |> method(:post)
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/snoozeReminder"
+      )
+      |> add_param(:body, :body, me_calendar_view_event_snooze_reminder_request)
+      |> Enum.into([])
+
+    connection
+    |> Connection.request(request)
+    |> evaluate_response([
+      {204, false},
+      {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
+      {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
+    ])
+  end
+
+  @doc """
+  Invoke action tentativelyAccept
+  Tentatively accept the specified event in a user calendar. If the event allows proposals for new times, on responding tentative to the event, an invitee can choose to suggest an alternative time by including the proposedNewTime parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times. This API is available in the following national cloud deployments.
+
+  ### Parameters
+
+  - `connection` (MicrosoftGraph.Connection): Connection to server
+  - `calendar_group_id` (String.t): The unique identifier of calendarGroup
+  - `calendar_id` (String.t): The unique identifier of calendar
+  - `event_id` (String.t): The unique identifier of event
+  - `me_calendar_view_event_instances_event_tentatively_accept_request` (MeCalendarViewEventInstancesEventTentativelyAcceptRequest): Action parameters
+  - `opts` (keyword): Optional parameters
+
+  ### Returns
+
+  - `{:ok, nil}` on success
+  - `{:error, Tesla.Env.t}` on failure
+  """
+  @spec me_calendar_groups_calendar_group_calendars_calendar_events_event_tentatively_accept(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendar_group_calendars_calendar_events_event_tentatively_accept(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        event_id,
+        me_calendar_view_event_instances_event_tentatively_accept_request,
+        _opts \\ []
+      ) do
+    request =
+      %{}
+      |> method(:post)
+      |> url(
+        "/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/events/#{event_id}/tentativelyAccept"
+      )
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_view_event_instances_event_tentatively_accept_request
+      )
       |> Enum.into([])
 
     connection
@@ -2456,19 +3763,40 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarGetSchedule2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_groups_calendar_group_calendars_calendar_get_schedule(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarGetScheduleRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarGetSchedule2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_groups_calendar_group_calendars_calendar_get_schedule(connection, calendar_group_id, calendar_id, me_calendar_groups_calendar_group_calendars_calendar_get_schedule_request, _opts \\ []) do
+  @spec me_calendar_groups_calendar_group_calendars_calendar_get_schedule(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarGetScheduleRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarGetSchedule2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_groups_calendar_group_calendars_calendar_get_schedule(
+        connection,
+        calendar_group_id,
+        calendar_id,
+        me_calendar_groups_calendar_group_calendars_calendar_get_schedule_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/calendarGroups/#{calendar_group_id}/calendars/#{calendar_id}/getSchedule")
-      |> add_param(:body, :body, me_calendar_groups_calendar_group_calendars_calendar_get_schedule_request)
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_groups_calendar_group_calendars_calendar_get_schedule_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarGetSchedule2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarGetSchedule2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -2490,8 +3818,21 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_view_event_accept(Tesla.Env.client, String.t, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventAcceptRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_view_event_accept(connection, event_id, me_calendar_view_event_instances_event_accept_request, _opts \\ []) do
+  @spec me_calendar_view_event_accept(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventInstancesEventAcceptRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_view_event_accept(
+        connection,
+        event_id,
+        me_calendar_view_event_instances_event_accept_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -2524,19 +3865,38 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_view_event_attachments_create_upload_session(Tesla.Env.client, String.t, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSessionRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_view_event_attachments_create_upload_session(connection, event_id, users_user_events_event_instances_event_attachments_create_upload_session_request, _opts \\ []) do
+  @spec me_calendar_view_event_attachments_create_upload_session(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSessionRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_view_event_attachments_create_upload_session(
+        connection,
+        event_id,
+        users_user_events_event_instances_event_attachments_create_upload_session_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/calendarView/#{event_id}/attachments/createUploadSession")
-      |> add_param(:body, :body, users_user_events_event_instances_event_attachments_create_upload_session_request)
+      |> add_param(
+        :body,
+        :body,
+        users_user_events_event_instances_event_attachments_create_upload_session_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -2558,13 +3918,30 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_view_event_cancel(Tesla.Env.client, String.t, MicrosoftGraph.Model.MeCalendarsCalendarCalendarViewEventInstancesEventCancelRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_view_event_cancel(connection, event_id, me_calendars_calendar_calendar_view_event_instances_event_cancel_request, _opts \\ []) do
+  @spec me_calendar_view_event_cancel(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarsCalendarCalendarViewEventInstancesEventCancelRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_view_event_cancel(
+        connection,
+        event_id,
+        me_calendars_calendar_calendar_view_event_instances_event_cancel_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/calendarView/#{event_id}/cancel")
-      |> add_param(:body, :body, me_calendars_calendar_calendar_view_event_instances_event_cancel_request)
+      |> add_param(
+        :body,
+        :body,
+        me_calendars_calendar_calendar_view_event_instances_event_cancel_request
+      )
       |> Enum.into([])
 
     connection
@@ -2592,13 +3969,30 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_view_event_decline(Tesla.Env.client, String.t, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_view_event_decline(connection, event_id, me_calendar_view_event_instances_event_tentatively_accept_request, _opts \\ []) do
+  @spec me_calendar_view_event_decline(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_view_event_decline(
+        connection,
+        event_id,
+        me_calendar_view_event_instances_event_tentatively_accept_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/calendarView/#{event_id}/decline")
-      |> add_param(:body, :body, me_calendar_view_event_instances_event_tentatively_accept_request)
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_view_event_instances_event_tentatively_accept_request
+      )
       |> Enum.into([])
 
     connection
@@ -2625,7 +4019,10 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_view_event_dismiss_reminder(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_calendar_view_event_dismiss_reminder(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_calendar_view_event_dismiss_reminder(connection, event_id, _opts \\ []) do
     request =
       %{}
@@ -2659,13 +4056,30 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_view_event_forward(Tesla.Env.client, String.t, MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_view_event_forward(connection, event_id, me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request, _opts \\ []) do
+  @spec me_calendar_view_event_forward(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_view_event_forward(
+        connection,
+        event_id,
+        me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/calendarView/#{event_id}/forward")
-      |> add_param(:body, :body, me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request)
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request
+      )
       |> Enum.into([])
 
     connection
@@ -2694,8 +4108,23 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_view_event_instances_event_accept(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventAcceptRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_view_event_instances_event_accept(connection, event_id, event_id1, me_calendar_view_event_instances_event_accept_request, _opts \\ []) do
+  @spec me_calendar_view_event_instances_event_accept(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventInstancesEventAcceptRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_view_event_instances_event_accept(
+        connection,
+        event_id,
+        event_id1,
+        me_calendar_view_event_instances_event_accept_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -2729,19 +4158,42 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_view_event_instances_event_attachments_create_upload_session(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSessionRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_view_event_instances_event_attachments_create_upload_session(connection, event_id, event_id1, users_user_events_event_instances_event_attachments_create_upload_session_request, _opts \\ []) do
+  @spec me_calendar_view_event_instances_event_attachments_create_upload_session(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSessionRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_view_event_instances_event_attachments_create_upload_session(
+        connection,
+        event_id,
+        event_id1,
+        users_user_events_event_instances_event_attachments_create_upload_session_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/calendarView/#{event_id}/instances/#{event_id1}/attachments/createUploadSession")
-      |> add_param(:body, :body, users_user_events_event_instances_event_attachments_create_upload_session_request)
+      |> url(
+        "/me/calendarView/#{event_id}/instances/#{event_id1}/attachments/createUploadSession"
+      )
+      |> add_param(
+        :body,
+        :body,
+        users_user_events_event_instances_event_attachments_create_upload_session_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -2764,13 +4216,32 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_view_event_instances_event_cancel(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeCalendarsCalendarCalendarViewEventInstancesEventCancelRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_view_event_instances_event_cancel(connection, event_id, event_id1, me_calendars_calendar_calendar_view_event_instances_event_cancel_request, _opts \\ []) do
+  @spec me_calendar_view_event_instances_event_cancel(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarsCalendarCalendarViewEventInstancesEventCancelRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_view_event_instances_event_cancel(
+        connection,
+        event_id,
+        event_id1,
+        me_calendars_calendar_calendar_view_event_instances_event_cancel_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/calendarView/#{event_id}/instances/#{event_id1}/cancel")
-      |> add_param(:body, :body, me_calendars_calendar_calendar_view_event_instances_event_cancel_request)
+      |> add_param(
+        :body,
+        :body,
+        me_calendars_calendar_calendar_view_event_instances_event_cancel_request
+      )
       |> Enum.into([])
 
     connection
@@ -2799,13 +4270,32 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_view_event_instances_event_decline(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_view_event_instances_event_decline(connection, event_id, event_id1, me_calendar_view_event_instances_event_tentatively_accept_request, _opts \\ []) do
+  @spec me_calendar_view_event_instances_event_decline(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_view_event_instances_event_decline(
+        connection,
+        event_id,
+        event_id1,
+        me_calendar_view_event_instances_event_tentatively_accept_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/calendarView/#{event_id}/instances/#{event_id1}/decline")
-      |> add_param(:body, :body, me_calendar_view_event_instances_event_tentatively_accept_request)
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_view_event_instances_event_tentatively_accept_request
+      )
       |> Enum.into([])
 
     connection
@@ -2833,8 +4323,21 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_view_event_instances_event_dismiss_reminder(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_view_event_instances_event_dismiss_reminder(connection, event_id, event_id1, _opts \\ []) do
+  @spec me_calendar_view_event_instances_event_dismiss_reminder(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_view_event_instances_event_dismiss_reminder(
+        connection,
+        event_id,
+        event_id1,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -2868,13 +4371,32 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_view_event_instances_event_forward(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_view_event_instances_event_forward(connection, event_id, event_id1, me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request, _opts \\ []) do
+  @spec me_calendar_view_event_instances_event_forward(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_view_event_instances_event_forward(
+        connection,
+        event_id,
+        event_id1,
+        me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/calendarView/#{event_id}/instances/#{event_id1}/forward")
-      |> add_param(:body, :body, me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request)
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request
+      )
       |> Enum.into([])
 
     connection
@@ -2903,8 +4425,23 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_view_event_instances_event_snooze_reminder(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeCalendarViewEventSnoozeReminderRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_view_event_instances_event_snooze_reminder(connection, event_id, event_id1, me_calendar_view_event_snooze_reminder_request, _opts \\ []) do
+  @spec me_calendar_view_event_instances_event_snooze_reminder(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventSnoozeReminderRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_view_event_instances_event_snooze_reminder(
+        connection,
+        event_id,
+        event_id1,
+        me_calendar_view_event_snooze_reminder_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -2938,13 +4475,32 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_view_event_instances_event_tentatively_accept(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_view_event_instances_event_tentatively_accept(connection, event_id, event_id1, me_calendar_view_event_instances_event_tentatively_accept_request, _opts \\ []) do
+  @spec me_calendar_view_event_instances_event_tentatively_accept(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_view_event_instances_event_tentatively_accept(
+        connection,
+        event_id,
+        event_id1,
+        me_calendar_view_event_instances_event_tentatively_accept_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/calendarView/#{event_id}/instances/#{event_id1}/tentativelyAccept")
-      |> add_param(:body, :body, me_calendar_view_event_instances_event_tentatively_accept_request)
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_view_event_instances_event_tentatively_accept_request
+      )
       |> Enum.into([])
 
     connection
@@ -2972,8 +4528,21 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_view_event_snooze_reminder(Tesla.Env.client, String.t, MicrosoftGraph.Model.MeCalendarViewEventSnoozeReminderRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_view_event_snooze_reminder(connection, event_id, me_calendar_view_event_snooze_reminder_request, _opts \\ []) do
+  @spec me_calendar_view_event_snooze_reminder(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventSnoozeReminderRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_view_event_snooze_reminder(
+        connection,
+        event_id,
+        me_calendar_view_event_snooze_reminder_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -3006,13 +4575,30 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendar_view_event_tentatively_accept(Tesla.Env.client, String.t, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendar_view_event_tentatively_accept(connection, event_id, me_calendar_view_event_instances_event_tentatively_accept_request, _opts \\ []) do
+  @spec me_calendar_view_event_tentatively_accept(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendar_view_event_tentatively_accept(
+        connection,
+        event_id,
+        me_calendar_view_event_instances_event_tentatively_accept_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/calendarView/#{event_id}/tentativelyAccept")
-      |> add_param(:body, :body, me_calendar_view_event_instances_event_tentatively_accept_request)
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_view_event_instances_event_tentatively_accept_request
+      )
       |> Enum.into([])
 
     connection
@@ -3041,8 +4627,23 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendars_calendar_calendar_view_event_accept(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventAcceptRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendars_calendar_calendar_view_event_accept(connection, calendar_id, event_id, me_calendar_view_event_instances_event_accept_request, _opts \\ []) do
+  @spec me_calendars_calendar_calendar_view_event_accept(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventInstancesEventAcceptRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendars_calendar_calendar_view_event_accept(
+        connection,
+        calendar_id,
+        event_id,
+        me_calendar_view_event_instances_event_accept_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -3076,19 +4677,42 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendars_calendar_calendar_view_event_attachments_create_upload_session(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSessionRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendars_calendar_calendar_view_event_attachments_create_upload_session(connection, calendar_id, event_id, users_user_events_event_instances_event_attachments_create_upload_session_request, _opts \\ []) do
+  @spec me_calendars_calendar_calendar_view_event_attachments_create_upload_session(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSessionRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendars_calendar_calendar_view_event_attachments_create_upload_session(
+        connection,
+        calendar_id,
+        event_id,
+        users_user_events_event_instances_event_attachments_create_upload_session_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/calendars/#{calendar_id}/calendarView/#{event_id}/attachments/createUploadSession")
-      |> add_param(:body, :body, users_user_events_event_instances_event_attachments_create_upload_session_request)
+      |> url(
+        "/me/calendars/#{calendar_id}/calendarView/#{event_id}/attachments/createUploadSession"
+      )
+      |> add_param(
+        :body,
+        :body,
+        users_user_events_event_instances_event_attachments_create_upload_session_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -3111,13 +4735,32 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendars_calendar_calendar_view_event_cancel(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeCalendarsCalendarCalendarViewEventInstancesEventCancelRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendars_calendar_calendar_view_event_cancel(connection, calendar_id, event_id, me_calendars_calendar_calendar_view_event_instances_event_cancel_request, _opts \\ []) do
+  @spec me_calendars_calendar_calendar_view_event_cancel(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarsCalendarCalendarViewEventInstancesEventCancelRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendars_calendar_calendar_view_event_cancel(
+        connection,
+        calendar_id,
+        event_id,
+        me_calendars_calendar_calendar_view_event_instances_event_cancel_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/calendars/#{calendar_id}/calendarView/#{event_id}/cancel")
-      |> add_param(:body, :body, me_calendars_calendar_calendar_view_event_instances_event_cancel_request)
+      |> add_param(
+        :body,
+        :body,
+        me_calendars_calendar_calendar_view_event_instances_event_cancel_request
+      )
       |> Enum.into([])
 
     connection
@@ -3146,13 +4789,32 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendars_calendar_calendar_view_event_decline(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendars_calendar_calendar_view_event_decline(connection, calendar_id, event_id, me_calendar_view_event_instances_event_tentatively_accept_request, _opts \\ []) do
+  @spec me_calendars_calendar_calendar_view_event_decline(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendars_calendar_calendar_view_event_decline(
+        connection,
+        calendar_id,
+        event_id,
+        me_calendar_view_event_instances_event_tentatively_accept_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/calendars/#{calendar_id}/calendarView/#{event_id}/decline")
-      |> add_param(:body, :body, me_calendar_view_event_instances_event_tentatively_accept_request)
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_view_event_instances_event_tentatively_accept_request
+      )
       |> Enum.into([])
 
     connection
@@ -3180,8 +4842,21 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendars_calendar_calendar_view_event_dismiss_reminder(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendars_calendar_calendar_view_event_dismiss_reminder(connection, calendar_id, event_id, _opts \\ []) do
+  @spec me_calendars_calendar_calendar_view_event_dismiss_reminder(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendars_calendar_calendar_view_event_dismiss_reminder(
+        connection,
+        calendar_id,
+        event_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -3215,13 +4890,32 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendars_calendar_calendar_view_event_forward(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendars_calendar_calendar_view_event_forward(connection, calendar_id, event_id, me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request, _opts \\ []) do
+  @spec me_calendars_calendar_calendar_view_event_forward(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendars_calendar_calendar_view_event_forward(
+        connection,
+        calendar_id,
+        event_id,
+        me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/calendars/#{calendar_id}/calendarView/#{event_id}/forward")
-      |> add_param(:body, :body, me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request)
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request
+      )
       |> Enum.into([])
 
     connection
@@ -3251,12 +4945,31 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendars_calendar_calendar_view_event_instances_event_accept(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventAcceptRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendars_calendar_calendar_view_event_instances_event_accept(connection, calendar_id, event_id, event_id1, me_calendar_view_event_instances_event_accept_request, _opts \\ []) do
+  @spec me_calendars_calendar_calendar_view_event_instances_event_accept(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventInstancesEventAcceptRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendars_calendar_calendar_view_event_instances_event_accept(
+        connection,
+        calendar_id,
+        event_id,
+        event_id1,
+        me_calendar_view_event_instances_event_accept_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/accept")
+      |> url(
+        "/me/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/accept"
+      )
       |> add_param(:body, :body, me_calendar_view_event_instances_event_accept_request)
       |> Enum.into([])
 
@@ -3287,19 +5000,44 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendars_calendar_calendar_view_event_instances_event_attachments_create_upload_session(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSessionRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendars_calendar_calendar_view_event_instances_event_attachments_create_upload_session(connection, calendar_id, event_id, event_id1, users_user_events_event_instances_event_attachments_create_upload_session_request, _opts \\ []) do
+  @spec me_calendars_calendar_calendar_view_event_instances_event_attachments_create_upload_session(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSessionRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendars_calendar_calendar_view_event_instances_event_attachments_create_upload_session(
+        connection,
+        calendar_id,
+        event_id,
+        event_id1,
+        users_user_events_event_instances_event_attachments_create_upload_session_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/attachments/createUploadSession")
-      |> add_param(:body, :body, users_user_events_event_instances_event_attachments_create_upload_session_request)
+      |> url(
+        "/me/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/attachments/createUploadSession"
+      )
+      |> add_param(
+        :body,
+        :body,
+        users_user_events_event_instances_event_attachments_create_upload_session_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -3323,13 +5061,36 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendars_calendar_calendar_view_event_instances_event_cancel(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MeCalendarsCalendarCalendarViewEventInstancesEventCancelRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendars_calendar_calendar_view_event_instances_event_cancel(connection, calendar_id, event_id, event_id1, me_calendars_calendar_calendar_view_event_instances_event_cancel_request, _opts \\ []) do
+  @spec me_calendars_calendar_calendar_view_event_instances_event_cancel(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarsCalendarCalendarViewEventInstancesEventCancelRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendars_calendar_calendar_view_event_instances_event_cancel(
+        connection,
+        calendar_id,
+        event_id,
+        event_id1,
+        me_calendars_calendar_calendar_view_event_instances_event_cancel_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/cancel")
-      |> add_param(:body, :body, me_calendars_calendar_calendar_view_event_instances_event_cancel_request)
+      |> url(
+        "/me/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/cancel"
+      )
+      |> add_param(
+        :body,
+        :body,
+        me_calendars_calendar_calendar_view_event_instances_event_cancel_request
+      )
       |> Enum.into([])
 
     connection
@@ -3359,13 +5120,36 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendars_calendar_calendar_view_event_instances_event_decline(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendars_calendar_calendar_view_event_instances_event_decline(connection, calendar_id, event_id, event_id1, me_calendar_view_event_instances_event_tentatively_accept_request, _opts \\ []) do
+  @spec me_calendars_calendar_calendar_view_event_instances_event_decline(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendars_calendar_calendar_view_event_instances_event_decline(
+        connection,
+        calendar_id,
+        event_id,
+        event_id1,
+        me_calendar_view_event_instances_event_tentatively_accept_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/decline")
-      |> add_param(:body, :body, me_calendar_view_event_instances_event_tentatively_accept_request)
+      |> url(
+        "/me/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/decline"
+      )
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_view_event_instances_event_tentatively_accept_request
+      )
       |> Enum.into([])
 
     connection
@@ -3394,12 +5178,29 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendars_calendar_calendar_view_event_instances_event_dismiss_reminder(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendars_calendar_calendar_view_event_instances_event_dismiss_reminder(connection, calendar_id, event_id, event_id1, _opts \\ []) do
+  @spec me_calendars_calendar_calendar_view_event_instances_event_dismiss_reminder(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendars_calendar_calendar_view_event_instances_event_dismiss_reminder(
+        connection,
+        calendar_id,
+        event_id,
+        event_id1,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/dismissReminder")
+      |> url(
+        "/me/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/dismissReminder"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -3430,13 +5231,36 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendars_calendar_calendar_view_event_instances_event_forward(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendars_calendar_calendar_view_event_instances_event_forward(connection, calendar_id, event_id, event_id1, me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request, _opts \\ []) do
+  @spec me_calendars_calendar_calendar_view_event_instances_event_forward(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendars_calendar_calendar_view_event_instances_event_forward(
+        connection,
+        calendar_id,
+        event_id,
+        event_id1,
+        me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/forward")
-      |> add_param(:body, :body, me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request)
+      |> url(
+        "/me/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/forward"
+      )
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request
+      )
       |> Enum.into([])
 
     connection
@@ -3466,12 +5290,31 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendars_calendar_calendar_view_event_instances_event_snooze_reminder(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MeCalendarViewEventSnoozeReminderRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendars_calendar_calendar_view_event_instances_event_snooze_reminder(connection, calendar_id, event_id, event_id1, me_calendar_view_event_snooze_reminder_request, _opts \\ []) do
+  @spec me_calendars_calendar_calendar_view_event_instances_event_snooze_reminder(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventSnoozeReminderRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendars_calendar_calendar_view_event_instances_event_snooze_reminder(
+        connection,
+        calendar_id,
+        event_id,
+        event_id1,
+        me_calendar_view_event_snooze_reminder_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/snoozeReminder")
+      |> url(
+        "/me/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/snoozeReminder"
+      )
       |> add_param(:body, :body, me_calendar_view_event_snooze_reminder_request)
       |> Enum.into([])
 
@@ -3502,13 +5345,36 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendars_calendar_calendar_view_event_instances_event_tentatively_accept(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendars_calendar_calendar_view_event_instances_event_tentatively_accept(connection, calendar_id, event_id, event_id1, me_calendar_view_event_instances_event_tentatively_accept_request, _opts \\ []) do
+  @spec me_calendars_calendar_calendar_view_event_instances_event_tentatively_accept(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendars_calendar_calendar_view_event_instances_event_tentatively_accept(
+        connection,
+        calendar_id,
+        event_id,
+        event_id1,
+        me_calendar_view_event_instances_event_tentatively_accept_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/tentativelyAccept")
-      |> add_param(:body, :body, me_calendar_view_event_instances_event_tentatively_accept_request)
+      |> url(
+        "/me/calendars/#{calendar_id}/calendarView/#{event_id}/instances/#{event_id1}/tentativelyAccept"
+      )
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_view_event_instances_event_tentatively_accept_request
+      )
       |> Enum.into([])
 
     connection
@@ -3537,8 +5403,23 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendars_calendar_calendar_view_event_snooze_reminder(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeCalendarViewEventSnoozeReminderRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendars_calendar_calendar_view_event_snooze_reminder(connection, calendar_id, event_id, me_calendar_view_event_snooze_reminder_request, _opts \\ []) do
+  @spec me_calendars_calendar_calendar_view_event_snooze_reminder(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventSnoozeReminderRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendars_calendar_calendar_view_event_snooze_reminder(
+        connection,
+        calendar_id,
+        event_id,
+        me_calendar_view_event_snooze_reminder_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -3572,13 +5453,32 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendars_calendar_calendar_view_event_tentatively_accept(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendars_calendar_calendar_view_event_tentatively_accept(connection, calendar_id, event_id, me_calendar_view_event_instances_event_tentatively_accept_request, _opts \\ []) do
+  @spec me_calendars_calendar_calendar_view_event_tentatively_accept(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendars_calendar_calendar_view_event_tentatively_accept(
+        connection,
+        calendar_id,
+        event_id,
+        me_calendar_view_event_instances_event_tentatively_accept_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/calendars/#{calendar_id}/calendarView/#{event_id}/tentativelyAccept")
-      |> add_param(:body, :body, me_calendar_view_event_instances_event_tentatively_accept_request)
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_view_event_instances_event_tentatively_accept_request
+      )
       |> Enum.into([])
 
     connection
@@ -3607,8 +5507,23 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendars_calendar_events_event_accept(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventAcceptRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendars_calendar_events_event_accept(connection, calendar_id, event_id, me_calendar_view_event_instances_event_accept_request, _opts \\ []) do
+  @spec me_calendars_calendar_events_event_accept(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventInstancesEventAcceptRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendars_calendar_events_event_accept(
+        connection,
+        calendar_id,
+        event_id,
+        me_calendar_view_event_instances_event_accept_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -3642,19 +5557,40 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendars_calendar_events_event_attachments_create_upload_session(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSessionRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendars_calendar_events_event_attachments_create_upload_session(connection, calendar_id, event_id, users_user_events_event_instances_event_attachments_create_upload_session_request, _opts \\ []) do
+  @spec me_calendars_calendar_events_event_attachments_create_upload_session(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSessionRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendars_calendar_events_event_attachments_create_upload_session(
+        connection,
+        calendar_id,
+        event_id,
+        users_user_events_event_instances_event_attachments_create_upload_session_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/calendars/#{calendar_id}/events/#{event_id}/attachments/createUploadSession")
-      |> add_param(:body, :body, users_user_events_event_instances_event_attachments_create_upload_session_request)
+      |> add_param(
+        :body,
+        :body,
+        users_user_events_event_instances_event_attachments_create_upload_session_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -3677,13 +5613,32 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendars_calendar_events_event_cancel(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeCalendarsCalendarCalendarViewEventInstancesEventCancelRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendars_calendar_events_event_cancel(connection, calendar_id, event_id, me_calendars_calendar_calendar_view_event_instances_event_cancel_request, _opts \\ []) do
+  @spec me_calendars_calendar_events_event_cancel(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarsCalendarCalendarViewEventInstancesEventCancelRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendars_calendar_events_event_cancel(
+        connection,
+        calendar_id,
+        event_id,
+        me_calendars_calendar_calendar_view_event_instances_event_cancel_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/calendars/#{calendar_id}/events/#{event_id}/cancel")
-      |> add_param(:body, :body, me_calendars_calendar_calendar_view_event_instances_event_cancel_request)
+      |> add_param(
+        :body,
+        :body,
+        me_calendars_calendar_calendar_view_event_instances_event_cancel_request
+      )
       |> Enum.into([])
 
     connection
@@ -3712,13 +5667,32 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendars_calendar_events_event_decline(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendars_calendar_events_event_decline(connection, calendar_id, event_id, me_calendar_view_event_instances_event_tentatively_accept_request, _opts \\ []) do
+  @spec me_calendars_calendar_events_event_decline(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendars_calendar_events_event_decline(
+        connection,
+        calendar_id,
+        event_id,
+        me_calendar_view_event_instances_event_tentatively_accept_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/calendars/#{calendar_id}/events/#{event_id}/decline")
-      |> add_param(:body, :body, me_calendar_view_event_instances_event_tentatively_accept_request)
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_view_event_instances_event_tentatively_accept_request
+      )
       |> Enum.into([])
 
     connection
@@ -3746,8 +5720,21 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendars_calendar_events_event_dismiss_reminder(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendars_calendar_events_event_dismiss_reminder(connection, calendar_id, event_id, _opts \\ []) do
+  @spec me_calendars_calendar_events_event_dismiss_reminder(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendars_calendar_events_event_dismiss_reminder(
+        connection,
+        calendar_id,
+        event_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -3781,13 +5768,32 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendars_calendar_events_event_forward(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendars_calendar_events_event_forward(connection, calendar_id, event_id, me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request, _opts \\ []) do
+  @spec me_calendars_calendar_events_event_forward(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendars_calendar_events_event_forward(
+        connection,
+        calendar_id,
+        event_id,
+        me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/calendars/#{calendar_id}/events/#{event_id}/forward")
-      |> add_param(:body, :body, me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request)
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request
+      )
       |> Enum.into([])
 
     connection
@@ -3817,8 +5823,25 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendars_calendar_events_event_instances_event_accept(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventAcceptRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendars_calendar_events_event_instances_event_accept(connection, calendar_id, event_id, event_id1, me_calendar_view_event_instances_event_accept_request, _opts \\ []) do
+  @spec me_calendars_calendar_events_event_instances_event_accept(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventInstancesEventAcceptRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendars_calendar_events_event_instances_event_accept(
+        connection,
+        calendar_id,
+        event_id,
+        event_id1,
+        me_calendar_view_event_instances_event_accept_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -3853,19 +5876,44 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendars_calendar_events_event_instances_event_attachments_create_upload_session(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSessionRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendars_calendar_events_event_instances_event_attachments_create_upload_session(connection, calendar_id, event_id, event_id1, users_user_events_event_instances_event_attachments_create_upload_session_request, _opts \\ []) do
+  @spec me_calendars_calendar_events_event_instances_event_attachments_create_upload_session(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSessionRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendars_calendar_events_event_instances_event_attachments_create_upload_session(
+        connection,
+        calendar_id,
+        event_id,
+        event_id1,
+        users_user_events_event_instances_event_attachments_create_upload_session_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/attachments/createUploadSession")
-      |> add_param(:body, :body, users_user_events_event_instances_event_attachments_create_upload_session_request)
+      |> url(
+        "/me/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/attachments/createUploadSession"
+      )
+      |> add_param(
+        :body,
+        :body,
+        users_user_events_event_instances_event_attachments_create_upload_session_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -3889,13 +5937,34 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendars_calendar_events_event_instances_event_cancel(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MeCalendarsCalendarCalendarViewEventInstancesEventCancelRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendars_calendar_events_event_instances_event_cancel(connection, calendar_id, event_id, event_id1, me_calendars_calendar_calendar_view_event_instances_event_cancel_request, _opts \\ []) do
+  @spec me_calendars_calendar_events_event_instances_event_cancel(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarsCalendarCalendarViewEventInstancesEventCancelRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendars_calendar_events_event_instances_event_cancel(
+        connection,
+        calendar_id,
+        event_id,
+        event_id1,
+        me_calendars_calendar_calendar_view_event_instances_event_cancel_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/cancel")
-      |> add_param(:body, :body, me_calendars_calendar_calendar_view_event_instances_event_cancel_request)
+      |> add_param(
+        :body,
+        :body,
+        me_calendars_calendar_calendar_view_event_instances_event_cancel_request
+      )
       |> Enum.into([])
 
     connection
@@ -3925,13 +5994,34 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendars_calendar_events_event_instances_event_decline(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendars_calendar_events_event_instances_event_decline(connection, calendar_id, event_id, event_id1, me_calendar_view_event_instances_event_tentatively_accept_request, _opts \\ []) do
+  @spec me_calendars_calendar_events_event_instances_event_decline(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendars_calendar_events_event_instances_event_decline(
+        connection,
+        calendar_id,
+        event_id,
+        event_id1,
+        me_calendar_view_event_instances_event_tentatively_accept_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/decline")
-      |> add_param(:body, :body, me_calendar_view_event_instances_event_tentatively_accept_request)
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_view_event_instances_event_tentatively_accept_request
+      )
       |> Enum.into([])
 
     connection
@@ -3960,12 +6050,29 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendars_calendar_events_event_instances_event_dismiss_reminder(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendars_calendar_events_event_instances_event_dismiss_reminder(connection, calendar_id, event_id, event_id1, _opts \\ []) do
+  @spec me_calendars_calendar_events_event_instances_event_dismiss_reminder(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendars_calendar_events_event_instances_event_dismiss_reminder(
+        connection,
+        calendar_id,
+        event_id,
+        event_id1,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/dismissReminder")
+      |> url(
+        "/me/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/dismissReminder"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -3996,13 +6103,34 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendars_calendar_events_event_instances_event_forward(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendars_calendar_events_event_instances_event_forward(connection, calendar_id, event_id, event_id1, me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request, _opts \\ []) do
+  @spec me_calendars_calendar_events_event_instances_event_forward(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendars_calendar_events_event_instances_event_forward(
+        connection,
+        calendar_id,
+        event_id,
+        event_id1,
+        me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/forward")
-      |> add_param(:body, :body, me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request)
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request
+      )
       |> Enum.into([])
 
     connection
@@ -4032,12 +6160,31 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendars_calendar_events_event_instances_event_snooze_reminder(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MeCalendarViewEventSnoozeReminderRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendars_calendar_events_event_instances_event_snooze_reminder(connection, calendar_id, event_id, event_id1, me_calendar_view_event_snooze_reminder_request, _opts \\ []) do
+  @spec me_calendars_calendar_events_event_instances_event_snooze_reminder(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventSnoozeReminderRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendars_calendar_events_event_instances_event_snooze_reminder(
+        connection,
+        calendar_id,
+        event_id,
+        event_id1,
+        me_calendar_view_event_snooze_reminder_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/snoozeReminder")
+      |> url(
+        "/me/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/snoozeReminder"
+      )
       |> add_param(:body, :body, me_calendar_view_event_snooze_reminder_request)
       |> Enum.into([])
 
@@ -4068,13 +6215,36 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendars_calendar_events_event_instances_event_tentatively_accept(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendars_calendar_events_event_instances_event_tentatively_accept(connection, calendar_id, event_id, event_id1, me_calendar_view_event_instances_event_tentatively_accept_request, _opts \\ []) do
+  @spec me_calendars_calendar_events_event_instances_event_tentatively_accept(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendars_calendar_events_event_instances_event_tentatively_accept(
+        connection,
+        calendar_id,
+        event_id,
+        event_id1,
+        me_calendar_view_event_instances_event_tentatively_accept_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/tentativelyAccept")
-      |> add_param(:body, :body, me_calendar_view_event_instances_event_tentatively_accept_request)
+      |> url(
+        "/me/calendars/#{calendar_id}/events/#{event_id}/instances/#{event_id1}/tentativelyAccept"
+      )
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_view_event_instances_event_tentatively_accept_request
+      )
       |> Enum.into([])
 
     connection
@@ -4103,8 +6273,23 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendars_calendar_events_event_snooze_reminder(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeCalendarViewEventSnoozeReminderRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendars_calendar_events_event_snooze_reminder(connection, calendar_id, event_id, me_calendar_view_event_snooze_reminder_request, _opts \\ []) do
+  @spec me_calendars_calendar_events_event_snooze_reminder(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventSnoozeReminderRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendars_calendar_events_event_snooze_reminder(
+        connection,
+        calendar_id,
+        event_id,
+        me_calendar_view_event_snooze_reminder_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -4138,13 +6323,32 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendars_calendar_events_event_tentatively_accept(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendars_calendar_events_event_tentatively_accept(connection, calendar_id, event_id, me_calendar_view_event_instances_event_tentatively_accept_request, _opts \\ []) do
+  @spec me_calendars_calendar_events_event_tentatively_accept(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendars_calendar_events_event_tentatively_accept(
+        connection,
+        calendar_id,
+        event_id,
+        me_calendar_view_event_instances_event_tentatively_accept_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/calendars/#{calendar_id}/events/#{event_id}/tentativelyAccept")
-      |> add_param(:body, :body, me_calendar_view_event_instances_event_tentatively_accept_request)
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_view_event_instances_event_tentatively_accept_request
+      )
       |> Enum.into([])
 
     connection
@@ -4172,19 +6376,38 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarGetSchedule2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_calendars_calendar_get_schedule(Tesla.Env.client, String.t, MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarGetScheduleRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarGetSchedule2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_calendars_calendar_get_schedule(connection, calendar_id, me_calendar_groups_calendar_group_calendars_calendar_get_schedule_request, _opts \\ []) do
+  @spec me_calendars_calendar_get_schedule(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarGetScheduleRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarGetSchedule2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_calendars_calendar_get_schedule(
+        connection,
+        calendar_id,
+        me_calendar_groups_calendar_group_calendars_calendar_get_schedule_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/calendars/#{calendar_id}/getSchedule")
-      |> add_param(:body, :body, me_calendar_groups_calendar_group_calendars_calendar_get_schedule_request)
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_groups_calendar_group_calendars_calendar_get_schedule_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarGetSchedule2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarGetSchedule2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -4205,7 +6428,14 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_change_password(Tesla.Env.client, MicrosoftGraph.Model.UsersUserChangePasswordRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_change_password(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.UsersUserChangePasswordRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_change_password(connection, users_user_change_password_request, _opts \\ []) do
     request =
       %{}
@@ -4239,8 +6469,21 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_chats_chat_hide_for_user(Tesla.Env.client, String.t, MicrosoftGraph.Model.ChatsChatUnhideForUserRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_chats_chat_hide_for_user(connection, chat_id, chats_chat_unhide_for_user_request, _opts \\ []) do
+  @spec me_chats_chat_hide_for_user(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.ChatsChatUnhideForUserRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_chats_chat_hide_for_user(
+        connection,
+        chat_id,
+        chats_chat_unhide_for_user_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -4274,13 +6517,32 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_chats_chat_installed_apps_teams_app_installation_upgrade(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.UsersUserChatsChatInstalledAppsTeamsAppInstallationUpgradeRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_chats_chat_installed_apps_teams_app_installation_upgrade(connection, chat_id, teams_app_installation_id, users_user_chats_chat_installed_apps_teams_app_installation_upgrade_request, _opts \\ []) do
+  @spec me_chats_chat_installed_apps_teams_app_installation_upgrade(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserChatsChatInstalledAppsTeamsAppInstallationUpgradeRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_chats_chat_installed_apps_teams_app_installation_upgrade(
+        connection,
+        chat_id,
+        teams_app_installation_id,
+        users_user_chats_chat_installed_apps_teams_app_installation_upgrade_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/chats/#{chat_id}/installedApps/#{teams_app_installation_id}/upgrade")
-      |> add_param(:body, :body, users_user_chats_chat_installed_apps_teams_app_installation_upgrade_request)
+      |> add_param(
+        :body,
+        :body,
+        users_user_chats_chat_installed_apps_teams_app_installation_upgrade_request
+      )
       |> Enum.into([])
 
     connection
@@ -4308,8 +6570,21 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_chats_chat_mark_chat_read_for_user(Tesla.Env.client, String.t, MicrosoftGraph.Model.ChatsChatUnhideForUserRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_chats_chat_mark_chat_read_for_user(connection, chat_id, chats_chat_unhide_for_user_request, _opts \\ []) do
+  @spec me_chats_chat_mark_chat_read_for_user(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.ChatsChatUnhideForUserRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_chats_chat_mark_chat_read_for_user(
+        connection,
+        chat_id,
+        chats_chat_unhide_for_user_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -4342,8 +6617,21 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_chats_chat_mark_chat_unread_for_user(Tesla.Env.client, String.t, MicrosoftGraph.Model.UsersUserChatsChatMarkChatUnreadForUserRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_chats_chat_mark_chat_unread_for_user(connection, chat_id, users_user_chats_chat_mark_chat_unread_for_user_request, _opts \\ []) do
+  @spec me_chats_chat_mark_chat_unread_for_user(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserChatsChatMarkChatUnreadForUserRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_chats_chat_mark_chat_unread_for_user(
+        connection,
+        chat_id,
+        users_user_chats_chat_mark_chat_unread_for_user_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -4376,8 +6664,21 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAdd2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_chats_chat_members_add(Tesla.Env.client, String.t, MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAddRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAdd2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_chats_chat_members_add(connection, chat_id, me_joined_teams_team_members_add_request, _opts \\ []) do
+  @spec me_chats_chat_members_add(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAddRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAdd2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_chats_chat_members_add(
+        connection,
+        chat_id,
+        me_joined_teams_team_members_add_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -4411,13 +6712,36 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_chats_chat_messages_chat_message_replies_chat_message_set_reaction(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_chats_chat_messages_chat_message_replies_chat_message_set_reaction(connection, chat_id, chat_message_id, chat_message_id1, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request, _opts \\ []) do
+  @spec me_chats_chat_messages_chat_message_replies_chat_message_set_reaction(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_chats_chat_messages_chat_message_replies_chat_message_set_reaction(
+        connection,
+        chat_id,
+        chat_message_id,
+        chat_message_id1,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/chats/#{chat_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/setReaction")
-      |> add_param(:body, :body, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request)
+      |> url(
+        "/me/chats/#{chat_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/setReaction"
+      )
+      |> add_param(
+        :body,
+        :body,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request
+      )
       |> Enum.into([])
 
     connection
@@ -4446,12 +6770,29 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_chats_chat_messages_chat_message_replies_chat_message_soft_delete(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_chats_chat_messages_chat_message_replies_chat_message_soft_delete(connection, chat_id, chat_message_id, chat_message_id1, _opts \\ []) do
+  @spec me_chats_chat_messages_chat_message_replies_chat_message_soft_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_chats_chat_messages_chat_message_replies_chat_message_soft_delete(
+        connection,
+        chat_id,
+        chat_message_id,
+        chat_message_id1,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/chats/#{chat_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/softDelete")
+      |> url(
+        "/me/chats/#{chat_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/softDelete"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -4481,12 +6822,29 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_chats_chat_messages_chat_message_replies_chat_message_undo_soft_delete(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_chats_chat_messages_chat_message_replies_chat_message_undo_soft_delete(connection, chat_id, chat_message_id, chat_message_id1, _opts \\ []) do
+  @spec me_chats_chat_messages_chat_message_replies_chat_message_undo_soft_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_chats_chat_messages_chat_message_replies_chat_message_undo_soft_delete(
+        connection,
+        chat_id,
+        chat_message_id,
+        chat_message_id1,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/chats/#{chat_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/undoSoftDelete")
+      |> url(
+        "/me/chats/#{chat_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/undoSoftDelete"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -4516,13 +6874,36 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_chats_chat_messages_chat_message_replies_chat_message_unset_reaction(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_chats_chat_messages_chat_message_replies_chat_message_unset_reaction(connection, chat_id, chat_message_id, chat_message_id1, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request, _opts \\ []) do
+  @spec me_chats_chat_messages_chat_message_replies_chat_message_unset_reaction(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_chats_chat_messages_chat_message_replies_chat_message_unset_reaction(
+        connection,
+        chat_id,
+        chat_message_id,
+        chat_message_id1,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/chats/#{chat_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/unsetReaction")
-      |> add_param(:body, :body, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request)
+      |> url(
+        "/me/chats/#{chat_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/unsetReaction"
+      )
+      |> add_param(
+        :body,
+        :body,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request
+      )
       |> Enum.into([])
 
     connection
@@ -4550,13 +6931,32 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_chats_chat_messages_chat_message_set_reaction(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_chats_chat_messages_chat_message_set_reaction(connection, chat_id, chat_message_id, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request, _opts \\ []) do
+  @spec me_chats_chat_messages_chat_message_set_reaction(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_chats_chat_messages_chat_message_set_reaction(
+        connection,
+        chat_id,
+        chat_message_id,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/chats/#{chat_id}/messages/#{chat_message_id}/setReaction")
-      |> add_param(:body, :body, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request)
+      |> add_param(
+        :body,
+        :body,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request
+      )
       |> Enum.into([])
 
     connection
@@ -4584,8 +6984,21 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_chats_chat_messages_chat_message_soft_delete(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_chats_chat_messages_chat_message_soft_delete(connection, chat_id, chat_message_id, _opts \\ []) do
+  @spec me_chats_chat_messages_chat_message_soft_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_chats_chat_messages_chat_message_soft_delete(
+        connection,
+        chat_id,
+        chat_message_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -4618,8 +7031,21 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_chats_chat_messages_chat_message_undo_soft_delete(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_chats_chat_messages_chat_message_undo_soft_delete(connection, chat_id, chat_message_id, _opts \\ []) do
+  @spec me_chats_chat_messages_chat_message_undo_soft_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_chats_chat_messages_chat_message_undo_soft_delete(
+        connection,
+        chat_id,
+        chat_message_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -4652,13 +7078,32 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_chats_chat_messages_chat_message_unset_reaction(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_chats_chat_messages_chat_message_unset_reaction(connection, chat_id, chat_message_id, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request, _opts \\ []) do
+  @spec me_chats_chat_messages_chat_message_unset_reaction(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_chats_chat_messages_chat_message_unset_reaction(
+        connection,
+        chat_id,
+        chat_message_id,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/chats/#{chat_id}/messages/#{chat_message_id}/unsetReaction")
-      |> add_param(:body, :body, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request)
+      |> add_param(
+        :body,
+        :body,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request
+      )
       |> Enum.into([])
 
     connection
@@ -4686,8 +7131,21 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_chats_chat_send_activity_notification(Tesla.Env.client, String.t, MicrosoftGraph.Model.MeJoinedTeamsTeamSendActivityNotificationRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_chats_chat_send_activity_notification(connection, chat_id, me_joined_teams_team_send_activity_notification_request, _opts \\ []) do
+  @spec me_chats_chat_send_activity_notification(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MeJoinedTeamsTeamSendActivityNotificationRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_chats_chat_send_activity_notification(
+        connection,
+        chat_id,
+        me_joined_teams_team_send_activity_notification_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -4720,8 +7178,21 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_chats_chat_unhide_for_user(Tesla.Env.client, String.t, MicrosoftGraph.Model.ChatsChatUnhideForUserRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_chats_chat_unhide_for_user(connection, chat_id, chats_chat_unhide_for_user_request, _opts \\ []) do
+  @spec me_chats_chat_unhide_for_user(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.ChatsChatUnhideForUserRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_chats_chat_unhide_for_user(
+        connection,
+        chat_id,
+        chats_chat_unhide_for_user_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -4753,8 +7224,19 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.ContractsContractCheckMemberGroups2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_check_member_groups(Tesla.Env.client, MicrosoftGraph.Model.ContractsContractCheckMemberGroupsRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.ContractsContractCheckMemberGroups2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_check_member_groups(connection, contracts_contract_check_member_groups_request, _opts \\ []) do
+  @spec me_check_member_groups(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.ContractsContractCheckMemberGroupsRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.ContractsContractCheckMemberGroups2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_check_member_groups(
+        connection,
+        contracts_contract_check_member_groups_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -4785,13 +7267,28 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.ContractsContractCheckMemberGroups2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_check_member_objects(Tesla.Env.client, MicrosoftGraph.Model.DirectoryRoleTemplatesDirectoryRoleTemplateCheckMemberObjectsRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.ContractsContractCheckMemberGroups2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_check_member_objects(connection, directory_role_templates_directory_role_template_check_member_objects_request, _opts \\ []) do
+  @spec me_check_member_objects(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.DirectoryRoleTemplatesDirectoryRoleTemplateCheckMemberObjectsRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.ContractsContractCheckMemberGroups2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_check_member_objects(
+        connection,
+        directory_role_templates_directory_role_template_check_member_objects_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/checkMemberObjects")
-      |> add_param(:body, :body, directory_role_templates_directory_role_template_check_member_objects_request)
+      |> add_param(
+        :body,
+        :body,
+        directory_role_templates_directory_role_template_check_member_objects_request
+      )
       |> Enum.into([])
 
     connection
@@ -4819,8 +7316,21 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_events_event_accept(Tesla.Env.client, String.t, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventAcceptRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_events_event_accept(connection, event_id, me_calendar_view_event_instances_event_accept_request, _opts \\ []) do
+  @spec me_events_event_accept(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventInstancesEventAcceptRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_events_event_accept(
+        connection,
+        event_id,
+        me_calendar_view_event_instances_event_accept_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -4853,19 +7363,38 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_events_event_attachments_create_upload_session(Tesla.Env.client, String.t, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSessionRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_events_event_attachments_create_upload_session(connection, event_id, users_user_events_event_instances_event_attachments_create_upload_session_request, _opts \\ []) do
+  @spec me_events_event_attachments_create_upload_session(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSessionRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_events_event_attachments_create_upload_session(
+        connection,
+        event_id,
+        users_user_events_event_instances_event_attachments_create_upload_session_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/events/#{event_id}/attachments/createUploadSession")
-      |> add_param(:body, :body, users_user_events_event_instances_event_attachments_create_upload_session_request)
+      |> add_param(
+        :body,
+        :body,
+        users_user_events_event_instances_event_attachments_create_upload_session_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -4887,13 +7416,30 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_events_event_cancel(Tesla.Env.client, String.t, MicrosoftGraph.Model.MeCalendarsCalendarCalendarViewEventInstancesEventCancelRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_events_event_cancel(connection, event_id, me_calendars_calendar_calendar_view_event_instances_event_cancel_request, _opts \\ []) do
+  @spec me_events_event_cancel(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarsCalendarCalendarViewEventInstancesEventCancelRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_events_event_cancel(
+        connection,
+        event_id,
+        me_calendars_calendar_calendar_view_event_instances_event_cancel_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/events/#{event_id}/cancel")
-      |> add_param(:body, :body, me_calendars_calendar_calendar_view_event_instances_event_cancel_request)
+      |> add_param(
+        :body,
+        :body,
+        me_calendars_calendar_calendar_view_event_instances_event_cancel_request
+      )
       |> Enum.into([])
 
     connection
@@ -4921,13 +7467,30 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_events_event_decline(Tesla.Env.client, String.t, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_events_event_decline(connection, event_id, me_calendar_view_event_instances_event_tentatively_accept_request, _opts \\ []) do
+  @spec me_events_event_decline(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_events_event_decline(
+        connection,
+        event_id,
+        me_calendar_view_event_instances_event_tentatively_accept_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/events/#{event_id}/decline")
-      |> add_param(:body, :body, me_calendar_view_event_instances_event_tentatively_accept_request)
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_view_event_instances_event_tentatively_accept_request
+      )
       |> Enum.into([])
 
     connection
@@ -4954,7 +7517,10 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_events_event_dismiss_reminder(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_events_event_dismiss_reminder(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_events_event_dismiss_reminder(connection, event_id, _opts \\ []) do
     request =
       %{}
@@ -4988,13 +7554,30 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_events_event_forward(Tesla.Env.client, String.t, MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_events_event_forward(connection, event_id, me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request, _opts \\ []) do
+  @spec me_events_event_forward(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_events_event_forward(
+        connection,
+        event_id,
+        me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/events/#{event_id}/forward")
-      |> add_param(:body, :body, me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request)
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request
+      )
       |> Enum.into([])
 
     connection
@@ -5023,8 +7606,23 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_events_event_instances_event_accept(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventAcceptRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_events_event_instances_event_accept(connection, event_id, event_id1, me_calendar_view_event_instances_event_accept_request, _opts \\ []) do
+  @spec me_events_event_instances_event_accept(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventInstancesEventAcceptRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_events_event_instances_event_accept(
+        connection,
+        event_id,
+        event_id1,
+        me_calendar_view_event_instances_event_accept_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -5058,19 +7656,40 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_events_event_instances_event_attachments_create_upload_session(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSessionRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_events_event_instances_event_attachments_create_upload_session(connection, event_id, event_id1, users_user_events_event_instances_event_attachments_create_upload_session_request, _opts \\ []) do
+  @spec me_events_event_instances_event_attachments_create_upload_session(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSessionRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_events_event_instances_event_attachments_create_upload_session(
+        connection,
+        event_id,
+        event_id1,
+        users_user_events_event_instances_event_attachments_create_upload_session_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/events/#{event_id}/instances/#{event_id1}/attachments/createUploadSession")
-      |> add_param(:body, :body, users_user_events_event_instances_event_attachments_create_upload_session_request)
+      |> add_param(
+        :body,
+        :body,
+        users_user_events_event_instances_event_attachments_create_upload_session_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -5093,13 +7712,32 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_events_event_instances_event_cancel(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeCalendarsCalendarCalendarViewEventInstancesEventCancelRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_events_event_instances_event_cancel(connection, event_id, event_id1, me_calendars_calendar_calendar_view_event_instances_event_cancel_request, _opts \\ []) do
+  @spec me_events_event_instances_event_cancel(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarsCalendarCalendarViewEventInstancesEventCancelRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_events_event_instances_event_cancel(
+        connection,
+        event_id,
+        event_id1,
+        me_calendars_calendar_calendar_view_event_instances_event_cancel_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/events/#{event_id}/instances/#{event_id1}/cancel")
-      |> add_param(:body, :body, me_calendars_calendar_calendar_view_event_instances_event_cancel_request)
+      |> add_param(
+        :body,
+        :body,
+        me_calendars_calendar_calendar_view_event_instances_event_cancel_request
+      )
       |> Enum.into([])
 
     connection
@@ -5128,13 +7766,32 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_events_event_instances_event_decline(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_events_event_instances_event_decline(connection, event_id, event_id1, me_calendar_view_event_instances_event_tentatively_accept_request, _opts \\ []) do
+  @spec me_events_event_instances_event_decline(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_events_event_instances_event_decline(
+        connection,
+        event_id,
+        event_id1,
+        me_calendar_view_event_instances_event_tentatively_accept_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/events/#{event_id}/instances/#{event_id1}/decline")
-      |> add_param(:body, :body, me_calendar_view_event_instances_event_tentatively_accept_request)
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_view_event_instances_event_tentatively_accept_request
+      )
       |> Enum.into([])
 
     connection
@@ -5162,8 +7819,21 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_events_event_instances_event_dismiss_reminder(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_events_event_instances_event_dismiss_reminder(connection, event_id, event_id1, _opts \\ []) do
+  @spec me_events_event_instances_event_dismiss_reminder(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_events_event_instances_event_dismiss_reminder(
+        connection,
+        event_id,
+        event_id1,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -5197,13 +7867,32 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_events_event_instances_event_forward(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_events_event_instances_event_forward(connection, event_id, event_id1, me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request, _opts \\ []) do
+  @spec me_events_event_instances_event_forward(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarGroupsCalendarGroupCalendarsCalendarCalendarViewEventInstancesEventForwardRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_events_event_instances_event_forward(
+        connection,
+        event_id,
+        event_id1,
+        me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/events/#{event_id}/instances/#{event_id1}/forward")
-      |> add_param(:body, :body, me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request)
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_groups_calendar_group_calendars_calendar_calendar_view_event_instances_event_forward_request
+      )
       |> Enum.into([])
 
     connection
@@ -5232,8 +7921,23 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_events_event_instances_event_snooze_reminder(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeCalendarViewEventSnoozeReminderRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_events_event_instances_event_snooze_reminder(connection, event_id, event_id1, me_calendar_view_event_snooze_reminder_request, _opts \\ []) do
+  @spec me_events_event_instances_event_snooze_reminder(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventSnoozeReminderRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_events_event_instances_event_snooze_reminder(
+        connection,
+        event_id,
+        event_id1,
+        me_calendar_view_event_snooze_reminder_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -5267,13 +7971,32 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_events_event_instances_event_tentatively_accept(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_events_event_instances_event_tentatively_accept(connection, event_id, event_id1, me_calendar_view_event_instances_event_tentatively_accept_request, _opts \\ []) do
+  @spec me_events_event_instances_event_tentatively_accept(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_events_event_instances_event_tentatively_accept(
+        connection,
+        event_id,
+        event_id1,
+        me_calendar_view_event_instances_event_tentatively_accept_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/events/#{event_id}/instances/#{event_id1}/tentativelyAccept")
-      |> add_param(:body, :body, me_calendar_view_event_instances_event_tentatively_accept_request)
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_view_event_instances_event_tentatively_accept_request
+      )
       |> Enum.into([])
 
     connection
@@ -5301,8 +8024,21 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_events_event_snooze_reminder(Tesla.Env.client, String.t, MicrosoftGraph.Model.MeCalendarViewEventSnoozeReminderRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_events_event_snooze_reminder(connection, event_id, me_calendar_view_event_snooze_reminder_request, _opts \\ []) do
+  @spec me_events_event_snooze_reminder(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventSnoozeReminderRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_events_event_snooze_reminder(
+        connection,
+        event_id,
+        me_calendar_view_event_snooze_reminder_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -5335,13 +8071,30 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_events_event_tentatively_accept(Tesla.Env.client, String.t, MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_events_event_tentatively_accept(connection, event_id, me_calendar_view_event_instances_event_tentatively_accept_request, _opts \\ []) do
+  @spec me_events_event_tentatively_accept(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MeCalendarViewEventInstancesEventTentativelyAcceptRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_events_event_tentatively_accept(
+        connection,
+        event_id,
+        me_calendar_view_event_instances_event_tentatively_accept_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/events/#{event_id}/tentativelyAccept")
-      |> add_param(:body, :body, me_calendar_view_event_instances_event_tentatively_accept_request)
+      |> add_param(
+        :body,
+        :body,
+        me_calendar_view_event_instances_event_tentatively_accept_request
+      )
       |> Enum.into([])
 
     connection
@@ -5368,7 +8121,14 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_export_personal_data(Tesla.Env.client, MicrosoftGraph.Model.UsersUserExportPersonalDataRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_export_personal_data(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.UsersUserExportPersonalDataRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_export_personal_data(connection, users_user_export_personal_data_request, _opts \\ []) do
     request =
       %{}
@@ -5401,7 +8161,14 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.UsersUserFindMeetingTimes2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_find_meeting_times(Tesla.Env.client, MicrosoftGraph.Model.UsersUserFindMeetingTimesRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserFindMeetingTimes2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_find_meeting_times(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.UsersUserFindMeetingTimesRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.UsersUserFindMeetingTimes2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_find_meeting_times(connection, users_user_find_meeting_times_request, _opts \\ []) do
     request =
       %{}
@@ -5434,7 +8201,14 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.UsersUserGetMailTips2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_get_mail_tips(Tesla.Env.client, MicrosoftGraph.Model.UsersUserGetMailTipsRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserGetMailTips2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_get_mail_tips(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.UsersUserGetMailTipsRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.UsersUserGetMailTips2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_get_mail_tips(connection, users_user_get_mail_tips_request, _opts \\ []) do
     request =
       %{}
@@ -5467,8 +8241,19 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.ContractsContractCheckMemberGroups2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_get_member_groups(Tesla.Env.client, MicrosoftGraph.Model.ContactsOrgContactGetMemberGroupsRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.ContractsContractCheckMemberGroups2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_get_member_groups(connection, contacts_org_contact_get_member_groups_request, _opts \\ []) do
+  @spec me_get_member_groups(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.ContactsOrgContactGetMemberGroupsRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.ContractsContractCheckMemberGroups2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_get_member_groups(
+        connection,
+        contacts_org_contact_get_member_groups_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -5500,8 +8285,19 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.ContractsContractCheckMemberGroups2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_get_member_objects(Tesla.Env.client, MicrosoftGraph.Model.ContactsOrgContactGetMemberGroupsRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.ContractsContractCheckMemberGroups2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_get_member_objects(connection, contacts_org_contact_get_member_groups_request, _opts \\ []) do
+  @spec me_get_member_objects(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.ContactsOrgContactGetMemberGroupsRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.ContractsContractCheckMemberGroups2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_get_member_objects(
+        connection,
+        contacts_org_contact_get_member_groups_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -5534,8 +8330,21 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_team_archive(Tesla.Env.client, String.t, MicrosoftGraph.Model.GroupsGroupTeamArchiveRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_team_archive(connection, team_id, groups_group_team_archive_request, _opts \\ []) do
+  @spec me_joined_teams_team_archive(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.GroupsGroupTeamArchiveRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_team_archive(
+        connection,
+        team_id,
+        groups_group_team_archive_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -5568,8 +8377,21 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_team_channels_channel_complete_migration(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_team_channels_channel_complete_migration(connection, team_id, channel_id, _opts \\ []) do
+  @spec me_joined_teams_team_channels_channel_complete_migration(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_team_channels_channel_complete_migration(
+        connection,
+        team_id,
+        channel_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -5603,8 +8425,23 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAdd2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_team_channels_channel_members_add(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAddRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAdd2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_team_channels_channel_members_add(connection, team_id, channel_id, me_joined_teams_team_members_add_request, _opts \\ []) do
+  @spec me_joined_teams_team_channels_channel_members_add(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAddRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAdd2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_team_channels_channel_members_add(
+        connection,
+        team_id,
+        channel_id,
+        me_joined_teams_team_members_add_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -5639,13 +8476,38 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_team_channels_channel_messages_chat_message_replies_chat_message_set_reaction(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_team_channels_channel_messages_chat_message_replies_chat_message_set_reaction(connection, team_id, channel_id, chat_message_id, chat_message_id1, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request, _opts \\ []) do
+  @spec me_joined_teams_team_channels_channel_messages_chat_message_replies_chat_message_set_reaction(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_team_channels_channel_messages_chat_message_replies_chat_message_set_reaction(
+        connection,
+        team_id,
+        channel_id,
+        chat_message_id,
+        chat_message_id1,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/setReaction")
-      |> add_param(:body, :body, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request)
+      |> url(
+        "/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/setReaction"
+      )
+      |> add_param(
+        :body,
+        :body,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request
+      )
       |> Enum.into([])
 
     connection
@@ -5675,12 +8537,31 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_team_channels_channel_messages_chat_message_replies_chat_message_soft_delete(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_team_channels_channel_messages_chat_message_replies_chat_message_soft_delete(connection, team_id, channel_id, chat_message_id, chat_message_id1, _opts \\ []) do
+  @spec me_joined_teams_team_channels_channel_messages_chat_message_replies_chat_message_soft_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_team_channels_channel_messages_chat_message_replies_chat_message_soft_delete(
+        connection,
+        team_id,
+        channel_id,
+        chat_message_id,
+        chat_message_id1,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/softDelete")
+      |> url(
+        "/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/softDelete"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -5711,12 +8592,31 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_team_channels_channel_messages_chat_message_replies_chat_message_undo_soft_delete(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_team_channels_channel_messages_chat_message_replies_chat_message_undo_soft_delete(connection, team_id, channel_id, chat_message_id, chat_message_id1, _opts \\ []) do
+  @spec me_joined_teams_team_channels_channel_messages_chat_message_replies_chat_message_undo_soft_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_team_channels_channel_messages_chat_message_replies_chat_message_undo_soft_delete(
+        connection,
+        team_id,
+        channel_id,
+        chat_message_id,
+        chat_message_id1,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/undoSoftDelete")
+      |> url(
+        "/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/undoSoftDelete"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -5747,13 +8647,38 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_team_channels_channel_messages_chat_message_replies_chat_message_unset_reaction(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_team_channels_channel_messages_chat_message_replies_chat_message_unset_reaction(connection, team_id, channel_id, chat_message_id, chat_message_id1, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request, _opts \\ []) do
+  @spec me_joined_teams_team_channels_channel_messages_chat_message_replies_chat_message_unset_reaction(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_team_channels_channel_messages_chat_message_replies_chat_message_unset_reaction(
+        connection,
+        team_id,
+        channel_id,
+        chat_message_id,
+        chat_message_id1,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/unsetReaction")
-      |> add_param(:body, :body, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request)
+      |> url(
+        "/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/replies/#{chat_message_id1}/unsetReaction"
+      )
+      |> add_param(
+        :body,
+        :body,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request
+      )
       |> Enum.into([])
 
     connection
@@ -5782,13 +8707,36 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_team_channels_channel_messages_chat_message_set_reaction(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_team_channels_channel_messages_chat_message_set_reaction(connection, team_id, channel_id, chat_message_id, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request, _opts \\ []) do
+  @spec me_joined_teams_team_channels_channel_messages_chat_message_set_reaction(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_team_channels_channel_messages_chat_message_set_reaction(
+        connection,
+        team_id,
+        channel_id,
+        chat_message_id,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/setReaction")
-      |> add_param(:body, :body, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request)
+      |> url(
+        "/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/setReaction"
+      )
+      |> add_param(
+        :body,
+        :body,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request
+      )
       |> Enum.into([])
 
     connection
@@ -5817,12 +8765,29 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_team_channels_channel_messages_chat_message_soft_delete(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_team_channels_channel_messages_chat_message_soft_delete(connection, team_id, channel_id, chat_message_id, _opts \\ []) do
+  @spec me_joined_teams_team_channels_channel_messages_chat_message_soft_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_team_channels_channel_messages_chat_message_soft_delete(
+        connection,
+        team_id,
+        channel_id,
+        chat_message_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/softDelete")
+      |> url(
+        "/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/softDelete"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -5852,12 +8817,29 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_team_channels_channel_messages_chat_message_undo_soft_delete(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_team_channels_channel_messages_chat_message_undo_soft_delete(connection, team_id, channel_id, chat_message_id, _opts \\ []) do
+  @spec me_joined_teams_team_channels_channel_messages_chat_message_undo_soft_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_team_channels_channel_messages_chat_message_undo_soft_delete(
+        connection,
+        team_id,
+        channel_id,
+        chat_message_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/undoSoftDelete")
+      |> url(
+        "/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/undoSoftDelete"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -5887,13 +8869,36 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_team_channels_channel_messages_chat_message_unset_reaction(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_team_channels_channel_messages_chat_message_unset_reaction(connection, team_id, channel_id, chat_message_id, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request, _opts \\ []) do
+  @spec me_joined_teams_team_channels_channel_messages_chat_message_unset_reaction(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_team_channels_channel_messages_chat_message_unset_reaction(
+        connection,
+        team_id,
+        channel_id,
+        chat_message_id,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/unsetReaction")
-      |> add_param(:body, :body, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request)
+      |> url(
+        "/me/joinedTeams/#{team_id}/channels/#{channel_id}/messages/#{chat_message_id}/unsetReaction"
+      )
+      |> add_param(
+        :body,
+        :body,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request
+      )
       |> Enum.into([])
 
     connection
@@ -5921,8 +8926,21 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.TeamsTeamChannelsChannelProvisionEmail2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_team_channels_channel_provision_email(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.TeamsTeamChannelsChannelProvisionEmail2XxResponse.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_team_channels_channel_provision_email(connection, team_id, channel_id, _opts \\ []) do
+  @spec me_joined_teams_team_channels_channel_provision_email(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.TeamsTeamChannelsChannelProvisionEmail2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_team_channels_channel_provision_email(
+        connection,
+        team_id,
+        channel_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -5955,8 +8973,21 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_team_channels_channel_remove_email(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_team_channels_channel_remove_email(connection, team_id, channel_id, _opts \\ []) do
+  @spec me_joined_teams_team_channels_channel_remove_email(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_team_channels_channel_remove_email(
+        connection,
+        team_id,
+        channel_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -5989,7 +9020,15 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_team_clone(Tesla.Env.client, String.t, MicrosoftGraph.Model.TeamsTeamCloneRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_team_clone(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.TeamsTeamCloneRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_team_clone(connection, team_id, teams_team_clone_request, _opts \\ []) do
     request =
       %{}
@@ -6022,7 +9061,10 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_team_complete_migration(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_team_complete_migration(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_team_complete_migration(connection, team_id, _opts \\ []) do
     request =
       %{}
@@ -6057,13 +9099,32 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_team_installed_apps_teams_app_installation_upgrade(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.UsersUserChatsChatInstalledAppsTeamsAppInstallationUpgradeRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_team_installed_apps_teams_app_installation_upgrade(connection, team_id, teams_app_installation_id, users_user_chats_chat_installed_apps_teams_app_installation_upgrade_request, _opts \\ []) do
+  @spec me_joined_teams_team_installed_apps_teams_app_installation_upgrade(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserChatsChatInstalledAppsTeamsAppInstallationUpgradeRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_team_installed_apps_teams_app_installation_upgrade(
+        connection,
+        team_id,
+        teams_app_installation_id,
+        users_user_chats_chat_installed_apps_teams_app_installation_upgrade_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/joinedTeams/#{team_id}/installedApps/#{teams_app_installation_id}/upgrade")
-      |> add_param(:body, :body, users_user_chats_chat_installed_apps_teams_app_installation_upgrade_request)
+      |> add_param(
+        :body,
+        :body,
+        users_user_chats_chat_installed_apps_teams_app_installation_upgrade_request
+      )
       |> Enum.into([])
 
     connection
@@ -6091,8 +9152,21 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAdd2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_team_members_add(Tesla.Env.client, String.t, MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAddRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAdd2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_team_members_add(connection, team_id, me_joined_teams_team_members_add_request, _opts \\ []) do
+  @spec me_joined_teams_team_members_add(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAddRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAdd2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_team_members_add(
+        connection,
+        team_id,
+        me_joined_teams_team_members_add_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -6124,7 +9198,14 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_team_primary_channel_complete_migration(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_team_primary_channel_complete_migration(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_team_primary_channel_complete_migration(connection, team_id, _opts \\ []) do
     request =
       %{}
@@ -6158,8 +9239,21 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAdd2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_team_primary_channel_members_add(Tesla.Env.client, String.t, MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAddRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAdd2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_team_primary_channel_members_add(connection, team_id, me_joined_teams_team_members_add_request, _opts \\ []) do
+  @spec me_joined_teams_team_primary_channel_members_add(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAddRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MeJoinedTeamsTeamMembersAdd2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_team_primary_channel_members_add(
+        connection,
+        team_id,
+        me_joined_teams_team_members_add_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -6193,13 +9287,36 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_team_primary_channel_messages_chat_message_replies_chat_message_set_reaction(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_team_primary_channel_messages_chat_message_replies_chat_message_set_reaction(connection, team_id, chat_message_id, chat_message_id1, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request, _opts \\ []) do
+  @spec me_joined_teams_team_primary_channel_messages_chat_message_replies_chat_message_set_reaction(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_team_primary_channel_messages_chat_message_replies_chat_message_set_reaction(
+        connection,
+        team_id,
+        chat_message_id,
+        chat_message_id1,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/replies/#{chat_message_id1}/setReaction")
-      |> add_param(:body, :body, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request)
+      |> url(
+        "/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/replies/#{chat_message_id1}/setReaction"
+      )
+      |> add_param(
+        :body,
+        :body,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request
+      )
       |> Enum.into([])
 
     connection
@@ -6228,12 +9345,29 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_team_primary_channel_messages_chat_message_replies_chat_message_soft_delete(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_team_primary_channel_messages_chat_message_replies_chat_message_soft_delete(connection, team_id, chat_message_id, chat_message_id1, _opts \\ []) do
+  @spec me_joined_teams_team_primary_channel_messages_chat_message_replies_chat_message_soft_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_team_primary_channel_messages_chat_message_replies_chat_message_soft_delete(
+        connection,
+        team_id,
+        chat_message_id,
+        chat_message_id1,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/replies/#{chat_message_id1}/softDelete")
+      |> url(
+        "/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/replies/#{chat_message_id1}/softDelete"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -6263,12 +9397,29 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_team_primary_channel_messages_chat_message_replies_chat_message_undo_soft_delete(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_team_primary_channel_messages_chat_message_replies_chat_message_undo_soft_delete(connection, team_id, chat_message_id, chat_message_id1, _opts \\ []) do
+  @spec me_joined_teams_team_primary_channel_messages_chat_message_replies_chat_message_undo_soft_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_team_primary_channel_messages_chat_message_replies_chat_message_undo_soft_delete(
+        connection,
+        team_id,
+        chat_message_id,
+        chat_message_id1,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/replies/#{chat_message_id1}/undoSoftDelete")
+      |> url(
+        "/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/replies/#{chat_message_id1}/undoSoftDelete"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -6298,13 +9449,36 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_team_primary_channel_messages_chat_message_replies_chat_message_unset_reaction(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_team_primary_channel_messages_chat_message_replies_chat_message_unset_reaction(connection, team_id, chat_message_id, chat_message_id1, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request, _opts \\ []) do
+  @spec me_joined_teams_team_primary_channel_messages_chat_message_replies_chat_message_unset_reaction(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_team_primary_channel_messages_chat_message_replies_chat_message_unset_reaction(
+        connection,
+        team_id,
+        chat_message_id,
+        chat_message_id1,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/replies/#{chat_message_id1}/unsetReaction")
-      |> add_param(:body, :body, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request)
+      |> url(
+        "/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/replies/#{chat_message_id1}/unsetReaction"
+      )
+      |> add_param(
+        :body,
+        :body,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request
+      )
       |> Enum.into([])
 
     connection
@@ -6332,13 +9506,32 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_team_primary_channel_messages_chat_message_set_reaction(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_team_primary_channel_messages_chat_message_set_reaction(connection, team_id, chat_message_id, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request, _opts \\ []) do
+  @spec me_joined_teams_team_primary_channel_messages_chat_message_set_reaction(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_team_primary_channel_messages_chat_message_set_reaction(
+        connection,
+        team_id,
+        chat_message_id,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/setReaction")
-      |> add_param(:body, :body, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request)
+      |> add_param(
+        :body,
+        :body,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request
+      )
       |> Enum.into([])
 
     connection
@@ -6366,8 +9559,21 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_team_primary_channel_messages_chat_message_soft_delete(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_team_primary_channel_messages_chat_message_soft_delete(connection, team_id, chat_message_id, _opts \\ []) do
+  @spec me_joined_teams_team_primary_channel_messages_chat_message_soft_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_team_primary_channel_messages_chat_message_soft_delete(
+        connection,
+        team_id,
+        chat_message_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -6400,12 +9606,27 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_team_primary_channel_messages_chat_message_undo_soft_delete(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_team_primary_channel_messages_chat_message_undo_soft_delete(connection, team_id, chat_message_id, _opts \\ []) do
+  @spec me_joined_teams_team_primary_channel_messages_chat_message_undo_soft_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_team_primary_channel_messages_chat_message_undo_soft_delete(
+        connection,
+        team_id,
+        chat_message_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/undoSoftDelete")
+      |> url(
+        "/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/undoSoftDelete"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -6434,13 +9655,34 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_team_primary_channel_messages_chat_message_unset_reaction(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_team_primary_channel_messages_chat_message_unset_reaction(connection, team_id, chat_message_id, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request, _opts \\ []) do
+  @spec me_joined_teams_team_primary_channel_messages_chat_message_unset_reaction(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.GroupsGroupTeamChannelsChannelMessagesChatMessageUnsetReactionRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_team_primary_channel_messages_chat_message_unset_reaction(
+        connection,
+        team_id,
+        chat_message_id,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/unsetReaction")
-      |> add_param(:body, :body, groups_group_team_channels_channel_messages_chat_message_unset_reaction_request)
+      |> url(
+        "/me/joinedTeams/#{team_id}/primaryChannel/messages/#{chat_message_id}/unsetReaction"
+      )
+      |> add_param(
+        :body,
+        :body,
+        groups_group_team_channels_channel_messages_chat_message_unset_reaction_request
+      )
       |> Enum.into([])
 
     connection
@@ -6467,7 +9709,14 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.TeamsTeamChannelsChannelProvisionEmail2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_team_primary_channel_provision_email(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.TeamsTeamChannelsChannelProvisionEmail2XxResponse.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_team_primary_channel_provision_email(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.TeamsTeamChannelsChannelProvisionEmail2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_team_primary_channel_provision_email(connection, team_id, _opts \\ []) do
     request =
       %{}
@@ -6500,7 +9749,14 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_team_primary_channel_remove_email(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_team_primary_channel_remove_email(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_team_primary_channel_remove_email(connection, team_id, _opts \\ []) do
     request =
       %{}
@@ -6534,8 +9790,21 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_team_schedule_share(Tesla.Env.client, String.t, MicrosoftGraph.Model.GroupsGroupTeamScheduleShareRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_team_schedule_share(connection, team_id, groups_group_team_schedule_share_request, _opts \\ []) do
+  @spec me_joined_teams_team_schedule_share(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.GroupsGroupTeamScheduleShareRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_team_schedule_share(
+        connection,
+        team_id,
+        groups_group_team_schedule_share_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -6568,8 +9837,21 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_team_send_activity_notification(Tesla.Env.client, String.t, MicrosoftGraph.Model.MeJoinedTeamsTeamSendActivityNotificationRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_joined_teams_team_send_activity_notification(connection, team_id, me_joined_teams_team_send_activity_notification_request, _opts \\ []) do
+  @spec me_joined_teams_team_send_activity_notification(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MeJoinedTeamsTeamSendActivityNotificationRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_joined_teams_team_send_activity_notification(
+        connection,
+        team_id,
+        me_joined_teams_team_send_activity_notification_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -6601,7 +9883,10 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_joined_teams_team_unarchive(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_joined_teams_team_unarchive(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_joined_teams_team_unarchive(connection, team_id, _opts \\ []) do
     request =
       %{}
@@ -6636,19 +9921,40 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderChildFoldersMailFolderCopy2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_mail_folder_child_folders_mail_folder_copy(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeMailFoldersMailFolderChildFoldersMailFolderMessagesMessageMoveRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderChildFoldersMailFolderCopy2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_mail_folder_child_folders_mail_folder_copy(connection, mail_folder_id, mail_folder_id1, me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_move_request, _opts \\ []) do
+  @spec me_mail_folders_mail_folder_child_folders_mail_folder_copy(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeMailFoldersMailFolderChildFoldersMailFolderMessagesMessageMoveRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.UsersUserMailFoldersMailFolderChildFoldersMailFolderCopy2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_mail_folder_child_folders_mail_folder_copy(
+        connection,
+        mail_folder_id,
+        mail_folder_id1,
+        me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_move_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/copy")
-      |> add_param(:body, :body, me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_move_request)
+      |> add_param(
+        :body,
+        :body,
+        me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_move_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.UsersUserMailFoldersMailFolderChildFoldersMailFolderCopy2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.UsersUserMailFoldersMailFolderChildFoldersMailFolderCopy2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -6672,19 +9978,44 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_attachments_create_upload_session(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSessionRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_attachments_create_upload_session(connection, mail_folder_id, mail_folder_id1, message_id, users_user_events_event_instances_event_attachments_create_upload_session_request, _opts \\ []) do
+  @spec me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_attachments_create_upload_session(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSessionRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_attachments_create_upload_session(
+        connection,
+        mail_folder_id,
+        mail_folder_id1,
+        message_id,
+        users_user_events_event_instances_event_attachments_create_upload_session_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}/attachments/createUploadSession")
-      |> add_param(:body, :body, users_user_events_event_instances_event_attachments_create_upload_session_request)
+      |> url(
+        "/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}/attachments/createUploadSession"
+      )
+      |> add_param(
+        :body,
+        :body,
+        users_user_events_event_instances_event_attachments_create_upload_session_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -6708,19 +10039,44 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_copy(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MeMailFoldersMailFolderChildFoldersMailFolderMessagesMessageMoveRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_copy(connection, mail_folder_id, mail_folder_id1, message_id, me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_move_request, _opts \\ []) do
+  @spec me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_copy(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeMailFoldersMailFolderChildFoldersMailFolderMessagesMessageMoveRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_copy(
+        connection,
+        mail_folder_id,
+        mail_folder_id1,
+        message_id,
+        me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_move_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}/copy")
-      |> add_param(:body, :body, me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_move_request)
+      |> url(
+        "/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}/copy"
+      )
+      |> add_param(
+        :body,
+        :body,
+        me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_move_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage},
+      {"2XX",
+       MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -6744,19 +10100,44 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_create_forward(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderChildFoldersMailFolderMessagesMessageCreateForwardRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_create_forward(connection, mail_folder_id, mail_folder_id1, message_id, users_user_mail_folders_mail_folder_child_folders_mail_folder_messages_message_create_forward_request, _opts \\ []) do
+  @spec me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_create_forward(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserMailFoldersMailFolderChildFoldersMailFolderMessagesMessageCreateForwardRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_create_forward(
+        connection,
+        mail_folder_id,
+        mail_folder_id1,
+        message_id,
+        users_user_mail_folders_mail_folder_child_folders_mail_folder_messages_message_create_forward_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}/createForward")
-      |> add_param(:body, :body, users_user_mail_folders_mail_folder_child_folders_mail_folder_messages_message_create_forward_request)
+      |> url(
+        "/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}/createForward"
+      )
+      |> add_param(
+        :body,
+        :body,
+        users_user_mail_folders_mail_folder_child_folders_mail_folder_messages_message_create_forward_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage},
+      {"2XX",
+       MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -6780,19 +10161,44 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_create_reply(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_create_reply(connection, mail_folder_id, mail_folder_id1, message_id, users_user_mail_folders_mail_folder_messages_message_reply_all_request, _opts \\ []) do
+  @spec me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_create_reply(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_create_reply(
+        connection,
+        mail_folder_id,
+        mail_folder_id1,
+        message_id,
+        users_user_mail_folders_mail_folder_messages_message_reply_all_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}/createReply")
-      |> add_param(:body, :body, users_user_mail_folders_mail_folder_messages_message_reply_all_request)
+      |> url(
+        "/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}/createReply"
+      )
+      |> add_param(
+        :body,
+        :body,
+        users_user_mail_folders_mail_folder_messages_message_reply_all_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage},
+      {"2XX",
+       MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -6816,19 +10222,44 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_create_reply_all(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_create_reply_all(connection, mail_folder_id, mail_folder_id1, message_id, users_user_mail_folders_mail_folder_messages_message_reply_all_request, _opts \\ []) do
+  @spec me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_create_reply_all(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_create_reply_all(
+        connection,
+        mail_folder_id,
+        mail_folder_id1,
+        message_id,
+        users_user_mail_folders_mail_folder_messages_message_reply_all_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}/createReplyAll")
-      |> add_param(:body, :body, users_user_mail_folders_mail_folder_messages_message_reply_all_request)
+      |> url(
+        "/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}/createReplyAll"
+      )
+      |> add_param(
+        :body,
+        :body,
+        users_user_mail_folders_mail_folder_messages_message_reply_all_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage},
+      {"2XX",
+       MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -6852,13 +10283,36 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_forward(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderChildFoldersMailFolderMessagesMessageCreateForwardRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_forward(connection, mail_folder_id, mail_folder_id1, message_id, users_user_mail_folders_mail_folder_child_folders_mail_folder_messages_message_create_forward_request, _opts \\ []) do
+  @spec me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_forward(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserMailFoldersMailFolderChildFoldersMailFolderMessagesMessageCreateForwardRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_forward(
+        connection,
+        mail_folder_id,
+        mail_folder_id1,
+        message_id,
+        users_user_mail_folders_mail_folder_child_folders_mail_folder_messages_message_create_forward_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}/forward")
-      |> add_param(:body, :body, users_user_mail_folders_mail_folder_child_folders_mail_folder_messages_message_create_forward_request)
+      |> url(
+        "/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}/forward"
+      )
+      |> add_param(
+        :body,
+        :body,
+        users_user_mail_folders_mail_folder_child_folders_mail_folder_messages_message_create_forward_request
+      )
       |> Enum.into([])
 
     connection
@@ -6888,19 +10342,44 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_move(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MeMailFoldersMailFolderChildFoldersMailFolderMessagesMessageMoveRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_move(connection, mail_folder_id, mail_folder_id1, message_id, me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_move_request, _opts \\ []) do
+  @spec me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_move(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeMailFoldersMailFolderChildFoldersMailFolderMessagesMessageMoveRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_move(
+        connection,
+        mail_folder_id,
+        mail_folder_id1,
+        message_id,
+        me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_move_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}/move")
-      |> add_param(:body, :body, me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_move_request)
+      |> url(
+        "/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}/move"
+      )
+      |> add_param(
+        :body,
+        :body,
+        me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_move_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage},
+      {"2XX",
+       MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -6924,13 +10403,36 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_reply(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_reply(connection, mail_folder_id, mail_folder_id1, message_id, users_user_mail_folders_mail_folder_messages_message_reply_all_request, _opts \\ []) do
+  @spec me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_reply(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_reply(
+        connection,
+        mail_folder_id,
+        mail_folder_id1,
+        message_id,
+        users_user_mail_folders_mail_folder_messages_message_reply_all_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}/reply")
-      |> add_param(:body, :body, users_user_mail_folders_mail_folder_messages_message_reply_all_request)
+      |> url(
+        "/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}/reply"
+      )
+      |> add_param(
+        :body,
+        :body,
+        users_user_mail_folders_mail_folder_messages_message_reply_all_request
+      )
       |> Enum.into([])
 
     connection
@@ -6960,13 +10462,36 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_reply_all(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_reply_all(connection, mail_folder_id, mail_folder_id1, message_id, users_user_mail_folders_mail_folder_messages_message_reply_all_request, _opts \\ []) do
+  @spec me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_reply_all(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_reply_all(
+        connection,
+        mail_folder_id,
+        mail_folder_id1,
+        message_id,
+        users_user_mail_folders_mail_folder_messages_message_reply_all_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}/replyAll")
-      |> add_param(:body, :body, users_user_mail_folders_mail_folder_messages_message_reply_all_request)
+      |> url(
+        "/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}/replyAll"
+      )
+      |> add_param(
+        :body,
+        :body,
+        users_user_mail_folders_mail_folder_messages_message_reply_all_request
+      )
       |> Enum.into([])
 
     connection
@@ -6995,12 +10520,29 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_send(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_send(connection, mail_folder_id, mail_folder_id1, message_id, _opts \\ []) do
+  @spec me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_send(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_send(
+        connection,
+        mail_folder_id,
+        mail_folder_id1,
+        message_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}/send")
+      |> url(
+        "/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/messages/#{message_id}/send"
+      )
       |> ensure_body()
       |> Enum.into([])
 
@@ -7030,19 +10572,40 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderChildFoldersMailFolderCopy2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_mail_folder_child_folders_mail_folder_move(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeMailFoldersMailFolderChildFoldersMailFolderMessagesMessageMoveRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderChildFoldersMailFolderCopy2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_mail_folder_child_folders_mail_folder_move(connection, mail_folder_id, mail_folder_id1, me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_move_request, _opts \\ []) do
+  @spec me_mail_folders_mail_folder_child_folders_mail_folder_move(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeMailFoldersMailFolderChildFoldersMailFolderMessagesMessageMoveRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.UsersUserMailFoldersMailFolderChildFoldersMailFolderCopy2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_mail_folder_child_folders_mail_folder_move(
+        connection,
+        mail_folder_id,
+        mail_folder_id1,
+        me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_move_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/mailFolders/#{mail_folder_id}/childFolders/#{mail_folder_id1}/move")
-      |> add_param(:body, :body, me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_move_request)
+      |> add_param(
+        :body,
+        :body,
+        me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_move_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.UsersUserMailFoldersMailFolderChildFoldersMailFolderCopy2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.UsersUserMailFoldersMailFolderChildFoldersMailFolderCopy2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -7064,19 +10627,38 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderChildFoldersMailFolderCopy2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_mail_folder_copy(Tesla.Env.client, String.t, MicrosoftGraph.Model.MeMailFoldersMailFolderChildFoldersMailFolderMessagesMessageMoveRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderChildFoldersMailFolderCopy2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_mail_folder_copy(connection, mail_folder_id, me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_move_request, _opts \\ []) do
+  @spec me_mail_folders_mail_folder_copy(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MeMailFoldersMailFolderChildFoldersMailFolderMessagesMessageMoveRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.UsersUserMailFoldersMailFolderChildFoldersMailFolderCopy2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_mail_folder_copy(
+        connection,
+        mail_folder_id,
+        me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_move_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/mailFolders/#{mail_folder_id}/copy")
-      |> add_param(:body, :body, me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_move_request)
+      |> add_param(
+        :body,
+        :body,
+        me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_move_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.UsersUserMailFoldersMailFolderChildFoldersMailFolderCopy2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.UsersUserMailFoldersMailFolderChildFoldersMailFolderCopy2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -7099,19 +10681,42 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_mail_folder_messages_message_attachments_create_upload_session(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSessionRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_mail_folder_messages_message_attachments_create_upload_session(connection, mail_folder_id, message_id, users_user_events_event_instances_event_attachments_create_upload_session_request, _opts \\ []) do
+  @spec me_mail_folders_mail_folder_messages_message_attachments_create_upload_session(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSessionRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_mail_folder_messages_message_attachments_create_upload_session(
+        connection,
+        mail_folder_id,
+        message_id,
+        users_user_events_event_instances_event_attachments_create_upload_session_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/mailFolders/#{mail_folder_id}/messages/#{message_id}/attachments/createUploadSession")
-      |> add_param(:body, :body, users_user_events_event_instances_event_attachments_create_upload_session_request)
+      |> url(
+        "/me/mailFolders/#{mail_folder_id}/messages/#{message_id}/attachments/createUploadSession"
+      )
+      |> add_param(
+        :body,
+        :body,
+        users_user_events_event_instances_event_attachments_create_upload_session_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -7134,19 +10739,40 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_mail_folder_messages_message_copy(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeMailFoldersMailFolderChildFoldersMailFolderMessagesMessageMoveRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_mail_folder_messages_message_copy(connection, mail_folder_id, message_id, me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_move_request, _opts \\ []) do
+  @spec me_mail_folders_mail_folder_messages_message_copy(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeMailFoldersMailFolderChildFoldersMailFolderMessagesMessageMoveRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_mail_folder_messages_message_copy(
+        connection,
+        mail_folder_id,
+        message_id,
+        me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_move_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/mailFolders/#{mail_folder_id}/messages/#{message_id}/copy")
-      |> add_param(:body, :body, me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_move_request)
+      |> add_param(
+        :body,
+        :body,
+        me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_move_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage},
+      {"2XX",
+       MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -7169,19 +10795,40 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_mail_folder_messages_message_create_forward(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderChildFoldersMailFolderMessagesMessageCreateForwardRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_mail_folder_messages_message_create_forward(connection, mail_folder_id, message_id, users_user_mail_folders_mail_folder_child_folders_mail_folder_messages_message_create_forward_request, _opts \\ []) do
+  @spec me_mail_folders_mail_folder_messages_message_create_forward(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserMailFoldersMailFolderChildFoldersMailFolderMessagesMessageCreateForwardRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_mail_folder_messages_message_create_forward(
+        connection,
+        mail_folder_id,
+        message_id,
+        users_user_mail_folders_mail_folder_child_folders_mail_folder_messages_message_create_forward_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/mailFolders/#{mail_folder_id}/messages/#{message_id}/createForward")
-      |> add_param(:body, :body, users_user_mail_folders_mail_folder_child_folders_mail_folder_messages_message_create_forward_request)
+      |> add_param(
+        :body,
+        :body,
+        users_user_mail_folders_mail_folder_child_folders_mail_folder_messages_message_create_forward_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage},
+      {"2XX",
+       MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -7204,19 +10851,40 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_mail_folder_messages_message_create_reply(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_mail_folder_messages_message_create_reply(connection, mail_folder_id, message_id, users_user_mail_folders_mail_folder_messages_message_reply_all_request, _opts \\ []) do
+  @spec me_mail_folders_mail_folder_messages_message_create_reply(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_mail_folder_messages_message_create_reply(
+        connection,
+        mail_folder_id,
+        message_id,
+        users_user_mail_folders_mail_folder_messages_message_reply_all_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/mailFolders/#{mail_folder_id}/messages/#{message_id}/createReply")
-      |> add_param(:body, :body, users_user_mail_folders_mail_folder_messages_message_reply_all_request)
+      |> add_param(
+        :body,
+        :body,
+        users_user_mail_folders_mail_folder_messages_message_reply_all_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage},
+      {"2XX",
+       MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -7239,19 +10907,40 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_mail_folder_messages_message_create_reply_all(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_mail_folder_messages_message_create_reply_all(connection, mail_folder_id, message_id, users_user_mail_folders_mail_folder_messages_message_reply_all_request, _opts \\ []) do
+  @spec me_mail_folders_mail_folder_messages_message_create_reply_all(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_mail_folder_messages_message_create_reply_all(
+        connection,
+        mail_folder_id,
+        message_id,
+        users_user_mail_folders_mail_folder_messages_message_reply_all_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/mailFolders/#{mail_folder_id}/messages/#{message_id}/createReplyAll")
-      |> add_param(:body, :body, users_user_mail_folders_mail_folder_messages_message_reply_all_request)
+      |> add_param(
+        :body,
+        :body,
+        users_user_mail_folders_mail_folder_messages_message_reply_all_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage},
+      {"2XX",
+       MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -7274,13 +10963,32 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_mail_folder_messages_message_forward(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderChildFoldersMailFolderMessagesMessageCreateForwardRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_mail_folder_messages_message_forward(connection, mail_folder_id, message_id, users_user_mail_folders_mail_folder_child_folders_mail_folder_messages_message_create_forward_request, _opts \\ []) do
+  @spec me_mail_folders_mail_folder_messages_message_forward(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserMailFoldersMailFolderChildFoldersMailFolderMessagesMessageCreateForwardRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_mail_folder_messages_message_forward(
+        connection,
+        mail_folder_id,
+        message_id,
+        users_user_mail_folders_mail_folder_child_folders_mail_folder_messages_message_create_forward_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/mailFolders/#{mail_folder_id}/messages/#{message_id}/forward")
-      |> add_param(:body, :body, users_user_mail_folders_mail_folder_child_folders_mail_folder_messages_message_create_forward_request)
+      |> add_param(
+        :body,
+        :body,
+        users_user_mail_folders_mail_folder_child_folders_mail_folder_messages_message_create_forward_request
+      )
       |> Enum.into([])
 
     connection
@@ -7309,19 +11017,40 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_mail_folder_messages_message_move(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeMailFoldersMailFolderChildFoldersMailFolderMessagesMessageMoveRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_mail_folder_messages_message_move(connection, mail_folder_id, message_id, me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_move_request, _opts \\ []) do
+  @spec me_mail_folders_mail_folder_messages_message_move(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeMailFoldersMailFolderChildFoldersMailFolderMessagesMessageMoveRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_mail_folder_messages_message_move(
+        connection,
+        mail_folder_id,
+        message_id,
+        me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_move_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/mailFolders/#{mail_folder_id}/messages/#{message_id}/move")
-      |> add_param(:body, :body, me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_move_request)
+      |> add_param(
+        :body,
+        :body,
+        me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_move_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage},
+      {"2XX",
+       MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -7344,13 +11073,32 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_mail_folder_messages_message_reply(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_mail_folder_messages_message_reply(connection, mail_folder_id, message_id, users_user_mail_folders_mail_folder_messages_message_reply_all_request, _opts \\ []) do
+  @spec me_mail_folders_mail_folder_messages_message_reply(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_mail_folder_messages_message_reply(
+        connection,
+        mail_folder_id,
+        message_id,
+        users_user_mail_folders_mail_folder_messages_message_reply_all_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/mailFolders/#{mail_folder_id}/messages/#{message_id}/reply")
-      |> add_param(:body, :body, users_user_mail_folders_mail_folder_messages_message_reply_all_request)
+      |> add_param(
+        :body,
+        :body,
+        users_user_mail_folders_mail_folder_messages_message_reply_all_request
+      )
       |> Enum.into([])
 
     connection
@@ -7379,13 +11127,32 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_mail_folder_messages_message_reply_all(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_mail_folder_messages_message_reply_all(connection, mail_folder_id, message_id, users_user_mail_folders_mail_folder_messages_message_reply_all_request, _opts \\ []) do
+  @spec me_mail_folders_mail_folder_messages_message_reply_all(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_mail_folder_messages_message_reply_all(
+        connection,
+        mail_folder_id,
+        message_id,
+        users_user_mail_folders_mail_folder_messages_message_reply_all_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/mailFolders/#{mail_folder_id}/messages/#{message_id}/replyAll")
-      |> add_param(:body, :body, users_user_mail_folders_mail_folder_messages_message_reply_all_request)
+      |> add_param(
+        :body,
+        :body,
+        users_user_mail_folders_mail_folder_messages_message_reply_all_request
+      )
       |> Enum.into([])
 
     connection
@@ -7413,8 +11180,21 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_mail_folder_messages_message_send(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_mail_folder_messages_message_send(connection, mail_folder_id, message_id, _opts \\ []) do
+  @spec me_mail_folders_mail_folder_messages_message_send(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_mail_folder_messages_message_send(
+        connection,
+        mail_folder_id,
+        message_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -7447,19 +11227,38 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderChildFoldersMailFolderCopy2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_mail_folders_mail_folder_move(Tesla.Env.client, String.t, MicrosoftGraph.Model.MeMailFoldersMailFolderChildFoldersMailFolderMessagesMessageMoveRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderChildFoldersMailFolderCopy2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_mail_folders_mail_folder_move(connection, mail_folder_id, me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_move_request, _opts \\ []) do
+  @spec me_mail_folders_mail_folder_move(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MeMailFoldersMailFolderChildFoldersMailFolderMessagesMessageMoveRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.UsersUserMailFoldersMailFolderChildFoldersMailFolderCopy2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_mail_folders_mail_folder_move(
+        connection,
+        mail_folder_id,
+        me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_move_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/mailFolders/#{mail_folder_id}/move")
-      |> add_param(:body, :body, me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_move_request)
+      |> add_param(
+        :body,
+        :body,
+        me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_move_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.UsersUserMailFoldersMailFolderChildFoldersMailFolderCopy2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.UsersUserMailFoldersMailFolderChildFoldersMailFolderCopy2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -7480,8 +11279,19 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_managed_devices_managed_device_bypass_activation_lock(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_managed_devices_managed_device_bypass_activation_lock(connection, managed_device_id, _opts \\ []) do
+  @spec me_managed_devices_managed_device_bypass_activation_lock(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_managed_devices_managed_device_bypass_activation_lock(
+        connection,
+        managed_device_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -7514,13 +11324,30 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_managed_devices_managed_device_clean_windows_device(Tesla.Env.client, String.t, MicrosoftGraph.Model.DeviceManagementManagedDevicesManagedDeviceCleanWindowsDeviceRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_managed_devices_managed_device_clean_windows_device(connection, managed_device_id, device_management_managed_devices_managed_device_clean_windows_device_request, _opts \\ []) do
+  @spec me_managed_devices_managed_device_clean_windows_device(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.DeviceManagementManagedDevicesManagedDeviceCleanWindowsDeviceRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_managed_devices_managed_device_clean_windows_device(
+        connection,
+        managed_device_id,
+        device_management_managed_devices_managed_device_clean_windows_device_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/managedDevices/#{managed_device_id}/cleanWindowsDevice")
-      |> add_param(:body, :body, device_management_managed_devices_managed_device_clean_windows_device_request)
+      |> add_param(
+        :body,
+        :body,
+        device_management_managed_devices_managed_device_clean_windows_device_request
+      )
       |> Enum.into([])
 
     connection
@@ -7548,13 +11375,30 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_managed_devices_managed_device_delete_user_from_shared_apple_device(Tesla.Env.client, String.t, MicrosoftGraph.Model.UsersUserManagedDevicesManagedDeviceDeleteUserFromSharedAppleDeviceRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_managed_devices_managed_device_delete_user_from_shared_apple_device(connection, managed_device_id, users_user_managed_devices_managed_device_delete_user_from_shared_apple_device_request, _opts \\ []) do
+  @spec me_managed_devices_managed_device_delete_user_from_shared_apple_device(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserManagedDevicesManagedDeviceDeleteUserFromSharedAppleDeviceRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_managed_devices_managed_device_delete_user_from_shared_apple_device(
+        connection,
+        managed_device_id,
+        users_user_managed_devices_managed_device_delete_user_from_shared_apple_device_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/managedDevices/#{managed_device_id}/deleteUserFromSharedAppleDevice")
-      |> add_param(:body, :body, users_user_managed_devices_managed_device_delete_user_from_shared_apple_device_request)
+      |> add_param(
+        :body,
+        :body,
+        users_user_managed_devices_managed_device_delete_user_from_shared_apple_device_request
+      )
       |> Enum.into([])
 
     connection
@@ -7581,8 +11425,19 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_managed_devices_managed_device_disable_lost_mode(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_managed_devices_managed_device_disable_lost_mode(connection, managed_device_id, _opts \\ []) do
+  @spec me_managed_devices_managed_device_disable_lost_mode(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_managed_devices_managed_device_disable_lost_mode(
+        connection,
+        managed_device_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -7614,7 +11469,10 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_managed_devices_managed_device_locate_device(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_managed_devices_managed_device_locate_device(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_managed_devices_managed_device_locate_device(connection, managed_device_id, _opts \\ []) do
     request =
       %{}
@@ -7647,19 +11505,36 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookWorksheetsWorkbookWorksheetChartsWorkbookChartImage8f132XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_managed_devices_managed_device_log_collection_requests_device_log_collection_response_create_download_url(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookWorksheetsWorkbookWorksheetChartsWorkbookChartImage8f132XxResponse.t} | {:error, Tesla.Env.t}
-  def me_managed_devices_managed_device_log_collection_requests_device_log_collection_response_create_download_url(connection, managed_device_id, device_log_collection_response_id, _opts \\ []) do
+  @spec me_managed_devices_managed_device_log_collection_requests_device_log_collection_response_create_download_url(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok,
+             MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookWorksheetsWorkbookWorksheetChartsWorkbookChartImage8f132XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def me_managed_devices_managed_device_log_collection_requests_device_log_collection_response_create_download_url(
+        connection,
+        managed_device_id,
+        device_log_collection_response_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/managedDevices/#{managed_device_id}/logCollectionRequests/#{device_log_collection_response_id}/createDownloadUrl")
+      |> url(
+        "/me/managedDevices/#{managed_device_id}/logCollectionRequests/#{device_log_collection_response_id}/createDownloadUrl"
+      )
       |> ensure_body()
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookWorksheetsWorkbookWorksheetChartsWorkbookChartImage8f132XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.DrivesDriveItemsDriveItemWorkbookWorksheetsWorkbookWorksheetChartsWorkbookChartImage8f132XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -7680,8 +11555,19 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_managed_devices_managed_device_logout_shared_apple_device_active_user(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_managed_devices_managed_device_logout_shared_apple_device_active_user(connection, managed_device_id, _opts \\ []) do
+  @spec me_managed_devices_managed_device_logout_shared_apple_device_active_user(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_managed_devices_managed_device_logout_shared_apple_device_active_user(
+        connection,
+        managed_device_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -7713,7 +11599,10 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_managed_devices_managed_device_reboot_now(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_managed_devices_managed_device_reboot_now(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_managed_devices_managed_device_reboot_now(connection, managed_device_id, _opts \\ []) do
     request =
       %{}
@@ -7746,8 +11635,19 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_managed_devices_managed_device_recover_passcode(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_managed_devices_managed_device_recover_passcode(connection, managed_device_id, _opts \\ []) do
+  @spec me_managed_devices_managed_device_recover_passcode(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_managed_devices_managed_device_recover_passcode(
+        connection,
+        managed_device_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -7779,7 +11679,10 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_managed_devices_managed_device_remote_lock(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_managed_devices_managed_device_remote_lock(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_managed_devices_managed_device_remote_lock(connection, managed_device_id, _opts \\ []) do
     request =
       %{}
@@ -7812,8 +11715,19 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_managed_devices_managed_device_request_remote_assistance(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_managed_devices_managed_device_request_remote_assistance(connection, managed_device_id, _opts \\ []) do
+  @spec me_managed_devices_managed_device_request_remote_assistance(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_managed_devices_managed_device_request_remote_assistance(
+        connection,
+        managed_device_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -7845,7 +11759,14 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_managed_devices_managed_device_reset_passcode(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_managed_devices_managed_device_reset_passcode(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_managed_devices_managed_device_reset_passcode(connection, managed_device_id, _opts \\ []) do
     request =
       %{}
@@ -7878,7 +11799,10 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_managed_devices_managed_device_retire(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_managed_devices_managed_device_retire(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_managed_devices_managed_device_retire(connection, managed_device_id, _opts \\ []) do
     request =
       %{}
@@ -7911,7 +11835,10 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_managed_devices_managed_device_shut_down(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_managed_devices_managed_device_shut_down(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_managed_devices_managed_device_shut_down(connection, managed_device_id, _opts \\ []) do
     request =
       %{}
@@ -7944,7 +11871,10 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_managed_devices_managed_device_sync_device(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_managed_devices_managed_device_sync_device(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_managed_devices_managed_device_sync_device(connection, managed_device_id, _opts \\ []) do
     request =
       %{}
@@ -7978,13 +11908,30 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_managed_devices_managed_device_update_windows_device_account(Tesla.Env.client, String.t, MicrosoftGraph.Model.UsersUserManagedDevicesManagedDeviceUpdateWindowsDeviceAccountRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_managed_devices_managed_device_update_windows_device_account(connection, managed_device_id, users_user_managed_devices_managed_device_update_windows_device_account_request, _opts \\ []) do
+  @spec me_managed_devices_managed_device_update_windows_device_account(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserManagedDevicesManagedDeviceUpdateWindowsDeviceAccountRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_managed_devices_managed_device_update_windows_device_account(
+        connection,
+        managed_device_id,
+        users_user_managed_devices_managed_device_update_windows_device_account_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/managedDevices/#{managed_device_id}/updateWindowsDeviceAccount")
-      |> add_param(:body, :body, users_user_managed_devices_managed_device_update_windows_device_account_request)
+      |> add_param(
+        :body,
+        :body,
+        users_user_managed_devices_managed_device_update_windows_device_account_request
+      )
       |> Enum.into([])
 
     connection
@@ -8012,13 +11959,30 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_managed_devices_managed_device_windows_defender_scan(Tesla.Env.client, String.t, MicrosoftGraph.Model.UsersUserManagedDevicesManagedDeviceWindowsDefenderScanRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_managed_devices_managed_device_windows_defender_scan(connection, managed_device_id, users_user_managed_devices_managed_device_windows_defender_scan_request, _opts \\ []) do
+  @spec me_managed_devices_managed_device_windows_defender_scan(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserManagedDevicesManagedDeviceWindowsDefenderScanRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_managed_devices_managed_device_windows_defender_scan(
+        connection,
+        managed_device_id,
+        users_user_managed_devices_managed_device_windows_defender_scan_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/managedDevices/#{managed_device_id}/windowsDefenderScan")
-      |> add_param(:body, :body, users_user_managed_devices_managed_device_windows_defender_scan_request)
+      |> add_param(
+        :body,
+        :body,
+        users_user_managed_devices_managed_device_windows_defender_scan_request
+      )
       |> Enum.into([])
 
     connection
@@ -8045,8 +12009,19 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_managed_devices_managed_device_windows_defender_update_signatures(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_managed_devices_managed_device_windows_defender_update_signatures(connection, managed_device_id, _opts \\ []) do
+  @spec me_managed_devices_managed_device_windows_defender_update_signatures(
+          Tesla.Env.client(),
+          String.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_managed_devices_managed_device_windows_defender_update_signatures(
+        connection,
+        managed_device_id,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -8079,8 +12054,21 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_managed_devices_managed_device_wipe(Tesla.Env.client, String.t, MicrosoftGraph.Model.UsersUserManagedDevicesManagedDeviceWipeRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_managed_devices_managed_device_wipe(connection, managed_device_id, users_user_managed_devices_managed_device_wipe_request, _opts \\ []) do
+  @spec me_managed_devices_managed_device_wipe(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserManagedDevicesManagedDeviceWipeRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_managed_devices_managed_device_wipe(
+        connection,
+        managed_device_id,
+        users_user_managed_devices_managed_device_wipe_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -8113,19 +12101,38 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_messages_message_attachments_create_upload_session(Tesla.Env.client, String.t, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSessionRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_messages_message_attachments_create_upload_session(connection, message_id, users_user_events_event_instances_event_attachments_create_upload_session_request, _opts \\ []) do
+  @spec me_messages_message_attachments_create_upload_session(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSessionRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_messages_message_attachments_create_upload_session(
+        connection,
+        message_id,
+        users_user_events_event_instances_event_attachments_create_upload_session_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/messages/#{message_id}/attachments/createUploadSession")
-      |> add_param(:body, :body, users_user_events_event_instances_event_attachments_create_upload_session_request)
+      |> add_param(
+        :body,
+        :body,
+        users_user_events_event_instances_event_attachments_create_upload_session_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -8147,19 +12154,38 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_messages_message_copy(Tesla.Env.client, String.t, MicrosoftGraph.Model.MeMailFoldersMailFolderChildFoldersMailFolderMessagesMessageMoveRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_messages_message_copy(connection, message_id, me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_move_request, _opts \\ []) do
+  @spec me_messages_message_copy(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MeMailFoldersMailFolderChildFoldersMailFolderMessagesMessageMoveRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_messages_message_copy(
+        connection,
+        message_id,
+        me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_move_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/messages/#{message_id}/copy")
-      |> add_param(:body, :body, me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_move_request)
+      |> add_param(
+        :body,
+        :body,
+        me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_move_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage},
+      {"2XX",
+       MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -8181,19 +12207,38 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_messages_message_create_forward(Tesla.Env.client, String.t, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderChildFoldersMailFolderMessagesMessageCreateForwardRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_messages_message_create_forward(connection, message_id, users_user_mail_folders_mail_folder_child_folders_mail_folder_messages_message_create_forward_request, _opts \\ []) do
+  @spec me_messages_message_create_forward(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserMailFoldersMailFolderChildFoldersMailFolderMessagesMessageCreateForwardRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_messages_message_create_forward(
+        connection,
+        message_id,
+        users_user_mail_folders_mail_folder_child_folders_mail_folder_messages_message_create_forward_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/messages/#{message_id}/createForward")
-      |> add_param(:body, :body, users_user_mail_folders_mail_folder_child_folders_mail_folder_messages_message_create_forward_request)
+      |> add_param(
+        :body,
+        :body,
+        users_user_mail_folders_mail_folder_child_folders_mail_folder_messages_message_create_forward_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage},
+      {"2XX",
+       MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -8215,19 +12260,38 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_messages_message_create_reply(Tesla.Env.client, String.t, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_messages_message_create_reply(connection, message_id, users_user_mail_folders_mail_folder_messages_message_reply_all_request, _opts \\ []) do
+  @spec me_messages_message_create_reply(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_messages_message_create_reply(
+        connection,
+        message_id,
+        users_user_mail_folders_mail_folder_messages_message_reply_all_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/messages/#{message_id}/createReply")
-      |> add_param(:body, :body, users_user_mail_folders_mail_folder_messages_message_reply_all_request)
+      |> add_param(
+        :body,
+        :body,
+        users_user_mail_folders_mail_folder_messages_message_reply_all_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage},
+      {"2XX",
+       MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -8249,19 +12313,38 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_messages_message_create_reply_all(Tesla.Env.client, String.t, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_messages_message_create_reply_all(connection, message_id, users_user_mail_folders_mail_folder_messages_message_reply_all_request, _opts \\ []) do
+  @spec me_messages_message_create_reply_all(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_messages_message_create_reply_all(
+        connection,
+        message_id,
+        users_user_mail_folders_mail_folder_messages_message_reply_all_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/messages/#{message_id}/createReplyAll")
-      |> add_param(:body, :body, users_user_mail_folders_mail_folder_messages_message_reply_all_request)
+      |> add_param(
+        :body,
+        :body,
+        users_user_mail_folders_mail_folder_messages_message_reply_all_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage},
+      {"2XX",
+       MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -8283,13 +12366,30 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_messages_message_forward(Tesla.Env.client, String.t, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderChildFoldersMailFolderMessagesMessageCreateForwardRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_messages_message_forward(connection, message_id, users_user_mail_folders_mail_folder_child_folders_mail_folder_messages_message_create_forward_request, _opts \\ []) do
+  @spec me_messages_message_forward(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserMailFoldersMailFolderChildFoldersMailFolderMessagesMessageCreateForwardRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_messages_message_forward(
+        connection,
+        message_id,
+        users_user_mail_folders_mail_folder_child_folders_mail_folder_messages_message_create_forward_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/messages/#{message_id}/forward")
-      |> add_param(:body, :body, users_user_mail_folders_mail_folder_child_folders_mail_folder_messages_message_create_forward_request)
+      |> add_param(
+        :body,
+        :body,
+        users_user_mail_folders_mail_folder_child_folders_mail_folder_messages_message_create_forward_request
+      )
       |> Enum.into([])
 
     connection
@@ -8317,19 +12417,38 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_messages_message_move(Tesla.Env.client, String.t, MicrosoftGraph.Model.MeMailFoldersMailFolderChildFoldersMailFolderMessagesMessageMoveRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_messages_message_move(connection, message_id, me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_move_request, _opts \\ []) do
+  @spec me_messages_message_move(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MeMailFoldersMailFolderChildFoldersMailFolderMessagesMessageMoveRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_messages_message_move(
+        connection,
+        message_id,
+        me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_move_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/messages/#{message_id}/move")
-      |> add_param(:body, :body, me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_move_request)
+      |> add_param(
+        :body,
+        :body,
+        me_mail_folders_mail_folder_child_folders_mail_folder_messages_message_move_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage},
+      {"2XX",
+       MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequestMessage},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -8351,13 +12470,30 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_messages_message_reply(Tesla.Env.client, String.t, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_messages_message_reply(connection, message_id, users_user_mail_folders_mail_folder_messages_message_reply_all_request, _opts \\ []) do
+  @spec me_messages_message_reply(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_messages_message_reply(
+        connection,
+        message_id,
+        users_user_mail_folders_mail_folder_messages_message_reply_all_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/messages/#{message_id}/reply")
-      |> add_param(:body, :body, users_user_mail_folders_mail_folder_messages_message_reply_all_request)
+      |> add_param(
+        :body,
+        :body,
+        users_user_mail_folders_mail_folder_messages_message_reply_all_request
+      )
       |> Enum.into([])
 
     connection
@@ -8385,13 +12521,30 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_messages_message_reply_all(Tesla.Env.client, String.t, MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_messages_message_reply_all(connection, message_id, users_user_mail_folders_mail_folder_messages_message_reply_all_request, _opts \\ []) do
+  @spec me_messages_message_reply_all(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserMailFoldersMailFolderMessagesMessageReplyAllRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_messages_message_reply_all(
+        connection,
+        message_id,
+        users_user_mail_folders_mail_folder_messages_message_reply_all_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/messages/#{message_id}/replyAll")
-      |> add_param(:body, :body, users_user_mail_folders_mail_folder_messages_message_reply_all_request)
+      |> add_param(
+        :body,
+        :body,
+        users_user_mail_folders_mail_folder_messages_message_reply_all_request
+      )
       |> Enum.into([])
 
     connection
@@ -8418,7 +12571,10 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_messages_message_send(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_messages_message_send(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_messages_message_send(connection, message_id, _opts \\ []) do
     request =
       %{}
@@ -8451,8 +12607,20 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.UsersUserOnenoteNotebooksGetNotebookFromWebUrl2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_get_notebook_from_web_url(Tesla.Env.client, MicrosoftGraph.Model.UsersUserOnenoteNotebooksGetNotebookFromWebUrlRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserOnenoteNotebooksGetNotebookFromWebUrl2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_get_notebook_from_web_url(connection, users_user_onenote_notebooks_get_notebook_from_web_url_request, _opts \\ []) do
+  @spec me_onenote_notebooks_get_notebook_from_web_url(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.UsersUserOnenoteNotebooksGetNotebookFromWebUrlRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.UsersUserOnenoteNotebooksGetNotebookFromWebUrl2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_get_notebook_from_web_url(
+        connection,
+        users_user_onenote_notebooks_get_notebook_from_web_url_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -8485,8 +12653,22 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_notebook_copy_notebook(Tesla.Env.client, String.t, MicrosoftGraph.Model.MeOnenoteNotebooksNotebookCopyNotebookRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_notebook_copy_notebook(connection, notebook_id, me_onenote_notebooks_notebook_copy_notebook_request, _opts \\ []) do
+  @spec me_onenote_notebooks_notebook_copy_notebook(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MeOnenoteNotebooksNotebookCopyNotebookRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_notebook_copy_notebook(
+        connection,
+        notebook_id,
+        me_onenote_notebooks_notebook_copy_notebook_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -8497,7 +12679,8 @@ defmodule MicrosoftGraph.Api.MeActions do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -8521,19 +12704,44 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_notebook_section_groups_section_group_sections_onenote_section_copy_to_notebook(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MeOnenoteSectionsOnenoteSectionCopyToSectionGroupRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_notebook_section_groups_section_group_sections_onenote_section_copy_to_notebook(connection, notebook_id, section_group_id, onenote_section_id, me_onenote_sections_onenote_section_copy_to_section_group_request, _opts \\ []) do
+  @spec me_onenote_notebooks_notebook_section_groups_section_group_sections_onenote_section_copy_to_notebook(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeOnenoteSectionsOnenoteSectionCopyToSectionGroupRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_notebook_section_groups_section_group_sections_onenote_section_copy_to_notebook(
+        connection,
+        notebook_id,
+        section_group_id,
+        onenote_section_id,
+        me_onenote_sections_onenote_section_copy_to_section_group_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/copyToNotebook")
-      |> add_param(:body, :body, me_onenote_sections_onenote_section_copy_to_section_group_request)
+      |> url(
+        "/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/copyToNotebook"
+      )
+      |> add_param(
+        :body,
+        :body,
+        me_onenote_sections_onenote_section_copy_to_section_group_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -8557,19 +12765,44 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_notebook_section_groups_section_group_sections_onenote_section_copy_to_section_group(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MeOnenoteSectionsOnenoteSectionCopyToSectionGroupRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_notebook_section_groups_section_group_sections_onenote_section_copy_to_section_group(connection, notebook_id, section_group_id, onenote_section_id, me_onenote_sections_onenote_section_copy_to_section_group_request, _opts \\ []) do
+  @spec me_onenote_notebooks_notebook_section_groups_section_group_sections_onenote_section_copy_to_section_group(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeOnenoteSectionsOnenoteSectionCopyToSectionGroupRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_notebook_section_groups_section_group_sections_onenote_section_copy_to_section_group(
+        connection,
+        notebook_id,
+        section_group_id,
+        onenote_section_id,
+        me_onenote_sections_onenote_section_copy_to_section_group_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/copyToSectionGroup")
-      |> add_param(:body, :body, me_onenote_sections_onenote_section_copy_to_section_group_request)
+      |> url(
+        "/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/copyToSectionGroup"
+      )
+      |> add_param(
+        :body,
+        :body,
+        me_onenote_sections_onenote_section_copy_to_section_group_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -8594,19 +12827,46 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_notebook_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSectionRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_notebook_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section(connection, notebook_id, section_group_id, onenote_section_id, onenote_page_id, me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section_request, _opts \\ []) do
+  @spec me_onenote_notebooks_notebook_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSectionRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_notebook_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section(
+        connection,
+        notebook_id,
+        section_group_id,
+        onenote_section_id,
+        onenote_page_id,
+        me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/copyToSection")
-      |> add_param(:body, :body, me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section_request)
+      |> url(
+        "/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/copyToSection"
+      )
+      |> add_param(
+        :body,
+        :body,
+        me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -8630,13 +12890,38 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_notebook_section_groups_section_group_sections_onenote_section_pages_onenote_page_onenote_patch_content(Tesla.Env.client, String.t, String.t, String.t, String.t, MicrosoftGraph.Model.UsersUserOnenotePagesOnenotePageOnenotePatchContentRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_notebook_section_groups_section_group_sections_onenote_section_pages_onenote_page_onenote_patch_content(connection, notebook_id, section_group_id, onenote_section_id, onenote_page_id, users_user_onenote_pages_onenote_page_onenote_patch_content_request, _opts \\ []) do
+  @spec me_onenote_notebooks_notebook_section_groups_section_group_sections_onenote_section_pages_onenote_page_onenote_patch_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserOnenotePagesOnenotePageOnenotePatchContentRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_notebook_section_groups_section_group_sections_onenote_section_pages_onenote_page_onenote_patch_content(
+        connection,
+        notebook_id,
+        section_group_id,
+        onenote_section_id,
+        onenote_page_id,
+        users_user_onenote_pages_onenote_page_onenote_patch_content_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/onenotePatchContent")
-      |> add_param(:body, :body, users_user_onenote_pages_onenote_page_onenote_patch_content_request)
+      |> url(
+        "/me/onenote/notebooks/#{notebook_id}/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/onenotePatchContent"
+      )
+      |> add_param(
+        :body,
+        :body,
+        users_user_onenote_pages_onenote_page_onenote_patch_content_request
+      )
       |> Enum.into([])
 
     connection
@@ -8665,19 +12950,40 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_notebook_sections_onenote_section_copy_to_notebook(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeOnenoteSectionsOnenoteSectionCopyToSectionGroupRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_notebook_sections_onenote_section_copy_to_notebook(connection, notebook_id, onenote_section_id, me_onenote_sections_onenote_section_copy_to_section_group_request, _opts \\ []) do
+  @spec me_onenote_notebooks_notebook_sections_onenote_section_copy_to_notebook(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeOnenoteSectionsOnenoteSectionCopyToSectionGroupRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_notebook_sections_onenote_section_copy_to_notebook(
+        connection,
+        notebook_id,
+        onenote_section_id,
+        me_onenote_sections_onenote_section_copy_to_section_group_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/onenote/notebooks/#{notebook_id}/sections/#{onenote_section_id}/copyToNotebook")
-      |> add_param(:body, :body, me_onenote_sections_onenote_section_copy_to_section_group_request)
+      |> add_param(
+        :body,
+        :body,
+        me_onenote_sections_onenote_section_copy_to_section_group_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -8700,19 +13006,42 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_notebook_sections_onenote_section_copy_to_section_group(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeOnenoteSectionsOnenoteSectionCopyToSectionGroupRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_notebook_sections_onenote_section_copy_to_section_group(connection, notebook_id, onenote_section_id, me_onenote_sections_onenote_section_copy_to_section_group_request, _opts \\ []) do
+  @spec me_onenote_notebooks_notebook_sections_onenote_section_copy_to_section_group(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeOnenoteSectionsOnenoteSectionCopyToSectionGroupRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_notebook_sections_onenote_section_copy_to_section_group(
+        connection,
+        notebook_id,
+        onenote_section_id,
+        me_onenote_sections_onenote_section_copy_to_section_group_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/onenote/notebooks/#{notebook_id}/sections/#{onenote_section_id}/copyToSectionGroup")
-      |> add_param(:body, :body, me_onenote_sections_onenote_section_copy_to_section_group_request)
+      |> url(
+        "/me/onenote/notebooks/#{notebook_id}/sections/#{onenote_section_id}/copyToSectionGroup"
+      )
+      |> add_param(
+        :body,
+        :body,
+        me_onenote_sections_onenote_section_copy_to_section_group_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -8736,19 +13065,44 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_notebook_sections_onenote_section_pages_onenote_page_copy_to_section(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSectionRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_notebook_sections_onenote_section_pages_onenote_page_copy_to_section(connection, notebook_id, onenote_section_id, onenote_page_id, me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section_request, _opts \\ []) do
+  @spec me_onenote_notebooks_notebook_sections_onenote_section_pages_onenote_page_copy_to_section(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSectionRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_notebook_sections_onenote_section_pages_onenote_page_copy_to_section(
+        connection,
+        notebook_id,
+        onenote_section_id,
+        onenote_page_id,
+        me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/onenote/notebooks/#{notebook_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/copyToSection")
-      |> add_param(:body, :body, me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section_request)
+      |> url(
+        "/me/onenote/notebooks/#{notebook_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/copyToSection"
+      )
+      |> add_param(
+        :body,
+        :body,
+        me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -8771,13 +13125,36 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_notebooks_notebook_sections_onenote_section_pages_onenote_page_onenote_patch_content(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.UsersUserOnenotePagesOnenotePageOnenotePatchContentRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_notebooks_notebook_sections_onenote_section_pages_onenote_page_onenote_patch_content(connection, notebook_id, onenote_section_id, onenote_page_id, users_user_onenote_pages_onenote_page_onenote_patch_content_request, _opts \\ []) do
+  @spec me_onenote_notebooks_notebook_sections_onenote_section_pages_onenote_page_onenote_patch_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserOnenotePagesOnenotePageOnenotePatchContentRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_notebooks_notebook_sections_onenote_section_pages_onenote_page_onenote_patch_content(
+        connection,
+        notebook_id,
+        onenote_section_id,
+        onenote_page_id,
+        users_user_onenote_pages_onenote_page_onenote_patch_content_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/onenote/notebooks/#{notebook_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/onenotePatchContent")
-      |> add_param(:body, :body, users_user_onenote_pages_onenote_page_onenote_patch_content_request)
+      |> url(
+        "/me/onenote/notebooks/#{notebook_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/onenotePatchContent"
+      )
+      |> add_param(
+        :body,
+        :body,
+        users_user_onenote_pages_onenote_page_onenote_patch_content_request
+      )
       |> Enum.into([])
 
     connection
@@ -8805,19 +13182,38 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_pages_onenote_page_copy_to_section(Tesla.Env.client, String.t, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSectionRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_pages_onenote_page_copy_to_section(connection, onenote_page_id, me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section_request, _opts \\ []) do
+  @spec me_onenote_pages_onenote_page_copy_to_section(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSectionRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_pages_onenote_page_copy_to_section(
+        connection,
+        onenote_page_id,
+        me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/onenote/pages/#{onenote_page_id}/copyToSection")
-      |> add_param(:body, :body, me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section_request)
+      |> add_param(
+        :body,
+        :body,
+        me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -8838,13 +13234,30 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_pages_onenote_page_onenote_patch_content(Tesla.Env.client, String.t, MicrosoftGraph.Model.UsersUserOnenotePagesOnenotePageOnenotePatchContentRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_pages_onenote_page_onenote_patch_content(connection, onenote_page_id, users_user_onenote_pages_onenote_page_onenote_patch_content_request, _opts \\ []) do
+  @spec me_onenote_pages_onenote_page_onenote_patch_content(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserOnenotePagesOnenotePageOnenotePatchContentRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_pages_onenote_page_onenote_patch_content(
+        connection,
+        onenote_page_id,
+        users_user_onenote_pages_onenote_page_onenote_patch_content_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/onenote/pages/#{onenote_page_id}/onenotePatchContent")
-      |> add_param(:body, :body, users_user_onenote_pages_onenote_page_onenote_patch_content_request)
+      |> add_param(
+        :body,
+        :body,
+        users_user_onenote_pages_onenote_page_onenote_patch_content_request
+      )
       |> Enum.into([])
 
     connection
@@ -8873,19 +13286,42 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_section_groups_section_group_sections_onenote_section_copy_to_notebook(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeOnenoteSectionsOnenoteSectionCopyToSectionGroupRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_section_groups_section_group_sections_onenote_section_copy_to_notebook(connection, section_group_id, onenote_section_id, me_onenote_sections_onenote_section_copy_to_section_group_request, _opts \\ []) do
+  @spec me_onenote_section_groups_section_group_sections_onenote_section_copy_to_notebook(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeOnenoteSectionsOnenoteSectionCopyToSectionGroupRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_section_groups_section_group_sections_onenote_section_copy_to_notebook(
+        connection,
+        section_group_id,
+        onenote_section_id,
+        me_onenote_sections_onenote_section_copy_to_section_group_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/onenote/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/copyToNotebook")
-      |> add_param(:body, :body, me_onenote_sections_onenote_section_copy_to_section_group_request)
+      |> url(
+        "/me/onenote/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/copyToNotebook"
+      )
+      |> add_param(
+        :body,
+        :body,
+        me_onenote_sections_onenote_section_copy_to_section_group_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -8908,19 +13344,42 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_section_groups_section_group_sections_onenote_section_copy_to_section_group(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeOnenoteSectionsOnenoteSectionCopyToSectionGroupRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_section_groups_section_group_sections_onenote_section_copy_to_section_group(connection, section_group_id, onenote_section_id, me_onenote_sections_onenote_section_copy_to_section_group_request, _opts \\ []) do
+  @spec me_onenote_section_groups_section_group_sections_onenote_section_copy_to_section_group(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeOnenoteSectionsOnenoteSectionCopyToSectionGroupRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_section_groups_section_group_sections_onenote_section_copy_to_section_group(
+        connection,
+        section_group_id,
+        onenote_section_id,
+        me_onenote_sections_onenote_section_copy_to_section_group_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/onenote/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/copyToSectionGroup")
-      |> add_param(:body, :body, me_onenote_sections_onenote_section_copy_to_section_group_request)
+      |> url(
+        "/me/onenote/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/copyToSectionGroup"
+      )
+      |> add_param(
+        :body,
+        :body,
+        me_onenote_sections_onenote_section_copy_to_section_group_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -8944,19 +13403,44 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSectionRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section(connection, section_group_id, onenote_section_id, onenote_page_id, me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section_request, _opts \\ []) do
+  @spec me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSectionRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section(
+        connection,
+        section_group_id,
+        onenote_section_id,
+        onenote_page_id,
+        me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/onenote/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/copyToSection")
-      |> add_param(:body, :body, me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section_request)
+      |> url(
+        "/me/onenote/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/copyToSection"
+      )
+      |> add_param(
+        :body,
+        :body,
+        me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -8979,13 +13463,36 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_onenote_patch_content(Tesla.Env.client, String.t, String.t, String.t, MicrosoftGraph.Model.UsersUserOnenotePagesOnenotePageOnenotePatchContentRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_onenote_patch_content(connection, section_group_id, onenote_section_id, onenote_page_id, users_user_onenote_pages_onenote_page_onenote_patch_content_request, _opts \\ []) do
+  @spec me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_onenote_patch_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserOnenotePagesOnenotePageOnenotePatchContentRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_onenote_patch_content(
+        connection,
+        section_group_id,
+        onenote_section_id,
+        onenote_page_id,
+        users_user_onenote_pages_onenote_page_onenote_patch_content_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/onenote/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/onenotePatchContent")
-      |> add_param(:body, :body, users_user_onenote_pages_onenote_page_onenote_patch_content_request)
+      |> url(
+        "/me/onenote/sectionGroups/#{section_group_id}/sections/#{onenote_section_id}/pages/#{onenote_page_id}/onenotePatchContent"
+      )
+      |> add_param(
+        :body,
+        :body,
+        users_user_onenote_pages_onenote_page_onenote_patch_content_request
+      )
       |> Enum.into([])
 
     connection
@@ -9013,19 +13520,38 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_sections_onenote_section_copy_to_notebook(Tesla.Env.client, String.t, MicrosoftGraph.Model.MeOnenoteSectionsOnenoteSectionCopyToSectionGroupRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_sections_onenote_section_copy_to_notebook(connection, onenote_section_id, me_onenote_sections_onenote_section_copy_to_section_group_request, _opts \\ []) do
+  @spec me_onenote_sections_onenote_section_copy_to_notebook(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MeOnenoteSectionsOnenoteSectionCopyToSectionGroupRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_sections_onenote_section_copy_to_notebook(
+        connection,
+        onenote_section_id,
+        me_onenote_sections_onenote_section_copy_to_section_group_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/onenote/sections/#{onenote_section_id}/copyToNotebook")
-      |> add_param(:body, :body, me_onenote_sections_onenote_section_copy_to_section_group_request)
+      |> add_param(
+        :body,
+        :body,
+        me_onenote_sections_onenote_section_copy_to_section_group_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -9047,19 +13573,38 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_sections_onenote_section_copy_to_section_group(Tesla.Env.client, String.t, MicrosoftGraph.Model.MeOnenoteSectionsOnenoteSectionCopyToSectionGroupRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_sections_onenote_section_copy_to_section_group(connection, onenote_section_id, me_onenote_sections_onenote_section_copy_to_section_group_request, _opts \\ []) do
+  @spec me_onenote_sections_onenote_section_copy_to_section_group(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MeOnenoteSectionsOnenoteSectionCopyToSectionGroupRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_sections_onenote_section_copy_to_section_group(
+        connection,
+        onenote_section_id,
+        me_onenote_sections_onenote_section_copy_to_section_group_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/onenote/sections/#{onenote_section_id}/copyToSectionGroup")
-      |> add_param(:body, :body, me_onenote_sections_onenote_section_copy_to_section_group_request)
+      |> add_param(
+        :body,
+        :body,
+        me_onenote_sections_onenote_section_copy_to_section_group_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -9082,19 +13627,40 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_sections_onenote_section_pages_onenote_page_copy_to_section(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSectionRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_sections_onenote_section_pages_onenote_page_copy_to_section(connection, onenote_section_id, onenote_page_id, me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section_request, _opts \\ []) do
+  @spec me_onenote_sections_onenote_section_pages_onenote_page_copy_to_section(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSectionRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_sections_onenote_section_pages_onenote_page_copy_to_section(
+        connection,
+        onenote_section_id,
+        onenote_page_id,
+        me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
       |> url("/me/onenote/sections/#{onenote_section_id}/pages/#{onenote_page_id}/copyToSection")
-      |> add_param(:body, :body, me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section_request)
+      |> add_param(
+        :body,
+        :body,
+        me_onenote_section_groups_section_group_sections_onenote_section_pages_onenote_page_copy_to_section_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.MeOnenoteSectionGroupsSectionGroupSectionsOnenoteSectionPagesOnenotePageCopyToSection2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -9116,13 +13682,34 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_onenote_sections_onenote_section_pages_onenote_page_onenote_patch_content(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.UsersUserOnenotePagesOnenotePageOnenotePatchContentRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_onenote_sections_onenote_section_pages_onenote_page_onenote_patch_content(connection, onenote_section_id, onenote_page_id, users_user_onenote_pages_onenote_page_onenote_patch_content_request, _opts \\ []) do
+  @spec me_onenote_sections_onenote_section_pages_onenote_page_onenote_patch_content(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserOnenotePagesOnenotePageOnenotePatchContentRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_onenote_sections_onenote_section_pages_onenote_page_onenote_patch_content(
+        connection,
+        onenote_section_id,
+        onenote_page_id,
+        users_user_onenote_pages_onenote_page_onenote_patch_content_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/onenote/sections/#{onenote_section_id}/pages/#{onenote_page_id}/onenotePatchContent")
-      |> add_param(:body, :body, users_user_onenote_pages_onenote_page_onenote_patch_content_request)
+      |> url(
+        "/me/onenote/sections/#{onenote_section_id}/pages/#{onenote_page_id}/onenotePatchContent"
+      )
+      |> add_param(
+        :body,
+        :body,
+        users_user_onenote_pages_onenote_page_onenote_patch_content_request
+      )
       |> Enum.into([])
 
     connection
@@ -9149,8 +13736,19 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.UsersUserOnlineMeetingsCreateOrGet2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_online_meetings_create_or_get(Tesla.Env.client, MicrosoftGraph.Model.UsersUserOnlineMeetingsCreateOrGetRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.UsersUserOnlineMeetingsCreateOrGet2XxResponse.t} | {:error, Tesla.Env.t}
-  def me_online_meetings_create_or_get(connection, users_user_online_meetings_create_or_get_request, _opts \\ []) do
+  @spec me_online_meetings_create_or_get(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.UsersUserOnlineMeetingsCreateOrGetRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.UsersUserOnlineMeetingsCreateOrGet2XxResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def me_online_meetings_create_or_get(
+        connection,
+        users_user_online_meetings_create_or_get_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -9182,8 +13780,19 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_presence_clear_presence(Tesla.Env.client, MicrosoftGraph.Model.UsersUserPresenceClearPresenceRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_presence_clear_presence(connection, users_user_presence_clear_presence_request, _opts \\ []) do
+  @spec me_presence_clear_presence(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.UsersUserPresenceClearPresenceRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_presence_clear_presence(
+        connection,
+        users_user_presence_clear_presence_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -9214,7 +13823,10 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_presence_clear_user_preferred_presence(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_presence_clear_user_preferred_presence(Tesla.Env.client(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_presence_clear_user_preferred_presence(connection, _opts \\ []) do
     request =
       %{}
@@ -9247,7 +13859,14 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_presence_set_presence(Tesla.Env.client, MicrosoftGraph.Model.MePresenceSetPresenceRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_presence_set_presence(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MePresenceSetPresenceRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_presence_set_presence(connection, me_presence_set_presence_request, _opts \\ []) do
     request =
       %{}
@@ -9280,8 +13899,19 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_presence_set_status_message(Tesla.Env.client, MicrosoftGraph.Model.MePresenceSetStatusMessageRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_presence_set_status_message(connection, me_presence_set_status_message_request, _opts \\ []) do
+  @spec me_presence_set_status_message(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MePresenceSetStatusMessageRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_presence_set_status_message(
+        connection,
+        me_presence_set_status_message_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -9313,8 +13943,19 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_presence_set_user_preferred_presence(Tesla.Env.client, MicrosoftGraph.Model.MePresenceSetUserPreferredPresenceRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_presence_set_user_preferred_presence(connection, me_presence_set_user_preferred_presence_request, _opts \\ []) do
+  @spec me_presence_set_user_preferred_presence(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MePresenceSetUserPreferredPresenceRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_presence_set_user_preferred_presence(
+        connection,
+        me_presence_set_user_preferred_presence_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -9345,7 +13986,10 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_remove_all_devices_from_management(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_remove_all_devices_from_management(Tesla.Env.client(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_remove_all_devices_from_management(connection, _opts \\ []) do
     request =
       %{}
@@ -9377,7 +14021,11 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowActivateRequestSubjectsInner.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_reprocess_license_assignment(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowActivateRequestSubjectsInner.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_reprocess_license_assignment(Tesla.Env.client(), keyword()) ::
+          {:ok,
+           MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowActivateRequestSubjectsInner.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_reprocess_license_assignment(connection, _opts \\ []) do
     request =
       %{}
@@ -9389,7 +14037,8 @@ defmodule MicrosoftGraph.Api.MeActions do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowActivateRequestSubjectsInner},
+      {"2XX",
+       MicrosoftGraph.Model.IdentityGovernanceLifecycleWorkflowsDeletedItemsWorkflowsWorkflowActivateRequestSubjectsInner},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -9409,7 +14058,10 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.OrganizationOrganizationRestore2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_restore(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.OrganizationOrganizationRestore2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_restore(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.OrganizationOrganizationRestore2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_restore(connection, _opts \\ []) do
     request =
       %{}
@@ -9440,7 +14092,10 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_retry_service_provisioning(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_retry_service_provisioning(Tesla.Env.client(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_retry_service_provisioning(connection, _opts \\ []) do
     request =
       %{}
@@ -9472,7 +14127,10 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.AdminServiceAnnouncementMessagesUnfavorite2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_revoke_sign_in_sessions(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.AdminServiceAnnouncementMessagesUnfavorite2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_revoke_sign_in_sessions(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.AdminServiceAnnouncementMessagesUnfavorite2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_revoke_sign_in_sessions(connection, _opts \\ []) do
     request =
       %{}
@@ -9505,7 +14163,10 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_send_mail(Tesla.Env.client, MicrosoftGraph.Model.MeSendMailRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_send_mail(Tesla.Env.client(), MicrosoftGraph.Model.MeSendMailRequest.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_send_mail(connection, me_send_mail_request, _opts \\ []) do
     request =
       %{}
@@ -9538,8 +14199,19 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_teamwork_send_activity_notification(Tesla.Env.client, MicrosoftGraph.Model.MeTeamworkSendActivityNotificationRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_teamwork_send_activity_notification(connection, me_teamwork_send_activity_notification_request, _opts \\ []) do
+  @spec me_teamwork_send_activity_notification(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MeTeamworkSendActivityNotificationRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_teamwork_send_activity_notification(
+        connection,
+        me_teamwork_send_activity_notification_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -9573,19 +14245,42 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_todo_lists_todo_task_list_tasks_todo_task_attachments_create_upload_session(Tesla.Env.client, String.t, String.t, MicrosoftGraph.Model.UsersUserTodoListsTodoTaskListTasksTodoTaskAttachmentsCreateUploadSessionRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_todo_lists_todo_task_list_tasks_todo_task_attachments_create_upload_session(connection, todo_task_list_id, todo_task_id, users_user_todo_lists_todo_task_list_tasks_todo_task_attachments_create_upload_session_request, _opts \\ []) do
+  @spec me_todo_lists_todo_task_list_tasks_todo_task_attachments_create_upload_session(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          MicrosoftGraph.Model.UsersUserTodoListsTodoTaskListTasksTodoTaskAttachmentsCreateUploadSessionRequest.t(),
+          keyword()
+        ) ::
+          {:ok,
+           MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_todo_lists_todo_task_list_tasks_todo_task_attachments_create_upload_session(
+        connection,
+        todo_task_list_id,
+        todo_task_id,
+        users_user_todo_lists_todo_task_list_tasks_todo_task_attachments_create_upload_session_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
-      |> url("/me/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/attachments/createUploadSession")
-      |> add_param(:body, :body, users_user_todo_lists_todo_task_list_tasks_todo_task_attachments_create_upload_session_request)
+      |> url(
+        "/me/todo/lists/#{todo_task_list_id}/tasks/#{todo_task_id}/attachments/createUploadSession"
+      )
+      |> add_param(
+        :body,
+        :body,
+        users_user_todo_lists_todo_task_list_tasks_todo_task_attachments_create_upload_session_request
+      )
       |> Enum.into([])
 
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {"2XX", MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse},
+      {"2XX",
+       MicrosoftGraph.Model.UsersUserEventsEventInstancesEventAttachmentsCreateUploadSession2XxResponse},
       {"4XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError},
       {"5XX", MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError}
     ])
@@ -9606,7 +14301,14 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, MicrosoftGraph.Model.MeTranslateExchangeIds2XxResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_translate_exchange_ids(Tesla.Env.client, MicrosoftGraph.Model.MeTranslateExchangeIdsRequest.t, keyword()) :: {:ok, MicrosoftGraph.Model.MeTranslateExchangeIds2XxResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec me_translate_exchange_ids(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MeTranslateExchangeIdsRequest.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MeTranslateExchangeIds2XxResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def me_translate_exchange_ids(connection, me_translate_exchange_ids_request, _opts \\ []) do
     request =
       %{}
@@ -9639,8 +14341,19 @@ defmodule MicrosoftGraph.Api.MeActions do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec me_wipe_managed_app_registrations_by_device_tag(Tesla.Env.client, MicrosoftGraph.Model.MeWipeManagedAppRegistrationsByDeviceTagRequest.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def me_wipe_managed_app_registrations_by_device_tag(connection, me_wipe_managed_app_registrations_by_device_tag_request, _opts \\ []) do
+  @spec me_wipe_managed_app_registrations_by_device_tag(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MeWipeManagedAppRegistrationsByDeviceTagRequest.t(),
+          keyword()
+        ) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def me_wipe_managed_app_registrations_by_device_tag(
+        connection,
+        me_wipe_managed_app_registrations_by_device_tag_request,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)

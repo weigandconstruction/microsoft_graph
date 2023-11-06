@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphDeviceLocalCredential do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -17,19 +17,18 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphDeviceLocalCredential do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :accountName => String.t | nil,
-    :accountSid => String.t | nil,
-    :backupDateTime => DateTime.t | nil,
-    :passwordBase64 => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :accountName => String.t() | nil,
+          :accountSid => String.t() | nil,
+          :backupDateTime => DateTime.t() | nil,
+          :passwordBase64 => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:backupDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:backupDateTime, :datetime, nil)
   end
 end
-

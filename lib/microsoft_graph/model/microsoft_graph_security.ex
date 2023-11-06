@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSecurity do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -24,36 +24,65 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSecurity do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :alerts => [MicrosoftGraph.Model.MicrosoftGraphAlert.t] | nil,
-    :alerts_v2 => [MicrosoftGraph.Model.MicrosoftGraphSecurityAlert.t] | nil,
-    :attackSimulation => MicrosoftGraph.Model.SecurityAttackSimulation.t | nil,
-    :cases => MicrosoftGraph.Model.SecurityCases.t | nil,
-    :incidents => [MicrosoftGraph.Model.MicrosoftGraphSecurityIncident.t] | nil,
-    :secureScoreControlProfiles => [MicrosoftGraph.Model.MicrosoftGraphSecureScoreControlProfile.t] | nil,
-    :secureScores => [MicrosoftGraph.Model.MicrosoftGraphSecureScore.t] | nil,
-    :subjectRightsRequests => [MicrosoftGraph.Model.MicrosoftGraphSubjectRightsRequest.t] | nil,
-    :threatIntelligence => MicrosoftGraph.Model.SecurityThreatIntelligence.t | nil,
-    :triggerTypes => MicrosoftGraph.Model.SecurityTriggerTypes.t | nil,
-    :triggers => MicrosoftGraph.Model.SecurityTriggers.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :alerts => [MicrosoftGraph.Model.MicrosoftGraphAlert.t()] | nil,
+          :alerts_v2 => [MicrosoftGraph.Model.MicrosoftGraphSecurityAlert.t()] | nil,
+          :attackSimulation => MicrosoftGraph.Model.SecurityAttackSimulation.t() | nil,
+          :cases => MicrosoftGraph.Model.SecurityCases.t() | nil,
+          :incidents => [MicrosoftGraph.Model.MicrosoftGraphSecurityIncident.t()] | nil,
+          :secureScoreControlProfiles =>
+            [MicrosoftGraph.Model.MicrosoftGraphSecureScoreControlProfile.t()] | nil,
+          :secureScores => [MicrosoftGraph.Model.MicrosoftGraphSecureScore.t()] | nil,
+          :subjectRightsRequests =>
+            [MicrosoftGraph.Model.MicrosoftGraphSubjectRightsRequest.t()] | nil,
+          :threatIntelligence => MicrosoftGraph.Model.SecurityThreatIntelligence.t() | nil,
+          :triggerTypes => MicrosoftGraph.Model.SecurityTriggerTypes.t() | nil,
+          :triggers => MicrosoftGraph.Model.SecurityTriggers.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:alerts, :list, MicrosoftGraph.Model.MicrosoftGraphAlert)
-     |> Deserializer.deserialize(:alerts_v2, :list, MicrosoftGraph.Model.MicrosoftGraphSecurityAlert)
-     |> Deserializer.deserialize(:attackSimulation, :struct, MicrosoftGraph.Model.SecurityAttackSimulation)
-     |> Deserializer.deserialize(:cases, :struct, MicrosoftGraph.Model.SecurityCases)
-     |> Deserializer.deserialize(:incidents, :list, MicrosoftGraph.Model.MicrosoftGraphSecurityIncident)
-     |> Deserializer.deserialize(:secureScoreControlProfiles, :list, MicrosoftGraph.Model.MicrosoftGraphSecureScoreControlProfile)
-     |> Deserializer.deserialize(:secureScores, :list, MicrosoftGraph.Model.MicrosoftGraphSecureScore)
-     |> Deserializer.deserialize(:subjectRightsRequests, :list, MicrosoftGraph.Model.MicrosoftGraphSubjectRightsRequest)
-     |> Deserializer.deserialize(:threatIntelligence, :struct, MicrosoftGraph.Model.SecurityThreatIntelligence)
-     |> Deserializer.deserialize(:triggerTypes, :struct, MicrosoftGraph.Model.SecurityTriggerTypes)
-     |> Deserializer.deserialize(:triggers, :struct, MicrosoftGraph.Model.SecurityTriggers)
+    |> Deserializer.deserialize(:alerts, :list, MicrosoftGraph.Model.MicrosoftGraphAlert)
+    |> Deserializer.deserialize(
+      :alerts_v2,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityAlert
+    )
+    |> Deserializer.deserialize(
+      :attackSimulation,
+      :struct,
+      MicrosoftGraph.Model.SecurityAttackSimulation
+    )
+    |> Deserializer.deserialize(:cases, :struct, MicrosoftGraph.Model.SecurityCases)
+    |> Deserializer.deserialize(
+      :incidents,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSecurityIncident
+    )
+    |> Deserializer.deserialize(
+      :secureScoreControlProfiles,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSecureScoreControlProfile
+    )
+    |> Deserializer.deserialize(
+      :secureScores,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSecureScore
+    )
+    |> Deserializer.deserialize(
+      :subjectRightsRequests,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphSubjectRightsRequest
+    )
+    |> Deserializer.deserialize(
+      :threatIntelligence,
+      :struct,
+      MicrosoftGraph.Model.SecurityThreatIntelligence
+    )
+    |> Deserializer.deserialize(:triggerTypes, :struct, MicrosoftGraph.Model.SecurityTriggerTypes)
+    |> Deserializer.deserialize(:triggers, :struct, MicrosoftGraph.Model.SecurityTriggers)
   end
 end
-

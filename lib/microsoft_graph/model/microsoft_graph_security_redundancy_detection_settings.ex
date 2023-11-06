@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityRedundancyDetectionSettings do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,15 +16,14 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphSecurityRedundancyDetectionSettings
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :isEnabled => boolean() | nil,
-    :maxWords => integer() | nil,
-    :minWords => integer() | nil,
-    :similarityThreshold => integer() | nil
-  }
+          :"@odata.type" => String.t(),
+          :isEnabled => boolean() | nil,
+          :maxWords => integer() | nil,
+          :minWords => integer() | nil,
+          :similarityThreshold => integer() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

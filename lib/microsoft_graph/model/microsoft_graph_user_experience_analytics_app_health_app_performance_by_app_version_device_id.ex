@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -21,23 +21,22 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphUserExperienceAnalyticsAppHealthApp
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :appCrashCount => integer() | nil,
-    :appDisplayName => String.t | nil,
-    :appName => String.t | nil,
-    :appPublisher => String.t | nil,
-    :appVersion => String.t | nil,
-    :deviceDisplayName => String.t | nil,
-    :deviceId => String.t | nil,
-    :processedDateTime => DateTime.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :appCrashCount => integer() | nil,
+          :appDisplayName => String.t() | nil,
+          :appName => String.t() | nil,
+          :appPublisher => String.t() | nil,
+          :appVersion => String.t() | nil,
+          :deviceDisplayName => String.t() | nil,
+          :deviceId => String.t() | nil,
+          :processedDateTime => DateTime.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:processedDateTime, :datetime, nil)
+    |> Deserializer.deserialize(:processedDateTime, :datetime, nil)
   end
 end
-

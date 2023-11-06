@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphAttributeMappingParameterSchema do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -16,18 +16,17 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphAttributeMappingParameterSchema do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :allowMultipleOccurrences => boolean() | nil,
-    :name => String.t | nil,
-    :required => boolean() | nil,
-    :type => MicrosoftGraph.Model.MicrosoftGraphAttributeType.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :allowMultipleOccurrences => boolean() | nil,
+          :name => String.t() | nil,
+          :required => boolean() | nil,
+          :type => MicrosoftGraph.Model.MicrosoftGraphAttributeType.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:type, :struct, MicrosoftGraph.Model.MicrosoftGraphAttributeType)
+    |> Deserializer.deserialize(:type, :struct, MicrosoftGraph.Model.MicrosoftGraphAttributeType)
   end
 end
-

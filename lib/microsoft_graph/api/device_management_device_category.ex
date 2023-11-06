@@ -24,8 +24,19 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceCategory do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceCategory.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_create_device_categories(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphDeviceCategory.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceCategory.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_create_device_categories(connection, microsoft_graph_device_category, _opts \\ []) do
+  @spec device_management_create_device_categories(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphDeviceCategory.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceCategory.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_create_device_categories(
+        connection,
+        microsoft_graph_device_category,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:post)
@@ -58,7 +69,10 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceCategory do
   - `{:ok, nil}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_delete_device_categories(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec device_management_delete_device_categories(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, nil}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def device_management_delete_device_categories(connection, device_category_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers
@@ -95,7 +109,10 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceCategory do
   - `{:ok, integer()}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_device_categories_get_count_ed54(Tesla.Env.client, keyword()) :: {:ok, Integer.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec device_management_device_categories_get_count_ed54(Tesla.Env.client(), keyword()) ::
+          {:ok, Integer.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def device_management_device_categories_get_count_ed54(connection, opts \\ []) do
     optional_params = %{
       :"$search" => :query,
@@ -135,7 +152,10 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceCategory do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceCategory.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_get_device_categories(Tesla.Env.client, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceCategory.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec device_management_get_device_categories(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceCategory.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def device_management_get_device_categories(connection, device_category_id, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -180,7 +200,10 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceCategory do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceCategoryCollectionResponse.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_list_device_categories(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceCategoryCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
+  @spec device_management_list_device_categories(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceCategoryCollectionResponse.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
   def device_management_list_device_categories(connection, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
@@ -225,8 +248,21 @@ defmodule MicrosoftGraph.Api.DeviceManagementDeviceCategory do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceCategory.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec device_management_update_device_categories(Tesla.Env.client, String.t, MicrosoftGraph.Model.MicrosoftGraphDeviceCategory.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceCategory.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def device_management_update_device_categories(connection, device_category_id, microsoft_graph_device_category, _opts \\ []) do
+  @spec device_management_update_device_categories(
+          Tesla.Env.client(),
+          String.t(),
+          MicrosoftGraph.Model.MicrosoftGraphDeviceCategory.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphDeviceCategory.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:error, Tesla.Env.t()}
+  def device_management_update_device_categories(
+        connection,
+        device_category_id,
+        microsoft_graph_device_category,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

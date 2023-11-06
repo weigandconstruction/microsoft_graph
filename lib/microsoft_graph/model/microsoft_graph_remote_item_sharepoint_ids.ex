@@ -19,18 +19,17 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphRemoteItemSharepointIds do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :listId => String.t | nil,
-    :listItemId => String.t | nil,
-    :listItemUniqueId => String.t | nil,
-    :siteId => String.t | nil,
-    :siteUrl => String.t | nil,
-    :tenantId => String.t | nil,
-    :webId => String.t | nil
-  }
+          :"@odata.type" => String.t(),
+          :listId => String.t() | nil,
+          :listItemId => String.t() | nil,
+          :listItemUniqueId => String.t() | nil,
+          :siteId => String.t() | nil,
+          :siteUrl => String.t() | nil,
+          :tenantId => String.t() | nil,
+          :webId => String.t() | nil
+        }
 
   def decode(value) do
     value
   end
 end
-

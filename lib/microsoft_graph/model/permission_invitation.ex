@@ -16,18 +16,21 @@ defmodule MicrosoftGraph.Model.PermissionInvitation do
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :email => String.t | nil,
-    :invitedBy => MicrosoftGraph.Model.MicrosoftGraphSharingInvitationInvitedBy.t | nil,
-    :redeemedBy => String.t | nil,
-    :signInRequired => boolean() | nil
-  }
+          :"@odata.type" => String.t(),
+          :email => String.t() | nil,
+          :invitedBy => MicrosoftGraph.Model.MicrosoftGraphSharingInvitationInvitedBy.t() | nil,
+          :redeemedBy => String.t() | nil,
+          :signInRequired => boolean() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:invitedBy, :struct, MicrosoftGraph.Model.MicrosoftGraphSharingInvitationInvitedBy)
+    |> Deserializer.deserialize(
+      :invitedBy,
+      :struct,
+      MicrosoftGraph.Model.MicrosoftGraphSharingInvitationInvitedBy
+    )
   end
 end
-

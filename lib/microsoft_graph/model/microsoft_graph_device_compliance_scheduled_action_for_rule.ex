@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphDeviceComplianceScheduledActionForRule do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,17 +15,21 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphDeviceComplianceScheduledActionForR
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :id => String.t | nil,
-    :ruleName => String.t | nil,
-    :scheduledActionConfigurations => [MicrosoftGraph.Model.MicrosoftGraphDeviceComplianceActionItem.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :id => String.t() | nil,
+          :ruleName => String.t() | nil,
+          :scheduledActionConfigurations =>
+            [MicrosoftGraph.Model.MicrosoftGraphDeviceComplianceActionItem.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:scheduledActionConfigurations, :list, MicrosoftGraph.Model.MicrosoftGraphDeviceComplianceActionItem)
+    |> Deserializer.deserialize(
+      :scheduledActionConfigurations,
+      :list,
+      MicrosoftGraph.Model.MicrosoftGraphDeviceComplianceActionItem
+    )
   end
 end
-

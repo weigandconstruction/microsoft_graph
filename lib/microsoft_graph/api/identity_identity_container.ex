@@ -24,7 +24,10 @@ defmodule MicrosoftGraph.Api.IdentityIdentityContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityContainer.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_identity_container_get_identity_container(Tesla.Env.client, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityContainer.t} | {:error, Tesla.Env.t}
+  @spec identity_identity_container_get_identity_container(Tesla.Env.client(), keyword()) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityContainer.t()}
+          | {:error, Tesla.Env.t()}
   def identity_identity_container_get_identity_container(connection, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
@@ -61,8 +64,19 @@ defmodule MicrosoftGraph.Api.IdentityIdentityContainer do
   - `{:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityContainer.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec identity_identity_container_update_identity_container(Tesla.Env.client, MicrosoftGraph.Model.MicrosoftGraphIdentityContainer.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityContainer.t} | {:error, Tesla.Env.t}
-  def identity_identity_container_update_identity_container(connection, microsoft_graph_identity_container, _opts \\ []) do
+  @spec identity_identity_container_update_identity_container(
+          Tesla.Env.client(),
+          MicrosoftGraph.Model.MicrosoftGraphIdentityContainer.t(),
+          keyword()
+        ) ::
+          {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t()}
+          | {:ok, MicrosoftGraph.Model.MicrosoftGraphIdentityContainer.t()}
+          | {:error, Tesla.Env.t()}
+  def identity_identity_container_update_identity_container(
+        connection,
+        microsoft_graph_identity_container,
+        _opts \\ []
+      ) do
     request =
       %{}
       |> method(:patch)

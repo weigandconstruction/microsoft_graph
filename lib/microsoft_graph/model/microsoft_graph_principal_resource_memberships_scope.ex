@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.MicrosoftGraphPrincipalResourceMembershipsScope do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -14,17 +14,26 @@ defmodule MicrosoftGraph.Model.MicrosoftGraphPrincipalResourceMembershipsScope d
   ]
 
   @type t :: %__MODULE__{
-    :"@odata.type" => String.t,
-    :principalScopes => [MicrosoftGraph.Model.PrincipalResourceMembershipsScopePrincipalScopesInner.t] | nil,
-    :resourceScopes => [MicrosoftGraph.Model.PrincipalResourceMembershipsScopePrincipalScopesInner.t] | nil
-  }
+          :"@odata.type" => String.t(),
+          :principalScopes =>
+            [MicrosoftGraph.Model.PrincipalResourceMembershipsScopePrincipalScopesInner.t()] | nil,
+          :resourceScopes =>
+            [MicrosoftGraph.Model.PrincipalResourceMembershipsScopePrincipalScopesInner.t()] | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:principalScopes, :list, MicrosoftGraph.Model.PrincipalResourceMembershipsScopePrincipalScopesInner)
-     |> Deserializer.deserialize(:resourceScopes, :list, MicrosoftGraph.Model.PrincipalResourceMembershipsScopePrincipalScopesInner)
+    |> Deserializer.deserialize(
+      :principalScopes,
+      :list,
+      MicrosoftGraph.Model.PrincipalResourceMembershipsScopePrincipalScopesInner
+    )
+    |> Deserializer.deserialize(
+      :resourceScopes,
+      :list,
+      MicrosoftGraph.Model.PrincipalResourceMembershipsScopePrincipalScopesInner
+    )
   end
 end
-

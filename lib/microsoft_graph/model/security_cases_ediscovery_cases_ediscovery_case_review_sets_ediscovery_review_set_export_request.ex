@@ -3,7 +3,7 @@
 
 defmodule MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseReviewSetsEdiscoveryReviewSetExportRequest do
   @moduledoc """
-  
+
   """
 
   @derive Jason.Encoder
@@ -15,18 +15,29 @@ defmodule MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseReviewS
   ]
 
   @type t :: %__MODULE__{
-    :description => String.t | nil,
-    :exportOptions => MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseReviewSetsEdiscoveryReviewSetExportRequestExportOptions.t | nil,
-    :exportStructure => MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseReviewSetsEdiscoveryReviewSetExportRequestExportStructure.t | nil,
-    :outputName => String.t | nil
-  }
+          :description => String.t() | nil,
+          :exportOptions =>
+            MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseReviewSetsEdiscoveryReviewSetExportRequestExportOptions.t()
+            | nil,
+          :exportStructure =>
+            MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseReviewSetsEdiscoveryReviewSetExportRequestExportStructure.t()
+            | nil,
+          :outputName => String.t() | nil
+        }
 
   alias MicrosoftGraph.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:exportOptions, :struct, MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseReviewSetsEdiscoveryReviewSetExportRequestExportOptions)
-     |> Deserializer.deserialize(:exportStructure, :struct, MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseReviewSetsEdiscoveryReviewSetExportRequestExportStructure)
+    |> Deserializer.deserialize(
+      :exportOptions,
+      :struct,
+      MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseReviewSetsEdiscoveryReviewSetExportRequestExportOptions
+    )
+    |> Deserializer.deserialize(
+      :exportStructure,
+      :struct,
+      MicrosoftGraph.Model.SecurityCasesEdiscoveryCasesEdiscoveryCaseReviewSetsEdiscoveryReviewSetExportRequestExportStructure
+    )
   end
 end
-
